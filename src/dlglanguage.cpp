@@ -16,7 +16,7 @@
  
 #include <klocale.h>
 #include <klineedit.h>
-#include <kstandarddirs.h> //locate
+#include <kiconloader.h>
 
 #include <qlabel.h>
 
@@ -27,8 +27,8 @@ DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialog
 {
   dlgBase = new DlgLanguageBase( this, "Dlg" );
   setMainWidget(dlgBase);
-  dlgBase -> picLanguage1 -> setPixmap(locate("data", "kwordquiz/pics/lang1.png"));
-  dlgBase -> picLanguage2 -> setPixmap(locate("data", "kwordquiz/pics/lang2.png"));
+  dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("rowcol", KIcon::Panel));
+  dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("language2", KIcon::Panel));
   
   completion1 = new KCompletion();
   completion1->setItems(Config().m_columnTitles1);

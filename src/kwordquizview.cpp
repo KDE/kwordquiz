@@ -993,4 +993,29 @@ void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr,
   QTable::paintCell (p, row, col, cr, selected, g );
 }
 
+void KWordQuizView::keyPressEvent( QKeyEvent * e)
+{
+  if (isEditing())
+    if (e->key() == Key_Tab)
+    {
+      endEdit(currentRow(), currentColumn(), true, true);
+      activateNextCell();
+      return;
+    }
+    else
+      return;
+     
+  if (e->key() == Key_Tab)
+  {
+    activateNextCell();
+    return;
+  }
+  QTable::keyPressEvent(e);
+}
+
+void KWordQuizView::slotCheckedAnswer( int i )
+{
+  setCurrentCell(i, 0);
+}
+
 #include "kwordquizview.moc"

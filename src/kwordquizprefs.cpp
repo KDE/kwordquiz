@@ -38,12 +38,12 @@
 
 KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name, bool modal) : KDialogBase(IconList, i18n("Configure"), Default|Ok|Apply|Cancel, Ok, parent, name, modal, true) {
 
-  QFrame* fraEditor = addPage( i18n("Editor"), i18n("Editor Settings"), locate("data", "kwordquiz/pics/lang1.png"));
+  QFrame* fraEditor = addPage( i18n("Editor"), i18n("Editor Settings"), KGlobal::iconLoader()->loadIcon("editor", KIcon::Panel));
   QVBoxLayout *frameLayout = new QVBoxLayout( fraEditor, 0, 0 );
   m_prefEditor = new PrefEditor(fraEditor);
   frameLayout->addWidget(m_prefEditor);  
     
-  QFrame* fraQuiz = addPage( i18n("Quiz"), i18n("Quiz Settings"), locate("data", "kwordquiz/pics/pref_flash.png"));
+  QFrame* fraQuiz = addPage( i18n("Quiz"), i18n("Quiz Settings"), KGlobal::iconLoader()->loadIcon("flash", KIcon::Panel));
   frameLayout = new QVBoxLayout( fraQuiz, 0, 0 );
   m_prefQuiz = new PrefQuiz(fraQuiz);
   frameLayout->addWidget(m_prefQuiz);

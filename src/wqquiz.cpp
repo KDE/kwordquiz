@@ -26,9 +26,9 @@ QPtrList<WQListItem> *WQQuiz::m_list = 0L;
 QPtrList<WQListItem> *WQQuiz::m_errorList = 0L;
 QPtrList<WQListItem> *WQQuiz::m_quizList = 0L;
 
-WQQuiz::WQQuiz(KWordQuizView *t)
+WQQuiz::WQQuiz(KWordQuizView * parent, const char *name) : QObject(parent, name)
 {
-  m_table = t;
+  m_table = parent;
 
   m_list = new QPtrList<WQListItem>();
   //m_list -> setAutoDelete(true);
@@ -40,6 +40,9 @@ WQQuiz::WQQuiz(KWordQuizView *t)
 
 WQQuiz::~WQQuiz()
 {
+  delete (m_list);
+  delete (m_errorList);
+  delete (m_quizList);
 }
 
 void WQQuiz::activateErrorList()
@@ -283,7 +286,7 @@ bool WQQuiz::checkAnswer(int i, QString ans)
   {
     m_errorList -> append(li);
   }
-
+  emit checkingAnswer(li->oneOp());
   return result;
 }
 
@@ -349,17 +352,17 @@ QString WQQuiz::quizIcon(int i, QuizIcon ico)
   if (ico == qiLeftCol)
   {
     if (li->question() == 0)
-      s = "lang1";
+      s = "rowcol";
     else
-      s = "lang2";
+      s = "language2";
   }
   
   if (ico == qiRightCol)
   {
     if (li->question() == 0)
-      s = "lang2";
+      s = "language2";
     else
-      s = "lang1";
+      s = "rowcol";
   }  
   return s;     
 }
@@ -559,3 +562,5 @@ int WQQuiz::questionCount()
 {
   return m_questionCount;
 }
+
+#include "wqquiz.moc"

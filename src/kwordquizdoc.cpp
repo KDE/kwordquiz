@@ -91,11 +91,11 @@ void KWordQuizDoc::setModified(bool _m)
   modified=_m;
   if (modified)
   {
-    //m_view-> tabMain->setTabIconSet(m_view-> tabEdit, QIconSet(QPixmap(locate("data", "kwordquiz/pics/tabeditsave.png"))));
+    //
   }
   else
   {
-    //m_view->tabMain->setTabIconSet(m_view-> tabEdit, QIconSet(QPixmap(locate("data", "kwordquiz/pics/tabedit.png"))));
+    //
   }
 }
 

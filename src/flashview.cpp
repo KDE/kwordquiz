@@ -16,7 +16,7 @@
  
 #include <qlabel.h>
 
-#include <kstandarddirs.h> //locate
+#include <kiconloader.h>
 #include <klocale.h>
 #include <knotifyclient.h>
 
@@ -173,22 +173,22 @@ void FlashView::updateScore()
   QString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(QPixmap(locate("data", "kwordquiz/pics/appicon.png")));
+  picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", KIcon::Panel));
 
   s = m_score->answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(QPixmap(locate("data", "kwordquiz/pics/question.png")));
+    picAnswered->setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
 
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(QPixmap(locate("data", "kwordquiz/pics/correct.png")));
+    picCorrect->setPixmap(KGlobal::iconLoader()->loadIcon("check", KIcon::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);
   if (!s.isEmpty())
-    picError->setPixmap(QPixmap(locate("data", "kwordquiz/pics/error.png")));
+    picError->setPixmap(KGlobal::iconLoader()->loadIcon("error", KIcon::Panel));
 }
 
 void FlashView::slotTimer( )

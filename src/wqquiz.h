@@ -28,13 +28,14 @@
 @author Peter Hedlund
 */
 
-class WQQuiz{
-
+class WQQuiz : public QObject
+{
+  Q_OBJECT
   public:
     enum QuizType {qtEditor, qtFlash, qtMultiple, qtQA};
     enum QuizIcon {qiLeftCol, qiRightCol, qiQuestion, qiCorrect, qiError};
 
-    WQQuiz(KWordQuizView *t);
+    WQQuiz(KWordQuizView * parent, const char * name=0);
     ~WQQuiz();
     void activateErrorList();
     void activateBaseList();
@@ -63,7 +64,9 @@ class WQQuiz{
 
     bool enableBlanks() const {return m_enableBlanks;}
     void setEnableBlanks(bool b);
-
+  signals:
+    void checkingAnswer(int );
+    
   private:
     KWordQuizView *m_table;
     int m_quizMode;

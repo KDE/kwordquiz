@@ -30,6 +30,7 @@
 #include <kfontdialog.h>
 #include <kpopupmenu.h>
 #include <knotifydialog.h>
+#include <kiconloader.h>
 //#include <keduvocdata.h>
 
 // application specific includes
@@ -146,25 +147,25 @@ void KWordQuizApp::initActions()
   editClear->setWhatsThis(i18n("Clears the content of the selected cells"));
   editClear->setToolTip(editClear->whatsThis());
 
-  editInsert = new KAction(i18n("&Insert Row"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
+  editInsert = new KAction(i18n("&Insert Row"), "insert_table_row", "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
   editInsert->setWhatsThis(i18n("Inserts a new row above the current row"));
   editInsert->setToolTip(editInsert->whatsThis());
 
-  editDelete = new KAction(i18n("&Delete Row"), /*"remrow"*/ locate("data", "kwordquiz/pics/deleterow.png"), "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
+  editDelete = new KAction(i18n("&Delete Row"), "delete_table_row", "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
   editDelete->setToolTip(editDelete->whatsThis());
 
-  editMarkBlank = new KAction(i18n("&Mark as Blank"), locate("data", "kwordquiz/pics/markasblank.png"), "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
+  editMarkBlank = new KAction(i18n("&Mark as Blank"), "markasblank", "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
   editMarkBlank->setWhatsThis(i18n("Marks the current or selected word as a blank for Fill-in-the-blank"));
   editMarkBlank->setToolTip(editMarkBlank->whatsThis());
 
-  editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), locate("data", "kwordquiz/pics/unmarkasblank.png"), 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
+  editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), "unmarkasblank", 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
   editUnmarkBlank->setWhatsThis(i18n("Removes blanks from the current or selected word"));
   editUnmarkBlank->setToolTip(editUnmarkBlank->whatsThis());
 
   //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
 
-  vocabLanguages = new KAction(i18n("&Column Titles..."), locate("data", "kwordquiz/pics/languages.png"), "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
+  vocabLanguages = new KAction(i18n("&Column Titles..."), "languages", "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
   vocabLanguages->setWhatsThis(i18n("Defines the column titles for the active vocabulary"));
   vocabLanguages->setToolTip(vocabLanguages->whatsThis());
 
@@ -174,35 +175,35 @@ void KWordQuizApp::initActions()
 
   //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
 
-  vocabRC = new KAction(i18n("&Rows/Columns..."), 0, 0, this, SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
+  vocabRC = new KAction(i18n("&Rows/Columns..."), "rowcol", 0, this, SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
   vocabRC->setWhatsThis(i18n("Defines the number of rows, row heights, and column widths for the active vocabulary"));
   vocabRC->setToolTip(vocabRC->whatsThis());
 
-  vocabSort = new KAction(i18n("&Sort..."), locate("data", "kwordquiz/pics/sort.png"), 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
+  vocabSort = new KAction(i18n("&Sort..."), "sort_incr", 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
   vocabSort->setWhatsThis(i18n("Sorts the vocabulary in ascending or descending order based on the left or right column"));
   vocabSort->setToolTip(vocabSort->whatsThis());
 
-  vocabShuffle = new KAction(i18n("Sh&uffle"), 0, 0, this, SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
+  vocabShuffle = new KAction(i18n("Sh&uffle"), "shuffle", 0, this, SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
   vocabShuffle->setWhatsThis(i18n("Shuffles the entries of the active vocabulary"));
   vocabShuffle->setToolTip(vocabShuffle->whatsThis());
 
-  mode = new KToolBarPopupAction(i18n("Change Mode"), locate("data", "kwordquiz/pics/mode1.png"), 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
+  mode = new KToolBarPopupAction(i18n("Change Mode"), "mode1", 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
 
   KPopupMenu *popup = mode->popupMenu();
   popup->clear();
-  popup->insertItem(QIconSet(QPixmap(locate("data", "kwordquiz/pics/mode1.png"))), "", this, SLOT(slotMode1()), 0, 0);
-  popup->insertItem(QIconSet(QPixmap(locate("data", "kwordquiz/pics/mode2.png"))), "", this, SLOT(slotMode2()), 0, 1);
-  popup->insertItem(QIconSet(QPixmap(locate("data", "kwordquiz/pics/mode3.png"))), "", this, SLOT(slotMode3()), 0, 2);
-  popup->insertItem(QIconSet(QPixmap(locate("data", "kwordquiz/pics/mode4.png"))), "", this, SLOT(slotMode4()), 0, 3);
-  popup->insertItem(QIconSet(QPixmap(locate("data", "kwordquiz/pics/mode5.png"))), "", this, SLOT(slotMode5()), 0, 4);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", KIcon::Toolbar), "", this, SLOT(slotMode1()), 0, 0);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", KIcon::Toolbar), "", this, SLOT(slotMode2()), 0, 1);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode3", KIcon::Toolbar), "", this, SLOT(slotMode3()), 0, 2);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode4", KIcon::Toolbar), "", this, SLOT(slotMode4()), 0, 3);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode5", KIcon::Toolbar), "", this, SLOT(slotMode5()), 0, 4);
 
-  mode1 = new KToggleAction("", locate("data", "kwordquiz/pics/mode1.png"), 0, this, SLOT(slotMode1()), actionCollection(),"mode_1");
-  mode2 = new KToggleAction("", locate("data", "kwordquiz/pics/mode2.png"), 0, this, SLOT(slotMode2()), actionCollection(),"mode_2");
-  mode3 = new KToggleAction("", locate("data", "kwordquiz/pics/mode3.png"), 0, this, SLOT(slotMode3()), actionCollection(),"mode_3");
-  mode4 = new KToggleAction("", locate("data", "kwordquiz/pics/mode4.png"), 0, this, SLOT(slotMode4()), actionCollection(),"mode_4");
-  mode5 = new KToggleAction("", locate("data", "kwordquiz/pics/mode5.png"), 0, this, SLOT(slotMode5()), actionCollection(),"mode_5");
+  mode1 = new KToggleAction("", "mode1", 0, this, SLOT(slotMode1()), actionCollection(),"mode_1");
+  mode2 = new KToggleAction("", "mode2", 0, this, SLOT(slotMode2()), actionCollection(),"mode_2");
+  mode3 = new KToggleAction("", "mode3", 0, this, SLOT(slotMode3()), actionCollection(),"mode_3");
+  mode4 = new KToggleAction("", "mode4", 0, this, SLOT(slotMode4()), actionCollection(),"mode_4");
+  mode5 = new KToggleAction("", "mode5", 0, this, SLOT(slotMode5()), actionCollection(),"mode_5");
   mode1->setWhatsThis(i18n("Selects this mode"));
   mode2->setWhatsThis(i18n("Selects this mode"));
   mode3->setWhatsThis(i18n("Selects this mode"));
@@ -214,43 +215,43 @@ void KWordQuizApp::initActions()
   mode4->setToolTip(mode4->whatsThis());
   mode5->setToolTip(mode5->whatsThis());
 
-  quizEditor = new KAction(i18n("&Editor"), locate("data", "kwordquiz/pics/tabedit.png"), "F6", this, SLOT(slotQuizEditor()), actionCollection(),"quiz_editor");
+  quizEditor = new KAction(i18n("&Editor"), "editor", "F6", this, SLOT(slotQuizEditor()), actionCollection(),"quiz_editor");
   quizEditor->setWhatsThis(i18n("Activates the vocabulary editor"));
   quizEditor->setToolTip(quizEditor->whatsThis());
 
-  quizFlash = new KAction(i18n("&Flashcard"), locate("data", "kwordquiz/pics/tabflash.png"), "F7", this, SLOT(slotQuizFlash()), actionCollection(),"quiz_flash");
+  quizFlash = new KAction(i18n("&Flashcard"), "flash", "F7", this, SLOT(slotQuizFlash()), actionCollection(),"quiz_flash");
   quizFlash->setWhatsThis(i18n("Starts a flashcard session using the active vocabulary"));
   quizFlash->setToolTip(quizFlash->whatsThis());
 
-  quizMultiple = new KAction(i18n("&Multiple Choice"), locate("data", "kwordquiz/pics/tabmultiple.png"), "F8", this, SLOT(slotQuizMultiple()), actionCollection(),"quiz_multiple");
+  quizMultiple = new KAction(i18n("&Multiple Choice"), "multiple", "F8", this, SLOT(slotQuizMultiple()), actionCollection(),"quiz_multiple");
   quizMultiple->setWhatsThis(i18n("Starts a multiple choice session using the active vocabulary"));
   quizMultiple->setToolTip(quizMultiple->whatsThis());
 
-  quizQA = new KAction(i18n("&Question && Answer"), locate("data", "kwordquiz/pics/tabqa.png"), "F9", this, SLOT(slotQuizQA()), actionCollection(),"quiz_qa");
+  quizQA = new KAction(i18n("&Question && Answer"), "qa", "F9", this, SLOT(slotQuizQA()), actionCollection(),"quiz_qa");
   quizQA->setWhatsThis(i18n("Starts a question and answer session using the active vocabulary"));
   quizQA->setToolTip(quizQA->whatsThis());
 
-  quizCheck = new KAction(i18n("&Check"), locate("data", "kwordquiz/pics/check.png"), "Return", this, 0, actionCollection(),"quiz_check");
+  quizCheck = new KAction(i18n("&Check"), "check", "Return", this, 0, actionCollection(),"quiz_check");
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
   quizCheck->setToolTip(quizCheck->whatsThis());
 
-  flashKnow = new KAction(i18n("I &Know"), locate("data", "kwordquiz/pics/know.png"), "K", this, 0, actionCollection(),"flash_know");
+  flashKnow = new KAction(i18n("I &Know"), "know", "K", this, 0, actionCollection(),"flash_know");
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
   flashKnow->setToolTip(flashKnow->whatsThis());
 
-  flashDontKnow = new KAction(i18n("I &Do Not Know"), locate("data", "kwordquiz/pics/dontknow.png"), "D", this, 0, actionCollection(),"flash_dont_know");
+  flashDontKnow = new KAction(i18n("I &Do Not Know"), "dontknow", "D", this, 0, actionCollection(),"flash_dont_know");
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
   flashDontKnow->setToolTip(flashDontKnow->whatsThis());
 
-  qaHint = new KAction(i18n("&Hint"), locate("data", "kwordquiz/pics/hint.png"), "CTRL+H", this, 0, actionCollection(),"qa_hint");
+  qaHint = new KAction(i18n("&Hint"), "hint", "CTRL+H", this, 0, actionCollection(),"qa_hint");
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
   qaHint->setToolTip(qaHint->whatsThis());
 
-  quizRestart = new KAction(i18n("&Restart"), locate("data", "kwordquiz/pics/restart.png"), "CTRL+R", this, 0, actionCollection(), "quiz_restart");
+  quizRestart = new KAction(i18n("&Restart"), "restart.png", "CTRL+R", this, 0, actionCollection(), "quiz_restart");
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
   quizRestart->setToolTip(quizRestart->whatsThis());
 
-  quizRepeatErrors = new KAction(i18n("Repeat &Errors"), locate("data", "kwordquiz/pics/repeat.png"), "CTRL+E", this, 0, actionCollection(),"quiz_repeat_errors");
+  quizRepeatErrors = new KAction(i18n("Repeat &Errors"), "repeat", "CTRL+E", this, 0, actionCollection(),"quiz_repeat_errors");
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
 
@@ -943,6 +944,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(m_editView);
+      //connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
@@ -1160,7 +1162,7 @@ void KWordQuizApp::updateMode(int m)
   popup->changeItem(4, i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
 
   QString s;
-  mode->setIcon(locate("data", "kwordquiz/pics/mode" + s.setNum(Config().m_mode) + ".png"));
+  mode->setIcon("mode" + s.setNum(Config().m_mode));
 
   switch( Config().m_mode ){
   case 1:
