@@ -291,7 +291,7 @@ void KWordQuizApp::initActions()
   charMapper = new QSignalMapper(this);
   connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
 
-  specialChar1 = new KAction(i18n("Special Character 1"), 0, "CTRL+1", charMapper, SLOT(map()), actionCollection(), "char_1") ;    
+  specialChar1 = new KAction(i18n("Special Character 1"), "", "CTRL+1", charMapper, SLOT(map()), actionCollection(), "char_1") ;    
   specialChar2 = new KAction(i18n("Special Character 2"), 0, "CTRL+2", charMapper, SLOT(map()), actionCollection(), "char_2") ; 
   specialChar3 = new KAction(i18n("Special Character 3"), 0, "CTRL+3", charMapper, SLOT(map()), actionCollection(), "char_3") ; 
   specialChar4 = new KAction(i18n("Special Character 4"), 0, "CTRL+4", charMapper, SLOT(map()), actionCollection(), "char_4") ; 
@@ -1118,37 +1118,51 @@ void KWordQuizApp::slotApplyPreferences()
 void KWordQuizApp::updateSpecialCharIcons( )
 {
   for (int i = 0; i < 9; i++){
-    QString s = (QString) Config().m_specialCharacters[i];
-    QRect r(2, 2, 30, 30);
-
-    ///A font to draw the character with
-    QFont font("sans");
-    font.setPixelSize(26);
-    font.setWeight(QFont::Bold);
-    
-    ///Create the pixmap        
-    QPixmap pm(32, 32);
-    pm.fill(Qt::white);
-    QPainter p(&pm);
-    p.setFont(font);
-    p.setPen(Qt::blue);
-    p.drawText(r, Qt::AlignCenter, s);
-    
-    ///Create transparency mask
-    QBitmap bm(32, 32);
-    bm.fill(Qt::color0);
-    QPainter b(&bm);
-    b.setFont(font);
-    b.setPen(Qt::color1);
-    b.drawText(r, Qt::AlignCenter, s);
-    
-    ///Mask the pixmap
-    pm.setMask(bm);   
-    
     KAction * act = actionCollection()->action("char_" + QString::number(i + 1));
-    act->setIconSet(QIconSet(pm));
-    act->setToolTip(i18n("Inserts the character %1").arg(s));
+    act->setIcon(charIcon(Config().m_specialCharacters[i]));
+    act->setToolTip(i18n("Inserts the character %1").arg(Config().m_specialCharacters[i]));
   }
+}
+
+QString KWordQuizApp::charIcon(const QChar & c)
+{
+  ///Create a name and path for the icon
+  QString s = locateLocal("icon", "char" + QString::number(c.unicode()) + ".png");
+  
+  ///No need to redraw if it already exists
+  if (KStandardDirs::exists(s))
+    return s;
+  
+  QRect r(4, 4, 120, 120);
+
+  ///A font to draw the character with
+  QFont font("sans");
+  font.setPixelSize(100);
+  font.setWeight(QFont::Bold);
+  
+  ///Create the pixmap        
+  QPixmap pm(128, 128);
+  pm.fill(Qt::white);
+  QPainter p(&pm);
+  p.setFont(font);
+  p.setPen(Qt::blue);
+  p.drawText(r, Qt::AlignCenter, (QString) c);
+  
+  ///Create transparency mask
+  QBitmap bm(128, 128);
+  bm.fill(Qt::color0);
+  QPainter b(&bm);
+  b.setFont(font);
+  b.setPen(Qt::color1);
+  b.drawText(r, Qt::AlignCenter, (QString) c);
+  
+  ///Mask the pixmap
+  pm.setMask(bm); 
+  
+  ///Save the icon to disk
+  pm.save(s, "PNG");
+  
+  return s;
 }
 
 void KWordQuizApp::slotStatusMsg(const QString &text)
@@ -1240,6 +1254,7 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
   if (!hl)
     slotStatusMsg(i18n("Ready"));
 }
+
 
 
 

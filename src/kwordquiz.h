@@ -320,6 +320,7 @@ class KWordQuizApp : public KMainWindow
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);
     void updateSpecialCharIcons();
+    QString charIcon(const QChar &);
 };
  
 #endif // KWORDQUIZ_H
