@@ -31,6 +31,7 @@
 #include <kmainwindow.h>
 #include <kaction.h>
 #include <kdirwatch.h>
+#include <kurl.h>
 
 // forward declaration of the KWordQuiz classes
 #include "wqquiz.h"
@@ -40,7 +41,6 @@ class KWordQuizPrefs;
 class QAView;
 class MultipleView;
 class FlashView;
-//class WQQuiz;
 
 /**
   * The base class for KWordQuiz application windows. It sets up the main
