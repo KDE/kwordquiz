@@ -105,7 +105,7 @@
                         <cstring>lblLanguage1</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Column 1</string>
+                        <string>&amp;Column 1:</string>
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>txtLanguage1</cstring>
@@ -202,7 +202,7 @@
                         <cstring>lblLanguage2</cstring>
                     </property>
                     <property name="text">
-                        <string>C&amp;olumn 2</string>
+                        <string>C&amp;olumn 2:</string>
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>txtLanguage2</cstring>
