@@ -173,8 +173,9 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     
     if (url.path().right(7) == ".xml.gz")
     {
+      doc_url.setFileName(i18n("Untitled"));//To invoke Save As..., since we don't have save support for this format
       PaukerData * paukerDoc = new PaukerData;
-      PaukerDataItemList dataList = paukerDoc->parse(url.path()); // KEduVocData::parse(url.path());
+      PaukerDataItemList dataList = paukerDoc->parse(url.path());
       g->setNumRows(dataList.count());
       QString s;
       for(PaukerDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
@@ -192,7 +193,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     if (url.path().right(6) == ".kvtml")
     {
       KEduVocData * kvtmldoc = new KEduVocData;
-      KEduVocDataItemList dataList = kvtmldoc->parse(url.path()); // KEduVocData::parse(url.path());
+      KEduVocDataItemList dataList = kvtmldoc->parse(url.path());
       if ((uint) kvtmldoc->numRows() > dataList.count())
         g->setNumRows(kvtmldoc->numRows());
       else

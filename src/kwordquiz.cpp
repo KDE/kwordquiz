@@ -481,7 +481,7 @@ void KWordQuizApp::slotFileOpen()
         // neither saved nor has content, as good as new
         doc->openDocument(url);
         m_dirWatch->addFile(url.path());
-        setCaption(url.fileName(), false);
+        setCaption(doc->URL().fileName(), false);
         fileOpenRecent->addURL( url );
         updateMode(Config().m_mode);
       }
@@ -491,7 +491,7 @@ void KWordQuizApp::slotFileOpen()
         new_window->show();
         new_window->doc->openDocument(url);
         m_dirWatch->addFile(url.path());
-        new_window->setCaption(url.fileName(), false);
+        new_window->setCaption(new_window->doc->URL().fileName(), false);
         new_window->fileOpenRecent->addURL( url );
         new_window->updateMode(Config().m_mode);
       }
@@ -530,7 +530,7 @@ void KWordQuizApp::slotFileOpenRecent(const KURL& url)
       // neither saved nor has content, as good as new
       doc->openDocument(url);
       m_dirWatch->addFile(url.path());
-      setCaption(url.fileName(), false);
+      setCaption(doc->URL().fileName(), false);
       updateMode(Config().m_mode);
     }
     else
@@ -539,7 +539,7 @@ void KWordQuizApp::slotFileOpenRecent(const KURL& url)
       new_window->show();
       new_window->doc->openDocument(url);
       m_dirWatch->addFile(url.path());
-      new_window->setCaption(url.fileName(), false);
+      new_window->setCaption(new_window->doc->URL().fileName(), false);
       new_window->updateMode(Config().m_mode);
     }
   }
