@@ -315,7 +315,7 @@ class KWordQuizApp : public KMainWindow
     void updateSession(WQQuiz::QuizType qt);
     void updateSpecialCharIcons();
     QString charIcon(const QChar &);
-    void openURL(const KURL& url, bool append = false);
+    void openURL(const KURL& url, int append = 0);
 };
  
 #endif // KWORDQUIZ_H

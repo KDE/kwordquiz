@@ -324,7 +324,7 @@ void KWordQuizApp::initView()
   connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
 
-void KWordQuizApp::openURL(const KURL& url, bool append)
+void KWordQuizApp::openURL(const KURL& url, int append)
 {
   if(!url.isEmpty()) {
     if (m_dirWatch->contains(url.path()))
@@ -482,6 +482,7 @@ void KWordQuizApp::slotFileOpen()
   
   QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0, 0);
   cb -> setChecked(false);
+  cb -> setEnabled(false);
   
   KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true, cb);
   fd -> setOperationMode(KFileDialog::Opening);
@@ -491,12 +492,15 @@ void KWordQuizApp::slotFileOpen()
 
   if (fd->exec() == QDialog::Accepted)
   {  
-    KURL::List l = fd -> selectedURLs();  
-    bool append = ((cb -> isChecked()) && (l.count() > 1));
+    KURL::List l = fd -> selectedURLs(); 
+    int append = 0;
+    if ((cb -> isChecked()) && (l.count() > 1))
+      append = 1;
     KURL::List::iterator it;
     for(it = l.begin(); it != l.end(); ++it)    
     {
       openURL(*it, append);
+      append++;
     }
   }
   delete (fd); //deletes cb also
