@@ -76,6 +76,7 @@ class KWordQuizApp : public KMainWindow
      */	
     KWordQuizDoc *getDocument() const; 	
 
+    bool saveAsFileName();
   protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file

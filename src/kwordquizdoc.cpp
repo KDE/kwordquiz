@@ -121,20 +121,17 @@ bool KWordQuizDoc::saveModified()
     case KMessageBox::Yes:
       if (doc_url.fileName() == i18n("Untitled"))
       {
-        win->slotFileSaveAs();
+        completed = win->saveAsFileName();
       }
       else
       {
-        saveDocument(URL());
+        completed = saveDocument(URL());
       };
 
-      deleteContents();
-      completed=true;
       break;
 
     case KMessageBox::No:
       setModified(false);
-      deleteContents();
       completed=true;
       break;
 

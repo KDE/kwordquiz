@@ -283,7 +283,10 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
   slotStatusMsg(i18n("Opening file..."));
   if (url.path() != "") {
     doc->openDocument( url);
+    m_dirWatch->addFile(url.path());
+    setCaption(url.fileName(), false);
     fileOpenRecent->addURL( url );
+    updateMode(Config().m_mode);    
   }
   slotStatusMsg(i18n("Ready."));
 }
@@ -522,7 +525,15 @@ void KWordQuizApp::slotFileSave()
 void KWordQuizApp::slotFileSaveAs()
 {
   slotStatusMsg(i18n("Saving file with a new filename..."));
+  saveAsFileName();
+  slotStatusMsg(i18n("Ready."));
+}
 
+bool KWordQuizApp::saveAsFileName( )
+{
+  
+  bool success = false;
+  
   KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, QString::null, true);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save vocabulary document as..."));
@@ -557,18 +568,32 @@ void KWordQuizApp::slotFileSaveAs()
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addURL(url);
         setCaption(url.fileName(),doc->isModified());
+        success = true;
       }
     }
   }
   delete(fd);
-  slotStatusMsg(i18n("Ready."));
+  return success;
 }
 
 void KWordQuizApp::slotFileClose()
 {
   slotStatusMsg(i18n("Closing file..."));
-	
-  close();
+  
+  if (memberList->count() > 1)
+    close();
+  else
+    if (queryClose())
+    {
+      doc->newDocument();
+      setCaption(doc->URL().fileName(), doc->isModified());      
+      delete (m_editView);
+      initView();
+      slotQuizEditor();
+      slotUndoChange(i18n("Can't &Undo"), false);
+      updateMode(Config().m_mode); 
+      m_editView ->setFocus();     
+    }    
 
   slotStatusMsg(i18n("Ready."));
 }
@@ -1104,6 +1129,7 @@ void KWordQuizApp::updateMode(int m)
   if (m_quiz !=0)
     updateSession(m_quizType);
 }
+
 
 
 
