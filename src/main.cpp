@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
       {
         if (go_to == "flash")
           kwordquiz->slotQuizFlash();
-        if (go_to == "multiple")
+        if (go_to == "mc")
           kwordquiz->slotQuizMultiple();
         if (go_to == "qa")
           kwordquiz->slotQuizQA();
