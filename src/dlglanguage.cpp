@@ -19,7 +19,7 @@
 #include "dlglanguage.h"
 #include "dlglanguagebase.h"
 
-DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(Plain, i18n("Column Titles"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Column Titles"), Ok|Cancel, Ok, parent, name, modal, true)
 {
   dlgBase = new DlgLanguageBase( this, "Dlg" );
   setMainWidget(dlgBase);

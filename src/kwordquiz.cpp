@@ -769,7 +769,7 @@ void KWordQuizApp::slotVocabLanguages()
   slotStatusMsg(i18n("Setting the column titles of the vocabulary..."));
   DlgLanguage* dlg;
   dlg = new DlgLanguage(this, "dlg_lang", true);
-  dlg->setInitialSize(QSize(310, 180), true);
+  dlg->disableResize();
   dlg->setLanguage(1, m_editView -> horizontalHeader()->label(0));
   dlg->setLanguage(2, m_editView -> horizontalHeader()->label(1));
   if (dlg->exec() == KDialogBase::Accepted)
