@@ -1,3 +1,6 @@
+#ifndef PAUKERITEM_H
+#define PAUKERITEM_H
+
 /* This file is part of KWordQuiz
   Copyright (C) 2004 Peter Hedlund <peter@peterandlinda.com>
 
@@ -50,3 +53,5 @@ public:
 private:
   QDomDocument* document;
 };
+
+#endif

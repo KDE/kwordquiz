@@ -1,3 +1,6 @@
+#ifndef KEDUVOCDATA_H
+#define KEDUVOCDATA_H
+
 /* This file is part of the KDE Edu Library
    Copyright (C) 2002 Scott Wheeler <wheeler@kde.org>
 
@@ -51,3 +54,6 @@ public:
 private:
     QDomDocument* document;
 };
+
+#endif
+
