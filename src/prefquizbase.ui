@@ -211,7 +211,7 @@
                         <string>Alt+T</string>
                     </property>
                     <property name="whatsThis" stdset="0">
-                        <string>Select if questions where the hint fuction has been used should be counted as errors</string>
+                        <string>Select if questions where the hint function has been used should be counted as errors</string>
                     </property>
                 </widget>
             </grid>
@@ -235,13 +235,13 @@
                         <cstring>chkPercent</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Show score as percent</string>
+                        <string>&amp;Show score as a percentage</string>
                     </property>
                     <property name="accel">
                         <string>Alt+S</string>
                     </property>
                     <property name="whatsThis" stdset="0">
-                        <string>Select if the score should be shown as percent</string>
+                        <string>Select if the score should be shown as a percentage</string>
                     </property>
                 </widget>
             </grid>

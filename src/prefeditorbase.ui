@@ -75,7 +75,7 @@
                         <cstring>optNoMove</cstring>
                     </property>
                     <property name="text">
-                        <string>Doesn't &amp;Move</string>
+                        <string>Does not &amp;Move</string>
                     </property>
                     <property name="accel">
                         <string>Alt+M</string>

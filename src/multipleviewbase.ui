@@ -317,7 +317,7 @@
                                 <bool>true</bool>
                             </property>
                             <property name="whatsThis" stdset="0">
-                                <string>The number of questions answered correctly. May be shown as percent.</string>
+                                <string>The number of questions answered correctly. May be shown as a percentage.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="5">
@@ -351,7 +351,7 @@
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
                             <property name="whatsThis" stdset="0">
-                                <string>The number of questions answered correctly. May be shown as percent.</string>
+                                <string>The number of questions answered correctly. May be shown as a percentage.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="6">
@@ -379,7 +379,7 @@
                                 <bool>true</bool>
                             </property>
                             <property name="whatsThis" stdset="0">
-                                <string>The number of questions answered incorrectly. May be shown as percent.</string>
+                                <string>The number of questions answered incorrectly. May be shown as a percentage.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="0">
@@ -441,7 +441,7 @@
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
                             <property name="whatsThis" stdset="0">
-                                <string>The number of questions already answered. May be shown as percent.</string>
+                                <string>The number of questions already answered. May be shown as a percentage.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="2">
@@ -469,7 +469,7 @@
                                 <bool>true</bool>
                             </property>
                             <property name="whatsThis" stdset="0">
-                                <string>The number of questions already answered. May be shown as percent.</string>
+                                <string>The number of questions already answered. May be shown as a percentage.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="7">
@@ -503,7 +503,7 @@
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
                             <property name="whatsThis" stdset="0">
-                                <string>The number of questions answered incorrectly. May be shown as percent.</string>
+                                <string>The number of questions answered incorrectly. May be shown as a percentage.</string>
                             </property>
                         </widget>
                     </grid>

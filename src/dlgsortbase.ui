@@ -52,7 +52,7 @@
                         <string>Based On</string>
                     </property>
                     <property name="whatsThis" stdset="0">
-                        <string>Select which column you want to base the sort on</string>
+                        <string>Select the column on which you want to base the sort</string>
                     </property>
                     <grid>
                         <property name="name">

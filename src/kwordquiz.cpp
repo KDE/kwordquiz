@@ -72,7 +72,7 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   m_qaView = 0;
   
   slotQuizEditor();
-  slotUndoChange(i18n("Can't &Undo"), false);
+  slotUndoChange(i18n("Cannot &Undo"), false);
   updateMode(Config().m_mode);
 
   m_prefDialog = 0;
@@ -238,7 +238,7 @@ void KWordQuizApp::initActions()
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
   flashKnow->setToolTip(flashKnow->whatsThis());
   
-  flashDontKnow = new KAction(i18n("I &Don't Know"), locate("data", "kwordquiz/pics/dontknow.png"), "D", this, 0, actionCollection(),"flash_dont_know");
+  flashDontKnow = new KAction(i18n("I &Do Not Know"), locate("data", "kwordquiz/pics/dontknow.png"), "D", this, 0, actionCollection(),"flash_dont_know");
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
   flashDontKnow->setToolTip(flashDontKnow->whatsThis());
   
@@ -627,7 +627,7 @@ void KWordQuizApp::slotFileClose()
       delete (m_editView);
       initView();
       slotQuizEditor();
-      slotUndoChange(i18n("Can't &Undo"), false);
+      slotUndoChange(i18n("Cannot &Undo"), false);
       updateMode(Config().m_mode); 
       m_editView ->setFocus();     
     }    

@@ -352,7 +352,7 @@ void KWordQuizView::doEditUndo( )
       emit undoChange(undo.text(), true);
     }
     else
-      emit undoChange(i18n("Can't &Undo"), false);
+      emit undoChange(i18n("Cannot &Undo"), false);
   }
 }
 
