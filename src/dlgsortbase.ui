@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>239</width>
-            <height>194</height>
+            <width>200</width>
+            <height>174</height>
         </rect>
     </property>
     <property name="sizePolicy">
@@ -20,12 +20,21 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
+    <property name="minimumSize">
+        <size>
+            <width>200</width>
+            <height>170</height>
+        </size>
+    </property>
     <property name="caption">
         <string>DlgSortBase</string>
     </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
         </property>
         <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">

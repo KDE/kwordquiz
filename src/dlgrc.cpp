@@ -13,7 +13,7 @@
 
 #include "dlgrc.h"
 
-DlgRC::DlgRC(QWidget *parent, const char *name, bool modal): KDialogBase(Plain, i18n("Rows and Columns"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgRC::DlgRC(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Rows and Columns"), Ok|Cancel, Ok, parent, name, modal, true)
 {
   dlgBase = new DlgRCBase( this, "Dlg" );
   setMainWidget(dlgBase);

@@ -726,9 +726,9 @@ void KWordQuizView::doVocabSort( )
   wqCurrentSelection();
   DlgSort* dlg;
   dlg = new DlgSort(this, "dlg_sort", true);
-  dlg->setInitialSize(QSize(245, 240), true);
   dlg->setLanguage(1, horizontalHeader()->label(0));
   dlg->setLanguage(2, horizontalHeader()->label(1));
+  dlg->disableResize();
   if (dlg->exec() == KDialogBase::Accepted)
   {
     addUndo(i18n("&Undo Sort"));
@@ -770,10 +770,11 @@ void KWordQuizView::doVocabRC( )
   wqCurrentSelection();
   DlgRC* dlg;
   dlg = new DlgRC(this, "dlg_rc", true);
-  dlg->setInitialSize(QSize(225, 230), true);
+  //dlg->setInitialSize(QSize(225, 230), true);
   dlg->setNumRows(numRows());
   dlg->setRowHeight(rowHeight(m_currentRow));
   dlg->setColWidth(columnWidth(m_currentCol));
+  dlg->disableResize();
   if (dlg->exec() == KDialogBase::Accepted)
   {
     if (dlg->numRows() < 1)

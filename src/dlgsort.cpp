@@ -15,10 +15,8 @@
 #include "dlgsort.h"
 
 
-DlgSort::DlgSort(QWidget *parent, const char *name, bool modal): KDialogBase(Plain, i18n("Sort"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgSort::DlgSort(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Sort"), Ok|Cancel, Ok, parent, name, modal, true)
 {
-
-
   dlgBase = new DlgSortBase( this, "Dlg" );
   setMainWidget(dlgBase);
 
