@@ -50,6 +50,14 @@ void MultipleView::init()
   opt2->show();
   opt3->show();
 
+  lblQuestion -> setFont(Config().m_editorFont);
+  lblPreviousQuestion -> setFont(Config().m_editorFont);
+  lblYourAnswer -> setFont(Config().m_editorFont);
+  lblCorrect -> setFont(Config().m_editorFont); 
+  opt1->setFont(Config().m_editorFont);
+  opt2->setFont(Config().m_editorFont);
+  opt3->setFont(Config().m_editorFont);
+  
   picAnswered->clear();
   picCorrect->clear();
   picError->clear();
@@ -123,7 +131,7 @@ void MultipleView::slotCheck()
       picYourAnswer->setPixmap(QPixmap(locate("data", "kwordquiz/pics/error.png")));
 
       lblCorrect->setText(m_quiz->answer(m_question));
-      lblCorrect->setFont(m_quiz->fontAnswer(m_question));
+      //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
       picCorrectAnswer->setPixmap(QPixmap(locate("data", "kwordquiz/pics/correct.png")));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
@@ -133,12 +141,12 @@ void MultipleView::slotCheck()
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question(m_question));
-    lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
+    //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
     picPrevious->setPixmap(QPixmap(locate("data", "kwordquiz/pics/question.png")));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
     lblYourAnswer->setText(m_quiz->yourAnswer(m_question, ans));
-    lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
+    //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
     {
@@ -239,15 +247,15 @@ void MultipleView::showQuestion(int i)
 
   lblQuestionLanguage -> setText(m_quiz ->langQuestion(i));
   lblQuestion -> setText(m_quiz ->question(i));
-  lblQuestion -> setFont(m_quiz->fontQuestion(i));
+  //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
   picQuestion->setPixmap(QPixmap(locate("data", "kwordquiz/pics/" + m_quiz->quizIcon(i, WQQuiz::qiLeftCol) + ".png")));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
-  opt1->setFont(m_quiz->fontAnswer(i));
-  opt2->setFont(m_quiz->fontAnswer(i));
-  opt3->setFont(m_quiz->fontAnswer(i));
+  //opt1->setFont(m_quiz->fontAnswer(i));
+  //opt2->setFont(m_quiz->fontAnswer(i));
+  //opt3->setFont(m_quiz->fontAnswer(i));
 
   QStringList sl = m_quiz->multiOptions(i);
   QString s[10];

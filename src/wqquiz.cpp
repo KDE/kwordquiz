@@ -62,9 +62,7 @@ void WQQuiz::activateBaseList()
 
   WQListItem *l;
   for (l = m_quizList->first(); l; l = m_quizList->next())
-  {
     m_list->append(l);
-  }
 
   m_questionCount = m_list->count();
 
@@ -532,16 +530,6 @@ QString WQQuiz::langAnswer(int i)
   return m_table->horizontalHeader()->label(j);
 }
 
-QFont WQQuiz::fontQuestion(int i)
-{
-  return m_table -> font();
-}
-
-QFont WQQuiz::fontAnswer(int i)
-{
-  return m_table -> font();
-}
-
 int WQQuiz::kbAnswer(int i)
 {
 /*  WQListItem *li = m_list->at(i);
@@ -554,12 +542,6 @@ int WQQuiz::kbAnswer(int i)
     //@todo return m_table -> layoutRight();
   }*/
   return 0;
-}
-
-void WQQuiz::setColumn(int i)
-{
-  //WQListItem *li = m_list->at(i);
-  //m_column = li->oneOp()->x();
 }
 
 void WQQuiz::setEnableBlanks(bool b)

@@ -39,15 +39,22 @@ void QAView::setQuiz(WQQuiz *quiz)
 
 void QAView::init()
 {
-  m_score ->setQuestionCount(m_quiz->questionCount());
-  m_score ->setAsPercent(Config().m_percent);
+  m_score -> setQuestionCount(m_quiz->questionCount());
+  m_score -> setAsPercent(Config().m_percent);
   m_hintUsed = false;
   m_question = 0;
   m_error = 0;
-  picAnswered->clear();
-  picCorrect->clear();
-  picError->clear();
+  picAnswered -> clear();
+  picCorrect -> clear();
+  picError -> clear();
 
+  lblQuestion -> setFont(Config().m_editorFont);
+  lblAnswerBlank -> setFont(Config().m_editorFont);
+  txtAnswer -> setFont(Config().m_editorFont);
+  lblPreviousQuestion -> setFont(Config().m_editorFont);
+  lblYourAnswer -> setFont(Config().m_editorFont);
+  lblCorrect -> setFont(Config().m_editorFont);
+      
   lblPreviousQuestionHeader->clear();
   lblPreviousQuestion->clear();
   lblYourAnswerHeader->clear();
@@ -108,7 +115,7 @@ void QAView::slotCheck()
       picYourAnswer->setPixmap(QPixmap(locate("data", "kwordquiz/pics/error.png")));
 
       lblCorrect->setText(m_quiz->answer(m_question));
-      lblCorrect->setFont(m_quiz->fontAnswer(m_question));
+      //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
       picCorrectAnswer->setPixmap(QPixmap(locate("data", "kwordquiz/pics/correct.png")));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
@@ -118,12 +125,12 @@ void QAView::slotCheck()
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question(m_question));
-    lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
+    //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
     picPrevious->setPixmap(QPixmap(locate("data", "kwordquiz/pics/question.png")));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
     lblYourAnswer->setText(m_quiz->yourAnswer(m_question, txtAnswer->text()));
-    lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
+    //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
     {
@@ -211,10 +218,10 @@ void QAView::updateScore()
  */
 void QAView::showQuestion(int i)
 {
-  m_quiz->setColumn(i);
+  //m_quiz->setColumn(i);
   lblQuestionLanguage -> setText(m_quiz ->langQuestion(i));
   lblQuestion -> setText(m_quiz ->question(i));
-  lblQuestion -> setFont(m_quiz->fontQuestion(i));
+  //lblQuestion -> setFont(m_quiz->fontQuestion(i));
   
   picQuestion->setPixmap(QPixmap(locate("data", "kwordquiz/pics/" + m_quiz->quizIcon(i, WQQuiz::qiLeftCol) + ".png")));
 
@@ -223,13 +230,13 @@ void QAView::showQuestion(int i)
   if (!QString(m_quiz ->blankAnswer(i)).isEmpty())
   {
     lblAnswerBlank->show();
-    lblAnswerBlank->setFont(m_quiz->fontAnswer(i));
+    //lblAnswerBlank->setFont(m_quiz->fontAnswer(i));
     lblAnswerBlank->setText(m_quiz->blankAnswer(i));
   }
   else
     lblAnswerBlank->hide();
 
-  txtAnswer->setFont(m_quiz->fontAnswer(i));
+  //txtAnswer->setFont(m_quiz->fontAnswer(i));
   txtAnswer -> setText("");
 
   picAnswer->setPixmap(QPixmap(locate("data", "kwordquiz/pics/" + m_quiz->quizIcon(i, WQQuiz::qiRightCol) + ".png")));  
