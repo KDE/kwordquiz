@@ -12,6 +12,7 @@
 
 #include <kapplication.h>       // for 'kapp'
 #include <kconfig.h>            // for KConfig
+#include <kglobalsettings.h>
 
 const int Configuration::m_defaultEnterMove = 1;
 const bool Configuration::m_defaultEnableBlanks = false;
@@ -21,10 +22,11 @@ const bool Configuration::m_defaultKeepDiscard = false;
 const bool Configuration::m_defaultAutoCheck = true;
 const bool Configuration::m_defaultHintError = false;
 const bool Configuration::m_defaultPercent = false;
-
+const int Configuration::m_defaultMode = 1;
 
 Configuration::Configuration() {
-    read(); // read the settings or set them to the default values
+  m_defaultEditorFont = KGlobalSettings::generalFont();
+  read(); // read the settings or set them to the default values
 };
 
 void Configuration::read() {
@@ -33,7 +35,8 @@ void Configuration::read() {
     conf->setGroup("Editor");
     m_enterMove = conf->readNumEntry("EnterMove", m_defaultEnterMove);
     m_enableBlanks = conf->readBoolEntry("EnableBlanks", m_defaultEnableBlanks);
-
+    m_editorFont = conf->readFontEntry("EditorFont", &m_defaultEditorFont);
+    
     conf->setGroup("Quiz");
     m_autoFlip = conf->readBoolEntry("AutoFlip", m_defaultAutoFlip);
     m_flipDelay = conf->readNumEntry("FlipDelay", m_defaultFlipDelay);
@@ -41,6 +44,7 @@ void Configuration::read() {
     m_autoCheck = conf->readBoolEntry("AutoCheck", m_defaultAutoCheck);
     m_hintError = conf->readBoolEntry("HintError", m_defaultHintError);
     m_percent = conf->readBoolEntry("Percent", m_defaultPercent);
+    m_mode = conf->readNumEntry("Mode", m_defaultMode);
 };
 
 void Configuration::write() const {
@@ -49,7 +53,8 @@ void Configuration::write() const {
     conf->setGroup("Editor");
     conf->writeEntry("EnterMove", m_enterMove);
     conf->writeEntry("EnableBlanks", m_enableBlanks);
-
+    conf->writeEntry("EditorFont", m_editorFont);
+    
     conf->setGroup("Quiz");
     conf->writeEntry("AutoFlip", m_autoFlip);
     conf->writeEntry("FlipDelay", m_flipDelay);
@@ -57,6 +62,7 @@ void Configuration::write() const {
     conf->writeEntry("AutoCheck", m_autoCheck);
     conf->writeEntry("HintError", m_hintError);
     conf->writeEntry("Percent", m_percent);
+    conf->writeEntry("Mode", m_mode);
 };
 
 Configuration& Config() {

@@ -11,6 +11,8 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
+#include <qfont.h>
+
 /**
 @author Peter Hedlund
 */
@@ -25,22 +27,26 @@ class Configuration {
 
     int m_enterMove;      ///< Direction of the enter key in the editor.
     bool m_enableBlanks;  ///< Enable fill-in-the-blank.
+    QFont m_editorFont;
     bool m_autoFlip;      ///< Automatically flip card.
     int m_flipDelay;      ///< Time delay to flip card.
     bool m_keepDiscard;   ///< Keep or discard card.
     bool m_autoCheck;     ///< Automatically check multiple choice selection.
     bool m_hintError;     ///< Treat hint usage as error.
     bool m_percent;       ///< Show score as percent.
-
+    int m_mode;
+    
     static const int m_defaultEnterMove;
     static const bool m_defaultEnableBlanks;
+    QFont m_defaultEditorFont;
     static const bool m_defaultAutoFlip;
     static const int m_defaultFlipDelay;
     static const bool m_defaultKeepDiscard;
     static const bool m_defaultAutoCheck;
     static const bool m_defaultHintError;
     static const bool m_defaultPercent;
-
+    static const int m_defaultMode;
+    
   private:
     Configuration();
     Configuration(const Configuration&);
