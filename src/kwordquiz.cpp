@@ -141,9 +141,9 @@ void KWordQuizApp::initActions()
   editClear = new KAction(i18n("C&lear"), "editclear", 0, this, SLOT(slotEditClear()), actionCollection(),"edit_clear_old");
   #endif
   editClear->setWhatsThis(i18n("Clear the content of the selected cells"));
-  editInsert = new KAction(i18n("&Insert"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
+  editInsert = new KAction(i18n("&Insert Row"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
   editInsert->setWhatsThis(i18n("Insert a new row above the current row"));
-  editDelete = new KAction(i18n("&Delete"), /*"remrow"*/ locate("data", "kwordquiz/pics/deleterow.png"), "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
+  editDelete = new KAction(i18n("&Delete Row"), /*"remrow"*/ locate("data", "kwordquiz/pics/deleterow.png"), "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
   editDelete->setWhatsThis(i18n("Delete the selected row(s)"));
   editMarkBlank = new KAction(i18n("&Mark As Blank"), locate("data", "kwordquiz/pics/markasblank.png"), "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
   editMarkBlank->setWhatsThis(i18n("Mark the current or selected word as a blank for Fill-in-the-blank"));
