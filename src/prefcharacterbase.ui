@@ -37,8 +37,14 @@
             <property name="name">
                 <cstring>lblShortCutInfo</cstring>
             </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
             <property name="text">
-                <string>Note: Select Settings -&gt; Configure KWordQuiz... to change the shortcut associated with each action.</string>
+                <string>Note: Select Settings -&gt; Configure Shortcuts... to change the shortcut associated with each action.</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignVCenter</set>
