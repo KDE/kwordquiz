@@ -374,19 +374,21 @@ QString WQQuiz::yourAnswer(int i, const QString & s)
     else
       ls.append(s);
 
-    result = m_answerBlank.replace("..........", "[]");
+    result = m_answerBlank.replace("..........", "<u></u>");
 
     int offset = 0, counter = 0;
     while (offset >= 0)
     {
-      offset = result.find("[", offset);
+      offset = result.find("<u>", offset);
       if (offset >= 0)
       {
-        result.insert(offset + 1, ls[counter]);
+        result.insert(offset + 3, ls[counter]);
         offset++;
         counter++; 
       }
     }
+    result.append("</qt>");
+    result.prepend("<qt>");
   }
   else
   {
@@ -489,6 +491,7 @@ QString WQQuiz::blankAnswer(int i)
 
 QString WQQuiz::answer(int i)
 {
+  QString s;
   WQListItem *li = m_list->at(i);
   int j;
   if (li->question() == 0)
@@ -503,18 +506,25 @@ QString WQQuiz::answer(int i)
 
   if (m_quizType == qtQA)
   {
-    return m_table->text(li->oneOp(), j);
+    s = m_table->text(li->oneOp(), j);
+    if (m_enableBlanks)
+    {
+      s.replace("[", "<u>");
+      s.replace("]", "</u>");
+      s.prepend("<qt>");
+      s.append("</qt>");
+    }
   }
   else
   {
-    QString s = m_table->text(li->oneOp(), j);
+    s = m_table->text(li->oneOp(), j);
     if (m_enableBlanks)
     {
       s.remove("[");
       s.remove("]");
     }
-    return s;
   }
+  return s;
 }
 
 QString WQQuiz::langQuestion(int i)
