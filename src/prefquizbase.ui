@@ -52,9 +52,6 @@
                     <property name="text">
                         <string>&amp;Flip card automatically after</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+F</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>Check to flip card automatically</string>
                     </property>
@@ -86,9 +83,6 @@
                     <property name="text">
                         <string>Count as co&amp;rrect</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+R</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>Select how to count card</string>
                     </property>
@@ -102,9 +96,6 @@
                     </property>
                     <property name="text">
                         <string>Count as &amp;error</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+E</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>Select how to count card</string>
@@ -189,9 +180,6 @@
                     <property name="text">
                         <string>Check selection a&amp;utomatically</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+U</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>Check to correct automatically</string>
                     </property>
@@ -222,9 +210,6 @@
                     <property name="text">
                         <string>&amp;Treat hint as error</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+T</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>Check to count hint as error</string>
                     </property>
@@ -254,9 +239,6 @@
                     </property>
                     <property name="text">
                         <string>&amp;Show score as a percentage</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+S</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>Check to show score as a percentage</string>

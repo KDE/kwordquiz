@@ -341,9 +341,6 @@
                     <property name="text">
                         <string>C&amp;haracter...</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+H</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>Click to choose a new character</string>
                     </property>

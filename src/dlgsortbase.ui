@@ -68,9 +68,6 @@
                             <property name="text">
                                 <string>&amp;1 Language 1</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+1</string>
-                            </property>
                             <property name="toolTip" stdset="0">
                                 <string>Sort based on this column</string>
                             </property>
@@ -84,9 +81,6 @@
                             </property>
                             <property name="text">
                                 <string>&amp;2 Language 2</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+2</string>
                             </property>
                             <property name="toolTip" stdset="0">
                                 <string>Sort based on this column</string>
@@ -121,9 +115,6 @@
                             <property name="text">
                                 <string>&amp;Ascending</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+A</string>
-                            </property>
                             <property name="toolTip" stdset="0">
                                 <string>Sort in this direction</string>
                             </property>
@@ -137,9 +128,6 @@
                             </property>
                             <property name="text">
                                 <string>&amp;Descending</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+D</string>
                             </property>
                             <property name="toolTip" stdset="0">
                                 <string>Sort in this direction</string>

@@ -52,9 +52,6 @@
                     <property name="text">
                         <string>&amp;Down</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+D</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>How enter key moves</string>
                     </property>
@@ -69,9 +66,6 @@
                     <property name="text">
                         <string>&amp;Right</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+R</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>How enter key moves</string>
                     </property>
@@ -85,9 +79,6 @@
                     </property>
                     <property name="text">
                         <string>Does not &amp;Move</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+M</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>How enter key moves</string>
@@ -104,9 +95,6 @@
             </property>
             <property name="text">
                 <string>&amp;Enable Fill-in-the-blank</string>
-            </property>
-            <property name="accel">
-                <string>Alt+E</string>
             </property>
             <property name="toolTip" stdset="0">
                 <string>Check to enable fill-in-the-blank</string>

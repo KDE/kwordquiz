@@ -714,9 +714,6 @@
                     <property name="text">
                         <string>&amp;2 Option</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+2</string>
-                    </property>
                     <property name="toolTip" stdset="0">
                         <string>Your choices</string>
                     </property>
@@ -744,9 +741,6 @@
                     </property>
                     <property name="text">
                         <string>&amp;1 Option</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+1</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>Your choices</string>
@@ -811,9 +805,6 @@
                     </property>
                     <property name="text">
                         <string>&amp;3 Option</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+3</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>Your choices</string>
