@@ -27,6 +27,32 @@
 #include "prefs.h"
 #include "kwordquiz.h"
 
+QString highlightError(const QString & c, const QString & e)
+{
+  QString result = "<qt>";
+  int i = 0;
+  while (c[i] == e[i])
+    result.append(e[i++]);
+  result.append("<b>");
+  QString result2 = "</qt>";
+  int j = c.length() - 1;
+  int k = e.length() - 1;
+  while (c[j] == e[k])
+  {
+    result2.prepend(e[k]);
+    j--;
+    k--;
+  }
+  result2.prepend("</b>");
+
+  for (int m = i; m <= k; m++)
+    result.append(e[m]);
+
+  result.append(result2);
+  return result;
+}
+
+
 QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, name, f)
 {
   m_score = new WQScore();
@@ -106,6 +132,7 @@ void QAView::slotCheck()
     {
 
       picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", KIcon::Panel));
+      lblYourAnswer->setText(m_quiz->yourAnswer(m_question, txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
@@ -118,7 +145,7 @@ void QAView::slotCheck()
       m_error++;
 
       picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("error", KIcon::Panel));
-
+      lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(m_question, txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer(m_question));
       //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
       picCorrectAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", KIcon::Panel));
@@ -134,7 +161,7 @@ void QAView::slotCheck()
     picPrevious->setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
-    lblYourAnswer->setText(m_quiz->yourAnswer(m_question, txtAnswer->text()));
+    
     //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
