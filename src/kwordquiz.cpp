@@ -944,6 +944,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_editView->show();
       setCentralWidget(m_editView);
       stateChanged("switchEditQuiz");
+      editMarkBlank->setEnabled(Config().m_enableBlanks);
+      editUnmarkBlank->setEnabled(Config().m_enableBlanks);
       stateChanged("showingEdit");
 
       toolBar("quizToolBar")->hide();
@@ -965,6 +967,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
         
         stateChanged("switchEditQuiz", StateReverse );
+        editMarkBlank->setEnabled(false);
+        editUnmarkBlank->setEnabled(false);
         stateChanged("showingFlash");
         toolBar("quizToolBar")->show();
 
@@ -993,7 +997,9 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_multipleView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
         
-        stateChanged("switchEditQuiz", StateReverse );        
+        stateChanged("switchEditQuiz", StateReverse ); 
+        editMarkBlank->setEnabled(false);
+        editUnmarkBlank->setEnabled(false);               
         stateChanged("showingMultiple");
         toolBar("quizToolBar")->show();        
         
@@ -1025,6 +1031,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
         
         stateChanged("switchEditQuiz", StateReverse );
+        editMarkBlank->setEnabled(false);
+        editUnmarkBlank->setEnabled(false);        
         stateChanged("showingQA");
         toolBar("quizToolBar")->show();
                 
