@@ -298,7 +298,7 @@ void KWordQuizApp::initActions()
   updateSpecialCharIcons();
 
    setupGUI();
-   
+
    configToolbar = actionCollection()->action("options_configure_toolbars");
    configToolbar->setWhatsThis(i18n("Toggles display of the toolbars"));
    configToolbar->setToolTip(configToolbar->whatsThis());
@@ -664,7 +664,8 @@ void KWordQuizApp::slotFileQuit()
     {
       // only close the window if the closeEvent is accepted. If the user presses Cancel on the saveModified() dialog,
       // the window and the application stay open.
-      if(!w->close())	break;
+      if(!w->close())
+        break;
     }
   }
 }
@@ -703,7 +704,6 @@ void KWordQuizApp::slotEditPaste()
   slotStatusMsg(i18n("Ready"));
 }
 
-
 void KWordQuizApp::slotEditClear()
 {
   slotStatusMsg(i18n("Clearing the selected cells..."));
@@ -738,7 +738,6 @@ void KWordQuizApp::slotEditUnmarkBlank()
   m_editView->doEditUnmarkBlank();
   slotStatusMsg(i18n("Ready"));
 }
-
 
 void KWordQuizApp::slotEditFind()
 {
@@ -951,7 +950,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Prefs::mode());
-      m_quiz-> setEnableBlanks(Prefs::enableBlanks());
       if (m_quiz -> init())
       {
         m_editView->saveCurrentSelection(true);
@@ -980,7 +978,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));      
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
       m_quiz->setQuizMode(Prefs::mode());
-      m_quiz-> setEnableBlanks(Prefs::enableBlanks());
       if (m_quiz -> init())
       {
         m_editView->saveCurrentSelection(true);
@@ -1008,7 +1005,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtQA);
       m_quiz->setQuizMode(Prefs::mode());
-      m_quiz-> setEnableBlanks(Prefs::enableBlanks());
       if (m_quiz -> init())
       {
         m_editView->saveCurrentSelection(true);
@@ -1051,7 +1047,7 @@ void KWordQuizApp::slotConfigure()
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
   KWordQuizPrefs* dialog = new KWordQuizPrefs( this, "settings",  Prefs::self() );
   connect(dialog, SIGNAL(settingsChanged()), this, SLOT(slotApplyPreferences()));
-  dialog->show();  
+  dialog->show();
 }
 
 void KWordQuizApp::slotApplyPreferences()

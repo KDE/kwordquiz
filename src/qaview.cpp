@@ -29,15 +29,19 @@
 
 QString highlightError(const QString & c, const QString & e)
 {
+  QString s = c;
+  if (s.left(4) == "<qt>" && e.left(4) != "<qt>")
+      s = s.mid(4, s.length() - 9);
+
   QString result = "<qt>";
   int i = 0;
-  while (c[i] == e[i])
+  while (s[i] == e[i])
     result.append(e[i++]);
   result.append("<b>");
   QString result2 = "</qt>";
-  int j = c.length() - 1;
+  int j = s.length() - 1;
   int k = e.length() - 1;
-  while (c[j] == e[k])
+  while (s[j] == e[k])
   {
     result2.prepend(e[k]);
     j--;
@@ -79,13 +83,21 @@ void QAView::init()
   picCorrect -> clear();
   picError -> clear();
 
-  lblQuestion -> setFont(Prefs::editorFont());
-  lblAnswerBlank -> setFont(Prefs::editorFont());
-  txtAnswer -> setFont(Prefs::editorFont());
-  lblPreviousQuestion -> setFont(Prefs::editorFont());
-  lblYourAnswer -> setFont(Prefs::editorFont());
-  lblCorrect -> setFont(Prefs::editorFont());
-      
+  QFont f = Prefs::editorFont();
+  f.setWeight(QFont::Normal);
+  lblQuestion -> setFont(f);
+  //lblQuestion -> font().setBold(false);
+  lblAnswerBlank -> setFont(f);
+  //lblAnswerBlank -> font().setBold(false);
+  txtAnswer -> setFont(f);
+  //txtAnswer -> font().setBold(false);
+  lblPreviousQuestion -> setFont(f);
+  //lblPreviousQuestion -> font().setBold(false);
+  lblYourAnswer -> setFont(f);
+  //lblYourAnswer -> font().setBold(false);
+  lblCorrect -> setFont(f);
+  //lblCorrect -> font().setBold(false);
+
   lblPreviousQuestionHeader->clear();
   lblPreviousQuestion->clear();
   lblYourAnswerHeader->clear();

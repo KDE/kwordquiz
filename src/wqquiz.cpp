@@ -21,6 +21,7 @@
 #include <qregexp.h>
 
 #include "wqquiz.h"
+#include "prefs.h"
 
 QPtrList<WQListItem> *WQQuiz::m_list = 0L;
 QPtrList<WQListItem> *WQQuiz::m_errorList = 0L;
@@ -125,7 +126,7 @@ bool WQQuiz::init()
 {
 
   bool result = false;
-  if (m_enableBlanks)
+  if (Prefs::enableBlanks())
   {
     result = m_table->checkSyntax(true, true);
   }
@@ -261,7 +262,7 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
   {
     if (m_quizType == qtMultiple)
     {
-      if (m_enableBlanks)
+      if (Prefs::enableBlanks())
       {
         tTemp.remove("[");
         tTemp.remove("]");
@@ -305,7 +306,7 @@ QStringList WQQuiz::multiOptions(int i)
   }
 
   s= new QString(m_table->text(li->oneOp(), j)); 
-  if (m_enableBlanks)
+  if (Prefs::enableBlanks())
   {
     s->remove("[");
     s->remove("]");
@@ -313,7 +314,7 @@ QStringList WQQuiz::multiOptions(int i)
   ls->append(s);
 
   s = new QString(m_table->text(li->twoOp(), j));
-  if (m_enableBlanks)
+  if (Prefs::enableBlanks())
   {
     s->remove("[");
     s->remove("]");
@@ -321,7 +322,7 @@ QStringList WQQuiz::multiOptions(int i)
   ls->append(s);
 
   s = new QString(m_table->text(li->threeOp(), j));
-  if (m_enableBlanks)
+  if (Prefs::enableBlanks())
   {
     s->remove("[");
     s->remove("]");
@@ -424,7 +425,7 @@ QString WQQuiz::question(int i)
 {
   WQListItem *li = m_list->at(i);
   QString s = m_table->text(li->oneOp(), li->question());
-  if (m_enableBlanks)
+  if (Prefs::enableBlanks())
   {
     s.remove("[");
     s.remove("]");
@@ -448,7 +449,7 @@ QString WQQuiz::blankAnswer(int i)
   m_answerBlank = "";
   QString tTemp;
 
-  if (m_quizType == qtQA && m_enableBlanks)
+  if (m_quizType == qtQA && Prefs::enableBlanks())
   {
     WQListItem *li = m_list->at(i);
     int j;
@@ -507,7 +508,7 @@ QString WQQuiz::answer(int i)
   if (m_quizType == qtQA)
   {
     s = m_table->text(li->oneOp(), j);
-    if (m_enableBlanks)
+    if (Prefs::enableBlanks())
     {
       s.replace("[", "<u>");
       s.replace("]", "</u>");
@@ -518,7 +519,7 @@ QString WQQuiz::answer(int i)
   else
   {
     s = m_table->text(li->oneOp(), j);
-    if (m_enableBlanks)
+    if (Prefs::enableBlanks())
     {
       s.remove("[");
       s.remove("]");
@@ -563,11 +564,6 @@ int WQQuiz::kbAnswer(int i)
     //@todo return m_table -> layoutRight();
   }*/
   return 0;
-}
-
-void WQQuiz::setEnableBlanks(bool b)
-{
-  m_enableBlanks = b;
 }
 
 int WQQuiz::questionCount()

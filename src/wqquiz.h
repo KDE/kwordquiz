@@ -63,8 +63,6 @@ class WQQuiz : public QObject
 
     int kbAnswer(int i);
 
-    bool enableBlanks() const {return m_enableBlanks;}
-    void setEnableBlanks(bool b);
   signals:
     void checkingAnswer(int );
 
@@ -79,7 +77,6 @@ class WQQuiz : public QObject
     QuizType m_quizType;
     QString m_correctBlank;
     QString m_answerBlank;
-    bool m_enableBlanks;
 
     void addToList(int aCol, int bCol);
     void listRandom();
