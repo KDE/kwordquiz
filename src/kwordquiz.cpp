@@ -153,8 +153,8 @@ void KWordQuizApp::initActions()
   vocabFont = new KAction(i18n("&Font..."), "fonts", 0, this, SLOT(slotVocabFont()), actionCollection(),"vocab_font");
   vocabFont->setWhatsThis(i18n("Define the font used by the editor"));
   //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
-  vocabChar = new KAction(i18n("Special &Characters..."), "kcharselect", 0, this, SLOT(slotVocabChar()), actionCollection(),"vocab_char");
-  vocabChar->setWhatsThis(i18n("Select and copy a special character to be pasted into the vocabulary"));
+  //vocabChar = new KAction(i18n("Special &Characters..."), "kcharselect", 0, this, SLOT(slotVocabChar()), actionCollection(),"vocab_char");
+  //vocabChar->setWhatsThis(i18n("Select and copy a special character to be pasted into the vocabulary"));
   vocabRC = new KAction(i18n("&Rows/Columns..."), 0, 0, this, SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
   vocabRC->setWhatsThis(i18n("Define number of rows, row heights, and column widths for the active vocabulary"));
   vocabSort = new KAction(i18n("&Sort..."), locate("data", "kwordquiz/pics/sort.png"), 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");

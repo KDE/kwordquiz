@@ -20,12 +20,12 @@
 #include <kdebug.h>
 
 DlgSpecChar::DlgSpecChar( QWidget *parent, const char *name, const QString &_font, const QChar &_chr, bool _modal )
-    : KDialogBase( Plain, i18n("Select Character"), User1 | Close, User1 , parent, name, _modal )
+    : KDialogBase( Plain, i18n("Select Character"), User1 | Cancel, User1 , parent, name, _modal )
 {
     initDialog(_chr,_font,true);
 
-    setButtonText( User1, i18n("C&opy") );
-    setButtonTip( User1, i18n("Copy the selected character to the clipboard") );
+    setButtonText( User1, i18n("&Select") );
+    setButtonTip( User1, i18n("Select this character") );
 
 }
 
@@ -63,14 +63,14 @@ QChar DlgSpecChar::chr()
 
 void DlgSpecChar::slotDoubleClicked()
 {
-  //emit insertChar(chr());
-  slotUser1();
+  emit insertChar(chr());
+  closeDialog();
 }
 
 void DlgSpecChar::slotUser1( )
 {
-  //emit insertChar(chr());
-  kapp->clipboard()->setText(chr());
+  emit insertChar(chr());
+  closeDialog();
 }
 
 

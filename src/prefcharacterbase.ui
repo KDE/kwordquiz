@@ -321,10 +321,10 @@
                         <cstring>btnCharacter</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Character...</string>
+                        <string>C&amp;haracter...</string>
                     </property>
                     <property name="accel">
-                        <string>Alt+C</string>
+                        <string>Alt+H</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Choose a character for the selected action</string>
@@ -378,8 +378,6 @@
         </widget>
     </grid>
 </widget>
-<connections>
-</connections>
 <tabstops>
     <tabstop>lstCharacters</tabstop>
     <tabstop>btnCharacter</tabstop>

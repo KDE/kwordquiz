@@ -21,6 +21,8 @@
 #include <kconfig.h>
 #include <krestrictedline.h>
 #include <kmessagebox.h>
+#include <kapplication.h>
+#include <kpushbutton.h>
 
 #include <qlayout.h>
 #include <qframe.h>
@@ -28,12 +30,15 @@
 #include <qradiobutton.h>
 #include <qcheckbox.h>
 #include <qlistview.h>
+#include <qlabel.h>
 
 #include "kwordquizprefs.h"
 #include "prefeditor.h"
 #include "prefquiz.h"
 #include "prefcharacter.h"
 #include "configuration.h"
+#include "kwordquiz.h"
+#include "dlgspecchar.h"
 
 KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name, bool modal) : KDialogBase(IconList, i18n("Configure"), Default|Ok|Apply|Cancel, Ok, parent, name, modal, true) {
 
@@ -47,10 +52,12 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name, bool modal) : 
   m_prefQuiz = new PrefQuiz(fraQuiz);
   frameLayout->addWidget(m_prefQuiz);
 
-  QFrame* fraCharacter = addPage( i18n("Special\nCharacters"), i18n("Special Characters"), DesktopIcon("kcharselect"));
+  QFrame* fraCharacter = addPage( i18n("Special\nCharacters"), i18n("Special Characters"), DesktopIcon("kcharselect", 32));
   frameLayout = new QVBoxLayout( fraCharacter, 0, 0 );
   m_prefCharacter = new PrefCharacter(fraCharacter);
   frameLayout->addWidget(m_prefCharacter);  
+  
+  m_dlgSpecChar = 0L;
   
   // connect interactive widgets and selfmade signals to the enableApply slotDefault
   connect(m_prefEditor->optDown, SIGNAL(clicked()), this, SLOT(enableApply()));
@@ -65,6 +72,9 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name, bool modal) : 
   connect(m_prefQuiz->chkAutoCheck, SIGNAL(clicked()), this, SLOT(enableApply()));
   connect(m_prefQuiz->chkHintError, SIGNAL(clicked()), this, SLOT(enableApply()));
   connect(m_prefQuiz->chkPercent, SIGNAL(clicked()), this, SLOT(enableApply()));
+  
+  connect(m_prefCharacter->lstCharacters, SIGNAL(selectionChanged()), this, SLOT(slotCharListSelectionChanged()));
+  connect(m_prefCharacter->btnCharacter, SIGNAL(clicked()), this, SLOT(slotSelectSpecChar()));
 }
 
 KWordQuizPrefs::~KWordQuizPrefs(){
@@ -95,11 +105,17 @@ void KWordQuizPrefs::updateDialog()
 
   m_prefQuiz->chkPercent->setChecked(Config().m_percent);
   
+  KWordQuizApp *win=(KWordQuizApp *) parent();
   int i=0;
   for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     it.current()->setText(2, (QString) Config().m_specialCharacters[i++] ) ;
+    it.current()->setText(1, win->actionCollection()->action("char_" + QString::number(i))->shortcut().toString());
   }
+  
+  m_prefCharacter->lstCharacters->setSelected(m_prefCharacter->lstCharacters->firstChild(), true);
+  m_prefCharacter->lstCharacters->setItemMargin(2);
+  
   enableButtonApply(false);   // disable apply button
 
 }
@@ -125,6 +141,13 @@ void KWordQuizPrefs::updateConfiguration()
   Config().m_hintError = m_prefQuiz->chkHintError->isChecked();
 
   Config().m_percent = m_prefQuiz->chkPercent->isChecked();
+  
+  int i=0;
+  for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  {
+    Config().m_specialCharacters.replace(i++, 1, it.current()->text(2));
+  }
+  
   enableButtonApply(false);   // disable apply button
 }
 
@@ -153,6 +176,13 @@ void KWordQuizPrefs::slotDefault() {
     m_prefQuiz->chkHintError->setChecked(Config().m_defaultHintError);
 
     m_prefQuiz->chkPercent->setChecked(Config().m_defaultPercent);
+    
+    int i = 0;
+    for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+    {
+      it.current()->setText(2, (QString) Config().m_defaultSpecialCharacters[i++] ) ;
+    }
+      
     enableApply();   // enable apply button
   }
 };
@@ -168,3 +198,40 @@ void KWordQuizPrefs::enableApply() {
     enableButtonApply(true);   // enable apply button
 };
 
+void KWordQuizPrefs::slotCharListSelectionChanged( )
+{
+  m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
+}
+
+void KWordQuizPrefs::slotSelectSpecChar( )
+{
+  QString f = Config().m_editorFont.family();
+  QString s = m_prefCharacter->lstCharacters->currentItem()->text(2);
+  QChar c = s[0];
+  
+  if (m_dlgSpecChar == 0)
+  {
+    m_dlgSpecChar = new DlgSpecChar( this, "insert special char", f, c, false );
+    connect( m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
+    connect( m_dlgSpecChar, SIGNAL(finished()), this, SLOT( slotDlgSpecCharClosed() ) );
+  }
+  m_dlgSpecChar->show();
+}
+
+void KWordQuizPrefs::slotDlgSpecCharClosed( )
+{
+  if ( m_dlgSpecChar )
+  {
+    disconnect( m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
+    disconnect( m_dlgSpecChar, SIGNAL( finished() ), this, SLOT( slotDlgSpecCharClosed() ) );
+    m_dlgSpecChar->deleteLater();
+    m_dlgSpecChar = 0L;
+  }
+}
+
+void KWordQuizPrefs::slotSpecChar(QChar c)
+{
+  m_prefCharacter->lstCharacters->currentItem()->setText(2, c);
+  m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));  
+  enableButtonApply(true);
+}

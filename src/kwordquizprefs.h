@@ -29,6 +29,7 @@
 class PrefEditor;
 class PrefQuiz; 
 class PrefCharacter;
+class DlgSpecChar;
   
 class KWordQuizPrefs : public KDialogBase  {
    Q_OBJECT
@@ -48,17 +49,24 @@ public slots:
   void slotApply();
   /// Will be called whenever a setting was changed.
   void enableApply();
+  /// Will be called when user selects a character
+  void slotSpecChar(QChar);
 
 signals:
   /// Will be emitted when the new settings should be applied.
   void settingsChanged();
 
-private:
+private slots:
+  void slotCharListSelectionChanged();  
+  void slotDlgSpecCharClosed();  
+  void slotSelectSpecChar();
 
+  
+private:
   PrefEditor *m_prefEditor;
   PrefQuiz *m_prefQuiz;
   PrefCharacter* m_prefCharacter;
-  
+  DlgSpecChar* m_dlgSpecChar;
 };
 
 #endif
