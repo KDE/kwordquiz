@@ -21,11 +21,8 @@
 #include "kwordquiz.h"
 #include "version.h"
 
-static const char *description =
-	I18N_NOOP("KWordQuiz is a powerful flashcard and vocabulary learning program.");
-// INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
-	
-	
+static const char *description = I18N_NOOP("KWordQuiz is a powerful flashcard and vocabulary learning program.");
+
 static KCmdLineOptions options[] =
 {
   { "+[File]", I18N_NOOP("file to open"), 0 },
@@ -35,13 +32,12 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-
-	KAboutData aboutData( "kwordquiz", I18N_NOOP("KWordQuiz"),
-		KWQ_VERSION, description, KAboutData::License_GPL,
-		"(c) 2003-2004, Peter Hedlund", 0, 0, "peter@peterandlinda.com");
-	aboutData.addAuthor("Peter Hedlund",0, "peter@peterandlinda.com");
-	KCmdLineArgs::init( argc, argv, &aboutData );
-	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+  KAboutData aboutData( "kwordquiz", I18N_NOOP("KWordQuiz"), KWQ_VERSION, description, KAboutData::License_GPL, "(c) 2003-2004, Peter Hedlund", 0, 0, "peter@peterandlinda.com");
+  aboutData.addAuthor("Peter Hedlund",0, "peter@peterandlinda.com");
+  aboutData.addCredit("Anne-Marie Mahfouf", I18N_NOOP("KDE Edutainment Maintainer"), "annma@kde.org", 0);
+  
+  KCmdLineArgs::init( argc, argv, &aboutData );
+  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
  
@@ -55,17 +51,16 @@ int main(int argc, char *argv[])
     kwordquiz->show();
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-		
-		if (args->count())
-		{
-        kwordquiz->openDocumentFile(args->arg(0));
-		}
-		else
-		{
-		  kwordquiz->openDocumentFile();
-		}
-		args->clear();
-  }
 
+    if (args->count())
+    {
+        kwordquiz->openDocumentFile(args->arg(0));
+    }
+    else
+    {
+      kwordquiz->openDocumentFile();
+    }
+    args->clear();
+  }
   return app.exec();
 }  
