@@ -289,18 +289,14 @@ void KWordQuizApp::initActions()
   charMapper->setMapping(specialChar7, 7);
   charMapper->setMapping(specialChar8, 8);
   charMapper->setMapping(specialChar9, 9);
-
-  createStandardStatusBarAction();
-  setStandardToolBarMenuEnabled(true);
   
   actionCollection()->setHighlightingEnabled(true);
   connect(actionCollection(), SIGNAL(actionStatusText(const QString &)), this, SLOT(slotStatusMsg(const QString &)));  
   connect(actionCollection(), SIGNAL(actionHighlighted(KAction *, bool)), this, SLOT(slotActionHighlighted(KAction *, bool)));    
   updateSpecialCharIcons();
     
-  // use the absolute path to your kwordquizui.rc file for testing purpose in createGUI();
-  createGUI("kwordquizui.rc");
-  setAutoSaveSettings();
+   // use the absolute path to your kwordquizui.rc file for testing purpose in createGUI();
+   setupGUI();
 }
 
 void KWordQuizApp::initStatusBar()
@@ -1051,21 +1047,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
 
   }
-}
-
-/** Configure toolbar */
-void KWordQuizApp::slotConfigureToolbar()
-{
-  saveMainWindowSettings( KGlobal::config(), "MainWindow" );
-  KEditToolbar dlg(actionCollection());
-  connect(&dlg, SIGNAL(newToolbarConfig()), this, SLOT(slotNewToolbarConfig()));
-  dlg.exec();        
-}
-
-void KWordQuizApp::slotNewToolbarConfig( )
-{
-  createGUI("kwordquizui.rc");
-  applyMainWindowSettings( KGlobal::config(), "MainWindow" );
 }
 
 /** Configure notifications */

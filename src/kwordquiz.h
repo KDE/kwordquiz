@@ -201,8 +201,6 @@ class KWordQuizApp : public KMainWindow
     /** question and answer session */
     void slotQuizQA();         
 
-    /** configure toolbar */
-    void slotConfigureToolbar();
     /** configure notifications */
     void slotConfigureNotifications();
     /** configure kwordquiz */
@@ -221,7 +219,7 @@ class KWordQuizApp : public KMainWindow
     void slotInsertChar(int i);
     
     void slotActionHighlighted(KAction *, bool);
-    void slotNewToolbarConfig();
+
     void slotContextMenuRequested(int, int, const QPoint &);
   private:
 
