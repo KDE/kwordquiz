@@ -21,7 +21,7 @@
         </sizepolicy>
     </property>
     <property name="caption">
-        <string>Sort</string>
+        <string>DlgSortBase</string>
     </property>
     <grid>
         <property name="name">
@@ -42,6 +42,9 @@
                     <property name="title">
                         <string>Based On</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select which column you want to base the sort on</string>
+                    </property>
                     <grid>
                         <property name="name">
                             <cstring>unnamed</cstring>
@@ -56,6 +59,9 @@
                             <property name="accel">
                                 <string>Alt+1</string>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Select to sort based on the left column</string>
+                            </property>
                         </widget>
                         <widget class="QRadioButton" row="1" column="0">
                             <property name="name">
@@ -67,6 +73,9 @@
                             <property name="accel">
                                 <string>Alt+2</string>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Select to sort based on the right column</string>
+                            </property>
                         </widget>
                     </grid>
                 </widget>
@@ -76,6 +85,9 @@
                     </property>
                     <property name="title">
                         <string>Direction</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select direction for the sort</string>
                     </property>
                     <grid>
                         <property name="name">
@@ -91,6 +103,9 @@
                             <property name="accel">
                                 <string>Alt+A</string>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Select to sort in ascending order</string>
+                            </property>
                         </widget>
                         <widget class="QRadioButton" row="1" column="0">
                             <property name="name">
@@ -101,6 +116,9 @@
                             </property>
                             <property name="accel">
                                 <string>Alt+D</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Select to sort in descending order</string>
                             </property>
                         </widget>
                     </grid>

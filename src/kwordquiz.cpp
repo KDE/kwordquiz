@@ -108,39 +108,61 @@ void KWordQuizApp::initActions()
 {
   fileNewWindow = new KAction(i18n("New &Window"), 0, 0, this, SLOT(slotFileNewWindow()), actionCollection(),"file_new_window");
   fileNew = KStdAction::openNew(this, SLOT(slotFileNewWindow()), actionCollection());
+  fileNew->setWhatsThis(i18n("Create a new blank vocabulary document"));
   fileOpen = KStdAction::open(this, SLOT(slotFileOpen()), actionCollection());
+  fileOpen->setWhatsThis(i18n("Open an existing vocabulary document"));
   fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KURL&)), actionCollection());
   fileSave = KStdAction::save(this, SLOT(slotFileSave()), actionCollection());
+  fileSave->setWhatsThis(i18n("Save the active vocabulary document"));
   fileSaveAs = KStdAction::saveAs(this, SLOT(slotFileSaveAs()), actionCollection());
+  fileSaveAs->setWhatsThis(i18n("Save the active vocabulary document with a different name"));
   fileClose = KStdAction::close(this, SLOT(slotFileClose()), actionCollection());
+  fileClose->setWhatsThis(i18n("Close the active vocabulary document"));
   filePrint = KStdAction::print(this, SLOT(slotFilePrint()), actionCollection());
+  filePrint->setWhatsThis(i18n("Print the active vocabulary document"));
   fileQuit = KStdAction::quit(this, SLOT(slotFileQuit()), actionCollection());
-
+  fileQuit->setWhatsThis(i18n("Quit KWordQuiz"));
+  
   editUndo = KStdAction::undo(this, SLOT(slotEditUndo()), actionCollection());
+  editUndo->setWhatsThis(i18n("Undo the last command"));
   editCut = KStdAction::cut(this, SLOT(slotEditCut()), actionCollection());
+  editCut->setWhatsThis(i18n("Cut the text from the selected cells and place it on the clipboard"));
   editCopy = KStdAction::copy(this, SLOT(slotEditCopy()), actionCollection());
+  editCopy->setWhatsThis(i18n("Copy the text from the selected cells and place it on the clipboard"));
   editPaste = KStdAction::paste(this, SLOT(slotEditPaste()), actionCollection());
+  editPaste->setWhatsThis(i18n("Paste previously cut or copied text from the clipboard into the selected cells"));
   #if KDE_VERSION >= 197120 // 320
   editClear = KStdAction::clear(this, SLOT(slotEditClear()), actionCollection());  
   #else
   editClear = new KAction(i18n("C&lear"), "editclear", 0, this, SLOT(slotEditClear()), actionCollection(),"edit_clear_old");
   #endif
+  editClear->setWhatsThis(i18n("Clear the content of the selected cells"));
   editInsert = new KAction(i18n("&Insert"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
+  editInsert->setWhatsThis(i18n("Insert a new row above the current row"));
   editDelete = new KAction(i18n("&Delete"), /*"remrow"*/ locate("data", "kwordquiz/pics/deleterow.png"), "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
+  editDelete->setWhatsThis(i18n("Delete the selected row(s)"));
   editMarkBlank = new KAction(i18n("&Mark As Blank"), locate("data", "kwordquiz/pics/markasblank.png"), "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
+  editMarkBlank->setWhatsThis(i18n("Mark the current or selected word as a blank for Fill-in-the-blank"));
   editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), locate("data", "kwordquiz/pics/unmarkasblank.png"), 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
+  editUnmarkBlank->setWhatsThis(i18n("Remove blanks for the current or selected word"));
   //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
 
   vocabLanguages = new KAction(i18n("&Languages..."), locate("data", "kwordquiz/pics/languages.png"), "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
+  vocabLanguages->setWhatsThis(i18n("Define languages or other identifiers for the active vocabulary"));
   vocabFont = new KAction(i18n("&Font..."), "fonts", 0, this, SLOT(slotVocabFont()), actionCollection(),"vocab_font");
-  vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
+  vocabFont->setWhatsThis(i18n("Define the font used by the editor"));
+  //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
   vocabChar = new KAction(i18n("Special &Characters..."), "kcharselect", 0, this, SLOT(slotVocabChar()), actionCollection(),"vocab_char");
+  vocabChar->setWhatsThis(i18n("Select and copy a special character to be pasted into the vocabulary"));
   vocabRC = new KAction(i18n("&Rows/Columns..."), 0, 0, this, SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
+  vocabRC->setWhatsThis(i18n("Define number of rows, row heights, and column widths for the active vocabulary"));
   vocabSort = new KAction(i18n("&Sort..."), locate("data", "kwordquiz/pics/sort.png"), 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
+  vocabSort->setWhatsThis(i18n("Sort the vocabulary in ascending or descending order based on the left or right column"));
   vocabShuffle = new KAction(i18n("Sh&uffle"), 0, 0, this, SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
+  vocabShuffle->setWhatsThis(i18n("Shuffle the entries of the active vocabulary"));
 
   mode = new KToolBarPopupAction(i18n("Change Mode"), locate("data", "kwordquiz/pics/mode1.png"), 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
-
+  mode->setWhatsThis(i18n("Change the mode used in quiz sessions"));
   KPopupMenu *popup = mode->popupMenu();
   popup->clear();
   popup->insertItem(QIconSet(QPixmap(locate("data", "kwordquiz/pics/mode1.png"))), "", this, SLOT(slotMode1()), 0, 0);
@@ -154,26 +176,42 @@ void KWordQuizApp::initActions()
   mode3 = new KToggleAction("", locate("data", "kwordquiz/pics/mode3.png"), 0, this, SLOT(slotMode3()), actionCollection(),"mode_3");
   mode4 = new KToggleAction("", locate("data", "kwordquiz/pics/mode4.png"), 0, this, SLOT(slotMode4()), actionCollection(),"mode_4");
   mode5 = new KToggleAction("", locate("data", "kwordquiz/pics/mode5.png"), 0, this, SLOT(slotMode5()), actionCollection(),"mode_5");
-
+  mode1->setWhatsThis(i18n("Select this mode"));
+  mode2->setWhatsThis(i18n("Select this mode"));
+  mode3->setWhatsThis(i18n("Select this mode"));
+  mode4->setWhatsThis(i18n("Select this mode"));
+  mode5->setWhatsThis(i18n("Select this mode"));
+          
   quizEditor = new KAction(i18n("&Editor"), locate("data", "kwordquiz/pics/tabedit.png"), "F6", this, SLOT(slotQuizEditor()), actionCollection(),"quiz_editor");
+  quizEditor->setWhatsThis(i18n("Activate the vocabulary editor"));
   quizFlash = new KAction(i18n("&Flashcard"), locate("data", "kwordquiz/pics/tabflash.png"), "F7", this, SLOT(slotQuizFlash()), actionCollection(),"quiz_flash");
+  quizFlash->setWhatsThis(i18n("Start a flashcard session using the active vocabulary"));
   quizMultiple = new KAction(i18n("&Multiple Choice"), locate("data", "kwordquiz/pics/tabmultiple.png"), "F8", this, SLOT(slotQuizMultiple()), actionCollection(),"quiz_multiple");
+  quizMultiple->setWhatsThis(i18n("Start a multiple choice session using the active vocabulary"));
   quizQA = new KAction(i18n("&Question && Answer"), locate("data", "kwordquiz/pics/tabqa.png"), "F9", this, SLOT(slotQuizQA()), actionCollection(),"quiz_qa");
+  quizQA->setWhatsThis(i18n("Start a question and answer session using the active vocabulary"));
 
   quizCheck = new KAction(i18n("&Check"), locate("data", "kwordquiz/pics/check.png"), "Return", this, 0, actionCollection(),"quiz_check");
-
+  quizCheck->setWhatsThis(i18n("Check your answer to this question"));
   flashKnow = new KAction(i18n("I &Know"), locate("data", "kwordquiz/pics/know.png"), "K", this, 0, actionCollection(),"flash_know");
+  flashKnow->setWhatsThis(i18n("Count this card as correct and show the next card"));
   flashDontKnow = new KAction(i18n("I &Don't Know"), locate("data", "kwordquiz/pics/dontknow.png"), "D", this, 0, actionCollection(),"flash_dont_know");
-
+  flashDontKnow->setWhatsThis(i18n("Count this card as incorrect and show the next card"));
   qaHint = new KAction(i18n("&Hint"), locate("data", "kwordquiz/pics/hint.png"), "CTRL+H", this, 0, actionCollection(),"qa_hint");
-
+  qaHint->setWhatsThis(i18n("Get the next correct letter of the answer"));
   quizRestart = new KAction(i18n("&Restart"), locate("data", "kwordquiz/pics/restart.png"), "CTRL+R", this, 0, actionCollection(), "quiz_restart");
+  quizRestart->setWhatsThis(i18n("Restart the quiz session from the beginning"));
   quizRepeatErrors = new KAction(i18n("Repeat &Errors"), locate("data", "kwordquiz/pics/repeat.png"), "CTRL+E", this, 0, actionCollection(),"quiz_repeat_errors");
+  quizRepeatErrors->setWhatsThis(i18n("Repeat all incorrectly answered questions"));
 
   configKeys = KStdAction::keyBindings(this, SLOT( slotConfigureKeys() ), actionCollection());
+  configKeys->setWhatsThis(i18n("Specify shortcut keys for all commands"));
   configToolbar = KStdAction::configureToolbars(this, SLOT( slotConfigureToolbar() ), actionCollection());
+  configToolbar->setWhatsThis(i18n("Toggle display of the toolbars"));
   configNotifications = KStdAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
+  configNotifications->setWhatsThis(i18n("Configure sound and other notifications for certain events"));
   configApp = KStdAction::preferences(this, SLOT( slotConfigure()), actionCollection());
+  configApp->setWhatsThis(i18n("Specify preferences for the vocabulary editor and quiz sessions"));
 
 
   //Question: isn't this supposed to show up in the statusbar?

@@ -129,6 +129,9 @@
                     <property name="alignment">
                         <set>AlignTop</set>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Language or other identifier for this card</string>
+                    </property>
                 </widget>
                 <widget class="Line">
                     <property name="name">
@@ -196,6 +199,9 @@
                     </property>
                     <property name="alignment">
                         <set>WordBreak|AlignCenter</set>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>The flashcard. Select Quiz -&gt; Check to see the other side.</string>
                     </property>
                 </widget>
             </vbox>
@@ -280,6 +286,9 @@
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards in the session</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="4">
                             <property name="name">
@@ -304,6 +313,9 @@
                             </property>
                             <property name="scaledContents">
                                 <bool>true</bool>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards countes as correct (I know). May be shown as percent.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="5">
@@ -336,6 +348,9 @@
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards countes as correct (I know). May be shown as percent.</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="6">
                             <property name="name">
@@ -361,6 +376,9 @@
                             <property name="scaledContents">
                                 <bool>true</bool>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards counted as incorrect (I don't know). May be shown as percent.</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="0">
                             <property name="name">
@@ -385,6 +403,9 @@
                             </property>
                             <property name="scaledContents">
                                 <bool>true</bool>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards in the session</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="3">
@@ -417,6 +438,9 @@
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards already seen. May be shown as percent.</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="2">
                             <property name="name">
@@ -441,6 +465,9 @@
                             </property>
                             <property name="scaledContents">
                                 <bool>true</bool>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards already seen. May be shown as percent.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="7">
@@ -472,6 +499,9 @@
                             </property>
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of cards counted as incorrect (I don't know). May be shown as percent.</string>
                             </property>
                         </widget>
                     </grid>

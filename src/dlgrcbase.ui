@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>DlgRCBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -43,6 +43,9 @@
                     <property name="validChars">
                         <string>0123456789</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Enter the number of rows the vocabulary should have</string>
+                    </property>
                 </widget>
                 <widget class="QLabel" row="0" column="0">
                     <property name="name">
@@ -53,6 +56,9 @@
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>txtNumRows</cstring>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Enter the number of rows the vocabulary should have</string>
                     </property>
                 </widget>
             </grid>
@@ -78,6 +84,9 @@
                     <property name="validChars">
                         <string>0123456789</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Enter the height (in pixels) for the selected row(s)</string>
+                    </property>
                 </widget>
                 <widget class="QLabel" row="0" column="0">
                     <property name="name">
@@ -88,6 +97,9 @@
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>txtRowHeight</cstring>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Enter the height (in pixels) for the selected row(s)</string>
                     </property>
                 </widget>
             </grid>
@@ -110,6 +122,9 @@
                     <property name="buddy" stdset="0">
                         <cstring>txtColWidth</cstring>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Enter the width (in pixels) for the selected column(s)</string>
+                    </property>
                 </widget>
                 <widget class="KRestrictedLine" row="1" column="0">
                     <property name="name">
@@ -124,15 +139,13 @@
                     <property name="validChars">
                         <string>0123456789</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Enter the width (in pixels) for the selected column(s)</string>
+                    </property>
                 </widget>
             </grid>
         </widget>
     </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>krestrictedline.h</includehint>
-    <includehint>krestrictedline.h</includehint>
-    <includehint>krestrictedline.h</includehint>
-</includehints>
 </UI>

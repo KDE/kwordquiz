@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>PrefQuizBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -29,6 +29,9 @@
             <property name="title">
                 <string>Flashcard</string>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>Specify behavior of a flashcard session</string>
+            </property>
             <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
@@ -42,6 +45,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+F</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select if you want a card to turn over automatically after the given amount of time</string>
                     </property>
                 </widget>
                 <spacer row="1" column="0" rowspan="3" colspan="1">
@@ -68,6 +74,12 @@
                     <property name="text">
                         <string>Count as &amp;correct</string>
                     </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select if the previous card should be counted as correct when moving to the next card</string>
+                    </property>
                 </widget>
                 <widget class="QRadioButton" row="3" column="1" rowspan="1" colspan="2">
                     <property name="name">
@@ -78,6 +90,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+E</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select if the previous card should be counted as incorrect when moving to the next card</string>
                     </property>
                 </widget>
                 <widget class="QLabel" row="1" column="2">
@@ -94,6 +109,9 @@
                     </property>
                     <property name="text">
                         <string>seconds and</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Specify the amount of time between card flips</string>
                     </property>
                 </widget>
                 <widget class="KRestrictedLine" row="1" column="1">
@@ -123,6 +141,9 @@
                     <property name="validChars">
                         <string>0123456789</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Specify the amount of time between card flips</string>
+                    </property>
                 </widget>
             </grid>
         </widget>
@@ -132,6 +153,9 @@
             </property>
             <property name="title">
                 <string>Multiple Choice</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>Specify behavior for a multiple choice session</string>
             </property>
             <grid>
                 <property name="name">
@@ -147,6 +171,9 @@
                     <property name="accel">
                         <string>Alt+A</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select if a choice should be checked immediately</string>
+                    </property>
                 </widget>
             </grid>
         </widget>
@@ -156,6 +183,9 @@
             </property>
             <property name="title">
                 <string>Question &amp;&amp; Answer</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>Specify behavior for a question and answer session</string>
             </property>
             <grid>
                 <property name="name">
@@ -171,6 +201,9 @@
                     <property name="accel">
                         <string>Alt+T</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select if questions where the hint fuction has been used should be counted as errors</string>
+                    </property>
                 </widget>
             </grid>
         </widget>
@@ -180,6 +213,9 @@
             </property>
             <property name="title">
                 <string>Score</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>Specify behavior of the score presentation in any session</string>
             </property>
             <grid>
                 <property name="name">
@@ -194,6 +230,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+S</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select if the score should be shown as percent</string>
                     </property>
                 </widget>
             </grid>
@@ -229,7 +268,4 @@
     <slot>slotAutoFlipClicked()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>krestrictedline.h</includehint>
-</includehints>
 </UI>

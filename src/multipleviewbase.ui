@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>MultipleViewBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -70,6 +70,9 @@
                     <property name="alignment">
                         <set>AlignTop</set>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Language or other identifier for the question</string>
+                    </property>
                 </widget>
                 <widget class="QLabel" row="1" column="1">
                     <property name="name">
@@ -94,6 +97,9 @@
                     </property>
                     <property name="alignment">
                         <set>WordBreak|AlignTop</set>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>The question</string>
                     </property>
                 </widget>
                 <widget class="QLabel" row="0" column="0">
@@ -185,6 +191,9 @@
                     <property name="alignment">
                         <set>AlignTop</set>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Your answer to the previous question</string>
+                    </property>
                 </widget>
                 <widget class="QLabel" row="1" column="1">
                     <property name="name">
@@ -209,6 +218,9 @@
                     </property>
                     <property name="alignment">
                         <set>WordBreak|AlignTop</set>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Your answer to the previous question</string>
                     </property>
                 </widget>
             </grid>
@@ -276,6 +288,9 @@
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions in the session</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="4">
                             <property name="name">
@@ -300,6 +315,9 @@
                             </property>
                             <property name="scaledContents">
                                 <bool>true</bool>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions answered correctly. May be shown as percent.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="5">
@@ -332,6 +350,9 @@
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions answered correctly. May be shown as percent.</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="6">
                             <property name="name">
@@ -357,6 +378,9 @@
                             <property name="scaledContents">
                                 <bool>true</bool>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions answered incorrectly. May be shown as percent.</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="0">
                             <property name="name">
@@ -381,6 +405,9 @@
                             </property>
                             <property name="scaledContents">
                                 <bool>true</bool>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions in the session</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="3">
@@ -413,6 +440,9 @@
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions already answered. May be shown as percent.</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="2">
                             <property name="name">
@@ -437,6 +467,9 @@
                             </property>
                             <property name="scaledContents">
                                 <bool>true</bool>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions already answered. May be shown as percent.</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="7">
@@ -468,6 +501,9 @@
                             </property>
                             <property name="alignment">
                                 <set>AlignVCenter|AlignLeft</set>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>The number of questions answered incorrectly. May be shown as percent.</string>
                             </property>
                         </widget>
                     </grid>
@@ -511,6 +547,9 @@
                     <property name="alignment">
                         <set>AlignTop</set>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>The correct answer to the previous question</string>
+                    </property>
                 </widget>
                 <widget class="QLabel" row="1" column="1">
                     <property name="name">
@@ -535,6 +574,9 @@
                     </property>
                     <property name="alignment">
                         <set>WordBreak|AlignTop</set>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>The correct answer to the previous question</string>
                     </property>
                 </widget>
                 <widget class="QLabel" row="0" column="0">
@@ -621,6 +663,9 @@
                     <property name="accel">
                         <string>Alt+2</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Three choices for the answer. One is correct.</string>
+                    </property>
                 </widget>
                 <widget class="QRadioButton" row="1" column="1">
                     <property name="name">
@@ -645,6 +690,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+1</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Three choices for the answer. One is correct.</string>
                     </property>
                 </widget>
                 <widget class="QLabel" row="0" column="1">
@@ -676,6 +724,9 @@
                     <property name="alignment">
                         <set>AlignTop</set>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Language or other identifier for the answer</string>
+                    </property>
                 </widget>
                 <widget class="QRadioButton" row="3" column="1">
                     <property name="name">
@@ -700,6 +751,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+3</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Three choices for the answer. One is correct.</string>
                     </property>
                 </widget>
             </grid>
@@ -741,6 +795,9 @@
                     <property name="alignment">
                         <set>AlignTop</set>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>The previous question</string>
+                    </property>
                 </widget>
                 <widget class="QLabel" row="1" column="1">
                     <property name="name">
@@ -768,6 +825,9 @@
                     </property>
                     <property name="indent">
                         <number>-1</number>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>The previous question</string>
                     </property>
                 </widget>
                 <widget class="QLabel" row="0" column="0">

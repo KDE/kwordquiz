@@ -12,6 +12,7 @@
 #include <qbuttongroup.h>
 #include <qradiobutton.h>
 #include <qlayout.h>
+#include <qwhatsthis.h>
 
 #include <klocale.h>
 
@@ -38,6 +39,11 @@ WQPrintDialogPage::WQPrintDialogPage(QWidget *parent, const char *name )
   rb2 = new QRadioButton(i18n("&Flashcards"), g);
   v->addWidget( rb2, 2, 0 );
   l->addWidget( g, 0, 0 );
+  
+  QWhatsThis::add(g, i18n("Specify type of printout to make"));
+  QWhatsThis::add(rb0, i18n("Select to print the vocabulary as displayed in the editor"));
+  QWhatsThis::add(rb1, i18n("Select to print the vocabulary as a vocabulary exam"));
+  QWhatsThis::add(rb2, i18n("Select to print flashcards"));      
 }
 
 
