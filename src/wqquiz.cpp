@@ -31,18 +31,12 @@ WQQuiz::WQQuiz(KWordQuizView * parent, const char *name) : QObject(parent, name)
   m_table = parent;
 
   m_list = new QPtrList<WQListItem>();
-  //m_list -> setAutoDelete(true);
   m_errorList = new QPtrList<WQListItem>();
-  //m_errorList -> setAutoDelete(true);
   m_quizList = new QPtrList<WQListItem>();
-  //m_quizList -> setAutoDelete(true);
 }
 
 WQQuiz::~WQQuiz()
 {
-  delete (m_list);
-  delete (m_errorList);
-  delete (m_quizList);
 }
 
 void WQQuiz::activateErrorList()
