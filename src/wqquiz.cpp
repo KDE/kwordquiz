@@ -126,7 +126,7 @@ bool WQQuiz::init()
   bool result = false;
   if (m_enableBlanks)
   {
-    result = true; //@todo result = SyntaxCheck(Grid, tGR, EnableBlanks)
+    result = m_table->checkSyntax(true, true);
   }
   else
   {

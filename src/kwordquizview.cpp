@@ -496,7 +496,6 @@ void KWordQuizView::doEditPaste( )
     setCurrentCell(m_currentRow, m_currentCol);
   }
   getDocument()->setModified(true);
-  //@todo SyntaxCheck(Self, Selection, EnableBlanks);
 }
 
 void KWordQuizView::doEditClear( )
@@ -564,8 +563,8 @@ bool KWordQuizView::checkForBlank( QString s, bool blank )
     return true;
   
   bool result = false;
-  int openCount = 1;
-  int closeCount = 1;
+  int openCount = 0;
+  int closeCount = 0;
   QMemArray<int> openPos(0);
   QMemArray<int> closePos(0);
 
@@ -573,34 +572,27 @@ bool KWordQuizView::checkForBlank( QString s, bool blank )
   {
     if (s[i] == delim_start)
     {
+      openCount++;
       openPos.resize(openCount);
-      openPos[openCount - 1] = i;
-      openCount++;        
+      openPos[openCount] = i;
     }
-    else
+
+    if (s[i] == delim_end)
     {
-      if (s[i] == delim_end)
-      {
-        closePos.resize(closeCount);
-        closePos[i] = i;
-        closeCount++;     
-      }
-    }   
+      closeCount++;
+      closePos.resize(closeCount);
+      closePos[closeCount] = i;
+    }
   }
 
+  if (openCount == 0 && closeCount == 0)
+    return true;
+    
   if (openCount > 0 && closeCount > 0)
-  {
     if (openPos.size() == closePos.size())
-    {
       for (int i = 0; i <= openPos.size(); ++i)
-      {
-        if (openPos[i] < closePos[i])
-          result = true;
-        else
-          return false;
-      }
-    }
-  }
+        result = (openPos[i] < closePos[i]);
+
   return result;
 }
 
@@ -707,8 +699,6 @@ void KWordQuizView::doEditUnmarkBlank( )
         setText(r, c, s);    
       }     
   }  
-  checkSyntax(false, true);
-
 }
 
 bool KWordQuizView::checkSyntax(bool all, bool blanks)
@@ -737,21 +727,10 @@ bool KWordQuizView::checkSyntax(bool all, bool blanks)
     {
       QString s = text(r, c);
       if (s.length() > 0)
-      {
         for (int i = 0; i <= s.length(); ++i)
-        {
           if (s[i] == delim_start || s[i] == delim_end)
-          {
             if (!checkForBlank(s, blanks))
-            {
-              //paint red
               errorCount++;
-            }
-            //else
-              //paint black
-          }
-        }
-      }    
     }
   return (errorCount == 0);
 }
@@ -1224,20 +1203,14 @@ void KWordQuizView::setFont( const QFont & font)
     adjustRow(i); //setRowHeight(i, fontMetrics().lineSpacing() );
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg )
+{
+  QColorGroup g (cg);
+  
+  if (Config().m_enableBlanks)
+    if (!checkForBlank(text(row, col), true))
+      g.setColor(QColorGroup::Text, Qt::red);
+  
+  QTable::paintCell (p, row, col, cr, selected, g );
+}
 

@@ -69,7 +69,9 @@ class KWordQuizView : public QTable
      * @see KWordQuizApp#getDocument
      */
     KWordQuizDoc *getDocument() const;
-
+    
+    //Reimplemented from QTable
+    void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
     void setFont( const QFont &);
     
     /** contains the implementation for printing functionality */
