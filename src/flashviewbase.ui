@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>FlashViewBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -172,8 +172,8 @@
                     </property>
                     <property name="sizePolicy">
                         <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>5</vsizetype>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>7</vsizetype>
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                         </sizepolicy>
@@ -188,8 +188,14 @@
                     <property name="text">
                         <string>This is your question</string>
                     </property>
+                    <property name="textFormat">
+                        <enum>AutoText</enum>
+                    </property>
+                    <property name="scaledContents">
+                        <bool>false</bool>
+                    </property>
                     <property name="alignment">
-                        <set>AlignTop</set>
+                        <set>WordBreak|AlignCenter</set>
                     </property>
                 </widget>
             </vbox>

@@ -68,15 +68,16 @@ void FlashView::init()
 void FlashView::showFront(int i)
 {
   lblLanguageQuestion ->setText(m_quiz ->langQuestion(i));
+  lblQuestion->setFont(m_quiz->fontQuestion(i));  
   lblQuestion -> setText(m_quiz -> question(i));
-  lblQuestion->setFont(m_quiz->fontQuestion(i));
+
 }
 
 void FlashView::showBack(int i)
 {
   lblLanguageQuestion ->setText(m_quiz->langAnswer(i));
-  lblQuestion -> setText(m_quiz->answer(i));
   lblQuestion->setFont(m_quiz->fontAnswer(m_question));
+  lblQuestion -> setText(m_quiz->answer(i));
 }
 
 
@@ -210,5 +211,6 @@ void FlashView::slotApplySettings( )
   m_score ->setAsPercent(Config().m_percent);
   updateScore();
 }
+
 
 #include "flashview.moc"
