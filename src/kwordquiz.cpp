@@ -112,8 +112,7 @@ KWordQuizApp::~KWordQuizApp()
 
 void KWordQuizApp::initActions()
 {
-  fileNewWindow = new KAction(i18n("New &Window"), 0, 0, this, SLOT(slotFileNewWindow()), actionCollection(),"file_new_window");
-  fileNew = KStdAction::openNew(this, SLOT(slotFileNewWindow()), actionCollection());
+  fileNew = KStdAction::openNew(this, SLOT(slotFileNew()), actionCollection());
   fileNew->setWhatsThis(i18n("Create a new blank vocabulary document"));
   fileOpen = KStdAction::open(this, SLOT(slotFileOpen()), actionCollection());
   fileOpen->setWhatsThis(i18n("Open an existing vocabulary document"));
@@ -222,7 +221,6 @@ void KWordQuizApp::initActions()
 
   //Question: isn't this supposed to show up in the statusbar?
   /*TODO*/
-  fileNewWindow->setStatusText(i18n("Opens a new application window"));
   fileNew->setStatusText(i18n("Creates a new document"));
   fileOpen->setStatusText(i18n("Opens an existing document"));
   fileOpenRecent->setStatusText(i18n("Opens a recently used file"));
@@ -378,36 +376,17 @@ bool KWordQuizApp::queryExit()
 // SLOT IMPLEMENTATION
 /////////////////////////////////////////////////////////////////////
 
-void KWordQuizApp::slotFileNewWindow()
+void KWordQuizApp::slotFileNew()
 {
-  slotStatusMsg(i18n("Opening a new application window..."));
-	if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+  slotStatusMsg(i18n("Opening a new document window..."));
+  if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
     // neither saved nor has content, as good as new
   }
   else
   {
     KWordQuizApp *new_window= new KWordQuizApp();
     new_window->show();
-
   }
-  slotStatusMsg(i18n("Ready."));
-}
-
-void KWordQuizApp::slotFileNew()
-{
-  slotStatusMsg(i18n("Creating new document..."));
-
-  if(!doc->saveModified())
-  {
-     // here saving wasn't successful
-
-  }
-  else
-  {	
-    doc->newDocument();		
-    setCaption(doc->URL().fileName(), false);
-  }
-
   slotStatusMsg(i18n("Ready."));
 }
 

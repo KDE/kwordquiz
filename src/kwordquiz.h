@@ -128,8 +128,6 @@ class KWordQuizApp : public KMainWindow
 
   public slots:
     /** open a new application window by creating a new instance of KWordQuizApp */
-    void slotFileNewWindow();
-    /** clears the document in the actual view to reuse it as the new document */
     void slotFileNew();
     /** open a file and load it into the document*/
     void slotFileOpen();
@@ -247,7 +245,6 @@ class KWordQuizApp : public KMainWindow
     KWordQuizDoc *doc;
 
     // KAction pointers to enable/disable actions
-    KAction* fileNewWindow;
     KAction* fileNew;
     KAction* fileOpen;
     KRecentFilesAction* fileOpenRecent;
