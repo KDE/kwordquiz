@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=KWordQuiz Vocabulary
+Hidden=false
+Icon=kwordquiz_doc
+MimeType=application/x-kwordquiz
+Patterns=*.wql
+Type=MimeType
+

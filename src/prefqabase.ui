@@ -1,0 +1,50 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>PrefQABase</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>PrefQABase</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>369</width>
+            <height>180</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Question and Answer</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QCheckBox" row="0" column="0">
+            <property name="name">
+                <cstring>chkHintError</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Treat hint as error</string>
+            </property>
+        </widget>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>spcVert</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>51</width>
+                    <height>117</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

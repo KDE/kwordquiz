@@ -1,0 +1,87 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>PrefEditorBase</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>PrefEditorBase</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>265</width>
+            <height>216</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Editor</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QButtonGroup" row="0" column="0">
+            <property name="name">
+                <cstring>grpEnterMove</cstring>
+            </property>
+            <property name="title">
+                <string>Enter Key Moves</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton" row="0" column="0">
+                    <property name="name">
+                        <cstring>optDown</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Down</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="1" column="0">
+                    <property name="name">
+                        <cstring>optRight</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Right</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="2" column="0">
+                    <property name="name">
+                        <cstring>optNoMove</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Doesn't &amp;Move</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QCheckBox" row="1" column="0">
+            <property name="name">
+                <cstring>chkEnableBlanks</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Enable Fill-in-the-blank</string>
+            </property>
+        </widget>
+        <spacer row="2" column="0">
+            <property name="name">
+                <cstring>spcVert</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>41</width>
+                    <height>81</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

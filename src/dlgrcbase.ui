@@ -1,0 +1,138 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>DlgRCBase</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>DlgRCBase</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>223</width>
+            <height>178</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>DlgRCBase</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout4</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KRestrictedLine" row="1" column="0">
+                    <property name="name">
+                        <cstring>txtNumRows</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>LineEditPanel</enum>
+                    </property>
+                    <property name="maxLength">
+                        <number>5</number>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignAuto</set>
+                    </property>
+                    <property name="validChars">
+                        <string>0123456789</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>lblNumRows</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Number of Rows</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>txtNumRows</cstring>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>layout5</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KRestrictedLine" row="1" column="0">
+                    <property name="name">
+                        <cstring>txtRowHeight</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>LineEditPanel</enum>
+                    </property>
+                    <property name="maxLength">
+                        <number>4</number>
+                    </property>
+                    <property name="validChars">
+                        <string>0123456789</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>lblRowHeight</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Row Height</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>txtRowHeight</cstring>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0">
+            <property name="name">
+                <cstring>layout3</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>lblColWidth</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Column Width</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>txtColWidth</cstring>
+                    </property>
+                </widget>
+                <widget class="KRestrictedLine" row="1" column="0">
+                    <property name="name">
+                        <cstring>txtColWidth</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>LineEditPanel</enum>
+                    </property>
+                    <property name="maxLength">
+                        <number>4</number>
+                    </property>
+                    <property name="validChars">
+                        <string>0123456789</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>krestrictedline.h</includehint>
+    <includehint>krestrictedline.h</includehint>
+    <includehint>krestrictedline.h</includehint>
+</includehints>
+</UI>

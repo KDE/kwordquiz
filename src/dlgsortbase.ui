@@ -1,0 +1,103 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>DlgSortBase</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>DlgSortBase</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>175</width>
+            <height>192</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="caption">
+        <string>Sort</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QButtonGroup" row="0" column="0">
+            <property name="name">
+                <cstring>grpBase</cstring>
+            </property>
+            <property name="title">
+                <string>Based On</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton" row="0" column="0">
+                    <property name="name">
+                        <cstring>optLang1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;1 Language 1</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+1</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="1" column="0">
+                    <property name="name">
+                        <cstring>optLang2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;2 Language 2</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+2</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QButtonGroup" row="1" column="0">
+            <property name="name">
+                <cstring>grpDirection</cstring>
+            </property>
+            <property name="title">
+                <string>Direction</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton" row="0" column="0">
+                    <property name="name">
+                        <cstring>optAscending</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Ascending</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+A</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="1" column="0">
+                    <property name="name">
+                        <cstring>optDescending</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Descending</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+D</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

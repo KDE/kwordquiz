@@ -1,0 +1,174 @@
+<!DOCTYPE kpartgui>
+<kpartgui version="0.2" name="kwordquiz" >
+ <MenuBar>
+  <Menu name="file" >
+   
+  </Menu>
+  <Menu name="edit" >
+   <Action name="edit_clear" />
+   <Separator/>
+   <Action name="edit_insert" />
+   <Action name="edit_delete" />
+   <!--<Separator/>
+   <Action name="edit_mark_blank" />
+   <Action name="edit_unmark_blank" /> -->
+  </Menu>
+  <Menu name="session" >
+   <text>&amp;Go to</text>
+   <Action name="quiz_editor" />
+   <Action name="quiz_flash" />
+   <Action name="quiz_multiple" />
+   <Action name="quiz_qa" />
+  </Menu>
+  <Menu name="vocabulary" >
+   <text>V&amp;ocabulary</text>
+   <Action name="vocab_languages" />
+   <Action name="vocab_font" />
+   <!--<Action name="vocab_keyboard" />-->
+   <Separator/>
+   <Action name="vocab_char" />
+   <Separator/>
+   <Action name="vocab_rc" />
+
+   <Action name="vocab_sort" />
+   <Action name="vocab_shuffle" />
+  </Menu>
+  <Menu name="mode" >
+   <text>&amp;Mode</text>
+   <Action name="mode_1" />
+   <Action name="mode_2" />
+   <Action name="mode_3" />
+   <Action name="mode_4" />
+   <Action name="mode_5" />
+  </Menu>
+  <Menu name="quiz" >
+   <text>&amp;Quiz</text>
+   <Action name="quiz_check" />
+   <Separator/>
+   <Action name="flash_know" />
+   <Action name="flash_dont_know" />
+   <Separator/>
+   <Action name="qa_hint" />
+   <Separator/>
+   <Action name="quiz_restart" />
+   <Action name="quiz_repeat_errors" />
+  </Menu> -->
+  </MenuBar>
+  <ToolBar name="mainToolBar">
+    <Action name="edit_insert"/>
+    <Action name="edit_delete"/>
+    <!--<Separator/>
+    <Action name="edit_mark_blank"/>
+    <Action name="edit_unmark_blank"/>-->
+    <Separator />
+    <Action name="vocab_languages"/>
+    <Action name="vocab_font"/>
+    <Action name="vocab_sort"/>
+    <Separator />
+    <Action name="mode_0"/>
+  </ToolBar>
+  <ToolBar name="sessionToolBar">
+    <text>Go to</text>
+    <Action name="quiz_editor" />
+    <Action name="quiz_flash" />
+    <Action name="quiz_multiple" />
+    <Action name="quiz_qa" />
+   </ToolBar>
+  <ToolBar name="quizToolBar" position="right" iconText="icontextright" >
+   <text>Quiz</text>
+   <Action name="quiz_check" />
+   <Separator/>
+   <Action name="flash_know" />
+   <Action name="flash_dont_know" />
+   <Separator/>
+   <Action name="qa_hint" />
+   <Separator/>
+   <Action name="quiz_restart" />
+   <Action name="quiz_repeat_errors" />
+  </ToolBar>
+  <State name="switchEditQuiz">
+    <Enable>
+      <Action name="file_save" />
+      <Action name="file_save_as" />
+      <Action name="file_print" />
+      <Action name="edit_find" />
+      <Action name="edit_clear" />
+      <Action name="edit_insert" />
+      <Action name="edit_delete" />
+      <Action name="edit_mark_blank" />
+      <Action name="edit_unmark_blank" />
+      <Action name="vocab_languages" />
+      <Action name="vocab_font" />
+      <Action name="vocab_keyboard" />
+      <Action name="vocab_char" />
+      <Action name="vocab_rc" />
+      <Action name="vocab_sort" />
+      <Action name="vocab_shuffle" />
+    </Enable>
+  </State>
+  <State name="showingEdit">
+    <Enable>
+      <Action name="quiz_flash" />
+      <Action name="quiz_multiple" />
+      <Action name="quiz_qa" />
+    </Enable>
+    <Disable>
+      <Action name="quiz_editor" />
+      <Action name="quiz_repeat_errors" />
+      <Action name="quiz_restart" />
+      <Action name="quiz_check" />
+      <Action name="flash_know" />
+      <Action name="flash_dont_know" />
+      <Action name="qa_hint" />
+    </Disable>
+  </State>
+
+  <State name="showingFlash">
+    <Enable>
+      <Action name="quiz_editor" />
+      <Action name="quiz_multiple" />
+      <Action name="quiz_qa" />
+      <Action name="quiz_check" />
+      <Action name="flash_know" />
+      <Action name="flash_dont_know" />
+      <Action name="quiz_restart" />
+    </Enable>
+    <Disable>
+      <Action name="quiz_flash" />
+      <Action name="quiz_repeat_errors" />
+      <Action name="qa_hint" />
+    </Disable>
+  </State>
+  <State name="showingMultiple">
+    <Enable>
+      <Action name="quiz_editor" />
+      <Action name="quiz_flash" />
+      <Action name="quiz_qa" />
+      <Action name="quiz_check" />
+      <Action name="quiz_restart" />
+    </Enable>
+    <Disable>
+      <Action name="quiz_multiple" />
+      <Action name="flash_know" />
+      <Action name="flash_dont_know" />
+      <Action name="qa_hint" />
+      <Action name="quiz_repeat_errors" />
+    </Disable>
+  </State>
+  <State name="showingQA">
+    <Enable>
+      <Action name="quiz_editor" />
+      <Action name="quiz_flash" />
+      <Action name="quiz_multiple" />
+      <Action name="quiz_check" />
+      <Action name="qa_hint" />
+      <Action name="quiz_restart" />
+    </Enable>
+    <Disable>
+      <Action name="quiz_qa" />
+      <Action name="flash_know" />
+      <Action name="flash_dont_know" />
+      <Action name="quiz_repeat_errors" />
+    </Disable>
+  </State>
+</kpartgui>

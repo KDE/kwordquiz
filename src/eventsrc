@@ -1,0 +1,24 @@
+ 
+
+ 
+ [!Global!]
+ IconName=kwordquiz
+ Comment=KWordQuiz
+ 
+ [QuizCorrect]
+ Name=QuizCorrect
+ Comment=Correct Answer
+ default_sound=KDE_Notify.wav
+ default_presentation=1
+ 
+ [QuizError]
+ Name=QuizError
+ Comment=Wrong Answer
+ default_sound=KDE_Error.wav
+ default_presentation=1
+ 
+ [SyntaxError]
+ Name=syntaxerror
+ Comment=Error in syntax
+ default_sound=KDE_Error.wav
+ default_presentation=1
