@@ -1,21 +1,31 @@
 [!Global!]
 IconName=kwordquiz
 Comment=KWordQuiz
+Comment[sv]=Kwordquiz
  
 [QuizCorrect]
 Name=QuizCorrect
+Name[sv]=Prov rätt
 Comment=Correct Answer
+Comment[et]=Õige vastust
+Comment[sv]=Rätt svar
 default_sound=KDE_Notify.wav
 default_presentation=1
  
 [QuizError]
 Name=QuizError
+Name[sv]=Prov fel
 Comment=Wrong Answer
+Comment[et]=Vale vastus
+Comment[sv]=Fel svar
 default_sound=KDE_Error.wav
 default_presentation=1
  
 [SyntaxError]
 Name=syntaxerror
+Name[sv]=Syntaxfel
 Comment=Error in syntax
+Comment[et]=Viga süntaksis
+Comment[sv]=Fel i syntaxen
 default_sound=KDE_Error.wav
 default_presentation=1
