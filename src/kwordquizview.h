@@ -27,6 +27,8 @@
 #include <qtable.h>
 #include <qtextstream.h>
 
+
+#include <kprinter.h>
 //include <wqviewbase.h>
 
 //class QTable;
@@ -71,7 +73,7 @@ class KWordQuizView : public QTable
     void setFont( const QFont &);
     
     /** contains the implementation for printing functionality */
-    void print(QPrinter *pPrinter);
+    void print(KPrinter *pPrinter);
     bool gridIsEmpty();
     QFont colFont(int i);
 

@@ -43,6 +43,7 @@
 #include <krandomsequence.h>
 //#include <keduvocdata.h>
 #include <kglobalsettings.h>
+#include <kprinter.h>
 
 // application specific includes
 #include "kwordquiz.h"
@@ -465,13 +466,13 @@ void KWordQuizApp::slotFileClose()
 void KWordQuizApp::slotFilePrint()
 {
   slotStatusMsg(i18n("Printing..."));
-  KMessageBox::sorry(0, i18n("Not implemented yet"));
-  /*QPrinter printer;
+  KPrinter printer;
+  printer.setFullPage(true);
   if (printer.setup(this))
   {
     m_editView->print(&printer);
   }
-*/
+
   slotStatusMsg(i18n("Ready."));
 }
 
