@@ -3,7 +3,7 @@
  "dtd/kdex.dtd" [
   <!ENTITY kwordquiz "<application>KWordQuiz</application>">
   <!ENTITY kappname "&kwordquiz;">
-  <!ENTITY package "kdenonbeta">
+  <!ENTITY package "kdeedu">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
