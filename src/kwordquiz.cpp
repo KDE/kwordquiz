@@ -82,6 +82,10 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
 
   m_quizType = WQQuiz::qtEditor;
   m_quiz = 0;
+  m_flashView = 0;
+  m_multipleView = 0;
+  m_qaView = 0;
+  
   slotQuizEditor();
   slotUndoChange(i18n("Can't &Undo"), false);
   updateMode(Config().m_mode);
@@ -793,40 +797,46 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       //
       break;
     case WQQuiz::qtFlash:
-      delete(m_flashView);
+      if (m_flashView != 0)
+      {
+        delete(m_flashView);
+        m_flashView = 0;
+      }
       break;
     case WQQuiz::qtMultiple:
-      delete(m_multipleView);
+      if (m_multipleView != 0)
+      {
+        delete(m_multipleView);
+        m_multipleView = 0;
+      }
       break;
     case WQQuiz::qtQA:
-      delete(m_qaView);
+      if (m_qaView != 0)
+      {
+        delete(m_qaView);
+        m_qaView = 0;
+      }
       break;
   }
 
   m_quizType = qt;
 
-  if (m_quizType == WQQuiz::qtEditor)
-    stateChanged("switchEditQuiz");
-  else
-    stateChanged("switchEditQuiz", StateReverse );
-
   switch( m_quizType ){
     case WQQuiz::qtEditor:
       m_editView->show();
       setCentralWidget(m_editView);
+      stateChanged("switchEditQuiz");
       stateChanged("showingEdit");
 
       toolBar("quizToolBar")->hide();
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(m_editView);
-
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
-
         m_editView->hide();
         m_flashView = new FlashView(this);
         connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
@@ -836,6 +846,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
         
+        stateChanged("switchEditQuiz", StateReverse );
         stateChanged("showingFlash");
         toolBar("quizToolBar")->show();
 
@@ -864,6 +875,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_multipleView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
         
+        stateChanged("switchEditQuiz", StateReverse );        
         stateChanged("showingMultiple");
         toolBar("quizToolBar")->show();        
         
@@ -893,7 +905,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRestart, SIGNAL(activated()), m_qaView, SLOT(slotRestart()));
         connect(quizRepeatErrors, SIGNAL(activated()), m_qaView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
-
+        
+        stateChanged("switchEditQuiz", StateReverse );
         stateChanged("showingQA");
         toolBar("quizToolBar")->show();
                 
