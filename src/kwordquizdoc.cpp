@@ -153,7 +153,7 @@ bool KWordQuizDoc::newDocument()
   return true;
 }
 
-bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
+bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
 {
   QString tmpfile;
   if (KIO::NetAccess::download( url, tmpfile, 0 ))
@@ -165,10 +165,17 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
       return false;
     }
 
-    doc_url = url;
+    if (append)
+      doc_url.setFileName(i18n("Untitled")); //To invoke Save As...,
+    else
+      doc_url = url;
+    
     QTable* g = m_view;
     g->setUpdatesEnabled(false);
+    
     int i = 0;
+    if (append && index > 0)
+      i = g->numRows();
     
     if (url.path().right(7) == ".xml.gz")
     {
@@ -177,7 +184,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
       PaukerDataItemList dataList = paukerDoc->parse(url.path());
       if (!dataList.isEmpty())
       {      
-        g->setNumRows(dataList.count());
+        g->setNumRows(dataList.count() + i);
         QString s;
         for(PaukerDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
         {
@@ -196,16 +203,20 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     {
       KEduVocData * kvtmldoc = new KEduVocData;
       KEduVocDataItemList dataList = kvtmldoc->parse(url.path());
-            if (!dataList.isEmpty())
+      if (!dataList.isEmpty())
       {
         if ((uint) kvtmldoc->numRows() > dataList.count())
-          g->setNumRows(kvtmldoc->numRows());
+          g->setNumRows(kvtmldoc->numRows() + i);
         else
-          g->setNumRows(dataList.count());
-        g->horizontalHeader()->setLabel(0, kvtmldoc->language(0));
-        g->horizontalHeader()->setLabel(1, kvtmldoc->language(1));
-        g->setColumnWidth(0, kvtmldoc->colWidth(0));
-        g->setColumnWidth(1, kvtmldoc->colWidth(1));
+          g->setNumRows(dataList.count() + i);
+        
+        if (!append)
+        {
+          g->horizontalHeader()->setLabel(0, kvtmldoc->language(0));
+          g->horizontalHeader()->setLabel(1, kvtmldoc->language(1));
+          g->setColumnWidth(0, kvtmldoc->colWidth(0));
+          g->setColumnWidth(1, kvtmldoc->colWidth(1));
+        }
         QString s;
         for(KEduVocDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
         {
@@ -227,19 +238,21 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
       if (!dataList.isEmpty())
       {
         if ((uint) wqldoc->numRows() > dataList.count())
-          g->setNumRows(wqldoc->numRows());
+          g->setNumRows(wqldoc->numRows() + i);
         else
-          g->setNumRows(dataList.count());
-        g->horizontalHeader()->setLabel(0, wqldoc->language(0));
-        g->horizontalHeader()->setLabel(1, wqldoc->language(1));
-        g->setColumnWidth(0, wqldoc->colWidth(0));
-        g->setColumnWidth(1, wqldoc->colWidth(1));
-        g->setFont(wqldoc->font());
+          g->setNumRows(dataList.count() + i);
         
-        g->setCurrentCell(wqldoc->startRow(), wqldoc->startCol());
-        g->selectCells(wqldoc->startRow(), wqldoc->startCol(), wqldoc->endRow(), wqldoc->endCol());
-        Config().m_specialCharacters = wqldoc->specialCharacters();
-        
+        if (!append)
+        {
+          g->horizontalHeader()->setLabel(0, wqldoc->language(0));
+          g->horizontalHeader()->setLabel(1, wqldoc->language(1));
+          g->setColumnWidth(0, wqldoc->colWidth(0));
+          g->setColumnWidth(1, wqldoc->colWidth(1));
+          g->setFont(wqldoc->font());
+          g->setCurrentCell(wqldoc->startRow(), wqldoc->startCol());
+          g->selectCells(wqldoc->startRow(), wqldoc->startCol(), wqldoc->endRow(), wqldoc->endCol());
+          Config().m_specialCharacters = wqldoc->specialCharacters();
+        }
         QString s;
         for(KWqlDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
         {
@@ -262,21 +275,25 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
       
       QString f = ts.read();
       QStringList fl = QStringList::split('\n', f, true);
-      g->setNumRows(fl.count() - 1);
+      g->setNumRows(fl.count() - 1 + i);
 
       QStringList sl = QStringList::split(",", fl[0], true);
-      if (!sl[0].isEmpty())
-        g->horizontalHeader()->setLabel(0, sl[0]);
-      if (!sl[1].isEmpty())
-        g->horizontalHeader()->setLabel(1, sl[1]);
-            
-      for(int i = 1; i < fl.count(); i++)
+      
+      if (!append)
       {
-        QStringList sl = QStringList::split(",", fl[i], true);
         if (!sl[0].isEmpty())
-          g->setText(i - 1, 0, sl[0]);
+          g->horizontalHeader()->setLabel(0, sl[0]);
         if (!sl[1].isEmpty())
-          g->setText(i - 1, 1, sl[1]);
+          g->horizontalHeader()->setLabel(1, sl[1]);
+      }
+          
+      for(int j = 1; j < fl.count(); j++)
+      {
+        QStringList sl = QStringList::split(",", fl[j], true);
+        if (!sl[0].isEmpty())
+          g->setText(i + j - 1, 0, sl[0]);
+        if (!sl[1].isEmpty())
+          g->setText(i + j - 1, 1, sl[1]);
       }      
       
     }    
@@ -300,6 +317,9 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     g->repaintContents();
   }
   modified=false;
+  if (append)
+    modified = true;
+    
   return true;
 }
 

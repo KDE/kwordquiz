@@ -65,8 +65,8 @@ class KWordQuizDoc : public QObject
     bool newDocument();
     /** closes the acutal document */
     void closeDocument();
-    /** loads the document by filename and format and emits the updateViews() signal */
-    bool openDocument(const KURL& url, const char *format=0);
+    /** loads the document by filename */
+    bool openDocument(const KURL& url, bool append = false, int index = 0);
     /** saves the document under filename and format.*/	
     bool saveDocument(const KURL& url, const char *format=0);
     /** returns the KURL of the document */

@@ -324,7 +324,7 @@ void KWordQuizApp::initView()
   connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
 
-void KWordQuizApp::openURL(const KURL& url, int append)
+void KWordQuizApp::openURL(const KURL& url)
 {
   if(!url.isEmpty()) {
     if (m_dirWatch->contains(url.path()))
@@ -482,7 +482,7 @@ void KWordQuizApp::slotFileOpen()
   
   QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0, 0);
   cb -> setChecked(false);
-  cb -> setEnabled(false);
+  //cb -> setEnabled(false);
   
   KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true, cb);
   fd -> setOperationMode(KFileDialog::Opening);
@@ -493,16 +493,39 @@ void KWordQuizApp::slotFileOpen()
   if (fd->exec() == QDialog::Accepted)
   {  
     KURL::List l = fd -> selectedURLs(); 
-    int append = 0;
-    if ((cb -> isChecked()) && (l.count() > 1))
-      append = 1;
-    KURL::List::iterator it;
-    for(it = l.begin(); it != l.end(); ++it)    
+    bool append = ((cb -> isChecked()) && (l.count() > 1));
+
+    if (append)
     {
-      openURL(*it, append);
-      append++;
+      KWordQuizApp * w;
+      if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+        // neither saved nor has content, as good as new
+        w = this;
+      }
+      else
+      {      
+        w = new KWordQuizApp();
+        w->show();
+      }
+      
+      KURL::List::iterator it;
+      int i = 0;
+      for(it = l.begin(); it != l.end(); ++it)    
+      {
+        w->getDocument()->openDocument(*it, true, i); 
+        i++;
+      }
+    }
+    else
+    {
+      KURL::List::iterator it;
+      for(it = l.begin(); it != l.end(); ++it)    
+      {
+        openURL(*it);
+      }
     }
   }
+  
   delete (fd); //deletes cb also
 
   slotStatusMsg(i18n("Ready"));
