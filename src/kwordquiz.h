@@ -263,12 +263,11 @@ class KWordQuizApp : public KMainWindow
     KAction* editDelete;
     KAction* editMarkBlank;
     KAction* editUnmarkBlank;
-    KAction* editFind;
+    //KAction* editFind;
 
     KAction* vocabLanguages;
     KAction* vocabFont;
-    KAction* vocabKeyboard;
-    KAction* vocabChar;
+    //KAction* vocabKeyboard;
     KAction* vocabRC;
     KAction* vocabSort;
     KAction* vocabShuffle;
@@ -313,6 +312,7 @@ class KWordQuizApp : public KMainWindow
 
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);
+    void updateActions(WQQuiz::QuizType qt);
     void updateSpecialCharIcons();
     QString charIcon(const QChar &);
     void openURL(const KURL& url);

@@ -935,17 +935,12 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
   }
 
   m_quizType = qt;
+  updateActions(qt);
 
   switch( m_quizType ){
     case WQQuiz::qtEditor:
       m_editView->show();
       setCentralWidget(m_editView);
-      stateChanged("switchEditQuiz");
-      editMarkBlank->setEnabled(Config().m_enableBlanks);
-      editUnmarkBlank->setEnabled(Config().m_enableBlanks);
-      stateChanged("showingEdit");
-
-      toolBar("quizToolBar")->hide();
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(m_editView);
@@ -962,12 +957,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRestart, SIGNAL(activated()), m_flashView, SLOT(slotRestart()));
         connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
-        
-        stateChanged("switchEditQuiz", StateReverse );
-        editMarkBlank->setEnabled(false);
-        editUnmarkBlank->setEnabled(false);
-        stateChanged("showingFlash");
-        toolBar("quizToolBar")->show();
 
         setCentralWidget(m_flashView);
         m_flashView -> setQuiz(m_quiz);
@@ -993,12 +982,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRestart, SIGNAL(activated()), m_multipleView, SLOT(slotRestart()));
         connect(quizRepeatErrors, SIGNAL(activated()), m_multipleView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
-        
-        stateChanged("switchEditQuiz", StateReverse ); 
-        editMarkBlank->setEnabled(false);
-        editUnmarkBlank->setEnabled(false);               
-        stateChanged("showingMultiple");
-        toolBar("quizToolBar")->show();        
         
         setCentralWidget(m_multipleView);
 
@@ -1026,12 +1009,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRestart, SIGNAL(activated()), m_qaView, SLOT(slotRestart()));
         connect(quizRepeatErrors, SIGNAL(activated()), m_qaView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
-        
-        stateChanged("switchEditQuiz", StateReverse );
-        editMarkBlank->setEnabled(false);
-        editUnmarkBlank->setEnabled(false);        
-        stateChanged("showingQA");
-        toolBar("quizToolBar")->show();
                 
         setCentralWidget(m_qaView);
 
@@ -1045,7 +1022,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_quiz = 0;
       }
       break;
-
+    
   }
 }
 
@@ -1230,9 +1207,42 @@ void KWordQuizApp::slotContextMenuRequested(int row, int col, const QPoint & pos
   popup->exec(pos);
 }
 
-
-
-
-
+void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
+{
+  bool fEdit = (qt == WQQuiz::qtEditor);
+      
+  fileSave->setEnabled(fEdit);
+  fileSaveAs->setEnabled(fEdit);
+  filePrint->setEnabled(fEdit);
+  //editFind->setEnabled(fEdit);
+  editClear->setEnabled(fEdit);
+  editInsert->setEnabled(fEdit);
+  editDelete->setEnabled(fEdit);
+  editMarkBlank->setEnabled(fEdit && Config().m_enableBlanks);
+  editUnmarkBlank->setEnabled(fEdit && Config().m_enableBlanks);
+  vocabLanguages->setEnabled(fEdit);
+  vocabFont->setEnabled(fEdit || (qt == WQQuiz::qtFlash));
+  //vocabKeyboard->setEnabled(fEdit);
+  vocabRC->setEnabled(fEdit);
+  vocabSort->setEnabled(fEdit);
+  vocabShuffle->setEnabled(fEdit);
+  
+  quizEditor->setEnabled(qt != WQQuiz::qtEditor);
+  quizFlash->setEnabled(qt != WQQuiz::qtFlash);
+  quizMultiple->setEnabled(qt != WQQuiz::qtMultiple);
+  quizQA->setEnabled(qt != WQQuiz::qtQA);
+  
+  quizCheck->setEnabled(qt != WQQuiz::qtEditor);
+  quizRestart->setEnabled(qt != WQQuiz::qtEditor);
+  quizRepeatErrors->setEnabled(false);
+  
+  flashKnow->setEnabled(qt == WQQuiz::qtFlash);
+  flashDontKnow->setEnabled(qt == WQQuiz::qtFlash);
+  
+  qaHint->setEnabled(qt == WQQuiz::qtQA);
+  
+  toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
+  
+}
 
 #include "kwordquiz.moc"
