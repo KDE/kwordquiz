@@ -56,7 +56,7 @@ KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : QTable(parent,
   setSelectionMode(QTable::Single);
   horizontalHeader()->setLabel(0, i18n("Language 1"));
   horizontalHeader()->setLabel(1, i18n("Language 2"));
-
+  setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
   //connect(QTable this, SIGNAL(valueChanged(int row, int col)), this, SLOT(slotValueChanged(int row, int col)));
 }
@@ -73,260 +73,122 @@ KWordQuizDoc *KWordQuizView::getDocument() const
   return theApp->getDocument();
 }
 
+const int pad = 2;
+const int marg = 72;
+
 void KWordQuizView::print(KPrinter *pPrinter)
 {
   QPainter painter;
   painter.begin(pPrinter);
-
-/*
-var
-  R: TRect;
-  iRC: Integer;
-  iLPos: Integer;
-  iTPos: Integer;
-  iGridWidth: Integer;
-  iCW0, iCW1, iCW2, iCW3: Integer;
-  Header: string;
-  iPageNo: Integer;
-
-  procedure DrawCellText(ACol, ARow: Longint; var ARect: TRect);
-  var
-    s: string;
-    flags: Integer;
-    _align: TMyAlign;
-        //_wordwrap: T_Wordwrap;
-  begin
-    _align := FGrid.AlignCell[ACol, ARow];
-        //_wordwrap:=FGrid.WordWrapCell[ACol,ARow];
-
-    s := FGrid.Cells[ACol, ARow] + #0;
-    InflateRect(ARect, PrintPreview.Screen2PrinterUnit(-2),
-      PrintPreview.Screen2PrinterUnit(-2));
-
-    flags := 0;
-    case _align of
-      alLeft,
-        alDefault: flags := dt_left;
-      alCenter: flags := dt_center;
-      alRight: flags := dt_Right;
-    end;
-        {case _wordwrap of
-          ww_Wordwrap: flags:=flags or dt_wordbreak;
-          ww_Ellipsis: flags:=flags or dt_end_ellipsis;
-          ww_default :  ;
-          end;
-         }
-    flags := flags or DT_WORDBREAK or DT_NOPREFIX or DT_NOCLIP;
-        //Canvas.Font.Assign(FGrid.CellFont[ACol, ARow]);
-        //Canvas.Font.Size := PrintPreview.Screen2PrinterUnit(Canvas.Font.Size);
-    DrawText(PrintPreview.Canvas.Handle, PChar(@s[1]), length(s) - 1, ARect, flags);
-
-  end;
-
-  procedure DoNewPage;
-  var
-    iHeight: Integer;
-    iWidth: Integer;
-    sScore: string;
-  begin
-    with PrintPreview do begin
-      iLPos := PageRect.Left;
-      iTPos := PageRect.Top;
-      iHeight := Self.FGrid.RowHeights[0];
-      Canvas.Pen.Width := 0;
-      Canvas.Brush.Style := bsCLear;
-      Canvas.MoveTo(iLPos, iTPos);
-      Canvas.LineTo(iLPos + iGridWidth, iTPos);
-            //Canvas.Rectangle(R.Left, R.Top, R.Right, R.Bottom);
-      with Canvas.Font do begin
-        Assign(FGrid.FixedRowFont[0]);
-        Height := Screen2PrinterUnit(Height);
-        Style := Style + [fsBold];
-        Canvas.TextOut(iLPos, iTPos - Screen2PrinterUnit(50), Header);
-        if txcKind.ItemIndex = 1 then begin
-          sScore := IDS_NAME + IDS_PRINT_LONG_LINE + IDS_DATE + IDS_PRINT_SHORT_LINE;
-          iWidth := Canvas.TextWidth(sScore);
-          Canvas.TextOut(PageRect.Right - iWidth, iTPos - Screen2PrinterUnit(50), sScore);
-        end;
-
-        Style := Style - [fsBold];
-      end;
-
-      SetRect(R, iLPos,
-        iTPos,
-        iLPos + iCW0,
-        iTPos + Screen2PrinterUnit(iHeight));
-
-            //DrawCellText(0, 0, R);
-
-      iLPos := iLPos + iCW0;
-      SetRect(R, iLPos,
-        iTPos,
-        iLPos + iCW1,
-        iTPos + Screen2PrinterUnit(iHeight));
-
-      DrawCellText(1, 0, R);
-
-      iLPos := iLPos + iCW1;
-      SetRect(R, iLPos,
-        iTPos,
-        iLPos + iCW2,
-        iTPos + Screen2PrinterUnit(iHeight));
-
-      DrawCellText(2, 0, R);
-
-      if txcKind.ItemIndex = 1 then begin
-        iLPos := iLPos + iCW2;
-        SetRect(R, iLPos,
-          iTPos,
-          iLPos + iCW3,
-          iTPos + Screen2PrinterUnit(iHeight));
-
-        InflateRect(R, PrintPreview.Screen2PrinterUnit(-2),
-          PrintPreview.Screen2PrinterUnit(-2));
-
-        DrawText(PrintPreview.Canvas.Handle, PChar(IDS_SCORE), length(IDS_SCORE), R, dt_left or DT_WORDBREAK or DT_NOPREFIX or DT_NOCLIP);
-      end;
-      iLPos := PageRect.Left;
-      iTPos := iTPos + Screen2PrinterUnit(iHeight);
-      iPageNo := iPageNo + 1;
-    end;
-  end;
-
-  procedure DoEndOfPage;
-  var
-    iPagePos: Integer;
-  begin
-    with PrintPreview do begin
-            //Last horizontal line
-      Canvas.MoveTo(PageRect.Left, iTPos);
-      Canvas.LineTo(PageRect.Left + iGridWidth, iTPos);
-            //Four vertical lines
-      Canvas.MoveTo(PageRect.Left, PageRect.Top);
-      Canvas.LineTo(PageRect.Left, iTPos);
-      Canvas.MoveTo(PageRect.Left + iCW0, PageRect.Top);
-      Canvas.LineTo(PageRect.Left + iCW0, iTPos);
-      Canvas.MoveTo(PageRect.Left + iCW0 + iCW1, PageRect.Top);
-      Canvas.LineTo(PageRect.Left + iCW0 + iCW1, iTPos);
-      Canvas.MoveTo(PageRect.Left + iCW0 + iCW1 + iCW2, PageRect.Top);
-      Canvas.LineTo(PageRect.Left + iCW0 + iCW1 + iCW2, iTPos);
-      if txcKind.ItemIndex = 1 then begin
-        Canvas.MoveTo(PageRect.Left + iCW0 + iCW1 + iCW2 + iCW3, PageRect.Top);
-        Canvas.LineTo(PageRect.Left + iCW0 + iCW1 + iCW2 + iCW3, iTPos);
-      end;
-
-      Canvas.MoveTo(PageRect.Left + iGridWidth, PageRect.Top);
-      Canvas.LineTo(PageRect.Left + iGridWidth, iTPos);
-      with Canvas.Font do begin
-        Assign(FGrid.FixedRowFont[0]);
-        Height := Screen2PrinterUnit(Height);
-        Style := Style + [fsBold];
-        iPagePos := PageRect.Left + ((PageRect.Right - PageRect.Left) div 2) - (Canvas.TextWidth(IntToStr(iPageNo)) div 2);
-        Canvas.TextOut(iPagePos, PageRect.Bottom + Screen2PrinterUnit(40), IntToStr(iPageNo));
-        Style := Style - [fsBold];
-      end;
-    end;
-  end;
-
-begin
-
-  if FGrid = nil then Exit;
-
-  if not Self.Visible then
-    txcKind.ItemIndex := 0;
-  sbrPreview.Panels[0].Text := IDS_PRINT_CREATING;
-  Header := IDS_APP_NAME + IDS_DASH_STRING + PageName;
-
-  Caption := Header;
-  iPageNo := 0;
-
-  with PrintPreview do begin
-
+  QRect w = painter.window(); 
+  int pageNum = 1;
+  
+  int cw0 = verticalHeader()->width();
+  int cw1 = columnWidth(0);
+  int cw2 = columnWidth(1);
+  int cw3 = 0;
     
-    Orientation := Printer.Orientation;
-    BeginDoc;
+  int type = 0;
 
-        { ---------- Creates first page ---------- }
-        { To draw the image first we should calculate the image rectangle. For this
-          purpose we must convert image dimensions from screen's pixels/resolution
-          to printer's unit/resolution. Here we also shrink the image dimension
-          two times. }
-          */
+  if (type == 1)
+    cw3 = 50;
+    
+  int gridWidth = cw0 + cw1 + cw2 + cw3;
+  int lPos = marg;
+  int tPos = marg + horizontalHeader()->height();
+
+  doNewPage(painter, type);
+    
+  for (int rc = 0; rc < numRows(); ++rc)
+  {
+    painter.drawLine(lPos, tPos, lPos + gridWidth, tPos);
+    painter.setFont(KGlobalSettings::generalFont());
+
+    painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), AlignRight | AlignVCenter, QString::number(rc + 1));
+    
+    painter.setFont(font());
+    painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 0));
+    
+    if (type == 0)
+      painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 1));
+    
+    tPos = tPos + rowHeight(rc);
+
+    if (tPos + rowHeight(rc + 1) > w.height() - marg)
+    {
+      doEndOfPage(painter, tPos, pageNum++, type);
+      tPos = marg + horizontalHeader()->height();
+      pPrinter->newPage();
+      doNewPage(painter, type);     
+    }
+  }
+  
+  doEndOfPage(painter, tPos, pageNum++,  type);
+  painter.end();
+}
+
+void KWordQuizView::doNewPage( QPainter & painter, int type )
+{
     int cw0 = verticalHeader()->width();
     int cw1 = columnWidth(0);
     int cw2 = columnWidth(1);
-    bool pQuiz = false;
     int cw3 = 0;
-    if (pQuiz)
+    
+    if (type == 1)
       cw3 = 50;
-      
-    int gridWidth = cw0 + cw1 + cw2 + cw3;
-    int lPos = 72;
-    int tPos = 72;
-
-/*
-    DoNewPage;
-*/
     
-    for (int rc = 0; rc < numRows(); ++rc)
+    QRect w = painter.window();
+    painter.drawLine(marg, marg, marg + cw0 + cw1 + cw2 + cw3, marg);
+
+    painter.setFont(KGlobalSettings::generalFont());
+    painter.drawText(marg, marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
+
+    if (type == 1)
     {
-      QRect r = QRect(lPos, tPos, lPos + cw0, tPos + rowHeight(rc));
-      painter.drawLine(lPos, tPos, lPos + gridWidth, tPos);
-    
-    /*
-
-      Canvas.Pen.Width := 0;
-      Canvas.Brush.Style := bsCLear;
-      
-      Canvas.Font.Assign(FGrid.FixedColFont[0]);
-      Canvas.Font.Height := Screen2PrinterUnit(Canvas.Font.Height);
-      DrawCellText(0, iRC, R);
-
-      iLPos := iLPos + iCW0;
-      SetRect(R, iLPos,
-        iTPos,
-        iLPos + iCW1,
-        iTPos + Screen2PrinterUnit(FGrid.RowHeights[iRC]));
-
-            //Canvas.Rectangle(R.Left, R.Top, R.Right, R.Bottom);
-      Canvas.Font.Assign(FGrid.ColFont[1]);
-      Canvas.Font.Height := Screen2PrinterUnit(Canvas.Font.Height);
-      DrawCellText(1, iRC, R);
-
-      iLPos := iLPos + iCW1;
-      SetRect(R, iLPos,
-        iTPos,
-        iLPos + iCW2,
-        iTPos + Screen2PrinterUnit(FGrid.RowHeights[iRC]));
-
-            //Canvas.Rectangle(R.Left, R.Top, R.Right, R.Bottom);
-      Canvas.Font.Assign(FGrid.ColFont[2]);
-      Canvas.Font.Height := Screen2PrinterUnit(Canvas.Font.Height);
-      if txcKind.ItemIndex < 1 then
-        DrawCellText(2, iRC, R);
-
-      iLPos := PageRect.Left;
-      iTPos := iTPos + Screen2PrinterUnit(FGrid.RowHeights[iRC]);
-      if (iTPos + Screen2PrinterUnit(FGrid.RowHeights[iRC + 1])) > PageRect.Bottom then begin
-        DoEndOfPage;
-        NewPage;
-        DoNewPage
-
-      end;
-    end;*/
+      QString score = i18n("Name:_____________________________ Date:__________");
+      QRect r = painter.boundingRect(0, 0, 0, 0, AlignAuto, score);
+      painter.drawText(w.width() - r.width() - marg, marg - 20, score);
     }
-    /*DoEndOfPage;
-    */
-    painter.end();
- 
-/*    { If there's any installed printer on the system, we permit printing. }
-  actPrint.Enabled := PrintPreview.PrinterInstalled;
-  ActiveControl := PrintPreview;
-  sbrPreview.Panels[0].Text := IDS_SB_DEFAULT;
+    
+    painter.drawText(marg, marg, cw0, horizontalHeader()->height(), AlignRight | AlignVCenter, "");
 
-*/
+    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), AlignAuto | AlignVCenter, horizontalHeader()->label(0));
+    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), AlignAuto | AlignVCenter, horizontalHeader()->label(1));
+    
+    if (type == 1)
+      painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), AlignAuto | AlignVCenter, i18n("Score"));
 
 }
+
+void KWordQuizView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int type )
+{
+    int cw0 = verticalHeader()->width();
+    int cw1 = columnWidth(0);
+    int cw2 = columnWidth(1);
+    int cw3 = 0;
+    
+    if (type == 1)
+      cw3 = 50;
+    
+    //Last horizontal line
+    painter.drawLine(marg, vPos, marg + cw0 + cw1 + cw2 + cw3, vPos);
+   //Four vertical lines
+    painter.drawLine(marg, marg, marg, vPos);
+    painter.drawLine(marg + cw0, marg, marg + cw0, vPos);
+    painter.drawLine(marg + cw0 + cw1, marg, marg + cw0 + cw1, vPos);
+    painter.drawLine(marg + cw0 + cw1 + cw2, marg, marg + cw0 + cw1 + cw2, vPos);            
+    
+    if (type == 1)
+      painter.drawLine(marg + cw0 + cw1 + cw2 + cw3, marg, marg + cw0 + cw1 + cw2 + cw3, vPos);  
+
+    painter.setFont(KGlobalSettings::generalFont());
+    QRect w = painter.window();
+    QRect r = painter.boundingRect(0, 0, 0, 0, AlignAuto, QString::number(pageNum));
+    painter.drawText((w.width()/2) - (r.width()/2), w.height() - marg + 20, QString::number(pageNum));
+
+}
+
+
 
 /*!
     \fn KWordQuizView::gridIsEmpty()
@@ -1083,6 +945,8 @@ void KWordQuizView::setFont( const QFont & font)
   for (uint i = 0; i < numRows(); ++i)
     adjustRow(i); //setRowHeight(i, fontMetrics().lineSpacing() );
 }
+
+
 
 
 

@@ -116,6 +116,8 @@ class KWordQuizView : public QTable
     /** the list of the undo objects */
     static QValueList<WQUndo> *m_undoList;
     void wqCurrentSelection(bool clear);
+    void doNewPage(QPainter & painter, int type);
+    void doEndOfPage(QPainter & painter, int vPos, int pageNum, int type);
 };
 
 #endif // KWORDQUIZVIEW_H
