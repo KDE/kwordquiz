@@ -31,6 +31,7 @@
 #include <kaccel.h>
 #include <kaction.h>
 #include <kurl.h>
+#include <kdirwatch.h>
 
 // forward declaration of the KWordQuiz classes
 #include "wqquiz.h"
@@ -299,6 +300,8 @@ class KWordQuizApp : public KMainWindow
     KAction* configKeys;
     KAction* configNotifications;
     KAction* configApp;
+    
+    KDirWatch * m_dirWatch;
 
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);

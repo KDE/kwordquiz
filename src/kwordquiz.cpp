@@ -44,6 +44,7 @@
 //#include <keduvocdata.h>
 #include <kglobalsettings.h>
 #include <kprinter.h>
+#include <kdirwatch.h>
 
 // application specific includes
 #include "kwordquiz.h"
@@ -80,6 +81,7 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   
   initView();
 
+  m_dirWatch = KDirWatch::self();
   m_quizType = WQQuiz::qtEditor;
   m_quiz = 0;
   m_flashView = 0;
@@ -356,7 +358,11 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
 bool KWordQuizApp::queryClose()
 {
-  return doc->saveModified();
+  bool f = doc->saveModified();
+  if (f)
+    if (m_dirWatch->contains(doc->URL().path()))
+      m_dirWatch->removeFile(doc->URL().path());
+  return f;
 }
 
 bool KWordQuizApp::queryExit()
@@ -410,21 +416,45 @@ void KWordQuizApp::slotFileOpen()
       i18n("Open Vocabulary Document..."));
 
   if(!url.isEmpty()) {
-  	if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
-      // neither saved nor has content, as good as new
-      doc->openDocument(url);
-      setCaption(url.fileName(), false);
-      fileOpenRecent->addURL( url );
-      updateMode(Config().m_mode);
+    if (m_dirWatch->contains(url.path()))
+    {
+      KMainWindow* w;
+      if(memberList)
+      {
+        for(w=memberList->first(); w!=0; w=memberList->next())
+        {
+          KWordQuizApp *a =(KWordQuizApp *) w;
+          if(a->doc ->URL().path() == url.path())
+          {
+            if (w->isMinimized())
+              w->showNormal();
+            w->setActiveWindow();
+            w->raise();
+            break;
+          }
+        }
+      }    
     }
     else
     {
-      KWordQuizApp *new_window= new KWordQuizApp();
-      new_window->show();
-      new_window->doc->openDocument(url);
-      new_window->setCaption(url.fileName(), false);
-      new_window->fileOpenRecent->addURL( url );
-      new_window->updateMode(Config().m_mode);
+      if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+        // neither saved nor has content, as good as new
+        doc->openDocument(url);
+        m_dirWatch->addFile(url.path());
+        setCaption(url.fileName(), false);
+        fileOpenRecent->addURL( url );
+        updateMode(Config().m_mode);
+      }
+      else
+      {
+        KWordQuizApp *new_window= new KWordQuizApp();
+        new_window->show();
+        new_window->doc->openDocument(url);
+        m_dirWatch->addFile(url.path());
+        new_window->setCaption(url.fileName(), false);
+        new_window->fileOpenRecent->addURL( url );
+        new_window->updateMode(Config().m_mode);
+      }
     }
   }
 
@@ -434,20 +464,43 @@ void KWordQuizApp::slotFileOpen()
 void KWordQuizApp::slotFileOpenRecent(const KURL& url)
 {
   slotStatusMsg(i18n("Opening file..."));
-
-  if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
-    // neither saved nor has content, as good as new
-    doc->openDocument(url);
-    setCaption(url.fileName(), false);
-    updateMode(Config().m_mode);
+  if (m_dirWatch->contains(url.path()))
+  {
+    KMainWindow* w;
+    if(memberList)
+    {
+      for(w=memberList->first(); w!=0; w=memberList->next())
+      {
+        KWordQuizApp *a =(KWordQuizApp *) w;
+        if(a->doc ->URL().path() == url.path())
+        {
+          if (w->isMinimized())
+            w->showNormal();
+          w->setActiveWindow();
+          w->raise();
+          break;
+        }
+      }
+    }    
   }
   else
   {
-    KWordQuizApp *new_window= new KWordQuizApp();
-    new_window->show();
-    new_window->doc->openDocument(url);
-    new_window->setCaption(url.fileName(), false);
-    new_window->updateMode(Config().m_mode);
+    if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+      // neither saved nor has content, as good as new
+      doc->openDocument(url);
+      m_dirWatch->addFile(url.path());
+      setCaption(url.fileName(), false);
+      updateMode(Config().m_mode);
+    }
+    else
+    {
+      KWordQuizApp *new_window= new KWordQuizApp();
+      new_window->show();
+      new_window->doc->openDocument(url);
+      m_dirWatch->addFile(url.path());
+      new_window->setCaption(url.fileName(), false);
+      new_window->updateMode(Config().m_mode);
+    }
   }
   slotStatusMsg(i18n("Ready."));
 }
