@@ -322,8 +322,75 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     }    
   }      
   
-  doc_url = url;
-  setModified(false);
+  if (url.path().right(5) == ".html")
+  {
+    QString cw1 = "width: " + QString::number(g->columnWidth(0)) + "; ";
+    QString cw2 = "width: " + QString::number(g->columnWidth(1)) + "; ";
+    
+    QString fn = "font-family: '" + g->font().family() + "'; ";
+    QString fs = "font-size: " + QString::number(g->font().pointSize()) + "pt; ";
+    QString fb;
+    QString fi;
+    
+    if (g->font().bold())
+      fb = "font-weight: bold; ";
+    else
+      fb = "font-weight: normal; ";
+    
+    if (g->font().italic())
+      fi = "font-style: italic; ";
+    else
+      fi = "font-style: normal; ";      
+    
+    QString hstyle0 = "style=\"text-align: right; width: " + QString::number(g->verticalHeader()->sectionSize(0)) + "; font-family:'Arial'; font-size: 12pt; background-color: darkgray\"";
+    QString hstyle1 = "style=\"" + cw1 + "font-family:'Arial'; font-size: 12pt; background-color: darkgray\"";
+    QString hstyle2 = "style=\"" + cw2 + "font-family:'Arial'; font-size: 12pt; background-color: darkgray\"";
+    
+    QString style1 = "style=\"" + cw1 + fn + fs + fb + fi + "background-color: white\"";
+    QString style2 = "style=\"" + cw2 + fn + fs + fb + fi + "background-color: white\"";      
+   
+    QTextStream ts(&file);
+    ts.setEncoding(QTextStream::UnicodeUTF8);
+    
+    ts << "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n"; 
+    ts << "<html>\n";
+    ts << "<head>\n";
+    ts << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
+    
+    ts << "<title>" + url.fileName() + "</title>\n";
+    ts << "</head>\n";
+    ts << "<body>\n";
+    
+    ts << "<table cols=\"3\" border=\"0\" cellspacing=\"1\" cellpadding=\"2\" bgcolor=\"silver\">\n";    
+
+    ts << "<tr height=" + QString::number(g->horizontalHeader()->height()) + ">\n";
+    ts << "<td " + hstyle0 + "></td\n>"; 
+    ts << "<td " + hstyle1 + "><p>" + g->horizontalHeader()->label(0)  + "</p></td>\n";        
+    ts << "<td " + hstyle2 + "><p>" + g->horizontalHeader()->label(1)  + "</p></td>\n";   
+    ts << "</tr>\n";        
+    
+    int i = 0;
+    int r = g->numRows();
+    while (i < r)
+    {
+      ts << "<tr height=" + QString::number(g->rowHeight(i)) + ">\n";
+      ts << "<td " + hstyle0 + "><p>" + QString::number(i + 1) + "</p></td>\n"; 
+      ts << "<td " + style1 + "><p>" + g->text(i, 0) + "</p></td>\n";        
+      ts << "<td " + style2 + "><p>" + g->text(i, 1) + "</p></td>\n";   
+      ts << "</tr>\n";
+      i++;         
+    }
+
+    ts << "</table>\n";
+    ts << "</body>\n";
+    ts << "</html>\n";   
+  }  
+
+  if (url.path().right(5) != ".html")    
+  {
+    doc_url = url;
+    setModified(false);
+  }
   return true;
 }
 

@@ -575,7 +575,7 @@ bool KWordQuizApp::saveAsFileName( )
   KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save vocabulary document as..."));
-  fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma Separated Values"));
+  fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma Separated Values\n*.html|Hypertext Markup Language"));
 
   if (fd->exec() == QDialog::Accepted)
   {
@@ -589,6 +589,8 @@ bool KWordQuizApp::saveAsFileName( )
           url = KURL(url.path() + ".wql");
         else if (fd->currentFilter() == "*.csv")
           url = KURL(url.path() + ".csv");
+        else if (fd->currentFilter() == "*.html")
+          url = KURL(url.path() + ".html");          
         else
           url = KURL(url.path() + ".kvtml");
       }
@@ -607,7 +609,7 @@ bool KWordQuizApp::saveAsFileName( )
         doc->saveDocument(url);
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addURL(url);
-        setCaption(url.fileName(),doc->isModified());
+        setCaption(doc->URL().fileName(), doc->isModified());
         success = true;
       }
     }
