@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.2" name="kwordquiz" >
+<kpartgui version="0.3" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
    
@@ -129,6 +129,7 @@
       <Action name="quiz_multiple" />
       <Action name="quiz_qa" />
       <Action name="quiz_check" />
+      <Action name="vocab_font" />      
       <Action name="flash_know" />
       <Action name="flash_dont_know" />
       <Action name="quiz_restart" />

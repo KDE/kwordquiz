@@ -53,6 +53,7 @@ void FlashView::init()
   picCorrect->clear();
   picError->clear();
 
+  lblQuestion->setFont(Config().m_flashFont);
   updateScore();
 
   KWordQuizApp *win=(KWordQuizApp *) parent();
@@ -68,7 +69,7 @@ void FlashView::init()
 void FlashView::showFront(int i)
 {
   lblLanguageQuestion ->setText(m_quiz ->langQuestion(i));
-  lblQuestion->setFont(m_quiz->fontQuestion(i));  
+  //lblQuestion->setFont(m_quiz->fontQuestion(i));  
   lblQuestion -> setText(m_quiz -> question(i));
 
 }
@@ -76,7 +77,7 @@ void FlashView::showFront(int i)
 void FlashView::showBack(int i)
 {
   lblLanguageQuestion ->setText(m_quiz->langAnswer(i));
-  lblQuestion->setFont(m_quiz->fontAnswer(m_question));
+  //lblQuestion->setFont(m_quiz->fontAnswer(m_question));
   lblQuestion -> setText(m_quiz->answer(i));
 }
 
@@ -202,7 +203,7 @@ void FlashView::slotTimer( )
 
 void FlashView::slotApplySettings( )
 {
-
+  lblQuestion->setFont(Config().m_flashFont);
   if (Config().m_autoFlip)
     m_timer->start(Config().m_flipDelay * 1000, true);
   else

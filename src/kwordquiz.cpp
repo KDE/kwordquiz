@@ -598,14 +598,24 @@ void KWordQuizApp::slotVocabFont()
   slotStatusMsg(i18n("Setting the font of the vocabulary..."));
   KFontDialog* dlg;
   dlg = new KFontDialog(this, "dlg_font", false, true);
-  dlg->setFont(m_editView -> font());
-  if ( dlg->exec() == KFontDialog::Accepted )
+  if (m_flashView != 0)
   {
-    m_editView ->setFont(dlg->font());
-    Config().m_editorFont = dlg->font();
-    //m_editView ->horizontalHeader()->setFont(KGlobalSettings::generalFont());
-    //m_editView ->verticalHeader()->setFont(KGlobalSettings::generalFont());
-    doc->setModified(true);
+    dlg->setFont(Config().m_flashFont);  
+    if ( dlg->exec() == KFontDialog::Accepted )
+    {
+      Config().m_flashFont = dlg->font();
+      emit settingsChanged();
+    } 
+  }
+  else
+  {
+    dlg->setFont(m_editView -> font());
+    if ( dlg->exec() == KFontDialog::Accepted )
+    {
+      m_editView ->setFont(dlg->font());
+      Config().m_editorFont = dlg->font();
+      doc->setModified(true);
+    }
   }
   slotStatusMsg(i18n("Ready."));
 }
