@@ -486,13 +486,12 @@ void KWordQuizApp::slotFileOpen()
 
   QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0, 0);
   cb -> setChecked(false);
-  //cb -> setEnabled(false);
 
-  KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true, cb);
+  QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
+  KFileDialog *fd = new KFileDialog(QString::null, filter, this, 0, true, cb);
   fd -> setOperationMode(KFileDialog::Opening);
   fd -> setMode(KFile::Files | KFile::ExistingOnly);
   fd -> setCaption(i18n("Open Vocabulary Document"));
-  fd -> setFilter(i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values"));
 
   if (fd->exec() == QDialog::Accepted)
   {
@@ -569,10 +568,10 @@ bool KWordQuizApp::saveAsFileName( )
 
   bool success = false;
 
-  KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true);
+  QString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language");
+  KFileDialog *fd = new KFileDialog(QString::null, filter, this, 0, true);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save Vocabulary Document As"));
-  fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language"));
 
   if (fd->exec() == QDialog::Accepted)
   {
