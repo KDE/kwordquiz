@@ -511,7 +511,7 @@ void KWordQuizView::doEditClear( )
   else
   {
     addUndo(i18n("&Undo Clear"));
-    wqCurrentSelection();
+    wqCurrentSelection(false);
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
         clearCell(r, c);
