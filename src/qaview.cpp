@@ -250,4 +250,29 @@ void QAView::slotApplySettings( )
   updateScore();
 }
 
+void QAView::slotSpecChar( const QChar & c)
+{
+  if (txtAnswer->hasFocus())
+  {
+    if (txtAnswer->hasSelectedText())
+    {
+      QString ls = txtAnswer->text();
+      QString s = txtAnswer->selectedText();
+      int len = s.length();
+      int ss = txtAnswer->selectionStart();
+      ls = ls.replace(ss, len, c);
+      txtAnswer->setText(ls);
+      txtAnswer->setSelection(ss, 1);
+    }
+    else
+    {
+      QString s = txtAnswer->text();
+      int i = txtAnswer->cursorPosition();
+      s.insert(i, c);
+      txtAnswer->setText(s);
+      txtAnswer->setCursorPosition(i + 1);
+    }
+  }
+}
+
 #include "qaview.moc"

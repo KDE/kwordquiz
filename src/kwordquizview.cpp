@@ -818,33 +818,29 @@ void KWordQuizView::slotDlgSpecCharClosed( )
   }
 }
 
-void KWordQuizView::slotSpecChar( QChar c)
+void KWordQuizView::slotSpecChar(const QChar & c)
 {
-
   if (isEditing())
   {
     QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
     if (l->hasSelectedText())
     {
-
+      QString ls = l->text();
+      QString s = l->selectedText();
+      int len = s.length();
+      int ss = l->selectionStart();
+      ls = ls.replace(ss, len, c);
+      l->setText(ls);
+      l->setSelection(ss, 1);
     }
     else
     {
       QString s = l->text();
       int i = l->cursorPosition();
-      s.insert(i + 1, c);
+      s.insert(i, c);
       l->setText(s);
       l->setCursorPosition(i + 1);
     }
-//
-//     if Length(InPlaceEditor.SelText) > 0 then
-//       InPlaceEditor.SelText := cTemp
-//     else begin
-// 
-
-// 
-//     end;
-
   }
   else
   {
@@ -853,7 +849,6 @@ void KWordQuizView::slotSpecChar( QChar c)
     ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->setCursorPosition(1);
   }
 }
-
 
 void KWordQuizView::activateNextCell( )
 {
@@ -1202,4 +1197,3 @@ void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr,
   
   QTable::paintCell (p, row, col, cr, selected, g );
 }
-

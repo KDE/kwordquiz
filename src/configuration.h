@@ -38,6 +38,7 @@ class Configuration {
     bool m_percent;       ///< Show score as percent.
     int m_mode;
     QFont m_flashFont;
+    QString m_specialCharacters;
     
     static const bool m_defaultFirstRun;
     static const int m_defaultEnterMove;
@@ -51,6 +52,7 @@ class Configuration {
     static const bool m_defaultPercent;
     static const int m_defaultMode;
     QFont m_defaultFlashFont;
+    static const QString m_defaultSpecialCharacters;
     
   private:
     Configuration();

@@ -214,9 +214,30 @@ void KWordQuizApp::initActions()
   configApp = KStdAction::preferences(this, SLOT( slotConfigure()), actionCollection());
   configApp->setWhatsThis(i18n("Specify preferences for the vocabulary editor and quiz sessions"));
 
+  charMapper = new QSignalMapper(this);
+  connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
 
-  //Question: isn't this supposed to show up in the statusbar?
-  /*TODO*/
+  specialChar1 = new KAction(i18n("Special Character 1"), 0, "CTRL+1", charMapper, SLOT(map()), actionCollection(), "char_1") ;    
+  specialChar2 = new KAction(i18n("Special Character 2"), 0, "CTRL+2", charMapper, SLOT(map()), actionCollection(), "char_2") ; 
+  specialChar3 = new KAction(i18n("Special Character 3"), 0, "CTRL+3", charMapper, SLOT(map()), actionCollection(), "char_3") ; 
+  specialChar4 = new KAction(i18n("Special Character 4"), 0, "CTRL+4", charMapper, SLOT(map()), actionCollection(), "char_4") ; 
+  specialChar5 = new KAction(i18n("Special Character 5"), 0, "CTRL+5", charMapper, SLOT(map()), actionCollection(), "char_5") ; 
+  specialChar6 = new KAction(i18n("Special Character 6"), 0, "CTRL+6", charMapper, SLOT(map()), actionCollection(), "char_6") ; 
+  specialChar7 = new KAction(i18n("Special Character 7"), 0, "CTRL+7", charMapper, SLOT(map()), actionCollection(), "char_7") ; 
+  specialChar8 = new KAction(i18n("Special Character 8"), 0, "CTRL+8", charMapper, SLOT(map()), actionCollection(), "char_8") ; 
+  specialChar9 = new KAction(i18n("Special Character 9"), 0, "CTRL+9", charMapper, SLOT(map()), actionCollection(), "char_9") ;     
+
+  charMapper->setMapping(specialChar1, 1);
+  charMapper->setMapping(specialChar2, 2);
+  charMapper->setMapping(specialChar3, 3);
+  charMapper->setMapping(specialChar4, 4);
+  charMapper->setMapping(specialChar5, 5);
+  charMapper->setMapping(specialChar6, 6);
+  charMapper->setMapping(specialChar7, 7);
+  charMapper->setMapping(specialChar8, 8);
+  charMapper->setMapping(specialChar9, 9);
+    
+  //@todo isn't this supposed to show up in the statusbar?
   fileNew->setStatusText(i18n("Creates a new document"));
   fileOpen->setStatusText(i18n("Opens an existing document"));
   fileOpenRecent->setStatusText(i18n("Opens a recently used file"));
@@ -1106,9 +1127,10 @@ void KWordQuizApp::updateMode(int m)
     updateSession(m_quizType);
 }
 
-
-
-
-
-
-
+void KWordQuizApp::slotInsertChar( int i )
+{
+  if (m_qaView != 0)
+    m_qaView->slotSpecChar(Config().m_specialCharacters[i - 1]);
+  else
+    m_editView->slotSpecChar(Config().m_specialCharacters[i - 1]);
+}

@@ -24,6 +24,7 @@
 #endif
 
 // include files for Qt
+#include <qsignalmapper.h>
 
 // include files for KDE 
 #include <kapp.h>
@@ -220,7 +221,8 @@ class KWordQuizApp : public KMainWindow
     void slotApplyPreferences();
 
     void slotUndoChange(const QString & text, bool enabled);
-
+    
+    void slotInsertChar(int i);
   private:
 
     WQQuiz::QuizType m_quizType;
@@ -299,6 +301,17 @@ class KWordQuizApp : public KMainWindow
     KAction* configNotifications;
     KAction* configApp;
     
+    QSignalMapper* charMapper;
+    KAction* specialChar1;    
+    KAction* specialChar2; 
+    KAction* specialChar3; 
+    KAction* specialChar4; 
+    KAction* specialChar5; 
+    KAction* specialChar6; 
+    KAction* specialChar7; 
+    KAction* specialChar8; 
+    KAction* specialChar9; 
+     
     KDirWatch * m_dirWatch;
 
     void updateMode(int m);

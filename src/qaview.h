@@ -41,7 +41,8 @@ public slots:
     void slotRepeat();
     void slotRestart();
     void slotApplySettings();
-
+    void slotSpecChar(const QChar &);
+    
 private:
     WQQuiz *m_quiz;
     WQScore *m_score;

@@ -100,10 +100,10 @@ class KWordQuizView : public QTable
     void activateNextCell();
   public slots:
     void adjustRow(int row);
-
+    void slotSpecChar(const QChar &);
+    
   private slots:
     void slotDlgSpecCharClosed();
-    void slotSpecChar(QChar);
 
   signals:
     void undoChange(const QString & text, bool enabled);    

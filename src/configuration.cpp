@@ -24,6 +24,7 @@ const bool Configuration::m_defaultAutoCheck = true;
 const bool Configuration::m_defaultHintError = false;
 const bool Configuration::m_defaultPercent = false;
 const int Configuration::m_defaultMode = 1;
+const QString Configuration::m_defaultSpecialCharacters = "abcdefghi";
 
 Configuration::Configuration() {
   m_defaultEditorFont = KGlobalSettings::generalFont();
@@ -39,6 +40,7 @@ void Configuration::read() {
     m_enterMove = conf->readNumEntry("EnterMove", m_defaultEnterMove);
     m_enableBlanks = conf->readBoolEntry("EnableBlanks", m_defaultEnableBlanks);
     m_editorFont = conf->readFontEntry("EditorFont", &m_defaultEditorFont);
+    m_specialCharacters = conf->readEntry("SpecialCharacters", m_defaultSpecialCharacters);
     
     conf->setGroup("Quiz");
     m_autoFlip = conf->readBoolEntry("AutoFlip", m_defaultAutoFlip);
@@ -60,6 +62,7 @@ void Configuration::write() const {
     conf->writeEntry("EnterMove", m_enterMove);
     conf->writeEntry("EnableBlanks", m_enableBlanks);
     conf->writeEntry("EditorFont", m_editorFont);
+    conf->writeEntry("SpecialCharacters", m_specialCharacters);
     
     conf->setGroup("Quiz");
     conf->writeEntry("AutoFlip", m_autoFlip);
