@@ -23,7 +23,7 @@
 #include "version.h"
 
 static const char *description =
-	I18N_NOOP("KWordQuiz");
+	I18N_NOOP("KWordQuiz is a powerful flashcard and vocabulary learning program.");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 	
 	
