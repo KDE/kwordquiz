@@ -608,6 +608,7 @@ void KWordQuizView::doEditMarkBlank( )
 {
   if (isEditing())
   {
+    addUndo(i18n("&Undo Mark Blank"));
     QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
     if (l->text().length() > 0)
     {
@@ -615,12 +616,21 @@ void KWordQuizView::doEditMarkBlank( )
       int cp = l->cursorPosition();      
       if (!l->hasSelectedText())
       {      
-        if (s[cp] != ' ')
+        if (!s[cp].isSpace() && !s[cp - 1].isSpace())
         {
+          l->cursorWordBackward(false);
+          int cp1 = l->cursorPosition();
           l->cursorWordForward(false);
-          //l->setCursorPosition(cp);
-          l->cursorWordBackward(true);
- 
+          if (l->cursorPosition() != s.length())
+          {  while(l->text()[l->cursorPosition()].isSpace())
+              l->cursorBackward(false, 1);
+          }
+          int cp2 = l->cursorPosition();
+          if (cp2 == s.length())
+            l->setSelection(cp1, cp2 - cp1);
+          else
+            l->setSelection(cp1, cp2 - cp1 - 1);
+         
         }
         else
           return;     
