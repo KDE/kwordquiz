@@ -554,6 +554,258 @@ void KWordQuizView::doEditDelete( )
   getDocument()->setModified(true);
 }
 
+const char delim_start = '[';
+const char delim_end = ']';
+
+
+bool KWordQuizView::checkForBlank( QString s, bool blank )
+{
+/*
+function pCheckForBlank(sText: string; ABlank: Boolean): Boolean;
+var
+    iCounter      : integer;
+    iClosePos     : array of integer;
+    iCloseCount   : integer;
+    iOpenPos      : array of integer;
+    iOpenCount    : integer;
+begin
+  if not ABlank then begin
+    Result := true;
+    exit;
+  end;
+    Result:= False; //Assume failure
+    iOpenCount := 1;
+    iCloseCount := 1;
+    SetLength(iOpenPos, 0);
+    SetLength(iClosePos, 0);
+
+    For iCounter := 0 To Length(sText) do
+        if sText[iCounter] = cStartChar then begin
+            SetLength( iOpenPos, iOpenCount);
+            iOpenPos[iOpenCount-1] := iCounter;
+            iOpenCount := iOpenCount + 1
+
+        end else if sText[iCounter] = cEndChar then begin
+            SetLength(iClosePos, iCloseCount);
+            iClosePos[iCloseCount-1] := iCounter;
+            iCloseCount := iCloseCount + 1;
+        end;
+
+    If (iOpenCount > 0) And (iCloseCount > 0) Then
+
+        if Length(iOpenPos) = Length(iClosePos) Then
+            For iCounter := 0 To Length(iOpenPos) -1 do
+
+                If iOpenPos[iCounter] < iClosePos[iCounter] Then
+                    Result := True
+                Else
+                    Exit;
+end;
+*/
+}
+
+void KWordQuizView::doEditMarkBlank( )
+{
+/*
+procedure MarkBlank(oText: TInplaceEdit);
+var
+    iCounter: integer;
+    sPart1: string;
+    sPart2: string;
+    sPart3: string;
+    iEnd: integer;
+    iStart: integer;
+    //cArray: array of Char;
+    sSelText: string;
+    sTemp: string;
+    iSelStart: integer;
+begin
+*/
+  if (isEditing())
+  {
+    QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
+    if (l->text().length() > 0)
+    {
+      QString s = l->text();
+      int cp = l->cursorPosition();
+      
+      if (l->hasSelectedText())
+      {
+        QString st = l->selectedText();
+        int len = st.length();
+        st = st.prepend(delim_start);
+        st = st.append(delim_end);
+        int ss = l->selectionStart();
+        s = s.replace(ss, len, st);
+        l->setText(s);
+        l->setSelection(ss, st.length());        
+      }
+      else
+      {
+        /*    If iSelStart > 0 Then begin
+                //efter StripOut kan lSelsStart vara större än Len(sTemp)
+                If iSelStart > Length(sTemp) Then
+                    iSelStart := Length(sTemp);
+
+                If iSelStart <> Length(sTemp) Then begin
+
+                    If sTemp[iSelStart] <> #32 Then
+                        If sTemp[iSelStart + 1] <> #32 Then begin
+
+                            //iStartPos := LastDelimiter(cStartChar, Copy(sTemp,0, iSelStart));
+
+                            iCounter := iSelStart;
+                            repeat
+                                iCounter := iCounter + 1;
+                                If iCounter = Length(sTemp) Then
+                                    Break;
+                            Until (sTemp[iCounter] = #32) Or (sTemp[iCounter] = cEndChar);
+                            iEnd := iCounter;
+
+
+                            iCounter := iSelStart;
+                            repeat
+                                iCounter := iCounter - 1;
+                            Until (sTemp[iCounter] = #32) Or (sTemp[iCounter] = cStartChar) Or (iCounter = 0);
+                            iStart := iCounter;
+
+                            sPart1 := Copy(sTemp, 0, iStart);
+                            sPart2 := Copy(sTemp, iStart+1, (iEnd-iStart-1));
+                            sPart3 := Copy(sTemp, iEnd, Length(sTemp)-1);
+
+                            oText.Text := sPart1 + cStartChar +  sPart2 + cEndChar + sPart3;
+                        end;
+                    oText.SelStart := iSelStart
+                end;
+            
+            end;
+            */
+      }
+
+    }
+  }
+}
+
+void KWordQuizView::doEditUnmarkBlank( )
+{
+  addUndo(i18n("&Undo Unmark Blank"));
+  QString s;
+  
+  if (isEditing())
+  {
+    QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
+    
+    if (l->hasSelectedText())
+    {
+      QString ls = l->text();
+      s = l->selectedText();
+      int len = s.length();
+      s.remove(delim_start);
+      s.remove(delim_end);
+      int ss = l->selectionStart();
+      ls = ls.replace(ss, len, s);
+      l->setText(ls);
+      l->setSelection(ss, s.length());
+    }
+    else
+    {
+      if (l->text().length() > 0)
+      {
+        s = l->text();
+        int cs = l->cursorPosition();
+        
+        int fr = s.findRev(delim_start, cs);
+        if (fr > 0)
+        {
+          s = s.replace(fr, 1, "");
+          cs--;
+        }
+        int ff = s.find(delim_end, cs);
+        if (ff > 0)
+          s = s.replace(ff, 1, "");
+        
+        l->setText(s);
+        l->setCursorPosition(cs);
+      }
+    }
+  }
+  else
+  {
+    wqCurrentSelection(false);
+    for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
+      for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
+      {
+        s = text(r, c);
+        s = s.remove(delim_start);
+        s = s.remove(delim_end);
+        setText(r, c, s);    
+      }     
+  }  
+  checkSyntax();
+
+}
+
+void KWordQuizView::checkSyntax( )
+{
+/*
+function SyntaxCheck(Grid: TWQGrid; tGR: TGridRect; ABlanks: Boolean): Boolean;
+var
+    //tGR: TGridRect;
+    l, t, r, b: integer;
+    iLoop: integer;
+    iLoop2: integer;
+    sText: string;
+    iCounter: integer;
+    //fSynCheck: Boolean;
+    iErrCount: integer;
+begin
+
+    //Result:= False;
+    iErrCount:= 0;
+
+    if tGr.Left > tGr.Right then begin
+        l:= tGr.Right;
+        r:= tGr.Left;
+    end else begin
+        l:= tGr.Left;
+        r:= tGr.Right;
+    end;
+
+    if tGr.Top > tGr.Bottom then begin
+        t:= tGr.Bottom;
+        b:= tGr.Top;
+    end else begin
+        t:= tGr.Top;
+        b:= tGr.Bottom;
+    end;
+
+    For iLoop := t To b do
+
+        For iLoop2 := l To r do begin
+
+            sText := Grid.Cells[iLoop2, iLoop];
+            if Length(stext) >  0 then
+                For iCounter := 0 To Length(sText)  do
+                    if (sText[iCounter] = cStartChar) or (sText[iCounter] = cEndChar) then begin
+                        Grid.CellFont[iLoop2, iLoop].Assign(Grid.ColFont[iLoop2]);
+                        if not pCheckForBlank(sText, ABlanks) then begin;
+
+                            Grid.CellFont[iLoop2, iLoop].Color:= clRed;
+                            iErrCount := iErrCount + 1;
+                        end else
+                            Grid.CellFont[iLoop2, iLoop].Color:= Grid.ColFont[iLoop2].Color;
+                        Break;
+                    end;
+        end;
+
+    Result := not (iErrCount > 0);  
+
+
+end;
+*/
+}
+
+
 void KWordQuizView::doVocabSort( )
 {
   wqCurrentSelection();
@@ -1020,6 +1272,9 @@ void KWordQuizView::setFont( const QFont & font)
   for (uint i = 0; i < numRows(); ++i)
     adjustRow(i); //setRowHeight(i, fontMetrics().lineSpacing() );
 }
+
+
+
 
 
 

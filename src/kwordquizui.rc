@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.3" name="kwordquiz" >
+<kpartgui version="0.4" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
    
@@ -9,9 +9,9 @@
    <Separator/>
    <Action name="edit_insert" />
    <Action name="edit_delete" />
-   <!--<Separator/>
+   <Separator/>
    <Action name="edit_mark_blank" />
-   <Action name="edit_unmark_blank" /> -->
+   <Action name="edit_unmark_blank" />
   </Menu>
   <Menu name="session" >
    <text>&amp;Go to</text>
@@ -57,9 +57,9 @@
   <ToolBar name="mainToolBar">
     <Action name="edit_insert"/>
     <Action name="edit_delete"/>
-    <!--<Separator/>
+    <Separator/>
     <Action name="edit_mark_blank"/>
-    <Action name="edit_unmark_blank"/>-->
+    <Action name="edit_unmark_blank"/>
     <Separator />
     <Action name="vocab_languages"/>
     <Action name="vocab_font"/>

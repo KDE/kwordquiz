@@ -87,12 +87,15 @@ class KWordQuizView : public QTable
     void doEditClear();
     void doEditInsert();
     void doEditDelete();
+    void doEditMarkBlank();
+    void doEditUnmarkBlank();
     void doVocabSort();
     void doVocabShuffle();
     void doVocabRC();
     void doVocabSpecChar();
     void fromStream(QTextStream* ts);
     void toStream(QTextStream* ts);
+    void checkSyntax();
   protected:
     QWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );
@@ -118,6 +121,7 @@ class KWordQuizView : public QTable
     void wqCurrentSelection(bool clear);
     void doNewPage(QPainter & painter, int res, int type);
     void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
+    bool checkForBlank(QString s, bool blank);
 };
 
 #endif // KWORDQUIZVIEW_H

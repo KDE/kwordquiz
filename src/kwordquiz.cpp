@@ -564,22 +564,22 @@ void KWordQuizApp::slotEditDelete()
 
 void KWordQuizApp::slotEditMarkBlank()
 {
-  slotStatusMsg(i18n("Undoing previous command..."));
-  KMessageBox::sorry(0, i18n("Not implemented yet"));
+  slotStatusMsg(i18n("Marking selected text as a blank..."));
+  m_editView->doEditMarkBlank();
   slotStatusMsg(i18n("Ready."));
 }
 
 void KWordQuizApp::slotEditUnmarkBlank()
 {
-  slotStatusMsg(i18n("Undoing previous command..."));
-  KMessageBox::sorry(0, i18n("Not implemented yet"));
+  slotStatusMsg(i18n("Removing blank markings..."));
+  m_editView->doEditUnmarkBlank();
   slotStatusMsg(i18n("Ready."));
 }
 
 
 void KWordQuizApp::slotEditFind()
 {
-  slotStatusMsg(i18n("Undoing previous command..."));
+  slotStatusMsg(i18n("Searching for indicated text..."));
   KMessageBox::sorry(0, i18n("Not implemented yet"));
   slotStatusMsg(i18n("Ready."));
 }
