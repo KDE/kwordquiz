@@ -109,15 +109,16 @@ void KWordQuizApp::initActions()
   editCut = KStdAction::cut(this, SLOT(slotEditCut()), actionCollection());
   editCopy = KStdAction::copy(this, SLOT(slotEditCopy()), actionCollection());
   editPaste = KStdAction::paste(this, SLOT(slotEditPaste()), actionCollection());
-  editClear = new KAction(i18n("C&lear"), "editclear", 0, this, SLOT(slotEditClear()), actionCollection(),"edit_clear");
-
-  //How can I use just the file name for the icons like other programs?
+  #if KDE_VERSION >= 197120 // 320
+  editClear = KStdAction::clear(this, SLOT(slotEditClear()), actionCollection());  
+  #else
+  editClear = new KAction(i18n("C&lear"), "editclear", 0, this, SLOT(slotEditClear()), actionCollection(),"edit_clear_old");
+  #endif
   editInsert = new KAction(i18n("&Insert"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
   editDelete = new KAction(i18n("&Delete"), /*"remrow"*/ locate("data", "kwordquiz/pics/deleterow.png"), "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
   editMarkBlank = new KAction(i18n("&Mark As Blank"), locate("data", "kwordquiz/pics/markasblank.png"), 0, this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
   editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), locate("data", "kwordquiz/pics/unmarkasblank.png"), 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
-  editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
-  //editFind = new KAction(i18n("&Find/Replace"), 0, 0, this, SLOT(slotEditFind()), actionCollection(),"edit_find");
+  //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
 
   vocabLanguages = new KAction(i18n("&Languages..."), locate("data", "kwordquiz/pics/languages.png"), "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
   vocabFont = new KAction(i18n("&Font..."), "fonts", 0, this, SLOT(slotVocabFont()), actionCollection(),"vocab_font");
@@ -774,13 +775,15 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRestart, SIGNAL(activated()), m_flashView, SLOT(slotRestart()));
         connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
-        m_flashView->show();
+        
+        stateChanged("showingFlash");
+        toolBar("quizToolBar")->show();
+
         setCentralWidget(m_flashView);
 
         m_flashView -> setQuiz(m_quiz);
         m_flashView ->init();
-        stateChanged("showingFlash");
-        toolBar("quizToolBar")->show();
+        m_flashView->show();
       }
       else
       {

@@ -5,7 +5,7 @@
    
   </Menu>
   <Menu name="edit" >
-   <Action name="edit_clear" />
+   <Action name="edit_clear_old" />
    <Separator/>
    <Action name="edit_insert" />
    <Action name="edit_delete" />
