@@ -95,7 +95,7 @@ class KWordQuizView : public QTable
     void doVocabSpecChar();
     void fromStream(QTextStream* ts);
     void toStream(QTextStream* ts);
-    void checkSyntax();
+    bool checkSyntax(bool all, bool blanks);
   protected:
     QWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );

@@ -648,72 +648,6 @@ void KWordQuizView::doEditMarkBlank( )
         l->setText(s);
         l->setSelection(ss, st.length());        
       }
-      /*else
-      {
-        int start, end;
-
-          
-          
-          if (s[cp+1] != ' ')
-          {
-            for (int i = cp; i < s.length(); ++i)
-              if (s[i] == ' ' || s[i] == delim_end)
-              {
-                end = i;
-                continue;
-              }
- 
-            for (int i = cp; i > 0; --i)
-              if (s[i] == ' ' || s[i] == delim_start)
-              {
-                start = i;
-                continue;                       
-              }
-            
-            QString temp;
-            temp = s.left(start) + delim_start + s.mid(start + 1, end - start - 1) + delim_end + s.mid(end, s.length());
-            l->setText(temp);
-            l->setCursorPosition(cp);    
-            
-          }
-              If iSelStart > 0 Then begin
-                //efter StripOut kan lSelsStart vara större än Len(sTemp)
-                If iSelStart > Length(sTemp) Then
-                    iSelStart := Length(sTemp);
-
-                If iSelStart <> Length(sTemp) Then begin
-
-                    If sTemp[iSelStart] <> #32 Then
-                        If sTemp[iSelStart + 1] <> #32 Then begin
-
-                            iCounter := iSelStart;
-                            repeat
-                                iCounter := iCounter + 1;
-                                If iCounter = Length(sTemp) Then
-                                    Break;
-                            Until (sTemp[iCounter] = #32) Or (sTemp[iCounter] = cEndChar);
-                            iEnd := iCounter;
-
-
-                            iCounter := iSelStart;
-                            repeat
-                                iCounter := iCounter - 1;
-                            Until (sTemp[iCounter] = #32) Or (sTemp[iCounter] = cStartChar) Or (iCounter = 0);
-                            iStart := iCounter;
-
-                            sPart1 := Copy(sTemp, 0, iStart);
-                            sPart2 := Copy(sTemp, iStart+1, (iEnd-iStart-1));
-                            sPart3 := Copy(sTemp, iEnd, Length(sTemp)-1);
-
-                            oText.Text := sPart1 + cStartChar +  sPart2 + cEndChar + sPart3;
-                        end;
-                    oText.SelStart := iSelStart
-                end;
-            
-            end;
-            
-      }*/
-
     }
   }
 }
@@ -777,7 +711,7 @@ void KWordQuizView::doEditUnmarkBlank( )
 
 }
 
-void KWordQuizView::checkSyntax( )
+bool KWordQuizView::checkSyntax(bool all, bool blanks)
 {
 /*
 function SyntaxCheck(Grid: TWQGrid; tGR: TGridRect; ABlanks: Boolean): Boolean;
@@ -792,8 +726,10 @@ var
     iErrCount: integer;
 begin
 
-    //Result:= False;
-    iErrCount:= 0;
+*/
+  int errorCount = 0;
+  int r1, r2, c1 ,c2;
+  /*
 
     if tGr.Left > tGr.Right then begin
         l:= tGr.Right;
@@ -835,6 +771,7 @@ begin
 
 end;
 */
+  return (errorCount == 0);
 }
 
 
