@@ -148,8 +148,8 @@ void KWordQuizApp::initActions()
   editUnmarkBlank->setWhatsThis(i18n("Remove blanks for the current or selected word"));
   //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
 
-  vocabLanguages = new KAction(i18n("&Languages..."), locate("data", "kwordquiz/pics/languages.png"), "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
-  vocabLanguages->setWhatsThis(i18n("Define languages or other identifiers for the active vocabulary"));
+  vocabLanguages = new KAction(i18n("&Column Titles..."), locate("data", "kwordquiz/pics/languages.png"), "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
+  vocabLanguages->setWhatsThis(i18n("Define column titles for the active vocabulary"));
   vocabFont = new KAction(i18n("&Font..."), "fonts", 0, this, SLOT(slotVocabFont()), actionCollection(),"vocab_font");
   vocabFont->setWhatsThis(i18n("Define the font used by the editor"));
   //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
@@ -708,7 +708,7 @@ void KWordQuizApp::slotEditFind()
 
 void KWordQuizApp::slotVocabLanguages()
 {
-  slotStatusMsg(i18n("Setting the languages of the vocabulary..."));
+  slotStatusMsg(i18n("Setting the column titles of the vocabulary..."));
   DlgLanguage* dlg;
   dlg = new DlgLanguage(this, "dlg_lang", true);
   dlg->setInitialSize(QSize(310, 180), true);

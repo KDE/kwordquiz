@@ -53,8 +53,8 @@ KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : QTable(parent,
   setColumnWidth(1, 250);
   setColumnWidth(0, 250);
   setSelectionMode(QTable::Single);
-  horizontalHeader()->setLabel(0, i18n("Language 1"));
-  horizontalHeader()->setLabel(1, i18n("Language 2"));
+  horizontalHeader()->setLabel(0, i18n("Column 1"));
+  horizontalHeader()->setLabel(1, i18n("Column 2"));
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
 }

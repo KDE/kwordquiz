@@ -61,13 +61,13 @@
 <chapter id="introduction">
 <title>Introduction</title>
 <para>
-&kwordquiz; is a tool that gives you a powerful way to master the vocabulary of a new language. You can also use it to practice any kind of terminology. 
+&kwordquiz; is a tool that gives you a powerful way to master new vocabularies. It may be a language or any other kind of terminology. 
 </para>
 <sect1 id="easy-to-use">
 <title>Easy to use</title>
 
 <para>
-With &kwordquiz; you build your own vocabulary documents in a simple and intuitive way. The basic layout is a two-column spreadsheet where you type vocabulary entries in the language you know and the language you want to learn. You change the headers of the columns to reflect the languages you use. 
+With &kwordquiz; you build your own vocabulary documents in a simple and intuitive way. The basic layout is a two-column spreadsheet where you type vocabulary entries in one form that you know and in another form that you want to learn. You change the titles of the columns to reflect what you are practicing. 
 </para>
 
 <sect2 id="practice-modes">
@@ -484,12 +484,12 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
           <keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo>
         </shortcut>
         <guimenu>Vocabulary</guimenu>
-        <guimenuitem>Languages...</guimenuitem>
+        <guimenuitem>Column Titles...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Define</action> the languages or other headers for the two columns in the vocabulary. Displays a <link linkend="dlg-languages">dialog</link>.
+        <action>Define</action> the titles of the two columns in the vocabulary. Displays a <link linkend="dlg-languages">dialog</link>.
       </para>
     </listitem>
   </varlistentry>
@@ -587,7 +587,7 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <para>
 The menu provides five different modes for the quiz.</para>
 <para>
-Note that the menu names will change to reflect the language headers of the currently active vocabulary document. The mode must be selected before a quiz is started. The selected mode will apply to Flashcard, Multiple Choice and Question &amp; Answer.
+Note that the menu names will change to reflect the column titles of the currently active vocabulary document. The mode must be selected before a quiz is started. The selected mode will apply to Flashcard, Multiple Choice and Question &amp; Answer.
 </para>
 <variablelist>
 
@@ -598,12 +598,12 @@ Note that the menu names will change to reflect the language headers of the curr
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Language 1 -&gt; Language 2 in order</guimenuitem>
+        <guimenuitem>Column 1 -&gt; Column 2 in order</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given the entries of Language 1 and asked to provide the corresponding Language 2 entries. This will be done in the order the entries appear in the vocabulary document.
+        During the quiz you will be given the entries of Column 1 and asked to provide the corresponding Column 2 entries. This will be done in the order the entries appear in the vocabulary document.
       </para>
     </listitem>
   </varlistentry>
@@ -615,12 +615,12 @@ Note that the menu names will change to reflect the language headers of the curr
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Language 2 -&gt; Language 1 in order</guimenuitem>
+        <guimenuitem>Column 2 -&gt; Column 1 in order</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given the entries of Language 2 and asked to provide the corresponding Language 1 entries. This will be done in the order the entries appear in the vocabulary document.
+        During the quiz you will be given the entries of Column 2 and asked to provide the corresponding Column 1 entries. This will be done in the order the entries appear in the vocabulary document.
       </para>
     </listitem>
   </varlistentry>  
@@ -632,12 +632,12 @@ Note that the menu names will change to reflect the language headers of the curr
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Language 1 -&gt; Language 2 randomly</guimenuitem>
+        <guimenuitem>Column 1 -&gt; Column 2 randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given the entries of Language 1 and asked to provide the corresponding Language 2 entries. This will be done in a random order, but each entry will be asked once.
+        During the quiz you will be given the entries of Column 1 and asked to provide the corresponding Column 2 entries. This will be done in a random order, but each entry will be asked once.
       </para>
     </listitem>
   </varlistentry>
@@ -649,12 +649,12 @@ Note that the menu names will change to reflect the language headers of the curr
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Language 2 -&gt; Language 1 randomly</guimenuitem>
+        <guimenuitem>Column 2 -&gt; Column 1 randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given the entries of Language 2 and asked to provide the corresponding Language 1 entries. This will be done in random order, but each entry will be asked once.
+        During the quiz you will be given the entries of Column 2 and asked to provide the corresponding Column 1 entries. This will be done in random order, but each entry will be asked once.
       </para>
     </listitem>
   </varlistentry>
@@ -666,12 +666,12 @@ Note that the menu names will change to reflect the language headers of the curr
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Language 1 &lt;-&gt; Language 2 randomly</guimenuitem>
+        <guimenuitem>Column 1 &lt;-&gt; Column 2 randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given an entry of either Language 1 or Language 2 and asked to provide the corresponding entry in the other language. This will be done in a random order for both language and entry. Each possible combination will be asked once.
+        During the quiz you will be given an entry of either Column 1 or Column 2 and asked to provide the corresponding entry in the other column. This will be done in a random order for both column and entry. Each possible combination will be asked once.
       </para>
     </listitem>
   </varlistentry>
@@ -730,7 +730,7 @@ Note that the menu names will change to reflect the language headers of the curr
     </term>
     <listitem>
       <para>
-        <action>Count</action> as error during a flashcard session. You can later repeat these cards by selecting <guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem>.
+        <action>Count</action> as error during a flashcard session. You can later repeat these cards by selecting <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice>.
       </para>
     </listitem>
   </varlistentry>
@@ -921,7 +921,7 @@ Note that the menu names will change to reflect the language headers of the curr
 <title>The Vocabulary Editor</title>
 
 <para>
-The vocabulary document area has the appearance of a spreadsheet-like grid. The grid consists of cells organized in two columns and a number of rows. Each column and row has a header. The column headers are used to specify the languages of the vocabulary document. They can be set by selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Languages...</guimenuitem></menuchoice>. The row headers number the rows consecutively.
+The vocabulary document area has the appearance of a spreadsheet-like grid. The grid consists of cells organized in two columns and a number of rows. Each column and row has a header. The column headers are used to specify the titles of the vocabulary document. They can be set by selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Titles...</guimenuitem></menuchoice>. The row headers number the rows consecutively.
 </para>
 <para>
 You can click in a cell of the grid to make it the active cell. You can select several cells for copying or other editing by dragging over them with the left mouse button down. To select entire rows or columns click in the headers.
@@ -1307,20 +1307,20 @@ Select <guibutton>Default</guibutton> to restore all settings to predefined defa
 </sect1>
 
 <sect1 id="dlg-languages">
-<title>Languages</title>
+<title>Column Titles</title>
 <screenshot>
-  <screeninfo>Languages</screeninfo>
+  <screeninfo>Column Titles</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="kwq-dlg-languages.png" format="PNG" />
     </imageobject>
     <textobject>
-      <phrase>Languages</phrase>
+      <phrase>Column Titles</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
 <para>
-Use this dialog to define the languages of the vocabulary. If you want you can also enter any other identifier for the two columns. Select <guibutton>OK</guibutton> to make your changes or <guibutton>Cancel</guibutton> to discard any changes.
+Use this dialog to define the column titles of the vocabulary. Select <guibutton>OK</guibutton> to make your changes or <guibutton>Cancel</guibutton> to discard any changes.
 </para>
 </sect1>
 
