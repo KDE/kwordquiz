@@ -508,7 +508,8 @@ void KWordQuizApp::slotFileOpenRecent(const KURL& url)
 void KWordQuizApp::slotFileSave()
 {
   slotStatusMsg(i18n("Saving file..."));
-	if (doc->URL().fileName() == i18n("Untitled") ){
+  if (doc->URL().fileName() == i18n("Untitled") )
+  {
     slotFileSaveAs();
   }
   else
@@ -523,24 +524,22 @@ void KWordQuizApp::slotFileSaveAs()
   slotStatusMsg(i18n("Saving file with a new filename..."));
 
   KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, QString::null, true);
-  fd->setOperationMode(KFileDialog::Saving);
+  fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save vocabulary document as..."));
-  fd->setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document"));
+  fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document"));
 
   if (fd->exec() == QDialog::Accepted)
   {
-    KURL url= fd->selectedURL();
-    //KURL url=KFileDialog::getSaveURL(QDir::currentDirPath(),
-    //      i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document"), this, i18n("Save vocabulary document as..."));
+    KURL url = fd -> selectedURL();
     if(!url.isEmpty()){
 
-      //TODO check that a valid extension was really given
+      //@todo check that a valid extension was really given
       if (!url.fileName().contains('.'))
       {
         if  (fd->currentFilter() == "*.wql")
           url = KURL(url.path() + ".wql");
         else
-            url = KURL(url.path() + ".kvtml");
+          url = KURL(url.path() + ".kvtml");
       }
 
       QFileInfo fileinfo(url.path());
@@ -552,7 +551,10 @@ void KWordQuizApp::slotFileSaveAs()
       }
       else
       {
+        if (m_dirWatch ->contains(doc->URL().path()))
+          m_dirWatch ->removeFile(doc->URL().path());
         doc->saveDocument(url);
+        m_dirWatch->addFile(url.path());
         fileOpenRecent->addURL(url);
         setCaption(url.fileName(),doc->isModified());
       }
