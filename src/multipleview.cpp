@@ -80,16 +80,29 @@ void MultipleView::slotCheck()
   {
 
     QString ans;
-
+    bool oneIsChecked = false;
+    
     if (opt1->isChecked())
+    {  
       ans = opt1->text().mid(3, opt1->text().length());
-
+      oneIsChecked = true;
+    }
+    
     if (opt2->isChecked())
+    {
       ans = opt2->text().mid(3, opt2->text().length());
-
+      oneIsChecked = true;
+    }
+    
     if (opt3->isChecked())
+    {
       ans = opt3->text().mid(3, opt3->text().length());
-
+      oneIsChecked = true;
+    }
+    
+    if (!oneIsChecked)
+      return;
+      
     bool fIsCorrect = m_quiz->checkAnswer(m_question, ans);
 
     if (fIsCorrect)
