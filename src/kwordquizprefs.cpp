@@ -22,6 +22,7 @@
 #include <kmessagebox.h>
 #include <kpushbutton.h>
 #include <kdebug.h>
+#include <kconfigskeleton.h>
 
 #include <qlayout.h>
 #include <qradiobutton.h>
@@ -35,7 +36,6 @@
 #include "prefcharacter.h"
 #include "kwordquiz.h"
 #include "dlgspecchar.h"
-#include "prefs.h"
 
 KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, DialogType dialogType, int dialogButtons, ButtonCode defaultButton, bool modal) 
   : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false) 
@@ -58,14 +58,18 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
 
   KWordQuizApp *win=(KWordQuizApp *) parent;
   int i=0;
+
+  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
+  QString ds = item->property().toString();
+
   for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
-    it.current()->setText(2, (QString) Prefs::specialCharacters()[i++] ) ;
+    it.current()->setText(2, (QString) ds[i++] ) ;
     it.current()->setText(1, win->actionCollection()->action(QString("char_" + QString::number(i)).latin1())->shortcut().toString());
   }
 
   m_prefCharacter->lstCharacters->setSelected(m_prefCharacter->lstCharacters->firstChild(), true);
-  m_prefCharacter->lstCharacters->setItemMargin(2);   
+  m_prefCharacter->lstCharacters->setItemMargin(2);
 
   m_hasChanged = false;
 }
@@ -80,7 +84,8 @@ void KWordQuizPrefs::slotCharListSelectionChanged( )
 
 void KWordQuizPrefs::slotSelectSpecChar( )
 {
-  QString f = Prefs::editorFont().family();
+  KConfigSkeletonItem * item = m_config->findItem("EditorFont");
+  QString f = item->property().toFont().family();
   QString s = m_prefCharacter->lstCharacters->currentItem()->text(2);
   QChar c = s[0];
 
@@ -127,16 +132,25 @@ bool KWordQuizPrefs::hasChanged( )
 bool KWordQuizPrefs::isDefault( )
 {
   kdDebug() << "isDefault" << endl;
+  bool bUseDefaults = m_config->useDefaults(true);
+  bool result /*= !hasChanged()*/;
+
   QString s;
   for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
-  if ("ßüחיטהזצר" == s.stripWhiteSpace())
 
-    return KConfigDialog::isDefault();
+  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
+  QString ds = item->property().toString();
+
+  if (ds == s.stripWhiteSpace())
+    result = KConfigDialog::isDefault();
   else
-    return false;
+    result = false;
+
+  m_config->useDefaults(bUseDefaults);
+  return result;
 }
 
 void KWordQuizPrefs::updateSettings( )
@@ -147,20 +161,27 @@ void KWordQuizPrefs::updateSettings( )
   {
     s.append(it.current()->text(2));
   }
-  Prefs::setSpecialCharacters(s);
+
+  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
+  item->setProperty(QVariant(s));
+
   emit settingsChanged();
   m_hasChanged = false;
 }
 
 void KWordQuizPrefs::updateWidgetsDefault( )
 {
+  bool bUseDefaults = m_config->useDefaults(true);
+
   QString s;
   for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
 
-  QString ds = "ßüחיטהזצר";
+  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
+  QString ds = item->property().toString();
+
   int i=0;
   for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
@@ -168,7 +189,7 @@ void KWordQuizPrefs::updateWidgetsDefault( )
   }
   m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
   m_hasChanged = (ds != s);
-
+  m_config->useDefaults(bUseDefaults);
 }
 
 #include "kwordquizprefs.moc"

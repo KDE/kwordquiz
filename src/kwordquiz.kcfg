@@ -31,7 +31,7 @@
     </entry>        
     <entry name="SpecialCharacters" type="String">
       <label>Characters for the special character toolbar</label>
-      <default>ßüçéèäæöø</default>
+      <default>ÃŸÃ¼Ã§Ã©Ã¨Ã¤Ã¦Ã¶Ã¸</default>
     </entry>  
   </group>
   <group name="Quiz">
