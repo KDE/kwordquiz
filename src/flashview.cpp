@@ -70,42 +70,35 @@ void FlashView::init()
 
 void FlashView::showFront(int i)
 {
-  lblLanguageQuestion ->setText(m_quiz ->langQuestion(i));
-  //lblQuestion->setFont(m_quiz->fontQuestion(i));  
+  lblLanguageQuestion -> setText(m_quiz ->langQuestion(i));
   lblQuestion -> setText(m_quiz -> question(i));
-
 }
 
 void FlashView::showBack(int i)
 {
-  lblLanguageQuestion ->setText(m_quiz->langAnswer(i));
-  //lblQuestion->setFont(m_quiz->fontAnswer(m_question));
+  lblLanguageQuestion -> setText(m_quiz->langAnswer(i));
   lblQuestion -> setText(m_quiz->answer(i));
 }
 
 
 void FlashView::keepDiscardCard(bool keep)
 {
+  if (!keep)
+  {
+    m_score->countIncrement(WQScore::cdCorrect);
+    updateScore();
+    KNotifyClient::event(winId(), "QuizCorrect", i18n("Your answer was correct!"));
+  }
+  else
+  {
+    m_error++;
+    m_quiz->checkAnswer(m_question, "");
+    m_score->countIncrement(WQScore::cdError);
+    updateScore();
+    KNotifyClient::event(winId(), "QuizError", i18n("Your answer was incorrect."));
+  }
 
-    if (!keep)
-    {
-      m_score->countIncrement(WQScore::cdCorrect);
-      updateScore();
-      KNotifyClient::event(winId(), "QuizCorrect", i18n("Your answer was correct!"));
-    }
-    else
-    {
-      m_error++;
-      m_quiz->checkAnswer(m_question, "");
-      m_score->countIncrement(WQScore::cdError);
-      updateScore();
-      KNotifyClient::event(winId(), "QuizError", i18n("Your answer was incorrect."));
-    }
-
-    //m_question++;
-
-    m_showFirst = true;
-
+  m_showFirst = true;
 
   if (++m_question < m_quiz->questionCount())
   {
@@ -113,13 +106,13 @@ void FlashView::keepDiscardCard(bool keep)
   }
   else
   {
+    m_quiz->finish();
     KWordQuizApp *win=(KWordQuizApp *) parent();
     win->actionCollection()->action("quiz_check")->setEnabled(false);
     win->actionCollection()->action("flash_know")->setEnabled(false);
     win->actionCollection()->action("flash_dont_know")->setEnabled(false);
     win->actionCollection()->action("quiz_repeat_errors")->setEnabled((m_error > 0));
   }
-
 }
 
 void FlashView::slotFlip()

@@ -308,7 +308,7 @@ void KWordQuizView::adjustRow( int row )
     setRowHeight(row, rh);
 }
 
-void KWordQuizView::wqCurrentSelection(bool clear = true)
+void KWordQuizView::saveCurrentSelection(bool clear = true)
 {
 
   m_currentRow = currentRow();
@@ -390,7 +390,7 @@ void KWordQuizView::doEditCut( )
   {
     addUndo(i18n("&Undo Cut"));
     doEditCopy();
-    wqCurrentSelection();
+    saveCurrentSelection();
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
         clearCell(r, c);
@@ -407,7 +407,7 @@ void KWordQuizView::doEditCopy( )
   }
   else
   {
-    wqCurrentSelection(false);
+    saveCurrentSelection(false);
     QString s;
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
     {
@@ -429,7 +429,7 @@ void KWordQuizView::doEditPaste( )
   else
   {
     addUndo(i18n("&Undo Paste"));
-    wqCurrentSelection();
+    saveCurrentSelection();
     int tr = m_currentSel.topRow();
     int br = m_currentSel.bottomRow();
     int lc = m_currentSel.leftCol();
@@ -517,7 +517,7 @@ void KWordQuizView::doEditClear( )
   else
   {
     addUndo(i18n("&Undo Clear"));
-    wqCurrentSelection(false);
+    saveCurrentSelection(false);
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
         clearCell(r, c);
@@ -529,7 +529,7 @@ void KWordQuizView::doEditInsert( )
 {
   addUndo(i18n("&Undo Insert"));
   setUpdatesEnabled(false);
-  wqCurrentSelection();
+  saveCurrentSelection();
   insertRows(m_currentSel.topRow(), m_currentSel.bottomRow() - m_currentSel.topRow() + 1);
 
   addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
@@ -543,7 +543,7 @@ void KWordQuizView::doEditDelete( )
 {
   addUndo(i18n("&Undo Delete"));
   //retrieve current selection
-  wqCurrentSelection();
+  saveCurrentSelection();
 
   int tr = m_currentSel.topRow();
   int br = m_currentSel.bottomRow();
@@ -699,7 +699,7 @@ void KWordQuizView::doEditUnmarkBlank( )
   }
   else
   {
-    wqCurrentSelection(false);
+    saveCurrentSelection(false);
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
       {
@@ -725,7 +725,7 @@ bool KWordQuizView::checkSyntax(bool all, bool blanks)
   }
   else
   {
-    wqCurrentSelection(false);
+    saveCurrentSelection(false);
     r1 = m_currentSel.topRow();
     r2 = m_currentSel.bottomRow();
     c1 = m_currentSel.leftCol();
@@ -747,7 +747,7 @@ bool KWordQuizView::checkSyntax(bool all, bool blanks)
 
 void KWordQuizView::doVocabSort( )
 {
-  wqCurrentSelection();
+  saveCurrentSelection();
   DlgSort* dlg;
   dlg = new DlgSort(this, "dlg_sort", true);
   dlg->setLanguage(1, horizontalHeader()->label(0));
@@ -771,7 +771,7 @@ void KWordQuizView::doVocabShuffle( )
 {
   //@todo handle empty rows
   addUndo(i18n("&Undo Shuffle"));
-  wqCurrentSelection();
+  saveCurrentSelection();
   KRandomSequence* rs;
   rs = new KRandomSequence();
   int count = numRows();
@@ -791,7 +791,7 @@ void KWordQuizView::doVocabShuffle( )
 
 void KWordQuizView::doVocabRC( )
 {
-  wqCurrentSelection();
+  saveCurrentSelection();
   DlgRC* dlg;
   dlg = new DlgRC(this, "dlg_rc", true);
   //dlg->setInitialSize(QSize(225, 230), true);
@@ -873,7 +873,7 @@ void KWordQuizView::slotSpecChar(const QChar & c)
 
 void KWordQuizView::activateNextCell( )
 {
-  wqCurrentSelection(false);
+  saveCurrentSelection(false);
   int tr = m_currentSel.topRow();
   int br = m_currentSel.bottomRow();
   int lc = m_currentSel.leftCol();
@@ -995,7 +995,7 @@ void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr,
 
 void KWordQuizView::keyPressEvent( QKeyEvent * e)
 {
-  if (isEditing())
+  /*if (isEditing())
     if (e->key() == Key_Tab)
     {
       endEdit(currentRow(), currentColumn(), true, true);
@@ -1004,7 +1004,7 @@ void KWordQuizView::keyPressEvent( QKeyEvent * e)
     }
     else
       return;
-     
+  */  
   if (e->key() == Key_Tab)
   {
     activateNextCell();
@@ -1015,7 +1015,18 @@ void KWordQuizView::keyPressEvent( QKeyEvent * e)
 
 void KWordQuizView::slotCheckedAnswer( int i )
 {
-  setCurrentCell(i, 0);
+  if (i == -1)
+  {
+    clearSelection();
+    addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+    setCurrentCell(m_currentRow, m_currentCol);  
+  }
+  else
+  {
+    clearSelection();
+    setCurrentCell(i, 0);
+    selectRow(i);
+  }
 }
 
 #include "kwordquizview.moc"

@@ -941,15 +941,17 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
     case WQQuiz::qtEditor:
       m_editView->show();
       setCentralWidget(m_editView);
+      m_editView -> setFocus();
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(m_editView);
-      //connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
+      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
+        m_editView->saveCurrentSelection(true);
         m_editView->hide();
         m_flashView = new FlashView(this);
         connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
@@ -972,11 +974,13 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
     case WQQuiz::qtMultiple:
       m_quiz = new WQQuiz(m_editView);
+      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));      
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
       m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
+        m_editView->saveCurrentSelection(true);
         m_editView->hide();
         m_multipleView = new MultipleView(this);
         connect(quizCheck, SIGNAL(activated()), m_multipleView, SLOT(slotCheck()));
@@ -998,11 +1002,13 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
     case WQQuiz::qtQA:
       m_quiz = new WQQuiz(m_editView);
+      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtQA);
       m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
+        m_editView->saveCurrentSelection(true);
         m_editView->hide();
         m_qaView = new QAView(this);
         connect(quizCheck, SIGNAL(activated()), m_qaView, SLOT(slotCheck()));

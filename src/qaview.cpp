@@ -143,7 +143,7 @@ void QAView::slotCheck()
     }
     else
     {
-
+      m_quiz->finish();
       win->actionCollection()->action("quiz_check")->setEnabled(false);
       win->actionCollection()->action("qa_hint")->setEnabled(false);
       win->actionCollection()->action("quiz_repeat_errors")->setEnabled((m_error > 0));

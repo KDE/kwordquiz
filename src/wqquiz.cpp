@@ -286,7 +286,7 @@ bool WQQuiz::checkAnswer(int i, QString ans)
   {
     m_errorList -> append(li);
   }
-  emit checkingAnswer(li->oneOp());
+
   return result;
 }
 
@@ -433,6 +433,14 @@ QString WQQuiz::question(int i)
     s.remove("[");
     s.remove("]");
   }
+  if (m_quizType != qtFlash && i > 0)
+  {
+    WQListItem *li2 = m_list->at(i - 1);
+    emit checkingAnswer(li2->oneOp());
+  }
+  else
+    emit checkingAnswer(li->oneOp());  
+  
   return s;
 }
 
@@ -561,6 +569,11 @@ void WQQuiz::setEnableBlanks(bool b)
 int WQQuiz::questionCount()
 {
   return m_questionCount;
+}
+
+void WQQuiz::finish()
+{
+  emit checkingAnswer(-1);
 }
 
 #include "wqquiz.moc"

@@ -41,6 +41,7 @@ class WQQuiz : public QObject
     void activateBaseList();
 
     bool init();
+    void finish();
     bool checkAnswer(int i, QString ans);
     QStringList multiOptions(int i);
     QString quizIcon(int i, QuizIcon ico);

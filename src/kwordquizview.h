@@ -79,6 +79,7 @@ class KWordQuizView : public QTable
     void doVocabRC();
     void doVocabSpecChar();
     bool checkSyntax(bool all, bool blanks);
+    void saveCurrentSelection(bool clear);    
   protected:
     QWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );
@@ -103,7 +104,7 @@ class KWordQuizView : public QTable
     DlgSpecChar* dlgSpecChar;
     /** the list of the undo objects */
     static QValueList<WQUndo> *m_undoList;
-    void wqCurrentSelection(bool clear);
+
     void doNewPage(QPainter & painter, int res, int type);
     void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
     bool checkForBlank(QString s, bool blank);
