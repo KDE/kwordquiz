@@ -1229,7 +1229,8 @@ void KWordQuizApp::slotInsertChar( int i )
   if (m_qaView != 0)
     m_qaView->slotSpecChar(Config().m_specialCharacters[i - 1]);
   else
-    m_editView->slotSpecChar(Config().m_specialCharacters[i - 1]);
+    if (centralWidget() == m_editView)
+      m_editView->slotSpecChar(Config().m_specialCharacters[i - 1]);
 }
 
 void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
