@@ -91,8 +91,8 @@ class KWordQuizView : public QTable
     void doVocabShuffle();
     void doVocabRC();
     void doVocabSpecChar();
-    void fromStream(QTextStream* ts);
-    void toStream(QTextStream* ts);
+    bool fromStream(QTextStream* ts, QTextStream::Encoding e);
+    void toStream(QTextStream* ts, QTextStream::Encoding e);
     bool checkSyntax(bool all, bool blanks);
   protected:
     QWidget * beginEdit(int row, int col, bool replace);

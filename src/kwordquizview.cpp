@@ -346,7 +346,7 @@ void KWordQuizView::doEditUndo( )
     {
       undo = m_undoList->first();
       QTextStream * ts = new QTextStream(undo.data(), IO_ReadOnly);
-      fromStream(ts);
+      fromStream(ts, QTextStream::UnicodeUTF8);
       m_undoList->remove(m_undoList->begin());
     }
 
@@ -918,14 +918,15 @@ void KWordQuizView::activateNextCell( )
   }
 }
 
-void KWordQuizView::fromStream( QTextStream * ts )
+bool KWordQuizView::fromStream( QTextStream * ts, QTextStream::Encoding e )
 {
-      //ts->setEncoding(QTextStream::UnicodeUTF8);
+      bool success = false;
+      ts->setEncoding(e);
       QString s = "";
       if (ts->readLine() != "WordQuiz")
       {
         KMessageBox::error(0, i18n("This does not appear to be a (K)WordQuiz file"));
-        return;
+        return success;
       }
       s = ts->readLine();
       s = s.left(1);
@@ -933,7 +934,7 @@ void KWordQuizView::fromStream( QTextStream * ts )
       if (iFV != 5)
       {
         KMessageBox::error(0, i18n("KWordQuiz can only open files created by WordQuiz 5.x"));
-        return;
+        return success;
       }
 
       while (ts->readLine() != "[Font Info]");
@@ -965,27 +966,10 @@ void KWordQuizView::fromStream( QTextStream * ts )
       QFont f(fam, ps, b, it);
       setFont(f);
 
-      /** TODO handle font and character information
-      [Font Info]
-      FontName1="Arial" done
-      FontSize1=12 done
-      FontBold1=0 done
-      FontItalic1=0 done
-      FontColor1=0
-      Charset1=0
-      Layout1=0000041d
-      FontName2="Arial"
-      FontSize2=12
-      FontBold2=0
-      FontItalic2=0
-      FontColor2=0
-      Charset1=0
-      Layout2=0000041d
-
-      [Character Info]
-      Characters1=ÈÉÊËÌÍÎÏÐ
-      Characters2=ÜÝÞßàáâãä
-      */
+      while (ts->readLine() != "[Character Info]");  
+      s = ts->readLine();    
+      p = s.find("=", 0);
+      Config().m_specialCharacters = s.right(s.length() - (p + 1));
 
       while (ts->readLine() != "[Grid Info]");
       ts->readLine(); //skip value for width of row headers
@@ -1058,11 +1042,13 @@ void KWordQuizView::fromStream( QTextStream * ts )
           setText(i, 1, s);
         i++;
       }
+      success = true;
+      return success;
 }
 
-void KWordQuizView::toStream( QTextStream* ts )
+void KWordQuizView::toStream( QTextStream* ts, QTextStream::Encoding e )
 {
-    //ts.setEncoding(QTextStream::UnicodeUTF8);
+    ts->setEncoding(e);
     // \r\n is for  compatibility with the Windows version
     QString s = "";
 
@@ -1116,8 +1102,8 @@ void KWordQuizView::toStream( QTextStream* ts )
     *ts << "Layout2=0\r\n\r\n";
 
     *ts << "[Character Info]\r\n";
-    *ts << "Characters1=abcdefghi\r\n";
-    *ts << "Characters2=jklmnopqr\r\n\r\n";
+    *ts << "Characters1=" + Config().m_specialCharacters + "\r\n";
+    *ts << "Characters2=" + Config().m_specialCharacters + "\r\n\r\n";
 
     *ts << "[Grid Info]\r\n";
     *ts << "ColWidth0=" + s.setNum(verticalHeader()->sectionSize(0)) + "\r\n";
@@ -1165,7 +1151,7 @@ void KWordQuizView::addUndo( const QString & caption )
 
   QString * s = new QString();
   QTextStream* ts = new QTextStream(s, IO_WriteOnly);
-  toStream(ts);
+  toStream(ts, QTextStream::UnicodeUTF8);
 
   WQUndo* undo = new WQUndo();
   undo->setText(caption);

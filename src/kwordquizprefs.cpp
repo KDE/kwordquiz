@@ -27,10 +27,12 @@
 #include <qbuttongroup.h>
 #include <qradiobutton.h>
 #include <qcheckbox.h>
+#include <qlistview.h>
 
 #include "kwordquizprefs.h"
 #include "prefeditor.h"
 #include "prefquiz.h"
+#include "prefcharacter.h"
 #include "configuration.h"
 
 KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name, bool modal) : KDialogBase(IconList, i18n("Configure"), Default|Ok|Apply|Cancel, Ok, parent, name, modal, true) {
@@ -45,6 +47,11 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name, bool modal) : 
   m_prefQuiz = new PrefQuiz(fraQuiz);
   frameLayout->addWidget(m_prefQuiz);
 
+  QFrame* fraCharacter = addPage( i18n("Special\nCharacters"), i18n("Special Characters"), DesktopIcon("kcharselect"));
+  frameLayout = new QVBoxLayout( fraCharacter, 0, 0 );
+  m_prefCharacter = new PrefCharacter(fraCharacter);
+  frameLayout->addWidget(m_prefCharacter);  
+  
   // connect interactive widgets and selfmade signals to the enableApply slotDefault
   connect(m_prefEditor->optDown, SIGNAL(clicked()), this, SLOT(enableApply()));
   connect(m_prefEditor->optRight, SIGNAL(clicked()), this, SLOT(enableApply()));
@@ -87,6 +94,12 @@ void KWordQuizPrefs::updateDialog()
   m_prefQuiz->chkHintError->setChecked(Config().m_hintError);
 
   m_prefQuiz->chkPercent->setChecked(Config().m_percent);
+  
+  int i=0;
+  for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  {
+    it.current()->setText(2, (QString) Config().m_specialCharacters[i++] ) ;
+  }
   enableButtonApply(false);   // disable apply button
 
 }

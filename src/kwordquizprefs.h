@@ -28,6 +28,7 @@
 
 class PrefEditor;
 class PrefQuiz; 
+class PrefCharacter;
   
 class KWordQuizPrefs : public KDialogBase  {
    Q_OBJECT
@@ -56,6 +57,7 @@ private:
 
   PrefEditor *m_prefEditor;
   PrefQuiz *m_prefQuiz;
+  PrefCharacter* m_prefCharacter;
   
 };
 

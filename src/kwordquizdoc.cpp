@@ -206,7 +206,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     else
     {
       QTextStream* ts = new QTextStream(&file);
-      m_view->fromStream(ts);
+      m_view->fromStream(ts, QTextStream::Latin1);
     }
     file.close();
     KIO::NetAccess::removeTempFile( tmpfile );
@@ -264,7 +264,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
   else
   {
     QTextStream* ts = new QTextStream(&file);
-    m_view->toStream(ts);
+    m_view->toStream(ts, QTextStream::Latin1);
     /*
     QTextStream ts(&file);
     //ts.setEncoding(QTextStream::UnicodeUTF8);
