@@ -32,6 +32,7 @@
 #include <knotifydialog.h>
 #include <kiconloader.h>
 //#include <keduvocdata.h>
+#include <kdebug.h>
 
 // application specific includes
 #include "kwordquiz.h"
@@ -43,6 +44,7 @@
 #include "multipleview.h"
 #include "configuration.h"
 #include "wqprintdialogpage.h"
+#include "prefs.h"
 
 #define ID_STATUS_MSG 1
 #define ID_STATUS_MSG_MODE 2
@@ -74,19 +76,20 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
 
   slotQuizEditor();
   slotUndoChange(i18n("Cannot &Undo"), false);
-  updateMode(Config().m_mode);
+  updateMode(Prefs::mode());
 
   m_prefDialog = 0;
 
-  editMarkBlank->setEnabled(Config().m_enableBlanks);
-  editUnmarkBlank->setEnabled(Config().m_enableBlanks);
+  editMarkBlank->setEnabled(Prefs::enableBlanks());
+  editUnmarkBlank->setEnabled(Prefs::enableBlanks());
 
-  if (Config().m_firstRun)
+  if (Prefs::firstRun())
   {
     fileOpenRecent->addURL( locate("data", "kwordquiz/examples/example.kvtml"));
     fileOpenRecent->addURL( locate("data", "kwordquiz/examples/french_verbs.kvtml"));
     fileOpenRecent->addURL( locate("data", "kwordquiz/examples/fill_in_the_blank.kvtml"));
     fileOpenRecent->addURL( locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml"));
+    Prefs::setFirstRun(false);
   }
 }
 
@@ -321,7 +324,7 @@ void KWordQuizApp::initView()
   doc->addView(m_editView);
   setCentralWidget(m_editView);
   setCaption(doc->URL().fileName(),false);
-  m_editView->setFont(Config().m_editorFont);
+  m_editView->setFont(Prefs::editorFont());
   connect(m_editView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
@@ -372,7 +375,7 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
     m_dirWatch->addFile(url.path());
     setCaption(doc->URL().fileName(), false);
     fileOpenRecent->addURL( url );
-    updateMode(Config().m_mode);
+    updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -386,13 +389,13 @@ KWordQuizDoc *KWordQuizApp::getDocument() const
 void KWordQuizApp::saveOptions()
 {
   fileOpenRecent->saveEntries(kapp->config(), "Recent Files");
-  Config().write();
+  Prefs::writeConfig();
 }
 
 
 void KWordQuizApp::readOptions()
 {
-  Config().read();
+  //Prefs::readConfig();
   fileOpenRecent->loadEntries(kapp->config(), "Recent Files");
 }
 
@@ -628,7 +631,7 @@ void KWordQuizApp::slotFileClose()
       initView();
       slotQuizEditor();
       slotUndoChange(i18n("Cannot &Undo"), false);
-      updateMode(Config().m_mode);
+      updateMode(Prefs::mode());
       m_editView ->setFocus();
     }
 
@@ -758,7 +761,7 @@ void KWordQuizApp::slotVocabLanguages()
   {
     m_editView -> horizontalHeader()->setLabel(0, dlg->Language(1));
     m_editView -> horizontalHeader()->setLabel(1, dlg->Language(2));
-    updateMode(Config().m_mode);
+    updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -770,10 +773,10 @@ void KWordQuizApp::slotVocabFont()
   dlg = new KFontDialog(this, "dlg_font", false, true);
   if (m_flashView != 0)
   {
-    dlg->setFont(Config().m_flashFont);
+    dlg->setFont(Prefs::flashFont());
     if ( dlg->exec() == KFontDialog::Accepted )
     {
-      Config().m_flashFont = dlg->font();
+      Prefs::setFlashFont(dlg->font());
       emit settingsChanged();
     }
   }
@@ -783,7 +786,7 @@ void KWordQuizApp::slotVocabFont()
     if ( dlg->exec() == KFontDialog::Accepted )
     {
       m_editView ->setFont(dlg->font());
-      Config().m_editorFont = dlg->font();
+      Prefs::setEditorFont(dlg->font());
       doc->setModified(true);
     }
   }
@@ -828,8 +831,8 @@ void KWordQuizApp::slotVocabShuffle()
 void KWordQuizApp::slotMode0()
 {
   slotStatusMsg(i18n("Updating mode..."));
-  if (Config().m_mode < 5) {
-    updateMode(Config().m_mode + 1);
+  if (Prefs::mode() < 5) {
+    updateMode(Prefs::mode() + 1);
   }
   else
   {
@@ -949,8 +952,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz = new WQQuiz(m_editView);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
-      m_quiz->setQuizMode(Config().m_mode);
-      m_quiz-> setEnableBlanks(Config().m_enableBlanks);
+      m_quiz->setQuizMode(Prefs::mode());
+      m_quiz-> setEnableBlanks(Prefs::enableBlanks());
       if (m_quiz -> init())
       {
         m_editView->saveCurrentSelection(true);
@@ -978,8 +981,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz = new WQQuiz(m_editView);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));      
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
-      m_quiz->setQuizMode(Config().m_mode);
-      m_quiz-> setEnableBlanks(Config().m_enableBlanks);
+      m_quiz->setQuizMode(Prefs::mode());
+      m_quiz-> setEnableBlanks(Prefs::enableBlanks());
       if (m_quiz -> init())
       {
         m_editView->saveCurrentSelection(true);
@@ -1006,8 +1009,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz = new WQQuiz(m_editView);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtQA);
-      m_quiz->setQuizMode(Config().m_mode);
-      m_quiz-> setEnableBlanks(Config().m_enableBlanks);
+      m_quiz->setQuizMode(Prefs::mode());
+      m_quiz-> setEnableBlanks(Prefs::enableBlanks());
       if (m_quiz -> init())
       {
         m_editView->saveCurrentSelection(true);
@@ -1044,25 +1047,20 @@ void KWordQuizApp::slotConfigureNotifications( )
 /** Configure kwordquiz */
 void KWordQuizApp::slotConfigure()
 {
-  // create dialog on demand
-  if (m_prefDialog==0)
-  {
-    m_prefDialog=new KWordQuizPrefs(this);
-    connect(m_prefDialog, SIGNAL(settingsChanged()), this, SLOT(slotApplyPreferences()));
-  }
-  m_prefDialog->updateDialog();
-  if (m_prefDialog->exec()==QDialog::Accepted)
-  {
-    m_prefDialog->updateConfiguration();
-    slotApplyPreferences();
-  }
+  if ( KWordQuizPrefs::showDialog( "settings" ) )
+    return;
+
+  //KConfigDialog didn't find an instance of this dialog, so lets create it :
+  KWordQuizPrefs* dialog = new KWordQuizPrefs( this, "settings",  Prefs::self() );
+  connect(dialog, SIGNAL(settingsChanged()), this, SLOT(slotApplyPreferences()));
+  dialog->show();  
 }
 
 void KWordQuizApp::slotApplyPreferences()
 {
-  Config().write();
-  editMarkBlank->setEnabled(Config().m_enableBlanks);
-  editUnmarkBlank->setEnabled(Config().m_enableBlanks);
+  kdDebug() << "Prefs Update" << endl;
+  editMarkBlank->setEnabled(Prefs::enableBlanks());
+  editUnmarkBlank->setEnabled(Prefs::enableBlanks());
   m_editView->viewport()->repaint(true);
   updateSpecialCharIcons();
   emit settingsChanged();
@@ -1072,8 +1070,8 @@ void KWordQuizApp::updateSpecialCharIcons( )
 {
   for (int i = 0; i < 9; i++){
     KAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)).latin1());
-    act->setIcon(charIcon(Config().m_specialCharacters[i]));
-    act->setToolTip(i18n("Inserts the character %1").arg(Config().m_specialCharacters[i]));
+    act->setIcon(charIcon(Prefs::specialCharacters()[i]));
+    act->setToolTip(i18n("Inserts the character %1").arg(Prefs::specialCharacters()[i]));
   }
 }
 
@@ -1132,15 +1130,15 @@ void KWordQuizApp::updateMode(int m)
   if (m_quiz != 0)
     if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString::null, KStdGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
     {
-      mode1->setChecked(Config().m_mode == 1);
-      mode2->setChecked(Config().m_mode == 2);
-      mode3->setChecked(Config().m_mode == 3);
-      mode4->setChecked(Config().m_mode == 4);
-      mode5->setChecked(Config().m_mode == 5);
+      mode1->setChecked(Prefs::mode() == 1);
+      mode2->setChecked(Prefs::mode() == 2);
+      mode3->setChecked(Prefs::mode() == 3);
+      mode4->setChecked(Prefs::mode() == 4);
+      mode5->setChecked(Prefs::mode() == 5);
       return;
     }
 
-  Config().m_mode = m;
+  Prefs::setMode(m);
   QString s1 = m_editView -> horizontalHeader()->label(0);
   QString s2 = m_editView -> horizontalHeader()->label(1);
 
@@ -1150,18 +1148,18 @@ void KWordQuizApp::updateMode(int m)
   mode4->setText(i18n("&4 %1 -> %2 Randomly").arg(s2).arg(s1));
   mode5->setText(i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
 
-  mode1->setChecked(Config().m_mode == 1);
-  mode2->setChecked(Config().m_mode == 2);
-  mode3->setChecked(Config().m_mode == 3);
-  mode4->setChecked(Config().m_mode == 4);
-  mode5->setChecked(Config().m_mode == 5);
+  mode1->setChecked(Prefs::mode() == 1);
+  mode2->setChecked(Prefs::mode() == 2);
+  mode3->setChecked(Prefs::mode() == 3);
+  mode4->setChecked(Prefs::mode() == 4);
+  mode5->setChecked(Prefs::mode() == 5);
 
   KPopupMenu *popup = mode->popupMenu();
-  popup->setItemChecked(0, Config().m_mode == 1);
-  popup->setItemChecked(1, Config().m_mode == 2);
-  popup->setItemChecked(2, Config().m_mode == 3);
-  popup->setItemChecked(3, Config().m_mode == 4);
-  popup->setItemChecked(4, Config().m_mode == 5);
+  popup->setItemChecked(0, Prefs::mode() == 1);
+  popup->setItemChecked(1, Prefs::mode() == 2);
+  popup->setItemChecked(2, Prefs::mode() == 3);
+  popup->setItemChecked(3, Prefs::mode() == 4);
+  popup->setItemChecked(4, Prefs::mode() == 5);
 
   popup->changeItem(0, i18n("&1 %1 -> %2 In Order").arg(s1).arg(s2));
   popup->changeItem(1, i18n("&2 %1 -> %2 In Order").arg(s2).arg(s1));
@@ -1170,9 +1168,9 @@ void KWordQuizApp::updateMode(int m)
   popup->changeItem(4, i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
 
   QString s;
-  mode->setIcon("mode" + s.setNum(Config().m_mode));
+  mode->setIcon("mode" + s.setNum(Prefs::mode()));
 
-  switch( Config().m_mode ){
+  switch( Prefs::mode() ){
   case 1:
     statusBar()->changeItem(i18n("%1 -> %2 In Order").arg(s1).arg(s2), ID_STATUS_MSG_MODE);
     break;
@@ -1197,10 +1195,10 @@ void KWordQuizApp::updateMode(int m)
 void KWordQuizApp::slotInsertChar( int i )
 {
   if (m_qaView != 0)
-    m_qaView->slotSpecChar(Config().m_specialCharacters[i - 1]);
+    m_qaView->slotSpecChar(Prefs::specialCharacters()[i - 1]);
   else
     if (centralWidget() == m_editView)
-      m_editView->slotSpecChar(Config().m_specialCharacters[i - 1]);
+      m_editView->slotSpecChar(Prefs::specialCharacters()[i - 1]);
 }
 
 void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
@@ -1227,8 +1225,8 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
   editClear->setEnabled(fEdit);
   editInsert->setEnabled(fEdit);
   editDelete->setEnabled(fEdit);
-  editMarkBlank->setEnabled(fEdit && Config().m_enableBlanks);
-  editUnmarkBlank->setEnabled(fEdit && Config().m_enableBlanks);
+  editMarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
+  editUnmarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
   vocabLanguages->setEnabled(fEdit);
   vocabFont->setEnabled(fEdit || (qt == WQQuiz::qtFlash));
   //vocabKeyboard->setEnabled(fEdit);

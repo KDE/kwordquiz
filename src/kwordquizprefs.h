@@ -18,7 +18,7 @@
 #ifndef KWORDQUIZPREFS_H
 #define KWORDQUIZPREFS_H
 
-#include <kdialogbase.h>
+#include <kconfigdialog.h>
 
 
 /**
@@ -29,43 +29,35 @@ class PrefEditor;
 class PrefQuiz; 
 class PrefCharacter;
 class DlgSpecChar;
-  
-class KWordQuizPrefs : public KDialogBase  {
+
+class KWordQuizPrefs : public KConfigDialog  {
    Q_OBJECT
 public: 
-  KWordQuizPrefs(QWidget *parent=0, const char *name=0, bool modal=true);
+  KWordQuizPrefs(QWidget *parent=0, const char *name=0, KConfigSkeleton *config=0, DialogType dialogType=IconList, 
+    int dialogButtons=Default|Ok|Apply|Cancel|Help, ButtonCode defaultButton=Ok, bool modal=false);
   ~KWordQuizPrefs();
 
-  /** Write settings */
-  void updateDialog();
-  /** Read settings */
-  void updateConfiguration();
-
-public slots:
-  /// Will be called when the "Default" button has been clicked.
-  void slotDefault();
-  /// Will be called when the "Apply" button has been clicked.
-  void slotApply();
-  /// Will be called whenever a setting was changed.
-  void enableApply();
-  /// Will be called when user selects a character
-  void slotSpecChar(QChar);
-
-signals:
-  /// Will be emitted when the new settings should be applied.
-  void settingsChanged();
+protected slots:
+  void updateSettings(); 
+  void updateWidgetsDefault();
 
 private slots:
-  void slotCharListSelectionChanged();  
-  void slotDlgSpecCharClosed();  
+  void slotCharListSelectionChanged();
+  void slotDlgSpecCharClosed();
   void slotSelectSpecChar();
+  void slotSpecChar(QChar);
 
-  
+protected:
+  bool hasChanged();
+  bool isDefault();
+
 private:
   PrefEditor *m_prefEditor;
   PrefQuiz *m_prefQuiz;
   PrefCharacter* m_prefCharacter;
   DlgSpecChar* m_dlgSpecChar;
+  KConfigSkeleton * m_config;
+  bool m_hasChanged;
 };
 
 #endif

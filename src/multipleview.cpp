@@ -25,7 +25,7 @@
 
 #include "kwordquiz.h"
 #include "multipleview.h"
-#include "configuration.h"
+#include "prefs.h"
 
 MultipleView::MultipleView(QWidget *parent, const char *name, WFlags f)
     : MultipleViewBase(parent, name, f)
@@ -46,7 +46,7 @@ void MultipleView::init()
 {
 
   m_score ->setQuestionCount(m_quiz->questionCount());
-  m_score ->setAsPercent(Config().m_percent);
+  m_score ->setAsPercent(Prefs::percent());
   m_question = 0;
   m_error = 0;
 
@@ -54,13 +54,13 @@ void MultipleView::init()
   opt2->show();
   opt3->show();
 
-  lblQuestion -> setFont(Config().m_editorFont);
-  lblPreviousQuestion -> setFont(Config().m_editorFont);
-  lblYourAnswer -> setFont(Config().m_editorFont);
-  lblCorrect -> setFont(Config().m_editorFont); 
-  opt1->setFont(Config().m_editorFont);
-  opt2->setFont(Config().m_editorFont);
-  opt3->setFont(Config().m_editorFont);
+  lblQuestion -> setFont(Prefs::editorFont());
+  lblPreviousQuestion -> setFont(Prefs::editorFont());
+  lblYourAnswer -> setFont(Prefs::editorFont());
+  lblCorrect -> setFont(Prefs::editorFont()); 
+  opt1->setFont(Prefs::editorFont());
+  opt2->setFont(Prefs::editorFont());
+  opt3->setFont(Prefs::editorFont());
   
   picAnswered->clear();
   picCorrect->clear();
@@ -176,7 +176,7 @@ void MultipleView::slotCheck()
 
 void MultipleView::slotOpt1Clicked()
 {
-  if (Config().m_autoCheck)
+  if (Prefs::autoCheck())
     slotCheck();
   else
   {
@@ -187,7 +187,7 @@ void MultipleView::slotOpt1Clicked()
 
 void MultipleView::slotOpt2Clicked()
 {
-  if (Config().m_autoCheck)
+  if (Prefs::autoCheck())
     slotCheck();
   else
   {
@@ -198,7 +198,7 @@ void MultipleView::slotOpt2Clicked()
 
 void MultipleView::slotOpt3Clicked()
 {
-  if (Config().m_autoCheck)
+  if (Prefs::autoCheck())
     slotCheck();
   else
   {
@@ -283,7 +283,7 @@ void MultipleView::showQuestion(int i)
 
 void MultipleView::slotApplySettings( )
 {
-  m_score ->setAsPercent(Config().m_percent);
+  m_score ->setAsPercent(Prefs::percent());
   updateScore();
 }
 

@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>PrefEditorBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -30,10 +30,10 @@
         </property>
         <widget class="QButtonGroup" row="0" column="0">
             <property name="name">
-                <cstring>grpEnterMove</cstring>
+                <cstring>kcfg_EnterMove</cstring>
             </property>
             <property name="title">
-                <string>Enter Key Moves</string>
+                <string>Enter Ke&amp;y Moves</string>
             </property>
             <property name="toolTip" stdset="0">
                 <string>How enter key moves</string>
@@ -91,10 +91,13 @@
         </widget>
         <widget class="QCheckBox" row="1" column="0">
             <property name="name">
-                <cstring>chkEnableBlanks</cstring>
+                <cstring>kcfg_EnableBlanks</cstring>
             </property>
             <property name="text">
-                <string>&amp;Enable fill-in-the-blank</string>
+                <string>E&amp;nable fill-in-the-blank</string>
+            </property>
+            <property name="accel">
+                <string>Alt+N</string>
             </property>
             <property name="toolTip" stdset="0">
                 <string>Check to enable fill-in-the-blank</string>

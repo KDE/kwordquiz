@@ -17,9 +17,9 @@
 */
 
 #include <qcheckbox.h>
-#include <qradiobutton.h>
+#include <qbuttongroup.h>
 
-#include <krestrictedline.h>
+#include <knuminput.h>
 
 #include "prefquiz.h"
 
@@ -27,21 +27,15 @@
 PrefQuiz::PrefQuiz(QWidget *parent, const char *name, WFlags f)
  : PrefQuizBase(parent, name, f)
 {
+  kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());
+  kcfg_KeepDiscard->setEnabled(kcfg_AutoFlip->isChecked());
+  //optCorrect -> setEnabled(kcfg_AutoFlip->isChecked());
+  //optError -> setEnabled(kcfg_AutoFlip->isChecked());
 }
 
 
 PrefQuiz::~PrefQuiz()
 {
-}
-
-/*!
-    \fn PrefQuiz::slotAutoFlipClicked()
- */
-void PrefQuiz::slotAutoFlipClicked()
-{
-  txtSeconds -> setEnabled(chkAutoFlip->isChecked());
-  optCorrect -> setEnabled(chkAutoFlip->isChecked());
-  optError -> setEnabled(chkAutoFlip->isChecked());
 }
 
 #include "prefquiz.moc"

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg>
+  <kcfgfile name="kwordquizrc"/>
+  <group name="General">
+    <entry name="FirstRun" type="Bool">
+      <label>Is this the first time KWordQuiz is run?</label>
+      <default>true</default>
+    </entry>
+  </group>
+  <group name="Editor">
+    <entry name="ColumnTitles1" type="StringList">
+      <label>Titles for column 1</label>
+      <default></default>
+    </entry> 
+    <entry name="ColumnTitles2" type="StringList">
+      <label>Titles for column 2</label>
+      <default></default>
+    </entry>   
+    <entry name="EditorFont" type="Font">
+      <label>Font used in the editor</label>
+      <default code="true">KGlobalSettings::generalFont()</default>
+    </entry>    
+    <entry name="EnableBlanks" type="Bool">
+      <label>If Fill-in-the-blank should be enabled</label>
+      <default>false</default>
+    </entry>  
+    <entry name="EnterMove" type="Int">
+      <label>Direction the Enter key moves in the editor</label>
+      <default>1</default>
+    </entry>        
+    <entry name="SpecialCharacters" type="String">
+      <label>Characters for the special character toolbar</label>
+      <default>ßüחיטהזצר</default>
+    </entry>  
+  </group>
+  <group name="Quiz">
+    <entry name="AutoCheck" type="Bool">
+      <label>Automatically check selected answer in multiple choice</label>
+      <default>false</default>
+    </entry>
+   <entry name="AutoFlip" type="Bool">
+      <label>Automatically flip flashcard</label>
+      <default>false</default>
+    </entry>  
+    <entry name="FlashFont" type="Font">
+      <label>Font used for the flashcards</label>
+      <default code="true">KGlobalSettings::generalFont()</default>
+    </entry>      
+    <entry name="FlipDelay" type="Int">
+      <label>Time delay for flipping flashcard</label>
+      <default>3</default>
+    </entry>
+    <entry name="HintError" type="Bool">
+      <label>Treat use of hint as error</label>
+      <default>false</default>
+    </entry>
+    <entry name="KeepDiscard" type="Int">
+      <label>Count flashcard as correct or error</label>
+      <default>1</default>
+    </entry>
+    <entry name="Mode" type="Int">
+      <label>Quiz mode</label>
+      <default>1</default>
+    </entry>
+    <entry name="Percent" type="Bool">
+      <label>Show score as percentage</label>
+      <default>false</default>
+    </entry>        
+  </group>
+</kcfg>

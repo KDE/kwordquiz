@@ -31,7 +31,7 @@
 #include "paukerreader.h"
 #include "wqlreader.h"
 #include "wqlwriter.h"
-#include "configuration.h"
+#include "prefs.h"
 
 //QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 //KWordQuizView *KWordQuizDoc::m_view;
@@ -252,7 +252,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           g->setFont(wqldoc->font());
           g->setCurrentCell(wqldoc->startRow(), wqldoc->startCol());
           g->selectCells(wqldoc->startRow(), wqldoc->startCol(), wqldoc->endRow(), wqldoc->endCol());
-          Config().m_specialCharacters = wqldoc->specialCharacters();
+          Prefs::setSpecialCharacters(wqldoc->specialCharacters());
         }
         QString s;
         for(KWqlDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
@@ -361,7 +361,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     file.close();
     WqlWriter writer(&file);
     writer.writeFont(g->font());
-    writer.writeCharacters(Config().m_specialCharacters);
+    writer.writeCharacters(Prefs::specialCharacters());
     writer.writeGridInfo(g->verticalHeader()->width(), g->columnWidth(0), g->columnWidth(1), g->numRows());
     if (g->numSelections() > 0)
     {

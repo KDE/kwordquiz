@@ -33,7 +33,7 @@
 #include "kwordquizdoc.h"
 #include "kwordquiz.h"
 #include "dlgsort.h"
-#include "configuration.h"
+#include "prefs.h"
 #include "dlgrc.h"
 #include "dlgspecchar.h"
 
@@ -293,7 +293,7 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
       itm->setWordWrap(true);
       adjustRow(row);
       getDocument() -> setModified(true);
-      if (Config().m_enableBlanks)
+      if (Prefs::enableBlanks())
         if (!checkForBlank(text(row, col), true))
           KNotifyClient::event(winId(), "SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
     }    
@@ -884,14 +884,14 @@ void KWordQuizView::activateNextCell( )
   if (lc == rc && tr == br) //one cell selected
   {
     clearSelection();
-    switch( Config().m_enterMove )
+    switch(Prefs::enterMove())
     {
-      case 1:
+      case 0:
         if (m_currentRow == (numRows() - 1))
           setNumRows(numRows() + 1);
         setCurrentCell(m_currentRow + 1, m_currentCol);
         break;
-      case 2:
+      case 1:
         if (m_currentCol == 0)
           setCurrentCell(m_currentRow, m_currentCol + 1);
         else
@@ -901,7 +901,7 @@ void KWordQuizView::activateNextCell( )
           setCurrentCell(m_currentRow + 1, m_currentCol - 1);
           }
         break;
-      case 3:
+      case 2:
         setCurrentCell(m_currentRow, m_currentCol);
         break;
     }
@@ -909,9 +909,9 @@ void KWordQuizView::activateNextCell( )
   else //a larger selection, move within it
   {
     //addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-    switch( Config().m_enterMove )
+    switch(Prefs::enterMove())
     {
-      case 1:
+      case 0:
         if (m_currentRow == br)
         {
           if (m_currentCol < rc)
@@ -923,7 +923,7 @@ void KWordQuizView::activateNextCell( )
           if (m_currentRow < br)
             setCurrentCell(m_currentRow + 1, m_currentCol);
         break;
-      case 2:
+      case 1:
         if (m_currentCol == rc)
         {
           if (m_currentRow < br)
@@ -934,7 +934,7 @@ void KWordQuizView::activateNextCell( )
         else
           setCurrentCell(m_currentRow, m_currentCol + 1);
         break;
-      case 3:
+      case 2:
         setCurrentCell(m_currentRow, m_currentCol);
         break;
     }
@@ -988,7 +988,7 @@ void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr,
 {
   QColorGroup g (cg);
   
-  if (Config().m_enableBlanks)
+  if (Prefs::enableBlanks())
     if (!checkForBlank(text(row, col), true))
       g.setColor(QColorGroup::Text, Qt::red);
   

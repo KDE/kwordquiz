@@ -24,7 +24,7 @@
 #include <knotifyclient.h>
 
 #include "qaview.h"
-#include "configuration.h"
+#include "prefs.h"
 #include "kwordquiz.h"
 
 QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, name, f)
@@ -45,7 +45,7 @@ void QAView::setQuiz(WQQuiz *quiz)
 void QAView::init()
 {
   m_score -> setQuestionCount(m_quiz->questionCount());
-  m_score -> setAsPercent(Config().m_percent);
+  m_score -> setAsPercent(Prefs::percent());
   m_hintUsed = false;
   m_question = 0;
   m_error = 0;
@@ -53,12 +53,12 @@ void QAView::init()
   picCorrect -> clear();
   picError -> clear();
 
-  lblQuestion -> setFont(Config().m_editorFont);
-  lblAnswerBlank -> setFont(Config().m_editorFont);
-  txtAnswer -> setFont(Config().m_editorFont);
-  lblPreviousQuestion -> setFont(Config().m_editorFont);
-  lblYourAnswer -> setFont(Config().m_editorFont);
-  lblCorrect -> setFont(Config().m_editorFont);
+  lblQuestion -> setFont(Prefs::editorFont());
+  lblAnswerBlank -> setFont(Prefs::editorFont());
+  txtAnswer -> setFont(Prefs::editorFont());
+  lblPreviousQuestion -> setFont(Prefs::editorFont());
+  lblYourAnswer -> setFont(Prefs::editorFont());
+  lblCorrect -> setFont(Prefs::editorFont());
       
   lblPreviousQuestionHeader->clear();
   lblPreviousQuestion->clear();
@@ -89,7 +89,7 @@ void QAView::slotCheck()
   {
     bool fIsCorrect;
 
-    if (m_hintUsed && Config().m_hintError)
+    if (m_hintUsed && Prefs::hintError())
     {
       //Force an Error
       fIsCorrect = m_quiz->checkAnswer(m_question, "");
@@ -251,7 +251,7 @@ void QAView::showQuestion(int i)
 
 void QAView::slotApplySettings( )
 {
-  m_score ->setAsPercent(Config().m_percent);
+  m_score ->setAsPercent(Prefs::percent());
   updateScore();
 }
 

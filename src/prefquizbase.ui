@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>PrefQuizBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -28,137 +28,6 @@
         <property name="margin">
             <number>0</number>
         </property>
-        <widget class="QButtonGroup" row="0" column="0">
-            <property name="name">
-                <cstring>grpFlash</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>GroupBoxPanel</enum>
-            </property>
-            <property name="title">
-                <string>Flashcard</string>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>Specify behavior of a flashcard session</string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>chkAutoFlip</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Flip card automatically after</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Check to flip card automatically</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Select if you want a card to turn over automatically after the given amount of time</string>
-                    </property>
-                </widget>
-                <spacer row="1" column="0" rowspan="3" colspan="1">
-                    <property name="name">
-                        <cstring>spcHorz</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Fixed</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>70</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QRadioButton" row="2" column="1" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>optCorrect</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Count as co&amp;rrect</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Select how to count card</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Select if the previous card should be counted as correct when moving to the next card</string>
-                    </property>
-                </widget>
-                <widget class="QRadioButton" row="3" column="1" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>optError</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Count as &amp;error</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Select how to count card</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Select if the previous card should be counted as incorrect when moving to the next card</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="1" column="2">
-                    <property name="name">
-                        <cstring>lblSeconds</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>7</hsizetype>
-                            <vsizetype>5</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>seconds and</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Specify the amount of time between card flips</string>
-                    </property>
-                </widget>
-                <widget class="KRestrictedLine" row="1" column="1">
-                    <property name="name">
-                        <cstring>txtSeconds</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>0</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="maximumSize">
-                        <size>
-                            <width>40</width>
-                            <height>32767</height>
-                        </size>
-                    </property>
-                    <property name="text">
-                        <string>3</string>
-                    </property>
-                    <property name="maxLength">
-                        <number>1</number>
-                    </property>
-                    <property name="validChars">
-                        <string>0123456789</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Seconds of delay</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Specify the amount of time between card flips</string>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
         <widget class="QButtonGroup" row="1" column="0">
             <property name="name">
                 <cstring>grpMultiple</cstring>
@@ -175,10 +44,13 @@
                 </property>
                 <widget class="QCheckBox" row="0" column="0">
                     <property name="name">
-                        <cstring>chkAutoCheck</cstring>
+                        <cstring>kcfg_AutoCheck</cstring>
                     </property>
                     <property name="text">
                         <string>Check selection a&amp;utomatically</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+U</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>Check to correct automatically</string>
@@ -205,10 +77,13 @@
                 </property>
                 <widget class="QCheckBox" row="0" column="0">
                     <property name="name">
-                        <cstring>chkHintError</cstring>
+                        <cstring>kcfg_HintError</cstring>
                     </property>
                     <property name="text">
                         <string>&amp;Treat hint as error</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+T</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>Check to count hint as error</string>
@@ -235,10 +110,13 @@
                 </property>
                 <widget class="QCheckBox" row="0" column="0">
                     <property name="name">
-                        <cstring>chkPercent</cstring>
+                        <cstring>kcfg_Percent</cstring>
                     </property>
                     <property name="text">
                         <string>&amp;Show score as a percentage</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+S</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>Check to show score as a percentage</string>
@@ -262,20 +140,166 @@
             <property name="sizeHint">
                 <size>
                     <width>21</width>
-                    <height>40</height>
+                    <height>31</height>
                 </size>
             </property>
         </spacer>
+        <widget class="QButtonGroup" row="0" column="0">
+            <property name="name">
+                <cstring>KeepDiscard</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>GroupBoxPanel</enum>
+            </property>
+            <property name="title">
+                <string>Flashcard</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>Specify behavior of a flashcard session</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer row="1" column="0" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>spcHorz</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>70</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel" row="1" column="2">
+                    <property name="name">
+                        <cstring>lblSeconds</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>seconds and</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Specify the amount of time between card flips</string>
+                    </property>
+                </widget>
+                <widget class="KIntNumInput" row="1" column="1">
+                    <property name="name">
+                        <cstring>kcfg_FlipDelay</cstring>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Delay to flip card</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Delay in seconds to flip card</string>
+                    </property>
+                </widget>
+                <widget class="QButtonGroup" row="2" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>kcfg_KeepDiscard</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="title">
+                        <string></string>
+                    </property>
+                    <property name="selectedId" stdset="0">
+                        <number>0</number>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <widget class="QRadioButton" row="0" column="0">
+                            <property name="name">
+                                <cstring>optCorrect</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Count &amp;as correct</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+A</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Select how to count card</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Select if the previous card should be counted as correct when moving to the next card</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton" row="1" column="0">
+                            <property name="name">
+                                <cstring>optError</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Count as &amp;error</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+E</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Select how to count card</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Select if the previous card should be counted as incorrect when moving to the next card</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>kcfg_AutoFlip</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Flip card automatically after</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+F</string>
+                    </property>
+                    <property name="buttonGroupId">
+                        <number>2</number>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Check to flip card automatically</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Select if you want a card to turn over automatically after the given amount of time</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
     </grid>
 </widget>
-<customwidgets>
-</customwidgets>
 <connections>
     <connection>
-        <sender>chkAutoFlip</sender>
-        <signal>clicked()</signal>
-        <receiver>PrefQuizBase</receiver>
-        <slot>slotAutoFlipClicked()</slot>
+        <sender>kcfg_AutoFlip</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>kcfg_FlipDelay</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>kcfg_AutoFlip</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>kcfg_KeepDiscard</receiver>
+        <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
 <slots>
@@ -283,6 +307,7 @@
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>krestrictedline.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
 </includehints>
 </UI>

@@ -28,5 +28,4 @@ PrefCharacter::~PrefCharacter()
 {
 }
 
-
 #include "prefcharacter.moc"

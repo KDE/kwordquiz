@@ -31,9 +31,6 @@ public:
 
   PrefQuiz(QWidget *parent, const char *name=0, WFlags f=0);
   ~PrefQuiz();
-
-public slots:
-    void slotAutoFlipClicked();
 };
 
 #endif

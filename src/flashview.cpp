@@ -22,7 +22,7 @@
 
 #include "kwordquiz.h"
 #include "flashview.h"
-#include "configuration.h"
+#include "prefs.h"
 
 
 FlashView::FlashView(QWidget *parent, const char *name, WFlags f)
@@ -47,7 +47,7 @@ void FlashView::setQuiz(WQQuiz *quiz)
 void FlashView::init()
 {
   m_score ->setQuestionCount(m_quiz->questionCount());
-  m_score ->setAsPercent(Config().m_percent);
+  m_score ->setAsPercent(Prefs::percent());
 
   m_question = 0;
   m_error = 0;
@@ -55,7 +55,7 @@ void FlashView::init()
   picCorrect->clear();
   picError->clear();
 
-  lblQuestion->setFont(Config().m_flashFont);
+  lblQuestion->setFont(Prefs::flashFont());
   updateScore();
 
   KWordQuizApp *win=(KWordQuizApp *) parent();
@@ -130,8 +130,8 @@ void FlashView::slotFlip()
     m_showFirst = true;
   }
 
-  if (Config().m_autoFlip)
-    m_timer->start(Config().m_flipDelay * 1000, true);
+  if (Prefs::autoFlip())
+    m_timer->start(Prefs::flipDelay() * 1000, true);
   else
     m_timer->stop();
 }
@@ -190,7 +190,7 @@ void FlashView::slotTimer( )
   if (!m_showFirst)
     slotFlip();
   else
-    if (Config().m_keepDiscard)
+    if (Prefs::keepDiscard())
       slotDontKnow();
     else
       slotKnow();
@@ -198,13 +198,13 @@ void FlashView::slotTimer( )
 
 void FlashView::slotApplySettings( )
 {
-  lblQuestion->setFont(Config().m_flashFont);
-  if (Config().m_autoFlip)
-    m_timer->start(Config().m_flipDelay * 1000, true);
+  lblQuestion->setFont(Prefs::flashFont());
+  if (Prefs::autoFlip())
+    m_timer->start(Prefs::flipDelay() * 1000, true);
   else
     m_timer->stop();
 
-  m_score ->setAsPercent(Config().m_percent);
+  m_score ->setAsPercent(Prefs::percent());
   updateScore();
 }
 
