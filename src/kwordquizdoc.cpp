@@ -383,3 +383,5 @@ void KWordQuizDoc::slotModifiedOnDisk( const QString & path)
   }
   */
 }
+
+#include "kwordquizdoc.moc"

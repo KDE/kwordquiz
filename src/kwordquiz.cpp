@@ -1259,3 +1259,5 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
 
 
 
+
+#include "kwordquiz.moc"

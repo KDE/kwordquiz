@@ -1183,3 +1183,5 @@ void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr,
   
   QTable::paintCell (p, row, col, cr, selected, g );
 }
+
+#include "kwordquizview.moc"

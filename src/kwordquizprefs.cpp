@@ -235,3 +235,5 @@ void KWordQuizPrefs::slotSpecChar(QChar c)
   m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));  
   enableButtonApply(true);
 }
+
+#include "kwordquizprefs.moc"
