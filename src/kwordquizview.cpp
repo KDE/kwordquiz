@@ -340,10 +340,34 @@ void KWordQuizView::doEditUndo( )
     WQUndo undo;
     if (m_undoList->count() > 0)
     {
+      setUpdatesEnabled(false);
       undo = m_undoList->first();
-      QTextStream * ts = new QTextStream(undo.data(), IO_ReadOnly);
-      fromStream(ts, QTextStream::UnicodeUTF8);
+      setFont(undo.font());
+      verticalHeader()->setMinimumWidth(undo.colWidth0());
+      setColumnWidth(0, undo.colWidth1());
+      setColumnWidth(1, undo.colWidth2());
+      setNumRows(0);
+      setNumRows(undo.numRows());
+      setCurrentCell(undo.currentRow(), undo.currentCol());
+      addSelection(undo.selection());
+    
+      QString s;
+      int i = 0;
+      KWqlDataItemList dataList = undo.list();  
+      for(KWqlDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+      {
+        s = (*dataIt).frontText();
+        if (!s.isEmpty())
+          setText(i, 0, s); //calling setText only when there actually is text helps with sorting
+        s = (*dataIt).backText();
+        if (!s.isEmpty())
+          setText(i, 1, s);
+        setRowHeight(i, (*dataIt).rowHeight());
+        i++;
+      } 
+      
       m_undoList->remove(m_undoList->begin());
+      setUpdatesEnabled(true);
     }
 
     if (m_undoList->count() > 0)
@@ -915,230 +939,6 @@ void KWordQuizView::activateNextCell( )
   }
 }
 
-bool KWordQuizView::fromStream( QTextStream * ts, QTextStream::Encoding e )
-{
-      bool success = false;
-      ts->setEncoding(e);
-      QString s = "";
-      if (ts->readLine() != "WordQuiz")
-      {
-        KMessageBox::error(0, i18n("This does not appear to be a (K)WordQuiz file"));
-        return success;
-      }
-      s = ts->readLine();
-      s = s.left(1);
-      int iFV = s.toInt(0);
-      if (iFV != 5)
-      {
-        KMessageBox::error(0, i18n("KWordQuiz can only open files created by WordQuiz 5.x"));
-        return success;
-      }
-
-      while (ts->readLine() != "[Font Info]");
-      s = ts->readLine();
-      int p = s.find("=", 0);
-      QString fam = s.right(s.length() - (p + 1));
-      fam = fam.mid(1, fam.length() - 2);
-      //g->font().setFamily(s);
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int ps = s.toInt(0);
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int b = 0;
-      if (s == "1")
-      {
-        b = QFont::Bold;
-      }
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      bool it = (s == "1");
-
-      QFont f(fam, ps, b, it);
-      setFont(f);
-
-      while (ts->readLine() != "[Character Info]");  
-      s = ts->readLine();    
-      p = s.find("=", 0);
-      Config().m_specialCharacters = s.right(s.length() - (p + 1));
-
-      while (ts->readLine() != "[Grid Info]");
-      ts->readLine(); //skip value for width of row headers
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      setColumnWidth(0, s.toInt(0, 10));
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      setColumnWidth(1, s.toInt(0, 10));
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      setNumRows(s.toInt(0, 10) - 1); //We need to reduce by one since the header is not included
-
-      // Selection
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int sc =s.toInt(0, 10) - 1;
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int sr =s.toInt(0, 10) - 1;
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int ec =s.toInt(0, 10) - 1;
-
-      s = ts->readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int er =s.toInt(0, 10) - 1 ;
-
-      setCurrentCell(sr, sc);
-      selectCells(sr, sc, er, ec);
-
-      while (ts->readLine() != "[Vocabulary]");
-
-      s = ts->readLine();
-      p = s.find("   [", 0);
-      s = s.left(p);
-      s = s.stripWhiteSpace();
-      horizontalHeader()->setLabel(0, s);
-      s = ts->readLine();
-      horizontalHeader()->setLabel(1, s);
-
-      int i = 0;
-
-      while (!s.isNull())
-      {
-        s = ts->readLine();
-        p = s.find("[", 0);
-        QString r = s.mid(p + 1, 10);
-        int h = r.toInt(0, 10);
-        setRowHeight(i, h / 15);
-        s = s.left(p);
-        s = s.stripWhiteSpace();
-        if (!s.isEmpty())
-          setText(i, 0, s);
-
-        s = ts->readLine();
-        if (!s.isEmpty())
-          setText(i, 1, s);
-        i++;
-      }
-      success = true;
-      return success;
-}
-
-void KWordQuizView::toStream( QTextStream* ts, QTextStream::Encoding e )
-{
-    ts->setEncoding(e);
-    // \r\n is for  compatibility with the Windows version
-    QString s = "";
-
-    *ts << "WordQuiz\r\n";
-    *ts << "5.9.0\r\n\r\n";
-
-    QFont f = font();
-
-    *ts << "[Font Info]\r\n";
-    *ts << "FontName1=\"" + f.family() + "\"\r\n";
-    *ts << "FontSize1=" + s.setNum(f.pointSize()) + "\r\n";
-    if (f.bold())
-    {
-      *ts << "FontBold1=1\r\n";
-    }
-    else
-    {
-      *ts << "FontBold1=0\r\n";
-    }
-    if (f.italic())
-    {
-      *ts << "FontItalic1=1\r\n";
-    }
-    else
-    {
-      *ts << "FontItalic1=0\r\n";
-    }
-    *ts << "FontColor1=0\r\n";
-    *ts << "CharSet1=0\r\n";
-    *ts << "Layout1=0\r\n";
-    *ts << "FontName2=\"" + f.family() + "\"\r\n";
-    *ts << "FontSize2=" + s.setNum(f.pointSize()) + "\r\n";
-    if (f.bold())
-    {
-      *ts << "FontBold2=1\r\n";
-    }
-    else
-    {
-      *ts << "FontBold2=0\r\n";
-    }
-    if (f.italic())
-    {
-      *ts << "FontItalic2=1\r\n";
-    }
-    else
-    {
-      *ts << "FontItalic2=0\r\n";
-    }
-    *ts << "FontColor2=0\r\n";
-    *ts << "CharSet2=0\r\n";
-    *ts << "Layout2=0\r\n\r\n";
-
-    *ts << "[Character Info]\r\n";
-    *ts << "Characters1=" + Config().m_specialCharacters + "\r\n";
-    *ts << "Characters2=" + Config().m_specialCharacters + "\r\n\r\n";
-
-    *ts << "[Grid Info]\r\n";
-    *ts << "ColWidth0=" + s.setNum(verticalHeader()->sectionSize(0)) + "\r\n";
-    *ts << "ColWidth1=" + s.setNum(columnWidth(0)) + "\r\n";
-    *ts << "ColWidth2=" + s.setNum(columnWidth(1)) + "\r\n";
-    *ts << "RowCount=" + s.setNum(numRows() + 1) + "\r\n"; //Add one for the header
-
-    // Selection
-    if (numSelections() > 0)
-    {
-      QTableSelection qts = selection(0);
-      *ts << "SelLeft=" + s.setNum(qts.leftCol() + 1) + "\r\n";
-      *ts << "SelTop=" + s.setNum(qts.topRow() + 1) + "\r\n";
-      *ts << "SelRight=" + s.setNum(qts.rightCol() +1) + "\r\n";
-      *ts << "SelBottom=" + s.setNum(qts.bottomRow() +1) + "\r\n\r\n";
-    }
-    else
-    {
-      *ts << "SelLeft=" + s.setNum(currentColumn() + 1) + "\r\n";
-      *ts << "SelTop=" + s.setNum(currentRow() + 1) + "\r\n";
-      *ts << "SelRight=" + s.setNum(currentColumn() +1) + "\r\n";
-      *ts << "SelBottom=" + s.setNum(currentRow() +1) + "\r\n\r\n";
-    }
-
-    *ts << "[Vocabulary]\r\n";
-
-    *ts << horizontalHeader()->label(0)  + "   [0000000300]\r\n"; // + s.setNum(g->horizontalHeader()->sectionSize(2) * 15) + "]\r\n";
-    *ts << horizontalHeader()->label(1)  + "\r\n";
-    int i = 0;
-    int r = numRows();
-    while (i < r)
-    {
-      *ts << text(i,0)  + QString( "   [%1]\r\n" ).arg(rowHeight(i) * 15, 10, 10 );
-      *ts << text(i,1) + "\r\n";
-      i++;
-    }
-}
-
 void KWordQuizView::addUndo( const QString & caption )
 {
   while (m_undoList->count() > 10)
@@ -1146,14 +946,26 @@ void KWordQuizView::addUndo( const QString & caption )
     m_undoList->remove(m_undoList->begin());
   }
 
-  QString * s = new QString();
-  QTextStream* ts = new QTextStream(s, IO_WriteOnly);
-  toStream(ts, QTextStream::UnicodeUTF8);
-
   WQUndo* undo = new WQUndo();
   undo->setText(caption);
-  undo->setData(s);
+  undo->setFont(font());
+  undo->setColWidth0(verticalHeader()->width());
+  undo->setColWidth1(columnWidth(0));
+  undo->setColWidth2(columnWidth(1));
+  undo->setNumRows(numRows());
+  undo->setCurrentRow(currentRow());
+  undo->setCurrentCol(currentColumn());
+  undo->setSelection(selection(0));
+  
+  KWqlDataItemList list; 
+  for(int i = 0; i < numRows(); i++)
+  {     
+    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
+    list.append(item);  
+  }
 
+  undo->setList(list);
+  
   m_undoList->prepend(*undo);
 
   getDocument()->setModified(true);
