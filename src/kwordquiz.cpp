@@ -153,7 +153,7 @@ void KWordQuizApp::initActions()
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
   editDelete->setToolTip(editDelete->whatsThis());
   
-  editMarkBlank = new KAction(i18n("&Mark As Blank"), locate("data", "kwordquiz/pics/markasblank.png"), "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
+  editMarkBlank = new KAction(i18n("&Mark as Blank"), locate("data", "kwordquiz/pics/markasblank.png"), "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
   editMarkBlank->setWhatsThis(i18n("Marks the current or selected word as a blank for Fill-in-the-blank"));
   editMarkBlank->setToolTip(editMarkBlank->whatsThis());
   
@@ -571,7 +571,7 @@ bool KWordQuizApp::saveAsFileName( )
   
   KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true);
   fd -> setOperationMode(KFileDialog::Saving);
-  fd -> setCaption(i18n("Save vocabulary document as..."));
+  fd -> setCaption(i18n("Save Vocabulary Document As..."));
   fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language"));
 
   if (fd->exec() == QDialog::Accepted)
