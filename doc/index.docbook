@@ -84,7 +84,14 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-&kwordquiz; can save your vocabulary documents in two different formats. The default is the .kvtml format used by other KDE programs, e.g. KVocTrain. The other format is the .wql format used by WordQuiz for Windows. This way you can exchange files with Windows users. You can have several files open at the same time and easily copy or move entries between files. In this way you can also combine several documents to one large if you need to practice for e. g. a final exam.</para>
+&kwordquiz; can open several types of vocabulary data. Supported are .kvtml used by other KDE programs such as KVocTrain, .wql used by WordQuiz for Windows, .csv files with comma-separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net). You can automatically combine several documents to one large list if you need to practice for e. g. a final exam.
+</para>
+<para>
+&kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other KDE programs. Other available options are the .wql format used by WordQuiz for Windows allowing exchange with Windows users, .csv, and .html. 
+</para>
+<para>
+You can have several files open at the same time and easily copy or move entries between files.
+</para>
 </sect2>
 </sect1>
 </chapter>
@@ -125,7 +132,7 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
     </term>
     <listitem>
       <para>
-        <action>Open</action> an existing vocabulary document
+        <action>Open</action> one or more existing vocabulary documents. Several documents can be combined to one larger list.
       </para>
     </listitem>
   </varlistentry>
@@ -1404,7 +1411,7 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
     </question>
     <answer>
       <para>
-        There is no automatic way to do this. However, &kwordquiz; supports smart pasting meaning that if you select just one cell the program will calculate (and insert) the number of rows needed. That way you can copy and paste several vocabularies into one with little effort.
+        Yes, when you select <menuchoice><guimenu>File</guimenu><guimenuitem>Open...</guimenuitem></menuchoice> you can highlight more than one file in the dialog. By default they will be opened in separate windows, but if you select the checkbox <guibutton>Join selected files into one list</guibutton>, then the data in all files will be combined into one new list.
       </para>
     </answer>
   </qandaentry>
