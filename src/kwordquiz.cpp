@@ -155,9 +155,6 @@ void KWordQuizApp::initActions()
   quizRestart = new KAction(i18n("&Restart"), locate("data", "kwordquiz/pics/restart.png"), "CTRL+R", this, 0, actionCollection(), "quiz_restart");
   quizRepeatErrors = new KAction(i18n("Repeat &Errors"), locate("data", "kwordquiz/pics/repeat.png"), "CTRL+T", this, 0, actionCollection(),"quiz_repeat_errors");
 
-  //viewToolBar = KStdAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
-  viewStatusBar = KStdAction::showStatusbar(this, SLOT(slotViewStatusBar()), actionCollection());
-
   configKeys = KStdAction::keyBindings(this, SLOT( slotConfigureKeys() ), actionCollection());
   configToolbar = KStdAction::configureToolbars(this, SLOT( slotConfigureToolbar() ), actionCollection());
   configNotifications = KStdAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
@@ -178,13 +175,12 @@ void KWordQuizApp::initActions()
   editCut->setStatusText(i18n("Cuts the selected section and puts it to the clipboard"));
   editCopy->setStatusText(i18n("Copies the selected section to the clipboard"));
   editPaste->setStatusText(i18n("Pastes the clipboard contents to actual position"));
-  //viewToolBar->setStatusText(i18n("Enables/disables the toolbar"));
-  viewStatusBar->setStatusText(i18n("Enables/disables the statusbar"));
 
+  createStandardStatusBarAction();
   setStandardToolBarMenuEnabled(true);
   // use the absolute path to your kwordquizui.rc file for testing purpose in createGUI();
   createGUI("kwordquizui.rc");
-
+  setAutoSaveSettings();
 }
 
 
@@ -240,16 +236,8 @@ KWordQuizDoc *KWordQuizApp::getDocument() const
 }
 
 void KWordQuizApp::saveOptions()
-{	
-  config->setGroup("General Options");
-  config->writeEntry("Geometry", size());
-  config->writeEntry("Show Statusbar",viewStatusBar->isChecked());
-
-  toolBar("mainToolBar")->saveSettings(config, "MainToolBar");
-  toolBar("sessionToolBar")->saveSettings(config, "SessionToolBar");
-  toolBar("quizToolBar")->saveSettings(config, "QuizToolBar");
-
-  fileOpenRecent->saveEntries(config,"Recent Files");
+{
+  fileOpenRecent->saveEntries(config, "Recent Files");
 
   config->setGroup("Quiz Options");
   config->writeEntry("Mode", m_mode);
@@ -258,25 +246,7 @@ void KWordQuizApp::saveOptions()
 
 void KWordQuizApp::readOptions()
 {
-
-  config->setGroup("General Options");
-
-  bool bViewStatusbar = config->readBoolEntry("Show Statusbar", true);
-  viewStatusBar->setChecked(bViewStatusbar);
-  slotViewStatusBar();
-
-  toolBar("mainToolBar")->applySettings(config, "MainToolBar");
-  toolBar("sessionToolBar")->applySettings(config, "SessionToolBar");
-  //toolBar("quizToolBar")->applySettings(config, "QuizToolBar");
-
-  // initialize the recent file list
-  fileOpenRecent->loadEntries(config,"Recent Files");
-
-  QSize size=config->readSizeEntry("Geometry");
-  if(!size.isEmpty())
-  {
-    resize(size);
-  }
+  fileOpenRecent->loadEntries(config, "Recent Files");
 
   config->setGroup("Quiz Options");
   m_mode = config->readNumEntry("Mode", 1);
@@ -879,41 +849,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
 
   }
 }
-
-void KWordQuizApp::slotViewToolBar()
-{
-  slotStatusMsg(i18n("Toggling toolbar..."));
-  ///////////////////////////////////////////////////////////////////
-  // turn Toolbar on or off
-//   if(!viewToolBar->isChecked())
-//   {
-//     toolBar("mainToolBar")->hide();
-//   }
-//   else
-//   {
-//     toolBar("mainToolBar")->show();
-//   }
-
-  slotStatusMsg(i18n("Ready."));
-}
-
-void KWordQuizApp::slotViewStatusBar()
-{
-  slotStatusMsg(i18n("Toggle the statusbar..."));
-  ///////////////////////////////////////////////////////////////////
-  //turn Statusbar on or off
-  if(!viewStatusBar->isChecked())
-  {
-    statusBar()->hide();
-  }
-  else
-  {
-    statusBar()->show();
-  }
-
-  slotStatusMsg(i18n("Ready."));
-}
-
 
 /** Configure keys */
 void KWordQuizApp::slotConfigureKeys()

@@ -202,11 +202,6 @@ class KWordQuizApp : public KMainWindow
     /** question and answer session */
     void slotQuizQA();         
 
-    /** toggles the toolbar */
-    void slotViewToolBar();
-    /** toggles the statusbar */
-    void slotViewStatusBar();
-
     /** configure toolbar */
     void slotConfigureToolbar();
     /** configure keys */
@@ -302,9 +297,6 @@ class KWordQuizApp : public KMainWindow
     KAction* flashDontKnow;
 
     KAction* qaHint;
-
-    KToggleAction* viewToolBar;
-    KToggleAction* viewStatusBar;
 
     KAction* configToolbar;
     KAction* configKeys;
