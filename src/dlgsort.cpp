@@ -11,7 +11,6 @@
 #include <klocale.h>
 
 #include <qradiobutton.h>
-#include <qlayout.h>
 
 #include "dlgsort.h"
 

@@ -9,17 +9,13 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 #include <qlabel.h>
-#include <qpixmap.h>
 
 #include <kstandarddirs.h> //locate
 #include <klocale.h>
-#include <kmenubar.h>
-#include <kpopupmenu.h>
 #include <knotifyclient.h>
 
 #include "kwordquiz.h"
 #include "flashview.h"
-#include "wqquiz.h"
 #include "configuration.h"
 
 

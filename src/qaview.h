@@ -13,10 +13,8 @@
 #define QAVIEW_H
 
 #include <kaction.h>
-#include <ktoolbar.h>
-#include <kpopupmenu.h>
 
-#include <qaviewbase.h>
+#include "qaviewbase.h"
 
 #include "wqquiz.h"
 #include "wqscore.h"

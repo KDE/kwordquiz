@@ -12,7 +12,6 @@
 #ifndef DLGLANGUAGE_H
 #define DLGLANGUAGE_H
 
-#include <qwidget.h>
 #include <kdialogbase.h>
 
 #include "dlglanguagebase.h"

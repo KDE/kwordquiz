@@ -12,7 +12,6 @@
 #define WQQUIZ_H
 
 #include <qtable.h>
-#include <qptrlist.h>
 
 #include "wqlistitem.h"
 #include "kwordquizview.h"

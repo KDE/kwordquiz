@@ -23,9 +23,6 @@
 #endif 
 
 // include files for Qt
-#include <qwidget.h>
-#include <qtable.h>
-#include <qtextstream.h>
 
 
 #include <kprinter.h>

@@ -11,15 +11,10 @@
 #ifndef FLASHVIEW_H
 #define FLASHVIEW_H
 
-#include <qtimer.h>
 
-#include <kaction.h>
-#include <ktoolbar.h>
-#include <kpopupmenu.h>
 
-#include <flashviewbase.h>
+#include "flashviewbase.h"
 
-#include "wqquiz.h"
 #include "wqscore.h"
 
 class WQQuiz;

@@ -18,7 +18,6 @@
 #ifndef KWORDQUIZPREFS_H
 #define KWORDQUIZPREFS_H
 
-#include <qwidget.h>
 #include <kdialogbase.h>
 
 

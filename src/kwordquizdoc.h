@@ -23,9 +23,6 @@
 #endif 
 
 // include files for QT
-#include <qobject.h>
-#include <qstring.h>
-#include <qlist.h>
 
 // include files for KDE
 #include <kurl.h>

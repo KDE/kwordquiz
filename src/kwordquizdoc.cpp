@@ -16,26 +16,16 @@
  ***************************************************************************/
 
 // include files for Qt
-#include <qdir.h>
-#include <qwidget.h>
-#include <qfile.h>
-#include <qtextstream.h>
-#include <qtable.h>
-#include <qtabwidget.h>
 
 // include files for KDE
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kio/job.h>
 #include <kio/netaccess.h>
-#include <kstandarddirs.h> //locate
-#include <keduvocdata.h>
-#include <kdirwatch.h>
+#include "keduvocdata.h"
 
 // application specific includes
 #include "kwordquizdoc.h"
 #include "kwordquiz.h"
-#include "kwordquizview.h"
 #include "kvtmlwriter.h"
 #include "version.h"
 

@@ -10,11 +10,9 @@
 
 #include <krandomsequence.h>
 
-#include <qvaluelist.h>
 #include <qregexp.h>
 
 #include "wqquiz.h"
-#include "wqlistitem.h"
 
 QPtrList<WQListItem> *WQQuiz::m_list = 0L;
 QPtrList<WQListItem> *WQQuiz::m_errorList = 0L;

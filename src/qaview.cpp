@@ -9,18 +9,15 @@
 // Copyright: See COPYING file that comes with this distribution
 
 #include <qlabel.h>
-#include <qpixmap.h>
 
 #include <kstandarddirs.h> //locate
 #include <klocale.h>
-#include <kmessagebox.h>
 #include <klineedit.h>
 #include <knotifyclient.h>
 
 #include "qaview.h"
 #include "configuration.h"
 #include "kwordquiz.h"
-#include "wqquiz.h"
 
 QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, name, f)
 {

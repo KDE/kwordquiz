@@ -18,15 +18,11 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kiconloader.h>
-#include <kconfig.h>
 #include <krestrictedline.h>
 #include <kmessagebox.h>
-#include <kapplication.h>
 #include <kpushbutton.h>
 
 #include <qlayout.h>
-#include <qframe.h>
-#include <qbuttongroup.h>
 #include <qradiobutton.h>
 #include <qcheckbox.h>
 #include <qlistview.h>

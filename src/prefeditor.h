@@ -11,7 +11,7 @@
 #ifndef PREFEDITOR_H
 #define PREFEDITOR_H
 
-#include <prefeditorbase.h>
+#include "prefeditorbase.h"
 
 /**
 @author Peter Hedlund

@@ -17,7 +17,6 @@
 
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
-#include <klocale.h>
 
 #include "kwordquiz.h"
 #include "version.h"

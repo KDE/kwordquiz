@@ -12,8 +12,6 @@
 #ifndef WQPRINTDIALOGPAGE_H
 #define WQPRINTDIALOGPAGE_H
 
-#include <qbuttongroup.h>
-#include <qradiobutton.h>
 
 #include <kdeprint/kprintdialogpage.h>
 

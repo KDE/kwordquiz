@@ -12,9 +12,8 @@
 #ifndef MULTIPLEVIEW_H
 #define MULTIPLEVIEW_H
 
-#include <multipleviewbase.h>
+#include "multipleviewbase.h"
 
-#include "wqquiz.h"
 #include "wqscore.h"
 
 /**

@@ -16,16 +16,12 @@
  ***************************************************************************/
 
 // include files for Qt
-#include <qprinter.h>
 #include <qpainter.h>
-#include <qpaintdevicemetrics.h>
-#include <qtabwidget.h>
 #include <qtable.h>
 #include <qclipboard.h>
 #include <qlineedit.h>
 
 // include files for KDE
-#include <kstandarddirs.h> //locate
 #include <klocale.h> //i18n
 #include <kmessagebox.h> // always useful
 #include <krandomsequence.h>

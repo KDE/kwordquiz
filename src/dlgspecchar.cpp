@@ -12,9 +12,7 @@
 #include "dlgspecchar.h"
 
 #include <qlayout.h>
-#include <qclipboard.h>
 
-#include <kapplication.h>
 #include <klocale.h>
 #include <kcharselect.h>
 #include <kdebug.h>

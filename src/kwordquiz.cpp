@@ -16,49 +16,31 @@
  ***************************************************************************/
 //
 // include files for QT
-#include <qdir.h>
-#include <qprinter.h>
 #include <qpainter.h>
-#include <qtabwidget.h>
-#include <qtable.h>
-#include <qsize.h>
-#include <qdialog.h>
-#include <qclipboard.h>
 #include <qbitmap.h>
 
 // include files for KDE
-#include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <kmenubar.h>
 #include <kstatusbar.h>
 #include <klocale.h>
-#include <kconfig.h>
-#include <kstdaction.h>
 #include <kkeydialog.h>
 #include <kedittoolbar.h>
 #include <kstandarddirs.h> //locate
 #include <kfontdialog.h>
 #include <kpopupmenu.h>
 #include <knotifydialog.h>
-#include <krandomsequence.h>
 //#include <keduvocdata.h>
-#include <kglobalsettings.h>
-#include <kprinter.h>
-#include <kdirwatch.h>
 
 // application specific includes
 #include "kwordquiz.h"
-#include "kwordquizview.h"
 #include "kwordquizdoc.h"
 #include "dlglanguage.h"
 #include "kwordquizprefs.h"
 #include "qaview.h"
 #include "flashview.h"
 #include "multipleview.h"
-#include "wqquiz.h"
 #include "configuration.h"
-#include "dlgsort.h"
 #include "wqprintdialogpage.h"
 
 #define ID_STATUS_MSG 1

@@ -12,7 +12,7 @@
 #ifndef PREFCHARACTER_H
 #define PREFCHARACTER_H
 
-#include <prefcharacterbase.h>
+#include "prefcharacterbase.h"
 
 /**
 @author Peter Hedlund
