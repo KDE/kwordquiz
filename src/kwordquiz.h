@@ -223,7 +223,8 @@ class KWordQuizApp : public KMainWindow
     void slotUndoChange(const QString & text, bool enabled);
     
     void slotInsertChar(int i);
-  
+    
+    void slotActionHighlighted(KAction *, bool);
   private:
 
     WQQuiz::QuizType m_quizType;

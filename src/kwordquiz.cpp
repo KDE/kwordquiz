@@ -315,8 +315,8 @@ void KWordQuizApp::initActions()
   setStandardToolBarMenuEnabled(true);
   
   actionCollection()->setHighlightingEnabled(true);
-  connect(actionCollection(), SIGNAL( actionStatusText( const QString & ) ), this, SLOT( slotStatusMsg( const QString & ) ) );  
-  
+  connect(actionCollection(), SIGNAL(actionStatusText(const QString &)), this, SLOT(slotStatusMsg(const QString &)));  
+  connect(actionCollection(), SIGNAL(actionHighlighted(KAction *, bool)), this, SLOT(slotActionHighlighted(KAction *, bool)));    
   updateSpecialCharIcons();
     
   // use the absolute path to your kwordquizui.rc file for testing purpose in createGUI();
@@ -324,20 +324,11 @@ void KWordQuizApp::initActions()
   setAutoSaveSettings();
 }
 
-
 void KWordQuizApp::initStatusBar()
 {
-  ///////////////////////////////////////////////////////////////////
-  // STATUSBAR
-  // TODO: add your own items you need for displaying current application status.
-  //statusBar()->insertFixedItem(i18n("Ready."), ID_STATUS_MSG);
-  //statusBar()->setItemFixed(ID_STATUS_MSG, 300);
-  //statusBar()->setItemAlignment(ID_STATUS_MSG, AlignLeft|AlignVCenter);
-
   statusBar()->insertFixedItem("", ID_STATUS_MSG_MODE, true);
   statusBar()->setItemFixed(ID_STATUS_MSG_MODE, 250);
   statusBar()->setItemAlignment(ID_STATUS_MSG_MODE, AlignLeft|AlignVCenter);
-
 }
 
 void KWordQuizApp::initDocument()
@@ -370,7 +361,7 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
     fileOpenRecent->addURL( url );
     updateMode(Config().m_mode);    
   }
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 
@@ -471,7 +462,7 @@ void KWordQuizApp::slotFileNew()
     KWordQuizApp *new_window= new KWordQuizApp();
     new_window->show();
   }
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotFileOpen()
@@ -524,7 +515,7 @@ void KWordQuizApp::slotFileOpen()
     }
   }
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotFileOpenRecent(const KURL& url)
@@ -569,7 +560,7 @@ void KWordQuizApp::slotFileOpenRecent(const KURL& url)
       new_window->updateMode(Config().m_mode);
     }
   }
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotFileSave()
@@ -583,14 +574,14 @@ void KWordQuizApp::slotFileSave()
   {
     doc->saveDocument(doc->URL());
   }
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotFileSaveAs()
 {
   slotStatusMsg(i18n("Saving file with a new filename..."));
   saveAsFileName();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 bool KWordQuizApp::saveAsFileName( )
@@ -659,7 +650,7 @@ void KWordQuizApp::slotFileClose()
       m_editView ->setFocus();     
     }    
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotFilePrint()
@@ -674,7 +665,7 @@ void KWordQuizApp::slotFilePrint()
     m_editView->print(&printer);
   }
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotFileQuit()
@@ -705,28 +696,28 @@ void KWordQuizApp::slotEditUndo()
 {
   slotStatusMsg(i18n("Undoing previous command..."));
   m_editView->doEditUndo();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditCut()
 {
   slotStatusMsg(i18n("Cutting selection..."));
   m_editView->doEditCut();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditCopy()
 {
   slotStatusMsg(i18n("Copying selection to clipboard..."));
   m_editView->doEditCopy();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditPaste()
 {
   slotStatusMsg(i18n("Inserting clipboard contents..."));
   m_editView->doEditPaste();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 
@@ -734,35 +725,35 @@ void KWordQuizApp::slotEditClear()
 {
   slotStatusMsg(i18n("Clearing the selected cells..."));
   m_editView->doEditClear();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditInsert()
 {
   slotStatusMsg(i18n("Inserting rows..."));
   m_editView->doEditInsert();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditDelete()
 {
   slotStatusMsg(i18n("Deleting selected rows..."));
   m_editView->doEditDelete();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditMarkBlank()
 {
   slotStatusMsg(i18n("Marking selected text as a blank..."));
   m_editView->doEditMarkBlank();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditUnmarkBlank()
 {
   slotStatusMsg(i18n("Removing blank markings..."));
   m_editView->doEditUnmarkBlank();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 
@@ -770,7 +761,7 @@ void KWordQuizApp::slotEditFind()
 {
   slotStatusMsg(i18n("Searching for indicated text..."));
   KMessageBox::sorry(0, i18n("Not implemented yet"));
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotVocabLanguages()
@@ -787,7 +778,7 @@ void KWordQuizApp::slotVocabLanguages()
     m_editView -> horizontalHeader()->setLabel(1, dlg->Language(2));
     updateMode(Config().m_mode);
   }
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotVocabFont()
@@ -814,42 +805,42 @@ void KWordQuizApp::slotVocabFont()
       doc->setModified(true);
     }
   }
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotVocabKeyboard()
 {
   slotStatusMsg(i18n("Changing the keyboard layout..."));
   KMessageBox::sorry(0, i18n("Not implemented yet"));
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotVocabChar()
 {
   slotStatusMsg(i18n("Inserting special character..."));
   m_editView->doVocabSpecChar();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotVocabRC()
 {
   slotStatusMsg(i18n("Changing row and column properties..."));
   m_editView->doVocabRC();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotVocabSort()
 {
   slotStatusMsg(i18n("Sorting the vocabulary..."));
   m_editView->doVocabSort();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotVocabShuffle()
 {
   slotStatusMsg(i18n("Randomizing the vocabulary..."));
   m_editView->doVocabShuffle();
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotMode0()
@@ -862,70 +853,70 @@ void KWordQuizApp::slotMode0()
   {
   updateMode(1);
   }
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotMode1()
 {
   slotStatusMsg(i18n("Updating mode..."));
   updateMode(1);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotMode2()
 {
   slotStatusMsg(i18n("Updating mode..."));
   updateMode(2);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotMode3()
 {
   slotStatusMsg(i18n("Updating mode..."));
   updateMode(3);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotMode4()
 {
   slotStatusMsg(i18n("Updating mode..."));
   updateMode(4);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotMode5()
 {
   slotStatusMsg(i18n("Updating mode..."));
   updateMode(5);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotQuizEditor()
 {
   slotStatusMsg(i18n("Starting editor session..."));
   updateSession(WQQuiz::qtEditor);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotQuizFlash()
 {
   slotStatusMsg(i18n("Starting flashcard session..."));
   updateSession(WQQuiz::qtFlash);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotQuizMultiple()
 {
   slotStatusMsg(i18n("Starting multiple choice session..."));
   updateSession(WQQuiz::qtMultiple);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotQuizQA()
 {
   slotStatusMsg(i18n("Starting question & answer session..."));
   updateSession(WQQuiz::qtQA);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
@@ -1245,6 +1236,12 @@ void KWordQuizApp::slotInsertChar( int i )
     m_qaView->slotSpecChar(Config().m_specialCharacters[i - 1]);
   else
     m_editView->slotSpecChar(Config().m_specialCharacters[i - 1]);
+}
+
+void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
+{
+  if (!hl)
+    slotStatusMsg(i18n("Ready"));
 }
 
 
