@@ -1,0 +1,556 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>PrefCardAppearanceBase</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>PrefCardAppearanceBase</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>606</width>
+            <height>181</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Card Appearance</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QFrame" row="0" column="0" rowspan="3" colspan="1">
+            <property name="name">
+                <cstring>cardFrame</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="minimumSize">
+                <size>
+                    <width>175</width>
+                    <height>100</height>
+                </size>
+            </property>
+            <property name="maximumSize">
+                <size>
+                    <width>175</width>
+                    <height>100</height>
+                </size>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="frameShape">
+                <enum>Box</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>The flashcard</string>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>11</x>
+                        <y>42</y>
+                        <width>153</width>
+                        <height>47</height>
+                    </rect>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>7</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>This is the question</string>
+                </property>
+                <property name="textFormat">
+                    <enum>AutoText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>false</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignCenter</set>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>The flashcard</string>
+                </property>
+                <property name="whatsThis" stdset="0">
+                    <string>The flashcard. Select Quiz -&gt; Check to see the other side.</string>
+                </property>
+            </widget>
+            <widget class="Line">
+                <property name="name">
+                    <cstring>line</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>11</x>
+                        <y>33</y>
+                        <width>153</width>
+                        <height>16</height>
+                    </rect>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>1</hsizetype>
+                        <vsizetype>0</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="paletteForegroundColor">
+                    <color>
+                        <red>255</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="frameShape">
+                    <enum>HLine</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Plain</enum>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>The flashcard</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>titleLabel</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>11</x>
+                        <y>11</y>
+                        <width>153</width>
+                        <height>16</height>
+                    </rect>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>0</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="font">
+                    <font>
+                        <bold>1</bold>
+                    </font>
+                </property>
+                <property name="text">
+                    <string>Front</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignTop</set>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>The flashcard</string>
+                </property>
+                <property name="whatsThis" stdset="0">
+                    <string>Language or other identifier for this card</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="KPushButton" row="3" column="0">
+            <property name="name">
+                <cstring>flipButton</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Flip</string>
+            </property>
+            <property name="accel">
+                <string>Alt+F</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Flip card</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>Use to show the other side of the card</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="1">
+            <property name="name">
+                <cstring>textColorLabel</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>Text Color:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>textColorButton</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="1">
+            <property name="name">
+                <cstring>frameColorLabel</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>Frame Color:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring></cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="1">
+            <property name="name">
+                <cstring>fontLabel</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>Font:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring></cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="1">
+            <property name="name">
+                <cstring>cardColorLabel</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>Card Color:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring></cstring>
+            </property>
+        </widget>
+        <widget class="QWidgetStack" row="0" column="2" rowspan="4" colspan="1">
+            <property name="name">
+                <cstring>widgetStack</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <widget class="QWidget">
+              <property name="name">
+                <cstring>backStackPage</cstring>
+              </property>
+              <attribute name="id">
+                <number>0</number>
+              </attribute>
+              <grid>
+                <property name="name">
+                  <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                  <number>0</number>
+                </property>
+                <widget class="KFontRequester" row="0" column="0">
+                  <property name="name">
+                    <cstring>kcfg_BackFont</cstring>
+                  </property>
+                  <property name="sizePolicy">
+                    <sizepolicy>
+                      <hsizetype>7</hsizetype>
+                      <vsizetype>0</vsizetype>
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                    </sizepolicy>
+                  </property>
+                  <property name="focusPolicy">
+                    <enum>TabFocus</enum>
+                  </property>
+                  <property name="title">
+                    <string>Font:</string>
+                  </property>
+                  <property name="toolTip" stdset="0">
+                    <string>Font for back of card</string>
+                  </property>
+                  <property name="whatsThis" stdset="0">
+                    <string>Use to select the font for displaying text on the back of the card</string>
+                  </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="0">
+                  <property name="name">
+                    <cstring>kcfg_BackTextColor</cstring>
+                  </property>
+                  <property name="text">
+                    <string></string>
+                  </property>
+                  <property name="toolTip" stdset="0">
+                    <string>Select text color</string>
+                  </property>
+                  <property name="whatsThis" stdset="0">
+                    <string>Use to select the color for text shown on the card</string>
+                  </property>
+                </widget>
+                <widget class="KColorButton" row="3" column="0">
+                  <property name="name">
+                    <cstring>kcfg_BackFrameColor</cstring>
+                  </property>
+                  <property name="text">
+                    <string></string>
+                  </property>
+                  <property name="toolTip" stdset="0">
+                    <string>Select card frame color</string>
+                  </property>
+                  <property name="whatsThis" stdset="0">
+                    <string>Use to select the color for drawing the frame of the card</string>
+                  </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="0">
+                  <property name="name">
+                    <cstring>kcfg_BackCardColor</cstring>
+                  </property>
+                  <property name="text">
+                    <string></string>
+                  </property>
+                  <property name="toolTip" stdset="0">
+                    <string>Select card color</string>
+                  </property>
+                  <property name="whatsThis" stdset="0">
+                    <string>Select color used to draw the card</string>
+                  </property>
+                </widget>
+              </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>frontStackPage</cstring>
+                </property>
+                <attribute name="id">
+                    <number>0</number>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>0</number>
+                    </property>
+                    <widget class="KFontRequester" row="0" column="0">
+                        <property name="name">
+                            <cstring>kcfg_FrontFont</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>7</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="focusPolicy">
+                            <enum>TabFocus</enum>
+                        </property>
+                        <property name="title">
+                            <string>Font:</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Font for front of card</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Use to select the font for displaying text on the front of the card</string>
+                        </property>
+                    </widget>
+                    <widget class="KColorButton" row="1" column="0">
+                        <property name="name">
+                            <cstring>kcfg_FrontTextColor</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Select text color</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Use to select the color for text shown on the card</string>
+                        </property>
+                    </widget>
+                    <widget class="KColorButton" row="3" column="0">
+                        <property name="name">
+                            <cstring>kcfg_FrontFrameColor</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Select card frame color</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Use to select the color for drawing the frame of the card</string>
+                        </property>
+                    </widget>
+                    <widget class="KColorButton" row="2" column="0">
+                        <property name="name">
+                            <cstring>kcfg_FrontCardColor</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Select card color</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Select color used to draw the card</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+        <spacer row="4" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>spacer</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>400</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>flipButton</sender>
+        <signal>clicked()</signal>
+        <receiver>PrefCardAppearanceBase</receiver>
+        <slot>slotFlipButtonClicked()</slot>
+    </connection>
+    <connection>
+        <sender>kcfg_FrontFont</sender>
+        <signal>fontSelected(const QFont&amp;)</signal>
+        <receiver>PrefCardAppearanceBase</receiver>
+        <slot>slotFontChanged(const QFont&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>kcfg_FrontTextColor</sender>
+        <signal>changed(const QColor&amp;)</signal>
+        <receiver>PrefCardAppearanceBase</receiver>
+        <slot>slotTextColorChanged(const QColor&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>kcfg_FrontCardColor</sender>
+        <signal>changed(const QColor&amp;)</signal>
+        <receiver>PrefCardAppearanceBase</receiver>
+        <slot>slotCardColorChanged(const QColor&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>kcfg_FrontFrameColor</sender>
+        <signal>changed(const QColor&amp;)</signal>
+        <receiver>PrefCardAppearanceBase</receiver>
+        <slot>slotFrameColorChanged(const QColor&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>widgetStack</sender>
+        <signal>aboutToShow(QWidget*)</signal>
+        <receiver>PrefCardAppearanceBase</receiver>
+        <slot>slotAboutToShowWidget(QWidget*)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>flipButton</tabstop>
+    <tabstop>kcfg_FrontFont</tabstop>
+    <tabstop>kcfg_FrontTextColor</tabstop>
+    <tabstop>kcfg_FrontCardColor</tabstop>
+    <tabstop>kcfg_FrontFrameColor</tabstop>
+</tabstops>
+<slots>
+    <slot>slotFlipButtonClicked()</slot>
+    <slot>slotFontChanged(const QFont &amp;)</slot>
+    <slot>slotTextColorChanged(const QColor &amp;)</slot>
+    <slot>slotAboutToShowWidget(QWidget *)</slot>
+    <slot>slotFrameColorChanged(const QColor &amp;)</slot>
+    <slot>slotCardColorChanged(const QColor &amp;)</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kfontrequester.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+</includehints>
+</UI>

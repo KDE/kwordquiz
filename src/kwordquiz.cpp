@@ -768,24 +768,12 @@ void KWordQuizApp::slotVocabFont()
   slotStatusMsg(i18n("Setting the font of the vocabulary..."));
   KFontDialog* dlg;
   dlg = new KFontDialog(this, "dlg_font", false, true);
-  if (m_flashView != 0)
+  dlg->setFont(m_editView -> font());
+  if (dlg->exec() == KFontDialog::Accepted)
   {
-    dlg->setFont(Prefs::flashFont());
-    if ( dlg->exec() == KFontDialog::Accepted )
-    {
-      Prefs::setFlashFont(dlg->font());
-      emit settingsChanged();
-    }
-  }
-  else
-  {
-    dlg->setFont(m_editView -> font());
-    if ( dlg->exec() == KFontDialog::Accepted )
-    {
-      m_editView ->setFont(dlg->font());
-      Prefs::setEditorFont(dlg->font());
-      doc->setModified(true);
-    }
+    m_editView ->setFont(dlg->font());
+    Prefs::setEditorFont(dlg->font());
+    doc->setModified(true);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -1222,7 +1210,7 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
   editMarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
   editUnmarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
   vocabLanguages->setEnabled(fEdit);
-  vocabFont->setEnabled(fEdit || (qt == WQQuiz::qtFlash));
+  vocabFont->setEnabled(fEdit);
   //vocabKeyboard->setEnabled(fEdit);
   vocabRC->setEnabled(fEdit);
   vocabSort->setEnabled(fEdit);

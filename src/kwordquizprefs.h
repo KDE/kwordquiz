@@ -28,6 +28,7 @@
 class PrefEditor;
 class PrefQuiz; 
 class PrefCharacter;
+class PrefCardAppearance;
 class DlgSpecChar;
 
 class KWordQuizPrefs : public KConfigDialog  {
@@ -56,6 +57,7 @@ private:
   PrefQuiz *m_prefQuiz;
   PrefCharacter* m_prefCharacter;
   DlgSpecChar* m_dlgSpecChar;
+  PrefCardAppearance* m_prefCardAppearance;
   KConfigSkeleton * m_config;
   bool m_hasChanged;
 };

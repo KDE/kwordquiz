@@ -55,7 +55,6 @@ void FlashView::init()
   picCorrect->clear();
   picError->clear();
 
-  lblQuestion->setFont(Prefs::flashFont());
   updateScore();
 
   KWordQuizApp *win=(KWordQuizApp *) parent();
@@ -119,13 +118,29 @@ void FlashView::slotFlip()
 {
   if (m_showFirst)
   {
-    linFlash->setPaletteForegroundColor(QColor(255, 0, 0));
+    lblLanguageQuestion->setPaletteBackgroundColor(Prefs::frontCardColor());
+    lblQuestion->setFont(Prefs::frontFont());
+    lblQuestion->setPaletteForegroundColor(Prefs::frontTextColor());
+    lblQuestion->setPaletteBackgroundColor(Prefs::frontCardColor());
+    fraCard->setPaletteBackgroundColor(Prefs::frontCardColor());
+    fraCard->setPaletteForegroundColor(Prefs::frontFrameColor());
+    linFlash->setPaletteForegroundColor(Prefs::frontFrameColor());
+    linFlash->setPaletteBackgroundColor(Prefs::frontCardColor());
+    //linFlash->setPaletteForegroundColor(QColor(255, 0, 0));
     showFront(m_question);
     m_showFirst = false;
   }
   else
   {
-    linFlash->setPaletteForegroundColor(QColor(0, 0, 255));
+    lblLanguageQuestion->setPaletteBackgroundColor(Prefs::backCardColor());
+    lblQuestion->setFont(Prefs::backFont());
+    lblQuestion->setPaletteForegroundColor(Prefs::backTextColor());
+    lblQuestion->setPaletteBackgroundColor(Prefs::backCardColor());
+    fraCard->setPaletteBackgroundColor(Prefs::backCardColor());
+    fraCard->setPaletteForegroundColor(Prefs::backFrameColor());
+    linFlash->setPaletteForegroundColor(Prefs::backFrameColor());
+    linFlash->setPaletteBackgroundColor(Prefs::backCardColor());
+    //linFlash->setPaletteForegroundColor(QColor(0, 0, 255));
     showBack(m_question);
     m_showFirst = true;
   }
@@ -198,7 +213,28 @@ void FlashView::slotTimer( )
 
 void FlashView::slotApplySettings( )
 {
-  lblQuestion->setFont(Prefs::flashFont());
+  if (!m_showFirst)
+  {
+    lblLanguageQuestion->setPaletteBackgroundColor(Prefs::frontCardColor());
+    lblQuestion->setFont(Prefs::frontFont());
+    lblQuestion->setPaletteForegroundColor(Prefs::frontTextColor());
+    lblQuestion->setPaletteBackgroundColor(Prefs::frontCardColor());
+    fraCard->setPaletteBackgroundColor(Prefs::frontCardColor());
+    fraCard->setPaletteForegroundColor(Prefs::frontFrameColor());
+    linFlash->setPaletteForegroundColor(Prefs::frontFrameColor());
+    linFlash->setPaletteBackgroundColor(Prefs::frontCardColor());
+  }
+  else
+  {
+    lblLanguageQuestion->setPaletteBackgroundColor(Prefs::backCardColor());
+    lblQuestion->setFont(Prefs::backFont());
+    lblQuestion->setPaletteForegroundColor(Prefs::backTextColor());
+    lblQuestion->setPaletteBackgroundColor(Prefs::backCardColor());
+    fraCard->setPaletteBackgroundColor(Prefs::backCardColor());
+    fraCard->setPaletteForegroundColor(Prefs::backFrameColor());
+    linFlash->setPaletteForegroundColor(Prefs::backFrameColor());
+    linFlash->setPaletteBackgroundColor(Prefs::backCardColor());
+  }
   if (Prefs::autoFlip())
     m_timer->start(Prefs::flipDelay() * 1000, true);
   else

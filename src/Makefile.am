@@ -4,12 +4,13 @@ bin_PROGRAMS = kwordquiz
 ## INCLUDES were found outside kdevelop specific part
 
 kwordquiz_SOURCES = kwordquizprefs.cpp kwordquizview.cpp kwordquizdoc.cpp \
-	kwordquiz.cpp main.cpp dlglanguagebase.ui flashviewbase.ui multipleviewbase.ui \
-	qaviewbase.ui qaview.cpp flashview.cpp multipleview.cpp wqquiz.cpp wqlistitem.cpp \
-	wqscore.cpp keduvocdata.cpp prefeditorbase.ui prefquizbase.ui prefeditor.cpp \
-	prefquiz.cpp dlgsortbase.ui dlgsort.cpp dlgrcbase.ui dlgrc.cpp dlgspecchar.cpp \
-	kvtmlwriter.cpp dlglanguage.cpp wqprintdialogpage.cpp prefcharacter.cpp \
-	prefcharacterbase.ui paukerreader.cpp wqlreader.cpp wqlwriter.cpp wqundo.cpp prefs.kcfgc
+		kwordquiz.cpp main.cpp dlglanguagebase.ui flashviewbase.ui multipleviewbase.ui \
+		qaviewbase.ui qaview.cpp flashview.cpp multipleview.cpp wqquiz.cpp wqlistitem.cpp \
+		wqscore.cpp keduvocdata.cpp prefeditorbase.ui prefquizbase.ui prefeditor.cpp \
+		prefquiz.cpp dlgsortbase.ui dlgsort.cpp dlgrcbase.ui dlgrc.cpp dlgspecchar.cpp \
+		kvtmlwriter.cpp dlglanguage.cpp wqprintdialogpage.cpp prefcharacter.cpp \
+		prefcharacterbase.ui paukerreader.cpp wqlreader.cpp wqlwriter.cpp wqundo.cpp prefs.kcfgc \
+	prefcardappearance.cpp prefcardappearancebase.ui
 kwordquiz_LDADD   =  $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)  $(LIBSOCKET) $(LIB_KDEPRINT)
 
 
@@ -64,6 +65,6 @@ messages: rc.cpp
 
 
 noinst_HEADERS = qaview.h flashview.h multipleview.h wqquiz.h wqlistitem.h \
-	wqscore.h prefeditor.h prefquiz.h dlgsort.h dlgrc.h dlgspecchar.h kvtmlwriter.h \
-	dlglanguage.h dlglanguage.h wqprintdialogpage.h prefcharacter.h wqlreader.h \
-	wqlwriter.h wqundo.h
+		wqscore.h prefeditor.h prefquiz.h dlgsort.h dlgrc.h dlgspecchar.h kvtmlwriter.h \
+		dlglanguage.h dlglanguage.h wqprintdialogpage.h prefcharacter.h wqlreader.h \
+		wqlwriter.h wqundo.h prefcardappearance.h

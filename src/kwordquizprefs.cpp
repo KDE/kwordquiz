@@ -15,6 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <qwidgetstack.h>
+#include <qlayout.h>
+#include <qradiobutton.h>
+#include <qcheckbox.h>
+#include <qlistview.h>
+#include <qlabel.h>
+
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kiconloader.h>
@@ -23,21 +30,18 @@
 #include <kpushbutton.h>
 #include <kdebug.h>
 #include <kconfigskeleton.h>
-
-#include <qlayout.h>
-#include <qradiobutton.h>
-#include <qcheckbox.h>
-#include <qlistview.h>
-#include <qlabel.h>
+#include <kcolorbutton.h>
+#include <kfontrequester.h>
 
 #include "kwordquizprefs.h"
 #include "prefeditor.h"
 #include "prefquiz.h"
 #include "prefcharacter.h"
+#include "prefcardappearance.h"
 #include "kwordquiz.h"
 #include "dlgspecchar.h"
 
-KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, DialogType dialogType, int dialogButtons, ButtonCode defaultButton, bool modal) 
+KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, DialogType dialogType, int /*dialogButtons*/, ButtonCode /*defaultButton*/, bool /*modal*/) 
   : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false) 
 {
   m_config = config;
@@ -46,7 +50,10 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
   addPage(m_prefEditor, i18n("Editor"), "editor", i18n("Editor Settings"), true);
 
   m_prefQuiz = new PrefQuiz(0, "Quiz Settings");
-  addPage(m_prefQuiz, i18n("Quiz"),  "flash", i18n("Quiz Settings"), true);
+  addPage(m_prefQuiz, i18n("Quiz"),  "qa", i18n("Quiz Settings"), true);
+
+  m_prefCardAppearance = new PrefCardAppearance(0, "Flashcard Appearance");
+  addPage(m_prefCardAppearance, i18n("Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);
 
   m_prefCharacter = new PrefCharacter(0, "Special Characters");
   addPage(m_prefCharacter, i18n("Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
@@ -72,6 +79,7 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
   m_prefCharacter->lstCharacters->setItemMargin(2);
 
   m_hasChanged = false;
+  kapp->processEvents();
 }
 
 KWordQuizPrefs::~KWordQuizPrefs(){

@@ -19,23 +19,23 @@
     <entry name="ColumnTitles2" type="StringList">
       <label>Titles for column 2</label>
       <default></default>
-    </entry>   
+    </entry>
     <entry name="EditorFont" type="Font">
       <label>Font used in the editor</label>
       <default code="true">KGlobalSettings::generalFont()</default>
-    </entry>    
+    </entry>
     <entry name="EnableBlanks" type="Bool">
       <label>If Fill-in-the-blank should be enabled</label>
       <default>false</default>
-    </entry>  
+    </entry>
     <entry name="EnterMove" type="Int">
       <label>Direction the Enter key moves in the editor</label>
       <default>1</default>
-    </entry>        
+    </entry>
     <entry name="SpecialCharacters" type="String">
       <label>Characters for the special character toolbar</label>
-      <default>ßüçéèäæöø</default>
-    </entry>  
+      <default>ÃÂÃÂ¼ÃÂ§ÃÂ©ÃÂ¨ÃÂ¤ÃÂ¦ÃÂ¶ÃÂ¸</default>
+    </entry>
   </group>
   <group name="Quiz">
     <entry name="AutoCheck" type="Bool">
@@ -46,10 +46,6 @@
       <label>Automatically flip flashcard</label>
       <default>false</default>
     </entry>  
-    <entry name="FlashFont" type="Font">
-      <label>Font used for the flashcards</label>
-      <default code="true">KGlobalSettings::generalFont()</default>
-    </entry>      
     <entry name="FlipDelay" type="Int">
       <label>Time delay for flipping flashcard</label>
       <default>3</default>
@@ -69,6 +65,40 @@
     <entry name="Percent" type="Bool">
       <label>Show score as percentage</label>
       <default>false</default>
-    </entry>        
+    </entry>
+  </group>
+  <group name="FlashCard">
+    <entry name="FrontFont" type="Font">
+      <label>Font used for front of flashcard</label>
+      <default code="true">KGlobalSettings::generalFont()</default>
+    </entry>
+    <entry name="FrontTextColor" type="Color">
+      <label>Color used for text on front of flashcard</label>
+      <default code="true">Qt::black</default>
+    </entry>
+    <entry name="FrontCardColor" type="Color">
+      <label>Color used for front of flashcard</label>
+      <default code="true">Qt::white</default>
+    </entry>
+    <entry name="FrontFrameColor" type="Color">
+      <label>Color used for frame on front of flashcard</label>
+      <default code="true">Qt::red</default>
+    </entry>
+    <entry name="BackFont" type="Font">
+      <label>Font used for back of flashcard</label>
+      <default code="true">KGlobalSettings::generalFont()</default>
+    </entry>
+    <entry name="BackTextColor" type="Color">
+      <label>Color used for text on back of flashcard</label>
+      <default code="true">Qt::black</default>
+    </entry>
+    <entry name="BackCardColor" type="Color">
+      <label>Color used for back of flashcard</label>
+      <default code="true">Qt::white</default>
+    </entry>
+    <entry name="BackFrameColor" type="Color">
+      <label>Color used for frame on back of flashcard</label>
+      <default code="true">Qt::blue</default>
+    </entry>
   </group>
 </kcfg>
