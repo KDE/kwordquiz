@@ -1,6 +1,5 @@
 [Desktop Entry]
 Comment=KWordQuiz Vocabulary
-Comment[af]=KWordQuiz Woordeskat
 Comment[bg]=Речник KWordQuiz
 Comment[bs]=KWordQuiz rječnik
 Comment[ca]=Vocabulari de KWordQuiz
@@ -26,13 +25,12 @@ Comment[ru]=Словарь KWordQuiz
 Comment[sk]=Slovník KWordQuiz
 Comment[sl]=Besednjak za KWordQuiz
 Comment[sr]=Речник KWordQuiz-а
-Comment[sr@Latn]=Речник KWordQuiz-а
+Comment[sr@Latn]=Rečnik KWordQuiz-a
 Comment[sv]=Kwordquiz-ordlista
 Comment[ta]=கேவார்த்தை வினாவிடை சொல்லாக்கம்
 Comment[tg]=Луғати KҲарфИмтиҳон
 Comment[tr]=KWordQuiz Sözlüğü
 Comment[uk]=Словник KWordQuiz
-Comment[xx]=xxKWordQuiz Vocabularyxx
 Comment[zh_CN]=KWordQuiz 词汇
 Hidden=false
 Icon=kwordquiz_doc
