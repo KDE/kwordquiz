@@ -78,7 +78,7 @@
                         <cstring>optNoMove</cstring>
                     </property>
                     <property name="text">
-                        <string>Does not &amp;Move</string>
+                        <string>Does not &amp;move</string>
                     </property>
                     <property name="toolTip" stdset="0">
                         <string>How enter key moves</string>
@@ -94,7 +94,7 @@
                 <cstring>chkEnableBlanks</cstring>
             </property>
             <property name="text">
-                <string>&amp;Enable Fill-in-the-blank</string>
+                <string>&amp;Enable fill-in-the-blank</string>
             </property>
             <property name="toolTip" stdset="0">
                 <string>Check to enable fill-in-the-blank</string>
