@@ -452,7 +452,7 @@ void KWordQuizApp::slotFileOpen()
 {
   slotStatusMsg(i18n("Opening file..."));
 
-  KURL url=KFileDialog::getOpenURL(QString::null, i18n("*.kvtml *.wql *.xml.gz|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson"), this,
+  KURL url=KFileDialog::getOpenURL(QString::null, i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma Separated Values"), this,
       i18n("Open Vocabulary Document..."));
 
   if(!url.isEmpty()) {
@@ -575,7 +575,7 @@ bool KWordQuizApp::saveAsFileName( )
   KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save vocabulary document as..."));
-  fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document"));
+  fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma Separated Values"));
 
   if (fd->exec() == QDialog::Accepted)
   {
@@ -587,6 +587,8 @@ bool KWordQuizApp::saveAsFileName( )
       {
         if  (fd->currentFilter() == "*.wql")
           url = KURL(url.path() + ".wql");
+        else if (fd->currentFilter() == "*.csv")
+          url = KURL(url.path() + ".csv");
         else
           url = KURL(url.path() + ".kvtml");
       }

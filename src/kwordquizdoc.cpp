@@ -220,6 +220,33 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
       QTextStream* ts = new QTextStream(&file);
       m_view->fromStream(ts, QTextStream::Latin1);
     }
+    
+    if (url.path().right(4) == ".csv")
+    {
+      QTextStream ts(&file);
+      ts.setEncoding(QTextStream::UnicodeUTF8);      
+      
+      QString f = ts.read();
+      QStringList fl = QStringList::split('\n', f, true);
+      g->setNumRows(fl.count() - 1);
+
+      QStringList sl = QStringList::split(",", fl[0], true);
+      if (!sl[0].isEmpty())
+        g->horizontalHeader()->setLabel(0, sl[0]);
+      if (!sl[1].isEmpty())
+        g->horizontalHeader()->setLabel(1, sl[1]);
+            
+      for(int i = 1; i < fl.count(); i++)
+      {
+        QStringList sl = QStringList::split(",", fl[i], true);
+        if (!sl[0].isEmpty())
+          g->setText(i - 1, 0, sl[0]);
+        if (!sl[1].isEmpty())
+          g->setText(i - 1, 1, sl[1]);
+      }      
+      
+    }    
+    
     file.close();
     KIO::NetAccess::removeTempFile( tmpfile );
 
@@ -273,103 +300,28 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
       w++;
     }
   }
-  else
+  
+  if (url.path().right(4) == ".wql")
   {
     QTextStream* ts = new QTextStream(&file);
     m_view->toStream(ts, QTextStream::Latin1);
-    /*
+  }
+  
+  if (url.path().right(4) == ".csv")
+  {
     QTextStream ts(&file);
-    //ts.setEncoding(QTextStream::UnicodeUTF8);
-    // \r\n is for  compatibility with the Windows version
-    ts << "WordQuiz\r\n";
-    ts << "5.9.0\r\n\r\n";
+    ts.setEncoding(QTextStream::UnicodeUTF8);
+    ts << g->horizontalHeader()->label(0)  + "," + g->horizontalHeader()->label(1)  + "\n"; 
 
-    QFont f = g -> font();
-
-    ts << "[Font Info]\r\n";
-    ts << "FontName1=\"" + f.family() + "\"\r\n";
-    ts << "FontSize1=" + s.setNum(f.pointSize()) + "\r\n";
-    if (f.bold())
-    {
-      ts << "FontBold1=1\r\n";
-    }
-    else
-    {
-      ts << "FontBold1=0\r\n";
-    }
-    if (f.italic())
-    {
-      ts << "FontItalic1=1\r\n";
-    }
-    else
-    {
-      ts << "FontItalic1=0\r\n";
-    }
-    ts << "FontColor1=0\r\n";
-    ts << "CharSet1=0\r\n";
-    ts << "Layout1=0\r\n";
-    ts << "FontName2=\"" + f.family() + "\"\r\n";
-    ts << "FontSize2=" + s.setNum(f.pointSize()) + "\r\n";
-    if (f.bold())
-    {
-      ts << "FontBold2=1\r\n";
-    }
-    else
-    {
-      ts << "FontBold2=0\r\n";
-    }
-    if (f.italic())
-    {
-      ts << "FontItalic2=1\r\n";
-    }
-    else
-    {
-      ts << "FontItalic2=0\r\n";
-    }
-    ts << "FontColor2=0\r\n";
-    ts << "CharSet2=0\r\n";
-    ts << "Layout2=0\r\n\r\n";
-
-    ts << "[Character Info]\r\n";
-    ts << "Characters1=abcdefghi\r\n";
-    ts << "Characters2=jklmnopqr\r\n\r\n";
-
-    ts << "[Grid Info]\r\n";
-    ts << "ColWidth0=" + s.setNum(g->verticalHeader()->sectionSize(0)) + "\r\n";
-    ts << "ColWidth1=" + s.setNum(g->columnWidth(0)) + "\r\n";
-    ts << "ColWidth2=" + s.setNum(g->columnWidth(1)) + "\r\n";
-    ts << "RowCount=" + s.setNum(g->numRows()) + "\r\n";
-
-    // Selection
-    if (g->numSelections() > 0)
-    {
-      QTableSelection qts = g->selection(0);
-      ts << "SelLeft=" + s.setNum(qts.leftCol() + 1) + "\r\n";
-      ts << "SelTop=" + s.setNum(qts.topRow() + 1) + "\r\n";
-      ts << "SelRight=" + s.setNum(qts.rightCol() +1) + "\r\n";
-      ts << "SelBottom=" + s.setNum(qts.bottomRow() +1) + "\r\n\r\n";
-    }
-    else
-    {
-      ts << "SelLeft=" + s.setNum(g->currentColumn() + 1) + "\r\n";
-      ts << "SelTop=" + s.setNum(g->currentRow() + 1) + "\r\n";
-      ts << "SelRight=" + s.setNum(g->currentColumn() +1) + "\r\n";
-      ts << "SelBottom=" + s.setNum(g->currentRow() +1) + "\r\n\r\n";
-    }
-
-    ts << "[Vocabulary]\r\n";
-
-    ts << g->horizontalHeader()->label(0)  + "   [0000000300]\r\n"; // + s.setNum(g->horizontalHeader()->sectionSize(2) * 15) + "]\r\n";
-    ts << g->horizontalHeader()->label(1)  + "\r\n";
     int i = 0;
-    int r = g->numRows() - 1;
+    int r = g->numRows();
     while (i < r)
     {
-      ts << g->text(i,0)  + QString( "   [%1]\r\n" ).arg( g->rowHeight(i) * 15, 10, 10 );
-      ts << g->text(i,1) + "\r\n";
+      ts << g->text(i, 0)  + "," + g->text(i, 1) + "\n";
       i++;
-    }*/
-  }
+    }    
+  }      
+  
   doc_url = url;
   setModified(false);
   return true;
@@ -377,10 +329,6 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
 
 void KWordQuizDoc::deleteContents()
 {
-  /////////////////////////////////////////////////
-  // TODO: Add implementation to delete the document contents
-  /////////////////////////////////////////////////
-
 }
 
 void KWordQuizDoc::slotModifiedOnDisk( const QString & path)
