@@ -228,7 +228,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>Text Color:</string>
+                <string>Text color:</string>
             </property>
             <property name="buddy" stdset="0">
                 <cstring>textColorButton</cstring>
@@ -247,7 +247,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>Frame Color:</string>
+                <string>Frame color:</string>
             </property>
             <property name="buddy" stdset="0">
                 <cstring></cstring>
@@ -285,7 +285,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>Card Color:</string>
+                <string>Card color:</string>
             </property>
             <property name="buddy" stdset="0">
                 <cstring></cstring>
