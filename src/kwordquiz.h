@@ -223,12 +223,9 @@ class KWordQuizApp : public KMainWindow
 
   private:
 
-    int m_mode;
     WQQuiz::QuizType m_quizType;
 
     WQQuiz *m_quiz;
-    /** the configuration object of the application */
-    KConfig *config;
 
     /** view is the main widget which represents your working area. The View
      * class should handle all events of the view widget.  It is kept empty so

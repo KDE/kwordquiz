@@ -67,22 +67,22 @@
 
 KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
 {
-  config=kapp->config();
-
+  
   ///////////////////////////////////////////////////////////////////
   // call inits to invoke all other construction parts
   initStatusBar();
   initActions();
   initDocument();
+  
+  readOptions();  
+  
   initView();
-
-  readOptions();
 
   m_quizType = WQQuiz::qtEditor;
   m_quiz = 0;
   slotQuizEditor();
   slotUndoChange(i18n("Can't &Undo"), false);
-  updateMode(m_mode);
+  updateMode(Config().m_mode);
   m_prefDialog = 0;
 }
 
@@ -216,7 +216,7 @@ void KWordQuizApp::initView()
   doc->addView(m_editView);
   setCentralWidget(m_editView);
   setCaption(doc->URL().fileName(),false);
-
+  m_editView->setFont(Config().m_editorFont);
   connect(m_editView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
 }
 
@@ -238,19 +238,15 @@ KWordQuizDoc *KWordQuizApp::getDocument() const
 
 void KWordQuizApp::saveOptions()
 {
-  fileOpenRecent->saveEntries(config, "Recent Files");
-
-  config->setGroup("Quiz Options");
-  config->writeEntry("Mode", m_mode);
+  fileOpenRecent->saveEntries(kapp->config(), "Recent Files");
+  Config().write();
 }
 
 
 void KWordQuizApp::readOptions()
 {
-  fileOpenRecent->loadEntries(config, "Recent Files");
-
-  config->setGroup("Quiz Options");
-  m_mode = config->readNumEntry("Mode", 1);
+  Config().read();
+  fileOpenRecent->loadEntries(kapp->config(), "Recent Files");
 }
 
 void KWordQuizApp::saveProperties(KConfig *_cfg)
@@ -363,7 +359,7 @@ void KWordQuizApp::slotFileOpen()
       doc->openDocument(url);
       setCaption(url.fileName(), false);
       fileOpenRecent->addURL( url );
-      updateMode(m_mode);
+      updateMode(Config().m_mode);
     }
     else
     {
@@ -372,7 +368,7 @@ void KWordQuizApp::slotFileOpen()
       new_window->doc->openDocument(url);
       new_window->setCaption(url.fileName(), false);
       new_window->fileOpenRecent->addURL( url );
-      new_window->updateMode(m_mode);
+      new_window->updateMode(Config().m_mode);
     }
   }
 
@@ -387,7 +383,7 @@ void KWordQuizApp::slotFileOpenRecent(const KURL& url)
     // neither saved nor has content, as good as new
     doc->openDocument(url);
     setCaption(url.fileName(), false);
-    updateMode(m_mode);
+    updateMode(Config().m_mode);
   }
   else
   {
@@ -395,7 +391,7 @@ void KWordQuizApp::slotFileOpenRecent(const KURL& url)
     new_window->show();
     new_window->doc->openDocument(url);
     new_window->setCaption(url.fileName(), false);
-    new_window->updateMode(m_mode);
+    new_window->updateMode(Config().m_mode);
   }
   slotStatusMsg(i18n("Ready."));
 }
@@ -587,7 +583,7 @@ void KWordQuizApp::slotVocabLanguages()
   {
     m_editView -> horizontalHeader()->setLabel(0, dlg->Language(1));
     m_editView -> horizontalHeader()->setLabel(1, dlg->Language(2));
-    updateMode(m_mode);
+    updateMode(Config().m_mode);
   }
   slotStatusMsg(i18n("Ready."));
 }
@@ -601,9 +597,9 @@ void KWordQuizApp::slotVocabFont()
   if ( dlg->exec() == KFontDialog::Accepted )
   {
     m_editView ->setFont(dlg->font());
-    
-    m_editView ->horizontalHeader()->setFont(KGlobalSettings::generalFont());
-    m_editView ->verticalHeader()->setFont(KGlobalSettings::generalFont());
+    Config().m_editorFont = dlg->font();
+    //m_editView ->horizontalHeader()->setFont(KGlobalSettings::generalFont());
+    //m_editView ->verticalHeader()->setFont(KGlobalSettings::generalFont());
     doc->setModified(true);
   }
   slotStatusMsg(i18n("Ready."));
@@ -647,8 +643,8 @@ void KWordQuizApp::slotVocabShuffle()
 void KWordQuizApp::slotMode0()
 {
   slotStatusMsg(i18n("Updating mode..."));
-  if (m_mode < 5) {
-    updateMode(m_mode + 1);
+  if (Config().m_mode < 5) {
+    updateMode(Config().m_mode + 1);
   }
   else
   {
@@ -660,7 +656,6 @@ void KWordQuizApp::slotMode0()
 void KWordQuizApp::slotMode1()
 {
   slotStatusMsg(i18n("Updating mode..."));
-  //m_mode = 1;
   updateMode(1);
   slotStatusMsg(i18n("Ready."));
 }
@@ -668,7 +663,6 @@ void KWordQuizApp::slotMode1()
 void KWordQuizApp::slotMode2()
 {
   slotStatusMsg(i18n("Updating mode..."));
-  //m_mode = 2;
   updateMode(2);
   slotStatusMsg(i18n("Ready."));
 }
@@ -676,7 +670,6 @@ void KWordQuizApp::slotMode2()
 void KWordQuizApp::slotMode3()
 {
   slotStatusMsg(i18n("Updating mode..."));
-  //m_mode = 3;
   updateMode(3);
   slotStatusMsg(i18n("Ready."));
 }
@@ -684,7 +677,6 @@ void KWordQuizApp::slotMode3()
 void KWordQuizApp::slotMode4()
 {
   slotStatusMsg(i18n("Updating mode..."));
-  //m_mode = 4;
   updateMode(4);
   slotStatusMsg(i18n("Ready."));
 }
@@ -692,7 +684,6 @@ void KWordQuizApp::slotMode4()
 void KWordQuizApp::slotMode5()
 {
   slotStatusMsg(i18n("Updating mode..."));
-  //m_mode = 5;
   updateMode(5);
   slotStatusMsg(i18n("Ready."));
 }
@@ -767,7 +758,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz = new WQQuiz(m_editView);
 
       m_quiz ->setQuizType(WQQuiz::qtFlash);
-      m_quiz->setQuizMode(m_mode);
+      m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
@@ -796,7 +787,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
     case WQQuiz::qtMultiple:
       m_quiz = new WQQuiz(m_editView);
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
-      m_quiz->setQuizMode(m_mode);
+      m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
@@ -823,7 +814,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
     case WQQuiz::qtQA:
       m_quiz = new WQQuiz(m_editView);
       m_quiz ->setQuizType(WQQuiz::qtQA);
-      m_quiz->setQuizMode(m_mode);
+      m_quiz->setQuizMode(Config().m_mode);
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
@@ -911,15 +902,15 @@ void KWordQuizApp::updateMode(int m)
   if (m_quiz != 0)
     if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString::null, KStdGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
     {
-      mode1->setChecked(m_mode == 1);
-      mode2->setChecked(m_mode == 2);
-      mode3->setChecked(m_mode == 3);
-      mode4->setChecked(m_mode == 4);
-      mode5->setChecked(m_mode == 5);
+      mode1->setChecked(Config().m_mode == 1);
+      mode2->setChecked(Config().m_mode == 2);
+      mode3->setChecked(Config().m_mode == 3);
+      mode4->setChecked(Config().m_mode == 4);
+      mode5->setChecked(Config().m_mode == 5);
       return;
     }
 
-  m_mode = m;
+  Config().m_mode = m;
   QString s1 = m_editView -> horizontalHeader()->label(0);
   QString s2 = m_editView -> horizontalHeader()->label(1);
 
@@ -929,18 +920,18 @@ void KWordQuizApp::updateMode(int m)
   mode4->setText(i18n("&4 %1 -> %2 Randomly").arg(s2).arg(s1));
   mode5->setText(i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
 
-  mode1->setChecked(m_mode == 1);
-  mode2->setChecked(m_mode == 2);
-  mode3->setChecked(m_mode == 3);
-  mode4->setChecked(m_mode == 4);
-  mode5->setChecked(m_mode == 5);
+  mode1->setChecked(Config().m_mode == 1);
+  mode2->setChecked(Config().m_mode == 2);
+  mode3->setChecked(Config().m_mode == 3);
+  mode4->setChecked(Config().m_mode == 4);
+  mode5->setChecked(Config().m_mode == 5);
 
   KPopupMenu *popup = mode->popupMenu();
-  popup->setItemChecked(0, m_mode == 1);
-  popup->setItemChecked(1, m_mode == 2);
-  popup->setItemChecked(2, m_mode == 3);
-  popup->setItemChecked(3, m_mode == 4);
-  popup->setItemChecked(4, m_mode == 5);
+  popup->setItemChecked(0, Config().m_mode == 1);
+  popup->setItemChecked(1, Config().m_mode == 2);
+  popup->setItemChecked(2, Config().m_mode == 3);
+  popup->setItemChecked(3, Config().m_mode == 4);
+  popup->setItemChecked(4, Config().m_mode == 5);
 
   popup->changeItem(0, i18n("&1 %1 -> %2 In Order").arg(s1).arg(s2));
   popup->changeItem(1, i18n("&2 %1 -> %2 In Order").arg(s2).arg(s1));
@@ -949,9 +940,9 @@ void KWordQuizApp::updateMode(int m)
   popup->changeItem(4, i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
 
   QString s;
-  mode->setIcon(locate("data", "kwordquiz/pics/mode" + s.setNum(m_mode) + ".png"));
+  mode->setIcon(locate("data", "kwordquiz/pics/mode" + s.setNum(Config().m_mode) + ".png"));
 
-  switch( m_mode ){
+  switch( Config().m_mode ){
   case 1:
     statusBar()->changeItem(i18n("%1 -> %2 In Order").arg(s1).arg(s2), ID_STATUS_MSG_MODE);
     break;
