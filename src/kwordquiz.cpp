@@ -109,8 +109,8 @@ void KWordQuizApp::initActions()
   editClear = new KAction(i18n("C&lear"), "editclear", 0, this, SLOT(slotEditClear()), actionCollection(),"edit_clear");
 
   //How can I use just the file name for the icons like other programs?
-  editInsert = new KAction(i18n("&Insert"), "insrow" /*locate("data", "kwordquiz/pics/insertrow.png")*/, "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
-  editDelete = new KAction(i18n("&Delete"), "remrow" /*locate("data", "kwordquiz/pics/deleterow.png")*/, "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
+  editInsert = new KAction(i18n("&Insert"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
+  editDelete = new KAction(i18n("&Delete"), /*"remrow"*/ locate("data", "kwordquiz/pics/deleterow.png"), "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
   editMarkBlank = new KAction(i18n("&Mark As Blank"), locate("data", "kwordquiz/pics/markasblank.png"), 0, this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
   editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), locate("data", "kwordquiz/pics/unmarkasblank.png"), 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
   editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
