@@ -560,48 +560,48 @@ const char delim_end = ']';
 
 bool KWordQuizView::checkForBlank( QString s, bool blank )
 {
-/*
-function pCheckForBlank(sText: string; ABlank: Boolean): Boolean;
-var
-    iCounter      : integer;
-    iClosePos     : array of integer;
-    iCloseCount   : integer;
-    iOpenPos      : array of integer;
-    iOpenCount    : integer;
-begin
-  if not ABlank then begin
-    Result := true;
-    exit;
-  end;
-    Result:= False; //Assume failure
-    iOpenCount := 1;
-    iCloseCount := 1;
-    SetLength(iOpenPos, 0);
-    SetLength(iClosePos, 0);
+  if (!blank)
+    return true;
+  
+  bool result = false;
+  int openCount = 1;
+  int closeCount = 1;
+  QMemArray<int> openPos(0);
+  QMemArray<int> closePos(0);
 
-    For iCounter := 0 To Length(sText) do
-        if sText[iCounter] = cStartChar then begin
-            SetLength( iOpenPos, iOpenCount);
-            iOpenPos[iOpenCount-1] := iCounter;
-            iOpenCount := iOpenCount + 1
+  for (int i = 0; i<= s.length(); ++i)
+  {
+    if (s[i] == delim_start)
+    {
+      openPos.resize(openCount);
+      openPos[openCount - 1] = i;
+      openCount++;        
+    }
+    else
+    {
+      if (s[i] == delim_end)
+      {
+        closePos.resize(closeCount);
+        closePos[i] = i;
+        closeCount++;     
+      }
+    }   
+  }
 
-        end else if sText[iCounter] = cEndChar then begin
-            SetLength(iClosePos, iCloseCount);
-            iClosePos[iCloseCount-1] := iCounter;
-            iCloseCount := iCloseCount + 1;
-        end;
-
-    If (iOpenCount > 0) And (iCloseCount > 0) Then
-
-        if Length(iOpenPos) = Length(iClosePos) Then
-            For iCounter := 0 To Length(iOpenPos) -1 do
-
-                If iOpenPos[iCounter] < iClosePos[iCounter] Then
-                    Result := True
-                Else
-                    Exit;
-end;
-*/
+  if (openCount > 0 && closeCount > 0)
+  {
+    if (openPos.size() == closePos.size())
+    {
+      for (int i = 0; i <= openPos.size(); ++i)
+      {
+        if (openPos[i] < closePos[i])
+          result = true;
+        else
+          return false;
+      }
+    }
+  }
+  return result;
 }
 
 void KWordQuizView::doEditMarkBlank( )
@@ -707,70 +707,52 @@ void KWordQuizView::doEditUnmarkBlank( )
         setText(r, c, s);    
       }     
   }  
-  checkSyntax();
+  checkSyntax(false, true);
 
 }
 
 bool KWordQuizView::checkSyntax(bool all, bool blanks)
 {
-/*
-function SyntaxCheck(Grid: TWQGrid; tGR: TGridRect; ABlanks: Boolean): Boolean;
-var
-    //tGR: TGridRect;
-    l, t, r, b: integer;
-    iLoop: integer;
-    iLoop2: integer;
-    sText: string;
-    iCounter: integer;
-    //fSynCheck: Boolean;
-    iErrCount: integer;
-begin
-
-*/
   int errorCount = 0;
   int r1, r2, c1 ,c2;
-  /*
-
-    if tGr.Left > tGr.Right then begin
-        l:= tGr.Right;
-        r:= tGr.Left;
-    end else begin
-        l:= tGr.Left;
-        r:= tGr.Right;
-    end;
-
-    if tGr.Top > tGr.Bottom then begin
-        t:= tGr.Bottom;
-        b:= tGr.Top;
-    end else begin
-        t:= tGr.Top;
-        b:= tGr.Bottom;
-    end;
-
-    For iLoop := t To b do
-
-        For iLoop2 := l To r do begin
-
-            sText := Grid.Cells[iLoop2, iLoop];
-            if Length(stext) >  0 then
-                For iCounter := 0 To Length(sText)  do
-                    if (sText[iCounter] = cStartChar) or (sText[iCounter] = cEndChar) then begin
-                        Grid.CellFont[iLoop2, iLoop].Assign(Grid.ColFont[iLoop2]);
-                        if not pCheckForBlank(sText, ABlanks) then begin;
-
-                            Grid.CellFont[iLoop2, iLoop].Color:= clRed;
-                            iErrCount := iErrCount + 1;
-                        end else
-                            Grid.CellFont[iLoop2, iLoop].Color:= Grid.ColFont[iLoop2].Color;
-                        Break;
-                    end;
-        end;
-
-    Result := not (iErrCount > 0);  
-
-
-end;
-*/
+  
+  if (all)
+  {
+    r1 = 0;
+    r2 = numRows() - 1;
+    c1 = 0;
+    c2 = 1;
+  }
+  else
+  {
+    wqCurrentSelection(false);
+    r1 = m_currentSel.topRow();
+    r2 = m_currentSel.bottomRow();
+    c1 = m_currentSel.leftCol();
+    c2 = m_currentSel.rightCol();
+  }  
+  
+  for (int r = r1; r <= r2; ++r)
+    for(int c = c1 ; c <= c2 ; ++c )
+    {
+      QString s = text(r, c);
+      if (s.length() > 0)
+      {
+        for (int i = 0; i <= s.length(); ++i)
+        {
+          if (s[i] == delim_start || s[i] == delim_end)
+          {
+            if (!checkForBlank(s, blanks))
+            {
+              //paint red
+              errorCount++;
+            }
+            //else
+              //paint black
+          }
+        }
+      }    
+    }
   return (errorCount == 0);
 }
 
