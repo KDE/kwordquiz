@@ -745,7 +745,7 @@ void KWordQuizView::doVocabSort( )
   wqCurrentSelection();
   DlgSort* dlg;
   dlg = new DlgSort(this, "dlg_sort", true);
-  dlg->setInitialSize(QSize(200, 240), true);
+  dlg->setInitialSize(QSize(245, 240), true);
   dlg->setLanguage(1, horizontalHeader()->label(0));
   dlg->setLanguage(2, horizontalHeader()->label(1));
   if (dlg->exec() == KDialogBase::Accepted)

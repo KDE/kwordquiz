@@ -127,7 +127,7 @@ void KWordQuizApp::initActions()
   #endif
   editInsert = new KAction(i18n("&Insert"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
   editDelete = new KAction(i18n("&Delete"), /*"remrow"*/ locate("data", "kwordquiz/pics/deleterow.png"), "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
-  editMarkBlank = new KAction(i18n("&Mark As Blank"), locate("data", "kwordquiz/pics/markasblank.png"), 0, this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
+  editMarkBlank = new KAction(i18n("&Mark As Blank"), locate("data", "kwordquiz/pics/markasblank.png"), "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
   editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), locate("data", "kwordquiz/pics/unmarkasblank.png"), 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
   //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
 
@@ -136,7 +136,7 @@ void KWordQuizApp::initActions()
   vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
   vocabChar = new KAction(i18n("Special &Characters..."), "kcharselect", 0, this, SLOT(slotVocabChar()), actionCollection(),"vocab_char");
   vocabRC = new KAction(i18n("&Rows/Columns..."), 0, 0, this, SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
-  vocabSort = new KAction(i18n("&Sort"), locate("data", "kwordquiz/pics/sort.png"), 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
+  vocabSort = new KAction(i18n("&Sort..."), locate("data", "kwordquiz/pics/sort.png"), 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
   vocabShuffle = new KAction(i18n("Sh&uffle"), 0, 0, this, SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
 
   mode = new KToolBarPopupAction(i18n("Change Mode"), locate("data", "kwordquiz/pics/mode1.png"), 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
@@ -168,7 +168,7 @@ void KWordQuizApp::initActions()
   qaHint = new KAction(i18n("&Hint"), locate("data", "kwordquiz/pics/hint.png"), "CTRL+H", this, 0, actionCollection(),"qa_hint");
 
   quizRestart = new KAction(i18n("&Restart"), locate("data", "kwordquiz/pics/restart.png"), "CTRL+R", this, 0, actionCollection(), "quiz_restart");
-  quizRepeatErrors = new KAction(i18n("Repeat &Errors"), locate("data", "kwordquiz/pics/repeat.png"), "CTRL+T", this, 0, actionCollection(),"quiz_repeat_errors");
+  quizRepeatErrors = new KAction(i18n("Repeat &Errors"), locate("data", "kwordquiz/pics/repeat.png"), "CTRL+E", this, 0, actionCollection(),"quiz_repeat_errors");
 
   configKeys = KStdAction::keyBindings(this, SLOT( slotConfigureKeys() ), actionCollection());
   configToolbar = KStdAction::configureToolbars(this, SLOT( slotConfigureToolbar() ), actionCollection());
