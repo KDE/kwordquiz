@@ -36,7 +36,7 @@
 #include "kwordquiz.h"
 #include "kwordquizview.h"
 #include "kvtmlwriter.h"
-
+#include "version.h"
 
 QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 //KWordQuizView *KWordQuizDoc::m_view;
@@ -400,7 +400,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
   {
     file.close();
     KVTMLWriter writer(&file);
-    writer.addHeader(QString("kwordquiz %1").arg(VERSION), 2, g->numRows(), url.fileName());
+    writer.addHeader(QString("kwordquiz %1").arg(KWQ_VERSION), 2, g->numRows(), url.fileName());
     writer.addFirstItem(g->horizontalHeader()->label(0), g->columnWidth(0), g->text(w, 0), g->horizontalHeader()->label(1), g->columnWidth(1), g->text(w, 1));
     w++;
     int r = g->numRows() - 1;

@@ -20,6 +20,7 @@
 #include <klocale.h>
 
 #include "kwordquiz.h"
+#include "version.h"
 
 static const char *description =
 	I18N_NOOP("KWordQuiz");
@@ -37,8 +38,8 @@ int main(int argc, char *argv[])
 {
 
 	KAboutData aboutData( "kwordquiz", I18N_NOOP("KWordQuiz"),
-		VERSION, description, KAboutData::License_GPL,
-		"(c) 2003, Peter Hedlund", 0, 0, "peter@peterandlinda.com");
+		KWQ_VERSION, description, KAboutData::License_GPL,
+		"(c) 2003-2004, Peter Hedlund", 0, 0, "peter@peterandlinda.com");
 	aboutData.addAuthor("Peter Hedlund",0, "peter@peterandlinda.com");
 	KCmdLineArgs::init( argc, argv, &aboutData );
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
