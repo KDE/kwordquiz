@@ -42,7 +42,6 @@
 #include "qaview.h"
 #include "flashview.h"
 #include "multipleview.h"
-#include "configuration.h"
 #include "wqprintdialogpage.h"
 #include "prefs.h"
 
