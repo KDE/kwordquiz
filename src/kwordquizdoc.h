@@ -82,6 +82,7 @@ class KWordQuizDoc : public QObject
      * As this view normally repaints itself, it is excluded from the paintEvent.
      */
     void slotUpdateAllViews(KWordQuizView *sender);
+    void slotModifiedOnDisk(const QString &);
  	
   public:	
     /** the list of the views currently connected to the document */

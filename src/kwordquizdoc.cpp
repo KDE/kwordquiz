@@ -30,6 +30,7 @@
 #include <kio/netaccess.h>
 #include <kstandarddirs.h> //locate
 #include <keduvocdata.h>
+#include <kdirwatch.h>
 
 // application specific includes
 #include "kwordquizdoc.h"
@@ -43,6 +44,7 @@ QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 
 KWordQuizDoc::KWordQuizDoc(QWidget *parent, const char *name) : QObject(parent, name)
 {
+  connect(KDirWatch::self(), SIGNAL(dirty(const QString& )), this, SLOT(slotModifiedOnDisk(const QString& )));
   /* if(!pViewList)
    {
      pViewList = new QList<KWordQuizView>();
@@ -507,6 +509,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
       i++;
     }*/
   }
+  doc_url = url;
   setModified(false);
   return true;
 }
@@ -517,4 +520,17 @@ void KWordQuizDoc::deleteContents()
   // TODO: Add implementation to delete the document contents
   /////////////////////////////////////////////////
 
+}
+
+void KWordQuizDoc::slotModifiedOnDisk( const QString & path)
+{
+  /*@todo this code doesn't work very well. Have to look in more detail on how Kate does it.
+  if (doc_url.path() == path)
+  {
+    QString str = i18n("The file %1 was changed (modified) on disc by another program!\n\n").arg(doc_url.fileName());    
+    int i = KMessageBox::warningYesNoCancel(0, str + i18n("Do you want to reload the modified file? Data loss may occur."));
+    if ( i == KMessageBox::Yes)
+      openDocument(doc_url);
+  }
+  */
 }
