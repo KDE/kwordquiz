@@ -271,7 +271,9 @@ bool KWordQuizView::gridIsEmpty()
 QWidget * KWordQuizView::beginEdit( int row, int col, bool replace )
 {
   m_currentText = text(row, col);
-  return QTable::beginEdit(row, col, replace);
+  cellEditor = QTable::beginEdit(row, col, replace);
+  cellEditor->installEventFilter(this);
+  return cellEditor;
 }
 
 void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
@@ -1027,6 +1029,24 @@ void KWordQuizView::slotCheckedAnswer( int i )
     setCurrentCell(i, 0);
     selectRow(i);
   }
+}
+
+bool KWordQuizView::eventFilter( QObject * o, QEvent * e )
+{
+  if (o == cellEditor)
+  {
+    if ( e->type() == QEvent::KeyPress ) 
+    {
+      QKeyEvent *k = (QKeyEvent *)e;
+      if (k->key() == Key_Tab)
+      {
+        endEdit(currentRow(), currentColumn(), true, true);      
+        activateNextCell();
+        return true;
+      }    
+    }
+  }
+  return QTable::eventFilter(o, e);
 }
 
 #include "kwordquizview.moc"

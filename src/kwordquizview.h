@@ -85,6 +85,7 @@ class KWordQuizView : public QTable
     void endEdit ( int row, int col, bool accept, bool replace );
     void activateNextCell();
     void keyPressEvent( QKeyEvent* );
+    bool eventFilter( QObject*, QEvent* );
   public slots:
     void adjustRow(int row);
     void slotSpecChar(const QChar &);
@@ -102,6 +103,7 @@ class KWordQuizView : public QTable
     QString m_currentText;
     QTableSelection m_currentSel;
     DlgSpecChar* dlgSpecChar;
+    QWidget * cellEditor;
     /** the list of the undo objects */
     static QValueList<WQUndo> *m_undoList;
 
