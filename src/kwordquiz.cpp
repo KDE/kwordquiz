@@ -1070,9 +1070,16 @@ void KWordQuizApp::slotConfigureKeys()
 /** Configure toolbar */
 void KWordQuizApp::slotConfigureToolbar()
 {
-    KEditToolbar edit( guiFactory(), this );
-    if( edit.exec() )
-        createGUI( "kwordquizui.rc" );
+  saveMainWindowSettings( KGlobal::config(), "MainWindow" );
+  KEditToolbar dlg(actionCollection());
+  connect(&dlg, SIGNAL(newToolbarConfig()), this, SLOT(slotNewToolbarConfig()));
+  dlg.exec();        
+}
+
+void KWordQuizApp::slotNewToolbarConfig( )
+{
+  createGUI("kwordquizui.rc");
+  applyMainWindowSettings( KGlobal::config(), "MainWindow" );
 }
 
 /** Configure notifications */
@@ -1110,15 +1117,6 @@ void KWordQuizApp::slotApplyPreferences()
 
 void KWordQuizApp::updateSpecialCharIcons( )
 {
-//void KAction::setIconSet(const QIconSet & iconSet)
-//QIconSet(QPixmap("open.xpm"))
-//we can probably create a 48 px pixmap, then do
-
-//actSpecChar->setIconSet(QIconSet(pm));
-
-//otherwise the icon size can be retrieved by
-//mainWin->toolBar("myToolbar")->iconSize();
-
   for (int i = 0; i < 9; i++){
     QString s = (QString) Config().m_specialCharacters[i];
     QRect r(2, 2, 30, 30);
@@ -1146,17 +1144,16 @@ void KWordQuizApp::updateSpecialCharIcons( )
     
     ///Mask the pixmap
     pm.setMask(bm);   
-
-    actionCollection()->action("char_" + QString::number(i + 1))->setIconSet(QIconSet(pm));
+    
+    KAction * act = actionCollection()->action("char_" + QString::number(i + 1));
+    act->setIconSet(QIconSet(pm));
+    act->setToolTip(i18n("Inserts the character %1").arg(s));
   }
 }
 
 void KWordQuizApp::slotStatusMsg(const QString &text)
 {
-  ///////////////////////////////////////////////////////////////////
-  // change status message permanently
   statusBar()->clear();
-  //statusBar()->changeItem(text, ID_STATUS_MSG);
   statusBar()->message(text);
 }
 
@@ -1243,6 +1240,7 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
   if (!hl)
     slotStatusMsg(i18n("Ready"));
 }
+
 
 
 

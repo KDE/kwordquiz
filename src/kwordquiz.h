@@ -225,6 +225,7 @@ class KWordQuizApp : public KMainWindow
     void slotInsertChar(int i);
     
     void slotActionHighlighted(KAction *, bool);
+    void slotNewToolbarConfig();
   private:
 
     WQQuiz::QuizType m_quizType;
