@@ -96,9 +96,6 @@
             <property name="text">
                 <string>E&amp;nable fill-in-the-blank</string>
             </property>
-            <property name="accel">
-                <string>Alt+N</string>
-            </property>
             <property name="toolTip" stdset="0">
                 <string>Check to enable fill-in-the-blank</string>
             </property>
