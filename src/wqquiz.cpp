@@ -348,17 +348,17 @@ QString WQQuiz::quizIcon(int i, QuizIcon ico)
   if (ico == qiLeftCol)
   {
     if (li->question() == 0)
-      s = "rowcol";
+      s = "question";
     else
-      s = "language2";
+      s = "answer";
   }
 
   if (ico == qiRightCol)
   {
     if (li->question() == 0)
-      s = "language2";
+      s = "answer";
     else
-      s = "rowcol";
+      s = "question";
   }
   return s;
 }
