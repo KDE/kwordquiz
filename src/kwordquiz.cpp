@@ -589,7 +589,7 @@ bool KWordQuizApp::saveAsFileName( )
   
   bool success = false;
   
-  KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, QString::null, true);
+  KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save vocabulary document as..."));
   fd -> setFilter(i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document"));
@@ -1118,7 +1118,7 @@ void KWordQuizApp::slotApplyPreferences()
 void KWordQuizApp::updateSpecialCharIcons( )
 {
   for (int i = 0; i < 9; i++){
-    KAction * act = actionCollection()->action("char_" + QString::number(i + 1));
+    KAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)).latin1());
     act->setIcon(charIcon(Config().m_specialCharacters[i]));
     act->setToolTip(i18n("Inserts the character %1").arg(Config().m_specialCharacters[i]));
   }

@@ -110,7 +110,7 @@ void KWordQuizPrefs::updateDialog()
   for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     it.current()->setText(2, (QString) Config().m_specialCharacters[i++] ) ;
-    it.current()->setText(1, win->actionCollection()->action("char_" + QString::number(i))->shortcut().toString());
+    it.current()->setText(1, win->actionCollection()->action(QString("char_" + QString::number(i)).latin1())->shortcut().toString());
   }
   
   m_prefCharacter->lstCharacters->setSelected(m_prefCharacter->lstCharacters->firstChild(), true);

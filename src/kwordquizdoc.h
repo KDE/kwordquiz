@@ -86,7 +86,7 @@ class KWordQuizDoc : public QObject
  	
   public:	
     /** the list of the views currently connected to the document */
-    static QList<KWordQuizView> *pViewList;	
+    //static QList<KWordQuizView> *pViewList;	
     //static KWordQuizView *m_view;
   private:
     /** the modified flag of the current document */

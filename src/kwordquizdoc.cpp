@@ -39,7 +39,7 @@
 #include "kvtmlwriter.h"
 #include "version.h"
 
-QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
+//QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 //KWordQuizView *KWordQuizDoc::m_view;
 
 KWordQuizDoc::KWordQuizDoc(QWidget *parent, const char *name) : QObject(parent, name)
