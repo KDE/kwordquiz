@@ -446,6 +446,7 @@ void KWordQuizApp::slotFileOpen()
 void KWordQuizApp::slotFileOpenRecent(const KURL& url)
 {
   slotStatusMsg(i18n("Opening file..."));
+  fileOpenRecent->setCurrentItem(-1);
   if (m_dirWatch->contains(url.path()))
   {
     KMainWindow* w;
