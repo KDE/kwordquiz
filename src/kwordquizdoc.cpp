@@ -293,7 +293,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     writer.addHeader(QString("kwordquiz %1").arg(KWQ_VERSION), 2, g->numRows(), url.fileName());
     writer.addFirstItem(g->horizontalHeader()->label(0), g->columnWidth(0), g->text(w, 0), g->horizontalHeader()->label(1), g->columnWidth(1), g->text(w, 1));
     w++;
-    int r = g->numRows() - 1;
+    int r = g->numRows();
     while (w < r)
     {
       writer.addItem(g->text(w, 0), g->text(w, 1));

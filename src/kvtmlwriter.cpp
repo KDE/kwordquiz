@@ -47,11 +47,11 @@ void KVTMLWriter::addFirstItem(const QString &ll, int lwidth, const QString &lef
   QString s = QString("  <o width=\"%1\" l=\"%2\">")
     .arg(lwidth)
     .arg(ll);
-  outputStream << s << left << "</o>" << endl;
+  outputStream << s << escape(left) << "</o>" << endl;
   s = QString("  <t width=\"%1\" l=\"%2\">")
     .arg(rwidth)
     .arg(rl);
-  outputStream << s << right << "</t>" << endl;
+  outputStream << s << escape(right) << "</t>" << endl;
   outputStream << " </e>" << endl;
 }
 
@@ -61,8 +61,8 @@ void KVTMLWriter::addFirstItem(const QString &ll, int lwidth, const QString &lef
 void KVTMLWriter::addItem(const QString &left, const QString &right)
 {
   outputStream << " <e>" << endl;
-  outputStream << "  <o>" << left << "</o>" << endl;
-  outputStream << "  <t>" << right << "</t>" << endl;
+  outputStream << "  <o>" << escape(left) << "</o>" << endl;
+  outputStream << "  <t>" << escape(right) << "</t>" << endl;
   outputStream << " </e>" << endl;
 }
 
@@ -71,6 +71,16 @@ KVTMLWriter::~KVTMLWriter()
 {
   outputStream << "</kvtml>" << endl;
   outputFile->close();
+}
+
+QString KVTMLWriter::escape( const QString & s)
+{
+  QString result = s;
+  result.replace(QChar('&'), "&amp;"); //must be done first 
+  result.replace(QChar('<'), "&lt;");
+  result.replace(QChar('>'), "&gt;");
+
+  return result;  
 }
 
 

@@ -27,6 +27,7 @@ public:
   void addHeader(const QString &generator, int cols, int rows, const QString &title);
   void addItem(const QString &left, const QString &right);
 private:
+  QString escape(const QString &);
   QFile *outputFile;
   QTextStream outputStream;
 };
