@@ -17,6 +17,8 @@
 
 #include "dlglanguagebase.h"
 
+class KCompletion;
+
 /**
 @author Peter Hedlund
 */
@@ -31,6 +33,8 @@ class DlgLanguage : public KDialogBase {
 
   private:
     DlgLanguageBase *dlgBase;
+    KCompletion * completion1;
+    KCompletion * completion2;
 
 };
 
