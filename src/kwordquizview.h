@@ -109,7 +109,7 @@ class KWordQuizView : public QTable
 
     void doNewPage(QPainter & painter, int res, int type);
     void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
-    bool checkForBlank(QString s, bool blank);
+    bool checkForBlank(const QString & s, bool blank);
 };
 
 #endif // KWORDQUIZVIEW_H

@@ -42,10 +42,10 @@ class WQQuiz : public QObject
 
     bool init();
     void finish();
-    bool checkAnswer(int i, QString ans);
+    bool checkAnswer(int i, const QString & );
     QStringList multiOptions(int i);
     QString quizIcon(int i, QuizIcon ico);
-    QString yourAnswer(int i, QString s);
+    QString yourAnswer(int i, const QString & s);
     QString hint(int i);
 
     QuizType quizType() const {return m_quizType;}
@@ -67,7 +67,7 @@ class WQQuiz : public QObject
     void setEnableBlanks(bool b);
   signals:
     void checkingAnswer(int );
-    
+
   private:
     KWordQuizView *m_table;
     int m_quizMode;

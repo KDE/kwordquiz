@@ -352,11 +352,12 @@ void KWordQuizView::doEditUndo( )
       setNumRows(undo.numRows());
       setCurrentCell(undo.currentRow(), undo.currentCol());
       addSelection(undo.selection());
-    
+
       QString s;
       int i = 0;
-      KWqlDataItemList dataList = undo.list();  
-      for(KWqlDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+      KWqlDataItemList dataList = undo.list();
+      KWqlDataItemList::ConstIterator end(dataList.end());
+      for(KWqlDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
       {
         s = (*dataIt).frontText();
         if (!s.isEmpty())
@@ -367,7 +368,7 @@ void KWordQuizView::doEditUndo( )
         setRowHeight(i, (*dataIt).rowHeight());
         i++;
       } 
-      
+
       m_undoList->remove(m_undoList->begin());
       setUpdatesEnabled(true);
     }
@@ -569,7 +570,7 @@ const char delim_start = '[';
 const char delim_end = ']';
 
 
-bool KWordQuizView::checkForBlank( QString s, bool blank )
+bool KWordQuizView::checkForBlank( const QString  & s, bool blank )
 {
   if (!blank)
     return true;

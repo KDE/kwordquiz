@@ -50,7 +50,7 @@ WQPrintDialogPage::WQPrintDialogPage(QWidget *parent, const char *name )
   QWhatsThis::add(g, i18n("Specify type of printout to make"));
   QWhatsThis::add(rb0, i18n("Select to print the vocabulary as displayed in the editor"));
   QWhatsThis::add(rb1, i18n("Select to print the vocabulary as a vocabulary exam"));
-  QWhatsThis::add(rb2, i18n("Select to print flashcards"));      
+  QWhatsThis::add(rb2, i18n("Select to print flashcards"));
 }
 
 
@@ -58,12 +58,12 @@ WQPrintDialogPage::~WQPrintDialogPage()
 {
 }
 
-void WQPrintDialogPage::getOptions( QMap< QString, QString > & opts, bool incldef )
+void WQPrintDialogPage::getOptions(QMap< QString, QString > & opts, bool incldef)
 {
   opts[ "kde-kwordquiz-type" ] = QString::number(g->selectedId());
 }
 
-void WQPrintDialogPage::setOptions( const QMap< QString, QString > & opts )
+void WQPrintDialogPage::setOptions(const QMap< QString, QString > & opts )
 {
   QString type = opts[ "kde-kwordquiz-type" ];
   switch (type.toInt())
@@ -74,7 +74,7 @@ void WQPrintDialogPage::setOptions( const QMap< QString, QString > & opts )
   }
 }
 
-bool WQPrintDialogPage::isValid( QString & msg )
+bool WQPrintDialogPage::isValid(const QString & msg )
 {
   return true;
 }

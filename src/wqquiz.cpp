@@ -214,7 +214,7 @@ void WQQuiz::listRandom()
   rs->randomize(m_quizList);
 }
 
-bool WQQuiz::checkAnswer(int i, QString ans)
+bool WQQuiz::checkAnswer(int i, const QString & a)
 {
   bool result = false;
   WQListItem *li = m_list->at(i);
@@ -227,7 +227,7 @@ bool WQQuiz::checkAnswer(int i, QString ans)
   {
     j= 0;
   }
-
+  QString ans = a;
   QString tTemp = m_table -> text(li->oneOp(), j);
   tTemp = tTemp.stripWhiteSpace();
   ans = ans.stripWhiteSpace();
@@ -241,7 +241,7 @@ bool WQQuiz::checkAnswer(int i, QString ans)
         ls = QStringList::split(";", ans);
       else
         ls.append(ans);
-        
+
       if (m_correctBlank.find(";") > 0)
         la = QStringList::split(";", m_correctBlank);
       else
@@ -356,18 +356,18 @@ QString WQQuiz::quizIcon(int i, QuizIcon ico)
     else
       s = "language2";
   }
-  
+
   if (ico == qiRightCol)
   {
     if (li->question() == 0)
       s = "language2";
     else
       s = "rowcol";
-  }  
-  return s;     
+  }
+  return s;
 }
 
-QString WQQuiz::yourAnswer(int i, QString s)
+QString WQQuiz::yourAnswer(int i, const QString & s)
 {
   QString result ="";
 
@@ -392,7 +392,7 @@ QString WQQuiz::yourAnswer(int i, QString s)
         offset++;
         counter++; 
       }
-    }    
+    }
   }
   else
   {
@@ -471,7 +471,7 @@ QString WQQuiz::blankAnswer(int i)
     rx.setPattern("\\[.*\\]");
 
     r.replace(rx, "..........");
-    
+
     if (r != tTemp)
     {
       m_answerBlank = r;

@@ -187,7 +187,8 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
       {      
         g->setNumRows(dataList.count() + i);
         QString s;
-        for(PaukerDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+        PaukerDataItemList::ConstIterator end(dataList.end());
+        for(PaukerDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
         {
           s = (*dataIt).frontSide();
           if (!s.isEmpty())
@@ -199,7 +200,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
         }
       }
     }
-        
+
     if (url.path().right(6) == ".kvtml")
     {
       KEduVocData * kvtmldoc = new KEduVocData;
@@ -210,7 +211,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           g->setNumRows(kvtmldoc->numRows() + i);
         else
           g->setNumRows(dataList.count() + i);
-        
+
         if (!append)
         {
           g->horizontalHeader()->setLabel(0, kvtmldoc->language(0));
@@ -219,7 +220,8 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           g->setColumnWidth(1, kvtmldoc->colWidth(1));
         }
         QString s;
-        for(KEduVocDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+        KEduVocDataItemList::ConstIterator end(dataList.end());
+        for(KEduVocDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
         {
           s = (*dataIt).originalText();
           if (!s.isEmpty())
@@ -231,7 +233,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
         }
       }
     }
-    
+
     if (url.path().right(4) == ".wql")
     {
       WqlReader * wqldoc = new WqlReader;
@@ -242,7 +244,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           g->setNumRows(wqldoc->numRows() + i);
         else
           g->setNumRows(dataList.count() + i);
-        
+
         if (!append)
         {
           g->horizontalHeader()->setLabel(0, wqldoc->language(0));
@@ -255,7 +257,8 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           Prefs::setSpecialCharacters(wqldoc->specialCharacters());
         }
         QString s;
-        for(KWqlDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+        KWqlDataItemList::ConstIterator end(dataList.end());
+        for(KWqlDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
         {
           s = (*dataIt).frontText();
           if (!s.isEmpty())

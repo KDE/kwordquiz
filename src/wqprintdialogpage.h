@@ -35,15 +35,15 @@ public:
 
     ~WQPrintDialogPage();
    //reimplement virtual functions
-   void getOptions( QMap<QString,QString>& opts, bool incldef = false );
-   void setOptions( const QMap<QString,QString>& opts );
-   bool isValid( QString& msg );
+   void getOptions(QMap<QString,QString>& opts, bool incldef = false);
+   void setOptions(const QMap<QString,QString>& opts);
+   bool isValid(const QString& msg );
 
 private:
   QButtonGroup * g;
   QRadioButton * rb0;
   QRadioButton * rb1;
-  QRadioButton * rb2;       
+  QRadioButton * rb2;
 };
 
 #endif
