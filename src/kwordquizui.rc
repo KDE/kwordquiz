@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.7" name="kwordquiz" >
+<kpartgui version="0.8" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
    
@@ -183,4 +183,16 @@
       <Action name="quiz_repeat_errors" />
     </Disable>
   </State>
+  <Menu name="editor_popup">
+    <Action name="edit_undo" />
+    <Separator/>      
+    <Action name="edit_cut" />
+    <Action name="edit_copy" />
+    <Action name="edit_paste" />
+    <Separator/>
+    <Action name="edit_insert" />
+    <Action name="edit_delete" />
+    <Separator/>
+    <Action name="vocab_languages" />  
+  </Menu>
 </kpartgui>

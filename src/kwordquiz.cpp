@@ -331,6 +331,7 @@ void KWordQuizApp::initView()
   setCaption(doc->URL().fileName(),false);
   m_editView->setFont(Config().m_editorFont);
   connect(m_editView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
+  connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
 
 void KWordQuizApp::openDocumentFile(const KURL& url)
@@ -1235,6 +1236,13 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
 {
   if (!hl)
     slotStatusMsg(i18n("Ready"));
+}
+
+void KWordQuizApp::slotContextMenuRequested(int row, int col, const QPoint & pos)
+{
+  QWidget *w = factory()->container("editor_popup", this);
+  QPopupMenu *popup = static_cast<QPopupMenu *>(w);
+  popup->exec(pos);
 }
 
 
