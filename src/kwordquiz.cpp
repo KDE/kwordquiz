@@ -757,7 +757,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       setCentralWidget(m_editView);
       stateChanged("showingEdit");
 
-      toolBar("quizToolBar")->hide();
+      //toolBar("quizToolBar")->hide();
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(m_editView);
@@ -767,6 +767,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz-> setEnableBlanks(Config().m_enableBlanks);
       if (m_quiz -> init())
       {
+
         m_editView->hide();
         m_flashView = new FlashView(this);
         connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
@@ -776,11 +777,9 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
         
-        stateChanged("showingFlash");
-        toolBar("quizToolBar")->show();
+        m_flashView->show();
 
         setCentralWidget(m_flashView);
-
         m_flashView -> setQuiz(m_quiz);
         m_flashView ->init();
         m_flashView->show();
@@ -810,7 +809,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_multipleView -> setQuiz(m_quiz);
         m_multipleView ->init();
         stateChanged("showingMultiple");
-        toolBar("quizToolBar")->show();
+        //toolBar("quizToolBar")->show();
       }
       else
       {
@@ -838,7 +837,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_qaView -> setQuiz(m_quiz);
         m_qaView ->init();
         stateChanged("showingQA");
-        toolBar("quizToolBar")->show();
+        //toolBar("quizToolBar")->show();
       }
       else
       {
