@@ -208,9 +208,6 @@
             <property name="text">
                 <string>&amp;Flip</string>
             </property>
-            <property name="accel">
-                <string>Alt+F</string>
-            </property>
             <property name="toolTip" stdset="0">
                 <string>Flip card</string>
             </property>
