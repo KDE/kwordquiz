@@ -296,7 +296,6 @@ void KWordQuizApp::initActions()
   connect(actionCollection(), SIGNAL(actionHighlighted(KAction *, bool)), this, SLOT(slotActionHighlighted(KAction *, bool)));    
   updateSpecialCharIcons();
     
-   // use the absolute path to your kwordquizui.rc file for testing purpose in createGUI();
    setupGUI();
 }
 
