@@ -5,7 +5,7 @@ Comment[sv]=Kwordquiz
 Comment[ta]=கேவார்த்தைவினாடுவிடை
 Comment[tg]=ИмтиҳониKҲарф
 Comment[xx]=xxKWordQuizxx
- 
+
 [QuizCorrect]
 Name=QuizCorrect
 Name[nl]=Kwiscorrectie
@@ -32,7 +32,7 @@ Comment[tg]=Ҷавоби дуруст
 Comment[xx]=xxCorrect Answerxx
 default_sound=KDE_Notify.wav
 default_presentation=1
- 
+
 [QuizError]
 Name=QuizError
 Name[nl]=Kwisfout
@@ -59,7 +59,7 @@ Comment[tg]=Ҷавоби нодуруст
 Comment[xx]=xxWrong Answerxx
 default_sound=KDE_Error.wav
 default_presentation=1
- 
+
 [SyntaxError]
 Name=syntaxerror
 Name[da]=syntaksfejl
@@ -70,7 +70,7 @@ Name[sl]=napakaskladnje
 Name[sv]=Syntaxfel
 Name[ta]= இலக்கணபிழை
 Name[xx]=xxsyntaxerrorxx
-Comment=Error in syntax
+Comment=Error in Syntax
 Comment[ca]=Error de sintaxi
 Comment[da]=Fejl i syntaks
 Comment[es]=Error en la sintaxis
