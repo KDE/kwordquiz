@@ -28,6 +28,7 @@
 #include "kwordquiz.h"
 #include "kvtmlwriter.h"
 #include "version.h"
+#include "paukerreader.h"
 
 //QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 //KWordQuizView *KWordQuizDoc::m_view;
@@ -169,6 +170,25 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     QTable* g = m_view;
     g->setUpdatesEnabled(false);
     int i = 0;
+    
+    if (url.path().right(7) == ".xml.gz")
+    {
+      PaukerData * paukerDoc = new PaukerData;
+      PaukerDataItemList dataList = paukerDoc->parse(url.path()); // KEduVocData::parse(url.path());
+      g->setNumRows(dataList.count());
+      QString s;
+      for(PaukerDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+      {
+        s = (*dataIt).frontSide();
+        if (!s.isEmpty())
+          g->setText(i, 0, s); //calling setText only when there actually is text helps with sorting
+        s = (*dataIt).backSide();
+        if (!s.isEmpty())
+          g->setText(i, 1, s);
+        i++;
+      }
+    }
+        
     if (url.path().right(6) == ".kvtml")
     {
       KEduVocData * kvtmldoc = new KEduVocData;
@@ -193,7 +213,8 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
         i++;
       }
     }
-    else
+    
+    if (url.path().right(4) == ".wql")
     {
       QTextStream* ts = new QTextStream(&file);
       m_view->fromStream(ts, QTextStream::Latin1);

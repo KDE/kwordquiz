@@ -452,7 +452,7 @@ void KWordQuizApp::slotFileOpen()
 {
   slotStatusMsg(i18n("Opening file..."));
 
-  KURL url=KFileDialog::getOpenURL(QString::null, i18n("*.kvtml *.wql|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document"), this,
+  KURL url=KFileDialog::getOpenURL(QString::null, i18n("*.kvtml *.wql *.xml.gz|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson"), this,
       i18n("Open Vocabulary Document..."));
 
   if(!url.isEmpty()) {
