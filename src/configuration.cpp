@@ -15,16 +15,16 @@
 #include <kglobalsettings.h>
 
 const bool Configuration::m_defaultFirstRun = true;
-const int Configuration::m_defaultEnterMove = 1;
+const int Configuration::m_defaultEnterMove = 2;
 const bool Configuration::m_defaultEnableBlanks = false;
 const bool Configuration::m_defaultAutoFlip = false;
 const int Configuration::m_defaultFlipDelay = 3;
 const bool Configuration::m_defaultKeepDiscard = false;
-const bool Configuration::m_defaultAutoCheck = true;
+const bool Configuration::m_defaultAutoCheck = false;
 const bool Configuration::m_defaultHintError = false;
 const bool Configuration::m_defaultPercent = false;
 const int Configuration::m_defaultMode = 1;
-const QString Configuration::m_defaultSpecialCharacters = "abcdefghi";
+const QString Configuration::m_defaultSpecialCharacters = "ßüחיטהזצר";
 
 Configuration::Configuration() {
   m_defaultEditorFont = KGlobalSettings::generalFont();
