@@ -557,7 +557,7 @@ void KWordQuizApp::slotFileSave()
 
 void KWordQuizApp::slotFileSaveAs()
 {
-  slotStatusMsg(i18n("Saving file with a new file name..."));
+  slotStatusMsg(i18n("Saving file with a new filename..."));
   saveAsFileName();
   slotStatusMsg(i18n("Ready"));
 }
