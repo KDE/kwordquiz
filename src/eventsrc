@@ -5,20 +5,17 @@ Comment=KWordQuiz
 [QuizCorrect]
 Name=QuizCorrect
 Comment=Correct Answer
-Comment[xx]=xxCorrect Answerxx
 default_sound=KDE_Notify.wav
 default_presentation=1
  
 [QuizError]
 Name=QuizError
 Comment=Wrong Answer
-Comment[xx]=xxWrong Answerxx
 default_sound=KDE_Error.wav
 default_presentation=1
  
 [SyntaxError]
 Name=syntaxerror
 Comment=Error in syntax
-Comment[xx]=xxError in syntaxxx
 default_sound=KDE_Error.wav
 default_presentation=1
