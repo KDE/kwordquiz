@@ -293,10 +293,6 @@ class KWordQuizApp : public KMainWindow
 
     KAction* qaHint;
 
-    KAction* configToolbar;
-    KAction* configNotifications;
-    KAction* configApp;
-    
     QSignalMapper* charMapper;
     KAction* specialChar1;    
     KAction* specialChar2; 

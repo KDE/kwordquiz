@@ -97,6 +97,10 @@ KWordQuizApp::~KWordQuizApp()
 
 void KWordQuizApp::initActions()
 {
+  KAction* configToolbar;
+  KAction* configNotifications;
+  KAction* configApp;
+
   fileNew = KStdAction::openNew(this, SLOT(slotFileNew()), actionCollection());
   fileNew->setWhatsThis(i18n("Creates a new blank vocabulary document"));
   fileNew->setToolTip(fileNew->whatsThis());
@@ -255,12 +259,6 @@ void KWordQuizApp::initActions()
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
 
-  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
-
-  configToolbar = KStdAction::configureToolbars(this, SLOT( slotConfigureToolbar() ), actionCollection());
-  configToolbar->setWhatsThis(i18n("Toggles display of the toolbars"));
-  configToolbar->setToolTip(configToolbar->whatsThis());
-
   configNotifications = KStdAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
   configNotifications->setWhatsThis(i18n("Configures sound and other notifications for certain events"));
   configNotifications->setToolTip(configNotifications->whatsThis());
@@ -298,6 +296,10 @@ void KWordQuizApp::initActions()
   updateSpecialCharIcons();
 
    setupGUI();
+   
+   configToolbar = actionCollection()->action("options_configure_toolbars");
+   configToolbar->setWhatsThis(i18n("Toggles display of the toolbars"));
+   configToolbar->setToolTip(configToolbar->whatsThis());
 }
 
 void KWordQuizApp::initStatusBar()
