@@ -211,7 +211,7 @@ void KWordQuizPrefs::slotSelectSpecChar( )
   
   if (m_dlgSpecChar == 0)
   {
-    m_dlgSpecChar = new DlgSpecChar( this, "insert special char", f, c, false );
+    m_dlgSpecChar = new DlgSpecChar( this, "insert special char", f, c, true );
     connect( m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
     connect( m_dlgSpecChar, SIGNAL(finished()), this, SLOT( slotDlgSpecCharClosed() ) );
   }
