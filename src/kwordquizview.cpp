@@ -606,28 +606,26 @@ end;
 
 void KWordQuizView::doEditMarkBlank( )
 {
-/*
-procedure MarkBlank(oText: TInplaceEdit);
-var
-    iCounter: integer;
-    sPart1: string;
-    sPart2: string;
-    sPart3: string;
-    iEnd: integer;
-    iStart: integer;
-    //cArray: array of Char;
-    sSelText: string;
-    sTemp: string;
-    iSelStart: integer;
-begin
-*/
   if (isEditing())
   {
     QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
     if (l->text().length() > 0)
     {
       QString s = l->text();
-      int cp = l->cursorPosition();
+      int cp = l->cursorPosition();      
+      if (!l->hasSelectedText())
+      {      
+        if (s[cp] != ' ')
+        {
+          l->cursorWordForward(false);
+          //l->setCursorPosition(cp);
+          l->cursorWordBackward(true);
+ 
+        }
+        else
+          return;     
+      }
+
       
       if (l->hasSelectedText())
       {
@@ -640,9 +638,35 @@ begin
         l->setText(s);
         l->setSelection(ss, st.length());        
       }
-      else
+      /*else
       {
-        /*    If iSelStart > 0 Then begin
+        int start, end;
+
+          
+          
+          if (s[cp+1] != ' ')
+          {
+            for (int i = cp; i < s.length(); ++i)
+              if (s[i] == ' ' || s[i] == delim_end)
+              {
+                end = i;
+                continue;
+              }
+ 
+            for (int i = cp; i > 0; --i)
+              if (s[i] == ' ' || s[i] == delim_start)
+              {
+                start = i;
+                continue;                       
+              }
+            
+            QString temp;
+            temp = s.left(start) + delim_start + s.mid(start + 1, end - start - 1) + delim_end + s.mid(end, s.length());
+            l->setText(temp);
+            l->setCursorPosition(cp);    
+            
+          }
+              If iSelStart > 0 Then begin
                 //efter StripOut kan lSelsStart vara större än Len(sTemp)
                 If iSelStart > Length(sTemp) Then
                     iSelStart := Length(sTemp);
@@ -651,8 +675,6 @@ begin
 
                     If sTemp[iSelStart] <> #32 Then
                         If sTemp[iSelStart + 1] <> #32 Then begin
-
-                            //iStartPos := LastDelimiter(cStartChar, Copy(sTemp,0, iSelStart));
 
                             iCounter := iSelStart;
                             repeat
@@ -679,8 +701,8 @@ begin
                 end;
             
             end;
-            */
-      }
+            
+      }*/
 
     }
   }
