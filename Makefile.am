@@ -9,7 +9,7 @@ EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README TODO
 # have all needed files, that a GNU package needs
 AUTOMAKE_OPTIONS = foreign 
 
-$(top_srcdir)/configure.in: configure.in.in $(top_srcdir)/subdirs
+$(top_srcdir)/configure.in: $(top_srcdir)/subdirs
 	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.in ;
 
 $(top_srcdir)/subdirs:
