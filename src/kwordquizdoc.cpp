@@ -30,6 +30,7 @@
 #include "version.h"
 #include "paukerreader.h"
 #include "wqlreader.h"
+#include "wqlwriter.h"
 #include "configuration.h"
 
 //QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
@@ -357,8 +358,27 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
   
   if (url.path().right(4) == ".wql")
   {
-    QTextStream* ts = new QTextStream(&file);
-    m_view->toStream(ts, QTextStream::Latin1);
+    file.close();
+    WqlWriter writer(&file);
+    writer.writeFont(g->font());
+    writer.writeCharacters(Config().m_specialCharacters);
+    writer.writeGridInfo(g->verticalHeader()->width(), g->columnWidth(0), g->columnWidth(1), g->numRows());
+    if (g->numSelections() > 0)
+    {
+      QTableSelection qts = g->selection(0);
+      writer.writeSelection(qts.leftCol(), qts.topRow(), qts.rightCol(), qts.bottomRow());
+    }
+    else
+    {
+      writer.writeSelection(g->currentColumn(), g->currentRow(), g->currentColumn(), g->currentRow());
+    }    
+    writer.writeFirstItem(g->horizontalHeader()->label(0), g->horizontalHeader()->label(1));
+    int r = g->numRows();
+    while (w < r)
+    {
+      writer.writeItem(g->text(w, 0), g->text(w, 1), g->rowHeight(w));
+      w++;
+    }
   }
   
   if (url.path().right(4) == ".csv")
