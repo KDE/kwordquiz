@@ -259,7 +259,7 @@
                         <string>Alt+S</string>
                     </property>
                     <property name="toolTip" stdset="0">
-                        <string>Check to show scor as percentage</string>
+                        <string>Check to show score as a percentage</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the score should be shown as a percentage</string>
