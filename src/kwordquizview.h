@@ -26,13 +26,14 @@
 
 
 #include <kprinter.h>
+#include "wqundo.h"
 //include <wqviewbase.h>
 
 //class QTable;
 class KWordQuizDoc;
 class DlgSpecChar;
 
-class WQUndo {
+class WQUndoQuizView {
 public:
   QString text() const {return m_text;};
   void setText(const QString & s) {m_text = s;};
