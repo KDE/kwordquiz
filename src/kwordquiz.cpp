@@ -57,6 +57,7 @@
 #include "wqquiz.h"
 #include "configuration.h"
 #include "dlgsort.h"
+#include "wqprintdialogpage.h"
 
 #define ID_STATUS_MSG 1
 #define ID_STATUS_MSG_MODE 2
@@ -466,7 +467,9 @@ void KWordQuizApp::slotFileClose()
 void KWordQuizApp::slotFilePrint()
 {
   slotStatusMsg(i18n("Printing..."));
+  WQPrintDialogPage * p = new WQPrintDialogPage(this);
   KPrinter printer;
+  printer.addDialogPage(p);
   printer.setFullPage(true);
   if (printer.setup(this))
   {

@@ -88,7 +88,7 @@ void KWordQuizView::print(KPrinter *pPrinter)
   int cw2 = columnWidth(1);
   int cw3 = 0;
     
-  int type = 0;
+  int type = pPrinter->option("kde-kwordquiz-type").toInt();
 
   if (type == 1)
     cw3 = 50;
