@@ -297,7 +297,10 @@ void KWordQuizApp::initActions()
   connect(actionCollection(), SIGNAL(actionHighlighted(KAction *, bool)), this, SLOT(slotActionHighlighted(KAction *, bool)));
   updateSpecialCharIcons();
 
-   setupGUI();
+  if (!initialGeometrySet())
+    resize( QSize(650, 500).expandedTo(minimumSizeHint()));
+  setupGUI(ToolBar | Keys | StatusBar | Create);
+  setAutoSaveSettings();
 
    configToolbar = actionCollection()->action("options_configure_toolbars");
    configToolbar->setWhatsThis(i18n("Toggles display of the toolbars"));
