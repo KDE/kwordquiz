@@ -24,7 +24,6 @@
 #include <kfiledialog.h>
 #include <kstatusbar.h>
 #include <klocale.h>
-#include <kkeydialog.h>
 #include <kedittoolbar.h>
 #include <kstandarddirs.h> //locate
 #include <kfontdialog.h>
@@ -254,10 +253,8 @@ void KWordQuizApp::initActions()
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
 
-  configKeys = KStdAction::keyBindings(this, SLOT( slotConfigureKeys() ), actionCollection());
-  configKeys->setWhatsThis(i18n("Specifies shortcut keys for all commands"));
-  configKeys->setToolTip(configKeys->whatsThis());
-  
+  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());  
+
   configToolbar = KStdAction::configureToolbars(this, SLOT( slotConfigureToolbar() ), actionCollection());
   configToolbar->setWhatsThis(i18n("Toggles display of the toolbars"));
   configToolbar->setToolTip(configToolbar->whatsThis());
@@ -1054,12 +1051,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
 
   }
-}
-
-/** Configure keys */
-void KWordQuizApp::slotConfigureKeys()
-{
-  KKeyDialog::configure( actionCollection(), 0, true );
 }
 
 /** Configure toolbar */

@@ -203,8 +203,6 @@ class KWordQuizApp : public KMainWindow
 
     /** configure toolbar */
     void slotConfigureToolbar();
-    /** configure keys */
-    void slotConfigureKeys();
     /** configure notifications */
     void slotConfigureNotifications();
     /** configure kwordquiz */
@@ -299,7 +297,6 @@ class KWordQuizApp : public KMainWindow
     KAction* qaHint;
 
     KAction* configToolbar;
-    KAction* configKeys;
     KAction* configNotifications;
     KAction* configApp;
     
