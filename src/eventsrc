@@ -1,6 +1,7 @@
 [!Global!]
 IconName=kwordquiz
 Comment=KWordQuiz
+Comment[ar]=Kكلمات متقاطعة
 Comment[pl]=Quiz słowny
 Comment[sv]=Kwordquiz
 Comment[ta]=கேவார்த்தைவினாவிடை
@@ -8,6 +9,7 @@ Comment[tg]=ИмтиҳониKҲарф
 
 [QuizCorrect]
 Name=QuizCorrect
+Name[ar]=حل صحيح للإختبار
 Name[bg]=Правилен отговор
 Name[bs]=KvizTačno
 Name[de]=QuizKorrekt
@@ -26,7 +28,9 @@ Name[ta]= சரியான வினா விடை
 Name[tg]=ИмтиҳониДурустӣ
 Name[zh_CN]=答对
 Comment=Correct answer
+Comment[ar]=إجابة صحيحة
 Comment[bg]=Правилен отговор
+Comment[br]=Eilger reizh
 Comment[bs]=Tačan odgovor
 Comment[ca]=Resposta correcta
 Comment[da]=Rigtigt svar
@@ -58,6 +62,7 @@ default_presentation=1
 
 [QuizError]
 Name=QuizError
+Name[ar]=حل خاطىء للإختبار
 Name[bg]=Грешен отговор
 Name[bs]=KvizGreška
 Name[de]=QuizFehler
@@ -76,6 +81,7 @@ Name[ta]= தவறான வினா விடை
 Name[tg]=ИмтиҳониХатогӣ
 Name[zh_CN]=答错
 Comment=Wrong answer
+Comment[ar]=إجابة خاطئة
 Comment[bg]=Грешен отговор
 Comment[bs]=Pogrešan odgovor
 Comment[ca]=Resposta incorrecta
@@ -109,6 +115,7 @@ default_presentation=1
 
 [SyntaxError]
 Name=syntaxerror
+Name[ar]=خطأ نحوى
 Name[bg]=Синтактична грешка
 Name[bs]=sintaksnagreška
 Name[da]=syntaksfejl
@@ -129,6 +136,7 @@ Name[sv]=Syntaxfel
 Name[ta]= இலக்கணபிழை
 Name[zh_CN]=语法错误
 Comment=Error in syntax
+Comment[ar]=خطأ في قواعد النحو
 Comment[bg]=Синтактична грешка
 Comment[bs]=Greška u sintaksi
 Comment[ca]=Error de sintaxi
