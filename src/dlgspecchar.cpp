@@ -1,14 +1,19 @@
-//
-// C++ Implementation: dlgspecchar
-//
-// Description: 
-//
-//
-// Author: Peter Hedlund <peter@peterandlinda.com>, (C) 2003
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/***************************************************************************
+                          dlglspecchar.cpp  -  description
+                             -------------------
+   copyright            : (C) 2003 by Peter Hedlund
+    email                : peter@peterandlinda.com
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+ 
 #include "dlgspecchar.h"
 
 #include <qlayout.h>
