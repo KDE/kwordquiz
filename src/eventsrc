@@ -55,6 +55,7 @@ default_presentation=1
 [SyntaxError]
 Name=syntaxerror
 Name[da]=syntaksfejl
+Name[gl]=Erro na sintaxe
 Name[nl]=syntaxisfout
 Name[pt]=Erro de Sintaxe
 Name[pt_BR]=Erro de sintaxe
@@ -68,6 +69,7 @@ Comment[ca]=Error de sintaxi
 Comment[da]=Fejl i syntaks
 Comment[es]=Error en la sintaxis
 Comment[et]=Viga süntaksis
+Comment[gl]=Erro na sintaxe
 Comment[is]=Villa
 Comment[nl]=Fout in syntaxis
 Comment[pt]=Erro de Sintaxe
