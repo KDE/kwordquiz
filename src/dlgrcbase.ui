@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>200</width>
-            <height>154</height>
+            <height>156</height>
         </rect>
     </property>
     <property name="minimumSize">
@@ -52,6 +52,9 @@
                     <property name="validChars">
                         <string>0123456789</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Number of rows</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Enter the number of rows the vocabulary should have</string>
                     </property>
@@ -65,6 +68,9 @@
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>txtNumRows</cstring>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Number of rows</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Enter the number of rows the vocabulary should have</string>
@@ -93,6 +99,9 @@
                     <property name="validChars">
                         <string>0123456789</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Height of selected row</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Enter the height (in pixels) for the selected row(s)</string>
                     </property>
@@ -106,6 +115,9 @@
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>txtRowHeight</cstring>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Height of selected row</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Enter the height (in pixels) for the selected row(s)</string>
@@ -131,6 +143,9 @@
                     <property name="buddy" stdset="0">
                         <cstring>txtColWidth</cstring>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Width of selected column</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Enter the width (in pixels) for the selected column(s)</string>
                     </property>
@@ -147,6 +162,9 @@
                     </property>
                     <property name="validChars">
                         <string>0123456789</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Width of selected column</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Enter the width (in pixels) for the selected column(s)</string>

@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>300</width>
-            <height>354</height>
+            <height>356</height>
         </rect>
     </property>
     <property name="minimumSize">
@@ -285,6 +285,9 @@
             <property name="allColumnsShowFocus">
                 <bool>true</bool>
             </property>
+            <property name="toolTip" stdset="0">
+                <string>Select character to modify</string>
+            </property>
             <property name="whatsThis" stdset="0">
                 <string>Customizable special character actions</string>
             </property>
@@ -341,6 +344,9 @@
                     <property name="accel">
                         <string>Alt+H</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Click to choose a new character</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Choose a character for the selected action</string>
                     </property>
@@ -384,6 +390,9 @@
                     </property>
                     <property name="alignment">
                         <set>AlignBottom</set>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Preview of current character</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Preview of the character associated with the selected action</string>

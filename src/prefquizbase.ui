@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>300</width>
-            <height>354</height>
+            <height>356</height>
         </rect>
     </property>
     <property name="minimumSize">
@@ -55,6 +55,9 @@
                     <property name="accel">
                         <string>Alt+F</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Check to flip card automatically</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if you want a card to turn over automatically after the given amount of time</string>
                     </property>
@@ -86,6 +89,9 @@
                     <property name="accel">
                         <string>Alt+R</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Select how to count card</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the previous card should be counted as correct when moving to the next card</string>
                     </property>
@@ -99,6 +105,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+E</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Select how to count card</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the previous card should be counted as incorrect when moving to the next card</string>
@@ -150,6 +159,9 @@
                     <property name="validChars">
                         <string>0123456789</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Seconds of delay</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Specify the amount of time between card flips</string>
                     </property>
@@ -179,6 +191,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+U</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Check to correct automatically</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if a choice should be checked immediately</string>
@@ -210,6 +225,9 @@
                     <property name="accel">
                         <string>Alt+T</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Check to count hint as error</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if questions where the hint function has been used should be counted as errors</string>
                     </property>
@@ -239,6 +257,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+S</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Check to show scor as percentage</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the score should be shown as a percentage</string>

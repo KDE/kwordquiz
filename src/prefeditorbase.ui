@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>250</width>
-            <height>254</height>
+            <height>256</height>
         </rect>
     </property>
     <property name="minimumSize">
@@ -35,6 +35,9 @@
             <property name="title">
                 <string>Enter Key Moves</string>
             </property>
+            <property name="toolTip" stdset="0">
+                <string>How enter key moves</string>
+            </property>
             <property name="whatsThis" stdset="0">
                 <string>Select how the Enter key should behave in the editor</string>
             </property>
@@ -52,6 +55,9 @@
                     <property name="accel">
                         <string>Alt+D</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>How enter key moves</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the next cell below should become active when pressing Enter.</string>
                     </property>
@@ -66,6 +72,9 @@
                     <property name="accel">
                         <string>Alt+R</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>How enter key moves</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the next cell to the right should become active when pressing Enter</string>
                     </property>
@@ -79,6 +88,9 @@
                     </property>
                     <property name="accel">
                         <string>Alt+M</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>How enter key moves</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the current cell should remain active when pressing Enter</string>
@@ -95,6 +107,9 @@
             </property>
             <property name="accel">
                 <string>Alt+E</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Check to enable fill-in-the-blank</string>
             </property>
             <property name="whatsThis" stdset="0">
                 <string>Select to enable the functions for Fill-in-the-blank</string>

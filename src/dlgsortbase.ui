@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>200</width>
-            <height>174</height>
+            <height>176</height>
         </rect>
     </property>
     <property name="sizePolicy">
@@ -51,6 +51,9 @@
                     <property name="title">
                         <string>Based On</string>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Sort based on this column</string>
+                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select the column on which you want to base the sort</string>
                     </property>
@@ -68,6 +71,9 @@
                             <property name="accel">
                                 <string>Alt+1</string>
                             </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Sort based on this column</string>
+                            </property>
                             <property name="whatsThis" stdset="0">
                                 <string>Select to sort based on the left column</string>
                             </property>
@@ -82,6 +88,9 @@
                             <property name="accel">
                                 <string>Alt+2</string>
                             </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Sort based on this column</string>
+                            </property>
                             <property name="whatsThis" stdset="0">
                                 <string>Select to sort based on the right column</string>
                             </property>
@@ -94,6 +103,9 @@
                     </property>
                     <property name="title">
                         <string>Direction</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Sort in this direction</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select direction for the sort</string>
@@ -112,6 +124,9 @@
                             <property name="accel">
                                 <string>Alt+A</string>
                             </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Sort in this direction</string>
+                            </property>
                             <property name="whatsThis" stdset="0">
                                 <string>Select to sort in ascending order</string>
                             </property>
@@ -125,6 +140,9 @@
                             </property>
                             <property name="accel">
                                 <string>Alt+D</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Sort in this direction</string>
                             </property>
                             <property name="whatsThis" stdset="0">
                                 <string>Select to sort in descending order</string>
