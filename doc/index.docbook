@@ -1,0 +1,1440 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+ "dtd/kdex.dtd" [
+  <!ENTITY kappname "KWordQuiz">
+  <!ENTITY package "kdenonbeta">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title>The KWordQuiz Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Peter</firstname>
+<othername></othername>
+<surname>Hedlund</surname>
+<affiliation>
+<address><email>peter@peterandlinda.com</email></address>
+</affiliation>
+</author>
+</authorgroup>
+
+
+<copyright>
+  <year>2003</year>
+  <year>2004</year>
+  <holder>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+
+<date>2004-03-06</date>
+<releaseinfo>0.5</releaseinfo>
+
+<abstract>
+<para>
+KWordQuiz is a flashcard and vocabulary learning program for &kde;.
+</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdenonbeta</keyword>
+<keyword>KWordQuiz</keyword>
+<keyword>flashcard</keyword>
+<keyword>vocabulary</keyword>
+<keyword>language</keyword>
+<keyword>education</keyword>
+<keyword>school</keyword>
+<keyword>college</keyword>
+<keyword>university</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title>Introduction</title>
+<para>
+KWordQuiz is a tool that gives you a powerful way to master the vocabulary of a new language. You can also use it to practice any kind of terminology. 
+</para>
+<sect1 id="easy-to-use">
+<title>Easy to use</title>
+
+<para>
+With KWordQuiz you build your own vocabulary documents in a simple and intuitive way. The basic layout is a two-column spreadsheet where you type vocabulary entries in the language you know and the language you want to learn. You change the headers of the columns to reflect the languages you use. 
+</para>
+
+<sect2 id="practice-modes">
+<title>Practice modes</title>
+
+<para>Before you start a quiz you select how you want to practice. KWordQuiz offers five different modes to make practicing more efficient. The different modes make it possible to have the quiz go through your vocabulary in sequential or random order in one or both directions.</para> 
+</sect2>
+<sect2 id="quiz-types">
+<title>Quiz types</title>
+
+<para>When you have entered your vocabulary and selected a mode you are ready to start a quiz. The vocabulary document is hidden during the quiz so you can't cheat. Maybe you want to start with a flashcard session, then you can move on to a multiple choice quiz or do the powerful question and answer quiz. You get instant feedback on correct and incorrect answers and you have the option to repeat any errors, further improving your learning efficiency. If you need a little extra help you can use the hint function.</para>
+</sect2> 
+<sect2 id="vocabulary-documents">
+<title>Vocabulary documents</title>
+<para>
+KWordQuiz can save your vocabulary documents in two different formats. The default is the .kvtml format used by other KDE programs, e.g. KVocTrain. The other format is the .wql format used by WordQuiz for Windows. This way you can exchange files with Windows users. You can have several files open at the same time and easily copy or move entries between files. In this way you can also combine several documents to one large if you need to practice for e. g. a final exam.</para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title>Command Reference</title>
+
+<sect1 id="file_menu">
+<title>The <guimenu>File</guimenu> Menu</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
+        </shortcut>
+        <guimenu>File</guimenu>
+        <guimenuitem>New</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>New</action> creates a new blank vocabulary document
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
+        </shortcut>
+        <guimenu>File</guimenu>
+        <guimenuitem>Open</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Open</action> an existing vocabulary document
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+<!--         <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>File</guimenu>
+        <guimenuitem>Open Recent</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Open</action> a recently used vocabulary document
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
+        </shortcut>
+        <guimenu>File</guimenu>
+        <guimenuitem>Save</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Save</action> the active vocabulary document to disk
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>File</guimenu>
+        <guimenuitem>Save As</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Save</action> the active vocabulary document with a new name
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
+        </shortcut>
+        <guimenu>File</guimenu>
+        <guimenuitem>Print</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Print</action> the active vocabulary document. KWordQuiz provides several options for <link linkend="printing">printing</link> your vocabularies.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>W</keycap></keycombo>
+        </shortcut>
+        <guimenu>File</guimenu>
+        <guimenuitem>Close</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Close</action> the active vocabulary document
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+        </shortcut>
+        <guimenu>File</guimenu>
+        <guimenuitem>Quit</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Quit</action> KWordQuiz
+      </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title>The <guimenu>Edit</guimenu> Menu</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Undo</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Undo</action> the last command. The name of this item will change to reflect what will be undone.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
+        </shortcut>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Cut</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Cut</action> the current selection and place it on the clipboard
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
+        </shortcut>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Copy</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Copy</action> the current selection and place it on the clipboard
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
+        </shortcut>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Paste</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Paste</action> the content of the clipboard to the current selection. If only one cell is selected KWordQuiz will activate smart pasting and calculate the space required for pasting and add rows if necessary.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Clear</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Clear</action> the current selection
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
+        </shortcut> 
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Insert</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Insert</action> a new row at the current selection. If the selection extends over more than one row, an equal number of rows will be inserted.
+      </para>
+    </listitem>
+  </varlistentry> 
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>K</keycap></keycombo>
+        </shortcut> 
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Delete</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Delete</action> the selected row. If the selection extends over more than one row, all selected rows will be deleted.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
+        </shortcut> 
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Mark Blank</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Mark Blank</action> marks selected text (or the word where the caret is) as a blank for a <link linkend="fill-in-the-blank">'Fill-in-the-blank'</link> quiz, i.e. it's enclosed in brackets. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
+        </shortcut> --> 
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Unmark Blank</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Unmark Blank</action> clears previously assigned blanks, i.e. brackets are removed. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
+      </para>
+    </listitem>
+  </varlistentry>
+
+    
+</variablelist>
+</sect1>
+
+<sect1 id="go-to-menu">
+<title>The <guimenu>Go to</guimenu> Menu</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"><keycap>F6</keycap></keycombo>
+        </shortcut>
+        <guimenu>Go to</guimenu>
+        <guimenuitem>Editor</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Activate</action> the vocabulary <link linkend="editor">editor</link>
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"><keycap>F7</keycap></keycombo>
+        </shortcut>
+        <guimenu>Go to</guimenu>
+        <guimenuitem>Flashcard</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Start</action> a <link linkend="flashcard">flashcard</link> session
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"><keycap>F8</keycap></keycombo>
+        </shortcut>
+        <guimenu>Go to</guimenu>
+        <guimenuitem>Multiple Choice</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Start</action> a <link linkend="multiple">multiple choice</link> quiz
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"><keycap>F9</keycap></keycombo>
+        </shortcut>
+        <guimenu>Go to</guimenu>
+        <guimenuitem>Question &amp; Answer</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Start</action> a <link linkend="question-and-answer">question &amp; answer</link> quiz
+      </para>
+    </listitem>
+  </varlistentry>
+    
+</variablelist>
+</sect1>
+
+<sect1 id="vocabulary-menu">
+<title>The <guimenu>Vocabulary</guimenu> Menu</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo>
+        </shortcut>
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Languages...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Define</action> the languages or other headers for the two columns in the vocabulary. Displays a <link linkend="dlg-languages">dialog</link>.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Font...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Change</action> the font used to display the vocabulary. If you are in flashcard session the font used to diplay the card will be changed. Displays the standard KDE font dialog.
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Special Characters...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Select</action> a special character for insertion in the vocabulary. Displays a <link linkend="dlg-special-characters">dialog</link>.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Rows/Columns...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Specify</action> the number of rows in the vocabulary, or define the height of selected rows or the width of selected columns. Displays a <link linkend="dlg-rows-columns">dialog</link>.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Sort...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Sort</action> the vocabulary entries. Displays a <link linkend="dlg-sort">dialog</link>.
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
+        </shortcut>  -->
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Shuffle</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Shuffle</action> the vocabulary entries in a random order
+      </para>
+    </listitem>
+  </varlistentry> 
+    
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title>The <guimenu>Mode</guimenu> Menu</title>
+<para>
+The menu provides five different modes for the quiz.</para>
+<para>
+Note that the menu names will change to reflect the language headers of the currently active vocabulary document. The mode must be selected before a quiz is started. The selected mode will apply to Flashcard, Multiple Choice and Question &amp; Answer.
+</para>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Mode</guimenu>
+        <guimenuitem>Language 1 -&gt; Language 2 in order</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        During the quiz you will be given the entries of Language 1 and asked to provide the corresponding Language 2 entries. This will be done in the order the entries appear in the vocabulary document.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Mode</guimenu>
+        <guimenuitem>Language 2 -&gt; Language 1 in order</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        During the quiz you will be given the entries of Language 2 and asked to provide the corresponding Language 1 entries. This will be done in the order the entries appear in the vocabulary document.
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Mode</guimenu>
+        <guimenuitem>Language 1 -&gt; Language 2 randomly</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        During the quiz you will be given the entries of Language 1 and asked to provide the corresponding Language 2 entries. This will be done in a random order, but each entry will be asked once.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Mode</guimenu>
+        <guimenuitem>Language 2 -&gt; Language 1 randomly</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        During the quiz you will be given the entries of Language 2 and asked to provide the corresponding Language 1 entries. This will be done in random order, but each entry will be asked once.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <!-- <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+        </shortcut> -->
+        <guimenu>Mode</guimenu>
+        <guimenuitem>Language 1 &lt;-&gt; Language 2 randomly</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        During the quiz you will be given an entry of either Language 1 or Language 2 and asked to provide the corresponding entry in the other language. This will be done in a random order for both language and entry. Each possible combination will be asked once.
+      </para>
+    </listitem>
+  </varlistentry>
+  
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title>The <guimenu>Quiz</guimenu> Menu</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"><keycap>Return</keycap></keycombo>
+        </shortcut>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>Check</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Check</action> if your answer is correct
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"><keycap>K</keycap></keycombo>
+        </shortcut>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>I Know</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Count</action> as correct during a flashcard session.
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"><keycap>D</keycap></keycombo>
+        </shortcut>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>I Don't Know</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Count</action> as error during a flashcard session. You can later repeat these cards by selecting <guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem>.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
+        </shortcut>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>Hint</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Get</action> the next correct letter during a Question &amp; Answer session.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>R</keycap></keycombo>
+        </shortcut>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>Restart</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Restart</action> the quiz session from the beginning. Will reset the scores.
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo>
+        </shortcut>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>Repeat Errors</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Repeat</action> any questions you answered incorrectly. Becomes available once you have answered all questions once.
+      </para>
+    </listitem>
+  </varlistentry> 
+    
+</variablelist>
+</sect1>
+
+<sect1 id="settings-menu">
+<title>The <guimenu>Settings</guimenu> Menu</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Toolbars</guimenuitem>
+        <guimenuitem>Show Main</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Toggle</action> the Main Toolbar
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Toolbars</guimenuitem>
+        <guimenuitem>Show Go to</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Toggle</action> the Go to Toolbar
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Toolbars</guimenuitem>
+        <guimenuitem>Show Quiz</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Toggle</action> the Quiz Toolbar
+      </para>
+    </listitem>
+  </varlistentry>
+    
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Show Status bar</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Toggle</action> the Status bar
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>  
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Configure Shortcuts...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Configure</action> the keyboard keys you use to access the different actions.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Configure Toolbars...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Configure</action> the items you want to put in the toolbar
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Configure Notifications...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Configure</action> notifications for certain events in KWordQuiz
+      </para>
+    </listitem>
+  </varlistentry>  
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Configure KWordQuiz...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Configure</action> preferences for the vocabulary editor and the quizzes. Displays a <link linkend="dlg-config-editor">dialog</link>.
+      </para>
+    </listitem>
+  </varlistentry>
+  
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title>The <guimenu>Help</guimenu> Menu</title>
+&help.menu.documentation;
+</sect1>
+</chapter>
+
+<chapter id="editor">
+<title>The Vocabulary Editor</title>
+
+<para>
+The vocabulary document area has the appearance of a spreadsheet-like grid. The grid consists of cells organized in two columns and a number of rows. Each column and row has a header. The column headers are used to specify the languages of the vocabulary document. They can be set by selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Languages...</guimenuitem></menuchoice>. The row headers number the rows consecutively.
+</para>
+<para>
+You can click in a cell of the grid to make it the active cell. You can select several cells for copying or other editing by dragging over them with the left mouse button down. To select entire rows or columns click in the headers.
+</para>
+
+
+<screenshot>
+  <screeninfo>The Vocabulary Editor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>The Vocabulary Editor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+In the document you build a vocabulary of pair-wise entries in the two columns. You can enter text into the active cell simply by starting to type. The cell will now be in edit mode and you can select all or part of the text. You can also edit a cell by double-clicking it or pressing F2 and make changes directly in the cell.
+</para>
+<para>
+When you have finished typing one entry, press the return key and the next cell will automatically become active. Hence, it's easy to quickly type several entries. You can customize this behavior by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure KWordQuiz...</guimenuitem></menuchoice>. When you reach the bottom row of the grid, a new row will be added as you press return, so you can just continue to type. When a new window is created it has 50 rows, but there is really no limit to the number of rows you can have in a document.
+</para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title>Flashcard Session</title>
+
+<para>Select <menuchoice><guimenu>Go to</guimenu><guimenuitem>Flashcard</guimenuitem></menuchoice> to start a flashcard session on the entries of the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.</para>
+ 
+<para>If you are working with long expressions the window can be resized to make more space avialable. The font size will also influence how much will fit in the different parts of the window. By selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Font</guimenuitem></menuchoice> you can specify the font used for the flashcards.
+</para>
+
+<screenshot>
+  <screeninfo>Flashcard Session</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Flashcard Session</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Initially the front of the card is displayed. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> to see the other side.
+</para>
+<para>
+To move on to the next card either select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Know</guimenuitem></menuchoice> to count the card as correct or <guimenu>Quiz</guimenu><guimenuitem>I Don't Know</guimenuitem> to count the card as incorrect.
+</para>
+<para>
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the cards you have counted as incorrect.
+</para>
+<para>
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Restart</guimenuitem></menuchoice> to start the session from the beginning again. If you are using a random mode the cards will be reshuffled.
+</para>
+<para>
+The score sections at the bottom of the screen shows the number of cards, the number of cards you have seen, the number of cards counted as correct, and the number counted as incorrect.
+</para>
+
+<tip>
+<para>All items on the <guimenu>Quiz</guimenu> menu are available on the Quiz toolbar that is displayed on the right by default.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title>Multiple Choice Session</title>
+
+<para>
+Select <menuchoice><guimenu>Go to</guimenu><guimenuitem>Multiple Choice</guimenuitem></menuchoice> to start a multiple choice quiz on the entries in the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+</para> 
+<para>
+If you are working with long expressions the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
+</para>
+<para>
+In the example below the user gave an incorrect answer to the previous question. He/she is now about to answer the next question. 
+</para>
+ 
+<screenshot>
+  <screeninfo>Multiple Choice Session</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Multiple Choice Session</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Your choices are shown on the top left. Select the one you think is correct. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> to see if the answer is correct. If you have activated the automatic mode in <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure KWordQuiz...</guimenuitem></menuchoice> your selection is checked immediately.
+</para>
+<para>
+The previous question is shown below the current. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
+</para>
+<para>
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the questions you answered incorrectly.
+</para>
+<para>
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Restart</guimenuitem></menuchoice> to start the session from the beginning again. If you are using a random mode the questions will be reshuffled.
+</para>
+<para>
+The score sections at the bottom of the screen shows the number of questions, the number of questions you have answered, the number of correct answers, and the number of incorrect answers.
+</para>
+
+<tip>
+<para>All items on the <guimenu>Quiz</guimenu> menu are available on the Quiz toolbar that is displayed on the right by default.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title>Question &amp; Answer Session</title>
+<para>
+Select <menuchoice><guimenu>Go to</guimenu><guimenuitem>Question &amp; Answer</guimenuitem></menuchoice> to start a question &amp; answer session on the entries in the active vocabulary. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+</para>
+<para> 
+If you are working with long expressions the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
+</para>
+<para>
+In the example below the user gave a correct answer to the previous question (to see how incorrect answers are handled, see the <link linkend="multiple">Multiple Choice</link> chapter). He/she is now about to answer the next question. 
+</para>
+ 
+<screenshot>
+  <screeninfo>Question &amp; Answer Session</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Question &amp; Answer Session</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Your question is shown on the top left. Type your answer in the edit field. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> or <keycap>Enter</keycap> to see if the answer is correct.
+</para>
+<para>
+The previous question is shown below the current. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
+</para>
+<para>
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> to get the next correct letter of the answer. In <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure KWordQuiz...</guimenuitem></menuchoice> you can select that questions where you use the hint function are always counted as incorrect.
+</para>
+<para>
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the questions you answered incorrectly.
+</para>
+<para>
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Restart</guimenuitem></menuchoice> to start the session from the beginning again. If you are using a random mode the questions will be reshuffled.
+</para>
+<para>
+The score sections at the bottom of the screen shows the number of questions, the number of questions you have answered, the number of correct answers, and the number of incorrect answers.
+</para>
+
+<tip>
+<para>All items on the <guimenu>Quiz</guimenu> menu are available on the Quiz toolbar that is displayed on the right by default.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title>Fill-in-the-blank</title>
+
+<para>
+'Fill-in-the-blank' is a powerful way to practice in KWordQuiz. It is a special kind of question and answer quiz that needs to be described in more detail.
+</para>
+
+<para>
+Consider the following table. It could be a vocabulary in KWordQuiz:
+</para>
+
+<informaltable><tgroup cols="3">
+<thead>
+<row>
+<entry></entry>
+<entry>English</entry>
+<entry>German</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry>1</entry>
+<entry>We own a computer</entry>
+<entry>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry>2</entry>
+<entry>We own a computer</entry>
+<entry>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry>3</entry>
+<entry>We own a computer</entry>
+<entry>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry>4</entry>
+<entry>We own a computer</entry>
+<entry>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para>
+The important thing to note is the placement of the brackets. They tell KWordQuiz how the quiz should be performed.
+</para>
+<para>
+In 1. there are no brackets. Assuming English is the question and German the answer you have to give the entire expression 'Wir besitzen einen Computer' for a correct answer.
+</para>
+<para>
+In 2. KWordQuiz would display the question but also 'Wir ........ einen Computer'. For a correct answer it is sufficient to write 'besitzen'.
+</para>
+<para>
+3. shows that a blank can consist of more than one word. The correct answer is 'besitzen einen'.
+</para>
+<para>
+In 4. there are two separate blanks. To specify that in the answer you have to write 'besitzen; Computer', i.e separate the blanks with a semicolon in order to get a correct answer.
+</para>
+<para>
+Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are toolbar and menu commands to mark and unmark blanks. Of course you can also just type the brackets. WordQuiz checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz can not be started.
+</para>
+<para>
+The 'Fill-in-the-blank' features can be turned on and off in the Options dialog. Turning them of will make it possible to use fonts that map other characters to the positions of the brackets. It will also speed up performance slightly.
+</para>
+</chapter>
+
+<chapter id="printing">
+<title>Printing</title>
+<para>
+KWordQuiz provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard KDE print dialog. In order to get access to the special KWordQuiz features you need to click on the <guibutton>Expand</guibutton> to see the Vocabulary Options tab. On this tab you can select to print the document as a vocabulary list (i.e as displayed in the editor), a vocabulary exam, or as flashcards.
+</para>
+<screenshot>
+  <screeninfo>Vocabulary Printing Options</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Vocabulary Printing Options</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title>Vocabulary list</title> 
+<para>The vocabulary will be printed as displayed in the editor. This includes font, row heights, and column widths. Make sure that the columns are narrow enough to fit on the page.</para>
+</formalpara>
+<screenshot>
+  <screeninfo>Print Vocabulary List</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Print Vocabulary List</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title>Vocabulary exam</title>
+<para>The vocabulary will be printed as displayed in the editor, except that the right column will be left empty and a third column for scoring is added. Settings used include font, row heights, and column widths. Make sure that the columns are narrow enough to fit on the page.</para>
+</formalpara> 
+<screenshot>
+  <screeninfo>Print Vocabulary Exam</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Print Vocabulary Exam</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title>Flashcard</title> 
+<para> Two 3" x 5" cards per page. The cards will always be printed in landscape.</para> 
+</formalpara>
+<screenshot>
+  <screeninfo>Print Flashcards</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Print Flashcards</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="dialogs">
+<title>Dialogs</title>
+<sect1 id="dlg-config-editor">
+<title>Configure Editor</title>
+<screenshot>
+  <screeninfo>Configure Editor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Configure Editor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+You can configure the behavior of the <keycap>Enter</keycap> key when working in the editor.
+</para>
+<para>
+You can also select if the functions for <link linkend="fill-in-the-blank">Fill-in-the-blank</link> should be activated. Turning them off will speed up performance a little.
+</para>
+<para>
+Select <guibutton>Default</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+</para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title>Configure Quiz</title>
+<screenshot>
+  <screeninfo>Configure Quiz</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Configure Quiz</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+For flashcard sessions you can select if the cards should be flipped automatically, anf if they should be counted as correct or incorrect. Enter a time delay in seconds for the automatic flipping.
+</para>
+<para>
+For multiple choice sessions you can select if your choice should be checked immediately or if you have to select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> first.
+</para>
+<para>
+For question &amp; answer sessions you can select if questions where you use  <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> should be counted as incorrect.
+</para>
+<para>
+For all sessions you can select if the scores should be displayed as percent instead of absolute numbers.
+</para>
+<para>
+Select <guibutton>Default</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+</para>
+
+</sect1>
+
+<sect1 id="dlg-languages">
+<title>Languages</title>
+<screenshot>
+  <screeninfo>Languages</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Languages</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Use this dialog to define the languages of the vocabulary. If you want you can also enter any other identifier for the two columns. Select <guibutton>OK</guibutton> to make your changes or <guibutton>Cancel</guibutton> to discard any changes.
+</para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title>Special Characters</title>
+<screenshot>
+  <screeninfo>Special Characters</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Special Characters</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Use this dialog to locate and copy any special character you want to add to your vocabulary. Once you have closed the dialog you can select <menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste</guimenuitem></menuchoice> to paste the character into the vocabulary.
+</para>
+<note>
+<para>
+The special character functionality will be imporved in future versions of KWordQuiz to include configurable actions for often used characters.
+</para>
+</note>
+
+</sect1>
+
+<sect1 id="dlg-rows-columns">
+<title>Rows/Columns</title>
+<screenshot>
+  <screeninfo>Rows/Columns</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-rowscolumns.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Rows/Columns</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Use this dialog to specify the number of rows you want in the vocabulary. You can also adjust the width (in pixels) of the selected columns and the height (in pixels) of the selected rows. Select <guibutton>OK</guibutton> to make your changes or <guibutton>Cancel</guibutton> to discard any changes.
+</para>
+<warning>
+<para>
+Specifying a number of rows lower than what currently is in the vocabulary may lead to loss of data.
+</para>
+</warning>
+
+</sect1>
+
+<sect1 id="dlg-sort">
+<title>Sort</title>
+<screenshot>
+  <screeninfo>Sort</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-sort.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Sort</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Use this dialog to sort the vocabulary alphabetically. You can specify if the sort should be based on the left (French in this example) or right (English in this example) column and if it should be in ascending or descending order. Select <guibutton>OK</guibutton> to do the sort or <guibutton>Cancel</guibutton> to leave the vocabulary unchanged.
+</para>
+</sect1>
+
+</chapter>
+
+<chapter id="faq">
+<title>Questions and Answers</title>
+
+&reporting.bugs;
+&updating.documentation;
+
+<qandaset id="faqlist">
+
+  <qandaentry>
+    <question>
+      <para>
+        Can I combine several vocabularies to one.
+      </para>
+    </question>
+    <answer>
+      <para>
+        There is no automatic way to do this. However, KWordQuiz supports smart pasting meaning that if you select just one cell the program will calculate (and insert) the number of rows needed. That way you can copy and paste several vocabularies into one with little effort.
+      </para>
+    </answer>
+  </qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits">
+
+<title>Credits and License</title>
+
+<para>
+KWordQuiz
+</para>
+<para>
+Program copyright 2003-2004 Peter B. Hedlund <email>peter AT peterandlinda DOT com</email>
+</para>
+
+<para>
+Documentation copyright 2003-2004 Peter B. Hedlund <email>peter AT peterandlinda DOT com</email>
+</para>
+
+&underFDL;   <!-- FDL: do not remove -->
+&underGPL;   <!-- GPL License -->
+
+</chapter>
+
+<appendix id="installation">
+<title>Installation</title>
+
+<sect1 id="getting-kwordquiz">
+<title>How to obtain KWordQuiz</title>
+
+&install.intro.documentation;
+
+</sect1>
+
+<sect1 id="compilation">
+<title>Compilation and installation</title>
+
+&install.compile.documentation;
+
+</sect1>
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
