@@ -15,16 +15,8 @@ kwordquiz_LDADD   =  $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)  $(LIBSO
 
 EXTRA_DIST = main.cpp kwordquiz.cpp kwordquiz.h kwordquizdoc.cpp kwordquizdoc.h kwordquizview.cpp kwordquizview.h kwordquizui.rc kwordquiz.desktop kwordquizprefs.cpp kwordquizprefs.h
 
-install-data-local:
-	$(mkinstalldirs) $(kde_mimedir)/application
-	$(INSTALL_DATA) $(srcdir)/x-kwordquiz.desktop $(kde_mimedir)/application/x-kwordquiz.desktop
-	$(mkinstalldirs) $(kde_appsdir)/Edutainment/Miscellaneous/
-	$(INSTALL_DATA) $(srcdir)/kwordquiz.desktop $(kde_appsdir)/Edutainment/Miscellaneous/kwordquiz.desktop
-
-uninstall-local:
-	-rm -f $(kde_mimedir)/application/x-kwordquiz.desktop
-	-rm -f $(kde_appsdir)/Applications/kwordquiz.desktop
-
+mime_DATA = x-kwordquiz.desktop
+mimedir = $(kde_mimedir)/application
 
 ####### kdevelop will overwrite this part!!! (end)############
 # These paths are KDE specific. Use them:
