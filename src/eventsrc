@@ -17,6 +17,12 @@ Name[tg]=ИмтиҳониДурустӣ
 Name[xx]=xxQuizCorrectxx
 Name[zh_CN]=答对
 Comment=Correct answer
+Comment[ca]=Resposta correcta
+Comment[es]=Respuesta correcta
+Comment[et]=Õige vastus
+Comment[pt]=Resposta correcta
+Comment[pt_BR]=Resposta correcta
+Comment[ru]=Правильный ответ
 default_sound=KDE_Notify.wav
 default_presentation=1
 
@@ -31,6 +37,12 @@ Name[tg]=ИмтиҳониХатогӣ
 Name[xx]=xxQuizErrorxx
 Name[zh_CN]=答错
 Comment=Wrong answer
+Comment[ca]=Resposta incorrecta
+Comment[es]=Respuesta incorrecta
+Comment[et]=Vale vastus
+Comment[pt]=Resposta errada
+Comment[pt_BR]=Resposta errada
+Comment[ru]=Неправильный ответ
 default_sound=KDE_Error.wav
 default_presentation=1
 
