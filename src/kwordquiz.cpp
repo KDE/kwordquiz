@@ -24,6 +24,7 @@
 #include <qsize.h>
 #include <qdialog.h>
 #include <qclipboard.h>
+#include <qbitmap.h>
 
 // include files for KDE
 #include <kiconloader.h>
@@ -91,6 +92,7 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   slotQuizEditor();
   slotUndoChange(i18n("Can't &Undo"), false);
   updateMode(Config().m_mode);
+
   m_prefDialog = 0;
 
   editMarkBlank->setEnabled(Config().m_enableBlanks);
@@ -253,6 +255,7 @@ void KWordQuizApp::initActions()
   createStandardStatusBarAction();
   setStandardToolBarMenuEnabled(true);
   // use the absolute path to your kwordquizui.rc file for testing purpose in createGUI();
+  updateSpecialCharIcons();
   createGUI("kwordquizui.rc");
   setAutoSaveSettings();
 }
@@ -1046,7 +1049,51 @@ void KWordQuizApp::slotApplyPreferences()
   editMarkBlank->setEnabled(Config().m_enableBlanks);
   editUnmarkBlank->setEnabled(Config().m_enableBlanks);
   m_editView->viewport()->repaint(true);
+  updateSpecialCharIcons();
   emit settingsChanged();
+}
+
+void KWordQuizApp::updateSpecialCharIcons( )
+{
+//void KAction::setIconSet(const QIconSet & iconSet)
+//QIconSet(QPixmap("open.xpm"))
+//we can probably create a 48 px pixmap, then do
+
+//actSpecChar->setIconSet(QIconSet(pm));
+
+//otherwise the icon size can be retrieved by
+//mainWin->toolBar("myToolbar")->iconSize();
+
+  for (int i = 0; i < 9; i++){
+    QString s = (QString) Config().m_specialCharacters[i];
+    QRect r(2, 2, 30, 30);
+
+    ///A font to draw the character with
+    QFont font("sans");
+    font.setPixelSize(26);
+    font.setWeight(QFont::Bold);
+    
+    ///Create the pixmap        
+    QPixmap pm(32, 32);
+    pm.fill(Qt::white);
+    QPainter p(&pm);
+    p.setFont(font);
+    p.setPen(Qt::blue);
+    p.drawText(r, Qt::AlignCenter, s);
+    
+    ///Create transparency mask
+    QBitmap bm(32, 32);
+    bm.fill(Qt::color0);
+    QPainter b(&bm);
+    b.setFont(font);
+    b.setPen(Qt::color1);
+    b.drawText(r, Qt::AlignCenter, s);
+    
+    ///Mask the pixmap
+    pm.setMask(bm);   
+
+    actionCollection()->action("char_" + QString::number(i + 1))->setIconSet(QIconSet(pm));
+  }
 }
 
 void KWordQuizApp::slotStatusMsg(const QString &text)
@@ -1134,3 +1181,6 @@ void KWordQuizApp::slotInsertChar( int i )
   else
     m_editView->slotSpecChar(Config().m_specialCharacters[i - 1]);
 }
+
+
+

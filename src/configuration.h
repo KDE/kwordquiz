@@ -12,6 +12,7 @@
 #define CONFIGURATION_H
 
 #include <qfont.h>
+#include <qstringlist.h>
 
 /**
 @author Peter Hedlund
@@ -39,6 +40,8 @@ class Configuration {
     int m_mode;
     QFont m_flashFont;
     QString m_specialCharacters;
+    QStringList m_columnTitles1;
+    QStringList m_columnTitles2;
     
     static const bool m_defaultFirstRun;
     static const int m_defaultEnterMove;

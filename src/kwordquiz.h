@@ -223,6 +223,7 @@ class KWordQuizApp : public KMainWindow
     void slotUndoChange(const QString & text, bool enabled);
     
     void slotInsertChar(int i);
+  
   private:
 
     WQQuiz::QuizType m_quizType;
@@ -316,6 +317,7 @@ class KWordQuizApp : public KMainWindow
 
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);
+    void updateSpecialCharIcons();
 };
  
 #endif // KWORDQUIZ_H

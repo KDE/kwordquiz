@@ -41,6 +41,8 @@ void Configuration::read() {
     m_enableBlanks = conf->readBoolEntry("EnableBlanks", m_defaultEnableBlanks);
     m_editorFont = conf->readFontEntry("EditorFont", &m_defaultEditorFont);
     m_specialCharacters = conf->readEntry("SpecialCharacters", m_defaultSpecialCharacters);
+    m_columnTitles1 = conf->readListEntry("ColumnTitles1");
+    m_columnTitles2 = conf->readListEntry("ColumnTitles2");
     
     conf->setGroup("Quiz");
     m_autoFlip = conf->readBoolEntry("AutoFlip", m_defaultAutoFlip);
@@ -63,6 +65,8 @@ void Configuration::write() const {
     conf->writeEntry("EnableBlanks", m_enableBlanks);
     conf->writeEntry("EditorFont", m_editorFont);
     conf->writeEntry("SpecialCharacters", m_specialCharacters);
+    conf->writeEntry("ColumnTitles1", m_columnTitles1);
+    conf->writeEntry("ColumnTitles2", m_columnTitles2);
     
     conf->setGroup("Quiz");
     conf->writeEntry("AutoFlip", m_autoFlip);

@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.5" name="kwordquiz" >
+<kpartgui version="0.6" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
    
@@ -85,6 +85,18 @@
    <Action name="quiz_restart" />
    <Action name="quiz_repeat_errors" />
   </ToolBar>
+  <ToolBar name="characterToolBar" >
+   <text>Special Characters</text>
+   <Action name="char_1" />
+   <Action name="char_2" />
+   <Action name="char_3" />
+   <Action name="char_4" />
+   <Action name="char_5" />
+   <Action name="char_6" />
+   <Action name="char_7" />
+   <Action name="char_8" />
+   <Action name="char_9" />                        
+  </ToolBar>  
   <State name="switchEditQuiz">
     <Enable>
       <Action name="file_save" />
