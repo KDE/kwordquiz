@@ -149,8 +149,8 @@ void KWordQuizPrefs::updateConfiguration()
 
 void KWordQuizPrefs::slotDefault() {
   if (KMessageBox::warningContinueCancel(this, i18n("This will set the default options "
-    "in all pages of the preferences dialog; continue?"), i18n("Set default options?"),
-    i18n("Set defaults"))==KMessageBox::Continue)
+    "in all pages of the preferences dialog; continue?"), i18n("Set Default Options?"),
+    i18n("Set Defaults"))==KMessageBox::Continue)
   {
     m_prefEditor->optDown->setChecked(Config().m_defaultEnterMove == 1);
     m_prefEditor->optRight->setChecked(Config().m_defaultEnterMove == 2);

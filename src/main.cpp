@@ -21,11 +21,11 @@
 #include "kwordquiz.h"
 #include "version.h"
 
-static const char *description = I18N_NOOP("KWordQuiz is a powerful flashcard and vocabulary learning program.");
+static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
 
 static KCmdLineOptions options[] =
 {
-  { "+[File]", I18N_NOOP("file to open"), 0 },
+  { "+[File]", I18N_NOOP("File to open"), 0 },
   { 0, 0, 0 }
   // INSERT YOUR COMMANDLINE OPTIONS HERE
 };
