@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.6" name="kwordquiz" >
+<kpartgui version="0.7" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
    
@@ -56,13 +56,13 @@
   <ToolBar name="mainToolBar">
     <Action name="edit_insert"/>
     <Action name="edit_delete"/>
-    <Separator/>
+    <!--<Separator/>
     <Action name="edit_mark_blank"/>
     <Action name="edit_unmark_blank"/>
     <Separator />
     <Action name="vocab_languages"/>
     <Action name="vocab_font"/>
-    <Action name="vocab_sort"/>
+    <Action name="vocab_sort"/>-->
     <Separator />
     <Action name="mode_0"/>
   </ToolBar>
@@ -85,7 +85,7 @@
    <Action name="quiz_restart" />
    <Action name="quiz_repeat_errors" />
   </ToolBar>
-  <ToolBar name="characterToolBar" >
+  <ToolBar name="characterToolBar" hidden="true">
    <text>Special Characters</text>
    <Action name="char_1" />
    <Action name="char_2" />
