@@ -162,6 +162,7 @@ bool WQQuiz::init()
     bCol = 0;
     break;
   case 5:
+  default:
     aCol = 0;
     bCol = 1;
     break;
