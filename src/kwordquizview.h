@@ -77,10 +77,6 @@ class KWordQuizView : public QTable
     /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);
     bool gridIsEmpty();
-    QFont colFont(int i);
-
-    
-    
     void addUndo(const QString & caption);
     void doEditUndo();
     void doEditCut();

@@ -46,11 +46,8 @@ QValueList<WQUndo> *KWordQuizView::m_undoList = 0L;
 KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : QTable(parent, name)
 {
   if(!m_undoList)
-  {
     m_undoList = new QValueList<WQUndo>();
-  }
   
-  //setBackgroundMode(PaletteBase);
   setNumCols(2);
   setNumRows(50);
   setColumnWidth(1, 250);
@@ -60,22 +57,17 @@ KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : QTable(parent,
   horizontalHeader()->setLabel(1, i18n("Language 2"));
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
-  //connect(QTable this, SIGNAL(valueChanged(int row, int col)), this, SLOT(slotValueChanged(int row, int col)));
 }
 
 KWordQuizView::~KWordQuizView()
 {
 }
 
-
 KWordQuizDoc *KWordQuizView::getDocument() const
 {
   KWordQuizApp *theApp=(KWordQuizApp *) parentWidget();
-
   return theApp->getDocument();
 }
-
-
 
 void KWordQuizView::print(KPrinter *pPrinter)
 {
@@ -95,7 +87,6 @@ void KWordQuizView::print(KPrinter *pPrinter)
   int card_height = 3 * res;
   int card_text_marg = res /5;
   int card_line_top = 30;  
-  
     
   if (type == 2)
     pPrinter->setOrientation(KPrinter::Landscape);  
@@ -297,14 +288,17 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
     if (((QLineEdit *) cellWidget(row, col))->text() != m_currentText)
       addUndo(i18n("&Undo Entry"));
     QTable::endEdit(row, col, accept, replace); //this will destroy the cellWidget
-    QTableItem* itm;
-    itm = item(row, col);
-    itm->setWordWrap(true);
-    adjustRow(row);
-    getDocument() -> setModified(true);
-    if (Config().m_enableBlanks)
-      if (!checkForBlank(text(row, col), true))
-        KNotifyClient::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
+    if (!text(row, col).isEmpty())
+    {
+      QTableItem* itm;
+      itm = item(row, col);
+      itm->setWordWrap(true);
+      adjustRow(row);
+      getDocument() -> setModified(true);
+      if (Config().m_enableBlanks)
+        if (!checkForBlank(text(row, col), true))
+          KNotifyClient::event(winId(), "SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
+    }    
   }
 }
 
@@ -316,14 +310,6 @@ void KWordQuizView::adjustRow( int row )
   QTable::adjustRow(row);
   if (rh > rowHeight(row))
     setRowHeight(row, rh);
-}
-
-/*!
-    \fn KWordQuizView::colFont(int i)
- */
-QFont KWordQuizView::colFont(int i)
-{
-  return font();
 }
 
 void KWordQuizView::wqCurrentSelection(bool clear = true)
@@ -446,7 +432,7 @@ void KWordQuizView::doEditPaste( )
         br= br + sl.count() - 1;
 
       if (lc == 0) //left col?
-        if (sl[0].find("\t") < (sl[0].length() - 1))
+        if (sl[0].find("\t") < ((int) sl[0].length() - 1))
           rc = 1; //expand to second column;
 
       uint i = 0;
@@ -572,7 +558,7 @@ bool KWordQuizView::checkForBlank( QString s, bool blank )
   QMemArray<int> openPos(0);
   QMemArray<int> closePos(0);
 
-  for (int i = 0; i<= s.length(); ++i)
+  for (uint i = 0; i<= s.length(); ++i)
   {
     if (s[i] == delim_start)
     {
@@ -594,7 +580,7 @@ bool KWordQuizView::checkForBlank( QString s, bool blank )
     
   if (openCount > 0 && closeCount > 0)
     if (openPos.size() == closePos.size())
-      for (int i = 0; i <= openPos.size(); ++i)
+      for (uint i = 0; i <= openPos.size(); ++i)
         result = (openPos[i] < closePos[i]);
 
   return result;
@@ -617,12 +603,12 @@ void KWordQuizView::doEditMarkBlank( )
           l->cursorWordBackward(false);
           int cp1 = l->cursorPosition();
           l->cursorWordForward(false);
-          if (l->cursorPosition() != s.length())
+          if (l->cursorPosition() != (int) s.length())
           {  while(l->text()[l->cursorPosition()].isSpace())
               l->cursorBackward(false, 1);
           }
           int cp2 = l->cursorPosition();
-          if (cp2 == s.length())
+          if (cp2 == (int) s.length())
             l->setSelection(cp1, cp2 - cp1);
           else
             l->setSelection(cp1, cp2 - cp1 - 1);
@@ -731,14 +717,13 @@ bool KWordQuizView::checkSyntax(bool all, bool blanks)
     {
       QString s = text(r, c);
       if (s.length() > 0)
-        for (int i = 0; i <= s.length(); ++i)
+        for (uint i = 0; i <= s.length(); ++i)
           if (s[i] == delim_start || s[i] == delim_end)
             if (!checkForBlank(s, blanks))
               errorCount++;
     }
   return (errorCount == 0);
 }
-
 
 void KWordQuizView::doVocabSort( )
 {
@@ -1203,7 +1188,7 @@ void KWordQuizView::setFont( const QFont & font)
   QTable::setFont(font);
   horizontalHeader()->setFont(KGlobalSettings::generalFont());
   verticalHeader()->setFont(KGlobalSettings::generalFont());  
-  for (uint i = 0; i < numRows(); ++i)
+  for (int i = 0; i < numRows(); ++i)
     adjustRow(i); //setRowHeight(i, fontMetrics().lineSpacing() );
 }
 

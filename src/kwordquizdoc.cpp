@@ -155,19 +155,15 @@ void KWordQuizDoc::closeDocument()
 
 bool KWordQuizDoc::newDocument()
 {
-  /////////////////////////////////////////////////
-  // TODO: Add your document initialization code here
-  /////////////////////////////////////////////////
   modified=false;
   doc_url.setFileName(i18n("Untitled"));
-
   return true;
 }
 
 bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
 {
   QString tmpfile;
-  if (KIO::NetAccess::download( url, tmpfile ))
+  if (KIO::NetAccess::download( url, tmpfile, 0 ))
   {
     QFile file(tmpfile);
     if (!file.open(IO_ReadOnly))
@@ -187,7 +183,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     {
       KEduVocData * kvtmldoc = new KEduVocData;
       KEduVocDataItemList dataList = kvtmldoc->parse(url.path()); // KEduVocData::parse(url.path());
-      if (kvtmldoc->numRows() > dataList.count())
+      if ((uint) kvtmldoc->numRows() > dataList.count())
         g->setNumRows(kvtmldoc->numRows());
       else
         g->setNumRows(dataList.count());
@@ -211,150 +207,6 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     {
       QTextStream* ts = new QTextStream(&file);
       m_view->fromStream(ts);
-      /*
-      //ts.setEncoding(QTextStream::UnicodeUTF8);
-      QString s = "";
-
-
-      if (ts.readLine() != "WordQuiz")
-      {
-        KMessageBox::error(0, i18n("This does not appear to be a (K)WordQuiz file"));
-        return false;
-      }
-      s = ts.readLine();
-      s = s.left(1);
-      int iFV = s.toInt(0);
-      if (iFV != 5)
-      {
-        KMessageBox::error(0, i18n("KWordQuiz can only open files created by WordQuiz 5.x"));
-        return false;
-      }
-
-      while (ts.readLine() != "[Font Info]");
-      s = ts.readLine();
-      int p = s.find("=", 0);
-      QString fam = s.right(s.length() - (p + 1));
-      fam = fam.mid(1, fam.length() - 2);
-      //g->font().setFamily(s);
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int ps = s.toInt(0);
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int b = 0;
-      if (s == "1")
-      {
-        b = QFont::Bold;
-      }
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      bool it = (s == "1");
-
-      QFont f(fam, ps, b, it);
-      g->setFont(f);
-      g->horizontalHeader()->setFont(QFont());
-      g->verticalHeader()->setFont(QFont());
-
-      /** TODO handle font and character information
-      [Font Info]
-      FontName1="Arial" done
-      FontSize1=12 done
-      FontBold1=0 done
-      FontItalic1=0 done
-      FontColor1=0
-      Charset1=0
-      Layout1=0000041d
-      FontName2="Arial"
-      FontSize2=12
-      FontBold2=0
-      FontItalic2=0
-      FontColor2=0
-      Charset1=0
-      Layout2=0000041d
-
-      [Character Info]
-      Characters1=ÈÉÊËÌÍÎÏÐ
-      Characters2=ÜÝÞßàáâãä
-      */
-      /*
-      while (ts.readLine() != "[Grid Info]");
-      ts.readLine(); //skip value for width of row headers
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      g->setColumnWidth(0, s.toInt(0, 10));
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      g -> setColumnWidth(1, s.toInt(0, 10));
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      g -> setNumRows(s.toInt(0, 10) - 1); //We need to reduce by one since the header is not included
-
-      // Selection
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int sc =s.toInt(0, 10) - 1;
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int sr =s.toInt(0, 10) - 1;
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int ec =s.toInt(0, 10) - 1;
-
-      s = ts.readLine();
-      p = s.find("=", 0);
-      s = s.right(s.length() - (p + 1));
-      int er =s.toInt(0, 10) - 1 ;
-
-      g -> setCurrentCell(sr, sc);
-      g -> selectCells(sr, sc, er, ec);
-      g -> updateHeaderStates();
-
-      while (ts.readLine() != "[Vocabulary]");
-
-      s = ts.readLine();
-      p = s.find("   [", 0);
-      s = s.left(p);
-      s = s.stripWhiteSpace();
-      g->horizontalHeader()->setLabel(0, s);
-      s = ts.readLine();
-      g->horizontalHeader()->setLabel(1, s);
-
-      i = 0;
-
-      while (!s.isNull())
-      {
-        s = ts.readLine();
-        p = s.find("[", 0);
-        QString r = s.mid(p + 1, 10);
-        int h = r.toInt(0, 10);
-        g -> setRowHeight(i, h / 15);
-        s = s.left(p);
-        s = s.stripWhiteSpace();
-        if (!s.isEmpty())
-          g->setText(i, 0, s);
-
-        s = ts.readLine();
-        if (!s.isEmpty())
-          g->setText(i, 1, s);
-        i++;
-      }*/
     }
     file.close();
     KIO::NetAccess::removeTempFile( tmpfile );

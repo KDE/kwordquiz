@@ -22,7 +22,7 @@
 #include "kwordquiz.h"
 #include "wqquiz.h"
 
-QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, name)
+QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, name, f)
 {
   m_score = new WQScore();
 }
@@ -99,7 +99,7 @@ void QAView::slotCheck()
       lblCorrect->clear();
       m_score->countIncrement(WQScore::cdCorrect);
       updateScore();
-      KNotifyClient::event("QuizCorrect", i18n("Your answer was correct!"));
+      KNotifyClient::event(winId(), "QuizCorrect", i18n("Your answer was correct!"));
     }
     else
     {
@@ -113,7 +113,7 @@ void QAView::slotCheck()
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
       updateScore();
-      KNotifyClient::event("QuizError", i18n("Your answer was incorrect."));
+      KNotifyClient::event(winId(), "QuizError", i18n("Your answer was incorrect."));
     }
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
@@ -156,7 +156,7 @@ void QAView::slotHint()
 
   if (answer.length() > 0)
   {
-    for(int i = 0; i <= answer.length(); i++)
+    for(uint i = 0; i <= answer.length(); i++)
     {
     if (answer.at(i) == correctAnswer.at(i))
       correctCharCount++;

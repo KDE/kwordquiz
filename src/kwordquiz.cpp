@@ -136,11 +136,7 @@ void KWordQuizApp::initActions()
   editCopy->setWhatsThis(i18n("Copy the text from the selected cells and place it on the clipboard"));
   editPaste = KStdAction::paste(this, SLOT(slotEditPaste()), actionCollection());
   editPaste->setWhatsThis(i18n("Paste previously cut or copied text from the clipboard into the selected cells"));
-  #if KDE_VERSION >= 197120 // 320
   editClear = KStdAction::clear(this, SLOT(slotEditClear()), actionCollection());  
-  #else
-  editClear = new KAction(i18n("C&lear"), "editclear", 0, this, SLOT(slotEditClear()), actionCollection(),"edit_clear_old");
-  #endif
   editClear->setWhatsThis(i18n("Clear the content of the selected cells"));
   editInsert = new KAction(i18n("&Insert Row"),/* "insrow"*/locate("data", "kwordquiz/pics/insertrow.png"), "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
   editInsert->setWhatsThis(i18n("Insert a new row above the current row"));
@@ -989,7 +985,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
 /** Configure keys */
 void KWordQuizApp::slotConfigureKeys()
 {
-    KKeyDialog::configureKeys( actionCollection(), xmlFile() );
+  KKeyDialog::configure( actionCollection(), 0, true );
 }
 
 /** Configure toolbar */

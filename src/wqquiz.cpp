@@ -170,6 +170,9 @@ bool WQQuiz::init()
   //check if enough in list
   switch (m_quizType)
   {
+  case qtEditor:
+    //
+    break;  
   case qtFlash:
     result = (m_quizList -> count() > 0);
     break;
@@ -240,7 +243,7 @@ bool WQQuiz::checkAnswer(int i, QString ans)
       result = (ls.count() == la.count());
       if (result)
       {
-        for (int counter = 0; counter < la.count(); counter++)
+        for (uint counter = 0; counter < la.count(); counter++)
         {
           result = (ls[counter].stripWhiteSpace() == la[counter].stripWhiteSpace());
           if (!result) 
@@ -477,8 +480,6 @@ QString WQQuiz::blankAnswer(int i)
 
 QString WQQuiz::answer(int i)
 {
-
-
   WQListItem *li = m_list->at(i);
   int j;
   if (li->question() == 0)
@@ -531,22 +532,19 @@ QString WQQuiz::langAnswer(int i)
   return m_table->horizontalHeader()->label(j);
 }
 
-
 QFont WQQuiz::fontQuestion(int i)
 {
-  WQListItem *li = m_list->at(i);
-  return m_table -> colFont(li ->question());
+  return m_table -> font();
 }
 
 QFont WQQuiz::fontAnswer(int i)
 {
-  WQListItem *li = m_list->at(i);
-  return m_table -> colFont(li ->oneOp());
+  return m_table -> font();
 }
 
 int WQQuiz::kbAnswer(int i)
 {
-  WQListItem *li = m_list->at(i);
+/*  WQListItem *li = m_list->at(i);
   if (li->question() == 0)
   {
     //@todo return m_table ->layoutLeft();
@@ -554,7 +552,8 @@ int WQQuiz::kbAnswer(int i)
   else
   {
     //@todo return m_table -> layoutRight();
-  }
+  }*/
+  return 0;
 }
 
 void WQQuiz::setColumn(int i)

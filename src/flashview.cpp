@@ -89,7 +89,7 @@ void FlashView::keepDiscardCard(bool keep)
     {
       m_score->countIncrement(WQScore::cdCorrect);
       updateScore();
-      KNotifyClient::event("QuizCorrect", i18n("Your answer was correct!"));
+      KNotifyClient::event(winId(), "QuizCorrect", i18n("Your answer was correct!"));
     }
     else
     {
@@ -97,7 +97,7 @@ void FlashView::keepDiscardCard(bool keep)
       m_quiz->checkAnswer(m_question, "");
       m_score->countIncrement(WQScore::cdError);
       updateScore();
-      KNotifyClient::event("QuizError", i18n("Your answer was incorrect."));
+      KNotifyClient::event(winId(), "QuizError", i18n("Your answer was incorrect."));
     }
 
     //m_question++;

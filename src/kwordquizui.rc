@@ -1,11 +1,10 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.4" name="kwordquiz" >
+<kpartgui version="0.5" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
    
   </Menu>
   <Menu name="edit" >
-   <Action name="edit_clear_old" />
    <Separator/>
    <Action name="edit_insert" />
    <Action name="edit_delete" />
@@ -14,7 +13,7 @@
    <Action name="edit_unmark_blank" />
   </Menu>
   <Menu name="session" >
-   <text>&amp;Go to</text>
+   <text>&amp;Go To</text>
    <Action name="quiz_editor" />
    <Action name="quiz_flash" />
    <Action name="quiz_multiple" />
