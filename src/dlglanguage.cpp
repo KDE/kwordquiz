@@ -57,7 +57,7 @@ void DlgLanguage::setLanguage(int index, const QString &lang) {
   {
     dlgBase->txtLanguage2 -> setText(lang);
   }
-};
+}
 
 
 QString DlgLanguage::Language(int index){
