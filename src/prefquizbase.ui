@@ -72,10 +72,10 @@
                         <cstring>optCorrect</cstring>
                     </property>
                     <property name="text">
-                        <string>Count as &amp;correct</string>
+                        <string>Count as co&amp;rrect</string>
                     </property>
                     <property name="accel">
-                        <string>Alt+C</string>
+                        <string>Alt+R</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if the previous card should be counted as correct when moving to the next card</string>
@@ -166,10 +166,10 @@
                         <cstring>chkAutoCheck</cstring>
                     </property>
                     <property name="text">
-                        <string>Check selection &amp;automatically</string>
+                        <string>Check selection a&amp;utomatically</string>
                     </property>
                     <property name="accel">
-                        <string>Alt+A</string>
+                        <string>Alt+U</string>
                     </property>
                     <property name="whatsThis" stdset="0">
                         <string>Select if a choice should be checked immediately</string>
