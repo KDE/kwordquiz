@@ -1,7 +1,8 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
  "dtd/kdex.dtd" [
-  <!ENTITY kappname "KWordQuiz">
+  <!ENTITY kwordquiz "<application>KWordQuiz</application>">
+  <!ENTITY kappname "&kwordquiz;">
   <!ENTITY package "kdenonbeta">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
@@ -10,7 +11,7 @@
 <book lang="&language;">
 
 <bookinfo>
-<title>The KWordQuiz Handbook</title>
+<title>The &kwordquiz; Handbook</title>
 
 <authorgroup>
 <author>
@@ -38,7 +39,7 @@
 
 <abstract>
 <para>
-KWordQuiz is a flashcard and vocabulary learning program for &kde;.
+&kwordquiz; is a flashcard and vocabulary learning program for &kde;.
 </para>
 </abstract>
 
@@ -60,19 +61,19 @@ KWordQuiz is a flashcard and vocabulary learning program for &kde;.
 <chapter id="introduction">
 <title>Introduction</title>
 <para>
-KWordQuiz is a tool that gives you a powerful way to master the vocabulary of a new language. You can also use it to practice any kind of terminology. 
+&kwordquiz; is a tool that gives you a powerful way to master the vocabulary of a new language. You can also use it to practice any kind of terminology. 
 </para>
 <sect1 id="easy-to-use">
 <title>Easy to use</title>
 
 <para>
-With KWordQuiz you build your own vocabulary documents in a simple and intuitive way. The basic layout is a two-column spreadsheet where you type vocabulary entries in the language you know and the language you want to learn. You change the headers of the columns to reflect the languages you use. 
+With &kwordquiz; you build your own vocabulary documents in a simple and intuitive way. The basic layout is a two-column spreadsheet where you type vocabulary entries in the language you know and the language you want to learn. You change the headers of the columns to reflect the languages you use. 
 </para>
 
 <sect2 id="practice-modes">
 <title>Practice modes</title>
 
-<para>Before you start a quiz you select how you want to practice. KWordQuiz offers five different modes to make practicing more efficient. The different modes make it possible to have the quiz go through your vocabulary in sequential or random order in one or both directions.</para> 
+<para>Before you start a quiz you select how you want to practice. &kwordquiz; offers five different modes to make practicing more efficient. The different modes make it possible to have the quiz go through your vocabulary in sequential or random order in one or both directions.</para> 
 </sect2>
 <sect2 id="quiz-types">
 <title>Quiz types</title>
@@ -82,7 +83,7 @@ With KWordQuiz you build your own vocabulary documents in a simple and intuitive
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-KWordQuiz can save your vocabulary documents in two different formats. The default is the .kvtml format used by other KDE programs, e.g. KVocTrain. The other format is the .wql format used by WordQuiz for Windows. This way you can exchange files with Windows users. You can have several files open at the same time and easily copy or move entries between files. In this way you can also combine several documents to one large if you need to practice for e. g. a final exam.</para>
+&kwordquiz; can save your vocabulary documents in two different formats. The default is the .kvtml format used by other KDE programs, e.g. KVocTrain. The other format is the .wql format used by WordQuiz for Windows. This way you can exchange files with Windows users. You can have several files open at the same time and easily copy or move entries between files. In this way you can also combine several documents to one large if you need to practice for e. g. a final exam.</para>
 </sect2>
 </sect1>
 </chapter>
@@ -191,7 +192,7 @@ KWordQuiz can save your vocabulary documents in two different formats. The defau
     </term>
     <listitem>
       <para>
-        <action>Print</action> the active vocabulary document. KWordQuiz provides several options for <link linkend="printing">printing</link> your vocabularies.
+        <action>Print</action> the active vocabulary document. &kwordquiz; provides several options for <link linkend="printing">printing</link> your vocabularies.
       </para>
     </listitem>
   </varlistentry>
@@ -225,7 +226,7 @@ KWordQuiz can save your vocabulary documents in two different formats. The defau
     </term>
     <listitem>
       <para>
-        <action>Quit</action> KWordQuiz
+        <action>Quit</action> &kwordquiz;
       </para>
     </listitem>
   </varlistentry>
@@ -301,7 +302,7 @@ KWordQuiz can save your vocabulary documents in two different formats. The defau
     </term>
     <listitem>
       <para>
-        <action>Paste</action> the content of the clipboard to the current selection. If only one cell is selected KWordQuiz will activate smart pasting and calculate the space required for pasting and add rows if necessary.
+        <action>Paste</action> the content of the clipboard to the current selection. If only one cell is selected &kwordquiz; will activate smart pasting and calculate the space required for pasting and add rows if necessary.
       </para>
     </listitem>
   </varlistentry>
@@ -510,12 +511,12 @@ KWordQuiz can save your vocabulary documents in two different formats. The defau
     </listitem>
   </varlistentry>  
 
-  <varlistentry>
+  <!-- <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
+        <shortcut>
           <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
-        </shortcut> -->
+        </shortcut> 
         <guimenu>Vocabulary</guimenu>
         <guimenuitem>Special Characters...</guimenuitem>
       </menuchoice>
@@ -525,7 +526,7 @@ KWordQuiz can save your vocabulary documents in two different formats. The defau
         <action>Select</action> a special character for insertion in the vocabulary. Displays a <link linkend="dlg-special-characters">dialog</link>.
       </para>
     </listitem>
-  </varlistentry>
+  </varlistentry>-->
 
   <varlistentry>
     <term>
@@ -888,7 +889,7 @@ Note that the menu names will change to reflect the language headers of the curr
     </term>
     <listitem>
       <para>
-        <action>Configure</action> notifications for certain events in KWordQuiz
+        <action>Configure</action> notifications for certain events in &kwordquiz;
       </para>
     </listitem>
   </varlistentry>  
@@ -897,7 +898,7 @@ Note that the menu names will change to reflect the language headers of the curr
     <term>
       <menuchoice>
         <guimenu>Settings</guimenu>
-        <guimenuitem>Configure KWordQuiz...</guimenuitem>
+        <guimenuitem>Configure &kwordquiz;...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -943,7 +944,7 @@ You can click in a cell of the grid to make it the active cell. You can select s
 In the document you build a vocabulary of pair-wise entries in the two columns. You can enter text into the active cell simply by starting to type. The cell will now be in edit mode and you can select all or part of the text. You can also edit a cell by double-clicking it or pressing F2 and make changes directly in the cell.
 </para>
 <para>
-When you have finished typing one entry, press the return key and the next cell will automatically become active. Hence, it's easy to quickly type several entries. You can customize this behavior by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure KWordQuiz...</guimenuitem></menuchoice>. When you reach the bottom row of the grid, a new row will be added as you press return, so you can just continue to type. When a new window is created it has 50 rows, but there is really no limit to the number of rows you can have in a document.
+When you have finished typing one entry, press the return key and the next cell will automatically become active. Hence, it's easy to quickly type several entries. You can customize this behavior by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice>. When you reach the bottom row of the grid, a new row will be added as you press return, so you can just continue to type. When a new window is created it has 50 rows, but there is really no limit to the number of rows you can have in a document.
 </para>
 </chapter>
 
@@ -1015,7 +1016,7 @@ In the example below the user gave an incorrect answer to the previous question.
   </mediaobject>
 </screenshot>
 <para>
-Your choices are shown on the top left. Select the one you think is correct. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> to see if the answer is correct. If you have activated the automatic mode in <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure KWordQuiz...</guimenuitem></menuchoice> your selection is checked immediately.
+Your choices are shown on the top left. Select the one you think is correct. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> to see if the answer is correct. If you have activated the automatic mode in <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> your selection is checked immediately.
 </para>
 <para>
 The previous question is shown below the current. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
@@ -1067,7 +1068,7 @@ Your question is shown on the top left. Type your answer in the edit field. Use 
 The previous question is shown below the current. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
 </para>
 <para>
-Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> to get the next correct letter of the answer. In <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure KWordQuiz...</guimenuitem></menuchoice> you can select that questions where you use the hint function are always counted as incorrect.
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> to get the next correct letter of the answer. In <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> you can select that questions where you use the hint function are always counted as incorrect.
 </para>
 <para>
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the questions you answered incorrectly.
@@ -1088,11 +1089,11 @@ The score sections at the bottom of the screen shows the number of questions, th
 <title>Fill-in-the-blank</title>
 
 <para>
-'Fill-in-the-blank' is a powerful way to practice in KWordQuiz. It is a special kind of question and answer quiz that needs to be described in more detail.
+'Fill-in-the-blank' is a powerful way to practice in &kwordquiz;. It is a special kind of question and answer quiz that needs to be described in more detail.
 </para>
 
 <para>
-Consider the following table. It could be a vocabulary in KWordQuiz:
+Consider the following table. It could be a vocabulary in &kwordquiz;:
 </para>
 
 <informaltable><tgroup cols="3">
@@ -1133,13 +1134,13 @@ Consider the following table. It could be a vocabulary in KWordQuiz:
 </informaltable>
 
 <para>
-The important thing to note is the placement of the brackets. They tell KWordQuiz how the quiz should be performed.
+The important thing to note is the placement of the brackets. They tell &kwordquiz; how the quiz should be performed.
 </para>
 <para>
 In 1. there are no brackets. Assuming English is the question and German the answer you have to give the entire expression 'Wir besitzen einen Computer' for a correct answer.
 </para>
 <para>
-In 2. KWordQuiz would display the question but also 'Wir ........ einen Computer'. For a correct answer it is sufficient to write 'besitzen'.
+In 2. &kwordquiz; would display the question but also 'Wir ........ einen Computer'. For a correct answer it is sufficient to write 'besitzen'.
 </para>
 <para>
 3. shows that a blank can consist of more than one word. The correct answer is 'besitzen einen'.
@@ -1148,7 +1149,7 @@ In 2. KWordQuiz would display the question but also 'Wir ........ einen Computer
 In 4. there are two separate blanks. To specify that in the answer you have to write 'besitzen; Computer', i.e separate the blanks with a semicolon in order to get a correct answer.
 </para>
 <para>
-Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are toolbar and menu commands to mark and unmark blanks. Of course you can also just type the brackets. WordQuiz checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz can not be started.
+Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are toolbar and menu commands to mark and unmark blanks. Of course you can also just type the brackets. &kwordquiz; checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz can not be started.
 </para>
 <para>
 The 'Fill-in-the-blank' features can be turned on and off in the Options dialog. Turning them of will make it possible to use fonts that map other characters to the positions of the brackets. It will also speed up performance slightly.
@@ -1158,7 +1159,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Options dialog.
 <chapter id="printing">
 <title>Printing</title>
 <para>
-KWordQuiz provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard KDE print dialog. In order to get access to the special KWordQuiz features you need to click on the <guibutton>Expand</guibutton> to see the Vocabulary Options tab. On this tab you can select to print the document as a vocabulary list (i.e as displayed in the editor), a vocabulary exam, or as flashcards.
+&kwordquiz; provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard KDE print dialog. In order to get access to the special &kwordquiz; features you need to click on the <guibutton>Expand</guibutton> to see the Vocabulary Options tab. On this tab you can select to print the document as a vocabulary list (i.e as displayed in the editor), a vocabulary exam, or as flashcards.
 </para>
 <screenshot>
   <screeninfo>Vocabulary Printing Options</screeninfo>
@@ -1279,6 +1280,32 @@ Select <guibutton>Default</guibutton> to restore all settings to predefined defa
 
 </sect1>
 
+<sect1 id="dlg-config-characters">
+<title>Configure Special Characters</title>
+<screenshot>
+  <screeninfo>Configure Special Characters</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Configure Special Characters</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Nine configurable actions are available for insertion of special characters into the vocabulary. Select one of the actions in the list and then click the <guibutton>Character...</guibutton> button to <link linkend="dlg-special-characters">select</link> a character for that action. A larger preview of the current character is displayed.
+</para>
+<para>
+Changing the keyboard shortcut associated with each action can be done by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice>.
+</para>
+
+<para>
+Select <guibutton>Default</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+</para>
+
+</sect1>
+
 <sect1 id="dlg-languages">
 <title>Languages</title>
 <screenshot>
@@ -1311,13 +1338,8 @@ Use this dialog to define the languages of the vocabulary. If you want you can a
   </mediaobject>
 </screenshot>
 <para>
-Use this dialog to locate and copy any special character you want to add to your vocabulary. Once you have closed the dialog you can select <menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste</guimenuitem></menuchoice> to paste the character into the vocabulary.
+Use this dialog to select any special character you want to associate with the current special character <link linkend="dlg-config-characters">action</link>.
 </para>
-<note>
-<para>
-The special character functionality will be imporved in future versions of KWordQuiz to include configurable actions for often used characters.
-</para>
-</note>
 
 </sect1>
 
@@ -1381,7 +1403,7 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
     </question>
     <answer>
       <para>
-        There is no automatic way to do this. However, KWordQuiz supports smart pasting meaning that if you select just one cell the program will calculate (and insert) the number of rows needed. That way you can copy and paste several vocabularies into one with little effort.
+        There is no automatic way to do this. However, &kwordquiz; supports smart pasting meaning that if you select just one cell the program will calculate (and insert) the number of rows needed. That way you can copy and paste several vocabularies into one with little effort.
       </para>
     </answer>
   </qandaentry>
@@ -1394,7 +1416,7 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
 <title>Credits and License</title>
 
 <para>
-KWordQuiz
+&kwordquiz;
 </para>
 <para>
 Program copyright 2003-2004 Peter B. Hedlund <email>peter AT peterandlinda DOT com</email>
@@ -1413,7 +1435,7 @@ Documentation copyright 2003-2004 Peter B. Hedlund <email>peter AT peterandlinda
 <title>Installation</title>
 
 <sect1 id="getting-kwordquiz">
-<title>How to obtain KWordQuiz</title>
+<title>How to obtain &kwordquiz;</title>
 
 &install.intro.documentation;
 
