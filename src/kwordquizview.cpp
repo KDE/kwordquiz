@@ -30,6 +30,7 @@
 #include <kmessagebox.h> // always useful
 #include <krandomsequence.h>
 #include <kglobalsettings.h>
+#include <knotifyclient.h>
 
 // application specific includes
 #include "kwordquizview.h"
@@ -301,6 +302,9 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
     itm->setWordWrap(true);
     adjustRow(row);
     getDocument() -> setModified(true);
+    if (Config().m_enableBlanks)
+      if (!checkForBlank(text(row, col), true))
+        KNotifyClient::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
   }
 }
 

@@ -86,7 +86,10 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   slotUndoChange(i18n("Can't &Undo"), false);
   updateMode(Config().m_mode);
   m_prefDialog = 0;
-  
+
+  editMarkBlank->setEnabled(Config().m_enableBlanks);
+  editUnmarkBlank->setEnabled(Config().m_enableBlanks); 
+    
   if (Config().m_firstRun)
   {
     fileOpenRecent->addURL( locate("data", "kwordquiz/examples/example.kvtml"));
@@ -912,6 +915,9 @@ void KWordQuizApp::slotConfigure()
 void KWordQuizApp::slotApplyPreferences()
 {
   Config().write();
+  editMarkBlank->setEnabled(Config().m_enableBlanks);
+  editUnmarkBlank->setEnabled(Config().m_enableBlanks);
+  m_editView->viewport()->repaint(true);
   emit settingsChanged();
 }
 

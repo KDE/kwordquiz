@@ -63,4 +63,4 @@ messages: rc.cpp
 	fi
 
 
-noinst_HEADERS = qaview.h flashview.h multipleview.h wqquiz.h wqlistitem.h wqpos.h wqscore.h prefeditor.h prefquiz.h configuration.h wqsyntax.h dlgsort.h dlgrc.h dlgspecchar.h kvtmlwriter.h dlglanguage.h dlglanguage.h wqprintdialogpage.h
+noinst_HEADERS = qaview.h flashview.h multipleview.h wqquiz.h wqlistitem.h wqscore.h prefeditor.h prefquiz.h configuration.h dlgsort.h dlgrc.h dlgspecchar.h kvtmlwriter.h dlglanguage.h dlglanguage.h wqprintdialogpage.h
