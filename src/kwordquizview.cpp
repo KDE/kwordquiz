@@ -616,9 +616,6 @@ void KWordQuizView::fromStream( QTextStream * ts )
 
       QFont f(fam, ps, b, it);
       setFont(f);
-      
-      horizontalHeader()->setFont(KGlobalSettings::generalFont());
-      verticalHeader()->setFont(KGlobalSettings::generalFont());
 
       /** TODO handle font and character information
       [Font Info]
@@ -831,6 +828,15 @@ void KWordQuizView::addUndo( const QString & caption )
   getDocument()->setModified(true);
 
   emit undoChange(caption, true);
+}
+
+void KWordQuizView::setFont( const QFont & font)
+{
+  QTable::setFont(font);
+  horizontalHeader()->setFont(KGlobalSettings::generalFont());
+  verticalHeader()->setFont(KGlobalSettings::generalFont());  
+  for (uint i = 0; i < numRows(); ++i)
+    adjustRow(i); //setRowHeight(i, fontMetrics().lineSpacing() );
 }
 
 

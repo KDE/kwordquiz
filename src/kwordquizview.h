@@ -68,11 +68,15 @@ class KWordQuizView : public QTable
      */
     KWordQuizDoc *getDocument() const;
 
+    void setFont( const QFont &);
+    
     /** contains the implementation for printing functionality */
     void print(QPrinter *pPrinter);
     bool gridIsEmpty();
     QFont colFont(int i);
 
+    
+    
     void addUndo(const QString & caption);
     void doEditUndo();
     void doEditCut();
