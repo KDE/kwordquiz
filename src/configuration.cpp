@@ -14,6 +14,7 @@
 #include <kconfig.h>            // for KConfig
 #include <kglobalsettings.h>
 
+const bool Configuration::m_defaultFirstRun = true;
 const int Configuration::m_defaultEnterMove = 1;
 const bool Configuration::m_defaultEnableBlanks = false;
 const bool Configuration::m_defaultAutoFlip = false;
@@ -31,7 +32,9 @@ Configuration::Configuration() {
 
 void Configuration::read() {
     KConfig *conf=kapp->config();
-    
+    conf->setGroup("General");
+    m_firstRun = conf->readBoolEntry("FirstRun", m_defaultFirstRun);
+        
     conf->setGroup("Editor");
     m_enterMove = conf->readNumEntry("EnterMove", m_defaultEnterMove);
     m_enableBlanks = conf->readBoolEntry("EnableBlanks", m_defaultEnableBlanks);
@@ -45,11 +48,14 @@ void Configuration::read() {
     m_hintError = conf->readBoolEntry("HintError", m_defaultHintError);
     m_percent = conf->readBoolEntry("Percent", m_defaultPercent);
     m_mode = conf->readNumEntry("Mode", m_defaultMode);
+    m_flashFont = conf->readFontEntry("FlashFont", &m_editorFont);
 };
 
 void Configuration::write() const {
     KConfig *conf=kapp->config();
-    
+    conf->setGroup("General");
+    conf->writeEntry("FirstRun", false);
+        
     conf->setGroup("Editor");
     conf->writeEntry("EnterMove", m_enterMove);
     conf->writeEntry("EnableBlanks", m_enableBlanks);
@@ -63,6 +69,7 @@ void Configuration::write() const {
     conf->writeEntry("HintError", m_hintError);
     conf->writeEntry("Percent", m_percent);
     conf->writeEntry("Mode", m_mode);
+    conf->writeEntry("FlashFont", m_flashFont);
 };
 
 Configuration& Config() {

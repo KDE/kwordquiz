@@ -24,7 +24,9 @@ class Configuration {
     void read();
     /// Writes the configuration data to the application config file.
     void write() const;
-
+    
+    bool m_firstRun;
+    
     int m_enterMove;      ///< Direction of the enter key in the editor.
     bool m_enableBlanks;  ///< Enable fill-in-the-blank.
     QFont m_editorFont;
@@ -35,7 +37,9 @@ class Configuration {
     bool m_hintError;     ///< Treat hint usage as error.
     bool m_percent;       ///< Show score as percent.
     int m_mode;
+    QFont m_flashFont;
     
+    static const bool m_defaultFirstRun;
     static const int m_defaultEnterMove;
     static const bool m_defaultEnableBlanks;
     QFont m_defaultEditorFont;
@@ -46,6 +50,7 @@ class Configuration {
     static const bool m_defaultHintError;
     static const bool m_defaultPercent;
     static const int m_defaultMode;
+    QFont m_defaultFlashFont;
     
   private:
     Configuration();
