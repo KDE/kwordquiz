@@ -757,7 +757,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       setCentralWidget(m_editView);
       stateChanged("showingEdit");
 
-      //toolBar("quizToolBar")->hide();
+      toolBar("quizToolBar")->hide();
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(m_editView);
@@ -777,7 +777,8 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
         
-        m_flashView->show();
+        stateChanged("showingFlash");
+        toolBar("quizToolBar")->show();
 
         setCentralWidget(m_flashView);
         m_flashView -> setQuiz(m_quiz);
@@ -803,13 +804,15 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRestart, SIGNAL(activated()), m_multipleView, SLOT(slotRestart()));
         connect(quizRepeatErrors, SIGNAL(activated()), m_multipleView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
-        m_multipleView->show();
+        
+        stateChanged("showingMultiple");
+        toolBar("quizToolBar")->show();        
+        
         setCentralWidget(m_multipleView);
 
         m_multipleView -> setQuiz(m_quiz);
         m_multipleView ->init();
-        stateChanged("showingMultiple");
-        //toolBar("quizToolBar")->show();
+        m_multipleView->show();
       }
       else
       {
@@ -831,13 +834,15 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRestart, SIGNAL(activated()), m_qaView, SLOT(slotRestart()));
         connect(quizRepeatErrors, SIGNAL(activated()), m_qaView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
-        m_qaView->show();
+
+        stateChanged("showingQA");
+        toolBar("quizToolBar")->show();
+                
         setCentralWidget(m_qaView);
 
         m_qaView -> setQuiz(m_quiz);
         m_qaView ->init();
-        stateChanged("showingQA");
-        //toolBar("quizToolBar")->show();
+        m_qaView->show();
       }
       else
       {
