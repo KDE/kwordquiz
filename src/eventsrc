@@ -22,8 +22,9 @@ Comment[es]=Respuesta correcta
 Comment[et]=Õige vastus
 Comment[nl]=Goed antwoord
 Comment[pt]=Resposta correcta
-Comment[pt_BR]=Resposta correcta
+Comment[pt_BR]=Resposta correta
 Comment[ru]=Правильный ответ
+Comment[sv]=Rätt svar
 default_sound=KDE_Notify.wav
 default_presentation=1
 
@@ -43,8 +44,9 @@ Comment[es]=Respuesta incorrecta
 Comment[et]=Vale vastus
 Comment[nl]=Fout antwoord
 Comment[pt]=Resposta errada
-Comment[pt_BR]=Resposta errada
+Comment[pt_BR]=Resposta incorreta
 Comment[ru]=Неправильный ответ
+Comment[sv]=Fel svar
 default_sound=KDE_Error.wav
 default_presentation=1
 
