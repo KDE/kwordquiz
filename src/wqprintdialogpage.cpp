@@ -31,11 +31,11 @@ WQPrintDialogPage::WQPrintDialogPage(QWidget *parent, const char *name )
   QGridLayout * v = new QGridLayout( g->layout() );
   v->setAlignment( Qt::AlignTop );
 
-  rb0 = new QRadioButton(i18n("Vocabulary List"), g );
+  rb0 = new QRadioButton(i18n("Vocabulary &List"), g );
   v->addWidget( rb0, 0, 0 );
-  rb1 = new QRadioButton(i18n("Vocabulary Exam"), g);
+  rb1 = new QRadioButton(i18n("Vocabulary E&xam"), g);
   v->addWidget( rb1, 1, 0 );
-  rb2 = new QRadioButton(i18n("Flashcards"), g);
+  rb2 = new QRadioButton(i18n("&Flashcards"), g);
   v->addWidget( rb2, 2, 0 );
   l->addWidget( g, 0, 0 );
 }

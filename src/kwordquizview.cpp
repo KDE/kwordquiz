@@ -18,6 +18,7 @@
 // include files for Qt
 #include <qprinter.h>
 #include <qpainter.h>
+#include <qpaintdevicemetrics.h>
 #include <qtabwidget.h>
 #include <qtable.h>
 #include <qclipboard.h>
@@ -73,14 +74,33 @@ KWordQuizDoc *KWordQuizView::getDocument() const
   return theApp->getDocument();
 }
 
-const int pad = 2;
-const int marg = 72;
+
 
 void KWordQuizView::print(KPrinter *pPrinter)
 {
   QPainter painter;
+  
+  //type 0 Vocabulary list
+  //type 1 Vocabulary exam
+  //type 2 Flashcards
+  int type = pPrinter->option("kde-kwordquiz-type").toInt();
+  
+  //I think working with screen resolution is enough for our purposes
+  int res = pPrinter->resolution();
+  int pad = 2;
+  int marg = res;
+  int card_marg = res / 2;
+  int card_width = 5 * res;
+  int card_height = 3 * res;
+  int card_text_marg = res /5;
+  int card_line_top = 30;  
+  
+    
+  if (type == 2)
+    pPrinter->setOrientation(KPrinter::Landscape);  
+  
   painter.begin(pPrinter);
-  QRect w = painter.window(); 
+
   int pageNum = 1;
   
   int cw0 = verticalHeader()->width();
@@ -88,7 +108,7 @@ void KWordQuizView::print(KPrinter *pPrinter)
   int cw2 = columnWidth(1);
   int cw3 = 0;
     
-  int type = pPrinter->option("kde-kwordquiz-type").toInt();
+
 
   if (type == 1)
     cw3 = 50;
@@ -96,51 +116,102 @@ void KWordQuizView::print(KPrinter *pPrinter)
   int gridWidth = cw0 + cw1 + cw2 + cw3;
   int lPos = marg;
   int tPos = marg + horizontalHeader()->height();
-
-  doNewPage(painter, type);
-    
-  for (int rc = 0; rc < numRows(); ++rc)
+  
+  QRect w = painter.window(); 
+  
+  doNewPage(painter, res, type);
+  
+  if (type == 2)
   {
-    painter.drawLine(lPos, tPos, lPos + gridWidth, tPos);
-    painter.setFont(KGlobalSettings::generalFont());
-
-    painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), AlignRight | AlignVCenter, QString::number(rc + 1));
-    
-    painter.setFont(font());
-    painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 0));
-    
-    if (type == 0)
-      painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 1));
-    
-    tPos = tPos + rowHeight(rc);
-
-    if (tPos + rowHeight(rc + 1) > w.height() - marg)
+    tPos = card_marg;
+    for (int rc = 0; rc < numRows(); ++rc)
     {
-      doEndOfPage(painter, tPos, pageNum++, type);
-      tPos = marg + horizontalHeader()->height();
-      pPrinter->newPage();
-      doNewPage(painter, type);     
+      
+      //draw rectangle 2 cards wide
+      painter.drawRect(card_marg, tPos, 2 * card_width, card_height);
+      //divide into 2 cards with line
+      painter.drawLine(card_marg + card_width, tPos, card_marg + card_width, tPos + card_height);
+      //draw line inside card
+      painter.drawLine(card_marg + card_text_marg, tPos + card_line_top, 
+        card_marg + card_width - card_text_marg, tPos + card_line_top);
+      painter.drawLine(card_marg + card_width + card_text_marg, tPos + card_line_top, 
+        card_marg + card_width + card_width - card_text_marg, tPos + card_line_top);   
+      //draw headers
+      painter.setFont(KGlobalSettings::generalFont());
+      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, AlignAuto | AlignVCenter, horizontalHeader()->label(0));
+      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, AlignAuto | AlignVCenter, horizontalHeader()->label(1));
+      //draw text
+      painter.setFont(font());
+      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter, text(rc, 0));
+      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter, text(rc, 1));
+      
+      tPos = tPos + card_height + card_line_top;
+  
+      if (tPos + card_height + card_line_top > w.height() - card_marg)
+      {
+        doEndOfPage(painter, tPos, pageNum++, res, type);
+        tPos = card_marg;
+        pPrinter->newPage();
+        doNewPage(painter, res, type);     
+      }         
+    }
+   
+  }
+  else
+  {
+      
+    for (int rc = 0; rc < numRows(); ++rc)
+    {
+      painter.drawLine(lPos, tPos, lPos + gridWidth, tPos);
+      painter.setFont(KGlobalSettings::generalFont());
+  
+      painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), AlignRight | AlignVCenter, QString::number(rc + 1));
+      
+      painter.setFont(font());
+      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 0));
+      
+      if (type == 0)
+        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 1));
+      
+      tPos = tPos + rowHeight(rc);
+  
+      if (tPos + rowHeight(rc + 1) > w.height() - marg)
+      {
+        doEndOfPage(painter, tPos, pageNum++, res, type);
+        tPos = marg + horizontalHeader()->height();
+        pPrinter->newPage();
+        doNewPage(painter, res, type);     
+      }
     }
   }
-  
-  doEndOfPage(painter, tPos, pageNum++,  type);
+  doEndOfPage(painter, tPos, pageNum++,  res, type);
   painter.end();
 }
 
-void KWordQuizView::doNewPage( QPainter & painter, int type )
+void KWordQuizView::doNewPage( QPainter & painter, int res, int type )
 {
     int cw0 = verticalHeader()->width();
     int cw1 = columnWidth(0);
     int cw2 = columnWidth(1);
     int cw3 = 0;
+    int marg = res;
+    int card_marg = res / 2;
+    int pad = 2;
     
     if (type == 1)
       cw3 = 50;
     
     QRect w = painter.window();
-    painter.drawLine(marg, marg, marg + cw0 + cw1 + cw2 + cw3, marg);
-
+ 
     painter.setFont(KGlobalSettings::generalFont());
+    
+    if (type == 2)
+    {
+      painter.drawText(card_marg, card_marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));      
+      return;
+    }
+    painter.drawLine(marg, marg, marg + cw0 + cw1 + cw2 + cw3, marg);
+    
     painter.drawText(marg, marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
 
     if (type == 1)
@@ -160,8 +231,17 @@ void KWordQuizView::doNewPage( QPainter & painter, int type )
 
 }
 
-void KWordQuizView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int type )
+void KWordQuizView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int res, int type )
 {
+    int marg = res;
+    painter.setFont(KGlobalSettings::generalFont());
+    QRect w = painter.window();
+    QRect r = painter.boundingRect(0, 0, 0, 0, AlignAuto, QString::number(pageNum));
+    painter.drawText((w.width()/2) - (r.width()/2), w.height() - marg + 20, QString::number(pageNum));
+    
+    if (type == 2)
+      return;
+       
     int cw0 = verticalHeader()->width();
     int cw1 = columnWidth(0);
     int cw2 = columnWidth(1);
@@ -180,11 +260,6 @@ void KWordQuizView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int 
     
     if (type == 1)
       painter.drawLine(marg + cw0 + cw1 + cw2 + cw3, marg, marg + cw0 + cw1 + cw2 + cw3, vPos);  
-
-    painter.setFont(KGlobalSettings::generalFont());
-    QRect w = painter.window();
-    QRect r = painter.boundingRect(0, 0, 0, 0, AlignAuto, QString::number(pageNum));
-    painter.drawText((w.width()/2) - (r.width()/2), w.height() - marg + 20, QString::number(pageNum));
 
 }
 
