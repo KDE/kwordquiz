@@ -365,13 +365,13 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
   {
     QTextStream ts(&file);
     ts.setEncoding(QTextStream::UnicodeUTF8);
-    ts << g->horizontalHeader()->label(0)  + "," + g->horizontalHeader()->label(1)  + "\n"; 
+    ts << g->horizontalHeader()->label(0)  << "," << g->horizontalHeader()->label(1)  << endl; 
 
     int i = 0;
     int r = g->numRows();
     while (i < r)
     {
-      ts << g->text(i, 0)  + "," + g->text(i, 1) + "\n";
+      ts << g->text(i, 0)  << "," << g->text(i, 1) << endl;
       i++;
     }    
   }      
@@ -406,38 +406,38 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     QTextStream ts(&file);
     ts.setEncoding(QTextStream::UnicodeUTF8);
     
-    ts << "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n"; 
-    ts << "<html>\n";
-    ts << "<head>\n";
-    ts << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
+    ts << "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">" << endl; 
+    ts << "<html>" << endl;
+    ts << "<head>" << endl;
+    ts << "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">" << endl;
     
-    ts << "<title>" + url.fileName() + "</title>\n";
-    ts << "</head>\n";
-    ts << "<body>\n";
+    ts << "<title>" << url.fileName() << "</title>" << endl;
+    ts << "</head>" << endl;
+    ts << "<body>" << endl;
     
-    ts << "<table cols=\"3\" border=\"0\" cellspacing=\"1\" cellpadding=\"2\" bgcolor=\"silver\">\n";    
+    ts << "<table cols=\"3\" border=\"0\" cellspacing=\"1\" cellpadding=\"2\" bgcolor=\"silver\">" << endl;    
 
-    ts << "<tr height=" + QString::number(g->horizontalHeader()->height()) + ">\n";
-    ts << "<td " + hstyle0 + "></td\n>"; 
-    ts << "<td " + hstyle1 + "><p>" + g->horizontalHeader()->label(0)  + "</p></td>\n";        
-    ts << "<td " + hstyle2 + "><p>" + g->horizontalHeader()->label(1)  + "</p></td>\n";   
-    ts << "</tr>\n";        
+    ts << "<tr height=" << QString::number(g->horizontalHeader()->height()) << ">" << endl;
+    ts << "<td " << hstyle0 << "></td>" << endl; 
+    ts << "<td " << hstyle1 << "><p>" << g->horizontalHeader()->label(0) << "</p></td>" << endl;        
+    ts << "<td " << hstyle2 << "><p>" + g->horizontalHeader()->label(1) << "</p></td>" << endl;
+    ts << "</tr>" << endl;
     
     int i = 0;
     int r = g->numRows();
     while (i < r)
     {
-      ts << "<tr height=" + QString::number(g->rowHeight(i)) + ">\n";
-      ts << "<td " + hstyle0 + "><p>" + QString::number(i + 1) + "</p></td>\n"; 
-      ts << "<td " + style1 + "><p>" + g->text(i, 0) + "</p></td>\n";        
-      ts << "<td " + style2 + "><p>" + g->text(i, 1) + "</p></td>\n";   
-      ts << "</tr>\n";
+      ts << "<tr height=" << QString::number(g->rowHeight(i)) << ">" << endl;
+      ts << "<td " << hstyle0 << "><p>" << QString::number(i + 1) << "</p></td>" << endl; 
+      ts << "<td " << style1 << "><p>" << g->text(i, 0) << "</p></td>" << endl;        
+      ts << "<td " << style2 << "><p>" << g->text(i, 1) << "</p></td>" << endl;   
+      ts << "</tr>" << endl;
       i++;         
     }
 
-    ts << "</table>\n";
-    ts << "</body>\n";
-    ts << "</html>\n";   
+    ts << "</table>" << endl;
+    ts << "</body>" << endl;
+    ts << "</html>" << endl;   
   }  
 
   if (url.path().right(5) != ".html")    
