@@ -42,6 +42,7 @@
 #include <knotifydialog.h>
 #include <krandomsequence.h>
 //#include <keduvocdata.h>
+#include <kglobalsettings.h>
 
 // application specific includes
 #include "kwordquiz.h"
@@ -600,8 +601,9 @@ void KWordQuizApp::slotVocabFont()
   if ( dlg->exec() == KFontDialog::Accepted )
   {
     m_editView ->setFont(dlg->font());
-    m_editView ->horizontalHeader()->setFont(QFont());
-    m_editView ->verticalHeader()->setFont(QFont());
+    
+    m_editView ->horizontalHeader()->setFont(KGlobalSettings::generalFont());
+    m_editView ->verticalHeader()->setFont(KGlobalSettings::generalFont());
     doc->setModified(true);
   }
   slotStatusMsg(i18n("Ready."));

@@ -28,6 +28,7 @@
 #include <klocale.h> //i18n
 #include <kmessagebox.h> // always useful
 #include <krandomsequence.h>
+#include <kglobalsettings.h>
 
 // application specific includes
 #include "kwordquizview.h"
@@ -615,8 +616,9 @@ void KWordQuizView::fromStream( QTextStream * ts )
 
       QFont f(fam, ps, b, it);
       setFont(f);
-      horizontalHeader()->setFont(QFont());
-      verticalHeader()->setFont(QFont());
+      
+      horizontalHeader()->setFont(KGlobalSettings::generalFont());
+      verticalHeader()->setFont(KGlobalSettings::generalFont());
 
       /** TODO handle font and character information
       [Font Info]
