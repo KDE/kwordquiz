@@ -18,6 +18,7 @@
 // include files for QT
 #include <qpainter.h>
 #include <qbitmap.h>
+#include <qcheckbox.h>
 
 // include files for KDE
 #include <kmessagebox.h>
@@ -314,10 +315,6 @@ void KWordQuizApp::initDocument()
 
 void KWordQuizApp::initView()
 {
-  ////////////////////////////////////////////////////////////////////
-  // create the main widget here that is managed by KTMainWindow's view-region and
-  // connect the widget to your document to display document contents.
-
   m_editView = new KWordQuizView(this);
   doc->addView(m_editView);
   setCentralWidget(m_editView);
@@ -327,13 +324,51 @@ void KWordQuizApp::initView()
   connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
 
+void KWordQuizApp::openURL(const KURL& url, bool append)
+{
+  if(!url.isEmpty()) {
+    if (m_dirWatch->contains(url.path()))
+    {
+      KMainWindow* w;
+      if(memberList)
+      {
+        for(w=memberList->first(); w!=0; w=memberList->next())
+        {
+          KWordQuizApp *a =(KWordQuizApp *) w;
+          if(a->doc ->URL().path() == url.path())
+          {
+            if (w->isMinimized())
+              w->showNormal();
+            w->setActiveWindow();
+            w->raise();
+            break;
+          }
+        }
+      }    
+    }
+    else
+    {
+      if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+        // neither saved nor has content, as good as new
+        openDocumentFile(url);
+      }
+      else
+      {
+        KWordQuizApp *new_window= new KWordQuizApp();
+        new_window->show();
+        new_window->openDocumentFile(url);
+      }
+    }
+  }
+}
+
 void KWordQuizApp::openDocumentFile(const KURL& url)
 {
   slotStatusMsg(i18n("Opening file..."));
-  if (url.path() != "") {
+  if (!url.isEmpty()) {
     doc->openDocument( url);
     m_dirWatch->addFile(url.path());
-    setCaption(url.fileName(), false);
+    setCaption(doc->URL().fileName(), false);
     fileOpenRecent->addURL( url );
     updateMode(Config().m_mode);    
   }
@@ -444,52 +479,27 @@ void KWordQuizApp::slotFileNew()
 void KWordQuizApp::slotFileOpen()
 {
   slotStatusMsg(i18n("Opening file..."));
+  
+  QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0, 0);
+  cb -> setChecked(false);
+  
+  KFileDialog *fd = new KFileDialog(QDir::currentDirPath(), QString::null, this, 0, true, cb);
+  fd -> setOperationMode(KFileDialog::Opening);
+  fd -> setMode(KFile::Files | KFile::ExistingOnly);
+  fd -> setCaption(i18n("Open Vocabulary Document..."));
+  fd -> setFilter(i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values"));
 
-  KURL url=KFileDialog::getOpenURL(QString::null, i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values"), this,
-      i18n("Open Vocabulary Document..."));
-
-  if(!url.isEmpty()) {
-    if (m_dirWatch->contains(url.path()))
+  if (fd->exec() == QDialog::Accepted)
+  {  
+    KURL::List l = fd -> selectedURLs();  
+    bool append = ((cb -> isChecked()) && (l.count() > 1));
+    KURL::List::iterator it;
+    for(it = l.begin(); it != l.end(); ++it)    
     {
-      KMainWindow* w;
-      if(memberList)
-      {
-        for(w=memberList->first(); w!=0; w=memberList->next())
-        {
-          KWordQuizApp *a =(KWordQuizApp *) w;
-          if(a->doc ->URL().path() == url.path())
-          {
-            if (w->isMinimized())
-              w->showNormal();
-            w->setActiveWindow();
-            w->raise();
-            break;
-          }
-        }
-      }    
-    }
-    else
-    {
-      if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
-        // neither saved nor has content, as good as new
-        doc->openDocument(url);
-        m_dirWatch->addFile(url.path());
-        setCaption(doc->URL().fileName(), false);
-        fileOpenRecent->addURL( url );
-        updateMode(Config().m_mode);
-      }
-      else
-      {
-        KWordQuizApp *new_window= new KWordQuizApp();
-        new_window->show();
-        new_window->doc->openDocument(url);
-        m_dirWatch->addFile(url.path());
-        new_window->setCaption(new_window->doc->URL().fileName(), false);
-        new_window->fileOpenRecent->addURL( url );
-        new_window->updateMode(Config().m_mode);
-      }
+      openURL(*it, append);
     }
   }
+  delete (fd); //deletes cb also
 
   slotStatusMsg(i18n("Ready"));
 }
@@ -498,44 +508,7 @@ void KWordQuizApp::slotFileOpenRecent(const KURL& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   fileOpenRecent->setCurrentItem(-1);
-  if (m_dirWatch->contains(url.path()))
-  {
-    KMainWindow* w;
-    if(memberList)
-    {
-      for(w=memberList->first(); w!=0; w=memberList->next())
-      {
-        KWordQuizApp *a =(KWordQuizApp *) w;
-        if(a->doc ->URL().path() == url.path())
-        {
-          if (w->isMinimized())
-            w->showNormal();
-          w->setActiveWindow();
-          w->raise();
-          break;
-        }
-      }
-    }    
-  }
-  else
-  {
-    if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
-      // neither saved nor has content, as good as new
-      doc->openDocument(url);
-      m_dirWatch->addFile(url.path());
-      setCaption(doc->URL().fileName(), false);
-      updateMode(Config().m_mode);
-    }
-    else
-    {
-      KWordQuizApp *new_window= new KWordQuizApp();
-      new_window->show();
-      new_window->doc->openDocument(url);
-      m_dirWatch->addFile(url.path());
-      new_window->setCaption(new_window->doc->URL().fileName(), false);
-      new_window->updateMode(Config().m_mode);
-    }
-  }
+  openURL(url);
   slotStatusMsg(i18n("Ready"));
 }
 
