@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<!DOCTYPE kvtml SYSTEM "kvoctrain.dtd">
+<kvtml
+ generator="kwordquiz 0.4"
+ cols="2"
+ lines="36"
+ title="french_verbs.kvtml">
+
+ <e>
+  <o width="250" l="French">je suis</o>
+  <t width="250" l="English">I am</t>
+ </e>
+ <e>
+  <o>tu es</o>
+  <t>you are (fam)</t>
+ </e>
+ <e>
+  <o>il est</o>
+  <t>he is </t>
+ </e>
+ <e>
+  <o>elle est</o>
+  <t>she is</t>
+ </e>
+ <e>
+  <o>nous sommes</o>
+  <t>we are</t>
+ </e>
+ <e>
+  <o>vous êtes</o>
+  <t>you are (formal)</t>
+ </e>
+ <e>
+  <o>ils sont</o>
+  <t>they are (m)</t>
+ </e>
+ <e>
+  <o>elles sont</o>
+  <t>they are (f)</t>
+ </e>
+ <e>
+  <o></o>
+  <t></t>
+ </e>
+ <e>
+  <o>je étais</o>
+  <t>I was</t>
+ </e>
+ <e>
+  <o>tu étais</o>
+  <t>you were (fam)</t>
+ </e>
+ <e>
+  <o>il était</o>
+  <t>he was</t>
+ </e>
+ <e>
+  <o>elle était</o>
+  <t>she was</t>
+ </e>
+ <e>
+  <o>nous étions</o>
+  <t>we were</t>
+ </e>
+ <e>
+  <o>vous étiez</o>
+  <t>you were (form)</t>
+ </e>
+ <e>
+  <o>ils étaient</o>
+  <t>they were (m)</t>
+ </e>
+ <e>
+  <o>elles étaient</o>
+  <t>they were (f)</t>
+ </e>
+ <e>
+  <o></o>
+  <t></t>
+ </e>
+ <e>
+  <o>je serai</o>
+  <t>I will be</t>
+ </e>
+ <e>
+  <o>tu seras</o>
+  <t>you will be (fam)</t>
+ </e>
+ <e>
+  <o>il sera</o>
+  <t>he will be</t>
+ </e>
+ <e>
+  <o>elle sera</o>
+  <t>she will be</t>
+ </e>
+ <e>
+  <o>nous serons</o>
+  <t>we will be</t>
+ </e>
+ <e>
+  <o>vous serez</o>
+  <t>you will be (form)</t>
+ </e>
+ <e>
+  <o>ils seront</o>
+  <t>they will be (m)</t>
+ </e>
+ <e>
+  <o>elles seront</o>
+  <t>they will be (f)</t>
+ </e>
+ <e>
+  <o></o>
+  <t></t>
+ </e>
+ <e>
+  <o>je serais</o>
+  <t>I would be</t>
+ </e>
+ <e>
+  <o>tu serais</o>
+  <t>you would be (fam)</t>
+ </e>
+ <e>
+  <o>il serait</o>
+  <t>he would be </t>
+ </e>
+ <e>
+  <o>elle serait</o>
+  <t>she would be</t>
+ </e>
+ <e>
+  <o>nous serions</o>
+  <t>we would be</t>
+ </e>
+ <e>
+  <o>vous seriez</o>
+  <t>you would be (form)</t>
+ </e>
+ <e>
+  <o>ils seraient</o>
+  <t>they would be (m)</t>
+ </e>
+ <e>
+  <o>elles seraient</o>
+  <t>they would be (f)</t>
+ </e>
+</kvtml>

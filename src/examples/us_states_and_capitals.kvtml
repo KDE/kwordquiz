@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<!DOCTYPE kvtml SYSTEM "kvoctrain.dtd">
+<kvtml
+ generator="kwordquiz 0.4"
+ cols="2"
+ lines="51"
+ title="us_states_and_capitals.kvtml">
+
+ <e>
+  <o width="225" l="State">Alabama</o>
+  <t width="225" l="Capital">Montgomery</t>
+ </e>
+ <e>
+  <o>Alaska</o>
+  <t>Juneau</t>
+ </e>
+ <e>
+  <o>Arizona</o>
+  <t>Phoenix</t>
+ </e>
+ <e>
+  <o>Arkansas</o>
+  <t>Little Rock</t>
+ </e>
+ <e>
+  <o>California</o>
+  <t>Sacramento</t>
+ </e>
+ <e>
+  <o>Colorado</o>
+  <t>Denver</t>
+ </e>
+ <e>
+  <o>Connecticut</o>
+  <t>Hartford</t>
+ </e>
+ <e>
+  <o>Delaware</o>
+  <t>Dover</t>
+ </e>
+ <e>
+  <o>Florida</o>
+  <t>Tallahassee</t>
+ </e>
+ <e>
+  <o>Georgia</o>
+  <t>Atlanta</t>
+ </e>
+ <e>
+  <o>Hawaii</o>
+  <t>Honolulu</t>
+ </e>
+ <e>
+  <o>Idaho</o>
+  <t>Boise</t>
+ </e>
+ <e>
+  <o>Illinois</o>
+  <t>Springfield</t>
+ </e>
+ <e>
+  <o>Indiana</o>
+  <t>Indianapolis</t>
+ </e>
+ <e>
+  <o>Iowa</o>
+  <t>Des Moines</t>
+ </e>
+ <e>
+  <o>Kansas</o>
+  <t>Topeka</t>
+ </e>
+ <e>
+  <o>Kentucky</o>
+  <t>Frankfort</t>
+ </e>
+ <e>
+  <o>Louisiana</o>
+  <t>Baton Rouge</t>
+ </e>
+ <e>
+  <o>Maine</o>
+  <t>Augusta</t>
+ </e>
+ <e>
+  <o>Maryland</o>
+  <t>Annapolis</t>
+ </e>
+ <e>
+  <o>Massachusetts</o>
+  <t>Boston</t>
+ </e>
+ <e>
+  <o>Michigan</o>
+  <t>Lansing</t>
+ </e>
+ <e>
+  <o>Minnesota</o>
+  <t>St. Paul</t>
+ </e>
+ <e>
+  <o>Mississippi</o>
+  <t>Jackson</t>
+ </e>
+ <e>
+  <o>Missouri</o>
+  <t>Jefferson City</t>
+ </e>
+ <e>
+  <o>Montana</o>
+  <t>Helena</t>
+ </e>
+ <e>
+  <o>Nebraska</o>
+  <t>Lincoln</t>
+ </e>
+ <e>
+  <o>Nevada</o>
+  <t>Carson City</t>
+ </e>
+ <e>
+  <o>New Hampshire</o>
+  <t>Concord</t>
+ </e>
+ <e>
+  <o>New Jersey</o>
+  <t>Trenton</t>
+ </e>
+ <e>
+  <o>New Mexico</o>
+  <t>Santa Fe</t>
+ </e>
+ <e>
+  <o>New York</o>
+  <t>Albany</t>
+ </e>
+ <e>
+  <o>North Carolina</o>
+  <t>Raleigh</t>
+ </e>
+ <e>
+  <o>North Dakota</o>
+  <t>Bismarck</t>
+ </e>
+ <e>
+  <o>Ohio</o>
+  <t>Columbus</t>
+ </e>
+ <e>
+  <o>Oklahoma</o>
+  <t>Oklahoma City</t>
+ </e>
+ <e>
+  <o>Oregon</o>
+  <t>Salem</t>
+ </e>
+ <e>
+  <o>Pennsylvania</o>
+  <t>Harrisburg</t>
+ </e>
+ <e>
+  <o>Rhode Island</o>
+  <t>Providence</t>
+ </e>
+ <e>
+  <o>South Carolina</o>
+  <t>Columbia</t>
+ </e>
+ <e>
+  <o>South Dakota</o>
+  <t>Pierre</t>
+ </e>
+ <e>
+  <o>Tennessee</o>
+  <t>Nashville</t>
+ </e>
+ <e>
+  <o>Texas</o>
+  <t>Austin</t>
+ </e>
+ <e>
+  <o>Utah</o>
+  <t>Salt Lake City</t>
+ </e>
+ <e>
+  <o>Vermont</o>
+  <t>Montpelier</t>
+ </e>
+ <e>
+  <o>Virginia</o>
+  <t>Richmond</t>
+ </e>
+ <e>
+  <o>Washington</o>
+  <t>Olympia</t>
+ </e>
+ <e>
+  <o>West Virginia</o>
+  <t>Charleston</t>
+ </e>
+ <e>
+  <o>Wisconsin</o>
+  <t>Madison</t>
+ </e>
+ <e>
+  <o>Wyoming</o>
+  <t>Cheyenne</t>
+ </e>
+</kvtml>

@@ -86,6 +86,14 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   slotUndoChange(i18n("Can't &Undo"), false);
   updateMode(Config().m_mode);
   m_prefDialog = 0;
+  
+  if (Config().m_firstRun)
+  {
+    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/example.kvtml"));
+    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/french_verbs.kvtml"));
+    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/fill_in_the_blank.kvtml"));
+    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml"));
+  }
 }
 
 KWordQuizApp::~KWordQuizApp()

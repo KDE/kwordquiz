@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE kvtml SYSTEM "kvoctrain.dtd">
+<kvtml
+ generator="kwordquiz 0.4"
+ cols="2"
+ lines="16"
+ title="fill_in_the_blank.kvtml">
+
+ <e>
+  <o width="280" l="English">the lawyer reads the newspaper</o>
+  <t width="280" l="Deutsch">der Rechtsanwalt liest [die Zeitung]</t>
+ </e>
+ <e>
+  <o>kids like ice-cream</o>
+  <t>Kinder mögen [Eis]</t>
+ </e>
+ <e>
+  <o>they have bought a Porsche</o>
+  <t>sie haben [einen Porsche] gekauft</t>
+ </e>
+ <e>
+  <o>they have many secrets</o>
+  <t>sie haben viele [Geheimnisse]</t>
+ </e>
+ <e>
+  <o>these exercises help the students</o>
+  <t>diese Übungen helfen [den Schülern]</t>
+ </e>
+ <e>
+  <o>it only takes a word</o>
+  <t>es bedarf nur [eines Wortes]</t>
+ </e>
+ <e>
+  <o>there is only one exit</o>
+  <t>es gibt nur [einen Ausweg]</t>
+ </e>
+ <e>
+  <o>there are many women here</o>
+  <t>es sind viele [Frauen] hier</t>
+ </e>
+ <e>
+  <o>the tires on the bus are new</o>
+  <t>die Reifen [des Busses] sind neu</t>
+ </e>
+ <e>
+  <o>she is a doctor</o>
+  <t>sie ist [Ärztin]</t>
+ </e>
+ <e>
+  <o>I will buy a TV</o>
+  <t>ich werde mir [einen Fernseher] kaufen</t>
+ </e>
+ <e>
+  <o>Earth is a planet</o>
+  <t>die Erde ist [ein Planet]</t>
+ </e>
+ <e>
+  <o>the rooms have three beds</o>
+  <t>die Zimmer haben [drei Betten]</t>
+ </e>
+ <e>
+  <o>we travel through Turkey</o>
+  <t>wir reisen durch [die Türkei]</t>
+ </e>
+ <e>
+  <o>we own a computer</o>
+  <t>wir besitzen [einen Computer]</t>
+ </e>
+</kvtml>

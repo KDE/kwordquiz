@@ -44,7 +44,7 @@ uninstall-local:
 
 # set the include path for X, qt and KDE
 INCLUDES = -I$(top_srcdir)/kwordquiz/icons $(all_includes)
-SUBDIRS = . pics
+SUBDIRS = . pics examples
 METASOURCES = AUTO
 
 # the library search path. 

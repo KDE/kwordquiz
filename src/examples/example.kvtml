@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE kvtml SYSTEM "kvoctrain.dtd">
+<kvtml
+ generator="kwordquiz 0.4"
+ cols="2"
+ lines="10"
+ title="example.kvtml">
+
+ <e>
+  <o width="250" l="English">one</o>
+  <t width="250" l="German">ein</t>
+ </e>
+ <e>
+  <o>two</o>
+  <t>zwei</t>
+ </e>
+ <e>
+  <o>three</o>
+  <t>drei</t>
+ </e>
+ <e>
+  <o>four</o>
+  <t>vier</t>
+ </e>
+ <e>
+  <o>five</o>
+  <t>fünf</t>
+ </e>
+ <e>
+  <o>six</o>
+  <t>sechs</t>
+ </e>
+ <e>
+  <o>seven</o>
+  <t>sieben</t>
+ </e>
+ <e>
+  <o>eight</o>
+  <t>acht</t>
+ </e>
+ <e>
+  <o>nine</o>
+  <t>neun</t>
+ </e>
+</kvtml>
