@@ -18,9 +18,6 @@
             <height>350</height>
         </size>
     </property>
-    <property name="caption">
-        <string>PrefCharacterBase</string>
-    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>

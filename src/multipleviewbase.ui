@@ -26,9 +26,6 @@
             <height>0</height>
         </size>
     </property>
-    <property name="caption">
-        <string>MultipleViewBase</string>
-    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
