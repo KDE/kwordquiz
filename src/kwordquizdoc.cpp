@@ -29,6 +29,8 @@
 #include "kvtmlwriter.h"
 #include "version.h"
 #include "paukerreader.h"
+#include "wqlreader.h"
+#include "configuration.h"
 
 //QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 //KWordQuizView *KWordQuizDoc::m_view;
@@ -159,10 +161,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     QFile file(tmpfile);
     if (!file.open(IO_ReadOnly))
     {
-      KMessageBox::error(0, i18n("<qt>Cannot open file<br><b>%1</b></qt>")
-                         .arg(url.path()));
-      //if (filename == fname)
-      // filename = "";
+      KMessageBox::error(0, i18n("<qt>Cannot open file<br><b>%1</b></qt>").arg(url.path()));
       return false;
     }
 
@@ -176,17 +175,20 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
       doc_url.setFileName(i18n("Untitled"));//To invoke Save As..., since we don't have save support for this format
       PaukerData * paukerDoc = new PaukerData;
       PaukerDataItemList dataList = paukerDoc->parse(url.path());
-      g->setNumRows(dataList.count());
-      QString s;
-      for(PaukerDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
-      {
-        s = (*dataIt).frontSide();
-        if (!s.isEmpty())
-          g->setText(i, 0, s); //calling setText only when there actually is text helps with sorting
-        s = (*dataIt).backSide();
-        if (!s.isEmpty())
-          g->setText(i, 1, s);
-        i++;
+      if (!dataList.isEmpty())
+      {      
+        g->setNumRows(dataList.count());
+        QString s;
+        for(PaukerDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+        {
+          s = (*dataIt).frontSide();
+          if (!s.isEmpty())
+            g->setText(i, 0, s); //calling setText only when there actually is text helps with sorting
+          s = (*dataIt).backSide();
+          if (!s.isEmpty())
+            g->setText(i, 1, s);
+          i++;
+        }
       }
     }
         
@@ -194,31 +196,63 @@ bool KWordQuizDoc::openDocument(const KURL& url, const char *format /*=0*/)
     {
       KEduVocData * kvtmldoc = new KEduVocData;
       KEduVocDataItemList dataList = kvtmldoc->parse(url.path());
-      if ((uint) kvtmldoc->numRows() > dataList.count())
-        g->setNumRows(kvtmldoc->numRows());
-      else
-        g->setNumRows(dataList.count());
-      g->horizontalHeader()->setLabel(0, kvtmldoc->language(0));
-      g->horizontalHeader()->setLabel(1, kvtmldoc->language(1));
-      g->setColumnWidth(0, kvtmldoc->colWidth(0));
-      g->setColumnWidth(1, kvtmldoc->colWidth(1));
-      QString s;
-      for(KEduVocDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+            if (!dataList.isEmpty())
       {
-        s = (*dataIt).originalText();
-        if (!s.isEmpty())
-          g->setText(i, 0, s); //calling setText only when there actually is text helps with sorting
-        s = (*dataIt).translatedText();
-        if (!s.isEmpty())
-          g->setText(i, 1, s);
-        i++;
+        if ((uint) kvtmldoc->numRows() > dataList.count())
+          g->setNumRows(kvtmldoc->numRows());
+        else
+          g->setNumRows(dataList.count());
+        g->horizontalHeader()->setLabel(0, kvtmldoc->language(0));
+        g->horizontalHeader()->setLabel(1, kvtmldoc->language(1));
+        g->setColumnWidth(0, kvtmldoc->colWidth(0));
+        g->setColumnWidth(1, kvtmldoc->colWidth(1));
+        QString s;
+        for(KEduVocDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+        {
+          s = (*dataIt).originalText();
+          if (!s.isEmpty())
+            g->setText(i, 0, s); //calling setText only when there actually is text helps with sorting
+          s = (*dataIt).translatedText();
+          if (!s.isEmpty())
+            g->setText(i, 1, s);
+          i++;
+        }
       }
     }
     
     if (url.path().right(4) == ".wql")
     {
-      QTextStream* ts = new QTextStream(&file);
-      m_view->fromStream(ts, QTextStream::Latin1);
+      WqlReader * wqldoc = new WqlReader;
+      KWqlDataItemList dataList = wqldoc->parse(url.path());
+      if (!dataList.isEmpty())
+      {
+        if ((uint) wqldoc->numRows() > dataList.count())
+          g->setNumRows(wqldoc->numRows());
+        else
+          g->setNumRows(dataList.count());
+        g->horizontalHeader()->setLabel(0, wqldoc->language(0));
+        g->horizontalHeader()->setLabel(1, wqldoc->language(1));
+        g->setColumnWidth(0, wqldoc->colWidth(0));
+        g->setColumnWidth(1, wqldoc->colWidth(1));
+        g->setFont(wqldoc->font());
+        
+        g->setCurrentCell(wqldoc->startRow(), wqldoc->startCol());
+        g->selectCells(wqldoc->startRow(), wqldoc->startCol(), wqldoc->endRow(), wqldoc->endCol());
+        Config().m_specialCharacters = wqldoc->specialCharacters();
+        
+        QString s;
+        for(KWqlDataItemList::Iterator dataIt = dataList.begin(); dataIt != dataList.end(); dataIt++)
+        {
+          s = (*dataIt).frontText();
+          if (!s.isEmpty())
+            g->setText(i, 0, s); //calling setText only when there actually is text helps with sorting
+          s = (*dataIt).backText();
+          if (!s.isEmpty())
+            g->setText(i, 1, s);
+          g->setRowHeight(i, (*dataIt).rowHeight());
+          i++;
+        }  
+      }    
     }
     
     if (url.path().right(4) == ".csv")
