@@ -954,7 +954,7 @@ When you have finished typing one entry, press the return key and the next cell 
 
 <para>Select <menuchoice><guimenu>Go to</guimenu><guimenuitem>Flashcard</guimenuitem></menuchoice> to start a flashcard session on the entries of the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.</para>
  
-<para>If you are working with long expressions the window can be resized to make more space avialable. The font size will also influence how much will fit in the different parts of the window. By selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Font</guimenuitem></menuchoice> you can specify the font used for the flashcards.
+<para>If you are working with long expressions the window can be resized to make more space available. The font size will also influence how much will fit in the different parts of the window. By selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Font</guimenuitem></menuchoice> you can specify the font used for the flashcards.
 </para>
 
 <screenshot>
@@ -1263,7 +1263,7 @@ Select <guibutton>Default</guibutton> to restore all settings to predefined defa
   </mediaobject>
 </screenshot>
 <para>
-For flashcard sessions you can select if the cards should be flipped automatically, anf if they should be counted as correct or incorrect. Enter a time delay in seconds for the automatic flipping.
+For flashcard sessions you can select if the cards should be flipped automatically, and if they should be counted as correct or incorrect. Enter a time delay in seconds for the automatic flipping.
 </para>
 <para>
 For multiple choice sessions you can select if your choice should be checked immediately or if you have to select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> first.
