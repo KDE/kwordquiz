@@ -1,4 +1,4 @@
-ï»¿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
@@ -15,7 +15,7 @@
     <entry name="ColumnTitles1" type="StringList">
       <label>Titles for column 1</label>
       <default></default>
-    </entry> 
+    </entry>
     <entry name="ColumnTitles2" type="StringList">
       <label>Titles for column 2</label>
       <default></default>
@@ -34,7 +34,7 @@
     </entry>
     <entry name="SpecialCharacters" type="String">
       <label>Characters for the special character toolbar</label>
-      <default>Ã?Â?Ã?Â¼Ã?Â§Ã?Â©Ã?Â¨Ã?Â¤Ã?Â¦Ã?Â¶Ã?Â¸</default>
+      <default>abcdefghi</default>
     </entry>
   </group>
   <group name="Quiz">
@@ -45,7 +45,7 @@
    <entry name="AutoFlip" type="Bool">
       <label>Automatically flip flashcard</label>
       <default>false</default>
-    </entry>  
+    </entry>
     <entry name="FlipDelay" type="Int">
       <label>Time delay for flipping flashcard</label>
       <default>3</default>
