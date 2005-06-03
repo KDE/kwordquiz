@@ -2,7 +2,7 @@
                           kwordquiz.cpp  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002 by Peter Hedlund
+    copyright            : (C) 2002-2005 by Peter Hedlund
     email                : peter@peterandlinda.com
  ***************************************************************************/
 
