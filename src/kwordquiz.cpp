@@ -44,6 +44,7 @@
 #include "multipleview.h"
 #include "wqprintdialogpage.h"
 #include "prefs.h"
+#include "kwqnewstuff.h"
 
 #define ID_STATUS_MSG 1
 #define ID_STATUS_MSG_MODE 2
@@ -112,6 +113,10 @@ void KWordQuizApp::initActions()
   fileOpen->setToolTip(fileOpen->whatsThis());
 
   fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KURL&)), actionCollection());
+
+  fileGHNS = new KAction(i18n("&Get New Vocabularies..."), "knewstuff", "CTRL+G", this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
+  fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
+  fileGHNS->setToolTip(fileGHNS->whatsThis());
 
   fileSave = KStdAction::save(this, SLOT(slotFileSave()), actionCollection());
   fileSave->setWhatsThis(i18n("Saves the active vocabulary document"));
@@ -559,6 +564,13 @@ void KWordQuizApp::slotFileSave()
   slotStatusMsg(i18n("Ready"));
 }
 
+void KWordQuizApp::slotFileGHNS()
+{
+  if (!m_newStuff)
+    m_newStuff = new KWQNewStuff(this);
+  m_newStuff->download();
+}
+
 void KWordQuizApp::slotFileSaveAs()
 {
   slotStatusMsg(i18n("Saving file with a new filename..."));
@@ -966,7 +978,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
     case WQQuiz::qtMultiple:
       m_quiz = new WQQuiz(m_editView);
-      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));      
+      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())

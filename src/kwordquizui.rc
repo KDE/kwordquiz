@@ -1,8 +1,8 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.8" name="kwordquiz" >
+<kpartgui version="0.9" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
-   
+    <Action append="open_merge" name="file_ghns" />
   </Menu>
   <Menu name="edit" >
    <Separator/>
@@ -95,8 +95,8 @@
    <Action name="char_6" />
    <Action name="char_7" />
    <Action name="char_8" />
-   <Action name="char_9" />                        
-  </ToolBar>  
+   <Action name="char_9" />
+  </ToolBar>
   <State name="switchEditQuiz">
     <Enable>
       <Action name="file_save" />
@@ -140,7 +140,7 @@
       <Action name="quiz_multiple" />
       <Action name="quiz_qa" />
       <Action name="quiz_check" />
-      <Action name="vocab_font" />      
+      <Action name="vocab_font" />
       <Action name="flash_know" />
       <Action name="flash_dont_know" />
       <Action name="quiz_restart" />
@@ -185,7 +185,7 @@
   </State>
   <Menu name="editor_popup">
     <Action name="edit_undo" />
-    <Separator/>      
+    <Separator/>
     <Action name="edit_cut" />
     <Action name="edit_copy" />
     <Action name="edit_paste" />
@@ -193,6 +193,6 @@
     <Action name="edit_insert" />
     <Action name="edit_delete" />
     <Separator/>
-    <Action name="vocab_languages" />  
+    <Action name="vocab_languages" />
   </Menu>
 </kpartgui>

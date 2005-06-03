@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
@@ -34,7 +34,7 @@
     </entry>
     <entry name="SpecialCharacters" type="String">
       <label>Characters for the special character toolbar</label>
-      <default>ÃÂÃÂ¼ÃÂ§ÃÂ©ÃÂ¨ÃÂ¤ÃÂ¦ÃÂ¶ÃÂ¸</default>
+      <default>�?�?�?¼�?§�?©�?¨�?¤�?¦�?¶�?¸</default>
     </entry>
   </group>
   <group name="Quiz">
@@ -99,6 +99,20 @@
     <entry name="BackFrameColor" type="Color">
       <label>Color used for frame on back of flashcard</label>
       <default code="true">Qt::blue</default>
+    </entry>
+  </group>
+  <group name="KNewStuff">
+    <entry name="ProvidersUrl" type="Path">
+       <label>The Providers path for KWordQuiz</label>
+         <default code="true">"http://edu.kde.org/kvoctrain/providers.xml"</default>
+    </entry>
+    <entry name="InstallationCommand" type="String">
+       <label>The command used to start a downloaded vocabulary</label>
+       <default>kwordquiz %f</default>
+    </entry>
+    <entry name="InstallPath" type="Path">
+       <label>The folder where downloaded vocabularies are saved by default (relative to $HOME)</label>
+       <default>Vocabularies</default>
     </entry>
   </group>
 </kcfg>

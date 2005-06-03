@@ -26,7 +26,7 @@
 // include files for Qt
 #include <qsignalmapper.h>
 
-// include files for KDE 
+// include files for KDE
 #include <kapplication.h>
 #include <kmainwindow.h>
 #include <kaction.h>
@@ -41,6 +41,7 @@ class KWordQuizPrefs;
 class QAView;
 class MultipleView;
 class FlashView;
+class KWQNewStuff;
 
 /**
   * The base class for KWordQuiz application windows. It sets up the main
@@ -72,14 +73,14 @@ class KWordQuizApp : public KMainWindow
     void openDocumentFile(const KURL& url=0);
     /** returns a pointer to the current document connected to the KTMainWindow instance and is used by
      * the View class to access the document object's methods
-     */	
-    KWordQuizDoc *getDocument() const; 	
+     */
+    KWordQuizDoc *getDocument() const;
 
     bool saveAsFileName();
   protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file
-     */ 	
+     */
     void saveOptions();
     /** read general Options again and initialize all variables like the recent file list
      */
@@ -105,7 +106,7 @@ class KWordQuizApp : public KMainWindow
      */
     virtual bool queryClose();
     /** queryExit is called by KTMainWindow when the last window of the application is going to be closed during the closeEvent().
-     * Against the default implementation that just returns true, this calls saveOptions() to save the settings of the last window's	
+     * Against the default implementation that just returns true, this calls saveOptions() to save the settings of the last window's
      * properties.
      * @see KTMainWindow#queryExit
      * @see KTMainWindow#closeEvent
@@ -132,6 +133,8 @@ class KWordQuizApp : public KMainWindow
     void slotFileOpen();
     /** opens a file from the recent files menu */
     void slotFileOpenRecent(const KURL& url);
+    /** download vocabularies from the Internet */
+    void slotFileGHNS();
     /** save a document */
     void slotFileSave();
     /** save a document by a new filename*/
@@ -164,7 +167,7 @@ class KWordQuizApp : public KMainWindow
     void slotEditUnmarkBlank();
     /** find and replace text */
     void slotEditFind();
-    
+
     /** define vocabulary languages */
     void slotVocabLanguages();
     /** define vocabulary fonts */
@@ -199,14 +202,14 @@ class KWordQuizApp : public KMainWindow
     /** multiple choice session */
     void slotQuizMultiple();
     /** question and answer session */
-    void slotQuizQA();         
+    void slotQuizQA();
 
     /** configure notifications */
     void slotConfigureNotifications();
     /** configure kwordquiz */
     void slotConfigure();
-    
-    
+
+
     /** changes the statusbar contents for the standard label permanently, used to indicate current actions.
      * @param text the text that is displayed in the statusbar */
     void slotStatusMsg(const QString &text);
@@ -215,9 +218,9 @@ class KWordQuizApp : public KMainWindow
     void slotApplyPreferences();
 
     void slotUndoChange(const QString & text, bool enabled);
-    
+
     void slotInsertChar(int i);
-    
+
     void slotActionHighlighted(KAction *, bool);
 
     void slotContextMenuRequested(int, int, const QPoint &);
@@ -238,7 +241,7 @@ class KWordQuizApp : public KMainWindow
     QAView *m_qaView;
 
     KWordQuizPrefs *m_prefDialog;
-    
+
     /** doc represents your actual document and is created only once. It keeps
      * information such as filename and does the serialization of your files.
      */
@@ -248,6 +251,7 @@ class KWordQuizApp : public KMainWindow
     KAction* fileNew;
     KAction* fileOpen;
     KRecentFilesAction* fileOpenRecent;
+    KAction* fileGHNS;
     KAction* fileSave;
     KAction* fileSaveAs;
     KAction* fileClose;
@@ -278,7 +282,7 @@ class KWordQuizApp : public KMainWindow
     KToggleAction* mode3;
     KToggleAction* mode4;
     KToggleAction* mode5;
-        
+
     KAction* quizEditor;
     KAction* quizFlash;
     KAction* quizMultiple;
@@ -294,17 +298,18 @@ class KWordQuizApp : public KMainWindow
     KAction* qaHint;
 
     QSignalMapper* charMapper;
-    KAction* specialChar1;    
-    KAction* specialChar2; 
-    KAction* specialChar3; 
-    KAction* specialChar4; 
-    KAction* specialChar5; 
-    KAction* specialChar6; 
-    KAction* specialChar7; 
-    KAction* specialChar8; 
-    KAction* specialChar9; 
-     
+    KAction* specialChar1;
+    KAction* specialChar2;
+    KAction* specialChar3;
+    KAction* specialChar4;
+    KAction* specialChar5;
+    KAction* specialChar6;
+    KAction* specialChar7;
+    KAction* specialChar8;
+    KAction* specialChar9;
+
     KDirWatch * m_dirWatch;
+    KWQNewStuff * m_newStuff;
 
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);
@@ -313,5 +318,5 @@ class KWordQuizApp : public KMainWindow
     QString charIcon(const QChar &);
     void openURL(const KURL& url);
 };
- 
+
 #endif // KWORDQUIZ_H
