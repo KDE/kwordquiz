@@ -20,6 +20,8 @@
 
 #include <knewstuff/knewstuff.h>
 
+class KWordQuizApp;
+
 /**
 @author Peter Hedlund
 */
@@ -57,6 +59,8 @@ public:
 
 private:
   QString destinationPath(KNS::Entry *entry);
+
+  KWordQuizApp * m_app;
 };
 
 #endif

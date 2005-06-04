@@ -23,32 +23,19 @@
 #include <kmessagebox.h>
 #include <knewstuff/entry.h>
 
+#include "kwordquiz.h"
 #include "kwqnewstuff.h"
 #include "prefs.h"
 
 KWQNewStuff::KWQNewStuff(QWidget *parent, const char *name) : QObject(), KNewStuff("kdeedu/vocabulary", parent)
 {
-
+  m_app = (KWordQuizApp *) parent;
 }
 
 
 bool KWQNewStuff::install(const QString & fileName)
 {
-  QStringList list, list2;
-
-  QString cmd = Prefs::installationCommand();
-  if (!cmd.isEmpty())
-  {
-    list = QStringList::split(" ", cmd);
-    for (QStringList::iterator it = list.begin(); it != list.end(); it++ )
-    {
-      list2 << (*it).replace("%f", fileName);
-    }
-    KProcess proc;
-    proc << list2;
-    proc.start(KProcess::DontCare);
-  }
-
+  m_app->slotFileOpenRecent(KURL(fileName));
   return true;
 }
 
@@ -93,11 +80,16 @@ QString KWQNewStuff::downloadDestination(KNS::Entry * entry)
     int result = KMessageBox::questionYesNo(parentWidget(),
         i18n("The file '%1' already exists. Do you want to overwrite it?")
         .arg(file),
-        QString::null, 
+        QString::null,
         i18n("Overwrite"));
     if (result == KMessageBox::No)
       return QString::null;
   }
+  KMessageBox::information(parentWidget(),
+    i18n("<qt>The selected file will now be downloaded and saved as\n<b>'%1'</b>.</qt>")
+    .arg(file),
+    QString::null,
+    "NewStuffDownloadLocation");
   return file;
 }
 
