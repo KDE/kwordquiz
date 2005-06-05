@@ -2,7 +2,7 @@
                           kwordquizprefs.h  -  description
                              -------------------
     begin                : Sun Aug 18 2002
-    copyright            : (C) 2002-2003 by Peter Hedlund
+    copyright            : (C) 2002-2005 by Peter Hedlund
     email                : peter@peterandlinda.com
  ***************************************************************************/
 
@@ -20,26 +20,25 @@
 
 #include <kconfigdialog.h>
 
-
 /**
   *@author Peter Hedlund
 */
 
 class PrefEditor;
-class PrefQuiz; 
+class PrefQuiz;
 class PrefCharacter;
 class PrefCardAppearance;
 class DlgSpecChar;
 
-class KWordQuizPrefs : public KConfigDialog  {
-   Q_OBJECT
-public: 
-  KWordQuizPrefs(QWidget *parent=0, const char *name=0, KConfigSkeleton *config=0, DialogType dialogType=IconList, 
+class KWordQuizPrefs : public KConfigDialog
+{
+  Q_OBJECT
+public:
+  KWordQuizPrefs(QWidget *parent=0, const char *name=0, KConfigSkeleton *config=0, DialogType dialogType=IconList,
     int dialogButtons=Default|Ok|Apply|Cancel|Help, ButtonCode defaultButton=Ok, bool modal=false);
-  ~KWordQuizPrefs();
 
 protected slots:
-  void updateSettings(); 
+  void updateSettings();
   void updateWidgetsDefault();
 
 private slots:
@@ -59,7 +58,6 @@ private:
   DlgSpecChar* m_dlgSpecChar;
   PrefCardAppearance* m_prefCardAppearance;
   KConfigSkeleton * m_config;
-  bool m_hasChanged;
 };
 
 #endif

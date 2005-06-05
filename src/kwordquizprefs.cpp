@@ -2,7 +2,7 @@
                           kwordquizprefs.cpp  -  description
                              -------------------
     begin                : Sun Aug 18 2002
-    copyright            : (C) 2002-2003 by Peter Hedlund
+    copyright            : (C) 2002-2005 by Peter Hedlund
     email                : peter@peterandlinda.com
  ***************************************************************************/
 
@@ -41,8 +41,8 @@
 #include "kwordquiz.h"
 #include "dlgspecchar.h"
 
-KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, DialogType dialogType, int /*dialogButtons*/, ButtonCode /*defaultButton*/, bool /*modal*/) 
-  : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false) 
+KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, DialogType dialogType, int /*dialogButtons*/, ButtonCode /*defaultButton*/, bool /*modal*/)
+  : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false)
 {
   m_config = config;
 
@@ -78,14 +78,10 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
   m_prefCharacter->lstCharacters->setSelected(m_prefCharacter->lstCharacters->firstChild(), true);
   m_prefCharacter->lstCharacters->setItemMargin(2);
 
-  m_hasChanged = false;
   kapp->processEvents();
 }
 
-KWordQuizPrefs::~KWordQuizPrefs(){
-}
-
-void KWordQuizPrefs::slotCharListSelectionChanged( )
+void KWordQuizPrefs::slotCharListSelectionChanged()
 {
   m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
 }
@@ -100,18 +96,18 @@ void KWordQuizPrefs::slotSelectSpecChar( )
   if (m_dlgSpecChar == 0)
   {
     m_dlgSpecChar = new DlgSpecChar( this, "insert special char", f, c, true );
-    connect( m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    connect( m_dlgSpecChar, SIGNAL(finished()), this, SLOT( slotDlgSpecCharClosed() ) );
+    connect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
+    connect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
   }
   m_dlgSpecChar->show();
 }
 
-void KWordQuizPrefs::slotDlgSpecCharClosed( )
+void KWordQuizPrefs::slotDlgSpecCharClosed()
 {
   if ( m_dlgSpecChar )
   {
-    disconnect( m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    disconnect( m_dlgSpecChar, SIGNAL( finished() ), this, SLOT( slotDlgSpecCharClosed() ) );
+    disconnect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
+    disconnect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
     m_dlgSpecChar->deleteLater();
     m_dlgSpecChar = 0L;
   }
@@ -121,30 +117,37 @@ void KWordQuizPrefs::slotSpecChar(QChar c)
 {
   m_prefCharacter->lstCharacters->currentItem()->setText(2, c);
   m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
-  m_hasChanged = true;
   updateButtons();
 }
 
-bool KWordQuizPrefs::hasChanged( )
+bool KWordQuizPrefs::hasChanged()
 {
-  kdDebug() << "hasChanged" << endl;
-  bool result = false;
-  if (m_hasChanged)
-    result = true;
-  else
+  bool result;
+
+  QString s;
+  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  {
+    s.append(it.current()->text(2));
+  }
+
+  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
+  QString ds = item->property().toString();
+
+  if (ds == s.stripWhiteSpace())
     result = KConfigDialog::hasChanged();
-  kdDebug() << result << endl;
+  else
+    result = true;
+
   return result;
 }
 
-bool KWordQuizPrefs::isDefault( )
+bool KWordQuizPrefs::isDefault()
 {
-  kdDebug() << "isDefault" << endl;
   bool bUseDefaults = m_config->useDefaults(true);
-  bool result /*= !hasChanged()*/;
+  bool result;
 
   QString s;
-  for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
@@ -163,9 +166,8 @@ bool KWordQuizPrefs::isDefault( )
 
 void KWordQuizPrefs::updateSettings( )
 {
-  kdDebug() << "updateSettings" << endl;
   QString s;
-  for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
@@ -174,7 +176,6 @@ void KWordQuizPrefs::updateSettings( )
   item->setProperty(QVariant(s));
 
   emit settingsChanged();
-  m_hasChanged = false;
 }
 
 void KWordQuizPrefs::updateWidgetsDefault( )
@@ -182,7 +183,7 @@ void KWordQuizPrefs::updateWidgetsDefault( )
   bool bUseDefaults = m_config->useDefaults(true);
 
   QString s;
-  for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
@@ -191,12 +192,11 @@ void KWordQuizPrefs::updateWidgetsDefault( )
   QString ds = item->property().toString();
 
   int i=0;
-  for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     it.current()->setText(2, (QString) ds[i++] ) ;
   }
   m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
-  m_hasChanged = (ds != s);
   m_config->useDefaults(bUseDefaults);
 }
 
