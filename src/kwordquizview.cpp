@@ -40,7 +40,7 @@
 QValueList<WQUndo> *KWordQuizView::m_undoList = 0L;
 
 KWQTableItem::KWQTableItem(QTable* table, EditType et, const QString & text) : QTableItem(table, et, text)
-{};
+{}
 
 int KWQTableItem::alignment() const
 {
