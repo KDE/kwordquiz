@@ -20,7 +20,7 @@
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif 
+#endif
 
 // include files for Qt
 #include <qtable.h>
@@ -41,6 +41,13 @@ class DlgSpecChar;
 @author Peter Hedlund
 */
 
+class KWQTableItem :public QTableItem
+{
+public:
+  KWQTableItem( QTable* table, EditType et, const QString & text );
+  virtual int alignment() const;
+};
+
 class KWordQuizView : public QTable
 {
   Q_OBJECT
@@ -56,11 +63,12 @@ class KWordQuizView : public QTable
      * @see KWordQuizApp#getDocument
      */
     KWordQuizDoc *getDocument() const;
-    
+
     //Reimplemented from QTable
     void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
     void setFont( const QFont &);
-    
+    void setText( int row, int col, const QString &text );
+
     /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);
     bool gridIsEmpty();
@@ -79,7 +87,7 @@ class KWordQuizView : public QTable
     void doVocabRC();
     void doVocabSpecChar();
     bool checkSyntax(bool all, bool blanks);
-    void saveCurrentSelection(bool clear);    
+    void saveCurrentSelection(bool clear);
   protected:
     QWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );
@@ -90,12 +98,12 @@ class KWordQuizView : public QTable
     void adjustRow(int row);
     void slotSpecChar(const QChar &);
     void slotCheckedAnswer(int );
-    
+
   private slots:
     void slotDlgSpecCharClosed();
 
   signals:
-    void undoChange(const QString & text, bool enabled);    
+    void undoChange(const QString & text, bool enabled);
 
   private:
     int m_currentRow;
