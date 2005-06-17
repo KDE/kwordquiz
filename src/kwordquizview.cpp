@@ -288,7 +288,8 @@ QWidget * KWordQuizView::beginEdit( int row, int col, bool replace )
 {
   m_currentText = text(row, col);
   cellEditor = QTable::beginEdit(row, col, replace);
-  cellEditor->installEventFilter(this);
+  if (cellEditor)
+    cellEditor->installEventFilter(this);
   return cellEditor;
 }
 
