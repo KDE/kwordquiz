@@ -30,7 +30,7 @@
 
 // application specific includes
 #include "kwordquizview.h"
-#include "kwordquizdoc.h"
+#include "keduvocdocument.h"
 #include "kwordquiz.h"
 #include "dlgsort.h"
 #include "prefs.h"
@@ -75,7 +75,22 @@ KWordQuizView::~KWordQuizView()
 {
 }
 
-KWordQuizDoc *KWordQuizView::getDocument() const
+void KWordQuizView::displayDoc()
+{
+  setNumRows(getDocument()->numEntries());
+  horizontalHeader()->setLabel(0, getDocument()->getOriginalIdent());
+  horizontalHeader()->setLabel(1, getDocument()->getIdent(1));
+  //TODO setColumnWidth(0, kvtmldoc->colWidth(0));
+  //TODO setColumnWidth(1, kvtmldoc->colWidth(1));
+
+  for (int i=0; i<getDocument()->numEntries(); i++)
+  {
+    setText(i, 0, getDocument()->getEntry(i)->getOriginal());
+    setText(i, 1, getDocument()->getEntry(i)->getTranslation(1));
+  }
+}
+
+KEduVocDocument *KWordQuizView::getDocument() const
 {
   KWordQuizApp *theApp=(KWordQuizApp *) parentWidget();
   return theApp->getDocument();
@@ -298,8 +313,13 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
   // this code gets called after enter and arrow keys, now we
   // only process if editing really has been done
 
-  if (cellWidget(row, col) != 0) //if edited the cellWidget still exists
+  if ((cellWidget(row, col) != 0) && accept) //if edited the cellWidget still exists
   {
+    if (col == 0)
+      getDocument()->getEntry(row)->setOriginal(((QLineEdit *) cellWidget(row, col))->text());
+    else
+      getDocument()->getEntry(row)->setTranslation(1, ((QLineEdit *) cellWidget(row, col))->text());
+    
     if (((QLineEdit *) cellWidget(row, col))->text() != m_currentText)
       addUndo(i18n("&Undo Entry"));
     QTable::endEdit(row, col, accept, replace); //this will destroy the cellWidget
@@ -550,7 +570,10 @@ void KWordQuizView::doEditInsert( )
   addUndo(i18n("&Undo Insert"));
   setUpdatesEnabled(false);
   saveCurrentSelection();
-  insertRows(m_currentSel.topRow(), m_currentSel.bottomRow() - m_currentSel.topRow() + 1);
+  
+  getDocument()->insertEntry(new KEduVocExpression, m_currentRow);
+  // TODO EPT  insertRows(m_currentSel.topRow(), m_currentSel.bottomRow() - m_currentSel.topRow() + 1);
+  displayDoc();
 
   addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
@@ -572,7 +595,9 @@ void KWordQuizView::doEditDelete( )
     br--; //leave one row if all rows are selected
 
   for (int r = br; r >= tr; --r)
-    removeRow(r);
+    getDocument()->removeEntry(r);
+
+  displayDoc();
 
   if (br > numRows())
     br = numRows(); //adjust for new numRows
@@ -777,10 +802,13 @@ void KWordQuizView::doVocabSort( )
   {
     addUndo(i18n("&Undo Sort"));
     if (dlg->base())
-      sortColumn(0, dlg->ascending(), true);
+      getDocument()->sort(0);
+      // TODO EPT sortColumn(0, dlg->ascending(), true);
     else
-      sortColumn(1, dlg->ascending(), true);
-      getDocument()->setModified(true);
+      getDocument()->sort(1);
+      // TODO EPT sortColumn(1, dlg->ascending(), true);
+    getDocument()->setModified(true);
+    displayDoc();
   }
   //restore selection
   addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
@@ -821,10 +849,20 @@ void KWordQuizView::doVocabRC( )
   dlg->disableResize();
   if (dlg->exec() == KDialogBase::Accepted)
   {
+    int newNumRows;
     if (dlg->numRows() < 1)
-      setNumRows(1);
+      newNumRows = 1;
     else
-      setNumRows(dlg->numRows());
+      newNumRows = dlg->numRows();
+      
+    while (newNumRows > getDocument()->numEntries())
+      getDocument()->appendEntry(new KEduVocExpression);
+      
+    while (newNumRows < getDocument()->numEntries())
+      getDocument()->removeEntry(getDocument()->numEntries()-1);
+      
+    displayDoc();
+
     for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); ++i)
       setRowHeight(i, dlg->rowHeight());
     for (int i = m_currentSel.leftCol(); i <= m_currentSel.rightCol(); ++i)

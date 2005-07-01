@@ -34,7 +34,7 @@
 #include "wqundo.h"
 //include <wqviewbase.h>
 
-class KWordQuizDoc;
+class KEduVocDocument;
 class DlgSpecChar;
 
 /**
@@ -62,12 +62,14 @@ class KWordQuizView : public QTable
      *
      * @see KWordQuizApp#getDocument
      */
-    KWordQuizDoc *getDocument() const;
+    KEduVocDocument *getDocument() const;
 
     //Reimplemented from QTable
     void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
     void setFont( const QFont &);
     void setText( int row, int col, const QString &text );
+
+    void displayDoc();
 
     /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);

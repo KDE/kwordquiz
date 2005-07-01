@@ -35,7 +35,7 @@
 
 // forward declaration of the KWordQuiz classes
 #include "wqquiz.h"
-class KWordQuizDoc;
+class KEduVocDocument;
 class KWordQuizView;
 class KWordQuizPrefs;
 class QAView;
@@ -74,7 +74,7 @@ class KWordQuizApp : public KMainWindow
     /** returns a pointer to the current document connected to the KTMainWindow instance and is used by
      * the View class to access the document object's methods
      */
-    KWordQuizDoc *getDocument() const;
+    KEduVocDocument *getDocument() const;
 
     bool saveAsFileName();
   protected:
@@ -245,7 +245,7 @@ class KWordQuizApp : public KMainWindow
     /** doc represents your actual document and is created only once. It keeps
      * information such as filename and does the serialization of your files.
      */
-    KWordQuizDoc *doc;
+    KEduVocDocument *doc;
 
     // KAction pointers to enable/disable actions
     KAction* fileNew;

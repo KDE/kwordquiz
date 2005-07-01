@@ -36,7 +36,7 @@
 
 // application specific includes
 #include "kwordquiz.h"
-#include "kwordquizdoc.h"
+#include "keduvocdocument.h"
 #include "dlglanguage.h"
 #include "kwordquizprefs.h"
 #include "qaview.h"
@@ -321,14 +321,16 @@ void KWordQuizApp::initStatusBar()
 
 void KWordQuizApp::initDocument()
 {
-  doc = new KWordQuizDoc(this);
-  doc->newDocument();
+  doc = new KEduVocDocument(this);
+  for (int i=0; i<20; i++)
+  {
+    doc->appendEntry(new KEduVocExpression());
+  }
 }
 
 void KWordQuizApp::initView()
 {
   m_editView = new KWordQuizView(this);
-  doc->addView(m_editView);
   setCentralWidget(m_editView);
   setCaption(doc->URL().fileName(),false);
   m_editView->setFont(Prefs::editorFont());
@@ -339,7 +341,7 @@ void KWordQuizApp::initView()
 void KWordQuizApp::openURL(const KURL& url)
 {
   if(!url.isEmpty()) {
-    if (m_dirWatch->contains(url.path()))
+    if (false) // TODO EPT m_dirWatch->contains(url.path()))
     {
       KMainWindow* w;
       if(memberList)
@@ -378,7 +380,8 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
-    doc->openDocument( url);
+    doc->open(url, false);
+    m_editView->displayDoc();
     m_dirWatch->addFile(url.path());
     setCaption(doc->URL().fileName(), false);
     fileOpenRecent->addURL( url );
@@ -388,7 +391,7 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
 }
 
 
-KWordQuizDoc *KWordQuizApp::getDocument() const
+KEduVocDocument *KWordQuizApp::getDocument() const
 {
   return doc;
 }
@@ -421,7 +424,7 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
     QString tempname = kapp->tempSaveName(url.url());
     QString tempurl= KURL::encode_string(tempname);
     KURL _url(tempurl);
-    doc->saveDocument(_url);
+    // TODO EPT doc->saveDocument(_url);
   }
 }
 
@@ -439,7 +442,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
     if(canRecover)
     {
-      doc->openDocument(_url);
+      // TODO EPT doc->openDocument(_url);
       doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
@@ -449,7 +452,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
   {
     if(!filename.isEmpty())
     {
-      doc->openDocument(url);
+      // TODO EPT doc->openDocument(url);
       setCaption(url.fileName(),false);
     }
   }
@@ -457,7 +460,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
 bool KWordQuizApp::queryClose()
 {
-  bool f = doc->saveModified();
+  bool f = true; // TODO EPTdoc->saveModified();
   if (f)
     if (m_dirWatch->contains(doc->URL().path()))
       m_dirWatch->removeFile(doc->URL().path());
@@ -508,6 +511,7 @@ void KWordQuizApp::slotFileOpen()
 
     if (append)
     {
+/* TODO EPT
       KWordQuizApp * w;
       if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
         // neither saved nor has content, as good as new
@@ -526,6 +530,7 @@ void KWordQuizApp::slotFileOpen()
         w->getDocument()->openDocument(*it, true, i);
         i++;
       }
+*/
     }
     else
     {
@@ -559,7 +564,8 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    doc->saveDocument(doc->URL());
+    // TODO EPT
+    doc->saveAs(this, doc->URL(), "title TODOEPT", KEduVocDocument::automatic);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -617,7 +623,7 @@ bool KWordQuizApp::saveAsFileName( )
       {
         if (m_dirWatch ->contains(doc->URL().path()))
           m_dirWatch ->removeFile(doc->URL().path());
-        doc->saveDocument(url);
+        // TODO EPT doc->saveDocument(url);
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addURL(url);
         setCaption(doc->URL().fileName(), doc->isModified());
@@ -638,7 +644,7 @@ void KWordQuizApp::slotFileClose()
   else
     if (queryClose())
     {
-      doc->newDocument();
+      // TODO EPT doc->newDocument();
       setCaption(doc->URL().fileName(), doc->isModified());
       delete (m_editView);
       initView();
@@ -771,8 +777,9 @@ void KWordQuizApp::slotVocabLanguages()
   dlg->disableResize();
   if (dlg->exec() == KDialogBase::Accepted)
   {
-    m_editView -> horizontalHeader()->setLabel(0, dlg->Language(1));
-    m_editView -> horizontalHeader()->setLabel(1, dlg->Language(2));
+    doc->setOriginalIdent(dlg->Language(1));
+    doc->setIdent(1, dlg->Language(2));
+    m_editView->displayDoc();
     updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
