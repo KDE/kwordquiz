@@ -650,13 +650,8 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc)
   domElementKvtml.setAttribute(KV_GENERATOR, (QString) "kwordquiz");// TODO EPT KVD_VERS_PREFIX KVOCTRAIN_VERSION_STRING);
   domElementKvtml.setAttribute(KV_COLS, m_doc->numLangs() );
   domElementKvtml.setAttribute(KV_LINES, m_doc->numEntries() );
-/* TODO EPT add title management
-  if (!title.isEmpty())
-  {
-    domElementKvtml.setAttribute(KV_TITLE, m_doc->getTitle() );
-    m_doc->doctitle = title;
-  }
-  else */if (!m_doc->doctitle.isEmpty())
+  
+  if (!m_doc->doctitle.isEmpty())
     domElementKvtml.setAttribute(KV_TITLE, m_doc->doctitle);
 
   if (!m_doc->author.isEmpty())

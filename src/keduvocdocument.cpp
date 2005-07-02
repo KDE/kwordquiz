@@ -179,15 +179,11 @@ bool KEduVocDocument::open(const KURL& url, bool append)
 }
 
 
-bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, QString title, FileType ft)
+bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft)
 {
   connect( this, SIGNAL(progressChanged(KEduVocDocument*,int)), parent, SLOT(slotProgress(KEduVocDocument*,int)) );
 
   KURL tmp (url);
-  if (title == i18n("Untitled"))
-    title = QString::null;
-  if (title == doc_url.fileName())
-    title = QString::null;
 
   if (ft == automatic)
   {
@@ -221,7 +217,6 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, QString title, F
     QApplication::setOverrideCursor( waitCursor );
     switch (ft) {
       case kvtml: {
-        //TODO handle title
         KEduVocKvtmlWriter kvtmlWriter(&f);
         saved = kvtmlWriter.writeDoc(this);
       }

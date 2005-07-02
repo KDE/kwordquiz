@@ -322,6 +322,7 @@ void KWordQuizApp::initStatusBar()
 void KWordQuizApp::initDocument()
 {
   doc = new KEduVocDocument(this);
+  
   for (int i=0; i<20; i++)
   {
     doc->appendEntry(new KEduVocExpression());
@@ -341,7 +342,7 @@ void KWordQuizApp::initView()
 void KWordQuizApp::openURL(const KURL& url)
 {
   if(!url.isEmpty()) {
-    if (false) // TODO EPT m_dirWatch->contains(url.path()))
+    if (m_dirWatch->contains(url.path()))
     {
       KMainWindow* w;
       if(memberList)
@@ -424,7 +425,7 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
     QString tempname = kapp->tempSaveName(url.url());
     QString tempurl= KURL::encode_string(tempname);
     KURL _url(tempurl);
-    // TODO EPT doc->saveDocument(_url);
+    doc->saveAs(this, _url, KEduVocDocument::automatic);
   }
 }
 
@@ -442,7 +443,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
     if(canRecover)
     {
-      // TODO EPT doc->openDocument(_url);
+      doc->open(_url, false);
       doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
@@ -452,7 +453,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
   {
     if(!filename.isEmpty())
     {
-      // TODO EPT doc->openDocument(url);
+      doc->open(url, false);
       setCaption(url.fileName(),false);
     }
   }
@@ -460,11 +461,47 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
 bool KWordQuizApp::queryClose()
 {
-  bool f = true; // TODO EPTdoc->saveModified();
-  if (f)
+  bool completed=true;
+  
+  if(doc->isModified())
+  {
+    int want_save = KMessageBox::warningYesNoCancel(this,
+                    i18n("The current file has been modified.\n"
+                         "Do you want to save it?"),
+                    i18n("Warning"));
+    switch(want_save)
+    {
+    case KMessageBox::Yes:
+      if (doc->URL().fileName() == i18n("Untitled"))
+      {
+        completed = saveAsFileName();
+      }
+      else
+      {
+        completed = doc->saveAs(this, doc->URL(), KEduVocDocument::automatic);
+      }
+
+      break;
+
+    case KMessageBox::No:
+      doc->setModified(false);
+      completed=true;
+      break;
+
+    case KMessageBox::Cancel:
+      completed=false;
+      break;
+
+    default:
+      completed=false;
+      break;
+    }
+  }
+  
+  if (completed)
     if (m_dirWatch->contains(doc->URL().path()))
       m_dirWatch->removeFile(doc->URL().path());
-  return f;
+  return completed;
 }
 
 bool KWordQuizApp::queryExit()
@@ -564,8 +601,7 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    // TODO EPT
-    doc->saveAs(this, doc->URL(), "title TODOEPT", KEduVocDocument::automatic);
+    doc->saveAs(this, doc->URL(), KEduVocDocument::automatic);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -623,7 +659,7 @@ bool KWordQuizApp::saveAsFileName( )
       {
         if (m_dirWatch ->contains(doc->URL().path()))
           m_dirWatch ->removeFile(doc->URL().path());
-        // TODO EPT doc->saveDocument(url);
+        doc->saveAs(this, url, KEduVocDocument::automatic);
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addURL(url);
         setCaption(doc->URL().fileName(), doc->isModified());
@@ -644,7 +680,8 @@ void KWordQuizApp::slotFileClose()
   else
     if (queryClose())
     {
-      // TODO EPT doc->newDocument();
+      delete doc;
+      initDocument();
       setCaption(doc->URL().fileName(), doc->isModified());
       delete (m_editView);
       initView();
