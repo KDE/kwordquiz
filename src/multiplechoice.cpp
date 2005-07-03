@@ -4,11 +4,11 @@
 
     -----------------------------------------------------------------------
 
-    begin                : Mon Oct 29 18:09:29 1999
+    begin          : Mon Oct 29 18:09:29 1999
 
-    copyright            : (C) 1999-2001 Ewald Arnold
-                           (C) 2001 The KDE-EDU team
-    email                : kvoctrain@ewald-arnold.de
+    copyright      : (C) 1999-2001 Ewald Arnold <kvoctrain@ewald-arnold.de>
+                     (C) 2001 The KDE-EDU team
+                     (C) 2005 Peter Hedlund <peter@peterandlinda.com>
 
     -----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "MultipleChoice.h"
+#include "multiplechoice.h"
 
 MultipleChoice::MultipleChoice (
            const QString &mc1,

@@ -52,7 +52,7 @@
 using namespace std;
 
 #include "grammarmanager.h"
-#include "MultipleChoice.h"
+#include "multiplechoice.h"
 
 typedef signed char grade_t;
 typedef unsigned short count_t;

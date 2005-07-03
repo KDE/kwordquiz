@@ -24,7 +24,7 @@
 
 //#include "keduvocdocument.h"
 #include "grammarmanager.h"
-#include "MultipleChoice.h"
+#include "multiplechoice.h"
 
 class KEduVocDocument;
 
