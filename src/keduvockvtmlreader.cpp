@@ -169,7 +169,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
     QString  fem_indef = "";
     QString  mal_indef = "";
     QString  nat_indef = "";
-    
+
     QDomElement domElementEntryChild = domElementEntry.firstChild().toElement();
     while (!domElementEntryChild.isNull())
     {
@@ -214,7 +214,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
         domErrorUnknownElement(domElementEntryChild.tagName());
         return false;
       }
-      
+
       domElementEntryChild = domElementEntryChild.nextSibling().toElement();
     }
 
@@ -476,14 +476,14 @@ bool KEduVocKvtmlReader::readOptions(QDomElement &domElementParent)
       m_doc->sort_allowed = true;
       QDomAttr domAttrOn = domElementSort.attributeNode(KV_BOOL_FLAG);
       if (!domAttrOn.isNull())
-            {         
-                bool ok = true;         
+            {
+                bool ok = true;
         m_doc->sort_allowed = domAttrOn.value().toInt(&ok);  // returns 0 if the conversion fails
           if (!ok)
               m_doc->sort_allowed = true;
-            }            
+            }
     }
-    
+
     domElementSort = domElementSort.nextSibling().toElement();
   }
 
@@ -632,7 +632,7 @@ bool KEduVocKvtmlReader::readComparison(QDomElement &domElementParent,
 {
   QString s;
   comp.clear();
-  
+
   QDomElement domElementComparisonChild = domElementParent.firstChild().toElement();
   while (!domElementComparisonChild.isNull())
   {
@@ -643,7 +643,7 @@ bool KEduVocKvtmlReader::readComparison(QDomElement &domElementParent,
         s = "";
       comp.setL1(s);
     }
-    
+
     else if (domElementComparisonChild.tagName() == KV_COMP_L2)
     {
       s = domElementComparisonChild.text();
@@ -651,7 +651,7 @@ bool KEduVocKvtmlReader::readComparison(QDomElement &domElementParent,
         s = "";
       comp.setL2(s);
     }
-    
+
     else if (domElementComparisonChild.tagName() == KV_COMP_L3)
     {
       s = domElementComparisonChild.text();
@@ -659,16 +659,16 @@ bool KEduVocKvtmlReader::readComparison(QDomElement &domElementParent,
         s = "";
       comp.setL3(s);
     }
-    
+
     else
     {
       domErrorUnknownElement(domElementComparisonChild.tagName());
       return false;
     }
-    
+
     domElementComparisonChild = domElementComparisonChild.nextSibling().toElement();
   }
-  
+
   return true;
 }
 
@@ -688,7 +688,7 @@ bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent,
 {
   QString s;
   mc.clear();
-  
+
   QDomElement domElementChild = domElementParent.firstChild().toElement();
   while (!domElementChild.isNull())
   {
@@ -699,7 +699,7 @@ bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent,
         s = "";
       mc.setMC1(s);
     }
-    
+
     else if (domElementChild.tagName() == KV_MC_2)
     {
       s = domElementChild.text();
@@ -707,7 +707,7 @@ bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent,
         s = "";
       mc.setMC2(s);
     }
-    
+
     else if (domElementChild.tagName() == KV_MC_3)
     {
       s = domElementChild.text();
@@ -715,7 +715,7 @@ bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent,
         s = "";
       mc.setMC3(s);
     }
-    
+
     else if (domElementChild.tagName() == KV_MC_4)
     {
       s = domElementChild.text();
@@ -723,7 +723,7 @@ bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent,
         s = "";
       mc.setMC4(s);
     }
-    
+
     else if (domElementChild.tagName() == KV_MC_5)
     {
       s = domElementChild.text();
@@ -731,16 +731,16 @@ bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent,
         s = "";
       mc.setMC5(s);
     }
-    
+
     else
     {
       domErrorUnknownElement(domElementChild.tagName());
       return false;
     }
-    
+
     domElementChild = domElementChild.nextSibling().toElement();
   }
-    
+
   mc.normalize();
   return true;
 }
@@ -766,17 +766,17 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
                                                         QString &paraphrase)
 {
   int pos;
-  
+
   lang = "";
   QDomAttr domAttrLang = domElementExpressionChild.attributeNode(KV_LANG);
   if (!domAttrLang.isNull())
     lang = domAttrLang.value();
-  
+
   width = -1;
   QDomAttr domAttrWidth = domElementExpressionChild.attributeNode(KV_SIZEHINT);
   if (!domAttrWidth.isNull())
     width = domAttrWidth.value().toInt();
-  
+
   grade = KV_NORM_GRADE;
   rev_grade = KV_NORM_GRADE;
   QDomAttr domAttrGrade = domElementExpressionChild.attributeNode(KV_LANG);
@@ -854,27 +854,27 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
   QDomAttr domAttrRemark = domElementExpressionChild.attributeNode(KV_REMARK);
   if (!domAttrRemark.isNull())
     remark = domAttrRemark.value();
-  
+
   faux_ami_f = "";
   QDomAttr domAttrFauxAmiF = domElementExpressionChild.attributeNode(KV_FAUX_AMI_F);
   if (!domAttrFauxAmiF.isNull())
     faux_ami_f = domAttrFauxAmiF.value();
-  
+
   faux_ami_t = "";
   QDomAttr domAttrFauxAmiT = domElementExpressionChild.attributeNode(KV_FAUX_AMI_T);
   if (!domAttrFauxAmiT.isNull())
     faux_ami_t = domAttrFauxAmiT.value();
-  
+
   synonym = "";
   QDomAttr domAttrSynonym = domElementExpressionChild.attributeNode(KV_SYNONYM);
   if (!domAttrSynonym.isNull())
     synonym = domAttrSynonym.value();
-  
+
   example = "";
   QDomAttr domAttrExample = domElementExpressionChild.attributeNode(KV_EXAMPLE);
   if (!domAttrExample.isNull())
     example = domAttrExample.value();
-  
+
   usage = "";
   QDomAttr domAttrUsage = domElementExpressionChild.attributeNode(KV_USAGE);
   if (!domAttrUsage.isNull())
@@ -901,7 +901,7 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
   QDomAttr domAttrParaphrase = domElementExpressionChild.attributeNode(KV_PARAPHRASE);
   if (!domAttrParaphrase.isNull())
     paraphrase = domAttrParaphrase.value();
-  
+
   antonym = "";
   QDomAttr domAttrAntonym = domElementExpressionChild.attributeNode(KV_ANTONYM);
   if (!domAttrAntonym.isNull())
@@ -930,7 +930,7 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
           s.setNum (i+1);
           s.insert (0, "#");  // invent descr according to number
           m_doc->type_descr.push_back (s);
-        }            
+        }
       }
     }
   }
@@ -939,12 +939,12 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
   QDomAttr domAttrPronunce = domElementExpressionChild.attributeNode(KV_PRONUNCE);
   if (!domAttrPronunce.isNull())
     pronunce = domAttrPronunce.value();
-  
+
   query_id = "";
   QDomAttr domAttrQuery = domElementExpressionChild.attributeNode(KV_QUERY);
   if (!domAttrQuery.isNull())
     query_id = domAttrQuery.value();
-  
+
   return true;
 }
 
@@ -971,7 +971,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
                 q_trans;
   QString       query_id;
   KEduVocExpression expr;
-  int           lesson;
+  int           lesson = 0;
   int           width;
   QString       type;
   QString       faux_ami_f;
@@ -1175,7 +1175,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
       domErrorUnknownElement(domElementOriginalChild.tagName());
       return false;
     }
-    
+
     domElementOriginalChild = domElementOriginalChild.nextSibling().toElement();
   }
 
@@ -1235,7 +1235,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
       domError(i18n("starting tag <%1> is missing").arg(KV_TRANS));
       return false;
     }
-  
+
     // found translation <t>
 
     count++;
@@ -1321,7 +1321,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
         if (!readConjug(domElementOriginalChild, conjug, (QString) KV_CON_TYPE))
           return false;
       }
-  
+
       if (domElementOriginalChild.tagName() == KV_COMPARISON_GRP)
       {
         if (bComparison)
@@ -1334,7 +1334,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
         if (!readComparison(domElementOriginalChild, comparison))
           return false;
       }
-  
+
       if (domElementOriginalChild.tagName() == KV_MULTIPLECHOICE_GRP)
       {
         if (bMultipleChoice)
@@ -1347,13 +1347,13 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
         if (!readMultipleChoice(domElementOriginalChild, mc))
           return false;
       }
-  
+
       else
       {
         domErrorUnknownElement(domElementOriginalChild.tagName());
         return false;
       }
-      
+
       domElementOriginalChild = domElementOriginalChild.nextSibling().toElement();
     }
 
@@ -1415,7 +1415,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
       expr.setParaphrase (count, paraphrase);
     if (!antonym.isEmpty() )
       expr.setAntonym (count, antonym);
-            
+
     domElementExpressionChild = domElementExpressionChild.nextSibling().toElement();
   }
   if (m_doc->numEntries() == 0)
@@ -1561,12 +1561,12 @@ if (lines != 0)
 bool KEduVocKvtmlReader::readDoc(KEduVocDocument *doc)
 {
   m_doc = doc;
-    
+
   QDomDocument domDoc("Kvtml" );
-  QString errorMsg;   
+  QString errorMsg;
   if( !domDoc.setContent( m_inputFile, &errorMsg ) )
   {
-    domError(errorMsg);   
+    domError(errorMsg);
     return false;
   }
 
