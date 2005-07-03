@@ -67,12 +67,11 @@ void KEduVocDocument::getVersion(int &, int &, int &)
 
 void KEduVocDocument::Init ()
 {
-
-//TODO setVersion (QString::fromUtf8(KVOCTRAIN_VERSION_STRING));
   lesson_descr.clear();
   type_descr.clear();
   tense_descr.clear();
   langs.clear();
+  sort_lang.clear();
   extraSizehints.clear();
   sizehints.clear();
   vocabulary.clear();
@@ -81,8 +80,6 @@ void KEduVocDocument::Init ()
   unknown_attr = false;
   unknown_elem = false;
   sort_lesson = false;
-  for (int i = 0; i < (int) langs.size(); i++)
-    sort_lang.push_back(false);
   setCurrentLesson (0);
   queryorg = "";
   querytrans = "";
@@ -179,7 +176,7 @@ bool KEduVocDocument::open(const KURL& url, bool append)
 }
 
 
-bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft)
+bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft, const QString & generator)
 {
   connect( this, SIGNAL(progressChanged(KEduVocDocument*,int)), parent, SLOT(slotProgress(KEduVocDocument*,int)) );
 
@@ -218,7 +215,7 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft)
     switch (ft) {
       case kvtml: {
         KEduVocKvtmlWriter kvtmlWriter(&f);
-        saved = kvtmlWriter.writeDoc(this);
+        saved = kvtmlWriter.writeDoc(this, generator);
       }
       break;
 

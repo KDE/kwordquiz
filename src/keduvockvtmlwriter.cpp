@@ -573,7 +573,7 @@ bool KEduVocKvtmlWriter::saveOptionsKvtMl(QDomDocument &domDoc, QDomElement &dom
 }
 
 
-bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc)
+bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator)
 {
   bool first_expr = true;
 
@@ -647,7 +647,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc)
 
   domElementKvtml.setAttribute(KV_ENCODING, (QString)"UTF-8");
 
-  domElementKvtml.setAttribute(KV_GENERATOR, (QString) "kwordquiz");// TODO EPT KVD_VERS_PREFIX KVOCTRAIN_VERSION_STRING);
+  domElementKvtml.setAttribute(KV_GENERATOR, generator);
   domElementKvtml.setAttribute(KV_COLS, m_doc->numLangs() );
   domElementKvtml.setAttribute(KV_LINES, m_doc->numEntries() );
   

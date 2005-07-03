@@ -45,6 +45,7 @@
 #include "wqprintdialogpage.h"
 #include "prefs.h"
 #include "kwqnewstuff.h"
+#include "version.h"
 
 #define ID_STATUS_MSG 1
 #define ID_STATUS_MSG_MODE 2
@@ -322,7 +323,10 @@ void KWordQuizApp::initStatusBar()
 void KWordQuizApp::initDocument()
 {
   doc = new KEduVocDocument(this);
-  
+  doc->appendLang(i18n("Column 1"));
+  doc->appendLang(i18n("Column 2"));
+  doc->setSizeHint(0, 250);
+  doc->setSizeHint(1, 250);
   for (int i=0; i<20; i++)
   {
     doc->appendEntry(new KEduVocExpression());
@@ -332,6 +336,7 @@ void KWordQuizApp::initDocument()
 void KWordQuizApp::initView()
 {
   m_editView = new KWordQuizView(this);
+  m_editView->displayDoc();
   setCentralWidget(m_editView);
   setCaption(doc->URL().fileName(),false);
   m_editView->setFont(Prefs::editorFont());
@@ -425,7 +430,7 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
     QString tempname = kapp->tempSaveName(url.url());
     QString tempurl= KURL::encode_string(tempname);
     KURL _url(tempurl);
-    doc->saveAs(this, _url, KEduVocDocument::automatic);
+    doc->saveAs(this, _url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
 }
 
@@ -478,7 +483,7 @@ bool KWordQuizApp::queryClose()
       }
       else
       {
-        completed = doc->saveAs(this, doc->URL(), KEduVocDocument::automatic);
+        completed = doc->saveAs(this, doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
       }
 
       break;
@@ -601,7 +606,7 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    doc->saveAs(this, doc->URL(), KEduVocDocument::automatic);
+    doc->saveAs(this, doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -659,7 +664,7 @@ bool KWordQuizApp::saveAsFileName( )
       {
         if (m_dirWatch ->contains(doc->URL().path()))
           m_dirWatch ->removeFile(doc->URL().path());
-        doc->saveAs(this, url, KEduVocDocument::automatic);
+        doc->saveAs(this, url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addURL(url);
         setCaption(doc->URL().fileName(), doc->isModified());

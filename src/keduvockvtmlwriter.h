@@ -70,7 +70,7 @@ public:
   KEduVocKvtmlWriter(QFile *file);
   ~KEduVocKvtmlWriter();
 
-  bool writeDoc(KEduVocDocument *doc);
+  bool writeDoc(KEduVocDocument *doc, const QString &generator);
 
   bool saveLessonKvtMl (QDomDocument &domDoc, QDomElement &domElementParent);
   bool saveTypeNameKvtMl (QDomDocument &domDoc, QDomElement &domElementParent);

@@ -438,7 +438,7 @@ class KEduVocDocument : public QObject
    * @param url     if url is empty (or NULL) actual name is preserved
    * @result         true if successful
    */
-  bool saveAs(QObject *parent, const KURL & url, FileType ft);
+  bool saveAs(QObject *parent, const KURL & url, FileType ft, const QString & generator);
 
   /** returns count of entries
    */

@@ -61,12 +61,8 @@ KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : QTable(parent,
     m_undoList = new QValueList<WQUndo>();
 
   setNumCols(2);
-  setNumRows(50);
-  setColumnWidth(1, 250);
-  setColumnWidth(0, 250);
   setSelectionMode(QTable::Single);
-  horizontalHeader()->setLabel(0, i18n("Column 1"));
-  horizontalHeader()->setLabel(1, i18n("Column 2"));
+
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
 }
@@ -80,8 +76,8 @@ void KWordQuizView::displayDoc()
   setNumRows(getDocument()->numEntries());
   horizontalHeader()->setLabel(0, getDocument()->getOriginalIdent());
   horizontalHeader()->setLabel(1, getDocument()->getIdent(1));
-  //TODO setColumnWidth(0, kvtmldoc->colWidth(0));
-  //TODO setColumnWidth(1, kvtmldoc->colWidth(1));
+  setColumnWidth(0, getDocument()->getSizeHint(0));
+  setColumnWidth(1, getDocument()->getSizeHint(1));
 
   for (int i=0; i<getDocument()->numEntries(); i++)
   {
@@ -367,6 +363,9 @@ void KWordQuizView::saveCurrentSelection(bool clear = true)
   }
 }
 
+// TODO Handle undo with the new document class
+// The KWqlDataItemList is no more sufficient, it will cause data losses. We have to store
+// KEduVocExpressions in the list.
 void KWordQuizView::doEditUndo( )
 {
   if (isEditing())
@@ -383,8 +382,8 @@ void KWordQuizView::doEditUndo( )
       undo = m_undoList->first();
       setFont(undo.font());
       verticalHeader()->setMinimumWidth(undo.colWidth0());
-      setColumnWidth(0, undo.colWidth1());
-      setColumnWidth(1, undo.colWidth2());
+      getDocument()->setSizeHint(0, undo.colWidth1());
+      getDocument()->setSizeHint(1, undo.colWidth2());
       setNumRows(0);
       setNumRows(undo.numRows());
       setCurrentCell(undo.currentRow(), undo.currentCol());
@@ -396,15 +395,12 @@ void KWordQuizView::doEditUndo( )
       KWqlDataItemList::ConstIterator end(dataList.end());
       for(KWqlDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
       {
-        s = (*dataIt).frontText();
-        if (!s.isEmpty())
-          setText(i, 0, s); //calling setText only when there actually is text helps with sorting
-        s = (*dataIt).backText();
-        if (!s.isEmpty())
-          setText(i, 1, s);
+        getDocument()->getEntry(i)->setOriginal((*dataIt).frontText());
+        getDocument()->getEntry(i)->setTranslation(1, (*dataIt).backText());
         setRowHeight(i, (*dataIt).rowHeight());
         i++;
       }
+      displayDoc();
 
       m_undoList->remove(m_undoList->begin());
       setUpdatesEnabled(true);
@@ -433,7 +429,10 @@ void KWordQuizView::doEditCut( )
     saveCurrentSelection();
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
-        clearCell(r, c);
+        if (c == 0)
+          getDocument()->getEntry(r)->setOriginal("");
+        else
+          getDocument()->getEntry(r)->setTranslation(1, "");
   }
   getDocument()->setModified(true);
 }
@@ -506,7 +505,10 @@ void KWordQuizView::doEditPaste( )
         int c = 0;
         while (ac <= rc)
         {
-          setText(ar, ac, sr[c]);
+          if (ac == 0)
+            getDocument()->getEntry(ar)->setOriginal(sr[c]);
+          else
+            getDocument()->getEntry(ar)->setTranslation(1, sr[c]);
           ac++;
           c++;
         }
@@ -532,7 +534,10 @@ void KWordQuizView::doEditPaste( )
         int c = 0;
         while (ac <= rc)
         {
-          setText(ar, ac, sr[c]);
+          if (ac == 0)
+            getDocument()->getEntry(ar)->setOriginal(sr[c]);
+          else
+            getDocument()->getEntry(ar)->setTranslation(1, sr[c]);
           ac++;
           c++;
         }
@@ -540,6 +545,8 @@ void KWordQuizView::doEditPaste( )
         i++;
       }
     }
+
+    displayDoc();
 
     //restore selection
     addSelection(QTableSelection(tr, lc, br, rc));
@@ -560,8 +567,12 @@ void KWordQuizView::doEditClear( )
     saveCurrentSelection(false);
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
-        clearCell(r, c);
+        if (c == 0)
+          getDocument()->getEntry(r)->setOriginal("");
+        else
+          getDocument()->getEntry(r)->setTranslation(1, "");
   }
+  displayDoc();
   getDocument()->setModified(true);
 }
 
@@ -751,6 +762,10 @@ void KWordQuizView::doEditUnmarkBlank( )
         s = text(r, c);
         s = s.remove(delim_start);
         s = s.remove(delim_end);
+        if (c == 0)
+          getDocument()->getEntry(r)->setOriginal(s);
+        else
+          getDocument()->getEntry(r)->setTranslation(1, s);
         setText(r, c, s);
       }
   }
@@ -860,13 +875,14 @@ void KWordQuizView::doVocabRC( )
       
     while (newNumRows < getDocument()->numEntries())
       getDocument()->removeEntry(getDocument()->numEntries()-1);
-      
-    displayDoc();
 
     for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); ++i)
       setRowHeight(i, dlg->rowHeight());
     for (int i = m_currentSel.leftCol(); i <= m_currentSel.rightCol(); ++i)
-      setColumnWidth(i, dlg->colWidth());
+      getDocument()->setSizeHint(i, dlg->colWidth());
+    
+    displayDoc();
+
     getDocument()->setModified(true);
   }
   addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
@@ -944,7 +960,10 @@ void KWordQuizView::activateNextCell( )
     {
       case 0:
         if (m_currentRow == (numRows() - 1))
+        {
+          getDocument()->appendEntry(new KEduVocExpression());
           setNumRows(numRows() + 1);
+        }
         setCurrentCell(m_currentRow + 1, m_currentCol);
         break;
       case 1:
@@ -953,7 +972,10 @@ void KWordQuizView::activateNextCell( )
         else
           {
           if (m_currentRow == (numRows() - 1))
+          {
+            getDocument()->appendEntry(new KEduVocExpression());
             setNumRows(numRows() + 1);
+          }
           setCurrentCell(m_currentRow + 1, m_currentCol - 1);
           }
         break;
