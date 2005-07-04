@@ -1144,7 +1144,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
         return false;
     }
 
-    if (domElementOriginalChild.tagName() == KV_COMPARISON_GRP)
+    else if (domElementOriginalChild.tagName() == KV_COMPARISON_GRP)
     {
       if (bComparison)
       {
@@ -1157,7 +1157,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
         return false;
     }
 
-    if (domElementOriginalChild.tagName() == KV_MULTIPLECHOICE_GRP)
+    else if (domElementOriginalChild.tagName() == KV_MULTIPLECHOICE_GRP)
     {
       if (bMultipleChoice)
       {
@@ -1179,7 +1179,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
     domElementOriginalChild = domElementOriginalChild.nextSibling().toElement();
   }
 
-  textstr = domElementExpressionChild.text();
+  textstr = domElementExpressionChild.lastChild().toText().data();
   if (textstr.isNull())
     textstr = "";
 
@@ -1322,7 +1322,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
           return false;
       }
 
-      if (domElementOriginalChild.tagName() == KV_COMPARISON_GRP)
+      else if (domElementOriginalChild.tagName() == KV_COMPARISON_GRP)
       {
         if (bComparison)
         {
@@ -1335,7 +1335,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
           return false;
       }
 
-      if (domElementOriginalChild.tagName() == KV_MULTIPLECHOICE_GRP)
+      else if (domElementOriginalChild.tagName() == KV_MULTIPLECHOICE_GRP)
       {
         if (bMultipleChoice)
         {
@@ -1357,7 +1357,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
       domElementOriginalChild = domElementOriginalChild.nextSibling().toElement();
     }
 
-    textstr = domElementExpressionChild.text();
+    textstr = domElementExpressionChild.lastChild().toText().data();
     if (textstr.isNull())
       textstr = "";
 
