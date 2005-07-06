@@ -419,9 +419,9 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     else
       fi = "font-style: normal; ";      
     
-    QString hstyle0 = "style=\"text-align: right; width: " + QString::number(g->verticalHeader()->sectionSize(0)) + "; font-family:'Arial'; font-size: 12pt; background-color: darkgray\"";
-    QString hstyle1 = "style=\"" + cw1 + "font-family:'Arial'; font-size: 12pt; background-color: darkgray\"";
-    QString hstyle2 = "style=\"" + cw2 + "font-family:'Arial'; font-size: 12pt; background-color: darkgray\"";
+    QString hstyle0 = "style=\"text-align: right; width: " + QString::number(g->verticalHeader()->sectionSize(0)) + "; font-size: 12pt; background-color: darkgray\"";
+    QString hstyle1 = "style=\"" + cw1 + "font-size: 12pt; background-color: darkgray\"";
+    QString hstyle2 = "style=\"" + cw2 + "font-size: 12pt; background-color: darkgray\"";
     
     QString style1 = "style=\"" + cw1 + fn + fs + fb + fi + "background-color: white\"";
     QString style2 = "style=\"" + cw2 + fn + fs + fb + fi + "background-color: white\"";      
