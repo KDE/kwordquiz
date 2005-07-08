@@ -243,6 +243,7 @@
 class QTextStream;
 class QStringList;
 class MultipleChoice;
+class LeitnerSystem;
 
 /*************************************************************
   * This class contains the expressions of your vocabulary
@@ -590,6 +591,12 @@ class KEduVocDocument : public QObject
    */
   void setSizeHint (int index, const int width);
 
+  bool leitnerSystemActive();
+  void setLeitnerSystemActive(bool yes);
+  void createStandardLeitnerSystem();
+  void setLeitnerSystem( LeitnerSystem* system );
+  LeitnerSystem* getLeitnerSystem();
+
   bool unknownAttribute (int line, const QString &name, const QString &attr);
   void unknownElement (int line, const QString &elem );
   void errorKvtMl (int line, const QString &text );
@@ -671,6 +678,9 @@ protected:
 
   vector<Article>        articles;
   vector<Conjugation>    conjugations;
+
+  LeitnerSystem* 	 leitnerSystem;
+  bool			 activeLeitnerSystem;
 };
 
 
