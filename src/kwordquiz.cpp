@@ -46,6 +46,7 @@
 #include "prefs.h"
 #include "kwqnewstuff.h"
 #include "version.h"
+#include "prefleitner.h"
 
 #define ID_STATUS_MSG 1
 #define ID_STATUS_MSG_MODE 2
@@ -198,6 +199,15 @@ void KWordQuizApp::initActions()
   vocabShuffle = new KAction(i18n("Sh&uffle"), "shuffle", 0, this, SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
   vocabShuffle->setWhatsThis(i18n("Shuffles the entries of the active vocabulary"));
   vocabShuffle->setToolTip(vocabShuffle->whatsThis());
+
+  vocabLeitner = new KAction(i18n("Enable Leitner system"), "leitner", 0, this, SLOT(slotLeitnerSystem()), actionCollection(), "vocab_leitner");
+  vocabLeitner->setWhatsThis(i18n("Enables the Leitner system for the active vocabulary"));
+  vocabLeitner->setToolTip(vocabLeitner->whatsThis());
+
+  vocabConfigLeitner = new KAction(i18n("Configure Leitner system"), "config_leitner", 0, this, SLOT(slotConfigLeitner()), actionCollection(), "vocab_leitner_config");
+  vocabConfigLeitner->setWhatsThis(i18n("Configure the Leitner system used for the active vocabulary"));
+  vocabConfigLeitner->setToolTip(vocabConfigLeitner->whatsThis());
+  vocabConfigLeitner->setEnabled(false);
 
   mode = new KToolBarPopupAction(i18n("Change Mode"), "mode1", 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
@@ -1296,6 +1306,31 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
 
   toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
 
+}
+
+void KWordQuizApp::slotLeitnerSystem()
+{
+	if( doc->leitnerSystemActive() )
+	{
+		doc->setLeitnerSystemActive(false);
+		vocabLeitner->setText(i18n("Enable Leitner system"));
+		vocabConfigLeitner->setEnabled( false );
+	}
+	else
+	{
+		doc->setLeitnerSystemActive(true);
+		vocabLeitner->setText(i18n("Disable Leitner system"));
+		vocabConfigLeitner->setEnabled( true );
+	}
+}
+
+void KWordQuizApp::slotConfigLeitner()
+{
+	PrefLeitner* config = new PrefLeitner( this, "configLeitner", 0, doc->getLeitnerSystem() );
+	if( config->exec() == QDialog::Accepted )
+		doc->setLeitnerSystem( config->getSystem() );
+	
+	delete config;
 }
 
 #include "kwordquiz.moc"

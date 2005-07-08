@@ -182,6 +182,10 @@ class KWordQuizApp : public KMainWindow
     void slotVocabSort();
     /** shuffle the vocabulary */
     void slotVocabShuffle();
+    /** enable the Leitner system */
+    void slotLeitnerSystem();
+    /** configure the Leitner system */
+    void slotConfigLeitner();
 
     void slotMode0();
     /** mode 1 */
@@ -275,6 +279,8 @@ class KWordQuizApp : public KMainWindow
     KAction* vocabRC;
     KAction* vocabSort;
     KAction* vocabShuffle;
+    KAction* vocabLeitner;
+    KAction* vocabConfigLeitner;
 
     KToolBarPopupAction* mode;
     KToggleAction* mode1;

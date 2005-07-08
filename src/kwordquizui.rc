@@ -31,6 +31,8 @@
 
    <Action name="vocab_sort" />
    <Action name="vocab_shuffle" />
+   <Action name="vocab_leitner" />
+   <Action name="vocab_leitner_config" />
   </Menu>
   <Menu name="mode" >
    <text>&amp;Mode</text>
@@ -115,6 +117,8 @@
       <Action name="vocab_rc" />
       <Action name="vocab_sort" />
       <Action name="vocab_shuffle" />
+      <Action name="vocab_leitner" />
+      <Action name="vocab_leitner_config" />
     </Enable>
   </State>
   <State name="showingEdit">
