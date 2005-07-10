@@ -12,7 +12,7 @@ kwordquiz_SOURCES = kwordquizprefs.cpp kwordquizview.cpp kwordquiz.cpp main.cpp 
 	prefcardappearance.cpp prefcardappearancebase.ui kwqnewstuff.cpp kwqnewstuff.h \
 	keduvocdocument.cpp keduvocexpression.cpp keduvockvtmlreader.cpp keduvockvtmlwriter.cpp \
 	grammarmanager.cpp multiplechoice.cpp prefleitnerbase.ui leitnersystem.cpp leitnerbox.cpp \
-	leitnersystemview.cpp leitnerreader.cpp prefleitner.cpp
+	leitnersystemview.cpp prefleitner.cpp
 kwordquiz_LDADD = $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE) \
 	$(LIBSOCKET) $(LIB_KDEPRINT) -lknewstuff
 
@@ -72,4 +72,4 @@ noinst_HEADERS = qaview.h flashview.h multipleview.h wqquiz.h wqlistitem.h \
 	dlglanguage.h wqprintdialogpage.h prefcharacter.h wqlreader.h wqlwriter.h wqundo.h \
 	prefcardappearance.h keduvocdocument.h keduvocexpression.h keduvockvtmlreader.h \
 	keduvockvtmlwriter.h grammarmanager.h multiplechoice.h leitnersystem.h leitnerbox.h \
-	prefleitner.h leitnersystemview.h leitnerreader.h 
+	prefleitner.h leitnersystemview.h
