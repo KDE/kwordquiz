@@ -24,7 +24,7 @@
 #endif
 
 #include <qobject.h>
-
+#include <qfont.h>
 #include <kurl.h>
 
 #include "keduvocexpression.h"
@@ -229,6 +229,7 @@
 #define KV_CONJ_COMMON "common"      // female contains common for all three
 
 #define LEX_IDENT_50   "Vocabulary Trainer V5.0"
+#define WQL_IDENT      "WordQuiz"
 
 #define KVTML_EXT        "kvtml"
 #define VT5_LEX_EXT      "lex"
@@ -237,6 +238,7 @@
 #define KVL_EXT          "vl"
 #define CSV_EXT          "csv"
 #define TXT_EXT          "txt"
+#define WQL_EXT          "wql"
 
 #define VCB_SEPARATOR    "__"
 
@@ -254,11 +256,13 @@ class KEduVocDocument : public QObject
   Q_OBJECT
   friend class KEduVocKvtmlWriter;
   friend class KEduVocKvtmlReader;
+  friend class KEduVocWqlReader;
  
  public:
 
   enum FileType { kvd_none, automatic,
                   kvtml,
+                  wql,
                   kvtbin,
                   vt_lex, vt_vcb, csv /*, kvoclearn, qvocab*/ };
 
@@ -297,6 +301,11 @@ class KEduVocDocument : public QObject
    * @param index           index of entry
    */
   void removeEntry (int index);
+
+  /** removes all entries from doc (clears vocabulary)
+   */
+  inline void removeAllEntries ()
+    { vocabulary.clear(); dirty = true; }
 
   /** sorts vocabulary alphabetically
    *
@@ -500,6 +509,9 @@ class KEduVocDocument : public QObject
   /** returns remark of file  */
   QString getDocRemark() const;
 
+  /** returns font  */
+  QFont* getFont() const;
+
   inline void getQueryLang(QString &org, QString &trans) const
     { org = queryorg; trans = querytrans; }
 
@@ -517,6 +529,9 @@ class KEduVocDocument : public QObject
 
   /** sets remark of file  */
   void setDocRemark(const QString & rem);
+
+  /** sets font  */
+  void setFont(QFont *font);
 
   /** gets version of loaded file  */
   void getVersion(int &major, int &minor, int &patch);
@@ -661,6 +676,8 @@ protected:
   int                    current_lesson;
   vector<int>            extraSizehints;
   vector<int>            sizehints;
+  QFont*                 font;
+
   QString                generator;
   QString                queryorg,
                          querytrans;
@@ -679,8 +696,8 @@ protected:
   vector<Article>        articles;
   vector<Conjugation>    conjugations;
 
-  LeitnerSystem* 	 leitnerSystem;
-  bool			 activeLeitnerSystem;
+  LeitnerSystem* 	     leitnerSystem;
+  bool			         activeLeitnerSystem;
 };
 
 

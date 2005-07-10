@@ -1068,24 +1068,24 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
   //-----------
   // Attributes
 
-    if (!readExpressionChildAttributes( domElementExpressionChild,
-                                        lang,
-                                        grade,  r_grade,
-                                        qcount, r_qcount,
-                                        qdate,  r_qdate,
-                                        remark,
-                                        bcount, r_bcount,
-                                        query_id,
-                                        pronunce,
-                                        width,
-                                        type,
-                                        faux_ami_t,
-                                        faux_ami_f,
-                                        synonym,
-                                        example,
-                                        antonym,
-                                        usage,
-                                        paraphrase))
+  if (!readExpressionChildAttributes( domElementExpressionChild,
+                                      lang,
+                                      grade,  r_grade,
+                                      qcount, r_qcount,
+                                      qdate,  r_qdate,
+                                      remark,
+                                      bcount, r_bcount,
+                                      query_id,
+                                      pronunce,
+                                      width,
+                                      type,
+                                      faux_ami_t,
+                                      faux_ami_f,
+                                      synonym,
+                                      example,
+                                      antonym,
+                                      usage,
+                                      paraphrase))
     return false;
 
 

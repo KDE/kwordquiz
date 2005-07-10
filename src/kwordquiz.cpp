@@ -346,10 +346,10 @@ void KWordQuizApp::initDocument()
 void KWordQuizApp::initView()
 {
   m_editView = new KWordQuizView(this);
+  m_editView->setFont(Prefs::editorFont());
   m_editView->displayDoc();
   setCentralWidget(m_editView);
   setCaption(doc->URL().fileName(),false);
-  m_editView->setFont(Prefs::editorFont());
   connect(m_editView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
@@ -397,6 +397,8 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
     doc->open(url, false);
+    if (doc->getFont() == NULL)
+      doc->setFont(new QFont(Prefs::editorFont()));
     m_editView->displayDoc();
     m_dirWatch->addFile(url.path());
     setCaption(doc->URL().fileName(), false);
@@ -459,6 +461,9 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
     if(canRecover)
     {
       doc->open(_url, false);
+      if (doc->getFont() == NULL)
+        doc->setFont(new QFont(Prefs::editorFont()));
+      m_editView->displayDoc();
       doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
@@ -469,6 +474,9 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
     if(!filename.isEmpty())
     {
       doc->open(url, false);
+      if (doc->getFont() == NULL)
+        doc->setFont(new QFont(Prefs::editorFont()));
+      m_editView->displayDoc();
       setCaption(url.fileName(),false);
     }
   }
@@ -845,7 +853,8 @@ void KWordQuizApp::slotVocabFont()
   dlg->setFont(m_editView -> font());
   if (dlg->exec() == KFontDialog::Accepted)
   {
-    m_editView ->setFont(dlg->font());
+    doc->setFont(new QFont(dlg->font()));
+    m_editView->setFont(dlg->font());
     Prefs::setEditorFont(dlg->font());
     doc->setModified(true);
   }

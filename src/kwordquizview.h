@@ -27,11 +27,8 @@
 
 #include <kprinter.h>
 
-#include "wqlreader.h"
 #include "wqundo.h"
 
-#include <kprinter.h>
-#include "wqundo.h"
 //include <wqviewbase.h>
 
 class KEduVocDocument;

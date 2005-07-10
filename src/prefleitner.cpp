@@ -145,4 +145,4 @@ LeitnerSystem* PrefLeitner::getSystem()
 	return m_selectedSystem;
 }
 
-#include "prefleitner.moc"
+//#include "prefleitner.moc"

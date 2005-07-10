@@ -37,6 +37,8 @@ using namespace std;
 
 #include "keduvockvtmlwriter.h"
 #include "keduvockvtmlreader.h"
+#include "keduvocwqlwriter.h"
+#include "keduvocwqlreader.h"
 #include "leitnersystem.h"
 //#include "prefs.h"
 
@@ -52,6 +54,7 @@ KEduVocDocument::KEduVocDocument(QObject *parent)
 
 KEduVocDocument::~KEduVocDocument()
 {
+  delete font;
 }
 
 
@@ -87,9 +90,12 @@ void KEduVocDocument::Init ()
   doc_url.setFileName(i18n("Untitled"));
   doctitle = "";
   author = "";
+  doc_remark = "";
+  doc_version = "";
+  font = NULL;
 
   activeLeitnerSystem = false;
-  leitnerSystem = 0;
+  leitnerSystem = NULL;
 }
 
 
@@ -122,6 +128,13 @@ bool KEduVocDocument::open(const KURL& url, bool append)
         {
           KEduVocKvtmlReader kvtmlReader(&f);
           read = kvtmlReader.readDoc(this);
+        }
+        break;
+
+        case wql:
+        {
+          KEduVocWqlReader wqlReader(&f);
+          read = wqlReader.readDoc(this);
         }
         break;
 
@@ -190,6 +203,8 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft, con
   {
     if (tmp.path().right(strlen("." KVTML_EXT)) == "." KVTML_EXT)
       ft = kvtml;
+    else if (tmp.path().right(strlen("." WQL_EXT)) == "." WQL_EXT)
+      ft = wql;
     else if (tmp.path().right(strlen("." VT5_LEX_EXT)) == "." VT5_LEX_EXT)
       ft = vt_lex;
     else if (tmp.path().right(strlen("." VCB_EXT)) == "." VCB_EXT)
@@ -220,6 +235,12 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft, con
       case kvtml: {
         KEduVocKvtmlWriter kvtmlWriter(&f);
         saved = kvtmlWriter.writeDoc(this, generator);
+      }
+      break;
+
+      case wql: {
+        KEduVocWqlWriter wqlWriter(&f);
+        saved = wqlWriter.writeDoc(this);
       }
       break;
 
@@ -857,6 +878,12 @@ QString KEduVocDocument::getDocRemark() const
 }
 
 
+QFont* KEduVocDocument::getFont() const
+{
+  return font;
+}
+
+
 void KEduVocDocument::setTitle(const QString & title)
 {
   doctitle = title.stripWhiteSpace();
@@ -878,6 +905,13 @@ void KEduVocDocument::setLicense(const QString & s)
 void KEduVocDocument::setDocRemark(const QString & s)
 {
   doc_remark = s.stripWhiteSpace();
+}
+
+
+void KEduVocDocument::setFont(QFont* font)
+{
+  delete this->font;
+  this->font = font;
 }
 
 
@@ -994,6 +1028,9 @@ KEduVocDocument::FileType KEduVocDocument::detectFT(const QString &filename)
      return kvd_none;
    if (c1 == '<' && c2 == '?' && c3 == 'x' && c4 == 'm' && c5 == 'l')
      return kvtml;
+
+   if (line == WQL_IDENT)
+     return wql;
 
    if (line.find (VCB_SEPARATOR) >= 0)
      return vt_vcb;

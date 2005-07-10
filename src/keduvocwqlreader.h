@@ -1,7 +1,8 @@
 /***************************************************************************
-                          wqlwriter.h  -  description
-                             -------------------
-   copyright            : (C) 2004 by Peter Hedlund
+                     read a KEduVocDocument from a WQL file
+    -----------------------------------------------------------------------
+    copyright            : (C) 2004 Peter Hedlund
+                         : (c) 2005 The KDE-EDU team
     email                : peter@peterandlinda.com
  ***************************************************************************/
 
@@ -13,30 +14,27 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#ifndef WQLWRITER_H
-#define WQLWRITER_H
+
+#ifndef KEDUVOCWQLREADER_H
+#define KEDUVOCWQLREADER_H
 
 #include <qfile.h>
-#include <qtextstream.h>
-#include <qfont.h>
 
-/**
-@author Peter Hedlund
-*/
-class WqlWriter{
+#include "keduvocdocument.h"
+
+class KEduVocDocument;
+
+class KEduVocWqlReader : public QObject
+{
 public:
-  WqlWriter(QFile *file);
+	KEduVocWqlReader(QFile *file);
+	~KEduVocWqlReader();
 
-  ~WqlWriter();
-  void writeFont(const QFont & font);
-  void writeCharacters(const QString & s);
-  void writeGridInfo(int col0, int col1, int col2, int numRows);
-  void writeSelection(int lc, int tr, int rc, int br);
-  void writeFirstItem(const QString &ll, const QString &rl);
-  void writeItem(const QString &left, const QString &right, int rh);
+	bool readDoc(KEduVocDocument *doc);
+
 private:
-  QFile *outputFile;
-  QTextStream outputStream;
+  QFile *m_inputFile;
+  KEduVocDocument *m_doc;
 };
 
 #endif

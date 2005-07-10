@@ -18,7 +18,7 @@
 
 #include <qtable.h>
 
-#include "wqlreader.h"
+#include "keduvocexpression.h"
 
 /**
 @author Peter Hedlund
@@ -34,8 +34,6 @@ public:
   void setColWidth1(int cw) {m_colWidth1 = cw;};
   int colWidth2() {return m_colWidth2;};
   void setColWidth2(int cw) {m_colWidth2 = cw;};
-  int numRows() {return m_numRows;};
-  void setNumRows(int n) {m_numRows = n;};      
   
   int currentRow() {return m_currentRow;};
   void setCurrentRow(int r) {m_currentRow = r;};
@@ -44,8 +42,8 @@ public:
   QTableSelection selection() const {return m_selection;};
   void setSelection(const QTableSelection & sel) {m_selection = sel;};
   
-  KWqlDataItemList list() const {return m_list;};
-  void setList(const KWqlDataItemList & list) {m_list = list;};
+  QValueList<KEduVocExpression> list() const {return m_list;};
+  void setList(const QValueList<KEduVocExpression> & list) {m_list = list;};
   
   QString text() const {return m_text;};
   void setText(const QString & s) {m_text = s;};
@@ -55,11 +53,10 @@ private:
   int m_colWidth0;
   int m_colWidth1;
   int m_colWidth2;
-  int m_numRows;
   int m_currentRow;
   int m_currentCol;
   QTableSelection m_selection;
-  KWqlDataItemList m_list;
+  QValueList<KEduVocExpression> m_list;
   
   QString m_text;
 };

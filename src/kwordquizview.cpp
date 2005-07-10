@@ -78,12 +78,15 @@ void KWordQuizView::displayDoc()
   horizontalHeader()->setLabel(1, getDocument()->getIdent(1));
   setColumnWidth(0, getDocument()->getSizeHint(0));
   setColumnWidth(1, getDocument()->getSizeHint(1));
+  if (getDocument()->getFont() != NULL)
+    setFont(*(getDocument()->getFont()));
 
   for (int i=0; i<getDocument()->numEntries(); i++)
   {
     setText(i, 0, getDocument()->getEntry(i)->getOriginal());
     setText(i, 1, getDocument()->getEntry(i)->getTranslation(1));
   }
+  
 }
 
 KEduVocDocument *KWordQuizView::getDocument() const
@@ -311,13 +314,15 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
 
   if ((cellWidget(row, col) != 0) && accept) //if edited the cellWidget still exists
   {
-    if (col == 0)
-      getDocument()->getEntry(row)->setOriginal(((QLineEdit *) cellWidget(row, col))->text());
-    else
-      getDocument()->getEntry(row)->setTranslation(1, ((QLineEdit *) cellWidget(row, col))->text());
-    
     if (((QLineEdit *) cellWidget(row, col))->text() != m_currentText)
+    {
       addUndo(i18n("&Undo Entry"));
+      if (col == 0)
+        getDocument()->getEntry(row)->setOriginal(((QLineEdit *) cellWidget(row, col))->text());
+      else
+        getDocument()->getEntry(row)->setTranslation(1, ((QLineEdit *) cellWidget(row, col))->text());
+    }
+    
     QTable::endEdit(row, col, accept, replace); //this will destroy the cellWidget
     if (!text(row, col).isEmpty())
     {
@@ -363,9 +368,6 @@ void KWordQuizView::saveCurrentSelection(bool clear = true)
   }
 }
 
-// TODO Handle undo with the new document class
-// The KWqlDataItemList is no more sufficient, it will cause data losses. We have to store
-// KEduVocExpressions in the list.
 void KWordQuizView::doEditUndo( )
 {
   if (isEditing())
@@ -380,28 +382,27 @@ void KWordQuizView::doEditUndo( )
     {
       setUpdatesEnabled(false);
       undo = m_undoList->first();
-      setFont(undo.font());
+      getDocument()->setFont(new QFont(undo.font()));
       verticalHeader()->setMinimumWidth(undo.colWidth0());
       getDocument()->setSizeHint(0, undo.colWidth1());
       getDocument()->setSizeHint(1, undo.colWidth2());
-      setNumRows(0);
-      setNumRows(undo.numRows());
-      setCurrentCell(undo.currentRow(), undo.currentCol());
-      addSelection(undo.selection());
 
-      QString s;
-      int i = 0;
-      KWqlDataItemList dataList = undo.list();
-      KWqlDataItemList::ConstIterator end(dataList.end());
-      for(KWqlDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
+      getDocument()->removeAllEntries();
+      /*      while (getDocument()->numEntries() > 0)
+        getDocument()->removeEntry (0);*/
+
+      QValueList<KEduVocExpression> dataList = undo.list();
+      QValueList<KEduVocExpression>::Iterator end(dataList.end());
+      for(QValueList<KEduVocExpression>::Iterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
       {
-        getDocument()->getEntry(i)->setOriginal((*dataIt).frontText());
-        getDocument()->getEntry(i)->setTranslation(1, (*dataIt).backText());
-        setRowHeight(i, (*dataIt).rowHeight());
-        i++;
+        getDocument()->appendEntry(&(*dataIt));
+        // TODO EPT setRowHeight(i, (*dataIt).rowHeight());
       }
       displayDoc();
 
+      setCurrentCell(undo.currentRow(), undo.currentCol());
+      addSelection(undo.selection());
+      
       m_undoList->remove(m_undoList->begin());
       setUpdatesEnabled(true);
     }
@@ -1028,20 +1029,20 @@ void KWordQuizView::addUndo( const QString & caption )
 
   WQUndo* undo = new WQUndo();
   undo->setText(caption);
-  undo->setFont(font());
+  if (getDocument()->getFont() != NULL)
+    undo->setFont(*(getDocument()->getFont()));
   undo->setColWidth0(verticalHeader()->width());
   undo->setColWidth1(columnWidth(0));
   undo->setColWidth2(columnWidth(1));
-  undo->setNumRows(numRows());
   undo->setCurrentRow(currentRow());
   undo->setCurrentCol(currentColumn());
   undo->setSelection(selection(0));
 
-  KWqlDataItemList list;
+  QValueList<KEduVocExpression> list;
   for(int i = 0; i < numRows(); i++)
   {
-    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
-    list.append(item);
+//    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
+    list.append(*getDocument()->getEntry(i));
   }
 
   undo->setList(list);
@@ -1059,7 +1060,8 @@ void KWordQuizView::setFont( const QFont & font)
   horizontalHeader()->setFont(KGlobalSettings::generalFont());
   verticalHeader()->setFont(KGlobalSettings::generalFont());
   for (int i = 0; i < numRows(); ++i)
-    adjustRow(i); //setRowHeight(i, fontMetrics().lineSpacing() );
+    // we adjust rows here because big fonts need big cells
+    adjustRow(i);
 }
 
 void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg )
