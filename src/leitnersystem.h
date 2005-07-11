@@ -45,13 +45,22 @@ public:
 	
 	const QString& getCorrectBox( int box );	//returns the correct word box of "int box"
 	const QString& getWrongBox( int box );		//returns the wrong word box of "int box"
+
 	int getWrongBoxNumber( int box );
 	int getCorrectBoxNumber( int box );
+
 	void setCorrectBox( const QString& box, const QString& correctWordBox );
 	void setWrongBox( const QString& box, const QString& wrongWordBox );
+
 	bool setBoxName( int box, const QString& name );
 	bool setBoxName( LeitnerBox* box, const QString& name );
 	
+	void setBoxVocabCount( QString& box, int vocabCount );
+	int getBoxVocabCount( QString& box );
+
+	void incrementBoxVocabCount( QString& box );
+ 	void decrementBoxVocabCount( QString& box );
+
 	//inserts a box with number, name, correct and wrong word box
 	bool insertBox( const QString& name, int correctWordBox, int wrongWordBox );
 	bool insertBox( const QString& name );

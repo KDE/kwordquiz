@@ -33,11 +33,6 @@ LeitnerSystemView::~LeitnerSystemView()
 
 void LeitnerSystemView::drawSystem(QPainter* p)
 {
-	kdDebug() << "drawSystem( )" << endl;
-	
-
-	//einarbeiten von m_selectedBox... aus prefLeitner
-	
 	m_imageY = height() / 2 - 32;
 
 	//draw the boxes' icons
@@ -69,23 +64,25 @@ void LeitnerSystemView::drawConnections(QPainter* p)
 	//paint the connections for the correct word boxes, above the boxes 
 	for(int i = 0; i < numberOfBoxes; i++)
 	{
-		dist = m_leitnerSystem->getCorrectBoxNumber( i ) - i;
+		if( m_leitnerSystem->getCorrectBoxNumber( i ) != -1 )
+		{
+			dist = m_leitnerSystem->getCorrectBoxNumber( i ) - i;
 				
-		if(dist <= 0)
-		{
-		        // (dist*(-1) -1)*64 == for each box in between take 64
-		        // dist*(-1)*10 == the gaps in between
-		        // 2*22; 2*21 == the distances of the endings on the picture 
-			width = (dist*(-1) -1)*64 + dist*(-1)*10 + 2*22 + 2*21; 
+			if(dist <= 0)
+			{
+		        	// (dist*(-1) -1)*64 == for each box in between take 64
+		        	// dist*(-1)*10 == the gaps in between
+		        	// 2*22; 2*21 == the distances of the endings on the picture 
+				width = (dist*(-1) -1)*64 + dist*(-1)*10 + 2*22 + 2*21; 
 			 
-			p->drawArc( 12 + (dist+i)*74 + 21, m_imageY-(width/3), width, /*(height()/2 - 12-32) *2*/ width/3*2, 0, 180*16);
-		}
-		else
-		{
-			width = (dist-1)*64 + dist*10 + 2*21;
-			p->drawArc(12 + i*74 + 21+22 ,m_imageY-(width/3) , width, /*(height()/2 - 12-32) *2*/width/3*2, 0, 180*16);
-		}
-		
+				p->drawArc( 12 + (dist+i)*74 + 21, m_imageY-(width/3), width, /*(height()/2 - 12-32) *2*/ width/3*2, 0, 180*16);
+			}
+			else
+			{
+				width = (dist-1)*64 + dist*10 + 2*21;
+				p->drawArc(12 + i*74 + 21+22 ,m_imageY-(width/3) , width, /*(height()/2 - 12-32) *2*/width/3*2, 0, 180*16);
+			}
+		}	
 	}
 	
 	//paint the connections for the wrong word boxes, below the boxes
@@ -93,20 +90,22 @@ void LeitnerSystemView::drawConnections(QPainter* p)
 
 	for(int i = 0; i < numberOfBoxes; i++)
 	{
-		dist = m_leitnerSystem->getWrongBoxNumber( i ) - i;
+		if( m_leitnerSystem->getWrongBoxNumber( i ) != -1 )
+		{
+			dist = m_leitnerSystem->getWrongBoxNumber( i ) - i;
 				
-		if(dist <= 0)
-		{
-			width = (dist*(-1) -1)*64 + dist*(-1)*10 + 2*22 + 2*21; 
-			p->drawArc(12+ (dist+i)*74 + 21 ,m_imageY+64-width/3 , width, width/3*2 , 180*16, 180*16);
-		}
-		else
-		{
-			width = (dist-1)*64 + dist*10 + 2*21;
-			p->drawArc(12 + i*74 + 21+22 ,m_imageY+64-width/3 , width, width/3*2, 180*16, 180*16);
+			if(dist <= 0)
+			{
+				width = (dist*(-1) -1)*64 + dist*(-1)*10 + 2*22 + 2*21; 
+				p->drawArc(12+ (dist+i)*74 + 21 ,m_imageY+64-width/3 , width, width/3*2 , 180*16, 180*16);
+			}	
+			else
+			{
+				width = (dist-1)*64 + dist*10 + 2*21;
+				p->drawArc(12 + i*74 + 21+22 ,m_imageY+64-width/3 , width, width/3*2, 180*16, 180*16);
+			}
 		}
 	}
-
 }
 
 void LeitnerSystemView::setSystem(LeitnerSystem* leitnersystem)
@@ -116,10 +115,6 @@ void LeitnerSystemView::setSystem(LeitnerSystem* leitnersystem)
 	//calculate the new sizes
 	calculateSize();
 	updateContents();
-	//repaint
-	//update();
-	//QPainter* p = new QPainter(this);
-	//drawContents( p, 0, 0, 0, 0 );
 }
 
 void LeitnerSystemView::highlightBox(int box)
@@ -130,7 +125,6 @@ void LeitnerSystemView::highlightBox(int box)
 
 void LeitnerSystemView::drawContents(QPainter* p, int clipx, int clipy, int clipw, int cliph)
 {
-	kdDebug() << "drawContents" << endl;
 	p->eraseRect(0,0,width(),height()); 
 	
 	drawSystem( p );
@@ -153,21 +147,27 @@ void LeitnerSystemView::calculateSize()
 
 	for(int i = 0; i < numberOfBoxes; i++)
 	{
-		dist = m_leitnerSystem->getCorrectBoxNumber( i ) - i;
+		if( m_leitnerSystem->getCorrectBoxNumber( i ) != -1 )
+		{	
+			dist = m_leitnerSystem->getCorrectBoxNumber( i ) - i;
 				
-		if( abs(dist) >= abs(tmpMaxC) )
-			tmpMaxC = dist;
-	
-		dist = m_leitnerSystem->getWrongBoxNumber( i ) - i;
+			if( abs(dist) >= abs(tmpMaxC) )
+				tmpMaxC = dist;
+		}
 		
-		if( abs(dist) >= abs(tmpMaxW) )
-			tmpMaxW = dist;
+		if( m_leitnerSystem->getWrongBoxNumber( i ) != -1 )
+		{
+			dist = m_leitnerSystem->getWrongBoxNumber( i ) - i;
+		
+			if( abs(dist) >= abs(tmpMaxW) )
+				tmpMaxW = dist;
+		}
 	}
-	
+
 	if( tmpMaxC <= 0 )
 		height += (( abs(tmpMaxC) -1)*64 + abs(tmpMaxC)*10 + 2*22 + 2*21)/3;
 	else
-		height += (( tmpMaxC-1)*64 + tmpMaxC*10 + 2*21)/3;
+		height += ((tmpMaxC-1)*64 + tmpMaxC*10 + 2*21)/3;
 	
 	if( tmpMaxW <= 0 )
 		height += (( abs(tmpMaxW) -1)*64 + abs(tmpMaxW)*10 + 2*22 + 2*21)/3;
@@ -175,7 +175,7 @@ void LeitnerSystemView::calculateSize()
 		height += (( tmpMaxW-1)*64 + tmpMaxW*10 + 2*21)/3;
 
 	height += 24+64;
-	
+
 	resizeContents( numberOfBoxes * 64 + (numberOfBoxes - 1)*10 + 2 * 12, height );
 	setMinimumSize( numberOfBoxes * 64 + (numberOfBoxes - 1)*10 + 2 * 12, height );
 }
@@ -184,7 +184,7 @@ void LeitnerSystemView::mousePressEvent(QMouseEvent* e)
 {
 	kdDebug() << "mouseClick" << endl;
 	//if the user has clicked into a box
-	if(e->y() > m_imageY && e->y() < m_imageY + 64 && e->x() < width()-13)
+	if( e->y() > m_imageY && e->y() < m_imageY + 64 && e->x() < contentsWidth() )
 	{
 		int d = (e->x()-12)/74;
 		
@@ -196,20 +196,6 @@ void LeitnerSystemView::mousePressEvent(QMouseEvent* e)
 			
 			updateContents();
 		}
-		else
-		{
-			emit boxClicked( -1 );
-			m_highlightedBox = -1;
-			
-			updateContents();
-		}
-	}
-	else
-	{
-		emit boxClicked( -1 );
-		m_highlightedBox = -1;
-			
-		updateContents();
 	}
 }
 
