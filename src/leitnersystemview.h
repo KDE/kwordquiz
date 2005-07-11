@@ -48,7 +48,6 @@ private:
 	void drawConnections(QPainter*);		//paints the arrows between the boxes
 	void calculateSize();
 
-	//QRect m_viewArea;
 	int m_imageY; 				//high border of the images
 	int m_distPixmap;
 	int m_highlightedBox;			//the box which is currently highlighted

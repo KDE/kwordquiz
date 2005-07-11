@@ -104,12 +104,21 @@ int LeitnerSystem::getCorrectBoxNumber( int box )
 
 void LeitnerSystem::deleteBox( int box )
 {
-	m_boxes.remove( m_boxes.at( box ) );
+	deleteBox( &(*m_boxes.at( box )) );
 }
 
 void LeitnerSystem::deleteBox( LeitnerBox* box )
 {
-	m_boxes.remove( *box ); 
+	for( int i = 0; i < m_boxes.count(); i++ )
+	{
+		if( m_boxes[i].getCorrectWordBox() == box )
+			m_boxes[i].setCorrectWordBox( 0 );
+
+		if( m_boxes[i].getWrongWordBox() == box )
+			m_boxes[i].setWrongWordBox( 0 );
+	}
+
+	m_boxes.remove( *box );
 }
 
 bool LeitnerSystem::insertBox( const QString& name, int correctWordBox, int wrongWordBox )
@@ -133,8 +142,9 @@ void LeitnerSystem::setSystemName( const QString& name )
 
 int LeitnerSystem::getNumber( LeitnerBox* box )
 {
-	if( m_boxes.findIndex( *box ) == -1 )
-		kdDebug() << "muhaha" << endl;
+	if( box == 0 )
+		return -1;
+
 	return m_boxes.findIndex( *box );
 }
 
@@ -169,7 +179,6 @@ bool LeitnerSystem::insertBox( const QString& name )
 	
 	LeitnerBox tmpBox;
 	tmpBox.setBoxName( name );
-	//tmpBox.setVocabCount( count );
 		
 	m_boxes.append( tmpBox );
 	return true;
@@ -189,3 +198,26 @@ const QString& LeitnerSystem::getBox( int i )
 {
 	return getBoxWithNumber( i )->getBoxName();
 }
+
+void LeitnerSystem::setBoxVocabCount( QString& box, int vocabCount )
+{
+	getBoxWithName( box )->setVocabCount( vocabCount );
+}
+
+int LeitnerSystem::getBoxVocabCount( QString& box )
+{
+	return getBoxWithName( box )->getVocabCount();
+}
+
+void LeitnerSystem::incrementBoxVocabCount( QString& box )
+{
+	int tmp = getBoxWithName( box )->getVocabCount();
+	getBoxWithName( box )->setVocabCount( tmp++ );
+}
+
+void LeitnerSystem::decrementBoxVocabCount( QString& box )
+{
+	int tmp = getBoxWithName( box )->getVocabCount();
+	getBoxWithName( box )->setVocabCount( tmp-- );
+}
+
