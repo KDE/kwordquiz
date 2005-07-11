@@ -35,6 +35,7 @@
 
 // forward declaration of the KWordQuiz classes
 #include "wqquiz.h"
+#include "kwordquizview.h"
 class KEduVocDocument;
 class KWordQuizView;
 class KWordQuizPrefs;
@@ -77,6 +78,9 @@ class KWordQuizApp : public KMainWindow
     KEduVocDocument *getDocument() const;
 
     bool saveAsFileName();
+    
+    bool checkSyntax(bool blanks);
+
   protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file

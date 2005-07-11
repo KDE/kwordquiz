@@ -533,6 +533,28 @@ bool KWordQuizApp::queryExit()
   return true;
 }
 
+bool KWordQuizApp::checkSyntax(bool blanks)
+{
+  int errorCount = 0;
+
+  for (int r = 0; r < doc->numEntries(); ++r)
+  {
+    QString s = doc->getEntry(r)->getOriginal();
+    if (s.length() > 0)
+      for (uint i = 0; i <= s.length(); ++i)
+        if (s[i] == delim_start || s[i] == delim_end)
+          if (!m_editView->checkForBlank(s, blanks))
+            errorCount++;
+    s = doc->getEntry(r)->getTranslation(1);
+    if (s.length() > 0)
+      for (uint i = 0; i <= s.length(); ++i)
+        if (s[i] == delim_start || s[i] == delim_end)
+          if (!m_editView->checkForBlank(s, blanks))
+            errorCount++;
+    }
+  return (errorCount == 0);
+}
+
 /////////////////////////////////////////////////////////////////////
 // SLOT IMPLEMENTATION
 /////////////////////////////////////////////////////////////////////
@@ -1017,7 +1039,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_editView -> setFocus();
       break;
     case WQQuiz::qtFlash:
-      m_quiz = new WQQuiz(m_editView);
+      m_quiz = new WQQuiz(this, doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Prefs::mode());
@@ -1045,7 +1067,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       }
       break;
     case WQQuiz::qtMultiple:
-      m_quiz = new WQQuiz(m_editView);
+      m_quiz = new WQQuiz(this, doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
       m_quiz->setQuizMode(Prefs::mode());
@@ -1072,7 +1094,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       }
       break;
     case WQQuiz::qtQA:
-      m_quiz = new WQQuiz(m_editView);
+      m_quiz = new WQQuiz(this, doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtQA);
       m_quiz->setQuizMode(Prefs::mode());

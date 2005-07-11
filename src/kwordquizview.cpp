@@ -620,10 +620,6 @@ void KWordQuizView::doEditDelete( )
   getDocument()->setModified(true);
 }
 
-const char delim_start = '[';
-const char delim_end = ']';
-
-
 bool KWordQuizView::checkForBlank( const QString  & s, bool blank )
 {
   if (!blank)
@@ -770,40 +766,6 @@ void KWordQuizView::doEditUnmarkBlank( )
         setText(r, c, s);
       }
   }
-}
-
-bool KWordQuizView::checkSyntax(bool all, bool blanks)
-{
-  int errorCount = 0;
-  int r1, r2, c1 ,c2;
-
-  if (all)
-  {
-    r1 = 0;
-    r2 = numRows() - 1;
-    c1 = 0;
-    c2 = 1;
-  }
-  else
-  {
-    saveCurrentSelection(false);
-    r1 = m_currentSel.topRow();
-    r2 = m_currentSel.bottomRow();
-    c1 = m_currentSel.leftCol();
-    c2 = m_currentSel.rightCol();
-  }
-
-  for (int r = r1; r <= r2; ++r)
-    for(int c = c1 ; c <= c2 ; ++c )
-    {
-      QString s = text(r, c);
-      if (s.length() > 0)
-        for (uint i = 0; i <= s.length(); ++i)
-          if (s[i] == delim_start || s[i] == delim_end)
-            if (!checkForBlank(s, blanks))
-              errorCount++;
-    }
-  return (errorCount == 0);
 }
 
 void KWordQuizView::doVocabSort( )

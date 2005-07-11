@@ -34,6 +34,9 @@
 class KEduVocDocument;
 class DlgSpecChar;
 
+const char delim_start = '[';
+const char delim_end = ']';
+
 /**
 @author Peter Hedlund
 */
@@ -85,8 +88,8 @@ class KWordQuizView : public QTable
     void doVocabShuffle();
     void doVocabRC();
     void doVocabSpecChar();
-    bool checkSyntax(bool all, bool blanks);
     void saveCurrentSelection(bool clear);
+    bool checkForBlank(const QString & s, bool blank);
   protected:
     QWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );
@@ -116,7 +119,6 @@ class KWordQuizView : public QTable
 
     void doNewPage(QPainter & painter, int res, int type);
     void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
-    bool checkForBlank(const QString & s, bool blank);
 };
 
 #endif // KWORDQUIZVIEW_H

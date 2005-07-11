@@ -22,7 +22,7 @@
 #include <qtable.h>
 
 #include "wqlistitem.h"
-#include "kwordquizview.h"
+#include "keduvocdocument.h"
 
 /**
 @author Peter Hedlund
@@ -35,7 +35,7 @@ class WQQuiz : public QObject
     enum QuizType {qtEditor, qtFlash, qtMultiple, qtQA};
     enum QuizIcon {qiLeftCol, qiRightCol, qiQuestion, qiCorrect, qiError};
 
-    WQQuiz(KWordQuizView * parent, const char * name=0);
+    WQQuiz(QWidget *parent, KEduVocDocument *doc, const char *name=0);
     ~WQQuiz();
     void activateErrorList();
     void activateBaseList();
@@ -67,7 +67,8 @@ class WQQuiz : public QObject
     void checkingAnswer(int );
 
   private:
-    KWordQuizView *m_table;
+    QWidget *m_app;
+    KEduVocDocument *m_doc;
     int m_quizMode;
     int m_questionCount;
     static QPtrList<WQListItem> *m_list;
