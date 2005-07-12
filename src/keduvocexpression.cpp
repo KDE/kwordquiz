@@ -790,3 +790,13 @@ void KEduVocExpression::setType (int idx, const QString &type)
   exprtypes[idx] = type.stripWhiteSpace();
 }
 
+void KEduVocExpression::setLeitnerBox( const QString& box )
+{
+	leitnerBox = box;
+}
+
+QString& KEduVocExpression::getLeitnerBox()
+{	
+	return leitnerBox;
+}
+

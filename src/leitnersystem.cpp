@@ -92,6 +92,16 @@ const QString& LeitnerSystem::getWrongBox( int box )
 	return m_boxes[ box ].getWrongWordBox()->getBoxName();
 }
 
+const QString& LeitnerSystem::getCorrectBox( QString& box )
+{
+	return getBoxWithName( box )->getCorrectWordBox()->getBoxName();
+}
+
+const QString& LeitnerSystem::getWrongBox( QString& box )
+{
+	return getBoxWithName( box )->getWrongWordBox()->getBoxName();
+}
+
 int LeitnerSystem::getWrongBoxNumber( int box )
 {
 	return getNumber( m_boxes[ box ].getWrongWordBox() );

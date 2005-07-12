@@ -20,6 +20,7 @@
 
 #include <qregexp.h>
 
+#include "leitnersystem.h"
 #include "kwordquiz.h"
 #include "wqquiz.h"
 #include "prefs.h"
@@ -279,11 +280,16 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
     }
 
   }
+	
+  QString tmpLeitner( m_doc->getEntry(li->oneOp())->getLeitnerBox() );
 
   if (!result)
   {
+    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->getWrongBox( tmpLeitner ));
     m_errorList -> append(li);
   }
+  else
+    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->getCorrectBox( tmpLeitner ));
 
   return result;
 }

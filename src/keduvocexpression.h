@@ -416,6 +416,18 @@ class KEduVocExpression
    */
   void incQueryCount (int index, bool rev_count = false);
 
+  /** sets the box of the Leitner system which actually contains the expression
+   *
+   * @param box		     the box's name
+   */
+  void setLeitnerBox(const QString& box);
+
+  /** returns the name of the Leitner system's box actually containing the expression
+   *
+   * @result		     the box's name
+   */
+  QString& getLeitnerBox();
+
  protected:
 
   void Init();
@@ -447,6 +459,7 @@ class KEduVocExpression
   vector<Comparison>  comparisons;
   vector<MultipleChoice> mcs;
 
+  QString 	     leitnerBox;
   int                lesson;
   bool               inquery;
   bool               active;

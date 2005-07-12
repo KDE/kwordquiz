@@ -45,6 +45,8 @@ public:
 	
 	const QString& getCorrectBox( int box );	//returns the correct word box of "int box"
 	const QString& getWrongBox( int box );		//returns the wrong word box of "int box"
+	const QString& getCorrectBox( QString& box );
+	const QString& getWrongBox( QString& box );
 
 	int getWrongBoxNumber( int box );
 	int getCorrectBoxNumber( int box );
