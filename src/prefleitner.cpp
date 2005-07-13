@@ -100,7 +100,7 @@ void PrefLeitner::slotBoxClicked( int box )
 
 void PrefLeitner::slotAddBox()
 {
-	m_selectedSystem->insertBox( "Neue Box", 1, 1 );
+	m_selectedSystem->insertBox( "New Box", 1, 1 );
 	refreshSystemView();
 }
 
