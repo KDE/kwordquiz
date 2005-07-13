@@ -47,6 +47,8 @@
 #define KV_LEV7_GRADE      7
 #define KV_LEV7_TEXT       I18N_NOOP("Level 7")
 
+#include <qstringlist.h>
+
 #include <time.h>
 #include <vector>
 using namespace std;
@@ -437,7 +439,7 @@ class KEduVocExpression
 
   // all these vectors must be deleted in removeTranslation()
   vector<QString>     exprtypes;
-  vector<QString>     translations;
+  /*vector<QString>*/ QStringList     translations;
   vector<QString>     remarks;
   vector<QString>     usageLabels;
   vector<QString>     paraphrases;

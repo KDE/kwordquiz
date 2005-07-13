@@ -1,7 +1,7 @@
 //
 // C++ Implementation: leitnerbox
 //
-// Description: 
+// Description:
 //
 //
 // Author: Martin Pfeiffer <martin-pfeiffer-bensheim@web.de>, (C) 2005
@@ -20,7 +20,7 @@ LeitnerBox::~LeitnerBox()
 {
 }
 
-int LeitnerBox::getVocabCount()
+int LeitnerBox::vocabCount()
 {
 	return m_vocabCount;
 }
@@ -30,17 +30,17 @@ void LeitnerBox::setVocabCount( int count )
 	m_vocabCount = count;
 }
 
-const QString& LeitnerBox::getBoxName() const
+const QString& LeitnerBox::boxName() const
 {
 	return m_name;
 }
 
-LeitnerBox* LeitnerBox::getCorrectWordBox()
+LeitnerBox* LeitnerBox::correctWordBox()
 {
 	return m_correctWordBox;
 }
 
-LeitnerBox* LeitnerBox::getWrongWordBox()
+LeitnerBox* LeitnerBox::wrongWordBox()
 {
 	return m_wrongWordBox;
 }
@@ -62,7 +62,7 @@ void LeitnerBox::setWrongWordBox( LeitnerBox* wrongWordBox )
 
 bool LeitnerBox::operator ==( const LeitnerBox& a ) const
 {
-	if( a.getBoxName() == getBoxName() )
+	if( a.boxName() == boxName() )
 		return true;
 	else
 		return false;

@@ -31,13 +31,13 @@ PrefLeitner::PrefLeitner(QWidget * parent, const char* name, WFlags f, LeitnerSy
 	m_leitnerSystemView = new LeitnerSystemView( this, 0 );
 	PrefLeitnerBaseLayout->addWidget( m_leitnerSystemView, 1, 0 );
 	PrefLeitnerBaseLayout->setOrigin( QGridLayout::BottomLeft );
-	
+
 	connect( m_leitnerSystemView, SIGNAL( boxClicked( int ) ), this, SLOT( slotBoxClicked( int ) ) );
 
 	//insert the list of box' names in the comboboxes
 	cmbWrong->insertStringList( m_selectedSystem->getBoxNameList() );
 	cmbCorrect->insertStringList( m_selectedSystem->getBoxNameList() );
-	
+
 	//show leitnersystem
 	m_leitnerSystemView->setSystem( m_selectedSystem );
 }
@@ -51,9 +51,9 @@ void PrefLeitner::slotCorrectWord( const QString& newBox )
 {
 	if( m_selectedBox == 0 )
 		return;
-	
+
 	//when the correct word box was changed in the combobox
-	m_selectedBox->setCorrectWordBox( m_selectedSystem->getBoxWithName( newBox ) );
+	m_selectedBox->setCorrectWordBox( m_selectedSystem->boxWithName( newBox ) );
 	refreshSystemView();
 }
 
@@ -61,9 +61,9 @@ void PrefLeitner::slotWrongWord( const QString& newBox )
 {
 	if( m_selectedBox == 0 )
 		return;
-	
+
 	//when the wrong word box was changed in the combobox
-	m_selectedBox->setWrongWordBox( m_selectedSystem->getBoxWithName( newBox ) );
+	m_selectedBox->setWrongWordBox( m_selectedSystem->boxWithName( newBox ) );
 	refreshSystemView();
 }
 
@@ -80,7 +80,7 @@ void PrefLeitner::newSystem()
 {
 	cmbCorrect->insertStringList( m_selectedSystem->getBoxNameList() );
 	cmbWrong->insertStringList( m_selectedSystem->getBoxNameList() );
-	
+
 	refreshSystemView();
 }
 
@@ -91,11 +91,11 @@ void PrefLeitner::refreshSystemView()
 
 void PrefLeitner::slotBoxClicked( int box )
 {
-	m_selectedBox = m_selectedSystem->getBoxWithNumber( box );
-		
-	cmbCorrect->setCurrentItem( m_selectedSystem->getCorrectBoxNumber( box ) );
-	cmbWrong->setCurrentItem( m_selectedSystem->getWrongBoxNumber( box ) );
-	lndBoxName->setText( m_selectedBox->getBoxName() );
+	m_selectedBox = m_selectedSystem->boxWithNumber( box );
+
+	cmbCorrect->setCurrentItem( m_selectedSystem->correctBoxNumber( box ) );
+	cmbWrong->setCurrentItem( m_selectedSystem->wrongBoxNumber( box ) );
+	lndBoxName->setText( m_selectedBox->boxName() );
 }
 
 void PrefLeitner::slotAddBox()

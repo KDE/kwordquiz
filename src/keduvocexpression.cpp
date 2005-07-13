@@ -402,7 +402,7 @@ void KEduVocExpression::removeTranslation (int idx)
      return;
 
    if (idx <= numTranslations())
-     translations.erase (translations.begin() + idx-1);
+     translations.remove(translations.at(idx-1));
 
    if (idx < (int)remarks.size() )
      remarks.erase (remarks.begin() + idx);

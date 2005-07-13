@@ -33,7 +33,7 @@ WQQuiz::WQQuiz(QWidget * parent, KEduVocDocument * doc, const char *name) : QObj
 {
   m_app = parent;
   m_doc = doc;
-  
+
   m_list = new QPtrList<WQListItem>();
   m_errorList = new QPtrList<WQListItem>();
   m_quizList = new QPtrList<WQListItem>();
@@ -179,7 +179,7 @@ bool WQQuiz::init()
   {
   case qtEditor:
     //
-    break;  
+    break;
   case qtFlash:
     result = (m_quizList -> count() > 0);
     break;
@@ -252,7 +252,7 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
         for (uint counter = 0; counter < la.count(); counter++)
         {
           result = (ls[counter].stripWhiteSpace() == la[counter].stripWhiteSpace());
-          if (!result) 
+          if (!result)
             break;
         }
       }
@@ -280,16 +280,16 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
     }
 
   }
-	
+
   QString tmpLeitner( m_doc->getEntry(li->oneOp())->getLeitnerBox() );
 
   if (!result)
   {
-    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->getWrongBox( tmpLeitner ));
+    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->wrongBox( tmpLeitner ));
     m_errorList -> append(li);
   }
   else
-    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->getCorrectBox( tmpLeitner ));
+    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->correctBox( tmpLeitner ));
 
   return result;
 }
@@ -400,7 +400,7 @@ QString WQQuiz::yourAnswer(int i, const QString & s)
       {
         result.insert(offset + 3, ls[counter]);
         offset++;
-        counter++; 
+        counter++;
       }
     }
     result.append("</qt>");
@@ -451,8 +451,8 @@ QString WQQuiz::question(int i)
     emit checkingAnswer(li2->oneOp());
   }
   else
-    emit checkingAnswer(li->oneOp());  
-  
+    emit checkingAnswer(li->oneOp());
+
   return s;
 }
 
@@ -488,7 +488,7 @@ QString WQQuiz::blankAnswer(int i)
             m_correctBlank = m_correctBlank + ";" + " " + tTemp.mid(offset + 1, tTemp.find(']', offset) - offset - 1);
           else
             m_correctBlank = tTemp.mid(offset + 1, tTemp.find(']', offset) - offset - 1);
-          offset++; 
+          offset++;
         }
       }
     }

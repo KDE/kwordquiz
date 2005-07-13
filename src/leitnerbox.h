@@ -1,7 +1,7 @@
 //
 // C++ Interface: leitnerbox
 //
-// Description: 
+// Description:
 //
 //
 // Author: Martin Pfeiffer <martin-pfeiffer-bensheim@web.de>, (C) 2005
@@ -29,19 +29,19 @@ public:
 	void setBoxName( const QString& );	//sets the boxes name
 
 	void setVocabCount( int count );
-	int getVocabCount();
-	
-	LeitnerBox* getCorrectWordBox();	
-	LeitnerBox* getWrongWordBox();
-	const QString& getBoxName() const;
-	
+	int vocabCount();
+
+	LeitnerBox* correctWordBox();
+	LeitnerBox* wrongWordBox();
+	const QString& boxName() const;
+
 	bool operator == ( const LeitnerBox& a ) const;
 
 private:
 	QString m_name;
 
 	int m_vocabCount;
-	
+
 	LeitnerBox* m_wrongWordBox;
 	LeitnerBox* m_correctWordBox;
 };

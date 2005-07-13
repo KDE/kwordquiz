@@ -1,7 +1,7 @@
 //
 // C++ Interface: leitnersystem
 //
-// Description: 
+// Description:
 //
 //
 // Author: Martin Pfeiffer <martin-pfeiffer-bensheim@web.de>, (C) 2005
@@ -33,32 +33,32 @@ public:
 	int getNumberOfBoxes();				//returns the number of boxes in the system
 	QStringList getBoxNameList();			//returns a list with the boxes names
 
-	QString& getSystemName();			//returns the systems name
+	QString& systemName();			//returns the systems name
 	void setSystemName( const QString& name );		//sets the systems name
 
-	LeitnerBox* getBoxWithNumber( int number );	//returns box by number
-	LeitnerBox* getBoxWithName( const QString& name );//returns box by name
-	int getNumber( LeitnerBox* box );
-	const QString& getBox( int i );
-	
-	const QString& getNextBox( QString& previousBox );	//returns the next box for the next question
-	
-	const QString& getCorrectBox( int box );	//returns the correct word box of "int box"
-	const QString& getWrongBox( int box );		//returns the wrong word box of "int box"
-	const QString& getCorrectBox( QString& box );
-	const QString& getWrongBox( QString& box );
+	LeitnerBox* boxWithNumber( int number );	//returns box by number
+	LeitnerBox* boxWithName( const QString& name );//returns box by name
+	int number( LeitnerBox* box );
+	const QString& box( int i );
 
-	int getWrongBoxNumber( int box );
-	int getCorrectBoxNumber( int box );
+	const QString& nextBox( QString& previousBox );	//returns the next box for the next question
+
+	const QString& correctBox( int box );	//returns the correct word box of "int box"
+	const QString& wrongBox( int box );		//returns the wrong word box of "int box"
+	const QString& correctBox( QString& box );
+	const QString& wrongBox( QString& box );
+
+	int wrongBoxNumber( int box );
+	int correctBoxNumber( int box );
 
 	void setCorrectBox( const QString& box, const QString& correctWordBox );
 	void setWrongBox( const QString& box, const QString& wrongWordBox );
 
 	bool setBoxName( int box, const QString& name );
 	bool setBoxName( LeitnerBox* box, const QString& name );
-	
+
 	void setBoxVocabCount( QString& box, int vocabCount );
-	int getBoxVocabCount( QString& box );
+	int boxVocabCount( QString& box );
 
 	void incrementBoxVocabCount( QString& box );
  	void decrementBoxVocabCount( QString& box );
