@@ -98,7 +98,7 @@ class KEduVocExpression
 
   /** returns index of lesson (0 = none)
    */
-  int getLesson () const;
+  int lesson () const;
 
   /** sets index of lesson (0 = none)
    */
@@ -106,7 +106,7 @@ class KEduVocExpression
 
   /** returns original expression of this entry
    */
-  QString getOriginal () const;
+  QString original () const;
 
   /** sets original expression of this entry
    */
@@ -137,7 +137,7 @@ class KEduVocExpression
    * @param index            number of translation
    * @result                 expression or "" if no translation available
    */
-  QString getTranslation (int index) const;
+  QString translation (int index) const;
 
   /** sets translation of this expression
    *
@@ -158,14 +158,14 @@ class KEduVocExpression
    * @param index            index of expression
    * @result                 pronunciation or "" if none available
    */
-  QString getPronunce (int index) const;
+  QString pronounce (int index) const;
 
   /** returns remarks of this expression
    *
    * @param index            index of expression
    * @result                 remark or "" if no remark available
    */
-  QString getRemark (int index) const;
+  QString remark (int index) const;
 
   /** sets remark of this expression
    *
@@ -190,7 +190,7 @@ class KEduVocExpression
    * @param rev_grade        dito, in opposite direction
    * @result                 false friend or "" if no string available
    */
-  QString getFauxAmi (int index, bool rev_ami = false) const;
+  QString fauxAmi (int index, bool rev_ami = false) const;
 
   /** sets synonym this expression
    *
@@ -205,7 +205,7 @@ class KEduVocExpression
    * @param index            index of expression
    * @result                 synonym or "" if no string available
    */
-  QString getSynonym (int index) const;
+  QString synonym (int index) const;
 
   /** sets example this expression
    *
@@ -220,7 +220,7 @@ class KEduVocExpression
    * @param index            index of expression
    * @result                 example or "" if no string available
    */
-  QString getExample (int index) const;
+  QString example (int index) const;
 
   /** sets usage label this expression
    *
@@ -235,7 +235,7 @@ class KEduVocExpression
    * @param index            index of expression
    * @result                 usage or "" if no string available
    */
-  QString getUsageLabel (int index) const;
+  QString usageLabel (int index) const;
 
   /** sets paraphrase of this expression
    *
@@ -250,7 +250,7 @@ class KEduVocExpression
    * @param index            index of expression
    * @result                 paraphrase or "" if no string available
    */
-  QString getParaphrase (int index) const;
+  QString paraphrase (int index) const;
 
   /** sets antonym this expression
    *
@@ -265,13 +265,13 @@ class KEduVocExpression
    * @param index            index of expression
    * @result                 antonym or "" if no string available
    */
-  QString getAntonym (int index) const;
+  QString antonym (int index) const;
 
   /** returns type of this expression
    *
    * @result                 type or "" if no type available
    */
-  QString getType (int index) const;
+  QString type (int index) const;
 
   /** all langs have same type ?
    *
@@ -307,7 +307,7 @@ class KEduVocExpression
    * @param rev_grade        dito, in opposite direction
    * @result                 number of knowlegde: 0=known, x=numbers not knows
    */
-  grade_t getGrade (int index, bool rev_grade = false) const;
+  grade_t grade (int index, bool rev_grade = false) const;
 
   /** increments grade of given translation
    *
@@ -328,7 +328,7 @@ class KEduVocExpression
    * @param index            index of translation
    * @param rev_date         dito, in opposite direction
    */
-  time_t getQueryDate (int index, bool rev_date = false) const;
+  time_t queryDate (int index, bool rev_date = false) const;
 
   /** set last query date of given translation as int
    *
@@ -341,7 +341,7 @@ class KEduVocExpression
    *
    * @param index            index of translation
    */
-  Conjugation getConjugation(int index) const;
+  Conjugation conjugation(int index) const;
 
   /** sets conjugations
    *
@@ -354,7 +354,7 @@ class KEduVocExpression
    *
    * @param index            index of translation
    */
-  Comparison getComparison(int index) const;
+  Comparison comparison(int index) const;
 
   /** sets comparison
    *
@@ -367,7 +367,7 @@ class KEduVocExpression
    *
    * @param index            index of multiple choice
    */
-  MultipleChoice getMultipleChoice(int index) const;
+  MultipleChoice multipleChoice(int index) const;
 
   /** sets multiple choice
    *
@@ -381,7 +381,7 @@ class KEduVocExpression
    * @param index            index of translation
    * @param rev_count        dito, in opposite direction
    */
-  count_t getQueryCount (int index, bool rev_count = false) const;
+  count_t queryCount (int index, bool rev_count = false) const;
 
   /** set query count of given translation as int
    *
@@ -395,7 +395,7 @@ class KEduVocExpression
    * @param index            index of translation
    * @param rev_count        dito, in opposite direction
    */
-  count_t getBadCount (int index, bool rev_count = false) const;
+  count_t badCount (int index, bool rev_count = false) const;
 
   /** set bad query count of given translation as int
    *
@@ -428,7 +428,7 @@ class KEduVocExpression
    *
    * @result		     the box's name
    */
-  QString& getLeitnerBox();
+  QString& leitnerBox();
 
  protected:
 
@@ -443,11 +443,11 @@ class KEduVocExpression
   vector<QString>     remarks;
   vector<QString>     usageLabels;
   vector<QString>     paraphrases;
-  vector<QString>     fauxAmi;
+  vector<QString>     m_fauxAmi;
   vector<QString>     rev_fauxAmi;
-  vector<QString>     synonym;
-  vector<QString>     example;
-  vector<QString>     antonym;
+  vector<QString>     m_synonym;
+  vector<QString>     m_example;
+  vector<QString>     m_antonym;
   vector<QString>     pronunces;
   vector<grade_t>     grades;
   vector<grade_t>     rev_grades;
@@ -461,10 +461,10 @@ class KEduVocExpression
   vector<Comparison>  comparisons;
   vector<MultipleChoice> mcs;
 
-  QString 	     leitnerBox;
-  int                lesson;
-  bool               inquery;
-  bool               active;
+  QString 	          m_leitnerBox;
+  int                 m_lesson;
+  bool                inquery;
+  bool                active;
 };
 
 #endif // KEduVocExpression_H

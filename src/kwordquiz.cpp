@@ -397,7 +397,7 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
     doc->open(url, false);
-    if (doc->getFont() == NULL)
+    if (doc->font() == NULL)
       doc->setFont(new QFont(Prefs::editorFont()));
     m_editView->displayDoc();
     m_dirWatch->addFile(url.path());
@@ -461,7 +461,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
     if(canRecover)
     {
       doc->open(_url, false);
-      if (doc->getFont() == NULL)
+      if (doc->font() == NULL)
         doc->setFont(new QFont(Prefs::editorFont()));
       m_editView->displayDoc();
       doc->setModified();
@@ -474,7 +474,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
     if(!filename.isEmpty())
     {
       doc->open(url, false);
-      if (doc->getFont() == NULL)
+      if (doc->font() == NULL)
         doc->setFont(new QFont(Prefs::editorFont()));
       m_editView->displayDoc();
       setCaption(url.fileName(),false);
@@ -485,7 +485,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 bool KWordQuizApp::queryClose()
 {
   bool completed=true;
-  
+
   if(doc->isModified())
   {
     int want_save = KMessageBox::warningYesNoCancel(this,
@@ -520,7 +520,7 @@ bool KWordQuizApp::queryClose()
       break;
     }
   }
-  
+
   if (completed)
     if (m_dirWatch->contains(doc->URL().path()))
       m_dirWatch->removeFile(doc->URL().path());
@@ -539,13 +539,13 @@ bool KWordQuizApp::checkSyntax(bool blanks)
 
   for (int r = 0; r < doc->numEntries(); ++r)
   {
-    QString s = doc->getEntry(r)->getOriginal();
+    QString s = doc->entry(r)->original();
     if (s.length() > 0)
       for (uint i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
           if (!m_editView->checkForBlank(s, blanks))
             errorCount++;
-    s = doc->getEntry(r)->getTranslation(1);
+    s = doc->entry(r)->translation(1);
     if (s.length() > 0)
       for (uint i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
@@ -1360,7 +1360,7 @@ void KWordQuizApp::slotConfigLeitner()
 	PrefLeitner* config = new PrefLeitner( this, "configLeitner", 0, doc->getLeitnerSystem() );
 	if( config->exec() == QDialog::Accepted )
 		doc->setLeitnerSystem( config->getSystem() );
-	
+
 	delete config;
 }
 

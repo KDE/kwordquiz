@@ -54,7 +54,7 @@ KEduVocDocument::KEduVocDocument(QObject *parent)
 
 KEduVocDocument::~KEduVocDocument()
 {
-  delete font;
+  delete m_font;
 }
 
 
@@ -64,7 +64,7 @@ void KEduVocDocument::setVersion (const QString & vers)
 }
 
 
-void KEduVocDocument::getVersion(int &, int &, int &)
+void KEduVocDocument::version(int &, int &, int &)
 {
 }
 
@@ -89,10 +89,10 @@ void KEduVocDocument::Init ()
   querytrans = "";
   doc_url.setFileName(i18n("Untitled"));
   doctitle = "";
-  author = "";
+  m_author = "";
   doc_remark = "";
   doc_version = "";
-  font = NULL;
+  m_font = NULL;
 
   activeLeitnerSystem = false;
   leitnerSystem = NULL;
@@ -288,7 +288,7 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft, con
 }
 
 
-KEduVocExpression *KEduVocDocument::getEntry(int index)
+KEduVocExpression *KEduVocDocument::entry(int index)
 {
   if (index < 0 || index >= (int)vocabulary.size() )
     return 0;
@@ -318,7 +318,7 @@ int KEduVocDocument::findIdent (const QString &lang) const
 }
 
 
-QString KEduVocDocument::getIdent (int index) const
+QString KEduVocDocument::ident (int index) const
 {
   if (index >= (int)langs.size() || index < 1 )
     return "";
@@ -335,7 +335,7 @@ void KEduVocDocument::setIdent (int idx, const QString &id)
 }
 
 
-QString KEduVocDocument::getTypeName (int index) const
+QString KEduVocDocument::typeName (int index) const
 {
   if (index >= (int)type_descr.size())
     return "";
@@ -354,7 +354,7 @@ void KEduVocDocument::setTypeName (int idx, QString &id)
 }
 
 
-QString KEduVocDocument::getTenseName (int index) const
+QString KEduVocDocument::tenseName (int index) const
 {
   if (index >= (int)tense_descr.size())
     return "";
@@ -373,7 +373,7 @@ void KEduVocDocument::setTenseName (int idx, QString &id)
 }
 
 
-QString KEduVocDocument::getUsageName (int index) const
+QString KEduVocDocument::usageName (int index) const
 {
   if (index >= (int)usage_descr.size())
     return "";
@@ -405,7 +405,7 @@ void KEduVocDocument::setConjugation (int idx, const Conjugation &con)
 }
 
 
-Conjugation KEduVocDocument::getConjugation (int idx) const
+Conjugation KEduVocDocument::conjugation (int idx) const
 {
   if (idx >= (int)conjugations.size() || idx < 0) {
     return Conjugation();
@@ -429,7 +429,7 @@ void KEduVocDocument::setArticle (int idx, const Article &art)
 }
 
 
-Article KEduVocDocument::getArticle (int idx) const
+Article KEduVocDocument::article (int idx) const
 {
   if (idx >= (int)articles.size() || idx < 0) {
     return Article();
@@ -440,7 +440,7 @@ Article KEduVocDocument::getArticle (int idx) const
 }
 
 
-int KEduVocDocument::getSizeHint (int idx) const
+int KEduVocDocument::sizeHint (int idx) const
 {
   if (idx < 0) {
     idx = -idx;
@@ -511,7 +511,7 @@ void KEduVocDocument::removeIdent (int index)
 }
 
 
-QString KEduVocDocument::getOriginalIdent () const
+QString KEduVocDocument::originalIdent () const
 {
   if (langs.size() > 0)
     return langs[0];
@@ -540,10 +540,10 @@ public:
     {
       return
         !dir
-        ? (QString::compare(x.getOriginal().upper(),
-                            y.getOriginal().upper() ) < 0)
-        : (QString::compare(x.getOriginal().upper(),
-                            y.getOriginal().upper() ) > 0);
+        ? (QString::compare(x.original().upper(),
+                            y.original().upper() ) < 0)
+        : (QString::compare(x.original().upper(),
+                            y.original().upper() ) > 0);
     }
 
  private:
@@ -562,20 +562,20 @@ public:
 
   bool operator() (const KEduVocExpression& x, const KEduVocExpression& y) const
     {
-      if (x.getLesson() != y.getLesson() )
+      if (x.lesson() != y.lesson() )
         return
           !dir
-          ? (QString::compare(doc.getLessonDescr(x.getLesson()).upper(),
-                              doc.getLessonDescr(y.getLesson()).upper() ) < 0)
-          : (QString::compare(doc.getLessonDescr(x.getLesson()).upper(),
-                              doc.getLessonDescr(y.getLesson()).upper() ) > 0);
+          ? (QString::compare(doc.lessonDescr(x.lesson()).upper(),
+                              doc.lessonDescr(y.lesson()).upper() ) < 0)
+          : (QString::compare(doc.lessonDescr(x.lesson()).upper(),
+                              doc.lessonDescr(y.lesson()).upper() ) > 0);
       else
         return
           !dir
-          ? (QString::compare(x.getOriginal().upper(),
-                              y.getOriginal().upper() ) < 0)
-          : (QString::compare(x.getOriginal().upper(),
-                              y.getOriginal().upper() ) > 0);
+          ? (QString::compare(x.original().upper(),
+                              y.original().upper() ) < 0)
+          : (QString::compare(x.original().upper(),
+                              y.original().upper() ) > 0);
     }
 
  private:
@@ -595,18 +595,18 @@ public:
 
   bool operator() (const KEduVocExpression& x, const KEduVocExpression& y) const
     {
-      if (x.getLesson() != y.getLesson() )
+      if (x.lesson() != y.lesson() )
         return
           !dir
-          ? x.getLesson() < y.getLesson()
-          : y.getLesson() < x.getLesson();
+          ? x.lesson() < y.lesson()
+          : y.lesson() < x.lesson();
       else
         return
           !dir
-          ? (QString::compare(x.getOriginal().upper(),
-                              y.getOriginal().upper() ) < 0)
-          : (QString::compare(x.getOriginal().upper(),
-                              y.getOriginal().upper() ) > 0);
+          ? (QString::compare(x.original().upper(),
+                              y.original().upper() ) < 0)
+          : (QString::compare(x.original().upper(),
+                              y.original().upper() ) > 0);
     }
 
  private:
@@ -627,10 +627,10 @@ public:
     {
       return
         !dir
-        ? (QString::compare(x.getTranslation(index).upper(),
-                            y.getTranslation(index).upper() ) < 0)
-        : (QString::compare(x.getTranslation(index).upper(),
-                            y.getTranslation(index).upper() ) > 0);
+        ? (QString::compare(x.translation(index).upper(),
+                            y.translation(index).upper() ) < 0)
+        : (QString::compare(x.translation(index).upper(),
+                            y.translation(index).upper() ) > 0);
     }
 
  private:
@@ -701,43 +701,43 @@ void KEduVocDocument::setLeitnerSystemActive( bool yes )
 		activeLeitnerSystem = true;
 	}
 	else if( !yes )
-		activeLeitnerSystem = false;	
+		activeLeitnerSystem = false;
 }
 
 void KEduVocDocument::createStandardLeitnerSystem()
 {
 	LeitnerSystem* tmpSystem = new LeitnerSystem();
 	QString name = "Standard";
-	
+
 	tmpSystem->setSystemName( name );
 	tmpSystem->insertBox( "Box 1" );
 	tmpSystem->insertBox( "Box 2" );
 	tmpSystem->insertBox( "Box 3" );
 	tmpSystem->insertBox( "Box 4" );
 	tmpSystem->insertBox( "Box 5" );
-	
+
 	tmpSystem->setCorrectBox( "Box 1", "Box 2" );
 	tmpSystem->setWrongBox( "Box 1", "Box 1" );
-	
+
 	tmpSystem->setCorrectBox( "Box 2", "Box 3" );
 	tmpSystem->setWrongBox( "Box 2", "Box 1" );
-	
+
 	tmpSystem->setCorrectBox( "Box 3", "Box 4" );
 	tmpSystem->setWrongBox( "Box 3", "Box 1" );
-	
+
 	tmpSystem->setCorrectBox( "Box 4", "Box 5" );
 	tmpSystem->setWrongBox( "Box 4", "Box 1" );
-	
+
 	tmpSystem->setCorrectBox( "Box 5", "Box 1" );
 	tmpSystem->setWrongBox( "Box 5", "Box 1" );
-	
+
 	leitnerSystem = tmpSystem;
 }
 
 void KEduVocDocument::setLeitnerSystem( LeitnerSystem* system )
 {
 	leitnerSystem = system;
-	
+
 	/*KWordQuizApp* app = (KWordQuizApp*) parent();
 	app->slotLeitnerSystem();*/
 }
@@ -759,7 +759,8 @@ public:
   void operator() (KEduVocExpression& x)
     {
        for (int i = 0; i <= x.numTranslations(); i++) {
-         if (lesson == 0 || lesson == x.getLesson() ) {
+         if (lesson == 0 || lesson == x.lesson())
+         {
             x.setGrade(i, KV_NORM_GRADE, false);
             x.setGrade(i, KV_NORM_GRADE, true);
             x.setQueryCount (i, 0, true);
@@ -786,7 +787,8 @@ public:
 
   void operator() (KEduVocExpression& x)
     {
-       if (lesson == 0 || lesson == x.getLesson() ) {
+       if (lesson == 0 || lesson == x.lesson())
+       {
          x.setGrade(index, KV_NORM_GRADE, false);
          x.setGrade(index, KV_NORM_GRADE, true);
          x.setQueryCount (index, 0, true);
@@ -813,7 +815,7 @@ void KEduVocDocument::resetEntry (int index, int lesson)
 }
 
 
-QString KEduVocDocument::getLessonDescr(int idx) const
+QString KEduVocDocument::lessonDescr(int idx) const
 {
   if (idx == 0)
     return i18n("<no lesson>");
@@ -825,7 +827,7 @@ QString KEduVocDocument::getLessonDescr(int idx) const
 }
 
 
-vector<int> KEduVocDocument::getLessonsInQuery() const
+vector<int> KEduVocDocument::lessonsInQuery() const
 {
   vector<int> iqvec;
   for (unsigned i = 0; i < lessons_in_query.size(); i++)
@@ -851,7 +853,7 @@ void KEduVocDocument::setLessonsInQuery(vector<int> lesson_iq)
 }
 
 
-QString KEduVocDocument::getTitle() const
+QString KEduVocDocument::title() const
 {
   if (doctitle.isEmpty())
     return doc_url.fileName();
@@ -860,27 +862,27 @@ QString KEduVocDocument::getTitle() const
 }
 
 
-QString KEduVocDocument::getAuthor() const
+QString KEduVocDocument::author() const
 {
-  return author;
+  return m_author;
 }
 
 
-QString KEduVocDocument::getLicense() const
+QString KEduVocDocument::license() const
 {
-  return license;
+  return m_license;
 }
 
 
-QString KEduVocDocument::getDocRemark() const
+QString KEduVocDocument::docRemark() const
 {
   return doc_remark;
 }
 
 
-QFont* KEduVocDocument::getFont() const
+QFont* KEduVocDocument::font() const
 {
-  return font;
+  return m_font;
 }
 
 
@@ -892,13 +894,13 @@ void KEduVocDocument::setTitle(const QString & title)
 
 void KEduVocDocument::setAuthor(const QString & s)
 {
-  author = s.stripWhiteSpace();
+  m_author = s.stripWhiteSpace();
 }
 
 
 void KEduVocDocument::setLicense(const QString & s)
 {
-  license = s.stripWhiteSpace();
+  m_license = s.stripWhiteSpace();
 }
 
 
@@ -910,8 +912,8 @@ void KEduVocDocument::setDocRemark(const QString & s)
 
 void KEduVocDocument::setFont(QFont* font)
 {
-  delete this->font;
-  this->font = font;
+  delete this->m_font;
+  this->m_font = font;
 }
 
 
@@ -935,11 +937,11 @@ int KEduVocDocument::search(QString substr, int id,
    if (id == 0) {
      for (int i = first; i < last; i++) {
        if (word_start) {
-         if (getEntry(i)->getOriginal().find (substr, 0, false) == 0)  // case insensitive
+         if (entry(i)->original().find (substr, 0, false) == 0)  // case insensitive
            return i;
        }
        else {
-         if (getEntry(i)->getOriginal().find (substr, 0, false) > -1)  // case insensitive
+         if (entry(i)->original().find (substr, 0, false) > -1)  // case insensitive
            return i;
        }
      }
@@ -947,11 +949,11 @@ int KEduVocDocument::search(QString substr, int id,
    else {
      for (int i = first; i < last; i++) {
        if (word_start) {
-         if (getEntry(i)->getTranslation(id).find (substr, 0, false) == 0) // case insensitive
+         if (entry(i)->translation(id).find (substr, 0, false) == 0) // case insensitive
            return i;
        }
        else {
-         if (getEntry(i)->getTranslation(id).find (substr, 0, false) > -1) // case insensitive
+         if (entry(i)->translation(id).find (substr, 0, false) > -1) // case insensitive
            return i;
        }
      }
@@ -1054,16 +1056,16 @@ public:
 
   bool operator< (const expRef& y) const
     {
-      QString s1 = exp->getOriginal();
-      QString s2 = y.exp->getOriginal();
+      QString s1 = exp->original();
+      QString s2 = y.exp->original();
       int cmp = QString::compare(s1.upper(), s2.upper());
       if (cmp != 0)
         return cmp < 0;
 
       for (int i = 1; i < (int) exp->numTranslations(); i++) {
 
-        s1 = exp->getTranslation(i);
-        s2 = y.exp->getTranslation(i);
+        s1 = exp->translation(i);
+        s2 = y.exp->translation(i);
         cmp = QString::compare(s1.upper(), s2.upper() );
         if (cmp != 0)
           return cmp < 0;
@@ -1084,16 +1086,16 @@ int KEduVocDocument::cleanUp()
   vector<int> to_delete;
 
   for (int i = 0; i < (int) vocabulary.size(); i++)
-    shadow.push_back (expRef (getEntry(i), i));
+    shadow.push_back (expRef (entry(i), i));
   std::sort(shadow.begin(), shadow.end());
 
 #ifdef CLEAN_BUG
   ofstream sso ("shadow.out");
   for (int i = shadow.size()-1; i > 0; i--) {
     kve1 = shadow[i].exp;
-    sso << kve1->getOriginal() << "  ";
+    sso << kve1->original() << "  ";
     for (int l = 1; l < (int) numLangs(); l++ )
-      sso << kve1->getTranslation(l)  << "  ";
+      sso << kve1->translation(l)  << "  ";
     sso << endl;
   }
 #endif
@@ -1112,9 +1114,9 @@ int KEduVocDocument::cleanUp()
       emit progressChanged(this, (int)((ent_no / f_ent_percent) / 2.0));
 
     bool equal = true;
-    if (kve1->getOriginal() == kve2->getOriginal() ) {
+    if (kve1->original() == kve2->original() ) {
       for (int l = 1; equal && l < (int) numLangs(); l++ )
-        if (kve1->getTranslation(l) != kve2->getTranslation(l))
+        if (kve1->translation(l) != kve2->translation(l))
           equal = false;
 
       if (equal) {

@@ -43,13 +43,13 @@ bool KEduVocWqlWriter::writeDoc(KEduVocDocument *doc)
   m_outputStream.setEncoding(QTextStream::Latin1);
 
   m_outputStream << "WordQuiz" << winendl;
-  m_outputStream << "5.9.0" << winendl << winendl;      
+  m_outputStream << "5.9.0" << winendl << winendl;
 
-  if (doc->getFont() != NULL)
-    writeFont(*(doc->getFont()));
+  if (doc->font() != NULL)
+    writeFont(*(doc->font()));
   // TODO writeCharacters(Prefs::specialCharacters());
   // TODO Find the vertical header width, handle the case where there are not exactly two languages
-  writeGridInfo(10, m_doc->getSizeHint(0), m_doc->getSizeHint(1), m_doc->numEntries());
+  writeGridInfo(10, m_doc->sizeHint(0), m_doc->sizeHint(1), m_doc->numEntries());
   /* TODO Find the selected cells
   if (g->numSelections() > 0)
   {
@@ -60,12 +60,12 @@ bool KEduVocWqlWriter::writeDoc(KEduVocDocument *doc)
   {
     writeSelection(g->currentColumn(), g->currentRow(), g->currentColumn(), g->currentRow());
   }*/
-  writeFirstItem(m_doc->getOriginalIdent(), m_doc->getIdent(1));
+  writeFirstItem(m_doc->originalIdent(), m_doc->ident(1));
   int r = m_doc->numEntries();
   for (int w=0; w < r; w++)
   {
     // TODO Find the row height (g->rowHeight(w))
-    writeItem(m_doc->getEntry(w)->getOriginal(), m_doc->getEntry(w)->getTranslation(1), 30);
+    writeItem(m_doc->entry(w)->original(), m_doc->entry(w)->translation(1), 30);
   }
 }
 
@@ -79,7 +79,7 @@ void KEduVocWqlWriter::writeFont( const QFont & font )
   m_outputStream << "FontColor1=0" << winendl;
   m_outputStream << "CharSet1=0" << winendl;
   m_outputStream << "Layout1=0" << winendl;
-  
+
   m_outputStream << "FontName2=\"" << font.family() << "\"" << winendl;
   m_outputStream << "FontSize2=" << QString::number(font.pointSize()) << winendl;
   m_outputStream << QString("FontBold2=%1").arg(font.bold() ? "1" : "0") <<winendl;

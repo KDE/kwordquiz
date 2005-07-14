@@ -257,7 +257,7 @@ class KEduVocDocument : public QObject
   friend class KEduVocKvtmlWriter;
   friend class KEduVocKvtmlReader;
   friend class KEduVocWqlReader;
- 
+
  public:
 
   enum FileType { kvd_none, automatic,
@@ -343,7 +343,7 @@ class KEduVocDocument : public QObject
 
   /** returns originals identifier
    */
-  QString getOriginalIdent () const;
+  QString originalIdent () const;
 
   /** set originals identifier
    */
@@ -354,7 +354,7 @@ class KEduVocDocument : public QObject
    * @param index            number of translation 1..x
    * @result                 ident string: de=german, en=englisch, ..
    */
-  QString getIdent (int index) const;
+  QString ident (int index) const;
 
   /** sets identifier of translation
    *
@@ -381,7 +381,7 @@ class KEduVocDocument : public QObject
    * @param index            number of attribute
    * @result                 string
    */
-  QString getTypeName (int index) const;
+  QString typeName (int index) const;
 
   /** sets attribute string
    *
@@ -391,7 +391,7 @@ class KEduVocDocument : public QObject
   void setTypeName (int index, QString &str);
 
   /** gets descr of types  */
-  inline vector<QString> getTypeDescr() const { return type_descr; }
+  inline vector<QString> typeDescr() const { return type_descr; }
 
   /** sets descr of types  */
   inline void setTypeDescr(vector<QString> names) { type_descr = names; }
@@ -401,7 +401,7 @@ class KEduVocDocument : public QObject
    * @param index            number of tense
    * @result                 string
    */
-  QString getTenseName (int index) const;
+  QString tenseName (int index) const;
 
   /** sets tense string
    *
@@ -411,7 +411,7 @@ class KEduVocDocument : public QObject
   void setTenseName (int index, QString &str);
 
   /** gets descr of tenses  */
-  inline vector<QString> getTenseDescr() const { return tense_descr; }
+  inline vector<QString> tenseDescr() const { return tense_descr; }
 
   /** sets descr of tenses  */
   inline void setTenseDescr(vector<QString> names) { tense_descr = names; }
@@ -421,7 +421,7 @@ class KEduVocDocument : public QObject
    * @param index            number of usage
    * @result                 string
    */
-  QString getUsageName (int index) const;
+  QString usageName (int index) const;
 
   /** sets usage string
    *
@@ -431,14 +431,14 @@ class KEduVocDocument : public QObject
   void setUsageName (int index, QString &str);
 
   /** gets descr of usages  */
-  inline vector<QString> getUsageDescr() const { return usage_descr; }
+  inline vector<QString> usageDescr() const { return usage_descr; }
 
   /** sets descr of usages  */
   inline void setUsageDescr(vector<QString> names) { usage_descr = names; }
 
   /** open a document file
    *
-   * @param url     
+   * @param url
    * @result         true if successful
    */
   bool open(const KURL& url, bool append);
@@ -475,7 +475,7 @@ class KEduVocDocument : public QObject
    * @param index     index of desired entry
    * @result          pointer to object or NULL if index out of range
    */
-  KEduVocExpression *getEntry(int index);
+  KEduVocExpression *entry(int index);
 
   /** search substring in vocabulary (case insensitive always)
    *
@@ -498,21 +498,21 @@ class KEduVocDocument : public QObject
   inline void setURL(const KURL& url) {doc_url = url;}
 
   /** returns title of xml file  */
-  QString getTitle() const;
+  QString title() const;
 
   /** returns author of file  */
-  QString getAuthor() const;
+  QString author() const;
 
   /** returns license of file  */
-  QString getLicense() const;
+  QString license() const;
 
   /** returns remark of file  */
-  QString getDocRemark() const;
+  QString docRemark() const;
 
   /** returns font  */
-  QFont* getFont() const;
+  QFont* font() const;
 
-  inline void getQueryLang(QString &org, QString &trans) const
+  inline void queryLang(QString &org, QString &trans) const
     { org = queryorg; trans = querytrans; }
 
   inline void setQueryLang(const QString &org, const QString &trans)
@@ -534,10 +534,10 @@ class KEduVocDocument : public QObject
   void setFont(QFont *font);
 
   /** gets version of loaded file  */
-  void getVersion(int &major, int &minor, int &patch);
+  void version(int &major, int &minor, int &patch);
 
   /** returns current lesson index  */
-  inline int getCurrentLesson() const { return current_lesson; }
+  inline int currentLesson() const { return current_lesson; }
 
   /** sets current lesson index
    * @param lesson    index of lesson
@@ -545,15 +545,15 @@ class KEduVocDocument : public QObject
   inline void setCurrentLesson(int lesson) { current_lesson = lesson; }
 
   /** returns descr of lesson  */
-  QString getLessonDescr(int index) const;
+  QString lessonDescr(int index) const;
 
   /** returns lessons in current query  */
-  vector<int> getLessonsInQuery() const;
+  vector<int> lessonsInQuery() const;
 
   /** sets lessons in current query  */
   void setLessonsInQuery(vector<int>);
 
-  inline vector<QString> getLessonDescr() const { return lesson_descr; }
+  inline vector<QString> lessonDescr() const { return lesson_descr; }
 
   inline int numLessons () const {return (int) lesson_descr.size(); }
 
@@ -564,7 +564,7 @@ class KEduVocDocument : public QObject
    *
    * @param index            index of translation
    */
-  Conjugation getConjugation(int index) const;
+  Conjugation conjugation(int index) const;
 
   /** sets conjugations
    *
@@ -577,7 +577,7 @@ class KEduVocDocument : public QObject
    *
    * @param index            index of translation
    */
-  Article getArticle(int index) const;
+  Article article(int index) const;
 
   /** sets articles
    *
@@ -597,7 +597,7 @@ class KEduVocDocument : public QObject
    * @param index            number of expr, -1 = lesson
    * @result                 width of column
    */
-  int getSizeHint (int index) const;
+  int sizeHint (int index) const;
 
   /** sets recommended size
    *
@@ -676,7 +676,7 @@ protected:
   int                    current_lesson;
   vector<int>            extraSizehints;
   vector<int>            sizehints;
-  QFont*                 font;
+  QFont*                 m_font;
 
   QString                generator;
   QString                queryorg,
@@ -688,16 +688,16 @@ protected:
   vector<QString>        tense_descr;
   vector<QString>        usage_descr;
   QString                doctitle;
-  QString                author;
-  QString                license;
+  QString                m_author;
+  QString                m_license;
   QString                doc_remark;
   QString                doc_version;
 
   vector<Article>        articles;
   vector<Conjugation>    conjugations;
 
-  LeitnerSystem* 	     leitnerSystem;
-  bool			         activeLeitnerSystem;
+  LeitnerSystem* 	       leitnerSystem;
+  bool			             activeLeitnerSystem;
 };
 
 

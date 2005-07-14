@@ -74,19 +74,19 @@ KWordQuizView::~KWordQuizView()
 void KWordQuizView::displayDoc()
 {
   setNumRows(getDocument()->numEntries());
-  horizontalHeader()->setLabel(0, getDocument()->getOriginalIdent());
-  horizontalHeader()->setLabel(1, getDocument()->getIdent(1));
-  setColumnWidth(0, getDocument()->getSizeHint(0));
-  setColumnWidth(1, getDocument()->getSizeHint(1));
-  if (getDocument()->getFont() != NULL)
-    setFont(*(getDocument()->getFont()));
+  horizontalHeader()->setLabel(0, getDocument()->originalIdent());
+  horizontalHeader()->setLabel(1, getDocument()->ident(1));
+  setColumnWidth(0, getDocument()->sizeHint(0));
+  setColumnWidth(1, getDocument()->sizeHint(1));
+  if (getDocument()->font() != NULL)
+    setFont(*(getDocument()->font()));
 
   for (int i=0; i<getDocument()->numEntries(); i++)
   {
-    setText(i, 0, getDocument()->getEntry(i)->getOriginal());
-    setText(i, 1, getDocument()->getEntry(i)->getTranslation(1));
+    setText(i, 0, getDocument()->entry(i)->original());
+    setText(i, 1, getDocument()->entry(i)->translation(1));
   }
-  
+
 }
 
 KEduVocDocument *KWordQuizView::getDocument() const
@@ -318,11 +318,11 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
     {
       addUndo(i18n("&Undo Entry"));
       if (col == 0)
-        getDocument()->getEntry(row)->setOriginal(((QLineEdit *) cellWidget(row, col))->text());
+        getDocument()->entry(row)->setOriginal(((QLineEdit *) cellWidget(row, col))->text());
       else
-        getDocument()->getEntry(row)->setTranslation(1, ((QLineEdit *) cellWidget(row, col))->text());
+        getDocument()->entry(row)->setTranslation(1, ((QLineEdit *) cellWidget(row, col))->text());
     }
-    
+
     QTable::endEdit(row, col, accept, replace); //this will destroy the cellWidget
     if (!text(row, col).isEmpty())
     {
@@ -402,7 +402,7 @@ void KWordQuizView::doEditUndo( )
 
       setCurrentCell(undo.currentRow(), undo.currentCol());
       addSelection(undo.selection());
-      
+
       m_undoList->remove(m_undoList->begin());
       setUpdatesEnabled(true);
     }
@@ -431,9 +431,9 @@ void KWordQuizView::doEditCut( )
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
         if (c == 0)
-          getDocument()->getEntry(r)->setOriginal("");
+          getDocument()->entry(r)->setOriginal("");
         else
-          getDocument()->getEntry(r)->setTranslation(1, "");
+          getDocument()->entry(r)->setTranslation(1, "");
   }
   getDocument()->setModified(true);
 }
@@ -507,9 +507,9 @@ void KWordQuizView::doEditPaste( )
         while (ac <= rc)
         {
           if (ac == 0)
-            getDocument()->getEntry(ar)->setOriginal(sr[c]);
+            getDocument()->entry(ar)->setOriginal(sr[c]);
           else
-            getDocument()->getEntry(ar)->setTranslation(1, sr[c]);
+            getDocument()->entry(ar)->setTranslation(1, sr[c]);
           ac++;
           c++;
         }
@@ -536,9 +536,9 @@ void KWordQuizView::doEditPaste( )
         while (ac <= rc)
         {
           if (ac == 0)
-            getDocument()->getEntry(ar)->setOriginal(sr[c]);
+            getDocument()->entry(ar)->setOriginal(sr[c]);
           else
-            getDocument()->getEntry(ar)->setTranslation(1, sr[c]);
+            getDocument()->entry(ar)->setTranslation(1, sr[c]);
           ac++;
           c++;
         }
@@ -569,9 +569,9 @@ void KWordQuizView::doEditClear( )
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
       for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
         if (c == 0)
-          getDocument()->getEntry(r)->setOriginal("");
+          getDocument()->entry(r)->setOriginal("");
         else
-          getDocument()->getEntry(r)->setTranslation(1, "");
+          getDocument()->entry(r)->setTranslation(1, "");
   }
   displayDoc();
   getDocument()->setModified(true);
@@ -582,7 +582,7 @@ void KWordQuizView::doEditInsert( )
   addUndo(i18n("&Undo Insert"));
   setUpdatesEnabled(false);
   saveCurrentSelection();
-  
+
   getDocument()->insertEntry(new KEduVocExpression, m_currentRow);
   // TODO EPT  insertRows(m_currentSel.topRow(), m_currentSel.bottomRow() - m_currentSel.topRow() + 1);
   displayDoc();
@@ -760,9 +760,9 @@ void KWordQuizView::doEditUnmarkBlank( )
         s = s.remove(delim_start);
         s = s.remove(delim_end);
         if (c == 0)
-          getDocument()->getEntry(r)->setOriginal(s);
+          getDocument()->entry(r)->setOriginal(s);
         else
-          getDocument()->getEntry(r)->setTranslation(1, s);
+          getDocument()->entry(r)->setTranslation(1, s);
         setText(r, c, s);
       }
   }
@@ -832,10 +832,10 @@ void KWordQuizView::doVocabRC( )
       newNumRows = 1;
     else
       newNumRows = dlg->numRows();
-      
+
     while (newNumRows > getDocument()->numEntries())
       getDocument()->appendEntry(new KEduVocExpression);
-      
+
     while (newNumRows < getDocument()->numEntries())
       getDocument()->removeEntry(getDocument()->numEntries()-1);
 
@@ -843,7 +843,7 @@ void KWordQuizView::doVocabRC( )
       setRowHeight(i, dlg->rowHeight());
     for (int i = m_currentSel.leftCol(); i <= m_currentSel.rightCol(); ++i)
       getDocument()->setSizeHint(i, dlg->colWidth());
-    
+
     displayDoc();
 
     getDocument()->setModified(true);
@@ -991,8 +991,8 @@ void KWordQuizView::addUndo( const QString & caption )
 
   WQUndo* undo = new WQUndo();
   undo->setText(caption);
-  if (getDocument()->getFont() != NULL)
-    undo->setFont(*(getDocument()->getFont()));
+  if (getDocument()->font() != NULL)
+    undo->setFont(*(getDocument()->font()));
   undo->setColWidth0(verticalHeader()->width());
   undo->setColWidth1(columnWidth(0));
   undo->setColWidth2(columnWidth(1));
@@ -1004,7 +1004,7 @@ void KWordQuizView::addUndo( const QString & caption )
   for(int i = 0; i < numRows(); i++)
   {
 //    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
-    list.append(*getDocument()->getEntry(i));
+    list.append(*getDocument()->entry(i));
   }
 
   undo->setList(list);

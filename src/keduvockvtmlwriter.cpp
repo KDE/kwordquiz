@@ -113,7 +113,7 @@ bool KEduVocKvtmlWriter::saveLessonKvtMl (QDomDocument &domDoc, QDomElement &dom
     return true;
 
   QDomElement domElementLesson = domDoc.createElement(KV_LESS_GRP);
-  domElementLesson.setAttribute(KV_SIZEHINT, m_doc->getSizeHint(-1));
+  domElementLesson.setAttribute(KV_SIZEHINT, m_doc->sizeHint(-1));
 
   for (int lfn = 0; lfn < (int) m_doc->lesson_descr.size(); lfn++)
   {
@@ -123,7 +123,7 @@ bool KEduVocKvtmlWriter::saveLessonKvtMl (QDomDocument &domDoc, QDomElement &dom
       QDomText domTextDesc = domDoc.createTextNode(m_doc->lesson_descr[lfn]);
 
       domElementDesc.setAttribute(KV_LESS_NO, lfn+1);
-      if (m_doc->getCurrentLesson() == lfn+1)
+      if (m_doc->currentLesson() == lfn+1)
         domElementDesc.setAttribute (KV_LESS_CURR, 1);
       if (lfn < (int) m_doc->lessons_in_query.size() && m_doc->lessons_in_query[lfn])
         domElementDesc.setAttribute (KV_LESS_QUERY, 1);
@@ -274,13 +274,13 @@ bool KEduVocKvtmlWriter::saveConjugHeader(QDomDocument &domDoc, QDomElement &dom
 
     if (ent == 0)
     {
-      s = m_doc->getOriginalIdent().stripWhiteSpace();  //EPT le Ident doit �re superflu
+      s = m_doc->originalIdent().stripWhiteSpace();  //EPT le Ident doit �re superflu
       if (s.isEmpty() )
         s = "original";
     }
     else
     {
-      s = m_doc->getIdent(ent).stripWhiteSpace();
+      s = m_doc->ident(ent).stripWhiteSpace();
       if (s.isEmpty() )
       {
         s.setNum(ent);
@@ -446,7 +446,7 @@ bool KEduVocKvtmlWriter::saveConjugEntry( QDomDocument &domDoc, QDomElement &dom
 
     type = curr_conjug.getType(lfn);
     domElementType.setAttribute(KV_CON_NAME, type);
-    
+
     if (!saveConjug (domDoc, domElementType, curr_conjug, curr_conjug.getType(lfn)) )
       return false;
 
@@ -483,13 +483,13 @@ bool KEduVocKvtmlWriter::saveArticleKvtMl(QDomDocument &domDoc, QDomElement &dom
     QDomElement domElementEntry = domDoc.createElement(KV_ART_ENTRY);
     if (lfn == 0)
     {
-      s = m_doc->getOriginalIdent().stripWhiteSpace();
+      s = m_doc->originalIdent().stripWhiteSpace();
       if (s.isEmpty() )
         s = "original";
     }
     else
     {
-      s = m_doc->getIdent(lfn).stripWhiteSpace();
+      s = m_doc->ident(lfn).stripWhiteSpace();
       if (s.isEmpty() )
       {
         s.setNum(lfn);
@@ -650,18 +650,18 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
   domElementKvtml.setAttribute(KV_GENERATOR, generator);
   domElementKvtml.setAttribute(KV_COLS, m_doc->numLangs() );
   domElementKvtml.setAttribute(KV_LINES, m_doc->numEntries() );
-  
+
   if (!m_doc->doctitle.isEmpty())
     domElementKvtml.setAttribute(KV_TITLE, m_doc->doctitle);
 
-  if (!m_doc->author.isEmpty())
-    domElementKvtml.setAttribute(KV_AUTHOR, m_doc->getAuthor() );
+  if (!m_doc->m_author.isEmpty())
+    domElementKvtml.setAttribute(KV_AUTHOR, m_doc->author() );
 
-  if (!m_doc->license.isEmpty())
-    domElementKvtml.setAttribute(KV_LICENSE, m_doc->getLicense() );
+  if (!m_doc->m_license.isEmpty())
+    domElementKvtml.setAttribute(KV_LICENSE, m_doc->license() );
 
   if (!m_doc->doc_remark.isEmpty())
-    domElementKvtml.setAttribute(KV_DOC_REM, m_doc->getDocRemark() );
+    domElementKvtml.setAttribute(KV_DOC_REM, m_doc->docRemark() );
 
   if (!saveLessonKvtMl(domDoc, domElementKvtml))
     return false;
@@ -686,7 +686,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
 
   QString q_org, q_trans;
   vector<KEduVocExpression>::const_iterator first =  m_doc->vocabulary.begin ();
-  m_doc->getQueryLang(q_org, q_trans);
+  m_doc->queryLang(q_org, q_trans);
 
   int ent_no = 0;
   int ent_percent = (int) m_doc->vocabulary.size () / 100;
@@ -701,11 +701,11 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
     if (ent_percent != 0 && (ent_no % ent_percent) == 0 )
 //TODO emit progressChanged(this, ent_no / (int) f_ent_percent);
 
-    if ((*first).getLesson() != 0)
+    if ((*first).lesson() != 0)
     {
       // entry belongs to lesson x
       QString ls;
-      int lm = (*first).getLesson();
+      int lm = (*first).lesson();
       if (lm > (int) m_doc->lesson_descr.size() )
       {
         // should not be
@@ -728,9 +728,9 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
       domElementExpression.setAttribute (KV_INACTIVE, (QString) "1");
     }
 
-    if ((*first).uniqueType() && !(*first).getType(0).isEmpty())
+    if ((*first).uniqueType() && !(*first).type(0).isEmpty())
     {
-      domElementExpression.setAttribute (KV_EXPRTYPE, (*first).getType(0));
+      domElementExpression.setAttribute (KV_EXPRTYPE, (*first).type(0));
     }
 
     QDomElement domElementOriginal = domDoc.createElement(KV_ORG);
@@ -738,10 +738,10 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
     {
       // save space, only tell language in first entry
       QString s;
-      s.setNum (m_doc->getSizeHint (0));
+      s.setNum (m_doc->sizeHint (0));
       domElementOriginal.setAttribute(KV_SIZEHINT, s);
 
-      s = m_doc->getOriginalIdent().stripWhiteSpace();
+      s = m_doc->originalIdent().stripWhiteSpace();
       if (s.isEmpty() )
         s = "original";
       domElementOriginal.setAttribute (KV_LANG, s);
@@ -752,35 +752,35 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
 
     }
 
-    if (!(*first).getRemark(0).isEmpty() )
-      domElementOriginal.setAttribute(KV_REMARK, (*first).getRemark(0));
+    if (!(*first).remark(0).isEmpty() )
+      domElementOriginal.setAttribute(KV_REMARK, (*first).remark(0));
 
-    if (!(*first).getSynonym(0).isEmpty() )
-      domElementOriginal.setAttribute(KV_SYNONYM, (*first).getSynonym(0));
+    if (!(*first).synonym(0).isEmpty() )
+      domElementOriginal.setAttribute(KV_SYNONYM, (*first).synonym(0));
 
-    if (!(*first).getExample(0).isEmpty() )
-      domElementOriginal.setAttribute(KV_EXAMPLE, (*first).getExample(0));
+    if (!(*first).example(0).isEmpty() )
+      domElementOriginal.setAttribute(KV_EXAMPLE, (*first).example(0));
 
-    if (!(*first).getUsageLabel(0).isEmpty() )
-      domElementOriginal.setAttribute(KV_USAGE, (*first).getUsageLabel(0));
+    if (!(*first).usageLabel(0).isEmpty() )
+      domElementOriginal.setAttribute(KV_USAGE, (*first).usageLabel(0));
 
-    if (!(*first).getParaphrase(0).isEmpty() )
-      domElementOriginal.setAttribute(KV_PARAPHRASE, (*first).getParaphrase(0));
+    if (!(*first).paraphrase(0).isEmpty() )
+      domElementOriginal.setAttribute(KV_PARAPHRASE, (*first).paraphrase(0));
 
-    if (!(*first).getAntonym(0).isEmpty() )
-      domElementOriginal.setAttribute(KV_ANTONYM, (*first).getAntonym(0));
+    if (!(*first).antonym(0).isEmpty() )
+      domElementOriginal.setAttribute(KV_ANTONYM, (*first).antonym(0));
 
-    if (!(*first).getPronunce(0).isEmpty() )
-      domElementOriginal.setAttribute(KV_PRONUNCE, (*first).getPronunce(0));
+    if (!(*first).pronounce(0).isEmpty() )
+      domElementOriginal.setAttribute(KV_PRONUNCE, (*first).pronounce(0));
 
-    if (!(*first).uniqueType() && !(*first).getType(0).isEmpty())
-      domElementOriginal.setAttribute(KV_EXPRTYPE, (*first).getType(0));
+    if (!(*first).uniqueType() && !(*first).type(0).isEmpty())
+      domElementOriginal.setAttribute(KV_EXPRTYPE, (*first).type(0));
 
-    if (!saveMultipleChoice(domDoc, domElementOriginal, (*first).getMultipleChoice(0)))
+    if (!saveMultipleChoice(domDoc, domElementOriginal, (*first).multipleChoice(0)))
       return false;
 
     QString s;
-    QString entype = s = (*first).getType(0);
+    QString entype = s = (*first).type(0);
     int pos = s.find (QM_TYPE_DIV);
     if (pos >= 0)
       entype = s.left (pos);
@@ -788,21 +788,21 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
       entype = s;
 
     if (entype == QM_VERB
-        && (*first).getConjugation(0).numEntries() > 0)
+        && (*first).conjugation(0).numEntries() > 0)
     {
-      Conjugation conj = (*first).getConjugation(0);
+      Conjugation conj = (*first).conjugation(0);
       if (!saveConjugEntry(domDoc, domElementOriginal, conj))
         return false;
     }
     else if (entype == QM_ADJ
-             && !(*first).getComparison(0).isEmpty())
+             && !(*first).comparison(0).isEmpty())
     {
-      Comparison comp = (*first).getComparison(0);
+      Comparison comp = (*first).comparison(0);
       if (!saveComparison(domDoc, domElementOriginal, comp))
         return false;
     }
 
-    QDomText domTextOriginal = domDoc.createTextNode((*first).getOriginal());
+    QDomText domTextOriginal = domDoc.createTextNode((*first).original());
     domElementOriginal.appendChild(domTextOriginal);
     domElementExpression.appendChild(domElementOriginal);
 
@@ -814,10 +814,10 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
       {
         // save space, only tell language in first entry
         QString s;
-        s.setNum (m_doc->getSizeHint (trans));
+        s.setNum (m_doc->sizeHint (trans));
         domElementTranslation.setAttribute(KV_SIZEHINT, s);
 
-        s = m_doc->getIdent(trans).stripWhiteSpace();
+        s = m_doc->ident(trans).stripWhiteSpace();
         if (s.isEmpty() )
         {
           s.setNum (trans);
@@ -832,75 +832,75 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
 
       QString s1, s2;
 
-      if ((*first).getGrade(trans, false) != 0
-        ||(*first).getGrade(trans, true) != 0)
+      if ((*first).grade(trans, false) != 0
+        ||(*first).grade(trans, true) != 0)
       {
         domElementTranslation.setAttribute(KV_GRADE, (*first).gradeStr(trans, false)
                   +';'
                   +(*first).gradeStr(trans, true));
       }
 
-      if ((*first).getQueryCount(trans, false) != 0
-        ||(*first).getQueryCount(trans, true) != 0)
+      if ((*first).queryCount(trans, false) != 0
+        ||(*first).queryCount(trans, true) != 0)
       {
-        s1.setNum((*first).getQueryCount(trans, false));
-        s2.setNum((*first).getQueryCount(trans, true));
+        s1.setNum((*first).queryCount(trans, false));
+        s2.setNum((*first).queryCount(trans, true));
         domElementTranslation.setAttribute(KV_COUNT, s1 +';' +s2);
       }
 
-      if ((*first).getBadCount(trans, false) != 0
-        ||(*first).getBadCount(trans, true) != 0)
+      if ((*first).badCount(trans, false) != 0
+        ||(*first).badCount(trans, true) != 0)
       {
-        s1.setNum((*first).getBadCount(trans, false));
-        s2.setNum((*first).getBadCount(trans, true));
+        s1.setNum((*first).badCount(trans, false));
+        s2.setNum((*first).badCount(trans, true));
         domElementTranslation.setAttribute(KV_BAD, s1 +';' +s2);
       }
 
-      if ((*first).getQueryDate(trans, false) != 0
-        ||(*first).getQueryDate(trans, true) != 0)
+      if ((*first).queryDate(trans, false) != 0
+        ||(*first).queryDate(trans, true) != 0)
       {
-        s1.setNum((*first).getQueryDate(trans, false));
-        s2.setNum((*first).getQueryDate(trans, true));
+        s1.setNum((*first).queryDate(trans, false));
+        s2.setNum((*first).queryDate(trans, true));
         domElementTranslation.setAttribute(KV_DATE, s1 +';' +s2);
       }
 
-      if (!(*first).getRemark(trans).isEmpty() )
-        domElementTranslation.setAttribute(KV_REMARK, (*first).getRemark(trans));
+      if (!(*first).remark(trans).isEmpty() )
+        domElementTranslation.setAttribute(KV_REMARK, (*first).remark(trans));
 
-      if (!(*first).getFauxAmi(trans, false).isEmpty() )
-        domElementTranslation.setAttribute(KV_FAUX_AMI_F, (*first).getFauxAmi(trans, false));
+      if (!(*first).fauxAmi(trans, false).isEmpty() )
+        domElementTranslation.setAttribute(KV_FAUX_AMI_F, (*first).fauxAmi(trans, false));
 
-      if (!(*first).getFauxAmi(trans, true).isEmpty() )
-        domElementTranslation.setAttribute(KV_FAUX_AMI_T, (*first).getFauxAmi(trans, true));
+      if (!(*first).fauxAmi(trans, true).isEmpty() )
+        domElementTranslation.setAttribute(KV_FAUX_AMI_T, (*first).fauxAmi(trans, true));
 
-      if (!(*first).getSynonym(trans).isEmpty() )
-        domElementTranslation.setAttribute(KV_SYNONYM, (*first).getSynonym(trans));
+      if (!(*first).synonym(trans).isEmpty() )
+        domElementTranslation.setAttribute(KV_SYNONYM, (*first).synonym(trans));
 
-      if (!(*first).getExample(trans).isEmpty() )
-        domElementTranslation.setAttribute(KV_EXAMPLE, (*first).getExample(trans));
+      if (!(*first).example(trans).isEmpty() )
+        domElementTranslation.setAttribute(KV_EXAMPLE, (*first).example(trans));
 
-      if (!(*first).getUsageLabel(trans).isEmpty() )
-        domElementTranslation.setAttribute(KV_USAGE, (*first).getUsageLabel(trans));
+      if (!(*first).usageLabel(trans).isEmpty() )
+        domElementTranslation.setAttribute(KV_USAGE, (*first).usageLabel(trans));
 
-      if (!(*first).getParaphrase(trans).isEmpty() )
-        domElementTranslation.setAttribute(KV_PARAPHRASE, (*first).getParaphrase(trans));
+      if (!(*first).paraphrase(trans).isEmpty() )
+        domElementTranslation.setAttribute(KV_PARAPHRASE, (*first).paraphrase(trans));
 
-      if (!(*first).getAntonym(trans).isEmpty() )
-        domElementTranslation.setAttribute(KV_ANTONYM, (*first).getAntonym(trans));
+      if (!(*first).antonym(trans).isEmpty() )
+        domElementTranslation.setAttribute(KV_ANTONYM, (*first).antonym(trans));
 
-      if (!(*first).getPronunce(trans).isEmpty() )
-        domElementTranslation.setAttribute(KV_PRONUNCE, (*first).getPronunce(trans));
+      if (!(*first).pronounce(trans).isEmpty() )
+        domElementTranslation.setAttribute(KV_PRONUNCE, (*first).pronounce(trans));
 
-      if (!(*first).uniqueType() && !(*first).getType(trans).isEmpty())
-        domElementTranslation.setAttribute(KV_EXPRTYPE, (*first).getType(trans));
+      if (!(*first).uniqueType() && !(*first).type(trans).isEmpty())
+        domElementTranslation.setAttribute(KV_EXPRTYPE, (*first).type(trans));
 
       // only save conjugations when type == verb
 
-      if (!saveMultipleChoice(domDoc, domElementTranslation, (*first).getMultipleChoice(trans)))
+      if (!saveMultipleChoice(domDoc, domElementTranslation, (*first).multipleChoice(trans)))
         return false;
 
       QString s;
-      QString entype = s = (*first).getType(0);
+      QString entype = s = (*first).type(0);
       int pos = s.find (QM_TYPE_DIV);
       if (pos >= 0)
         entype = s.left (pos);
@@ -908,22 +908,22 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
         entype = s;
 
       if (entype == QM_VERB
-          && (*first).getConjugation(trans).numEntries() > 0)
+          && (*first).conjugation(trans).numEntries() > 0)
       {
-        Conjugation conj = (*first).getConjugation(trans);
+        Conjugation conj = (*first).conjugation(trans);
         if (!saveConjugEntry(domDoc, domElementTranslation, conj))
           return false;
       }
 
       if (entype == QM_ADJ
-          && !(*first).getComparison(trans).isEmpty())
+          && !(*first).comparison(trans).isEmpty())
       {
-        Comparison comp = (*first).getComparison(trans);
+        Comparison comp = (*first).comparison(trans);
         if (!saveComparison(domDoc, domElementTranslation, comp))
           return false;
       }
 
-      QDomText domTextTranslation = domDoc.createTextNode((*first).getTranslation(trans));
+      QDomText domTextTranslation = domDoc.createTextNode((*first).translation(trans));
       domElementTranslation.appendChild(domTextTranslation);
       domElementExpression.appendChild(domElementTranslation);
 

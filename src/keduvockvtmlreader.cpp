@@ -1577,8 +1577,8 @@ bool KEduVocKvtmlReader::readDoc(KEduVocDocument *doc)
   m_doc->cols = 0;
   m_doc->lines = 0;
   m_doc->doctitle = "";
-  m_doc->author = "";
-  m_doc->license = "";
+  m_doc->m_author = "";
+  m_doc->m_license = "";
   m_doc->doc_remark = "";
 
 
@@ -1610,13 +1610,13 @@ bool KEduVocKvtmlReader::readDoc(KEduVocDocument *doc)
   QDomAttr domAttrAuthor = domElementKvtml.attributeNode(KV_AUTHOR);
   if (!domAttrAuthor.isNull())
   {
-    m_doc->author = domAttrAuthor.value();
+    m_doc->m_author = domAttrAuthor.value();
   }
 
   QDomAttr domAttrLicence = domElementKvtml.attributeNode(KV_LICENSE);
   if (!domAttrLicence.isNull())
   {
-    m_doc->license = domAttrLicence.value();
+    m_doc->m_license = domAttrLicence.value();
   }
 
   QDomAttr domAttrRemark = domElementKvtml.attributeNode(KV_DOC_REM);

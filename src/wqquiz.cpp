@@ -83,7 +83,7 @@ void WQQuiz::addToList(int aCol, int bCol)
   IntList tempList;
   for (int current = 0; current < m_doc->numEntries(); ++current)
   {
-    if (!m_doc->getEntry(current)->getOriginal().isEmpty() && !m_doc->getEntry(current)->getTranslation(1).isEmpty())
+    if (!m_doc->entry(current)->original().isEmpty() && !m_doc->entry(current)->translation(1).isEmpty())
     {
       tempList.append(current);
     }
@@ -222,11 +222,11 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
   QString tTemp;
   if (li->question() == 0)
   {
-    tTemp = m_doc->getEntry(li->oneOp())->getTranslation(1);
+    tTemp = m_doc->entry(li->oneOp())->translation(1);
   }
   else
   {
-    tTemp = m_doc->getEntry(li->oneOp())->getOriginal();
+    tTemp = m_doc->entry(li->oneOp())->original();
   }
   tTemp = tTemp.stripWhiteSpace();
   ans = ans.stripWhiteSpace();
@@ -281,15 +281,15 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
 
   }
 
-  QString tmpLeitner( m_doc->getEntry(li->oneOp())->getLeitnerBox() );
+  QString tmpLeitner( m_doc->entry(li->oneOp())->leitnerBox() );
 
   if (!result)
   {
-    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->wrongBox( tmpLeitner ));
+    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->wrongBox( tmpLeitner ));
     m_errorList -> append(li);
   }
   else
-    m_doc->getEntry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->correctBox( tmpLeitner ));
+    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->correctBox( tmpLeitner ));
 
   return result;
 }
@@ -315,8 +315,8 @@ QStringList WQQuiz::multiOptions(int i)
   }
 
   s = new QString(j ?
-                  m_doc->getEntry(li->oneOp())->getTranslation(1) :
-                  m_doc->getEntry(li->oneOp())->getOriginal());
+                  m_doc->entry(li->oneOp())->translation(1) :
+                  m_doc->entry(li->oneOp())->original());
   if (Prefs::enableBlanks())
   {
     s->remove("[");
@@ -325,8 +325,8 @@ QStringList WQQuiz::multiOptions(int i)
   ls->append(s);
 
   s = new QString(j ?
-                  m_doc->getEntry(li->twoOp())->getTranslation(1) :
-                  m_doc->getEntry(li->twoOp())->getOriginal());
+                  m_doc->entry(li->twoOp())->translation(1) :
+                  m_doc->entry(li->twoOp())->original());
   if (Prefs::enableBlanks())
   {
     s->remove("[");
@@ -335,8 +335,8 @@ QStringList WQQuiz::multiOptions(int i)
   ls->append(s);
 
   s = new QString(j ?
-                  m_doc->getEntry(li->threeOp())->getTranslation(1) :
-                  m_doc->getEntry(li->threeOp())->getOriginal());
+                  m_doc->entry(li->threeOp())->translation(1) :
+                  m_doc->entry(li->threeOp())->original());
   if (Prefs::enableBlanks())
   {
     s->remove("[");
@@ -439,7 +439,7 @@ void WQQuiz::setQuizMode(int qm)
 QString WQQuiz::question(int i)
 {
   WQListItem *li = m_list->at(i);
-  QString s = (li->question() ? m_doc->getEntry(li->oneOp())->getTranslation(1) : m_doc->getEntry(li->oneOp())->getOriginal());
+  QString s = (li->question() ? m_doc->entry(li->oneOp())->translation(1) : m_doc->entry(li->oneOp())->original());
   if (Prefs::enableBlanks())
   {
     s.remove("[");
@@ -467,7 +467,7 @@ QString WQQuiz::blankAnswer(int i)
   if (m_quizType == qtQA && Prefs::enableBlanks())
   {
     WQListItem *li = m_list->at(i);
-    tTemp = (li->question() ? m_doc->getEntry(li->oneOp())->getOriginal() : m_doc->getEntry(li->oneOp())->getTranslation(1));
+    tTemp = (li->question() ? m_doc->entry(li->oneOp())->original() : m_doc->entry(li->oneOp())->translation(1));
     r = tTemp;
     QRegExp rx;
     rx.setMinimal(true);
@@ -503,7 +503,7 @@ QString WQQuiz::answer(int i)
 
   if (m_quizType == qtQA)
   {
-    s = (li->question() ? m_doc->getEntry(li->oneOp())->getOriginal() : m_doc->getEntry(li->oneOp())->getTranslation(1));
+    s = (li->question() ? m_doc->entry(li->oneOp())->original() : m_doc->entry(li->oneOp())->translation(1));
     if (Prefs::enableBlanks())
     {
       s.replace("[", "<u>");
@@ -514,7 +514,7 @@ QString WQQuiz::answer(int i)
   }
   else
   {
-    s = (li->question() ? m_doc->getEntry(li->oneOp())->getOriginal() : m_doc->getEntry(li->oneOp())->getTranslation(1));
+    s = (li->question() ? m_doc->entry(li->oneOp())->original() : m_doc->entry(li->oneOp())->translation(1));
     if (Prefs::enableBlanks())
     {
       s.remove("[");
@@ -528,9 +528,9 @@ QString WQQuiz::langQuestion(int i)
 {
   WQListItem *li = m_list->at(i);
   if (li->question() == 0)
-    return m_doc->getOriginalIdent();
+    return m_doc->originalIdent();
   else
-    return m_doc->getIdent(1);
+    return m_doc->ident(1);
 }
 
 QString WQQuiz::langAnswer(int i)
@@ -538,9 +538,9 @@ QString WQQuiz::langAnswer(int i)
 
   WQListItem *li = m_list->at(i);
   if (li->question() == 1)
-    return m_doc->getOriginalIdent();
+    return m_doc->originalIdent();
   else
-    return m_doc->getIdent(1);
+    return m_doc->ident(1);
 }
 
 int WQQuiz::kbAnswer(int i)
