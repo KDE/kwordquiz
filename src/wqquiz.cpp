@@ -285,11 +285,11 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
 
   if (!result)
   {
-    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->wrongBox( tmpLeitner ));
+    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->leitnerSystem()->wrongBox( tmpLeitner ));
     m_errorList -> append(li);
   }
   else
-    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->getLeitnerSystem()->correctBox( tmpLeitner ));
+    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->leitnerSystem()->correctBox( tmpLeitner ));
 
   return result;
 }

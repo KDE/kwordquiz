@@ -95,7 +95,7 @@ void KEduVocDocument::Init ()
   m_font = NULL;
 
   activeLeitnerSystem = false;
-  leitnerSystem = NULL;
+  m_leitnerSystem = NULL;
 }
 
 
@@ -695,7 +695,7 @@ void KEduVocDocument::setLeitnerSystemActive( bool yes )
 {
 	if( yes )
 	{
-		if( leitnerSystem == 0 )
+		if (m_leitnerSystem == 0)
 			createStandardLeitnerSystem(); //if nothing is loaded yet
 
 		activeLeitnerSystem = true;
@@ -731,20 +731,20 @@ void KEduVocDocument::createStandardLeitnerSystem()
 	tmpSystem->setCorrectBox( "Box 5", "Box 1" );
 	tmpSystem->setWrongBox( "Box 5", "Box 1" );
 
-	leitnerSystem = tmpSystem;
+	m_leitnerSystem = tmpSystem;
 }
 
 void KEduVocDocument::setLeitnerSystem( LeitnerSystem* system )
 {
-	leitnerSystem = system;
+	m_leitnerSystem = system;
 
 	/*KWordQuizApp* app = (KWordQuizApp*) parent();
 	app->slotLeitnerSystem();*/
 }
 
-LeitnerSystem* KEduVocDocument::getLeitnerSystem()
+LeitnerSystem* KEduVocDocument::leitnerSystem()
 {
-	return leitnerSystem;
+	return m_leitnerSystem;
 }
 
 

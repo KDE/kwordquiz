@@ -610,7 +610,7 @@ class KEduVocDocument : public QObject
   void setLeitnerSystemActive(bool yes);
   void createStandardLeitnerSystem();
   void setLeitnerSystem( LeitnerSystem* system );
-  LeitnerSystem* getLeitnerSystem();
+  LeitnerSystem* leitnerSystem();
 
   bool unknownAttribute (int line, const QString &name, const QString &attr);
   void unknownElement (int line, const QString &elem );
@@ -696,7 +696,7 @@ protected:
   vector<Article>        articles;
   vector<Conjugation>    conjugations;
 
-  LeitnerSystem* 	       leitnerSystem;
+  LeitnerSystem* 	       m_leitnerSystem;
   bool			             activeLeitnerSystem;
 };
 

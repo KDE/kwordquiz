@@ -1357,7 +1357,7 @@ void KWordQuizApp::slotLeitnerSystem()
 
 void KWordQuizApp::slotConfigLeitner()
 {
-	PrefLeitner* config = new PrefLeitner( this, "configLeitner", 0, doc->getLeitnerSystem() );
+	PrefLeitner* config = new PrefLeitner( this, "configLeitner", 0, doc->leitnerSystem() );
 	if( config->exec() == QDialog::Accepted )
 		doc->setLeitnerSystem( config->getSystem() );
 
