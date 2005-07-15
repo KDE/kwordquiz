@@ -1,6 +1,7 @@
 [!Global!]
 IconName=kwordquiz
 Comment=KWordQuiz
+Comment[bn]=কে-ওয়ার্ড-কুইজ
 Comment[hi]=के-वर्ड-क्विज़
 Comment[mk]=К светски квиз
 Comment[pl]=Quiz słowny
@@ -11,6 +12,7 @@ Comment[tg]=ИмтиҳониKҲарф
 [QuizCorrect]
 Name=QuizCorrect
 Name[bg]=Правилен отговор
+Name[bn]==কুইজ-সঠিক
 Name[bs]=KvizTačno
 Name[ca]=QüestionariCorrecte
 Name[cs]=Správně
@@ -32,6 +34,7 @@ Name[tg]=ИмтиҳониДурустӣ
 Name[zh_CN]=答对
 Comment=Correct answer
 Comment[bg]=Правилен отговор
+Comment[bn]=সঠিক উত্তর
 Comment[br]=Eilger reizh
 Comment[bs]=Tačan odgovor
 Comment[ca]=Resposta correcta
@@ -73,6 +76,7 @@ default_presentation=1
 [QuizError]
 Name=QuizError
 Name[bg]=Грешен отговор
+Name[bn]=কুইজ-বেঠিক
 Name[bs]=KvizGreška
 Name[ca]=QüestionariError
 Name[cs]=Chyba
@@ -94,6 +98,7 @@ Name[tg]=ИмтиҳониХатогӣ
 Name[zh_CN]=答错
 Comment=Wrong answer
 Comment[bg]=Грешен отговор
+Comment[bn]=ভুল উত্তর
 Comment[br]=Respont fall
 Comment[bs]=Pogrešan odgovor
 Comment[ca]=Resposta incorrecta
@@ -135,6 +140,7 @@ default_presentation=1
 [SyntaxError]
 Name=syntaxerror
 Name[bg]=Синтактична грешка
+Name[bn]=ভুল-বানান
 Name[bs]=sintaksnagreška
 Name[ca]=error de sintaxi
 Name[cs]=chyba v syntaxy
@@ -160,6 +166,7 @@ Name[tr]=sözdizimi hatası
 Name[zh_CN]=语法错误
 Comment=Error in syntax
 Comment[bg]=Синтактична грешка
+Comment[bn]=বানানে ভুল রয়েছে
 Comment[bs]=Greška u sintaksi
 Comment[ca]=Error de sintaxi
 Comment[cs]=Chyba v syntaxy
