@@ -19,16 +19,6 @@
 #ifndef KEDUVOCDOCUMENT_H
 #define KEDUVOCDOCUMENT_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-#include <qobject.h>
-#include <qfont.h>
-#include <kurl.h>
-
-#include "keduvocexpression.h"
-
 #define KVD_ZERO_TIME  934329599   // 1999-08-10 23:59:59, never change
 #define KVD_VERS_PREFIX " v"       // kvoctrain v0.1.0
 
@@ -242,14 +232,21 @@
 
 #define VCB_SEPARATOR    "__"
 
+#include <qobject.h>
+#include <qfont.h>
+#include <kurl.h>
+
+#include "keduvocexpression.h"
+
 class QTextStream;
 class QStringList;
 class MultipleChoice;
 class LeitnerSystem;
 
-/*************************************************************
-  * This class contains the expressions of your vocabulary
-  ************************************************************/
+/**
+  This class contains the expressions of your vocabulary
+  as well as other information about the vocabulary
+  */
 
 class KEduVocDocument : public QObject
 {
