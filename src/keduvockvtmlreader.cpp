@@ -1004,7 +1004,9 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
   QDomAttr domAttrType = domElementParent.attributeNode(KV_EXPRTYPE);
   if (!domAttrType.isNull())
   {
-    exprtype = !domAttrType.value().toInt();
+    exprtype = domAttrType.value();
+    //exprtype = !domAttrType.value().toInt(); PBH 2005-07-17 I don't know what this is supposed to achieve?
+    //The above works better
     if (exprtype == "1")
       exprtype = QM_VERB;
     else if (exprtype == "2")  // convert from pre-0.5 versions
@@ -1377,8 +1379,11 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
     expr.setQueryCount  (count, r_qcount, true);
     expr.setBadCount    (count, bcount, false);
     expr.setBadCount    (count, r_bcount, true);
-    expr.setQueryDate   (count, qdate, false);
-    expr.setQueryDate   (count, r_qdate, true);
+    QDateTime dt;
+    dt.setTime_t(qdate);
+    expr.setQueryDate(count, dt, false);
+    dt.setTime_t(r_qdate);
+    expr.setQueryDate(count, dt, true);
 
     if (conjug.size() > 0)
     {

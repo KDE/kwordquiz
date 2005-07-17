@@ -47,11 +47,9 @@
 #define KV_LEV7_GRADE      7
 #define KV_LEV7_TEXT       I18N_NOOP("Level 7")
 
+#include <qvaluelist.h>
 #include <qstringlist.h>
-
-#include <time.h>
-#include <vector>
-using namespace std;
+#include <qdatetime.h>
 
 #include "grammarmanager.h"
 #include "multiplechoice.h"
@@ -59,10 +57,10 @@ using namespace std;
 typedef signed char grade_t;
 typedef unsigned short count_t;
 
-/***************************************************************
-  * This class contains one expression as original or in one
-  * translations
-  **************************************************************/
+/**
+  This class contains one expression either as an original or as a
+  translation
+  */
 
 class KEduVocExpression
 {
@@ -328,14 +326,14 @@ class KEduVocExpression
    * @param index            index of translation
    * @param rev_date         dito, in opposite direction
    */
-  time_t queryDate (int index, bool rev_date = false) const;
+  QDateTime queryDate (int index, bool rev_date = false) const;
 
   /** set last query date of given translation as int
    *
    * @param index            index of translation
    * @param rev_date         dito, in opposite direction
    */
-  void setQueryDate (int index, time_t date, bool rev_date = false);
+  void setQueryDate (int index, const QDateTime & date, bool rev_date = false);
 
   /** returns conjugations if available
    *
@@ -435,31 +433,31 @@ class KEduVocExpression
   void Init();
 
  private:
-  QString            origin;
+  QString        origin;
 
   // all these vectors must be deleted in removeTranslation()
-  vector<QString>     exprtypes;
-  /*vector<QString>*/ QStringList     translations;
-  vector<QString>     remarks;
-  vector<QString>     usageLabels;
-  vector<QString>     paraphrases;
-  vector<QString>     m_fauxAmi;
-  vector<QString>     rev_fauxAmi;
-  vector<QString>     m_synonym;
-  vector<QString>     m_example;
-  vector<QString>     m_antonym;
-  vector<QString>     pronunces;
-  vector<grade_t>     grades;
-  vector<grade_t>     rev_grades;
-  vector<count_t>     qcounts;
-  vector<count_t>     rev_qcounts;
-  vector<count_t>     bcounts;
-  vector<count_t>     rev_bcounts;
-  vector<time_t>      qdates;
-  vector<time_t>      rev_qdates;
-  vector<Conjugation> conjugations;
-  vector<Comparison>  comparisons;
-  vector<MultipleChoice> mcs;
+  QStringList    exprtypes;
+  QStringList    translations;
+  QStringList    remarks;
+  QStringList    usageLabels;
+  QStringList    paraphrases;
+  QStringList    m_fauxAmi;
+  QStringList    rev_fauxAmi;
+  QStringList    m_synonym;
+  QStringList    m_example;
+  QStringList    m_antonym;
+  QStringList    pronunces;
+  QValueList<grade_t>     grades;
+  QValueList<grade_t>     rev_grades;
+  QValueList<count_t>     qcounts;
+  QValueList<count_t>     rev_qcounts;
+  QValueList<count_t>     bcounts;
+  QValueList<count_t>     rev_bcounts;
+  QValueList<QDateTime>      qdates;
+  QValueList<QDateTime>      rev_qdates;
+  QValueList<Conjugation> conjugations;
+  QValueList<Comparison>  comparisons;
+  QValueList<MultipleChoice> mcs;
 
   QString 	          m_leitnerBox;
   int                 m_lesson;

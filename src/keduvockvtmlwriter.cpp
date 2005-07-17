@@ -699,8 +699,9 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
 
     ent_no++;
     if (ent_percent != 0 && (ent_no % ent_percent) == 0 )
-//TODO emit progressChanged(this, ent_no / (int) f_ent_percent);
-
+    {
+      //TODO emit progressChanged(this, ent_no / (int) f_ent_percent);
+    }
     if ((*first).lesson() != 0)
     {
       // entry belongs to lesson x
@@ -856,11 +857,11 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
         domElementTranslation.setAttribute(KV_BAD, s1 +';' +s2);
       }
 
-      if ((*first).queryDate(trans, false) != 0
-        ||(*first).queryDate(trans, true) != 0)
+      if ((*first).queryDate(trans, false).toTime_t() != 0
+        ||(*first).queryDate(trans, true).toTime_t() != 0)
       {
-        s1.setNum((*first).queryDate(trans, false));
-        s2.setNum((*first).queryDate(trans, true));
+        s1.setNum((*first).queryDate(trans, false).toTime_t());
+        s2.setNum((*first).queryDate(trans, true).toTime_t());
         domElementTranslation.setAttribute(KV_DATE, s1 +';' +s2);
       }
 

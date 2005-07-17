@@ -767,8 +767,10 @@ public:
             x.setQueryCount (i, 0, false);
             x.setBadCount (i, 0, true);
             x.setBadCount (i, 0, false);
-            x.setQueryDate (i, 0, true);
-            x.setQueryDate (i, 0, false);
+            QDateTime dt;
+            dt.setTime_t(0);
+            x.setQueryDate (i, dt, true);
+            x.setQueryDate (i, dt, false);
          }
        }
     }
@@ -795,8 +797,10 @@ public:
          x.setQueryCount (index, 0, false);
          x.setBadCount (index, 0, true);
          x.setBadCount (index, 0, false);
-         x.setQueryDate (index, 0, true);
-         x.setQueryDate (index, 0, false);
+         QDateTime dt;
+         dt.setTime_t(0);
+         x.setQueryDate (index, dt, true);
+         x.setQueryDate (index, dt, false);
        }
     }
 
