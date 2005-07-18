@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
  "dtd/kdex.dtd" [
-  <!ENTITY kwordquiz "<application>KWordQuiz</application>">
   <!ENTITY kappname "&kwordquiz;">
   <!ENTITY package "kdeedu">
   <!ENTITY % addindex "IGNORE">
@@ -1428,11 +1427,11 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
 &kwordquiz;
 </para>
 <para>
-Program copyright 2003-2004 Peter B. Hedlund <email>peter AT peterandlinda DOT com</email>
+Program copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
 </para>
 
 <para>
-Documentation copyright 2003-2004 Peter B. Hedlund <email>peter AT peterandlinda DOT com</email>
+Documentation copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
 </para>
 
 &underFDL;   <!-- FDL: do not remove -->
