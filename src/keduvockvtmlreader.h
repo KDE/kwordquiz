@@ -79,7 +79,7 @@ public:
 	bool readLesson(QDomElement &domElementParent);
 	bool readArticle(QDomElement &domElementParent);
 	bool readConjug(QDomElement &domElementParent,
-									vector<Conjugation> &curr_conjug,
+									QValueList<Conjugation> &curr_conjug,
                   const QString &entry_tag);
 	bool readOptions(QDomElement &domElementParent);
 	bool readType(QDomElement &domElementParent);

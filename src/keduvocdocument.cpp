@@ -46,7 +46,7 @@ using namespace std;
 //  KEduVocDocument
 //********************************************************
 
-KEduVocDocument::KEduVocDocument(QObject *parent)
+KEduVocDocument::KEduVocDocument(QObject */*parent*/)
 {
   Init();
 }
@@ -60,7 +60,7 @@ KEduVocDocument::~KEduVocDocument()
 
 void KEduVocDocument::setVersion (const QString & vers)
 {
-  doc_version = vers;
+  m_version = vers;
 }
 
 
@@ -71,39 +71,39 @@ void KEduVocDocument::version(int &, int &, int &)
 
 void KEduVocDocument::Init ()
 {
-  lesson_descr.clear();
-  type_descr.clear();
-  tense_descr.clear();
-  langs.clear();
-  sort_lang.clear();
-  extraSizehints.clear();
-  sizehints.clear();
-  vocabulary.clear();
-  dirty = false;
-  sort_allowed = true;
-  unknown_attr = false;
-  unknown_elem = false;
-  sort_lesson = false;
+  m_lessonDescriptions.clear();
+  m_typeDescriptions.clear();
+  m_tenseDescriptions.clear();
+  m_languages.clear();
+  m_sortLanguage.clear();
+  m_extraSizeHints.clear();
+  m_sizeHints.clear();
+  m_vocabulary.clear();
+  m_dirty = false;
+  m_enableSorting = true;
+  m_unknownAttribute = false;
+  m_unknownElement = false;
+  m_sortLesson = false;
   setCurrentLesson (0);
-  queryorg = "";
-  querytrans = "";
-  doc_url.setFileName(i18n("Untitled"));
-  doctitle = "";
+  m_queryorg = "";
+  m_querytrans = "";
+  m_url.setFileName(i18n("Untitled"));
+  m_title = "";
   m_author = "";
-  doc_remark = "";
-  doc_version = "";
+  m_remark = "";
+  m_version = "";
   m_font = NULL;
 
-  activeLeitnerSystem = false;
+  m_activeLeitnerSystem = false;
   m_leitnerSystem = NULL;
 }
 
 
-bool KEduVocDocument::open(const KURL& url, bool append)
+bool KEduVocDocument::open(const KURL& url, bool /*append*/)
 {
   Init();
   if (!url.isEmpty())
-    doc_url = url;
+    m_url = url;
 
   // TODO EPT  connect( this, SIGNAL(progressChanged(KEduVocDocument*,int)), parent, SLOT(slotProgress(KEduVocDocument*,int)) );
 
@@ -117,7 +117,7 @@ bool KEduVocDocument::open(const KURL& url, bool append)
       return false;
     }
 
-    FileType ft = detectFT(url.path());
+    FileType ft = detectFileType(url.path());
 
     bool read = false;
     while (!read) {
@@ -169,7 +169,7 @@ bool KEduVocDocument::open(const KURL& url, bool append)
       QApplication::restoreOverrideCursor();
 
       if (!read) {
-        if (unknown_attr || unknown_elem ) {
+        if (m_unknownAttribute || m_unknownElement ) {
           Init();
           return false;
         }
@@ -281,8 +281,8 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft, con
       if ( result == KMessageBox::Cancel ) return false;
     }
   }
-  doc_url = tmp;
-  dirty = false;
+  m_url = tmp;
+  m_dirty = false;
   emit docModified(false);
   return true;
 }
@@ -290,25 +290,25 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft, con
 
 KEduVocExpression *KEduVocDocument::entry(int index)
 {
-  if (index < 0 || index >= (int)vocabulary.size() )
+  if (index < 0 || index >= (int)m_vocabulary.size() )
     return 0;
   else
-    return &vocabulary[index];
+    return &m_vocabulary[index];
 }
 
 
 void KEduVocDocument::removeEntry(int index)
 {
-  if (index >= 0 && index < (int)vocabulary.size() )
-    vocabulary.erase (vocabulary.begin() + index);
+  if (index >= 0 && index < (int)m_vocabulary.size() )
+    m_vocabulary.erase(m_vocabulary.at(index));
 }
 
 
-int KEduVocDocument::findIdent (const QString &lang) const
+int KEduVocDocument::findIdentifier(const QString &lang) const
 {
-  vector<QString>::const_iterator first = langs.begin();
+  QStringList::const_iterator first = m_languages.begin();
   int count = 0;
-  while (first != langs.end()) {
+  while (first != m_languages.end()) {
     if ( *first == lang)
       return count;
     first++;
@@ -318,124 +318,124 @@ int KEduVocDocument::findIdent (const QString &lang) const
 }
 
 
-QString KEduVocDocument::ident (int index) const
+QString KEduVocDocument::identifier(int index) const
 {
-  if (index >= (int)langs.size() || index < 1 )
+  if (index >= (int)m_languages.size() || index < 1 )
     return "";
   else
-    return langs[index];
+    return m_languages[index];
 }
 
 
-void KEduVocDocument::setIdent (int idx, const QString &id)
+void KEduVocDocument::setIdentifier(int idx, const QString &id)
 {
-  if (idx < (int)langs.size() && idx >= 1 ) {
-    langs[idx] = id;
+  if (idx < (int)m_languages.size() && idx >= 1 ) {
+    m_languages[idx] = id;
   }
 }
 
 
 QString KEduVocDocument::typeName (int index) const
 {
-  if (index >= (int)type_descr.size())
+  if (index >= (int)m_typeDescriptions.count())
     return "";
   else
-    return type_descr[index];
+    return m_typeDescriptions[index];
 }
 
 
-void KEduVocDocument::setTypeName (int idx, QString &id)
+void KEduVocDocument::setTypeName(int idx, QString &id)
 {
-  if (idx >= (int)type_descr.size())
-    for (int i = (int)type_descr.size(); i <= idx; i++)
-      type_descr.push_back ("");
+  if (idx >= (int)m_typeDescriptions.size())
+    for (int i = (int)m_typeDescriptions.size(); i <= idx; i++)
+      m_typeDescriptions.push_back ("");
 
-  type_descr[idx] = id;
+  m_typeDescriptions[idx] = id;
 }
 
 
-QString KEduVocDocument::tenseName (int index) const
+QString KEduVocDocument::tenseName(int index) const
 {
-  if (index >= (int)tense_descr.size())
+  if (index >= (int)m_tenseDescriptions.size())
     return "";
   else
-    return tense_descr[index];
+    return m_tenseDescriptions[index];
 }
 
 
-void KEduVocDocument::setTenseName (int idx, QString &id)
+void KEduVocDocument::setTenseName(int idx, QString &id)
 {
-  if (idx >= (int)tense_descr.size())
-    for (int i = (int)tense_descr.size(); i <= idx; i++)
-      tense_descr.push_back ("");
+  if (idx >= (int)m_tenseDescriptions.size())
+    for (int i = (int)m_tenseDescriptions.size(); i <= idx; i++)
+      m_tenseDescriptions.push_back ("");
 
-  tense_descr[idx] = id;
+  m_tenseDescriptions[idx] = id;
 }
 
 
-QString KEduVocDocument::usageName (int index) const
+QString KEduVocDocument::usageName(int index) const
 {
-  if (index >= (int)usage_descr.size())
+  if (index >= (int)m_usageDescriptions.size())
     return "";
   else
-    return usage_descr[index];
+    return m_usageDescriptions[index];
 }
 
 
-void KEduVocDocument::setUsageName (int idx, QString &id)
+void KEduVocDocument::setUsageName(int idx, QString &id)
 {
-  if (idx >= (int)usage_descr.size())
-    for (int i = (int)usage_descr.size(); i <= idx; i++)
-      usage_descr.push_back ("");
+  if (idx >= (int)m_usageDescriptions.size())
+    for (int i = (int)m_usageDescriptions.size(); i <= idx; i++)
+      m_usageDescriptions.push_back ("");
 
-  usage_descr[idx] = id;
+  m_usageDescriptions[idx] = id;
 }
 
 
-void KEduVocDocument::setConjugation (int idx, const Conjugation &con)
+void KEduVocDocument::setConjugation(int idx, const Conjugation &con)
 {
   if ( idx < 0) return;
 
   // extend conjugation with empty elements
-  if ((int)conjugations.size() <= idx )
-    for (int i = conjugations.size(); i < idx+1; i++)
-      conjugations.push_back (Conjugation());
+  if ((int)m_conjugations.size() <= idx )
+    for (int i = m_conjugations.size(); i < idx+1; i++)
+      m_conjugations.push_back (Conjugation());
 
-  conjugations[idx] = con;
+  m_conjugations[idx] = con;
 }
 
 
 Conjugation KEduVocDocument::conjugation (int idx) const
 {
-  if (idx >= (int)conjugations.size() || idx < 0) {
+  if (idx >= (int)m_conjugations.size() || idx < 0) {
     return Conjugation();
   }
   else {
-    return conjugations[idx];
+    return m_conjugations[idx];
   }
 }
 
 
-void KEduVocDocument::setArticle (int idx, const Article &art)
+void KEduVocDocument::setArticle(int idx, const Article &art)
 {
   if ( idx < 0) return;
 
   // extend conjugation with empty elements
-  if ((int)articles.size() <= idx )
-    for (int i = articles.size(); i < idx+1; i++)
-      articles.push_back (Article());
+  if ((int)m_articles.size() <= idx )
+    for (int i = m_articles.size(); i < idx+1; i++)
+      m_articles.push_back (Article());
 
-  articles[idx] = art;
+  m_articles[idx] = art;
 }
 
 
 Article KEduVocDocument::article (int idx) const
 {
-  if (idx >= (int)articles.size() || idx < 0) {
+  if (idx >= (int)m_articles.size() || idx < 0) {
     return Article();
   }
   else {
-    return articles[idx];
+    return m_articles[idx];
   }
 }
 
@@ -444,19 +444,19 @@ int KEduVocDocument::sizeHint (int idx) const
 {
   if (idx < 0) {
     idx = -idx;
-    if (idx >= (int)extraSizehints.size() )
+    if (idx >= (int)m_extraSizeHints.size() )
       return 80; // make a good guess about column size
     else {
 //      cout << "gsh " << idx << "  " << extraSizehints[idx] << endl;
-      return extraSizehints[idx];
+      return m_extraSizeHints[idx];
     }
   }
   else {
-    if (idx >= (int)sizehints.size() )
+    if (idx >= (int)m_sizeHints.size() )
       return 150; // make a good guess about column size
     else {
 //      cout << "gsh " << idx << "  " << sizehints[idx] << endl;
-      return sizehints[idx];
+      return m_sizeHints[idx];
     }
   }
 }
@@ -467,19 +467,19 @@ void KEduVocDocument::setSizeHint (int idx, const int width)
 //  cout << "ssh " << idx << "  " << width << endl;
   if (idx < 0) {
     idx = -idx;
-    if (idx >= (int)extraSizehints.size()) {
-      for (int i = (int)extraSizehints.size(); i <= idx; i++)
-        extraSizehints.push_back (80);
+    if (idx >= (int)m_extraSizeHints.size()) {
+      for (int i = (int)m_extraSizeHints.size(); i <= idx; i++)
+        m_extraSizeHints.push_back (80);
     }
-    extraSizehints[idx] = width;
+    m_extraSizeHints[idx] = width;
 
   }
   else {
-    if (idx >= (int)sizehints.size()) {
-      for (int i = (int)sizehints.size(); i <= idx; i++)
-        sizehints.push_back (150);
+    if (idx >= (int)m_sizeHints.size()) {
+      for (int i = (int)m_sizeHints.size(); i <= idx; i++)
+        m_sizeHints.push_back (150);
     }
-    sizehints[idx] = width;
+    m_sizeHints[idx] = width;
   }
 }
 
@@ -502,28 +502,28 @@ public:
 };
 
 
-void KEduVocDocument::removeIdent (int index)
+void KEduVocDocument::removeIdentifier(int index)
 {
-  if (index < (int)langs.size() && index >= 1 ) {
-    langs.erase(langs.begin() + index);
-    for_each (vocabulary.begin(), vocabulary.end(), eraseTrans(index));
+  if (index < (int)m_languages.size() && index >= 1 ) {
+    m_languages.erase(m_languages.at(index));
+    for_each (m_vocabulary.begin(), m_vocabulary.end(), eraseTrans(index));
   }
 }
 
 
-QString KEduVocDocument::originalIdent () const
+QString KEduVocDocument::originalIdentifier() const
 {
-  if (langs.size() > 0)
-    return langs[0];
+  if (m_languages.size() > 0)
+    return m_languages[0];
   else
     return "";
 }
 
 
-void KEduVocDocument::setOriginalIdent (const QString &id)
+void KEduVocDocument::setOriginalIdentifier(const QString &id)
 {
-  if (langs.size() > 0) {
-    langs[0] = id;
+  if (m_languages.size() > 0) {
+    m_languages[0] = id;
   }
 }
 
@@ -565,10 +565,10 @@ public:
       if (x.lesson() != y.lesson() )
         return
           !dir
-          ? (QString::compare(doc.lessonDescr(x.lesson()).upper(),
-                              doc.lessonDescr(y.lesson()).upper() ) < 0)
-          : (QString::compare(doc.lessonDescr(x.lesson()).upper(),
-                              doc.lessonDescr(y.lesson()).upper() ) > 0);
+          ? (QString::compare(doc.lessonDescription(x.lesson()).upper(),
+                              doc.lessonDescription(y.lesson()).upper() ) < 0)
+          : (QString::compare(doc.lessonDescription(x.lesson()).upper(),
+                              doc.lessonDescription(y.lesson()).upper() ) > 0);
       else
         return
           !dir
@@ -641,7 +641,7 @@ public:
 
 bool KEduVocDocument::sort (int index)
 {
-  if (!sort_allowed)
+  /*if (!sort_allowed)
     return false;
 
   if (index >= numLangs())
@@ -656,24 +656,24 @@ bool KEduVocDocument::sort (int index)
   else
     std::sort (vocabulary.begin(), vocabulary.end(), sortByTrans(index, sort_lang[index]));
   sort_lang[index] = !sort_lang[index];
-  return sort_lang[index];
+  return sort_lang[index];*/
 }
 
 
-bool KEduVocDocument::sortByLesson_alpha ()
+bool KEduVocDocument::sortByLessonAlpha ()
 {
-  if (!sort_allowed)
+ /* if (!sort_allowed)
     return false;
 
   std::sort (vocabulary.begin(), vocabulary.end(), sortByLessonAndOrg_alpha(sort_lesson, *this ));
   sort_lesson = !sort_lesson;
-  return sort_lesson;
+  return sort_lesson;*/
 }
 
 
-bool KEduVocDocument::sortByLesson_index ()
+bool KEduVocDocument::sortByLessonIndex ()
 {
-  if (!sort_allowed)
+ /* if (!sort_allowed)
     return false;
 
   if (sort_lang.size() < langs.size())
@@ -683,12 +683,12 @@ bool KEduVocDocument::sortByLesson_index ()
   std::sort (vocabulary.begin(), vocabulary.end(), sortByLessonAndOrg_index(sort_lesson, *this ));
   sort_lesson = !sort_lesson;
   sort_lang[0] = sort_lesson;
-  return sort_lesson;
+  return sort_lesson;*/
 }
 
 bool KEduVocDocument::leitnerSystemActive()
 {
-	return activeLeitnerSystem;
+	return m_activeLeitnerSystem;
 }
 
 void KEduVocDocument::setLeitnerSystemActive( bool yes )
@@ -698,10 +698,10 @@ void KEduVocDocument::setLeitnerSystemActive( bool yes )
 		if (m_leitnerSystem == 0)
 			createStandardLeitnerSystem(); //if nothing is loaded yet
 
-		activeLeitnerSystem = true;
+		m_activeLeitnerSystem = true;
 	}
 	else if( !yes )
-		activeLeitnerSystem = false;
+		m_activeLeitnerSystem = false;
 }
 
 void KEduVocDocument::createStandardLeitnerSystem()
@@ -813,29 +813,29 @@ public:
 void KEduVocDocument::resetEntry (int index, int lesson)
 {
   if (index < 0)
-    for_each (vocabulary.begin(), vocabulary.end(), resetAll(lesson) );
+    for_each (m_vocabulary.begin(), m_vocabulary.end(), resetAll(lesson) );
   else
-    for_each (vocabulary.begin(), vocabulary.end(), resetOne(index, lesson) );
+    for_each (m_vocabulary.begin(), m_vocabulary.end(), resetOne(index, lesson) );
 }
 
 
-QString KEduVocDocument::lessonDescr(int idx) const
+QString KEduVocDocument::lessonDescription(int idx) const
 {
   if (idx == 0)
     return i18n("<no lesson>");
 
-  if (idx <= 0 || idx > (int) lesson_descr.size() )
+  if (idx <= 0 || idx > (int) m_lessonDescriptions.size() )
     return "";
 
-  return lesson_descr[idx-1];
+  return m_lessonDescriptions[idx-1];
 }
 
 
-vector<int> KEduVocDocument::lessonsInQuery() const
+QValueList<int> KEduVocDocument::lessonsInQuery() const
 {
-  vector<int> iqvec;
-  for (unsigned i = 0; i < lessons_in_query.size(); i++)
-    if (lessons_in_query[i]) {
+  QValueList<int> iqvec;
+  for (unsigned i = 0; i < m_lessonsInQuery.size(); i++)
+    if (m_lessonsInQuery[i]) {
       iqvec.push_back(i+1);   // Offset <no lesson>
 //      cout << "getliq: " << i+1 << endl;
     }
@@ -843,15 +843,15 @@ vector<int> KEduVocDocument::lessonsInQuery() const
 }
 
 
-void KEduVocDocument::setLessonsInQuery(vector<int> lesson_iq)
+void KEduVocDocument::setLessonsInQuery(QValueList<int> lesson_iq)
 {
-  lessons_in_query.clear();
-  for (unsigned i = 0; i < lesson_descr.size(); i++)
-    lessons_in_query.push_back(false);
+  m_lessonsInQuery.clear();
+  for (unsigned i = 0; i < m_lessonDescriptions.size(); i++)
+    m_lessonsInQuery.push_back(false);
 
   for (unsigned i = 0; i < lesson_iq.size(); i++)
-    if (lesson_iq[i] <= (int) lessons_in_query.size() ) {
-      lessons_in_query[lesson_iq[i]-1] = true;    // Offset <no lesson>
+    if (lesson_iq[i] <= (int) m_lessonsInQuery.size() ) {
+      m_lessonsInQuery[lesson_iq[i]-1] = true;    // Offset <no lesson>
 //      cout << "setliq: " << lesson_iq[i] << " " << i << endl;
     }
 }
@@ -859,10 +859,10 @@ void KEduVocDocument::setLessonsInQuery(vector<int> lesson_iq)
 
 QString KEduVocDocument::title() const
 {
-  if (doctitle.isEmpty())
-    return doc_url.fileName();
+  if (m_title.isEmpty())
+    return m_url.fileName();
   else
-    return doctitle;
+    return m_title;
 }
 
 
@@ -880,7 +880,7 @@ QString KEduVocDocument::license() const
 
 QString KEduVocDocument::docRemark() const
 {
-  return doc_remark;
+  return m_remark;
 }
 
 
@@ -892,7 +892,7 @@ QFont* KEduVocDocument::font() const
 
 void KEduVocDocument::setTitle(const QString & title)
 {
-  doctitle = title.stripWhiteSpace();
+  m_title = title.stripWhiteSpace();
 }
 
 
@@ -910,7 +910,7 @@ void KEduVocDocument::setLicense(const QString & s)
 
 void KEduVocDocument::setDocRemark(const QString & s)
 {
-  doc_remark = s.stripWhiteSpace();
+  m_remark = s.stripWhiteSpace();
 }
 
 
@@ -933,7 +933,7 @@ int KEduVocDocument::search(QString substr, int id,
    if (first < 0)
      first = 0;
 
-   if (id >= numLangs()
+   if (id >= numLanguages()
       || last < first
       )
      return -1;
@@ -1004,7 +1004,7 @@ unsigned long KEduVocDocument::decompressDate(QString s) const
 }
 
 
-KEduVocDocument::FileType KEduVocDocument::detectFT(const QString &filename)
+KEduVocDocument::FileType KEduVocDocument::detectFileType(const QString &filename)
 {
    QFile f( filename );
    if (!f.open( IO_ReadOnly ))
@@ -1089,7 +1089,7 @@ int KEduVocDocument::cleanUp()
   vector<expRef> shadow;
   vector<int> to_delete;
 
-  for (int i = 0; i < (int) vocabulary.size(); i++)
+  for (int i = 0; i < (int) m_vocabulary.size(); i++)
     shadow.push_back (expRef (entry(i), i));
   std::sort(shadow.begin(), shadow.end());
 
@@ -1105,8 +1105,8 @@ int KEduVocDocument::cleanUp()
 #endif
 
   int ent_no = 0;
-  int ent_percent = vocabulary.size () / 100;
-  float f_ent_percent = vocabulary.size () / 100.0;
+  int ent_percent = m_vocabulary.size () / 100;
+  float f_ent_percent = m_vocabulary.size () / 100.0;
   emit progressChanged(this, 0);
 
   for (int i = shadow.size()-1; i > 0; i--) {
@@ -1119,7 +1119,7 @@ int KEduVocDocument::cleanUp()
 
     bool equal = true;
     if (kve1->original() == kve2->original() ) {
-      for (int l = 1; equal && l < (int) numLangs(); l++ )
+      for (int l = 1; equal && l < (int) numLanguages(); l++ )
         if (kve1->translation(l) != kve2->translation(l))
           equal = false;
 

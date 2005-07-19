@@ -74,8 +74,8 @@ KWordQuizView::~KWordQuizView()
 void KWordQuizView::displayDoc()
 {
   setNumRows(getDocument()->numEntries());
-  horizontalHeader()->setLabel(0, getDocument()->originalIdent());
-  horizontalHeader()->setLabel(1, getDocument()->ident(1));
+  horizontalHeader()->setLabel(0, getDocument()->originalIdentifier());
+  horizontalHeader()->setLabel(1, getDocument()->identifier(1));
   setColumnWidth(0, getDocument()->sizeHint(0));
   setColumnWidth(1, getDocument()->sizeHint(1));
   if (getDocument()->font() != NULL)

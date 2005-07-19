@@ -79,7 +79,7 @@ public:
   bool saveOptionsKvtMl  (QDomDocument &domDoc, QDomElement &domElementParent);
   bool saveArticleKvtMl  (QDomDocument &domDoc, QDomElement &domElementParent);
   bool saveConjugHeader  (QDomDocument &domDoc, QDomElement &domElementParent,
-                          vector<Conjugation> &curr_conjug);
+                          QValueList<Conjugation> &curr_conjug);
   bool saveConjug        (QDomDocument &domDoc, QDomElement &domElementParent,
                           const Conjugation &curr_conjug, QString type);
   bool saveConjugEntry   (QDomDocument &domDoc, QDomElement &domElementParent,

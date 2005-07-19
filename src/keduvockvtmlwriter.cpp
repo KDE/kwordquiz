@@ -35,17 +35,17 @@ KEduVocKvtmlWriter::~KEduVocKvtmlWriter()
 
 bool KEduVocKvtmlWriter::saveTypeNameKvtMl (QDomDocument &domDoc, QDomElement &domElementParent)
 {
-  if (m_doc->type_descr.size() == 0)
+  if (m_doc->m_typeDescriptions.size() == 0)
     return true;
 
   QDomElement domElementType = domDoc.createElement(KV_TYPE_GRP);
 
-  for (int lfn = 0; lfn < (int) m_doc->type_descr.size(); lfn++)
+  for (int lfn = 0; lfn < (int) m_doc->m_typeDescriptions.size(); lfn++)
   {
-    if (!(m_doc->type_descr[lfn].isNull()) )
+    if (!(m_doc->m_typeDescriptions[lfn].isNull()) )
     {
       QDomElement domElementDesc = domDoc.createElement(KV_TYPE_DESC);
-      QDomText domTextDesc = domDoc.createTextNode(m_doc->type_descr[lfn]);
+      QDomText domTextDesc = domDoc.createTextNode(m_doc->m_typeDescriptions[lfn]);
 
       domElementDesc.setAttribute(KV_TYPE_NO, lfn+1);
       domElementDesc.appendChild(domTextDesc);
@@ -60,16 +60,16 @@ bool KEduVocKvtmlWriter::saveTypeNameKvtMl (QDomDocument &domDoc, QDomElement &d
 
 bool KEduVocKvtmlWriter::saveTenseNameKvtMl (QDomDocument &domDoc, QDomElement &domElementParent)
 {
-  if (m_doc->tense_descr.size() == 0)
+  if (m_doc->m_tenseDescriptions.size() == 0)
     return true;
 
   QDomElement domElementTense = domDoc.createElement(KV_TENSE_GRP);
 
-  for (int lfn = 0; lfn < (int) m_doc->tense_descr.size(); lfn++)
+  for (int lfn = 0; lfn < (int) m_doc->m_tenseDescriptions.size(); lfn++)
   {
-    if (!(m_doc->tense_descr[lfn].isNull()) ) {
+    if (!(m_doc->m_tenseDescriptions[lfn].isNull()) ) {
       QDomElement domElementDesc = domDoc.createElement(KV_TENSE_DESC);
-      QDomText domTextDesc = domDoc.createTextNode(m_doc->tense_descr[lfn]);
+      QDomText domTextDesc = domDoc.createTextNode(m_doc->m_tenseDescriptions[lfn]);
 
       domElementDesc.setAttribute(KV_TENSE_NO, lfn+1);
       domElementDesc.appendChild(domTextDesc);
@@ -84,17 +84,17 @@ bool KEduVocKvtmlWriter::saveTenseNameKvtMl (QDomDocument &domDoc, QDomElement &
 
 bool KEduVocKvtmlWriter::saveUsageNameKvtMl (QDomDocument &domDoc, QDomElement &domElementParent)
 {
-  if (m_doc->usage_descr.size() == 0)
+  if (m_doc->m_usageDescriptions.size() == 0)
     return true;
 
   QDomElement domElementUsage = domDoc.createElement(KV_USAGE_GRP);
 
-  for (int lfn = 0; lfn < (int) m_doc->usage_descr.size(); lfn++)
+  for (int lfn = 0; lfn < (int) m_doc->m_usageDescriptions.size(); lfn++)
   {
-    if (!(m_doc->usage_descr[lfn].isNull()) )
+    if (!(m_doc->m_usageDescriptions[lfn].isNull()) )
     {
       QDomElement domElementDesc = domDoc.createElement(KV_USAGE_DESC);
-      QDomText domTextDesc = domDoc.createTextNode(m_doc->usage_descr[lfn]);
+      QDomText domTextDesc = domDoc.createTextNode(m_doc->m_usageDescriptions[lfn]);
 
       domElementDesc.setAttribute(KV_USAGE_NO, lfn+1);
       domElementDesc.appendChild(domTextDesc);
@@ -109,23 +109,23 @@ bool KEduVocKvtmlWriter::saveUsageNameKvtMl (QDomDocument &domDoc, QDomElement &
 
 bool KEduVocKvtmlWriter::saveLessonKvtMl (QDomDocument &domDoc, QDomElement &domElementParent)
 {
-  if (m_doc->lesson_descr.size() == 0)
+  if (m_doc->m_lessonDescriptions.size() == 0)
     return true;
 
   QDomElement domElementLesson = domDoc.createElement(KV_LESS_GRP);
   domElementLesson.setAttribute(KV_SIZEHINT, m_doc->sizeHint(-1));
 
-  for (int lfn = 0; lfn < (int) m_doc->lesson_descr.size(); lfn++)
+  for (int lfn = 0; lfn < (int) m_doc->m_lessonDescriptions.size(); lfn++)
   {
-    if (!(m_doc->lesson_descr[lfn].isNull()) )
+    if (!(m_doc->m_lessonDescriptions[lfn].isNull()) )
     {
       QDomElement domElementDesc = domDoc.createElement(KV_LESS_DESC);
-      QDomText domTextDesc = domDoc.createTextNode(m_doc->lesson_descr[lfn]);
+      QDomText domTextDesc = domDoc.createTextNode(m_doc->m_lessonDescriptions[lfn]);
 
       domElementDesc.setAttribute(KV_LESS_NO, lfn+1);
       if (m_doc->currentLesson() == lfn+1)
         domElementDesc.setAttribute (KV_LESS_CURR, 1);
-      if (lfn < (int) m_doc->lessons_in_query.size() && m_doc->lessons_in_query[lfn])
+      if (lfn < (int) m_doc->m_lessonsInQuery.size() && m_doc->m_lessonsInQuery[lfn])
         domElementDesc.setAttribute (KV_LESS_QUERY, 1);
 
       domElementDesc.appendChild(domTextDesc);
@@ -243,7 +243,7 @@ bool KEduVocKvtmlWriter::saveConjug(QDomDocument &domDoc, QDomElement &domElemen
 }
 
 bool KEduVocKvtmlWriter::saveConjugHeader(QDomDocument &domDoc, QDomElement &domElementParent,
-                                          vector<Conjugation> &curr_conjug)
+                                          QValueList<Conjugation> &curr_conjug)
 {
 /*
  <conjugation>    used in header for definiton of "prefix"
@@ -268,19 +268,19 @@ bool KEduVocKvtmlWriter::saveConjugHeader(QDomDocument &domDoc, QDomElement &dom
   QDomElement domElementConjug = domDoc.createElement(KV_CONJUG_GRP);
   QString s;
 
-  for (int ent = 0; ent < QMIN((int) curr_conjug.size(), m_doc->numLangs()); ent++)
+  for (int ent = 0; ent < QMIN((int) curr_conjug.size(), m_doc->numLanguages()); ent++)
   {
     QDomElement domElementEntry = domDoc.createElement(KV_CON_ENTRY);
 
     if (ent == 0)
     {
-      s = m_doc->originalIdent().stripWhiteSpace();  //EPT le Ident doit �re superflu
+      s = m_doc->originalIdentifier().stripWhiteSpace();  //EPT le Ident doit �re superflu
       if (s.isEmpty() )
         s = "original";
     }
     else
     {
-      s = m_doc->ident(ent).stripWhiteSpace();
+      s = m_doc->identifier(ent).stripWhiteSpace();
       if (s.isEmpty() )
       {
         s.setNum(ent);
@@ -472,24 +472,24 @@ bool KEduVocKvtmlWriter::saveArticleKvtMl(QDomDocument &domDoc, QDomElement &dom
  </article>
 */
 {
-  if (m_doc->articles.size() == 0)
+  if (m_doc->m_articles.size() == 0)
     return true;
 
   QDomElement domElementArticle = domDoc.createElement(KV_ARTICLE_GRP);
   QString def, indef, s;
 
-  for (int lfn = 0; lfn < QMIN((int) m_doc->articles.size(), m_doc->numLangs()); lfn++)
+  for (int lfn = 0; lfn < QMIN((int) m_doc->m_articles.size(), m_doc->numLanguages()); lfn++)
   {
     QDomElement domElementEntry = domDoc.createElement(KV_ART_ENTRY);
     if (lfn == 0)
     {
-      s = m_doc->originalIdent().stripWhiteSpace();
+      s = m_doc->originalIdentifier().stripWhiteSpace();
       if (s.isEmpty() )
         s = "original";
     }
     else
     {
-      s = m_doc->ident(lfn).stripWhiteSpace();
+      s = m_doc->identifier(lfn).stripWhiteSpace();
       if (s.isEmpty() )
       {
         s.setNum(lfn);
@@ -498,7 +498,7 @@ bool KEduVocKvtmlWriter::saveArticleKvtMl(QDomDocument &domDoc, QDomElement &dom
     }
     domElementEntry.setAttribute(KV_LANG, s);
 
-    m_doc->articles[lfn].female(def, indef);
+    m_doc->m_articles[lfn].female(def, indef);
     if (!def.isEmpty() )
     {
       QDomElement domElementFD = domDoc.createElement(KV_ART_FD);
@@ -516,7 +516,7 @@ bool KEduVocKvtmlWriter::saveArticleKvtMl(QDomDocument &domDoc, QDomElement &dom
       domElementEntry.appendChild(domElementFI);
     }
 
-    m_doc->articles[lfn].male(def, indef);
+    m_doc->m_articles[lfn].male(def, indef);
     if (!def.isEmpty() )
     {
       QDomElement domElementMD = domDoc.createElement(KV_ART_MD);
@@ -534,7 +534,7 @@ bool KEduVocKvtmlWriter::saveArticleKvtMl(QDomDocument &domDoc, QDomElement &dom
       domElementEntry.appendChild(domElementMI);
     }
 
-    m_doc->articles[lfn].natural(def, indef);
+    m_doc->m_articles[lfn].natural(def, indef);
     if (!def.isEmpty() )
     {
       QDomElement domElementND = domDoc.createElement(KV_ART_ND);
@@ -565,7 +565,7 @@ bool KEduVocKvtmlWriter::saveOptionsKvtMl(QDomDocument &domDoc, QDomElement &dom
   QDomElement domElementOption = domDoc.createElement(KV_OPTION_GRP);
   QDomElement domElementSort = domDoc.createElement(KV_OPT_SORT);
 
-  domElementSort.setAttribute(KV_BOOL_FLAG, (m_doc->sort_allowed?1:0));
+  domElementSort.setAttribute(KV_BOOL_FLAG, (m_doc->m_enableSorting?1:0));
   domElementOption.appendChild(domElementSort);
 
   domElementParent.appendChild(domElementOption);
@@ -648,11 +648,11 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
   domElementKvtml.setAttribute(KV_ENCODING, (QString)"UTF-8");
 
   domElementKvtml.setAttribute(KV_GENERATOR, generator);
-  domElementKvtml.setAttribute(KV_COLS, m_doc->numLangs() );
+  domElementKvtml.setAttribute(KV_COLS, m_doc->numLanguages() );
   domElementKvtml.setAttribute(KV_LINES, m_doc->numEntries() );
 
-  if (!m_doc->doctitle.isEmpty())
-    domElementKvtml.setAttribute(KV_TITLE, m_doc->doctitle);
+  if (!m_doc->m_title.isEmpty())
+    domElementKvtml.setAttribute(KV_TITLE, m_doc->m_title);
 
   if (!m_doc->m_author.isEmpty())
     domElementKvtml.setAttribute(KV_AUTHOR, m_doc->author() );
@@ -660,7 +660,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
   if (!m_doc->m_license.isEmpty())
     domElementKvtml.setAttribute(KV_LICENSE, m_doc->license() );
 
-  if (!m_doc->doc_remark.isEmpty())
+  if (!m_doc->m_remark.isEmpty())
     domElementKvtml.setAttribute(KV_DOC_REM, m_doc->docRemark() );
 
   if (!saveLessonKvtMl(domDoc, domElementKvtml))
@@ -669,7 +669,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
   if (!saveArticleKvtMl(domDoc, domElementKvtml))
     return false;
 
-  if (!saveConjugHeader(domDoc, domElementKvtml, m_doc->conjugations))
+  if (!saveConjugHeader(domDoc, domElementKvtml, m_doc->m_conjugations))
     return false;
 
   if (!saveOptionsKvtMl(domDoc, domElementKvtml))
@@ -685,15 +685,15 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
     return false;
 
   QString q_org, q_trans;
-  vector<KEduVocExpression>::const_iterator first =  m_doc->vocabulary.begin ();
+  QValueList<KEduVocExpression>::const_iterator first =  m_doc->m_vocabulary.begin ();
   m_doc->queryLang(q_org, q_trans);
 
   int ent_no = 0;
-  int ent_percent = (int) m_doc->vocabulary.size () / 100;
-  float f_ent_percent = (int) m_doc->vocabulary.size () / 100.0;
+  int ent_percent = (int) m_doc->m_vocabulary.size () / 100;
+  float f_ent_percent = (int) m_doc->m_vocabulary.size () / 100.0;
 //TODO emit progressChanged(this, 0);
 
-  while (first != m_doc->vocabulary.end ())
+  while (first != m_doc->m_vocabulary.end ())
   {
     QDomElement domElementExpression = domDoc.createElement(KV_EXPR);
 
@@ -707,7 +707,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
       // entry belongs to lesson x
       QString ls;
       int lm = (*first).lesson();
-      if (lm > (int) m_doc->lesson_descr.size() )
+      if (lm > (int) m_doc->m_lessonDescriptions.size() )
       {
         // should not be
         kdError() << "index of lesson member too high: " << lm << endl;
@@ -742,7 +742,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
       s.setNum (m_doc->sizeHint (0));
       domElementOriginal.setAttribute(KV_SIZEHINT, s);
 
-      s = m_doc->originalIdent().stripWhiteSpace();
+      s = m_doc->originalIdentifier().stripWhiteSpace();
       if (s.isEmpty() )
         s = "original";
       domElementOriginal.setAttribute (KV_LANG, s);
@@ -808,7 +808,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
     domElementExpression.appendChild(domElementOriginal);
 
     int trans = 1;
-    while (trans < (int)m_doc->langs.size())
+    while (trans < (int)m_doc->m_languages.size())
     {
       QDomElement domElementTranslation = domDoc.createElement(KV_TRANS);
       if (first_expr)
@@ -818,7 +818,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
         s.setNum (m_doc->sizeHint (trans));
         domElementTranslation.setAttribute(KV_SIZEHINT, s);
 
-        s = m_doc->ident(trans).stripWhiteSpace();
+        s = m_doc->identifier(trans).stripWhiteSpace();
         if (s.isEmpty() )
         {
           s.setNum (trans);

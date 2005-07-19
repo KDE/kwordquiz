@@ -41,7 +41,7 @@ KEduVocKvtmlReader::~KEduVocKvtmlReader()
 bool KEduVocKvtmlReader::readLesson(QDomElement &domElementParent)
 {
   QString s;
-  m_doc->lesson_descr.clear();
+  m_doc->m_lessonDescriptions.clear();
 
   //-------------------------------------------------------------------------
   // Attributes
@@ -80,9 +80,9 @@ bool KEduVocKvtmlReader::readLesson(QDomElement &domElementParent)
 
       QDomAttr domAttrQuery = domElementChild.attributeNode(KV_LESS_QUERY);
       if (!domAttrQuery.isNull())
-        m_doc->lessons_in_query.push_back(domAttrQuery.value().toInt() != 0);
+        m_doc->m_lessonsInQuery.push_back(domAttrQuery.value().toInt() != 0);
       else
-        m_doc->lessons_in_query.push_back(false);
+        m_doc->m_lessonsInQuery.push_back(false);
 
       //-----
       // Text
@@ -90,7 +90,7 @@ bool KEduVocKvtmlReader::readLesson(QDomElement &domElementParent)
       s = domElementChild.text();
       if (s.isNull())
         s = "";
-      m_doc->lesson_descr.push_back(s);
+      m_doc->m_lessonDescriptions.push_back(s);
     }
     else
     {
@@ -123,7 +123,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
   bool inEntry = false;
   int count = 0;
   QString s;
-  m_doc->articles.clear();
+  m_doc->m_articles.clear();
 
   QDomElement domElementEntry = domElementParent.firstChild().toElement();
 
@@ -141,18 +141,18 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
     QString lang;
     QDomAttr domAttrLang = domElementEntry.attributeNode(KV_LANG);
 
-    if ((int)m_doc->langs.size() <= count)
+    if ((int)m_doc->m_languages.size() <= count)
     {
       // first entry
       if (!domAttrLang.isNull())         // no definition in first entry
         lang = domAttrLang.value();
       else
         lang = "original";
-      m_doc->langs.push_back(lang);
+      m_doc->m_languages.push_back(lang);
     }
     else
     {
-      if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->langs[count])
+      if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->m_languages[count])
       {
         // different originals ?
         domError(i18n("ambiguous definition of language code"));
@@ -218,7 +218,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
       domElementEntryChild = domElementEntryChild.nextSibling().toElement();
     }
 
-    m_doc->articles.push_back(Article(  fem_def, fem_indef,
+    m_doc->m_articles.push_back(Article(  fem_def, fem_indef,
                                         mal_def, mal_indef,
                                         nat_def, nat_indef));
 
@@ -231,7 +231,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
 
 
 bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent,
-                                    vector<Conjugation> &curr_conjug,
+                                    QValueList<Conjugation> &curr_conjug,
                                     const QString &entry_tag)
 /*
  <conjugation>        used in header for definiton of "prefix"
@@ -300,18 +300,18 @@ bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent,
       QString lang;
       QDomAttr domAttrLang = domElementConjugChild.attributeNode(KV_LANG);
 
-      if ((int)m_doc->langs.size() <= count)
+      if ((int)m_doc->m_languages.size() <= count)
       {
         // first entry
         if (!domAttrLang.isNull())            // no definition in first entry
           lang = domAttrLang.value();
         else
           lang = "original";
-        m_doc->langs.push_back(lang);
+        m_doc->m_languages.push_back(lang);
       }
       else
       {
-        if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->langs[count])
+        if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->m_languages[count])
         {
           // different originals ?
           domError(i18n("ambiguous definition of language code"));
@@ -332,15 +332,15 @@ bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent,
       if (type.length() != 0 && type.left(1) == UL_USER_TENSE)
       {
         int num = QMIN(type.mid (1, 40).toInt(), 1000); // paranoia check
-        if( num > (int) m_doc->tense_descr.size() )
+        if( num > (int) m_doc->m_tenseDescriptions.size() )
         {
           // description missing ?
           QString s;
-          for (int i = m_doc->tense_descr.size(); i < num; i++)
+          for (int i = m_doc->m_tenseDescriptions.size(); i < num; i++)
           {
             s.setNum (i+1);
             s.insert (0, "#");  // invent descr according to number
-            m_doc->tense_descr.push_back(s);
+            m_doc->m_tenseDescriptions.push_back(s);
           }
         }
       }
@@ -473,14 +473,14 @@ bool KEduVocKvtmlReader::readOptions(QDomElement &domElementParent)
   {
     if (domElementSort.tagName() == KV_OPT_SORT)
     {
-      m_doc->sort_allowed = true;
+      m_doc->m_enableSorting = true;
       QDomAttr domAttrOn = domElementSort.attributeNode(KV_BOOL_FLAG);
       if (!domAttrOn.isNull())
             {
                 bool ok = true;
-        m_doc->sort_allowed = domAttrOn.value().toInt(&ok);  // returns 0 if the conversion fails
+        m_doc->m_enableSorting = domAttrOn.value().toInt(&ok);  // returns 0 if the conversion fails
           if (!ok)
-              m_doc->sort_allowed = true;
+              m_doc->m_enableSorting = true;
             }
     }
 
@@ -494,7 +494,7 @@ bool KEduVocKvtmlReader::readOptions(QDomElement &domElementParent)
 bool KEduVocKvtmlReader::readType(QDomElement &domElementParent)
 {
   QString s;
-  m_doc->type_descr.clear();
+  m_doc->m_typeDescriptions.clear();
 
   QDomElement domElementDesc = domElementParent.firstChild().toElement();
 
@@ -519,7 +519,7 @@ bool KEduVocKvtmlReader::readType(QDomElement &domElementParent)
       if (s.isNull())
         s = "";
 
-      m_doc->type_descr.push_back (s);
+      m_doc->m_typeDescriptions.push_back (s);
     }
     else
     {
@@ -537,7 +537,7 @@ bool KEduVocKvtmlReader::readType(QDomElement &domElementParent)
 bool KEduVocKvtmlReader::readTense(QDomElement &domElementParent)
 {
   QString s;
-  m_doc->tense_descr.clear();
+  m_doc->m_tenseDescriptions.clear();
 
   QDomElement domElementDesc = domElementParent.firstChild().toElement();
 
@@ -562,7 +562,7 @@ bool KEduVocKvtmlReader::readTense(QDomElement &domElementParent)
       if (s.isNull())
         s = "";
 
-      m_doc->tense_descr.push_back (s);
+      m_doc->m_tenseDescriptions.push_back (s);
     }
     else
     {
@@ -580,7 +580,7 @@ bool KEduVocKvtmlReader::readTense(QDomElement &domElementParent)
 bool KEduVocKvtmlReader::readUsage(QDomElement &domElementParent)
 {
   QString s;
-  m_doc->usage_descr.clear();
+  m_doc->m_usageDescriptions.clear();
 
   QDomElement domElementDesc = domElementParent.firstChild().toElement();
 
@@ -605,7 +605,7 @@ bool KEduVocKvtmlReader::readUsage(QDomElement &domElementParent)
       if (s.isNull())
         s = "";
 
-      m_doc->usage_descr.push_back (s);
+      m_doc->m_usageDescriptions.push_back (s);
     }
     else
     {
@@ -883,15 +883,15 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
     if (usage.length() != 0 && usage.left(1) == UL_USER_USAGE)
     {
       int num = QMIN(usage.mid (1, 40).toInt(), 1000); // paranioa check
-      if( num > (int) m_doc->usage_descr.size() )
+      if( num > (int) m_doc->m_usageDescriptions.size() )
       {
         // description missing ?
         QString s;
-        for (int i = m_doc->usage_descr.size(); i < num; i++)
+        for (int i = m_doc->m_usageDescriptions.size(); i < num; i++)
         {
           s.setNum (i+1);
           s.insert (0, "#");  // invent descr according to number
-          m_doc->usage_descr.push_back (s);
+          m_doc->m_usageDescriptions.push_back (s);
         }
       }
     }
@@ -921,15 +921,15 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
     if (type.length() != 0 && type.left(1) == QM_USER_TYPE)
     {
       int num = QMIN(type.mid (1, 40).toInt(), 1000); // paranoia check
-      if( num > (int) m_doc->type_descr.size() )
+      if( num > (int) m_doc->m_typeDescriptions.size() )
       {
         // description missing ?
         QString s;
-        for (int i = m_doc->type_descr.size(); i < num; i++)
+        for (int i = m_doc->m_typeDescriptions.size(); i < num; i++)
         {
           s.setNum (i+1);
           s.insert (0, "#");  // invent descr according to number
-          m_doc->type_descr.push_back (s);
+          m_doc->m_typeDescriptions.push_back (s);
         }
       }
     }
@@ -981,7 +981,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
   QString       antonym;
   QString       usage;
   QString       paraphrase;
-  vector<Conjugation> conjug;
+  QValueList<Conjugation> conjug;
   Comparison     comparison;
   MultipleChoice mc;
 
@@ -1017,29 +1017,29 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
     if (exprtype.length() != 0 && exprtype.left(1) == QM_USER_TYPE)
     {
       int num = QMIN(exprtype.mid (1, 40).toInt(), 1000); // paranoia check
-      if( num > (int) m_doc->type_descr.size() )
+      if( num > (int) m_doc->m_typeDescriptions.size() )
       {
         // description missing ?
         QString s;
-        for (int i = m_doc->type_descr.size(); i < num; i++)
+        for (int i = m_doc->m_typeDescriptions.size(); i < num; i++)
         {
           s.setNum (i+1);
           s.insert (0, "#");  // invent descr according to number
-          m_doc->type_descr.push_back (s);
+          m_doc->m_typeDescriptions.push_back (s);
         }
       }
     }
   }
 
-  if (lesson && lesson > (int) m_doc->lesson_descr.size() )
+  if (lesson && lesson > (int) m_doc->m_lessonDescriptions.size() )
   {
     // description missing ?
     QString s;
-    for (int i = m_doc->lesson_descr.size(); i < lesson; i++)
+    for (int i = m_doc->m_lessonDescriptions.size(); i < lesson; i++)
     {
       s.setNum (i+1);
       s.insert (0, "#");  // invent descr according to number
-      m_doc->lesson_descr.push_back (s);
+      m_doc->m_lessonDescriptions.push_back (s);
     }
   }
 
@@ -1091,7 +1091,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
     return false;
 
 
-  if (m_doc->vocabulary.size() == 0)
+  if (m_doc->m_vocabulary.size() == 0)
   {
     // only accept in first entry
     if (width >= 0)
@@ -1104,17 +1104,17 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
       q_trans = lang;
   }
 
-  if (m_doc->langs.size() == 0)
+  if (m_doc->m_languages.size() == 0)
   {
     // first entry
     if (lang.isEmpty())                 // no definition in first entry
       lang = "original";
-    m_doc->langs.push_back(lang);
+    m_doc->m_languages.push_back(lang);
 
   }
   else
   {
-    if (lang != m_doc->langs[0] && !lang.isEmpty())
+    if (lang != m_doc->m_languages[0] && !lang.isEmpty())
     {
       // different originals ?
       domError(i18n("ambiguous definition of language code"));
@@ -1266,7 +1266,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
                                         paraphrase))
       return false;
 
-    if (m_doc->vocabulary.size() == 0)
+    if (m_doc->m_vocabulary.size() == 0)
     {
       // only accept in first entry
       if (width >= 0)
@@ -1280,21 +1280,21 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
 
     }
 
-    if (m_doc->langs.size() <= count)
+    if (m_doc->m_languages.size() <= count)
     {
       // new translation
       if (lang.isEmpty())
       {
         // no definition in first entry ?
-        lang.setNum (m_doc->langs.size() );
+        lang.setNum (m_doc->m_languages.size() );
         lang.insert (0, "translation ");
       }
-      m_doc->langs.push_back(lang);
+      m_doc->m_languages.push_back(lang);
 
     }
     else
     {
-      if (lang != m_doc->langs[count] && !lang.isEmpty())
+      if (lang != m_doc->m_languages[count] && !lang.isEmpty())
       { // different language ?
         domError(i18n("ambiguous definition of language code"));
         return false;
@@ -1425,7 +1425,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
   }
   if (m_doc->numEntries() == 0)
     m_doc->setQueryLang(q_org, q_trans);
-  m_doc->vocabulary.push_back(expr);
+  m_doc->m_vocabulary.push_back(expr);
 
   return true;
 }
@@ -1442,8 +1442,8 @@ bool KEduVocKvtmlReader::readBody(QDomElement &domElementParent)
   bool conjuggroup = false;
 
   int ent_no = 0;
-  int ent_percent = (int) m_doc->lines / 100;
-  float f_ent_percent = (int) m_doc->lines / 100.0;
+  int ent_percent = (int) m_doc->m_lines / 100;
+  float f_ent_percent = (int) m_doc->m_lines / 100.0;
 /* TODO EPT
 if (lines != 0)
     emit progressChanged(this, 0);
@@ -1485,7 +1485,7 @@ if (lines != 0)
         return false;
       }
       conjuggroup = true;
-      if (!readConjug(domElementChild, m_doc->conjugations, KV_CON_ENTRY))
+      if (!readConjug(domElementChild, m_doc->m_conjugations, KV_CON_ENTRY))
         return false;
     }
 
@@ -1575,16 +1575,16 @@ bool KEduVocKvtmlReader::readDoc(KEduVocDocument *doc)
     return false;
   }
 
-  m_doc->langs.clear();
-  m_doc->vocabulary.clear();
+  m_doc->m_languages.clear();
+  m_doc->m_vocabulary.clear();
 
-  m_doc->generator = "";
-  m_doc->cols = 0;
-  m_doc->lines = 0;
-  m_doc->doctitle = "";
+  m_doc->m_generator = "";
+  m_doc->m_cols = 0;
+  m_doc->m_lines = 0;
+  m_doc->m_title = "";
   m_doc->m_author = "";
   m_doc->m_license = "";
-  m_doc->doc_remark = "";
+  m_doc->m_remark = "";
 
 
   QDomElement domElementKvtml = domDoc.documentElement();
@@ -1609,7 +1609,7 @@ bool KEduVocKvtmlReader::readDoc(KEduVocDocument *doc)
   QDomAttr domAttrTitle = domElementKvtml.attributeNode(KV_TITLE);
   if (!domAttrTitle.isNull())
   {
-    m_doc->doctitle = domAttrTitle.value();
+    m_doc->m_title = domAttrTitle.value();
   }
 
   QDomAttr domAttrAuthor = domElementKvtml.attributeNode(KV_AUTHOR);
@@ -1627,31 +1627,31 @@ bool KEduVocKvtmlReader::readDoc(KEduVocDocument *doc)
   QDomAttr domAttrRemark = domElementKvtml.attributeNode(KV_DOC_REM);
   if (!domAttrRemark.isNull())
   {
-    m_doc->doc_remark = domAttrRemark.value();
+    m_doc->m_remark = domAttrRemark.value();
   }
 
   QDomAttr domAttrGenerator = domElementKvtml.attributeNode(KV_GENERATOR);
   if (!domAttrGenerator.isNull())
   {
-    m_doc->generator = domAttrGenerator.value();
-    int pos = m_doc->generator.findRev (KVD_VERS_PREFIX);
+    m_doc->m_generator = domAttrGenerator.value();
+    int pos = m_doc->m_generator.findRev (KVD_VERS_PREFIX);
     if (pos >= 0)
     {
-      m_doc->doc_version = m_doc->generator;
-      m_doc->doc_version.remove (0, pos+2);
+      m_doc->m_version = m_doc->m_generator;
+      m_doc->m_version.remove (0, pos+2);
     }
   }
 
   QDomAttr domAttrCols = domElementKvtml.attributeNode(KV_COLS);
   if (!domAttrCols.isNull())
   {
-    m_doc->cols = domAttrCols.value().toInt();
+    m_doc->m_cols = domAttrCols.value().toInt();
   }
 
   QDomAttr domAttrLines = domElementKvtml.attributeNode(KV_LINES);
   if (!domAttrLines.isNull())
   {
-    m_doc->lines = domAttrLines.value().toInt();
+    m_doc->m_lines = domAttrLines.value().toInt();
   }
 
 

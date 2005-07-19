@@ -60,7 +60,7 @@ bool KEduVocWqlWriter::writeDoc(KEduVocDocument *doc)
   {
     writeSelection(g->currentColumn(), g->currentRow(), g->currentColumn(), g->currentRow());
   }*/
-  writeFirstItem(m_doc->originalIdent(), m_doc->ident(1));
+  writeFirstItem(m_doc->originalIdentifier(), m_doc->identifier(1));
   int r = m_doc->numEntries();
   for (int w=0; w < r; w++)
   {

@@ -39,7 +39,7 @@ KEduVocWqlReader::~KEduVocWqlReader()
 bool KEduVocWqlReader::readDoc(KEduVocDocument *doc)
 {
   m_doc = doc;
-    
+
   QTextStream inputStream(m_inputFile);
   inputStream.setEncoding(QTextStream::Latin1);
 
@@ -88,8 +88,8 @@ bool KEduVocWqlReader::readDoc(KEduVocDocument *doc)
   m_doc->setFont(new QFont(fam, ps, b, it));
 
 /* TODO
-  while (inputStream.readLine() != "[Character Info]");  
-  s = inputStream.readLine();    
+  while (inputStream.readLine() != "[Character Info]");
+  s = inputStream.readLine();
   p = s.find("=", 0);
   m_specialCharacters = s.right(s.length() - (p + 1));
 */
@@ -138,8 +138,8 @@ bool KEduVocWqlReader::readDoc(KEduVocDocument *doc)
   p = s.find("   [", 0);
   s = s.left(p);
   s = s.stripWhiteSpace();
-  m_doc->langs.push_back(s);
-  m_doc->langs.push_back(inputStream.readLine());
+  m_doc->m_languages.push_back(s);
+  m_doc->m_languages.push_back(inputStream.readLine());
 
   while (!s.isNull())
   {
@@ -149,10 +149,10 @@ bool KEduVocWqlReader::readDoc(KEduVocDocument *doc)
     int h = r.toInt();
     s = s.left(p);
     s = s.stripWhiteSpace();
-    
+
     QString b;
     b = inputStream.readLine();
-    
+
     KEduVocExpression expr = KEduVocExpression(s);
     expr.setTranslation(1, b);
     m_doc->appendEntry(&expr);

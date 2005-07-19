@@ -333,8 +333,8 @@ void KWordQuizApp::initStatusBar()
 void KWordQuizApp::initDocument()
 {
   doc = new KEduVocDocument(this);
-  doc->appendLang(i18n("Column 1"));
-  doc->appendLang(i18n("Column 2"));
+  doc->appendLanguage(i18n("Column 1"));
+  doc->appendLanguage(i18n("Column 2"));
   doc->setSizeHint(0, 250);
   doc->setSizeHint(1, 250);
   for (int i=0; i<20; i++)
@@ -859,8 +859,8 @@ void KWordQuizApp::slotVocabLanguages()
   dlg->disableResize();
   if (dlg->exec() == KDialogBase::Accepted)
   {
-    doc->setOriginalIdent(dlg->Language(1));
-    doc->setIdent(1, dlg->Language(2));
+    doc->setOriginalIdentifier(dlg->Language(1));
+    doc->setIdentifier(1, dlg->Language(2));
     m_editView->displayDoc();
     updateMode(Prefs::mode());
   }

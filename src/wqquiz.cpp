@@ -528,9 +528,9 @@ QString WQQuiz::langQuestion(int i)
 {
   WQListItem *li = m_list->at(i);
   if (li->question() == 0)
-    return m_doc->originalIdent();
+    return m_doc->originalIdentifier();
   else
-    return m_doc->ident(1);
+    return m_doc->identifier(1);
 }
 
 QString WQQuiz::langAnswer(int i)
@@ -538,9 +538,9 @@ QString WQQuiz::langAnswer(int i)
 
   WQListItem *li = m_list->at(i);
   if (li->question() == 1)
-    return m_doc->originalIdent();
+    return m_doc->originalIdentifier();
   else
-    return m_doc->ident(1);
+    return m_doc->identifier(1);
 }
 
 int WQQuiz::kbAnswer(int i)
