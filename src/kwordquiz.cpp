@@ -333,8 +333,8 @@ void KWordQuizApp::initStatusBar()
 void KWordQuizApp::initDocument()
 {
   doc = new KEduVocDocument(this);
-  doc->appendLanguage(i18n("Column 1"));
-  doc->appendLanguage(i18n("Column 2"));
+  doc->appendIdentifier(i18n("Column 1"));
+  doc->appendIdentifier(i18n("Column 2"));
   doc->setSizeHint(0, 250);
   doc->setSizeHint(1, 250);
   for (int i=0; i<20; i++)

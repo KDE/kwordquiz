@@ -138,8 +138,8 @@ bool KEduVocWqlReader::readDoc(KEduVocDocument *doc)
   p = s.find("   [", 0);
   s = s.left(p);
   s = s.stripWhiteSpace();
-  m_doc->m_languages.push_back(s);
-  m_doc->m_languages.push_back(inputStream.readLine());
+  m_doc->m_identifiers.push_back(s);
+  m_doc->m_identifiers.push_back(inputStream.readLine());
 
   while (!s.isNull())
   {

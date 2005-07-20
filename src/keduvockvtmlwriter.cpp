@@ -268,7 +268,7 @@ bool KEduVocKvtmlWriter::saveConjugHeader(QDomDocument &domDoc, QDomElement &dom
   QDomElement domElementConjug = domDoc.createElement(KV_CONJUG_GRP);
   QString s;
 
-  for (int ent = 0; ent < QMIN((int) curr_conjug.size(), m_doc->numLanguages()); ent++)
+  for (int ent = 0; ent < QMIN((int) curr_conjug.size(), m_doc->numIdentifiers()); ent++)
   {
     QDomElement domElementEntry = domDoc.createElement(KV_CON_ENTRY);
 
@@ -478,7 +478,7 @@ bool KEduVocKvtmlWriter::saveArticleKvtMl(QDomDocument &domDoc, QDomElement &dom
   QDomElement domElementArticle = domDoc.createElement(KV_ARTICLE_GRP);
   QString def, indef, s;
 
-  for (int lfn = 0; lfn < QMIN((int) m_doc->m_articles.size(), m_doc->numLanguages()); lfn++)
+  for (int lfn = 0; lfn < QMIN((int) m_doc->m_articles.size(), m_doc->numIdentifiers()); lfn++)
   {
     QDomElement domElementEntry = domDoc.createElement(KV_ART_ENTRY);
     if (lfn == 0)
@@ -648,8 +648,8 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
   domElementKvtml.setAttribute(KV_ENCODING, (QString)"UTF-8");
 
   domElementKvtml.setAttribute(KV_GENERATOR, generator);
-  domElementKvtml.setAttribute(KV_COLS, m_doc->numLanguages() );
-  domElementKvtml.setAttribute(KV_LINES, m_doc->numEntries() );
+  domElementKvtml.setAttribute(KV_COLS, m_doc->numIdentifiers());
+  domElementKvtml.setAttribute(KV_LINES, m_doc->numEntries());
 
   if (!m_doc->m_title.isEmpty())
     domElementKvtml.setAttribute(KV_TITLE, m_doc->m_title);
@@ -808,7 +808,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
     domElementExpression.appendChild(domElementOriginal);
 
     int trans = 1;
-    while (trans < (int)m_doc->m_languages.size())
+    while (trans < (int)m_doc->m_identifiers.size())
     {
       QDomElement domElementTranslation = domDoc.createElement(KV_TRANS);
       if (first_expr)

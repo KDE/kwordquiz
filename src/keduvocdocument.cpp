@@ -74,7 +74,7 @@ void KEduVocDocument::Init ()
   m_lessonDescriptions.clear();
   m_typeDescriptions.clear();
   m_tenseDescriptions.clear();
-  m_languages.clear();
+  m_identifiers.clear();
   m_sortLanguage.clear();
   m_extraSizeHints.clear();
   m_sizeHints.clear();
@@ -306,9 +306,9 @@ void KEduVocDocument::removeEntry(int index)
 
 int KEduVocDocument::findIdentifier(const QString &lang) const
 {
-  QStringList::const_iterator first = m_languages.begin();
+  QStringList::const_iterator first = m_identifiers.begin();
   int count = 0;
-  while (first != m_languages.end()) {
+  while (first != m_identifiers.end()) {
     if ( *first == lang)
       return count;
     first++;
@@ -320,17 +320,17 @@ int KEduVocDocument::findIdentifier(const QString &lang) const
 
 QString KEduVocDocument::identifier(int index) const
 {
-  if (index >= (int)m_languages.size() || index < 1 )
+  if (index >= (int)m_identifiers.size() || index < 1 )
     return "";
   else
-    return m_languages[index];
+    return m_identifiers[index];
 }
 
 
 void KEduVocDocument::setIdentifier(int idx, const QString &id)
 {
-  if (idx < (int)m_languages.size() && idx >= 1 ) {
-    m_languages[idx] = id;
+  if (idx < (int)m_identifiers.size() && idx >= 1 ) {
+    m_identifiers[idx] = id;
   }
 }
 
@@ -504,8 +504,8 @@ public:
 
 void KEduVocDocument::removeIdentifier(int index)
 {
-  if (index < (int)m_languages.size() && index >= 1 ) {
-    m_languages.erase(m_languages.at(index));
+  if (index < (int)m_identifiers.size() && index >= 1 ) {
+    m_identifiers.erase(m_identifiers.at(index));
     for_each (m_vocabulary.begin(), m_vocabulary.end(), eraseTrans(index));
   }
 }
@@ -513,8 +513,8 @@ void KEduVocDocument::removeIdentifier(int index)
 
 QString KEduVocDocument::originalIdentifier() const
 {
-  if (m_languages.size() > 0)
-    return m_languages[0];
+  if (m_identifiers.size() > 0)
+    return m_identifiers[0];
   else
     return "";
 }
@@ -522,8 +522,8 @@ QString KEduVocDocument::originalIdentifier() const
 
 void KEduVocDocument::setOriginalIdentifier(const QString &id)
 {
-  if (m_languages.size() > 0) {
-    m_languages[0] = id;
+  if (m_identifiers.size() > 0) {
+    m_identifiers[0] = id;
   }
 }
 
@@ -933,7 +933,7 @@ int KEduVocDocument::search(QString substr, int id,
    if (first < 0)
      first = 0;
 
-   if (id >= numLanguages()
+   if (id >= numIdentifiers()
       || last < first
       )
      return -1;
@@ -1119,7 +1119,7 @@ int KEduVocDocument::cleanUp()
 
     bool equal = true;
     if (kve1->original() == kve2->original() ) {
-      for (int l = 1; equal && l < (int) numLanguages(); l++ )
+      for (int l = 1; equal && l < (int) numIdentifiers(); l++ )
         if (kve1->translation(l) != kve2->translation(l))
           equal = false;
 

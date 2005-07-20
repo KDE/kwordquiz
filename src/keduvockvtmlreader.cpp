@@ -141,18 +141,18 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
     QString lang;
     QDomAttr domAttrLang = domElementEntry.attributeNode(KV_LANG);
 
-    if ((int)m_doc->m_languages.size() <= count)
+    if ((int)m_doc->m_identifiers.size() <= count)
     {
       // first entry
       if (!domAttrLang.isNull())         // no definition in first entry
         lang = domAttrLang.value();
       else
         lang = "original";
-      m_doc->m_languages.push_back(lang);
+      m_doc->m_identifiers.push_back(lang);
     }
     else
     {
-      if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->m_languages[count])
+      if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->m_identifiers[count])
       {
         // different originals ?
         domError(i18n("ambiguous definition of language code"));
@@ -300,18 +300,18 @@ bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent,
       QString lang;
       QDomAttr domAttrLang = domElementConjugChild.attributeNode(KV_LANG);
 
-      if ((int)m_doc->m_languages.size() <= count)
+      if ((int)m_doc->m_identifiers.size() <= count)
       {
         // first entry
         if (!domAttrLang.isNull())            // no definition in first entry
           lang = domAttrLang.value();
         else
           lang = "original";
-        m_doc->m_languages.push_back(lang);
+        m_doc->m_identifiers.push_back(lang);
       }
       else
       {
-        if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->m_languages[count])
+        if (!domAttrLang.isNull() && domAttrLang.value() != m_doc->m_identifiers[count])
         {
           // different originals ?
           domError(i18n("ambiguous definition of language code"));
@@ -1104,17 +1104,17 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
       q_trans = lang;
   }
 
-  if (m_doc->m_languages.size() == 0)
+  if (m_doc->m_identifiers.size() == 0)
   {
     // first entry
     if (lang.isEmpty())                 // no definition in first entry
       lang = "original";
-    m_doc->m_languages.push_back(lang);
+    m_doc->m_identifiers.push_back(lang);
 
   }
   else
   {
-    if (lang != m_doc->m_languages[0] && !lang.isEmpty())
+    if (lang != m_doc->m_identifiers[0] && !lang.isEmpty())
     {
       // different originals ?
       domError(i18n("ambiguous definition of language code"));
@@ -1280,21 +1280,21 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
 
     }
 
-    if (m_doc->m_languages.size() <= count)
+    if (m_doc->m_identifiers.size() <= count)
     {
       // new translation
       if (lang.isEmpty())
       {
         // no definition in first entry ?
-        lang.setNum (m_doc->m_languages.size() );
+        lang.setNum (m_doc->m_identifiers.size() );
         lang.insert (0, "translation ");
       }
-      m_doc->m_languages.push_back(lang);
+      m_doc->m_identifiers.push_back(lang);
 
     }
     else
     {
-      if (lang != m_doc->m_languages[count] && !lang.isEmpty())
+      if (lang != m_doc->m_identifiers[count] && !lang.isEmpty())
       { // different language ?
         domError(i18n("ambiguous definition of language code"));
         return false;
@@ -1575,7 +1575,7 @@ bool KEduVocKvtmlReader::readDoc(KEduVocDocument *doc)
     return false;
   }
 
-  m_doc->m_languages.clear();
+  m_doc->m_identifiers.clear();
   m_doc->m_vocabulary.clear();
 
   m_doc->m_generator = "";

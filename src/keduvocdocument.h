@@ -459,13 +459,15 @@ class KEduVocDocument : public QObject
    */
   void resetEntry(int index = -1, int lesson = 0);
 
-  /** returns count of different languages
+  /** returns the number of different identifiers (usually languages)
    */
-  inline int numLanguages() const { return m_languages.count(); } // org + translations
+  inline int numIdentifiers() const { return m_identifiers.count(); } // org + translations
 
-  /** append new lang ident
+  /** appends a new identifier (usually a language)
+   *
+   * @param id         the identifier to append
    */
-  inline void appendLanguage(const QString & id) { m_languages.append(id); }
+  inline void appendIdentifier(const QString & id) { m_identifiers.append(id); }
 
   /** returns pointer to expression object x
    *
@@ -664,7 +666,7 @@ protected:
   bool                  m_enableSorting;
 
   // save these to document
-  QStringList           m_languages;      //0= origin, 1,.. translations
+  QStringList           m_identifiers;      //0= origin, 1,.. translations
   int                   m_cols;
   int                   m_lines;
   int                   m_currentLesson;
