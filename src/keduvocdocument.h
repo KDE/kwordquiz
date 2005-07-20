@@ -659,7 +659,7 @@ protected:
  private:
   bool                  m_dirty;
   KURL                  m_url;
-  QValueList<bool>      m_sortLanguage;
+  QValueList<bool>      m_sortIdentifier;
   bool                  m_sortLesson;
   bool                  m_unknownAttribute;
   bool                  m_unknownElement;

@@ -18,29 +18,23 @@
 
 #include "keduvocdocument.h"
 
+#include <qfileinfo.h>
+
 #include <kapplication.h>
 #include <klocale.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
 #include <kio/netaccess.h>
 
-#include <qfileinfo.h>
-
-#include <algorithm>
-#include <functional>
-#include <vector>
 using namespace std;
 
 #include <iostream>
-
-#include <float.h>
 
 #include "keduvockvtmlwriter.h"
 #include "keduvockvtmlreader.h"
 #include "keduvocwqlwriter.h"
 #include "keduvocwqlreader.h"
 #include "leitnersystem.h"
-//#include "prefs.h"
 
 //********************************************************
 //  KEduVocDocument
@@ -75,7 +69,7 @@ void KEduVocDocument::Init ()
   m_typeDescriptions.clear();
   m_tenseDescriptions.clear();
   m_identifiers.clear();
-  m_sortLanguage.clear();
+  m_sortIdentifier.clear();
   m_extraSizeHints.clear();
   m_sizeHints.clear();
   m_vocabulary.clear();
@@ -527,7 +521,7 @@ void KEduVocDocument::setOriginalIdentifier(const QString &id)
   }
 }
 
-
+/*
 class sortByOrg : public binary_function<KEduVocExpression, KEduVocExpression, bool>
 {
 
@@ -637,10 +631,44 @@ public:
   int  index;
   bool dir;
 };
+*/
+/**@todo implement sorting based on lesson index and name.
+  * Will be done when KVocTrain is ported to this class
+*/
+int sortIndex;
+bool sortAscending;
 
-
-bool KEduVocDocument::sort (int index)
+bool operator< (const KEduVocExpression &e1, const KEduVocExpression &e2)
 {
+  if (sortAscending)
+    if (sortIndex == 0)
+      return ! (e1.original() > e2.original());
+    else
+      return ! (e1.translation(sortIndex) > e2.translation(sortIndex));
+  else
+    if (sortIndex == 0)
+      return ! (e1.original() < e2.original());
+    else
+      return ! (e1.translation(sortIndex) < e2.translation(sortIndex));
+}
+
+bool KEduVocDocument::sort(int index)
+{
+  bool result = false;
+  if (m_enableSorting && index < numIdentifiers())
+  {
+    if (m_sortIdentifier.count() < m_identifiers.count())
+      for (int i = m_sortIdentifier.count(); i < (int) m_identifiers.count(); i++)
+          m_sortIdentifier.append(false);
+
+    sortAscending = m_sortIdentifier[index];
+    sortIndex = index;
+    qHeapSort(m_vocabulary);
+    m_sortIdentifier[index] = !m_sortIdentifier[index];
+    result = m_sortIdentifier[index];
+  }
+  return result;
+
   /*if (!sort_allowed)
     return false;
 
@@ -1136,7 +1164,8 @@ int KEduVocDocument::cleanUp()
   f_ent_percent = to_delete.size () / 100.0;
   emit progressChanged(this, 0);
 
-  std::sort (to_delete.begin(), to_delete.end() );
+  qHeapSort(to_delete.begin(), to_delete.end());
+  //std::sort (to_delete.begin(), to_delete.end() );
   for (int i = (int) to_delete.size()-1; i >= 0; i--) {
     ent_no++;
     if (ent_percent != 0 && (ent_no % ent_percent) == 0 )
