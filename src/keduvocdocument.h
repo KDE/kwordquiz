@@ -484,10 +484,9 @@ class KEduVocDocument : public QObject
    * @param last       index of last entry, -1 goes till end
    * @param word_start false: search partial string,
    *                   true:always from beginning of word
-   * @param tolerant
    * @result          index of found entry, -1 if none
    */
-  int search(QString substr, int id, int first=0, int last=-1, bool word_start = false, bool tolerant=false);
+  int search(QString substr, int id, int first=0, int last=-1, bool word_start = false);
 
   /** returns url of xml file  */
   inline KURL URL() const {return m_url; }

@@ -949,48 +949,42 @@ void KEduVocDocument::setFont(QFont* font)
 }
 
 
-int KEduVocDocument::search(QString substr, int id,
-                         int first, int last,
-                         bool word_start,
-                         bool)
+int KEduVocDocument::search(QString substr, int id, int first, int last, bool word_start)
 {
-   if (last >= numEntries()
-       || last < 0 )
-     last = numEntries();
+  if (last >= numEntries() || last < 0)
+    last = numEntries();
 
-   if (first < 0)
-     first = 0;
+  if (first < 0)
+    first = 0;
 
-   if (id >= numIdentifiers()
-      || last < first
-      )
-     return -1;
+  if (id >= numIdentifiers() || last < first)
+    return -1;
 
-   if (id == 0) {
-     for (int i = first; i < last; i++) {
-       if (word_start) {
-         if (entry(i)->original().find (substr, 0, false) == 0)  // case insensitive
-           return i;
-       }
-       else {
-         if (entry(i)->original().find (substr, 0, false) > -1)  // case insensitive
-           return i;
-       }
-     }
-   }
-   else {
-     for (int i = first; i < last; i++) {
-       if (word_start) {
-         if (entry(i)->translation(id).find (substr, 0, false) == 0) // case insensitive
-           return i;
-       }
-       else {
-         if (entry(i)->translation(id).find (substr, 0, false) > -1) // case insensitive
-           return i;
-       }
-     }
-   }
-   return -1;
+  if (id == 0) {
+    for (int i = first; i < last; i++) {
+      if (word_start) {
+        if (entry(i)->original().find(substr, 0, false) == 0)  // case insensitive
+          return i;
+      }
+      else {
+        if (entry(i)->original().find(substr, 0, false) > -1)  // case insensitive
+          return i;
+      }
+    }
+  }
+  else {
+    for (int i = first; i < last; i++) {
+      if (word_start) {
+        if (entry(i)->translation(id).find(substr, 0, false) == 0) // case insensitive
+          return i;
+      }
+      else {
+        if (entry(i)->translation(id).find(substr, 0, false) > -1) // case insensitive
+          return i;
+      }
+    }
+  }
+  return -1;
 }
 
 
