@@ -2,7 +2,7 @@
                      read a KEduVocDocument from a WQL file
     -----------------------------------------------------------------------
     copyright            : (C) 2004 Peter Hedlund
-                         : (c) 2005 The KDE-EDU team
+                         : (c) 2005 Eric Pignet
     email                : peter@peterandlinda.com
  ***************************************************************************/
 

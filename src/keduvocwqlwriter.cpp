@@ -1,8 +1,8 @@
 /***************************************************************************
                    export a KEduVocDocument to a WQL file
     -----------------------------------------------------------------------
-    copyright            : (C) 2004 Peter Hedlung
-                           (C) 2005 The KDE-EDU team
+    copyright            : (C) 2004 Peter Hedlund
+                           (C) 2005 Eric Pignet
     email                : peter@peterandlinda.com
  ***************************************************************************/
 

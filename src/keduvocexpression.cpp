@@ -3,7 +3,7 @@
     -----------------------------------------------------------------------
     copyright            : (C) 1999-2001 Ewald Arnold
                            (C) 2001 The KDE-EDU team
-                           (C) 2005 Peter Hedlung
+                           (C) 2005 Peter Hedlund
     email                : peter@peterandlinda.com
  ***************************************************************************/
 
