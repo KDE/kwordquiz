@@ -3,7 +3,7 @@
     -----------------------------------------------------------------------
     copyright            : (C) 1999-2001 Ewald Arnold
                            (C) 2001 The KDE-EDU team
-                           (C) 2005 Peter Hedlung
+                           (C) 2005 Peter Hedlund
     email                : peter@peterandlinda.com
  ***************************************************************************/
 
@@ -48,7 +48,7 @@
 #define KV_CHARSET     "charset"   // recommended charset (obsolete!)
 #define KV_BAD         "b"         // number of times failed
 #define KV_DATE        "d"         // last query date
-#define KV_DATE2       "w"         // last query date, compressed format
+#define KV_DATE2       "w"         // last query date, compressed format, deprecated, currently ignored
 #define KV_REMARK      "r"         // remark for this entry
 #define KV_FAUX_AMI_F  "ff"        // false friend of this entry from org
 #define KV_FAUX_AMI_T  "tf"        // false friend of this entry to org
@@ -583,12 +583,6 @@ class KEduVocDocument : public QObject
    * @param art              article block
    */
   void setArticle(int index, const Article &art);
-
-  /** compress date */
-  QString compressDate(unsigned long) const;
-
-  /** decompress date */
-  unsigned long decompressDate(QString) const;
 
   /** returns recommended size
    *

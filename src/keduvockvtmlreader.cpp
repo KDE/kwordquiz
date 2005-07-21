@@ -840,14 +840,7 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
   QDomAttr domAttrDate2 = domElementExpressionChild.attributeNode(KV_DATE2);
   if (!domAttrDate2.isNull())
   {
-    QString s = domAttrDate2.value();
-    if ((pos = s.find(';')) >= 1)
-    {
-      date = m_doc->decompressDate(s.left(pos));
-      rev_date = m_doc->decompressDate(s.mid(pos+1, s.length()));
-    }
-    else
-      date = m_doc->decompressDate(s);
+    //this format is deprecated and ignored.
   }
 
   remark = "";

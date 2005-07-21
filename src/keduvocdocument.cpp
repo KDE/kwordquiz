@@ -3,7 +3,7 @@
     -----------------------------------------------------------------------
     copyright            : (C) 1999-2001 Ewald Arnold
                            (C) 2001 The KDE-EDU team
-                           (C) 2005 Peter Hedlung
+                           (C) 2005 Peter Hedlund
     email                : peter@peterandlinda.com
  ***************************************************************************/
 
@@ -991,44 +991,6 @@ int KEduVocDocument::search(QString substr, int id,
      }
    }
    return -1;
-}
-
-#define _OFFSET     0x40
-#define _BITMASK    0x3F
-#define _BITUSED    6
-
-QString KEduVocDocument::compressDate(unsigned long l) const
-{
-   if (l == 0)
-     return "";
-
-   QString res;
-   if (l <= KVD_ZERO_TIME)
-     l = 1;
-   else
-     l -= KVD_ZERO_TIME;
-   while (l != 0) {
-     char c = _OFFSET + (l & _BITMASK);
-     res.insert (0, c);
-     l >>= _BITUSED;
-   }
-   return res;
-}
-
-
-unsigned long KEduVocDocument::decompressDate(QString s) const
-{
-   if (s.isEmpty())
-     return 0;
-
-   long res = 0;
-   unsigned incr = 0;
-   for (int i = s.length()-1; i >= 0; i--) {
-     char c = s.local8Bit()[i];
-     res += ((c - _OFFSET) & _BITMASK) << incr ;
-     incr += _BITUSED;
-   }
-   return res > 48 ? res+KVD_ZERO_TIME : 0;  // early bug with "0"
 }
 
 
