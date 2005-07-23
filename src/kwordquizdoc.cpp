@@ -109,7 +109,7 @@ bool KWordQuizDoc::saveModified()
     int want_save = KMessageBox::warningYesNoCancel(win,
                     i18n("The current file has been modified.\n"
                          "Do you want to save it?"),
-                    i18n("Warning"));
+                    i18n("Warning"),KStdGuiItem::save(),KStdGuiItem::discard());
     switch(want_save)
     {
     case KMessageBox::Yes:
@@ -481,7 +481,7 @@ void KWordQuizDoc::slotModifiedOnDisk( const QString & path)
   if (doc_url.path() == path)
   {
     QString str = i18n("The file %1 was changed (modified) on disc by another program!\n\n").arg(doc_url.fileName());    
-    int i = KMessageBox::warningYesNoCancel(0, str + i18n("Do you want to reload the modified file? Data loss may occur."));
+    int i = KMessageBox::warningYesNoCancel(0, str + i18n("Do you want to reload the modified file? Data loss may occur."),QString::null,i18n("Reload"),i18n("Do Not Reload"));
     if ( i == KMessageBox::Yes)
       openDocument(doc_url);
   }

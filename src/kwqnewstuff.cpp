@@ -81,7 +81,7 @@ QString KWQNewStuff::downloadDestination(KNS::Entry * entry)
         i18n("The file '%1' already exists. Do you want to overwrite it?")
         .arg(file),
         QString::null,
-        i18n("Overwrite"));
+        i18n("Overwrite"),i18n("Do Not Overwrite"));
     if (result == KMessageBox::No)
       return QString::null;
   }
