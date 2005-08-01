@@ -21,7 +21,7 @@
 */
 
 #include <qstring.h>
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 #include <qfont.h>
 
 class KWqlDataItem
@@ -41,7 +41,7 @@ private:
   int m_height;
 };
 
-typedef QValueList<KWqlDataItem> KWqlDataItemList;
+typedef Q3ValueList<KWqlDataItem> KWqlDataItemList;
 
 class WqlReader{
 public:

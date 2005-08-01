@@ -57,7 +57,7 @@ QString highlightError(const QString & c, const QString & e)
 }
 
 
-QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, name, f)
+QAView::QAView(QWidget *parent, const char *name, Qt::WFlags f):QAViewBase(parent, name, f)
 {
   m_score = new WQScore();
 }

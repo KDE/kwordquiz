@@ -15,11 +15,13 @@
  ***************************************************************************/
  
 #include "kvtmlwriter.h"
+//Added by qt3to4:
+#include <QTextStream>
 
 KVTMLWriter::KVTMLWriter(QFile *file)
 {
   outputFile = file;
-  if(outputFile->open(IO_WriteOnly))
+  if(outputFile->open(QIODevice::WriteOnly))
     {
       outputStream.setDevice(outputFile);
       outputStream.setEncoding(QTextStream::UnicodeUTF8);

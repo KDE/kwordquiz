@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qwidgetstack.h>
+#include <q3widgetstack.h>
 #include <qlayout.h>
 #include <qradiobutton.h>
 #include <qcheckbox.h>
-#include <qlistview.h>
+#include <q3listview.h>
 #include <qlabel.h>
 
 #include <klocale.h>
@@ -69,7 +69,7 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
   KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
   QString ds = item->property().toString();
 
-  for ( QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for ( Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     it.current()->setText(2, (QString) ds[i++] ) ;
     it.current()->setText(1, win->actionCollection()->action(QString("char_" + QString::number(i)).latin1())->shortcut().toString());
@@ -125,7 +125,7 @@ bool KWordQuizPrefs::hasChanged()
   bool result;
 
   QString s;
-  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
@@ -147,7 +147,7 @@ bool KWordQuizPrefs::isDefault()
   bool result;
 
   QString s;
-  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
@@ -167,7 +167,7 @@ bool KWordQuizPrefs::isDefault()
 void KWordQuizPrefs::updateSettings( )
 {
   QString s;
-  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
@@ -183,7 +183,7 @@ void KWordQuizPrefs::updateWidgetsDefault( )
   bool bUseDefaults = m_config->useDefaults(true);
 
   QString s;
-  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
@@ -192,7 +192,7 @@ void KWordQuizPrefs::updateWidgetsDefault( )
   QString ds = item->property().toString();
 
   int i=0;
-  for (QListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
   {
     it.current()->setText(2, (QString) ds[i++] ) ;
   }

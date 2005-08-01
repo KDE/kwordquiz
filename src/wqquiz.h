@@ -19,7 +19,9 @@
 #ifndef WQQUIZ_H
 #define WQQUIZ_H
 
-#include <qtable.h>
+#include <q3table.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 #include "wqlistitem.h"
 #include "kwordquizview.h"
@@ -70,9 +72,9 @@ class WQQuiz : public QObject
     KWordQuizView *m_table;
     int m_quizMode;
     int m_questionCount;
-    static QPtrList<WQListItem> *m_list;
-    static QPtrList<WQListItem> *m_errorList;
-    static QPtrList<WQListItem> *m_quizList;
+    static Q3PtrList<WQListItem> *m_list;
+    static Q3PtrList<WQListItem> *m_errorList;
+    static Q3PtrList<WQListItem> *m_quizList;
 
     QuizType m_quizType;
     QString m_correctBlank;

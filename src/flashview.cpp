@@ -25,7 +25,7 @@
 #include "prefs.h"
 
 
-FlashView::FlashView(QWidget *parent, const char *name, WFlags f)
+FlashView::FlashView(QWidget *parent, const char *name, Qt::WFlags f)
     : FlashViewBase(parent, name, f)
 {
   m_score = new WQScore();

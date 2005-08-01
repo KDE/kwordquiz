@@ -32,6 +32,8 @@
 #include "wqlreader.h"
 #include "wqlwriter.h"
 #include "prefs.h"
+//Added by qt3to4:
+#include <QTextStream>
 
 //QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 //KWordQuizView *KWordQuizDoc::m_view;
@@ -160,7 +162,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
   if (KIO::NetAccess::download( url, tmpfile, 0 ))
   {
     QFile file(tmpfile);
-    if (!file.open(IO_ReadOnly))
+    if (!file.open(QIODevice::ReadOnly))
     {
       KMessageBox::error(0, i18n("<qt>Cannot open file<br><b>%1</b></qt>").arg(url.path()));
       return false;
@@ -171,7 +173,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
     else
       doc_url = url;
     
-    QTable* g = m_view;
+    Q3Table* g = m_view;
     g->setUpdatesEnabled(false);
     
     int i = 0;
@@ -306,7 +308,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
     KIO::NetAccess::removeTempFile( tmpfile );
 
     //Apply word wrap to cell with text
-    QTableItem* itm;
+    Q3TableItem* itm;
     for (int r = 0; r <= g->numRows() -1; ++r)
     {
       itm = g->item(r, 0);
@@ -331,7 +333,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
 {
 
   QFile file(url.path());
-  if (!file.open(IO_WriteOnly))
+  if (!file.open(QIODevice::WriteOnly))
   {
     KMessageBox::error(0, i18n("<qt>Cannot write to file<br><b>%1</b></qt>")
                        .arg(url.path()));
@@ -340,7 +342,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     return false;
   }
 
-  QTable* g = m_view;
+  Q3Table* g = m_view;
   QString s = "";
   int w = 0;
 
@@ -368,7 +370,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     writer.writeGridInfo(g->verticalHeader()->width(), g->columnWidth(0), g->columnWidth(1), g->numRows());
     if (g->numSelections() > 0)
     {
-      QTableSelection qts = g->selection(0);
+      Q3TableSelection qts = g->selection(0);
       writer.writeSelection(qts.leftCol(), qts.topRow(), qts.rightCol(), qts.bottomRow());
     }
     else

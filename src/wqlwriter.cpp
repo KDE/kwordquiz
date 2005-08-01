@@ -14,13 +14,15 @@
  *                                                                         *
  ***************************************************************************/
 #include "wqlwriter.h"
+//Added by qt3to4:
+#include <QTextStream>
 
 #define winendl "\r\n"
 
 WqlWriter::WqlWriter(QFile *file)
 {
   outputFile = file;
-  if(outputFile->open(IO_WriteOnly))
+  if(outputFile->open(QIODevice::WriteOnly))
   {
     outputStream.setDevice(outputFile);
     outputStream.setEncoding(QTextStream::Latin1);

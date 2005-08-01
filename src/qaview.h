@@ -33,7 +33,7 @@ class QAView : public QAViewBase
 {
 Q_OBJECT
 public:
-    QAView(QWidget *parent = 0, const char *name = 0, WFlags f = 0);
+    QAView(QWidget *parent = 0, const char *name = 0, Qt::WFlags f = 0);
 
     ~QAView();
 

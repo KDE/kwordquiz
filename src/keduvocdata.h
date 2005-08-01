@@ -20,7 +20,7 @@
 */
 
 #include <qdom.h>
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 
 class KEduVocDataItem
 {
@@ -39,7 +39,7 @@ private:
     QDomElement domElement;
 };
 
-typedef QValueList<KEduVocDataItem> KEduVocDataItemList;
+typedef Q3ValueList<KEduVocDataItem> KEduVocDataItemList;
 
 class KEduVocData
 {

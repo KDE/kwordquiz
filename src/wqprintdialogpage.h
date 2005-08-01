@@ -40,7 +40,7 @@ public:
    bool isValid(const QString& msg );
 
 private:
-  QButtonGroup * g;
+  Q3ButtonGroup * g;
   QRadioButton * rb0;
   QRadioButton * rb1;
   QRadioButton * rb2;

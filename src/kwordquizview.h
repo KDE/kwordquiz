@@ -23,7 +23,11 @@
 #endif
 
 // include files for Qt
-#include <qtable.h>
+#include <q3table.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <QKeyEvent>
+#include <QEvent>
 
 #include <kprinter.h>
 
@@ -41,14 +45,14 @@ class DlgSpecChar;
 @author Peter Hedlund
 */
 
-class KWQTableItem :public QTableItem
+class KWQTableItem :public Q3TableItem
 {
 public:
-  KWQTableItem( QTable* table, EditType et, const QString & text );
+  KWQTableItem( Q3Table* table, EditType et, const QString & text );
   virtual int alignment() const;
 };
 
-class KWordQuizView : public QTable
+class KWordQuizView : public Q3Table
 {
   Q_OBJECT
   public:
@@ -109,11 +113,11 @@ class KWordQuizView : public QTable
     int m_currentRow;
     int m_currentCol;
     QString m_currentText;
-    QTableSelection m_currentSel;
+    Q3TableSelection m_currentSel;
     DlgSpecChar* dlgSpecChar;
     QWidget * cellEditor;
     /** the list of the undo objects */
-    static QValueList<WQUndo> *m_undoList;
+    static Q3ValueList<WQUndo> *m_undoList;
 
     void doNewPage(QPainter & painter, int res, int type);
     void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);

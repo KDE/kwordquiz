@@ -27,7 +27,7 @@
 #include "multipleview.h"
 #include "prefs.h"
 
-MultipleView::MultipleView(QWidget *parent, const char *name, WFlags f)
+MultipleView::MultipleView(QWidget *parent, const char *name, Qt::WFlags f)
     : MultipleViewBase(parent, name, f)
 {
   m_score = new WQScore();

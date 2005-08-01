@@ -20,7 +20,7 @@
 */
 
 #include <qdom.h>
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 
 class PaukerDataItem
 {
@@ -39,7 +39,7 @@ private:
   QDomElement domElement;
 };
 
-typedef QValueList<PaukerDataItem> PaukerDataItemList;
+typedef Q3ValueList<PaukerDataItem> PaukerDataItemList;
 
 class PaukerData
 {

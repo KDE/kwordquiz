@@ -9,7 +9,7 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-#include <qwidgetstack.h>
+#include <q3widgetstack.h>
 #include <qlabel.h>
 
 #include <kfontrequester.h>

@@ -30,7 +30,7 @@ class MultipleView : public MultipleViewBase
 {
 Q_OBJECT
 public:
-    MultipleView(QWidget *parent = 0, const char *name = 0, WFlags f = 0);
+    MultipleView(QWidget *parent = 0, const char *name = 0, Qt::WFlags f = 0);
 
     ~MultipleView();
 

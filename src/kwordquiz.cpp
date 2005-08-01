@@ -19,6 +19,9 @@
 #include <qpainter.h>
 #include <qbitmap.h>
 #include <qcheckbox.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <Q3PopupMenu>
 
 // include files for KDE
 #include <kmessagebox.h>
@@ -1207,7 +1210,7 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
 void KWordQuizApp::slotContextMenuRequested(int row, int col, const QPoint & pos)
 {
   QWidget *w = factory()->container("editor_popup", this);
-  QPopupMenu *popup = static_cast<QPopupMenu *>(w);
+  Q3PopupMenu *popup = static_cast<Q3PopupMenu *>(w);
   popup->exec(pos);
 }
 

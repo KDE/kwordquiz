@@ -17,14 +17,14 @@
 */
 
 #include <qcheckbox.h>
-#include <qbuttongroup.h>
+#include <q3buttongroup.h>
 
 #include <knuminput.h>
 
 #include "prefquiz.h"
 
 
-PrefQuiz::PrefQuiz(QWidget *parent, const char *name, WFlags f)
+PrefQuiz::PrefQuiz(QWidget *parent, const char *name, Qt::WFlags f)
  : PrefQuizBase(parent, name, f)
 {
   kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());

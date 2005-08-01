@@ -29,7 +29,7 @@ class PrefEditor : public PrefEditorBase
 Q_OBJECT
 public:
 
-  PrefEditor(QWidget *parent, const char *name=0, WFlags f=0);
+  PrefEditor(QWidget *parent, const char *name=0, Qt::WFlags f=0);
   ~PrefEditor();
 
 };

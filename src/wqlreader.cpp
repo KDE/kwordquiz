@@ -51,7 +51,7 @@ KWqlDataItemList WqlReader::parse(const QString &fileName)
 {
     KWqlDataItemList list;
     QFile file(fileName);
-    file.open(IO_ReadOnly);
+    file.open(QIODevice::ReadOnly);
     QTextStream ts(&file);
     ts.setEncoding(QTextStream::Latin1);
 

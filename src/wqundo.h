@@ -16,7 +16,7 @@
 #ifndef WQUNDO_H
 #define WQUNDO_H
 
-#include <qtable.h>
+#include <q3table.h>
 
 #include "wqlreader.h"
 
@@ -41,8 +41,8 @@ public:
   void setCurrentRow(int r) {m_currentRow = r;};
   int currentCol() {return m_currentCol;};
   void setCurrentCol(int c) {m_currentCol = c;};
-  QTableSelection selection() const {return m_selection;};
-  void setSelection(const QTableSelection & sel) {m_selection = sel;};
+  Q3TableSelection selection() const {return m_selection;};
+  void setSelection(const Q3TableSelection & sel) {m_selection = sel;};
   
   KWqlDataItemList list() const {return m_list;};
   void setList(const KWqlDataItemList & list) {m_list = list;};
@@ -58,7 +58,7 @@ private:
   int m_numRows;
   int m_currentRow;
   int m_currentCol;
-  QTableSelection m_selection;
+  Q3TableSelection m_selection;
   KWqlDataItemList m_list;
   
   QString m_text;
