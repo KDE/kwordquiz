@@ -2,7 +2,7 @@
                                  wqlreader.cpp
                              -------------------
    copyright            : (C) 2004 by Peter Hedlund
-    email                : peter@peterandlinda.com
+   email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************

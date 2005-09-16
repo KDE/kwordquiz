@@ -2,7 +2,7 @@
                           dlglsort.h  -  description
                              -------------------
    copyright            : (C) 2003 by Peter Hedlund
-    email                : peter@peterandlinda.com
+   email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************

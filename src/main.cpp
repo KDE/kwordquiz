@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002-2003 by Peter Hedlund
-    email                : peter@peterandlinda.com
+    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
                        "http://edu.kde.org/kwordquiz",
                        "submit@bugs.kde.org");
 
-  aboutData.addAuthor("Peter Hedlund", 0, "peter@peterandlinda.com");
+  aboutData.addAuthor("Peter Hedlund", 0, "peter.hedlund@kdemail.net");
   aboutData.addCredit("Anne-Marie Mahfouf", I18N_NOOP("KDE Edutainment Maintainer"), "annma@kde.org", 0);
 
   KCmdLineArgs::init( argc, argv, &aboutData );

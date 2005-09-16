@@ -4,7 +4,7 @@
 // Description: KWordQuiz flashcard appearance preferences
 //
 //
-// Author: Peter Hedlund <peter@peterandlinda.com>, (C) 2004
+// Author: Peter Hedlund <peter.hedlund@kdemail.net>, (C) 2004
 //
 // Copyright: See COPYING file that comes with this distribution
 //
