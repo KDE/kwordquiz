@@ -35,7 +35,16 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-  KAboutData aboutData( "kwordquiz", I18N_NOOP("KWordQuiz"), KWQ_VERSION, description, KAboutData::License_GPL, "(c) 2003-2005, Peter Hedlund", 0, 0, "peter@peterandlinda.com");
+  KAboutData aboutData("kwordquiz",
+                       I18N_NOOP("KWordQuiz"),
+                       KWQ_VERSION,
+                       description,
+                       KAboutData::License_GPL,
+                       "(c) 2003-2005, Peter Hedlund",
+                       0,
+                       "http://edu.kde.org/kwordquiz",
+                       "submit@bugs.kde.org");
+
   aboutData.addAuthor("Peter Hedlund", 0, "peter@peterandlinda.com");
   aboutData.addCredit("Anne-Marie Mahfouf", I18N_NOOP("KDE Edutainment Maintainer"), "annma@kde.org", 0);
 
