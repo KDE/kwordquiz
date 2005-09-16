@@ -1,1 +1,1 @@
-#define KWQ_VERSION "0.8"
+#define KWQ_VERSION "0.8.1"
