@@ -88,7 +88,7 @@ PaukerDataItemList PaukerData::parse(const QString &fileName)
   QDomNodeList entries = document->elementsByTagName("Card");
 
   // loop through the "Card" tags looking for data
-  for(uint i = 0 ; i < entries.count() ; i++) {
+  for(int i = 0 ; i < entries.count() ; i++) {
 
     // get an entry to operate on
     QDomElement entry = entries.item(i).toElement();

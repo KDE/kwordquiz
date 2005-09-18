@@ -102,7 +102,7 @@ KEduVocDataItemList KEduVocData::parse(const QString &fileName)
     QDomNodeList entries = document->elementsByTagName("e");
 
     // loop through the "e" (entry) tags looking for data
-    for(uint i = 0 ; i < entries.count() ; i++) {
+    for(int i = 0 ; i < entries.count() ; i++) {
 
         // get an entry to operate on
         QDomElement entry = entries.item(i).toElement();
