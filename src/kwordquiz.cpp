@@ -31,7 +31,7 @@
 #include <kedittoolbar.h>
 #include <kstandarddirs.h> //locate
 #include <kfontdialog.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <knotifydialog.h>
 #include <kiconloader.h>
 //#include <keduvocdata.h>
@@ -205,7 +205,7 @@ void KWordQuizApp::initActions()
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
 
-  KPopupMenu *popup = mode->popupMenu();
+  KMenu *popup = mode->popupMenu();
   popup->clear();
   popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", KIcon::Toolbar), "", this, SLOT(slotMode1()), 0, 0);
   popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", KIcon::Toolbar), "", this, SLOT(slotMode2()), 0, 1);
@@ -1154,7 +1154,7 @@ void KWordQuizApp::updateMode(int m)
   mode4->setChecked(Prefs::mode() == 4);
   mode5->setChecked(Prefs::mode() == 5);
 
-  KPopupMenu *popup = mode->popupMenu();
+  KMenu *popup = mode->popupMenu();
   popup->setItemChecked(0, Prefs::mode() == 1);
   popup->setItemChecked(1, Prefs::mode() == 2);
   popup->setItemChecked(2, Prefs::mode() == 3);
