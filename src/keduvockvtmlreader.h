@@ -23,8 +23,8 @@
 #include <qdom.h>
 
 #include "keduvocdocument.h"
-#include "grammarmanager.h"
-#include "multiplechoice.h"
+#include "keduvocgrammar.h"
+#include "keduvocmultiplechoice.h"
 
 class KEduVocDocument;
 
@@ -78,17 +78,13 @@ public:
 
 	bool readLesson(QDomElement &domElementParent);
 	bool readArticle(QDomElement &domElementParent);
-	bool readConjug(QDomElement &domElementParent,
-									QValueList<Conjugation> &curr_conjug,
-                  const QString &entry_tag);
+	bool readConjug(QDomElement &domElementParent, QValueList<KEduVocConjugation> &curr_conjug, const QString &entry_tag);
 	bool readOptions(QDomElement &domElementParent);
 	bool readType(QDomElement &domElementParent);
 	bool readTense(QDomElement &domElementParent);
 	bool readUsage(QDomElement &domElementParent);
-	bool readComparison(QDomElement &domElementParent,
-                      Comparison &comp);
-	bool readMultipleChoice(QDomElement &domElementParent,
-                          MultipleChoice &mc);
+	bool readComparison(QDomElement &domElementParent, KEduVocComparison &comp);
+	bool readMultipleChoice(QDomElement &domElementParent, KEduVocMultipleChoice &mc);
 	bool readExpressionChildAttributes(	QDomElement &domElementExpressionChild,
 														          QString &lang,
 														          grade_t &grade, grade_t &rev_grade,

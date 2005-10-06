@@ -31,14 +31,14 @@
 
 #define MAX_MULTIPLE_CHOICE  5  // select one out of x
 
-class MultipleChoice
+class KEduVocMultipleChoice
 {
 
 public:
 
-   MultipleChoice() {}
+   KEduVocMultipleChoice() {}
 
-   MultipleChoice (
+   KEduVocMultipleChoice (
            const QString &mc1,
            const QString &mc2,
            const QString &mc3,

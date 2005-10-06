@@ -23,8 +23,8 @@
 #include <qdom.h>
 
 //#include "keduvocdocument.h"
-#include "grammarmanager.h"
-#include "multiplechoice.h"
+#include "keduvocgrammar.h"
+#include "keduvocmultiplechoice.h"
 
 class KEduVocDocument;
 
@@ -79,17 +79,17 @@ public:
   bool saveOptionsKvtMl  (QDomDocument &domDoc, QDomElement &domElementParent);
   bool saveArticleKvtMl  (QDomDocument &domDoc, QDomElement &domElementParent);
   bool saveConjugHeader  (QDomDocument &domDoc, QDomElement &domElementParent,
-                          QValueList<Conjugation> &curr_conjug);
+                          QValueList<KEduVocConjugation> &curr_conjug);
   bool saveConjug        (QDomDocument &domDoc, QDomElement &domElementParent,
-                          const Conjugation &curr_conjug, QString type);
+                          const KEduVocConjugation &curr_conjug, QString type);
   bool saveConjugEntry   (QDomDocument &domDoc, QDomElement &domElementParent,
-                          Conjugation &curr_conjug);
+                          KEduVocConjugation &curr_conjug);
 
   bool saveComparison    (QDomDocument &domDoc, QDomElement &domElementParent,
-                          const Comparison &comp);
+                          const KEduVocComparison &comp);
 
   bool saveMultipleChoice(QDomDocument &domDoc, QDomElement &domElementParent,
-                          const MultipleChoice &mc);
+                          const KEduVocMultipleChoice &mc);
 
 private:
   QFile *m_outputFile;

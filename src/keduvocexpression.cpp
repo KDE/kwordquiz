@@ -278,23 +278,23 @@ QString KEduVocExpression::antonym (int idx) const
 }
 
 
-void KEduVocExpression::setConjugation (int idx, const Conjugation &con)
+void KEduVocExpression::setConjugation (int idx, const KEduVocConjugation &con)
 {
   if ( idx < 0) return;
 
   // extend conjugation with empty elements
   if ((int)m_conjugations.size() <= idx )
     for (int i = m_conjugations.size(); i < idx+1; i++)
-      m_conjugations.push_back (Conjugation());
+      m_conjugations.push_back (KEduVocConjugation());
 
   m_conjugations[idx] = con;
 }
 
 
-Conjugation KEduVocExpression::conjugation (int idx) const
+KEduVocConjugation KEduVocExpression::conjugation (int idx) const
 {
   if (idx >= (int)m_conjugations.size() || idx < 0) {
-    return Conjugation();
+    return KEduVocConjugation();
   }
   else {
     return m_conjugations[idx];
@@ -302,23 +302,23 @@ Conjugation KEduVocExpression::conjugation (int idx) const
 }
 
 
-void KEduVocExpression::setComparison (int idx, const Comparison &con)
+void KEduVocExpression::setComparison (int idx, const KEduVocComparison &con)
 {
   if ( idx < 0) return;
 
   // extend comparison with empty elements
   if ((int)m_comparisons.size() <= idx )
     for (int i = m_comparisons.size(); i < idx+1; i++)
-      m_comparisons.push_back (Comparison());
+      m_comparisons.push_back (KEduVocComparison());
 
   m_comparisons[idx] = con;
 }
 
 
-Comparison KEduVocExpression::comparison (int idx) const
+KEduVocComparison KEduVocExpression::comparison (int idx) const
 {
   if (idx >= (int)m_comparisons.size() || idx < 0) {
-    return Comparison();
+    return KEduVocComparison();
   }
   else {
     return m_comparisons[idx];
@@ -326,23 +326,23 @@ Comparison KEduVocExpression::comparison (int idx) const
 }
 
 
-void KEduVocExpression::setMultipleChoice (int idx, const MultipleChoice &mc)
+void KEduVocExpression::setMultipleChoice (int idx, const KEduVocMultipleChoice &mc)
 {
   if ( idx < 0) return;
 
   // extend comparison with empty elements
   if ((int)m_multipleChoices.size() <= idx )
     for (int i = m_multipleChoices.size(); i < idx+1; i++)
-      m_multipleChoices.push_back (MultipleChoice());
+      m_multipleChoices.push_back (KEduVocMultipleChoice());
 
   m_multipleChoices[idx] = mc;
 }
 
 
-MultipleChoice KEduVocExpression::multipleChoice (int idx) const
+KEduVocMultipleChoice KEduVocExpression::multipleChoice (int idx) const
 {
   if (idx >= (int)m_multipleChoices.size() || idx < 0) {
-    return MultipleChoice();
+    return KEduVocMultipleChoice();
   }
   else {
     return m_multipleChoices[idx];

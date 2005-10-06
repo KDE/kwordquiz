@@ -51,8 +51,8 @@
 #include <qstringlist.h>
 #include <qdatetime.h>
 
-#include "grammarmanager.h"
-#include "multiplechoice.h"
+#include "keduvocgrammar.h"
+#include "keduvocmultiplechoice.h"
 
 typedef signed char grade_t;
 typedef unsigned short count_t;
@@ -338,40 +338,40 @@ class KEduVocExpression
    *
    * @param index            index of translation
    */
-  Conjugation conjugation(int index) const;
+  KEduVocConjugation conjugation(int index) const;
 
   /** sets conjugations
    *
    * @param index            index of translation
    * @param con              conjugation block
    */
-  void setConjugation(int index, const Conjugation & conjugation);
+  void setConjugation(int index, const KEduVocConjugation & conjugation);
 
   /** returns comparison if available
    *
    * @param index            index of translation
    */
-  Comparison comparison(int index) const;
+  KEduVocComparison comparison(int index) const;
 
   /** sets comparison
    *
    * @param index            index of translation
    * @param con              comparison block
    */
-  void setComparison(int index, const Comparison & comparison);
+  void setComparison(int index, const KEduVocComparison & comparison);
 
   /** returns multiple choice if available
    *
    * @param index            index of multiple choice
    */
-  MultipleChoice multipleChoice(int index) const;
+  KEduVocMultipleChoice multipleChoice(int index) const;
 
   /** sets multiple choice
    *
    * @param index            index of translation
    * @param con              multiple choice block
    */
-  void setMultipleChoice(int index, const MultipleChoice & mc);
+  void setMultipleChoice(int index, const KEduVocMultipleChoice & mc);
 
   /** returns query count of given translation as int
    *
@@ -454,9 +454,9 @@ class KEduVocExpression
   QValueList<count_t> m_reverseBadCounts;
   QValueList<QDateTime> m_queryDates;
   QValueList<QDateTime> m_reverseQueryDates;
-  QValueList<Conjugation> m_conjugations;
-  QValueList<Comparison> m_comparisons;
-  QValueList<MultipleChoice> m_multipleChoices;
+  QValueList<KEduVocConjugation> m_conjugations;
+  QValueList<KEduVocComparison> m_comparisons;
+  QValueList<KEduVocMultipleChoice> m_multipleChoices;
 
   QString m_leitnerBox;
   int m_lesson;

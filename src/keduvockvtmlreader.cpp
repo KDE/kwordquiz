@@ -218,9 +218,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
       domElementEntryChild = domElementEntryChild.nextSibling().toElement();
     }
 
-    m_doc->m_articles.push_back(Article(  fem_def, fem_indef,
-                                        mal_def, mal_indef,
-                                        nat_def, nat_indef));
+    m_doc->m_articles.push_back(KEduVocArticle(fem_def, fem_indef, mal_def, mal_indef, nat_def, nat_indef));
 
     domElementEntry = domElementEntry.nextSibling().toElement();
     count++;
@@ -230,9 +228,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
 }
 
 
-bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent,
-                                    QValueList<Conjugation> &curr_conjug,
-                                    const QString &entry_tag)
+bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent, QValueList<KEduVocConjugation> &curr_conjug, const QString &entry_tag)
 /*
  <conjugation>        used in header for definiton of "prefix"
   <e l="de">          lang determines also lang order in entries !!
@@ -285,7 +281,7 @@ bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent,
   QString lang;
   QString type;
   int count = 0;
-  curr_conjug.push_back(Conjugation());
+  curr_conjug.push_back(KEduVocConjugation());
 
   QDomElement domElementConjugChild = domElementParent.firstChild().toElement();
   while (!domElementConjugChild.isNull())
@@ -441,7 +437,7 @@ bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent,
 
     if (domElementConjugChild.tagName() == KV_CON_ENTRY)
       while (count+1 > (int) curr_conjug.size() )
-        curr_conjug.push_back(Conjugation());
+        curr_conjug.push_back(KEduVocConjugation());
 
     curr_conjug[count].setPers3SingularCommon(type, s3_common);
     curr_conjug[count].setPers3PluralCommon(type, p3_common);
@@ -620,8 +616,7 @@ bool KEduVocKvtmlReader::readUsage(QDomElement &domElementParent)
 }
 
 
-bool KEduVocKvtmlReader::readComparison(QDomElement &domElementParent,
-                                        Comparison &comp)
+bool KEduVocKvtmlReader::readComparison(QDomElement &domElementParent, KEduVocComparison &comp)
 /*
  <comparison>
    <l1>good</l1>
@@ -673,8 +668,7 @@ bool KEduVocKvtmlReader::readComparison(QDomElement &domElementParent,
 }
 
 
-bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent,
-                                            MultipleChoice &mc)
+bool KEduVocKvtmlReader::readMultipleChoice(QDomElement &domElementParent, KEduVocMultipleChoice &mc)
 /*
  <multiplechoice>
    <mc1>good</mc1>
@@ -974,9 +968,9 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
   QString       antonym;
   QString       usage;
   QString       paraphrase;
-  QValueList<Conjugation> conjug;
-  Comparison     comparison;
-  MultipleChoice mc;
+  QValueList<KEduVocConjugation> conjug;
+  KEduVocComparison     comparison;
+  KEduVocMultipleChoice mc;
 
   //-------------------------------------------------------------------------
   // Attributes

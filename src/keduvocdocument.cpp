@@ -386,23 +386,23 @@ void KEduVocDocument::setUsageName(int idx, QString &id)
 }
 
 
-void KEduVocDocument::setConjugation(int idx, const Conjugation &con)
+void KEduVocDocument::setConjugation(int idx, const KEduVocConjugation &con)
 {
   if ( idx < 0) return;
 
   // extend conjugation with empty elements
   if ((int)m_conjugations.size() <= idx )
     for (int i = m_conjugations.size(); i < idx+1; i++)
-      m_conjugations.push_back (Conjugation());
+      m_conjugations.push_back (KEduVocConjugation());
 
   m_conjugations[idx] = con;
 }
 
 
-Conjugation KEduVocDocument::conjugation (int idx) const
+KEduVocConjugation KEduVocDocument::conjugation (int idx) const
 {
   if (idx >= (int)m_conjugations.size() || idx < 0) {
-    return Conjugation();
+    return KEduVocConjugation();
   }
   else {
     return m_conjugations[idx];
@@ -410,23 +410,23 @@ Conjugation KEduVocDocument::conjugation (int idx) const
 }
 
 
-void KEduVocDocument::setArticle(int idx, const Article &art)
+void KEduVocDocument::setArticle(int idx, const KEduVocArticle &art)
 {
   if ( idx < 0) return;
 
   // extend conjugation with empty elements
   if ((int)m_articles.size() <= idx )
     for (int i = m_articles.size(); i < idx+1; i++)
-      m_articles.push_back (Article());
+      m_articles.push_back (KEduVocArticle());
 
   m_articles[idx] = art;
 }
 
 
-Article KEduVocDocument::article (int idx) const
+KEduVocArticle KEduVocDocument::article (int idx) const
 {
   if (idx >= (int)m_articles.size() || idx < 0) {
-    return Article();
+    return KEduVocArticle();
   }
   else {
     return m_articles[idx];

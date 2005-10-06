@@ -1,14 +1,14 @@
 /***************************************************************************
 
-              manage grammer parts (articles, conjugation)
+              manage grammar parts (articles, conjugation)
 
     -----------------------------------------------------------------------
 
-    begin                : Sat Nov 27 09:50:53 MET 1999
+    begin          : Sat Nov 27 09:50:53 MET 1999
 
-    copyright            : (C) 1999-2001 Ewald Arnold
-                           (C) 2001 The KDE-EDU team
-    email                : kvoctrain@ewald-arnold.de
+    copyright      : (C) 1999-2001 Ewald Arnold <kvoctrain@ewald-arnold.de>
+                     (C) 2001 The KDE-EDU team
+                     (C) 2005 Peter Hedlund <peter.hedlund@kdemail.net>
 
     -----------------------------------------------------------------------
 
@@ -46,14 +46,14 @@ using namespace std;
 
 #define UL_USER_TENSE  "#"   // designates number of user tense
 
-class Article
+class KEduVocArticle
 {
 
 public:
 
-   Article() {}
+   KEduVocArticle() {}
 
-   Article (
+   KEduVocArticle (
            const QString &fem_def, const QString &fem_indef,
            const QString &mal_def, const QString &mal_indef,
            const QString &nat_def, const QString &nat_indef
@@ -75,14 +75,14 @@ protected:
 };
 
 
-class Comparison
+class KEduVocComparison
 {
 
 public:
 
-   Comparison() {}
+   KEduVocComparison() {}
 
-   Comparison (
+   KEduVocComparison (
            const QString &l1,
            const QString &l2,
            const QString &l3
@@ -105,11 +105,11 @@ protected:
 };
 
 
-class TenseRelation
+class KEduVocTenseRelation
 {
  public:
 
-  TenseRelation (const QString & _short, const QString & _long)
+  KEduVocTenseRelation (const QString & _short, const QString & _long)
     : shortId (_short), longId(_long) {}
 
   inline QString shortStr() const { return shortId; }
@@ -121,16 +121,16 @@ class TenseRelation
 };
 
 
-class Conjugation
+class KEduVocConjugation
 {
 
 public:
 
-   Conjugation () {}
+   KEduVocConjugation () {}
 
    int numEntries() const;
 
-   static vector<TenseRelation> getRelation ();
+   static vector<KEduVocTenseRelation> getRelation ();
    static void setTenseNames (vector<QString> names);
 
    static QString getName (const QString &abbrev);

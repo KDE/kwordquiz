@@ -240,7 +240,7 @@
 
 class QTextStream;
 class QStringList;
-class MultipleChoice;
+class KEduVocMultipleChoice;
 class LeitnerSystem;
 
 /**
@@ -561,27 +561,27 @@ class KEduVocDocument : public QObject
    *
    * @param index            index of translation
    */
-  Conjugation conjugation(int index) const;
+  KEduVocConjugation conjugation(int index) const;
 
   /** sets conjugations
    *
    * @param index            index of translation
    * @param con              conjugation block
    */
-  void setConjugation(int index, const Conjugation &con);
+  void setConjugation(int index, const KEduVocConjugation &con);
 
   /** returns pointer to articles if available
    *
    * @param index            index of translation
    */
-  Article article(int index) const;
+  KEduVocArticle article(int index) const;
 
   /** sets articles
    *
    * @param index            index of translation
    * @param art              article block
    */
-  void setArticle(int index, const Article &art);
+  void setArticle(int index, const KEduVocArticle &art);
 
   /** returns recommended size
    *
@@ -682,8 +682,8 @@ protected:
   QString               m_remark;
   QString               m_version;
 
-  QValueList<Article>   m_articles;
-  QValueList<Conjugation> m_conjugations;
+  QValueList<KEduVocArticle>   m_articles;
+  QValueList<KEduVocConjugation> m_conjugations;
 
   LeitnerSystem* 	       m_leitnerSystem;
   bool			             m_activeLeitnerSystem;

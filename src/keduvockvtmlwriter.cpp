@@ -139,7 +139,7 @@ bool KEduVocKvtmlWriter::saveLessonKvtMl (QDomDocument &domDoc, QDomElement &dom
 
 
 bool KEduVocKvtmlWriter::saveConjug(QDomDocument &domDoc, QDomElement &domElementParent,
-                                    const Conjugation &curr_conjug, QString type)
+                                    const KEduVocConjugation &curr_conjug, QString type)
 {
   if (!curr_conjug.pers1Singular(type).isEmpty() )
   {
@@ -243,7 +243,7 @@ bool KEduVocKvtmlWriter::saveConjug(QDomDocument &domDoc, QDomElement &domElemen
 }
 
 bool KEduVocKvtmlWriter::saveConjugHeader(QDomDocument &domDoc, QDomElement &domElementParent,
-                                          QValueList<Conjugation> &curr_conjug)
+                                          QValueList<KEduVocConjugation> &curr_conjug)
 {
 /*
  <conjugation>    used in header for definiton of "prefix"
@@ -300,8 +300,7 @@ bool KEduVocKvtmlWriter::saveConjugHeader(QDomDocument &domDoc, QDomElement &dom
 }
 
 
-bool KEduVocKvtmlWriter::saveComparison(QDomDocument &domDoc, QDomElement &domElementParent,
-                                        const Comparison &comp)
+bool KEduVocKvtmlWriter::saveComparison(QDomDocument &domDoc, QDomElement &domElementParent, const KEduVocComparison &comp)
 /*
  <comparison>
    <l1>good</l1>
@@ -348,7 +347,7 @@ bool KEduVocKvtmlWriter::saveComparison(QDomDocument &domDoc, QDomElement &domEl
 
 
 bool KEduVocKvtmlWriter::saveMultipleChoice(QDomDocument &domDoc, QDomElement &domElementParent,
-                                            const MultipleChoice &mc)
+                                            const KEduVocMultipleChoice &mc)
 /*
  <multiplechoice>
    <mc1>good</mc1>
@@ -415,7 +414,7 @@ bool KEduVocKvtmlWriter::saveMultipleChoice(QDomDocument &domDoc, QDomElement &d
 
 
 bool KEduVocKvtmlWriter::saveConjugEntry( QDomDocument &domDoc, QDomElement &domElementParent,
-                                          Conjugation &curr_conjug)
+                                          KEduVocConjugation &curr_conjug)
 /*
  <conjugation>    in entry for definition of tenses of (irreg.) verbs
   <t n="sipa">
@@ -791,14 +790,14 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
     if (entype == QM_VERB
         && (*first).conjugation(0).numEntries() > 0)
     {
-      Conjugation conj = (*first).conjugation(0);
+      KEduVocConjugation conj = (*first).conjugation(0);
       if (!saveConjugEntry(domDoc, domElementOriginal, conj))
         return false;
     }
     else if (entype == QM_ADJ
              && !(*first).comparison(0).isEmpty())
     {
-      Comparison comp = (*first).comparison(0);
+      KEduVocComparison comp = (*first).comparison(0);
       if (!saveComparison(domDoc, domElementOriginal, comp))
         return false;
     }
@@ -911,7 +910,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
       if (entype == QM_VERB
           && (*first).conjugation(trans).numEntries() > 0)
       {
-        Conjugation conj = (*first).conjugation(trans);
+        KEduVocConjugation conj = (*first).conjugation(trans);
         if (!saveConjugEntry(domDoc, domElementTranslation, conj))
           return false;
       }
@@ -919,7 +918,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
       if (entype == QM_ADJ
           && !(*first).comparison(trans).isEmpty())
       {
-        Comparison comp = (*first).comparison(trans);
+        KEduVocComparison comp = (*first).comparison(trans);
         if (!saveComparison(domDoc, domElementTranslation, comp))
           return false;
       }

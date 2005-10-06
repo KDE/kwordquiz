@@ -23,9 +23,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "multiplechoice.h"
+#include "keduvocmultiplechoice.h"
 
-MultipleChoice::MultipleChoice (
+KEduVocMultipleChoice::KEduVocMultipleChoice (
            const QString &mc1,
            const QString &mc2,
            const QString &mc3,
@@ -41,7 +41,7 @@ MultipleChoice::MultipleChoice (
 }
 
 
-bool MultipleChoice::isEmpty() const
+bool KEduVocMultipleChoice::isEmpty() const
 {
   return   muc1.stripWhiteSpace().isEmpty()
         && muc2.stripWhiteSpace().isEmpty()
@@ -51,7 +51,7 @@ bool MultipleChoice::isEmpty() const
 }
 
 
-void MultipleChoice::clear()
+void KEduVocMultipleChoice::clear()
 {
    muc1 = "";
    muc2 = "";
@@ -61,7 +61,7 @@ void MultipleChoice::clear()
 }
 
 
-QString MultipleChoice::mc (unsigned idx) const
+QString KEduVocMultipleChoice::mc (unsigned idx) const
 {
    switch (idx) {
      case 0: return muc1;
@@ -74,7 +74,7 @@ QString MultipleChoice::mc (unsigned idx) const
 }
 
 
-unsigned MultipleChoice::size()
+unsigned KEduVocMultipleChoice::size()
 {
    normalize();
    unsigned num = 0;
@@ -92,7 +92,7 @@ unsigned MultipleChoice::size()
 }
 
 
-void MultipleChoice::normalize()
+void KEduVocMultipleChoice::normalize()
 {
   // fill from first to last
 
