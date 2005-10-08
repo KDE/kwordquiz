@@ -89,7 +89,7 @@ public:
 														          QString &lang,
 														          grade_t &grade, grade_t &rev_grade,
 														          int &count, int &rev_count,
-														          time_t &date, time_t &rev_date,
+														          QDateTime &date, QDateTime &rev_date,
 														          QString &remark,
 														          int &bcount, int &rev_bcount,
 														          QString &query_id,

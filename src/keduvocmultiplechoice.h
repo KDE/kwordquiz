@@ -38,13 +38,7 @@ public:
 
    KEduVocMultipleChoice() {}
 
-   KEduVocMultipleChoice (
-           const QString &mc1,
-           const QString &mc2,
-           const QString &mc3,
-           const QString &mc4,
-           const QString &mc5
-          );
+   KEduVocMultipleChoice (const QString &mc1, const QString &mc2, const QString &mc3, const QString &mc4, const QString &mc5);
 
    void setMC1 (const QString &s) { muc1 = s; }
    void setMC2 (const QString &s) { muc2 = s; }

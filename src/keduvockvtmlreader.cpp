@@ -21,7 +21,6 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 
-#include <qdom.h>
 #include <qtextstream.h>
 
 #include "keduvockvtmlreader.h"
@@ -744,7 +743,7 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
                                                         QString &lang,
                                                         grade_t &grade, grade_t &rev_grade,
                                                         int &count, int &rev_count,
-                                                        time_t &date, time_t &rev_date,
+                                                        QDateTime &date, QDateTime &rev_date,
                                                         QString &remark,
                                                         int &bcount, int &rev_bcount,
                                                         QString &query_id,
@@ -816,19 +815,19 @@ bool KEduVocKvtmlReader::readExpressionChildAttributes( QDomElement &domElementE
       bcount = s.toInt();
   }
 
-  date = 0;
-  rev_date = 0;
+  date.setTime_t(0);
+  rev_date.setTime_t(0);
   QDomAttr domAttrDate = domElementExpressionChild.attributeNode(KV_DATE);
   if (!domAttrDate.isNull())
   {
     QString s = domAttrDate.value();
     if ((pos = s.find(';')) >= 1)
     {
-      date = s.left(pos).toInt();
-      rev_date = s.mid(pos+1, s.length()).toInt();
+      date.setTime_t(s.left(pos).toInt());
+      rev_date.setTime_t(s.mid(pos+1, s.length()).toInt());
     }
     else
-      date = s.toInt();
+      date.setTime_t(s.toInt());
   }
 
   QDomAttr domAttrDate2 = domElementExpressionChild.attributeNode(KV_DATE2);
@@ -946,7 +945,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
                  r_bcount;
   QString       remark;
   QString       pronunce;
-  time_t        qdate,
+  QDateTime     qdate,
                 r_qdate;
   bool          inquery;
   bool          active;
@@ -1366,11 +1365,11 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
     expr.setQueryCount  (count, r_qcount, true);
     expr.setBadCount    (count, bcount, false);
     expr.setBadCount    (count, r_bcount, true);
-    QDateTime dt;
-    dt.setTime_t(qdate);
-    expr.setQueryDate(count, dt, false);
-    dt.setTime_t(r_qdate);
-    expr.setQueryDate(count, dt, true);
+    //QDateTime dt;
+    //dt.setTime_t(qdate);
+    expr.setQueryDate(count, qdate, false);
+    //dt.setTime_t(r_qdate);
+    expr.setQueryDate(count, r_qdate, true);
 
     if (conjug.size() > 0)
     {

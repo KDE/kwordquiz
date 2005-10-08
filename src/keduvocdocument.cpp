@@ -1,10 +1,9 @@
 /***************************************************************************
                         Vocabulary Document for KDE Edu
     -----------------------------------------------------------------------
-    copyright            : (C) 1999-2001 Ewald Arnold
-                           (C) 2001 The KDE-EDU team
-                           (C) 2005 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
+    copyright           : (C) 1999-2001 Ewald Arnold
+                          (C) 2001 The KDE-EDU team
+                          (C) 2005 Peter Hedlund <peter.hedlund@kdemail.net>
  ***************************************************************************/
 
 /***************************************************************************
@@ -25,10 +24,6 @@
 #include <kdebug.h>
 #include <kmessagebox.h>
 #include <kio/netaccess.h>
-
-using namespace std;
-
-#include <iostream>
 
 #include "keduvockvtmlwriter.h"
 #include "keduvockvtmlreader.h"
@@ -477,7 +472,7 @@ void KEduVocDocument::setSizeHint (int idx, const int width)
   }
 }
 
-
+/*
 class eraseTrans : public unary_function<KEduVocExpression, void>
 {
 
@@ -494,13 +489,16 @@ public:
  private:
     int index;
 };
-
+*/
 
 void KEduVocDocument::removeIdentifier(int index)
 {
-  if (index < (int)m_identifiers.size() && index >= 1 ) {
+  if (index < (int)m_identifiers.size() && index >= 1 )
+  {
     m_identifiers.erase(m_identifiers.at(index));
-    for_each (m_vocabulary.begin(), m_vocabulary.end(), eraseTrans(index));
+    QValueList<KEduVocExpression>::iterator it;
+    for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
+      (*it).removeTranslation(index);
   }
 }
 
@@ -775,7 +773,7 @@ LeitnerSystem* KEduVocDocument::leitnerSystem()
 	return m_leitnerSystem;
 }
 
-
+/*
 class resetAll : public unary_function<KEduVocExpression, void>
 {
 
@@ -836,14 +834,50 @@ public:
   int index;
   int lesson;
 };
+*/
 
-
-void KEduVocDocument::resetEntry (int index, int lesson)
+void KEduVocDocument::resetEntry(int index, int lesson)
 {
+  QValueList<KEduVocExpression>::iterator it;
   if (index < 0)
-    for_each (m_vocabulary.begin(), m_vocabulary.end(), resetAll(lesson) );
+  {
+    for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
+      for (int i = 0; i <= (*it).numTranslations(); i++)
+      {
+        if (lesson == 0 || lesson == (*it).lesson())
+        {
+          (*it).setGrade(i, KV_NORM_GRADE, false);
+          (*it).setGrade(i, KV_NORM_GRADE, true);
+          (*it).setQueryCount(i, 0, true);
+          (*it).setQueryCount(i, 0, false);
+          (*it).setBadCount(i, 0, true);
+          (*it).setBadCount(i, 0, false);
+          QDateTime dt;
+          dt.setTime_t(0);
+          (*it).setQueryDate(i, dt, true);
+          (*it).setQueryDate(i, dt, false);
+         }
+       }
+    //for_each (m_vocabulary.begin(), m_vocabulary.end(), resetAll(lesson) );
+  }
   else
-    for_each (m_vocabulary.begin(), m_vocabulary.end(), resetOne(index, lesson) );
+  {
+    for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
+      if (lesson == 0 || lesson == (*it).lesson())
+      {
+        (*it).setGrade(index, KV_NORM_GRADE, false);
+        (*it).setGrade(index, KV_NORM_GRADE, true);
+        (*it).setQueryCount(index, 0, true);
+        (*it).setQueryCount(index, 0, false);
+        (*it).setBadCount(index, 0, true);
+        (*it).setBadCount(index, 0, false);
+        QDateTime dt;
+        dt.setTime_t(0);
+        (*it).setQueryDate(index, dt, true);
+        (*it).setQueryDate(index, dt, false);
+      }
+    //for_each (m_vocabulary.begin(), m_vocabulary.end(), resetOne(index, lesson) );
+  }
 }
 
 
@@ -1032,50 +1066,51 @@ KEduVocDocument::FileType KEduVocDocument::detectFileType(const QString &filenam
 }
 
 
-class expRef {
+class ExpRef {
 
 public:
+  ExpRef() {}
+  ExpRef (KEduVocExpression *_exp, int _idx)
+  {
+    idx    = _idx;
+    exp    = _exp;
+  }
 
-  expRef (KEduVocExpression *_exp, int _idx)
-   {
-      idx    = _idx;
-      exp    = _exp;
-   }
+  bool operator< (const ExpRef& y) const
+  {
+    QString s1 = exp->original();
+    QString s2 = y.exp->original();
+    int cmp = QString::compare(s1.upper(), s2.upper());
+    if (cmp != 0)
+      return cmp < 0;
 
-  bool operator< (const expRef& y) const
-    {
-      QString s1 = exp->original();
-      QString s2 = y.exp->original();
-      int cmp = QString::compare(s1.upper(), s2.upper());
+    for (int i = 1; i < (int) exp->numTranslations(); i++) {
+
+      s1 = exp->translation(i);
+      s2 = y.exp->translation(i);
+      cmp = QString::compare(s1.upper(), s2.upper() );
       if (cmp != 0)
         return cmp < 0;
-
-      for (int i = 1; i < (int) exp->numTranslations(); i++) {
-
-        s1 = exp->translation(i);
-        s2 = y.exp->translation(i);
-        cmp = QString::compare(s1.upper(), s2.upper() );
-        if (cmp != 0)
-          return cmp < 0;
-      }
-      return cmp < 0;
     }
+    return cmp < 0;
+  }
 
-  int            idx;
+  int idx;
   KEduVocExpression *exp;
 };
 
+typedef QValueList<ExpRef> ExpRefList;
 
 int KEduVocDocument::cleanUp()
 {
   int count = 0;
   KEduVocExpression *kve1, *kve2;
-  vector<expRef> shadow;
-  vector<int> to_delete;
+  ExpRefList shadow;
+  QValueList<int> to_delete;
 
   for (int i = 0; i < (int) m_vocabulary.size(); i++)
-    shadow.push_back (expRef (entry(i), i));
-  std::sort(shadow.begin(), shadow.end());
+    shadow.push_back (ExpRef (entry(i), i));
+  qHeapSort(shadow.begin(), shadow.end());
 
 #ifdef CLEAN_BUG
   ofstream sso ("shadow.out");

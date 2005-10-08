@@ -25,13 +25,8 @@
 
 #include "keduvocmultiplechoice.h"
 
-KEduVocMultipleChoice::KEduVocMultipleChoice (
-           const QString &mc1,
-           const QString &mc2,
-           const QString &mc3,
-           const QString &mc4,
-           const QString &mc5
-          )
+KEduVocMultipleChoice::KEduVocMultipleChoice
+  (const QString &mc1, const QString &mc2, const QString &mc3, const QString &mc4,const QString &mc5)
 {
    setMC1 (mc1);
    setMC2 (mc2);
@@ -43,11 +38,11 @@ KEduVocMultipleChoice::KEduVocMultipleChoice (
 
 bool KEduVocMultipleChoice::isEmpty() const
 {
-  return   muc1.stripWhiteSpace().isEmpty()
-        && muc2.stripWhiteSpace().isEmpty()
-        && muc3.stripWhiteSpace().isEmpty()
-        && muc4.stripWhiteSpace().isEmpty()
-        && muc5.stripWhiteSpace().isEmpty();
+  return muc1.stripWhiteSpace().isEmpty() &&
+         muc2.stripWhiteSpace().isEmpty() &&
+         muc3.stripWhiteSpace().isEmpty() &&
+         muc4.stripWhiteSpace().isEmpty() &&
+         muc5.stripWhiteSpace().isEmpty();
 }
 
 
@@ -78,15 +73,15 @@ unsigned KEduVocMultipleChoice::size()
 {
    normalize();
    unsigned num = 0;
-   if (!muc1.isEmpty() )
+   if (!muc1.isEmpty())
      ++num;
-   if (!muc2.isEmpty() )
+   if (!muc2.isEmpty())
      ++num;
-   if (!muc3.isEmpty() )
+   if (!muc3.isEmpty())
      ++num;
-   if (!muc4.isEmpty() )
+   if (!muc4.isEmpty())
      ++num;
-   if (!muc5.isEmpty() )
+   if (!muc5.isEmpty())
      ++num;
    return num;
 }
