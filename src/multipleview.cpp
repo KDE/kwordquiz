@@ -27,15 +27,11 @@
 #include "multipleview.h"
 #include "prefs.h"
 
-MultipleView::MultipleView(QWidget *parent, const char *name, WFlags f)
-    : MultipleViewBase(parent, name, f)
+MultipleView::MultipleView(QWidget *parent) : QWidget(parent)
 {
+  setupUi(this);
   m_score = new WQScore();
 }
-
-
-MultipleView::~MultipleView()
-{}
 
 void MultipleView::setQuiz(WQQuiz *quiz)
 {

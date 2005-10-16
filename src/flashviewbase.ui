@@ -1,552 +1,503 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
-<class>FlashViewBase</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>FlashViewBase</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>617</width>
-            <height>492</height>
-        </rect>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>FlashViewBase</class>
+ <widget class="QWidget" name="FlashViewBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>617</width>
+    <height>492</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>10</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="0" column="1" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>21</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>30</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>30</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QFrame" name="fraCard" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>7</hsizetype>
+       <vsizetype>7</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip" >
+      <string>The flashcard</string>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QVBoxLayout" >
+      <property name="margin" >
+       <number>10</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblLanguageQuestion" >
+        <property name="sizePolicy" >
+         <sizepolicy>
+          <hsizetype>7</hsizetype>
+          <vsizetype>0</vsizetype>
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <spacer row="0" column="1">
-            <property name="name">
-                <cstring>spacer9_2</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Fixed</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>21</width>
-                    <height>30</height>
-                </size>
-            </property>
-        </spacer>
-        <spacer row="1" column="0">
-            <property name="name">
-                <cstring>spacer11</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Fixed</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>30</width>
-                    <height>20</height>
-                </size>
-            </property>
-        </spacer>
-        <spacer row="1" column="2">
-            <property name="name">
-                <cstring>spacer11_2</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Fixed</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>30</width>
-                    <height>20</height>
-                </size>
-            </property>
-        </spacer>
-        <widget class="QFrame" row="1" column="1">
-            <property name="name">
-                <cstring>fraCard</cstring>
-            </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>7</hsizetype>
-                    <vsizetype>7</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                </sizepolicy>
-            </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="frameShape">
-                <enum>Box</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="toolTip" stdset="0">
-                <string>The flashcard</string>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>lblLanguageQuestion</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>7</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="font">
-                        <font>
-                            <bold>1</bold>
-                        </font>
-                    </property>
-                    <property name="text">
-                        <string>Language 1</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignTop</set>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>The flashcard</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Language or other identifier for this card</string>
-                    </property>
-                </widget>
-                <widget class="Line">
-                    <property name="name">
-                        <cstring>linFlash</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="paletteForegroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="frameShape">
-                        <enum>HLine</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>The flashcard</string>
-                    </property>
-                </widget>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>lblQuestion</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>7</hsizetype>
-                            <vsizetype>7</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="text">
-                        <string>This is your question</string>
-                    </property>
-                    <property name="textFormat">
-                        <enum>AutoText</enum>
-                    </property>
-                    <property name="scaledContents">
-                        <bool>false</bool>
-                    </property>
-                    <property name="alignment">
-                        <set>WordBreak|AlignCenter</set>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>The flashcard</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>The flashcard. Select Quiz -&gt; Check to see the other side.</string>
-                    </property>
-                </widget>
-            </vbox>
+        <property name="font" >
+         <font>
+          <family></family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
+        <property name="toolTip" >
+         <string>The flashcard</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Language or other identifier for this card</string>
+        </property>
+        <property name="text" >
+         <string>Language 1</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="linFlash" >
+        <property name="sizePolicy" >
+         <sizepolicy>
+          <hsizetype>1</hsizetype>
+          <vsizetype>0</vsizetype>
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip" >
+         <string>The flashcard</string>
+        </property>
+        <property name="frameShape" >
+         <enum>QFrame::HLine</enum>
+        </property>
+        <property name="frameShadow" >
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblQuestion" >
+        <property name="sizePolicy" >
+         <sizepolicy>
+          <hsizetype>7</hsizetype>
+          <vsizetype>7</vsizetype>
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip" >
+         <string>The flashcard</string>
+        </property>
+        <property name="whatsThis" >
+         <string>The flashcard. Select Quiz -> Check to see the other side.</string>
+        </property>
+        <property name="text" >
+         <string>This is your question</string>
+        </property>
+        <property name="textFormat" >
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="scaledContents" >
+         <bool>false</bool>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>21</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="3" >
+    <layout class="QGridLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item row="0" column="0" >
+      <widget class="Line" name="line1_2" >
+       <property name="frameShape" >
+        <enum>QFrame::HLine</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item row="0" column="1" >
+        <widget class="QLabel" name="lblScoreCount" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>5</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font" >
+          <font>
+           <family></family>
+           <pointsize>24</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
+         <property name="toolTip" >
+          <string>Questions</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards in the session</string>
+         </property>
+         <property name="text" >
+          <string>00</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
         </widget>
-        <spacer row="2" column="1">
-            <property name="name">
-                <cstring>spacer9</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Fixed</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>21</width>
-                    <height>30</height>
-                </size>
-            </property>
-        </spacer>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>layout13</cstring>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="Line" row="0" column="0">
-                    <property name="name">
-                        <cstring>line1_2</cstring>
-                    </property>
-                    <property name="backgroundOrigin">
-                        <enum>WidgetOrigin</enum>
-                    </property>
-                    <property name="frameShape">
-                        <enum>HLine</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Sunken</enum>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                </widget>
-                <widget class="QLayoutWidget" row="1" column="0">
-                    <property name="name">
-                        <cstring>layout12</cstring>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QLabel" row="0" column="1">
-                            <property name="name">
-                                <cstring>lblScoreCount</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>5</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="paletteForegroundColor">
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                            </property>
-                            <property name="font">
-                                <font>
-                                    <pointsize>24</pointsize>
-                                </font>
-                            </property>
-                            <property name="text">
-                                <string>00</string>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignVCenter|AlignLeft</set>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Questions</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards in the session</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="4">
-                            <property name="name">
-                                <cstring>picCorrect</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>0</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>32</width>
-                                    <height>32</height>
-                                </size>
-                            </property>
-                            <property name="pixmap">
-                                <pixmap>image0</pixmap>
-                            </property>
-                            <property name="scaledContents">
-                                <bool>true</bool>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Correct answers</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards counted as correct (I know). May be shown as a percentage.</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="5">
-                            <property name="name">
-                                <cstring>lblScoreCorrect</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>5</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="paletteForegroundColor">
-                                <color>
-                                    <red>0</red>
-                                    <green>255</green>
-                                    <blue>0</blue>
-                                </color>
-                            </property>
-                            <property name="font">
-                                <font>
-                                    <pointsize>24</pointsize>
-                                </font>
-                            </property>
-                            <property name="text">
-                                <string>00</string>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignVCenter|AlignLeft</set>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Correct answers</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards counted as correct (I know). May be shown as a percentage.</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="6">
-                            <property name="name">
-                                <cstring>picError</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>0</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>32</width>
-                                    <height>32</height>
-                                </size>
-                            </property>
-                            <property name="pixmap">
-                                <pixmap>image0</pixmap>
-                            </property>
-                            <property name="scaledContents">
-                                <bool>true</bool>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Incorrect answers</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards counted as incorrect (I do not know). May be shown as a percentage.</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="0">
-                            <property name="name">
-                                <cstring>picCount</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>0</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>32</width>
-                                    <height>32</height>
-                                </size>
-                            </property>
-                            <property name="pixmap">
-                                <pixmap>image0</pixmap>
-                            </property>
-                            <property name="scaledContents">
-                                <bool>true</bool>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Questions</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards in the session</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="3">
-                            <property name="name">
-                                <cstring>lblScoreAnswered</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>5</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="paletteForegroundColor">
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>255</blue>
-                                </color>
-                            </property>
-                            <property name="font">
-                                <font>
-                                    <pointsize>24</pointsize>
-                                </font>
-                            </property>
-                            <property name="text">
-                                <string>00</string>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignVCenter|AlignLeft</set>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Answered questions</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards already seen. May be shown as a percentage.</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="2">
-                            <property name="name">
-                                <cstring>picAnswered</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>0</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>32</width>
-                                    <height>32</height>
-                                </size>
-                            </property>
-                            <property name="pixmap">
-                                <pixmap>image0</pixmap>
-                            </property>
-                            <property name="scaledContents">
-                                <bool>true</bool>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Answered questions</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards already seen. May be shown as a percentage.</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="7">
-                            <property name="name">
-                                <cstring>lblScoreError</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>5</hsizetype>
-                                    <vsizetype>0</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="paletteForegroundColor">
-                                <color>
-                                    <red>255</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                            </property>
-                            <property name="font">
-                                <font>
-                                    <pointsize>24</pointsize>
-                                </font>
-                            </property>
-                            <property name="text">
-                                <string>00</string>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignVCenter|AlignLeft</set>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Incorrect answers</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>The number of cards counted as incorrect (I do not know). May be shown as a percentage.</string>
-                            </property>
-                        </widget>
-                    </grid>
-                </widget>
-            </grid>
+       </item>
+       <item row="0" column="4" >
+        <widget class="QLabel" name="picCorrect" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>0</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="toolTip" >
+          <string>Correct answers</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards counted as correct (I know). May be shown as a percentage.</string>
+         </property>
+         <property name="pixmap" >
+          <pixmap/>
+         </property>
+         <property name="scaledContents" >
+          <bool>true</bool>
+         </property>
         </widget>
-    </grid>
-</widget>
-<images>
-    <image name="image0">
-        <data format="XPM.GZ" length="29635">789cdd9c59536349b2a0dffb579475bcb58dc5456841b2b17910082476891daedd87588f401202b4736dfefb7884bb878e1632c9aaec99b2694c957c9c25c2c3f73847fd1ffffae3a17dfec7bffee31fa3b11a3f9b3f4c577dfcf12f3b190c16fff95fffebbffff1cfc2cece1fe153de2bfdb1fbcffff18f7f8af91fe60fb113ff17b996b81a588d990b787c465cc2f3954c8ce78f98e9fc297195ce3f4a8ce71799f17c7b92188ff37c0c5eef7b89e3714de31768feb64e4cf3d3c791ab69be93c478ff43661cdfa5e338be3e21e6f98bc478fc9e99ae3f4e8cc7df8869fef634318e3f65a6f5aa22b33c6e9618ef77c08cf7170b62924fd0fc0b345fdd27a6f18d0e0c77a3f1dc09328f9765cc78dcbc10f3fd2f89e9fea24d4cf7570de45db6274f4cd7674562bade45fb2a54f97cf5404ce7fb7a6294d711b33e14318d9f7503efa6f1748198d763404ce78b0cb9c8f3fd24a6ebcd1e31cb8b5ce3f3b3d7c4a8cf6b62b6b773621e7f9f98c6771ab944f73367818b053e5ff588597ff78971bc1b64be5e7413e3f10f629a8fed258ec7fd9c99f43d23a6f1ad899ce6a74f89797d4c62d4cf0533d9f39898d7af9318e73723667d98c4f17846e395cb349f68ffa5025fef86c4bc9ebb8951be2633ce471be432dbdb59e278be1932d3fcebc434be2b25c6f93d12d768fe2f89e3712b90f72cad2fce4f95cb349f77623adf4c99e97815b952208ef1b0bc5bb6e8ff7e9f79b716e7f7865c29d0fd5acc74fd0e318defcb89f1fc3be65d5c6f1aaf42f2f91b624bf247ff2ec3fc8a8578ff5d625a1f75c04cf17d4e4cf28a0a33cde79e98eeefaf98e9facfc4180f7bcc385fa591f7485e534f8ce727c6f3b31631ebf739318e6f98f17a17e35d05d6a318d7db5689693eaece8cf777a7ccb83ebe9f385e9f2d9079beaa9418eff7ce4cfad827a6f9f83b669287af277db90233e50bc54ce7ef12f37a467fa82479fd8819edcb8f99511e7b454cf777b7cc78bed82726fd699118cfef32937c378971bc57e42aad87ba65a6f9477bda2b32db69e278bde2e3b43ebe93188f3f12d37cb32133e92be6a33dcdf15c58628a674621a7eb0f98c91f5e89d93edf13e3f917c835922f3b67a6f98ac4f17cfdcc4ceb1ff55d2da6f8dc404ee77f30e3f9a24f4cf2eb4f663cee1c31c9a34e99693d5462d44fb4ffaa4ef1fb3931eaf78919f59fe17c748de41789c91f769015ebef8299e43d4c8ce31f10b37dce98f1fc4c25467963fd512bf1fdb31b66f2e72362bade3c24c6eb1d7309f5bb205674fd0b7349c5f9d4881d8e676e99f17c2199f17ee60359ef92ff4a66b287a7c418ef5f9849bf6fc415ca97e3c4e83fc7c48aee7f9d18fdfd9499f415ebc99aa972beeb21b3bce69598e431136694473d23c3fc50de33663c9e7512c7f5b22d629a7f564e8cf63462a6f9f1fd2ab83ef29e19c7538619c7f315e632f63fc7c4b41e6a2731aed72b338e274f12c7e3f29699ec73c9717c49eba11dde5fd613e3f50b66baff7e621cff9319e5335789513e92d790bdc86162bc7f8f99ee3f4d8cf509ad87a1f5164789315f3c31533d7448ccf612f5ab4a55cae7ea8599ced7c414ff5513b9c6f9b94a4cf6a51f90f52eeac77f12933eed3133ead33612a3fd4866bc3e7b23267de91233e5e72633e9eb9199ee9faea7fb1799f1fee68998f46979fea44fff9218ebab13661a5f24467fb6cc684ff23a31fa579919e7e77a89717e1933cecf923cc93e3e13a37d64cc641f8dc478fc9899fceb3231cea7cb4cf1e73531ae678598ec4bdac4787fc14ce3ebc478fc9019c7d7b3c4b85e3566ca4f85c418dff788c9bfe57962bcff8899c6ef26467db599693c9687fcddb788d9bfcf12e3f537cc94df513ec3fe601532fb83cf8839dede32d3f17662bc7f8598fb872633f9f70733d547683f86edc9b598293e1e268ef6941d21b3fef565628c3f43668ab70566f29fbdc4689f5d66f21f4f4cfad75789319e5498717c719218f3719399fca59318e793cea7fc7a9418e773ce4cfe724d4cf6617698c93ede12a37e0e99697d6789d1fe8bcc540f0e13633e4ce3e1fc641a8fe63762c6f9295e4fb237fb9418f323eb87e28fb84f8cf65e6526fd65cc54ef9c2746ff217bb3142fac6326fb6b3093fc51ffbac4f6e7df99e9f89271fc5d62ee07769849bf77cc7b3ade6fc85c2dc6f3fbc88aea677bc64ce3d1f9acffec9898f4e3cf98c95eeacc642fef89a33e748599f2d35b62f4974b625a6fad99c97f9e98c91e6e12e3f803669aaf4c8cf56409d9b2ffb599a9feb8488cf29d1093bff8180fb4ad513f92e17caca2f8e38e98293fcd9969fda7c4bc7ff1c24cfed923e6fcba9718f5394636949f3cced75af6c7a86f53e6fe4d8c88a9becffacc246f8798fbaf4f62924f9c23ab32cedf0e98d17e4409d972bd502026fdba983f8de57eca6b6445fb2bea0a5957f07ea6474cf141086287c77dcc7fb6ccfd94e920f3fdec2bb2a6f5329699ec2531d9ff3471942f1b11937d650f8971fe3bc81c4f9d21e6f815edc93a8ee7be48ac70fd32c38ce3e92e31dddf5e32e3711be7eb2adc2ff945e2a86f7180ccf69cdd3153bfb5c74cd73b66bcbf9913937dab3e33c5d70133adff2d31c7df5d628aa7fe3231c6a33233adff11b2a37a4af9c4180fe97ac7fdca3933c563bc9f63f9dc0133c59bb7c4e80f7d628a5fbac58cf2ab7de65a29aedf3531db8b4f8ce31d3253fd78c34cd73f2736713d8e88793dae98a91ee926c6fc72c74cf9f82131ea5730533ccd98717cd144e6f51585c478ff0366ea1f64629c5f8399ec793731e6e31b66daeff84c8cc7c7c45cafb612e3f87366aa07668951ff0b66ead79e99d1fee41e31d7a383c478ff1766b297bbc478ff8c99f603ae13e3fcc9be1cd9b3784c8cf1688799ee4ffaf1b4be599c8f07ff20fd9c33a37e4c9198ebc54162f4e72b66b41fdd464efad967a6fdb02766ca7775668ac7e97c1a7fc9f1fee69498f4a33bcc949fca8931be2e98291f4f1263bc51cc641f1789315ebc33d37caf9851bfea2e31c6cb0633cd7744ccfa7f4d8cfaef33937db9c4789ce525fdeb6962d43faf37f9bfba4c8cf2cd9929de1c32637cd78fcc240faf27f73726719c4f67cc4cf3558971be47cce40f178931bfa5eb69bd0789315e3d3053fd41ebe9b99f6d26c6f13c33cde739311e2f3153fea3f97adeffb865a6f8729018fd23e633efa17e89f66e3e9153fd7082ccf6e22533c5ef51e278bdcb98a9de5830a3bdbbfbc4d17eb229b3c2e39e98ebadbbc4a8ef0b66aa07c689d15e9e9869bfee2d31d69be7cc54afa5f1703eaec88cf3318e98ec219b25c6f5ab3093fe1f99295f5c25c67ae29999fac9fbc4981f7798d13e4c8919ed377b4f8cc70533aeafbe4d8cebdb64a6f5ed306b1be59f309b723c7e86ccf6670acc647fef89d1fe2e9829fe5513637cb961a6f5d84d8cc74f99297f7f24467bec33e37ac81a33f9732b31d60f5d665c0f554e8cfa7d65c6f5c81cb389eb21f87e9c0f3f12637dcce773ff3e64a6fda24662acdf2c33f5c385c4988fae99a99e6f3253fd7dcc4cfabc67c6f9fbddc4f1b8d5c49c5f07cca48f2233d5ebd789d13e3d33e5c3e3c438df4366daef607d90ffd80933d95b3531d65fe41fde53fdf4c24cfeba488cfebac78cf7eb8ca5f8777da45af95d874f62232d7d7ecb58d116fe6d92fce4c392d8df73bfdfa0179b5bdf5f999dfdfbe9659b24ebb30cfffeae19ff5bf5f253e9be3c2ff88f5bfacfff7bbd7c439aafcf53bf4f927f8f5e3a5ff8d08facf0efab975f94ee6fa617e9e3bf197cbaf219f845f6822f504e49d624fbf0770f9f413cbf07dcfd7be945beca21cc2e8bbfbfc4190a90e84dbe83642845067fcfe0f72efc0d7f7f8e5264bf4ff7bf432ff2438e607643f87d14f403520da3f50409c77292f481d2043d4de50c3e73b980cf6f93e6b7f9cb274932ea2c7de313a40affd683ce2802efcb03d9807f0fe551d4175bdbdf432f36ceb809928459b7643d774c93040df837ccfe18f471224f81e7f1dc70ddd9df2aef9fc38ccea375f561e61730e3537929dbb223afe4b5bc91b7f24edecb07f9289fe48e2cc0df77655196e05c0fd795ff56f5585356e41e48f22eabb206337d125208a184164658e1848f3f4e64a22b9ec58be889be1888573184f3fbe2edf748f24dbd7c9507963962005e7c2a3be25d7c889118c3ac27622a66f13313f3f4338b7f9b8a85f81475b12f0ee09a06e811ac9074fc17f2cd37f402771787f0398aa3510f0211f5538065899638967371224ec599381717e232ce977fe65ffccc48aab6e880feaec4b5b881b8d682fbdd42ec0b710ea283b8039f7a11f7bf4f2f61adc48338148fe249eca024a20071e943d6c5aecc445194445954c49ea8c6d9d7e867bb1474544925224fc5a5524a2ba32c4487961cc218dde04b2089564e0ae57fb75e409aa3b5bfd7e54c65aaab9ed58bea911c7348f13f926429699487fe166d0ee4e9ab81aca9578871a18e08511e32ad7afdbdfe023a39128fc947c0b260b4991aaa37f5ae3e602e643769763ffaa9a9911aab316967a2849ac6ab176aa6e6f25e2dd4276455f6c3a89bdfa617f888a7156fdf039d9caabada5707aa11f401b33bfc961cdbf50392a9a3e8416dd504976cc9431a6b4415d0b7fad6efe517b06196a4228d3a9617ea449daa33f6105ee72f3c7e8bd5255b6459c6f18c20cdb9ba5097aa0dd16518a5197cb7b6fe95fc12eea23a70a75390e44a5dc759a3656d7ac8dabae723025895402d828dc978f53cdd01a29bba51b7ea4e9c80df0c5547dd7f773fe197f23edec9c90e8cf54092a007e09c36e558e5bca4a81d91bb4b2e5eab6bf5a89ec4098c19b2f06fd44bcc2741d3af6a07745250bb90c36769e4394557b295a483f56cc25a3c52c5156b3b5ad32746b6b62aa9b2aa88a6da83990f39764216107f492f219f58885d755505ebba4549481379ed0449466a94b3969aaa41426a5015d3d6722915c8244967580b2cad15ff9269a195d6909171455fb1e383bcf617e2184c3af41823e9200a5f8175b1ddacc4d99c3666aa06eb7aad8d2a69ab9df6cae84c9ce9ae7ed62fba273e753fce3dac478aceec3f89667aa05f55172a1c157bd56cbd075df79d6fe9a50e6b3194333d147df4f8b4f6ab3129caa1df6045dff5871ee9b13855433d91977aaa6750a514a16eeee8b95ee84f5dd7fb2aacff5c1f048dae79533c22a67a5f37f461acd7b8db0e1dddaaff9a5fd18b3e82cad1e9a66e69c331388ca98ff5314a02c39ca03ef4a93ed3e7f25a5fe84bdd56afbaa3afa07e0e1dda30f436109b7afa5adfe85bd0d71dd4cd13bae3a1becfc993ec0eeef7a01fa1df39802eee284af3f6e7f512f3fcae7e526f7a07f2492eea0449482bd15f7541ef6a587b5dd26518bd0f56f10abde532f65420a2875ec7ca39e4f65d5dd17bba8ad936f9df3c79e11c343c0f5f8980685395fb4642bd16baba8b554996d27ca71e0b158b1146c551291ae5638fd1411263c29b4dd0bf64c619cf9f28d120d672d441635d07d977df64a66b9e85d4a7e68563628a8af334cea5e9c9a2e9c77e741ffa524dcf0e362274d2cbd6984d674eccc0bcaa1baad357ed1aa372cd0ccd9b7937d27cc4f347a08fd7e8ade1f349b55c9020f4f7f52819fedb35633331538535432dea472439a2e7989999eb1bb300495cec36bef07ed2cb7a061a456f1fc851b00add319fea05c75a6644350923059d6869ea665f0d61ddf4fa0830ba0049cecd01c4a297a89b217cead193c3eed3c034cca139324d90661e7d66b58288ab655ae6d89c98d3b8b7335a9beb9abf6cab0c8224d24305f10a9d56d99cad44afbc8d55953673736e2e20420ce28e44b200bad739e4ee61a850cd259c53326dd33157e65aee77c6e606fed6d353736bee82376e54a87144736f1ecca3793223b303d2f0bd711771238ead5706618fcb14409ab15ca8d06955a325d7383b2e7b0fb36b8a7aa8afa3f52cf591d78d0f3e07b368c9862999b2a9983d53958fb20d3ed08a957dcfd42c9c24a662bda241595eac025f7432b3da3ca527216ad52356fc85d7318b11746076c2bfe602badfbd5c7732a35a3066006bac15af605dbdb4b3e43762ff4836ad83bfef5b6f33282cc35e405bd76d177ac913f9218ee0d8b17db62fb617f3ec7ce36726f66c5f37419ab790ff7f9cf7579efcbc2c6b1ea9f4d00e82563083249f8fbeaa07f6d5063fa9a34ec0227927365f0936e504d65fab967db3ef20097af6c47ed89179b463b8e60ceaac133bd1cf54e96d5474aa66a7fa36d6ce5fc6dcad7a09bbd723ace8ec4cbc1b13b5928b2e98a7e1fe733bb40baa3c9b20c9727f381f3143adbb2f1ab66b3fa11b9ec5baad2866b66ef7e5a3012b168f706dcbcee4139c314dd22459601d67f6c036e4ae1d83e5c71af1a77a415df4a99783fece94ec6188fe4aae54918771ad6eec916dda568c10063d9c76c357f402b150804e8e412797c152ed891aeb7b7b0abf3fd8337b0e7e13560fc6b317f6529d6fca12adbb6ddbaa2e0fa2e56ff8ca6adecf591977a50b5515afb6b31a8be1ce500d87f865af2c547caa63af638fd18c957997eaa5204185570774f7686f42bd122bfc5aca4cc1d23e21ff4f411ab88772f6d6de25cdacf98c9dda7bfbc0318ce6fc459d9cf4f24c9edc87aaee498ca3b7e76b25fc3dd3e710f39d7d5cd129e7e4a67d8a3da897daee802405d0c9b23f59763f907d4dd39445113aef3d39b2bbb628b29429f39a99da9239d29d98633e6316ce49b5518f25bdc099a1d7167a2264bcf37a8f18aaaf775bd665a854461b9deba7dcb31559c648a0a776cf56453bd607e3a8e119f56447248fb73527a1ce827be8997ad2ef10cba6ab5a897691690ff5984935459cefd2dab6eae505a409b3534ec0ff261485b953c1fabc0d55fd05e40bb7a5836dda8a53e03f1045ec8e29839fb4979d16d58ed31413a11e76da1995c5d5bc7010e6a1f25b93258e3971ce79d44b7ebe5fea251cdd072b0bbf6bd9866c3015b9ec45bd13c47b97e94bd987ea71a317b74f602d61df7f2186f2da7563753d075f5fdae734ed0c8618d270cfee057c2acc2ee8f10dbaa46d7a9942a7d98c16f6ba5abd6cd74bd45ac848512fb223f46a551c650977357aacdba1265ea9eae913a3f3c2945ccff5a1875caf46a916a6ffd6f48bbd7503c89a10e2a0233e74af6eb85e8b63e4746ff20abc9ff4f2751ccbe945cbf768eb1a3cdf6cd10b8cefdedd871b85f5016f5ccf27a12a817ce27a3674c369565403e5577ae6c6b60a9e7fa367f248843127f248d59526bd242f7531c3aa992a401f936dcffd5bf512faeb71dc3dba16766d7da22cfacd4da1fbed847802ebd45feb149eb1eeb26741129724c97526344b377673bba7aae229d61a3eee896ae8e63ed02ed7bc74a6cedd02f4d7ff15bdc06702bf37dc676ef7886489b3a84287aba0fb3550e9f537ee7a2cdba6ec62ffebbe7a7611bb1e57b77b6e5f2e3ad841dbd873f64dd71d844a67d961927542cd241f5d23ea258bcfaa37f24b3e1e44ddf4e31a0d25642ee1d7a20956626d77282f21c7076b0a9dd679ac7a9a98e3650da2f03b542bbc33b6b28b1963d934d4beeec83583cfc51d09b005e8d446b1b73995f710f9e6a92a4ff2ab075334271dec8b1a5bfb7dce2be10929ff6e63647ed8224b8c3cca40ae864e4d1cc10c2ced2d4ec2933ebb702d558a73e16a3abf7309ff75c7605d27eed416cda3fc7467e2c99dcb5e671c2bd451b05077015139e96ff903de751ce25d9ceb321b6cd14bec404dccd5226a11d68776c356ed1cb29bcec05ba16a24ff188a96bb8cfb353518ade0c61b5d483e438da2c7b55d47d5dd558c83c3a89396bb8e2b786aca24cb9a66c0bf6ee465077db9b12ac9ba5e3afca420e4fd50c13c80bf6cca328791cec44dd8b98e4f15c20e5cd8356a08d097bb8dcff9a6319f6cf689288d8c36f66e8a4ec803e85ff640bfb7411a59177721f76f970556f6ccdd454f487af9228e717d8bef4e04bd3c8acf6db2884bdd954518b912eaadd8b7b7a0126d41147e47afa5fda1d5d8b57e97852ab97bc8613b311f85679561450edd835e241b5d91450fa08745bda89fe47dae8f636f09721fab37d1dd1285665aea677925ebc1d3837540cfdeb03ee49350ad802423ac56482b4bfb5ae61aaccadaee5dbd99767ce28abb4d100974d33d6ade6b5eb16dd5b36f7a92e297dd8c631b7a1944ab59c89979774fc97bf3f174a65f6407ce3b87f37a30931ef4395db74355fdeaeef26a9798626ca87c812e5d5dde41175602cf1f63bd20af5c21566ce92ade8777bbaea84ba1aafc693dc67a091d95866e745f165c69b3670dcfe3744fcfc1b29a60eb03f84066043f699324f9a7315b3aded86d534484dfa76aeecaae22ee6825952ae89dd8c7aecb02b539ac6e03abfd7549b6eb05351dbdabe3f6623551c3e88335547cb698995bd38f7b5f43e9edcc54a29f8c20dee66c9c6d4cdfc72a2edfbbac3c15b0fbaeea6aa16704dd54dc420f569eb6d5e833b5532f2122f5b73f1b5bf6fb6bfe12f69e16e6d10b5bc7fe85f6c379077be2951e520fd9f3da0499675845c7a75db9a7caf139f15c4d5662da32e3046b9a78037d4bd86759e8a9739429b91295b42a0b6f654797bf7a3f23d7eff3bb7736bea1133e2d3df3e12d96f48c27d90e8cafebde9b93b017d9199b2b9f450b1b91acd176925f40668cfbdcf927ae2bb124f4ca4a7baf86beab4efc33dbc25296b07b0133393325ffb2566dade9656d1fb0179fdc3c879a55bc8a7ab2dd3407df83d9ee6b27c26e75d8a9bb763d5d0f7b2c94558e04e90263afeffb7eec91974fbe562263d8c7d07dbbef07ba029f41ea90973616e2441dc63ba6fa8fbb932df518f52bfc4e64173ea3f8eed1ae7fc52758f93944add7fcd0bf992cbcb3a25e65db9efbf7f80c6f4afb4fbc635ff51f90a63b7e1464ddb62bc19d26dc71ec271043aa395f5b6a6eeaa7fa461ee0f317894f811b1b7ae1ba46939cc1f333f0e80af488333fc35d87646782f3839ffb85ab057f81cf89f57664f7e3f3e55ccf085547dd7fca2b1372fc3b65c06d99333c399afbbadf8f7ba46bcf4542e473637fa0aa6a87f6c72cd5645feb252fa7f50d9066ae0aa213c6413b4b193d44b589ae9a67d0e100baa8b97a358fd0471ec5d5a728aa1edcdc1f422dfce98f9c70f72eee906d4a132279ec27f21968a5da07ad34e5937f817ee93af9f78ff4b2fa0d8f816f419df4e68fc13a2e97b2505c1ea960c16df0c60b7f0255e5507ef853f3688eeca7aa91a5c5fe84f2f4441ef8337feeea1bef94b19d85e7d087394d25ad45afabba777fe12f61d55e531cd35fea65bda3e258716cf68337827f525c8e16413bcaeac64c74781beb11ce2fcbba9e82dfb4e33e8ad72faea9aa6185a06f34a177741508569ddc1ecca6ad6db7c199fad05083c70c9edf495c798bfe1bcf2b9d1dfaabf8cc62ccb280fdd6b8da35bb76cf5fcb29549967204d789652f6374efb1be8a81a3182f4a03f19ca3da8509e65d1dffabb65ef8c716fed675d6fe04bfe1eeabf0654b0bcc31b9e7de67717c5b79e5736c48d38f3e0d390edc629e2d7685739c4b3b65e989a3c14bbb6225a32f38ffec9efb817e8db67e17dd758b3ed40a51376dd4bbee077ed67ccc03f7af36fe931a1fadbf7455f8aabe157f726beacc7b6eba5ef5fc4a9adc69e37d71de6f3b62ffb8a7d8eb9067a4cb5234b2a3317f14969d8cd0d95fc082ad0b0fb07fd89ab897753075f9b6eece86d9728ec8b85bdea8a6fc4be6ae549a2dc782ef643695afad2f64567a573a708434f4a1756d817bf07f56e0b7b91f8ce7e1f3cf523bc45077fdb0bd2844a14ee77208bfad6ee876c14debcf8521f44beea6b662027be01d1a8b5fa7ce717f562ecb5ee64d24e537fb4d657847a0b6257077a9a27c8661771a4213d451ac57797f7d471ece54d7cba2174d97433e1c76e4cd17dcb4f7a87e93253100b75f0f6d0c7e623d3d7fdcb171febcecc93acf9cf4ca7bdfab567bd94b99dfdcc8cbc87918fa3870ec471d451333d01b771dfed5566ae91d9cc653eb7fe1bda09d26459d6cd9ee56588be71f6cf7f4d2f901b5eed43f692f5e2db30b3dcec97fe3bc3aca2ceb3be6dc827e8d44ee3be8e8e6fbbfbd87f8618b480fea4a2a7ea241bf871f6fad5de59eebf97d910fcab6b245cefd3fb305bde8afb8ebf1827df44217bcbdeb30fd5cbf51ff99197d1742aac6965237fa8caaa9e8d4d37eeef1ce999dd9145b90b75b0d79fd9440fe21b8ee97d870d3f59eaa7a6ebd95476409a502d0db90a5eb7b46fbda7d4c86661df18d65365737a3711ab197ea724ef4721864af5a0ceb5c916fac35af52c1fecad7cf0b3ec5369d30229daa95b1be764f92a8e417da17b595d0d202e0eada69d3eb76e69df8a63a7f139cba7eceba76c3f3b88d174bed607af7757f107ec6e212e55037e1ea0ea6c474de4e7fdf57bccf99f50274c40370d730e83e2b317b7f27eecb7f30be8a38cef1c6533dd544fee1d3b8cd8b7e76bf3f53e6bbd4a648faee5de65dcf0f6adb55a78fbaaef0aea323bcc7f5fe64fe417971de11b54e649b775336bbaae2ec4fbbfa537ae56c75ee5d1dabcb7493c4bd26cd14c7ce607155ed6029f79cb3f1df9b538d61943a775a1afc27396204d36cb8eb313fd4acfae67dbfa44f4a77c4e5dd3d9d7d5cb177f0f5152d5b2d3ec2cb7bfffebf945c427792e4400e343c6124dad552b3bd7a7c1fe7ff2063f74fe4ad07ba23f96221ecdb22fa2344802f1fe026261fcde13c7b15fd54b76299a5063857cdeb28faa93b521e335fc71d6d1b5edbdd54f567ad5fb79a76916734997be75b2228798805e32af6401e217e6978db7bbbea9978de791615dcc497665caa6677e56ed6e4ab02e4b0dbff7e3ab99ca9eb361fecddfa8591973b08aefc4f6d3f761be7eafef8755cc8624cf59fc269b18aa2cbbd63be6debce0b86bbebba5da598be4945ff5be16bea6274e841a3af437d095a2340b9064a62ea00e3f0e6fc56f9bd35fd04b2b3ec7d250ef9eb80788d2e5ec26bb855850e55d0b7c37561dbac9fadbbab83f1bdf9be5ef2655d587bff7453d34e169af335d57d4bdf856c1143d3e7c5bc1efe9a6b8c3f769d757f957fc6555228c06f1fb7a879087f78d5415f3a886d99dbb151da87c57bb926d5181f759a6c2f9a6fd84eef7ca97e0be93f0dc00d47e9dd5a334d3f84461600fedb36e423416a2f5a339fe99eff1c98fb8af99c5ef4c424d200ae13d7f7f96dddbb7ecc1ddda52faeedb7aef98befba6aeb3c7ec29db914f597877b601fd4de8b4420f0f55a4866a32dbcd8a4127fa33f849d8390f3a094fbabe9ad79ffa7e2546c556fc06ee0222f64e789e0cf9e718f453771fe64887ff1f1be1dec0cecff5403d38e854d403fcd673bbfadd4ebdb5c7ee43dfa8aa7f014bd5a1830b9d16bd0d94c17d8b90e34b20ef45dcab9cc7151cc64eee2fe5fdf58f3e8aefc9eaf8ae18589b39353b56430fd9cfcafe482e40aa86f3ba29afd4895bc847538499df883353f487e00b15f9a486e6d09ce832be1b0033edc6e7d6adf8e4b5670a32ecba1ffa6e7666fa71d7b5b7be927f3a8e6d5a59d86f1ec4ef7c0be9512f61dfca14c2ef3402f43c60e327ae614eec425f66157da9a7e6c4edfb177aaf9c67844f4bfab1cb0adf210fb5f030ec208699cb56fc17bfb91ddeb37dde8c487f5e2f5f44ebe5dff0ed9bf4b6f5ca2ae0dbd7dbeeb5f1d6e1963dbbade3ff257ff99124e1f3999326bd53b41ed9b7db3c4a45fb912b7ffff9ff37c65fd1cb9699e1373b56759151e7d4d8f21e3ebf8f897b90b97d6deab4446e8f5be77788b77dbe9ff77fa097f5bfaf5811fcdee03e70db0af01ee44a5d419d16e9e3f7e9656baf909fd5da9a7d65459b7f4709f58facef9bb6f14dbd7cd5f9e4efb4f27ce07b92e864795bf4b5a2a31f48f4cb71ec2b0fff91f5fd60c42dc7577b91706e2577feb671d37d7d23dbfbad7ad98c43ab5efae56cf2e7af44f5dc3d7fb00a704eb60795cf9fa8937f76deeffa7c77bcdf93f7ff9e9f7ff7ff2fdcffcdcfff577af9dffff31fff075dc58bf2</data>
-    </image>
-</images>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+       </item>
+       <item row="0" column="5" >
+        <widget class="QLabel" name="lblScoreCorrect" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>5</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font" >
+          <font>
+           <family></family>
+           <pointsize>24</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
+         <property name="toolTip" >
+          <string>Correct answers</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards counted as correct (I know). May be shown as a percentage.</string>
+         </property>
+         <property name="text" >
+          <string>00</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6" >
+        <widget class="QLabel" name="picError" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>0</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="toolTip" >
+          <string>Incorrect answers</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards counted as incorrect (I do not know). May be shown as a percentage.</string>
+         </property>
+         <property name="pixmap" >
+          <pixmap/>
+         </property>
+         <property name="scaledContents" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" >
+        <widget class="QLabel" name="picCount" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>0</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="toolTip" >
+          <string>Questions</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards in the session</string>
+         </property>
+         <property name="pixmap" >
+          <pixmap/>
+         </property>
+         <property name="scaledContents" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3" >
+        <widget class="QLabel" name="lblScoreAnswered" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>5</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font" >
+          <font>
+           <family></family>
+           <pointsize>24</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
+         <property name="toolTip" >
+          <string>Answered questions</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards already seen. May be shown as a percentage.</string>
+         </property>
+         <property name="text" >
+          <string>00</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" >
+        <widget class="QLabel" name="picAnswered" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>0</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="toolTip" >
+          <string>Answered questions</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards already seen. May be shown as a percentage.</string>
+         </property>
+         <property name="pixmap" >
+          <pixmap/>
+         </property>
+         <property name="scaledContents" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="7" >
+        <widget class="QLabel" name="lblScoreError" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>5</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font" >
+          <font>
+           <family></family>
+           <pointsize>24</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
+         <property name="toolTip" >
+          <string>Incorrect answers</string>
+         </property>
+         <property name="whatsThis" >
+          <string>The number of cards counted as incorrect (I do not know). May be shown as a percentage.</string>
+         </property>
+         <property name="text" >
+          <string>00</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources/>
+ <connections/>
+</ui>

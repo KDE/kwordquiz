@@ -233,6 +233,9 @@
 
 #include <qobject.h>
 #include <qfont.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <QTextStream>
 #include <kurl.h>
 
 #include "keduvocexpression.h"
@@ -544,10 +547,10 @@ class KEduVocDocument : public QObject
   QString lessonDescription(int index) const;
 
   /** returns lessons in current query  */
-  QValueList<int> lessonsInQuery() const;
+  Q3ValueList<int> lessonsInQuery() const;
 
   /** sets lessons in current query  */
-  void setLessonsInQuery(QValueList<int>);
+  void setLessonsInQuery(Q3ValueList<int>);
 
   inline QStringList lessonDescriptions() const { return m_lessonDescriptions; }
 
@@ -651,7 +654,7 @@ protected:
  private:
   bool                  m_dirty;
   KURL                  m_url;
-  QValueList<bool>      m_sortIdentifier;
+  Q3ValueList<bool>      m_sortIdentifier;
   bool                  m_sortLesson;
   bool                  m_unknownAttribute;
   bool                  m_unknownElement;
@@ -662,15 +665,15 @@ protected:
   int                   m_cols;
   int                   m_lines;
   int                   m_currentLesson;
-  QValueList<int>       m_extraSizeHints;
-  QValueList<int>       m_sizeHints;
+  Q3ValueList<int>       m_extraSizeHints;
+  Q3ValueList<int>       m_sizeHints;
   QFont*                m_font;
 
   QString               m_generator;
   QString               m_queryorg;
   QString               m_querytrans;
-  QValueList<KEduVocExpression>  m_vocabulary;
-  QValueList<bool>      m_lessonsInQuery;
+  Q3ValueList<KEduVocExpression>  m_vocabulary;
+  Q3ValueList<bool>      m_lessonsInQuery;
   QStringList           m_lessonDescriptions;
   QStringList           m_typeDescriptions;
   QStringList           m_tenseDescriptions;
@@ -681,8 +684,8 @@ protected:
   QString               m_remark;
   QString               m_version;
 
-  QValueList<KEduVocArticle>   m_articles;
-  QValueList<KEduVocConjugation> m_conjugations;
+  Q3ValueList<KEduVocArticle>   m_articles;
+  Q3ValueList<KEduVocConjugation> m_conjugations;
 
   LeitnerSystem* 	       m_leitnerSystem;
   bool			             m_activeLeitnerSystem;

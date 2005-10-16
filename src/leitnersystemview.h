@@ -12,8 +12,10 @@
 #ifndef LEITNERSYSTEMVIEW_H
 #define LEITNERSYSTEMVIEW_H
 
-#include <qscrollview.h>
+#include <q3scrollview.h>
 #include <qpixmap.h>
+//Added by qt3to4:
+#include <QMouseEvent>
 
 class LeitnerSystem;
 
@@ -22,12 +24,12 @@ class LeitnerSystem;
 @author Martin Pfeiffer
 */
 
-class LeitnerSystemView : public QScrollView
+class LeitnerSystemView : public Q3ScrollView
 {
 	Q_OBJECT
 		
 public:
-    LeitnerSystemView(QWidget* parent = 0, const char* name = 0, WFlags f = 0);
+    LeitnerSystemView(QWidget* parent = 0, const char* name = 0, Qt::WFlags f = 0);
 
     ~LeitnerSystemView();
 

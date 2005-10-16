@@ -47,7 +47,7 @@
 #define KV_LEV7_GRADE      7
 #define KV_LEV7_TEXT       I18N_NOOP("Level 7")
 
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 #include <qstringlist.h>
 #include <qdatetime.h>
 
@@ -446,17 +446,17 @@ class KEduVocExpression
   QStringList m_example;
   QStringList m_antonym;
   QStringList m_pronounciations;
-  QValueList<grade_t> m_grades;
-  QValueList<grade_t> m_reverseGrades;
-  QValueList<count_t> m_queryCounts;
-  QValueList<count_t> m_reverseQueryCounts;
-  QValueList<count_t> m_badCounts;
-  QValueList<count_t> m_reverseBadCounts;
-  QValueList<QDateTime> m_queryDates;
-  QValueList<QDateTime> m_reverseQueryDates;
-  QValueList<KEduVocConjugation> m_conjugations;
-  QValueList<KEduVocComparison> m_comparisons;
-  QValueList<KEduVocMultipleChoice> m_multipleChoices;
+  Q3ValueList<grade_t> m_grades;
+  Q3ValueList<grade_t> m_reverseGrades;
+  Q3ValueList<count_t> m_queryCounts;
+  Q3ValueList<count_t> m_reverseQueryCounts;
+  Q3ValueList<count_t> m_badCounts;
+  Q3ValueList<count_t> m_reverseBadCounts;
+  Q3ValueList<QDateTime> m_queryDates;
+  Q3ValueList<QDateTime> m_reverseQueryDates;
+  Q3ValueList<KEduVocConjugation> m_conjugations;
+  Q3ValueList<KEduVocComparison> m_comparisons;
+  Q3ValueList<KEduVocMultipleChoice> m_multipleChoices;
 
   QString m_leitnerBox;
   int m_lesson;

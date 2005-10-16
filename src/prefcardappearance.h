@@ -17,12 +17,11 @@
 /**
 @author Peter Hedlund
 */
-class PrefCardAppearance : public PrefCardAppearanceBase
+class PrefCardAppearance : public QWidget, public Ui::PrefCardAppearanceBase
 {
 Q_OBJECT
 public:
-  PrefCardAppearance(QWidget *parent = 0, const char *name = 0);
-  ~PrefCardAppearance();
+  PrefCardAppearance(QWidget *parent);
 
 public slots:
   void slotFlipButtonClicked();

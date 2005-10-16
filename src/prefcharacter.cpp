@@ -18,14 +18,9 @@
 
 #include "prefcharacter.h"
 
-PrefCharacter::PrefCharacter(QWidget *parent, const char *name)
- : PrefCharacterBase(parent, name)
+PrefCharacter::PrefCharacter(QWidget *parent) : QWidget(parent)
 {
-}
-
-
-PrefCharacter::~PrefCharacter()
-{
+  setupUi(this);
 }
 
 #include "prefcharacter.moc"

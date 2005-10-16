@@ -17,8 +17,6 @@
 #ifndef FLASHVIEW_H
 #define FLASHVIEW_H
 
-
-
 #include "flashviewbase.h"
 
 #include "wqscore.h"
@@ -28,13 +26,11 @@ class WQQuiz;
 /**
 @author Peter Hedlund
 */
-class FlashView : public FlashViewBase
+class FlashView : public QWidget, public Ui::FlashViewBase
 {
 Q_OBJECT
 public:
-    FlashView(QWidget *parent = 0, const char *name = 0, WFlags f = 0);
-
-    ~FlashView();
+    FlashView(QWidget *parent);
 
     void setQuiz(WQQuiz *quiz);
     void init();

@@ -19,24 +19,27 @@
 #include <krandomsequence.h>
 
 #include <qregexp.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <Q3PtrList>
 
 #include "leitnersystem.h"
 #include "kwordquiz.h"
 #include "wqquiz.h"
 #include "prefs.h"
 
-QPtrList<WQListItem> *WQQuiz::m_list = 0L;
-QPtrList<WQListItem> *WQQuiz::m_errorList = 0L;
-QPtrList<WQListItem> *WQQuiz::m_quizList = 0L;
+Q3PtrList<WQListItem> *WQQuiz::m_list = 0L;
+Q3PtrList<WQListItem> *WQQuiz::m_errorList = 0L;
+Q3PtrList<WQListItem> *WQQuiz::m_quizList = 0L;
 
 WQQuiz::WQQuiz(QWidget * parent, KEduVocDocument * doc, const char *name) : QObject(parent, name)
 {
   m_app = parent;
   m_doc = doc;
 
-  m_list = new QPtrList<WQListItem>();
-  m_errorList = new QPtrList<WQListItem>();
-  m_quizList = new QPtrList<WQListItem>();
+  m_list = new Q3PtrList<WQListItem>();
+  m_errorList = new Q3PtrList<WQListItem>();
+  m_quizList = new Q3PtrList<WQListItem>();
 }
 
 WQQuiz::~WQQuiz()
@@ -79,7 +82,7 @@ void WQQuiz::addToList(int aCol, int bCol)
 {
   //build a list of row numbers containing text in both columns
 
-  typedef QValueList<int> IntList;
+  typedef Q3ValueList<int> IntList;
   IntList tempList;
   for (int current = 0; current < m_doc->numEntries(); ++current)
   {
@@ -211,7 +214,7 @@ bool WQQuiz::init()
 void WQQuiz::listRandom()
 {
   KRandomSequence *rs = new KRandomSequence(0);
-  rs->randomize(m_quizList);
+  ///@todo port rs->randomize(m_quizList);
 }
 
 bool WQQuiz::checkAnswer(int i, const QString & a)
@@ -300,9 +303,9 @@ QStringList WQQuiz::multiOptions(int i)
   QStringList Result;
   WQListItem *li = m_list->at(i);
 
-  typedef QPtrList<QString> LS;
+  typedef Q3PtrList<QString> LS;
   LS *ls;
-  ls = new QPtrList<QString>();
+  ls = new Q3PtrList<QString>();
 
   int j;
   if (li->question() == 0)
@@ -345,7 +348,7 @@ QStringList WQQuiz::multiOptions(int i)
   ls->append(s);
 
   KRandomSequence *rs = new KRandomSequence(0);
-  rs->randomize(ls);
+  ///@todo port rs->randomize(ls);
 
   while (ls->count())
   {

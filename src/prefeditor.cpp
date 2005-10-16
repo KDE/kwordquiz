@@ -19,13 +19,9 @@
 #include "prefeditor.h"
 
 
-PrefEditor::PrefEditor(QWidget *parent, const char *name, WFlags f)
- : PrefEditorBase(parent, name, f)
+PrefEditor::PrefEditor(QWidget *parent) : QWidget(parent)
 {
-}
-
-PrefEditor::~PrefEditor()
-{
+  setupUi(this);
 }
 
 

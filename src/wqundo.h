@@ -16,7 +16,9 @@
 #ifndef WQUNDO_H
 #define WQUNDO_H
 
-#include <qtable.h>
+#include <q3table.h>
+//Added by qt3to4:
+#include <Q3ValueList>
 
 #include "keduvocexpression.h"
 
@@ -39,11 +41,11 @@ public:
   void setCurrentRow(int r) {m_currentRow = r;};
   int currentCol() {return m_currentCol;};
   void setCurrentCol(int c) {m_currentCol = c;};
-  QTableSelection selection() const {return m_selection;};
-  void setSelection(const QTableSelection & sel) {m_selection = sel;};
+  Q3TableSelection selection() const {return m_selection;};
+  void setSelection(const Q3TableSelection & sel) {m_selection = sel;};
   
-  QValueList<KEduVocExpression> list() const {return m_list;};
-  void setList(const QValueList<KEduVocExpression> & list) {m_list = list;};
+  Q3ValueList<KEduVocExpression> list() const {return m_list;};
+  void setList(const Q3ValueList<KEduVocExpression> & list) {m_list = list;};
   
   QString text() const {return m_text;};
   void setText(const QString & s) {m_text = s;};
@@ -55,8 +57,8 @@ private:
   int m_colWidth2;
   int m_currentRow;
   int m_currentCol;
-  QTableSelection m_selection;
-  QValueList<KEduVocExpression> m_list;
+  Q3TableSelection m_selection;
+  Q3ValueList<KEduVocExpression> m_list;
   
   QString m_text;
 };

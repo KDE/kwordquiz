@@ -24,13 +24,12 @@
 /**
 @author Peter Hedlund
 */
-class PrefEditor : public PrefEditorBase
+class PrefEditor : public QWidget, public Ui::PrefEditorBase
 {
 Q_OBJECT
 public:
 
-  PrefEditor(QWidget *parent, const char *name=0, WFlags f=0);
-  ~PrefEditor();
+  PrefEditor(QWidget *parent);
 
 };
 

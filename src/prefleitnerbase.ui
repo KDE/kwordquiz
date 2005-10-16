@@ -1,247 +1,163 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>PrefLeitnerBase</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>PrefLeitnerBase</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>770</width>
-            <height>458</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>Leitner System</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QLayoutWidget" row="0" column="0">
-            <property name="name">
-                <cstring>layout5</cstring>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton" row="3" column="3">
-                    <property name="name">
-                        <cstring>btnApply</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Appl&amp;y Changes</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+Y</string>
-                    </property>
-                </widget>
-                <spacer row="3" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>spacer2</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>421</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLayoutWidget" row="0" column="1" rowspan="3" colspan="1">
-                    <property name="name">
-                        <cstring>lytBoxName</cstring>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QLineEdit" row="1" column="0">
-                            <property name="name">
-                                <cstring>lndBoxName</cstring>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="0">
-                            <property name="name">
-                                <cstring>lblBoxName</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Edit box name:</string>
-                            </property>
-                        </widget>
-                    </grid>
-                </widget>
-                <widget class="QPushButton" row="3" column="2">
-                    <property name="name">
-                        <cstring>btnDiscard</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Disc&amp;ard Changes</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+A</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="1" column="0">
-                    <property name="name">
-                        <cstring>btnAddBox</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add a bo&amp;x</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+X</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="2" column="0">
-                    <property name="name">
-                        <cstring>btnDeleteBox</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Delete selected &amp;box</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+B</string>
-                    </property>
-                </widget>
-                <widget class="QLayoutWidget" row="0" column="2" rowspan="3" colspan="2">
-                    <property name="name">
-                        <cstring>lytWrongCorrect</cstring>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QLabel" row="0" column="0">
-                            <property name="name">
-                                <cstring>lblCorrect</cstring>
-                            </property>
-                            <property name="paletteBackgroundColor">
-                                <color>
-                                    <red>0</red>
-                                    <green>255</green>
-                                    <blue>0</blue>
-                                </color>
-                            </property>
-                            <property name="text">
-                                <string>Correct words to:</string>
-                            </property>
-                        </widget>
-                        <widget class="QComboBox" row="0" column="1">
-                            <property name="name">
-                                <cstring>cmbCorrect</cstring>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="1" column="0">
-                            <property name="name">
-                                <cstring>lblWrong</cstring>
-                            </property>
-                            <property name="paletteBackgroundColor">
-                                <color>
-                                    <red>255</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                            </property>
-                            <property name="text">
-                                <string>Wrong words to:</string>
-                            </property>
-                        </widget>
-                        <widget class="QComboBox" row="1" column="1">
-                            <property name="name">
-                                <cstring>cmbWrong</cstring>
-                            </property>
-                            <property name="paletteBackgroundColor">
-                                <color>
-                                    <red>253</red>
-                                    <green>253</green>
-                                    <blue>253</blue>
-                                </color>
-                            </property>
-                        </widget>
-                    </grid>
-                </widget>
-                <spacer row="0" column="0">
-                    <property name="name">
-                        <cstring>spacer1</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>252</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-            </grid>
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>PrefLeitnerBase</class>
+ <widget class="QDialog" name="PrefLeitnerBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>770</width>
+    <height>458</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Leitner System</string>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>10</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="0" column="0" >
+    <layout class="QGridLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item row="3" column="3" >
+      <widget class="QPushButton" name="btnApply" >
+       <property name="text" >
+        <string>Appl&amp;y Changes</string>
+       </property>
+       <property name="shortcut" >
+        <string>Alt+Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2" >
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>421</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item rowspan="3" row="0" column="1" >
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item row="1" column="0" >
+        <widget class="QLineEdit" name="lndBoxName" />
+       </item>
+       <item row="0" column="0" >
+        <widget class="QLabel" name="lblBoxName" >
+         <property name="text" >
+          <string>Edit box name:</string>
+         </property>
         </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>cmbCorrect</sender>
-        <signal>activated(const QString&amp;)</signal>
-        <receiver>PrefLeitnerBase</receiver>
-        <slot>slotCorrectWord(const QString&amp;)</slot>
-    </connection>
-    <connection>
-        <sender>cmbWrong</sender>
-        <signal>activated(const QString&amp;)</signal>
-        <receiver>PrefLeitnerBase</receiver>
-        <slot>slotWrongWord(const QString&amp;)</slot>
-    </connection>
-    <connection>
-        <sender>lndBoxName</sender>
-        <signal>textChanged(const QString&amp;)</signal>
-        <receiver>PrefLeitnerBase</receiver>
-        <slot>slotBoxName(const QString&amp;)</slot>
-    </connection>
-    <connection>
-        <sender>btnAddBox</sender>
-        <signal>clicked()</signal>
-        <receiver>PrefLeitnerBase</receiver>
-        <slot>slotAddBox()</slot>
-    </connection>
-    <connection>
-        <sender>btnDeleteBox</sender>
-        <signal>clicked()</signal>
-        <receiver>PrefLeitnerBase</receiver>
-        <slot>slotDeleteBox()</slot>
-    </connection>
-    <connection>
-        <sender>btnApply</sender>
-        <signal>clicked()</signal>
-        <receiver>PrefLeitnerBase</receiver>
-        <slot>slotDiscard()</slot>
-    </connection>
-    <connection>
-        <sender>btnDiscard</sender>
-        <signal>clicked()</signal>
-        <receiver>PrefLeitnerBase</receiver>
-        <slot>slotApply()</slot>
-    </connection>
-</connections>
-<slots>
-    <slot>slotBoxName(const QString&amp;)</slot>
-    <slot>slotSystem(const QString&amp;)</slot>
-    <slot>slotWrongWord(const QString&amp;)</slot>
-    <slot>slotCorrectWord(const QString&amp;)</slot>
-    <slot>slotAddBox()</slot>
-    <slot>slotDeleteBox()</slot>
-    <slot>slotDiscard()</slot>
-    <slot>slotApply()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+       </item>
+      </layout>
+     </item>
+     <item row="3" column="2" >
+      <widget class="QPushButton" name="btnDiscard" >
+       <property name="text" >
+        <string>Disc&amp;ard Changes</string>
+       </property>
+       <property name="shortcut" >
+        <string>Alt+A</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QPushButton" name="btnAddBox" >
+       <property name="text" >
+        <string>Add a bo&amp;x</string>
+       </property>
+       <property name="shortcut" >
+        <string>Alt+X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" >
+      <widget class="QPushButton" name="btnDeleteBox" >
+       <property name="text" >
+        <string>Delete selected &amp;box</string>
+       </property>
+       <property name="shortcut" >
+        <string>Alt+B</string>
+       </property>
+      </widget>
+     </item>
+     <item rowspan="3" row="0" column="2" colspan="2" >
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item row="0" column="0" >
+        <widget class="QLabel" name="lblCorrect" >
+         <property name="text" >
+          <string>Correct words to:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" >
+        <widget class="QComboBox" name="cmbCorrect" />
+       </item>
+       <item row="1" column="0" >
+        <widget class="QLabel" name="lblWrong" >
+         <property name="text" >
+          <string>Wrong words to:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" >
+        <widget class="QComboBox" name="cmbWrong" />
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="0" >
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>252</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
+</ui>

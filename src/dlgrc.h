@@ -30,7 +30,6 @@ Q_OBJECT
 public:
   DlgRC(QWidget *parent = 0, const char *name = 0, bool modal=true);
 
-  ~DlgRC();
   void setNumRows(int r);
   void setRowHeight(int h);
   void setColWidth(int w);
@@ -39,7 +38,7 @@ public:
   int colWidth();
 
 private:
-  DlgRCBase *dlgBase;
+  Ui::DlgRCBase *dlgBase;
 
 };
 

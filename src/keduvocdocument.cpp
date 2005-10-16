@@ -18,6 +18,10 @@
 #include "keduvocdocument.h"
 
 #include <qfileinfo.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <QTextStream>
+#include <QtAlgorithms>
 
 #include <kapplication.h>
 #include <klocale.h>
@@ -100,7 +104,7 @@ bool KEduVocDocument::open(const KURL& url, bool /*append*/)
   if (KIO::NetAccess::download( url, tmpfile, 0 ))
   {
     QFile f(tmpfile);
-    if (!f.open(IO_ReadOnly))
+    if (!f.open(QIODevice::ReadOnly))
     {
       KMessageBox::error(0, i18n("<qt>Cannot open file<br><b>%1</b></qt>").arg(url.path()));
       return false;
@@ -111,7 +115,7 @@ bool KEduVocDocument::open(const KURL& url, bool /*append*/)
     bool read = false;
     while (!read) {
 
-      QApplication::setOverrideCursor( waitCursor );
+      QApplication::setOverrideCursor( Qt::WaitCursor );
       switch (ft) {
         case kvtml:
         {
@@ -213,13 +217,13 @@ bool KEduVocDocument::saveAs(QObject *parent, const KURL & url, FileType ft, con
 
     QFile f(tmp.path());
 
-    if (!f.open(IO_WriteOnly))
+    if (!f.open(QIODevice::WriteOnly))
     {
       KMessageBox::error(0, i18n("<qt>Cannot write to file<br><b>%1</b></qt>").arg(tmp.path()));
       return false;
     }
 
-    QApplication::setOverrideCursor( waitCursor );
+    QApplication::setOverrideCursor(Qt::WaitCursor);
     switch (ft) {
       case kvtml: {
         KEduVocKvtmlWriter kvtmlWriter(&f);
@@ -495,8 +499,8 @@ void KEduVocDocument::removeIdentifier(int index)
 {
   if (index < (int)m_identifiers.size() && index >= 1 )
   {
-    m_identifiers.erase(m_identifiers.at(index));
-    QValueList<KEduVocExpression>::iterator it;
+    m_identifiers.takeAt(index);
+    Q3ValueList<KEduVocExpression>::iterator it;
     for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
       (*it).removeTranslation(index);
   }
@@ -661,7 +665,7 @@ bool KEduVocDocument::sort(int index)
 
     sortAscending = m_sortIdentifier[index];
     sortIndex = index;
-    qHeapSort(m_vocabulary);
+    ///@todo port qStableSort(m_vocabulary);
     m_sortIdentifier[index] = !m_sortIdentifier[index];
     result = m_sortIdentifier[index];
   }
@@ -838,7 +842,7 @@ public:
 
 void KEduVocDocument::resetEntry(int index, int lesson)
 {
-  QValueList<KEduVocExpression>::iterator it;
+  Q3ValueList<KEduVocExpression>::iterator it;
   if (index < 0)
   {
     for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
@@ -893,9 +897,9 @@ QString KEduVocDocument::lessonDescription(int idx) const
 }
 
 
-QValueList<int> KEduVocDocument::lessonsInQuery() const
+Q3ValueList<int> KEduVocDocument::lessonsInQuery() const
 {
-  QValueList<int> iqvec;
+  Q3ValueList<int> iqvec;
   for (unsigned i = 0; i < m_lessonsInQuery.size(); i++)
     if (m_lessonsInQuery[i]) {
       iqvec.push_back(i+1);   // Offset <no lesson>
@@ -905,7 +909,7 @@ QValueList<int> KEduVocDocument::lessonsInQuery() const
 }
 
 
-void KEduVocDocument::setLessonsInQuery(QValueList<int> lesson_iq)
+void KEduVocDocument::setLessonsInQuery(Q3ValueList<int> lesson_iq)
 {
   m_lessonsInQuery.clear();
   for (unsigned i = 0; i < m_lessonDescriptions.size(); i++)
@@ -1025,7 +1029,7 @@ int KEduVocDocument::search(QString substr, int id, int first, int last, bool wo
 KEduVocDocument::FileType KEduVocDocument::detectFileType(const QString &filename)
 {
    QFile f( filename );
-   if (!f.open( IO_ReadOnly ))
+   if (!f.open( QIODevice::ReadOnly ))
      return csv;
 
    QDataStream is( &f );
@@ -1099,18 +1103,18 @@ public:
   KEduVocExpression *exp;
 };
 
-typedef QValueList<ExpRef> ExpRefList;
+typedef Q3ValueList<ExpRef> ExpRefList;
 
 int KEduVocDocument::cleanUp()
 {
   int count = 0;
   KEduVocExpression *kve1, *kve2;
   ExpRefList shadow;
-  QValueList<int> to_delete;
+  Q3ValueList<int> to_delete;
 
   for (int i = 0; i < (int) m_vocabulary.size(); i++)
     shadow.push_back (ExpRef (entry(i), i));
-  qHeapSort(shadow.begin(), shadow.end());
+  ///@todo port qStableSort(shadow.begin(), shadow.end());
 
 #ifdef CLEAN_BUG
   ofstream sso ("shadow.out");
@@ -1155,7 +1159,7 @@ int KEduVocDocument::cleanUp()
   f_ent_percent = to_delete.size () / 100.0;
   emit progressChanged(this, 0);
 
-  qHeapSort(to_delete.begin(), to_delete.end());
+  ///@todo port qStableSort(to_delete.begin(), to_delete.end());
   //std::sort (to_delete.begin(), to_delete.end() );
   for (int i = (int) to_delete.size()-1; i >= 0; i--) {
     ent_no++;

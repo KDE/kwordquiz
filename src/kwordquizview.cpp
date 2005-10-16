@@ -17,9 +17,14 @@
 
 // include files for Qt
 #include <qpainter.h>
-#include <qtable.h>
+#include <q3table.h>
 #include <qclipboard.h>
 #include <qlineedit.h>
+//Added by qt3to4:
+#include <Q3MemArray>
+#include <QKeyEvent>
+#include <QEvent>
+#include <Q3ValueList>
 
 // include files for KDE
 #include <klocale.h> //i18n
@@ -37,9 +42,9 @@
 #include "dlgrc.h"
 #include "dlgspecchar.h"
 
-QValueList<WQUndo> *KWordQuizView::m_undoList = 0L;
+Q3ValueList<WQUndo> *KWordQuizView::m_undoList = 0L;
 
-KWQTableItem::KWQTableItem(QTable* table, EditType et, const QString & text) : QTableItem(table, et, text)
+KWQTableItem::KWQTableItem(Q3Table* table, EditType et, const QString & text) : Q3TableItem(table, et, text)
 {}
 
 int KWQTableItem::alignment() const
@@ -55,13 +60,13 @@ int KWQTableItem::alignment() const
   return (num ? Qt::AlignRight : Qt::AlignAuto) | Qt::AlignVCenter;
 }
 
-KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : QTable(parent, name)
+KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : Q3Table(parent, name)
 {
   if(!m_undoList)
-    m_undoList = new QValueList<WQUndo>();
+    m_undoList = new Q3ValueList<WQUndo>();
 
   setNumCols(2);
-  setSelectionMode(QTable::Single);
+  setSelectionMode(Q3Table::Single);
 
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
@@ -156,12 +161,12 @@ void KWordQuizView::print(KPrinter *pPrinter)
         card_marg + card_width + card_width - card_text_marg, tPos + card_line_top);
       //draw headers
       painter.setFont(KGlobalSettings::generalFont());
-      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, AlignAuto | AlignVCenter, horizontalHeader()->label(0));
-      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, AlignAuto | AlignVCenter, horizontalHeader()->label(1));
+      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(0));
+      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(1));
       //draw text
       painter.setFont(font());
-      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter, text(rc, 0));
-      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter, text(rc, 1));
+      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, text(rc, 0));
+      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, text(rc, 1));
 
       tPos = tPos + card_height + card_line_top;
 
@@ -183,13 +188,13 @@ void KWordQuizView::print(KPrinter *pPrinter)
       painter.drawLine(lPos, tPos, lPos + gridWidth, tPos);
       painter.setFont(KGlobalSettings::generalFont());
 
-      painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), AlignRight | AlignVCenter, QString::number(rc + 1));
+      painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), Qt::AlignRight | Qt::AlignVCenter, QString::number(rc + 1));
 
       painter.setFont(font());
-      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 0));
+      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignAuto | Qt::AlignVCenter, text(rc, 0));
 
       if (type == 0)
-        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 1));
+        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignAuto | Qt::AlignVCenter, text(rc, 1));
 
       tPos = tPos + rowHeight(rc);
 
@@ -235,17 +240,17 @@ void KWordQuizView::doNewPage( QPainter & painter, int res, int type )
     if (type == 1)
     {
       QString score = i18n("Name:_____________________________ Date:__________");
-      QRect r = painter.boundingRect(0, 0, 0, 0, AlignAuto, score);
+      QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignAuto, score);
       painter.drawText(w.width() - r.width() - marg, marg - 20, score);
     }
 
-    painter.drawText(marg, marg, cw0, horizontalHeader()->height(), AlignRight | AlignVCenter, "");
+    painter.drawText(marg, marg, cw0, horizontalHeader()->height(), Qt::AlignRight | Qt::AlignVCenter, "");
 
-    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), AlignAuto | AlignVCenter, horizontalHeader()->label(0));
-    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), AlignAuto | AlignVCenter, horizontalHeader()->label(1));
+    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(0));
+    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(1));
 
     if (type == 1)
-      painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), AlignAuto | AlignVCenter, i18n("Score"));
+      painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), Qt::AlignAuto | Qt::AlignVCenter, i18n("Score"));
 
 }
 
@@ -254,7 +259,7 @@ void KWordQuizView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int 
     int marg = res;
     painter.setFont(KGlobalSettings::generalFont());
     QRect w = painter.window();
-    QRect r = painter.boundingRect(0, 0, 0, 0, AlignAuto, QString::number(pageNum));
+    QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignAuto, QString::number(pageNum));
     painter.drawText((w.width()/2) - (r.width()/2), w.height() - marg + 20, QString::number(pageNum));
 
     if (type == 2)
@@ -301,7 +306,7 @@ bool KWordQuizView::gridIsEmpty()
 QWidget * KWordQuizView::beginEdit( int row, int col, bool replace )
 {
   m_currentText = text(row, col);
-  cellEditor = QTable::beginEdit(row, col, replace);
+  cellEditor = Q3Table::beginEdit(row, col, replace);
   if (cellEditor)
     cellEditor->installEventFilter(this);
   return cellEditor;
@@ -323,10 +328,10 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
         getDocument()->entry(row)->setTranslation(1, ((QLineEdit *) cellWidget(row, col))->text());
     }
 
-    QTable::endEdit(row, col, accept, replace); //this will destroy the cellWidget
+    Q3Table::endEdit(row, col, accept, replace); //this will destroy the cellWidget
     if (!text(row, col).isEmpty())
     {
-      QTableItem* itm;
+      Q3TableItem* itm;
       itm = item(row, col);
       itm->setWordWrap(true);
       adjustRow(row);
@@ -343,7 +348,7 @@ void KWordQuizView::adjustRow( int row )
   // we want to make the row high enough to display content, but
   // if the user already made it even higher we keep that height
   int rh = rowHeight(row);
-  QTable::adjustRow(row);
+  Q3Table::adjustRow(row);
   if (rh > rowHeight(row))
     setRowHeight(row, rh);
 }
@@ -362,8 +367,8 @@ void KWordQuizView::saveCurrentSelection(bool clear = true)
   }
   else
   {
-    QTableSelection* ts;
-    ts = new QTableSelection(m_currentRow, m_currentCol, m_currentRow, m_currentCol);
+    Q3TableSelection* ts;
+    ts = new Q3TableSelection(m_currentRow, m_currentCol, m_currentRow, m_currentCol);
     m_currentSel = *ts;
   }
 }
@@ -391,9 +396,9 @@ void KWordQuizView::doEditUndo( )
       /*      while (getDocument()->numEntries() > 0)
         getDocument()->removeEntry (0);*/
 
-      QValueList<KEduVocExpression> dataList = undo.list();
-      QValueList<KEduVocExpression>::Iterator end(dataList.end());
-      for(QValueList<KEduVocExpression>::Iterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
+      Q3ValueList<KEduVocExpression> dataList = undo.list();
+      Q3ValueList<KEduVocExpression>::Iterator end(dataList.end());
+      for(Q3ValueList<KEduVocExpression>::Iterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
       {
         getDocument()->appendEntry(&(*dataIt));
         // TODO EPT setRowHeight(i, (*dataIt).rowHeight());
@@ -550,7 +555,7 @@ void KWordQuizView::doEditPaste( )
     displayDoc();
 
     //restore selection
-    addSelection(QTableSelection(tr, lc, br, rc));
+    addSelection(Q3TableSelection(tr, lc, br, rc));
     setCurrentCell(m_currentRow, m_currentCol);
   }
   getDocument()->setModified(true);
@@ -587,7 +592,7 @@ void KWordQuizView::doEditInsert( )
   // TODO EPT  insertRows(m_currentSel.topRow(), m_currentSel.bottomRow() - m_currentSel.topRow() + 1);
   displayDoc();
 
-  addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
   setUpdatesEnabled(true);
   repaintContents();
@@ -615,7 +620,7 @@ void KWordQuizView::doEditDelete( )
     br = numRows(); //adjust for new numRows
 
   //restore selection as much as possible
-  addSelection(QTableSelection(tr, m_currentSel.leftCol(), br, m_currentSel.rightCol()));
+  addSelection(Q3TableSelection(tr, m_currentSel.leftCol(), br, m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
   getDocument()->setModified(true);
 }
@@ -628,8 +633,8 @@ bool KWordQuizView::checkForBlank( const QString  & s, bool blank )
   bool result = false;
   int openCount = 0;
   int closeCount = 0;
-  QMemArray<int> openPos(0);
-  QMemArray<int> closePos(0);
+  Q3MemArray<int> openPos(0);
+  Q3MemArray<int> closePos(0);
 
   for (uint i = 0; i<= s.length(); ++i)
   {
@@ -789,7 +794,7 @@ void KWordQuizView::doVocabSort( )
     displayDoc();
   }
   //restore selection
-  addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
 }
 
@@ -808,7 +813,7 @@ void KWordQuizView::doVocabShuffle( )
     count--;
   }
   //restore selection
-  addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
   setUpdatesEnabled(true);
   repaintContents();
@@ -848,7 +853,7 @@ void KWordQuizView::doVocabRC( )
 
     getDocument()->setModified(true);
   }
-  addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
 }
 
@@ -903,7 +908,7 @@ void KWordQuizView::slotSpecChar(const QChar & c)
   else
   {
     editCell(currentRow(), currentColumn(), true);
-    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->setText(c);
+    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->setText(QString(c));
     ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->setCursorPosition(1);
   }
 }
@@ -1000,7 +1005,7 @@ void KWordQuizView::addUndo( const QString & caption )
   undo->setCurrentCol(currentColumn());
   undo->setSelection(selection(0));
 
-  QValueList<KEduVocExpression> list;
+  Q3ValueList<KEduVocExpression> list;
   for(int i = 0; i < numRows(); i++)
   {
 //    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
@@ -1018,7 +1023,7 @@ void KWordQuizView::addUndo( const QString & caption )
 
 void KWordQuizView::setFont( const QFont & font)
 {
-  QTable::setFont(font);
+  Q3Table::setFont(font);
   horizontalHeader()->setFont(KGlobalSettings::generalFont());
   verticalHeader()->setFont(KGlobalSettings::generalFont());
   for (int i = 0; i < numRows(); ++i)
@@ -1034,7 +1039,7 @@ void KWordQuizView::paintCell( QPainter * p, int row, int col, const QRect & cr,
     if (!checkForBlank(text(row, col), true))
       g.setColor(QColorGroup::Text, Qt::red);
 
-  QTable::paintCell (p, row, col, cr, selected, g );
+  Q3Table::paintCell (p, row, col, cr, selected, g );
 }
 
 void KWordQuizView::keyPressEvent( QKeyEvent * e)
@@ -1049,12 +1054,12 @@ void KWordQuizView::keyPressEvent( QKeyEvent * e)
     else
       return;
   */
-  if (e->key() == Key_Tab)
+  if (e->key() == Qt::Key_Tab)
   {
     activateNextCell();
     return;
   }
-  QTable::keyPressEvent(e);
+  Q3Table::keyPressEvent(e);
 }
 
 void KWordQuizView::slotCheckedAnswer( int i )
@@ -1062,7 +1067,7 @@ void KWordQuizView::slotCheckedAnswer( int i )
   if (i == -1)
   {
     clearSelection();
-    addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+    addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
     setCurrentCell(m_currentRow, m_currentCol);
   }
   else
@@ -1080,7 +1085,7 @@ bool KWordQuizView::eventFilter( QObject * o, QEvent * e )
     if ( e->type() == QEvent::KeyPress )
     {
       QKeyEvent *k = (QKeyEvent *)e;
-      if (k->key() == Key_Tab)
+      if (k->key() == Qt::Key_Tab)
       {
         endEdit(currentRow(), currentColumn(), true, true);
         activateNextCell();
@@ -1088,18 +1093,18 @@ bool KWordQuizView::eventFilter( QObject * o, QEvent * e )
       }
     }
   }
-  return QTable::eventFilter(o, e);
+  return Q3Table::eventFilter(o, e);
 }
 
 void KWordQuizView::setText(int row, int col, const QString & text)
 {
-  QTableItem *itm = item(row, col);
+  Q3TableItem *itm = item(row, col);
   if (itm) {
     itm->setText(text);
     itm->updateEditor(row, col);
     updateCell(row, col);
   } else {
-    KWQTableItem *i = new KWQTableItem(this, QTableItem::OnTyping, text);
+    KWQTableItem *i = new KWQTableItem(this, Q3TableItem::OnTyping, text);
     setItem(row, col, i);
   }
 }

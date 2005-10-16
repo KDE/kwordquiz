@@ -19,6 +19,10 @@
 #include <qpainter.h>
 #include <qbitmap.h>
 #include <qcheckbox.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <Q3PopupMenu>
+#include <Q3PtrList>
 
 // include files for KDE
 #include <kmessagebox.h>
@@ -28,7 +32,7 @@
 #include <kedittoolbar.h>
 #include <kstandarddirs.h> //locate
 #include <kfontdialog.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <knotifydialog.h>
 #include <kiconloader.h>
 //#include <keduvocdata.h>
@@ -213,7 +217,7 @@ void KWordQuizApp::initActions()
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
 
-  KPopupMenu *popup = mode->popupMenu();
+  KMenu *popup = mode->popupMenu();
   popup->clear();
   popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", KIcon::Toolbar), "", this, SLOT(slotMode1()), 0, 0);
   popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", KIcon::Toolbar), "", this, SLOT(slotMode2()), 0, 1);
@@ -327,7 +331,7 @@ void KWordQuizApp::initStatusBar()
 {
   statusBar()->insertFixedItem("", ID_STATUS_MSG_MODE, true);
   statusBar()->setItemFixed(ID_STATUS_MSG_MODE, 250);
-  statusBar()->setItemAlignment(ID_STATUS_MSG_MODE, AlignLeft|AlignVCenter);
+  statusBar()->setItemAlignment(ID_STATUS_MSG_MODE, Qt::AlignLeft | Qt::AlignVCenter);
 }
 
 void KWordQuizApp::initDocument()
@@ -360,7 +364,8 @@ void KWordQuizApp::openURL(const KURL& url)
     if (m_dirWatch->contains(url.path()))
     {
       KMainWindow* w;
-      if(memberList)
+      ///@todo port
+      /*if(memberList)
       {
         for(w=memberList->first(); w!=0; w=memberList->next())
         {
@@ -374,7 +379,7 @@ void KWordQuizApp::openURL(const KURL& url)
             break;
           }
         }
-      }
+      }*/
     }
     else
     {
@@ -720,7 +725,7 @@ void KWordQuizApp::slotFileClose()
 {
   slotStatusMsg(i18n("Closing file..."));
 
-  if (memberList->count() > 1)
+  if (false) ///@todo port (memberList->count() > 1)
     close();
   else
     if (queryClose())
@@ -761,7 +766,8 @@ void KWordQuizApp::slotFileQuit()
   // close the first window, the list makes the next one the first again.
   // This ensures that queryClose() is called on each window to ask for closing
   KMainWindow* w;
-  if(memberList)
+  ///@todo port
+  /*if(memberList)
   {
     for(w=memberList->first(); w!=0; w=memberList->next())
     {
@@ -770,7 +776,7 @@ void KWordQuizApp::slotFileQuit()
       if(!w->close())
         break;
     }
-  }
+  }*/
 }
 
 void KWordQuizApp::slotUndoChange( const QString & text, bool enabled )
@@ -1241,7 +1247,7 @@ void KWordQuizApp::updateMode(int m)
   mode4->setChecked(Prefs::mode() == 4);
   mode5->setChecked(Prefs::mode() == 5);
 
-  KPopupMenu *popup = mode->popupMenu();
+  KMenu *popup = mode->popupMenu();
   popup->setItemChecked(0, Prefs::mode() == 1);
   popup->setItemChecked(1, Prefs::mode() == 2);
   popup->setItemChecked(2, Prefs::mode() == 3);
@@ -1296,8 +1302,8 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
 
 void KWordQuizApp::slotContextMenuRequested(int row, int col, const QPoint & pos)
 {
-  QWidget *w = factory()->container("editor_popup", this);
-  QPopupMenu *popup = static_cast<QPopupMenu *>(w);
+  QWidget *w; ///@todo port = factory()->container("editor_popup", this);
+  Q3PopupMenu *popup = static_cast<Q3PopupMenu *>(w);
   popup->exec(pos);
 }
 
@@ -1341,27 +1347,27 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
 
 void KWordQuizApp::slotLeitnerSystem()
 {
-	if( doc->leitnerSystemActive() )
-	{
-		doc->setLeitnerSystemActive(false);
-		vocabLeitner->setText(i18n("Enable Leitner system"));
-		vocabConfigLeitner->setEnabled( false );
-	}
-	else
-	{
-		doc->setLeitnerSystemActive(true);
-		vocabLeitner->setText(i18n("Disable Leitner system"));
-		vocabConfigLeitner->setEnabled( true );
-	}
+  if( doc->leitnerSystemActive() )
+  {
+    doc->setLeitnerSystemActive(false);
+    vocabLeitner->setText(i18n("Enable Leitner system"));
+    vocabConfigLeitner->setEnabled( false );
+  }
+  else
+  {
+    doc->setLeitnerSystemActive(true);
+    vocabLeitner->setText(i18n("Disable Leitner system"));
+    vocabConfigLeitner->setEnabled( true );
+  }
 }
 
 void KWordQuizApp::slotConfigLeitner()
 {
-	PrefLeitner* config = new PrefLeitner( this, "configLeitner", 0, doc->leitnerSystem() );
-	if( config->exec() == QDialog::Accepted )
-		doc->setLeitnerSystem( config->getSystem() );
+  PrefLeitner* config = new PrefLeitner( this, doc->leitnerSystem() );
+  if( config->exec() == QDialog::Accepted )
+    doc->setLeitnerSystem( config->getSystem() );
 
-	delete config;
+  delete config;
 }
 
 #include "kwordquiz.moc"

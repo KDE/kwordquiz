@@ -19,6 +19,7 @@
 #ifndef WQPRINTDIALOGPAGE_H
 #define WQPRINTDIALOGPAGE_H
 
+#include <q3buttongroup.h>
 
 #include <kdeprint/kprintdialogpage.h>
 
@@ -31,16 +32,16 @@ class WQPrintDialogPage : public KPrintDialogPage
 {
 Q_OBJECT
 public:
-    WQPrintDialogPage( QWidget *parent = 0, const char *name = 0 );
+  WQPrintDialogPage( QWidget *parent = 0, const char *name = 0 );
 
-    ~WQPrintDialogPage();
-   //reimplement virtual functions
-   void getOptions(QMap<QString,QString>& opts, bool incldef = false);
-   void setOptions(const QMap<QString,QString>& opts);
-   bool isValid(const QString& msg );
+  ~WQPrintDialogPage();
+  //reimplement virtual functions
+  void getOptions(QMap<QString,QString>& opts, bool incldef = false);
+  void setOptions(const QMap<QString,QString>& opts);
+  bool isValid(const QString& msg );
 
 private:
-  QButtonGroup * g;
+  Q3ButtonGroup * g;
   QRadioButton * rb0;
   QRadioButton * rb1;
   QRadioButton * rb2;

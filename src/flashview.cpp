@@ -25,19 +25,13 @@
 #include "prefs.h"
 
 
-FlashView::FlashView(QWidget *parent, const char *name, WFlags f)
-    : FlashViewBase(parent, name, f)
+FlashView::FlashView(QWidget *parent) : QWidget(parent)
 {
+  setupUi(this);
   m_score = new WQScore();
   m_timer = new QTimer(this);
   connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
 }
-
-
-FlashView::~FlashView()
-{
-}
-
 
 void FlashView::setQuiz(WQQuiz *quiz)
 {

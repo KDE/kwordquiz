@@ -24,13 +24,13 @@
 /**
 @author Peter Hedlund
 */
-class PrefCharacter : public PrefCharacterBase
+class PrefCharacter :  public QWidget, public Ui::PrefCharacterBase
 {
 Q_OBJECT
 public:
-    PrefCharacter(QWidget *parent = 0, const char *name = 0);
 
-    ~PrefCharacter();
+  PrefCharacter(QWidget *parent);
+
 };
 
 #endif

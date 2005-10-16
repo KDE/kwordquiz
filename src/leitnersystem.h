@@ -12,7 +12,7 @@
 
 #include <qstring.h>
 #include <qstringlist.h>
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 #include "leitnerbox.h"
 
 #ifndef LEITNERSYSTEM_H
@@ -26,7 +26,7 @@ class LeitnerSystem
 {
 public:
 	LeitnerSystem();
-	LeitnerSystem( QValueList<LeitnerBox>& boxes, QString name );
+	LeitnerSystem( Q3ValueList<LeitnerBox>& boxes, QString name );
 
 	~LeitnerSystem();
 
@@ -72,7 +72,7 @@ public:
 private:
 	QString m_systemName;				//the systems name
 
-	QValueList<LeitnerBox> m_boxes;
+	Q3ValueList<LeitnerBox> m_boxes;
 };
 
 #endif

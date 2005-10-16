@@ -21,16 +21,16 @@
 
 #include <kdebug.h>
 
-PrefLeitner::PrefLeitner(QWidget * parent, const char* name, WFlags f, LeitnerSystem* system)
-	: PrefLeitnerBase( parent, name, f )
+PrefLeitner::PrefLeitner(QWidget * parent, LeitnerSystem* system) : QDialog(parent)
 {
-	m_selectedSystem = system;
+  setupUi(this);
+  m_selectedSystem = system;
 	m_selectedBox = 0;
 
 	//create new leitnersystemview, show and connect it
 	m_leitnerSystemView = new LeitnerSystemView( this, 0 );
-	PrefLeitnerBaseLayout->addWidget( m_leitnerSystemView, 1, 0 );
-	PrefLeitnerBaseLayout->setOrigin( QGridLayout::BottomLeft );
+  ///@todo port PrefLeitnerBaseLayout->addWidget( m_leitnerSystemView, 1, 0 );
+	///@todo port PrefLeitnerBaseLayout->setOrigin( Qt::BottomLeftCorner );
 
 	connect( m_leitnerSystemView, SIGNAL( boxClicked( int ) ), this, SLOT( slotBoxClicked( int ) ) );
 
@@ -40,11 +40,6 @@ PrefLeitner::PrefLeitner(QWidget * parent, const char* name, WFlags f, LeitnerSy
 
 	//show leitnersystem
 	m_leitnerSystemView->setSystem( m_selectedSystem );
-}
-
-
-PrefLeitner::~PrefLeitner()
-{
 }
 
 void PrefLeitner::slotCorrectWord( const QString& newBox )

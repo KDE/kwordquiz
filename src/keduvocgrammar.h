@@ -28,7 +28,7 @@
 #define grammarmanager_included
 
 #include <qstring.h>
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 #include <qstringlist.h>
 
 #define CONJ_SIMPLE_PRESENT    "PrSi" // I live at home  what you frequently do
@@ -127,7 +127,7 @@ public:
 
   int numEntries() const;
 
-  static QValueList<KEduVocTenseRelation> getRelation ();
+  static Q3ValueList<KEduVocTenseRelation> getRelation ();
   static void setTenseNames (QStringList names);
 
   static QString getName (const QString &abbrev);
@@ -199,7 +199,7 @@ struct conjug_t
 };
 
 protected:
-  typedef QValueList<conjug_t> conjug_tList;
+  typedef Q3ValueList<conjug_t> conjug_tList;
   conjug_tList conjugations;
 
   static conjug_name_t names [];

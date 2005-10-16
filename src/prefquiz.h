@@ -24,13 +24,13 @@
 /**
 @author Peter Hedlund
 */
-class PrefQuiz : public PrefQuizBase
+class PrefQuiz : public QWidget, public Ui::PrefQuizBase
 {
 Q_OBJECT
 public:
 
-  PrefQuiz(QWidget *parent, const char *name=0, WFlags f=0);
-  ~PrefQuiz();
+  PrefQuiz(QWidget *parent);
+
 };
 
 #endif

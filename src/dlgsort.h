@@ -30,14 +30,13 @@ Q_OBJECT
 public:
 
   DlgSort(QWidget *parent = 0, const char *name = 0, bool modal=true);
-  ~DlgSort();
-  
+
   bool base();
   bool ascending();
   void setLanguage(int index, const QString &lang);
 
 private:
-  DlgSortBase *dlgBase;
+  Ui::DlgSortBase *dlgBase;
 
 };
 

@@ -21,15 +21,13 @@ class LeitnerBox;
 /**
 @author Martin Pfeiffer
 */
-class PrefLeitner : public PrefLeitnerBase
+class PrefLeitner : public QDialog, public Ui::PrefLeitnerBase
 {
 	Q_OBJECT
 	
 public:
-	PrefLeitner(QWidget * parent, const char* name, WFlags f, LeitnerSystem* system);
+	PrefLeitner(QWidget * parent, LeitnerSystem* system);
 
-	~PrefLeitner();
-	
 	LeitnerSystem* getSystem();
 
 public slots:

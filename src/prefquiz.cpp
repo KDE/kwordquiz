@@ -24,18 +24,13 @@
 #include "prefquiz.h"
 
 
-PrefQuiz::PrefQuiz(QWidget *parent, const char *name, WFlags f)
- : PrefQuizBase(parent, name, f)
+PrefQuiz::PrefQuiz(QWidget *parent) : QWidget(parent)
 {
+  setupUi(this);
   kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());
   kcfg_KeepDiscard->setEnabled(kcfg_AutoFlip->isChecked());
   //optCorrect -> setEnabled(kcfg_AutoFlip->isChecked());
   //optError -> setEnabled(kcfg_AutoFlip->isChecked());
-}
-
-
-PrefQuiz::~PrefQuiz()
-{
 }
 
 #include "prefquiz.moc"

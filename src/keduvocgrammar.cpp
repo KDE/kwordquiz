@@ -26,6 +26,8 @@
 #include "keduvocgrammar.h"
 
 #include <klocale.h>
+//Added by qt3to4:
+#include <Q3ValueList>
 
 KEduVocConjugation::conjug_name_t
 KEduVocConjugation::names [] =
@@ -142,9 +144,9 @@ int KEduVocConjugation::numEntries() const
 }
 
 
-QValueList<KEduVocTenseRelation> KEduVocConjugation::getRelation ()
+Q3ValueList<KEduVocTenseRelation> KEduVocConjugation::getRelation ()
 {
-  QValueList<KEduVocTenseRelation> vec;
+  Q3ValueList<KEduVocTenseRelation> vec;
 
   for (int i = 0; i < numInternalNames(); i++) {
     vec.append(KEduVocTenseRelation(names[i].abbrev, i18n(names[i].name)));
@@ -169,7 +171,7 @@ void KEduVocConjugation::setTenseNames (QStringList names)
 
 QString KEduVocConjugation::getName (const QString &abbrev)
 {
-  if (abbrev.length() >= 2 && abbrev[0] == QString(UL_USER_TENSE)) {
+  if (abbrev.length() >= 2 && QString(abbrev[0]) == QString(UL_USER_TENSE)) {
     QString s = abbrev;
     s.remove(0, 1);
     int i = s.toInt() - 1;

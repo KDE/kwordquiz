@@ -29,13 +29,11 @@
 /**
 @author Peter Hedlund
 */
-class QAView : public QAViewBase
+class QAView : public QWidget, public Ui::QAViewBase
 {
 Q_OBJECT
 public:
-    QAView(QWidget *parent = 0, const char *name = 0, WFlags f = 0);
-
-    ~QAView();
+    QAView(QWidget *parent);
 
     void setQuiz(WQQuiz *quiz);
     void init();
@@ -47,7 +45,7 @@ public slots:
     void slotRestart();
     void slotApplySettings();
     void slotSpecChar(const QChar &);
-    
+
 private:
     WQQuiz *m_quiz;
     WQScore *m_score;

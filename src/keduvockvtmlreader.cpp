@@ -22,6 +22,8 @@
 #include <kmessagebox.h>
 
 #include <qtextstream.h>
+//Added by qt3to4:
+#include <Q3ValueList>
 
 #include "keduvockvtmlreader.h"
 #include "keduvocdocument.h"
@@ -227,7 +229,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
 }
 
 
-bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent, QValueList<KEduVocConjugation> &curr_conjug, const QString &entry_tag)
+bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent, Q3ValueList<KEduVocConjugation> &curr_conjug, const QString &entry_tag)
 /*
  <conjugation>        used in header for definiton of "prefix"
   <e l="de">          lang determines also lang order in entries !!
@@ -967,7 +969,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
   QString       antonym;
   QString       usage;
   QString       paraphrase;
-  QValueList<KEduVocConjugation> conjug;
+  Q3ValueList<KEduVocConjugation> conjug;
   KEduVocComparison     comparison;
   KEduVocMultipleChoice mc;
 
@@ -1664,7 +1666,7 @@ void KEduVocKvtmlReader::domErrorUnknownElement(const QString &elem)
       "read documents with unknown elements.\n"
      );
   QString msg = format.arg(elem);
-  QApplication::setOverrideCursor( arrowCursor, true );
+  QApplication::setOverrideCursor(Qt::ArrowCursor, true);
   QString s = kapp->makeStdCaption(i18n("Unknown element"));
   KMessageBox::sorry(0, ln+msg, s);
   QApplication::restoreOverrideCursor();
@@ -1672,7 +1674,7 @@ void KEduVocKvtmlReader::domErrorUnknownElement(const QString &elem)
 
 void KEduVocKvtmlReader::domError(const QString &text )
 {
-  QApplication::setOverrideCursor( arrowCursor, true );
+  QApplication::setOverrideCursor(Qt::ArrowCursor, true);
   QString s = kapp->makeStdCaption(i18n("Error"));
   QString ln = i18n("File:\t%1\n").arg(m_doc->URL().path());
   QString msg = text;
