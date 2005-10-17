@@ -23,7 +23,6 @@
 //Added by qt3to4:
 #include <QPixmap>
 #include <Q3PopupMenu>
-#include <Q3PtrList>
 
 // include files for KDE
 #include <kmessagebox.h>
@@ -365,10 +364,9 @@ void KWordQuizApp::openURL(const KURL& url)
     if (m_dirWatch->contains(url.path()))
     {
       KMainWindow* w;
-      ///@todo port
-      /*if(memberList)
+      if(memberList())
       {
-        for(w=memberList->first(); w!=0; w=memberList->next())
+        for(w=memberList()->first(); w!=0; w=memberList()->next())
         {
           KWordQuizApp *a =(KWordQuizApp *) w;
           if(a->doc ->URL().path() == url.path())
@@ -380,7 +378,7 @@ void KWordQuizApp::openURL(const KURL& url)
             break;
           }
         }
-      }*/
+      }
     }
     else
     {
@@ -726,7 +724,7 @@ void KWordQuizApp::slotFileClose()
 {
   slotStatusMsg(i18n("Closing file..."));
 
-  if (false) ///@todo port (memberList->count() > 1)
+  if (memberList()->count() > 1)
     close();
   else
     if (queryClose())
@@ -767,17 +765,16 @@ void KWordQuizApp::slotFileQuit()
   // close the first window, the list makes the next one the first again.
   // This ensures that queryClose() is called on each window to ask for closing
   KMainWindow* w;
-  ///@todo port
-  /*if(memberList)
+  if(memberList())
   {
-    for(w=memberList->first(); w!=0; w=memberList->next())
+    for(w=memberList()->first(); w!=0; w=memberList()->next())
     {
       // only close the window if the closeEvent is accepted. If the user presses Cancel on the saveModified() dialog,
       // the window and the application stay open.
       if(!w->close())
         break;
     }
-  }*/
+  }
 }
 
 void KWordQuizApp::slotUndoChange( const QString & text, bool enabled )
