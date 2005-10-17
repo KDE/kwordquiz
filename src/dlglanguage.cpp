@@ -2,7 +2,7 @@
                           dlglanguage.cpp  -  description
                              -------------------
    copyright            : (C) 2004 by Peter Hedlund
-    email                : peter@peterandlinda.com
+   email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -25,11 +25,16 @@
 
 DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Column Titles"), Ok|Cancel, Ok, parent, name, modal, true)
 {
-  dlgBase = new DlgLanguageBase( this, "Dlg" );
-  setMainWidget(dlgBase);
+  QWidget w;
+  //Ui::DlgLanguageBase ui;
+  dlgBase->setupUi(&w);
+
+
+  //dlgBase = new DlgLanguageBase( this, "Dlg" );
+  setMainWidget(&w);
   dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
   dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", KIcon::Panel));
-  
+
   completion1 = new KCompletion();
   completion1->setItems(Prefs::columnTitles1());
   dlgBase -> txtLanguage1->setCompletionObject(completion1);
@@ -37,7 +42,7 @@ DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialog
   completion2 = new KCompletion();
   completion2->setItems(Prefs::columnTitles2());
   dlgBase -> txtLanguage2->setCompletionObject(completion2);
-      
+
   dlgBase->txtLanguage1->setFocus();
 }
 

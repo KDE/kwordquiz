@@ -2,7 +2,7 @@
                           dlglrc.cpp  -  description
                              -------------------
    copyright            : (C) 2003 by Peter Hedlund
-    email                : peter@peterandlinda.com
+   email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -21,44 +21,43 @@
 
 DlgRC::DlgRC(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Rows & Columns"), Ok|Cancel, Ok, parent, name, modal, true)
 {
-  dlgBase = new DlgRCBase( this, "Dlg" );
-  setMainWidget(dlgBase);
+  QWidget w;
+  //Ui::DlgRCBase ui;
+  dlgBase->setupUi(&w);
+
+  //dlgBase = new DlgRCBase( this, "Dlg" );
+  setMainWidget(&w /*dlgBase*/);
   dlgBase->txtNumRows->setFocus();
-}
-
-
-DlgRC::~DlgRC()
-{
 }
 
 void DlgRC::setNumRows( int r )
 {
-  dlgBase->txtNumRows->setText(QString::number(r, 10));
+  dlgBase->txtNumRows->setValue(r);
 }
 
 void DlgRC::setRowHeight( int h )
 {
-  dlgBase->txtRowHeight->setText(QString::number(h, 10));
+  dlgBase->txtRowHeight->setValue(h);
 }
 
 void DlgRC::setColWidth( int w )
 {
-  dlgBase->txtColWidth->setText(QString::number(w, 10));
+  dlgBase->txtColWidth->setValue(w);
 }
 
 int DlgRC::numRows( )
 {
-  return dlgBase->txtNumRows->text().toInt();
+  return dlgBase->txtNumRows->value();
 }
 
 int DlgRC::rowHeight( )
 {
-  return dlgBase->txtRowHeight->text().toInt();
+  return dlgBase->txtRowHeight->value();
 }
 
 int DlgRC::colWidth( )
 {
-  return dlgBase->txtColWidth->text().toInt();
+  return dlgBase->txtColWidth->value();
 }
 
 

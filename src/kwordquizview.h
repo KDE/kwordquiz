@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002 by Peter Hedlund
-    email                : peter@peterandlinda.com
+    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -31,15 +31,15 @@
 
 #include <kprinter.h>
 
-#include "wqlreader.h"
 #include "wqundo.h"
 
-#include <kprinter.h>
-#include "wqundo.h"
 //include <wqviewbase.h>
 
-class KWordQuizDoc;
+class KEduVocDocument;
 class DlgSpecChar;
+
+const char delim_start = '[';
+const char delim_end = ']';
 
 /**
 @author Peter Hedlund
@@ -66,12 +66,14 @@ class KWordQuizView : public Q3Table
      *
      * @see KWordQuizApp#getDocument
      */
-    KWordQuizDoc *getDocument() const;
+    KEduVocDocument *getDocument() const;
 
     //Reimplemented from QTable
     void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
     void setFont( const QFont &);
     void setText( int row, int col, const QString &text );
+
+    void displayDoc();
 
     /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);
@@ -90,8 +92,8 @@ class KWordQuizView : public Q3Table
     void doVocabShuffle();
     void doVocabRC();
     void doVocabSpecChar();
-    bool checkSyntax(bool all, bool blanks);
     void saveCurrentSelection(bool clear);
+    bool checkForBlank(const QString & s, bool blank);
   protected:
     QWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );
@@ -121,7 +123,6 @@ class KWordQuizView : public Q3Table
 
     void doNewPage(QPainter & painter, int res, int type);
     void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
-    bool checkForBlank(const QString & s, bool blank);
 };
 
 #endif // KWORDQUIZVIEW_H

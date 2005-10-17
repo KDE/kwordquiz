@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002-2005 by Peter Hedlund
-    email                : peter@peterandlinda.com
+    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -35,7 +35,8 @@
 
 // forward declaration of the KWordQuiz classes
 #include "wqquiz.h"
-class KWordQuizDoc;
+#include "kwordquizview.h"
+class KEduVocDocument;
 class KWordQuizView;
 class KWordQuizPrefs;
 class QAView;
@@ -74,9 +75,12 @@ class KWordQuizApp : public KMainWindow
     /** returns a pointer to the current document connected to the KTMainWindow instance and is used by
      * the View class to access the document object's methods
      */
-    KWordQuizDoc *getDocument() const;
+    KEduVocDocument *getDocument() const;
 
     bool saveAsFileName();
+    
+    bool checkSyntax(bool blanks);
+
   protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file
@@ -182,6 +186,10 @@ class KWordQuizApp : public KMainWindow
     void slotVocabSort();
     /** shuffle the vocabulary */
     void slotVocabShuffle();
+    /** enable the Leitner system */
+    void slotLeitnerSystem();
+    /** configure the Leitner system */
+    void slotConfigLeitner();
 
     void slotMode0();
     /** mode 1 */
@@ -245,7 +253,7 @@ class KWordQuizApp : public KMainWindow
     /** doc represents your actual document and is created only once. It keeps
      * information such as filename and does the serialization of your files.
      */
-    KWordQuizDoc *doc;
+    KEduVocDocument *doc;
 
     // KAction pointers to enable/disable actions
     KAction* fileNew;
@@ -275,6 +283,8 @@ class KWordQuizApp : public KMainWindow
     KAction* vocabRC;
     KAction* vocabSort;
     KAction* vocabShuffle;
+    KAction* vocabLeitner;
+    KAction* vocabConfigLeitner;
 
     KToolBarPopupAction* mode;
     KToggleAction* mode1;

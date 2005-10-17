@@ -2,7 +2,7 @@
                           dlglrc.h  -  description
                              -------------------
    copyright            : (C) 2003 by Peter Hedlund
-    email                : peter@peterandlinda.com
+   email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -30,7 +30,6 @@ Q_OBJECT
 public:
   DlgRC(QWidget *parent = 0, const char *name = 0, bool modal=true);
 
-  ~DlgRC();
   void setNumRows(int r);
   void setRowHeight(int h);
   void setColWidth(int w);
@@ -39,7 +38,7 @@ public:
   int colWidth();
 
 private:
-  DlgRCBase *dlgBase;
+  Ui::DlgRCBase *dlgBase;
 
 };
 

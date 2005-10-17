@@ -3,7 +3,7 @@
                              -------------------
     begin                : Sun Aug 18 2002
     copyright            : (C) 2002-2005 by Peter Hedlund
-    email                : peter@peterandlinda.com
+    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -46,16 +46,16 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
 {
   m_config = config;
 
-  m_prefEditor = new PrefEditor(0, "Editor Settings");
+  m_prefEditor = new PrefEditor(0);
   addPage(m_prefEditor, i18n("Editor"), "editor", i18n("Editor Settings"), true);
 
-  m_prefQuiz = new PrefQuiz(0, "Quiz Settings");
+  m_prefQuiz = new PrefQuiz(0);
   addPage(m_prefQuiz, i18n("Quiz"),  "qa", i18n("Quiz Settings"), true);
 
-  m_prefCardAppearance = new PrefCardAppearance(0, "Flashcard Appearance");
+  m_prefCardAppearance = new PrefCardAppearance(0);
   addPage(m_prefCardAppearance, i18n("Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);
 
-  m_prefCharacter = new PrefCharacter(0, "Special Characters");
+  m_prefCharacter = new PrefCharacter(0);
   addPage(m_prefCharacter, i18n("Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
 
   m_dlgSpecChar = 0L;
@@ -89,7 +89,7 @@ void KWordQuizPrefs::slotCharListSelectionChanged()
 void KWordQuizPrefs::slotSelectSpecChar( )
 {
   KConfigSkeletonItem * item = m_config->findItem("EditorFont");
-  QString f = item->property().toFont().family();
+  QString f; ///@todo port= item->property().toFont().family();
   QString s = m_prefCharacter->lstCharacters->currentItem()->text(2);
   QChar c = s[0];
 
@@ -115,7 +115,7 @@ void KWordQuizPrefs::slotDlgSpecCharClosed()
 
 void KWordQuizPrefs::slotSpecChar(QChar c)
 {
-  m_prefCharacter->lstCharacters->currentItem()->setText(2, c);
+  m_prefCharacter->lstCharacters->currentItem()->setText(2, QString(c));
   m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
   updateButtons();
 }
@@ -175,7 +175,7 @@ void KWordQuizPrefs::updateSettings( )
   KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
   item->setProperty(QVariant(s));
 
-  emit settingsChanged();
+  emit settingsChanged(""); ///@todo port check
 }
 
 void KWordQuizPrefs::updateWidgetsDefault( )

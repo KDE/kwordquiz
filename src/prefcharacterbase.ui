@@ -1,409 +1,220 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
-<class>PrefCharacterBase</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>PrefCharacterBase</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>300</width>
-            <height>356</height>
-        </rect>
-    </property>
-    <property name="minimumSize">
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>PrefCharacterBase</class>
+ <widget class="QWidget" name="PrefCharacterBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>356</height>
+   </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>300</width>
+    <height>350</height>
+   </size>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>0</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="2" column="0" colspan="2" >
+    <widget class="Line" name="line1" >
+     <property name="frameShape" >
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2" >
+    <widget class="QLabel" name="lblShortCutInfo" >
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text" >
+      <string>Note: Select Settings -> Configure Shortcuts... to change the shortcut associated with each action.</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2" >
+    <widget class="Q3ListView" name="lstCharacters" >
+     <property name="toolTip" >
+      <string>Select character to modify</string>
+     </property>
+     <property name="whatsThis" >
+      <string>Customizable special character actions</string>
+     </property>
+     <property name="resizePolicy" >
+      <enum>Q3ScrollView::Manual</enum>
+     </property>
+     <property name="selectionMode" >
+      <enum>Q3ListView::Single</enum>
+     </property>
+     <property name="allColumnsShowFocus" >
+      <bool>true</bool>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Action</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Shortcut</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Character</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>220</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" >
+    <layout class="QGridLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item rowspan="2" row="0" column="1" >
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" >
         <size>
-            <width>300</width>
-            <height>350</height>
+         <width>30</width>
+         <height>50</height>
         </size>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <property name="margin">
-            <number>0</number>
-        </property>
-        <widget class="Line" row="2" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>line1</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>HLine</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Sunken</enum>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-        </widget>
-        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>lblShortCutInfo</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Note: Select Settings -&gt; Configure Shortcuts... to change the shortcut associated with each action.</string>
-            </property>
-            <property name="alignment">
-                <set>WordBreak|AlignVCenter</set>
-            </property>
-        </widget>
-        <widget class="QListView" row="0" column="0" rowspan="1" colspan="2">
-            <column>
-                <property name="text">
-                    <string>Action</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
-            <column>
-                <property name="text">
-                    <string>Shortcut</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
-            <column>
-                <property name="text">
-                    <string>Character</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
-        <item>
-            <property name="text">
-                <string>Special Character 1</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+1</string>
-            </property>
-            <property name="text">
-                <string>A</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 2</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+2</string>
-            </property>
-            <property name="text">
-                <string>B</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 3</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+3</string>
-            </property>
-            <property name="text">
-                <string>C</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 4</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+4</string>
-            </property>
-            <property name="text">
-                <string>D</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 5</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+5</string>
-            </property>
-            <property name="text">
-                <string>E</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 6</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+6</string>
-            </property>
-            <property name="text">
-                <string>F</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 7</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+7</string>
-            </property>
-            <property name="text">
-                <string>G</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 8</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+8</string>
-            </property>
-            <property name="text">
-                <string>H</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>Special Character 9</string>
-            </property>
-            <property name="text">
-                <string>Ctrl+9</string>
-            </property>
-            <property name="text">
-                <string>I</string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-            <property name="name">
-                <cstring>lstCharacters</cstring>
-            </property>
-            <property name="resizePolicy">
-                <enum>Manual</enum>
-            </property>
-            <property name="selectionMode">
-                <enum>Single</enum>
-            </property>
-            <property name="allColumnsShowFocus">
-                <bool>true</bool>
-            </property>
-            <property name="toolTip" stdset="0">
-                <string>Select character to modify</string>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>Customizable special character actions</string>
-            </property>
-        </widget>
-        <spacer row="1" column="0">
-            <property name="name">
-                <cstring>spacer2</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>220</width>
-                    <height>30</height>
-                </size>
-            </property>
-        </spacer>
-        <widget class="QLayoutWidget" row="1" column="1">
-            <property name="name">
-                <cstring>layout9</cstring>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <spacer row="0" column="1" rowspan="2" colspan="1">
-                    <property name="name">
-                        <cstring>spacer5</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Fixed</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>30</width>
-                            <height>50</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="KPushButton" row="1" column="2">
-                    <property name="name">
-                        <cstring>btnCharacter</cstring>
-                    </property>
-                    <property name="text">
-                        <string>C&amp;haracter...</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Click to choose a new character</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Choose a character for the selected action</string>
-                    </property>
-                </widget>
-                <spacer row="0" column="2">
-                    <property name="name">
-                        <cstring>spacer4</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Fixed</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>31</width>
-                            <height>31</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLabel" row="0" column="0" rowspan="2" colspan="1">
-                    <property name="name">
-                        <cstring>lblPreview</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>1</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="font">
-                        <font>
-                            <pointsize>36</pointsize>
-                        </font>
-                    </property>
-                    <property name="text">
-                        <string>A</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignBottom</set>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Preview of current character</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Preview of the character associated with the selected action</string>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
-    </grid>
-</widget>
-<customwidgets>
-</customwidgets>
-<tabstops>
-    <tabstop>lstCharacters</tabstop>
-    <tabstop>btnCharacter</tabstop>
-</tabstops>
-<layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
-</UI>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="2" >
+      <widget class="KPushButton" name="btnCharacter" >
+       <property name="toolTip" >
+        <string>Click to choose a new character</string>
+       </property>
+       <property name="whatsThis" >
+        <string>Choose a character for the selected action</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" >
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>31</width>
+         <height>31</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item rowspan="2" row="0" column="0" >
+      <widget class="QLabel" name="lblPreview" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>1</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font" >
+        <font>
+         <family></family>
+         <pointsize>36</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+        </font>
+       </property>
+       <property name="toolTip" >
+        <string>Preview of current character</string>
+       </property>
+       <property name="whatsThis" >
+        <string>Preview of the character associated with the selected action</string>
+       </property>
+       <property name="text" >
+        <string>A</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignBottom</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Q3ListView</class>
+   <extends></extends>
+   <header>q3listview.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QWidget</extends>
+   <header>kpushbutton.h</header>
+   <container>1</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lstCharacters</tabstop>
+  <tabstop>btnCharacter</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

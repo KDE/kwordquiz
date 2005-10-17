@@ -2,7 +2,7 @@
                           dlglsort.cpp  -  description
                              -------------------
    copyright            : (C) 2003 by Peter Hedlund
-    email                : peter@peterandlinda.com
+   email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -23,16 +23,18 @@
 
 DlgSort::DlgSort(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Sort"), Ok|Cancel, Ok, parent, name, modal, true)
 {
-  dlgBase = new DlgSortBase( this, "Dlg" );
-  setMainWidget(dlgBase);
+  QWidget w;
+  //Ui::DlgSortBase ui;
+  dlgBase->setupUi(&w);
+
+  //w.show();
+
+  //dlgBase = new DlgSortBase( this, "Dlg" );
+  setMainWidget(&w /*dlgBase*/);
 
   dlgBase->optLang1->setChecked(true);
   dlgBase->optAscending->setChecked(true);
   dlgBase->optLang1->setFocus();
-}
-
-DlgSort::~DlgSort()
-{
 }
 
 bool DlgSort::base( )

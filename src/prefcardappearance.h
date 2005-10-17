@@ -4,7 +4,7 @@
 // Description: KWordQuiz flashcard appearance preferences
 //
 //
-// Author: Peter Hedlund <peter@peterandlinda.com>, (C) 2004
+// Author: Peter Hedlund <peter.hedlund@kdemail.net>, (C) 2004
 //
 // Copyright: See COPYING file that comes with this distribution
 //
@@ -17,12 +17,11 @@
 /**
 @author Peter Hedlund
 */
-class PrefCardAppearance : public PrefCardAppearanceBase
+class PrefCardAppearance : public QWidget, public Ui::PrefCardAppearanceBase
 {
 Q_OBJECT
 public:
-  PrefCardAppearance(QWidget *parent = 0, const char *name = 0);
-  ~PrefCardAppearance();
+  PrefCardAppearance(QWidget *parent);
 
 public slots:
   void slotFlipButtonClicked();
