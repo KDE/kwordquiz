@@ -860,7 +860,7 @@ void KWordQuizApp::slotVocabLanguages()
   dlg = new DlgLanguage(this, "dlg_lang", true);
   dlg->setLanguage(1, m_editView -> horizontalHeader()->label(0));
   dlg->setLanguage(2, m_editView -> horizontalHeader()->label(1));
-  dlg->disableResize();
+  //dlg->disableResize();
   if (dlg->exec() == KDialogBase::Accepted)
   {
     doc->setOriginalIdentifier(dlg->Language(1));

@@ -13,7 +13,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
- 
+
 #include <klocale.h>
 #include <klineedit.h>
 #include <kiconloader.h>
@@ -25,13 +25,10 @@
 
 DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Column Titles"), Ok|Cancel, Ok, parent, name, modal, true)
 {
-  QWidget w;
-  //Ui::DlgLanguageBase ui;
-  dlgBase->setupUi(&w);
+  dlgBase = new Ui::DlgLanguageBase();
+  dlgBase->setupUi(&dlgBaseWidget);
 
-
-  //dlgBase = new DlgLanguageBase( this, "Dlg" );
-  setMainWidget(&w);
+  setMainWidget(&dlgBaseWidget);
   dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
   dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", KIcon::Panel));
 

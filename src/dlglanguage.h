@@ -13,7 +13,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
- 
+
 #ifndef DLGLANGUAGE_H
 #define DLGLANGUAGE_H
 
@@ -36,6 +36,7 @@ public:
   QString Language(int index);
 
 private:
+  QWidget dlgBaseWidget;
   Ui::DlgLanguageBase *dlgBase;
   KCompletion * completion1;
   KCompletion * completion2;
