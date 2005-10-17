@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter@peterandlinda.com>
+  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -26,13 +26,11 @@
 /**
 @author Peter Hedlund
 */
-class MultipleView : public MultipleViewBase
+class MultipleView : public QWidget, public Ui::MultipleViewBase
 {
 Q_OBJECT
 public:
-    MultipleView(QWidget *parent = 0, const char *name = 0, Qt::WFlags f = 0);
-
-    ~MultipleView();
+    MultipleView(QWidget *parent);
 
     void setQuiz(WQQuiz *quiz);
     void init();

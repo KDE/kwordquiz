@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2004 Peter Hedlund <peter@peterandlinda.com>
+  Copyright (C) 2004 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -19,7 +19,7 @@
 #include <q3buttongroup.h>
 #include <qradiobutton.h>
 #include <qlayout.h>
-
+#include <q3whatsthis.h>
 //Added by qt3to4:
 #include <QGridLayout>
 
@@ -28,10 +28,10 @@
 #include "wqprintdialogpage.h"
 
 WQPrintDialogPage::WQPrintDialogPage(QWidget *parent, const char *name )
- : KPrintDialogPage( parent, name )
+ : KPrintDialogPage(parent)
 {
   setTitle(i18n("Vocabulary Options"));
-  
+
   QGridLayout * l = new QGridLayout( this, 1, 1, 11, 6);
 
   g = new Q3ButtonGroup(i18n("Select Type of Printout"), this );
@@ -48,11 +48,11 @@ WQPrintDialogPage::WQPrintDialogPage(QWidget *parent, const char *name )
   rb2 = new QRadioButton(i18n("&Flashcards"), g);
   v->addWidget( rb2, 2, 0 );
   l->addWidget( g, 0, 0 );
-  
-  g->setWhatsThis( i18n("Specify type of printout to make"));
-  rb0->setWhatsThis( i18n("Select to print the vocabulary as displayed in the editor"));
-  rb1->setWhatsThis( i18n("Select to print the vocabulary as a vocabulary exam"));
-  rb2->setWhatsThis( i18n("Select to print flashcards"));
+
+  Q3WhatsThis::add(g, i18n("Specify type of printout to make"));
+  Q3WhatsThis::add(rb0, i18n("Select to print the vocabulary as displayed in the editor"));
+  Q3WhatsThis::add(rb1, i18n("Select to print the vocabulary as a vocabulary exam"));
+  Q3WhatsThis::add(rb2, i18n("Select to print flashcards"));
 }
 
 

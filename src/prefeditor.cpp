@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter@peterandlinda.com>
+  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -18,14 +18,9 @@
 
 #include "prefeditor.h"
 
-
-PrefEditor::PrefEditor(QWidget *parent, const char *name, Qt::WFlags f)
- : PrefEditorBase(parent, name, f)
+PrefEditor::PrefEditor(QWidget *parent) : QWidget(parent)
 {
-}
-
-PrefEditor::~PrefEditor()
-{
+  setupUi(this);
 }
 
 

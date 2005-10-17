@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter@peterandlinda.com>
+  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -24,13 +24,12 @@
 /**
 @author Peter Hedlund
 */
-class PrefQuiz : public PrefQuizBase
+class PrefQuiz : public QWidget, public Ui::PrefQuizBase
 {
 Q_OBJECT
 public:
+  PrefQuiz(QWidget *parent);
 
-  PrefQuiz(QWidget *parent, const char *name=0, Qt::WFlags f=0);
-  ~PrefQuiz();
 };
 
 #endif

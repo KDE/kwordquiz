@@ -4,13 +4,14 @@
 // Description: KWordQuiz flashcard appearance preferences
 //
 //
-// Author: Peter Hedlund <peter@peterandlinda.com>, (C) 2004
+// Author: Peter Hedlund <peter.hedlund@kdemail.net>, (C) 2004
 //
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-#include <q3widgetstack.h>
-#include <qlabel.h>
+
+#include <QStackedWidget>
+#include <QLabel>
 
 #include <kfontrequester.h>
 #include <kcolorbutton.h>
@@ -18,23 +19,18 @@
 
 #include "prefcardappearance.h"
 
-PrefCardAppearance::PrefCardAppearance(QWidget *parent, const char *name)
- : PrefCardAppearanceBase(parent, name)
+PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
 {
-  widgetStack->raiseWidget(frontStackPage);
-}
-
-
-PrefCardAppearance::~PrefCardAppearance()
-{
+  setupUi(this);
+  widgetStack->setCurrentWidget(frontStackPage);
 }
 
 void PrefCardAppearance::slotFlipButtonClicked( )
 {
-  if (widgetStack->visibleWidget() == frontStackPage)
-    widgetStack->raiseWidget(backStackPage);
+  if (widgetStack->currentWidget() == frontStackPage)
+    widgetStack->setCurrentWidget(backStackPage);
   else
-    widgetStack->raiseWidget(frontStackPage);
+    widgetStack->setCurrentWidget(frontStackPage);
 }
 
 void PrefCardAppearance::slotFontChanged(const QFont & font)

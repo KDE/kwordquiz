@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002-2003 by Peter Hedlund
-    email                : peter@peterandlinda.com
+    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -15,13 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QByteArray>
+
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
+#include <klocale.h>
 
 #include "kwordquiz.h"
 #include "version.h"
-//Added by qt3to4:
-#include <Q3CString>
 
 static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
 
@@ -37,8 +38,17 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-  KAboutData aboutData( "kwordquiz", I18N_NOOP("KWordQuiz"), KWQ_VERSION, description, KAboutData::License_GPL, "(c) 2003-2005, Peter Hedlund", 0, 0, "peter@peterandlinda.com");
-  aboutData.addAuthor("Peter Hedlund", 0, "peter@peterandlinda.com");
+  KAboutData aboutData("kwordquiz",
+                       I18N_NOOP("KWordQuiz"),
+                       KWQ_VERSION,
+                       description,
+                       KAboutData::License_GPL,
+                       "(c) 2003-2005, Peter Hedlund",
+                       0,
+                       "http://edu.kde.org/kwordquiz",
+                       "submit@bugs.kde.org");
+
+  aboutData.addAuthor("Peter Hedlund", 0, "peter.hedlund@kdemail.net");
   aboutData.addCredit("Anne-Marie Mahfouf", I18N_NOOP("KDE Edutainment Maintainer"), "annma@kde.org", 0);
 
   KCmdLineArgs::init( argc, argv, &aboutData );
@@ -60,7 +70,9 @@ int main(int argc, char *argv[])
     if (args->count())
     {
       kwordquiz->openDocumentFile(args->arg(args->count() - 1));
-      Q3CString mode = args->getOption("mode");
+
+      QByteArray mode = args->getOption("mode");
+
       if (!mode.isEmpty())
       {
         if (mode == "1")
@@ -74,7 +86,8 @@ int main(int argc, char *argv[])
         if (mode == "5")
           kwordquiz->slotMode5();
       }
-      Q3CString go_to = args->getOption("goto");
+
+      QByteArray go_to = args->getOption("goto");
       if (!go_to.isEmpty())
       {
         if (go_to == "flash")

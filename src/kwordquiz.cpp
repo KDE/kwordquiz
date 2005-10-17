@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002-2005 by Peter Hedlund
-    email                : peter@peterandlinda.com
+    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
 /***************************************************************************
@@ -19,9 +19,11 @@
 #include <qpainter.h>
 #include <qbitmap.h>
 #include <qcheckbox.h>
+
 //Added by qt3to4:
 #include <QPixmap>
 #include <Q3PopupMenu>
+#include <Q3PtrList>
 
 // include files for KDE
 #include <kmessagebox.h>
@@ -39,7 +41,7 @@
 
 // application specific includes
 #include "kwordquiz.h"
-#include "kwordquizdoc.h"
+#include "keduvocdocument.h"
 #include "dlglanguage.h"
 #include "kwordquizprefs.h"
 #include "qaview.h"
@@ -48,6 +50,8 @@
 #include "wqprintdialogpage.h"
 #include "prefs.h"
 #include "kwqnewstuff.h"
+#include "version.h"
+#include "prefleitner.h"
 
 #define ID_STATUS_MSG 1
 #define ID_STATUS_MSG_MODE 2
@@ -201,6 +205,15 @@ void KWordQuizApp::initActions()
   vocabShuffle->setWhatsThis(i18n("Shuffles the entries of the active vocabulary"));
   vocabShuffle->setToolTip(vocabShuffle->whatsThis());
 
+  vocabLeitner = new KAction(i18n("Enable Leitner system"), "leitner", 0, this, SLOT(slotLeitnerSystem()), actionCollection(), "vocab_leitner");
+  vocabLeitner->setWhatsThis(i18n("Enables the Leitner system for the active vocabulary"));
+  vocabLeitner->setToolTip(vocabLeitner->whatsThis());
+
+  vocabConfigLeitner = new KAction(i18n("Configure Leitner system"), "config_leitner", 0, this, SLOT(slotConfigLeitner()), actionCollection(), "vocab_leitner_config");
+  vocabConfigLeitner->setWhatsThis(i18n("Configure the Leitner system used for the active vocabulary"));
+  vocabConfigLeitner->setToolTip(vocabConfigLeitner->whatsThis());
+  vocabConfigLeitner->setEnabled(false);
+
   mode = new KToolBarPopupAction(i18n("Change Mode"), "mode1", 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
@@ -319,22 +332,29 @@ void KWordQuizApp::initStatusBar()
 {
   statusBar()->insertFixedItem("", ID_STATUS_MSG_MODE, true);
   statusBar()->setItemFixed(ID_STATUS_MSG_MODE, 250);
-  statusBar()->setItemAlignment(ID_STATUS_MSG_MODE, AlignLeft|AlignVCenter);
+  statusBar()->setItemAlignment(ID_STATUS_MSG_MODE, Qt::AlignLeft | Qt::AlignVCenter);
 }
 
 void KWordQuizApp::initDocument()
 {
-  doc = new KWordQuizDoc(this);
-  doc->newDocument();
+  doc = new KEduVocDocument(this);
+  doc->appendIdentifier(i18n("Column 1"));
+  doc->appendIdentifier(i18n("Column 2"));
+  doc->setSizeHint(0, 250);
+  doc->setSizeHint(1, 250);
+  for (int i=0; i<20; i++)
+  {
+    doc->appendEntry(new KEduVocExpression());
+  }
 }
 
 void KWordQuizApp::initView()
 {
   m_editView = new KWordQuizView(this);
-  doc->addView(m_editView);
+  m_editView->setFont(Prefs::editorFont());
+  m_editView->displayDoc();
   setCentralWidget(m_editView);
   setCaption(doc->URL().fileName(),false);
-  m_editView->setFont(Prefs::editorFont());
   connect(m_editView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
@@ -345,7 +365,8 @@ void KWordQuizApp::openURL(const KURL& url)
     if (m_dirWatch->contains(url.path()))
     {
       KMainWindow* w;
-      if(memberList)
+      ///@todo port
+      /*if(memberList)
       {
         for(w=memberList->first(); w!=0; w=memberList->next())
         {
@@ -359,7 +380,7 @@ void KWordQuizApp::openURL(const KURL& url)
             break;
           }
         }
-      }
+      }*/
     }
     else
     {
@@ -381,7 +402,10 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
-    doc->openDocument( url);
+    doc->open(url, false);
+    if (doc->font() == NULL)
+      doc->setFont(new QFont(Prefs::editorFont()));
+    m_editView->displayDoc();
     m_dirWatch->addFile(url.path());
     setCaption(doc->URL().fileName(), false);
     fileOpenRecent->addURL( url );
@@ -391,7 +415,7 @@ void KWordQuizApp::openDocumentFile(const KURL& url)
 }
 
 
-KWordQuizDoc *KWordQuizApp::getDocument() const
+KEduVocDocument *KWordQuizApp::getDocument() const
 {
   return doc;
 }
@@ -424,7 +448,7 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
     QString tempname = kapp->tempSaveName(url.url());
     QString tempurl= KURL::encode_string(tempname);
     KURL _url(tempurl);
-    doc->saveDocument(_url);
+    doc->saveAs(this, _url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
 }
 
@@ -442,7 +466,10 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
     if(canRecover)
     {
-      doc->openDocument(_url);
+      doc->open(_url, false);
+      if (doc->font() == NULL)
+        doc->setFont(new QFont(Prefs::editorFont()));
+      m_editView->displayDoc();
       doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
@@ -452,7 +479,10 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
   {
     if(!filename.isEmpty())
     {
-      doc->openDocument(url);
+      doc->open(url, false);
+      if (doc->font() == NULL)
+        doc->setFont(new QFont(Prefs::editorFont()));
+      m_editView->displayDoc();
       setCaption(url.fileName(),false);
     }
   }
@@ -460,17 +490,75 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
 bool KWordQuizApp::queryClose()
 {
-  bool f = doc->saveModified();
-  if (f)
+  bool completed=true;
+
+  if(doc->isModified())
+  {
+    int want_save = KMessageBox::warningYesNoCancel(this,
+                    i18n("The current file has been modified.\n"
+                         "Do you want to save it?"),
+                    i18n("Warning"));
+    switch(want_save)
+    {
+    case KMessageBox::Yes:
+      if (doc->URL().fileName() == i18n("Untitled"))
+      {
+        completed = saveAsFileName();
+      }
+      else
+      {
+        completed = doc->saveAs(this, doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+      }
+
+      break;
+
+    case KMessageBox::No:
+      doc->setModified(false);
+      completed=true;
+      break;
+
+    case KMessageBox::Cancel:
+      completed=false;
+      break;
+
+    default:
+      completed=false;
+      break;
+    }
+  }
+
+  if (completed)
     if (m_dirWatch->contains(doc->URL().path()))
       m_dirWatch->removeFile(doc->URL().path());
-  return f;
+  return completed;
 }
 
 bool KWordQuizApp::queryExit()
 {
   saveOptions();
   return true;
+}
+
+bool KWordQuizApp::checkSyntax(bool blanks)
+{
+  int errorCount = 0;
+
+  for (int r = 0; r < doc->numEntries(); ++r)
+  {
+    QString s = doc->entry(r)->original();
+    if (s.length() > 0)
+      for (uint i = 0; i <= s.length(); ++i)
+        if (s[i] == delim_start || s[i] == delim_end)
+          if (!m_editView->checkForBlank(s, blanks))
+            errorCount++;
+    s = doc->entry(r)->translation(1);
+    if (s.length() > 0)
+      for (uint i = 0; i <= s.length(); ++i)
+        if (s[i] == delim_start || s[i] == delim_end)
+          if (!m_editView->checkForBlank(s, blanks))
+            errorCount++;
+    }
+  return (errorCount == 0);
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -511,6 +599,7 @@ void KWordQuizApp::slotFileOpen()
 
     if (append)
     {
+/* TODO EPT
       KWordQuizApp * w;
       if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
         // neither saved nor has content, as good as new
@@ -529,6 +618,7 @@ void KWordQuizApp::slotFileOpen()
         w->getDocument()->openDocument(*it, true, i);
         i++;
       }
+*/
     }
     else
     {
@@ -562,7 +652,7 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    doc->saveDocument(doc->URL());
+    doc->saveAs(this, doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -620,7 +710,7 @@ bool KWordQuizApp::saveAsFileName( )
       {
         if (m_dirWatch ->contains(doc->URL().path()))
           m_dirWatch ->removeFile(doc->URL().path());
-        doc->saveDocument(url);
+        doc->saveAs(this, url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addURL(url);
         setCaption(doc->URL().fileName(), doc->isModified());
@@ -636,12 +726,13 @@ void KWordQuizApp::slotFileClose()
 {
   slotStatusMsg(i18n("Closing file..."));
 
-  if (memberList->count() > 1)
+  if (false) ///@todo port (memberList->count() > 1)
     close();
   else
     if (queryClose())
     {
-      doc->newDocument();
+      delete doc;
+      initDocument();
       setCaption(doc->URL().fileName(), doc->isModified());
       delete (m_editView);
       initView();
@@ -676,7 +767,8 @@ void KWordQuizApp::slotFileQuit()
   // close the first window, the list makes the next one the first again.
   // This ensures that queryClose() is called on each window to ask for closing
   KMainWindow* w;
-  if(memberList)
+  ///@todo port
+  /*if(memberList)
   {
     for(w=memberList->first(); w!=0; w=memberList->next())
     {
@@ -685,7 +777,7 @@ void KWordQuizApp::slotFileQuit()
       if(!w->close())
         break;
     }
-  }
+  }*/
 }
 
 void KWordQuizApp::slotUndoChange( const QString & text, bool enabled )
@@ -774,8 +866,9 @@ void KWordQuizApp::slotVocabLanguages()
   dlg->disableResize();
   if (dlg->exec() == KDialogBase::Accepted)
   {
-    m_editView -> horizontalHeader()->setLabel(0, dlg->Language(1));
-    m_editView -> horizontalHeader()->setLabel(1, dlg->Language(2));
+    doc->setOriginalIdentifier(dlg->Language(1));
+    doc->setIdentifier(1, dlg->Language(2));
+    m_editView->displayDoc();
     updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
@@ -789,7 +882,8 @@ void KWordQuizApp::slotVocabFont()
   dlg->setFont(m_editView -> font());
   if (dlg->exec() == KFontDialog::Accepted)
   {
-    m_editView ->setFont(dlg->font());
+    doc->setFont(new QFont(dlg->font()));
+    m_editView->setFont(dlg->font());
     Prefs::setEditorFont(dlg->font());
     doc->setModified(true);
   }
@@ -952,7 +1046,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_editView -> setFocus();
       break;
     case WQQuiz::qtFlash:
-      m_quiz = new WQQuiz(m_editView);
+      m_quiz = new WQQuiz(this, doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Prefs::mode());
@@ -980,7 +1074,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       }
       break;
     case WQQuiz::qtMultiple:
-      m_quiz = new WQQuiz(m_editView);
+      m_quiz = new WQQuiz(this, doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
       m_quiz->setQuizMode(Prefs::mode());
@@ -1007,7 +1101,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       }
       break;
     case WQQuiz::qtQA:
-      m_quiz = new WQQuiz(m_editView);
+      m_quiz = new WQQuiz(this, doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtQA);
       m_quiz->setQuizMode(Prefs::mode());
@@ -1209,8 +1303,9 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
 
 void KWordQuizApp::slotContextMenuRequested(int row, int col, const QPoint & pos)
 {
-  QWidget *w = factory()->container("editor_popup", this);
+  QWidget *w; ///@todo port = factory()->container("editor_popup", this);
   Q3PopupMenu *popup = static_cast<Q3PopupMenu *>(w);
+
   popup->exec(pos);
 }
 
@@ -1250,6 +1345,31 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
 
   toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
 
+}
+
+void KWordQuizApp::slotLeitnerSystem()
+{
+  if( doc->leitnerSystemActive() )
+  {
+    doc->setLeitnerSystemActive(false);
+    vocabLeitner->setText(i18n("Enable Leitner system"));
+    vocabConfigLeitner->setEnabled( false );
+  }
+  else
+  {
+    doc->setLeitnerSystemActive(true);
+    vocabLeitner->setText(i18n("Disable Leitner system"));
+    vocabConfigLeitner->setEnabled( true );
+  }
+}
+
+void KWordQuizApp::slotConfigLeitner()
+{
+  PrefLeitner* config = new PrefLeitner( this, doc->leitnerSystem() );
+  if( config->exec() == QDialog::Accepted )
+    doc->setLeitnerSystem( config->getSystem() );
+
+  delete config;
 }
 
 #include "kwordquiz.moc"

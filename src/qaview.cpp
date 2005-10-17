@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter@peterandlinda.com>
+  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -56,15 +56,10 @@ QString highlightError(const QString & c, const QString & e)
   return result;
 }
 
-
-QAView::QAView(QWidget *parent, const char *name, Qt::WFlags f):QAViewBase(parent, name, f)
+QAView::QAView(QWidget *parent) : QWidget(parent)
 {
+  setupUi(this);
   m_score = new WQScore();
-}
-
-
-QAView::~QAView()
-{
 }
 
 void QAView::setQuiz(WQQuiz *quiz)

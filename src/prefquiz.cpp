@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter@peterandlinda.com>
+  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -23,19 +23,13 @@
 
 #include "prefquiz.h"
 
-
-PrefQuiz::PrefQuiz(QWidget *parent, const char *name, Qt::WFlags f)
- : PrefQuizBase(parent, name, f)
+PrefQuiz::PrefQuiz(QWidget *parent) : QWidget(parent)
 {
+  setupUi(this);
   kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());
   kcfg_KeepDiscard->setEnabled(kcfg_AutoFlip->isChecked());
   //optCorrect -> setEnabled(kcfg_AutoFlip->isChecked());
   //optError -> setEnabled(kcfg_AutoFlip->isChecked());
-}
-
-
-PrefQuiz::~PrefQuiz()
-{
 }
 
 #include "prefquiz.moc"
