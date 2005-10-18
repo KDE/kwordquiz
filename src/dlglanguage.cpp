@@ -1,8 +1,8 @@
 /***************************************************************************
                           dlglanguage.cpp  -  description
                              -------------------
-   copyright            : (C) 2004 by Peter Hedlund
-   email                : peter.hedlund@kdemail.net
+   copyright       : (C) 2004-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+
  ***************************************************************************/
 
 /***************************************************************************
@@ -14,21 +14,20 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QLabel>
+
 #include <klocale.h>
 #include <klineedit.h>
 #include <kiconloader.h>
 
-#include <qlabel.h>
-
 #include "prefs.h"
 #include "dlglanguage.h"
 
-DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Column Titles"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(parent, name, modal, i18n("Column Titles"), Ok|Cancel, Ok, true)
 {
   dlgBase = new Ui::DlgLanguageBase();
-  dlgBase->setupUi(&dlgBaseWidget);
+  dlgBase->setupUi(makeMainWidget());
 
-  setMainWidget(&dlgBaseWidget);
   dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
   dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", KIcon::Panel));
 

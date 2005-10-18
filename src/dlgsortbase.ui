@@ -1,5 +1,5 @@
 <ui version="4.0" >
- <author></author>
+ <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
  <comment></comment>
  <exportmacro></exportmacro>
  <class>DlgSortBase</class>
@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>229</width>
-    <height>202</height>
+    <width>263</width>
+    <height>270</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -33,114 +33,117 @@
    <property name="spacing" >
     <number>6</number>
    </property>
+   <item row="2" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
    <item row="0" column="0" >
-    <layout class="QVBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
+    <widget class="Q3ButtonGroup" name="grpBase" >
+     <property name="toolTip" >
+      <string>Sort based on this column</string>
      </property>
-     <property name="spacing" >
-      <number>6</number>
+     <property name="whatsThis" >
+      <string>Select the column on which you want to base the sort</string>
      </property>
-     <item>
-      <widget class="Q3ButtonGroup" name="grpBase" >
-       <property name="toolTip" >
-        <string>Sort based on this column</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Select the column on which you want to base the sort</string>
-       </property>
-       <property name="title" >
-        <string>Based On</string>
-       </property>
-       <layout class="QGridLayout" >
-        <property name="margin" >
-         <number>10</number>
+     <property name="title" >
+      <string>Based On</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>-1</number>
+      </property>
+      <property name="spacing" >
+       <number>0</number>
+      </property>
+      <item row="0" column="0" >
+       <widget class="QRadioButton" name="optLang1" >
+        <property name="toolTip" >
+         <string>Sort based on this column</string>
         </property>
-        <property name="spacing" >
-         <number>6</number>
+        <property name="whatsThis" >
+         <string>Select to sort based on the left column</string>
         </property>
-        <item row="0" column="0" >
-         <widget class="QRadioButton" name="optLang1" >
-          <property name="toolTip" >
-           <string>Sort based on this column</string>
-          </property>
-          <property name="whatsThis" >
-           <string>Select to sort based on the left column</string>
-          </property>
-          <property name="text" >
-           <string>&amp;1 Language 1</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" >
-         <widget class="QRadioButton" name="optLang2" >
-          <property name="toolTip" >
-           <string>Sort based on this column</string>
-          </property>
-          <property name="whatsThis" >
-           <string>Select to sort based on the right column</string>
-          </property>
-          <property name="text" >
-           <string>&amp;2 Language 2</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="Q3ButtonGroup" name="grpDirection" >
-       <property name="toolTip" >
-        <string>Sort in this direction</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Select direction for the sort</string>
-       </property>
-       <property name="title" >
-        <string>Direction</string>
-       </property>
-       <layout class="QGridLayout" >
-        <property name="margin" >
-         <number>10</number>
+        <property name="text" >
+         <string>&amp;1 Language 1</string>
         </property>
-        <property name="spacing" >
-         <number>6</number>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QRadioButton" name="optLang2" >
+        <property name="toolTip" >
+         <string>Sort based on this column</string>
         </property>
-        <item row="0" column="0" >
-         <widget class="QRadioButton" name="optAscending" >
-          <property name="toolTip" >
-           <string>Sort in this direction</string>
-          </property>
-          <property name="whatsThis" >
-           <string>Select to sort in ascending order</string>
-          </property>
-          <property name="text" >
-           <string>&amp;Ascending</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" >
-         <widget class="QRadioButton" name="optDescending" >
-          <property name="toolTip" >
-           <string>Sort in this direction</string>
-          </property>
-          <property name="whatsThis" >
-           <string>Select to sort in descending order</string>
-          </property>
-          <property name="text" >
-           <string>&amp;Descending</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-    </layout>
+        <property name="whatsThis" >
+         <string>Select to sort based on the right column</string>
+        </property>
+        <property name="text" >
+         <string>&amp;2 Language 2</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="Q3ButtonGroup" name="grpDirection" >
+     <property name="toolTip" >
+      <string>Sort in this direction</string>
+     </property>
+     <property name="whatsThis" >
+      <string>Select direction for the sort</string>
+     </property>
+     <property name="title" >
+      <string>Direction</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <property name="margin" >
+       <number>-1</number>
+      </property>
+      <property name="spacing" >
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QRadioButton" name="optAscending" >
+        <property name="toolTip" >
+         <string>Sort in this direction</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Select to sort in ascending order</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Ascending</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="optDescending" >
+        <property name="toolTip" >
+         <string>Sort in this direction</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Select to sort in descending order</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Descending</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <layoutdefault spacing="6" margin="9" />
+ <pixmapfunction></pixmapfunction>
  <customwidgets>
   <customwidget>
    <class>Q3ButtonGroup</class>
@@ -150,6 +153,12 @@
    <pixmap></pixmap>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>optLang1</tabstop>
+  <tabstop>optLang2</tabstop>
+  <tabstop>optAscending</tabstop>
+  <tabstop>optDescending</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

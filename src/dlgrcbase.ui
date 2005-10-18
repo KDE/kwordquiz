@@ -1,5 +1,5 @@
 <ui version="4.0" >
- <author></author>
+ <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
  <comment></comment>
  <exportmacro></exportmacro>
  <class>DlgRCBase</class>
@@ -8,14 +8,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>229</width>
-    <height>177</height>
+    <width>368</width>
+    <height>190</height>
    </rect>
   </property>
   <property name="minimumSize" >
    <size>
     <width>200</width>
-    <height>150</height>
+    <height>160</height>
    </size>
   </property>
   <layout class="QGridLayout" >
@@ -25,127 +25,111 @@
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="0" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
+   <item row="5" column="0" >
+    <widget class="KIntNumInput" name="txtColWidth" >
+     <property name="toolTip" >
+      <string>Width of selected column</string>
      </property>
-     <property name="spacing" >
-      <number>6</number>
+     <property name="whatsThis" >
+      <string>Enter the width (in pixels) for the selected column(s)</string>
      </property>
-     <item row="1" column="0" >
-       <widget class="KIntNumInput" name="txtNumRows" >
-       <property name="toolTip" >
-        <string>Number of rows</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Enter the number of rows the vocabulary should have</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="lblNumRows" >
-       <property name="toolTip" >
-        <string>Number of rows</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Enter the number of rows the vocabulary should have</string>
-       </property>
-       <property name="text" >
-        <string>&amp;Number of rows:</string>
-       </property>
-       <property name="buddy" >
-        <cstring>txtNumRows</cstring>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    </widget>
+   </item>
+   <item row="3" column="0" >
+    <widget class="KIntNumInput" name="txtRowHeight" >
+     <property name="toolTip" >
+      <string>Height of selected row</string>
+     </property>
+     <property name="whatsThis" >
+      <string>Enter the height (in pixels) for the selected row(s)</string>
+     </property>
+    </widget>
    </item>
    <item row="1" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
+    <widget class="KIntNumInput" name="txtNumRows" >
+     <property name="toolTip" >
+      <string>Number of rows</string>
      </property>
-     <property name="spacing" >
-      <number>6</number>
+     <property name="whatsThis" >
+      <string>Enter the number of rows the vocabulary should have</string>
      </property>
-     <item row="1" column="0" >
-       <widget class="KIntNumInput" name="txtRowHeight" >
-       <property name="toolTip" >
-        <string>Height of selected row</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Enter the height (in pixels) for the selected row(s)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="lblRowHeight" >
-       <property name="toolTip" >
-        <string>Height of selected row</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Enter the height (in pixels) for the selected row(s)</string>
-       </property>
-       <property name="text" >
-        <string>&amp;Row height:</string>
-       </property>
-       <property name="buddy" >
-        <cstring>txtRowHeight</cstring>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    </widget>
+   </item>
+   <item row="0" column="0" >
+    <widget class="QLabel" name="lblNumRows" >
+     <property name="toolTip" >
+      <string>Number of rows</string>
+     </property>
+     <property name="whatsThis" >
+      <string>Enter the number of rows the vocabulary should have</string>
+     </property>
+     <property name="text" >
+      <string>&amp;Number of rows:</string>
+     </property>
+     <property name="buddy" >
+      <cstring>txtNumRows</cstring>
+     </property>
+    </widget>
    </item>
    <item row="2" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
+    <widget class="QLabel" name="lblRowHeight" >
+     <property name="toolTip" >
+      <string>Height of selected row</string>
      </property>
-     <property name="spacing" >
-      <number>6</number>
+     <property name="whatsThis" >
+      <string>Enter the height (in pixels) for the selected row(s)</string>
      </property>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="lblColWidth" >
-       <property name="toolTip" >
-        <string>Width of selected column</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Enter the width (in pixels) for the selected column(s)</string>
-       </property>
-       <property name="text" >
-        <string>Column &amp;width:</string>
-       </property>
-       <property name="buddy" >
-        <cstring>txtColWidth</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" >
-       <widget class="KIntNumInput" name="txtColWidth" >
-       <property name="toolTip" >
-        <string>Width of selected column</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Enter the width (in pixels) for the selected column(s)</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+     <property name="text" >
+      <string>&amp;Row height:</string>
+     </property>
+     <property name="buddy" >
+      <cstring>txtRowHeight</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" >
+    <widget class="QLabel" name="lblColWidth" >
+     <property name="toolTip" >
+      <string>Width of selected column</string>
+     </property>
+     <property name="whatsThis" >
+      <string>Enter the width (in pixels) for the selected column(s)</string>
+     </property>
+     <property name="text" >
+      <string>Column &amp;width:</string>
+     </property>
+     <property name="buddy" >
+      <cstring>txtColWidth</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11" />
- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <pixmapfunction></pixmapfunction>
  <customwidgets>
   <customwidget>
-    <class>KIntNumInput</class>
+   <class>KIntNumInput</class>
    <extends>QWidget</extends>
    <header>knuminput.h</header>
    <container>1</container>
    <pixmap></pixmap>
   </customwidget>
  </customwidgets>
+ <includes/>
  <resources/>
  <connections/>
 </ui>

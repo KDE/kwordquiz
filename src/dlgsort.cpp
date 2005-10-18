@@ -1,8 +1,8 @@
 /***************************************************************************
-                          dlglsort.cpp  -  description
+                          dlgsort.cpp  -  description
                              -------------------
-   copyright            : (C) 2003 by Peter Hedlund
-   email                : peter.hedlund@kdemail.net
+   copyright       : (C) 2003-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+
  ***************************************************************************/
 
 /***************************************************************************
@@ -14,23 +14,16 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <klocale.h>
+#include <QRadioButton>
 
-#include <qradiobutton.h>
+#include <klocale.h>
 
 #include "dlgsort.h"
 
-
-DlgSort::DlgSort(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Sort"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgSort::DlgSort(QWidget *parent, const char *name, bool modal): KDialogBase(parent, name, modal,  i18n("Sort"), Ok|Cancel, Ok, true)
 {
-  QWidget w;
-  //Ui::DlgSortBase ui;
-  dlgBase->setupUi(&w);
-
-  //w.show();
-
-  //dlgBase = new DlgSortBase( this, "Dlg" );
-  setMainWidget(&w /*dlgBase*/);
+  dlgBase = new Ui::DlgSortBase();
+  dlgBase->setupUi(makeMainWidget());
 
   dlgBase->optLang1->setChecked(true);
   dlgBase->optAscending->setChecked(true);

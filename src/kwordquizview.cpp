@@ -1,9 +1,9 @@
 /***************************************************************************
                           kwordquizview.cpp  -  description
                              -------------------
-    begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002 by Peter Hedlund
-    email                : peter.hedlund@kdemail.net
+    begin          : Wed Jul 24 20:12:30 PDT 2002
+    copyright      : (C) 2002-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+
  ***************************************************************************/
 
 /***************************************************************************
@@ -783,7 +783,7 @@ void KWordQuizView::doVocabSort( )
   dlg = new DlgSort(this, "dlg_sort", true);
   dlg->setLanguage(1, horizontalHeader()->label(0));
   dlg->setLanguage(2, horizontalHeader()->label(1));
-  dlg->disableResize();
+
   if (dlg->exec() == KDialogBase::Accepted)
   {
     addUndo(i18n("&Undo Sort"));
@@ -828,11 +828,10 @@ void KWordQuizView::doVocabRC( )
   saveCurrentSelection();
   DlgRC* dlg;
   dlg = new DlgRC(this, "dlg_rc", true);
-  //dlg->setInitialSize(QSize(225, 230), true);
   dlg->setNumRows(numRows());
   dlg->setRowHeight(rowHeight(m_currentRow));
   dlg->setColWidth(columnWidth(m_currentCol));
-  dlg->disableResize();
+
   if (dlg->exec() == KDialogBase::Accepted)
   {
     int newNumRows;

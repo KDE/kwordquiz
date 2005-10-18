@@ -1,8 +1,8 @@
 /***************************************************************************
                           dlglanguage.h  -  description
                              -------------------
-   copyright            : (C) 2004 by Peter Hedlund
-   email                : peter.hedlund@kdemail.net
+   copyright       : (C) 2004-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+
  ***************************************************************************/
 
 /***************************************************************************
@@ -36,7 +36,6 @@ public:
   QString Language(int index);
 
 private:
-  QWidget dlgBaseWidget;
   Ui::DlgLanguageBase *dlgBase;
   KCompletion * completion1;
   KCompletion * completion2;
