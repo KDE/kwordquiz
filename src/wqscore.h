@@ -17,7 +17,7 @@
 #ifndef WQSCORE_H
 #define WQSCORE_H
 
-#include <qwidget.h>
+#include <QWidget>
 
 /**
 @author Peter Hedlund

@@ -14,7 +14,7 @@
  *                                                                         *
  ***************************************************************************/
  
-#include <qlabel.h>
+#include <QLabel>
 
 #include <kiconloader.h>
 #include <klocale.h>

@@ -12,7 +12,7 @@
 #ifndef LEITNERBOX_H
 #define LEITNERBOX_H
 
-#include <qstring.h>
+#include <QString>
 
 /**
 @author Martin Pfeiffer

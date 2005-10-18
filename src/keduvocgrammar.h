@@ -27,9 +27,9 @@
 #ifndef grammarmanager_included
 #define grammarmanager_included
 
-#include <qstring.h>
+#include <QString>
 #include <q3valuelist.h>
-#include <qstringlist.h>
+#include <QStringList>
 
 #define CONJ_SIMPLE_PRESENT    "PrSi" // I live at home  what you frequently do
 #define CONJ_PRESENT_PROGR     "PrPr" // I am working    what you currently are doing

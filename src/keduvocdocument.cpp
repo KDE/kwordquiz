@@ -17,7 +17,7 @@
 
 #include "keduvocdocument.h"
 
-#include <qfileinfo.h>
+#include <QFileInfQFileInfo>
 //Added by qt3to4:
 #include <Q3ValueList>
 #include <QTextStream>

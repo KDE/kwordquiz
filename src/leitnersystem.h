@@ -10,8 +10,8 @@
 //
 //
 
-#include <qstring.h>
-#include <qstringlist.h>
+#include <QString>
+#include <QStringList>
 #include <q3valuelist.h>
 #include "leitnerbox.h"
 

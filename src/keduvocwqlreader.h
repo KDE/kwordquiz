@@ -18,7 +18,7 @@
 #ifndef KEDUVOCWQLREADER_H
 #define KEDUVOCWQLREADER_H
 
-#include <qfile.h>
+#include <QFile>
 
 #include "keduvocdocument.h"
 
