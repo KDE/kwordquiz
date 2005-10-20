@@ -50,7 +50,7 @@ LeitnerBox* LeitnerSystem::boxWithNumber( int number )
 	return &m_boxes[ number ];
 }
 
-LeitnerBox* LeitnerSystem::boxWithName( const QString& name )
+LeitnerBox* LeitnerSystem::boxWithName( const QString& name ) const
 {
 	foreach( LeitnerBox box, m_boxes )
 	{
@@ -61,7 +61,7 @@ LeitnerBox* LeitnerSystem::boxWithName( const QString& name )
 	return 0;
 }
 
-QString& LeitnerSystem::systemName() 
+QString& LeitnerSystem::systemName()
 {
 	return m_systemName;
 }
@@ -145,7 +145,7 @@ void LeitnerSystem::setSystemName( const QString& name )
 	m_systemName = name;
 }
 
-int LeitnerSystem::number( LeitnerBox* box )
+int LeitnerSystem::number( LeitnerBox* box ) const
 {
 	if( box == 0 )
 		return -1;
@@ -199,9 +199,9 @@ void LeitnerSystem::setWrongBox( const QString& box, const QString& wrongWordBox
 	boxWithName( box )->setWrongWordBox( boxWithName( wrongWordBox ) );
 }
 
-const QString& LeitnerSystem::box( int i )
+const QString& LeitnerSystem::box( int i ) const
 {
-	return boxWithNumber( i )->boxName();
+	return m_boxes[ i ].boxName();
 }
 
 void LeitnerSystem::setBoxVocabCount( QString& box, int vocabCount )

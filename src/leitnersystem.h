@@ -25,23 +25,67 @@
 class LeitnerSystem
 {
 public:
+	/**Constructor without arguments*/
 	LeitnerSystem();
+
+	/**Constructor with arguments
+	 * @param boxes reference to a QList of LeitnerBox
+	 * @param name the new LeitnerSystems name
+	 */
 	LeitnerSystem( QList<LeitnerBox>& boxes, QString name );
 
+	/**Destructor*/
 	~LeitnerSystem();
 
-	int getNumberOfBoxes() const;			//returns the number of boxes in the system
-	QStringList getBoxNameList();			//returns a list with the boxes names
+	/**Returns the number of LeitnerBoxes contained by this LeitnerSystem
+	 * @return the number of LeitnerBoxes as integer
+	 */
+	int getNumberOfBoxes() const;
 
-	QString& systemName();			//returns the systems name
-	void setSystemName( const QString& name );	//sets the systems name
+	/**Returns a QStringList with all the LeitnerBoxes' names
+	 * @return a QStringList with all names
+	 */
+	QStringList getBoxNameList();
 
-	LeitnerBox* boxWithNumber( int number );	//returns box by number
-	LeitnerBox* boxWithName( const QString& name );	//returns box by name
-	int number( LeitnerBox* box );
-	const QString& box( int i );
+	/**Returns the LeitnerSystem's name
+	 * @return the LeitnerSystem's name as reference to QString
+	 */
+	QString& systemName();
 
-	const QString& nextBox( QString& previousBox );	//returns the next box for the next question
+	/**Sets the LeitnerSystem's name
+	 * @param the new name as QString
+	 */
+	void setSystemName( const QString& name );
+
+	/**Returns a LeitnerBox by number
+	 * @param the number of the LeitnerBox to be returned
+	 * @return a pointer to the LeitnerBox with the number
+	 */
+	LeitnerBox* boxWithNumber( int number );
+
+	/**Returns a LeitnerBox by name
+	 * @param the name of the LeitnerBox to be returned
+	 * @return a pointer to the LeitnerBox with the name
+	 */
+	LeitnerBox* boxWithName( const QString& name ) const;
+
+	/**Returns the number of the given LeitnerBox
+	 * @param a pointer to the LeitnerBox
+	 * @return the number of the given LeitnerBox
+	 */
+	int number( LeitnerBox* box ) const;
+
+	/**Returns the name of the LeitnerBox with number @param i
+	 * @param the LeitnerBox's number
+	 * @return the name of the LeitnerBox with number @param i
+	 */
+	const QString& box( int i ) const;
+
+	/**Returns the LeitnerBox following @param previousBox
+	 * @param the name of the LeitnerBox
+	 * @return the name of the LeitnerBox following previousBox
+	 */
+	const QString& nextBox( QString& previousBox );
 
 	const QString& correctBox( int box );	//returns the correct word box of "int box"
 	const QString& wrongBox( int box );		//returns the wrong word box of "int box"
