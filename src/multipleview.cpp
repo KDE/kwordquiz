@@ -31,6 +31,9 @@ MultipleView::MultipleView(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
   m_score = new WQScore();
+  connect(opt1, SIGNAL(clicked()), this, SLOT(slotOpt1Clicked()));
+  connect(opt2, SIGNAL(clicked()), this, SLOT(slotOpt2Clicked()));
+  connect(opt3, SIGNAL(clicked()), this, SLOT(slotOpt3Clicked()));
 }
 
 void MultipleView::setQuiz(WQQuiz *quiz)
@@ -53,11 +56,11 @@ void MultipleView::init()
   lblQuestion -> setFont(Prefs::editorFont());
   lblPreviousQuestion -> setFont(Prefs::editorFont());
   lblYourAnswer -> setFont(Prefs::editorFont());
-  lblCorrect -> setFont(Prefs::editorFont()); 
+  lblCorrect -> setFont(Prefs::editorFont());
   opt1->setFont(Prefs::editorFont());
   opt2->setFont(Prefs::editorFont());
   opt3->setFont(Prefs::editorFont());
-  
+
   picAnswered->clear();
   picCorrect->clear();
   picError->clear();
@@ -89,28 +92,28 @@ void MultipleView::slotCheck()
 
     QString ans;
     bool oneIsChecked = false;
-    
+
     if (opt1->isChecked())
-    {  
+    {
       ans = opt1->text().mid(3, opt1->text().length());
       oneIsChecked = true;
     }
-    
+
     if (opt2->isChecked())
     {
       ans = opt2->text().mid(3, opt2->text().length());
       oneIsChecked = true;
     }
-    
+
     if (opt3->isChecked())
     {
       ans = opt3->text().mid(3, opt3->text().length());
       oneIsChecked = true;
     }
-    
+
     if (!oneIsChecked)
       return;
-      
+
     bool fIsCorrect = m_quiz->checkAnswer(m_question, ans);
 
     if (fIsCorrect)

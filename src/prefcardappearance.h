@@ -29,7 +29,7 @@ public slots:
   void slotTextColorChanged(const QColor &);
   void slotCardColorChanged(const QColor &);
   void slotFrameColorChanged(const QColor &);
-  void slotAboutToShowWidget(QWidget *);
+  void slotCurrentChanged(int);
 };
 
 #endif

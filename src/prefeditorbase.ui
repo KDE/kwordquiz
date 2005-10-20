@@ -1,5 +1,5 @@
 <ui version="4.0" >
- <author></author>
+ <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
  <comment></comment>
  <exportmacro></exportmacro>
  <class>PrefEditorBase</class>
@@ -8,16 +8,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>159</width>
-    <height>209</height>
+    <width>300</width>
+    <height>300</height>
    </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>300</width>
+    <height>300</height>
+   </size>
   </property>
   <property name="windowTitle" >
    <string>Form</string>
   </property>
   <layout class="QGridLayout" >
    <property name="margin" >
-    <number>8</number>
+    <number>0</number>
    </property>
    <property name="spacing" >
     <number>6</number>
@@ -30,7 +36,7 @@
      <property name="sizeHint" >
       <size>
        <width>20</width>
-       <height>41</height>
+       <height>40</height>
       </size>
      </property>
     </spacer>
@@ -57,7 +63,7 @@
       <string>Select how the Enter key should behave in the editor</string>
      </property>
      <property name="title" >
-      <string>Enter Ke&amp;y Moves</string>
+      <string>Enter Ke&amp;y Move</string>
      </property>
      <layout class="QVBoxLayout" >
       <property name="margin" >

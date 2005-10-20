@@ -163,12 +163,15 @@
     </widget>
    </item>
    <item row="3" column="0" >
-    <widget class="KPushButton" name="flipButton" >
+    <widget class="QPushButton" name="flipButton" >
      <property name="toolTip" >
       <string>Flip card</string>
      </property>
      <property name="whatsThis" >
       <string>Use to show the other side of the card</string>
+     </property>
+     <property name="text" >
+      <string>&amp;Flip Card</string>
      </property>
     </widget>
    </item>
@@ -183,7 +186,7 @@
       </sizepolicy>
      </property>
      <property name="text" >
-      <string>Text color:</string>
+      <string>&amp;Text color:</string>
      </property>
     </widget>
    </item>
@@ -198,7 +201,7 @@
       </sizepolicy>
      </property>
      <property name="text" >
-      <string>Frame color:</string>
+      <string>Fra&amp;me color:</string>
      </property>
     </widget>
    </item>
@@ -213,7 +216,7 @@
       </sizepolicy>
      </property>
      <property name="text" >
-      <string>Font:</string>
+      <string>F&amp;ont:</string>
      </property>
     </widget>
    </item>
@@ -228,7 +231,7 @@
       </sizepolicy>
      </property>
      <property name="text" >
-      <string>Card color:</string>
+      <string>&amp;Card color:</string>
      </property>
     </widget>
    </item>
@@ -243,14 +246,6 @@
       </sizepolicy>
      </property>
      <widget class="QWidget" name="backStackPage" >
-      <property name="geometry" >
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>350</width>
-        <height>122</height>
-       </rect>
-      </property>
       <layout class="QGridLayout" >
        <property name="margin" >
         <number>0</number>
@@ -271,9 +266,6 @@
          <property name="focusPolicy" >
           <enum>Qt::TabFocus</enum>
          </property>
-         <!-- <property name="toolTip" >
-          <string>Font for back of card</string>
-         </property> -->
          <property name="whatsThis" >
           <string>Use to select the font for displaying text on the back of the card</string>
          </property>
@@ -312,14 +304,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="frontStackPage" >
-      <property name="geometry" >
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>100</width>
-        <height>30</height>
-       </rect>
-      </property>
       <layout class="QGridLayout" >
        <property name="margin" >
         <number>0</number>
@@ -340,9 +324,6 @@
          <property name="focusPolicy" >
           <enum>Qt::TabFocus</enum>
          </property>
-         <!--<property name="toolTip" >
-          <string>Font for front of card</string>
-         </property> -->
          <property name="whatsThis" >
           <string>Use to select the font for displaying text on the front of the card</string>
          </property>
@@ -414,13 +395,6 @@
    <class>KFontRequester</class>
    <extends>QWidget</extends>
    <header>kfontrequester.h</header>
-   <container>1</container>
-   <pixmap></pixmap>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QWidget</extends>
-   <header>kpushbutton.h</header>
    <container>1</container>
    <pixmap></pixmap>
   </customwidget>

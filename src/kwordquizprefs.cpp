@@ -60,7 +60,7 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
 
   m_dlgSpecChar = 0L;
 
-  connect(m_prefCharacter->lstCharacters, SIGNAL(selectionChanged()), this, SLOT(slotCharListSelectionChanged()));
+  connect(m_prefCharacter->CharacterTree, SIGNAL(selectionChanged()), this, SLOT(slotCharListSelectionChanged()));
   connect(m_prefCharacter->btnCharacter, SIGNAL(clicked()), this, SLOT(slotSelectSpecChar()));
 
   KWordQuizApp *win=(KWordQuizApp *) parent;
@@ -68,29 +68,30 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
 
   KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
   QString ds = item->property().toString();
-
-  for ( Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  ///@todo port
+  /*
+  for ( Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
   {
     it.current()->setText(2, (QString) ds[i++] ) ;
     it.current()->setText(1, win->actionCollection()->action(QString("char_" + QString::number(i)).latin1())->shortcut().toString());
   }
 
-  m_prefCharacter->lstCharacters->setSelected(m_prefCharacter->lstCharacters->firstChild(), true);
-  m_prefCharacter->lstCharacters->setItemMargin(2);
+  m_prefCharacter->CharacterTree->setSelected(m_prefCharacter->CharacterTree->firstChild(), true);
+  m_prefCharacter->CharacterTree->setItemMargin(2);*/
 
   kapp->processEvents();
 }
 
 void KWordQuizPrefs::slotCharListSelectionChanged()
 {
-  m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
+  m_prefCharacter->lblPreview->setText(m_prefCharacter->CharacterTree->currentItem()->text(2));
 }
 
 void KWordQuizPrefs::slotSelectSpecChar( )
 {
   KConfigSkeletonItem * item = m_config->findItem("EditorFont");
   QString f; ///@todo port= item->property().toFont().family();
-  QString s = m_prefCharacter->lstCharacters->currentItem()->text(2);
+  QString s = m_prefCharacter->CharacterTree->currentItem()->text(2);
   QChar c = s[0];
 
   if (m_dlgSpecChar == 0)
@@ -115,8 +116,8 @@ void KWordQuizPrefs::slotDlgSpecCharClosed()
 
 void KWordQuizPrefs::slotSpecChar(QChar c)
 {
-  m_prefCharacter->lstCharacters->currentItem()->setText(2, QString(c));
-  m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
+  m_prefCharacter->CharacterTree->currentItem()->setText(2, QString(c));
+  m_prefCharacter->lblPreview->setText(m_prefCharacter->CharacterTree->currentItem()->text(2));
   updateButtons();
 }
 
@@ -125,11 +126,13 @@ bool KWordQuizPrefs::hasChanged()
   bool result;
 
   QString s;
-  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  ///@todo port
+  /*
+  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
-
+  */
   KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
   QString ds = item->property().toString();
 
@@ -147,11 +150,13 @@ bool KWordQuizPrefs::isDefault()
   bool result;
 
   QString s;
-  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  ///@todo port
+  /*
+  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
-
+  */
   KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
   QString ds = item->property().toString();
 
@@ -167,11 +172,13 @@ bool KWordQuizPrefs::isDefault()
 void KWordQuizPrefs::updateSettings( )
 {
   QString s;
-  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  ///@todo port
+  /*
+  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
-
+  */
   KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
   item->setProperty(QVariant(s));
 
@@ -183,20 +190,25 @@ void KWordQuizPrefs::updateWidgetsDefault( )
   bool bUseDefaults = m_config->useDefaults(true);
 
   QString s;
-  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  ///@todo port
+  /*
+  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
   {
     s.append(it.current()->text(2));
   }
-
+  */
   KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
   QString ds = item->property().toString();
 
   int i=0;
-  for (Q3ListViewItemIterator it = m_prefCharacter->lstCharacters; it.current(); ++it)
+  ///@todo port
+  /*
+  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
   {
     it.current()->setText(2, (QString) ds[i++] ) ;
   }
-  m_prefCharacter->lblPreview->setText(m_prefCharacter->lstCharacters->currentItem()->text(2));
+  */
+  m_prefCharacter->lblPreview->setText(m_prefCharacter->CharacterTree->currentItem()->text(2));
   m_config->useDefaults(bUseDefaults);
 }
 

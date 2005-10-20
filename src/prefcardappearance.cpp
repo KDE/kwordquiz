@@ -4,7 +4,7 @@
 // Description: KWordQuiz flashcard appearance preferences
 //
 //
-// Author: Peter Hedlund <peter.hedlund@kdemail.net>, (C) 2004
+// Author: Peter Hedlund <peter.hedlund@kdemail.net>, (C) 2004-2005
 //
 // Copyright: See COPYING file that comes with this distribution
 //
@@ -22,15 +22,27 @@
 PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
+
+  connect(flipButton, SIGNAL(clicked()), this, SLOT(slotFlipButtonClicked()));
+  connect(kcfg_FrontFont, SIGNAL(fontSelected(const QFont&)), this, SLOT(slotFontChanged(const QFont&)));
+  connect(kcfg_FrontTextColor, SIGNAL(changed(const QColor&)), this, SLOT(slotTextColorChanged(const QColor&)));
+  connect(kcfg_FrontCardColor, SIGNAL(changed(const QColor&)), this, SLOT(slotCardColorChanged(const QColor&)));
+  connect(kcfg_FrontFrameColor, SIGNAL(changed(const QColor&)), this, SLOT(slotFrameColorChanged(const QColor&)));
+  connect(widgetStack, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentChanged(int)));
+
   widgetStack->setCurrentWidget(frontStackPage);
 }
 
 void PrefCardAppearance::slotFlipButtonClicked( )
 {
   if (widgetStack->currentWidget() == frontStackPage)
+  {
     widgetStack->setCurrentWidget(backStackPage);
+  }
   else
+  {
     widgetStack->setCurrentWidget(frontStackPage);
+  }
 }
 
 void PrefCardAppearance::slotFontChanged(const QFont & font)
@@ -57,9 +69,9 @@ void PrefCardAppearance::slotFrameColorChanged( const QColor & color)
   line->setPaletteForegroundColor(color);
 }
 
-void PrefCardAppearance::slotAboutToShowWidget(QWidget * widget)
+void PrefCardAppearance::slotCurrentChanged(int index)
 {
-  if (widget == backStackPage)
+  if (index == widgetStack->indexOf(backStackPage))
   {
     titleLabel->setText(i18n("Back of the flashcard", "Back"));
     titleLabel->setPaletteBackgroundColor(kcfg_BackCardColor->color());
@@ -71,6 +83,10 @@ void PrefCardAppearance::slotAboutToShowWidget(QWidget * widget)
     cardFrame->setPaletteForegroundColor(kcfg_BackFrameColor->color());
     line->setPaletteForegroundColor(kcfg_BackFrameColor->color());
     line->setPaletteBackgroundColor(kcfg_BackCardColor->color());
+    fontLabel->setBuddy(kcfg_BackFont);
+    textColorLabel->setBuddy(kcfg_BackTextColor);
+    frameColorLabel->setBuddy(kcfg_BackFrameColor);
+    cardColorLabel->setBuddy(kcfg_BackCardColor);
   }
   else
   {
@@ -84,6 +100,10 @@ void PrefCardAppearance::slotAboutToShowWidget(QWidget * widget)
     cardFrame->setPaletteForegroundColor(kcfg_FrontFrameColor->color());
     line->setPaletteForegroundColor(kcfg_FrontFrameColor->color());
     line->setPaletteBackgroundColor(kcfg_FrontCardColor->color());
+    fontLabel->setBuddy(kcfg_FrontFont);
+    textColorLabel->setBuddy(kcfg_FrontTextColor);
+    frameColorLabel->setBuddy(kcfg_FrontFrameColor);
+    cardColorLabel->setBuddy(kcfg_FrontCardColor);
   }
 }
 
