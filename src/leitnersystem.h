@@ -1,3 +1,6 @@
+#ifndef LEITNERSYSTEM_H
+#define LEITNERSYSTEM_H
+
 //
 // C++ Interface: leitnersystem
 //
@@ -12,32 +15,29 @@
 
 #include <QString>
 #include <QStringList>
-#include <q3valuelist.h>
+
 #include "leitnerbox.h"
-
-#ifndef LEITNERSYSTEM_H
-#define LEITNERSYSTEM_H
-
 
 /**
 @author Martin Pfeiffer
 */
+
 class LeitnerSystem
 {
 public:
 	LeitnerSystem();
-	LeitnerSystem( Q3ValueList<LeitnerBox>& boxes, QString name );
+	LeitnerSystem( QList<LeitnerBox>& boxes, QString name );
 
 	~LeitnerSystem();
 
-	int getNumberOfBoxes();				//returns the number of boxes in the system
+	int getNumberOfBoxes() const;			//returns the number of boxes in the system
 	QStringList getBoxNameList();			//returns a list with the boxes names
 
 	QString& systemName();			//returns the systems name
-	void setSystemName( const QString& name );		//sets the systems name
+	void setSystemName( const QString& name );	//sets the systems name
 
 	LeitnerBox* boxWithNumber( int number );	//returns box by number
-	LeitnerBox* boxWithName( const QString& name );//returns box by name
+	LeitnerBox* boxWithName( const QString& name );	//returns box by name
 	int number( LeitnerBox* box );
 	const QString& box( int i );
 
@@ -72,7 +72,7 @@ public:
 private:
 	QString m_systemName;				//the systems name
 
-	Q3ValueList<LeitnerBox> m_boxes;
+	QList<LeitnerBox> m_boxes;
 };
 
 #endif

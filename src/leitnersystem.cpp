@@ -10,11 +10,10 @@
 //
 //
 #include "leitnersystem.h"
-#include <kdebug.h>
-//Added by qt3to4:
-#include <Q3ValueList>
 
-LeitnerSystem::LeitnerSystem(Q3ValueList<LeitnerBox>& boxes, QString name)
+#include <kdebug.h>
+
+LeitnerSystem::LeitnerSystem(QList<LeitnerBox>& boxes, QString name)
 {
 	if( !boxes.empty() )
 		m_boxes = boxes;
@@ -34,18 +33,14 @@ LeitnerSystem::~LeitnerSystem()
 QStringList LeitnerSystem::getBoxNameList()
 {
 	QStringList boxNameList;
-	Q3ValueList<LeitnerBox>::iterator it;
 
-
-	for(it = m_boxes.begin(); it != m_boxes.end(); ++it)
-	{
-		boxNameList.append((*it).boxName());
-	}
-
+	foreach( LeitnerBox box, m_boxes )
+		boxNameList.append( box.boxName() );
+	
 	return boxNameList;
 }
 
-int LeitnerSystem::getNumberOfBoxes()
+int LeitnerSystem::getNumberOfBoxes() const
 {
 	return m_boxes.count();
 }
@@ -57,18 +52,16 @@ LeitnerBox* LeitnerSystem::boxWithNumber( int number )
 
 LeitnerBox* LeitnerSystem::boxWithName( const QString& name )
 {
-	Q3ValueList<LeitnerBox>::iterator it;
-
-	for(it = m_boxes.begin(); it != m_boxes.end(); ++it)
+	foreach( LeitnerBox box, m_boxes )
 	{
-		if((*it).boxName() == name)
-			return &(*it);
+		if ( box.boxName() == name )
+			return &box;
 	}
 
 	return 0;
 }
 
-QString& LeitnerSystem::systemName()
+QString& LeitnerSystem::systemName() 
 {
 	return m_systemName;
 }
@@ -116,7 +109,7 @@ int LeitnerSystem::correctBoxNumber( int box )
 
 void LeitnerSystem::deleteBox( int box )
 {
-	deleteBox( &(*m_boxes.at( box )) );
+	m_boxes.removeAt( box );
 }
 
 void LeitnerSystem::deleteBox( LeitnerBox* box )
@@ -130,7 +123,7 @@ void LeitnerSystem::deleteBox( LeitnerBox* box )
 			m_boxes[i].setWrongWordBox( 0 );
 	}
 
-	m_boxes.remove( *box );
+	m_boxes.removeAll( *box );
 }
 
 bool LeitnerSystem::insertBox( const QString& name, int correctWordBox, int wrongWordBox )
