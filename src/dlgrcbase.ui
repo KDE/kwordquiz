@@ -175,8 +175,8 @@
 </customwidgets>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>krestrictedline.h</includehint>
-    <includehint>krestrictedline.h</includehint>
-    <includehint>krestrictedline.h</includehint>
+    
+    
+    
 </includehints>
 </UI>
