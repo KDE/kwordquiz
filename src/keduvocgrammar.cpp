@@ -26,8 +26,6 @@
 #include "keduvocgrammar.h"
 
 #include <klocale.h>
-//Added by qt3to4:
-#include <Q3ValueList>
 
 KEduVocConjugation::conjug_name_t
 KEduVocConjugation::names [] =
@@ -74,6 +72,14 @@ void KEduVocComparison::clear()
   ls1 = "";
   ls2 = "";
   ls3 = "";
+}
+
+bool KEduVocComparison::operator ==( const KEduVocComparison& a ) const
+{
+	if ( ls1 == a.l1() && ls2 == a.l2() && ls3 == a.l3() )
+		return true;
+	else
+		return false;
 }
 
 
@@ -138,15 +144,29 @@ void KEduVocArticle::natural(QString &def, QString &indef) const
 //==============================================================
 
 
+bool KEduVocConjugation::operator ==( const KEduVocConjugation& a ) const
+{
+	if ( verbName == a.getVerbName() )
+		return true;
+	else
+		return false;
+}
+
+
+const QString& KEduVocConjugation::getVerbName() const
+{
+	return verbName;
+}
+
 int KEduVocConjugation::numEntries() const
 {
   return conjugations.size();
 }
 
 
-Q3ValueList<KEduVocTenseRelation> KEduVocConjugation::getRelation ()
+QList<KEduVocTenseRelation> KEduVocConjugation::getRelation ()
 {
-  Q3ValueList<KEduVocTenseRelation> vec;
+  QList<KEduVocTenseRelation> vec;
 
   for (int i = 0; i < numInternalNames(); i++) {
     vec.append(KEduVocTenseRelation(names[i].abbrev, i18n(names[i].name)));
@@ -285,7 +305,7 @@ void KEduVocConjugation::cleanUp ()
         && ctp->pers3_f_plur.stripWhiteSpace().isEmpty()
         && ctp->pers3_n_plur.stripWhiteSpace().isEmpty()
        )
-     conjugations.erase(conjugations.at(i));
+     conjugations.removeAt( i );
   }
 }
 
