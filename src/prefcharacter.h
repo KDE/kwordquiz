@@ -19,7 +19,11 @@
 #ifndef PREFCHARACTER_H
 #define PREFCHARACTER_H
 
+#include <kactioncollection.h>
+
 #include "prefcharacterbase.h"
+
+class DlgSpecChar;
 
 /**
 @author Peter Hedlund
@@ -29,8 +33,25 @@ class PrefCharacter :  public QWidget, public Ui::PrefCharacterBase
 Q_OBJECT
 public:
 
-  PrefCharacter(QWidget *parent);
+  PrefCharacter(QWidget *parent, KActionCollection * ac);
+  void updateWidgets();
+  bool hasChanged();
+  bool isDefault();
+  void updateSettings();
 
+signals:
+  void widgetModified();
+
+private slots:
+  void fillWidgets();
+  void slotCharListSelectionChanged();
+  void slotDlgSpecCharClosed();
+  void slotSelectSpecChar();
+  void slotSpecChar(QChar);
+
+private:
+  KActionCollection * m_actionCollection;
+  DlgSpecChar* m_dlgSpecChar;
 };
 
 #endif

@@ -39,7 +39,6 @@
 #include "prefcharacter.h"
 #include "prefcardappearance.h"
 #include "kwordquiz.h"
-#include "dlgspecchar.h"
 
 KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, DialogType dialogType, int /*dialogButtons*/, ButtonCode /*defaultButton*/, bool /*modal*/)
   : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false)
@@ -55,160 +54,32 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
   m_prefCardAppearance = new PrefCardAppearance(0);
   addPage(m_prefCardAppearance, i18n("Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);
 
-  m_prefCharacter = new PrefCharacter(0);
-  addPage(m_prefCharacter, i18n("Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
-
-  m_dlgSpecChar = 0L;
-
-  connect(m_prefCharacter->CharacterTree, SIGNAL(selectionChanged()), this, SLOT(slotCharListSelectionChanged()));
-  connect(m_prefCharacter->btnCharacter, SIGNAL(clicked()), this, SLOT(slotSelectSpecChar()));
-
   KWordQuizApp *win=(KWordQuizApp *) parent;
-  int i=0;
-
-  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
-  QString ds = item->property().toString();
-  ///@todo port
-  /*
-  for ( Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
-  {
-    it.current()->setText(2, (QString) ds[i++] ) ;
-    it.current()->setText(1, win->actionCollection()->action(QString("char_" + QString::number(i)).latin1())->shortcut().toString());
-  }
-
-  m_prefCharacter->CharacterTree->setSelected(m_prefCharacter->CharacterTree->firstChild(), true);
-  m_prefCharacter->CharacterTree->setItemMargin(2);*/
-
-  kapp->processEvents();
-}
-
-void KWordQuizPrefs::slotCharListSelectionChanged()
-{
-  m_prefCharacter->lblPreview->setText(m_prefCharacter->CharacterTree->currentItem()->text(2));
-}
-
-void KWordQuizPrefs::slotSelectSpecChar( )
-{
-  KConfigSkeletonItem * item = m_config->findItem("EditorFont");
-  QString f; ///@todo port= item->property().toFont().family();
-  QString s = m_prefCharacter->CharacterTree->currentItem()->text(2);
-  QChar c = s[0];
-
-  if (m_dlgSpecChar == 0)
-  {
-    m_dlgSpecChar = new DlgSpecChar( this, "insert special char", f, c, true );
-    connect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    connect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
-  }
-  m_dlgSpecChar->show();
-}
-
-void KWordQuizPrefs::slotDlgSpecCharClosed()
-{
-  if ( m_dlgSpecChar )
-  {
-    disconnect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    disconnect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
-    m_dlgSpecChar->deleteLater();
-    m_dlgSpecChar = 0L;
-  }
-}
-
-void KWordQuizPrefs::slotSpecChar(QChar c)
-{
-  m_prefCharacter->CharacterTree->currentItem()->setText(2, QString(c));
-  m_prefCharacter->lblPreview->setText(m_prefCharacter->CharacterTree->currentItem()->text(2));
-  updateButtons();
+  m_prefCharacter = new PrefCharacter(0, win->actionCollection());
+  addPage(m_prefCharacter, i18n("Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
+  connect(m_prefCharacter, SIGNAL(widgetModified()), this, SLOT(updateButtons()));
 }
 
 bool KWordQuizPrefs::hasChanged()
 {
-  bool result;
-
-  QString s;
-  ///@todo port
-  /*
-  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
-  {
-    s.append(it.current()->text(2));
-  }
-  */
-  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
-  QString ds = item->property().toString();
-
-  if (ds == s.stripWhiteSpace())
-    result = KConfigDialog::hasChanged();
-  else
-    result = true;
-
-  return result;
+  return m_prefCharacter->hasChanged();
 }
 
 bool KWordQuizPrefs::isDefault()
 {
-  bool bUseDefaults = m_config->useDefaults(true);
-  bool result;
-
-  QString s;
-  ///@todo port
-  /*
-  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
-  {
-    s.append(it.current()->text(2));
-  }
-  */
-  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
-  QString ds = item->property().toString();
-
-  if (ds == s.stripWhiteSpace())
-    result = KConfigDialog::isDefault();
-  else
-    result = false;
-
-  m_config->useDefaults(bUseDefaults);
-  return result;
+  return m_prefCharacter->isDefault();
 }
 
 void KWordQuizPrefs::updateSettings( )
 {
-  QString s;
-  ///@todo port
-  /*
-  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
-  {
-    s.append(it.current()->text(2));
-  }
-  */
-  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
-  item->setProperty(QVariant(s));
-
-  emit settingsChanged(""); ///@todo port check
+  m_prefCharacter->updateSettings();
+  emit settingsChanged("");
 }
 
-void KWordQuizPrefs::updateWidgetsDefault( )
+void KWordQuizPrefs::updateWidgetsDefault()
 {
   bool bUseDefaults = m_config->useDefaults(true);
-
-  QString s;
-  ///@todo port
-  /*
-  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
-  {
-    s.append(it.current()->text(2));
-  }
-  */
-  KConfigSkeletonItem * item = m_config->findItem("SpecialCharacters");
-  QString ds = item->property().toString();
-
-  int i=0;
-  ///@todo port
-  /*
-  for (Q3ListViewItemIterator it = m_prefCharacter->CharacterTree; it.current(); ++it)
-  {
-    it.current()->setText(2, (QString) ds[i++] ) ;
-  }
-  */
-  m_prefCharacter->lblPreview->setText(m_prefCharacter->CharacterTree->currentItem()->text(2));
+  m_prefCharacter->updateWidgets();
   m_config->useDefaults(bUseDefaults);
 }
 
