@@ -83,7 +83,7 @@ class KEduVocExpression
   /** adds a new translation of this entry
    * @param expression       translation
    * @param grade            grade of knowledge of this translation
-   * @param rev_grade        dito, in opposite direction
+   * @param reverseGrade     dito, in opposite direction
    */
   void addTranslation(const QString & expression, grade_t grade = KV_NORM_GRADE, grade_t reverseGrade = KV_NORM_GRADE);
 

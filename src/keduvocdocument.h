@@ -267,7 +267,7 @@ class KEduVocDocument : public QObject
 
   /** Constructor for a KdeEdu vocabulary document
    *
-   * @param obj calling object
+   * @param parent calling object
    */
   KEduVocDocument(QObject* parent);
 
@@ -282,14 +282,14 @@ class KEduVocDocument : public QObject
 
   /** appends a new expression to the end of the vocabulary
    *
-   * @param expr            expression to append
+   * @param expression            expression to append
    */
   inline void appendEntry (KEduVocExpression *expression)
     { m_vocabulary.append(*expression); m_dirty = true; }
 
   /** inserts a new expression
    *
-   * @param expr            expression to insert
+   * @param expression            expression to insert
    * @param index           index of entry
    */
   inline void insertEntry(KEduVocExpression *expression, int index)
@@ -437,7 +437,11 @@ class KEduVocDocument : public QObject
 
   /** open a document file
    *
-   * @param url
+   * @param url      url to file to open
+   * @param append   if @c true, the words from @p url are appended to the
+   *                 existing collection; if @c false, the collection is
+   *                 emptied first so that only the words from @p url
+   *                 are in the result.
    * @result         true if successful
    */
   bool open(const KURL& url, bool append);
