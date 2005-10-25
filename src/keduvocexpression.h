@@ -139,14 +139,14 @@ class KEduVocExpression
   /** sets translation of this expression
    *
    * @param index            number of translation
-   * @param expr             expression of this index
+   * @param expression       expression of this index
    */
   void setTranslation(int index, const QString & expression);
 
   /** sets pronounciation of this expression
    *
    * @param index            index of expression
-   * @param expr             pronounciation of this index
+   * @param expression       pronounciation of this index
    */
   void setPronounciation(int index, const QString & expression);
 
@@ -192,7 +192,7 @@ class KEduVocExpression
   /** sets synonym this expression
    *
    * @param index            index of expression
-   * @param expr             synonym of this index
+   * @param expression       synonym of this index
    */
   void setSynonym(int index, const QString & expression);
 

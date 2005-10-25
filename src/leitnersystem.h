@@ -58,31 +58,32 @@ public:
 	void setSystemName( const QString& name );
 
 	/**Returns a LeitnerBox by number
-	 * @param the number of the LeitnerBox to be returned
+	 * @param number the number of the LeitnerBox to be returned
 	 * @return a pointer to the LeitnerBox with the number
 	 */
 	LeitnerBox* boxWithNumber( int number );
 
 	/**Returns a LeitnerBox by name
-	 * @param the name of the LeitnerBox to be returned
-	 * @return a pointer to the LeitnerBox with the name
+	 * @param name the name of the LeitnerBox to be returned
+	 * @return a pointer to the LeitnerBox with the name,
+	 *         or 0 if no such box exists.
 	 */
 	LeitnerBox* boxWithName( const QString& name ) const;
 
 	/**Returns the number of the given LeitnerBox
-	 * @param a pointer to the LeitnerBox
+	 * @param box a pointer to the LeitnerBox
 	 * @return the number of the given LeitnerBox
 	 */
 	int number( LeitnerBox* box ) const;
 
-	/**Returns the name of the LeitnerBox with number @param i
-	 * @param the LeitnerBox's number
-	 * @return the name of the LeitnerBox with number @param i
+	/**Returns the name of the LeitnerBox with number @p i
+	 * @param i the LeitnerBox's number
+	 * @return the name of the LeitnerBox with number @p i
 	 */
 	const QString& box( int i ) const;
 
-	/**Returns the LeitnerBox following @param previousBox
-	 * @param the name of the LeitnerBox
+	/**Returns the LeitnerBox following @p previousBox
+	 * @param previousBox the name of the LeitnerBox
 	 * @return the name of the LeitnerBox following previousBox
 	 */
 	const QString& nextBox( QString& previousBox );
