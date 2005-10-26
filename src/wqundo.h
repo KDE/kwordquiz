@@ -17,8 +17,7 @@
 #define WQUNDO_H
 
 #include <q3table.h>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QList>
 
 #include "keduvocexpression.h"
 
@@ -44,8 +43,8 @@ public:
   Q3TableSelection selection() const {return m_selection;};
   void setSelection(const Q3TableSelection & sel) {m_selection = sel;};
 
-  Q3ValueList<KEduVocExpression> list() const {return m_list;};
-  void setList(const Q3ValueList<KEduVocExpression> & list) {m_list = list;};
+  QList<KEduVocExpression> list() const {return m_list;};
+  void setList(const QList<KEduVocExpression> & list) {m_list = list;};
 
   QString text() const {return m_text;};
   void setText(const QString & s) {m_text = s;};
@@ -59,7 +58,7 @@ private:
   int m_currentCol;
 
   Q3TableSelection m_selection;
-  Q3ValueList<KEduVocExpression> m_list;
+  QList<KEduVocExpression> m_list;
 
   QString m_text;
 };
