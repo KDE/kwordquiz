@@ -17,10 +17,8 @@
  ***************************************************************************/
 
 #include <kdebug.h>
-#include <qdom.h>
-#include <qtextstream.h>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QDomDocument>
+#include <QTextStream>
 
 #include "keduvockvtmlwriter.h"
 #include "keduvocdocument.h"
@@ -245,7 +243,7 @@ bool KEduVocKvtmlWriter::saveConjug(QDomDocument &domDoc, QDomElement &domElemen
 }
 
 bool KEduVocKvtmlWriter::saveConjugHeader(QDomDocument &domDoc, QDomElement &domElementParent,
-                                          Q3ValueList<KEduVocConjugation> &curr_conjug)
+                                          QList<KEduVocConjugation> &curr_conjug)
 {
 /*
  <conjugation>    used in header for definiton of "prefix"
@@ -686,7 +684,7 @@ bool KEduVocKvtmlWriter::writeDoc(KEduVocDocument *doc, const QString &generator
     return false;
 
   QString q_org, q_trans;
-  Q3ValueList<KEduVocExpression>::const_iterator first =  m_doc->m_vocabulary.begin ();
+  QList<KEduVocExpression>::const_iterator first =  m_doc->m_vocabulary.begin ();
   m_doc->queryLang(q_org, q_trans);
 
   int ent_no = 0;

@@ -19,10 +19,9 @@
 #ifndef KEDUVOCKVTMLWRITER_H
 #define KEDUVOCKVTMLWRITER_H
 
-#include <qfile.h>
-#include <qdom.h>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QFile>
+#include <QDomDocument>
+#include <QList>
 
 //#include "keduvocdocument.h"
 #include "keduvocgrammar.h"
@@ -81,7 +80,7 @@ public:
   bool saveOptionsKvtMl  (QDomDocument &domDoc, QDomElement &domElementParent);
   bool saveArticleKvtMl  (QDomDocument &domDoc, QDomElement &domElementParent);
   bool saveConjugHeader  (QDomDocument &domDoc, QDomElement &domElementParent,
-                          Q3ValueList<KEduVocConjugation> &curr_conjug);
+                          QList<KEduVocConjugation> &curr_conjug);
   bool saveConjug        (QDomDocument &domDoc, QDomElement &domElementParent,
                           const KEduVocConjugation &curr_conjug, QString type);
   bool saveConjugEntry   (QDomDocument &domDoc, QDomElement &domElementParent,

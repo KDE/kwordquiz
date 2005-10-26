@@ -24,7 +24,7 @@
 #endif
 
 // include files for Qt
-#include <qsignalmapper.h>
+#include <QSignalMapper>
 
 // include files for KDE
 #include <kapplication.h>
@@ -65,18 +65,32 @@ class KWordQuizApp : public KMainWindow
   friend class KWordQuizView;
 
   public:
-    /** construtor of KWordQuizApp, calls all init functions to create the application.
+    /**
+     * construtor of KWordQuizApp, calls all init functions to create the application.
      */
     KWordQuizApp(QWidget* parent=0, const char* name=0);
+    
+    /**
+     * destructor
+     */
     ~KWordQuizApp();
-    /** opens a file specified by commandline option
+    
+    /**
+     * opens a file specified by commandline option
+     * @param the URL to be opened
      */
     void openDocumentFile(const KURL& url=0);
-    /** returns a pointer to the current document connected to the KTMainWindow instance and is used by
+    
+    /**
+     * returns a pointer to the current document connected to the KTMainWindow instance and is used by
      * the View class to access the document object's methods
+     * @return
      */
     KEduVocDocument *getDocument() const;
 
+    /**
+     * @return whether the saving was successful
+     */
     bool saveAsFileName();
     
     bool checkSyntax(bool blanks);

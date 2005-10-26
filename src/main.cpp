@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
 
   aboutData.addAuthor("Peter Hedlund", 0, "peter.hedlund@kdemail.net");
   aboutData.addCredit("Anne-Marie Mahfouf", I18N_NOOP("KDE Edutainment Maintainer"), "annma@kde.org", 0);
+  aboutData.addCredit("Martin Pfeiffer", I18N_NOOP("Leitner System and several code contributions"), "hubipete@gmx.net", 0);
 
   KCmdLineArgs::init( argc, argv, &aboutData );
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.

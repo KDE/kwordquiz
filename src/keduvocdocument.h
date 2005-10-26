@@ -231,16 +231,14 @@
 
 #define VCB_SEPARATOR    "__"
 
-#include <qobject.h>
-#include <qfont.h>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QObject>
+#include <QFont>
+#include <QList>
 #include <QTextStream>
 #include <kurl.h>
 
 #include "keduvocexpression.h"
 
-class QTextStream;
 class QStringList;
 class KEduVocMultipleChoice;
 class LeitnerSystem;
@@ -293,7 +291,7 @@ class KEduVocDocument : public QObject
    * @param index           index of entry
    */
   inline void insertEntry(KEduVocExpression *expression, int index)
-    { m_vocabulary.insert(m_vocabulary.at(index), *expression); m_dirty = true; }
+    { m_vocabulary.insert(index, *expression); m_dirty = true; }
 
   /** removes an expression from the document
    *
@@ -551,10 +549,10 @@ class KEduVocDocument : public QObject
   QString lessonDescription(int index) const;
 
   /** returns lessons in current query  */
-  Q3ValueList<int> lessonsInQuery() const;
+  QList<int> lessonsInQuery() const;
 
   /** sets lessons in current query  */
-  void setLessonsInQuery(Q3ValueList<int>);
+  void setLessonsInQuery(QList<int>);
 
   inline QStringList lessonDescriptions() const { return m_lessonDescriptions; }
 
@@ -658,7 +656,7 @@ protected:
  private:
   bool                  m_dirty;
   KURL                  m_url;
-  Q3ValueList<bool>      m_sortIdentifier;
+  QList<bool>      m_sortIdentifier;
   bool                  m_sortLesson;
   bool                  m_unknownAttribute;
   bool                  m_unknownElement;
@@ -669,15 +667,15 @@ protected:
   int                   m_cols;
   int                   m_lines;
   int                   m_currentLesson;
-  Q3ValueList<int>       m_extraSizeHints;
-  Q3ValueList<int>       m_sizeHints;
+  QList<int>       m_extraSizeHints;
+  QList<int>       m_sizeHints;
   QFont*                m_font;
 
   QString               m_generator;
   QString               m_queryorg;
   QString               m_querytrans;
-  Q3ValueList<KEduVocExpression>  m_vocabulary;
-  Q3ValueList<bool>      m_lessonsInQuery;
+  QList<KEduVocExpression>  m_vocabulary;
+  QList<bool>      m_lessonsInQuery;
   QStringList           m_lessonDescriptions;
   QStringList           m_typeDescriptions;
   QStringList           m_tenseDescriptions;
@@ -688,11 +686,11 @@ protected:
   QString               m_remark;
   QString               m_version;
 
-  Q3ValueList<KEduVocArticle>   m_articles;
-  Q3ValueList<KEduVocConjugation> m_conjugations;
+  QList<KEduVocArticle>   m_articles;
+  QList<KEduVocConjugation> m_conjugations;
 
   LeitnerSystem* 	       m_leitnerSystem;
-  bool			             m_activeLeitnerSystem;
+  bool			       m_activeLeitnerSystem;
 };
 
 

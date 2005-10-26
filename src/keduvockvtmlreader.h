@@ -19,10 +19,9 @@
 #ifndef KEDUVOCKVTMLREADER_H
 #define KEDUVOCKVTMLREADER_H
 
-#include <qfile.h>
-#include <qdom.h>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QFile>
+#include <QDomDocument>
+#include <QList>
 
 #include "keduvocdocument.h"
 #include "keduvocgrammar.h"
@@ -80,7 +79,7 @@ public:
 
 	bool readLesson(QDomElement &domElementParent);
 	bool readArticle(QDomElement &domElementParent);
-	bool readConjug(QDomElement &domElementParent, Q3ValueList<KEduVocConjugation> &curr_conjug, const QString &entry_tag);
+	bool readConjug(QDomElement &domElementParent, QList<KEduVocConjugation> &curr_conjug, const QString &entry_tag);
 	bool readOptions(QDomElement &domElementParent);
 	bool readType(QDomElement &domElementParent);
 	bool readTense(QDomElement &domElementParent);

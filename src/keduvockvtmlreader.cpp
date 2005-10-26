@@ -21,9 +21,8 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 
-#include <qtextstream.h>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QTextStream>
+#include <QList>
 
 #include "keduvockvtmlreader.h"
 #include "keduvocdocument.h"
@@ -229,7 +228,7 @@ bool KEduVocKvtmlReader::readArticle(QDomElement &domElementParent)
 }
 
 
-bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent, Q3ValueList<KEduVocConjugation> &curr_conjug, const QString &entry_tag)
+bool KEduVocKvtmlReader::readConjug(QDomElement &domElementParent, QList<KEduVocConjugation> &curr_conjug, const QString &entry_tag)
 /*
  <conjugation>        used in header for definiton of "prefix"
   <e l="de">          lang determines also lang order in entries !!
@@ -969,7 +968,7 @@ bool KEduVocKvtmlReader::readExpression(QDomElement &domElementParent)
   QString       antonym;
   QString       usage;
   QString       paraphrase;
-  Q3ValueList<KEduVocConjugation> conjug;
+  QList<KEduVocConjugation> conjug;
   KEduVocComparison     comparison;
   KEduVocMultipleChoice mc;
 

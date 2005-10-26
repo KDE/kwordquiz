@@ -18,8 +18,7 @@
 #include "keduvocdocument.h"
 
 #include <QFileInfo>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QList>
 #include <QTextStream>
 #include <QtAlgorithms>
 
@@ -293,7 +292,7 @@ KEduVocExpression *KEduVocDocument::entry(int index)
 void KEduVocDocument::removeEntry(int index)
 {
   if (index >= 0 && index < (int)m_vocabulary.size() )
-    m_vocabulary.erase(m_vocabulary.at(index));
+    m_vocabulary.removeAt( index );
 }
 
 
@@ -500,9 +499,8 @@ void KEduVocDocument::removeIdentifier(int index)
   if (index < (int)m_identifiers.size() && index >= 1 )
   {
     m_identifiers.takeAt(index);
-    Q3ValueList<KEduVocExpression>::iterator it;
-    for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
-      (*it).removeTranslation(index);
+    foreach( KEduVocExpression exp, m_vocabulary )
+      exp.removeTranslation(index);
   }
 }
 
@@ -842,45 +840,44 @@ public:
 
 void KEduVocDocument::resetEntry(int index, int lesson)
 {
-  Q3ValueList<KEduVocExpression>::iterator it;
   if (index < 0)
   {
-    for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
-      for (int i = 0; i <= (*it).numTranslations(); i++)
+    foreach( KEduVocExpression exp, m_vocabulary )
+    {
+      for (int i = 0; i <= exp.numTranslations(); i++)
       {
-        if (lesson == 0 || lesson == (*it).lesson())
+        if (lesson == 0 || lesson == exp.lesson())
         {
-          (*it).setGrade(i, KV_NORM_GRADE, false);
-          (*it).setGrade(i, KV_NORM_GRADE, true);
-          (*it).setQueryCount(i, 0, true);
-          (*it).setQueryCount(i, 0, false);
-          (*it).setBadCount(i, 0, true);
-          (*it).setBadCount(i, 0, false);
+          exp.setGrade(i, KV_NORM_GRADE, false);
+          exp.setGrade(i, KV_NORM_GRADE, true);
+          exp.setQueryCount(i, 0, true);
+          exp.setQueryCount(i, 0, false);
+          exp.setBadCount(i, 0, true);
+          exp.setBadCount(i, 0, false);
           QDateTime dt;
           dt.setTime_t(0);
-          (*it).setQueryDate(i, dt, true);
-          (*it).setQueryDate(i, dt, false);
+          exp.setQueryDate(i, dt, true);
+          exp.setQueryDate(i, dt, false);
          }
        }
-    //for_each (m_vocabulary.begin(), m_vocabulary.end(), resetAll(lesson) );
+    }
   }
   else
   {
-    for (it = m_vocabulary.begin(); it != m_vocabulary.end(); ++it)
-      if (lesson == 0 || lesson == (*it).lesson())
+    foreach( KEduVocExpression exp, m_vocabulary )    
+      if (lesson == 0 || lesson == exp.lesson())
       {
-        (*it).setGrade(index, KV_NORM_GRADE, false);
-        (*it).setGrade(index, KV_NORM_GRADE, true);
-        (*it).setQueryCount(index, 0, true);
-        (*it).setQueryCount(index, 0, false);
-        (*it).setBadCount(index, 0, true);
-        (*it).setBadCount(index, 0, false);
+        exp.setGrade(index, KV_NORM_GRADE, false);
+        exp.setGrade(index, KV_NORM_GRADE, true);
+        exp.setQueryCount(index, 0, true);
+        exp.setQueryCount(index, 0, false);
+        exp.setBadCount(index, 0, true);
+        exp.setBadCount(index, 0, false);
         QDateTime dt;
         dt.setTime_t(0);
-        (*it).setQueryDate(index, dt, true);
-        (*it).setQueryDate(index, dt, false);
+        exp.setQueryDate(index, dt, true);
+        exp.setQueryDate(index, dt, false);
       }
-    //for_each (m_vocabulary.begin(), m_vocabulary.end(), resetOne(index, lesson) );
   }
 }
 
@@ -897,9 +894,9 @@ QString KEduVocDocument::lessonDescription(int idx) const
 }
 
 
-Q3ValueList<int> KEduVocDocument::lessonsInQuery() const
+QList<int> KEduVocDocument::lessonsInQuery() const
 {
-  Q3ValueList<int> iqvec;
+  QList<int> iqvec;
   for (unsigned i = 0; i < m_lessonsInQuery.size(); i++)
     if (m_lessonsInQuery[i]) {
       iqvec.push_back(i+1);   // Offset <no lesson>
@@ -909,14 +906,15 @@ Q3ValueList<int> KEduVocDocument::lessonsInQuery() const
 }
 
 
-void KEduVocDocument::setLessonsInQuery(Q3ValueList<int> lesson_iq)
+void KEduVocDocument::setLessonsInQuery(QList<int> lesson_iq)
 {
   m_lessonsInQuery.clear();
   for (unsigned i = 0; i < m_lessonDescriptions.size(); i++)
     m_lessonsInQuery.push_back(false);
 
-  for (unsigned i = 0; i < lesson_iq.size(); i++)
-    if (lesson_iq[i] <= (int) m_lessonsInQuery.size() ) {
+  foreach( int i, lesson_iq )
+    if (lesson_iq[i] <= (int) m_lessonsInQuery.size() )
+    {
       m_lessonsInQuery[lesson_iq[i]-1] = true;    // Offset <no lesson>
 //      cout << "setliq: " << lesson_iq[i] << " " << i << endl;
     }
@@ -1103,14 +1101,14 @@ public:
   KEduVocExpression *exp;
 };
 
-typedef Q3ValueList<ExpRef> ExpRefList;
+typedef QList<ExpRef> ExpRefList;
 
 int KEduVocDocument::cleanUp()
 {
   int count = 0;
   KEduVocExpression *kve1, *kve2;
   ExpRefList shadow;
-  Q3ValueList<int> to_delete;
+  QList<int> to_delete;
 
   for (int i = 0; i < (int) m_vocabulary.size(); i++)
     shadow.push_back (ExpRef (entry(i), i));
