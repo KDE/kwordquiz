@@ -77,6 +77,7 @@ class KEduVocExpression
   /** Constructor for an expression in different languages
    *
    * @param expression       expression
+   * @param lesson           lesson number, 0 for none
    */
   KEduVocExpression(const QString & expression, int lesson = 0);
 
@@ -383,21 +384,21 @@ class KEduVocExpression
   /** set query count of given translation as int
    *
    * @param index            index of translation
-   * @param rev_count        dito, in opposite direction
+   * @param reverse          dito, in opposite direction
    */
   void setQueryCount(int index, count_t count, bool reverse = false);
 
   /** returns bad query count of given translation as int
    *
    * @param index            index of translation
-   * @param rev_count        dito, in opposite direction
+   * @param reverse          dito, in opposite direction
    */
   count_t badCount(int index, bool reverse = false) const;
 
   /** set bad query count of given translation as int
    *
    * @param index            index of translation
-   * @param rev_count        dito, in opposite direction
+   * @param reverse          dito, in opposite direction
    */
   void setBadCount(int index, count_t count, bool reverse = false);
 
