@@ -20,10 +20,6 @@
 #include <qbitmap.h>
 #include <qcheckbox.h>
 
-//Added by qt3to4:
-#include <QPixmap>
-#include <Q3PopupMenu>
-
 // include files for KDE
 #include <kmessagebox.h>
 #include <kfiledialog.h>
@@ -37,6 +33,7 @@
 #include <kiconloader.h>
 //#include <keduvocdata.h>
 #include <kdebug.h>
+#include <kxmlguifactory.h>
 
 // application specific includes
 #include "kwordquiz.h"
@@ -545,13 +542,13 @@ bool KWordQuizApp::checkSyntax(bool blanks)
   {
     QString s = doc->entry(r)->original();
     if (s.length() > 0)
-      for (uint i = 0; i <= s.length(); ++i)
+      for (int i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
           if (!m_editView->checkForBlank(s, blanks))
             errorCount++;
     s = doc->entry(r)->translation(1);
     if (s.length() > 0)
-      for (uint i = 0; i <= s.length(); ++i)
+      for (int i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
           if (!m_editView->checkForBlank(s, blanks))
             errorCount++;
@@ -1292,16 +1289,16 @@ void KWordQuizApp::slotInsertChar( int i )
       m_editView->slotSpecChar(Prefs::specialCharacters()[i - 1]);
 }
 
-void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
+void KWordQuizApp::slotActionHighlighted(KAction * /*action*/, bool hl)
 {
   if (!hl)
     slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotContextMenuRequested(int row, int col, const QPoint & pos)
+void KWordQuizApp::slotContextMenuRequested(int /*row*/, int /*col*/, const QPoint & pos)
 {
-  QWidget *w; ///@todo port = factory()->container("editor_popup", this);
-  Q3PopupMenu *popup = static_cast<Q3PopupMenu *>(w);
+  QWidget * w = guiFactory()->container("editor_popup", this);
+  KMenu *popup = static_cast<KMenu *>(w);
 
   popup->exec(pos);
 }

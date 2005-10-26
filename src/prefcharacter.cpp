@@ -66,8 +66,6 @@ void PrefCharacter::updateWidgets()
   QString sc = Prefs::specialCharacters();
   for (int i = 0; i < 9; i++)
     CharacterTree->topLevelItem(i)->setText(2, QString(sc[i]));
-
-  ///@todo check that currentItem exist lblPreview->setText(CharacterTree->currentItem()->text(2));
 }
 
 void PrefCharacter::slotCharListSelectionChanged( )
