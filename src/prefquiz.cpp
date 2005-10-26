@@ -26,6 +26,10 @@
 PrefQuiz::PrefQuiz(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
+
+  connect(kcfg_AutoFlip, SIGNAL(toggled(bool)), kcfg_FlipDelay, SLOT(setEnabled(bool)));
+  connect(kcfg_AutoFlip, SIGNAL(toggled(bool)), kcfg_KeepDiscard, SLOT(setEnabled(bool)));
+
   kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());
   kcfg_KeepDiscard->setEnabled(kcfg_AutoFlip->isChecked());
   //optCorrect -> setEnabled(kcfg_AutoFlip->isChecked());

@@ -142,8 +142,6 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="9" />
- <pixmapfunction></pixmapfunction>
  <customwidgets>
   <customwidget>
    <class>Q3ButtonGroup</class>

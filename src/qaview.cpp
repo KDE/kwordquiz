@@ -59,6 +59,9 @@ QString highlightError(const QString & c, const QString & e)
 QAView::QAView(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
+
+  connect(txtAnswer, SIGNAL(returnPressed()), this, SLOT(slotCheck()));
+
   m_score = new WQScore();
 }
 
@@ -168,7 +171,7 @@ void QAView::slotCheck()
     picPrevious->setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
-    
+
     //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
@@ -261,7 +264,7 @@ void QAView::showQuestion(int i)
   lblQuestionLanguage -> setText(m_quiz ->langQuestion(i));
   lblQuestion -> setText(m_quiz ->question(i));
   //lblQuestion -> setFont(m_quiz->fontQuestion(i));
-  
+
   picQuestion->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), KIcon::Panel));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
@@ -278,7 +281,7 @@ void QAView::showQuestion(int i)
   //txtAnswer->setFont(m_quiz->fontAnswer(i));
   txtAnswer -> setText("");
 
-  picAnswer->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), KIcon::Panel));  
+  picAnswer->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), KIcon::Panel));
 
   //@todo handle keyboard layouts
 }

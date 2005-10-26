@@ -1,5 +1,5 @@
 <ui version="4.0" >
- <author></author>
+  <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
  <comment></comment>
  <exportmacro></exportmacro>
  <class>PrefCharacterBase</class>
@@ -20,7 +20,7 @@
   </property>
   <layout class="QGridLayout" >
    <property name="margin" >
-    <number>8</number>
+    <number>0</number>
    </property>
    <property name="spacing" >
     <number>6</number>
@@ -196,8 +196,6 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <tabstops>
   <tabstop>btnCharacter</tabstop>
  </tabstops>

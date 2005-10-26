@@ -1,5 +1,5 @@
 <ui version="4.0" >
- <author></author>
+ <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
  <comment></comment>
  <exportmacro></exportmacro>
  <class>PrefCardAppearanceBase</class>
@@ -381,8 +381,6 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
    <class>KColorButton</class>

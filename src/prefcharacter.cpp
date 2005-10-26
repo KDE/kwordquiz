@@ -57,6 +57,7 @@ void PrefCharacter::fillWidgets()
   }
   CharacterTree->resizeColumnToContents(0);
   CharacterTree->setItemSelected(CharacterTree->topLevelItem(0), true);
+  CharacterTree->setCurrentItem(CharacterTree->topLevelItem(0));
   lblPreview->setText(CharacterTree->topLevelItem(0)->text(2));
 }
 
