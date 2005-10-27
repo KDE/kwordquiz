@@ -20,7 +20,7 @@
 #define KEDUVOCKVTMLWRITER_H
 
 #include <QFile>
-#include <QDomDocument>
+#include <QtXml/QDomDocument>
 #include <QList>
 
 //#include "keduvocdocument.h"
