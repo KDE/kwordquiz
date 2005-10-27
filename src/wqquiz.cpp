@@ -20,7 +20,6 @@
 
 #include <QRegExp>
 //Added by qt3to4:
-#include <Q3ValueList>
 #include <Q3PtrList>
 
 #include "leitnersystem.h"
@@ -82,7 +81,7 @@ void WQQuiz::addToList(int aCol, int bCol)
 {
   //build a list of row numbers containing text in both columns
 
-  typedef Q3ValueList<int> IntList;
+  typedef QList<int> IntList;
   IntList tempList;
   for (int current = 0; current < m_doc->numEntries(); ++current)
   {

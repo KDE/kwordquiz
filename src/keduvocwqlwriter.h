@@ -18,9 +18,8 @@
 #ifndef KEDUVOCWQLWRITER_H
 #define KEDUVOCWQLWRITER_H
 
-#include <qfile.h>
-#include <qfont.h>
-//Added by qt3to4:
+#include <QFile>
+#include <QFont>
 #include <QTextStream>
 
 class KEduVocDocument;
