@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2004 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2004-2005 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -19,7 +19,7 @@
 #ifndef WQPRINTDIALOGPAGE_H
 #define WQPRINTDIALOGPAGE_H
 
-#include <q3buttongroup.h>
+#include <QtGui/QGroupBox>
 
 #include <kdeprint/kprintdialogpage.h>
 
@@ -32,16 +32,14 @@ class WQPrintDialogPage : public KPrintDialogPage
 {
 Q_OBJECT
 public:
-  WQPrintDialogPage( QWidget *parent = 0, const char *name = 0 );
+  WQPrintDialogPage(QWidget *parent = 0);
 
-  ~WQPrintDialogPage();
-  //reimplement virtual functions
   void getOptions(QMap<QString,QString>& opts, bool incldef = false);
   void setOptions(const QMap<QString,QString>& opts);
   bool isValid(const QString& msg );
 
 private:
-  Q3ButtonGroup * g;
+  QGroupBox * g;
   QRadioButton * rb0;
   QRadioButton * rb1;
   QRadioButton * rb2;
