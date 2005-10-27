@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2003-2005 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -16,8 +16,7 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include <qcheckbox.h>
-#include <q3buttongroup.h>
+#include <QCheckBox>
 
 #include <knuminput.h>
 

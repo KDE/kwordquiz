@@ -15,12 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <q3widgetstack.h>
-#include <qlayout.h>
-#include <qradiobutton.h>
-#include <qcheckbox.h>
-#include <q3listview.h>
-#include <qlabel.h>
+#include <QLayout>
+#include <QRadioButton>
+#include <QCheckBox>
+#include <QLabel>
 
 #include <klocale.h>
 #include <kstandarddirs.h>
