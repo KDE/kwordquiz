@@ -25,7 +25,7 @@
 // include files for Qt
 #include <q3table.h>
 //Added by qt3to4:
-#include <Q3ValueList>
+#include <QList>
 #include <QKeyEvent>
 #include <QEvent>
 
@@ -119,7 +119,7 @@ class KWordQuizView : public Q3Table
     DlgSpecChar* dlgSpecChar;
     QWidget * cellEditor;
     /** the list of the undo objects */
-    static Q3ValueList<WQUndo> *m_undoList;
+    static QList<WQUndo> *m_undoList;
 
     void doNewPage(QPainter & painter, int res, int type);
     void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);

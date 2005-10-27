@@ -24,7 +24,7 @@
 #include <Q3MemArray>
 #include <QKeyEvent>
 #include <QEvent>
-#include <Q3ValueList>
+#include <QList>
 
 // include files for KDE
 #include <klocale.h> //i18n
@@ -42,7 +42,7 @@
 #include "dlgrc.h"
 #include "dlgspecchar.h"
 
-Q3ValueList<WQUndo> *KWordQuizView::m_undoList = 0L;
+QList<WQUndo> *KWordQuizView::m_undoList = 0L;
 
 KWQTableItem::KWQTableItem(Q3Table* table, EditType et, const QString & text) : Q3TableItem(table, et, text)
 {}
@@ -63,7 +63,7 @@ int KWQTableItem::alignment() const
 KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : Q3Table(parent, name)
 {
   if(!m_undoList)
-    m_undoList = new Q3ValueList<WQUndo>();
+    m_undoList = new QList<WQUndo>();
 
   setNumCols(2);
   setSelectionMode(Q3Table::Single);
@@ -398,9 +398,9 @@ void KWordQuizView::doEditUndo( )
       /*      while (getDocument()->numEntries() > 0)
         getDocument()->removeEntry (0);*/
 
-      Q3ValueList<KEduVocExpression> dataList = undo.list();
-      Q3ValueList<KEduVocExpression>::Iterator end(dataList.end());
-      for(Q3ValueList<KEduVocExpression>::Iterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
+      QList<KEduVocExpression> dataList = undo.list();
+      QList<KEduVocExpression>::Iterator end(dataList.end());
+      for(QList<KEduVocExpression>::Iterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
       {
         getDocument()->appendEntry(&(*dataIt));
         // TODO EPT setRowHeight(i, (*dataIt).rowHeight());
@@ -1007,7 +1007,7 @@ void KWordQuizView::addUndo( const QString & caption )
   undo->setCurrentCol(currentColumn());
   undo->setSelection(selection(0));
 
-  Q3ValueList<KEduVocExpression> list;
+  QList<KEduVocExpression> list;
   for(int i = 0; i < numRows(); i++)
   {
 //    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
