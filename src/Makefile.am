@@ -9,12 +9,9 @@ kwordquiz_SOURCES = kwordquizprefs.cpp kwordquizview.cpp kwordquiz.cpp main.cpp 
 	prefeditorbase.ui prefquizbase.ui prefeditor.cpp prefquiz.cpp dlgsortbase.ui dlgsort.cpp \
 	dlgrcbase.ui dlgrc.cpp dlgspecchar.cpp dlglanguage.cpp wqprintdialogpage.cpp \
 	prefcharacter.cpp prefcharacterbase.ui wqundo.cpp prefs.kcfgc prefcardappearance.cpp \
-	prefcardappearancebase.ui kwqnewstuff.cpp kwqnewstuff.h keduvocdocument.cpp keduvocexpression.cpp \
-	keduvockvtmlreader.cpp keduvockvtmlwriter.cpp prefleitnerbase.ui leitnersystem.cpp \
-	leitnerbox.cpp leitnersystemview.cpp prefleitner.cpp keduvocwqlwriter.cpp \
-	keduvocwqlreader.cpp keduvocgrammar.cpp keduvocmultiplechoice.cpp
-kwordquiz_LDADD = $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE) \
-	$(LIBSOCKET) $(LIB_KDEPRINT) -lknewstuff
+	prefcardappearancebase.ui kwqnewstuff.cpp kwqnewstuff.h
+kwordquiz_LDADD = ../../libkdeedu/kdeeducore/libkdeeducore.la $(LIB_QT) \
+	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE) $(LIBSOCKET) $(LIB_KDEPRINT) -lknewstuff
 
 
 EXTRA_DIST = main.cpp kwordquiz.cpp kwordquiz.h kwordquizdoc.cpp kwordquizdoc.h kwordquizview.cpp kwordquizview.h kwordquizui.rc kwordquiz.desktop kwordquizprefs.cpp kwordquizprefs.h
@@ -47,7 +44,8 @@ mimedir = $(kde_mimedir)/application
 # kde_designerdir     Where Qt Designer plugins should go to (new in KDE 3).
 
 # set the include path for X, qt and KDE
-INCLUDES = -I$(top_srcdir)/kwordquiz/icons $(all_includes)
+INCLUDES = -I$(top_builddir)/libkdeedu/kdeeducore \
+	-I$(srcdir)/../../libkdeedu/kdeeducore -I$(top_srcdir)/kwordquiz/icons $(all_includes)
 SUBDIRS = . pics examples
 METASOURCES = AUTO
 
@@ -69,7 +67,4 @@ messages: rc.cpp
 
 noinst_HEADERS = qaview.h flashview.h multipleview.h wqquiz.h wqlistitem.h \
 	wqscore.h prefeditor.h prefquiz.h dlgsort.h dlgrc.h dlgspecchar.h dlglanguage.h \
-	dlglanguage.h wqprintdialogpage.h prefcharacter.h wqundo.h prefcardappearance.h \
-	keduvocdocument.h keduvocexpression.h keduvockvtmlreader.h keduvockvtmlwriter.h \
-	leitnersystem.h leitnerbox.h prefleitner.h leitnersystemview.h keduvocwqlreader.h \
-	keduvocwqlwriter.h
+	dlglanguage.h wqprintdialogpage.h prefcharacter.h wqundo.h prefcardappearance.h
