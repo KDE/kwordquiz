@@ -77,7 +77,7 @@ class KWordQuizApp : public KMainWindow
     
     /**
      * opens a file specified by commandline option
-     * @param the URL to be opened
+     * @param url the URL to be opened
      */
     void openDocumentFile(const KURL& url=0);
     
