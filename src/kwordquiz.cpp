@@ -34,6 +34,7 @@
 //#include <keduvocdata.h>
 #include <kdebug.h>
 #include <kxmlguifactory.h>
+#include <kglobal.h>
 
 // application specific includes
 #include "kwordquiz.h"
@@ -417,7 +418,7 @@ KEduVocDocument *KWordQuizApp::getDocument() const
 
 void KWordQuizApp::saveOptions()
 {
-  fileOpenRecent->saveEntries(kapp->config(), "Recent Files");
+  fileOpenRecent->saveEntries(KGlobal::config(), "Recent Files");
   Prefs::writeConfig();
 }
 
@@ -425,7 +426,7 @@ void KWordQuizApp::saveOptions()
 void KWordQuizApp::readOptions()
 {
   //Prefs::readConfig();
-  fileOpenRecent->loadEntries(kapp->config(), "Recent Files");
+  fileOpenRecent->loadEntries(KGlobal::config(), "Recent Files");
 }
 
 void KWordQuizApp::saveProperties(KConfig *_cfg)
