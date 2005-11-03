@@ -488,7 +488,7 @@ void KWordQuizView::doEditPaste( )
       QStringList sl;
       sl = QStringList::split("\n", s);
 
-      uint r = numRows() - tr;
+      int r = numRows() - tr;
 
       if (sl.count() > r) //do we need to add rows?
       {
@@ -502,7 +502,7 @@ void KWordQuizView::doEditPaste( )
         if (sl[0].find("\t") < ((int) sl[0].length() - 1))
           rc = 1; //expand to second column;
 
-      uint i = 0;
+      int i = 0;
       int ar = tr;
       QStringList sr;
       while(i < sl.count() && br <= numRows() )
@@ -531,7 +531,7 @@ void KWordQuizView::doEditPaste( )
       QString s = kapp->clipboard()->text();
       QStringList sl;
       sl = QStringList::split("\n", s);
-      uint i = 0;
+      int i = 0;
       int ar = tr;
       QStringList sr;
       while(i < sl.count() && ar <= br )
@@ -639,7 +639,7 @@ bool KWordQuizView::checkForBlank( const QString  & s, bool blank )
   Q3MemArray<int> openPos(0);
   Q3MemArray<int> closePos(0);
 
-  for (uint i = 0; i<= s.length(); ++i)
+  for (int i = 0; i<= s.length(); ++i)
   {
     if (s[i] == delim_start)
     {
