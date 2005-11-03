@@ -205,7 +205,7 @@ void QAView::slotHint()
 
   if (answer.length() > 0)
   {
-    for(uint i = 0; i <= answer.length(); i++)
+    for(int i = 0; i <= answer.length(); i++)
     {
     if (answer.at(i) == correctAnswer.at(i))
       correctCharCount++;
