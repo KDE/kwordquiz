@@ -5,11 +5,11 @@ bin_PROGRAMS = kwordquiz
 
 kwordquiz_SOURCES = kwordquizprefs.cpp kwordquizview.cpp kwordquiz.cpp main.cpp \
 	dlglanguagebase.ui flashviewbase.ui multipleviewbase.ui qaviewbase.ui qaview.cpp \
-	flashview.cpp multipleview.cpp wqquiz.cpp wqlistitem.cpp wqscore.cpp \
-	prefeditorbase.ui prefquizbase.ui prefeditor.cpp prefquiz.cpp dlgsortbase.ui dlgsort.cpp \
-	dlgrcbase.ui dlgrc.cpp dlgspecchar.cpp dlglanguage.cpp wqprintdialogpage.cpp \
-	prefcharacter.cpp prefcharacterbase.ui wqundo.cpp prefs.kcfgc prefcardappearance.cpp \
-	prefcardappearancebase.ui kwqnewstuff.cpp kwqnewstuff.h
+	flashview.cpp multipleview.cpp wqquiz.cpp wqscore.cpp prefeditorbase.ui \
+	prefquizbase.ui prefeditor.cpp prefquiz.cpp dlgsortbase.ui dlgsort.cpp dlgrcbase.ui \
+	dlgrc.cpp dlgspecchar.cpp dlglanguage.cpp wqprintdialogpage.cpp prefcharacter.cpp \
+	prefcharacterbase.ui wqundo.cpp prefs.kcfgc prefcardappearance.cpp prefcardappearancebase.ui \
+	kwqnewstuff.cpp kwqnewstuff.h
 kwordquiz_LDADD = ../../libkdeedu/kdeeducore/libkdeeducore.la $(LIB_QT) \
 	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE) $(LIBSOCKET) $(LIB_KDEPRINT) -lknewstuff
 

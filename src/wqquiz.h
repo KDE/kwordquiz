@@ -19,9 +19,7 @@
 #ifndef WQQUIZ_H
 #define WQQUIZ_H
 
-#include <q3table.h>
-//Added by qt3to4:
-#include <Q3PtrList>
+#include <QList>
 
 #include "wqlistitem.h"
 #include "keduvocdocument.h"
@@ -32,57 +30,56 @@
 
 class WQQuiz : public QObject
 {
-  Q_OBJECT
-  public:
-    enum QuizType {qtEditor, qtFlash, qtMultiple, qtQA};
-    enum QuizIcon {qiLeftCol, qiRightCol, qiQuestion, qiCorrect, qiError};
+Q_OBJECT
+public:
+  enum QuizType {qtEditor, qtFlash, qtMultiple, qtQA};
+  enum QuizIcon {qiLeftCol, qiRightCol, qiQuestion, qiCorrect, qiError};
 
-    WQQuiz(QWidget *parent, KEduVocDocument *doc, const char *name=0);
-    ~WQQuiz();
-    void activateErrorList();
-    void activateBaseList();
+  WQQuiz(QWidget *parent, KEduVocDocument *doc);
 
-    bool init();
-    void finish();
-    bool checkAnswer(int i, const QString & );
-    QStringList multiOptions(int i);
-    QString quizIcon(int i, QuizIcon ico);
-    QString yourAnswer(int i, const QString & s);
-    QString hint(int i);
+  void activateErrorList();
+  void activateBaseList();
 
-    QuizType quizType() const {return m_quizType;}
-    void setQuizType(QuizType qt);
+  bool init();
+  void finish();
+  bool checkAnswer(int i, const QString & );
+  QStringList multiOptions(int i);
+  QString quizIcon(int i, QuizIcon ico);
+  QString yourAnswer(int i, const QString & s);
+  QString hint(int i);
 
-    int quizMode() const {return m_quizMode;}
-    void setQuizMode(int qm);
+  QuizType quizType() const {return m_quizType;}
+  void setQuizType(QuizType qt);
 
-    int questionCount();
-    QString question(int i);
-    QString blankAnswer(int i);
-    QString answer(int i);
-    QString langQuestion(int i);
-    QString langAnswer(int i);
+  int quizMode() const {return m_quizMode;}
+  void setQuizMode(int qm);
 
-    int kbAnswer(int i);
+  int questionCount();
+  QString question(int i);
+  QString blankAnswer(int i);
+  QString answer(int i);
+  QString langQuestion(int i);
+  QString langAnswer(int i);
 
-  signals:
-    void checkingAnswer(int );
+  int kbAnswer(int i);
 
-  private:
-    QWidget *m_app;
-    KEduVocDocument *m_doc;
-    int m_quizMode;
-    int m_questionCount;
-    static Q3PtrList<WQListItem> *m_list;
-    static Q3PtrList<WQListItem> *m_errorList;
-    static Q3PtrList<WQListItem> *m_quizList;
+signals:
+  void checkingAnswer(int );
 
-    QuizType m_quizType;
-    QString m_correctBlank;
-    QString m_answerBlank;
+private:
+  QWidget *m_app;
+  KEduVocDocument *m_doc;
+  int m_quizMode;
+  int m_questionCount;
+  QList<WQListItem> m_list;
+  QList<WQListItem> m_errorList;
+  QList<WQListItem> m_quizList;
 
-    void addToList(int aCol, int bCol);
-    void listRandom();
+  QuizType m_quizType;
+  QString m_correctBlank;
+  QString m_answerBlank;
+
+  void addToList(int aCol, int bCol);
 };
 
 #endif

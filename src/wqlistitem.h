@@ -26,14 +26,13 @@
 
 class WQListItem{
 public:
-    WQListItem();
+  WQListItem(){}
 
-    ~WQListItem();
-  void setQuestion(int i);
-  void setCorrect(int c);
-  void setOneOp(int i);
-  void setTwoOp(int i);
-  void setThreeOp(int i);
+  void setQuestion(int i) {m_question = i;}
+  void setCorrect(int c) {m_correct = c;}
+  void setOneOp(int i) {m_oneOp = i;}
+  void setTwoOp(int i) {m_twoOp = i;}
+  void setThreeOp(int i) {m_threeOp = i;}
 
   int question() {return m_question;}
   int correct() const {return m_correct;}

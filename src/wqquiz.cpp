@@ -19,70 +19,53 @@
 #include <krandomsequence.h>
 
 #include <QRegExp>
-//Added by qt3to4:
-#include <Q3PtrList>
 
 #include "leitnersystem.h"
 #include "kwordquiz.h"
 #include "wqquiz.h"
 #include "prefs.h"
 
-Q3PtrList<WQListItem> *WQQuiz::m_list = 0L;
-Q3PtrList<WQListItem> *WQQuiz::m_errorList = 0L;
-Q3PtrList<WQListItem> *WQQuiz::m_quizList = 0L;
-
-WQQuiz::WQQuiz(QWidget * parent, KEduVocDocument * doc, const char *name) : QObject(parent, name)
+WQQuiz::WQQuiz(QWidget * parent, KEduVocDocument * doc) : QObject(parent)
 {
   m_app = parent;
   m_doc = doc;
 
-  m_list = new Q3PtrList<WQListItem>();
-  m_errorList = new Q3PtrList<WQListItem>();
-  m_quizList = new Q3PtrList<WQListItem>();
-}
-
-WQQuiz::~WQQuiz()
-{
+  m_list.clear();
+  m_errorList.clear();
+  m_quizList.clear();
 }
 
 void WQQuiz::activateErrorList()
 {
-  m_list->clear();
+  m_list.clear();
+  foreach(WQListItem l, m_errorList)
+    m_list.append(l);
 
-  WQListItem *l;
-  for (l = m_errorList->first(); l; l = m_errorList->next())
-  {
-    m_list->append(l);
-  }
-
-  m_errorList->clear();
-  m_questionCount = m_list->count();
-
+  m_errorList.clear();
+  m_questionCount = m_list.count();
 }
 
 void WQQuiz::activateBaseList()
 {
-  m_list->clear();
+  m_list.clear();
 
   if (m_quizMode > 2)
   {
-    listRandom();
+    KRandomSequence *rs = new KRandomSequence(0);
+    rs->randomize(m_quizList);
   };
 
-  WQListItem *l;
-  for (l = m_quizList->first(); l; l = m_quizList->next())
-    m_list->append(l);
+  foreach(WQListItem l, m_quizList)
+    m_list.append(l);
 
-  m_questionCount = m_list->count();
-
+  m_questionCount = m_list.count();
 }
 
 void WQQuiz::addToList(int aCol, int bCol)
 {
   //build a list of row numbers containing text in both columns
 
-  typedef QList<int> IntList;
-  IntList tempList;
+  QList<int> tempList;
   for (int current = 0; current < m_doc->numEntries(); ++current)
   {
     if (!m_doc->entry(current)->original().isEmpty() && !m_doc->entry(current)->translation(1).isEmpty())
@@ -95,36 +78,30 @@ void WQQuiz::addToList(int aCol, int bCol)
 
   int count = tempList.count();
 
-  IntList::ConstIterator it;
-  for ( it = tempList.begin(); it != tempList.end(); ++it )
+  foreach(int i, tempList)
   {
-    WQListItem *li;
-    li = new WQListItem();
-    li->setQuestion(aCol);
-    li->setCorrect(1);
-    li->setOneOp(*it);
+    WQListItem li;
+    li.setQuestion(aCol);
+    li.setCorrect(1);
+    li.setOneOp(i);
 
     if (count > 2)
     {
-
       int a, b;
       do
-        a = rs->getLong(count); //rand() % count;
-      while(a==*it);
+        a = rs->getLong(count);
+      while(a==i);
 
-      li->setTwoOp(a);
+      li.setTwoOp(a);
 
       do
-        b = rs->getLong(count); //rand() % count;
-      while(b == *it || b == a /*|| b < 0*/);
+        b = rs->getLong(count);
+      while(b == i || b == a);
 
-      li->setThreeOp(b);
-
+      li.setThreeOp(b);
     }
-    m_quizList->append(li);
-
+    m_quizList.append(li);
   }
-
 }
 
 bool WQQuiz::init()
@@ -183,13 +160,13 @@ bool WQQuiz::init()
     //
     break;
   case qtFlash:
-    result = (m_quizList -> count() > 0);
+    result = (m_quizList.count() > 0);
     break;
   case qtQA:
-    result = (m_quizList -> count() > 0);
+    result = (m_quizList.count() > 0);
     break;
   case qtMultiple:
-    result = (m_quizList -> count() > 2);
+    result = (m_quizList.count() > 2);
     break;
   }
 
@@ -210,28 +187,22 @@ bool WQQuiz::init()
   return true;
 }
 
-void WQQuiz::listRandom()
-{
-  KRandomSequence *rs = new KRandomSequence(0);
-  ///@todo port rs->randomize(m_quizList);
-}
-
 bool WQQuiz::checkAnswer(int i, const QString & a)
 {
   bool result = false;
-  WQListItem *li = m_list->at(i);
+  WQListItem li = m_list.at(i);
   QString ans = a;
   QString tTemp;
-  if (li->question() == 0)
+  if (li.question() == 0)
   {
-    tTemp = m_doc->entry(li->oneOp())->translation(1);
+    tTemp = m_doc->entry(li.oneOp())->translation(1);
   }
   else
   {
-    tTemp = m_doc->entry(li->oneOp())->original();
+    tTemp = m_doc->entry(li.oneOp())->original();
   }
-  tTemp = tTemp.stripWhiteSpace();
-  ans = ans.stripWhiteSpace();
+  tTemp = tTemp.simplified();
+  ans = ans.simplified();
 
   if (m_quizType == qtQA)
   {
@@ -251,9 +222,9 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
       result = (ls.count() == la.count());
       if (result)
       {
-        for (uint counter = 0; counter < la.count(); counter++)
+        for (int counter = 0; counter < la.count(); counter++)
         {
-          result = (ls[counter].stripWhiteSpace() == la[counter].stripWhiteSpace());
+          result = (ls[counter].simplified() == la[counter].simplified());
           if (!result)
             break;
         }
@@ -282,32 +253,30 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
     }
 
   }
-
-  QString tmpLeitner( m_doc->entry(li->oneOp())->leitnerBox() );
+  ///@todo currently the Leitner stuff crashes KWQ
+  //QString tmpLeitner( m_doc->entry(li.oneOp())->leitnerBox() );
 
   if (!result)
   {
-    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->leitnerSystem()->wrongBox( tmpLeitner ));
-    m_errorList -> append(li);
+    //m_doc->entry(li.oneOp())->setLeitnerBox(m_doc->leitnerSystem()->wrongBox( tmpLeitner ));
+    m_errorList.append(li);
   }
-  else
-    m_doc->entry(li->oneOp())->setLeitnerBox(m_doc->leitnerSystem()->correctBox( tmpLeitner ));
+  //else
+    //m_doc->entry(li.oneOp())->setLeitnerBox(m_doc->leitnerSystem()->correctBox( tmpLeitner ));
 
   return result;
 }
 
 QStringList WQQuiz::multiOptions(int i)
 {
-  QString *s;
+  QString s;
   QStringList Result;
-  WQListItem *li = m_list->at(i);
+  QStringList ls;
 
-  typedef Q3PtrList<QString> LS;
-  LS *ls;
-  ls = new Q3PtrList<QString>();
+  WQListItem li = m_list.at(i);
 
   int j;
-  if (li->question() == 0)
+  if (li.question() == 0)
   {
     j = 1;
   }
@@ -316,54 +285,46 @@ QStringList WQQuiz::multiOptions(int i)
     j= 0;
   }
 
-  s = new QString(j ?
-                  m_doc->entry(li->oneOp())->translation(1) :
-                  m_doc->entry(li->oneOp())->original());
+  s = (j ?  m_doc->entry(li.oneOp())->translation(1) :  m_doc->entry(li.oneOp())->original());
   if (Prefs::enableBlanks())
   {
-    s->remove("[");
-    s->remove("]");
+    s.remove("[");
+    s.remove("]");
   }
-  ls->append(s);
+  ls.append(s);
 
-  s = new QString(j ?
-                  m_doc->entry(li->twoOp())->translation(1) :
-                  m_doc->entry(li->twoOp())->original());
+  s =(j ? m_doc->entry(li.twoOp())->translation(1) : m_doc->entry(li.twoOp())->original());
   if (Prefs::enableBlanks())
   {
-    s->remove("[");
-    s->remove("]");
+    s.remove("[");
+    s.remove("]");
   }
-  ls->append(s);
+  ls.append(s);
 
-  s = new QString(j ?
-                  m_doc->entry(li->threeOp())->translation(1) :
-                  m_doc->entry(li->threeOp())->original());
+  s = (j ? m_doc->entry(li.threeOp())->translation(1) : m_doc->entry(li.threeOp())->original());
   if (Prefs::enableBlanks())
   {
-    s->remove("[");
-    s->remove("]");
+    s.remove("[");
+    s.remove("]");
   }
-  ls->append(s);
+  ls.append(s);
 
   KRandomSequence *rs = new KRandomSequence(0);
-  ///@todo port rs->randomize(ls);
+  rs->randomize(ls);
 
-  while (ls->count())
-  {
-    Result.append(*ls->first());
-    ls->removeFirst();
-  }
- return Result;
+  foreach(QString s, ls)
+    Result.append(s);
+
+  return Result;
 }
 
 QString WQQuiz::quizIcon(int i, QuizIcon ico)
 {
   QString s;
-  WQListItem *li = m_list->at(i);
+  WQListItem li = m_list.at(i);
   if (ico == qiLeftCol)
   {
-    if (li->question() == 0)
+    if (li.question() == 0)
       s = "question";
     else
       s = "answer";
@@ -371,7 +332,7 @@ QString WQQuiz::quizIcon(int i, QuizIcon ico)
 
   if (ico == qiRightCol)
   {
-    if (li->question() == 0)
+    if (li.question() == 0)
       s = "answer";
     else
       s = "question";
@@ -440,8 +401,8 @@ void WQQuiz::setQuizMode(int qm)
 
 QString WQQuiz::question(int i)
 {
-  WQListItem *li = m_list->at(i);
-  QString s = (li->question() ? m_doc->entry(li->oneOp())->translation(1) : m_doc->entry(li->oneOp())->original());
+  WQListItem li = m_list.at(i);
+  QString s = (li.question() ? m_doc->entry(li.oneOp())->translation(1) : m_doc->entry(li.oneOp())->original());
   if (Prefs::enableBlanks())
   {
     s.remove("[");
@@ -449,11 +410,11 @@ QString WQQuiz::question(int i)
   }
   if (m_quizType != qtFlash && i > 0)
   {
-    WQListItem *li2 = m_list->at(i - 1);
-    emit checkingAnswer(li2->oneOp());
+    WQListItem li2 = m_list.at(i - 1);
+    emit checkingAnswer(li2.oneOp());
   }
   else
-    emit checkingAnswer(li->oneOp());
+    emit checkingAnswer(li.oneOp());
 
   return s;
 }
@@ -468,8 +429,8 @@ QString WQQuiz::blankAnswer(int i)
 
   if (m_quizType == qtQA && Prefs::enableBlanks())
   {
-    WQListItem *li = m_list->at(i);
-    tTemp = (li->question() ? m_doc->entry(li->oneOp())->original() : m_doc->entry(li->oneOp())->translation(1));
+    WQListItem li = m_list.at(i);
+    tTemp = (li.question() ? m_doc->entry(li.oneOp())->original() : m_doc->entry(li.oneOp())->translation(1));
     r = tTemp;
     QRegExp rx;
     rx.setMinimal(true);
@@ -501,11 +462,11 @@ QString WQQuiz::blankAnswer(int i)
 QString WQQuiz::answer(int i)
 {
   QString s;
-  WQListItem *li = m_list->at(i);
+  WQListItem li = m_list.at(i);
 
   if (m_quizType == qtQA)
   {
-    s = (li->question() ? m_doc->entry(li->oneOp())->original() : m_doc->entry(li->oneOp())->translation(1));
+    s = (li.question() ? m_doc->entry(li.oneOp())->original() : m_doc->entry(li.oneOp())->translation(1));
     if (Prefs::enableBlanks())
     {
       s.replace("[", "<u>");
@@ -516,7 +477,7 @@ QString WQQuiz::answer(int i)
   }
   else
   {
-    s = (li->question() ? m_doc->entry(li->oneOp())->original() : m_doc->entry(li->oneOp())->translation(1));
+    s = (li.question() ? m_doc->entry(li.oneOp())->original() : m_doc->entry(li.oneOp())->translation(1));
     if (Prefs::enableBlanks())
     {
       s.remove("[");
@@ -528,8 +489,8 @@ QString WQQuiz::answer(int i)
 
 QString WQQuiz::langQuestion(int i)
 {
-  WQListItem *li = m_list->at(i);
-  if (li->question() == 0)
+  WQListItem li = m_list.at(i);
+  if (li.question() == 0)
     return m_doc->originalIdentifier();
   else
     return m_doc->identifier(1);
@@ -538,8 +499,8 @@ QString WQQuiz::langQuestion(int i)
 QString WQQuiz::langAnswer(int i)
 {
 
-  WQListItem *li = m_list->at(i);
-  if (li->question() == 1)
+  WQListItem li = m_list.at(i);
+  if (li.question() == 1)
     return m_doc->originalIdentifier();
   else
     return m_doc->identifier(1);
