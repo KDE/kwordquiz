@@ -803,7 +803,7 @@ void KWordQuizView::doVocabSort( )
 
 void KWordQuizView::doVocabShuffle( )
 {
-  //@todo handle empty rows
+  /**@todo handle empty rows, port to document class */
   addUndo(i18n("&Undo Shuffle"));
   saveCurrentSelection();
   KRandomSequence* rs;
