@@ -15,25 +15,21 @@
  *                                                                         *
  ***************************************************************************/
 
-// include files for Qt
-#include <qpainter.h>
-#include <q3table.h>
-#include <qclipboard.h>
-#include <qlineedit.h>
-//Added by qt3to4:
+#include <QPainter>
+#include <Q3Table>
+#include <QClipboard>
+#include <QLineEdit>
 #include <Q3MemArray>
 #include <QKeyEvent>
 #include <QEvent>
 #include <QList>
 
-// include files for KDE
-#include <klocale.h> //i18n
-#include <kmessagebox.h> // always useful
+#include <klocale.h>
+#include <kmessagebox.h>
 #include <krandomsequence.h>
 #include <kglobalsettings.h>
 #include <knotifyclient.h>
 
-// application specific includes
 #include "kwordquizview.h"
 #include "keduvocdocument.h"
 #include "kwordquiz.h"

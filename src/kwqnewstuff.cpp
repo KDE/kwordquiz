@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qdir.h>
+#include <QDir>
 
 #include <kprocess.h>
 #include <klocale.h>
@@ -27,7 +27,7 @@
 #include "kwqnewstuff.h"
 #include "prefs.h"
 
-KWQNewStuff::KWQNewStuff(QWidget *parent, const char *name) : QObject(), KNewStuff("kdeedu/vocabulary", parent)
+KWQNewStuff::KWQNewStuff(QWidget *parent, const char */*name*/) : QObject(), KNewStuff("kdeedu/vocabulary", parent)
 {
   m_app = (KWordQuizApp *) parent;
 }
@@ -40,7 +40,7 @@ bool KWQNewStuff::install(const QString & fileName)
 }
 
 
-bool KWQNewStuff::createUploadFile(const QString & fileName)
+bool KWQNewStuff::createUploadFile(const QString & /*fileName*/)
 {
   return true;
 }

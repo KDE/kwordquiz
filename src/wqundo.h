@@ -16,7 +16,7 @@
 #ifndef WQUNDO_H
 #define WQUNDO_H
 
-#include <q3table.h>
+#include <Q3Table>
 #include <QList>
 
 #include "keduvocexpression.h"

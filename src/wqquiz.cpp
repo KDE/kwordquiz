@@ -61,7 +61,7 @@ void WQQuiz::activateBaseList()
   m_questionCount = m_list.count();
 }
 
-void WQQuiz::addToList(int aCol, int bCol)
+void WQQuiz::addToList(int aCol, int /*bCol*/)
 {
   //build a list of row numbers containing text in both columns
 
@@ -340,7 +340,7 @@ QString WQQuiz::quizIcon(int i, QuizIcon ico)
   return s;
 }
 
-QString WQQuiz::yourAnswer(int i, const QString & s)
+QString WQQuiz::yourAnswer(int /*i*/, const QString & s)
 {
   QString result ="";
 
@@ -506,7 +506,7 @@ QString WQQuiz::langAnswer(int i)
     return m_doc->identifier(1);
 }
 
-int WQQuiz::kbAnswer(int i)
+int WQQuiz::kbAnswer(int /*i*/)
 {
 /*  WQListItem *li = m_list->at(i);
   if (li->question() == 0)

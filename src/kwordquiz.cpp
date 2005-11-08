@@ -14,29 +14,25 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-// include files for QT
-#include <qpainter.h>
-#include <qbitmap.h>
-#include <qcheckbox.h>
 
-// include files for KDE
+#include <QPainter>
+#include <QBitmap>
+#include <QCheckBox>
+
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <kstatusbar.h>
 #include <klocale.h>
 #include <kedittoolbar.h>
-#include <kstandarddirs.h> //locate
+#include <kstandarddirs.h>
 #include <kfontdialog.h>
 #include <kmenu.h>
 #include <knotifydialog.h>
 #include <kiconloader.h>
-//#include <keduvocdata.h>
 #include <kdebug.h>
 #include <kxmlguifactory.h>
 #include <kglobal.h>
 
-// application specific includes
 #include "kwordquiz.h"
 #include "keduvocdocument.h"
 #include "dlglanguage.h"

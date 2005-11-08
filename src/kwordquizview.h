@@ -22,9 +22,7 @@
 #include <config.h>
 #endif
 
-// include files for Qt
-#include <q3table.h>
-//Added by qt3to4:
+#include <Q3Table>
 #include <QList>
 #include <QKeyEvent>
 #include <QEvent>
@@ -32,8 +30,6 @@
 #include <kprinter.h>
 
 #include "wqundo.h"
-
-//include <wqviewbase.h>
 
 class KEduVocDocument;
 class DlgSpecChar;
