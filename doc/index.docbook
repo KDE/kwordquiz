@@ -18,7 +18,7 @@
 <othername></othername>
 <surname>Hedlund</surname>
 <affiliation>
-<address><email>peter@peterandlinda.com</email></address>
+<address><email>peter.hedlund@kdemail.net</email></address>
 </affiliation>
 </author>
 </authorgroup>
@@ -1427,11 +1427,11 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
 &kwordquiz;
 </para>
 <para>
-Program copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
+Program copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
 </para>
 
 <para>
-Documentation copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
+Documentation copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
 </para>
 
 &underFDL;   <!-- FDL: do not remove -->
