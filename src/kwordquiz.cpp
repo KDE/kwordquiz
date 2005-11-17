@@ -358,10 +358,11 @@ void KWordQuizApp::openURL(const KURL& url)
     if (m_dirWatch->contains(url.path()))
     {
       KMainWindow* w;
-      if(memberList())
+      if(!memberList().isEmpty())
       {
-        for(w=memberList()->first(); w!=0; w=memberList()->next())
+		for (int i = 0; i < memberList().size(); ++i) 
         {
+		  w = memberList().at(i);
           KWordQuizApp *a =(KWordQuizApp *) w;
           if(a->doc ->URL().path() == url.path())
           {
@@ -718,7 +719,7 @@ void KWordQuizApp::slotFileClose()
 {
   slotStatusMsg(i18n("Closing file..."));
 
-  if (memberList()->count() > 1)
+  if (memberList().count() > 1)
     close();
   else
     if (queryClose())
@@ -759,10 +760,11 @@ void KWordQuizApp::slotFileQuit()
   // close the first window, the list makes the next one the first again.
   // This ensures that queryClose() is called on each window to ask for closing
   KMainWindow* w;
-  if(memberList())
+  if(!memberList().isEmpty())
   {
-    for(w=memberList()->first(); w!=0; w=memberList()->next())
+	for (int i = 0; i < memberList().size(); ++i) 
     {
+	  w = memberList().at(i);
       // only close the window if the closeEvent is accepted. If the user presses Cancel on the saveModified() dialog,
       // the window and the application stay open.
       if(!w->close())
