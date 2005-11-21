@@ -15,15 +15,14 @@
 <authorgroup>
 <author>
 <firstname>Peter</firstname>
-<othername></othername>
 <surname>Hedlund</surname>
 <affiliation>
-<address><email>peter.hedlund@kdemail.net</email></address>
+<address><email>peter@peterandlinda.com</email></address>
 </affiliation>
 </author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
   <year>2003</year>
@@ -79,15 +78,15 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="quiz-types">
 <title>Quiz types</title>
 
-<para>When you have entered your vocabulary and selected a mode you are ready to start a quiz. The vocabulary document is hidden during the quiz so you can't cheat. Maybe you want to start with a flashcard session, then you can move on to a multiple choice quiz or do the powerful question and answer quiz. You get instant feedback on correct and incorrect answers and you have the option to repeat any errors, further improving your learning efficiency. If you need a little extra help you can use the hint function.</para>
+<para>When you have entered your vocabulary and selected a mode you are ready to start a quiz. The vocabulary document is hidden during the quiz so you cannot cheat. Maybe you want to start with a flashcard session, then you can move on to a multiple choice quiz or do the powerful question and answer quiz. You get instant feedback on correct and incorrect answers and you have the option to repeat any errors, further improving your learning efficiency. If you need a little extra help you can use the hint function.</para>
 </sect2>
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-&kwordquiz; can open several types of vocabulary data. Supported are .kvtml used by other KDE programs such as KVocTrain, .wql used by WordQuiz for Windows, .csv files with comma-separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net). You can automatically combine several documents to one large list if you need to practice for e. g. a final exam.
+&kwordquiz; can open several types of vocabulary data. Supported are .kvtml used by other &kde; programs such as &kvoctrain;, .wql used by WordQuiz for &Windows;, .csv files with comma-separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net). You can automatically combine several documents to one large list if you need to practice for &eg; a final exam.
 </para>
 <para>
-&kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other KDE programs. Other available options are the .wql format used by WordQuiz for Windows allowing exchange with Windows users, .csv, and .html.
+&kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other &kde; programs. Other available options are the .wql format used by WordQuiz for &Windows; allowing exchange with &Windows; users, .csv, and .html.
 </para>
 <para>
 You can have several files open at the same time and easily copy or move entries between files.
@@ -150,6 +149,23 @@ You can have several files open at the same time and easily copy or move entries
     <listitem>
       <para>
         <action>Open</action> a recently used vocabulary document
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo>
+        </shortcut>
+        <guimenu>File</guimenu>
+        <guimenuitem>Get New Vocabularies</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Downloads</action> new vocabularies.
       </para>
     </listitem>
   </varlistentry>
@@ -339,7 +355,7 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
         </shortcut>
         <guimenu>Edit</guimenu>
-        <guimenuitem>Insert</guimenuitem>
+        <guimenuitem>Insert Row</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -356,7 +372,7 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>K</keycap></keycombo>
         </shortcut>
         <guimenu>Edit</guimenu>
-        <guimenuitem>Delete</guimenuitem>
+        <guimenuitem>Delete Row</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -373,12 +389,12 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
         </shortcut>
         <guimenu>Edit</guimenu>
-        <guimenuitem>Mark Blank</guimenuitem>
+        <guimenuitem>Mark as Blank</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Mark Blank</action> marks selected text (or the word where the caret is) as a blank for a <link linkend="fill-in-the-blank">'Fill-in-the-blank'</link> quiz, i.e. it's enclosed in brackets. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
+        <action>Mark as Blank</action> marks selected text (or the word where the caret is) as a blank for a <link linkend="fill-in-the-blank">'Fill-in-the-blank'</link> quiz, &ie; it's enclosed in brackets. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
       </para>
     </listitem>
   </varlistentry>
@@ -390,12 +406,12 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
         </shortcut> -->
         <guimenu>Edit</guimenu>
-        <guimenuitem>Unmark Blank</guimenuitem>
+        <guimenuitem>Unmark Blanks</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Unmark Blank</action> clears previously assigned blanks, i.e. brackets are removed. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
+        <action>Unmark Blanks</action> clears previously assigned blanks, &ie; brackets are removed. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
       </para>
     </listitem>
   </varlistentry>
@@ -514,7 +530,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Change</action> the font used to display the vocabulary. If you are in flashcard session the font used to diplay the card will be changed. Displays the standard KDE font dialog.
+        <action>Change</action> the font used to display the vocabulary. If you are in flashcard session the font used to diplay the card will be changed. Displays the standard &kde; font dialog.
       </para>
     </listitem>
   </varlistentry>
@@ -606,7 +622,7 @@ Note that the menu names will change to reflect the column titles of the current
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 1 -&gt; Column 2 in order</guimenuitem>
+        <guimenuitem>Column 1 -&gt; Column 2 In Order</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -623,7 +639,7 @@ Note that the menu names will change to reflect the column titles of the current
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 2 -&gt; Column 1 in order</guimenuitem>
+        <guimenuitem>Column 2 -&gt; Column 1 In Order</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -640,7 +656,7 @@ Note that the menu names will change to reflect the column titles of the current
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 1 -&gt; Column 2 randomly</guimenuitem>
+        <guimenuitem>Column 1 -&gt; Column 2 Randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -657,7 +673,7 @@ Note that the menu names will change to reflect the column titles of the current
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 2 -&gt; Column 1 randomly</guimenuitem>
+        <guimenuitem>Column 2 -&gt; Column 1 Randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -674,7 +690,7 @@ Note that the menu names will change to reflect the column titles of the current
           <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
         </shortcut> -->
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 1 &lt;-&gt; Column 2 randomly</guimenuitem>
+        <guimenuitem>Column 1 &lt;-&gt; Column 2 Randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -733,7 +749,7 @@ Note that the menu names will change to reflect the column titles of the current
           <keycombo action="simul"><keycap>D</keycap></keycombo>
         </shortcut>
         <guimenu>Quiz</guimenu>
-        <guimenuitem>I Don't Know</guimenuitem>
+        <guimenuitem>I Do Not Know</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -806,7 +822,7 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guimenuitem>Toolbars</guimenuitem>
-        <guimenuitem>Show Main</guimenuitem>
+        <guimenuitem>Main Toolbar (KWordQuiz)</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -821,7 +837,7 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guimenuitem>Toolbars</guimenuitem>
-        <guimenuitem>Show Go to</guimenuitem>
+        <guimenuitem>Go to (KWordQuiz)</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -836,12 +852,12 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guimenuitem>Toolbars</guimenuitem>
-        <guimenuitem>Show Quiz</guimenuitem>
+        <guimenuitem>Special Characters (KWordQuiz)</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Toggle</action> the Quiz Toolbar
+        <action>Toggle</action> the Special Characters Toolbar
       </para>
     </listitem>
   </varlistentry>
@@ -850,12 +866,12 @@ Note that the menu names will change to reflect the column titles of the current
     <term>
       <menuchoice>
         <guimenu>Settings</guimenu>
-        <guimenuitem>Show Status bar</guimenuitem>
+        <guimenuitem>Show/Hide Statusbar</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Toggle</action> the Status bar
+        <action>Toggle</action> the Statusbar
       </para>
     </listitem>
   </varlistentry>
@@ -1107,7 +1123,6 @@ Consider the following table. It could be a vocabulary in &kwordquiz;:
 <informaltable><tgroup cols="3">
 <thead>
 <row>
-<entry></entry>
 <entry>English</entry>
 <entry>German</entry>
 </row>
@@ -1157,7 +1172,7 @@ In 2. &kwordquiz; would display the question but also 'Wir ........ einen Comput
 In 4. there are two separate blanks. To specify that in the answer you have to write 'besitzen; Computer', i.e separate the blanks with a semicolon in order to get a correct answer.
 </para>
 <para>
-Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are toolbar and menu commands to mark and unmark blanks. Of course you can also just type the brackets. &kwordquiz; checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz can not be started.
+Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are toolbar and menu commands to mark and unmark blanks. Of course you can also just type the brackets. &kwordquiz; checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz cannot be started.
 </para>
 <para>
 The 'Fill-in-the-blank' features can be turned on and off in the Options dialog. Turning them of will make it possible to use fonts that map other characters to the positions of the brackets. It will also speed up performance slightly.
@@ -1167,7 +1182,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Options dialog.
 <chapter id="printing">
 <title>Printing</title>
 <para>
-&kwordquiz; provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard KDE print dialog. In order to get access to the special &kwordquiz; features you need to click on the <guibutton>Expand</guibutton> to see the Vocabulary Options tab. On this tab you can select to print the document as a vocabulary list (i.e as displayed in the editor), a vocabulary exam, or as flashcards.
+&kwordquiz; provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard &kde; print dialog. In order to get access to the special &kwordquiz; features you need to click on the <guibutton>Options&gt;&gt;</guibutton> to see the Vocabulary Options tab. On this tab you can select to print the document as a vocabulary list (&ie; as displayed in the editor), a vocabulary exam, or as flashcards.
 </para>
 <screenshot>
   <screeninfo>Vocabulary Printing Options</screeninfo>
@@ -1411,7 +1426,7 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
     </question>
     <answer>
       <para>
-        Yes, when you select <menuchoice><guimenu>File</guimenu><guimenuitem>Open...</guimenuitem></menuchoice> you can highlight more than one file in the dialog. By default they will be opened in separate windows, but if you select the checkbox <guibutton>Join selected files into one list</guibutton>, then the data in all files will be combined into one new list.
+        Yes, when you select <menuchoice><guimenu>File</guimenu><guimenuitem>Open...</guimenuitem></menuchoice> you can highlight more than one file in the dialog. By default they will be opened in separate windows, but if you select the check box <guibutton>Join selected files into one list</guibutton>, then the data in all files will be combined into one new list.
       </para>
     </answer>
   </qandaentry>
@@ -1427,12 +1442,14 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
 &kwordquiz;
 </para>
 <para>
-Program copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
+Program copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
 </para>
 
 <para>
-Documentation copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
+Documentation copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
 </para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;   <!-- FDL: do not remove -->
 &underGPL;   <!-- GPL License -->
