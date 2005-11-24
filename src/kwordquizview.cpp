@@ -632,8 +632,8 @@ bool KWordQuizView::checkForBlank( const QString  & s, bool blank )
   bool result = false;
   int openCount = 0;
   int closeCount = 0;
-  Q3MemArray<int> openPos(0);
-  Q3MemArray<int> closePos(0);
+  QVector<int> openPos(0);
+  QVector<int> closePos(0);
 
   for (int i = 0; i<= s.length(); ++i)
   {
@@ -657,7 +657,7 @@ bool KWordQuizView::checkForBlank( const QString  & s, bool blank )
 
   if (openCount > 0 && closeCount > 0)
     if (openPos.size() == closePos.size())
-      for (uint i = 0; i <= openPos.size(); ++i)
+      for (int i = 0; i <= openPos.size(); ++i)
         result = (openPos[i] < closePos[i]);
 
   return result;
