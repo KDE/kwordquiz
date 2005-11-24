@@ -53,7 +53,7 @@ int KWQTableItem::alignment() const
     (void)text().toDouble(&ok2);
   num = ok1 || ok2;
 
-  return (num ? Qt::AlignRight : Qt::AlignAuto) | Qt::AlignVCenter;
+  return (num ? Qt::AlignRight : Qt::AlignLeft) | Qt::AlignVCenter;
 }
 
 KWordQuizView::KWordQuizView(QWidget *parent, const char *name) : Q3Table(parent, name)
@@ -157,8 +157,8 @@ void KWordQuizView::print(KPrinter *pPrinter)
         card_marg + card_width + card_width - card_text_marg, tPos + card_line_top);
       //draw headers
       painter.setFont(KGlobalSettings::generalFont());
-      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(0));
-      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(1));
+      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, horizontalHeader()->label(0));
+      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, horizontalHeader()->label(1));
       //draw text
       painter.setFont(font());
       painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, text(rc, 0));
@@ -187,10 +187,10 @@ void KWordQuizView::print(KPrinter *pPrinter)
       painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), Qt::AlignRight | Qt::AlignVCenter, QString::number(rc + 1));
 
       painter.setFont(font());
-      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignAuto | Qt::AlignVCenter, text(rc, 0));
+      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, text(rc, 0));
 
       if (type == 0)
-        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignAuto | Qt::AlignVCenter, text(rc, 1));
+        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, text(rc, 1));
 
       tPos = tPos + rowHeight(rc);
 
@@ -236,17 +236,17 @@ void KWordQuizView::doNewPage( QPainter & painter, int res, int type )
     if (type == 1)
     {
       QString score = i18n("Name:_____________________________ Date:__________");
-      QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignAuto, score);
+      QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignLeft, score);
       painter.drawText(w.width() - r.width() - marg, marg - 20, score);
     }
 
     painter.drawText(marg, marg, cw0, horizontalHeader()->height(), Qt::AlignRight | Qt::AlignVCenter, "");
 
-    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(0));
-    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), Qt::AlignAuto | Qt::AlignVCenter, horizontalHeader()->label(1));
+    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, horizontalHeader()->label(0));
+    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, horizontalHeader()->label(1));
 
     if (type == 1)
-      painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), Qt::AlignAuto | Qt::AlignVCenter, i18n("Score"));
+      painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, i18n("Score"));
 
 }
 
@@ -255,7 +255,7 @@ void KWordQuizView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int 
     int marg = res;
     painter.setFont(KGlobalSettings::generalFont());
     QRect w = painter.window();
-    QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignAuto, QString::number(pageNum));
+    QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignLeft, QString::number(pageNum));
     painter.drawText((w.width()/2) - (r.width()/2), w.height() - marg + 20, QString::number(pageNum));
 
     if (type == 2)
