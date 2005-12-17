@@ -1139,7 +1139,7 @@ void KWordQuizApp::slotConfigure()
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
   KWordQuizPrefs* dialog = new KWordQuizPrefs( this, "settings",  Prefs::self() );
-  connect(dialog, SIGNAL(settingsChanged()), this, SLOT(slotApplyPreferences()));
+  connect(dialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplyPreferences()));
   dialog->show();
 }
 
