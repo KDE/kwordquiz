@@ -17,7 +17,7 @@
 <firstname>Peter</firstname>
 <surname>Hedlund</surname>
 <affiliation>
-<address><email>peter@peterandlinda.com</email></address>
+<address><email>peter.hedlund@kdemail.net</email></address>
 </affiliation>
 </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -34,8 +34,8 @@
 <legalnotice>&FDLNotice;</legalnotice>
 
 
-<date>2005-06-14</date>
-<releaseinfo>0.8</releaseinfo>
+<date>2005-12-10</date>
+<releaseinfo>0.8.1</releaseinfo>
 
 <abstract>
 <para>
@@ -1442,11 +1442,11 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
 &kwordquiz;
 </para>
 <para>
-Program copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
+Program copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
 </para>
 
 <para>
-Documentation copyright 2003-2004 Peter B. Hedlund <email>peter@peterandlinda.com</email>
+Documentation copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
