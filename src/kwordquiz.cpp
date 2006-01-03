@@ -580,7 +580,7 @@ void KWordQuizApp::slotFileOpen()
   cb -> setChecked(false);
 
   QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
-  KFileDialog *fd = new KFileDialog(QString::null, filter, this, 0, true, cb);
+  KFileDialog *fd = new KFileDialog(QString(), filter, this, 0, true, cb);
   fd -> setOperationMode(KFileDialog::Opening);
   fd -> setMode(KFile::Files | KFile::ExistingOnly);
   fd -> setCaption(i18n("Open Vocabulary Document"));
@@ -670,7 +670,7 @@ bool KWordQuizApp::saveAsFileName( )
   bool success = false;
 
   QString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language");
-  KFileDialog *fd = new KFileDialog(QString::null, filter, this, 0, true);
+  KFileDialog *fd = new KFileDialog(QString(), filter, this, 0, true);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save Vocabulary Document As"));
 
@@ -695,7 +695,7 @@ bool KWordQuizApp::saveAsFileName( )
       QFileInfo fileinfo(url.path());
       if (fileinfo.exists() && KMessageBox::warningContinueCancel(0,
           i18n("<qt>The file<br><b>%1</b><br>already exists. Do you want to overwrite it?</qt>")
-              .arg(url.path()),QString::null,i18n("Overwrite")) == KMessageBox::Cancel)
+              .arg(url.path()),QString(),i18n("Overwrite")) == KMessageBox::Cancel)
       {
       // do nothing
       }
@@ -1215,7 +1215,7 @@ void KWordQuizApp::slotStatusMsg(const QString &text)
 void KWordQuizApp::updateMode(int m)
 {
   if (m_quiz != 0)
-    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString::null, KStdGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
+    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStdGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
     {
       mode1->setChecked(Prefs::mode() == 1);
       mode2->setChecked(Prefs::mode() == 2);
