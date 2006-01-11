@@ -450,7 +450,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 {
   QString filename = _cfg->readEntry("filename", "");
   KURL url(filename);
-  bool modified = _cfg->readBoolEntry("modified", false);
+  bool modified = _cfg->readEntry("modified", false);
   if(modified)
   {
     bool canRecover;
