@@ -73,6 +73,7 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   m_flashView = 0;
   m_multipleView = 0;
   m_qaView = 0;
+  m_newStuff = 0;
 
   slotQuizEditor();
   slotUndoChange(i18n("Cannot &Undo"), false);
