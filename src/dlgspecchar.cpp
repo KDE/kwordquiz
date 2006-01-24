@@ -40,7 +40,7 @@ void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_en
 
   int t = (_chr.unicode()/256);
 
-  charSelect = new KCharSelect( page, "", _font, _chr, t);
+  charSelect = new KCharSelect( page,  _font, _chr, t);
   connect(charSelect, SIGNAL(doubleClicked()),this, SLOT(slotDoubleClicked()));
   charSelect->resize( charSelect->sizeHint() );
   charSelect->enableFontCombo( false );
