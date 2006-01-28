@@ -112,7 +112,7 @@ void KWordQuizApp::initActions()
   fileOpen->setWhatsThis(i18n("Opens an existing vocabulary document"));
   fileOpen->setToolTip(fileOpen->whatsThis());
 
-  fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KURL&)), actionCollection());
+  fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
 
   fileGHNS = new KAction(i18n("&Get New Vocabularies..."), "knewstuff", "CTRL+G", this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
@@ -352,7 +352,7 @@ void KWordQuizApp::initView()
   connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
 }
 
-void KWordQuizApp::openURL(const KURL& url)
+void KWordQuizApp::openURL(const KUrl& url)
 {
   if(!url.isEmpty()) {
     if (m_dirWatch->contains(url.path()))
@@ -391,7 +391,7 @@ void KWordQuizApp::openURL(const KURL& url)
   }
 }
 
-void KWordQuizApp::openDocumentFile(const KURL& url)
+void KWordQuizApp::openDocumentFile(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
@@ -435,12 +435,12 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
   }
   else
   {
-    KURL url=doc->URL();
+    KUrl url=doc->URL();
     _cfg->writeEntry("filename", url.url());
     _cfg->writeEntry("modified", doc->isModified());
     QString tempname = kapp->tempSaveName(url.url());
-    QString tempurl= KURL::encode_string(tempname);
-    KURL _url(tempurl);
+    QString tempurl= KUrl::encode_string(tempname);
+    KUrl _url(tempurl);
     doc->saveAs(this, _url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
 }
@@ -449,13 +449,13 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
 void KWordQuizApp::readProperties(KConfig* _cfg)
 {
   QString filename = _cfg->readEntry("filename", "");
-  KURL url(filename);
+  KUrl url(filename);
   bool modified = _cfg->readEntry("modified", false);
   if(modified)
   {
     bool canRecover;
     QString tempname = kapp->checkRecoverFile(filename, canRecover);
-    KURL _url(tempname);
+    KUrl _url(tempname);
 
     if(canRecover)
     {
@@ -587,7 +587,7 @@ void KWordQuizApp::slotFileOpen()
 
   if (fd->exec() == QDialog::Accepted)
   {
-    KURL::List l = fd -> selectedURLs();
+    KUrl::List l = fd -> selectedURLs();
     bool append = ((cb -> isChecked()) && (l.count() > 1));
 
     if (append)
@@ -604,7 +604,7 @@ void KWordQuizApp::slotFileOpen()
         w->show();
       }
 
-      KURL::List::iterator it;
+      KUrl::List::iterator it;
       int i = 0;
       for(it = l.begin(); it != l.end(); ++it)
       {
@@ -615,7 +615,7 @@ void KWordQuizApp::slotFileOpen()
     }
     else
     {
-      KURL::List::iterator it;
+      KUrl::List::iterator it;
       for(it = l.begin(); it != l.end(); ++it)
       {
         openURL(*it);
@@ -628,7 +628,7 @@ void KWordQuizApp::slotFileOpen()
   slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotFileOpenRecent(const KURL& url)
+void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   fileOpenRecent->setCurrentItem(-1);
@@ -676,7 +676,7 @@ bool KWordQuizApp::saveAsFileName( )
 
   if (fd->exec() == QDialog::Accepted)
   {
-    KURL url = fd -> selectedURL();
+    KUrl url = fd -> selectedURL();
     if(!url.isEmpty()){
 
       //@todo check that a valid extension was really given

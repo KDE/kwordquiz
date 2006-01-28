@@ -79,7 +79,7 @@ class KWordQuizApp : public KMainWindow
      * opens a file specified by commandline option
      * @param url the URL to be opened
      */
-    void openDocumentFile(const KURL& url=0);
+    void openDocumentFile(const KUrl& url=0);
     
     /**
      * returns a pointer to the current document connected to the KTMainWindow instance and is used by
@@ -150,7 +150,7 @@ class KWordQuizApp : public KMainWindow
     /** open a file and load it into the document*/
     void slotFileOpen();
     /** opens a file from the recent files menu */
-    void slotFileOpenRecent(const KURL& url);
+    void slotFileOpenRecent(const KUrl& url);
     /** download vocabularies from the Internet */
     void slotFileGHNS();
     /** save a document */
@@ -340,7 +340,7 @@ class KWordQuizApp : public KMainWindow
     void updateActions(WQQuiz::QuizType qt);
     void updateSpecialCharIcons();
     QString charIcon(const QChar &);
-    void openURL(const KURL& url);
+    void openURL(const KUrl& url);
 };
 
 #endif // KWORDQUIZ_H
