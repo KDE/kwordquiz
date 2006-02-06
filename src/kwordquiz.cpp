@@ -1146,7 +1146,7 @@ void KWordQuizApp::slotConfigure()
 
 void KWordQuizApp::slotApplyPreferences()
 {
-  kdDebug() << "Prefs Update" << endl;
+  kDebug() << "Prefs Update" << endl;
   editMarkBlank->setEnabled(Prefs::enableBlanks());
   editUnmarkBlank->setEnabled(Prefs::enableBlanks());
   m_editView->viewport()->repaint(true);
