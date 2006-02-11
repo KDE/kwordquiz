@@ -46,14 +46,6 @@
 #include "version.h"
 #include "prefleitner.h"
 
-#define ID_STATUS_MSG 1
-#define ID_STATUS_MSG_MODE 2
-#define ID_STATUS_MSG_SCORE 3
-
-#define ID_MODE_1 1
-
-#define ID_MENU_QUIZ 1001
-
 KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
 {
 
@@ -307,8 +299,10 @@ void KWordQuizApp::initActions()
   charMapper->setMapping(specialChar9, 9);
 
   actionCollection()->setHighlightingEnabled(true);
-  connect(actionCollection(), SIGNAL(actionStatusText(const QString &)), this, SLOT(slotStatusMsg(const QString &)));
-  connect(actionCollection(), SIGNAL(actionHighlighted(KAction *, bool)), this, SLOT(slotActionHighlighted(KAction *, bool)));
+
+  connect(actionCollection(), SIGNAL(actionStatusText(const QString &)), statusBar(), SLOT(showMessage(const QString &)));
+  connect(actionCollection(), SIGNAL(clearStatusText()), statusBar(), SLOT(clearMessage()));
+
   updateSpecialCharIcons();
 
   if (!initialGeometrySet())
@@ -316,16 +310,17 @@ void KWordQuizApp::initActions()
   setupGUI(ToolBar | Keys | StatusBar | Create);
   setAutoSaveSettings();
 
-   configToolbar = actionCollection()->action("options_configure_toolbars");
-   configToolbar->setWhatsThis(i18n("Toggles display of the toolbars"));
-   configToolbar->setToolTip(configToolbar->whatsThis());
+  configToolbar = actionCollection()->action("options_configure_toolbars");
+  configToolbar->setWhatsThis(i18n("Toggles display of the toolbars"));
+  configToolbar->setToolTip(configToolbar->whatsThis());
 }
 
 void KWordQuizApp::initStatusBar()
 {
-  statusBar()->insertFixedItem("", ID_STATUS_MSG_MODE, true);
-  statusBar()->setItemFixed(ID_STATUS_MSG_MODE, 250);
-  statusBar()->setItemAlignment(ID_STATUS_MSG_MODE, Qt::AlignLeft | Qt::AlignVCenter);
+  m_modeLabel = new QLabel();
+  m_modeLabel->setFixedWidth(250);
+  m_modeLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+  statusBar()->addPermanentWidget(m_modeLabel, 0);
 }
 
 void KWordQuizApp::initDocument()
@@ -360,7 +355,7 @@ void KWordQuizApp::openURL(const KUrl& url)
       KMainWindow* w;
       if(!memberList().isEmpty())
       {
-		for (int i = 0; i < memberList().size(); ++i) 
+		for (int i = 0; i < memberList().size(); ++i)
         {
 		  w = memberList().at(i);
           KWordQuizApp *a =(KWordQuizApp *) w;
@@ -762,7 +757,7 @@ void KWordQuizApp::slotFileQuit()
   KMainWindow* w;
   if(!memberList().isEmpty())
   {
-	for (int i = 0; i < memberList().size(); ++i) 
+	for (int i = 0; i < memberList().size(); ++i)
     {
 	  w = memberList().at(i);
       // only close the window if the closeEvent is accepted. If the user presses Cancel on the saveModified() dialog,
@@ -1206,8 +1201,8 @@ QString KWordQuizApp::charIcon(const QChar & c)
 
 void KWordQuizApp::slotStatusMsg(const QString &text)
 {
-  statusBar()->clear();
-  statusBar()->message(text);
+  //statusBar()->clearMessage();
+  statusBar()->showMessage(text);
 }
 
 /*!
@@ -1260,19 +1255,19 @@ void KWordQuizApp::updateMode(int m)
 
   switch( Prefs::mode() ){
   case 1:
-    statusBar()->changeItem(i18n("%1 -> %2 In Order").arg(s1).arg(s2), ID_STATUS_MSG_MODE);
+    m_modeLabel->setText(i18n("%1 -> %2 In Order").arg(s1).arg(s2));
     break;
   case 2:
-    statusBar()->changeItem(i18n("%1 -> %2 In Order").arg(s2).arg(s1), ID_STATUS_MSG_MODE);
+    m_modeLabel->setText(i18n("%1 -> %2 In Order").arg(s2).arg(s1));
     break;
   case 3:
-    statusBar()->changeItem(i18n("%1 -> %2 Randomly").arg(s1).arg(s2), ID_STATUS_MSG_MODE);
+    m_modeLabel->setText(i18n("%1 -> %2 Randomly").arg(s1).arg(s2));
     break;
   case 4:
-    statusBar()->changeItem(i18n("%1 -> %2 Randomly").arg(s2).arg(s1), ID_STATUS_MSG_MODE);
+    m_modeLabel->setText(i18n("%1 -> %2 Randomly").arg(s2).arg(s1));
     break;
   case 5:
-    statusBar()->changeItem(i18n("%1 <-> %2 Randomly").arg(s1).arg(s2), ID_STATUS_MSG_MODE);
+    m_modeLabel->setText(i18n("%1 <-> %2 Randomly").arg(s1).arg(s2));
     break;
   }
 
@@ -1288,13 +1283,13 @@ void KWordQuizApp::slotInsertChar( int i )
     if (centralWidget() == m_editView)
       m_editView->slotSpecChar(Prefs::specialCharacters()[i - 1]);
 }
-
-void KWordQuizApp::slotActionHighlighted(KAction * /*action*/, bool hl)
+/*
+void KWordQuizApp::slotActionHighlighted(KAction * action, bool hl)
 {
-  if (!hl)
-    slotStatusMsg(i18n("Ready"));
+  //if (!hl)
+   // slotStatusMsg(i18n("Ready"));
 }
-
+*/
 void KWordQuizApp::slotContextMenuRequested(int /*row*/, int /*col*/, const QPoint & pos)
 {
   QWidget * w = guiFactory()->container("editor_popup", this);

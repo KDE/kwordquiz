@@ -25,6 +25,7 @@
 
 // include files for Qt
 #include <QSignalMapper>
+#include <QLabel>
 
 // include files for KDE
 #include <kapplication.h>
@@ -69,18 +70,18 @@ class KWordQuizApp : public KMainWindow
      * construtor of KWordQuizApp, calls all init functions to create the application.
      */
     KWordQuizApp(QWidget* parent=0, const char* name=0);
-    
+
     /**
      * destructor
      */
     ~KWordQuizApp();
-    
+
     /**
      * opens a file specified by commandline option
      * @param url the URL to be opened
      */
     void openDocumentFile(const KUrl& url=0);
-    
+
     /**
      * returns a pointer to the current document connected to the KTMainWindow instance and is used by
      * the View class to access the document object's methods
@@ -92,7 +93,7 @@ class KWordQuizApp : public KMainWindow
      * @return whether the saving was successful
      */
     bool saveAsFileName();
-    
+
     bool checkSyntax(bool blanks);
 
   protected:
@@ -243,7 +244,7 @@ class KWordQuizApp : public KMainWindow
 
     void slotInsertChar(int i);
 
-    void slotActionHighlighted(KAction *, bool);
+    //void slotActionHighlighted(KAction *, bool);
 
     void slotContextMenuRequested(int, int, const QPoint &);
   private:
@@ -334,6 +335,8 @@ class KWordQuizApp : public KMainWindow
 
     KDirWatch * m_dirWatch;
     KWQNewStuff * m_newStuff;
+
+    QLabel * m_modeLabel;
 
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);
