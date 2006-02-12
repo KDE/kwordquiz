@@ -678,13 +678,13 @@ bool KWordQuizApp::saveAsFileName( )
       if (!url.fileName().contains('.'))
       {
         if  (fd->currentFilter() == "*.wql")
-          url = KURL(url.path() + ".wql");
+          url = KUrl(url.path() + ".wql");
         else if (fd->currentFilter() == "*.csv")
-          url = KURL(url.path() + ".csv");
+          url = KUrl(url.path() + ".csv");
         else if (fd->currentFilter() == "*.html")
-          url = KURL(url.path() + ".html");
+          url = KUrl(url.path() + ".html");
         else
-          url = KURL(url.path() + ".kvtml");
+          url = KUrl(url.path() + ".kvtml");
       }
 
       QFileInfo fileinfo(url.path());

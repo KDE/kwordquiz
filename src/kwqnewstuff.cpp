@@ -35,7 +35,7 @@ KWQNewStuff::KWQNewStuff(QWidget *parent, const char */*name*/) : QObject(), KNe
 
 bool KWQNewStuff::install(const QString & fileName)
 {
-  m_app->slotFileOpenRecent(KURL(fileName));
+  m_app->slotFileOpenRecent(KUrl(fileName));
   return true;
 }
 
