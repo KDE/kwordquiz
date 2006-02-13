@@ -98,6 +98,7 @@ KEduVocDocument *KWordQuizView::getDocument() const
 
 void KWordQuizView::print(KPrinter *pPrinter)
 {
+  ///@todo retrieve text to print from doc instead of table
   QPainter painter;
 
   //type 0 Vocabulary list
