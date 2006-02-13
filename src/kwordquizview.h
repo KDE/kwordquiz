@@ -73,7 +73,6 @@ class KWordQuizView : public Q3Table
 
     /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);
-    bool gridIsEmpty();
     void addUndo(const QString & caption);
     void doEditUndo();
     void doEditCut();

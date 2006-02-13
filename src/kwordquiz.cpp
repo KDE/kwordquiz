@@ -355,9 +355,9 @@ void KWordQuizApp::openURL(const KUrl& url)
       KMainWindow* w;
       if(!memberList().isEmpty())
       {
-		for (int i = 0; i < memberList().size(); ++i)
+        for (int i = 0; i < memberList().size(); ++i)
         {
-		  w = memberList().at(i);
+          w = memberList().at(i);
           KWordQuizApp *a =(KWordQuizApp *) w;
           if(a->doc ->URL().path() == url.path())
           {
@@ -372,7 +372,8 @@ void KWordQuizApp::openURL(const KUrl& url)
     }
     else
     {
-      if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+      ///@todo this doesn't really check if the entries are empty. Is it worth it to have such as function?
+      if (doc -> URL().fileName() == i18n("Untitled")  && doc -> numEntries() == 0){
         // neither saved nor has content, as good as new
         openDocumentFile(url);
       }
@@ -556,7 +557,7 @@ bool KWordQuizApp::checkSyntax(bool blanks)
 void KWordQuizApp::slotFileNew()
 {
   slotStatusMsg(i18n("Opening a new document window..."));
-  if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+  if (doc -> URL().fileName() == i18n("Untitled")  && doc -> numEntries() == 0){
     // neither saved nor has content, as good as new
   }
   else
@@ -573,6 +574,8 @@ void KWordQuizApp::slotFileOpen()
 
   QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0, 0);
   cb -> setChecked(false);
+  ///@todo make append work again
+  cb -> setEnabled(false);
 
   QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
   KFileDialog *fd = new KFileDialog(QString(), filter, this, 0, true, cb);
@@ -587,9 +590,8 @@ void KWordQuizApp::slotFileOpen()
 
     if (append)
     {
-/* TODO EPT
       KWordQuizApp * w;
-      if (doc->URL().fileName() == i18n("Untitled")  && m_editView->gridIsEmpty()){
+      if (doc->URL().fileName() == i18n("Untitled")  && doc->numEntries() == 0){
         // neither saved nor has content, as good as new
         w = this;
       }
@@ -603,10 +605,9 @@ void KWordQuizApp::slotFileOpen()
       int i = 0;
       for(it = l.begin(); it != l.end(); ++it)
       {
-        w->getDocument()->openDocument(*it, true, i);
+        w->getDocument()->open(*it, true);
         i++;
       }
-*/
     }
     else
     {
@@ -674,9 +675,10 @@ bool KWordQuizApp::saveAsFileName( )
     KUrl url = fd -> selectedURL();
     if(!url.isEmpty()){
 
-      //@todo check that a valid extension was really given
+      ///@todo check that a valid extension was really given
       if (!url.fileName().contains('.'))
       {
+        ///@todo make sure all these formats are really available
         if  (fd->currentFilter() == "*.wql")
           url = KUrl(url.path() + ".wql");
         else if (fd->currentFilter() == "*.csv")

@@ -282,23 +282,6 @@ void KWordQuizView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int 
 
 }
 
-
-
-/*!
-    \fn KWordQuizView::gridIsEmpty()
- */
-bool KWordQuizView::gridIsEmpty()
-{
-  for(int i = 0; i < numRows(); i++){
-    for(int j = 0; j < 2; j++){
-      if(!text(i, j).isEmpty()){
-        return false;
-      }
-    }
-  }
-  return true;
-}
-
 QWidget * KWordQuizView::beginEdit( int row, int col, bool replace )
 {
   m_currentText = text(row, col);
