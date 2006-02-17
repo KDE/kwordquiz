@@ -65,6 +65,7 @@ QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, n
 
 QAView::~QAView()
 {
+  delete txtAnswer; //Fixes #122110 on PCLOS and Ubuntu
 }
 
 void QAView::setQuiz(WQQuiz *quiz)
