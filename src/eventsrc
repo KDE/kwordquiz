@@ -5,24 +5,30 @@ Comment[x-test]=xxKWordQuizxx
 
 [QuizCorrect]
 Name=QuizCorrect
+Name[fr]=Corrigé de questionnaire
 Name[x-test]=xxQuizCorrectxx
 Comment=Correct answer
+Comment[fr]=Bonne réponse
 Comment[x-test]=xxCorrect answerxx
 default_sound=KDE_Chimes_2.ogg
 default_presentation=1
 
 [QuizError]
 Name=QuizError
+Name[fr]=Erreur de questionnaire
 Name[x-test]=xxQuizErrorxx
 Comment=Wrong answer
+Comment[fr]=Mauvaise réponse
 Comment[x-test]=xxWrong answerxx
 default_sound=KDE_Error_1.ogg
 default_presentation=1
 
 [SyntaxError]
 Name=syntaxerror
+Name[fr]=Erreur de syntaxe
 Name[x-test]=xxsyntaxerrorxx
 Comment=Error in syntax
+Comment[fr]=Erreur de syntaxe
 Comment[x-test]=xxError in syntaxxx
 default_sound=KDE_Error_1.ogg
 default_presentation=1
