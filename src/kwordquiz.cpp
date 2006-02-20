@@ -578,7 +578,7 @@ void KWordQuizApp::slotFileOpen()
   cb -> setEnabled(false);
 
   QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
-  KFileDialog *fd = new KFileDialog(QString(), filter, this, 0, true, cb);
+  KFileDialog *fd = new KFileDialog(QString(), filter, this, cb);
   fd -> setOperationMode(KFileDialog::Opening);
   fd -> setMode(KFile::Files | KFile::ExistingOnly);
   fd -> setCaption(i18n("Open Vocabulary Document"));
@@ -666,7 +666,7 @@ bool KWordQuizApp::saveAsFileName( )
   bool success = false;
 
   QString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language");
-  KFileDialog *fd = new KFileDialog(QString(), filter, this, 0, true);
+  KFileDialog *fd = new KFileDialog(QString(), filter, this);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save Vocabulary Document As"));
 

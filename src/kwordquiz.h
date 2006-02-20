@@ -80,7 +80,7 @@ class KWordQuizApp : public KMainWindow
      * opens a file specified by commandline option
      * @param url the URL to be opened
      */
-    void openDocumentFile(const KUrl& url=0);
+    void openDocumentFile(const KUrl& url=KUrl());
 
     /**
      * returns a pointer to the current document connected to the KTMainWindow instance and is used by

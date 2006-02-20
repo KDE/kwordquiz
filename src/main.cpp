@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 
     if (args->count())
     {
-      kwordquiz->openDocumentFile(args->arg(args->count() - 1));
+      kwordquiz->openDocumentFile(KUrl(args->arg(args->count() - 1)));
 
       QByteArray mode = args->getOption("mode");
 
