@@ -32,6 +32,7 @@
 #include <kdebug.h>
 #include <kxmlguifactory.h>
 #include <kglobal.h>
+#include <ktoolbar.h>
 
 #include "kwordquiz.h"
 #include "keduvocdocument.h"
