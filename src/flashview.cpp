@@ -1,7 +1,7 @@
 /***************************************************************************
                           flashview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003 by Peter Hedlund
+   copyright            : (C) 2003-2006 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -13,12 +13,12 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
- 
+
 #include <QLabel>
 
 #include <kiconloader.h>
 #include <klocale.h>
-#include <knotifyclient.h>
+#include <knotification.h>
 
 #include "kwordquiz.h"
 #include "flashview.h"
@@ -79,7 +79,7 @@ void FlashView::keepDiscardCard(bool keep)
   {
     m_score->countIncrement(WQScore::cdCorrect);
     updateScore();
-    KNotifyClient::event(winId(), "QuizCorrect", i18n("Your answer was correct!"));
+    KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
   }
   else
   {
@@ -87,7 +87,7 @@ void FlashView::keepDiscardCard(bool keep)
     m_quiz->checkAnswer(m_question, "");
     m_score->countIncrement(WQScore::cdError);
     updateScore();
-    KNotifyClient::event(winId(), "QuizError", i18n("Your answer was incorrect."));
+    KNotification::event("QuizError", i18n("Your answer was incorrect."));
   }
 
   m_showFirst = true;

@@ -1,27 +1,25 @@
-/* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
+/***************************************************************************
+                          multipleview.cpp  -  description
+                             -------------------
+   copyright            : (C) 2003-2006 Peter Hedlund
+   email                : peter.hedlund@kdemail.net
+ ***************************************************************************/
 
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Library General Public
-  License version 2 as published by the Free Software Foundation.
-
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Library General Public License for more details.
-
-  You should have received a copy of the GNU Library General Public License
-  along with this library; see the file COPYING.LIB.  If not, write to
-  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-  Boston, MA 02110-1301, USA.
-*/
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 
 #include <QLabel>
 #include <QRadioButton>
 
 #include <kiconloader.h>
 #include <klocale.h>
-#include <knotifyclient.h>
+#include <knotification.h>
 
 #include "kwordquiz.h"
 #include "multipleview.h"
@@ -125,7 +123,7 @@ void MultipleView::slotCheck()
       lblCorrect->clear();
       m_score->countIncrement(WQScore::cdCorrect);
       updateScore();
-      KNotifyClient::event(winId(), "QuizCorrect", i18n("Your answer was correct!"));
+      KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
     }
     else
     {
@@ -139,7 +137,7 @@ void MultipleView::slotCheck()
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
       updateScore();
-      KNotifyClient::event(winId(), "QuizError", i18n("Your answer was incorrect."));
+      KNotification::event("QuizError", i18n("Your answer was incorrect."));
     }
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
