@@ -34,7 +34,7 @@
 <legalnotice>&FDLNotice;</legalnotice>
 
 
-<date>2005-12-10</date>
+<date>2006-02-24</date>
 <releaseinfo>0.8.1</releaseinfo>
 
 <abstract>
@@ -45,7 +45,7 @@
 
 <keywordset>
 <keyword>KDE</keyword>
-<keyword>kdenonbeta</keyword>
+<keyword>kdeedu</keyword>
 <keyword>KWordQuiz</keyword>
 <keyword>flashcard</keyword>
 <keyword>vocabulary</keyword>
@@ -126,7 +126,7 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
         </shortcut>
         <guimenu>File</guimenu>
-        <guimenuitem>Open</guimenuitem>
+        <guimenuitem>Open...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -160,7 +160,7 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo>
         </shortcut>
         <guimenu>File</guimenu>
-        <guimenuitem>Get New Vocabularies</guimenuitem>
+        <guimenuitem>Get New Vocabularies...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -194,7 +194,7 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
         </shortcut> -->
         <guimenu>File</guimenu>
-        <guimenuitem>Save As</guimenuitem>
+        <guimenuitem>Save As...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -211,7 +211,7 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
         </shortcut>
         <guimenu>File</guimenu>
-        <guimenuitem>Print</guimenuitem>
+        <guimenuitem>Print...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -852,6 +852,21 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guimenuitem>Toolbars</guimenuitem>
+        <guimenuitem>Quiz (KWordQuiz)</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Toggle</action> the Quiz Toolbar
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Toolbars</guimenuitem>
         <guimenuitem>Special Characters (KWordQuiz)</guimenuitem>
       </menuchoice>
     </term>
@@ -1268,7 +1283,7 @@ You can configure the behavior of the <keycap>Enter</keycap> key when working in
 You can also select if the functions for <link linkend="fill-in-the-blank">Fill-in-the-blank</link> should be activated. Turning them off will speed up performance a little.
 </para>
 <para>
-Select <guibutton>Default</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
 </sect1>
 
@@ -1298,7 +1313,28 @@ For question &amp; answer sessions you can select if questions where you use  <m
 For all sessions you can select if the scores should be displayed as percent instead of absolute numbers.
 </para>
 <para>
-Select <guibutton>Default</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+</para>
+
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title>Configure Flashcard Appearance</title>
+<screenshot>
+  <screeninfo>Configure Flashcard Appearance</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Configure Flashcard Appearance</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+For flashcard sessions you can select the <guilabel>Font:</guilabel> and the colors of text, card and frames. Click the <guibutton>Flip</guibutton> to switch between the <guilabel>Front</guilabel> and the <guilabel>Back</guilabel> of the cards.
+</para>
+<para>Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
 
 </sect1>
@@ -1324,7 +1360,7 @@ Changing the keyboard shortcut associated with each action can be done by select
 </para>
 
 <para>
-Select <guibutton>Default</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
 
 </sect1>
