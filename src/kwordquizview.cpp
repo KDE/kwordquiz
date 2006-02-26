@@ -436,10 +436,17 @@ void KWordQuizView::doEditCopy( )
   {
     saveCurrentSelection(false);
     QString s;
+    QString rs;
     for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
     {
       for (int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
-        s = s + text(r, c) + "\t";
+      {
+        if (c == 0)
+          rs = getDocument()->entry(r)->original();
+        else
+          rs = getDocument()->entry(r)->translation(1);
+        s = s + rs + "\t";
+      }
       s = s + "\n";
     }
     kapp->clipboard()->setText(s);
