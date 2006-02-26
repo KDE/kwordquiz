@@ -28,7 +28,7 @@
 #include <kmessagebox.h>
 #include <krandomsequence.h>
 #include <kglobalsettings.h>
-#include <knotifyclient.h>
+#include <knotification.h>
 
 #include "kwordquizview.h"
 #include "keduvocdocument.h"
@@ -320,7 +320,7 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
       getDocument() -> setModified(true);
       if (Prefs::enableBlanks())
         if (!checkForBlank(text(row, col), true))
-          KNotifyClient::event(winId(), "SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
+          KNotification::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
     }
   }
 }
