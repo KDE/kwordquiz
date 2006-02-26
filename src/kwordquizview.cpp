@@ -475,15 +475,11 @@ void KWordQuizView::doEditPaste( )
       QStringList sl;
       sl = QStringList::split("\n", s);
 
-      int r = numRows() - tr;
+      //Do we need to add entries (rows)?
+      while (sl.count() > getDocument()->numEntries() - tr)
+        getDocument()->appendEntry(new KEduVocExpression);
 
-      if (sl.count() > r) //do we need to add rows?
-      {
-        setNumRows(numRows() + (sl.count() - r));
-        br = numRows();
-      }
-      else
-        br= br + sl.count() - 1;
+      br= br + sl.count() - 1;
 
       if (lc == 0) //left col?
         if (sl[0].find("\t") < ((int) sl[0].length() - 1))
@@ -492,7 +488,7 @@ void KWordQuizView::doEditPaste( )
       int i = 0;
       int ar = tr;
       QStringList sr;
-      while(i < sl.count() && br <= numRows() )
+      while (i < sl.count() && br <= getDocument()->numEntries())
       {
         int ac = lc;
 
@@ -510,8 +506,6 @@ void KWordQuizView::doEditPaste( )
         ar++;
         i++;
       }
-
-
     }
     else
     {
