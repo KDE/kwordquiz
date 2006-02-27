@@ -74,6 +74,8 @@ KWordQuizView::~KWordQuizView()
 
 void KWordQuizView::displayDoc()
 {
+  setUpdatesEnabled(false);
+  saveCurrentSelection(false);
   setNumRows(getDocument()->numEntries());
   horizontalHeader()->setLabel(0, getDocument()->originalIdentifier());
   horizontalHeader()->setLabel(1, getDocument()->identifier(1));
@@ -87,7 +89,11 @@ void KWordQuizView::displayDoc()
     setText(i, 0, getDocument()->entry(i)->original());
     setText(i, 1, getDocument()->entry(i)->translation(1));
   }
+  setUpdatesEnabled(true);
+  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
 
+  setCurrentCell(m_currentRow, m_currentCol);
+  repaintContents();
 }
 
 KEduVocDocument *KWordQuizView::getDocument() const
@@ -568,18 +574,13 @@ void KWordQuizView::doEditClear( )
 void KWordQuizView::doEditInsert( )
 {
   addUndo(i18n("&Undo Insert"));
-  setUpdatesEnabled(false);
-  saveCurrentSelection();
+  saveCurrentSelection(false);
 
-  getDocument()->insertEntry(new KEduVocExpression, m_currentRow);
-  // TODO EPT  insertRows(m_currentSel.topRow(), m_currentSel.bottomRow() - m_currentSel.topRow() + 1);
-  displayDoc();
+  for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); i++)
+    getDocument()->insertEntry(new KEduVocExpression, i);
 
   addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-
-  setCurrentCell(m_currentRow, m_currentCol);
-  setUpdatesEnabled(true);
-  repaintContents();
+  displayDoc();
   getDocument()->setModified(true);
 }
 
