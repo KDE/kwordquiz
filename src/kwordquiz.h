@@ -2,7 +2,7 @@
                           kwordquiz.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2005 by Peter Hedlund
+    copyright            : (C) 2002-2006 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -36,10 +36,10 @@
 
 // forward declaration of the KWordQuiz classes
 #include "wqquiz.h"
-#include "kwordquizview.h"
+
 class KEduVocDocument;
 class KWQTableModel;
-class KWordQuizView;
+class KWQTableView;
 class KWordQuizPrefs;
 class QAView;
 class MultipleView;

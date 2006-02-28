@@ -2,7 +2,7 @@
                           kwordquiz.cpp  -  description
                              -------------------
     begin         : Wed Jul 24 20:12:30 PDT 2002
-    copyright     : (C) 2002-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright     : (C) 2002-2006 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -37,6 +37,7 @@
 #include "kwordquiz.h"
 #include "keduvocdocument.h"
 #include "kwqtablemodel.h"
+#include "kwqtableview.h"
 #include "dlglanguage.h"
 #include "kwordquizprefs.h"
 #include "qaview.h"

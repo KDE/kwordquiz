@@ -2,7 +2,7 @@
                           kwordquizview.cpp  -  description
                              -------------------
     begin          : Wed Jul 24 20:12:30 PDT 2002
-    copyright      : (C) 2002-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2006 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -30,7 +30,7 @@
 #include <kglobalsettings.h>
 #include <knotification.h>
 
-#include "kwordquizview.h"
+#include "kwqtableview.h"
 #include "keduvocdocument.h"
 #include "kwordquiz.h"
 #include "dlgsort.h"
@@ -1086,6 +1086,7 @@ bool KWQTableView::eventFilter( QObject * o, QEvent * e )
     }
   }
 //  return Q3Table::eventFilter(o, e);
+  return true;
 }
 
 void KWQTableView::setText(int row, int col, const QString & text)
@@ -1101,4 +1102,4 @@ void KWQTableView::setText(int row, int col, const QString & text)
   }
 }
 
-#include "kwordquizview.moc"
+//#include "kwqtableview.moc"

@@ -2,7 +2,7 @@
                           kwordquizview.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002 by Peter Hedlund
+    copyright            : (C) 2002-2006 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 

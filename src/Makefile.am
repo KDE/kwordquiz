@@ -3,18 +3,18 @@ bin_PROGRAMS = kwordquiz
 
 ## INCLUDES were found outside kdevelop specific part
 
-kwordquiz_SOURCES = kwordquizprefs.cpp kwordquizview.cpp kwordquiz.cpp main.cpp \
-		dlglanguagebase.ui flashviewbase.ui multipleviewbase.ui qaviewbase.ui qaview.cpp \
-		flashview.cpp multipleview.cpp wqquiz.cpp wqscore.cpp prefeditorbase.ui \
-		prefquizbase.ui prefeditor.cpp prefquiz.cpp dlgsortbase.ui dlgsort.cpp dlgrcbase.ui \
-		dlgrc.cpp dlgspecchar.cpp dlglanguage.cpp wqprintdialogpage.cpp prefcharacter.cpp \
-		prefcharacterbase.ui wqundo.cpp prefs.kcfgc prefcardappearance.cpp prefcardappearancebase.ui \
-		kwqnewstuff.cpp kwqnewstuff.h kwqtablemodel.cpp
+kwordquiz_SOURCES = kwordquizprefs.cpp kwordquiz.cpp main.cpp \
+	dlglanguagebase.ui flashviewbase.ui multipleviewbase.ui qaviewbase.ui qaview.cpp \
+	flashview.cpp multipleview.cpp wqquiz.cpp wqscore.cpp prefeditorbase.ui \
+	prefquizbase.ui prefeditor.cpp prefquiz.cpp dlgsortbase.ui dlgsort.cpp dlgrcbase.ui \
+	dlgrc.cpp dlgspecchar.cpp dlglanguage.cpp wqprintdialogpage.cpp prefcharacter.cpp \
+	prefcharacterbase.ui wqundo.cpp prefs.kcfgc prefcardappearance.cpp prefcardappearancebase.ui \
+	kwqnewstuff.cpp kwqnewstuff.h kwqtablemodel.cpp kwqtableview.cpp
 kwordquiz_LDADD = ../../libkdeedu/kdeeducore/libkdeeducore.la $(LIB_QT) \
 	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE) $(LIBSOCKET) $(LIB_KDEPRINT) -lknewstuff
 
 
-EXTRA_DIST = main.cpp kwordquiz.cpp kwordquiz.h kwordquizdoc.cpp kwordquizdoc.h kwordquizview.cpp kwordquizview.h kwordquizui.rc kwordquiz.desktop kwordquizprefs.cpp kwordquizprefs.h
+EXTRA_DIST = main.cpp kwordquiz.cpp kwordquiz.h kwordquizdoc.cpp kwordquizdoc.h kwordquizui.rc kwordquiz.desktop kwordquizprefs.cpp kwordquizprefs.h
 
 kde_kcfg_DATA = kwordquiz.kcfg
 kde_conf_DATA = kwordquizrc
@@ -66,6 +66,6 @@ messages: rc.cpp
 
 
 noinst_HEADERS = qaview.h flashview.h multipleview.h wqquiz.h wqlistitem.h \
-		wqscore.h prefeditor.h prefquiz.h dlgsort.h dlgrc.h dlgspecchar.h dlglanguage.h \
-		dlglanguage.h wqprintdialogpage.h prefcharacter.h wqundo.h prefcardappearance.h \
-	kwqtablemodel.h
+	wqscore.h prefeditor.h prefquiz.h dlgsort.h dlgrc.h dlgspecchar.h dlglanguage.h \
+	dlglanguage.h wqprintdialogpage.h prefcharacter.h wqundo.h prefcardappearance.h \
+	kwqtablemodel.h kwqtableview.h
