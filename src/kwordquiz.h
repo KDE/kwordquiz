@@ -38,6 +38,7 @@
 #include "wqquiz.h"
 #include "kwordquizview.h"
 class KEduVocDocument;
+class KWQTableModel;
 class KWordQuizView;
 class KWordQuizPrefs;
 class QAView;
@@ -258,7 +259,8 @@ class KWordQuizApp : public KMainWindow
      * you can create your view according to your application's needs by
      * changing the view class.
      */
-    KWordQuizView *m_editView;
+    KWQTableView *m_tableView;
+    KWQTableModel *m_tableModel;
     FlashView *m_flashView;
     MultipleView *m_multipleView;
     QAView *m_qaView;

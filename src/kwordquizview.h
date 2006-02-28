@@ -23,6 +23,7 @@
 #endif
 
 #include <Q3Table>
+#include <QTableView>
 #include <QList>
 #include <QKeyEvent>
 #include <QEvent>
@@ -48,14 +49,14 @@ public:
   virtual int alignment() const;
 };
 
-class KWordQuizView : public Q3Table
+class KWQTableView : public QTableView
 {
   Q_OBJECT
   public:
     /** Constructor for the main view */
-    KWordQuizView(QWidget *parent = 0, const char *name=0);
+    KWQTableView(QWidget *parent = 0, const char *name=0);
     /** Destructor for the main view */
-    ~KWordQuizView();
+    ~KWQTableView();
 
     /** returns a pointer to the document connected to the view instance. Mind that this method requires a KWordQuizApp instance as a parent
      * widget to get to the window document pointer by calling the KWordQuizApp::getDocument() method.
