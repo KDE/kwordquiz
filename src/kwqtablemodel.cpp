@@ -47,4 +47,16 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
     return m_doc->entry(index.row())->translation(1);
 }
 
+/*QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+  if (orientation == Qt::Horizontal)
+    if (role != Qt::DisplayRole)
+      return QVariant();
+    else if (section == 1)
+      return m_doc->originalIdentifier();
+    else
+      return m_doc->identifier(1);
+}*/
+
+//#include "kwqtablemodel.moc"
 
