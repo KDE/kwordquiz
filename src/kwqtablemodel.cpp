@@ -62,4 +62,26 @@ QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int
     return QAbstractTableModel::headerData(section, orientation, role);
 }
 
+Qt::ItemFlags KWQTableModel::flags(const QModelIndex & index) const
+{
+  if (!index.isValid())
+    return Qt::ItemIsEnabled;
+
+  return QAbstractItemModel::flags(index) | Qt::ItemIsEditable;
+}
+
+bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, int role)
+{
+  if (index.isValid() && role == Qt::EditRole) {
+    if (index.column() == 0)
+      m_doc->entry(index.row())->setOriginal(value.toString());
+    else
+      m_doc->entry(index.row())->setTranslation(1, value.toString());
+
+    emit dataChanged(index, index);
+    return true;
+  }
+  return false;
+}
+
 #include "kwqtablemodel.moc"

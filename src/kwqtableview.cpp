@@ -61,8 +61,11 @@ KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(paren
   if(!m_undoList)
     m_undoList = new QList<WQUndo>();
 
-  //setNumCols(2);
-  setSelectionMode(QAbstractItemView::SingleSelection);
+  setSelectionMode(QAbstractItemView::ContiguousSelection);
+  setSelectionBehavior(QAbstractItemView::SelectItems);
+  setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed |
+    QAbstractItemView::AnyKeyPressed);
+  setTabKeyNavigation(true);
 
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
