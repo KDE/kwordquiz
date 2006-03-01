@@ -29,6 +29,7 @@
 */
 class KWQTableModel : public QAbstractTableModel
 {
+Q_OBJECT
 public:
   KWQTableModel(KEduVocDocument * doc, QObject * parent);
 

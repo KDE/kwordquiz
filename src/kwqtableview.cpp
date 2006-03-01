@@ -1102,4 +1102,4 @@ void KWQTableView::setText(int row, int col, const QString & text)
   }
 }
 
-//#include "kwqtableview.moc"
+#include "kwqtableview.moc"

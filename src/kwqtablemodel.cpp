@@ -58,5 +58,5 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
       return m_doc->identifier(1);
 }*/
 
-//#include "kwqtablemodel.moc"
+#include "kwqtablemodel.moc"
 
