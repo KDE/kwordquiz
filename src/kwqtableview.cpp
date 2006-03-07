@@ -63,9 +63,11 @@ KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(paren
 
   setSelectionMode(QAbstractItemView::ContiguousSelection);
   setSelectionBehavior(QAbstractItemView::SelectItems);
-  setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed |
-    QAbstractItemView::AnyKeyPressed);
+  setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
+  setItemDelegate(new KWQTableDelegate(this));
+
+  setSelection(QRect(1,1,1,1), QItemSelectionModel::Select);
 
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
@@ -1036,10 +1038,10 @@ void KWQTableView::paintCell( QPainter * p, int row, int col, const QRect & cr, 
 
   Q3Table::paintCell (p, row, col, cr, selected, g );*/
 }
-
+/*
 void KWQTableView::keyPressEvent( QKeyEvent * e)
 {
-  /*if (isEditing())
+  if (isEditing())
     if (e->key() == Key_Tab)
     {
       endEdit(currentRow(), currentColumn(), true, true);
@@ -1048,7 +1050,7 @@ void KWQTableView::keyPressEvent( QKeyEvent * e)
     }
     else
       return;
-  */
+
   if (e->key() == Qt::Key_Tab)
   {
     activateNextCell();
@@ -1056,7 +1058,7 @@ void KWQTableView::keyPressEvent( QKeyEvent * e)
   }
 //  Q3Table::keyPressEvent(e);
 }
-
+*/
 void KWQTableView::slotCheckedAnswer( int i )
 {
   if (i == -1)
@@ -1072,7 +1074,7 @@ void KWQTableView::slotCheckedAnswer( int i )
     selectRow(i);
   }
 }
-
+/*
 bool KWQTableView::eventFilter( QObject * o, QEvent * e )
 {
   if (o == cellEditor)
@@ -1091,7 +1093,7 @@ bool KWQTableView::eventFilter( QObject * o, QEvent * e )
 //  return Q3Table::eventFilter(o, e);
   return true;
 }
-
+*/
 void KWQTableView::setText(int row, int col, const QString & text)
 {
   Q3TableItem *itm = 0 /*item(row, col)*/;

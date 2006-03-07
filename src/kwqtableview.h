@@ -30,6 +30,7 @@
 
 #include <kprinter.h>
 
+#include "kwqtabledelegate.h"
 #include "wqundo.h"
 
 class KEduVocDocument;
@@ -94,8 +95,8 @@ class KWQTableView : public QTableView
     QWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );
     void activateNextCell();
-    void keyPressEvent( QKeyEvent* );
-    bool eventFilter( QObject*, QEvent* );
+    //void keyPressEvent( QKeyEvent* );
+    //bool eventFilter( QObject*, QEvent* );
   public slots:
     void adjustRow(int row);
     void slotSpecChar(const QChar &);
@@ -114,6 +115,8 @@ class KWQTableView : public QTableView
     Q3TableSelection m_currentSel;
     DlgSpecChar* dlgSpecChar;
     QWidget * cellEditor;
+    KWQTableDelegate * m_delegate;
+
     /** the list of the undo objects */
     static QList<WQUndo> *m_undoList;
 
