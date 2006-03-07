@@ -39,6 +39,8 @@ public:
 
   void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
+private slots:
+    void commitAndCloseEditor();
 };
 
 #endif

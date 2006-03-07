@@ -17,11 +17,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QLineEdit>
-
+#include <QtGui>
 
 #include "kwqtabledelegate.h"
-#include "kwqtablemodel.h"
 
 KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
 {
@@ -31,10 +29,8 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
 {
   QLineEdit *editor = new QLineEdit(parent);
   editor->setFrame(false);
-  //editor->setMinimum(0);
-  //editor->setMaximum(100);
-  editor->installEventFilter(const_cast<KWQTableDelegate*>(this));
-
+  //editor->installEventFilter(const_cast<KWQTableDelegate*>(this));
+  connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
   return editor;
 }
 
@@ -57,6 +53,13 @@ void KWQTableDelegate::setModelData(QWidget * editor, QAbstractItemModel * model
 void KWQTableDelegate::updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & /*index*/) const
 {
   editor->setGeometry(option.rect);
+}
+
+void KWQTableDelegate::commitAndCloseEditor( )
+{
+  QWidget *editor = qobject_cast<QWidget *>(sender());
+  emit commitData(editor);
+  emit closeEditor(editor, QAbstractItemDelegate::EditNextItem);
 }
 
 #include "kwqtabledelegate.moc"
