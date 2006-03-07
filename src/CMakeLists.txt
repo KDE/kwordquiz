@@ -30,7 +30,9 @@ set(kwordquiz_SRCS
    kwqnewstuff.cpp 
    kwqnewstuff.h 
    kwqtablemodel.cpp 
-   kwqtableview.cpp )
+   kwqtableview.cpp 
+   kwqtabledelegate.cpp
+   )
 
 kde4_automoc(${kwordquiz_SRCS})
 
