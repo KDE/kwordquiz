@@ -72,6 +72,7 @@ class KWQTableView : public QTableView
     void setText( int row, int col, const QString &text );
 
     void displayDoc();
+    void initSelection();
 
     /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);
@@ -116,6 +117,7 @@ class KWQTableView : public QTableView
     DlgSpecChar* dlgSpecChar;
     QWidget * cellEditor;
     KWQTableDelegate * m_delegate;
+    QItemSelectionModel *m_selectionModel;
 
     /** the list of the undo objects */
     static QList<WQUndo> *m_undoList;

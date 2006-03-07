@@ -67,8 +67,6 @@ KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(paren
   setTabKeyNavigation(true);
   setItemDelegate(new KWQTableDelegate(this));
 
-  setSelection(QRect(1,1,1,1), QItemSelectionModel::Select);
-
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
 }
@@ -1105,6 +1103,20 @@ void KWQTableView::setText(int row, int col, const QString & text)
 //    KWQTableItem *i = new KWQTableItem(this, Q3TableItem::OnTyping, text);
 //    setItem(row, col, i);
   }
+}
+
+void KWQTableView::initSelection( )
+{
+  /*QModelIndex topLeft;
+  QModelIndex bottomRight;
+
+  topLeft = model()->index(0, 0, QModelIndex());
+  bottomRight = model()->index(5, 2, QModelIndex());
+
+  QItemSelection selection(topLeft, topLeft);
+  selectionModel()->select(selection, QItemSelectionModel::Select);
+*/
+  setSelection(QRect(0,0,1,1), QItemSelectionModel::Select);
 }
 
 #include "kwqtableview.moc"

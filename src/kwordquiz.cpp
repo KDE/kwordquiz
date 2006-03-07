@@ -345,6 +345,7 @@ void KWordQuizApp::initView()
   m_tableView = new KWQTableView(this);
   m_tableView->setModel(m_tableModel);
   m_tableView->setFont(Prefs::editorFont());
+  m_tableView->initSelection();
   //m_tableView->displayDoc();
   setCentralWidget(m_tableView);
   setCaption(doc->URL().fileName(),false);
