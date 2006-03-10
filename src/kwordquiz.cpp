@@ -346,8 +346,9 @@ void KWordQuizApp::initView()
   m_tableView->setModel(m_tableModel);
   m_tableView->setFont(Prefs::editorFont());
   m_tableView->initSelection();
-  //m_tableView->displayDoc();
+  m_tableView->viewport()->setFocus();
   setCentralWidget(m_tableView);
+  m_tableView->viewport()->setFocus();
   setCaption(doc->URL().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));

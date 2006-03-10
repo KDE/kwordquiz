@@ -39,6 +39,10 @@ public:
 
   void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
+protected:
+  void drawDisplay(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QString &text) const;
+  void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const;
+
 private slots:
     void commitAndCloseEditor();
 };

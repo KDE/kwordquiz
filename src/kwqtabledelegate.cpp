@@ -62,4 +62,51 @@ void KWQTableDelegate::commitAndCloseEditor( )
   emit closeEditor(editor, QAbstractItemDelegate::EditNextItem);
 }
 
+void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect, const QString & text) const
+{
+    QPen pen = painter->pen();
+    QPalette::ColorGroup cg = option.state & QStyle::State_Enabled ? QPalette::Normal : QPalette::Disabled;
+    if (option.state & QStyle::State_Selected) {
+        painter->fillRect(rect, option.palette.brush(cg, option.state & QStyle::State_HasFocus ?
+          QPalette::Base : QPalette::Highlight));
+        painter->setPen(option.palette.color(cg, option.state & QStyle::State_HasFocus ?
+          QPalette::Text : QPalette::HighlightedText));
+    } else {
+        painter->setPen(option.palette.color(cg, QPalette::Text));
+    }
+
+    if (option.state & QStyle::State_Editing) {
+        painter->save();
+        painter->setPen(option.palette.color(cg, QPalette::Text));
+        painter->drawRect(rect.adjusted(0, 0, -1, -1));
+        painter->restore();
+    }
+
+    QFont font = painter->font();
+    painter->setFont(option.font);
+    QRect textRect = rect.adjusted(3, 0, -3, 0); // remove width padding
+    QString str = text;
+    if (painter->fontMetrics().width(text) > textRect.width() && !text.contains(QLatin1Char('\n')))
+        str = elidedText(option.fontMetrics, textRect.width(), option.textElideMode, text);
+    qt_format_text(option.font, textRect, option.displayAlignment, str, 0, 0, 0, 0, painter);
+    painter->setFont(font);
+    painter->setPen(pen);
+}
+
+void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect) const
+{
+  if (option.state & QStyle::State_HasFocus) {
+    painter->save();
+    QPen pen = painter->pen();
+    pen.setColor(Qt::black);
+    pen.setWidth(0);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawRect(rect.adjusted(0,0,-1,-1));
+    painter->drawRect(rect.adjusted(1,1,-2,-2));
+    painter->restore();
+  }
+}
+
+
+
 #include "kwqtabledelegate.moc"
