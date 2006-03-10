@@ -66,10 +66,10 @@ class KWQTableView : public QTableView
      */
     KEduVocDocument *getDocument() const;
 
+
     //Reimplemented from QTable
     void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
     void setFont( const QFont &);
-    void setText( int row, int col, const QString &text );
 
     void displayDoc();
     void initSelection();
@@ -90,7 +90,6 @@ class KWQTableView : public QTableView
     void doVocabShuffle();
     void doVocabRC();
     void doVocabSpecChar();
-    void saveCurrentSelection(bool clear);
     bool checkForBlank(const QString & s, bool blank);
   protected:
     QWidget * beginEdit(int row, int col, bool replace);

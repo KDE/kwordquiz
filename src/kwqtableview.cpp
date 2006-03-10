@@ -78,25 +78,15 @@ KWQTableView::~KWQTableView()
 void KWQTableView::displayDoc()
 {
   setUpdatesEnabled(false);
-  saveCurrentSelection(false);
-//  setNumRows(getDocument()->numEntries());
-//  horizontalHeader()->setLabel(0, getDocument()->originalIdentifier());
-//  horizontalHeader()->setLabel(1, getDocument()->identifier(1));
+
   setColumnWidth(0, getDocument()->sizeHint(0));
   setColumnWidth(1, getDocument()->sizeHint(1));
+
+  ///@todo font should be handled differently
   if (getDocument()->font() != NULL)
     setFont(*(getDocument()->font()));
 
-  for (int i=0; i<getDocument()->numEntries(); i++)
-  {
-    setText(i, 0, getDocument()->entry(i)->original());
-    setText(i, 1, getDocument()->entry(i)->translation(1));
-  }
   setUpdatesEnabled(true);
-//  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-
-//  setCurrentCell(m_currentRow, m_currentCol);
-//  repaintContents();
 }
 
 KEduVocDocument *KWQTableView::getDocument() const
@@ -354,26 +344,6 @@ void KWQTableView::adjustRow( int row )
     setRowHeight(row, rh);
 }
 
-void KWQTableView::saveCurrentSelection(bool clear = true)
-{
-/*
-  m_currentRow = currentRow();
-  m_currentCol = currentColumn();
-
-  if (numSelections() > 0)
-  {
-    m_currentSel = selection(0);
-    if (clear)
-      clearSelection();
-  }
-  else
-  {
-    Q3TableSelection* ts;
-    ts = new Q3TableSelection(m_currentRow, m_currentCol, m_currentRow, m_currentCol);
-    m_currentSel = *ts;
-  }*/
-}
-
 void KWQTableView::doEditUndo( )
 {
 /*  if (isEditing())
@@ -585,7 +555,7 @@ void KWQTableView::doEditClear( )
 void KWQTableView::doEditInsert( )
 {
   addUndo(i18n("&Undo Insert"));
-  saveCurrentSelection(false);
+  //saveCurrentSelection(false);
 
   for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); i++)
     getDocument()->insertEntry(new KEduVocExpression, i);
@@ -599,7 +569,7 @@ void KWQTableView::doEditDelete( )
 {
   addUndo(i18n("&Undo Delete"));
   //retrieve current selection
-  saveCurrentSelection();
+ // saveCurrentSelection();
 
   int tr = m_currentSel.topRow();
   int br = m_currentSel.bottomRow();
@@ -771,7 +741,7 @@ void KWQTableView::doEditUnmarkBlank( )
 
 void KWQTableView::doVocabSort( )
 {
-  saveCurrentSelection();
+//  saveCurrentSelection();
   DlgSort* dlg;
   dlg = new DlgSort(this, "dlg_sort", true);
   dlg->setLanguage(1, getDocument()->originalIdentifier());
@@ -798,7 +768,7 @@ void KWQTableView::doVocabShuffle( )
 {
   /**@todo handle empty rows, port to document class */
   addUndo(i18n("&Undo Shuffle"));
-  saveCurrentSelection();
+//  saveCurrentSelection();
   KRandomSequence* rs;
   rs = new KRandomSequence();
   int count = getDocument()->numEntries();
@@ -818,7 +788,7 @@ void KWQTableView::doVocabShuffle( )
 
 void KWQTableView::doVocabRC( )
 {
-  saveCurrentSelection();
+//  saveCurrentSelection();
   DlgRC* dlg;
   dlg = new DlgRC(this, "dlg_rc", true);
   dlg->setNumRows(getDocument()->numEntries());
@@ -910,7 +880,7 @@ void KWQTableView::slotSpecChar(const QChar & c)
 
 void KWQTableView::activateNextCell( )
 {
-  saveCurrentSelection(false);
+//  saveCurrentSelection(false);
   int tr = m_currentSel.topRow();
   int br = m_currentSel.bottomRow();
   int lc = m_currentSel.leftCol();
@@ -1092,18 +1062,6 @@ bool KWQTableView::eventFilter( QObject * o, QEvent * e )
   return true;
 }
 */
-void KWQTableView::setText(int row, int col, const QString & text)
-{
-  Q3TableItem *itm = 0 /*item(row, col)*/;
-  if (itm) {
-    itm->setText(text);
-    itm->updateEditor(row, col);
-//    updateCell(row, col);
-  } else {
-//    KWQTableItem *i = new KWQTableItem(this, Q3TableItem::OnTyping, text);
-//    setItem(row, col, i);
-  }
-}
 
 void KWQTableView::initSelection( )
 {

@@ -1050,7 +1050,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
       {
-        m_tableView->saveCurrentSelection(true);
+        //m_tableView->saveCurrentSelection(true);
         m_tableView->hide();
         m_flashView = new FlashView(this);
         connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
@@ -1078,7 +1078,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
       {
-        m_tableView->saveCurrentSelection(true);
+        //m_tableView->saveCurrentSelection(true);
         m_tableView->hide();
         m_multipleView = new MultipleView(this);
         connect(quizCheck, SIGNAL(activated()), m_multipleView, SLOT(slotCheck()));
@@ -1105,7 +1105,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
       {
-        m_tableView->saveCurrentSelection(true);
+        //m_tableView->saveCurrentSelection(true);
         m_tableView->hide();
         m_qaView = new QAView(this);
         connect(quizCheck, SIGNAL(activated()), m_qaView, SLOT(slotCheck()));
