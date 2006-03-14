@@ -16,10 +16,8 @@
  ***************************************************************************/
 
 #include <QPainter>
-#include <Q3Table>
 #include <QClipboard>
 #include <QLineEdit>
-#include <Q3MemArray>
 #include <QKeyEvent>
 #include <QEvent>
 #include <QList>
@@ -40,22 +38,6 @@
 #include "dlgspecchar.h"
 
 QList<WQUndo> *KWQTableView::m_undoList = 0L;
-
-KWQTableItem::KWQTableItem(Q3Table* table, EditType et, const QString & text) : Q3TableItem(table, et, text)
-{}
-
-int KWQTableItem::alignment() const
-{
-  bool num;
-  bool ok1 = false;
-  bool ok2 = false;
-  (void)text().toInt(&ok1);
-  if (!ok1)
-    (void)text().toDouble(&ok2);
-  num = ok1 || ok2;
-
-  return (num ? Qt::AlignRight : Qt::AlignLeft) | Qt::AlignVCenter;
-}
 
 KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(parent)
 {

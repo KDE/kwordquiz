@@ -22,7 +22,6 @@
 #include <config.h>
 #endif
 
-#include <Q3Table>
 #include <QTableView>
 #include <QList>
 #include <QKeyEvent>
@@ -43,90 +42,83 @@ const char delim_end = ']';
 @author Peter Hedlund
 */
 
-class KWQTableItem :public Q3TableItem
-{
-public:
-  KWQTableItem( Q3Table* table, EditType et, const QString & text );
-  virtual int alignment() const;
-};
-
 class KWQTableView : public QTableView
 {
-  Q_OBJECT
-  public:
-    /** Constructor for the main view */
-    KWQTableView(QWidget *parent = 0, const char *name=0);
-    /** Destructor for the main view */
-    ~KWQTableView();
+Q_OBJECT
+public:
+  /** Constructor for the main view */
+  KWQTableView(QWidget *parent = 0, const char *name=0);
+  /** Destructor for the main view */
+  ~KWQTableView();
 
-    /** returns a pointer to the document connected to the view instance. Mind that this method requires a KWordQuizApp instance as a parent
-     * widget to get to the window document pointer by calling the KWordQuizApp::getDocument() method.
-     *
-     * @see KWordQuizApp#getDocument
-     */
-    KEduVocDocument *getDocument() const;
-
-
-    //Reimplemented from QTable
-    void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
-    void setFont( const QFont &);
-
-    void displayDoc();
-    void initSelection();
-
-    /** contains the implementation for printing functionality */
-    void print(KPrinter *pPrinter);
-    void addUndo(const QString & caption);
-    void doEditUndo();
-    void doEditCut();
-    void doEditCopy();
-    void doEditPaste();
-    void doEditClear();
-    void doEditInsert();
-    void doEditDelete();
-    void doEditMarkBlank();
-    void doEditUnmarkBlank();
-    void doVocabSort();
-    void doVocabShuffle();
-    void doVocabRC();
-    void doVocabSpecChar();
-    bool checkForBlank(const QString & s, bool blank);
-  protected:
-    QWidget * beginEdit(int row, int col, bool replace);
-    void endEdit ( int row, int col, bool accept, bool replace );
-    void activateNextCell();
-    //void keyPressEvent( QKeyEvent* );
-    //bool eventFilter( QObject*, QEvent* );
-  public slots:
-    void adjustRow(int row);
-    void slotSpecChar(const QChar &);
-    void slotCheckedAnswer(int );
-  protected slots:
-    void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint);
-    void commitData (QWidget * editor);
-
-  private slots:
-    void slotDlgSpecCharClosed();
+  /** returns a pointer to the document connected to the view instance. Mind that this method requires a KWordQuizApp instance as a parent
+    * widget to get to the window document pointer by calling the KWordQuizApp::getDocument() method.
+    *
+    * @see KWordQuizApp#getDocument
+    */
+  KEduVocDocument *getDocument() const;
 
 
-  signals:
-    void undoChange(const QString & text, bool enabled);
+  //Reimplemented from QTable
+  void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
+  void setFont( const QFont &);
 
-  private:
-    int m_currentRow;
-    int m_currentCol;
-    QString m_currentText;
-    Q3TableSelection m_currentSel;
-    DlgSpecChar* dlgSpecChar;
-    QWidget * cellEditor;
-    KWQTableDelegate * m_delegate;
-    QItemSelectionModel *m_selectionModel;
+  void displayDoc();
+  void initSelection();
 
-    /** the list of the undo objects */
-    static QList<WQUndo> *m_undoList;
+  /** contains the implementation for printing functionality */
+  void print(KPrinter *pPrinter);
+  void addUndo(const QString & caption);
+  void doEditUndo();
+  void doEditCut();
+  void doEditCopy();
+  void doEditPaste();
+  void doEditClear();
+  void doEditInsert();
+  void doEditDelete();
+  void doEditMarkBlank();
+  void doEditUnmarkBlank();
+  void doVocabSort();
+  void doVocabShuffle();
+  void doVocabRC();
+  void doVocabSpecChar();
+  bool checkForBlank(const QString & s, bool blank);
+protected:
+  QWidget * beginEdit(int row, int col, bool replace);
+  void endEdit ( int row, int col, bool accept, bool replace );
+  void activateNextCell();
+  //void keyPressEvent( QKeyEvent* );
+  //bool eventFilter( QObject*, QEvent* );
+public slots:
+  void adjustRow(int row);
+  void slotSpecChar(const QChar &);
+  void slotCheckedAnswer(int );
+protected slots:
+  void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint);
+  void commitData (QWidget * editor);
 
-    void doNewPage(QPainter & painter, int res, int type);
-    void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
+private slots:
+  void slotDlgSpecCharClosed();
+
+
+signals:
+  void undoChange(const QString & text, bool enabled);
+
+private:
+  int m_currentRow;
+  int m_currentCol;
+  QString m_currentText;
+  Q3TableSelection m_currentSel;
+  DlgSpecChar* dlgSpecChar;
+  QWidget * cellEditor;
+  KWQTableDelegate * m_delegate;
+  QItemSelectionModel *m_selectionModel;
+
+  /** the list of the undo objects */
+  static QList<WQUndo> *m_undoList;
+
+  void doNewPage(QPainter & painter, int res, int type);
+  void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
 };
 
 #endif // KWORDQUIZVIEW_H
