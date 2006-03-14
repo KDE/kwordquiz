@@ -873,6 +873,21 @@ void KWQTableView::activateNextCell( )
   int lc = m_currentSel.leftCol();
   int rc = m_currentSel.rightCol();
 
+  QModelIndex idx = currentIndex();
+
+  int currentRow = idx.row();
+  int currentColumn = idx.column();
+
+  int newRow = currentRow;
+  int newColumn = currentColumn;
+
+  if (newColumn == 1){
+    newColumn--;
+    newRow++;
+  }
+  else
+    newColumn++;
+/*
   if (lc == rc && tr == br) //one cell selected
   {
     clearSelection();
@@ -882,61 +897,65 @@ void KWQTableView::activateNextCell( )
         if (m_currentRow == (getDocument()->numEntries() - 1))
         {
           getDocument()->appendEntry(new KEduVocExpression());
-//          setNumRows(getDocument()->numEntries() + 1);
+          setNumRows(getDocument()->numEntries() + 1);
         }
-//        setCurrentCell(m_currentRow + 1, m_currentCol);
+        setCurrentCell(m_currentRow + 1, m_currentCol);
         break;
       case 1:
         if (m_currentCol == 0)
-          /*setCurrentCell(m_currentRow, m_currentCol + 1)*/;
+          setCurrentCell(m_currentRow, m_currentCol + 1);
         else
           {
           if (m_currentRow == (getDocument()->numEntries() - 1))
           {
             getDocument()->appendEntry(new KEduVocExpression());
-//            setNumRows(getDocument()->numEntries() + 1);
+            setNumRows(getDocument()->numEntries() + 1);
           }
-//          setCurrentCell(m_currentRow + 1, m_currentCol - 1);
+          setCurrentCell(m_currentRow + 1, m_currentCol - 1);
           }
         break;
       case 2:
-//        setCurrentCell(m_currentRow, m_currentCol);
+        setCurrentCell(m_currentRow, m_currentCol);
         break;
     }
   }
   else //a larger selection, move within it
   {
-    //addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+    addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
     switch(Prefs::enterMove())
     {
       case 0:
         if (m_currentRow == br)
         {
           if (m_currentCol < rc)
-            /*setCurrentCell(tr, rc)*/;
+            setCurrentCell(tr, rc);
           else
-            /*setCurrentCell(tr, lc)*/;
+            setCurrentCell(tr, lc);
         }
         else
           if (m_currentRow < br)
-            /*setCurrentCell(m_currentRow + 1, m_currentCol)*/;
+            setCurrentCell(m_currentRow + 1, m_currentCol);
         break;
       case 1:
         if (m_currentCol == rc)
         {
           if (m_currentRow < br)
-            /*setCurrentCell(m_currentRow + 1, lc)*/;
+            setCurrentCell(m_currentRow + 1, lc);
           else
-            /*setCurrentCell(tr, lc)*/;
+            setCurrentCell(tr, lc);
         }
         else
-          /*setCurrentCell(m_currentRow, m_currentCol + 1)*/;
+          setCurrentCell(m_currentRow, m_currentCol + 1);
         break;
       case 2:
-        /*setCurrentCell(m_currentRow, m_currentCol)*/;
+        setCurrentCell(m_currentRow, m_currentCol);
         break;
     }
-  }
+  }*/
+
+  QModelIndex newIdx = idx.model()->index(newRow, newColumn);
+  setCurrentIndex(newIdx);
+
 }
 
 void KWQTableView::addUndo( const QString & caption )
@@ -1060,13 +1079,8 @@ void KWQTableView::initSelection( )
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
 {
   QTableView::closeEditor(editor, hint);
-  kDebug() << "hint1: " << hint;
-  if (hint == QAbstractItemDelegate::SubmitModelCache) {
-    kDebug() << "hint2";
-    QModelIndex idx = currentIndex();
-    QModelIndex newIdx = idx.model()->index(idx.row(), idx.column() + 1);
-    setCurrentIndex(newIdx);
-  }
+  if (hint == QAbstractItemDelegate::SubmitModelCache)
+    activateNextCell();
 }
 
 void KWQTableView::commitData(QWidget * editor)
