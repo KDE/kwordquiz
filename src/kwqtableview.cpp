@@ -50,6 +50,9 @@ KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(paren
   setTabKeyNavigation(true);
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
+
+  m_selectionModel = selectionModel();
+
 /*
   connect(m_delegate, SIGNAL(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)),
     this, SLOT(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)));
@@ -867,41 +870,39 @@ void KWQTableView::slotSpecChar(const QChar & c)
 
 void KWQTableView::activateNextCell( )
 {
-//  saveCurrentSelection(false);
-  int tr = m_currentSel.topRow();
-  int br = m_currentSel.bottomRow();
-  int lc = m_currentSel.leftCol();
-  int rc = m_currentSel.rightCol();
+  QModelIndexList indexes = selectionModel()->selectedIndexes();
+  kDebug() << "count " << indexes.count() << '\n';
+ /* QModelIndex currentIndex = m_selectionModel->currentIndex();
 
-  QModelIndex idx = currentIndex();
-
-  int currentRow = idx.row();
-  int currentColumn = idx.column();
+  int currentRow = currentIndex.row();
+  int currentColumn = currentIndex.column();
 
   int newRow = currentRow;
-  int newColumn = currentColumn;
-
+  int newColumn = currentColumn;*/
+/*
   if (newColumn == 1){
     newColumn--;
     newRow++;
   }
   else
     newColumn++;
-/*
-  if (lc == rc && tr == br) //one cell selected
+*/
+  if (indexes.count() == 1) //one cell selected
   {
-    clearSelection();
-    switch(Prefs::enterMove())
+    //clearSelection();
+/*    switch(Prefs::enterMove())
     {
       case 0:
-        if (m_currentRow == (getDocument()->numEntries() - 1))
+        if (currentRow == (model()->rowCount() - 1))
         {
-          getDocument()->appendEntry(new KEduVocExpression());
-          setNumRows(getDocument()->numEntries() + 1);
+          ///@todo append row
+          //getDocument()->appendEntry(new KEduVocExpression());
+          //setNumRows(getDocument()->numEntries() + 1);
         }
-        setCurrentCell(m_currentRow + 1, m_currentCol);
-        break;
-      case 1:
+        newRow = 0;
+        newColumn = 0;
+        break;*/
+     /* case 1:
         if (m_currentCol == 0)
           setCurrentCell(m_currentRow, m_currentCol + 1);
         else
@@ -917,11 +918,11 @@ void KWQTableView::activateNextCell( )
       case 2:
         setCurrentCell(m_currentRow, m_currentCol);
         break;
-    }
+    }*/
   }
   else //a larger selection, move within it
   {
-    addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
+    /*addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
     switch(Prefs::enterMove())
     {
       case 0:
@@ -950,11 +951,11 @@ void KWQTableView::activateNextCell( )
       case 2:
         setCurrentCell(m_currentRow, m_currentCol);
         break;
-    }
-  }*/
+    }*/
+  }
 
-  QModelIndex newIdx = idx.model()->index(newRow, newColumn);
-  setCurrentIndex(newIdx);
+//  QModelIndex newIndex = model()->index(newRow, newColumn);
+  //m_selectionModel->setCurrentIndex(newIndex, QItemSelectionModel::SelectCurrent);
 
 }
 
