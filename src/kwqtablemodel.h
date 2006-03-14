@@ -31,7 +31,7 @@ class KWQTableModel : public QAbstractTableModel
 {
 Q_OBJECT
 public:
-  KWQTableModel(KEduVocDocument * doc, QObject * parent);
+  KWQTableModel(KEduVocDocument * doc = 0, QObject * parent = 0);
 
   int rowCount(const QModelIndex &parent) const;
   int columnCount(const QModelIndex &parent) const;
@@ -41,6 +41,8 @@ public:
 
   Qt::ItemFlags flags (const QModelIndex & index) const;
   bool setData(const QModelIndex &index, const QVariant &value,int role = Qt::EditRole);
+
+  int columnWidth(int column) const;
 
 private:
   KEduVocDocument * m_doc;

@@ -19,7 +19,10 @@
 
 #include <QtGui>
 
+#include "kdebug.h"
+
 #include "kwqtabledelegate.h"
+#include "kwqtablemodel.h"
 
 KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
 {
@@ -38,6 +41,9 @@ void KWQTableDelegate::setEditorData(QWidget * editor, const QModelIndex & index
 {
   QString value = index.model()->data(index, Qt::DisplayRole).toString();
 
+  if (value == "@empty@")
+    value = "";
+
   QLineEdit *lineEdit = static_cast<QLineEdit*>(editor);
   lineEdit->setText(value);
 }
@@ -55,9 +61,10 @@ void KWQTableDelegate::updateEditorGeometry(QWidget * editor, const QStyleOption
   editor->setGeometry(option.rect);
 }
 
-void KWQTableDelegate::commitAndCloseEditor( )
+void KWQTableDelegate::commitAndCloseEditor()
 {
   QWidget *editor = qobject_cast<QWidget *>(sender());
+  kDebug() << "Commiting and closing";
   emit commitData(editor);
   emit closeEditor(editor, QAbstractItemDelegate::EditNextItem);
 }
@@ -86,6 +93,9 @@ void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewIte
     painter->setFont(option.font);
     QRect textRect = rect.adjusted(3, 0, -3, 0); // remove width padding
     QString str = text;
+    if (str == "@empty@")
+      str = "";
+
     if (painter->fontMetrics().width(text) > textRect.width() && !text.contains(QLatin1Char('\n')))
         str = elidedText(option.fontMetrics, textRect.width(), option.textElideMode, text);
     qt_format_text(option.font, textRect, option.displayAlignment, str, 0, 0, 0, 0, painter);
@@ -106,7 +116,5 @@ void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem 
     painter->restore();
   }
 }
-
-
 
 #include "kwqtabledelegate.moc"

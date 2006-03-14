@@ -41,10 +41,16 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
   else if (role != Qt::DisplayRole)
     return QVariant();
 
+  QVariant result;
   if (index.column() == 0)
-    return m_doc->entry(index.row())->original();
+    result = m_doc->entry(index.row())->original();
   else
-    return m_doc->entry(index.row())->translation(1);
+    result = m_doc->entry(index.row())->translation(1);
+
+  if (result.toString().isEmpty())
+    result = "@empty@";
+
+  return result;
 }
 
 QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -82,6 +88,11 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
     return true;
   }
   return false;
+}
+
+int KWQTableModel::columnWidth(int column) const
+{
+  return m_doc->sizeHint(column);
 }
 
 #include "kwqtablemodel.moc"

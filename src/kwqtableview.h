@@ -101,9 +101,13 @@ class KWQTableView : public QTableView
     void adjustRow(int row);
     void slotSpecChar(const QChar &);
     void slotCheckedAnswer(int );
+  protected slots:
+    void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint);
+    void commitData (QWidget * editor);
 
   private slots:
     void slotDlgSpecCharClosed();
+
 
   signals:
     void undoChange(const QString & text, bool enabled);

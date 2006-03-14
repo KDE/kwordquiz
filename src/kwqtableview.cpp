@@ -29,6 +29,7 @@
 #include <krandomsequence.h>
 #include <kglobalsettings.h>
 #include <knotification.h>
+#include <kdebug.h>
 
 #include "kwqtableview.h"
 #include "keduvocdocument.h"
@@ -65,8 +66,12 @@ KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(paren
   setSelectionBehavior(QAbstractItemView::SelectItems);
   setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
-  setItemDelegate(new KWQTableDelegate(this));
-
+  m_delegate = new KWQTableDelegate(this);
+  setItemDelegate(m_delegate);
+/*
+  connect(m_delegate, SIGNAL(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)),
+    this, SLOT(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)));
+*/
   setMinimumSize(0, 0); //This seems to improve resizing of main window
   dlgSpecChar = 0;
 }
@@ -1065,16 +1070,26 @@ bool KWQTableView::eventFilter( QObject * o, QEvent * e )
 
 void KWQTableView::initSelection( )
 {
-  /*QModelIndex topLeft;
-  QModelIndex bottomRight;
+  //Can't have this in the ctor because a model is needed first
+  setCurrentIndex(model()->index(0, 0));
+  scrollTo(currentIndex());
+}
 
-  topLeft = model()->index(0, 0, QModelIndex());
-  bottomRight = model()->index(5, 2, QModelIndex());
+void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
+{
+  QTableView::closeEditor(editor, hint);
+  kDebug() << "hint1: " << hint;
+  if (hint == QAbstractItemDelegate::SubmitModelCache) {
+    kDebug() << "hint2";
+    QModelIndex idx = currentIndex();
+    QModelIndex newIdx = idx.model()->index(idx.row(), idx.column() + 1);
+    setCurrentIndex(newIdx);
+  }
+}
 
-  QItemSelection selection(topLeft, topLeft);
-  selectionModel()->select(selection, QItemSelectionModel::Select);
-*/
-  setSelection(QRect(0,0,1,1), QItemSelectionModel::Select);
+void KWQTableView::commitData(QWidget * editor)
+{
+  QTableView::commitData(editor);
 }
 
 #include "kwqtableview.moc"
