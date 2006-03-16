@@ -51,8 +51,6 @@ KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(paren
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
 
-  m_selectionModel = selectionModel();
-
 /*
   connect(m_delegate, SIGNAL(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)),
     this, SLOT(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)));
@@ -870,60 +868,63 @@ void KWQTableView::slotSpecChar(const QChar & c)
 
 void KWQTableView::activateNextCell( )
 {
-  QModelIndexList indexes = selectionModel()->selectedIndexes();
+  QItemSelectionModel * selModel = selectionModel();
+
+  QModelIndexList indexes = selModel->selectedIndexes();
   kDebug() << "count " << indexes.count() << '\n';
- /* QModelIndex currentIndex = m_selectionModel->currentIndex();
+  QModelIndex currentIndex = selModel->currentIndex();
 
   int currentRow = currentIndex.row();
   int currentColumn = currentIndex.column();
-
+  kDebug() << "Current Row: " << currentRow << '\n' << "Current column: " << currentColumn << '\n';
   int newRow = currentRow;
-  int newColumn = currentColumn;*/
-/*
-  if (newColumn == 1){
-    newColumn--;
-    newRow++;
-  }
-  else
-    newColumn++;
-*/
+  int newColumn = currentColumn;
+
   if (indexes.count() == 1) //one cell selected
   {
     //clearSelection();
-/*    switch(Prefs::enterMove())
+    switch(Prefs::enterMove())
     {
-      case 0:
+      ///@todo 0 should be down, not right. change ui file
+      case 0: //right
+        if (currentRow == (model()->rowCount() - 1) && currentColumn == 1)
+        {
+          ///@todo append row
+          //getDocument()->appendEntry(new KEduVocExpression());
+          //setNumRows(getDocument()->numEntries() + 1);
+          newRow = 0;
+          newColumn = 0;
+        } else {
+          if (currentColumn == 0)
+            newColumn++;
+          else {
+            newRow++;
+            newColumn--;
+          }
+        }
+        break;
+     case 1: //down
         if (currentRow == (model()->rowCount() - 1))
         {
           ///@todo append row
           //getDocument()->appendEntry(new KEduVocExpression());
           //setNumRows(getDocument()->numEntries() + 1);
-        }
-        newRow = 0;
-        newColumn = 0;
-        break;*/
-     /* case 1:
-        if (m_currentCol == 0)
-          setCurrentCell(m_currentRow, m_currentCol + 1);
-        else
-          {
-          if (m_currentRow == (getDocument()->numEntries() - 1))
-          {
-            getDocument()->appendEntry(new KEduVocExpression());
-            setNumRows(getDocument()->numEntries() + 1);
-          }
-          setCurrentCell(m_currentRow + 1, m_currentCol - 1);
-          }
+          newRow = 0;
+        } else
+          newRow++;
         break;
-      case 2:
-        setCurrentCell(m_currentRow, m_currentCol);
+      case 2: //no move
+        //do nothing
         break;
-    }*/
+
+    }
+
+    QModelIndex newIndex = model()->index(newRow, newColumn);
+    setCurrentIndex(newIndex/*, QItemSelectionModel::SelectCurrent*/);
   }
   else //a larger selection, move within it
   {
-    /*addSelection(QTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-    switch(Prefs::enterMove())
+    /*switch(Prefs::enterMove())
     {
       case 0:
         if (m_currentRow == br)
@@ -952,10 +953,11 @@ void KWQTableView::activateNextCell( )
         setCurrentCell(m_currentRow, m_currentCol);
         break;
     }*/
+    QModelIndex newIndex = model()->index(newRow, newColumn);
+    selModel->setCurrentIndex(newIndex, QItemSelectionModel::Current);
   }
 
-//  QModelIndex newIndex = model()->index(newRow, newColumn);
-  //m_selectionModel->setCurrentIndex(newIndex, QItemSelectionModel::SelectCurrent);
+
 
 }
 

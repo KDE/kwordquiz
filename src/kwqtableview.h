@@ -112,7 +112,6 @@ private:
   DlgSpecChar* dlgSpecChar;
   QWidget * cellEditor;
   KWQTableDelegate * m_delegate;
-  QItemSelectionModel *m_selectionModel;
 
   /** the list of the undo objects */
   static QList<WQUndo> *m_undoList;
