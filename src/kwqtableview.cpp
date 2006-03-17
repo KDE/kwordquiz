@@ -545,8 +545,8 @@ void KWQTableView::doEditInsert( )
   addUndo(i18n("&Undo Insert"));
   //saveCurrentSelection(false);
 
-  for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); i++)
-    getDocument()->insertEntry(new KEduVocExpression, i);
+  //for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); i++)
+    //getDocument()->insertEntry(new KEduVocExpression, i);
 
 //  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   displayDoc();
@@ -559,8 +559,8 @@ void KWQTableView::doEditDelete( )
   //retrieve current selection
  // saveCurrentSelection();
 
-  int tr = m_currentSel.topRow();
-  int br = m_currentSel.bottomRow();
+  int tr /*= m_currentSel.topRow()*/;
+  int br /*= m_currentSel.bottomRow()*/;
 
   if (tr == 0 && br == getDocument()->numEntries() - 1)
     br--; //leave one row if all rows are selected
@@ -780,8 +780,8 @@ void KWQTableView::doVocabRC( )
   DlgRC* dlg;
   dlg = new DlgRC(this, "dlg_rc", true);
   dlg->setNumRows(getDocument()->numEntries());
-  dlg->setRowHeight(rowHeight(m_currentRow));
-  dlg->setColWidth(columnWidth(m_currentCol));
+//  dlg->setRowHeight(rowHeight(m_currentRow));
+//  dlg->setColWidth(columnWidth(m_currentCol));
 
   if (dlg->exec() == KDialogBase::Accepted)
   {
@@ -796,12 +796,12 @@ void KWQTableView::doVocabRC( )
 
     while (newNumRows < getDocument()->numEntries())
       getDocument()->removeEntry(getDocument()->numEntries()-1);
-
+/*
     for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); ++i)
       setRowHeight(i, dlg->rowHeight());
     for (int i = m_currentSel.leftCol(); i <= m_currentSel.rightCol(); ++i)
       getDocument()->setSizeHint(i, dlg->colWidth());
-
+*/
     displayDoc();
 
     getDocument()->setModified(true);
@@ -869,20 +869,16 @@ void KWQTableView::slotSpecChar(const QChar & c)
 void KWQTableView::activateNextCell( )
 {
   QItemSelectionModel * selModel = selectionModel();
-
   QModelIndexList indexes = selModel->selectedIndexes();
-  kDebug() << "count " << indexes.count() << '\n';
   QModelIndex currentIndex = selModel->currentIndex();
 
   int currentRow = currentIndex.row();
   int currentColumn = currentIndex.column();
-  kDebug() << "Current Row: " << currentRow << '\n' << "Current column: " << currentColumn << '\n';
   int newRow = currentRow;
   int newColumn = currentColumn;
 
   if (indexes.count() == 1) //one cell selected
   {
-    //clearSelection();
     switch(Prefs::enterMove())
     {
       ///@todo 0 should be down, not right. change ui file
@@ -924,41 +920,48 @@ void KWQTableView::activateNextCell( )
   }
   else //a larger selection, move within it
   {
-    /*switch(Prefs::enterMove())
+    QModelIndex topLeft = indexes.first();
+    QModelIndex bottomRight = indexes.last();
+
+    int tr = topLeft.row();
+    int lc = topLeft.column();
+    int br = bottomRight.row();
+    int rc = bottomRight.column();
+
+    switch(Prefs::enterMove())
     {
       case 0:
-        if (m_currentRow == br)
+        if (currentRow == br)
         {
-          if (m_currentCol < rc)
-            setCurrentCell(tr, rc);
+          newRow = tr;
+          if (currentColumn < rc)
+            newColumn = rc;
           else
-            setCurrentCell(tr, lc);
+            newColumn = lc;
         }
         else
-          if (m_currentRow < br)
-            setCurrentCell(m_currentRow + 1, m_currentCol);
+          if (currentRow < br)
+            newRow++;
         break;
       case 1:
-        if (m_currentCol == rc)
+        if (currentColumn == rc)
         {
-          if (m_currentRow < br)
-            setCurrentCell(m_currentRow + 1, lc);
+          newColumn = lc;
+          if (currentRow < br)
+            newRow++;
           else
-            setCurrentCell(tr, lc);
+            newRow = tr;
         }
         else
-          setCurrentCell(m_currentRow, m_currentCol + 1);
+          newColumn++;
         break;
       case 2:
-        setCurrentCell(m_currentRow, m_currentCol);
+        //do nothing
         break;
-    }*/
+    }
     QModelIndex newIndex = model()->index(newRow, newColumn);
     selModel->setCurrentIndex(newIndex, QItemSelectionModel::Current);
   }
-
-
-
 }
 
 void KWQTableView::addUndo( const QString & caption )

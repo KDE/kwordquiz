@@ -105,10 +105,7 @@ signals:
   void undoChange(const QString & text, bool enabled);
 
 private:
-  int m_currentRow;
-  int m_currentCol;
   QString m_currentText;
-  Q3TableSelection m_currentSel;
   DlgSpecChar* dlgSpecChar;
   QWidget * cellEditor;
   KWQTableDelegate * m_delegate;
