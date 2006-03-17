@@ -1,4 +1,5 @@
 kde4_header()
+project(kwordquiz)
 
 add_subdirectory( src ) 
 
