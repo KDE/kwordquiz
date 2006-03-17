@@ -442,7 +442,7 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
     _cfg->writeEntry("filename", url.url());
     _cfg->writeEntry("modified", doc->isModified());
     QString tempname = kapp->tempSaveName(url.url());
-    QString tempurl= KUrl::encode_string(tempname);
+    QString tempurl= KUrl::toPercentEncoding(tempname);
     KUrl _url(tempurl);
     doc->saveAs(this, _url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
