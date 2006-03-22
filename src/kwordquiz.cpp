@@ -80,10 +80,10 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
 
   if (Prefs::firstRun())
   {
-    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/example.kvtml"));
-    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/french_verbs.kvtml"));
-    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/fill_in_the_blank.kvtml"));
-    fileOpenRecent->addURL( locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml"));
+    fileOpenRecent->addUrl( locate("data", "kwordquiz/examples/example.kvtml"));
+    fileOpenRecent->addUrl( locate("data", "kwordquiz/examples/french_verbs.kvtml"));
+    fileOpenRecent->addUrl( locate("data", "kwordquiz/examples/fill_in_the_blank.kvtml"));
+    fileOpenRecent->addUrl( locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml"));
     Prefs::setFirstRun(false);
   }
 }
@@ -404,7 +404,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
     m_tableView->displayDoc();
     m_dirWatch->addFile(url.path());
     setCaption(doc->URL().fileName(), false);
-    fileOpenRecent->addURL( url );
+    fileOpenRecent->addUrl( url );
     updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
@@ -709,7 +709,7 @@ bool KWordQuizApp::saveAsFileName( )
           m_dirWatch ->removeFile(doc->URL().path());
         doc->saveAs(this, url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         m_dirWatch->addFile(url.path());
-        fileOpenRecent->addURL(url);
+        fileOpenRecent->addUrl(url);
         setCaption(doc->URL().fileName(), doc->isModified());
         success = true;
       }
