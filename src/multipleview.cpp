@@ -117,7 +117,7 @@ void MultipleView::slotCheck()
     if (fIsCorrect)
     {
 
-      picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", KIcon::Panel));
+      picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", K3Icon::Panel));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
@@ -129,11 +129,11 @@ void MultipleView::slotCheck()
     {
       m_error++;
 
-      picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("error", KIcon::Panel));
+      picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("error", K3Icon::Panel));
 
       lblCorrect->setText(m_quiz->answer(m_question));
       //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
-      picCorrectAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", KIcon::Panel));
+      picCorrectAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", K3Icon::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
       updateScore();
@@ -143,7 +143,7 @@ void MultipleView::slotCheck()
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question(m_question));
     //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
-    picPrevious->setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
+    picPrevious->setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
     lblYourAnswer->setText(m_quiz->yourAnswer(m_question, ans));
@@ -165,7 +165,7 @@ void MultipleView::slotCheck()
       opt1->hide();
       opt2->hide();
       opt3->hide();
-      picQuestion->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", KIcon::Panel));
+      picQuestion->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
       picAnswer->clear();
     }
   }
@@ -221,22 +221,22 @@ void MultipleView::updateScore()
   QString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", KIcon::Panel));
+  picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
 
   s = m_score->answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
+    picAnswered->setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
 
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KGlobal::iconLoader()->loadIcon("check", KIcon::Panel));
+    picCorrect->setPixmap(KGlobal::iconLoader()->loadIcon("check", K3Icon::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);
   if (!s.isEmpty())
-    picError->setPixmap(KGlobal::iconLoader()->loadIcon("error", KIcon::Panel));
+    picError->setPixmap(KGlobal::iconLoader()->loadIcon("error", K3Icon::Panel));
 }
 
 
@@ -250,7 +250,7 @@ void MultipleView::showQuestion(int i)
   lblQuestion -> setText(m_quiz ->question(i));
   //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
-  picQuestion->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), KIcon::Panel));
+  picQuestion->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), K3Icon::Panel));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
@@ -275,7 +275,7 @@ void MultipleView::showQuestion(int i)
   opt2->setChecked(false);
   opt3->setChecked(false);
 
-  picAnswer->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), KIcon::Panel));
+  picAnswer->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), K3Icon::Panel));
 }
 
 void MultipleView::slotApplySettings( )

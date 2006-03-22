@@ -208,11 +208,11 @@ void KWordQuizApp::initActions()
 
   KMenu *popup = mode->popupMenu();
   popup->clear();
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", KIcon::Toolbar), "", this, SLOT(slotMode1()), 0, 0);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", KIcon::Toolbar), "", this, SLOT(slotMode2()), 0, 1);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode3", KIcon::Toolbar), "", this, SLOT(slotMode3()), 0, 2);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode4", KIcon::Toolbar), "", this, SLOT(slotMode4()), 0, 3);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode5", KIcon::Toolbar), "", this, SLOT(slotMode5()), 0, 4);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", K3Icon::Toolbar), "", this, SLOT(slotMode1()), 0, 0);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", K3Icon::Toolbar), "", this, SLOT(slotMode2()), 0, 1);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode3", K3Icon::Toolbar), "", this, SLOT(slotMode3()), 0, 2);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode4", K3Icon::Toolbar), "", this, SLOT(slotMode4()), 0, 3);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode5", K3Icon::Toolbar), "", this, SLOT(slotMode5()), 0, 4);
 
   mode1 = new KToggleAction("", "mode1", 0, this, SLOT(slotMode1()), actionCollection(),"mode_1");
   mode2 = new KToggleAction("", "mode2", 0, this, SLOT(slotMode2()), actionCollection(),"mode_2");

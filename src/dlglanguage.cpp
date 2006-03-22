@@ -28,8 +28,8 @@ DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialog
   dlgBase = new Ui::DlgLanguageBase();
   dlgBase->setupUi(makeMainWidget());
 
-  dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
-  dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", KIcon::Panel));
+  dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
+  dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", K3Icon::Panel));
 
   completion1 = new KCompletion();
   completion1->setItems(Prefs::columnTitles1());
