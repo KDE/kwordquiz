@@ -95,4 +95,25 @@ int KWQTableModel::columnWidth(int column) const
   return m_doc->sizeHint(column);
 }
 
+bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
+{
+  if (count < 1 || row < 0 || row > m_doc->numEntries())
+    return false;
+
+  beginInsertRows(QModelIndex(), row, row + count - 1);
+  /*int rc = vertical.count();
+  int cc = horizontal.count();
+  vertical.insert(row, count, 0);
+  if (rc == 0)
+      table.resize(cc * count);
+  else
+      table.insert(tableIndex(row, 0), cc * count, 0);*/
+  for (int i = row; i < row + count; i++)
+    m_doc->insertEntry(new KEduVocExpression, i);
+
+  endInsertRows();
+  m_doc->setModified(true);
+  return true;
+}
+
 #include "kwqtablemodel.moc"

@@ -542,15 +542,15 @@ void KWQTableView::doEditClear( )
 
 void KWQTableView::doEditInsert( )
 {
+  ///@todo preserve selection
   addUndo(i18n("&Undo Insert"));
-  //saveCurrentSelection(false);
-
-  //for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); i++)
-    //getDocument()->insertEntry(new KEduVocExpression, i);
-
-//  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-  displayDoc();
-  getDocument()->setModified(true);
+  QRect sel = selection();
+  //QItemSelectionModel * selModel = selectionModel();
+  //QItemSelection itemSel = selModel->selection();
+  model()->insertRows(sel.top(), sel.height(), QModelIndex());
+  //setSelection(sel, QItemSelectionModel::Select);
+  //selModel->select(itemSel, QItemSelectionModel::Select);
+  //displayDoc();
 }
 
 void KWQTableView::doEditDelete( )
@@ -1092,6 +1092,17 @@ void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditH
 void KWQTableView::commitData(QWidget * editor)
 {
   QTableView::commitData(editor);
+}
+
+const QRect KWQTableView::selection()
+{
+  const QList<QItemSelectionRange> ranges = selectionModel()->selection();
+  QRect result;
+  result.setTop(ranges.at(0).top());
+  result.setLeft(ranges.at(0).left());
+  result.setBottom(ranges.at(0).bottom());
+  result.setRight(ranges.at(0).right());
+  return result;
 }
 
 #include "kwqtableview.moc"

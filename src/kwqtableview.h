@@ -84,6 +84,7 @@ public:
   void doVocabSpecChar();
   bool checkForBlank(const QString & s, bool blank);
 protected:
+  const QRect selection();
   QWidget * beginEdit(int row, int col, bool replace);
   void endEdit ( int row, int col, bool accept, bool replace );
   void activateNextCell();

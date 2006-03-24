@@ -301,7 +301,7 @@ void KWordQuizApp::initActions()
   charMapper->setMapping(specialChar8, 8);
   charMapper->setMapping(specialChar9, 9);
 
-  actionCollection()->setHighlightingEnabled(true);
+  ///@todo port actionCollection()->setHighlightingEnabled(true);
 
   connect(actionCollection(), SIGNAL(actionStatusText(const QString &)), statusBar(), SLOT(showMessage(const QString &)));
   connect(actionCollection(), SIGNAL(clearStatusText()), statusBar(), SLOT(clearMessage()));
@@ -1040,7 +1040,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
   switch( m_quizType ){
     case WQQuiz::qtEditor:
       m_tableView->show();
-      setCentralWidget(m_tableView);
+      //setCentralWidget(m_tableView);
       m_tableView -> setFocus();
       break;
     case WQQuiz::qtFlash:
@@ -1160,11 +1160,12 @@ void KWordQuizApp::slotApplyPreferences()
 
 void KWordQuizApp::updateSpecialCharIcons( )
 {
-  for (int i = 0; i < 9; i++){
+///@todo port
+/*  for (int i = 0; i < 9; i++){
     KAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)).latin1());
     act->setIcon(charIcon(Prefs::specialCharacters()[i]));
     act->setToolTip(i18n("Inserts the character %1").arg(Prefs::specialCharacters()[i]));
-  }
+  }*/
 }
 
 QString KWordQuizApp::charIcon(const QChar & c)
@@ -1260,7 +1261,7 @@ void KWordQuizApp::updateMode(int m)
   popup->changeItem(4, i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
 
   QString s;
-  mode->setIcon("mode" + s.setNum(Prefs::mode()));
+  ///@todo port mode->setIcon("mode" + s.setNum(Prefs::mode()));
 
   switch( Prefs::mode() ){
   case 1:
