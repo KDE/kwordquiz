@@ -555,9 +555,10 @@ void KWQTableView::doEditInsert( )
 
 void KWQTableView::doEditDelete( )
 {
+  ///@todo preserve selection
   addUndo(i18n("&Undo Delete"));
-  //retrieve current selection
- // saveCurrentSelection();
+  QRect sel = selection();
+  model()->removeRows(sel.top(), sel.height(), QModelIndex());
 
   int tr /*= m_currentSel.topRow()*/;
   int br /*= m_currentSel.bottomRow()*/;
@@ -576,7 +577,6 @@ void KWQTableView::doEditDelete( )
   //restore selection as much as possible
 //  addSelection(Q3TableSelection(tr, m_currentSel.leftCol(), br, m_currentSel.rightCol()));
 //  setCurrentCell(m_currentRow, m_currentCol);
-  getDocument()->setModified(true);
 }
 
 bool KWQTableView::checkForBlank( const QString  & s, bool blank )

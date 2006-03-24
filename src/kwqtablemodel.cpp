@@ -116,4 +116,32 @@ bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
   return true;
 }
 
+bool KWQTableModel::removeRows( int row, int count, const QModelIndex & parent )
+{
+/*  if (count < 1 || row < 0 || row + count > vertical.count())
+    return false;
+
+  beginRemoveRows(QModelIndex(), row, row + count - 1);
+  int i = tableIndex(row, 0);
+  int n = count * columnCount();
+  QTableWidgetItem *oldItem = 0;
+  for (int j=i; j<n+i; ++j) {
+    oldItem = table.at(j);
+    if (oldItem)
+        oldItem->model = 0;
+    delete oldItem;
+  }
+  table.remove(qMax(i, 0), n);
+  for (int v=row; v<row+count; ++v) {
+    oldItem = vertical.at(v);
+    if (oldItem)
+        oldItem->model = 0;
+    delete oldItem;
+  }
+  vertical.remove(row, count);
+  endRemoveRows();*/
+  m_doc->setModified(true);
+  return true;
+}
+
 #include "kwqtablemodel.moc"
