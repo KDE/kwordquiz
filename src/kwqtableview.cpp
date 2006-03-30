@@ -868,14 +868,20 @@ void KWQTableView::activateNextCell( )
   {
     switch(Prefs::enterMove())
     {
-      ///@todo 0 should be down, not right. change ui file
-      case 0: //right
+     case 0: //down
+        if (currentRow == (model()->rowCount() - 1))
+        {
+          model()->insertRows(model()->rowCount(), 1, QModelIndex());
+          newRow++;
+        } else
+          newRow++;
+        break;
+
+     case 1: //right
         if (currentRow == (model()->rowCount() - 1) && currentColumn == 1)
         {
-          ///@todo append row
-          //getDocument()->appendEntry(new KEduVocExpression());
-          //setNumRows(getDocument()->numEntries() + 1);
-          newRow = 0;
+          model()->insertRows(model()->rowCount(), 1, QModelIndex());
+          newRow++;
           newColumn = 0;
         } else {
           if (currentColumn == 0)
@@ -886,16 +892,7 @@ void KWQTableView::activateNextCell( )
           }
         }
         break;
-     case 1: //down
-        if (currentRow == (model()->rowCount() - 1))
-        {
-          ///@todo append row
-          //getDocument()->appendEntry(new KEduVocExpression());
-          //setNumRows(getDocument()->numEntries() + 1);
-          newRow = 0;
-        } else
-          newRow++;
-        break;
+
       case 2: //no move
         //do nothing
         break;
