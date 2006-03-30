@@ -542,41 +542,28 @@ void KWQTableView::doEditClear( )
 
 void KWQTableView::doEditInsert( )
 {
-  ///@todo preserve selection
   addUndo(i18n("&Undo Insert"));
   QRect sel = selection();
-  //QItemSelectionModel * selModel = selectionModel();
-  //QItemSelection itemSel = selModel->selection();
+  int currentRow = currentIndex().row();
+  int currentColumn = currentIndex().column();
   model()->insertRows(sel.top(), sel.height(), QModelIndex());
-  //setSelection(sel, QItemSelectionModel::Select);
-  //selModel->select(itemSel, QItemSelectionModel::Select);
-  //displayDoc();
+  setCurrentIndex(model()->index(currentRow, currentColumn));
+  selectCells(sel);
 }
 
 void KWQTableView::doEditDelete( )
 {
-  ///@todo preserve selection
   addUndo(i18n("&Undo Delete"));
   QRect sel = selection();
+  int currentRow = currentIndex().row();
+  int currentColumn = currentIndex().column();
   model()->removeRows(sel.top(), sel.height(), QModelIndex());
 
-  int tr /*= m_currentSel.topRow()*/;
-  int br /*= m_currentSel.bottomRow()*/;
+  while (!model()->hasIndex(currentRow, currentColumn))
+    currentRow--;
 
-  if (tr == 0 && br == getDocument()->numEntries() - 1)
-    br--; //leave one row if all rows are selected
-
-  for (int r = br; r >= tr; --r)
-    getDocument()->removeEntry(r);
-
-  displayDoc();
-
-  if (br > getDocument()->numEntries())
-    br = getDocument()->numEntries(); //adjust for new numRows
-
-  //restore selection as much as possible
-//  addSelection(Q3TableSelection(tr, m_currentSel.leftCol(), br, m_currentSel.rightCol()));
-//  setCurrentCell(m_currentRow, m_currentCol);
+  setCurrentIndex(model()->index(currentRow, currentColumn));
+  selectCells(sel);
 }
 
 bool KWQTableView::checkForBlank( const QString  & s, bool blank )
@@ -1103,6 +1090,18 @@ const QRect KWQTableView::selection()
   result.setBottom(ranges.at(0).bottom());
   result.setRight(ranges.at(0).right());
   return result;
+}
+
+void KWQTableView::selectCells(const QRect & selection)
+{
+  if (!model()->hasIndex(selection.top(), selection.left(), rootIndex()) ||
+      !model()->hasIndex(selection.bottom(), selection.right(), rootIndex()))
+    return;
+
+  QModelIndex topLeft = model()->index(selection.top(), selection.left(), rootIndex());
+  QModelIndex bottomRight = model()->index(selection.bottom(), selection.right(), rootIndex());
+
+  selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::ClearAndSelect);
 }
 
 #include "kwqtableview.moc"

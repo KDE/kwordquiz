@@ -97,17 +97,12 @@ int KWQTableModel::columnWidth(int column) const
 
 bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
 {
+  Q_UNUSED(parent);
   if (count < 1 || row < 0 || row > m_doc->numEntries())
     return false;
 
   beginInsertRows(QModelIndex(), row, row + count - 1);
-  /*int rc = vertical.count();
-  int cc = horizontal.count();
-  vertical.insert(row, count, 0);
-  if (rc == 0)
-      table.resize(cc * count);
-  else
-      table.insert(tableIndex(row, 0), cc * count, 0);*/
+
   for (int i = row; i < row + count; i++)
     m_doc->insertEntry(new KEduVocExpression, i);
 
@@ -116,30 +111,19 @@ bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
   return true;
 }
 
-bool KWQTableModel::removeRows( int row, int count, const QModelIndex & parent )
+bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 {
-/*  if (count < 1 || row < 0 || row + count > vertical.count())
+  Q_UNUSED(parent);
+  if (count < 1 || row < 0 || row + count > m_doc->numEntries() || count >= m_doc->numEntries())
     return false;
 
+  int bottomRow = row + count -1;
   beginRemoveRows(QModelIndex(), row, row + count - 1);
-  int i = tableIndex(row, 0);
-  int n = count * columnCount();
-  QTableWidgetItem *oldItem = 0;
-  for (int j=i; j<n+i; ++j) {
-    oldItem = table.at(j);
-    if (oldItem)
-        oldItem->model = 0;
-    delete oldItem;
-  }
-  table.remove(qMax(i, 0), n);
-  for (int v=row; v<row+count; ++v) {
-    oldItem = vertical.at(v);
-    if (oldItem)
-        oldItem->model = 0;
-    delete oldItem;
-  }
-  vertical.remove(row, count);
-  endRemoveRows();*/
+
+  for (int i = bottomRow; i >= row; i--)
+    m_doc->removeEntry(i);
+
+  endRemoveRows();
   m_doc->setModified(true);
   return true;
 }
