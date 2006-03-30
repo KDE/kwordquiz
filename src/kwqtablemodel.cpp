@@ -85,6 +85,7 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
       m_doc->entry(index.row())->setTranslation(1, value.toString());
 
     emit dataChanged(index, index);
+    m_doc->setModified(true);
     return true;
   }
   return false;
