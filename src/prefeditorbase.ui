@@ -8,7 +8,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>468</width>
     <height>300</height>
    </rect>
   </property>
@@ -35,8 +35,8 @@
      </property>
      <property name="sizeHint" >
       <size>
-       <width>20</width>
-       <height>40</height>
+       <width>371</width>
+       <height>123</height>
       </size>
      </property>
     </spacer>
@@ -63,29 +63,16 @@
       <string>Select how the Enter key should behave in the editor</string>
      </property>
      <property name="title" >
-      <string>Enter Ke&amp;y Move</string>
+      <string>Enter Ke&amp;y Moves</string>
      </property>
-     <layout class="QVBoxLayout" >
+     <layout class="QGridLayout" >
       <property name="margin" >
-       <number>8</number>
+       <number>9</number>
       </property>
       <property name="spacing" >
        <number>6</number>
       </property>
-      <item>
-       <widget class="QRadioButton" name="optRight" >
-        <property name="toolTip" >
-         <string>How enter key moves</string>
-        </property>
-        <property name="whatsThis" >
-         <string>Select if the next cell to the right should become active when pressing Enter</string>
-        </property>
-        <property name="text" >
-         <string>&amp;Right</string>
-        </property>
-       </widget>
-      </item>
-      <item>
+      <item row="0" column="0" >
        <widget class="QRadioButton" name="optDown" >
         <property name="toolTip" >
          <string>How enter key moves</string>
@@ -98,7 +85,20 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="1" column="0" >
+       <widget class="QRadioButton" name="optRight" >
+        <property name="toolTip" >
+         <string>How enter key moves</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Select if the next cell to the right should become active when pressing Enter</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Right</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
        <widget class="QRadioButton" name="optNoMove" >
         <property name="toolTip" >
          <string>How enter key moves</string>
@@ -116,6 +116,9 @@
    </item>
   </layout>
  </widget>
+ <layoutdefault spacing="6" margin="0" />
+ <pixmapfunction></pixmapfunction>
+ <includes/>
  <resources/>
  <connections/>
 </ui>
