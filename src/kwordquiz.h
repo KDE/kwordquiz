@@ -303,7 +303,7 @@ class KWordQuizApp : public KMainWindow
     KAction* vocabLeitner;
     KAction* vocabConfigLeitner;
 
-    KToolBarPopupAction* mode;
+    KActionMenu* mode;
     KToggleAction* mode1;
     KToggleAction* mode2;
     KToggleAction* mode3;

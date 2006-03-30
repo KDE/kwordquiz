@@ -109,9 +109,11 @@ void KWordQuizApp::initActions()
 
   fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
 
-  fileGHNS = new KAction(i18n("&Get New Vocabularies..."), "knewstuff", "CTRL+G", this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
+  fileGHNS = new KAction(KIcon("knewstuff"), i18n("&Get New Vocabularies..."), actionCollection(), "file_ghns");
+  fileGHNS->setShortcut(Qt::CTRL + Qt::Key_G);
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
+  connect(fileGHNS, SIGNAL(triggered(bool)), this, SLOT(slotFileGHNS()));
 
   fileSave = KStdAction::save(this, SLOT(slotFileSave()), actionCollection());
   fileSave->setWhatsThis(i18n("Saves the active vocabulary document"));
@@ -153,122 +155,165 @@ void KWordQuizApp::initActions()
   editClear->setWhatsThis(i18n("Clears the content of the selected cells"));
   editClear->setToolTip(editClear->whatsThis());
 
-  editInsert = new KAction(i18n("&Insert Row"), "insert_table_row", "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
+  editInsert = new KAction(KIcon("insert_table_row"), i18n("&Insert Row"), actionCollection(), "edit_insert");
+  editInsert->setShortcut(Qt::CTRL + Qt::Key_I);
   editInsert->setWhatsThis(i18n("Inserts a new row above the current row"));
   editInsert->setToolTip(editInsert->whatsThis());
+  connect(editInsert, SIGNAL(triggered(bool)), this, SLOT(slotEditInsert()));
 
-  editDelete = new KAction(i18n("&Delete Row"), "delete_table_row", "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
+  editDelete = new KAction(KIcon("delete_table_row"), i18n("&Delete Row"), actionCollection(), "edit_delete");
+  editDelete->setShortcut(Qt::CTRL + Qt::Key_K);
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
   editDelete->setToolTip(editDelete->whatsThis());
+  connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotEditDelete()));
 
-  editMarkBlank = new KAction(i18n("&Mark as Blank"), "markasblank", "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
+  editMarkBlank = new KAction(KIcon("markasblank"), i18n("&Mark as Blank"), actionCollection(), "edit_mark_blank");
+  editMarkBlank->setShortcut(Qt::CTRL + Qt::Key_M);
   editMarkBlank->setWhatsThis(i18n("Marks the current or selected word as a blank for Fill-in-the-blank"));
   editMarkBlank->setToolTip(editMarkBlank->whatsThis());
+  connect(editMarkBlank, SIGNAL(triggered(bool)), this, SLOT(slotEditMarkBlank()));
 
-  editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), "unmarkasblank", 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
+  editUnmarkBlank = new KAction(KIcon("unmarkasblank"), i18n("&Unmark Blanks"), actionCollection(), "edit_unmark_blank");
   editUnmarkBlank->setWhatsThis(i18n("Removes blanks from the current or selected word"));
   editUnmarkBlank->setToolTip(editUnmarkBlank->whatsThis());
+  connect(editUnmarkBlank, SIGNAL(triggered(bool)), this, SLOT(slotEditUnmarkBlank()));
 
   //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
 
-  vocabLanguages = new KAction(i18n("&Column Titles..."), "languages", "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
+  vocabLanguages = new KAction(KIcon("languages"), i18n("&Column Titles..."), actionCollection(), "vocab_languages");
+  vocabLanguages->setShortcut(Qt::CTRL + Qt::Key_L);
   vocabLanguages->setWhatsThis(i18n("Defines the column titles for the active vocabulary"));
   vocabLanguages->setToolTip(vocabLanguages->whatsThis());
+  connect(vocabLanguages, SIGNAL(triggered(bool)), this, SLOT(slotVocabLanguages()));
 
-  vocabFont = new KAction(i18n("&Font..."), "fonts", 0, this, SLOT(slotVocabFont()), actionCollection(),"vocab_font");
+  vocabFont = new KAction(KIcon("fonts"), i18n("&Font..."), actionCollection(),"vocab_font");
   vocabFont->setWhatsThis(i18n("Defines the font used by the editor"));
   vocabFont->setToolTip(vocabFont->whatsThis());
+  connect(vocabFont, SIGNAL(triggered(bool)), this, SLOT(slotVocabFont()));
 
   //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
 
-  vocabRC = new KAction(i18n("&Rows/Columns..."), "rowcol", 0, this, SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
+  vocabRC = new KAction(KIcon("rowcol"), i18n("&Rows/Columns..."), actionCollection(), "vocab_rc");
   vocabRC->setWhatsThis(i18n("Defines the number of rows, row heights, and column widths for the active vocabulary"));
   vocabRC->setToolTip(vocabRC->whatsThis());
+  connect(vocabRC, SIGNAL(triggered(bool)), this, SLOT(slotVocabRC()));
 
-  vocabSort = new KAction(i18n("&Sort..."), "sort_incr", 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
+  vocabSort = new KAction(KIcon("sort_incr"), i18n("&Sort..."), actionCollection(), "vocab_sort");
   vocabSort->setWhatsThis(i18n("Sorts the vocabulary in ascending or descending order based on the left or right column"));
   vocabSort->setToolTip(vocabSort->whatsThis());
+  connect(vocabSort, SIGNAL(triggered(bool)), this, SLOT(slotVocabSort()));
 
-  vocabShuffle = new KAction(i18n("Sh&uffle"), "shuffle", 0, this, SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
+  vocabShuffle = new KAction(KIcon("shuffle"), i18n("Sh&uffle"), actionCollection(), "vocab_shuffle");
   vocabShuffle->setWhatsThis(i18n("Shuffles the entries of the active vocabulary"));
   vocabShuffle->setToolTip(vocabShuffle->whatsThis());
+  connect(vocabShuffle, SIGNAL(triggered(bool)), this, SLOT(slotVocabShuffle()));
 
-  vocabLeitner = new KAction(i18n("Enable Leitner system"), "leitner", 0, this, SLOT(slotLeitnerSystem()), actionCollection(), "vocab_leitner");
+  vocabLeitner = new KAction(KIcon("leitner"), i18n("Enable Leitner system"), actionCollection(), "vocab_leitner");
   vocabLeitner->setWhatsThis(i18n("Enables the Leitner system for the active vocabulary"));
   vocabLeitner->setToolTip(vocabLeitner->whatsThis());
+  connect(vocabLeitner, SIGNAL(triggered(bool)), this, SLOT(slotLeitnerSystem()));
 
-  vocabConfigLeitner = new KAction(i18n("Configure Leitner system"), "config_leitner", 0, this, SLOT(slotConfigLeitner()), actionCollection(), "vocab_leitner_config");
+  vocabConfigLeitner = new KAction(KIcon("config_leitner"), i18n("Configure Leitner system"),actionCollection(), "vocab_leitner_config");
   vocabConfigLeitner->setWhatsThis(i18n("Configure the Leitner system used for the active vocabulary"));
   vocabConfigLeitner->setToolTip(vocabConfigLeitner->whatsThis());
   vocabConfigLeitner->setEnabled(false);
+  connect(vocabConfigLeitner, SIGNAL(triggered(bool)), this, SLOT(slotConfigLeitner()));
 
-  mode = new KToolBarPopupAction(i18n("Change Mode"), "mode1", 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
+  mode = new KActionMenu(KIcon("mode1"), i18n("Change Mode"), actionCollection(), "mode_0");
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
+  connect(mode, SIGNAL(triggered(bool)), this, SLOT(slotMode0()));
 
-  KMenu *popup = mode->popupMenu();
-  popup->clear();
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", K3Icon::Toolbar), "", this, SLOT(slotMode1()), 0, 0);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", K3Icon::Toolbar), "", this, SLOT(slotMode2()), 0, 1);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode3", K3Icon::Toolbar), "", this, SLOT(slotMode3()), 0, 2);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode4", K3Icon::Toolbar), "", this, SLOT(slotMode4()), 0, 3);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode5", K3Icon::Toolbar), "", this, SLOT(slotMode5()), 0, 4);
-
-  mode1 = new KToggleAction("", "mode1", 0, this, SLOT(slotMode1()), actionCollection(),"mode_1");
-  mode2 = new KToggleAction("", "mode2", 0, this, SLOT(slotMode2()), actionCollection(),"mode_2");
-  mode3 = new KToggleAction("", "mode3", 0, this, SLOT(slotMode3()), actionCollection(),"mode_3");
-  mode4 = new KToggleAction("", "mode4", 0, this, SLOT(slotMode4()), actionCollection(),"mode_4");
-  mode5 = new KToggleAction("", "mode5", 0, this, SLOT(slotMode5()), actionCollection(),"mode_5");
+  ///@todo use a QActionGroup here?
+  mode1 = new KToggleAction(KIcon("mode1"), "", actionCollection(), "mode_1");
   mode1->setWhatsThis(i18n("Selects this mode"));
-  mode2->setWhatsThis(i18n("Selects this mode"));
-  mode3->setWhatsThis(i18n("Selects this mode"));
-  mode4->setWhatsThis(i18n("Selects this mode"));
-  mode5->setWhatsThis(i18n("Selects this mode"));
   mode1->setToolTip(mode1->whatsThis());
-  mode2->setToolTip(mode2->whatsThis());
-  mode3->setToolTip(mode3->whatsThis());
-  mode4->setToolTip(mode4->whatsThis());
-  mode5->setToolTip(mode5->whatsThis());
+  connect(mode1, SIGNAL(triggered(bool)), this, SLOT(slotMode1()));
+  mode->addAction(mode1);
 
-  quizEditor = new KAction(i18n("&Editor"), "editor", "F6", this, SLOT(slotQuizEditor()), actionCollection(),"quiz_editor");
+  mode2 = new KToggleAction(KIcon("mode2"), "", actionCollection(), "mode_2");
+  mode2->setWhatsThis(i18n("Selects this mode"));
+  mode2->setToolTip(mode2->whatsThis());
+  connect(mode1, SIGNAL(triggered(bool)), this, SLOT(slotMode2()));
+  mode->addAction(mode2);
+
+  mode3 = new KToggleAction(KIcon("mode3"), "", actionCollection(), "mode_3");
+  mode3->setWhatsThis(i18n("Selects this mode"));
+  mode3->setToolTip(mode3->whatsThis());
+  connect(mode3, SIGNAL(triggered(bool)), this, SLOT(slotMode3()));
+  mode->addAction(mode3);
+
+  mode4 = new KToggleAction(KIcon("mode4"), "", actionCollection(), "mode_4");
+  mode4->setWhatsThis(i18n("Selects this mode"));
+  mode4->setToolTip(mode4->whatsThis());
+  connect(mode4, SIGNAL(triggered(bool)), this, SLOT(slotMode4()));
+  mode->addAction(mode4);
+
+  mode5 = new KToggleAction(KIcon("mode5"), "", actionCollection(), "mode_5");
+  mode5->setWhatsThis(i18n("Selects this mode"));
+  mode5->setToolTip(mode5->whatsThis());
+  connect(mode5, SIGNAL(triggered(bool)), this, SLOT(slotMode5()));
+  mode->addAction(mode5);
+
+  quizEditor = new KAction(KIcon("editor"), i18n("&Editor"), actionCollection(), "quiz_editor");
+  quizEditor->setShortcut(Qt::Key_F6);
   quizEditor->setWhatsThis(i18n("Activates the vocabulary editor"));
   quizEditor->setToolTip(quizEditor->whatsThis());
+  connect(quizEditor, SIGNAL(triggered(bool)), this, SLOT(slotQuizEditor()));
 
-  quizFlash = new KAction(i18n("&Flashcard"), "flash", "F7", this, SLOT(slotQuizFlash()), actionCollection(),"quiz_flash");
+  quizFlash = new KAction(KIcon("flash"), i18n("&Flashcard"), actionCollection(), "quiz_flash");
+  quizFlash->setShortcut(Qt::Key_F7);
   quizFlash->setWhatsThis(i18n("Starts a flashcard session using the active vocabulary"));
   quizFlash->setToolTip(quizFlash->whatsThis());
+  connect(quizFlash, SIGNAL(triggered(bool)), this, SLOT(slotQuizFlash()));
 
-  quizMultiple = new KAction(i18n("&Multiple Choice"), "multiple", "F8", this, SLOT(slotQuizMultiple()), actionCollection(),"quiz_multiple");
+  quizMultiple = new KAction(KIcon("multiple"), i18n("&Multiple Choice"), actionCollection(), "quiz_multiple");
+  quizMultiple->setShortcut(Qt::Key_F8);
   quizMultiple->setWhatsThis(i18n("Starts a multiple choice session using the active vocabulary"));
   quizMultiple->setToolTip(quizMultiple->whatsThis());
+  connect(quizMultiple, SIGNAL(triggered(bool)), this, SLOT(slotQuizMultiple()));
 
-  quizQA = new KAction(i18n("&Question && Answer"), "qa", "F9", this, SLOT(slotQuizQA()), actionCollection(),"quiz_qa");
+  quizQA = new KAction(KIcon("qa"), i18n("&Question && Answer"), actionCollection(), "quiz_qa");
+  quizQA->setShortcut(Qt::Key_F9);
   quizQA->setWhatsThis(i18n("Starts a question and answer session using the active vocabulary"));
   quizQA->setToolTip(quizQA->whatsThis());
+  connect(quizQA, SIGNAL(triggered(bool)), this, SLOT(slotQuizQA()));
 
-  quizCheck = new KAction(i18n("&Check"), "check", "Return", this, 0, actionCollection(),"quiz_check");
+  quizCheck = new KAction(KIcon("check"), i18n("&Check"), actionCollection(), "quiz_check");
+  quizCheck->setShortcut(Qt::Key_Return);
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
   quizCheck->setToolTip(quizCheck->whatsThis());
+  connect(quizCheck, SIGNAL(triggered(bool)), this, SLOT(()));
 
-  flashKnow = new KAction(i18n("I &Know"), "know", "K", this, 0, actionCollection(),"flash_know");
+  flashKnow = new KAction(KIcon("know"), i18n("I &Know"), actionCollection(), "flash_know");
+  flashKnow->setShortcut(Qt::Key_K);
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
   flashKnow->setToolTip(flashKnow->whatsThis());
+  connect(flashKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
-  flashDontKnow = new KAction(i18n("I &Do Not Know"), "dontknow", "D", this, 0, actionCollection(),"flash_dont_know");
+  flashDontKnow = new KAction(KIcon("dontknow"), i18n("I &Do Not Know"), actionCollection(), "flash_dont_know");
+  flashDontKnow->setShortcut(Qt::Key_D);
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
   flashDontKnow->setToolTip(flashDontKnow->whatsThis());
+  connect(flashDontKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
-  qaHint = new KAction(i18n("&Hint"), "hint", "CTRL+H", this, 0, actionCollection(),"qa_hint");
+  qaHint = new KAction(KIcon("hint"), i18n("&Hint"), actionCollection(), "qa_hint");
+  qaHint->setShortcut(Qt::CTRL + Qt::Key_H);
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
   qaHint->setToolTip(qaHint->whatsThis());
+  connect(qaHint, SIGNAL(triggered(bool)), this, SLOT(()));
 
-  quizRestart = new KAction(i18n("&Restart"), "restart.png", "CTRL+R", this, 0, actionCollection(), "quiz_restart");
+  quizRestart = new KAction(KIcon("restart"), i18n("&Restart"), actionCollection(), "quiz_restart");
+  quizRestart->setShortcut(Qt::CTRL + Qt::Key_R);
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
   quizRestart->setToolTip(quizRestart->whatsThis());
+  connect(quizRestart, SIGNAL(triggered(bool)), this, SLOT(()));
 
-  quizRepeatErrors = new KAction(i18n("Repeat &Errors"), "repeat", "CTRL+E", this, 0, actionCollection(),"quiz_repeat_errors");
+  quizRepeatErrors = new KAction(KIcon("repeat"), i18n("Repeat &Errors"), actionCollection(), "quiz_repeat_errors");
+  quizRepeatErrors->setShortcut(Qt::CTRL + Qt::Key_E);
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
+  connect(quizRepeatErrors, SIGNAL(triggered(bool)), this, SLOT(()));
 
   configNotifications = KStdAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
   configNotifications->setWhatsThis(i18n("Configures sound and other notifications for certain events"));
@@ -281,15 +326,59 @@ void KWordQuizApp::initActions()
   charMapper = new QSignalMapper(this);
   connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
 
-  specialChar1 = new KAction(i18n("Special Character 1"), "", "CTRL+1", charMapper, SLOT(map()), actionCollection(), "char_1") ;
-  specialChar2 = new KAction(i18n("Special Character 2"), 0, "CTRL+2", charMapper, SLOT(map()), actionCollection(), "char_2") ;
-  specialChar3 = new KAction(i18n("Special Character 3"), 0, "CTRL+3", charMapper, SLOT(map()), actionCollection(), "char_3") ;
-  specialChar4 = new KAction(i18n("Special Character 4"), 0, "CTRL+4", charMapper, SLOT(map()), actionCollection(), "char_4") ;
-  specialChar5 = new KAction(i18n("Special Character 5"), 0, "CTRL+5", charMapper, SLOT(map()), actionCollection(), "char_5") ;
-  specialChar6 = new KAction(i18n("Special Character 6"), 0, "CTRL+6", charMapper, SLOT(map()), actionCollection(), "char_6") ;
-  specialChar7 = new KAction(i18n("Special Character 7"), 0, "CTRL+7", charMapper, SLOT(map()), actionCollection(), "char_7") ;
-  specialChar8 = new KAction(i18n("Special Character 8"), 0, "CTRL+8", charMapper, SLOT(map()), actionCollection(), "char_8") ;
-  specialChar9 = new KAction(i18n("Special Character 9"), 0, "CTRL+9", charMapper, SLOT(map()), actionCollection(), "char_9") ;
+  specialChar1 = new KAction(i18n("Special Character 1"), actionCollection(), "char_1") ;
+  specialChar1->setShortcut(Qt::CTRL + Qt::Key_1);
+  specialChar1->setWhatsThis(i18n("Insert this character"));
+  specialChar1->setToolTip(specialChar1->whatsThis());
+  connect(specialChar1, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar2 = new KAction(i18n("Special Character 2"), actionCollection(), "char_2") ;
+  specialChar2->setShortcut(Qt::CTRL + Qt::Key_2);
+  specialChar2->setWhatsThis(i18n("Insert this character"));
+  specialChar2->setToolTip(specialChar2->whatsThis());
+  connect(specialChar2, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar3 = new KAction(i18n("Special Character 3"), actionCollection(), "char_3") ;
+  specialChar3->setShortcut(Qt::CTRL + Qt::Key_3);
+  specialChar3->setWhatsThis(i18n("Insert this character"));
+  specialChar3->setToolTip(specialChar3->whatsThis());
+  connect(specialChar3, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar4 = new KAction(i18n("Special Character 4"), actionCollection(), "char_4") ;
+  specialChar4->setShortcut(Qt::CTRL + Qt::Key_4);
+  specialChar4->setWhatsThis(i18n("Insert this character"));
+  specialChar4->setToolTip(specialChar4->whatsThis());
+  connect(specialChar4, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar5 = new KAction(i18n("Special Character 5"), actionCollection(), "char_5") ;
+  specialChar5->setShortcut(Qt::CTRL + Qt::Key_5);
+  specialChar5->setWhatsThis(i18n("Insert this character"));
+  specialChar5->setToolTip(specialChar5->whatsThis());
+  connect(specialChar5, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar6 = new KAction(i18n("Special Character 6"), actionCollection(), "char_6") ;
+  specialChar6->setShortcut(Qt::CTRL + Qt::Key_6);
+  specialChar6->setWhatsThis(i18n("Insert this character"));
+  specialChar6->setToolTip(specialChar6->whatsThis());
+  connect(specialChar6, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar7 = new KAction(i18n("Special Character 7"), actionCollection(), "char_7") ;
+  specialChar7->setShortcut(Qt::CTRL + Qt::Key_7);
+  specialChar7->setWhatsThis(i18n("Insert this character"));
+  specialChar7->setToolTip(specialChar7->whatsThis());
+  connect(specialChar7, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar8 = new KAction(i18n("Special Character 8"), actionCollection(), "char_8") ;
+  specialChar8->setShortcut(Qt::CTRL + Qt::Key_8);
+  specialChar8->setWhatsThis(i18n("Insert this character"));
+  specialChar8->setToolTip(specialChar8->whatsThis());
+  connect(specialChar8, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+
+  specialChar9 = new KAction(i18n("Special Character 9"), actionCollection(), "char_9") ;
+  specialChar9->setShortcut(Qt::CTRL + Qt::Key_9);
+  specialChar9->setWhatsThis(i18n("Insert this character"));
+  specialChar9->setToolTip(specialChar9->whatsThis());
+  connect(specialChar9, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   charMapper->setMapping(specialChar1, 1);
   charMapper->setMapping(specialChar2, 2);
@@ -1247,23 +1336,10 @@ void KWordQuizApp::updateMode(int m)
   mode4->setChecked(Prefs::mode() == 4);
   mode5->setChecked(Prefs::mode() == 5);
 
-  KMenu *popup = mode->popupMenu();
-  popup->setItemChecked(0, Prefs::mode() == 1);
-  popup->setItemChecked(1, Prefs::mode() == 2);
-  popup->setItemChecked(2, Prefs::mode() == 3);
-  popup->setItemChecked(3, Prefs::mode() == 4);
-  popup->setItemChecked(4, Prefs::mode() == 5);
-
-  popup->changeItem(0, i18n("&1 %1 -> %2 In Order").arg(s1).arg(s2));
-  popup->changeItem(1, i18n("&2 %1 -> %2 In Order").arg(s2).arg(s1));
-  popup->changeItem(2, i18n("&3 %1 -> %2 Randomly").arg(s1).arg(s2));
-  popup->changeItem(3, i18n("&4 %1 -> %2 Randomly").arg(s2).arg(s1));
-  popup->changeItem(4, i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
-
   QString s;
-  ///@todo port mode->setIcon("mode" + s.setNum(Prefs::mode()));
+  mode->setIcon(KIcon("mode" + s.setNum(Prefs::mode())));
 
-  switch( Prefs::mode() ){
+  switch (Prefs::mode()){
   case 1:
     m_modeLabel->setText(i18n("%1 -> %2 In Order").arg(s1).arg(s2));
     break;
