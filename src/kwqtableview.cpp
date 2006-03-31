@@ -381,100 +381,107 @@ void KWQTableView::doEditUndo( )
 
 void KWQTableView::doEditCut( )
 {
-/*  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->cut();
+    if (QApplication::focusWidget())
+    {
+      QLineEdit *lineEdit = static_cast<QLineEdit*>(QApplication::focusWidget());
+      lineEdit->cut();
+    }
   }
   else
   {
     addUndo(i18n("&Undo Cut"));
+
     doEditCopy();
-    saveCurrentSelection();
-    for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
-      for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
-        if (c == 0)
-          getDocument()->entry(r)->setOriginal("");
-        else
-          getDocument()->entry(r)->setTranslation(1, "");
+
+    QModelIndex index;
+    QModelIndexList items = selectionModel()->selectedIndexes();
+
+    foreach (index, items)
+      model()->setData(index, QVariant());
   }
-  getDocument()->setModified(true);*/
 }
 
 void KWQTableView::doEditCopy( )
 {
-/*  bool mod = getDocument()->isModified();
-  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->copy();
+    if (QApplication::focusWidget())
+    {
+      QLineEdit *lineEdit = static_cast<QLineEdit*>(QApplication::focusWidget());
+      lineEdit->copy();
+    }
   }
   else
   {
-    saveCurrentSelection(false);
+    QRect sel = selection();
     QString s;
     QString rs;
-    for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
+    for (int r = sel.top(); r <= sel.bottom(); ++r)
     {
-      for (int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
+      for (int c = sel.left(); c <= sel.right(); ++c)
       {
-        if (c == 0)
-          rs = getDocument()->entry(r)->original();
-        else
-          rs = getDocument()->entry(r)->translation(1);
+        QVariant v =  model()->data(model()->index(r, c, QModelIndex()), Qt::DisplayRole);
+        rs = v.toString();
         s = s + rs + "\t";
       }
       s = s + "\n";
     }
     kapp->clipboard()->setText(s);
   }
-  getDocument()->setModified(mod);*/
 }
 
 void KWQTableView::doEditPaste( )
 {
-/*  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->paste();
+    if (QApplication::focusWidget())
+    {
+      QLineEdit *lineEdit = static_cast<QLineEdit*>(QApplication::focusWidget());
+      lineEdit->paste();
+    }
   }
   else
   {
     addUndo(i18n("&Undo Paste"));
-    saveCurrentSelection();
-    int tr = m_currentSel.topRow();
-    int br = m_currentSel.bottomRow();
-    int lc = m_currentSel.leftCol();
-    int rc = m_currentSel.rightCol();
+    QRect sel = selection();
+    int tr = sel.top();
+    int br = sel.bottom();
+    int lc = sel.left();
+    int rc = sel.right();
+
+    QString s = kapp->clipboard()->text();
+    QStringList sl;
+    sl = QStringList::split("\n", s);
+
+    int i = 0;
+    int ar = tr;
+    int ac;
+    QStringList sr;
 
     if (lc == rc && tr == br) //one cell selected
     {
-      QString s = kapp->clipboard()->text();
-      QStringList sl;
-      sl = QStringList::split("\n", s);
-
       //Do we need to add entries (rows)?
-      while (sl.count() > getDocument()->numEntries() - tr)
-        getDocument()->appendEntry(new KEduVocExpression);
+      while (sl.count() > model()->rowCount() - tr)
+        model()->insertRows(model()->rowCount(), 1, QModelIndex());
 
-      br= br + sl.count() - 1;
+      br = br + sl.count() - 1;
 
       if (lc == 0) //left col?
         if (sl[0].find("\t") < ((int) sl[0].length() - 1))
           rc = 1; //expand to second column;
 
-      int i = 0;
-      int ar = tr;
-      QStringList sr;
-      while (i < sl.count() && br <= getDocument()->numEntries())
+
+      while (i < sl.count() && br <= model()->rowCount())
       {
-        int ac = lc;
+        ac = lc;
 
         sr = QStringList::split("\t", sl[i]);
         int c = 0;
         while (ac <= rc)
         {
-          if (ac == 0)
-            getDocument()->entry(ar)->setOriginal(sr[c]);
-          else
-            getDocument()->entry(ar)->setTranslation(1, sr[c]);
+          model()->setData(model()->index(ar, ac), QVariant(sr[c]), Qt::EditRole);
           ac++;
           c++;
         }
@@ -484,24 +491,15 @@ void KWQTableView::doEditPaste( )
     }
     else
     {
-      QString s = kapp->clipboard()->text();
-      QStringList sl;
-      sl = QStringList::split("\n", s);
-      int i = 0;
-      int ar = tr;
-      QStringList sr;
       while(i < sl.count() && ar <= br )
       {
-        int ac = lc;
+        ac = lc;
 
         sr = QStringList::split("\t", sl[i]);
         int c = 0;
         while (ac <= rc)
         {
-          if (ac == 0)
-            getDocument()->entry(ar)->setOriginal(sr[c]);
-          else
-            getDocument()->entry(ar)->setTranslation(1, sr[c]);
+          model()->setData(model()->index(ar, ac), QVariant(sr[c]), Qt::EditRole);
           ac++;
           c++;
         }
@@ -509,35 +507,30 @@ void KWQTableView::doEditPaste( )
         i++;
       }
     }
-
-    displayDoc();
-
-    //restore selection
-    addSelection(Q3TableSelection(tr, lc, br, rc));
-    setCurrentCell(m_currentRow, m_currentCol);
+    ///@todo make this work selectCells(QRect(tr, lc, ar, ac));
   }
-  getDocument()->setModified(true);*/
 }
 
 void KWQTableView::doEditClear( )
 {
-/*  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->clear();
+    if (QApplication::focusWidget())
+    {
+      QLineEdit *lineEdit = static_cast<QLineEdit*>(QApplication::focusWidget());
+      lineEdit->clear();
+    }
   }
   else
   {
     addUndo(i18n("&Undo Clear"));
-    saveCurrentSelection(false);
-    for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
-      for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
-        if (c == 0)
-          getDocument()->entry(r)->setOriginal("");
-        else
-          getDocument()->entry(r)->setTranslation(1, "");
+
+    QModelIndex index;
+    QModelIndexList items = selectionModel()->selectedIndexes();
+
+    foreach (index, items)
+      model()->setData(index, QVariant());
   }
-  displayDoc();
-  getDocument()->setModified(true);*/
 }
 
 void KWQTableView::doEditInsert( )
