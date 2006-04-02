@@ -507,7 +507,7 @@ void KWQTableView::doEditPaste( )
         i++;
       }
     }
-    ///@todo make this work selectCells(QRect(tr, lc, ar, ac));
+    selectCells(QRect(lc, tr, ac - lc, ar - tr));
   }
 }
 
