@@ -26,6 +26,7 @@
 // include files for Qt
 #include <QSignalMapper>
 #include <QLabel>
+#include <QVBoxLayout>
 
 // include files for KDE
 #include <kapplication.h>
@@ -339,6 +340,7 @@ class KWordQuizApp : public KMainWindow
     KWQNewStuff * m_newStuff;
 
     QLabel * m_modeLabel;
+    QVBoxLayout * m_topLayout;
 
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);

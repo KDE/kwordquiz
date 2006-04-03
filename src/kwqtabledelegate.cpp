@@ -28,10 +28,11 @@ KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
 {
 }
 
-QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionViewItem & /*option*/, const QModelIndex & /*index */) const
+QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
   QLineEdit *editor = new QLineEdit(parent);
   editor->setFrame(false);
+  editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
   //editor->installEventFilter(const_cast<KWQTableDelegate*>(this));
   connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
   return editor;
@@ -115,6 +116,16 @@ void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem 
     painter->drawRect(rect.adjusted(1,1,-2,-2));
     painter->restore();
   }
+}
+
+QSize KWQTableDelegate::sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const
+{
+  return QSize(300, 25);
+}
+
+void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
+{
+  QItemDelegate::paint(painter, option, index);
 }
 
 #include "kwqtabledelegate.moc"

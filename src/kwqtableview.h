@@ -58,12 +58,6 @@ public:
     */
   KEduVocDocument *getDocument() const;
 
-
-  //Reimplemented from QTable
-  void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
-  void setFont( const QFont &);
-
-  void displayDoc();
   void initSelection();
 
   /** contains the implementation for printing functionality */
@@ -89,8 +83,8 @@ protected:
   QWidget * beginEdit(int row, int col, bool replace);
   void endEdit ( int row, int col, bool accept, bool replace );
   void activateNextCell();
-  //void keyPressEvent( QKeyEvent* );
-  //bool eventFilter( QObject*, QEvent* );
+  void keyPressEvent(QKeyEvent*);
+
 public slots:
   void adjustRow(int row);
   void slotSpecChar(const QChar &);

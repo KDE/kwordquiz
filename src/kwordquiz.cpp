@@ -431,13 +431,18 @@ void KWordQuizApp::initDocument()
 
 void KWordQuizApp::initView()
 {
+  QWidget * mainWidget = new QWidget(this);
+  setCentralWidget(mainWidget);
+  m_topLayout = new QVBoxLayout(mainWidget, 0, KDialog::spacingHint());
+  m_tableView = new KWQTableView(centralWidget());
+  m_topLayout->addWidget(m_tableView);
+
   m_tableModel = new KWQTableModel(doc, this);
-  m_tableView = new KWQTableView(this);
   m_tableView->setModel(m_tableModel);
-  m_tableView->setFont(Prefs::editorFont());
+  //m_tableView->setFont(Prefs::editorFont());
   m_tableView->initSelection();
-  m_tableView->displayDoc();
-  setCentralWidget(m_tableView);
+  //m_tableView->displayDoc();
+  //setCentralWidget(m_tableView);
   setCaption(doc->URL().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
@@ -490,7 +495,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
     doc->open(url, false);
     if (doc->font() == NULL)
       doc->setFont(new QFont(Prefs::editorFont()));
-    m_tableView->displayDoc();
+    //m_tableView->displayDoc();
     m_dirWatch->addFile(url.path());
     setCaption(doc->URL().fileName(), false);
     fileOpenRecent->addUrl( url );
@@ -554,7 +559,6 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
       doc->open(_url, false);
       if (doc->font() == NULL)
         doc->setFont(new QFont(Prefs::editorFont()));
-      m_tableView->displayDoc();
       doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
@@ -567,7 +571,6 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
       doc->open(url, false);
       if (doc->font() == NULL)
         doc->setFont(new QFont(Prefs::editorFont()));
-      m_tableView->displayDoc();
       setCaption(url.fileName(),false);
     }
   }
@@ -954,7 +957,7 @@ void KWordQuizApp::slotVocabLanguages()
   {
     doc->setOriginalIdentifier(dlg->Language(1));
     doc->setIdentifier(1, dlg->Language(2));
-    m_tableView->displayDoc();
+    m_tableView->reset();
     updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
@@ -966,11 +969,11 @@ void KWordQuizApp::slotVocabFont()
   KFontDialog* dlg;
   dlg = new KFontDialog(this, false, true);
   dlg->setObjectName("dlg_font");
-  dlg->setFont(m_tableView -> font());
+  dlg->setFont(Prefs::editorFont());
   if (dlg->exec() == KFontDialog::Accepted)
   {
     doc->setFont(new QFont(dlg->font()));
-    m_tableView->setFont(dlg->font());
+    m_tableView->reset();
     Prefs::setEditorFont(dlg->font());
     doc->setModified(true);
   }
@@ -1129,7 +1132,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
   switch( m_quizType ){
     case WQQuiz::qtEditor:
       m_tableView->show();
-      //setCentralWidget(m_tableView);
       m_tableView -> setFocus();
       break;
     case WQQuiz::qtFlash:
@@ -1139,7 +1141,6 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
       {
-        //m_tableView->saveCurrentSelection(true);
         m_tableView->hide();
         m_flashView = new FlashView(this);
         connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
@@ -1149,10 +1150,10 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
 
-        setCentralWidget(m_flashView);
-        m_flashView -> setQuiz(m_quiz);
-        m_flashView ->init();
+        m_flashView->setQuiz(m_quiz);
+        m_flashView->init();
         m_flashView->show();
+        m_topLayout->addWidget(m_flashView);
       }
       else
       {
@@ -1175,11 +1176,10 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_multipleView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
 
-        setCentralWidget(m_multipleView);
-
         m_multipleView -> setQuiz(m_quiz);
         m_multipleView ->init();
         m_multipleView->show();
+        m_topLayout->addWidget(m_multipleView);
       }
       else
       {
@@ -1203,11 +1203,10 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         connect(quizRepeatErrors, SIGNAL(activated()), m_qaView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
 
-        setCentralWidget(m_qaView);
-
         m_qaView -> setQuiz(m_quiz);
         m_qaView ->init();
         m_qaView->show();
+        m_topLayout->addWidget(m_qaView);
       }
       else
       {

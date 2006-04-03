@@ -18,6 +18,7 @@
  ***************************************************************************/
 
 #include "kwqtablemodel.h"
+#include "prefs.h"
 
 KWQTableModel::KWQTableModel(KEduVocDocument * doc, QObject * parent) : QAbstractTableModel(parent)
 {
@@ -38,6 +39,8 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
 {
   if (!index.isValid())
     return QVariant();
+  else if (role == Qt::FontRole)
+    return QVariant(Prefs::editorFont());
   else if (role != Qt::DisplayRole)
     return QVariant();
 
@@ -93,7 +96,7 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
 
 int KWQTableModel::columnWidth(int column) const
 {
-  return m_doc->sizeHint(column);
+  return 500 /*m_doc->sizeHint(column)*/;
 }
 
 bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)

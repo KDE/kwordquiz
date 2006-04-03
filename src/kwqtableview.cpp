@@ -63,20 +63,6 @@ KWQTableView::~KWQTableView()
 {
 }
 
-void KWQTableView::displayDoc()
-{
-  setUpdatesEnabled(false);
-
-  setColumnWidth(0, getDocument()->sizeHint(0));
-  setColumnWidth(1, getDocument()->sizeHint(1));
-
-  ///@todo font should be handled differently
-  if (getDocument()->font() != NULL)
-    setFont(*(getDocument()->font()));
-
-  setUpdatesEnabled(true);
-}
-
 KEduVocDocument *KWQTableView::getDocument() const
 {
   KWordQuizApp *theApp=(KWordQuizApp *) parentWidget();
@@ -725,7 +711,6 @@ void KWQTableView::doVocabSort( )
       getDocument()->sort(1);
       // TODO EPT sortColumn(1, dlg->ascending(), true);
     getDocument()->setModified(true);
-    displayDoc();
   }
   //restore selection
 //  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
@@ -782,7 +767,6 @@ void KWQTableView::doVocabRC( )
     for (int i = m_currentSel.leftCol(); i <= m_currentSel.rightCol(); ++i)
       getDocument()->setSizeHint(i, dlg->colWidth());
 */
-    displayDoc();
 
     getDocument()->setModified(true);
   }
@@ -975,82 +959,31 @@ void KWQTableView::addUndo( const QString & caption )
   emit undoChange(caption, true);
 }
 
-void KWQTableView::setFont( const QFont & font)
+void KWQTableView::keyPressEvent(QKeyEvent * e)
 {
-//  Q3Table::setFont(font);
-//  horizontalHeader()->setFont(KGlobalSettings::generalFont());
-//  verticalHeader()->setFont(KGlobalSettings::generalFont());
-  for (int i = 0; i < getDocument()->numEntries(); ++i)
-    // we adjust rows here because big fonts need big cells
-    adjustRow(i);
-}
-
-void KWQTableView::paintCell( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg )
-{
-/*  QColorGroup g (cg);
-
-  if (Prefs::enableBlanks())
-    if (!checkForBlank(text(row, col), true))
-      g.setColor(QColorGroup::Text, Qt::red);
-
-  Q3Table::paintCell (p, row, col, cr, selected, g );*/
-}
-/*
-void KWQTableView::keyPressEvent( QKeyEvent * e)
-{
-  if (isEditing())
-    if (e->key() == Key_Tab)
-    {
-      endEdit(currentRow(), currentColumn(), true, true);
-      activateNextCell();
-      return;
-    }
-    else
-      return;
-
-  if (e->key() == Qt::Key_Tab)
+  if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter)
   {
     activateNextCell();
     return;
   }
-//  Q3Table::keyPressEvent(e);
+  QTableView::keyPressEvent(e);
 }
-*/
-void KWQTableView::slotCheckedAnswer( int i )
+
+void KWQTableView::slotCheckedAnswer(int i)
 {
   if (i == -1)
   {
-    clearSelection();
-//    addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-//    setCurrentCell(m_currentRow, m_currentCol);
+    QModelIndex current = currentIndex();
+    selectionModel()->clear();
+    setCurrentIndex(current);
   }
   else
   {
-    clearSelection();
-//    setCurrentCell(i, 0);
+    selectionModel()->clear();
+    setCurrentIndex(model()->index(i, 0));
     selectRow(i);
   }
 }
-/*
-bool KWQTableView::eventFilter( QObject * o, QEvent * e )
-{
-  if (o == cellEditor)
-  {
-    if ( e->type() == QEvent::KeyPress )
-    {
-      QKeyEvent *k = (QKeyEvent *)e;
-      if (k->key() == Qt::Key_Tab)
-      {
-//        endEdit(currentRow(), currentColumn(), true, true);
-        activateNextCell();
-        return true;
-      }
-    }
-  }
-//  return Q3Table::eventFilter(o, e);
-  return true;
-}
-*/
 
 void KWQTableView::initSelection( )
 {
