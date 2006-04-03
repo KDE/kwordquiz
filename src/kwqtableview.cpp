@@ -39,7 +39,7 @@
 
 QList<WQUndo> *KWQTableView::m_undoList = 0L;
 
-KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(parent)
+KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
 {
   if(!m_undoList)
     m_undoList = new QList<WQUndo>();
@@ -61,12 +61,6 @@ KWQTableView::KWQTableView(QWidget *parent, const char *name) : QTableView(paren
 
 KWQTableView::~KWQTableView()
 {
-}
-
-KEduVocDocument *KWQTableView::getDocument() const
-{
-  KWordQuizApp *theApp=(KWordQuizApp *) parentWidget();
-  return theApp->getDocument();
 }
 
 void KWQTableView::print(KPrinter *pPrinter)
@@ -119,7 +113,7 @@ void KWQTableView::print(KPrinter *pPrinter)
   if (type == 2)
   {
     tPos = card_marg;
-    for (int rc = 0; rc < getDocument()->numEntries(); ++rc)
+    for (int rc = 0; rc < model()->rowCount(); ++rc)
     {
 
       //draw rectangle 2 cards wide
@@ -133,15 +127,15 @@ void KWQTableView::print(KPrinter *pPrinter)
         card_marg + card_width + card_width - card_text_marg, tPos + card_line_top);
       //draw headers
       painter.setFont(KGlobalSettings::generalFont());
-      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, getDocument()->originalIdentifier());
-      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, getDocument()->identifier(1));
+      //painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, getDocument()->originalIdentifier());
+      //painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, getDocument()->identifier(1));
       //draw text
       painter.setFont(font());
-      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
-        card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, getDocument()->entry(rc)->original());
+      //painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
+      //  card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, getDocument()->entry(rc)->original());
 
-      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
-        card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, getDocument()->entry(rc)->translation(1));
+     // painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
+       // card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, getDocument()->entry(rc)->translation(1));
 
       tPos = tPos + card_height + card_line_top;
 
@@ -158,7 +152,7 @@ void KWQTableView::print(KPrinter *pPrinter)
   else
   {
 
-    for (int rc = 0; rc < getDocument()->numEntries(); ++rc)
+    for (int rc = 0; rc < model()->rowCount(); ++rc)
     {
       painter.drawLine(lPos, tPos, lPos + gridWidth, tPos);
       painter.setFont(KGlobalSettings::generalFont());
@@ -166,11 +160,11 @@ void KWQTableView::print(KPrinter *pPrinter)
       painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), Qt::AlignRight | Qt::AlignVCenter, QString::number(rc + 1));
 
       painter.setFont(font());
-      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, getDocument()->entry(rc)->original());
+      //painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, getDocument()->entry(rc)->original());
 
       if (type == 0)
-        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter,
-          getDocument()->entry(rc)->translation(1));
+        //painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter,
+          //getDocument()->entry(rc)->translation(1));
 
       tPos = tPos + rowHeight(rc);
 
@@ -206,12 +200,12 @@ void KWQTableView::doNewPage( QPainter & painter, int res, int type )
 
     if (type == 2)
     {
-      painter.drawText(card_marg, card_marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
+      //painter.drawText(card_marg, card_marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
       return;
     }
     painter.drawLine(marg, marg, marg + cw0 + cw1 + cw2 + cw3, marg);
 
-    painter.drawText(marg, marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
+    //painter.drawText(marg, marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
 
     if (type == 1)
     {
@@ -264,7 +258,7 @@ void KWQTableView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int r
 
 QWidget * KWQTableView::beginEdit( int row, int col, bool replace )
 {
-  if (col == 0)
+  /*if (col == 0)
     m_currentText = getDocument()->entry(row)->original();
   else
     m_currentText = getDocument()->entry(row)->translation(1);
@@ -272,7 +266,7 @@ QWidget * KWQTableView::beginEdit( int row, int col, bool replace )
 //  cellEditor = Q3Table::beginEdit(row, col, replace);
   if (cellEditor)
     cellEditor->installEventFilter(this);
-  return cellEditor;
+  return cellEditor;*/
 }
 
 void KWQTableView::endEdit( int row, int col, bool accept, bool replace )
@@ -695,11 +689,11 @@ void KWQTableView::doEditUnmarkBlank( )
 
 void KWQTableView::doVocabSort( )
 {
-//  saveCurrentSelection();
+/*//  saveCurrentSelection();
   DlgSort* dlg;
   dlg = new DlgSort(this, "dlg_sort", true);
-  dlg->setLanguage(1, getDocument()->originalIdentifier());
-  dlg->setLanguage(2, getDocument()->identifier(1));
+  //dlg->setLanguage(1, getDocument()->originalIdentifier());
+  //dlg->setLanguage(2, getDocument()->identifier(1));
 
   if (dlg->exec() == KDialogBase::Accepted)
   {
@@ -714,7 +708,7 @@ void KWQTableView::doVocabSort( )
   }
   //restore selection
 //  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-//  setCurrentCell(m_currentRow, m_currentCol);
+//  setCurrentCell(m_currentRow, m_currentCol);*/
 }
 
 void KWQTableView::doVocabShuffle( )
@@ -724,7 +718,7 @@ void KWQTableView::doVocabShuffle( )
 //  saveCurrentSelection();
   KRandomSequence* rs;
   rs = new KRandomSequence();
-  int count = getDocument()->numEntries();
+  int count = model()->rowCount();
   setUpdatesEnabled(false);
   while (count > 0)
   {
@@ -736,7 +730,7 @@ void KWQTableView::doVocabShuffle( )
 //  setCurrentCell(m_currentRow, m_currentCol);
   setUpdatesEnabled(true);
 //  repaintContents();
-  getDocument()->setModified(true);
+//  getDocument()->setModified(true);
 }
 
 void KWQTableView::doVocabRC( )
@@ -744,7 +738,7 @@ void KWQTableView::doVocabRC( )
 //  saveCurrentSelection();
   DlgRC* dlg;
   dlg = new DlgRC(this, "dlg_rc", true);
-  dlg->setNumRows(getDocument()->numEntries());
+  dlg->setNumRows(model()->rowCount());
 //  dlg->setRowHeight(rowHeight(m_currentRow));
 //  dlg->setColWidth(columnWidth(m_currentCol));
 
@@ -755,20 +749,20 @@ void KWQTableView::doVocabRC( )
       newNumRows = 1;
     else
       newNumRows = dlg->numRows();
-
-    while (newNumRows > getDocument()->numEntries())
+/*
+    while (newNumRows > model()->rowCount())
       getDocument()->appendEntry(new KEduVocExpression);
 
-    while (newNumRows < getDocument()->numEntries())
-      getDocument()->removeEntry(getDocument()->numEntries()-1);
-/*
+    while (newNumRows < model()->rowCount())
+      getDocument()->removeEntry(model()->rowCount()-1);
+
     for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); ++i)
       setRowHeight(i, dlg->rowHeight());
     for (int i = m_currentSel.leftCol(); i <= m_currentSel.rightCol(); ++i)
       getDocument()->setSizeHint(i, dlg->colWidth());
 */
 
-    getDocument()->setModified(true);
+    //getDocument()->setModified(true);
   }
 //  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
 //  setCurrentCell(m_currentRow, m_currentCol);
@@ -934,8 +928,8 @@ void KWQTableView::addUndo( const QString & caption )
 
   WQUndo* undo = new WQUndo();
   undo->setText(caption);
-  if (getDocument()->font() != NULL)
-    undo->setFont(*(getDocument()->font()));
+//  if (getDocument()->font() != NULL)
+//    undo->setFont(*(getDocument()->font()));
 //  undo->setColWidth0(verticalHeader()->width());
   undo->setColWidth1(columnWidth(0));
   undo->setColWidth2(columnWidth(1));
@@ -944,17 +938,17 @@ void KWQTableView::addUndo( const QString & caption )
 //  undo->setSelection(selection(0));
 
   QList<KEduVocExpression> list;
-  for(int i = 0; i < getDocument()->numEntries(); i++)
+  for(int i = 0; i < model()->rowCount(); i++)
   {
 //    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
-    list.append(*getDocument()->entry(i));
+//    list.append(*getDocument()->entry(i));
   }
 
   undo->setList(list);
 
   m_undoList->prepend(*undo);
 
-  getDocument()->setModified(true);
+  //getDocument()->setModified(true);
 
   emit undoChange(caption, true);
 }

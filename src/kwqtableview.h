@@ -47,16 +47,9 @@ class KWQTableView : public QTableView
 Q_OBJECT
 public:
   /** Constructor for the main view */
-  KWQTableView(QWidget *parent = 0, const char *name=0);
+  KWQTableView(QWidget *parent = 0);
   /** Destructor for the main view */
   ~KWQTableView();
-
-  /** returns a pointer to the document connected to the view instance. Mind that this method requires a KWordQuizApp instance as a parent
-    * widget to get to the window document pointer by calling the KWordQuizApp::getDocument() method.
-    *
-    * @see KWordQuizApp#getDocument
-    */
-  KEduVocDocument *getDocument() const;
 
   void initSelection();
 
