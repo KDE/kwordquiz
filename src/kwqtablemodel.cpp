@@ -132,4 +132,9 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
   return true;
 }
 
+void KWQTableModel::sort(int column, Qt::SortOrder order)
+{
+  m_doc->setModified(true);
+}
+
 #include "kwqtablemodel.moc"

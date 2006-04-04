@@ -539,7 +539,7 @@ void KWQTableView::doEditDelete( )
   selectCells(sel);
 }
 
-bool KWQTableView::checkForBlank( const QString  & s, bool blank )
+bool KWQTableView::checkForBlank(const QString  & s, bool blank)
 {
   if (!blank)
     return true;
@@ -578,137 +578,129 @@ bool KWQTableView::checkForBlank( const QString  & s, bool blank )
   return result;
 }
 
-void KWQTableView::doEditMarkBlank( )
+void KWQTableView::doEditMarkBlank()
 {
-/*  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    addUndo(i18n("&Undo Mark Blank"));
-    QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
-    if (l->text().length() > 0)
+    if (QApplication::focusWidget())
     {
-      QString s = l->text();
-      int cp = l->cursorPosition();
-      if (!l->hasSelectedText())
+      QLineEdit *l = static_cast<QLineEdit*>(QApplication::focusWidget());
+      addUndo(i18n("&Undo Mark Blank"));
+
+      if (l->text().length() > 0)
       {
-        if (!s[cp].isSpace() && !s[cp - 1].isSpace())
+        QString s = l->text();
+        int cp = l->cursorPosition();
+        if (!l->hasSelectedText())
         {
-          l->cursorWordBackward(false);
-          int cp1 = l->cursorPosition();
-          l->cursorWordForward(false);
-          if (l->cursorPosition() != (int) s.length())
-          {  while(l->text()[l->cursorPosition()].isSpace())
-              l->cursorBackward(false, 1);
+          if (!s[cp].isSpace() && !s[cp - 1].isSpace())
+          {
+            l->cursorWordBackward(false);
+            int cp1 = l->cursorPosition();
+            l->cursorWordForward(false);
+            if (l->cursorPosition() != (int) s.length())
+            {  while(l->text()[l->cursorPosition()].isSpace())
+                l->cursorBackward(false, 1);
+            }
+            int cp2 = l->cursorPosition();
+            if (cp2 == (int) s.length())
+              l->setSelection(cp1, cp2 - cp1);
+            else
+              l->setSelection(cp1, cp2 - cp1 - 1);
+
           }
-          int cp2 = l->cursorPosition();
-          if (cp2 == (int) s.length())
-            l->setSelection(cp1, cp2 - cp1);
           else
-            l->setSelection(cp1, cp2 - cp1 - 1);
-
+            return;
         }
-        else
-          return;
-      }
 
-
-      if (l->hasSelectedText())
-      {
-        QString st = l->selectedText();
-        int len = st.length();
-        st = st.prepend(delim_start);
-        st = st.append(delim_end);
-        int ss = l->selectionStart();
-        s = s.replace(ss, len, st);
-        l->setText(s);
-        l->setSelection(ss, st.length());
+        if (l->hasSelectedText())
+        {
+          QString st = l->selectedText();
+          int len = st.length();
+          st = st.prepend(delim_start);
+          st = st.append(delim_end);
+          int ss = l->selectionStart();
+          s = s.replace(ss, len, st);
+          l->setText(s);
+          l->setSelection(ss, st.length());
+        }
       }
     }
-  }*/
+  }
 }
 
 void KWQTableView::doEditUnmarkBlank( )
 {
-/*  addUndo(i18n("&Undo Unmark Blank"));
+  addUndo(i18n("&Undo Unmark Blank"));
   QString s;
 
-  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
-
-    if (l->hasSelectedText())
+    if (QApplication::focusWidget())
     {
-      QString ls = l->text();
-      s = l->selectedText();
-      int len = s.length();
-      s.remove(delim_start);
-      s.remove(delim_end);
-      int ss = l->selectionStart();
-      ls = ls.replace(ss, len, s);
-      l->setText(ls);
-      l->setSelection(ss, s.length());
-    }
-    else
-    {
-      if (l->text().length() > 0)
+      QLineEdit *l = static_cast<QLineEdit*>(QApplication::focusWidget());
+      if (l->hasSelectedText())
       {
-        s = l->text();
-        int cs = l->cursorPosition();
-
-        int fr = s.findRev(delim_start, cs);
-        if (fr > 0)
+        QString ls = l->text();
+        s = l->selectedText();
+        int len = s.length();
+        s.remove(delim_start);
+        s.remove(delim_end);
+        int ss = l->selectionStart();
+        ls = ls.replace(ss, len, s);
+        l->setText(ls);
+        l->setSelection(ss, s.length());
+      }
+      else
+      {
+        if (l->text().length() > 0)
         {
-          s = s.replace(fr, 1, "");
-          cs--;
-        }
-        int ff = s.find(delim_end, cs);
-        if (ff > 0)
-          s = s.replace(ff, 1, "");
+          s = l->text();
+          int cs = l->cursorPosition();
 
-        l->setText(s);
-        l->setCursorPosition(cs);
+          int fr = s.findRev(delim_start, cs);
+          if (fr > 0)
+          {
+            s = s.replace(fr, 1, "");
+            cs--;
+          }
+          int ff = s.find(delim_end, cs);
+          if (ff > 0)
+            s = s.replace(ff, 1, "");
+
+          l->setText(s);
+          l->setCursorPosition(cs);
+        }
       }
     }
   }
   else
   {
-    saveCurrentSelection(false);
-    for (int r = m_currentSel.topRow(); r <= m_currentSel.bottomRow(); ++r)
-      for(int c = m_currentSel.leftCol(); c <= m_currentSel.rightCol(); ++c)
-      {
-        s = text(r, c);
-        s = s.remove(delim_start);
-        s = s.remove(delim_end);
-        if (c == 0)
-          getDocument()->entry(r)->setOriginal(s);
-        else
-          getDocument()->entry(r)->setTranslation(1, s);
-        setText(r, c, s);
-      }
-  }*/
+    QModelIndex index;
+    QModelIndexList items = selectionModel()->selectedIndexes();
+
+    foreach (index, items)
+    {
+      s = model()->data(index, Qt::DisplayRole).toString();
+      s = s.remove(delim_start);
+      s = s.remove(delim_end);
+      model()->setData(index, QVariant(s));
+    }
+  }
 }
 
 void KWQTableView::doVocabSort( )
 {
-/*//  saveCurrentSelection();
   DlgSort* dlg;
   dlg = new DlgSort(this, "dlg_sort", true);
-  //dlg->setLanguage(1, getDocument()->originalIdentifier());
-  //dlg->setLanguage(2, getDocument()->identifier(1));
+  dlg->setLanguage(1, model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+  dlg->setLanguage(2, model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
   if (dlg->exec() == KDialogBase::Accepted)
   {
     addUndo(i18n("&Undo Sort"));
-    if (dlg->base())
-      getDocument()->sort(0);
-      // TODO EPT sortColumn(0, dlg->ascending(), true);
-    else
-      getDocument()->sort(1);
-      // TODO EPT sortColumn(1, dlg->ascending(), true);
-    getDocument()->setModified(true);
+    model()->sort(dlg->base() ? 0 : 1, dlg->ascending() ? Qt::AscendingOrder : Qt::DescendingOrder);
   }
-  //restore selection
-//  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-//  setCurrentCell(m_currentRow, m_currentCol);*/
 }
 
 void KWQTableView::doVocabShuffle( )

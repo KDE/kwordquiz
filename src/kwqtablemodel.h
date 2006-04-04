@@ -46,6 +46,7 @@ public:
   bool setData(const QModelIndex &index, const QVariant &value,int role = Qt::EditRole);
 
   int columnWidth(int column) const;
+  void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
 
 private:
   KEduVocDocument * m_doc;
