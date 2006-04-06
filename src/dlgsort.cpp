@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlgsort.cpp  -  description
                              -------------------
-   copyright       : (C) 2003-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2003-2006 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -20,35 +20,33 @@
 
 #include "dlgsort.h"
 
-DlgSort::DlgSort(QWidget *parent, const char *name, bool modal): KDialogBase(parent, name, modal,  i18n("Sort"), Ok|Cancel, Ok, true)
+DlgSort::DlgSort(QWidget *parent): KDialog(parent, i18n("Sort"), Ok|Cancel)
 {
+  QWidget * w = new QWidget();
+  setMainWidget(w);
   dlgBase = new Ui::DlgSortBase();
-  dlgBase->setupUi(makeMainWidget());
-
+  dlgBase->setupUi(mainWidget());
   dlgBase->optLang1->setChecked(true);
   dlgBase->optAscending->setChecked(true);
   dlgBase->optLang1->setFocus();
 }
 
-bool DlgSort::base( )
+bool DlgSort::base()
 {
   return dlgBase->optLang1->isChecked();
 }
 
-bool DlgSort::ascending( )
+bool DlgSort::ascending()
 {
   return dlgBase->optAscending->isChecked();
 }
 
-void DlgSort::setLanguage( int index, const QString & lang )
+void DlgSort::setLanguage(int index, const QString & lang)
 {
-  if (index == 1) {
+  if (index == 1)
     dlgBase->optLang1 -> setText("&1 " + lang);
-  }
   else
-  {
     dlgBase->optLang2 -> setText("&2 " + lang);
-  }
 }
 
 

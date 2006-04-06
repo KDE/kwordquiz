@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>263</width>
-    <height>270</height>
+    <width>228</width>
+    <height>261</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -33,50 +33,18 @@
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="2" column="0" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" >
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="0" column="0" >
-    <widget class="Q3ButtonGroup" name="grpBase" >
-     <property name="toolTip" >
-      <string>Sort based on this column</string>
-     </property>
-     <property name="whatsThis" >
-      <string>Select the column on which you want to base the sort</string>
-     </property>
+    <widget class="QGroupBox" name="groupBoxBase" >
      <property name="title" >
       <string>Based On</string>
      </property>
      <layout class="QGridLayout" >
       <property name="margin" >
-       <number>-1</number>
+       <number>9</number>
       </property>
       <property name="spacing" >
-       <number>0</number>
+       <number>6</number>
       </property>
-      <item row="0" column="0" >
-       <widget class="QRadioButton" name="optLang1" >
-        <property name="toolTip" >
-         <string>Sort based on this column</string>
-        </property>
-        <property name="whatsThis" >
-         <string>Select to sort based on the left column</string>
-        </property>
-        <property name="text" >
-         <string>&amp;1 Language 1</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0" >
        <widget class="QRadioButton" name="optLang2" >
         <property name="toolTip" >
@@ -90,41 +58,35 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="0" >
+       <widget class="QRadioButton" name="optLang1" >
+        <property name="toolTip" >
+         <string>Sort based on this column</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Select to sort based on the left column</string>
+        </property>
+        <property name="text" >
+         <string>&amp;1 Language 1</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
    <item row="1" column="0" >
-    <widget class="Q3ButtonGroup" name="grpDirection" >
-     <property name="toolTip" >
-      <string>Sort in this direction</string>
-     </property>
-     <property name="whatsThis" >
-      <string>Select direction for the sort</string>
-     </property>
+    <widget class="QGroupBox" name="groupBoxDirection" >
      <property name="title" >
       <string>Direction</string>
      </property>
-     <layout class="QVBoxLayout" >
+     <layout class="QGridLayout" >
       <property name="margin" >
-       <number>-1</number>
+       <number>9</number>
       </property>
       <property name="spacing" >
-       <number>0</number>
+       <number>6</number>
       </property>
-      <item>
-       <widget class="QRadioButton" name="optAscending" >
-        <property name="toolTip" >
-         <string>Sort in this direction</string>
-        </property>
-        <property name="whatsThis" >
-         <string>Select to sort in ascending order</string>
-        </property>
-        <property name="text" >
-         <string>&amp;Ascending</string>
-        </property>
-       </widget>
-      </item>
-      <item>
+      <item row="1" column="0" >
        <widget class="QRadioButton" name="optDescending" >
         <property name="toolTip" >
          <string>Sort in this direction</string>
@@ -137,26 +99,38 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="0" >
+       <widget class="QRadioButton" name="optAscending" >
+        <property name="toolTip" >
+         <string>Sort in this direction</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Select to sort in ascending order</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Ascending</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
+   <item row="2" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>141</width>
+       <height>34</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>Q3ButtonGroup</class>
-   <extends></extends>
-   <header>Qt3Support/Q3ButtonGroup</header>
-   <container>1</container>
-   <pixmap></pixmap>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>optLang1</tabstop>
-  <tabstop>optLang2</tabstop>
-  <tabstop>optAscending</tabstop>
-  <tabstop>optDescending</tabstop>
- </tabstops>
+ <pixmapfunction></pixmapfunction>
  <resources/>
  <connections/>
 </ui>

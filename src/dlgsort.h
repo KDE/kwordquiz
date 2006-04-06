@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlglsort.h  -  description
                              -------------------
-   copyright            : (C) 2003 by Peter Hedlund
+   copyright            : (C) 2003-2006 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -17,19 +17,19 @@
 #ifndef DLGSORT_H
 #define DLGSORT_H
 
-#include <kdialogbase.h>
+#include <kdialog.h>
 
 #include "dlgsortbase.h"
 
 /**
 @author Peter Hedlund
 */
-class DlgSort : public KDialogBase
+class DlgSort : public KDialog
 {
 Q_OBJECT
 public:
 
-  DlgSort(QWidget *parent = 0, const char *name = 0, bool modal=true);
+  DlgSort(QWidget *parent = 0);
 
   bool base();
   bool ascending();

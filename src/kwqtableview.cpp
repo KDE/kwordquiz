@@ -692,7 +692,7 @@ void KWQTableView::doEditUnmarkBlank( )
 void KWQTableView::doVocabSort( )
 {
   DlgSort* dlg;
-  dlg = new DlgSort(this, "dlg_sort", true);
+  dlg = new DlgSort(this);
   dlg->setLanguage(1, model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
   dlg->setLanguage(2, model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
