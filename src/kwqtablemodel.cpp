@@ -138,4 +138,10 @@ void KWQTableModel::sort(int column, Qt::SortOrder order)
   m_doc->setModified(true);
 }
 
+void KWQTableModel::shuffle( )
+{
+  m_doc->shuffle();
+  reset();
+}
+
 #include "kwqtablemodel.moc"

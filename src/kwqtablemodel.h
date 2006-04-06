@@ -47,6 +47,7 @@ public:
 
   int columnWidth(int column) const;
   void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
+  void shuffle();
 
 private:
   KEduVocDocument * m_doc;

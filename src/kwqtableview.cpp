@@ -705,24 +705,7 @@ void KWQTableView::doVocabSort( )
 
 void KWQTableView::doVocabShuffle( )
 {
-  /**@todo handle empty rows, port to document class */
   addUndo(i18n("&Undo Shuffle"));
-//  saveCurrentSelection();
-  KRandomSequence* rs;
-  rs = new KRandomSequence();
-  int count = model()->rowCount();
-  setUpdatesEnabled(false);
-  while (count > 0)
-  {
-//    swapRows(count-1, rs->getLong(count));
-    count--;
-  }
-  //restore selection
-//  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-//  setCurrentCell(m_currentRow, m_currentCol);
-  setUpdatesEnabled(true);
-//  repaintContents();
-//  getDocument()->setModified(true);
 }
 
 void KWQTableView::doVocabRC( )

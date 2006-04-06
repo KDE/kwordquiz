@@ -1012,6 +1012,7 @@ void KWordQuizApp::slotVocabShuffle()
 {
   slotStatusMsg(i18n("Randomizing the vocabulary..."));
   m_tableView->doVocabShuffle();
+  m_tableModel->shuffle();
   slotStatusMsg(i18n("Ready"));
 }
 
