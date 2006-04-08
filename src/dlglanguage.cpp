@@ -23,17 +23,20 @@
 #include "prefs.h"
 #include "dlglanguage.h"
 
-DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(parent, name, modal, i18n("Column Titles"), Ok|Cancel, Ok, true)
+DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent, i18n("Column Titles"), Ok|Cancel)
 {
+  QWidget * w = new QWidget();
+  setMainWidget(w);
+
   dlgBase = new Ui::DlgLanguageBase();
-  dlgBase->setupUi(makeMainWidget());
+  dlgBase->setupUi(mainWidget());
 
   dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
   dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", K3Icon::Panel));
-
-  completion1 = new KCompletion();
-  completion1->setItems(Prefs::columnTitles1());
-  dlgBase -> txtLanguage1->setCompletionObject(completion1);
+  ///@todo text completion not working
+  //completion1 = new KCompletion();
+  dlgBase->txtLanguage1->completionObject(true)->setItems(Prefs::columnTitles1());
+  dlgBase -> txtLanguage1->setCompletedItems(Prefs::columnTitles1(), true);
 
   completion2 = new KCompletion();
   completion2->setItems(Prefs::columnTitles2());
@@ -45,33 +48,33 @@ DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialog
 
 DlgLanguage::~DlgLanguage()
 {
-  delete completion1;
+  //delete completion1;
   delete completion2;
 }
 
 
 void DlgLanguage::setLanguage(int index, const QString &lang) {
   if (index == 1) {
-    dlgBase->txtLanguage1 -> setText(lang);
+    dlgBase->txtLanguage1->setText(lang);
   }
   else
   {
-    dlgBase->txtLanguage2 -> setText(lang);
+    dlgBase->txtLanguage2->setText(lang);
   }
 }
 
 
 QString DlgLanguage::Language(int index){
   if (index == 1) {
-    completion1->addItem(dlgBase->txtLanguage1 -> text());
-    Prefs::setColumnTitles1(completion1->items());
-    return dlgBase->txtLanguage1 -> text();
+    dlgBase->txtLanguage1->completionObject(true)->addItem(dlgBase->txtLanguage1 -> text());
+    Prefs::setColumnTitles1(dlgBase->txtLanguage1->completionObject(true)->items());
+    return dlgBase->txtLanguage1->text();
   }
   else
   {
     completion2->addItem(dlgBase->txtLanguage2 -> text());
     Prefs::setColumnTitles2(completion2->items());
-    return dlgBase->txtLanguage2 -> text();
+    return dlgBase->txtLanguage2->text();
   }
 }
 

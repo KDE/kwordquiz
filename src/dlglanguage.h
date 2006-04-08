@@ -17,7 +17,7 @@
 #ifndef DLGLANGUAGE_H
 #define DLGLANGUAGE_H
 
-#include <kdialogbase.h>
+#include <kdialog.h>
 
 #include "dlglanguagebase.h"
 
@@ -26,10 +26,10 @@ class KCompletion;
 /**
 @author Peter Hedlund
 */
-class DlgLanguage : public KDialogBase {
+class DlgLanguage : public KDialog {
   Q_OBJECT
 public:
-  DlgLanguage(QWidget *parent = 0, const char *name = 0, bool modal=true);
+  DlgLanguage(QWidget *parent = 0);
   ~DlgLanguage();
 
   void setLanguage(int index, const QString &lang);
