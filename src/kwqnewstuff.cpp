@@ -78,16 +78,16 @@ QString KWQNewStuff::downloadDestination(KNS::Entry * entry)
   if (KStandardDirs::exists(file))
   {
     int result = KMessageBox::questionYesNo(parentWidget(),
-        i18n("The file '%1' already exists. Do you want to overwrite it?")
-        .arg(file),
+        i18n("The file '%1' already exists. Do you want to overwrite it?",
+         file),
         QString(),
         i18n("Overwrite"),i18n("Do Not Overwrite"));
     if (result == KMessageBox::No)
       return QString();
   }
   KMessageBox::information(parentWidget(),
-    i18n("<qt>The selected file will now be downloaded and saved as\n<b>'%1'</b>.</qt>")
-    .arg(file),
+    i18n("<qt>The selected file will now be downloaded and saved as\n<b>'%1'</b>.</qt>",
+     file),
     QString(),
     "NewStuffDownloadLocation");
   return file;

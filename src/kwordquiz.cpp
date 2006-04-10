@@ -790,8 +790,8 @@ bool KWordQuizApp::saveAsFileName( )
 
       QFileInfo fileinfo(url.path());
       if (fileinfo.exists() && KMessageBox::warningContinueCancel(0,
-          i18n("<qt>The file<br><b>%1</b><br>already exists. Do you want to overwrite it?</qt>")
-              .arg(url.path()),QString(),i18n("Overwrite")) == KMessageBox::Cancel)
+          i18n("<qt>The file<br><b>%1</b><br>already exists. Do you want to overwrite it?</qt>",
+               url.path()),QString(),i18n("Overwrite")) == KMessageBox::Cancel)
       {
       // do nothing
       }
@@ -1324,11 +1324,11 @@ void KWordQuizApp::updateMode(int m)
   QString s1 = doc->originalIdentifier();
   QString s2 = doc->identifier(1);
 
-  mode1->setText(i18n("&1 %1 -> %2 In Order").arg(s1).arg(s2));
-  mode2->setText(i18n("&2 %1 -> %2 In Order").arg(s2).arg(s1));
-  mode3->setText(i18n("&3 %1 -> %2 Randomly").arg(s1).arg(s2));
-  mode4->setText(i18n("&4 %1 -> %2 Randomly").arg(s2).arg(s1));
-  mode5->setText(i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
+  mode1->setText(i18n("&1 %1 -> %2 In Order", s1, s2));
+  mode2->setText(i18n("&2 %1 -> %2 In Order", s2, s1));
+  mode3->setText(i18n("&3 %1 -> %2 Randomly", s1, s2));
+  mode4->setText(i18n("&4 %1 -> %2 Randomly", s2, s1));
+  mode5->setText(i18n("&5 %1 <-> %2 Randomly", s1, s2));
 
   mode1->setChecked(Prefs::mode() == 1);
   mode2->setChecked(Prefs::mode() == 2);
@@ -1341,19 +1341,19 @@ void KWordQuizApp::updateMode(int m)
 
   switch (Prefs::mode()){
   case 1:
-    m_modeLabel->setText(i18n("%1 -> %2 In Order").arg(s1).arg(s2));
+    m_modeLabel->setText(i18n("%1 -> %2 In Order", s1, s2));
     break;
   case 2:
-    m_modeLabel->setText(i18n("%1 -> %2 In Order").arg(s2).arg(s1));
+    m_modeLabel->setText(i18n("%1 -> %2 In Order", s2, s1));
     break;
   case 3:
-    m_modeLabel->setText(i18n("%1 -> %2 Randomly").arg(s1).arg(s2));
+    m_modeLabel->setText(i18n("%1 -> %2 Randomly", s1, s2));
     break;
   case 4:
-    m_modeLabel->setText(i18n("%1 -> %2 Randomly").arg(s2).arg(s1));
+    m_modeLabel->setText(i18n("%1 -> %2 Randomly", s2, s1));
     break;
   case 5:
-    m_modeLabel->setText(i18n("%1 <-> %2 Randomly").arg(s1).arg(s2));
+    m_modeLabel->setText(i18n("%1 <-> %2 Randomly", s1, s2));
     break;
   }
 

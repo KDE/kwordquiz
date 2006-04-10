@@ -73,7 +73,7 @@ void PrefCardAppearance::slotCurrentChanged(int index)
 {
   if (index == widgetStack->indexOf(backStackPage))
   {
-    titleLabel->setText(i18n("Back of the flashcard", "Back"));
+    titleLabel->setText(i18nc("Back of the flashcard", "Back"));
     titleLabel->setPaletteBackgroundColor(kcfg_BackCardColor->color());
     textLabel->setText(i18n("Answer"));
     textLabel->setFont(kcfg_BackFont->font());
