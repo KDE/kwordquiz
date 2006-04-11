@@ -19,7 +19,7 @@
 
 #include <kdialog.h>
 
-#include "dlglanguagebase.h"
+#include "ui_dlglanguagebase.h"
 
 class KCompletion;
 

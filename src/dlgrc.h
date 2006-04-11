@@ -19,7 +19,7 @@
 
 #include <kdialogbase.h>
 
-#include "dlgrcbase.h"
+#include "ui_dlgrcbase.h"
 
 /**
 @author Peter Hedlund

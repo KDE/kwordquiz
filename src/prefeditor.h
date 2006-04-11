@@ -19,7 +19,7 @@
 #ifndef PREFEDITOR_H
 #define PREFEDITOR_H
 
-#include "prefeditorbase.h"
+#include "ui_prefeditorbase.h"
 
 /**
 @author Peter Hedlund

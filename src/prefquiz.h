@@ -19,7 +19,7 @@
 #ifndef PREFQUIZ_H
 #define PREFQUIZ_H
 
-#include "prefquizbase.h"
+#include "ui_prefquizbase.h"
 
 /**
 @author Peter Hedlund

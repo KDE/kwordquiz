@@ -21,7 +21,7 @@
 
 #include <kactioncollection.h>
 
-#include "prefcharacterbase.h"
+#include "ui_prefcharacterbase.h"
 
 class DlgSpecChar;
 

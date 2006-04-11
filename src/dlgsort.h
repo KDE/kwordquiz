@@ -19,7 +19,7 @@
 
 #include <kdialog.h>
 
-#include "dlgsortbase.h"
+#include "ui_dlgsortbase.h"
 
 /**
 @author Peter Hedlund

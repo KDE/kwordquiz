@@ -12,7 +12,7 @@
 #ifndef PREFCARDAPPEARANCE_H
 #define PREFCARDAPPEARANCE_H
 
-#include <prefcardappearancebase.h>
+#include <ui_prefcardappearancebase.h>
 
 /**
 @author Peter Hedlund

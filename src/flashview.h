@@ -17,7 +17,7 @@
 #ifndef FLASHVIEW_H
 #define FLASHVIEW_H
 
-#include "flashviewbase.h"
+#include "ui_flashviewbase.h"
 
 #include "wqscore.h"
 

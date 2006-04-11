@@ -21,7 +21,7 @@
 
 #include <kaction.h>
 
-#include "qaviewbase.h"
+#include "ui_qaviewbase.h"
 
 #include "wqquiz.h"
 #include "wqscore.h"
