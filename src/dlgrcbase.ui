@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>368</width>
-    <height>190</height>
+    <width>209</width>
+    <height>207</height>
    </rect>
   </property>
   <property name="minimumSize" >
@@ -25,27 +25,20 @@
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="5" column="0" >
-    <widget class="KIntNumInput" name="txtColWidth" >
-     <property name="toolTip" >
-      <string>Width of selected column</string>
-     </property>
-     <property name="whatsThis" >
-      <string>Enter the width (in pixels) for the selected column(s)</string>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="0" >
-    <widget class="KIntNumInput" name="txtRowHeight" >
-     <property name="toolTip" >
-      <string>Height of selected row</string>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="whatsThis" >
-      <string>Enter the height (in pixels) for the selected row(s)</string>
+     <property name="sizeHint" >
+      <size>
+       <width>171</width>
+       <height>51</height>
+      </size>
      </property>
-    </widget>
+    </spacer>
    </item>
-   <item row="1" column="0" >
+   <item row="0" column="0" >
     <widget class="KIntNumInput" name="txtNumRows" >
      <property name="toolTip" >
       <string>Number of rows</string>
@@ -53,81 +46,58 @@
      <property name="whatsThis" >
       <string>Enter the number of rows the vocabulary should have</string>
      </property>
-    </widget>
-   </item>
-   <item row="0" column="0" >
-    <widget class="QLabel" name="lblNumRows" >
-     <property name="toolTip" >
-      <string>Number of rows</string>
-     </property>
-     <property name="whatsThis" >
-      <string>Enter the number of rows the vocabulary should have</string>
-     </property>
-     <property name="text" >
+     <property name="label" >
       <string>&amp;Number of rows:</string>
      </property>
-     <property name="buddy" >
-      <cstring>txtNumRows</cstring>
+     <property name="minimum" >
+      <number>1</number>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" >
-    <widget class="QLabel" name="lblRowHeight" >
+   <item row="1" column="0" >
+    <widget class="KIntNumInput" name="txtRowHeight" >
      <property name="toolTip" >
       <string>Height of selected row</string>
      </property>
      <property name="whatsThis" >
       <string>Enter the height (in pixels) for the selected row(s)</string>
      </property>
-     <property name="text" >
+     <property name="label" >
       <string>&amp;Row height:</string>
      </property>
-     <property name="buddy" >
-      <cstring>txtRowHeight</cstring>
+     <property name="minimum" >
+      <number>0</number>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" >
-    <widget class="QLabel" name="lblColWidth" >
+   <item row="2" column="0" >
+    <widget class="KIntNumInput" name="txtColWidth" >
      <property name="toolTip" >
       <string>Width of selected column</string>
      </property>
      <property name="whatsThis" >
       <string>Enter the width (in pixels) for the selected column(s)</string>
      </property>
-     <property name="text" >
+     <property name="label" >
       <string>Column &amp;width:</string>
      </property>
-     <property name="buddy" >
-      <cstring>txtColWidth</cstring>
+     <property name="minimum" >
+      <number>0</number>
      </property>
     </widget>
    </item>
-   <item row="6" column="0" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" >
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
   </layout>
  </widget>
+ <pixmapfunction></pixmapfunction>
  <customwidgets>
   <customwidget>
    <class>KIntNumInput</class>
-   <extends>QWidget</extends>
+   <extends></extends>
    <header>knuminput.h</header>
-   <container>1</container>
+   <container>0</container>
    <pixmap></pixmap>
   </customwidget>
  </customwidgets>
- <includes/>
  <resources/>
  <connections/>
 </ui>

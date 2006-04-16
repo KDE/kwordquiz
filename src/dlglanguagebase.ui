@@ -255,13 +255,16 @@
  <customwidgets>
   <customwidget>
    <class>KLineEdit</class>
-   <extends>QWidget</extends>
+   <extends></extends>
    <header>klineedit.h</header>
-   <container>1</container>
+   <container>0</container>
    <pixmap></pixmap>
   </customwidget>
  </customwidgets>
- <includes/>
+ <tabstops>
+  <tabstop>txtLanguage1</tabstop>
+  <tabstop>txtLanguage2</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
