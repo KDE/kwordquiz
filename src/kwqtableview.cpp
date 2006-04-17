@@ -710,37 +710,37 @@ void KWQTableView::doVocabShuffle( )
 
 void KWQTableView::doVocabRC( )
 {
-//  saveCurrentSelection();
   DlgRC* dlg;
-  dlg = new DlgRC(this, "dlg_rc", true);
-  dlg->setNumRows(model()->rowCount());
-//  dlg->setRowHeight(rowHeight(m_currentRow));
-//  dlg->setColWidth(columnWidth(m_currentCol));
+  dlg = new DlgRC(this);
+  int rowCount = model()->rowCount();
+  dlg->setNumRows(rowCount);
+  dlg->setRowHeight(rowHeight(currentIndex().row()));
+  dlg->setColWidth(columnWidth(currentIndex().column()));
 
-  if (dlg->exec() == KDialogBase::Accepted)
+  if (dlg->exec() == KDialog::Accepted)
   {
-    int newNumRows;
-    if (dlg->numRows() < 1)
-      newNumRows = 1;
-    else
-      newNumRows = dlg->numRows();
-/*
-    while (newNumRows > model()->rowCount())
-      getDocument()->appendEntry(new KEduVocExpression);
+    int newRowCount = dlg->numRows();
+    if (newRowCount < rowCount)
+    {
+      addUndo(i18n("&Undo Delete"));
+      model()->removeRows(newRowCount, rowCount - newRowCount, QModelIndex());
+    }
 
-    while (newNumRows < model()->rowCount())
-      getDocument()->removeEntry(model()->rowCount()-1);
+    if (newRowCount > rowCount)
+    {
+      addUndo(i18n("&Undo Insert"));
+      model()->insertRows(rowCount, newRowCount - rowCount, QModelIndex());
+    }
 
-    for (int i = m_currentSel.topRow(); i <= m_currentSel.bottomRow(); ++i)
-      setRowHeight(i, dlg->rowHeight());
-    for (int i = m_currentSel.leftCol(); i <= m_currentSel.rightCol(); ++i)
-      getDocument()->setSizeHint(i, dlg->colWidth());
-*/
+    QModelIndex index;
+    QModelIndexList items = selectionModel()->selectedIndexes();
 
-    //getDocument()->setModified(true);
+    foreach (index, items)
+    {
+      setRowHeight(index.row(), dlg->rowHeight());
+      setColumnWidth(index.column(), dlg->colWidth());
+    }
   }
-//  addSelection(Q3TableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
-//  setCurrentCell(m_currentRow, m_currentCol);
 }
 
 void KWQTableView::doVocabSpecChar( )
@@ -953,14 +953,16 @@ void KWQTableView::slotCheckedAnswer(int i)
     selectRow(i);
   }
 }
-
-void KWQTableView::initSelection( )
+/*
+void KWQTableView::setModel(QAbstractItemModel * newModel)
 {
-  //Can't have this in the ctor because a model is needed first
+  QTableView::setModel(newModel);
   setCurrentIndex(model()->index(0, 0));
   scrollTo(currentIndex());
+  connect(verticalHeader(), SIGNAL(sectionResized(int, int, int)), model(), SLOT(verticalHeaderResized(int, int, int)));
+  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), model(), SLOT(horizontalHeaderResized(int, int, int)));
 }
-
+*/
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
 {
   QTableView::closeEditor(editor, hint);

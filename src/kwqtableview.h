@@ -51,8 +51,6 @@ public:
   /** Destructor for the main view */
   ~KWQTableView();
 
-  void initSelection();
-
   /** contains the implementation for printing functionality */
   void print(KPrinter *pPrinter);
   void addUndo(const QString & caption);

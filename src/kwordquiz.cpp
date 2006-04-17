@@ -435,12 +435,13 @@ void KWordQuizApp::initView()
   setCentralWidget(mainWidget);
   m_topLayout = new QVBoxLayout(mainWidget, 0, KDialog::spacingHint());
   m_tableView = new KWQTableView(centralWidget());
+  m_tableView->setFrameStyle(QFrame::NoFrame);
   m_topLayout->addWidget(m_tableView);
 
   m_tableModel = new KWQTableModel(doc, this);
   m_tableView->setModel(m_tableModel);
   //m_tableView->setFont(Prefs::editorFont());
-  m_tableView->initSelection();
+  //m_tableView->initSelection();
   //m_tableView->displayDoc();
   //setCentralWidget(m_tableView);
   setCaption(doc->URL().fileName(),false);

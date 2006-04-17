@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlglrc.h  -  description
                              -------------------
-   copyright            : (C) 2003 by Peter Hedlund
+   copyright            : (C) 2003-2006 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -17,18 +17,18 @@
 #ifndef DLGRC_H
 #define DLGRC_H
 
-#include <kdialogbase.h>
+#include <kdialog.h>
 
 #include "ui_dlgrcbase.h"
 
 /**
 @author Peter Hedlund
 */
-class DlgRC : public KDialogBase
+class DlgRC : public KDialog
 {
 Q_OBJECT
 public:
-  DlgRC(QWidget *parent = 0, const char *name = 0, bool modal=true);
+  DlgRC(QWidget *parent = 0);
 
   void setNumRows(int r);
   void setRowHeight(int h);

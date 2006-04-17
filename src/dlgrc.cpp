@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlgrc.cpp  -  description
                              -------------------
-   copyright       : (C) 2003-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2003-2006 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -19,11 +19,12 @@
 
 #include "dlgrc.h"
 
-DlgRC::DlgRC(QWidget *parent, const char *name, bool modal): KDialogBase(parent, name, modal, i18n("Rows & Columns"), Ok|Cancel, Ok, true)
+DlgRC::DlgRC(QWidget *parent): KDialog(parent, i18n("Rows & Columns"), Ok|Cancel)
 {
+  QWidget * w = new QWidget();
+  setMainWidget(w);
   dlgBase = new Ui::DlgRCBase();
-  dlgBase->setupUi(makeMainWidget());
-
+  dlgBase->setupUi(mainWidget());
   dlgBase->txtNumRows->setFocus();
 }
 
