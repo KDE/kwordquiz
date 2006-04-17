@@ -50,6 +50,7 @@ public:
   KWQTableView(QWidget *parent = 0);
   /** Destructor for the main view */
   ~KWQTableView();
+  void setModel(QAbstractItemModel * newModel);
 
   /** contains the implementation for printing functionality */
   void print(KPrinter *pPrinter);
@@ -80,13 +81,15 @@ public slots:
   void adjustRow(int row);
   void slotSpecChar(const QChar &);
   void slotCheckedAnswer(int );
+
 protected slots:
   void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint);
   void commitData (QWidget * editor);
+  void verticalHeaderResized(int, int, int);
+  void horizontalHeaderResized(int, int, int);
 
 private slots:
   void slotDlgSpecCharClosed();
-
 
 signals:
   void undoChange(const QString & text, bool enabled);

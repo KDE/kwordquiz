@@ -15,6 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QHeaderView>
 #include <QPainter>
 #include <QClipboard>
 #include <QLineEdit>
@@ -953,16 +954,16 @@ void KWQTableView::slotCheckedAnswer(int i)
     selectRow(i);
   }
 }
-/*
+
 void KWQTableView::setModel(QAbstractItemModel * newModel)
 {
   QTableView::setModel(newModel);
   setCurrentIndex(model()->index(0, 0));
   scrollTo(currentIndex());
-  connect(verticalHeader(), SIGNAL(sectionResized(int, int, int)), model(), SLOT(verticalHeaderResized(int, int, int)));
-  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), model(), SLOT(horizontalHeaderResized(int, int, int)));
+  connect(verticalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(verticalHeaderResized(int, int, int)));
+  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
 }
-*/
+
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
 {
   QTableView::closeEditor(editor, hint);
@@ -996,6 +997,17 @@ void KWQTableView::selectCells(const QRect & selection)
   QModelIndex bottomRight = model()->index(selection.bottom(), selection.right(), rootIndex());
 
   selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::ClearAndSelect);
+}
+
+
+void KWQTableView::verticalHeaderResized( int , int , int )
+{
+  kDebug() << "Row resized\n";
+}
+
+void KWQTableView::horizontalHeaderResized( int , int , int )
+{
+  kDebug() << "Column resized\n";
 }
 
 #include "kwqtableview.moc"

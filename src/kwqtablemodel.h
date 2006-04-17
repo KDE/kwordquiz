@@ -49,10 +49,6 @@ public:
   void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
   void shuffle();
 
-public slots:
-  void slotVerticalHeaderResized(int, int, int);
-  void slotHorizontalHeaderResized(int, int, int);
-
 private:
   KEduVocDocument * m_doc;
 };

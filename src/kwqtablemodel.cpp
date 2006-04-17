@@ -144,14 +144,4 @@ void KWQTableModel::shuffle( )
   reset();
 }
 
-void KWQTableModel::slotVerticalHeaderResized(int logicalIndex, int oldSize, int newSize)
-{
-  //
-}
-
-void KWQTableModel::slotHorizontalHeaderResized(int logicalIndex, int oldSize, int newSize)
-{
-  //
-}
-
 #include "kwqtablemodel.moc"
