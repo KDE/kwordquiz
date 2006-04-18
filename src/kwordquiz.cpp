@@ -446,6 +446,7 @@ void KWordQuizApp::initView()
   setCaption(doc->URL().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
+  doc->setModified(false);
 }
 
 void KWordQuizApp::openURL(const KUrl& url)
@@ -672,7 +673,7 @@ void KWordQuizApp::slotFileOpen()
 {
   slotStatusMsg(i18n("Opening file..."));
 
-  QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0, 0);
+  QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0);
   cb -> setChecked(false);
   ///@todo make append work again
   cb -> setEnabled(false);
@@ -1241,7 +1242,7 @@ void KWordQuizApp::slotApplyPreferences()
   kDebug() << "Prefs Update" << endl;
   editMarkBlank->setEnabled(Prefs::enableBlanks());
   editUnmarkBlank->setEnabled(Prefs::enableBlanks());
-  m_tableView->viewport()->repaint(true);
+  m_tableView->reset();
   updateSpecialCharIcons();
   emit settingsChanged();
 }
