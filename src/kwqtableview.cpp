@@ -1000,14 +1000,15 @@ void KWQTableView::selectCells(const QRect & selection)
 }
 
 
-void KWQTableView::verticalHeaderResized( int , int , int )
+void KWQTableView::verticalHeaderResized(int , int , int)
 {
   kDebug() << "Row resized\n";
 }
 
-void KWQTableView::horizontalHeaderResized( int , int , int )
+void KWQTableView::horizontalHeaderResized(int logicalIndex, int oldSize, int newSize)
 {
   kDebug() << "Column resized\n";
+  model()->setHeaderData(logicalIndex, Qt::Horizontal, QSize(newSize, 25), Qt::SizeHintRole);
 }
 
 #include "kwqtableview.moc"

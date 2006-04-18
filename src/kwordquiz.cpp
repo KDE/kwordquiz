@@ -420,12 +420,13 @@ void KWordQuizApp::initDocument()
   doc = new KEduVocDocument(this);
   doc->appendIdentifier(i18n("Column 1"));
   doc->appendIdentifier(i18n("Column 2"));
-  doc->setSizeHint(0, 250);
-  doc->setSizeHint(1, 250);
   for (int i=0; i<20; i++)
   {
     doc->appendEntry(new KEduVocExpression());
   }
+  m_tableModel = new KWQTableModel(doc, this);
+  m_tableModel->setHeaderData(0, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
+  m_tableModel->setHeaderData(1, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
   doc->setModified(false);
 }
 
@@ -438,9 +439,10 @@ void KWordQuizApp::initView()
   m_tableView->setFrameStyle(QFrame::NoFrame);
   m_topLayout->addWidget(m_tableView);
 
-  m_tableModel = new KWQTableModel(doc, this);
-  m_tableView->setModel(m_tableModel);
 
+  m_tableView->setModel(m_tableModel);
+  m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
+  m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
   setCaption(doc->URL().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
@@ -491,9 +493,10 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
     doc->open(url, false);
+    m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
+    m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
     if (doc->font() == NULL)
       doc->setFont(new QFont(Prefs::editorFont()));
-    //m_tableView->displayDoc();
     m_dirWatch->addFile(url.path());
     setCaption(doc->URL().fileName(), false);
     fileOpenRecent->addUrl( url );
