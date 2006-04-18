@@ -948,14 +948,12 @@ void KWordQuizApp::slotVocabLanguages()
   slotStatusMsg(i18n("Setting the column titles of the vocabulary..."));
   DlgLanguage* dlg;
   dlg = new DlgLanguage(this);
-  dlg->setLanguage(1, doc->originalIdentifier());
-  dlg->setLanguage(2, doc->identifier(1));
-  //dlg->disableResize();
+  dlg->setLanguage(1, m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+  dlg->setLanguage(2, m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
   if (dlg->exec() == KDialog::Accepted)
   {
-    doc->setOriginalIdentifier(dlg->Language(1));
-    doc->setIdentifier(1, dlg->Language(2));
-    m_tableView->reset();
+    m_tableModel->setHeaderData(0, Qt::Horizontal, dlg->Language(1), Qt::EditRole);
+    m_tableModel->setHeaderData(1, Qt::Horizontal, dlg->Language(2), Qt::EditRole);
     updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));

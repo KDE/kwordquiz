@@ -43,9 +43,9 @@ public:
   QVariant headerData(int section, Qt::Orientation orientation, int role) const;
 
   Qt::ItemFlags flags (const QModelIndex & index) const;
-  bool setData(const QModelIndex &index, const QVariant &value,int role = Qt::EditRole);
+  bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
+  bool setHeaderData (int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole);
 
-  int columnWidth(int column) const;
   void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
   void shuffle();
 

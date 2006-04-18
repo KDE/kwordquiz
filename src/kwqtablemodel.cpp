@@ -94,9 +94,18 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
   return false;
 }
 
-int KWQTableModel::columnWidth(int column) const
+bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
 {
-  return 500 /*m_doc->sizeHint(column)*/;
+  if (role == Qt::EditRole && orientation == Qt::Horizontal) {
+    if (section == 0)
+      m_doc->setOriginalIdentifier(value.toString());
+    if (section == 1)
+      m_doc->setIdentifier(1, value.toString());
+    emit headerDataChanged(orientation, section, section);
+    m_doc->setModified(true);
+    return true;
+  }
+  return false;
 }
 
 bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
