@@ -1359,7 +1359,7 @@ void KWordQuizApp::slotInsertChar( int i )
   if (m_qaView != 0)
     m_qaView->slotSpecChar(Prefs::specialCharacters()[i - 1]);
   else
-    if (centralWidget() == m_tableView)
+    if (m_tableView->isVisible())
       m_tableView->slotSpecChar(Prefs::specialCharacters()[i - 1]);
 }
 /*

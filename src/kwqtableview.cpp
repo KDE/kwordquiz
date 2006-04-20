@@ -746,34 +746,41 @@ void KWQTableView::doVocabRC( )
 
 void KWQTableView::slotSpecChar(const QChar & c)
 {
-/*  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    QLineEdit * l = (QLineEdit *) cellWidget(currentRow(), currentColumn());
-    if (l->hasSelectedText())
+    if (QApplication::focusWidget())
     {
-      QString ls = l->text();
-      QString s = l->selectedText();
-      int len = s.length();
-      int ss = l->selectionStart();
-      ls = ls.replace(ss, len, c);
-      l->setText(ls);
-      l->setSelection(ss, 1);
-    }
-    else
-    {
-      QString s = l->text();
-      int i = l->cursorPosition();
-      s.insert(i, c);
-      l->setText(s);
-      l->setCursorPosition(i + 1);
+      QLineEdit *l = static_cast<QLineEdit*>(QApplication::focusWidget());
+      if (l->hasSelectedText())
+      {
+        QString ls = l->text();
+        QString s = l->selectedText();
+        int len = s.length();
+        int ss = l->selectionStart();
+        ls = ls.replace(ss, len, c);
+        l->setText(ls);
+        l->setSelection(ss, 1);
+      }
+      else
+      {
+        QString s = l->text();
+        int i = l->cursorPosition();
+        s.insert(i, c);
+        l->setText(s);
+        l->setCursorPosition(i + 1);
+      }
     }
   }
   else
   {
-    editCell(currentRow(), currentColumn(), true);
-    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->setText(QString(c));
-    ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->setCursorPosition(1);
-  }*/
+    edit(currentIndex());
+    if (QApplication::focusWidget())
+    {
+      QLineEdit *l = static_cast<QLineEdit*>(QApplication::focusWidget());
+      l->setText(QString(c));
+      l->setCursorPosition(1);
+    }
+  }
 }
 
 void KWQTableView::activateNextCell( )
