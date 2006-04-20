@@ -247,35 +247,7 @@ void KWQTableView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int r
 
 void KWQTableView::endEdit( int row, int col, bool accept, bool replace )
 {
-  // this code gets called after enter and arrow keys, now we
-  // only process if editing really has been done
-/*
-  if ((cellWidget(row, col) != 0) && accept) //if edited the cellWidget still exists
-  {
-    if (((QLineEdit *) cellWidget(row, col))->text() != m_currentText)
-    {
-      addUndo(i18n("&Undo Entry"));
 
-      if (col == 0)
-        getDocument()->entry(row)->setOriginal(((QLineEdit *) cellWidget(row, col))->text());
-      else
-        getDocument()->entry(row)->setTranslation(1, ((QLineEdit *) cellWidget(row, col))->text());
-    }
-
-    Q3Table::endEdit(row, col, accept, replace); //this will destroy the cellWidget
-
-    if (!text(row, col).isEmpty())
-    {
-      Q3TableItem* itm;
-      itm = item(row, col);
-      itm->setWordWrap(true);
-      adjustRow(row);
-      getDocument() -> setModified(true);
-      if (Prefs::enableBlanks())
-        if (!checkForBlank(text(row, col), true))
-          KNotification::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
-    }
-  }*/
 }
 
 void KWQTableView::doEditUndo( )
@@ -516,7 +488,7 @@ bool KWQTableView::checkForBlank(const QString  & s, bool blank)
   QVector<int> openPos(0);
   QVector<int> closePos(0);
 
-  for (int i = 0; i<= s.length(); ++i)
+  for (int i = 0; i< s.length(); ++i)
   {
     if (s[i] == delim_start)
     {
@@ -922,6 +894,18 @@ void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditH
 
 void KWQTableView::commitData(QWidget * editor)
 {
+  QString currentText = model()->data(currentIndex(), Qt::DisplayRole).toString();
+  QLineEdit *l = static_cast<QLineEdit*>(editor);
+  QString newText = l->text();
+  if (newText != currentText)
+    addUndo(i18n("&Undo Entry"));
+
+  if (!newText.isEmpty()) {
+    if (Prefs::enableBlanks())
+      if (!checkForBlank(newText, true))
+        KNotification::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
+  }
+
   QTableView::commitData(editor);
 }
 
