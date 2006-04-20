@@ -36,7 +36,6 @@
 #include "dlgsort.h"
 #include "prefs.h"
 #include "dlgrc.h"
-#include "dlgspecchar.h"
 
 QList<WQUndo> *KWQTableView::m_undoList = 0L;
 
@@ -51,17 +50,6 @@ KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
   setTabKeyNavigation(true);
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
-
-/*
-  connect(m_delegate, SIGNAL(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)),
-    this, SLOT(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)));
-*/
-  setMinimumSize(0, 0); //This seems to improve resizing of main window
-  dlgSpecChar = 0;
-}
-
-KWQTableView::~KWQTableView()
-{
 }
 
 void KWQTableView::print(KPrinter *pPrinter)
@@ -257,19 +245,6 @@ void KWQTableView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int r
 
 }
 
-QWidget * KWQTableView::beginEdit( int row, int col, bool replace )
-{
-  /*if (col == 0)
-    m_currentText = getDocument()->entry(row)->original();
-  else
-    m_currentText = getDocument()->entry(row)->translation(1);
-
-//  cellEditor = Q3Table::beginEdit(row, col, replace);
-  if (cellEditor)
-    cellEditor->installEventFilter(this);
-  return cellEditor;*/
-}
-
 void KWQTableView::endEdit( int row, int col, bool accept, bool replace )
 {
   // this code gets called after enter and arrow keys, now we
@@ -301,16 +276,6 @@ void KWQTableView::endEdit( int row, int col, bool accept, bool replace )
           KNotification::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
     }
   }*/
-}
-
-void KWQTableView::adjustRow( int row )
-{
-  // we want to make the row high enough to display content, but
-  // if the user already made it even higher we keep that height
-  int rh = rowHeight(row);
-//  Q3Table::adjustRow(row);
-  if (rh > rowHeight(row))
-    setRowHeight(row, rh);
 }
 
 void KWQTableView::doEditUndo( )
@@ -697,7 +662,7 @@ void KWQTableView::doVocabSort( )
   dlg->setLanguage(1, model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
   dlg->setLanguage(2, model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
-  if (dlg->exec() == KDialogBase::Accepted)
+  if (dlg->exec() == KDialog::Accepted)
   {
     addUndo(i18n("&Undo Sort"));
     model()->sort(dlg->base() ? 0 : 1, dlg->ascending() ? Qt::AscendingOrder : Qt::DescendingOrder);
@@ -950,6 +915,7 @@ void KWQTableView::setModel(QAbstractItemModel * newModel)
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
 {
   QTableView::closeEditor(editor, hint);
+  adjustCurrentRow();
   if (hint == QAbstractItemDelegate::SubmitModelCache)
     activateNextCell();
 }
@@ -957,6 +923,17 @@ void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditH
 void KWQTableView::commitData(QWidget * editor)
 {
   QTableView::commitData(editor);
+}
+
+void KWQTableView::adjustCurrentRow()
+{
+  // we want to make the row high enough to display content, but
+  // if the user already made it even higher we keep that height
+  int r = currentIndex().row();
+  int rh = rowHeight(r);
+  resizeRowToContents(r);
+  if (rh > rowHeight(r))
+    setRowHeight(r, rh);
 }
 
 const QRect KWQTableView::selection()

@@ -33,7 +33,6 @@
 #include "wqundo.h"
 
 class KEduVocDocument;
-class DlgSpecChar;
 
 const char delim_start = '[';
 const char delim_end = ']';
@@ -48,8 +47,7 @@ Q_OBJECT
 public:
   /** Constructor for the main view */
   KWQTableView(QWidget *parent = 0);
-  /** Destructor for the main view */
-  ~KWQTableView();
+
   void setModel(QAbstractItemModel * newModel);
 
   /** contains the implementation for printing functionality */
@@ -72,13 +70,12 @@ public:
 protected:
   const QRect selection();
   void selectCells(const QRect & selection);
-  QWidget * beginEdit(int row, int col, bool replace);
   void endEdit ( int row, int col, bool accept, bool replace );
   void activateNextCell();
   void keyPressEvent(QKeyEvent*);
 
 public slots:
-  void adjustRow(int row);
+  void adjustCurrentRow();
   void slotSpecChar(const QChar &);
   void slotCheckedAnswer(int );
 
@@ -94,7 +91,7 @@ signals:
 
 private:
   QString m_currentText;
-  DlgSpecChar* dlgSpecChar;
+
   QWidget * cellEditor;
   KWQTableDelegate * m_delegate;
 
