@@ -67,7 +67,7 @@ public:
   void doVocabSort();
   void doVocabShuffle();
   void doVocabRC();
-  void doVocabSpecChar();
+
   bool checkForBlank(const QString & s, bool blank);
 protected:
   const QRect selection();
@@ -88,8 +88,6 @@ protected slots:
   void verticalHeaderResized(int, int, int);
   void horizontalHeaderResized(int, int, int);
 
-private slots:
-  void slotDlgSpecCharClosed();
 
 signals:
   void undoChange(const QString & text, bool enabled);

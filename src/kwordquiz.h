@@ -195,8 +195,6 @@ class KWordQuizApp : public KMainWindow
     void slotVocabFont();
     /** define keyboard layouts */
     void slotVocabKeyboard();
-    /** define special characters */
-    void slotVocabChar();
     /** define row and column properties */
     void slotVocabRC();
     /** sort vocabulary */

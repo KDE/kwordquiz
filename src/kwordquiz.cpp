@@ -987,13 +987,6 @@ void KWordQuizApp::slotVocabKeyboard()
   slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotVocabChar()
-{
-  slotStatusMsg(i18n("Inserting special character..."));
-  m_tableView->doVocabSpecChar();
-  slotStatusMsg(i18n("Ready"));
-}
-
 void KWordQuizApp::slotVocabRC()
 {
   slotStatusMsg(i18n("Changing row and column properties..."));

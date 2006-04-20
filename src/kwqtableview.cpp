@@ -744,30 +744,6 @@ void KWQTableView::doVocabRC( )
   }
 }
 
-void KWQTableView::doVocabSpecChar( )
-{
-  QString f = font().family();
-  QChar c=' ';
-  if (dlgSpecChar==0)
-  {
-    dlgSpecChar = new DlgSpecChar( this, "insert special char", f, c, false );
-    connect( dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    connect( dlgSpecChar, SIGNAL( finished() ), this, SLOT( slotDlgSpecCharClosed() ) );
-  }
-  dlgSpecChar->show();
-}
-
-void KWQTableView::slotDlgSpecCharClosed( )
-{
-  if ( dlgSpecChar )
-  {
-    disconnect( dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    disconnect( dlgSpecChar, SIGNAL( finished() ), this, SLOT( slotDlgSpecCharClosed() ) );
-    dlgSpecChar->deleteLater();
-    dlgSpecChar = 0L;
-  }
-}
-
 void KWQTableView::slotSpecChar(const QChar & c)
 {
 /*  if (isEditing())
