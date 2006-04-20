@@ -46,8 +46,8 @@ void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_en
   charSelect->enableFontCombo( false );
   grid->addWidget( charSelect, 0, 0 );
 
-  grid->addColSpacing( 0, charSelect->width() );
-  grid->addRowSpacing( 0, charSelect->height() );
+  grid->addItem( new QSpacerItem( charSelect->width(), 0 ), 0, 0 );
+  grid->addItem( new QSpacerItem( 0, charSelect->height() ), 0, 0 );
   grid->setRowStretch( 0, 0 );
   charSelect->setFocus();
 }
