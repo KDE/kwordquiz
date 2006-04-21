@@ -209,13 +209,13 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
     if (QString(m_correctBlank).length() > 0)
     {
       QStringList la, ls;
-      if (ans.find(";") > 0)
-        ls = QStringList::split(";", ans);
+      if (ans.indexOf(";") > 0)
+        ls = ans.split(";", QString::SkipEmptyParts);
       else
         ls.append(ans);
 
-      if (m_correctBlank.find(";") > 0)
-        la = QStringList::split(";", m_correctBlank);
+      if (m_correctBlank.indexOf(";") > 0)
+        la = m_correctBlank.split(";", QString::SkipEmptyParts);
       else
         la.append(m_correctBlank);
 
@@ -348,8 +348,8 @@ QString WQQuiz::yourAnswer(int /*i*/, const QString & s)
   {
     QStringList ls;
 
-    if (s.find(";") > 0)
-      ls = QStringList::split(";", s, true);
+    if (s.indexOf(";") > 0)
+      ls = s.split(";");
     else
       ls.append(s);
 
@@ -358,7 +358,7 @@ QString WQQuiz::yourAnswer(int /*i*/, const QString & s)
     int offset = 0, counter = 0;
     while (offset >= 0)
     {
-      offset = result.find("<u>", offset);
+      offset = result.indexOf("<u>", offset);
       if (offset >= 0)
       {
         result.insert(offset + 3, ls[counter]);
@@ -444,13 +444,13 @@ QString WQQuiz::blankAnswer(int i)
       int offset = 0;
       while (offset >= 0)
       {
-        offset = rx.search(tTemp, offset);
+        offset = rx.indexIn(tTemp, offset);
         if (offset >= 0)
         {
           if (m_correctBlank.length() > 0)
-            m_correctBlank = m_correctBlank + ";" + " " + tTemp.mid(offset + 1, tTemp.find(']', offset) - offset - 1);
+            m_correctBlank = m_correctBlank + ";" + " " + tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
           else
-            m_correctBlank = tTemp.mid(offset + 1, tTemp.find(']', offset) - offset - 1);
+            m_correctBlank = tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
           offset++;
         }
       }

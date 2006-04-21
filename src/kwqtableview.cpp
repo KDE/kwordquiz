@@ -371,7 +371,7 @@ void KWQTableView::doEditPaste( )
 
     QString s = kapp->clipboard()->text();
     QStringList sl;
-    sl = QStringList::split("\n", s);
+    sl = s.split("\n", QString::SkipEmptyParts);
 
     int i = 0;
     int ar = tr;
@@ -387,7 +387,7 @@ void KWQTableView::doEditPaste( )
       br = br + sl.count() - 1;
 
       if (lc == 0) //left col?
-        if (sl[0].find("\t") < ((int) sl[0].length() - 1))
+        if (sl[0].indexOf("\t") < ((int) sl[0].length() - 1))
           rc = 1; //expand to second column;
 
 
@@ -395,7 +395,7 @@ void KWQTableView::doEditPaste( )
       {
         ac = lc;
 
-        sr = QStringList::split("\t", sl[i]);
+        sr = sl.at(i).split("\t", QString::SkipEmptyParts);
         int c = 0;
         while (ac <= rc)
         {
@@ -413,7 +413,7 @@ void KWQTableView::doEditPaste( )
       {
         ac = lc;
 
-        sr = QStringList::split("\t", sl[i]);
+        sr = sl.at(i).split("\t", QString::SkipEmptyParts);
         int c = 0;
         while (ac <= rc)
         {
@@ -596,13 +596,13 @@ void KWQTableView::doEditUnmarkBlank( )
           s = l->text();
           int cs = l->cursorPosition();
 
-          int fr = s.findRev(delim_start, cs);
+          int fr = s.lastIndexOf(delim_start, cs);
           if (fr > 0)
           {
             s = s.replace(fr, 1, "");
             cs--;
           }
-          int ff = s.find(delim_end, cs);
+          int ff = s.indexOf(delim_end, cs);
           if (ff > 0)
             s = s.replace(ff, 1, "");
 

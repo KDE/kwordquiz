@@ -434,7 +434,9 @@ void KWordQuizApp::initView()
 {
   QWidget * mainWidget = new QWidget(this);
   setCentralWidget(mainWidget);
-  m_topLayout = new QVBoxLayout(mainWidget, 0, KDialog::spacingHint());
+  m_topLayout = new QVBoxLayout(mainWidget);
+  m_topLayout->setMargin(0);
+  m_topLayout->setSpacing(KDialog::spacingHint());
   m_tableView = new KWQTableView(centralWidget());
   m_tableView->setFrameStyle(QFrame::NoFrame);
   m_topLayout->addWidget(m_tableView);
@@ -465,7 +467,7 @@ void KWordQuizApp::openURL(const KUrl& url)
           {
             if (w->isMinimized())
               w->showNormal();
-            w->setActiveWindow();
+            w->activateWindow();
             w->raise();
             break;
           }
