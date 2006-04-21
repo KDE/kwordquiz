@@ -494,14 +494,14 @@ bool KWQTableView::checkForBlank(const QString  & s, bool blank)
     {
       openCount++;
       openPos.resize(openCount);
-      openPos[openCount] = i;
+      openPos[openCount - 1] = i;
     }
 
     if (s[i] == delim_end)
     {
       closeCount++;
       closePos.resize(closeCount);
-      closePos[closeCount] = i;
+      closePos[closeCount - 1] = i;
     }
   }
 
