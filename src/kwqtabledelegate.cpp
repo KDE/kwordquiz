@@ -99,8 +99,8 @@ void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewIte
 
     if (painter->fontMetrics().width(text) > textRect.width() && !text.contains(QLatin1Char('\n')))
         str = elidedText(option.fontMetrics, textRect.width(), option.textElideMode, text);
-#warning a troll told me that function is not public so you can NOT use it (moreover it does not link when using it) FIX !! It links just fine for me. I will rewrite this later
-    qt_format_text(option.font, textRect, option.displayAlignment, str, 0, 0, 0, 0, painter);
+
+    painter->drawText(textRect, option.displayAlignment, str);
     painter->setFont(font);
     painter->setPen(pen);
 }
