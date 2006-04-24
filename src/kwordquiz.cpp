@@ -477,7 +477,7 @@ void KWordQuizApp::openURL(const KUrl& url)
     else
     {
       ///@todo this doesn't really check if the entries are empty. Is it worth it to have such as function?
-      if (doc -> URL().fileName() == i18n("Untitled")  && doc -> numEntries() == 0){
+      if (doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
         // neither saved nor has content, as good as new
         openDocumentFile(url);
       }
@@ -635,7 +635,7 @@ bool KWordQuizApp::checkSyntax(bool blanks)
 {
   int errorCount = 0;
 
-  for (int r = 0; r < doc->numEntries(); ++r)
+  for (int r = 0; r < m_tableModel->rowCount(QModelIndex()); ++r)
   {
     QString s = doc->entry(r)->original();
     if (s.length() > 0)
@@ -660,7 +660,7 @@ bool KWordQuizApp::checkSyntax(bool blanks)
 void KWordQuizApp::slotFileNew()
 {
   slotStatusMsg(i18n("Opening a new document window..."));
-  if (doc -> URL().fileName() == i18n("Untitled")  && doc -> numEntries() == 0){
+  if (doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
     // neither saved nor has content, as good as new
   }
   else
@@ -694,7 +694,7 @@ void KWordQuizApp::slotFileOpen()
     if (append)
     {
       KWordQuizApp * w;
-      if (doc->URL().fileName() == i18n("Untitled")  && doc->numEntries() == 0){
+      if (doc->URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
         // neither saved nor has content, as good as new
         w = this;
       }
@@ -1316,8 +1316,8 @@ void KWordQuizApp::updateMode(int m)
     }
 
   Prefs::setMode(m);
-  QString s1 = doc->originalIdentifier();
-  QString s2 = doc->identifier(1);
+  QString s1 = m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
+  QString s2 = m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
 
   mode1->setText(i18n("&1 %1 -> %2 In Order", s1, s2));
   mode2->setText(i18n("&2 %1 -> %2 In Order", s2, s1));
