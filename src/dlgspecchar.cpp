@@ -36,7 +36,9 @@ void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_en
 {
   QWidget *page = plainPage();
 
-  grid = new QGridLayout( page, 1, 1, KDialog::marginHint(), KDialog::spacingHint() );
+  grid = new QGridLayout( page );
+  grid->setMargin( KDialog::marginHint() );
+  grid->setSpacing( KDialog::spacingHint() );
 
   int t = (_chr.unicode()/256);
 
