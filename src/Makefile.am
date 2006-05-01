@@ -58,11 +58,6 @@ rc_DATA = kwordquizui.rc eventsrc
 apps_DATA = kwordquiz.desktop
 appsdir = $(kde_appsdir)/Edutainment/Miscellaneous
 
-messages: rc.cpp
-	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
-	if test -n "$$LIST"; then \
-	 $(XGETTEXT) $$LIST -o $(podir)/kwordquiz.pot; \
-	fi
 
 
 noinst_HEADERS = qaview.h flashview.h multipleview.h wqquiz.h wqlistitem.h \
