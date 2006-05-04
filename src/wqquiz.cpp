@@ -74,7 +74,7 @@ void WQQuiz::addToList(int aCol, int /*bCol*/)
     }
   }
 
-  KRandomSequence *rs = new KRandomSequence(0);
+  KRandomSequence rs(0);
 
   int count = tempList.count();
 
@@ -89,13 +89,13 @@ void WQQuiz::addToList(int aCol, int /*bCol*/)
     {
       int a, b;
       do
-        a = rs->getLong(count);
+        a = rs.getLong(count);
       while(a==i);
 
       li.setTwoOp(a);
 
       do
-        b = rs->getLong(count);
+        b = rs.getLong(count);
       while(b == i || b == a);
 
       li.setThreeOp(b);
