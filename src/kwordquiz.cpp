@@ -19,6 +19,8 @@
 #include <QBitmap>
 #include <QCheckBox>
 
+#include <kactioncollection.h>
+#include <kactionmenu.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <kstatusbar.h>
@@ -32,6 +34,9 @@
 #include <kdebug.h>
 #include <kxmlguifactory.h>
 #include <kglobal.h>
+#include <krecentfilesaction.h>
+#include <kstdaction.h>
+#include <ktoggleaction.h>
 #include <ktoolbar.h>
 
 #include "kwordquiz.h"

@@ -38,6 +38,9 @@
 // forward declaration of the KWordQuiz classes
 #include "wqquiz.h"
 
+class KActionMenu;
+class KRecentFilesAction;
+class KToggleAction;
 class KEduVocDocument;
 class KWQTableModel;
 class KWQTableView;

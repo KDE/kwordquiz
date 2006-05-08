@@ -17,6 +17,7 @@
 #include <QLabel>
 #include <QRadioButton>
 
+#include <kactioncollection.h>
 #include <kiconloader.h>
 #include <klocale.h>
 #include <knotification.h>
