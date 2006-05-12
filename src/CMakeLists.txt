@@ -3,7 +3,7 @@ kde4_header()
 add_subdirectory( pics ) 
 add_subdirectory( examples ) 
 
-include_directories( ${CMAKE_SOURCE_DIR}/kwordquiz/icons ${CMAKE_CURRENT_BINARY_DIR}/../../libkdeedu/kdeeducore  )
+include_directories( ${CMAKE_SOURCE_DIR}/kwordquiz/icons ${CMAKE_SOURCE_DIR}/libkdeedu/kdeeducore  )
 
 
 ########### next target ###############
