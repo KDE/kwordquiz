@@ -1,4 +1,3 @@
-kde4_header()
 project(kwordquiz)
 
 add_subdirectory( src ) 
@@ -9,7 +8,6 @@ add_subdirectory( src )
 ########### install files ###############
 
 
-kde4_footer()
 
 
 

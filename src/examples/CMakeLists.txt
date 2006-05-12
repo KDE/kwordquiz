@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -7,7 +6,6 @@ kde4_header()
 
 install_files( ${DATA_INSTALL_DIR}/kwordquiz/examples FILES example.kvtml french_verbs.kvtml fill_in_the_blank.kvtml us_states_and_capitals.kvtml )
 
-kde4_footer()
 
 
 

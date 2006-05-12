@@ -1,4 +1,3 @@
-kde4_header()
 
 add_subdirectory( pics ) 
 add_subdirectory( examples ) 
@@ -65,7 +64,6 @@ install_files( ${CONFIG_INSTALL_DIR} FILES kwordquizrc )
 install_files( ${DATA_INSTALL_DIR}/kwordquiz FILES kwordquizui.rc eventsrc )
 install_files( ${MIME_INSTALL_DIR}/application FILES x-kwordquiz.desktop )
 
-kde4_footer()
 
 
 
