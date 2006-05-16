@@ -288,37 +288,37 @@ void KWordQuizApp::initActions()
   quizCheck->setShortcut(Qt::Key_Return);
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
   quizCheck->setToolTip(quizCheck->whatsThis());
-  connect(quizCheck, SIGNAL(triggered(bool)), this, SLOT(()));
+  //connect(quizCheck, SIGNAL(triggered(bool)), this, SLOT(()));
 
   flashKnow = new KAction(KIcon("know"), i18n("I &Know"), actionCollection(), "flash_know");
   flashKnow->setShortcut(Qt::Key_K);
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
   flashKnow->setToolTip(flashKnow->whatsThis());
-  connect(flashKnow, SIGNAL(triggered(bool)), this, SLOT(()));
+  //connect(flashKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
   flashDontKnow = new KAction(KIcon("dontknow"), i18n("I &Do Not Know"), actionCollection(), "flash_dont_know");
   flashDontKnow->setShortcut(Qt::Key_D);
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
   flashDontKnow->setToolTip(flashDontKnow->whatsThis());
-  connect(flashDontKnow, SIGNAL(triggered(bool)), this, SLOT(()));
+  //connect(flashDontKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
   qaHint = new KAction(KIcon("hint"), i18n("&Hint"), actionCollection(), "qa_hint");
   qaHint->setShortcut(Qt::CTRL + Qt::Key_H);
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
   qaHint->setToolTip(qaHint->whatsThis());
-  connect(qaHint, SIGNAL(triggered(bool)), this, SLOT(()));
+  //connect(qaHint, SIGNAL(triggered(bool)), this, SLOT(()));
 
   quizRestart = new KAction(KIcon("restart"), i18n("&Restart"), actionCollection(), "quiz_restart");
   quizRestart->setShortcut(Qt::CTRL + Qt::Key_R);
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
   quizRestart->setToolTip(quizRestart->whatsThis());
-  connect(quizRestart, SIGNAL(triggered(bool)), this, SLOT(()));
+  //connect(quizRestart, SIGNAL(triggered(bool)), this, SLOT(()));
 
   quizRepeatErrors = new KAction(KIcon("repeat"), i18n("Repeat &Errors"), actionCollection(), "quiz_repeat_errors");
   quizRepeatErrors->setShortcut(Qt::CTRL + Qt::Key_E);
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
-  connect(quizRepeatErrors, SIGNAL(triggered(bool)), this, SLOT(()));
+  //connect(quizRepeatErrors, SIGNAL(triggered(bool)), this, SLOT(()));
 
   configNotifications = KStdAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
   configNotifications->setWhatsThis(i18n("Configures sound and other notifications for certain events"));
