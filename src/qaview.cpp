@@ -147,7 +147,7 @@ void QAView::slotCheck()
       lblCorrect->clear();
       m_score->countIncrement(WQScore::cdCorrect);
       updateScore();
-      KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
+      KNotification::event("QuizCorrect", i18n("Your answer was correct."));
     }
     else
     {
