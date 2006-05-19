@@ -518,7 +518,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
 }
 
 
-KEduVocDocument *KWordQuizApp::getDocument() const
+KEduVocDocument *KWordQuizApp::document() const
 {
   return m_doc;
 }
@@ -717,7 +717,7 @@ void KWordQuizApp::slotFileOpen()
       int i = 0;
       for(it = l.begin(); it != l.end(); ++it)
       {
-        w->getDocument()->open(*it, true);
+        w->document()->open(*it, true);
         i++;
       }
     }

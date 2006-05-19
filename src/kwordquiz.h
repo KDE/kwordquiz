@@ -82,11 +82,10 @@ class KWordQuizApp : public KMainWindow
     void openDocumentFile(const KUrl& url=KUrl());
 
     /**
-     * returns a pointer to the current document connected to the KMainWindow instance and is used by
-     * the View class to access the document object's methods
+     * returns a pointer to the current document connected to the KMainWindow instance
      * @return
      */
-    KEduVocDocument *getDocument() const;
+    KEduVocDocument * document() const;
 
     /**
      * @return whether the saving was successful
