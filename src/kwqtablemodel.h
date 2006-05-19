@@ -31,7 +31,9 @@ class KWQTableModel : public QAbstractTableModel
 {
 Q_OBJECT
 public:
-  KWQTableModel(KEduVocDocument * doc = 0, QObject * parent = 0);
+  KWQTableModel(QObject * parent = 0);
+
+  void setDocument(KEduVocDocument * doc);
 
   bool insertRows(int row, int count = 1, const QModelIndex &parent = QModelIndex());
   bool removeRows(int row, int count = 1, const QModelIndex &parent = QModelIndex());

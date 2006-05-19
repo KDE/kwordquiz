@@ -269,10 +269,10 @@ class KWordQuizApp : public KMainWindow
 
     KWordQuizPrefs *m_prefDialog;
 
-    /** doc represents your actual document and is created only once. It keeps
+    /** m_doc represents your actual document and is created only once. It keeps
      * information such as filename and does the serialization of your files.
      */
-    KEduVocDocument *doc;
+    KEduVocDocument * m_doc;
 
     // KAction pointers to enable/disable actions
     KAction* fileNew;

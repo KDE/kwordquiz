@@ -56,9 +56,6 @@
 
 KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
 {
-
-  ///////////////////////////////////////////////////////////////////
-  // call inits to invoke all other construction parts
   initStatusBar();
   initActions();
   initDocument();
@@ -422,17 +419,18 @@ void KWordQuizApp::initStatusBar()
 
 void KWordQuizApp::initDocument()
 {
-  doc = new KEduVocDocument(this);
-  doc->appendIdentifier(i18n("Column 1"));
-  doc->appendIdentifier(i18n("Column 2"));
+  m_doc = new KEduVocDocument(this);
+  m_doc->appendIdentifier(i18n("Column 1"));
+  m_doc->appendIdentifier(i18n("Column 2"));
   for (int i=0; i<20; i++)
   {
-    doc->appendEntry(new KEduVocExpression());
+    m_doc->appendEntry(new KEduVocExpression());
   }
-  m_tableModel = new KWQTableModel(doc, this);
+  m_tableModel = new KWQTableModel(this);
+  m_tableModel->setDocument(m_doc);
   m_tableModel->setHeaderData(0, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
   m_tableModel->setHeaderData(1, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
-  doc->setModified(false);
+  m_doc->setModified(false);
 }
 
 void KWordQuizApp::initView()
@@ -450,10 +448,10 @@ void KWordQuizApp::initView()
   m_tableView->setModel(m_tableModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
-  setCaption(doc->URL().fileName(),false);
+  setCaption(m_doc->URL().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
-  doc->setModified(false);
+  m_doc->setModified(false);
 }
 
 void KWordQuizApp::openURL(const KUrl& url)
@@ -468,7 +466,7 @@ void KWordQuizApp::openURL(const KUrl& url)
         {
           w = memberList().at(i);
           KWordQuizApp *a =(KWordQuizApp *) w;
-          if(a->doc ->URL().path() == url.path())
+          if(a->m_doc ->URL().path() == url.path())
           {
             if (w->isMinimized())
               w->showNormal();
@@ -482,7 +480,7 @@ void KWordQuizApp::openURL(const KUrl& url)
     else
     {
       ///@todo this doesn't really check if the entries are empty. Is it worth it to have such as function?
-      if (doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
+      if (m_doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
         // neither saved nor has content, as good as new
         openDocumentFile(url);
       }
@@ -500,13 +498,13 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
-    doc->open(url, false);
+    m_doc->open(url, false);
     m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
     m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
-    if (doc->font() == NULL)
-      doc->setFont(new QFont(Prefs::editorFont()));
+    if (m_doc->font() == NULL)
+      m_doc->setFont(new QFont(Prefs::editorFont()));
     m_dirWatch->addFile(url.path());
-    setCaption(doc->URL().fileName(), false);
+    setCaption(m_doc->URL().fileName(), false);
     fileOpenRecent->addUrl( url );
     updateMode(Prefs::mode());
   }
@@ -516,7 +514,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
 
 KEduVocDocument *KWordQuizApp::getDocument() const
 {
-  return doc;
+  return m_doc;
 }
 
 void KWordQuizApp::saveOptions()
@@ -534,20 +532,20 @@ void KWordQuizApp::readOptions()
 
 void KWordQuizApp::saveProperties(KConfig *_cfg)
 {
-  if(doc->URL().fileName()!=i18n("Untitled") && !doc->isModified())
+  if(m_doc->URL().fileName()!=i18n("Untitled") && !m_doc->isModified())
   {
     // saving to tempfile not necessary
 
   }
   else
   {
-    KUrl url=doc->URL();
+    KUrl url = m_doc->URL();
     _cfg->writeEntry("filename", url.url());
-    _cfg->writeEntry("modified", doc->isModified());
+    _cfg->writeEntry("modified", m_doc->isModified());
     QString tempname = kapp->tempSaveName(url.url());
-    QString tempurl= KUrl::toPercentEncoding(tempname);
+    QString tempurl = KUrl::toPercentEncoding(tempname);
     KUrl _url(tempurl);
-    doc->saveAs(this, _url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    m_doc->saveAs(this, _url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
 }
 
@@ -565,10 +563,10 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 
     if(canRecover)
     {
-      doc->open(_url, false);
-      if (doc->font() == NULL)
-        doc->setFont(new QFont(Prefs::editorFont()));
-      doc->setModified();
+      m_doc->open(_url, false);
+      if (m_doc->font() == NULL)
+        m_doc->setFont(new QFont(Prefs::editorFont()));
+      m_doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
     }
@@ -577,9 +575,9 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
   {
     if(!filename.isEmpty())
     {
-      doc->open(url, false);
-      if (doc->font() == NULL)
-        doc->setFont(new QFont(Prefs::editorFont()));
+      m_doc->open(url, false);
+      if (m_doc->font() == NULL)
+        m_doc->setFont(new QFont(Prefs::editorFont()));
       setCaption(url.fileName(),false);
     }
   }
@@ -589,7 +587,7 @@ bool KWordQuizApp::queryClose()
 {
   bool completed=true;
 
-  if(doc->isModified())
+  if(m_doc->isModified())
   {
     int want_save = KMessageBox::warningYesNoCancel(this,
                     i18n("The current file has been modified.\n"
@@ -598,19 +596,19 @@ bool KWordQuizApp::queryClose()
     switch(want_save)
     {
     case KMessageBox::Yes:
-      if (doc->URL().fileName() == i18n("Untitled"))
+      if (m_doc->URL().fileName() == i18n("Untitled"))
       {
         completed = saveAsFileName();
       }
       else
       {
-        completed = doc->saveAs(this, doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        completed = m_doc->saveAs(this, m_doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
       }
 
       break;
 
     case KMessageBox::No:
-      doc->setModified(false);
+      m_doc->setModified(false);
       completed=true;
       break;
 
@@ -625,8 +623,8 @@ bool KWordQuizApp::queryClose()
   }
 
   if (completed)
-    if (m_dirWatch->contains(doc->URL().path()))
-      m_dirWatch->removeFile(doc->URL().path());
+    if (m_dirWatch->contains(m_doc->URL().path()))
+      m_dirWatch->removeFile(m_doc->URL().path());
   return completed;
 }
 
@@ -642,13 +640,13 @@ bool KWordQuizApp::checkSyntax(bool blanks)
 
   for (int r = 0; r < m_tableModel->rowCount(QModelIndex()); ++r)
   {
-    QString s = doc->entry(r)->original();
+    QString s = m_doc->entry(r)->original();
     if (s.length() > 0)
       for (int i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
           if (!m_tableView->checkForBlank(s, blanks))
             errorCount++;
-    s = doc->entry(r)->translation(1);
+    s = m_doc->entry(r)->translation(1);
     if (s.length() > 0)
       for (int i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
@@ -665,7 +663,7 @@ bool KWordQuizApp::checkSyntax(bool blanks)
 void KWordQuizApp::slotFileNew()
 {
   slotStatusMsg(i18n("Opening a new document window..."));
-  if (doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
+  if (m_doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
     // neither saved nor has content, as good as new
   }
   else
@@ -699,7 +697,7 @@ void KWordQuizApp::slotFileOpen()
     if (append)
     {
       KWordQuizApp * w;
-      if (doc->URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
+      if (m_doc->URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
         // neither saved nor has content, as good as new
         w = this;
       }
@@ -743,13 +741,13 @@ void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
 void KWordQuizApp::slotFileSave()
 {
   slotStatusMsg(i18n("Saving file..."));
-  if (doc->URL().fileName() == i18n("Untitled") )
+  if (m_doc->URL().fileName() == i18n("Untitled") )
   {
     slotFileSaveAs();
   }
   else
   {
-    doc->saveAs(this, doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    m_doc->saveAs(this, m_doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -806,12 +804,12 @@ bool KWordQuizApp::saveAsFileName( )
       }
       else
       {
-        if (m_dirWatch ->contains(doc->URL().path()))
-          m_dirWatch ->removeFile(doc->URL().path());
-        doc->saveAs(this, url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        if (m_dirWatch ->contains(m_doc->URL().path()))
+          m_dirWatch ->removeFile(m_doc->URL().path());
+        m_doc->saveAs(this, url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addUrl(url);
-        setCaption(doc->URL().fileName(), doc->isModified());
+        setCaption(m_doc->URL().fileName(), m_doc->isModified());
         success = true;
       }
     }
@@ -829,9 +827,9 @@ void KWordQuizApp::slotFileClose()
   else
     if (queryClose())
     {
-      delete doc;
+      delete m_doc;
       initDocument();
-      setCaption(doc->URL().fileName(), doc->isModified());
+      setCaption(m_doc->URL().fileName(), m_doc->isModified());
       delete (m_tableView);
       initView();
       slotQuizEditor();
@@ -979,10 +977,10 @@ void KWordQuizApp::slotVocabFont()
   dlg->setFont(Prefs::editorFont());
   if (dlg->exec() == KFontDialog::Accepted)
   {
-    doc->setFont(new QFont(dlg->font()));
+    m_doc->setFont(new QFont(dlg->font()));
     m_tableView->reset();
     Prefs::setEditorFont(dlg->font());
-    doc->setModified(true);
+    m_doc->setModified(true);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -1136,7 +1134,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       m_tableView -> setFocus();
       break;
     case WQQuiz::qtFlash:
-      m_quiz = new WQQuiz(this, doc);
+      m_quiz = new WQQuiz(this, m_doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Prefs::mode());
@@ -1163,7 +1161,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       }
       break;
     case WQQuiz::qtMultiple:
-      m_quiz = new WQQuiz(this, doc);
+      m_quiz = new WQQuiz(this, m_doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
       m_quiz->setQuizMode(Prefs::mode());
@@ -1189,7 +1187,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       }
       break;
     case WQQuiz::qtQA:
-      m_quiz = new WQQuiz(this, doc);
+      m_quiz = new WQQuiz(this, m_doc);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtQA);
       m_quiz->setQuizMode(Prefs::mode());
@@ -1424,15 +1422,15 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
 
 void KWordQuizApp::slotLeitnerSystem()
 {
-  if( doc->leitnerSystemActive() )
+  if(m_doc->leitnerSystemActive())
   {
-    doc->setLeitnerSystemActive(false);
+    m_doc->setLeitnerSystemActive(false);
     vocabLeitner->setText(i18n("Enable Leitner system"));
     vocabConfigLeitner->setEnabled( false );
   }
   else
   {
-    doc->setLeitnerSystemActive(true);
+    m_doc->setLeitnerSystemActive(true);
     vocabLeitner->setText(i18n("Disable Leitner system"));
     vocabConfigLeitner->setEnabled( true );
   }
@@ -1440,9 +1438,9 @@ void KWordQuizApp::slotLeitnerSystem()
 
 void KWordQuizApp::slotConfigLeitner()
 {
-  PrefLeitner* config = new PrefLeitner(this, doc->leitnerSystem());
+  PrefLeitner* config = new PrefLeitner(this, m_doc->leitnerSystem());
   if (config->exec() == QDialog::Accepted)
-    doc->setLeitnerSystem(config->system());
+    m_doc->setLeitnerSystem(config->system());
 
   delete config;
 }

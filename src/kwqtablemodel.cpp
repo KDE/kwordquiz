@@ -20,9 +20,9 @@
 #include "kwqtablemodel.h"
 #include "prefs.h"
 
-KWQTableModel::KWQTableModel(KEduVocDocument * doc, QObject * parent) : QAbstractTableModel(parent)
+KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
-  m_doc = doc;
+  m_doc = 0;
 }
 
 int KWQTableModel::rowCount(const QModelIndex & /*parent*/) const
@@ -159,6 +159,11 @@ void KWQTableModel::shuffle( )
 {
   m_doc->shuffle();
   reset();
+}
+
+void KWQTableModel::setDocument(KEduVocDocument * doc)
+{
+  m_doc = doc;
 }
 
 #include "kwqtablemodel.moc"
