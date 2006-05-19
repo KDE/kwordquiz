@@ -51,6 +51,8 @@ public:
   void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
   void shuffle();
 
+  bool isEmpty();
+
 private:
   KEduVocDocument * m_doc;
 };

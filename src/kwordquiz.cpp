@@ -486,8 +486,7 @@ void KWordQuizApp::openURL(const KUrl& url)
     else
     {
       ///@todo this doesn't really check if the entries are empty. Is it worth it to have such as function?
-      if (m_doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
-        // neither saved nor has content, as good as new
+      if (m_tableModel->isEmpty()){
         openDocumentFile(url);
       }
       else
@@ -511,7 +510,8 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
       m_doc->setFont(new QFont(Prefs::editorFont()));
     m_dirWatch->addFile(url.path());
     setCaption(m_doc->URL().fileName(), false);
-    fileOpenRecent->addUrl( url );
+    ///@todo check when this is not crashing anymore
+    //fileOpenRecent->addUrl( url );
     updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
@@ -592,39 +592,36 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 bool KWordQuizApp::queryClose()
 {
   bool completed=true;
-
+///@todo Currently (2006-05-19) KMessageBox returns the same value for No and Cancel, very annoying
   if(m_doc->isModified())
   {
-    int want_save = KMessageBox::warningYesNoCancel(this,
-                    i18n("The current file has been modified.\n"
-                         "Do you want to save it?"),
-                    i18n("Warning"));
+    int want_save = KMessageBox::warningYesNoCancel(this, i18n("The current document has been modified.\nDo you want to save it?"));
     switch(want_save)
     {
-    case KMessageBox::Yes:
-      if (m_doc->URL().fileName() == i18n("Untitled"))
-      {
-        completed = saveAsFileName();
-      }
-      else
-      {
-        completed = m_doc->saveAs(this, m_doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
-      }
+      case KMessageBox::Cancel:
+        completed = false;
+        break;
 
-      break;
+      case KMessageBox::Yes:
+        if (m_doc->URL().fileName() == i18n("Untitled"))
+        {
+          completed = saveAsFileName();
+        }
+        else
+        {
+          completed = m_doc->saveAs(this, m_doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        }
 
-    case KMessageBox::No:
-      m_doc->setModified(false);
-      completed=true;
-      break;
+        break;
 
-    case KMessageBox::Cancel:
-      completed=false;
-      break;
+      case KMessageBox::No:
+        m_doc->setModified(false);
+        completed = true;
+        break;
 
-    default:
-      completed=false;
-      break;
+      default:
+        completed = false;
+        break;
     }
   }
 
@@ -662,18 +659,10 @@ bool KWordQuizApp::checkSyntax(bool blanks)
   return (errorCount == 0);
 }
 
-/////////////////////////////////////////////////////////////////////
-// SLOT IMPLEMENTATION
-/////////////////////////////////////////////////////////////////////
-
 void KWordQuizApp::slotFileNew()
 {
   slotStatusMsg(i18n("Opening a new document window..."));
-  if (m_doc -> URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
-    // neither saved nor has content, as good as new
-  }
-  else
-  {
+  if (!m_tableModel->isEmpty()){
     KWordQuizApp *new_window= new KWordQuizApp();
     new_window->show();
   }
@@ -703,7 +692,7 @@ void KWordQuizApp::slotFileOpen()
     if (append)
     {
       KWordQuizApp * w;
-      if (m_doc->URL().fileName() == i18n("Untitled")  && m_tableModel->rowCount(QModelIndex()) == 0){
+      if (m_tableModel->isEmpty()){
         // neither saved nor has content, as good as new
         w = this;
       }
@@ -836,8 +825,9 @@ void KWordQuizApp::slotFileClose()
       delete m_doc;
       initDocument();
       setCaption(m_doc->URL().fileName(), m_doc->isModified());
-      delete (m_tableView);
-      initView();
+      m_tableModel->setDocument(m_doc);
+      //delete (m_tableView);
+      //initView();
       slotQuizEditor();
       slotUndoChange(i18n("Cannot &Undo"), false);
       updateMode(Prefs::mode());
