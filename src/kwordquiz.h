@@ -119,6 +119,11 @@ class KWordQuizApp : public KMainWindow
      * @see initView();
      */
     void initDocument();
+    /** creates a data model that reads and writes data from the document and displays it in a view
+     * @see initDocument();
+     * @see initView();
+     */
+    void initModel();
     /** creates the centerwidget of the KTMainWindow instance and sets it as the view
      */
     void initView();

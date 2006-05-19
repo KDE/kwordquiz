@@ -59,6 +59,7 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   initStatusBar();
   initActions();
   initDocument();
+  initModel();
 
   readOptions();
 
@@ -426,11 +427,16 @@ void KWordQuizApp::initDocument()
   {
     m_doc->appendEntry(new KEduVocExpression());
   }
+  m_doc->setModified(false);
+}
+
+
+void KWordQuizApp::initModel( )
+{
   m_tableModel = new KWQTableModel(this);
   m_tableModel->setDocument(m_doc);
   m_tableModel->setHeaderData(0, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
   m_tableModel->setHeaderData(1, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
-  m_doc->setModified(false);
 }
 
 void KWordQuizApp::initView()
