@@ -1240,7 +1240,7 @@ void KWordQuizApp::slotApplyPreferences()
 void KWordQuizApp::updateSpecialCharIcons( )
 {
   for (int i = 0; i < 9; i++){
-    KAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)).latin1());
+    KAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)));
     act->setIcon(KIcon(charIcon(Prefs::specialCharacters()[i])));
     act->setToolTip(i18n("Inserts the character %1").arg(Prefs::specialCharacters()[i]));
   }
