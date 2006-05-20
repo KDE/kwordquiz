@@ -29,6 +29,7 @@
 
 #include <kprinter.h>
 
+#include "kwqtablemodel.h"
 #include "kwqtabledelegate.h"
 #include "wqundo.h"
 
@@ -48,7 +49,8 @@ public:
   /** Constructor for the main view */
   KWQTableView(QWidget *parent = 0);
 
-  void setModel(QAbstractItemModel * newModel);
+  void setModel(KWQTableModel * model);
+  //KWQTableModel * model() const;
 
   /** contains the implementation for printing functionality */
   void print(KPrinter *pPrinter);
@@ -93,6 +95,7 @@ private:
   QString m_currentText;
 
   QWidget * cellEditor;
+
   KWQTableDelegate * m_delegate;
 
   /** the list of the undo objects */

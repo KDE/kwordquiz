@@ -170,7 +170,7 @@ void KWQTableView::print(KPrinter *pPrinter)
   painter.end();
 }
 
-void KWQTableView::doNewPage( QPainter & painter, int res, int type )
+void KWQTableView::doNewPage(QPainter & painter, int res, int type)
 {
     int cw0 = 200 /*verticalHeader()->width()*/;
     int cw1 = columnWidth(0);
@@ -213,7 +213,7 @@ void KWQTableView::doNewPage( QPainter & painter, int res, int type )
 */
 }
 
-void KWQTableView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int res, int type )
+void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type)
 {
     int marg = res;
     painter.setFont(KGlobalSettings::generalFont());
@@ -245,12 +245,12 @@ void KWQTableView::doEndOfPage( QPainter & painter, int vPos, int pageNum, int r
 
 }
 
-void KWQTableView::endEdit( int row, int col, bool accept, bool replace )
+void KWQTableView::endEdit(int row, int col, bool accept, bool replace)
 {
 
 }
 
-void KWQTableView::doEditUndo( )
+void KWQTableView::doEditUndo()
 {
 /*  if (isEditing())
   {
@@ -297,7 +297,7 @@ void KWQTableView::doEditUndo( )
   }*/
 }
 
-void KWQTableView::doEditCut( )
+void KWQTableView::doEditCut()
 {
   if (state() == QAbstractItemView::EditingState)
   {
@@ -321,7 +321,7 @@ void KWQTableView::doEditCut( )
   }
 }
 
-void KWQTableView::doEditCopy( )
+void KWQTableView::doEditCopy()
 {
   if (state() == QAbstractItemView::EditingState)
   {
@@ -350,7 +350,7 @@ void KWQTableView::doEditCopy( )
   }
 }
 
-void KWQTableView::doEditPaste( )
+void KWQTableView::doEditPaste()
 {
   if (state() == QAbstractItemView::EditingState)
   {
@@ -429,7 +429,7 @@ void KWQTableView::doEditPaste( )
   }
 }
 
-void KWQTableView::doEditClear( )
+void KWQTableView::doEditClear()
 {
   if (state() == QAbstractItemView::EditingState)
   {
@@ -451,7 +451,7 @@ void KWQTableView::doEditClear( )
   }
 }
 
-void KWQTableView::doEditInsert( )
+void KWQTableView::doEditInsert()
 {
   addUndo(i18n("&Undo Insert"));
   QRect sel = selection();
@@ -462,7 +462,7 @@ void KWQTableView::doEditInsert( )
   selectCells(sel);
 }
 
-void KWQTableView::doEditDelete( )
+void KWQTableView::doEditDelete()
 {
   addUndo(i18n("&Undo Delete"));
   QRect sel = selection();
@@ -567,7 +567,7 @@ void KWQTableView::doEditMarkBlank()
   }
 }
 
-void KWQTableView::doEditUnmarkBlank( )
+void KWQTableView::doEditUnmarkBlank()
 {
   addUndo(i18n("&Undo Unmark Blank"));
   QString s;
@@ -627,7 +627,7 @@ void KWQTableView::doEditUnmarkBlank( )
   }
 }
 
-void KWQTableView::doVocabSort( )
+void KWQTableView::doVocabSort()
 {
   DlgSort* dlg;
   dlg = new DlgSort(this);
@@ -641,12 +641,18 @@ void KWQTableView::doVocabSort( )
   }
 }
 
-void KWQTableView::doVocabShuffle( )
+void KWQTableView::doVocabShuffle()
 {
   addUndo(i18n("&Undo Shuffle"));
+  QRect sel = selection();
+  int currentRow = currentIndex().row();
+  int currentColumn = currentIndex().column();  
+  qobject_cast<KWQTableModel *> (model())->shuffle();
+  setCurrentIndex(model()->index(currentRow, currentColumn));
+  selectCells(sel);
 }
 
-void KWQTableView::doVocabRC( )
+void KWQTableView::doVocabRC()
 {
   DlgRC* dlg;
   dlg = new DlgRC(this);
@@ -720,7 +726,7 @@ void KWQTableView::slotSpecChar(const QChar & c)
   }
 }
 
-void KWQTableView::activateNextCell( )
+void KWQTableView::activateNextCell()
 {
   QItemSelectionModel * selModel = selectionModel();
   QModelIndexList indexes = selModel->selectedIndexes();
@@ -815,7 +821,7 @@ void KWQTableView::activateNextCell( )
   }
 }
 
-void KWQTableView::addUndo( const QString & caption )
+void KWQTableView::addUndo(const QString & caption)
 {
   while (m_undoList->count() > 10)
   {
@@ -875,10 +881,10 @@ void KWQTableView::slotCheckedAnswer(int i)
   }
 }
 
-void KWQTableView::setModel(QAbstractItemModel * newModel)
+void KWQTableView::setModel(KWQTableModel * model)
 {
-  QTableView::setModel(newModel);
-  setCurrentIndex(model()->index(0, 0));
+  QTableView::setModel(model);
+  setCurrentIndex(model->index(0, 0));
   scrollTo(currentIndex());
   connect(verticalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(verticalHeaderResized(int, int, int)));
   connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));

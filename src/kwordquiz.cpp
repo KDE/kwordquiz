@@ -501,6 +501,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
     m_doc->open(url, false);
+    m_tableView->reset();
     m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
     m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
     if (m_doc->font() == NULL)
@@ -508,7 +509,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
     m_dirWatch->addFile(url.path());
     setCaption(m_doc->URL().fileName(), false);
     ///@todo check when this is not crashing anymore
-    //fileOpenRecent->addUrl( url );
+    //fileOpenRecent->addUrl(url);
     updateMode(Prefs::mode());
   }
   slotStatusMsg(i18n("Ready"));
@@ -1002,7 +1003,6 @@ void KWordQuizApp::slotVocabShuffle()
 {
   slotStatusMsg(i18n("Randomizing the vocabulary..."));
   m_tableView->doVocabShuffle();
-  m_tableModel->shuffle();
   slotStatusMsg(i18n("Ready"));
 }
 
