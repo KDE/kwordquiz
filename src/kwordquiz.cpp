@@ -430,8 +430,7 @@ void KWordQuizApp::initDocument()
   m_doc->setModified(false);
 }
 
-
-void KWordQuizApp::initModel( )
+void KWordQuizApp::initModel()
 {
   m_tableModel = new KWQTableModel(this);
   m_tableModel->setDocument(m_doc);
@@ -449,7 +448,6 @@ void KWordQuizApp::initView()
   m_tableView = new KWQTableView(centralWidget());
   m_tableView->setFrameStyle(QFrame::NoFrame);
   m_topLayout->addWidget(m_tableView);
-
 
   m_tableView->setModel(m_tableModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
@@ -485,7 +483,6 @@ void KWordQuizApp::openURL(const KUrl& url)
     }
     else
     {
-      ///@todo this doesn't really check if the entries are empty. Is it worth it to have such as function?
       if (m_tableModel->isEmpty()){
         openDocumentFile(url);
       }
@@ -541,7 +538,6 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
   if(m_doc->URL().fileName()!=i18n("Untitled") && !m_doc->isModified())
   {
     // saving to tempfile not necessary
-
   }
   else
   {
@@ -1243,12 +1239,11 @@ void KWordQuizApp::slotApplyPreferences()
 
 void KWordQuizApp::updateSpecialCharIcons( )
 {
-///@todo port
-/*  for (int i = 0; i < 9; i++){
+  for (int i = 0; i < 9; i++){
     KAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)).latin1());
-    act->setIcon(charIcon(Prefs::specialCharacters()[i]));
+    act->setIcon(KIcon(charIcon(Prefs::specialCharacters()[i])));
     act->setToolTip(i18n("Inserts the character %1").arg(Prefs::specialCharacters()[i]));
-  }*/
+  }
 }
 
 QString KWordQuizApp::charIcon(const QChar & c)
