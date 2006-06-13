@@ -23,18 +23,25 @@
 #include "dlgspecchar.h"
 
 DlgSpecChar::DlgSpecChar( QWidget *parent, const char *name, const QString &_font, const QChar &_chr, bool _modal )
-    : KDialogBase( Plain, i18n("Select Character"), User1 | Cancel, User1 , parent, name, _modal )
+    : KDialog( parent )
 {
+  setCaption( i18n("Select Character") );
+  setButtons( User1 | Cancel );
+  setDefaultButton( User1 );
+  setModal( _modal );
+  setObjectName( QLatin1String(name) );
+
   initDialog(_chr,_font,true);
 
   setButtonText( User1, i18n("&Select") );
-  setButtonTip( User1, i18n("Select this character") );
+  setButtonToolTip( User1, i18n("Select this character") );
 
 }
 
 void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_enableFont*/)
 {
-  QWidget *page = plainPage();
+  QWidget *page = new QWidget( this );
+  setMainWidget( page );
 
   grid = new QGridLayout( page );
   grid->setMargin( KDialog::marginHint() );
@@ -56,7 +63,7 @@ void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_en
 
 void DlgSpecChar::closeDialog()
 {
-  KDialogBase::close();
+  KDialog::close();
 }
 
 QChar DlgSpecChar::chr()

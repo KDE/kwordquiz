@@ -20,8 +20,10 @@
 
 #include "dlgsort.h"
 
-DlgSort::DlgSort(QWidget *parent): KDialog(parent, i18n("Sort"), Ok|Cancel)
+DlgSort::DlgSort(QWidget *parent): KDialog(parent)
 {
+  setCaption(i18n("Sort"));
+  setButtons(Ok|Cancel);
   QWidget * w = new QWidget();
   setMainWidget(w);
   dlgBase = new Ui::DlgSortBase();

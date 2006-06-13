@@ -23,8 +23,11 @@
 #include "prefs.h"
 #include "dlglanguage.h"
 
-DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent, i18n("Column Titles"), Ok|Cancel)
+DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent)
 {
+  setCaption(i18n("Column Titles"));
+  setButtons(Ok|Cancel);
+
   QWidget * w = new QWidget();
   setMainWidget(w);
 

@@ -19,8 +19,10 @@
 
 #include "dlgrc.h"
 
-DlgRC::DlgRC(QWidget *parent): KDialog(parent, i18n("Rows & Columns"), Ok|Cancel)
+DlgRC::DlgRC(QWidget *parent): KDialog(parent)
 {
+  setCaption(i18n("Rows & Columns"));
+  setButtons(Ok|Cancel);
   QWidget * w = new QWidget();
   setMainWidget(w);
   dlgBase = new Ui::DlgRCBase();

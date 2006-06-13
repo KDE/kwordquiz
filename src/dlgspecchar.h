@@ -17,7 +17,7 @@
 #ifndef DLGSPECCHAR_H
 #define DLGSPECCHAR_H
 
-#include <kdialogbase.h>
+#include <kdialog.h>
 
 class QWidget;
 class QGridLayout;
@@ -28,7 +28,7 @@ class KButtonBox;
 /**
 @author Peter Hedlund
 */
-class DlgSpecChar : public KDialogBase
+class DlgSpecChar : public KDialog
 {
 Q_OBJECT
 public:
