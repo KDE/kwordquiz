@@ -38,7 +38,7 @@
 #include "prefcardappearance.h"
 #include "kwordquiz.h"
 
-KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, DialogType dialogType, int /*dialogButtons*/, ButtonCode /*defaultButton*/, bool /*modal*/)
+KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, FaceType dialogType, int /*dialogButtons*/, ButtonCode /*defaultButton*/, bool /*modal*/)
   : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false)
 {
   m_config = config;
