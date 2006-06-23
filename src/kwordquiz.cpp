@@ -639,6 +639,11 @@ void KWordQuizApp::slotFileClose()
   else
     if (queryClose())
     {
+      if (m_quiz != 0)
+      {
+        delete(m_quiz);
+        m_quiz = 0;
+      }
       doc->newDocument();
       setCaption(doc->URL().fileName(), doc->isModified());
       delete (m_editView);
