@@ -45,6 +45,7 @@ Comment[tr]=Bir fiş ve dilbilgisi öğrenme uygulaması
 Comment[uk]=Програма для завчання слів по картках
 Comment[vi]=Một chương trình luyện tập từ vừng bằng các thẻ
 Comment[zh_CN]=Flash 卡片和词汇学习程序
+Comment[zh_TW]=閃卡與字彙學習程式
 Terminal=false
 Name=KWordQuiz
 Name[bn]=কে-ওয়ার্ড-কুইজ
