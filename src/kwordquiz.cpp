@@ -1249,7 +1249,7 @@ void KWordQuizApp::updateSpecialCharIcons( )
 QString KWordQuizApp::charIcon(const QChar & c)
 {
   ///Create a name and path for the icon
-  QString s = locateLocal("icon", "char" + QString::number(c.unicode()) + ".png");
+  QString s = KStandardDirs::locateLocal("icon", "char" + QString::number(c.unicode()) + ".png");
 
   ///No need to redraw if it already exists
   if (KStandardDirs::exists(s))
