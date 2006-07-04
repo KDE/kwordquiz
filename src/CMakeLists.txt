@@ -58,11 +58,11 @@ install_targets(/bin kwordquiz )
 
 ########### install files ###############
 
-install_files( ${XDG_APPS_DIR} FILES kwordquiz.desktop )
-install_files( ${KCFG_INSTALL_DIR} FILES kwordquiz.kcfg )
-install_files( ${CONFIG_INSTALL_DIR} FILES kwordquizrc )
-install_files( ${DATA_INSTALL_DIR}/kwordquiz FILES kwordquizui.rc eventsrc )
-install_files( ${MIME_INSTALL_DIR}/application FILES x-kwordquiz.desktop )
+install( FILES kwordquiz.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kwordquiz.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+install( FILES kwordquizrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
+install( FILES kwordquizui.rc eventsrc  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz )
+install( FILES x-kwordquiz.desktop  DESTINATION  ${MIME_INSTALL_DIR}/application )
 
 
 
