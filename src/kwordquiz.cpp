@@ -85,7 +85,7 @@ KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
   {
     fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/example.kvtml")));
     fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/french_verbs.kvtml")));
-    fileOpenRecent->addUrl(KUrl::fromPath(locate("data", "kwordquiz/examples/fill_in_the_blank.kvtml")));
+    fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/fill_in_the_blank.kvtml")));
     fileOpenRecent->addUrl(KUrl::fromPath(locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml")));
     Prefs::setFirstRun(false);
   }
