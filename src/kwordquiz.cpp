@@ -683,7 +683,7 @@ void KWordQuizApp::slotFileOpen()
 
   if (fd->exec() == QDialog::Accepted)
   {
-    KUrl::List l = fd -> selectedURLs();
+    KUrl::List l = fd -> selectedUrls();
     bool append = ((cb -> isChecked()) && (l.count() > 1));
 
     if (append)
@@ -770,7 +770,7 @@ bool KWordQuizApp::saveAsFileName( )
 
   if (fd->exec() == QDialog::Accepted)
   {
-    KUrl url = fd -> selectedURL();
+    KUrl url = fd -> selectedUrl();
     if(!url.isEmpty()){
 
       ///@todo check that a valid extension was really given
