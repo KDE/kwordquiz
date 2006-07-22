@@ -51,7 +51,7 @@ kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc )
 
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
 
-target_link_libraries(kwordquiz  ${KDE4_KDECORE_LIBS} kdeeducore kdeui kdeprint knewstuff )
+target_link_libraries(kwordquiz  ${KDE4_KDECORE_LIBS} kdeeducore ${KDE4_KDEUI_LIBS} ${KDE4_KDEPRINT_LIBS} knewstuff )
 
 install(TARGETS kwordquiz  DESTINATION ${BIN_INSTALL_DIR} )
 
