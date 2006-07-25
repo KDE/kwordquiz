@@ -1,20 +1,5 @@
+kde4_install_icons( ${DATA_INSTALL_DIR}/kwordquiz/icons  hicolor )
+kde4_install_icons( ${DATA_INSTALL_DIR}/kwordquiz/icons  crystalsvg )
 
 
 
-
-########### install files ###############
-
-install( FILES   DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz/icons )
-
-kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
-
-
-
-
-#original Makefile.am contents follow:
-
-#kwordquiziconsdir = $(kde_datadir)/kwordquiz/icons
-#
-#kwordquizicons_ICON = AUTO
-#
-#KDE_ICON = kwordquiz kwordquiz_doc
