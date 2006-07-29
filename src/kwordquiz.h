@@ -249,7 +249,7 @@ class KWordQuizApp : public KMainWindow
 
     //void slotActionHighlighted(KAction *, bool);
 
-    void slotContextMenuRequested(int, int, const QPoint &);
+    void contextMenuEvent(QContextMenuEvent * event);
   private:
 
     WQQuiz::QuizType m_quizType;
