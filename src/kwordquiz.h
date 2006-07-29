@@ -93,6 +93,8 @@ class KWordQuizApp : public KMainWindow
     bool saveAsFileName();
 
     bool checkSyntax(bool blanks);
+	
+    static KWordQuizApp * self() { return m_self; }
 
   protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
@@ -340,6 +342,8 @@ class KWordQuizApp : public KMainWindow
 
     QLabel * m_modeLabel;
     QVBoxLayout * m_topLayout;
+    
+    static KWordQuizApp * m_self;
 
     void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);

@@ -29,7 +29,7 @@
 
 KWQNewStuff::KWQNewStuff(QWidget *parent, const char */*name*/) : QObject(), KNewStuff("kdeedu/vocabulary", parent)
 {
-  m_app = (KWordQuizApp *) parent;
+  m_app = KWordQuizApp::self();
 }
 
 

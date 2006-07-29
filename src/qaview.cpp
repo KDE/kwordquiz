@@ -106,7 +106,7 @@ void QAView::init()
   picYourAnswer->clear();
   picCorrectAnswer->clear();
 
-  KWordQuizApp *win=(KWordQuizApp *) parent();
+  KWordQuizApp *win=KWordQuizApp::self();
   win->actionCollection()->action("quiz_check")->setEnabled(true);
   win->actionCollection()->action("qa_hint")->setEnabled(true);
   win->actionCollection()->action("quiz_repeat_errors")->setEnabled(false);
@@ -119,7 +119,7 @@ void QAView::init()
 
 void QAView::slotCheck()
 {
-  KWordQuizApp *win=(KWordQuizApp *) parent();
+  KWordQuizApp *win=KWordQuizApp::self();
   if (win->actionCollection()->action("quiz_check")->isEnabled())
   {
     bool fIsCorrect;

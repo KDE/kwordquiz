@@ -75,7 +75,7 @@ void MultipleView::init()
   picYourAnswer->clear();
   picCorrectAnswer->clear();
 
-  KWordQuizApp *win=(KWordQuizApp *) parent();
+  KWordQuizApp *win=KWordQuizApp::self();
   win->actionCollection()->action("quiz_check")->setEnabled(true);
   win->actionCollection()->action("quiz_repeat_errors")->setEnabled(false);
 
@@ -85,7 +85,7 @@ void MultipleView::init()
 
 void MultipleView::slotCheck()
 {
-  KWordQuizApp *win=(KWordQuizApp *) parent();
+  KWordQuizApp *win=KWordQuizApp::self();
   if (win->actionCollection()->action("quiz_check")->isEnabled())
   {
 

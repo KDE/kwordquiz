@@ -51,7 +51,7 @@ void FlashView::init()
 
   updateScore();
 
-  KWordQuizApp *win=(KWordQuizApp *) parent();
+  KWordQuizApp *win=KWordQuizApp::self();
   win->actionCollection()->action("quiz_check")->setEnabled(true);
   win->actionCollection()->action("flash_know")->setEnabled(true);
   win->actionCollection()->action("flash_dont_know")->setEnabled(true);
@@ -100,7 +100,7 @@ void FlashView::keepDiscardCard(bool keep)
   else
   {
     m_quiz->finish();
-    KWordQuizApp *win=(KWordQuizApp *) parent();
+    KWordQuizApp *win=KWordQuizApp::self();
     win->actionCollection()->action("quiz_check")->setEnabled(false);
     win->actionCollection()->action("flash_know")->setEnabled(false);
     win->actionCollection()->action("flash_dont_know")->setEnabled(false);

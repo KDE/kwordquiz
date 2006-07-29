@@ -54,8 +54,12 @@
 #include "version.h"
 #include "prefleitner.h"
 
+KWordQuizApp * KWordQuizApp::m_self = 0;
+
 KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
 {
+  m_self = this;
+  
   initStatusBar();
   initActions();
   initDocument();

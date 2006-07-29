@@ -52,7 +52,7 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
   m_prefCardAppearance = new PrefCardAppearance(0);
   addPage(m_prefCardAppearance, i18n("Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);
 
-  KWordQuizApp *win=(KWordQuizApp *) parent;
+  KWordQuizApp *win=KWordQuizApp::self();
   m_prefCharacter = new PrefCharacter(0, win->actionCollection());
   addPage(m_prefCharacter, i18n("Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
   connect(m_prefCharacter, SIGNAL(widgetModified()), this, SLOT(updateButtons()));
