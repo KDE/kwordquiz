@@ -51,7 +51,7 @@ kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc )
 
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
 
-target_link_libraries(kwordquiz  ${KDE4_KDECORE_LIBS} kdeeducore ${KDE4_KDEUI_LIBS} ${KDE4_KDEPRINT_LIBS} knewstuff )
+target_link_libraries(kwordquiz  ${KDE4_KDECORE_LIBS} kdeeducore ${KDE4_KDEUI_LIBS} ${KDE4_KDEPRINT_LIBS} knewstuff knotifyconfig)
 
 install(TARGETS kwordquiz  DESTINATION ${BIN_INSTALL_DIR} )
 
@@ -61,7 +61,7 @@ install(TARGETS kwordquiz  DESTINATION ${BIN_INSTALL_DIR} )
 install( FILES kwordquiz.desktop  DESTINATION  ${XDG_APPS_DIR} )
 install( FILES kwordquiz.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kwordquizrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
-install( FILES kwordquizui.rc eventsrc  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz )
+install( FILES kwordquizui.rc kwordquiz.notifyrc  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz )
 install( FILES x-kwordquiz.desktop  DESTINATION  ${MIME_INSTALL_DIR}/application )
 
 

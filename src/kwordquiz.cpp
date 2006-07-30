@@ -30,6 +30,7 @@
 #include <kfontdialog.h>
 #include <kmenu.h>
 #include <knotifydialog.h>
+#include <knotifyconfigwidget.h>
 #include <kiconloader.h>
 #include <kdebug.h>
 #include <kxmlguifactory.h>
@@ -978,6 +979,7 @@ void KWordQuizApp::slotVocabFont()
     Prefs::setEditorFont(dlg->font());
     m_doc->setModified(true);
   }
+  delete dlg;
   slotStatusMsg(i18n("Ready"));
 }
 
@@ -1215,7 +1217,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
 /** Configure notifications */
 void KWordQuizApp::slotConfigureNotifications( )
 {
-  KNotifyDialog::configure(this, "Notification Configuration Dialog");
+  KNotifyConfigWidget::configure(this);
 }
 
 /** Configure kwordquiz */
