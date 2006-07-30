@@ -859,6 +859,7 @@ void KWQTableView::keyPressEvent(QKeyEvent * e)
 {
   if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter)
   {
+    e->accept();
     activateNextCell();
     return;
   }
