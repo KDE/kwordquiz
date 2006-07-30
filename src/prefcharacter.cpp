@@ -52,7 +52,7 @@ void PrefCharacter::fillWidgets()
   {
     twi = new QTreeWidgetItem(CharacterTree);
     twi->setText(0, i18n("Special Character %1", i + 1));
-    twi->setText(1, m_actionCollection->action(QString("char_" + QString::number(i + 1)).latin1())->shortcut().toString());
+    twi->setText(1, m_actionCollection->action(QString("char_" + QString::number(i + 1)))->shortcut().toString());
     twi->setText(2, QString(sc[i]));
   }
   CharacterTree->resizeColumnToContents(0);

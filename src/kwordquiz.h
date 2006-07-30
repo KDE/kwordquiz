@@ -68,7 +68,7 @@ class KWordQuizApp : public KMainWindow
     /**
      * construtor of KWordQuizApp, calls all init functions to create the application.
      */
-    KWordQuizApp(QWidget* parent=0, const char* name=0);
+    KWordQuizApp(QWidget* parent=0);
 
     /**
      * destructor

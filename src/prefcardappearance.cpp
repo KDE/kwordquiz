@@ -52,21 +52,39 @@ void PrefCardAppearance::slotFontChanged(const QFont & font)
 
 void PrefCardAppearance::slotTextColorChanged( const QColor & color)
 {
-  textLabel->setPaletteForegroundColor(color);
+  QPalette pal = textLabel->palette();
+  pal.setColor(textLabel->foregroundRole(), color);
+  textLabel->setPalette(pal);
 }
 
 void PrefCardAppearance::slotCardColorChanged( const QColor & color)
 {
-  cardFrame->setPaletteBackgroundColor(color);
-  titleLabel->setPaletteBackgroundColor(color);
-  textLabel->setPaletteBackgroundColor(color);
-  line->setPaletteBackgroundColor(color);
+  QPalette pal = cardFrame->palette();
+  pal.setColor(cardFrame->backgroundRole(), color);
+  cardFrame->setPalette(pal);
+  
+  pal = titleLabel->palette();
+  pal.setColor(titleLabel->backgroundRole(), color);
+  titleLabel->setPalette(pal);
+  
+  pal = textLabel->palette();
+  pal.setColor(textLabel->backgroundRole(), color);
+  textLabel->setPalette(pal);
+  
+  pal = line->palette();
+  pal.setColor(line->backgroundRole(), color);
+  line->setPalette(pal);
 }
 
 void PrefCardAppearance::slotFrameColorChanged( const QColor & color)
 {
-  cardFrame->setPaletteForegroundColor(color);
-  line->setPaletteForegroundColor(color);
+  QPalette pal = cardFrame->palette();
+  pal.setColor(cardFrame->foregroundRole(), color);
+  cardFrame->setPalette(pal);
+  
+  pal = line->palette();
+  pal.setColor(line->foregroundRole(), color);
+  line->setPalette(pal);
 }
 
 void PrefCardAppearance::slotCurrentChanged(int index)
@@ -74,15 +92,28 @@ void PrefCardAppearance::slotCurrentChanged(int index)
   if (index == widgetStack->indexOf(backStackPage))
   {
     titleLabel->setText(i18nc("Back of the flashcard", "Back"));
-    titleLabel->setPaletteBackgroundColor(kcfg_BackCardColor->color());
+    QPalette pal = titleLabel->palette();
+    pal.setColor(titleLabel->backgroundRole(), kcfg_BackCardColor->color());
+    titleLabel->setPalette(pal);
+    
     textLabel->setText(i18n("Answer"));
     textLabel->setFont(kcfg_BackFont->font());
-    textLabel->setPaletteForegroundColor(kcfg_BackTextColor->color());
-    textLabel->setPaletteBackgroundColor(kcfg_BackCardColor->color());
-    cardFrame->setPaletteBackgroundColor(kcfg_BackCardColor->color());
-    cardFrame->setPaletteForegroundColor(kcfg_BackFrameColor->color());
-    line->setPaletteForegroundColor(kcfg_BackFrameColor->color());
-    line->setPaletteBackgroundColor(kcfg_BackCardColor->color());
+    
+    pal = textLabel->palette();
+    pal.setColor(textLabel->foregroundRole(), kcfg_BackTextColor->color());
+    pal.setColor(textLabel->backgroundRole(), kcfg_BackCardColor->color());
+    textLabel->setPalette(pal);
+    
+    pal = cardFrame->palette();
+    pal.setColor(cardFrame->foregroundRole(), kcfg_BackFrameColor->color());
+    pal.setColor(cardFrame->backgroundRole(), kcfg_BackCardColor->color());
+    cardFrame->setPalette(pal);
+    
+    pal = line->palette();
+    pal.setColor(line->foregroundRole(), kcfg_BackFrameColor->color());
+    pal.setColor(line->backgroundRole(), kcfg_BackCardColor->color());
+    line->setPalette(pal);
+    
     fontLabel->setBuddy(kcfg_BackFont);
     textColorLabel->setBuddy(kcfg_BackTextColor);
     frameColorLabel->setBuddy(kcfg_BackFrameColor);
@@ -91,15 +122,28 @@ void PrefCardAppearance::slotCurrentChanged(int index)
   else
   {
     titleLabel->setText(i18n("Front"));
-    titleLabel->setPaletteBackgroundColor(kcfg_FrontCardColor->color());
+    QPalette pal = titleLabel->palette();
+    pal.setColor(titleLabel->backgroundRole(), kcfg_FrontCardColor->color());
+    titleLabel->setPalette(pal);
+    
     textLabel->setText(i18n("Question"));
     textLabel->setFont(kcfg_FrontFont->font());
-    textLabel->setPaletteForegroundColor(kcfg_FrontTextColor->color());
-    textLabel->setPaletteBackgroundColor(kcfg_FrontCardColor->color());
-    cardFrame->setPaletteBackgroundColor(kcfg_FrontCardColor->color());
-    cardFrame->setPaletteForegroundColor(kcfg_FrontFrameColor->color());
-    line->setPaletteForegroundColor(kcfg_FrontFrameColor->color());
-    line->setPaletteBackgroundColor(kcfg_FrontCardColor->color());
+    
+    pal = textLabel->palette();
+    pal.setColor(textLabel->foregroundRole(), kcfg_FrontTextColor->color());
+    pal.setColor(textLabel->backgroundRole(), kcfg_FrontCardColor->color());
+    textLabel->setPalette(pal);
+    
+    pal = cardFrame->palette();
+    pal.setColor(cardFrame->foregroundRole(), kcfg_FrontFrameColor->color());
+    pal.setColor(cardFrame->backgroundRole(), kcfg_FrontCardColor->color());
+    cardFrame->setPalette(pal);
+    
+    pal = line->palette();
+    pal.setColor(line->foregroundRole(), kcfg_FrontFrameColor->color());
+    pal.setColor(line->backgroundRole(), kcfg_FrontCardColor->color());
+    line->setPalette(pal);
+    
     fontLabel->setBuddy(kcfg_FrontFont);
     textColorLabel->setBuddy(kcfg_FrontTextColor);
     frameColorLabel->setBuddy(kcfg_FrontFrameColor);

@@ -57,7 +57,7 @@
 
 KWordQuizApp * KWordQuizApp::m_self = 0;
 
-KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
+KWordQuizApp::KWordQuizApp(QWidget*):KMainWindow(0)
 {
   m_self = this;
   

@@ -825,7 +825,7 @@ void KWQTableView::addUndo(const QString & caption)
 {
   while (m_undoList->count() > 10)
   {
-    m_undoList->remove(m_undoList->begin());
+    m_undoList->erase(m_undoList->begin());
   }
 
   WQUndo* undo = new WQUndo();
