@@ -55,6 +55,8 @@ public:
 
 private:
   KEduVocDocument * m_doc;
+  
+  friend class KWordQuizApp;
 };
 
 #endif

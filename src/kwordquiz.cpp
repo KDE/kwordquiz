@@ -505,7 +505,8 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
     m_doc->open(url, false);
-    m_tableView->reset();
+//     m_tableView->reset();
+    m_tableModel->reset();
     m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
     m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
     if (m_doc->font() == NULL)
