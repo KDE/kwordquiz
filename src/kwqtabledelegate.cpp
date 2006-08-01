@@ -65,9 +65,9 @@ void KWQTableDelegate::updateEditorGeometry(QWidget * editor, const QStyleOption
 void KWQTableDelegate::commitAndCloseEditor()
 {
   QWidget *editor = qobject_cast<QWidget *>(sender());
-  kDebug() << "Commiting and closing";
+  kDebug() << "Commiting and closing\n";
   emit commitData(editor);
-  emit closeEditor(editor, QAbstractItemDelegate::EditNextItem);
+  emit closeEditor(editor, QAbstractItemDelegate::NoHint);
 }
 
 void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect, const QString & text) const

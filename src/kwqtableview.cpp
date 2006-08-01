@@ -895,8 +895,8 @@ void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditH
 {
   QTableView::closeEditor(editor, hint);
   adjustCurrentRow();
-  if (hint == QAbstractItemDelegate::SubmitModelCache)
-    activateNextCell();
+//   if (hint == QAbstractItemDelegate::SubmitModelCache)
+//     activateNextCell();
 }
 
 void KWQTableView::commitData(QWidget * editor)
