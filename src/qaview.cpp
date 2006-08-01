@@ -34,7 +34,7 @@ QString highlightError(const QString & c, const QString & e)
 
   QString result = "<qt>";
   int i = 0;
-  while (s[i] == e[i])
+  while (i < e.length() && s[i] == e[i])
     result.append(e[i++]);
   result.append("<b>");
   QString result2 = "</qt>";
