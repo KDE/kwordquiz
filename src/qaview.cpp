@@ -40,7 +40,7 @@ QString highlightError(const QString & c, const QString & e)
   QString result2 = "</qt>";
   int j = s.length() - 1;
   int k = e.length() - 1;
-  while (s[j] == e[k])
+  while (j >= 0 && k >= 0 && s[j] == e[k])
   {
     result2.prepend(e[k]);
     j--;
