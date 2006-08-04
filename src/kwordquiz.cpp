@@ -39,6 +39,7 @@
 #include <kstdaction.h>
 #include <ktoggleaction.h>
 #include <ktoolbar.h>
+#include <kicon.h>
 
 #include "kwordquiz.h"
 #include "keduvocdocument.h"
