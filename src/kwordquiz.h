@@ -247,8 +247,6 @@ class KWordQuizApp : public KMainWindow
 
     void slotInsertChar(int i);
 
-    //void slotActionHighlighted(KAction *, bool);
-
     void contextMenuEvent(QContextMenuEvent * event);
   private:
 
@@ -342,7 +340,7 @@ class KWordQuizApp : public KMainWindow
 
     QLabel * m_modeLabel;
     QVBoxLayout * m_topLayout;
-    
+
     static KWordQuizApp * m_self;
 
     void updateMode(int m);
