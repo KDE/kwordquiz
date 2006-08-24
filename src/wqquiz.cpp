@@ -309,8 +309,8 @@ QStringList WQQuiz::multiOptions(int i)
   }
   ls.append(s);
 
-  KRandomSequence *rs = new KRandomSequence(0);
-  rs->randomize(ls);
+  KRandomSequence rs(0);
+  rs.randomize(ls);
 
   foreach(QString s, ls)
     Result.append(s);
