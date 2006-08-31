@@ -509,7 +509,7 @@ void KWordQuizApp::initView()
   m_doc->setModified(false);
 }
 
-void KWordQuizApp::openURL(const KUrl& url)
+void KWordQuizApp::openUrl(const KUrl& url)
 {
   if(!url.isEmpty()) {
     if (m_dirWatch->contains(url.path()))
@@ -764,7 +764,7 @@ void KWordQuizApp::slotFileOpen()
       KUrl::List::iterator it;
       for(it = l.begin(); it != l.end(); ++it)
       {
-        openURL(*it);
+        openUrl(*it);
       }
     }
   }
@@ -778,7 +778,7 @@ void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   fileOpenRecent->setCurrentItem(-1);
-  openURL(url);
+  openUrl(url);
   slotStatusMsg(i18n("Ready"));
 }
 
