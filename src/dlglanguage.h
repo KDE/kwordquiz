@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlglanguage.h  -  description
                              -------------------
-   copyright       : (C) 2004-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2004-2006 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -30,16 +30,12 @@ class DlgLanguage : public KDialog {
   Q_OBJECT
 public:
   DlgLanguage(QWidget *parent = 0);
-  ~DlgLanguage();
 
   void setLanguage(int index, const QString &lang);
   QString Language(int index);
 
 private:
   Ui::DlgLanguageBase *dlgBase;
-  KCompletion * completion1;
-  KCompletion * completion2;
-
 };
 
 #endif

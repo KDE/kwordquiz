@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlglanguage.cpp  -  description
                              -------------------
-   copyright       : (C) 2004-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2004-2006 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -36,25 +36,15 @@ DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent)
 
   dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
   dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", K3Icon::Panel));
-  ///@todo text completion not working
-  //completion1 = new KCompletion();
-  dlgBase->txtLanguage1->completionObject(true)->setItems(Prefs::columnTitles1());
-  dlgBase -> txtLanguage1->setCompletedItems(Prefs::columnTitles1(), true);
 
-  completion2 = new KCompletion();
-  completion2->setItems(Prefs::columnTitles2());
-  dlgBase -> txtLanguage2->setCompletionObject(completion2);
+  dlgBase->txtLanguage1->completionObject(true)->setItems(Prefs::columnTitles1());
+  dlgBase->txtLanguage1->setCompletionMode(KGlobalSettings::CompletionAuto);
+
+  dlgBase->txtLanguage2->completionObject(true)->setItems(Prefs::columnTitles2());
+  dlgBase->txtLanguage2->setCompletionMode(KGlobalSettings::CompletionAuto);
 
   dlgBase->txtLanguage1->setFocus();
 }
-
-
-DlgLanguage::~DlgLanguage()
-{
-  //delete completion1;
-  delete completion2;
-}
-
 
 void DlgLanguage::setLanguage(int index, const QString &lang) {
   if (index == 1) {
@@ -66,7 +56,6 @@ void DlgLanguage::setLanguage(int index, const QString &lang) {
   }
 }
 
-
 QString DlgLanguage::Language(int index){
   if (index == 1) {
     dlgBase->txtLanguage1->completionObject(true)->addItem(dlgBase->txtLanguage1 -> text());
@@ -75,12 +64,10 @@ QString DlgLanguage::Language(int index){
   }
   else
   {
-    completion2->addItem(dlgBase->txtLanguage2 -> text());
-    Prefs::setColumnTitles2(completion2->items());
+    dlgBase->txtLanguage2->completionObject(true)->addItem(dlgBase->txtLanguage2 -> text());
+    Prefs::setColumnTitles2(dlgBase->txtLanguage2->completionObject(true)->items());
     return dlgBase->txtLanguage2->text();
   }
 }
-
-
 
 #include "dlglanguage.moc"
