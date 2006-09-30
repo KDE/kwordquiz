@@ -448,7 +448,7 @@ QString WQQuiz::blankAnswer(int i)
         if (offset >= 0)
         {
           if (m_correctBlank.length() > 0)
-            m_correctBlank = m_correctBlank + ";" + " " + tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
+            m_correctBlank = m_correctBlank + "; " + tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
           else
             m_correctBlank = tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
           offset++;

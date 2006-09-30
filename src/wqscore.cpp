@@ -67,9 +67,9 @@ QString WQScore::answerText()
     if (m_answerCount > 0)
     {
       if (f < 1)
-        s = s.setNum(f, 'f', 1) + "%"; //for long lists (i.e. each question is less than 1%) we show one decimal 
+        s = s.setNum(f, 'f', 1) + '%'; //for long lists (i.e. each question is less than 1%) we show one decimal
       else
-        s = s.setNum(f, 'f', 0) + "%";
+        s = s.setNum(f, 'f', 0) + '%';
     }
     else
       s= valueToString(m_answerCount);
@@ -90,7 +90,7 @@ QString WQScore::correctText()
     if (m_correct > 0)
     {
       float f = ((m_correct * 100.0) / m_answerCount);
-      s = s.setNum(f, 'f', 0) + "%";
+      s = s.setNum(f, 'f', 0) + '%';
     }
     else
       s = valueToString(m_correct);
@@ -112,7 +112,7 @@ QString WQScore::errorText()
     if (m_error > 0)
     {
       float f = ((m_error * 100.0) / m_answerCount);
-      s = s.setNum(f, 'f', 0) + "%";
+      s = s.setNum(f, 'f', 0) + '%';
     }
     else
       s = valueToString(m_error);

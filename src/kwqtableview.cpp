@@ -342,9 +342,9 @@ void KWQTableView::doEditCopy()
       {
         QVariant v =  model()->data(model()->index(r, c, QModelIndex()), Qt::DisplayRole);
         rs = v.toString();
-        s = s + rs + "\t";
+        s += rs + '\t';
       }
-      s = s + "\n";
+      s += '\n';
     }
     kapp->clipboard()->setText(s);
   }

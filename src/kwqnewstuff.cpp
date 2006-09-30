@@ -60,7 +60,7 @@ QString KWQNewStuff::destinationPath(KNS::Entry * entry)
       file = KNewStuff::downloadDestination(entry); //fall back on a temp file, should never happen
     else
     {
-      file = QDir::home().path() + "/" + path + "/";
+      file = QDir::home().path() + '/' + path + '/';
       KStandardDirs::makeDir(file); //ensure the directory exists
       file += fileName;
     }
