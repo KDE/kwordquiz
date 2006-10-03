@@ -21,8 +21,6 @@
 
 #include "ui_dlglanguagebase.h"
 
-class KCompletion;
-
 /**
 @author Peter Hedlund
 */
