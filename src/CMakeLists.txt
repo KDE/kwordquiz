@@ -47,7 +47,7 @@ kde4_add_ui_files(kwordquiz_SRCS
    prefcharacterbase.ui 
    prefcardappearancebase.ui )
 
-kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc )
+kde4_add_kcfg_files(kwordquiz kwordquiz_SRCS prefs.kcfgc )
 
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
 
