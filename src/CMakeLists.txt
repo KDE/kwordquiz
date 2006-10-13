@@ -33,7 +33,7 @@ set(kwordquiz_SRCS
    kwqtabledelegate.cpp
    )
 
-kde4_automoc(${kwordquiz_SRCS})
+kde4_automoc(kwordquiz ${kwordquiz_SRCS})
 
 kde4_add_ui_files(kwordquiz_SRCS 
    dlglanguagebase.ui 
