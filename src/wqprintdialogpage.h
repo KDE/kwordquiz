@@ -36,7 +36,6 @@ public:
 
   void getOptions(QMap<QString,QString>& opts, bool incldef = false);
   void setOptions(const QMap<QString,QString>& opts);
-  bool isValid(const QString& msg ) const;
 
 private:
   QGroupBox * g;

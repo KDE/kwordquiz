@@ -76,10 +76,4 @@ void WQPrintDialogPage::setOptions(const QMap< QString, QString > & opts )
   }
 }
 
-bool WQPrintDialogPage::isValid(const QString & /*msg*/ ) const
-{
-  return true;
-}
-
-
 #include "wqprintdialogpage.moc"
