@@ -1,7 +1,5 @@
 <ui version="4.0" >
  <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>FlashViewBase</class>
  <widget class="QWidget" name="FlashViewBase" >
   <property name="geometry" >
@@ -80,6 +78,9 @@
      <property name="toolTip" >
       <string>The flashcard</string>
      </property>
+     <property name="autoFillBackground" >
+      <bool>true</bool>
+     </property>
      <property name="frameShape" >
       <enum>QFrame::Box</enum>
      </property>
@@ -105,7 +106,6 @@
         </property>
         <property name="font" >
          <font>
-          <family></family>
           <pointsize>12</pointsize>
           <weight>50</weight>
           <italic>false</italic>
@@ -129,26 +129,15 @@
        </widget>
       </item>
       <item>
-       <widget class="Line" name="linFlash" >
-        <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>1</hsizetype>
-          <vsizetype>0</vsizetype>
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip" >
-         <string>The flashcard</string>
+       <widget class="QFrame" name="linFlash" >
+        <property name="autoFillBackground" >
+         <bool>true</bool>
         </property>
         <property name="frameShape" >
          <enum>QFrame::HLine</enum>
         </property>
         <property name="frameShadow" >
          <enum>QFrame::Plain</enum>
-        </property>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
@@ -242,7 +231,6 @@
          </property>
          <property name="font" >
           <font>
-           <family></family>
            <pointsize>24</pointsize>
            <weight>50</weight>
            <italic>false</italic>
@@ -307,7 +295,6 @@
          </property>
          <property name="font" >
           <font>
-           <family></family>
            <pointsize>24</pointsize>
            <weight>50</weight>
            <italic>false</italic>
@@ -402,7 +389,6 @@
          </property>
          <property name="font" >
           <font>
-           <family></family>
            <pointsize>24</pointsize>
            <weight>50</weight>
            <italic>false</italic>
@@ -467,7 +453,6 @@
          </property>
          <property name="font" >
           <font>
-           <family></family>
            <pointsize>24</pointsize>
            <weight>50</weight>
            <italic>false</italic>
