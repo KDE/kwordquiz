@@ -1,7 +1,5 @@
 <ui version="4.0" >
  <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>PrefCardAppearanceBase</class>
  <widget class="QWidget" name="PrefCardAppearanceBase" >
   <property name="geometry" >
@@ -22,218 +20,21 @@
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item rowspan="3" row="0" column="0" >
-    <widget class="QFrame" name="cardFrame" >
-     <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>5</hsizetype>
-       <vsizetype>5</vsizetype>
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+   <item row="4" column="0" colspan="3" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="minimumSize" >
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
       <size>
-       <width>175</width>
-       <height>100</height>
+       <width>400</width>
+       <height>20</height>
       </size>
      </property>
-     <property name="maximumSize" >
-      <size>
-       <width>175</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="toolTip" >
-      <string>The flashcard</string>
-     </property>
-     <property name="frameShape" >
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow" >
-      <enum>QFrame::Plain</enum>
-     </property>
-     <widget class="QLabel" name="textLabel" >
-      <property name="geometry" >
-       <rect>
-        <x>11</x>
-        <y>42</y>
-        <width>153</width>
-        <height>47</height>
-       </rect>
-      </property>
-      <property name="sizePolicy" >
-       <sizepolicy>
-        <hsizetype>7</hsizetype>
-        <vsizetype>7</vsizetype>
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="toolTip" >
-       <string>The flashcard</string>
-      </property>
-      <property name="whatsThis" >
-       <string>The flashcard. Select Quiz -> Check to see the other side.</string>
-      </property>
-      <property name="text" >
-       <string>This is the question</string>
-      </property>
-      <property name="textFormat" >
-       <enum>Qt::AutoText</enum>
-      </property>
-      <property name="scaledContents" >
-       <bool>false</bool>
-      </property>
-      <property name="alignment" >
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="Line" name="line" >
-      <property name="geometry" >
-       <rect>
-        <x>11</x>
-        <y>33</y>
-        <width>153</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="sizePolicy" >
-       <sizepolicy>
-        <hsizetype>1</hsizetype>
-        <vsizetype>0</vsizetype>
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="toolTip" >
-       <string>The flashcard</string>
-      </property>
-      <property name="frameShape" >
-       <enum>QFrame::HLine</enum>
-      </property>
-      <property name="frameShadow" >
-       <enum>QFrame::Plain</enum>
-      </property>
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="titleLabel" >
-      <property name="geometry" >
-       <rect>
-        <x>11</x>
-        <y>11</y>
-        <width>153</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="sizePolicy" >
-       <sizepolicy>
-        <hsizetype>7</hsizetype>
-        <vsizetype>0</vsizetype>
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font" >
-       <font>
-        <family></family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-       </font>
-      </property>
-      <property name="toolTip" >
-       <string>The flashcard</string>
-      </property>
-      <property name="whatsThis" >
-       <string>Language or other identifier for this card</string>
-      </property>
-      <property name="text" >
-       <string>Front</string>
-      </property>
-      <property name="alignment" >
-       <set>Qt::AlignTop</set>
-      </property>
-     </widget>
-    </widget>
-   </item>
-   <item row="3" column="0" >
-    <widget class="QPushButton" name="flipButton" >
-     <property name="toolTip" >
-      <string>Flip card</string>
-     </property>
-     <property name="whatsThis" >
-      <string>Use to show the other side of the card</string>
-     </property>
-     <property name="text" >
-      <string>&amp;Flip Card</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" >
-    <widget class="QLabel" name="textColorLabel" >
-     <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>1</hsizetype>
-       <vsizetype>5</vsizetype>
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text" >
-      <string>&amp;Text color:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1" >
-    <widget class="QLabel" name="frameColorLabel" >
-     <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>1</hsizetype>
-       <vsizetype>5</vsizetype>
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text" >
-      <string>Fra&amp;me color:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" >
-    <widget class="QLabel" name="fontLabel" >
-     <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>1</hsizetype>
-       <vsizetype>5</vsizetype>
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text" >
-      <string>F&amp;ont:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" >
-    <widget class="QLabel" name="cardColorLabel" >
-     <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>1</hsizetype>
-       <vsizetype>5</vsizetype>
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text" >
-      <string>&amp;Card color:</string>
-     </property>
-    </widget>
+    </spacer>
    </item>
    <item rowspan="4" row="0" column="2" >
     <widget class="QStackedWidget" name="widgetStack" >
@@ -244,6 +45,9 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="currentIndex" >
+      <number>0</number>
      </property>
      <widget class="QWidget" name="backStackPage" >
       <layout class="QGridLayout" >
@@ -363,38 +167,265 @@
      </widget>
     </widget>
    </item>
-   <item row="4" column="0" colspan="3" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
+   <item row="0" column="1" >
+    <widget class="QLabel" name="fontLabel" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>1</hsizetype>
+       <vsizetype>5</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="sizeType" >
-      <enum>QSizePolicy::Expanding</enum>
+     <property name="text" >
+      <string>F&amp;ont:</string>
      </property>
-     <property name="sizeHint" >
+    </widget>
+   </item>
+   <item rowspan="3" row="0" column="0" >
+    <widget class="QFrame" name="cardFrame" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>5</hsizetype>
+       <vsizetype>5</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize" >
       <size>
-       <width>400</width>
-       <height>20</height>
+       <width>175</width>
+       <height>100</height>
       </size>
      </property>
-    </spacer>
+     <property name="maximumSize" >
+      <size>
+       <width>175</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="toolTip" >
+      <string>The flashcard</string>
+     </property>
+     <property name="autoFillBackground" >
+      <bool>true</bool>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <widget class="QLabel" name="titleLabel" >
+      <property name="geometry" >
+       <rect>
+        <x>11</x>
+        <y>11</y>
+        <width>153</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="sizePolicy" >
+       <sizepolicy>
+        <hsizetype>7</hsizetype>
+        <vsizetype>0</vsizetype>
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="toolTip" >
+       <string>The flashcard</string>
+      </property>
+      <property name="whatsThis" >
+       <string>Language or other identifier for this card</string>
+      </property>
+      <property name="text" >
+       <string>Front</string>
+      </property>
+      <property name="alignment" >
+       <set>Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="textLabel" >
+      <property name="geometry" >
+       <rect>
+        <x>11</x>
+        <y>42</y>
+        <width>153</width>
+        <height>47</height>
+       </rect>
+      </property>
+      <property name="sizePolicy" >
+       <sizepolicy>
+        <hsizetype>7</hsizetype>
+        <vsizetype>7</vsizetype>
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="toolTip" >
+       <string>The flashcard</string>
+      </property>
+      <property name="whatsThis" >
+       <string>The flashcard. Select Quiz -> Check to see the other side.</string>
+      </property>
+      <property name="text" >
+       <string>This is the question</string>
+      </property>
+      <property name="textFormat" >
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="scaledContents" >
+       <bool>false</bool>
+      </property>
+      <property name="alignment" >
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QFrame" name="line" >
+      <property name="geometry" >
+       <rect>
+        <x>11</x>
+        <y>36</y>
+        <width>153</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>16</width>
+        <height>1</height>
+       </size>
+      </property>
+      <property name="palette" >
+       <palette>
+        <active>
+         <colorrole role="WindowText" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="WindowText" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="WindowText" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>163</red>
+            <green>163</green>
+            <blue>163</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>true</bool>
+      </property>
+      <property name="frameShape" >
+       <enum>QFrame::HLine</enum>
+      </property>
+      <property name="frameShadow" >
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QLabel" name="textColorLabel" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>1</hsizetype>
+       <vsizetype>5</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text" >
+      <string>&amp;Text color:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" >
+    <widget class="QLabel" name="frameColorLabel" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>1</hsizetype>
+       <vsizetype>5</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text" >
+      <string>Fra&amp;me color:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" >
+    <widget class="QPushButton" name="flipButton" >
+     <property name="toolTip" >
+      <string>Flip card</string>
+     </property>
+     <property name="whatsThis" >
+      <string>Use to show the other side of the card</string>
+     </property>
+     <property name="text" >
+      <string>&amp;Flip Card</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" >
+    <widget class="QLabel" name="cardColorLabel" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>1</hsizetype>
+       <vsizetype>5</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text" >
+      <string>&amp;Card color:</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
  <customwidgets>
   <customwidget>
    <class>KColorButton</class>
-   <extends>QWidget</extends>
+   <extends>QPushButton</extends>
    <header>kcolorbutton.h</header>
-   <container>1</container>
-   <pixmap></pixmap>
   </customwidget>
   <customwidget>
    <class>KFontRequester</class>
    <extends>QWidget</extends>
    <header>kfontrequester.h</header>
-   <container>1</container>
-   <pixmap></pixmap>
   </customwidget>
  </customwidgets>
  <tabstops>
