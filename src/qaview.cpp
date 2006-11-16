@@ -199,12 +199,13 @@ void QAView::slotHint()
 {
   QString answer = txtAnswer->text();
   QString correctAnswer = m_quiz->hint(m_question);
+  int minLength = qMin(answer.length(), correctAnswer.length());
 
   int correctCharCount = 1;
 
   if (answer.length() > 0)
   {
-    for(int i = 0; i <= answer.length(); i++)
+    for(int i = 0; i < minLength; i++)
     {
     if (answer.at(i) == correctAnswer.at(i))
       correctCharCount++;
