@@ -506,6 +506,7 @@ void KWordQuizApp::initView()
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
   setCaption(m_doc->URL().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
+  connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
   m_doc->setModified(false);
 }
 
@@ -553,8 +554,6 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
   if (!url.isEmpty()) {
     m_doc->open(url, false);
     m_tableModel->reset();
-    m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
-    m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
     if (m_doc->font() == NULL)
       m_doc->setFont(new QFont(Prefs::editorFont()));
     m_dirWatch->addFile(url.path());

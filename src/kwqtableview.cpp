@@ -48,7 +48,7 @@ KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
   setSelectionBehavior(QAbstractItemView::SelectItems);
   setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
-  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int))); 
+  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
 }
@@ -961,6 +961,12 @@ void KWQTableView::horizontalHeaderResized(int logicalIndex, int oldSize, int ne
 {
   kDebug() << "Column resized\n";
   model()->setHeaderData(logicalIndex, Qt::Horizontal, QSize(newSize, 25), Qt::SizeHintRole);
+}
+
+void KWQTableView::slotModelReset()
+{
+  setColumnWidth(0, qvariant_cast<QSize>(model()->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
+  setColumnWidth(1, qvariant_cast<QSize>(model()->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
 }
 
 #include "kwqtableview.moc"

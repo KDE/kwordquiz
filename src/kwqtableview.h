@@ -78,13 +78,13 @@ public slots:
   void adjustCurrentRow();
   void slotSpecChar(const QChar &);
   void slotCheckedAnswer(int );
+  void slotModelReset();
 
 protected slots:
   void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint);
   void commitData (QWidget * editor);
   void verticalHeaderResized(int, int, int);
   void horizontalHeaderResized(int, int, int);
-
 
 signals:
   void undoChange(const QString & text, bool enabled);
