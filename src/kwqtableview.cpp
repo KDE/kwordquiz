@@ -48,6 +48,7 @@ KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
   setSelectionBehavior(QAbstractItemView::SelectItems);
   setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
+  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int))); 
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
 }
