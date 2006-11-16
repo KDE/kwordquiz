@@ -635,7 +635,6 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
 bool KWordQuizApp::queryClose()
 {
   bool completed=true;
-///@todo Currently (2006-10-03) KMessageBox returns the same value for No and Cancel, very annoying
   if(m_doc->isModified())
   {
     int want_save = KMessageBox::warningYesNoCancel(this, i18n("The current document has been modified.\nDo you want to save it?"));
