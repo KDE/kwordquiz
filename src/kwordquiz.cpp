@@ -121,7 +121,7 @@ void KWordQuizApp::initActions()
   fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
 
   fileGHNS = new KAction(KIcon("knewstuff"), i18n("&Get New Vocabularies..."), actionCollection(), "file_ghns");
-  fileGHNS->setShortcut(Qt::CTRL + Qt::Key_G);
+  fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
   fileGHNS->setStatusTip(fileGHNS->whatsThis());
@@ -177,21 +177,21 @@ void KWordQuizApp::initActions()
   editClear->setStatusTip(editClear->whatsThis());
 
   editInsert = new KAction(KIcon("insert_table_row"), i18n("&Insert Row"), actionCollection(), "edit_insert");
-  editInsert->setShortcut(Qt::CTRL + Qt::Key_I);
+  editInsert->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));
   editInsert->setWhatsThis(i18n("Inserts a new row above the current row"));
   editInsert->setToolTip(editInsert->whatsThis());
   editInsert->setStatusTip(editInsert->whatsThis());
   connect(editInsert, SIGNAL(triggered(bool)), this, SLOT(slotEditInsert()));
 
   editDelete = new KAction(KIcon("delete_table_row"), i18n("&Delete Row"), actionCollection(), "edit_delete");
-  editDelete->setShortcut(Qt::CTRL + Qt::Key_K);
+  editDelete->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_K));
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
   editDelete->setToolTip(editDelete->whatsThis());
   editDelete->setStatusTip(editDelete->whatsThis());
   connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotEditDelete()));
 
   editMarkBlank = new KAction(KIcon("markasblank"), i18n("&Mark as Blank"), actionCollection(), "edit_mark_blank");
-  editMarkBlank->setShortcut(Qt::CTRL + Qt::Key_M);
+  editMarkBlank->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_M));
   editMarkBlank->setWhatsThis(i18n("Marks the current or selected word as a blank for Fill-in-the-blank"));
   editMarkBlank->setToolTip(editMarkBlank->whatsThis());
   editMarkBlank->setStatusTip(editMarkBlank->whatsThis());
@@ -206,7 +206,7 @@ void KWordQuizApp::initActions()
   //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
 
   vocabLanguages = new KAction(KIcon("languages"), i18n("&Column Titles..."), actionCollection(), "vocab_languages");
-  vocabLanguages->setShortcut(Qt::CTRL + Qt::Key_L);
+  vocabLanguages->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
   vocabLanguages->setWhatsThis(i18n("Defines the column titles for the active vocabulary"));
   vocabLanguages->setToolTip(vocabLanguages->whatsThis());
   vocabLanguages->setStatusTip(vocabLanguages->whatsThis());
@@ -294,70 +294,70 @@ void KWordQuizApp::initActions()
   mode->addAction(mode5);
 
   quizEditor = new KAction(KIcon("editor"), i18n("&Editor"), actionCollection(), "quiz_editor");
-  quizEditor->setShortcut(Qt::Key_F6);
+  quizEditor->setShortcut(QKeySequence(Qt::Key_F6));
   quizEditor->setWhatsThis(i18n("Activates the vocabulary editor"));
   quizEditor->setToolTip(quizEditor->whatsThis());
   quizEditor->setStatusTip(quizEditor->whatsThis());
   connect(quizEditor, SIGNAL(triggered(bool)), this, SLOT(slotQuizEditor()));
 
   quizFlash = new KAction(KIcon("flash"), i18n("&Flashcard"), actionCollection(), "quiz_flash");
-  quizFlash->setShortcut(Qt::Key_F7);
+  quizFlash->setShortcut(QKeySequence(Qt::Key_F7));
   quizFlash->setWhatsThis(i18n("Starts a flashcard session using the active vocabulary"));
   quizFlash->setToolTip(quizFlash->whatsThis());
   quizFlash->setStatusTip(quizFlash->whatsThis());
   connect(quizFlash, SIGNAL(triggered(bool)), this, SLOT(slotQuizFlash()));
 
   quizMultiple = new KAction(KIcon("multiple"), i18n("&Multiple Choice"), actionCollection(), "quiz_multiple");
-  quizMultiple->setShortcut(Qt::Key_F8);
+  quizMultiple->setShortcut(QKeySequence(Qt::Key_F8));
   quizMultiple->setWhatsThis(i18n("Starts a multiple choice session using the active vocabulary"));
   quizMultiple->setToolTip(quizMultiple->whatsThis());
   quizMultiple->setStatusTip(quizMultiple->whatsThis());
   connect(quizMultiple, SIGNAL(triggered(bool)), this, SLOT(slotQuizMultiple()));
 
   quizQA = new KAction(KIcon("qa"), i18n("&Question && Answer"), actionCollection(), "quiz_qa");
-  quizQA->setShortcut(Qt::Key_F9);
+  quizQA->setShortcut(QKeySequence(Qt::Key_F9));
   quizQA->setWhatsThis(i18n("Starts a question and answer session using the active vocabulary"));
   quizQA->setToolTip(quizQA->whatsThis());
   quizQA->setStatusTip(quizQA->whatsThis());
   connect(quizQA, SIGNAL(triggered(bool)), this, SLOT(slotQuizQA()));
 
   quizCheck = new KAction(KIcon("check"), i18n("&Check"), actionCollection(), "quiz_check");
-  quizCheck->setShortcut(Qt::Key_Return);
+  quizCheck->setShortcut(QKeySequence(Qt::Key_Return));
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
   quizCheck->setToolTip(quizCheck->whatsThis());
   quizCheck->setStatusTip(quizCheck->whatsThis());
   //connect(quizCheck, SIGNAL(triggered(bool)), this, SLOT(()));
 
   flashKnow = new KAction(KIcon("know"), i18n("I &Know"), actionCollection(), "flash_know");
-  flashKnow->setShortcut(Qt::Key_K);
+  flashKnow->setShortcut(QKeySequence(Qt::Key_K));
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
   flashKnow->setToolTip(flashKnow->whatsThis());
   flashKnow->setStatusTip(flashKnow->whatsThis());
   //connect(flashKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
   flashDontKnow = new KAction(KIcon("dontknow"), i18n("I &Do Not Know"), actionCollection(), "flash_dont_know");
-  flashDontKnow->setShortcut(Qt::Key_D);
+  flashDontKnow->setShortcut(QKeySequence(Qt::Key_D));
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
   flashDontKnow->setToolTip(flashDontKnow->whatsThis());
   flashDontKnow->setStatusTip(flashDontKnow->whatsThis());
   //connect(flashDontKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
   qaHint = new KAction(KIcon("hint"), i18n("&Hint"), actionCollection(), "qa_hint");
-  qaHint->setShortcut(Qt::CTRL + Qt::Key_H);
+  qaHint->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_H));
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
   qaHint->setToolTip(qaHint->whatsThis());
   qaHint->setStatusTip(qaHint->whatsThis());
   //connect(qaHint, SIGNAL(triggered(bool)), this, SLOT(()));
 
   quizRestart = new KAction(KIcon("restart"), i18n("&Restart"), actionCollection(), "quiz_restart");
-  quizRestart->setShortcut(Qt::CTRL + Qt::Key_R);
+  quizRestart->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
   quizRestart->setToolTip(quizRestart->whatsThis());
   quizRestart->setStatusTip(quizRestart->whatsThis());
   //connect(quizRestart, SIGNAL(triggered(bool)), this, SLOT(()));
 
   quizRepeatErrors = new KAction(KIcon("repeat"), i18n("Repeat &Errors"), actionCollection(), "quiz_repeat_errors");
-  quizRepeatErrors->setShortcut(Qt::CTRL + Qt::Key_E);
+  quizRepeatErrors->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_E));
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
   quizRepeatErrors->setStatusTip(quizRepeatErrors->whatsThis());
@@ -377,63 +377,63 @@ void KWordQuizApp::initActions()
   connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
 
   specialChar1 = new KAction(i18n("Special Character 1"), actionCollection(), "char_1") ;
-  specialChar1->setShortcut(Qt::CTRL + Qt::Key_1);
+  specialChar1->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_1));
   specialChar1->setWhatsThis(i18n("Insert this character"));
   specialChar1->setToolTip(specialChar1->whatsThis());
   specialChar1->setStatusTip(specialChar1->whatsThis());
   connect(specialChar1, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar2 = new KAction(i18n("Special Character 2"), actionCollection(), "char_2") ;
-  specialChar2->setShortcut(Qt::CTRL + Qt::Key_2);
+  specialChar2->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_2));
   specialChar2->setWhatsThis(i18n("Insert this character"));
   specialChar2->setToolTip(specialChar2->whatsThis());
   specialChar2->setStatusTip(specialChar2->whatsThis());
   connect(specialChar2, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar3 = new KAction(i18n("Special Character 3"), actionCollection(), "char_3") ;
-  specialChar3->setShortcut(Qt::CTRL + Qt::Key_3);
+  specialChar3->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_3));
   specialChar3->setWhatsThis(i18n("Insert this character"));
   specialChar3->setToolTip(specialChar3->whatsThis());
   specialChar3->setStatusTip(specialChar3->whatsThis());
   connect(specialChar3, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar4 = new KAction(i18n("Special Character 4"), actionCollection(), "char_4") ;
-  specialChar4->setShortcut(Qt::CTRL + Qt::Key_4);
+  specialChar4->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_4));
   specialChar4->setWhatsThis(i18n("Insert this character"));
   specialChar4->setToolTip(specialChar4->whatsThis());
   specialChar4->setStatusTip(specialChar4->whatsThis());
   connect(specialChar4, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar5 = new KAction(i18n("Special Character 5"), actionCollection(), "char_5") ;
-  specialChar5->setShortcut(Qt::CTRL + Qt::Key_5);
+  specialChar5->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
   specialChar5->setWhatsThis(i18n("Insert this character"));
   specialChar5->setToolTip(specialChar5->whatsThis());
   specialChar5->setStatusTip(specialChar5->whatsThis());
   connect(specialChar5, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar6 = new KAction(i18n("Special Character 6"), actionCollection(), "char_6") ;
-  specialChar6->setShortcut(Qt::CTRL + Qt::Key_6);
+  specialChar6->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
   specialChar6->setWhatsThis(i18n("Insert this character"));
   specialChar6->setToolTip(specialChar6->whatsThis());
   specialChar6->setStatusTip(specialChar6->whatsThis());
   connect(specialChar6, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar7 = new KAction(i18n("Special Character 7"), actionCollection(), "char_7") ;
-  specialChar7->setShortcut(Qt::CTRL + Qt::Key_7);
+  specialChar7->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
   specialChar7->setWhatsThis(i18n("Insert this character"));
   specialChar7->setToolTip(specialChar7->whatsThis());
   specialChar7->setStatusTip(specialChar7->whatsThis());
   connect(specialChar7, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar8 = new KAction(i18n("Special Character 8"), actionCollection(), "char_8") ;
-  specialChar8->setShortcut(Qt::CTRL + Qt::Key_8);
+  specialChar8->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_8));
   specialChar8->setWhatsThis(i18n("Insert this character"));
   specialChar8->setToolTip(specialChar8->whatsThis());
   specialChar8->setStatusTip(specialChar8->whatsThis());
   connect(specialChar8, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
 
   specialChar9 = new KAction(i18n("Special Character 9"), actionCollection(), "char_9") ;
-  specialChar9->setShortcut(Qt::CTRL + Qt::Key_9);
+  specialChar9->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_9));
   specialChar9->setWhatsThis(i18n("Insert this character"));
   specialChar9->setToolTip(specialChar9->whatsThis());
   specialChar9->setStatusTip(specialChar9->whatsThis());
