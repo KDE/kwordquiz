@@ -146,8 +146,8 @@ void KWordQuizView::print(KPrinter *pPrinter)
       painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, AlignAuto | AlignVCenter, horizontalHeader()->label(1));
       //draw text
       painter.setFont(font());
-      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter, text(rc, 0));
-      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter, text(rc, 1));
+      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter | WordBreak, text(rc, 0));
+      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg), card_height - card_line_top, AlignHCenter | AlignVCenter | WordBreak, text(rc, 1));
 
       tPos = tPos + card_height + card_line_top;
 
@@ -172,10 +172,10 @@ void KWordQuizView::print(KPrinter *pPrinter)
       painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), AlignRight | AlignVCenter, QString::number(rc + 1));
 
       painter.setFont(font());
-      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 0));
+      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), AlignAuto | AlignVCenter | WordBreak, text(rc, 0));
 
       if (type == 0)
-        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), AlignAuto | AlignVCenter, text(rc, 1));
+        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), AlignAuto | AlignVCenter | WordBreak, text(rc, 1));
 
       tPos = tPos + rowHeight(rc);
 
