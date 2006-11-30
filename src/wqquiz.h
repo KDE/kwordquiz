@@ -28,6 +28,8 @@
 @author Peter Hedlund
 */
 
+typedef QValueList<WQListItem> QuizList;
+
 class WQQuiz : public QObject
 {
   Q_OBJECT
@@ -36,7 +38,7 @@ class WQQuiz : public QObject
     enum QuizIcon {qiLeftCol, qiRightCol, qiQuestion, qiCorrect, qiError};
 
     WQQuiz(KWordQuizView * parent, const char * name=0);
-    ~WQQuiz();
+
     void activateErrorList();
     void activateBaseList();
 
@@ -70,9 +72,9 @@ class WQQuiz : public QObject
     KWordQuizView *m_table;
     int m_quizMode;
     int m_questionCount;
-    static QPtrList<WQListItem> *m_list;
-    static QPtrList<WQListItem> *m_errorList;
-    static QPtrList<WQListItem> *m_quizList;
+    QuizList m_list;
+    QuizList m_errorList;
+    QuizList m_quizList;
 
     QuizType m_quizType;
     QString m_correctBlank;
