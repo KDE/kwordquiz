@@ -16,8 +16,10 @@
 #ifndef WQUNDO_H
 #define WQUNDO_H
 
-#include <Q3Table>
+#include <QFont>
 #include <QList>
+#include <QRect>
+#include <QModelIndex>
 
 #include "keduvocexpression.h"
 
@@ -36,12 +38,11 @@ public:
   int colWidth2() {return m_colWidth2;};
   void setColWidth2(int cw) {m_colWidth2 = cw;};
 
-  int currentRow() {return m_currentRow;};
-  void setCurrentRow(int r) {m_currentRow = r;};
-  int currentCol() {return m_currentCol;};
-  void setCurrentCol(int c) {m_currentCol = c;};
-  Q3TableSelection selection() const {return m_selection;};
-  void setSelection(const Q3TableSelection & sel) {m_selection = sel;};
+  QModelIndex currentCell() const {return m_currentCell;};
+  void setCurrentCell(const QModelIndex & cc) {m_currentCell = cc;};
+
+  QRect selection() const {return m_selection;};
+  void setSelection(const QRect & sel) {m_selection = sel;};
 
   QList<KEduVocExpression> list() const {return m_list;};
   void setList(const QList<KEduVocExpression> & list) {m_list = list;};
@@ -54,10 +55,9 @@ private:
   int m_colWidth0;
   int m_colWidth1;
   int m_colWidth2;
-  int m_currentRow;
-  int m_currentCol;
+  QModelIndex m_currentCell;
 
-  Q3TableSelection m_selection;
+  QRect m_selection;
   QList<KEduVocExpression> m_list;
 
   QString m_text;

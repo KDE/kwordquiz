@@ -913,10 +913,11 @@ void KWordQuizApp::slotFileQuit()
   }
 }
 
-void KWordQuizApp::slotUndoChange( const QString & text, bool enabled )
+void KWordQuizApp::slotUndoChange(const QString & text, bool enabled)
 {
   editUndo->setText(text);
   editUndo->setEnabled(enabled);
+  m_doc->setModified(true);
 }
 
 void KWordQuizApp::slotEditUndo()
