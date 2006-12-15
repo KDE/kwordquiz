@@ -969,6 +969,7 @@ QPoint KWQTableView::currentCell() const
   QPoint result;
   result.setX(index.column());
   result.setY(index.row());
+  return result;
 }
 
 void KWQTableView::setCurrentCell(const QPoint & currentCell)
