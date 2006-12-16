@@ -40,6 +40,8 @@ const char delim_end = ']';
 @author Peter Hedlund
 */
 
+typedef QList<WQUndo> WQUndoList;
+
 class KWQTableView : public QTableView
 {
 Q_OBJECT
@@ -48,7 +50,6 @@ public:
   KWQTableView(QWidget *parent = 0);
 
   void setModel(KWQTableModel * model);
-  //KWQTableModel * model() const;
 
   /** contains the implementation for printing functionality */
   void print(KPrinter *pPrinter);
@@ -67,10 +68,12 @@ public:
   void doVocabRC();
 
   bool checkForBlank(const QString & s, bool blank);
+
 protected:
-  const QRect selection();
+  QRect selection() const;
+  QPoint currentCell() const;
   void selectCells(const QRect & selection);
-  void endEdit ( int row, int col, bool accept, bool replace );
+  void setCurrentCell(const QPoint & currentCell);
   void activateNextCell();
   void keyPressEvent(QKeyEvent*);
 
@@ -97,7 +100,7 @@ private:
   KWQTableDelegate * m_delegate;
 
   /** the list of the undo objects */
-  static QList<WQUndo> *m_undoList;
+  WQUndoList m_undoList;
 
   void doNewPage(QPainter & painter, int res, int type);
   void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);

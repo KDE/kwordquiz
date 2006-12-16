@@ -37,12 +37,9 @@
 #include "prefs.h"
 #include "dlgrc.h"
 
-QList<WQUndo> *KWQTableView::m_undoList = 0L;
-
 KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
 {
-  if(!m_undoList)
-    m_undoList = new QList<WQUndo>();
+  m_undoList.clear();
 
   setSelectionMode(QAbstractItemView::ContiguousSelection);
   setSelectionBehavior(QAbstractItemView::SelectItems);
@@ -246,56 +243,87 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
 
 }
 
-void KWQTableView::endEdit(int row, int col, bool accept, bool replace)
+void KWQTableView::addUndo(const QString & caption)
 {
+  while (m_undoList.count() > 10)
+    m_undoList.erase(m_undoList.begin());
 
+  WQUndo undo;
+  undo.setText(caption);
+  undo.setFont(Prefs::editorFont());
+  undo.setColWidth1(columnWidth(0));
+  undo.setColWidth2(columnWidth(1));
+  undo.setCurrentCell(selectionModel()->currentIndex());
+  undo.setSelection(selection());
+
+  QList<KEduVocExpression> list;
+  for(int i = 0; i < model()->rowCount(); i++)
+  {
+    KEduVocExpression expression;
+    expression.setOriginal(model()->data(model()->index(i, 0), Qt::DisplayRole).toString());
+    expression.setTranslation(1, model()->data(model()->index(i, 1), Qt::DisplayRole).toString());
+    list.append(expression);
+  }
+
+  undo.setList(list);
+
+  m_undoList.prepend(undo);
+
+  emit undoChange(caption, true);
 }
 
 void KWQTableView::doEditUndo()
 {
-/*  if (isEditing())
+  if (state() == QAbstractItemView::EditingState)
   {
-    if (((QLineEdit *) cellWidget(currentRow(), currentColumn()))->isUndoAvailable())
-      ((QLineEdit *) cellWidget(currentRow(), currentColumn()))->undo();
+    if (QApplication::focusWidget())
+    {
+      QLineEdit *lineEdit = static_cast<QLineEdit*>(QApplication::focusWidget());
+      if (lineEdit->isUndoAvailable())
+        lineEdit->undo();
+    }
   }
   else
   {
     WQUndo undo;
-    if (m_undoList->count() > 0)
+    if (m_undoList.count() > 0)
     {
       setUpdatesEnabled(false);
-      undo = m_undoList->first();
-      getDocument()->setFont(new QFont(undo.font()));
-      verticalHeader()->setMinimumWidth(undo.colWidth0());
-      getDocument()->setSizeHint(0, undo.colWidth1());
-      getDocument()->setSizeHint(1, undo.colWidth2());
+      undo = m_undoList.first();
+      Prefs::setEditorFont(undo.font());
+      model()->setHeaderData(0, Qt::Horizontal, undo.colWidth1(), Qt::SizeHintRole);
+      model()->setHeaderData(1, Qt::Horizontal, undo.colWidth2(), Qt::SizeHintRole);
 
-      getDocument()->removeAllEntries();
+      model()->removeRows(0, model()->rowCount() - 1, QModelIndex());
+      model()->insertRows(0, undo.list().count(), QModelIndex());
+      model()->removeRows(0, 1, QModelIndex());
 
-      QList<KEduVocExpression> dataList = undo.list();
-      QList<KEduVocExpression>::Iterator end(dataList.end());
-      for(QList<KEduVocExpression>::Iterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
+      KEduVocExpression expression;
+      QList<KEduVocExpression> items = undo.list();
+
+      for(int i = 0; i < items.count(); i++)
       {
-        getDocument()->appendEntry(&(*dataIt));
-        // TODO EPT setRowHeight(i, (*dataIt).rowHeight());
+        expression = items[i];
+        model()->setData(model()->index(i, 0), QVariant(expression.original()), Qt::EditRole);
+        model()->setData(model()->index(i, 1), QVariant(expression.translation(1)), Qt::EditRole);
       }
-      displayDoc();
 
-      setCurrentCell(undo.currentRow(), undo.currentCol());
-      addSelection(undo.selection());
+      selectCells(undo.selection());
+      selectionModel()->setCurrentIndex(undo.currentCell(), QItemSelectionModel::Current);
 
-      m_undoList->remove(m_undoList->begin());
+      m_undoList.remove(m_undoList.begin());
       setUpdatesEnabled(true);
+      reset();
     }
 
-    if (m_undoList->count() > 0)
+    if (m_undoList.count() > 0)
     {
-      undo = m_undoList->first();
+      undo = m_undoList.first();
       emit undoChange(undo.text(), true);
     }
     else
       emit undoChange(i18n("Cannot &Undo"), false);
-  }*/
+  }
 }
 
 void KWQTableView::doEditCut()
@@ -822,40 +850,6 @@ void KWQTableView::activateNextCell()
   }
 }
 
-void KWQTableView::addUndo(const QString & caption)
-{
-  while (m_undoList->count() > 10)
-  {
-    m_undoList->erase(m_undoList->begin());
-  }
-
-  WQUndo* undo = new WQUndo();
-  undo->setText(caption);
-//  if (getDocument()->font() != NULL)
-//    undo->setFont(*(getDocument()->font()));
-//  undo->setColWidth0(verticalHeader()->width());
-  undo->setColWidth1(columnWidth(0));
-  undo->setColWidth2(columnWidth(1));
-//  undo->setCurrentRow(currentRow());
-//  undo->setCurrentCol(currentColumn());
-//  undo->setSelection(selection(0));
-
-  QList<KEduVocExpression> list;
-  for(int i = 0; i < model()->rowCount(); i++)
-  {
-//    KWqlDataItem item(text(i, 0), text(i, 1), rowHeight(i));
-//    list.append(*getDocument()->entry(i));
-  }
-
-  undo->setList(list);
-
-  m_undoList->prepend(*undo);
-
-  //getDocument()->setModified(true);
-
-  emit undoChange(caption, true);
-}
-
 void KWQTableView::keyPressEvent(QKeyEvent * e)
 {
   if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter)
@@ -928,7 +922,7 @@ void KWQTableView::adjustCurrentRow()
     setRowHeight(r, rh);
 }
 
-const QRect KWQTableView::selection()
+QRect KWQTableView::selection() const
 {
   const QList<QItemSelectionRange> ranges = selectionModel()->selection();
   QRect result;
@@ -967,6 +961,22 @@ void KWQTableView::slotModelReset()
 {
   setColumnWidth(0, qvariant_cast<QSize>(model()->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   setColumnWidth(1, qvariant_cast<QSize>(model()->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
+}
+
+QPoint KWQTableView::currentCell() const
+{
+  QModelIndex index = selectionModel()->currentIndex();
+  QPoint result;
+  result.setX(index.column());
+  result.setY(index.row());
+  return result;
+}
+
+void KWQTableView::setCurrentCell(const QPoint & currentCell)
+{
+  if (!model()->hasIndex(currentCell.y(), currentCell.x(), rootIndex()))
+    return;
+  selectionModel()->setCurrentIndex(model()->index(currentCell.y(), currentCell.x(), rootIndex()), QItemSelectionModel::Current);
 }
 
 #include "kwqtableview.moc"
