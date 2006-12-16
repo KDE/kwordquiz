@@ -246,7 +246,7 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
 void KWQTableView::addUndo(const QString & caption)
 {
   while (m_undoList.count() > 10)
-    m_undoList.erase(m_undoList.begin());
+    m_undoList.removeLast();
 
   WQUndo undo;
   undo.setText(caption);
@@ -289,7 +289,7 @@ void KWQTableView::doEditUndo()
     if (m_undoList.count() > 0)
     {
       setUpdatesEnabled(false);
-      undo = m_undoList.first();
+      undo = m_undoList.takeFirst();
       Prefs::setEditorFont(undo.font());
       model()->setHeaderData(0, Qt::Horizontal, undo.colWidth1(), Qt::SizeHintRole);
       model()->setHeaderData(1, Qt::Horizontal, undo.colWidth2(), Qt::SizeHintRole);
@@ -310,10 +310,8 @@ void KWQTableView::doEditUndo()
 
       selectCells(undo.selection());
       selectionModel()->setCurrentIndex(undo.currentCell(), QItemSelectionModel::Current);
-
-      m_undoList.remove(m_undoList.begin());
-      setUpdatesEnabled(true);
       reset();
+      setUpdatesEnabled(true);
     }
 
     if (m_undoList.count() > 0)
