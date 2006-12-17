@@ -98,7 +98,7 @@ void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewIte
       str = "";
 
     if (painter->fontMetrics().width(text) > textRect.width() && !text.contains(QLatin1Char('\n')))
-        str = elidedText(option.fontMetrics, textRect.width(), option.textElideMode, text);
+        str = elidedText(option.fontMetrics, textRect.width(), option.textElideMode, str);
 
     painter->drawText(textRect, option.displayAlignment, str);
     painter->setFont(font);
