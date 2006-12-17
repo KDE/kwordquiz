@@ -1,5 +1,5 @@
 /***************************************************************************
-                          kwordquizview.cpp  -  description
+                          kwqtableview.cpp  -  description
                              -------------------
     begin          : Wed Jul 24 20:12:30 PDT 2002
     copyright      : (C) 2002-2006 Peter Hedlund <peter.hedlund@kdemail.net>
@@ -29,6 +29,7 @@
 #include <kglobalsettings.h>
 #include <knotification.h>
 #include <kdebug.h>
+#include <kapplication.h>
 
 #include "kwqtableview.h"
 #include "keduvocdocument.h"
@@ -52,7 +53,6 @@ KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
 
 void KWQTableView::print(KPrinter *pPrinter)
 {
-  ///@todo retrieve text to print from doc instead of table
   QPainter painter;
 
   //type 0 Vocabulary list
@@ -77,8 +77,8 @@ void KWQTableView::print(KPrinter *pPrinter)
 
   int pageNum = 1;
 
-//  int cw0 = verticalHeader()->width();
-  int cw0 = 50;
+  int cw0 = verticalHeader()->width();
+  //int cw0 = 50;
   int cw1 = columnWidth(0);
   int cw2 = columnWidth(1);
   int cw3 = 0;
@@ -90,8 +90,8 @@ void KWQTableView::print(KPrinter *pPrinter)
 
   int gridWidth = cw0 + cw1 + cw2 + cw3;
   int lPos = marg;
-//  int tPos = marg + horizontalHeader()->height();
-  int tPos = marg + 20;
+  int tPos = marg + horizontalHeader()->height();
+  //int tPos = marg + 20;
 
   QRect w = painter.window();
 
@@ -114,15 +114,17 @@ void KWQTableView::print(KPrinter *pPrinter)
         card_marg + card_width + card_width - card_text_marg, tPos + card_line_top);
       //draw headers
       painter.setFont(KGlobalSettings::generalFont());
-      //painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, getDocument()->originalIdentifier());
-      //painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter, getDocument()->identifier(1));
+      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter,
+          model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter,
+          model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
       //draw text
       painter.setFont(font());
-      //painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
-      //  card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, getDocument()->entry(rc)->original());
+      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
+          card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, model()->data(model()->index(rc, 0)).toString());
 
-     // painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
-       // card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, getDocument()->entry(rc)->translation(1));
+      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
+          card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, model()->data(model()->index(rc, 1)).toString());
 
       tPos = tPos + card_height + card_line_top;
 
@@ -147,18 +149,18 @@ void KWQTableView::print(KPrinter *pPrinter)
       painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), Qt::AlignRight | Qt::AlignVCenter, QString::number(rc + 1));
 
       painter.setFont(font());
-      //painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, getDocument()->entry(rc)->original());
+      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, model()->data(model()->index(rc, 0)).toString());
 
       if (type == 0)
-        //painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter,
-          //getDocument()->entry(rc)->translation(1));
+        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter,
+          model()->data(model()->index(rc, 1)).toString());
 
       tPos = tPos + rowHeight(rc);
 
       if (tPos + rowHeight(rc + 1) > w.height() - marg)
       {
         doEndOfPage(painter, tPos, pageNum++, res, type);
-        tPos = marg + 20 /*horizontalHeader()->height()*/;
+        tPos = marg + horizontalHeader()->height();
         pPrinter->newPage();
         doNewPage(painter, res, type);
       }
@@ -170,7 +172,7 @@ void KWQTableView::print(KPrinter *pPrinter)
 
 void KWQTableView::doNewPage(QPainter & painter, int res, int type)
 {
-    int cw0 = 200 /*verticalHeader()->width()*/;
+    int cw0 = verticalHeader()->width();
     int cw1 = columnWidth(0);
     int cw2 = columnWidth(1);
     int cw3 = 0;
@@ -187,12 +189,13 @@ void KWQTableView::doNewPage(QPainter & painter, int res, int type)
 
     if (type == 2)
     {
-      //painter.drawText(card_marg, card_marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
+      /// @todo find a more elegant way to retrieve the caption
+      painter.drawText(card_marg, card_marg - 20, KInstance::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
       return;
     }
     painter.drawLine(marg, marg, marg + cw0 + cw1 + cw2 + cw3, marg);
 
-    //painter.drawText(marg, marg - 20, i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName()));
+    painter.drawText(marg, marg - 20, KInstance::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
 
     if (type == 1)
     {
@@ -200,15 +203,15 @@ void KWQTableView::doNewPage(QPainter & painter, int res, int type)
       QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignLeft, score);
       painter.drawText(w.width() - r.width() - marg, marg - 20, score);
     }
-/*
+
     painter.drawText(marg, marg, cw0, horizontalHeader()->height(), Qt::AlignRight | Qt::AlignVCenter, "");
 
-    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, getDocument()->originalIdentifier());
-    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, getDocument()->identifier(1));
+    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
     if (type == 1)
       painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, i18n("Score"));
-*/
+
 }
 
 void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type)
@@ -222,7 +225,7 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
     if (type == 2)
       return;
 
-    int cw0 = 200 /*verticalHeader()->width()*/;
+    int cw0 = verticalHeader()->width();
     int cw1 = columnWidth(0);
     int cw2 = columnWidth(1);
     int cw3 = 0;
@@ -246,7 +249,7 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
 void KWQTableView::addUndo(const QString & caption)
 {
   while (m_undoList.count() > 10)
-    m_undoList.erase(m_undoList.begin());
+    m_undoList.removeLast();
 
   WQUndo undo;
   undo.setText(caption);
@@ -289,7 +292,7 @@ void KWQTableView::doEditUndo()
     if (m_undoList.count() > 0)
     {
       setUpdatesEnabled(false);
-      undo = m_undoList.first();
+      undo = m_undoList.takeFirst();
       Prefs::setEditorFont(undo.font());
       model()->setHeaderData(0, Qt::Horizontal, undo.colWidth1(), Qt::SizeHintRole);
       model()->setHeaderData(1, Qt::Horizontal, undo.colWidth2(), Qt::SizeHintRole);
@@ -310,10 +313,8 @@ void KWQTableView::doEditUndo()
 
       selectCells(undo.selection());
       selectionModel()->setCurrentIndex(undo.currentCell(), QItemSelectionModel::Current);
-
-      m_undoList.remove(m_undoList.begin());
-      setUpdatesEnabled(true);
       reset();
+      setUpdatesEnabled(true);
     }
 
     if (m_undoList.count() > 0)

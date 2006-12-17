@@ -1,5 +1,5 @@
 /***************************************************************************
-                          kwordquizview.h  -  description
+                          kwqtableview.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002-2006 by Peter Hedlund
