@@ -36,7 +36,7 @@
 #include <kxmlguifactory.h>
 #include <kglobal.h>
 #include <krecentfilesaction.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <ktoggleaction.h>
 #include <ktoolbar.h>
 #include <kicon.h>
@@ -108,17 +108,17 @@ void KWordQuizApp::initActions()
   KAction* configNotifications;
   KAction* configApp;
 
-  fileNew = KStdAction::openNew(this, SLOT(slotFileNew()), actionCollection());
+  fileNew = KStandardAction::openNew(this, SLOT(slotFileNew()), actionCollection());
   fileNew->setWhatsThis(i18n("Creates a new blank vocabulary document"));
   fileNew->setToolTip(fileNew->whatsThis());
   fileNew->setStatusTip(fileNew->whatsThis());
 
-  fileOpen = KStdAction::open(this, SLOT(slotFileOpen()), actionCollection());
+  fileOpen = KStandardAction::open(this, SLOT(slotFileOpen()), actionCollection());
   fileOpen->setWhatsThis(i18n("Opens an existing vocabulary document"));
   fileOpen->setToolTip(fileOpen->whatsThis());
   fileOpen->setStatusTip(fileOpen->whatsThis());
 
-  fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
+  fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
 
   fileGHNS = new KAction(KIcon("knewstuff"), i18n("&Get New Vocabularies..."), actionCollection(), "file_ghns");
   fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
@@ -127,51 +127,51 @@ void KWordQuizApp::initActions()
   fileGHNS->setStatusTip(fileGHNS->whatsThis());
   connect(fileGHNS, SIGNAL(triggered(bool)), this, SLOT(slotFileGHNS()));
 
-  fileSave = KStdAction::save(this, SLOT(slotFileSave()), actionCollection());
+  fileSave = KStandardAction::save(this, SLOT(slotFileSave()), actionCollection());
   fileSave->setWhatsThis(i18n("Saves the active vocabulary document"));
   fileSave->setToolTip(fileSave->whatsThis());
   fileSave->setStatusTip(fileSave->whatsThis());
 
-  fileSaveAs = KStdAction::saveAs(this, SLOT(slotFileSaveAs()), actionCollection());
+  fileSaveAs = KStandardAction::saveAs(this, SLOT(slotFileSaveAs()), actionCollection());
   fileSaveAs->setWhatsThis(i18n("Saves the active vocabulary document with a different name"));
   fileSaveAs->setToolTip(fileSaveAs->whatsThis());
   fileSaveAs->setStatusTip(fileSaveAs->whatsThis());
 
-  fileClose = KStdAction::close(this, SLOT(slotFileClose()), actionCollection());
+  fileClose = KStandardAction::close(this, SLOT(slotFileClose()), actionCollection());
   fileClose->setWhatsThis(i18n("Closes the active vocabulary document"));
   fileClose->setStatusTip(fileClose->whatsThis());
 
-  filePrint = KStdAction::print(this, SLOT(slotFilePrint()), actionCollection());
+  filePrint = KStandardAction::print(this, SLOT(slotFilePrint()), actionCollection());
   filePrint->setWhatsThis(i18n("Prints the active vocabulary document"));
   filePrint->setToolTip(filePrint->whatsThis());
   filePrint->setStatusTip(filePrint->whatsThis());
 
-  fileQuit = KStdAction::quit(this, SLOT(slotFileQuit()), actionCollection());
+  fileQuit = KStandardAction::quit(this, SLOT(slotFileQuit()), actionCollection());
   fileQuit->setWhatsThis(i18n("Quits KWordQuiz"));
   fileQuit->setToolTip(fileQuit->whatsThis());
   fileQuit->setStatusTip(fileQuit->whatsThis());
 
-  editUndo = KStdAction::undo(this, SLOT(slotEditUndo()), actionCollection());
+  editUndo = KStandardAction::undo(this, SLOT(slotEditUndo()), actionCollection());
   editUndo->setWhatsThis(i18n("Undoes the last command"));
   editUndo->setToolTip(editUndo->whatsThis());
   editUndo->setStatusTip(editUndo->whatsThis());
 
-  editCut = KStdAction::cut(this, SLOT(slotEditCut()), actionCollection());
+  editCut = KStandardAction::cut(this, SLOT(slotEditCut()), actionCollection());
   editCut->setWhatsThis(i18n("Cuts the text from the selected cells and places it on the clipboard"));
   editCut->setToolTip(editCut->whatsThis());
   editCut->setStatusTip(editCut->whatsThis());
 
-  editCopy = KStdAction::copy(this, SLOT(slotEditCopy()), actionCollection());
+  editCopy = KStandardAction::copy(this, SLOT(slotEditCopy()), actionCollection());
   editCopy->setWhatsThis(i18n("Copies the text from the selected cells and places it on the clipboard"));
   editCopy->setToolTip(editCopy->whatsThis());
   editCopy->setStatusTip(editCopy->whatsThis());
 
-  editPaste = KStdAction::paste(this, SLOT(slotEditPaste()), actionCollection());
+  editPaste = KStandardAction::paste(this, SLOT(slotEditPaste()), actionCollection());
   editPaste->setWhatsThis(i18n("Pastes previously cut or copied text from the clipboard into the selected cells"));
   editPaste->setToolTip(editPaste->whatsThis());
   editPaste->setStatusTip(editPaste->whatsThis());
 
-  editClear = KStdAction::clear(this, SLOT(slotEditClear()), actionCollection());
+  editClear = KStandardAction::clear(this, SLOT(slotEditClear()), actionCollection());
   editClear->setWhatsThis(i18n("Clears the content of the selected cells"));
   editClear->setToolTip(editClear->whatsThis());
   editClear->setStatusTip(editClear->whatsThis());
@@ -203,7 +203,7 @@ void KWordQuizApp::initActions()
   editUnmarkBlank->setStatusTip(editUnmarkBlank->whatsThis());
   connect(editUnmarkBlank, SIGNAL(triggered(bool)), this, SLOT(slotEditUnmarkBlank()));
 
-  //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
+  //@todo implement editFind = KStandardAction::find(this, SLOT(slotEditFind()), actionCollection());
 
   vocabLanguages = new KAction(KIcon("languages"), i18n("&Column Titles..."), actionCollection(), "vocab_languages");
   vocabLanguages->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
@@ -363,12 +363,12 @@ void KWordQuizApp::initActions()
   quizRepeatErrors->setStatusTip(quizRepeatErrors->whatsThis());
   //connect(quizRepeatErrors, SIGNAL(triggered(bool)), this, SLOT(()));
 
-  configNotifications = KStdAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
+  configNotifications = KStandardAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
   configNotifications->setWhatsThis(i18n("Configures sound and other notifications for certain events"));
   configNotifications->setToolTip(configNotifications->whatsThis());
   configNotifications->setStatusTip(configNotifications->whatsThis());
 
-  configApp = KStdAction::preferences(this, SLOT( slotConfigure()), actionCollection());
+  configApp = KStandardAction::preferences(this, SLOT( slotConfigure()), actionCollection());
   configApp->setWhatsThis(i18n("Specifies preferences for the vocabulary editor and quiz sessions"));
   configApp->setToolTip(configApp->whatsThis());
   configApp->setToolTip(configApp->whatsThis());
@@ -834,7 +834,7 @@ bool KWordQuizApp::saveAsFileName( )
       QFileInfo fileinfo(url.path());
       if (fileinfo.exists() && KMessageBox::warningContinueCancel(0,
           i18n("<qt>The file<br><b>%1</b><br>already exists. Do you want to overwrite it?</qt>",
-               url.path()),QString(),KStdGuiItem::overwrite()) == KMessageBox::Cancel)
+               url.path()),QString(),KStandardGuiItem::overwrite()) == KMessageBox::Cancel)
       {
       // do nothing
       }
@@ -1345,7 +1345,7 @@ void KWordQuizApp::slotStatusMsg(const QString &text)
 void KWordQuizApp::updateMode(int m)
 {
   if (m_quiz != 0)
-    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStdGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
+    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStandardGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
     {
       mode1->setChecked(Prefs::mode() == 1);
       mode2->setChecked(Prefs::mode() == 2);
