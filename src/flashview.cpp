@@ -20,6 +20,7 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <knotification.h>
+#include <kapplication.h>
 
 #include "kwordquiz.h"
 #include "flashview.h"
@@ -200,22 +201,22 @@ void FlashView::updateScore()
   QString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
+  picCount->setPixmap(kapp->iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
 
   s = m_score->answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
+    picAnswered->setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
 
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KGlobal::iconLoader()->loadIcon("check", K3Icon::Panel));
+    picCorrect->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);
   if (!s.isEmpty())
-    picError->setPixmap(KGlobal::iconLoader()->loadIcon("error", K3Icon::Panel));
+    picError->setPixmap(kapp->iconLoader()->loadIcon("error", K3Icon::Panel));
 }
 
 void FlashView::slotTimer( )
