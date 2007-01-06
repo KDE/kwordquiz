@@ -19,6 +19,7 @@
 #include <klocale.h>
 #include <klineedit.h>
 #include <kiconloader.h>
+#include <kapplication.h>
 
 #include "prefs.h"
 #include "dlglanguage.h"
@@ -34,8 +35,8 @@ DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent)
   dlgBase = new Ui::DlgLanguageBase();
   dlgBase->setupUi(mainWidget());
 
-  dlgBase -> picLanguage1 -> setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
-  dlgBase -> picLanguage2 -> setPixmap(KGlobal::iconLoader()->loadIcon("answer", K3Icon::Panel));
+  dlgBase -> picLanguage1 -> setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
+  dlgBase -> picLanguage2 -> setPixmap(kapp->iconLoader()->loadIcon("answer", K3Icon::Panel));
 
   dlgBase->txtLanguage1->completionObject(true)->setItems(Prefs::columnTitles1());
   dlgBase->txtLanguage1->setCompletionMode(KGlobalSettings::CompletionAuto);

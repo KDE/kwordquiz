@@ -29,7 +29,6 @@
 #include <kstandarddirs.h>
 #include <kfontdialog.h>
 #include <kmenu.h>
-#include <knotifydialog.h>
 #include <knotifyconfigwidget.h>
 #include <kiconloader.h>
 #include <kdebug.h>

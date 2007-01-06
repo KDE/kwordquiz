@@ -21,6 +21,7 @@
 #include <klocale.h>
 #include <klineedit.h>
 #include <knotification.h>
+#include <kapplication.h>
 
 #include "qaview.h"
 #include "prefs.h"
@@ -140,7 +141,7 @@ void QAView::slotCheck()
     if (fIsCorrect)
     {
 
-      picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", K3Icon::Panel));
+      picYourAnswer->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
       lblYourAnswer->setText(m_quiz->yourAnswer(m_question, txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
@@ -153,11 +154,11 @@ void QAView::slotCheck()
     {
       m_error++;
 
-      picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("error", K3Icon::Panel));
+      picYourAnswer->setPixmap(kapp->iconLoader()->loadIcon("error", K3Icon::Panel));
       lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(m_question, txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer(m_question));
       //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
-      picCorrectAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", K3Icon::Panel));
+      picCorrectAnswer->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
       updateScore();
@@ -167,7 +168,7 @@ void QAView::slotCheck()
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question(m_question));
     //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
-    picPrevious->setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
+    picPrevious->setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
 
@@ -189,7 +190,7 @@ void QAView::slotCheck()
       lblAnswerLanguage->clear();
       lblAnswerBlank->hide();
       txtAnswer->hide();
-      picQuestion->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
+      picQuestion->setPixmap(kapp->iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
       picAnswer->clear();
     }
   }
@@ -236,22 +237,22 @@ void QAView::updateScore()
   QString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
+  picCount->setPixmap(kapp->iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
 
   s = m_score->answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(KGlobal::iconLoader()->loadIcon("question", K3Icon::Panel));
+    picAnswered->setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
 
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KGlobal::iconLoader()->loadIcon("check", K3Icon::Panel));
+    picCorrect->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);
   if (!s.isEmpty())
-    picError->setPixmap(KGlobal::iconLoader()->loadIcon("error", K3Icon::Panel));
+    picError->setPixmap(kapp->iconLoader()->loadIcon("error", K3Icon::Panel));
 }
 
 
@@ -265,7 +266,7 @@ void QAView::showQuestion(int i)
   lblQuestion -> setText(m_quiz ->question(i));
   //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
-  picQuestion->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), K3Icon::Panel));
+  picQuestion->setPixmap(kapp->iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), K3Icon::Panel));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
@@ -281,7 +282,7 @@ void QAView::showQuestion(int i)
   //txtAnswer->setFont(m_quiz->fontAnswer(i));
   txtAnswer -> setText("");
 
-  picAnswer->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), K3Icon::Panel));
+  picAnswer->setPixmap(kapp->iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), K3Icon::Panel));
 
   //@todo handle keyboard layouts
 }
