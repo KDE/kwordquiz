@@ -19,7 +19,6 @@
 #include <klocale.h>
 #include <klineedit.h>
 #include <kiconloader.h>
-#include <kapplication.h>
 
 #include "prefs.h"
 #include "dlglanguage.h"

@@ -21,7 +21,6 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <knotification.h>
-#include <kapplication.h>
 
 #include "kwordquiz.h"
 #include "multipleview.h"

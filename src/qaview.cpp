@@ -21,7 +21,6 @@
 #include <klocale.h>
 #include <klineedit.h>
 #include <knotification.h>
-#include <kapplication.h>
 
 #include "qaview.h"
 #include "prefs.h"
