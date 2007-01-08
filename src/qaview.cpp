@@ -141,7 +141,7 @@ void QAView::slotCheck()
     if (fIsCorrect)
     {
 
-      picYourAnswer->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
       lblYourAnswer->setText(m_quiz->yourAnswer(m_question, txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
@@ -154,11 +154,11 @@ void QAView::slotCheck()
     {
       m_error++;
 
-      picYourAnswer->setPixmap(kapp->iconLoader()->loadIcon("error", K3Icon::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", K3Icon::Panel));
       lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(m_question, txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer(m_question));
       //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
-      picCorrectAnswer->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
+      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
       updateScore();
@@ -168,7 +168,7 @@ void QAView::slotCheck()
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question(m_question));
     //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
-    picPrevious->setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
+    picPrevious->setPixmap(KIconLoader::global()->loadIcon("question", K3Icon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
 
@@ -190,7 +190,7 @@ void QAView::slotCheck()
       lblAnswerLanguage->clear();
       lblAnswerBlank->hide();
       txtAnswer->hide();
-      picQuestion->setPixmap(kapp->iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
+      picQuestion->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", K3Icon::Panel));
       picAnswer->clear();
     }
   }
@@ -237,22 +237,22 @@ void QAView::updateScore()
   QString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(kapp->iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
+  picCount->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", K3Icon::Panel));
 
   s = m_score->answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
+    picAnswered->setPixmap(KIconLoader::global()->loadIcon("question", K3Icon::Panel));
 
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
+    picCorrect->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);
   if (!s.isEmpty())
-    picError->setPixmap(kapp->iconLoader()->loadIcon("error", K3Icon::Panel));
+    picError->setPixmap(KIconLoader::global()->loadIcon("error", K3Icon::Panel));
 }
 
 
@@ -266,7 +266,7 @@ void QAView::showQuestion(int i)
   lblQuestion -> setText(m_quiz ->question(i));
   //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
-  picQuestion->setPixmap(kapp->iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), K3Icon::Panel));
+  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), K3Icon::Panel));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
@@ -282,7 +282,7 @@ void QAView::showQuestion(int i)
   //txtAnswer->setFont(m_quiz->fontAnswer(i));
   txtAnswer -> setText("");
 
-  picAnswer->setPixmap(kapp->iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), K3Icon::Panel));
+  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), K3Icon::Panel));
 
   //@todo handle keyboard layouts
 }

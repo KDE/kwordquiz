@@ -35,8 +35,8 @@ DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent)
   dlgBase = new Ui::DlgLanguageBase();
   dlgBase->setupUi(mainWidget());
 
-  dlgBase -> picLanguage1 -> setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
-  dlgBase -> picLanguage2 -> setPixmap(kapp->iconLoader()->loadIcon("answer", K3Icon::Panel));
+  dlgBase -> picLanguage1 -> setPixmap(KIconLoader::global()->loadIcon("question", K3Icon::Panel));
+  dlgBase -> picLanguage2 -> setPixmap(KIconLoader::global()->loadIcon("answer", K3Icon::Panel));
 
   dlgBase->txtLanguage1->completionObject(true)->setItems(Prefs::columnTitles1());
   dlgBase->txtLanguage1->setCompletionMode(KGlobalSettings::CompletionAuto);

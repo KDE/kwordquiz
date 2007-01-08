@@ -201,22 +201,22 @@ void FlashView::updateScore()
   QString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(kapp->iconLoader()->loadIcon("kwordquiz", K3Icon::Panel));
+  picCount->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", K3Icon::Panel));
 
   s = m_score->answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(kapp->iconLoader()->loadIcon("question", K3Icon::Panel));
+    picAnswered->setPixmap(KIconLoader::global()->loadIcon("question", K3Icon::Panel));
 
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(kapp->iconLoader()->loadIcon("check", K3Icon::Panel));
+    picCorrect->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);
   if (!s.isEmpty())
-    picError->setPixmap(kapp->iconLoader()->loadIcon("error", K3Icon::Panel));
+    picError->setPixmap(KIconLoader::global()->loadIcon("error", K3Icon::Panel));
 }
 
 void FlashView::slotTimer( )
