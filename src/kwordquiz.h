@@ -90,7 +90,7 @@ class KWordQuizApp : public KMainWindow
     bool saveAsFileName();
 
     bool checkSyntax(bool blanks);
-	
+
     static KWordQuizApp * self() { return m_self; }
 
   protected:
@@ -270,35 +270,35 @@ class KWordQuizApp : public KMainWindow
     KEduVocDocument * m_doc;
 
     // KAction pointers to enable/disable actions
-    KAction* fileNew;
-    KAction* fileOpen;
+    QAction* fileNew;
+    QAction* fileOpen;
     KRecentFilesAction* fileOpenRecent;
-    KAction* fileGHNS;
-    KAction* fileSave;
-    KAction* fileSaveAs;
-    KAction* fileClose;
-    KAction* filePrint;
-    KAction* fileQuit;
+    QAction* fileGHNS;
+    QAction* fileSave;
+    QAction* fileSaveAs;
+    QAction* fileClose;
+    QAction* filePrint;
+    QAction* fileQuit;
 
-    KAction* editUndo;
-    KAction* editCut;
-    KAction* editCopy;
-    KAction* editPaste;
-    KAction* editClear;
-    KAction* editInsert;
-    KAction* editDelete;
-    KAction* editMarkBlank;
-    KAction* editUnmarkBlank;
-    //KAction* editFind;
+    QAction* editUndo;
+    QAction* editCut;
+    QAction* editCopy;
+    QAction* editPaste;
+    QAction* editClear;
+    QAction* editInsert;
+    QAction* editDelete;
+    QAction* editMarkBlank;
+    QAction* editUnmarkBlank;
+    //QAction* editFind;
 
-    KAction* vocabLanguages;
-    KAction* vocabFont;
-    //KAction* vocabKeyboard;
-    KAction* vocabRC;
-    KAction* vocabSort;
-    KAction* vocabShuffle;
-    KAction* vocabLeitner;
-    KAction* vocabConfigLeitner;
+    QAction* vocabLanguages;
+    QAction* vocabFont;
+    //QAction* vocabKeyboard;
+    QAction* vocabRC;
+    QAction* vocabSort;
+    QAction* vocabShuffle;
+    QAction* vocabLeitner;
+    QAction* vocabConfigLeitner;
 
     KActionMenu* mode;
     KToggleAction* mode1;
@@ -307,30 +307,30 @@ class KWordQuizApp : public KMainWindow
     KToggleAction* mode4;
     KToggleAction* mode5;
 
-    KAction* quizEditor;
-    KAction* quizFlash;
-    KAction* quizMultiple;
-    KAction* quizQA;
+    QAction* quizEditor;
+    QAction* quizFlash;
+    QAction* quizMultiple;
+    QAction* quizQA;
 
-    KAction* quizCheck;
-    KAction* quizRestart;
-    KAction* quizRepeatErrors;
+    QAction* quizCheck;
+    QAction* quizRestart;
+    QAction* quizRepeatErrors;
 
-    KAction* flashKnow;
-    KAction* flashDontKnow;
+    QAction* flashKnow;
+    QAction* flashDontKnow;
 
-    KAction* qaHint;
+    QAction* qaHint;
 
     QSignalMapper* charMapper;
-    KAction* specialChar1;
-    KAction* specialChar2;
-    KAction* specialChar3;
-    KAction* specialChar4;
-    KAction* specialChar5;
-    KAction* specialChar6;
-    KAction* specialChar7;
-    KAction* specialChar8;
-    KAction* specialChar9;
+    QAction* specialChar1;
+    QAction* specialChar2;
+    QAction* specialChar3;
+    QAction* specialChar4;
+    QAction* specialChar5;
+    QAction* specialChar6;
+    QAction* specialChar7;
+    QAction* specialChar8;
+    QAction* specialChar9;
 
     KDirWatch * m_dirWatch;
     KWQNewStuff * m_newStuff;
