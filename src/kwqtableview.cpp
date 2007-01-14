@@ -343,10 +343,9 @@ void KWQTableView::doEditCut()
 
     doEditCopy();
 
-    QModelIndex index;
     QModelIndexList items = selectionModel()->selectedIndexes();
 
-    foreach (index, items)
+    foreach (const QModelIndex &index, items)
       model()->setData(index, QVariant());
   }
 }
@@ -473,10 +472,9 @@ void KWQTableView::doEditClear()
   {
     addUndo(i18n("&Undo Clear"));
 
-    QModelIndex index;
     QModelIndexList items = selectionModel()->selectedIndexes();
 
-    foreach (index, items)
+    foreach (const QModelIndex &index, items)
       model()->setData(index, QVariant());
   }
 }
@@ -644,10 +642,9 @@ void KWQTableView::doEditUnmarkBlank()
   }
   else
   {
-    QModelIndex index;
     QModelIndexList items = selectionModel()->selectedIndexes();
 
-    foreach (index, items)
+    foreach (const QModelIndex &index, items)
     {
       s = model()->data(index, Qt::DisplayRole).toString();
       s = s.remove(delim_start);
@@ -706,10 +703,9 @@ void KWQTableView::doVocabRC()
       model()->insertRows(rowCount, newRowCount - rowCount, QModelIndex());
     }
 
-    QModelIndex index;
     QModelIndexList items = selectionModel()->selectedIndexes();
 
-    foreach (index, items)
+    foreach (const QModelIndex &index, items)
     {
       setRowHeight(index.row(), dlg->rowHeight());
       setColumnWidth(index.column(), dlg->colWidth());

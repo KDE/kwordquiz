@@ -38,7 +38,7 @@ WQQuiz::WQQuiz(QWidget * parent, KEduVocDocument * doc) : QObject(parent)
 void WQQuiz::activateErrorList()
 {
   m_list.clear();
-  foreach(WQListItem l, m_errorList)
+  foreach(const WQListItem &l, m_errorList)
     m_list.append(l);
 
   m_errorList.clear();
@@ -55,7 +55,7 @@ void WQQuiz::activateBaseList()
     rs->randomize(m_quizList);
   };
 
-  foreach(WQListItem l, m_quizList)
+  foreach(const WQListItem &l, m_quizList)
     m_list.append(l);
 
   m_questionCount = m_list.count();
@@ -312,7 +312,7 @@ QStringList WQQuiz::multiOptions(int i)
   KRandomSequence rs(0);
   rs.randomize(ls);
 
-  foreach(QString s, ls)
+  foreach(const QString &s, ls)
     Result.append(s);
 
   return Result;
