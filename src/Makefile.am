@@ -15,7 +15,7 @@ kwordquiz_LDADD = $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE) \
 	$(LIBSOCKET) $(LIB_KDEPRINT) -lknewstuff
 
 
-EXTRA_DIST = main.cpp kwordquiz.cpp kwordquiz.h kwordquizdoc.cpp kwordquizdoc.h kwordquizview.cpp kwordquizview.h kwordquizui.rc kwordquiz.desktop kwordquizprefs.cpp kwordquizprefs.h
+EXTRA_DIST = main.cpp kwordquiz.cpp kwordquiz.h kwordquizdoc.cpp kwordquizdoc.h kwordquizview.cpp kwordquizview.h kwordquizui.rc kwordquizprefs.cpp kwordquizprefs.h
 
 kde_kcfg_DATA = kwordquiz.kcfg
 kde_conf_DATA = kwordquizrc
@@ -55,8 +55,7 @@ kwordquiz_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 rcdir = $(kde_datadir)/kwordquiz
 rc_DATA = kwordquizui.rc eventsrc
 
-apps_DATA = kwordquiz.desktop
-appsdir = $(kde_appsdir)/Edutainment/Miscellaneous
+xdg_apps_DATA = kwordquiz.desktop
 
 messages: rc.cpp
 	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
