@@ -190,12 +190,12 @@ void KWQTableView::doNewPage(QPainter & painter, int res, int type)
     if (type == 2)
     {
       /// @todo find a more elegant way to retrieve the caption
-      painter.drawText(card_marg, card_marg - 20, KInstance::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
+      painter.drawText(card_marg, card_marg - 20, KGlobal::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
       return;
     }
     painter.drawLine(marg, marg, marg + cw0 + cw1 + cw2 + cw3, marg);
 
-    painter.drawText(marg, marg - 20, KInstance::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
+    painter.drawText(marg, marg - 20, KGlobal::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
 
     if (type == 1)
     {
