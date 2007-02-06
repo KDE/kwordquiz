@@ -18,8 +18,6 @@
 #ifndef KWORDQUIZVIEW_H
 #define KWORDQUIZVIEW_H
 
-#include <config.h>
-
 #include <QTableView>
 #include <QList>
 #include <QKeyEvent>

@@ -18,8 +18,6 @@
 #ifndef KWORDQUIZ_H
 #define KWORDQUIZ_H
 
-#include <config.h>
-
 // include files for Qt
 #include <QSignalMapper>
 #include <QLabel>
