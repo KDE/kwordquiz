@@ -30,6 +30,7 @@ KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
 
 QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
+  Q_UNUSED(option);
   QLineEdit *editor = new QLineEdit(parent);
   editor->setFrame(false);
   editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
@@ -121,6 +122,8 @@ void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem 
 
 QSize KWQTableDelegate::sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
+  Q_UNUSED(option);
+  Q_UNUSED(index);
   return QSize(300, 25);
 }
 

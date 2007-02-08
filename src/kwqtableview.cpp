@@ -404,7 +404,7 @@ void KWQTableView::doEditPaste()
 
     int i = 0;
     int ar = tr;
-    int ac;
+    int ac = 0;
     QStringList sr;
 
     if (lc == rc && tr == br) //one cell selected
@@ -950,7 +950,7 @@ void KWQTableView::verticalHeaderResized(int , int , int)
 
 void KWQTableView::horizontalHeaderResized(int logicalIndex, int oldSize, int newSize)
 {
-  kDebug() << "Column resized\n";
+  Q_UNUSED(oldSize);
   model()->setHeaderData(logicalIndex, Qt::Horizontal, QSize(newSize, 25), Qt::SizeHintRole);
 }
 
