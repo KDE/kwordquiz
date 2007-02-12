@@ -923,10 +923,20 @@ QRect KWQTableView::selection() const
 {
   const QList<QItemSelectionRange> ranges = selectionModel()->selection();
   QRect result;
-  result.setTop(ranges.at(0).top());
-  result.setLeft(ranges.at(0).left());
-  result.setBottom(ranges.at(0).bottom());
-  result.setRight(ranges.at(0).right());
+  if (ranges.count() > 0)
+  {
+    result.setTop(ranges.at(0).top());
+    result.setLeft(ranges.at(0).left());
+    result.setBottom(ranges.at(0).bottom());
+    result.setRight(ranges.at(0).right());
+  }
+  else
+  {
+    result.setTop(0);
+    result.setLeft(0);
+    result.setBottom(0);
+    result.setRight(0);
+  }
   return result;
 }
 
