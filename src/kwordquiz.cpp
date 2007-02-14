@@ -635,13 +635,13 @@ KEduVocDocument *KWordQuizApp::document() const
 
 void KWordQuizApp::saveOptions()
 {
-  fileOpenRecent->saveEntries(KGlobal::config().data(), "Recent Files");
+  fileOpenRecent->saveEntries(KGlobal::config()->group( "Recent Files") );
   Prefs::writeConfig();
 }
 
 void KWordQuizApp::readOptions()
 {
-  fileOpenRecent->loadEntries(KGlobal::config().data(), "Recent Files");
+  fileOpenRecent->loadEntries(KGlobal::config()->group( "Recent Files") );
 }
 
 void KWordQuizApp::saveProperties(KConfig *_cfg)
