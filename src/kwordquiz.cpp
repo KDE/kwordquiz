@@ -644,7 +644,7 @@ void KWordQuizApp::readOptions()
   fileOpenRecent->loadEntries(KGlobal::config()->group( "Recent Files") );
 }
 
-void KWordQuizApp::saveProperties(KConfig *_cfg)
+void KWordQuizApp::saveProperties(KConfigGroup &_cfg)
 {
   if(m_doc->URL().fileName()!=i18n("Untitled") && !m_doc->isModified())
   {
@@ -653,8 +653,8 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
   else
   {
     KUrl url = m_doc->URL();
-    _cfg->writeEntry("filename", url.url());
-    _cfg->writeEntry("modified", m_doc->isModified());
+    _cfg.writeEntry("filename", url.url());
+    _cfg.writeEntry("modified", m_doc->isModified());
     QString tempname = kapp->tempSaveName(url.url());
     QString tempurl = KUrl::toPercentEncoding(tempname);
     KUrl _url(tempurl);
@@ -662,11 +662,11 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
   }
 }
 
-void KWordQuizApp::readProperties(KConfig* _cfg)
+void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
 {
-  QString filename = _cfg->readEntry("filename", "");
+  QString filename = _cfg.readEntry("filename", "");
   KUrl url(filename);
-  bool modified = _cfg->readEntry("modified", false);
+  bool modified = _cfg.readEntry("modified", false);
   if(modified)
   {
     bool canRecover;
