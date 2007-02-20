@@ -783,7 +783,7 @@ void KWordQuizApp::slotFileOpen()
   ///@todo make append work again
   cb -> setEnabled(false);
 
-  QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
+  QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz *.pau.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
   KFileDialog *fd = new KFileDialog(QString(), filter, this, cb);
   fd -> setOperationMode(KFileDialog::Opening);
   fd -> setMode(KFile::Files | KFile::ExistingOnly);
