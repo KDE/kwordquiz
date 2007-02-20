@@ -135,12 +135,12 @@ class KWordQuizApp : public KMainWindow
      * opened file by a temporary filename provided by KApplication.
      * @see KMainWindow#saveProperties
      */
-    virtual void saveProperties(KConfig *_cfg);
+    virtual void saveProperties(KConfigGroup &_cfg);
     /** reads the session config file and restores the application's state including the last opened files and documents by reading the
      * temporary files saved by saveProperties()
      * @see KMainWindow#readProperties
      */
-    virtual void readProperties(KConfig *_cfg);
+    virtual void readProperties(const KConfigGroup &_cfg);
 
   signals:
     void settingsChanged();
