@@ -66,7 +66,7 @@ void WQQuiz::addToList(int aCol, int /*bCol*/)
   //build a list of row numbers containing text in both columns
 
   QList<int> tempList;
-  for (int current = 0; current < m_doc->numEntries(); ++current)
+  for (int current = 0; current < m_doc->entryCount(); ++current)
   {
     if (!m_doc->entry(current)->original().isEmpty() && !m_doc->entry(current)->translation(1).isEmpty())
     {

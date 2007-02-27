@@ -29,7 +29,7 @@ KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 
 int KWQTableModel::rowCount(const QModelIndex & /*parent*/) const
 {
-  return m_doc->numEntries();
+  return m_doc->entryCount();
 }
 
 int KWQTableModel::columnCount(const QModelIndex & /*parent*/) const
@@ -121,7 +121,7 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
 bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
 {
   Q_UNUSED(parent);
-  if (count < 1 || row < 0 || row > m_doc->numEntries())
+  if (count < 1 || row < 0 || row > m_doc->entryCount())
     return false;
 
   beginInsertRows(QModelIndex(), row, row + count - 1);
@@ -137,7 +137,7 @@ bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
 bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 {
   Q_UNUSED(parent);
-  if (count < 1 || row < 0 || row + count > m_doc->numEntries() || count >= m_doc->numEntries())
+  if (count < 1 || row < 0 || row + count > m_doc->entryCount() || count >= m_doc->entryCount())
     return false;
 
   int bottomRow = row + count -1;
