@@ -618,8 +618,6 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
   if (!url.isEmpty()) {
     m_doc->open(url, false);
     m_tableModel->reset();
-    if (m_doc->font() == NULL)
-      m_doc->setFont(new QFont(Prefs::editorFont()));
     m_dirWatch->addFile(url.path());
     setCaption(m_doc->URL().fileName(), false);
     fileOpenRecent->addUrl(url);
@@ -676,8 +674,6 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
     if(canRecover)
     {
       m_doc->open(_url, false);
-      if (m_doc->font() == NULL)
-        m_doc->setFont(new QFont(Prefs::editorFont()));
       m_doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
@@ -688,8 +684,6 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
     if(!filename.isEmpty())
     {
       m_doc->open(url, false);
-      if (m_doc->font() == NULL)
-        m_doc->setFont(new QFont(Prefs::editorFont()));
       setCaption(url.fileName(),false);
     }
   }
@@ -1079,7 +1073,6 @@ void KWordQuizApp::slotVocabFont()
   dlg->setFont(Prefs::editorFont());
   if (dlg->exec() == KFontDialog::Accepted)
   {
-    m_doc->setFont(new QFont(dlg->font()));
     m_tableView->reset();
     Prefs::setEditorFont(dlg->font());
     m_doc->setModified(true);
