@@ -777,7 +777,7 @@ void KWordQuizApp::slotFileOpen()
   ///@todo make append work again
   cb -> setEnabled(false);
 
-  QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz *.pau.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
+  QString filter = i18n("*.kvtml *.wql *.xml.gz *.pau.gz *.voc *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz *.pau.gz|Pauker Lesson\n*.voc|Vokabeltrainer\n*.csv|Comma-Separated Values");
   KFileDialog *fd = new KFileDialog(QString(), filter, this, cb);
   fd -> setOperationMode(KFileDialog::Opening);
   fd -> setMode(KFile::Files | KFile::ExistingOnly);
@@ -865,7 +865,7 @@ bool KWordQuizApp::saveAsFileName( )
 
   bool success = false;
 
-  QString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language");
+  QString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.csv|Delimited Text");
   KFileDialog *fd = new KFileDialog(QString(), filter, this);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save Vocabulary Document As"));
@@ -878,13 +878,10 @@ bool KWordQuizApp::saveAsFileName( )
       ///@todo check that a valid extension was really given
       if (!url.fileName().contains('.'))
       {
-        ///@todo make sure all these formats are really available
         if  (fd->currentFilter() == "*.wql")
           url = KUrl(url.path() + ".wql");
         else if (fd->currentFilter() == "*.csv")
           url = KUrl(url.path() + ".csv");
-        else if (fd->currentFilter() == "*.html")
-          url = KUrl(url.path() + ".html");
         else
           url = KUrl(url.path() + ".kvtml");
       }
