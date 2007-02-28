@@ -20,6 +20,7 @@
 
 #include <QRegExp>
 
+#include "keduvocexpression.h"
 #include "leitnersystem.h"
 #include "kwordquiz.h"
 #include "wqquiz.h"

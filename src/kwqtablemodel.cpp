@@ -22,6 +22,8 @@
 #include "kwqtablemodel.h"
 #include "prefs.h"
 
+#include "keduvocexpression.h"
+
 KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
   m_doc = 0;
