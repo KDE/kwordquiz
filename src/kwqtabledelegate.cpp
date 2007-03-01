@@ -17,7 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtGui>
+#include <QLineEdit>
+#include <QPainter>
 
 #include "kdebug.h"
 
