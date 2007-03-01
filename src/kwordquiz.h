@@ -24,7 +24,6 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <kapplication.h>
 #include <kmainwindow.h>
 #include <kaction.h>
 #include <kdirwatch.h>

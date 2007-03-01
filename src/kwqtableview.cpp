@@ -22,6 +22,7 @@
 #include <QKeyEvent>
 #include <QEvent>
 #include <QList>
+#include <QApplication>
 
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -29,7 +30,6 @@
 #include <kglobalsettings.h>
 #include <knotification.h>
 #include <kdebug.h>
-#include <kapplication.h>
 
 #include "kwqtableview.h"
 #include "keduvocdocument.h"
@@ -375,7 +375,7 @@ void KWQTableView::doEditCopy()
       }
       s += '\n';
     }
-    kapp->clipboard()->setText(s);
+    QApplication::clipboard()->setText(s);
   }
 }
 
@@ -398,7 +398,7 @@ void KWQTableView::doEditPaste()
     int lc = sel.left();
     int rc = sel.right();
 
-    QString s = kapp->clipboard()->text();
+    QString s = QApplication::clipboard()->text();
     QStringList sl;
     sl = s.split("\n", QString::SkipEmptyParts);
 

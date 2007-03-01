@@ -21,6 +21,7 @@
 
 #include <kactioncollection.h>
 #include <kactionmenu.h>
+#include <kapplication.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <kstatusbar.h>
