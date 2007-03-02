@@ -778,7 +778,7 @@ void KWordQuizApp::slotFileOpen()
   ///@todo make append work again
   cb -> setEnabled(false);
 
-  QString filter = i18n("*.kvtml *.wql *.xml.gz *.pau.gz *.voc *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz *.pau.gz|Pauker Lesson\n*.voc|Vokabeltrainer\n*.csv|Comma-Separated Values");
+  QString filter = KEduVocDocument::pattern(KEduVocDocument::Reading);
   KFileDialog *fd = new KFileDialog(QString(), filter, this, cb);
   fd -> setOperationMode(KFileDialog::Opening);
   fd -> setMode(KFile::Files | KFile::ExistingOnly);
@@ -866,7 +866,7 @@ bool KWordQuizApp::saveAsFileName( )
 
   bool success = false;
 
-  QString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.csv|Delimited Text");
+  QString filter = KEduVocDocument::pattern(KEduVocDocument::Writing);
   KFileDialog *fd = new KFileDialog(QString(), filter, this);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save Vocabulary Document As"));
