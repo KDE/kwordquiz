@@ -172,7 +172,7 @@ void KWQTableModel::setDocument(KEduVocDocument * doc)
 
 bool KWQTableModel::isEmpty()
 {
-  if (m_doc->URL().fileName() == i18n("Untitled")){
+  if (m_doc->url().fileName() == i18n("Untitled")){
     int rc = rowCount(QModelIndex());
     for (int i = 0; i < rc; i++)
       if (data(index(i, 0), Qt::DisplayRole).toString() != "@empty@" || data(index(i, 1), Qt::DisplayRole).toString() != "@empty@")

@@ -569,7 +569,7 @@ void KWordQuizApp::initView()
   m_tableView->setModel(m_tableModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
-  setCaption(m_doc->URL().fileName(),false);
+  setCaption(m_doc->url().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
   m_doc->setModified(false);
@@ -587,7 +587,7 @@ void KWordQuizApp::openUrl(const KUrl& url)
         {
           w = memberList().at(i);
           KWordQuizApp *a =(KWordQuizApp *) w;
-          if(a->m_doc ->URL().path() == url.path())
+          if(a->m_doc->url().path() == url.path())
           {
             if (w->isMinimized())
               w->showNormal();
@@ -620,7 +620,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
     m_doc->open(url, false);
     m_tableModel->reset();
     m_dirWatch->addFile(url.path());
-    setCaption(m_doc->URL().fileName(), false);
+    setCaption(m_doc->url().fileName(), false);
     fileOpenRecent->addUrl(url);
     updateMode(Prefs::mode());
   }
@@ -645,13 +645,13 @@ void KWordQuizApp::readOptions()
 
 void KWordQuizApp::saveProperties(KConfigGroup &_cfg)
 {
-  if(m_doc->URL().fileName()!=i18n("Untitled") && !m_doc->isModified())
+  if(m_doc->url().fileName()!=i18n("Untitled") && !m_doc->isModified())
   {
     // saving to tempfile not necessary
   }
   else
   {
-    KUrl url = m_doc->URL();
+    KUrl url = m_doc->url();
     _cfg.writeEntry("filename", url.url());
     _cfg.writeEntry("modified", m_doc->isModified());
     QString tempname = kapp->tempSaveName(url.url());
@@ -703,13 +703,13 @@ bool KWordQuizApp::queryClose()
         break;
 
       case KMessageBox::Yes:
-        if (m_doc->URL().fileName() == i18n("Untitled"))
+        if (m_doc->url().fileName() == i18n("Untitled"))
         {
           completed = saveAsFileName();
         }
         else
         {
-          completed = m_doc->saveAs(this, m_doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+          completed = m_doc->saveAs(this, m_doc->url(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         }
 
         break;
@@ -726,8 +726,8 @@ bool KWordQuizApp::queryClose()
   }
 
   if (completed)
-    if (m_dirWatch->contains(m_doc->URL().path()))
-      m_dirWatch->removeFile(m_doc->URL().path());
+    if (m_dirWatch->contains(m_doc->url().path()))
+      m_dirWatch->removeFile(m_doc->url().path());
   return completed;
 }
 
@@ -836,13 +836,13 @@ void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
 void KWordQuizApp::slotFileSave()
 {
   slotStatusMsg(i18n("Saving file..."));
-  if (m_doc->URL().fileName() == i18n("Untitled") )
+  if (m_doc->url().fileName() == i18n("Untitled") )
   {
     slotFileSaveAs();
   }
   else
   {
-    m_doc->saveAs(this, m_doc->URL(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    m_doc->saveAs(this, m_doc->url(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -896,12 +896,12 @@ bool KWordQuizApp::saveAsFileName( )
       }
       else
       {
-        if (m_dirWatch ->contains(m_doc->URL().path()))
-          m_dirWatch ->removeFile(m_doc->URL().path());
+        if (m_dirWatch ->contains(m_doc->url().path()))
+          m_dirWatch ->removeFile(m_doc->url().path());
         m_doc->saveAs(this, url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addUrl(url);
-        setCaption(m_doc->URL().fileName(), m_doc->isModified());
+        setCaption(m_doc->url().fileName(), m_doc->isModified());
         success = true;
       }
     }
@@ -921,7 +921,7 @@ void KWordQuizApp::slotFileClose()
     {
       delete m_doc;
       initDocument();
-      setCaption(m_doc->URL().fileName(), m_doc->isModified());
+      setCaption(m_doc->url().fileName(), m_doc->isModified());
       m_tableModel->setDocument(m_doc);
       //delete (m_tableView);
       //initView();
