@@ -121,7 +121,7 @@ void KWordQuizApp::initActions()
   fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
 
   fileGHNS = actionCollection()->addAction("file_ghns");
-  fileGHNS->setIcon(KIcon("knewstuff"));
+  fileGHNS->setIcon(KIcon("get-hot-new-stuff"));
   fileGHNS->setText(i18n("&Get New Vocabularies..."));
   fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
