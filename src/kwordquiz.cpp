@@ -617,7 +617,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
-    m_doc->open(url, false);
+    m_doc->open(url);
     m_tableModel->reset();
     m_dirWatch->addFile(url.path());
     setCaption(m_doc->url().fileName(), false);
@@ -674,7 +674,7 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
 
     if(canRecover)
     {
-      m_doc->open(_url, false);
+      m_doc->open(_url);
       m_doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
@@ -684,7 +684,7 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
   {
     if(!filename.isEmpty())
     {
-      m_doc->open(url, false);
+      m_doc->open(url);
       setCaption(url.fileName(),false);
     }
   }
@@ -806,7 +806,7 @@ void KWordQuizApp::slotFileOpen()
       int i = 0;
       for(it = l.begin(); it != l.end(); ++it)
       {
-        w->document()->open(*it, true);
+        w->document()->open(*it);
         i++;
       }
     }
