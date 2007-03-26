@@ -842,7 +842,9 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    m_doc->saveAs(this, m_doc->url(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    if (!m_doc->saveAs(this, m_doc->url(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION))) {
+      slotFileSaveAs();
+    }
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -879,9 +881,7 @@ bool KWordQuizApp::saveAsFileName( )
       ///@todo check that a valid extension was really given
       if (!url.fileName().contains('.'))
       {
-        if  (fd->currentFilter() == "*.wql")
-          url = KUrl(url.path() + ".wql");
-        else if (fd->currentFilter() == "*.csv")
+        if (fd->currentFilter() == "*.csv")
           url = KUrl(url.path() + ".csv");
         else
           url = KUrl(url.path() + ".kvtml");
