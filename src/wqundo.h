@@ -28,27 +28,27 @@
 */
 class WQUndo{
 public:
-  QFont font() const {return m_font;};
-  void setFont(const QFont & font) {m_font = font;};
+  QFont font() const {return m_font;}
+  void setFont(const QFont & font) {m_font = font;}
 
-  int colWidth0() {return m_colWidth0;};
-  void setColWidth0(int cw) {m_colWidth0 = cw;};
-  int colWidth1() {return m_colWidth1;};
-  void setColWidth1(int cw) {m_colWidth1 = cw;};
-  int colWidth2() {return m_colWidth2;};
-  void setColWidth2(int cw) {m_colWidth2 = cw;};
+  int colWidth0() {return m_colWidth0;}
+  void setColWidth0(int cw) {m_colWidth0 = cw;}
+  int colWidth1() {return m_colWidth1;}
+  void setColWidth1(int cw) {m_colWidth1 = cw;}
+  int colWidth2() {return m_colWidth2;}
+  void setColWidth2(int cw) {m_colWidth2 = cw;}
 
-  QModelIndex currentCell() const {return m_currentCell;};
-  void setCurrentCell(const QModelIndex & cc) {m_currentCell = cc;};
+  QModelIndex currentCell() const {return m_currentCell;}
+  void setCurrentCell(const QModelIndex & cc) {m_currentCell = cc;}
 
-  QRect selection() const {return m_selection;};
-  void setSelection(const QRect & sel) {m_selection = sel;};
+  QRect selection() const {return m_selection;}
+  void setSelection(const QRect & sel) {m_selection = sel;}
 
-  QList<KEduVocExpression> list() const {return m_list;};
-  void setList(const QList<KEduVocExpression> & list) {m_list = list;};
+  QList<KEduVocExpression> list() const {return m_list;}
+  void setList(const QList<KEduVocExpression> & list) {m_list = list;}
 
-  QString text() const {return m_text;};
-  void setText(const QString & s) {m_text = s;};
+  QString text() const {return m_text;}
+  void setText(const QString & s) {m_text = s;}
 
 private:
   QFont m_font;
