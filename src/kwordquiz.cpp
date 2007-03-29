@@ -773,42 +773,33 @@ void KWordQuizApp::slotFileOpen()
 {
   slotStatusMsg(i18n("Opening file..."));
 
-  QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0);
+  QCheckBox * cb = new QCheckBox(i18n("&Merge selected files with the current document"), 0);
   cb -> setChecked(false);
-  ///@todo make append work again
-  cb -> setEnabled(false);
+  cb -> setEnabled(true);
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Reading);
   KFileDialog *fd = new KFileDialog(QString(), filter, this, cb);
-  fd -> setOperationMode(KFileDialog::Opening);
-  fd -> setMode(KFile::Files | KFile::ExistingOnly);
-  fd -> setCaption(i18n("Open Vocabulary Document"));
+  fd->setOperationMode(KFileDialog::Opening);
+  fd->setMode(KFile::Files | KFile::ExistingOnly);
+  fd->setCaption(i18n("Open Vocabulary Document"));
 
   if (fd->exec() == QDialog::Accepted)
   {
-    KUrl::List l = fd -> selectedUrls();
-    bool append = ((cb -> isChecked()) && (l.count() > 1));
+    KUrl::List l = fd->selectedUrls();
+    bool append = ((cb->isChecked()) && (l.count() >= 1));
 
     if (append)
     {
-      KWordQuizApp * w;
-      if (m_tableModel->isEmpty()){
-        // neither saved nor has content, as good as new
-        w = this;
-      }
-      else
-      {
-        w = new KWordQuizApp();
-        w->show();
-      }
-
       KUrl::List::iterator it;
-      int i = 0;
       for(it = l.begin(); it != l.end(); ++it)
       {
-        w->document()->open(*it);
-        i++;
+        KEduVocDocument *new_doc = new KEduVocDocument(this);
+        new_doc->open(*it);
+
+        m_doc->merge(new_doc, false);
+        delete (new_doc);
       }
+      m_tableModel->reset();
     }
     else
     {

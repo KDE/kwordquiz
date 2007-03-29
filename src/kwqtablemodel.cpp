@@ -177,8 +177,11 @@ bool KWQTableModel::isEmpty()
     for (int i = 0; i < rc; i++)
       if (data(index(i, 0), Qt::DisplayRole).toString() != "@empty@" || data(index(i, 1), Qt::DisplayRole).toString() != "@empty@")
         return false;
+
+    return true;
   }
-  return true;
+  else
+    return false;
 }
 
 #include "kwqtablemodel.moc"
