@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.9" name="kwordquiz" >
+<kpartgui version="0.11" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -31,8 +31,8 @@
 
    <Action name="vocab_sort" />
    <Action name="vocab_shuffle" />
-   <Action name="vocab_leitner" />
-   <Action name="vocab_leitner_config" />
+   <!--<Action name="vocab_leitner" />
+   <Action name="vocab_leitner_config" />-->
   </Menu>
   <Menu name="mode" >
    <text>&amp;Mode</text>
@@ -56,9 +56,9 @@
   </Menu> -->
   </MenuBar>
   <ToolBar name="mainToolBar">
-    <Action name="edit_insert"/>
+    <!--<Action name="edit_insert"/>
     <Action name="edit_delete"/>
-    <!--<Separator/>
+    <Separator/>
     <Action name="edit_mark_blank"/>
     <Action name="edit_unmark_blank"/>
     <Separator />
