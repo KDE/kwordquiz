@@ -64,8 +64,8 @@
     <Separator />
     <Action name="vocab_languages"/>
     <Action name="vocab_font"/>
-    <Action name="vocab_sort"/>-->
-    <Separator />
+    <Action name="vocab_sort"/>
+    <Separator />-->
     <Action name="mode_0"/>
   </ToolBar>
   <ToolBar name="sessionToolBar">

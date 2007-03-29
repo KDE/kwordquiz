@@ -1209,10 +1209,9 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
   }
 
-  m_quizType = qt;
-  updateActions(qt);
+  //m_quizType = qt;
 
-  switch( m_quizType ){
+  switch (qt){
     case WQQuiz::qtEditor:
       m_tableView->show();
       m_tableView -> setFocus();
@@ -1237,6 +1236,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_flashView->init();
         m_flashView->show();
         m_topLayout->addWidget(m_flashView);
+        m_quizType = qt;
       }
       else
       {
@@ -1263,6 +1263,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_multipleView ->init();
         m_multipleView->show();
         m_topLayout->addWidget(m_multipleView);
+        m_quizType = qt;
       }
       else
       {
@@ -1290,6 +1291,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_qaView ->init();
         m_qaView->show();
         m_topLayout->addWidget(m_qaView);
+        m_quizType = qt;
       }
       else
       {
@@ -1299,6 +1301,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
 
   }
+  updateActions(m_quizType);
 }
 
 /** Configure notifications */
