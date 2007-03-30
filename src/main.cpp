@@ -16,11 +16,13 @@
  ***************************************************************************/
 
 #include <QByteArray>
+#include <QAction>
 
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
+#include <kactioncollection.h>
 
 #include "kwordquiz.h"
 #include "version.h"
@@ -44,7 +46,7 @@ int main(int argc, char *argv[])
                        KWQ_VERSION,
                        description,
                        KAboutData::License_GPL,
-                       "(c) 2003-2005, Peter Hedlund",
+                       "(c) 2003-2007, Peter Hedlund",
                        0,
                        "http://edu.kde.org/kwordquiz",
                        "submit@bugs.kde.org");
@@ -77,16 +79,8 @@ int main(int argc, char *argv[])
 
       if (!mode.isEmpty())
       {
-        if (mode == "1")
-          kwordquiz->slotMode1();
-        if (mode == "2")
-          kwordquiz->slotMode2();
-        if (mode == "3")
-          kwordquiz->slotMode3();
-        if (mode == "4")
-          kwordquiz->slotMode4();
-        if (mode == "5")
-          kwordquiz->slotMode5();
+        QAction *a = kwordquiz->actionCollection()->action(QString("mode_%1").arg(QString(mode)));
+        kwordquiz->slotModeActionGroupTriggered(a);
       }
 
       QByteArray go_to = args->getOption("goto");

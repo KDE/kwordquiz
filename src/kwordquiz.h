@@ -22,6 +22,7 @@
 #include <QSignalMapper>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QActionGroup>
 
 // include files for KDE
 #include <kmainwindow.h>
@@ -203,17 +204,8 @@ class KWordQuizApp : public KMainWindow
     /** configure the Leitner system */
     void slotConfigLeitner();
 
-    void slotMode0();
-    /** mode 1 */
-    void slotMode1();
-    /** mode 2 */
-    void slotMode2();
-    /** mode 3 */
-    void slotMode3();
-    /** mode 4 */
-    void slotMode4();
-    /** mode 5 */
-    void slotMode5();
+    void slotModeChange();
+    void slotModeActionGroupTriggered(QAction *);
 
     /** editor session */
     void slotQuizEditor();
@@ -298,11 +290,12 @@ class KWordQuizApp : public KMainWindow
     QAction* vocabConfigLeitner;
 
     KActionMenu* mode;
-    KToggleAction* mode1;
-    KToggleAction* mode2;
-    KToggleAction* mode3;
-    KToggleAction* mode4;
-    KToggleAction* mode5;
+    QActionGroup *m_modeActionGroup;
+    QAction* mode1;
+    QAction* mode2;
+    QAction* mode3;
+    QAction* mode4;
+    QAction* mode5;
 
     QAction* quizEditor;
     QAction* quizFlash;
@@ -337,7 +330,6 @@ class KWordQuizApp : public KMainWindow
 
     static KWordQuizApp * m_self;
 
-    void updateMode(int m);
     void updateSession(WQQuiz::QuizType qt);
     void updateActions(WQQuiz::QuizType qt);
     void updateSpecialCharIcons();

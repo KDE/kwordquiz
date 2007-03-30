@@ -80,7 +80,9 @@ KWordQuizApp::KWordQuizApp(QWidget*):KMainWindow(0)
 
   slotQuizEditor();
   slotUndoChange(i18n("Cannot &Undo"), false);
-  updateMode(Prefs::mode());
+
+  QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
+  slotModeActionGroupTriggered(a);
 
   m_prefDialog = 0;
 
@@ -281,53 +283,65 @@ void KWordQuizApp::initActions()
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
   mode->setStatusTip(mode->whatsThis());
-  connect(mode, SIGNAL(triggered(bool)), this, SLOT(slotMode0()));
+  connect(mode, SIGNAL(triggered(bool)), this, SLOT(slotModeChange()));
 
-  ///@todo use a QActionGroup here?
-  mode1 = actionCollection()->add<KToggleAction>("mode_1");
+  m_modeActionGroup = new QActionGroup(this);
+  connect(m_modeActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotModeActionGroupTriggered(QAction *)));
+
+  mode1 = actionCollection()->addAction("mode_1");
+  mode1->setData(1);
+  mode1->setCheckable(true);
   mode1->setIcon(KIcon("mode1"));
   mode1->setText("");
   mode1->setWhatsThis(i18n("Selects this mode"));
   mode1->setToolTip(mode1->whatsThis());
   mode1->setStatusTip(mode1->whatsThis());
-  connect(mode1, SIGNAL(triggered(bool)), this, SLOT(slotMode1()));
   mode->addAction(mode1);
+  m_modeActionGroup->addAction(mode1);
 
-  mode2 = actionCollection()->add<KToggleAction>("mode_2");
+  mode2 = actionCollection()->addAction("mode_2");
+  mode2->setData(2);
+  mode2->setCheckable(true);
   mode2->setIcon(KIcon("mode2"));
   mode2->setText("");
   mode2->setWhatsThis(i18n("Selects this mode"));
   mode2->setToolTip(mode2->whatsThis());
   mode2->setStatusTip(mode2->whatsThis());
-  connect(mode1, SIGNAL(triggered(bool)), this, SLOT(slotMode2()));
   mode->addAction(mode2);
+  m_modeActionGroup->addAction(mode2);
 
-  mode3 = actionCollection()->add<KToggleAction>("mode_3");
+  mode3 = actionCollection()->addAction("mode_3");
+  mode3->setData(3);
+  mode3->setCheckable(true);
   mode3->setIcon(KIcon("mode3"));
   mode3->setText("");
   mode3->setWhatsThis(i18n("Selects this mode"));
   mode3->setToolTip(mode3->whatsThis());
   mode3->setStatusTip(mode3->whatsThis());
-  connect(mode3, SIGNAL(triggered(bool)), this, SLOT(slotMode3()));
   mode->addAction(mode3);
+  m_modeActionGroup->addAction(mode3);
 
-  mode4 = actionCollection()->add<KToggleAction>("mode_4");
+  mode4 = actionCollection()->addAction("mode_4");
+  mode4->setData(4);
+  mode4->setCheckable(true);
   mode4->setIcon(KIcon("mode4"));
   mode4->setText("");
   mode4->setWhatsThis(i18n("Selects this mode"));
   mode4->setToolTip(mode4->whatsThis());
   mode4->setStatusTip(mode4->whatsThis());
-  connect(mode4, SIGNAL(triggered(bool)), this, SLOT(slotMode4()));
   mode->addAction(mode4);
+  m_modeActionGroup->addAction(mode4);
 
-  mode5 = actionCollection()->add<KToggleAction>("mode_5");
+  mode5 = actionCollection()->addAction("mode_5");
+  mode5->setData(5);
+  mode5->setCheckable(true);
   mode5->setIcon(KIcon("mode5"));
   mode5->setText("");
   mode5->setWhatsThis(i18n("Selects this mode"));
   mode5->setToolTip(mode5->whatsThis());
   mode5->setStatusTip(mode5->whatsThis());
-  connect(mode5, SIGNAL(triggered(bool)), this, SLOT(slotMode5()));
   mode->addAction(mode5);
+  m_modeActionGroup->addAction(mode5);
 
   quizEditor = actionCollection()->addAction("quiz_editor");
   quizEditor->setIcon(KIcon("editor"));
@@ -622,7 +636,8 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
     m_dirWatch->addFile(url.path());
     setCaption(m_doc->url().fileName(), false);
     fileOpenRecent->addUrl(url);
-    updateMode(Prefs::mode());
+    QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
+    slotModeActionGroupTriggered(a);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -868,8 +883,6 @@ bool KWordQuizApp::saveAsFileName( )
   {
     KUrl url = fd -> selectedUrl();
     if(!url.isEmpty()){
-
-      ///@todo check that a valid extension was really given
       if (!url.fileName().contains('.'))
       {
         if (fd->currentFilter() == "*.csv")
@@ -918,7 +931,8 @@ void KWordQuizApp::slotFileClose()
       //initView();
       slotQuizEditor();
       slotUndoChange(i18n("Cannot &Undo"), false);
-      updateMode(Prefs::mode());
+      QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
+      slotModeActionGroupTriggered(a);
       m_tableView ->setFocus();
     }
 
@@ -1048,7 +1062,8 @@ void KWordQuizApp::slotVocabLanguages()
   {
     m_tableModel->setHeaderData(0, Qt::Horizontal, dlg->Language(1), Qt::EditRole);
     m_tableModel->setHeaderData(1, Qt::Horizontal, dlg->Language(2), Qt::EditRole);
-    updateMode(Prefs::mode());
+    QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
+    slotModeActionGroupTriggered(a);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -1098,53 +1113,20 @@ void KWordQuizApp::slotVocabShuffle()
   slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotMode0()
+void KWordQuizApp::slotModeChange()
 {
+  QString newMode;
   slotStatusMsg(i18n("Updating mode..."));
-  if (Prefs::mode() < 5) {
-    updateMode(Prefs::mode() + 1);
-  }
+  if (Prefs::mode() < 5)
+    newMode = QString("mode_%1").arg(QString::number(Prefs::mode() + 1));
   else
-  {
-  updateMode(1);
-  }
+    newMode = QString("mode_1");
+
+  QAction *a = actionCollection()->action(newMode);
+  a->activate(QAction::Trigger);
   slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotMode1()
-{
-  slotStatusMsg(i18n("Updating mode..."));
-  updateMode(1);
-  slotStatusMsg(i18n("Ready"));
-}
-
-void KWordQuizApp::slotMode2()
-{
-  slotStatusMsg(i18n("Updating mode..."));
-  updateMode(2);
-  slotStatusMsg(i18n("Ready"));
-}
-
-void KWordQuizApp::slotMode3()
-{
-  slotStatusMsg(i18n("Updating mode..."));
-  updateMode(3);
-  slotStatusMsg(i18n("Ready"));
-}
-
-void KWordQuizApp::slotMode4()
-{
-  slotStatusMsg(i18n("Updating mode..."));
-  updateMode(4);
-  slotStatusMsg(i18n("Ready"));
-}
-
-void KWordQuizApp::slotMode5()
-{
-  slotStatusMsg(i18n("Updating mode..."));
-  updateMode(5);
-  slotStatusMsg(i18n("Ready"));
-}
 
 void KWordQuizApp::slotQuizEditor()
 {
@@ -1388,23 +1370,23 @@ void KWordQuizApp::slotStatusMsg(const QString &text)
   statusBar()->showMessage(text);
 }
 
-/*!
-    \fn KWordQuizApp::updateMode(int m)
- */
-void KWordQuizApp::updateMode(int m)
+
+void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
 {
   if (m_quiz != 0)
-    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStandardGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
-    {
-      mode1->setChecked(Prefs::mode() == 1);
-      mode2->setChecked(Prefs::mode() == 2);
-      mode3->setChecked(Prefs::mode() == 3);
-      mode4->setChecked(Prefs::mode() == 4);
-      mode5->setChecked(Prefs::mode() == 5);
-      return;
-    }
+    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStandardGuiItem::cont(), "askModeQuiz")
+      != KMessageBox::Continue)
+      {
+        mode1->setChecked(Prefs::mode() == 1);
+        mode2->setChecked(Prefs::mode() == 2);
+        mode3->setChecked(Prefs::mode() == 3);
+        mode4->setChecked(Prefs::mode() == 4);
+        mode5->setChecked(Prefs::mode() == 5);
+        return;
+      }
 
-  Prefs::setMode(m);
+  act->setChecked(true);
+
   QString s1 = m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
   QString s2 = m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
 
@@ -1414,14 +1396,8 @@ void KWordQuizApp::updateMode(int m)
   mode4->setText(i18n("&4 %1 -> %2 Randomly", s2, s1));
   mode5->setText(i18n("&5 %1 <-> %2 Randomly", s1, s2));
 
-  mode1->setChecked(Prefs::mode() == 1);
-  mode2->setChecked(Prefs::mode() == 2);
-  mode3->setChecked(Prefs::mode() == 3);
-  mode4->setChecked(Prefs::mode() == 4);
-  mode5->setChecked(Prefs::mode() == 5);
-
-  QString s;
-  mode->setIcon(KIcon("mode" + s.setNum(Prefs::mode())));
+  Prefs::setMode(act->data().toInt());
+  mode->setIcon(KIcon("mode" + QString::number(Prefs::mode())));
 
   switch (Prefs::mode()){
   case 1:
@@ -1445,6 +1421,7 @@ void KWordQuizApp::updateMode(int m)
     updateSession(m_quizType);
 }
 
+
 void KWordQuizApp::slotInsertChar( int i )
 {
   if (m_qaView != 0)
@@ -1453,13 +1430,7 @@ void KWordQuizApp::slotInsertChar( int i )
     if (m_tableView->isVisible())
       m_tableView->slotSpecChar(Prefs::specialCharacters()[i - 1]);
 }
-/*
-void KWordQuizApp::slotActionHighlighted(KAction * action, bool hl)
-{
-  //if (!hl)
-   // slotStatusMsg(i18n("Ready"));
-}
-*/
+
 
 void KWordQuizApp::contextMenuEvent(QContextMenuEvent * event)
 {
@@ -1503,7 +1474,7 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
 
   qaHint->setEnabled(qt == WQQuiz::qtQA);
 
-  toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
+  //toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
 
 }
 
