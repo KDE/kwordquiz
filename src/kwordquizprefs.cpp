@@ -2,7 +2,7 @@
                           kwordquizprefs.cpp  -  description
                              -------------------
     begin                : Sun Aug 18 2002
-    copyright            : (C) 2002-2005 by Peter Hedlund
+    copyright            : (C) 2002-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -38,9 +38,13 @@
 #include "prefcardappearance.h"
 #include "kwordquiz.h"
 
-KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, FaceType dialogType, int /*dialogButtons*/, ButtonCode /*defaultButton*/, bool /*modal*/)
+KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, FaceType dialogType, int dialogButtons, ButtonCode defaultButton, bool modal)
   : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false)
 {
+  Q_UNUSED(dialogButtons);
+  Q_UNUSED(defaultButton);
+  Q_UNUSED(modal);
+
   m_config = config;
 
   m_prefEditor = new PrefEditor(0);
@@ -52,7 +56,7 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkelet
   m_prefCardAppearance = new PrefCardAppearance(0);
   addPage(m_prefCardAppearance, i18n("Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);
 
-  KWordQuizApp *win=KWordQuizApp::self();
+  KWordQuizApp *win = KWordQuizApp::self();
   m_prefCharacter = new PrefCharacter(0, win->actionCollection());
   addPage(m_prefCharacter, i18n("Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
   connect(m_prefCharacter, SIGNAL(widgetModified()), this, SLOT(updateButtons()));

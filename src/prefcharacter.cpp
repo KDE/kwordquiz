@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2004 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2004, 2007 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -81,7 +81,7 @@ bool PrefCharacter::hasChanged()
   for (int i = 0; i < 9; i++)
     s.append(CharacterTree->topLevelItem(i)->text(2));
 
-  return (sc.simplified() == s.simplified());
+  return (sc.simplified() != s.simplified());
 }
 
 bool PrefCharacter::isDefault()

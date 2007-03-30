@@ -2,7 +2,7 @@
                           kwordquizprefs.h  -  description
                              -------------------
     begin                : Sun Aug 18 2002
-    copyright            : (C) 2002-2005 by Peter Hedlund
+    copyright            : (C) 2002-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -33,8 +33,8 @@ class KWordQuizPrefs : public KConfigDialog
 {
   Q_OBJECT
 public:
-  KWordQuizPrefs(QWidget *parent=0, const char *name=0, KConfigSkeleton *config=0, FaceType  dialogType=List,
-    int dialogButtons=Default|Ok|Apply|Cancel|Help, ButtonCode defaultButton=Ok, bool modal=false);
+  KWordQuizPrefs(QWidget *parent = 0, const char *name = 0, KConfigSkeleton *config = 0, FaceType dialogType = List,
+    int dialogButtons = Default|Ok|Apply|Cancel|Help, ButtonCode defaultButton = Ok, bool modal = false);
 
 protected slots:
   void updateSettings();
