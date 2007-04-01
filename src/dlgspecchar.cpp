@@ -48,17 +48,15 @@ void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_en
   grid->setMargin( KDialog::marginHint() );
   grid->setSpacing( KDialog::spacingHint() );
 
-  int t = (_chr.unicode()/256);
-
-  charSelect = new KCharSelect( page,  _font, _chr, t);
-  connect(charSelect, SIGNAL(doubleClicked()),this, SLOT(slotDoubleClicked()));
+  charSelect = new KCharSelect( page, _chr, _font);
+  connect(charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
   charSelect->resize( charSelect->sizeHint() );
-  charSelect->enableFontCombo( false );
+//   charSelect->enableFontCombo( false );
   grid->addWidget( charSelect, 0, 0 );
 
-  grid->addItem( new QSpacerItem( charSelect->width(), 0 ), 0, 0 );
-  grid->addItem( new QSpacerItem( 0, charSelect->height() ), 0, 0 );
-  grid->setRowStretch( 0, 0 );
+//   grid->addItem( new QSpacerItem( charSelect->width(), 0 ), 0, 0 );
+//   grid->addItem( new QSpacerItem( 0, charSelect->height() ), 0, 0 );
+//   grid->setRowStretch( 0, 0 );
   charSelect->setFocus();
 }
 
@@ -69,7 +67,7 @@ void DlgSpecChar::closeDialog()
 
 QChar DlgSpecChar::chr()
 {
-  return charSelect->chr();
+  return charSelect->currentChar();
 }
 
 void DlgSpecChar::slotDoubleClicked()
