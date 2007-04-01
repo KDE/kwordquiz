@@ -1374,7 +1374,7 @@ void KWordQuizApp::slotStatusMsg(const QString &text)
 void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
 {
   if (m_quiz != 0)
-    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStandardGuiItem::cont(), "askModeQuiz")
+    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStandardGuiItem::cont(), KStandardGuiItem::cancel(), "askModeQuiz")
       != KMessageBox::Continue)
       {
         mode1->setChecked(Prefs::mode() == 1);
