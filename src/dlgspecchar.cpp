@@ -48,7 +48,9 @@ void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_en
   grid->setMargin( KDialog::marginHint() );
   grid->setSpacing( KDialog::spacingHint() );
 
-  charSelect = new KCharSelect( page, _chr, _font);
+  charSelect = new KCharSelect( page );
+  charSelect->setCurrentChar( _chr );
+  charSelect->setCurrentFont( _font );
   connect(charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
   charSelect->resize( charSelect->sizeHint() );
 //   charSelect->enableFontCombo( false );
