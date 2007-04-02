@@ -40,6 +40,8 @@
 #include <ktoggleaction.h>
 #include <ktoolbar.h>
 #include <kicon.h>
+#include <knewstuff2/engine.h>
+#include <knewstuff2/ui/knewstuffaction.h>
 
 #include "kwordquiz.h"
 #include "keduvocdocument.h"
@@ -52,7 +54,6 @@
 #include "multipleview.h"
 #include "wqprintdialogpage.h"
 #include "prefs.h"
-#include "kwqnewstuff.h"
 #include "version.h"
 #include "prefleitner.h"
 
@@ -122,14 +123,11 @@ void KWordQuizApp::initActions()
 
   fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
 
-  fileGHNS = actionCollection()->addAction("file_ghns");
-  fileGHNS->setIcon(KIcon("get-hot-new-stuff"));
-  fileGHNS->setText(i18n("&Get New Vocabularies..."));
+  fileGHNS = KNS::standardAction(i18n("Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
   fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
   fileGHNS->setStatusTip(fileGHNS->whatsThis());
-  connect(fileGHNS, SIGNAL(triggered(bool)), this, SLOT(slotFileGHNS()));
 
   fileSave = KStandardAction::save(this, SLOT(slotFileSave()), actionCollection());
   fileSave->setWhatsThis(i18n("Saves the active vocabulary document"));
@@ -857,9 +855,7 @@ void KWordQuizApp::slotFileSave()
 
 void KWordQuizApp::slotFileGHNS()
 {
-  if (!m_newStuff)
-    m_newStuff = new KWQNewStuff(this);
-  m_newStuff->download();
+  KNS::Entry::List entries = KNS::Engine::download();
 }
 
 void KWordQuizApp::slotFileSaveAs()

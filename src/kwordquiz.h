@@ -43,7 +43,6 @@ class KWordQuizPrefs;
 class QAView;
 class MultipleView;
 class FlashView;
-class KWQNewStuff;
 
 /**
   * The base class for KWordQuiz application windows. It sets up the main
@@ -323,7 +322,6 @@ class KWordQuizApp : public KMainWindow
     QAction* specialChar9;
 
     KDirWatch * m_dirWatch;
-    KWQNewStuff * m_newStuff;
 
     QLabel * m_modeLabel;
     QVBoxLayout * m_topLayout;
