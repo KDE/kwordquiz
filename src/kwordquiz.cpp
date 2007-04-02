@@ -1072,7 +1072,7 @@ void KWordQuizApp::slotVocabFont()
 {
   slotStatusMsg(i18n("Setting the font of the vocabulary..."));
   KFontDialog* dlg;
-  dlg = new KFontDialog(this, false, true);
+  dlg = new KFontDialog(this);
   dlg->setObjectName("dlg_font");
   dlg->setFont(Prefs::editorFont());
   if (dlg->exec() == KFontDialog::Accepted)
