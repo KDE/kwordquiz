@@ -31,9 +31,9 @@ public:
   KWqlDataItem(const QString &front, const QString &back, int height);
   virtual ~KWqlDataItem();
 
-  QString frontText() const {return m_front;};
-  QString backText() const {return m_back;};
-  int rowHeight() const {return m_height;};
+  QString frontText() const {return m_front;}
+  QString backText() const {return m_back;}
+  int rowHeight() const {return m_height;}
 
 private:
   QString m_front;
@@ -48,14 +48,14 @@ public:
   WqlReader();
   KWqlDataItemList parse(const QString &fileName);
   int colWidth(int col);
-  int numRows() {return m_numRows;};
-  int startCol() {return m_topLeft;};
-  int startRow() {return m_topRight;};
-  int endCol() {return m_bottomLeft;};
-  int endRow() {return m_bottomRight;};
+  int numRows() {return m_numRows;}
+  int startCol() {return m_topLeft;}
+  int startRow() {return m_topRight;}
+  int endCol() {return m_bottomLeft;}
+  int endRow() {return m_bottomRight;}
   QString language(int col);
-  QFont font() {return m_font;};
-  QString specialCharacters() {return m_specialCharacters;};
+  QFont font() {return m_font;}
+  QString specialCharacters() {return m_specialCharacters;}
   
 private:
   QFont m_font;
