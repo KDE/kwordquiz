@@ -213,8 +213,6 @@ void KWordQuizApp::initActions()
   editUnmarkBlank->setStatusTip(editUnmarkBlank->whatsThis());
   connect(editUnmarkBlank, SIGNAL(triggered(bool)), this, SLOT(slotEditUnmarkBlank()));
 
-  //@todo implement editFind = KStandardAction::find(this, SLOT(slotEditFind()), actionCollection());
-
   vocabLanguages = actionCollection()->addAction("vocab_languages");
   vocabLanguages->setIcon(KIcon("languages"));
   vocabLanguages->setText(i18n("&Column Titles..."));
@@ -384,7 +382,6 @@ void KWordQuizApp::initActions()
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
   quizCheck->setToolTip(quizCheck->whatsThis());
   quizCheck->setStatusTip(quizCheck->whatsThis());
-  //connect(quizCheck, SIGNAL(triggered(bool)), this, SLOT(()));
 
   flashKnow = actionCollection()->addAction("flash_know");
   flashKnow->setIcon(KIcon("know"));
@@ -393,7 +390,6 @@ void KWordQuizApp::initActions()
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
   flashKnow->setToolTip(flashKnow->whatsThis());
   flashKnow->setStatusTip(flashKnow->whatsThis());
-  //connect(flashKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
   flashDontKnow = actionCollection()->addAction("flash_dont_know");
   flashDontKnow->setIcon(KIcon("dontknow"));
@@ -402,7 +398,6 @@ void KWordQuizApp::initActions()
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
   flashDontKnow->setToolTip(flashDontKnow->whatsThis());
   flashDontKnow->setStatusTip(flashDontKnow->whatsThis());
-  //connect(flashDontKnow, SIGNAL(triggered(bool)), this, SLOT(()));
 
   qaHint = actionCollection()->addAction("qa_hint");
   qaHint->setIcon(KIcon("hint"));
@@ -411,7 +406,6 @@ void KWordQuizApp::initActions()
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
   qaHint->setToolTip(qaHint->whatsThis());
   qaHint->setStatusTip(qaHint->whatsThis());
-  //connect(qaHint, SIGNAL(triggered(bool)), this, SLOT(()));
 
   quizRestart = actionCollection()->addAction("quiz_restart");
   quizRestart->setIcon(KIcon("restart"));
@@ -420,7 +414,6 @@ void KWordQuizApp::initActions()
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
   quizRestart->setToolTip(quizRestart->whatsThis());
   quizRestart->setStatusTip(quizRestart->whatsThis());
-  //connect(quizRestart, SIGNAL(triggered(bool)), this, SLOT(()));
 
   quizRepeatErrors = actionCollection()->addAction("quiz_repeat_errors");
   quizRepeatErrors->setIcon(KIcon("repeat"));
@@ -429,7 +422,13 @@ void KWordQuizApp::initActions()
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
   quizRepeatErrors->setStatusTip(quizRepeatErrors->whatsThis());
-  //connect(quizRepeatErrors, SIGNAL(triggered(bool)), this, SLOT(()));
+
+  configShowSearchBar = actionCollection()->add<KToggleAction>("config_show_search");
+  configShowSearchBar->setText(i18n("Show Se&arch"));
+  connect(configShowSearchBar, SIGNAL(triggered(bool)), this, SLOT(slotConfigShowSearch()));
+  configShowSearchBar->setWhatsThis(i18n("Toggle display of the search bar"));
+  configShowSearchBar->setToolTip(configShowSearchBar->whatsThis());
+  configShowSearchBar->setStatusTip(configShowSearchBar->whatsThis());
 
   configNotifications = KStandardAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
   configNotifications->setWhatsThis(i18n("Configures sound and other notifications for certain events"));
@@ -574,8 +573,28 @@ void KWordQuizApp::initView()
   m_topLayout = new QVBoxLayout(mainWidget);
   m_topLayout->setMargin(0);
   m_topLayout->setSpacing(KDialog::spacingHint());
+
+  m_searchLine = new KLineEdit(this);
+  m_searchLine->show();
+  m_searchLine->setFocusPolicy(Qt::ClickFocus);
+  m_searchLine->setClearButtonShown(true);
+  m_searchLine->setClickMessage(i18n("Enter search terms here"));
+  connect(m_searchLine, SIGNAL(textChanged(const QString&)), this, SLOT(slotEditFind(const QString&)));
+
+  QLabel *label = new QLabel(i18n("S&earch:"), this);
+  label->setBuddy(m_searchLine);
+  label->show();
+
+  m_searchWidget = new QWidget(this);
+  QHBoxLayout* layout = new QHBoxLayout(m_searchWidget);
+  layout->setSpacing(KDialog::spacingHint());
+  layout->setMargin(KDialog::marginHint());
+  layout->addWidget(label);
+  layout->addWidget(m_searchLine);
+
   m_tableView = new KWQTableView(centralWidget());
   m_tableView->setFrameStyle(QFrame::NoFrame);
+  m_topLayout->addWidget(m_searchWidget);
   m_topLayout->addWidget(m_tableView);
 
   m_tableView->setModel(m_tableModel);
@@ -584,6 +603,10 @@ void KWordQuizApp::initView()
   setCaption(m_doc->url().fileName(),false);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
+
+  m_searchWidget->setVisible(Prefs::showSearch());
+  configShowSearchBar->setChecked(Prefs::showSearch());
+
   m_doc->setModified(false);
 }
 
@@ -1040,11 +1063,27 @@ void KWordQuizApp::slotEditUnmarkBlank()
   slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotEditFind()
+void KWordQuizApp::slotEditFind(const QString & find)
 {
-  slotStatusMsg(i18n("Searching for indicated text..."));
-  KMessageBox::sorry(0, i18n("Not implemented yet"));
-  slotStatusMsg(i18n("Ready"));
+  if (find.isEmpty()) {
+    for (int i = 0; i < m_tableModel->rowCount(QModelIndex()); i++)
+      m_tableView->setRowHidden(i, false);
+    return;
+  }
+  for (int i = 0; i < m_tableModel->rowCount(QModelIndex()); i++)
+    m_tableView->setRowHidden(i, true);
+
+  QModelIndexList list = m_tableModel->match(m_tableModel->index(0, 0, QModelIndex()), Qt::DisplayRole, QVariant(find), m_tableModel->rowCount(QModelIndex()),
+                                             Qt::MatchContains | Qt::MatchWrap);
+
+  QModelIndexList list2 = m_tableModel->match(m_tableModel->index(0, 1, QModelIndex()), Qt::DisplayRole, QVariant(find), m_tableModel->rowCount(QModelIndex()),
+                                              Qt::MatchContains | Qt::MatchWrap);
+
+  foreach(QModelIndex index, list2)
+    list.append(index);
+
+  foreach(QModelIndex index, list)
+    m_tableView->setRowHidden(index.row(), false);
 }
 
 void KWordQuizApp::slotVocabLanguages()
@@ -1496,6 +1535,14 @@ void KWordQuizApp::slotConfigLeitner()
     m_doc->setLeitnerSystem(config->system());
 
   delete config;
+}
+
+void KWordQuizApp::slotConfigShowSearch()
+{
+  if (m_searchWidget) {
+    m_searchWidget->setVisible(m_searchWidget->isHidden());
+    Prefs::setShowSearch(m_searchWidget->isVisible());
+  }
 }
 
 #include "kwordquiz.moc"

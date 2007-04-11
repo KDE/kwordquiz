@@ -36,6 +36,7 @@
 class KActionMenu;
 class KRecentFilesAction;
 class KToggleAction;
+class KLineEdit;
 class KEduVocDocument;
 class KWQTableModel;
 class KWQTableView;
@@ -184,7 +185,7 @@ class KWordQuizApp : public KMainWindow
     /** unmark word as blank */
     void slotEditUnmarkBlank();
     /** find and replace text */
-    void slotEditFind();
+    void slotEditFind(const QString &);
 
     /** define vocabulary languages */
     void slotVocabLanguages();
@@ -215,6 +216,7 @@ class KWordQuizApp : public KMainWindow
     /** question and answer session */
     void slotQuizQA();
 
+    void slotConfigShowSearch();
     /** configure notifications */
     void slotConfigureNotifications();
     /** configure kwordquiz */
@@ -251,6 +253,9 @@ class KWordQuizApp : public KMainWindow
     QAView *m_qaView;
 
     KWordQuizPrefs *m_prefDialog;
+
+    KLineEdit *m_searchLine;
+    QWidget *m_searchWidget;
 
     /** m_doc represents your actual document and is created only once. It keeps
      * information such as filename and does the serialization of your files.
@@ -320,6 +325,8 @@ class KWordQuizApp : public KMainWindow
     QAction* specialChar7;
     QAction* specialChar8;
     QAction* specialChar9;
+
+    QAction* configShowSearchBar;
 
     KDirWatch * m_dirWatch;
 

@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="0.11" name="kwordquiz" >
+<kpartgui version="0.12" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -53,7 +53,10 @@
    <Separator/>
    <Action name="quiz_restart" />
    <Action name="quiz_repeat_errors" />
-  </Menu> -->
+  </Menu>
+  <Menu name="settings" >
+    <Action name="config_show_search" />
+  </Menu>
   </MenuBar>
   <ToolBar name="mainToolBar">
     <!--<Action name="edit_insert"/>
