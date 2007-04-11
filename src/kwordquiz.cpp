@@ -1187,12 +1187,11 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
   }
 
-  //m_quizType = qt;
-
   switch (qt){
     case WQQuiz::qtEditor:
       m_tableView->show();
       m_tableView -> setFocus();
+      m_quizType = qt;
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(this, m_doc);
