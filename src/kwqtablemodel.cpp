@@ -168,6 +168,7 @@ void KWQTableModel::shuffle( )
 void KWQTableModel::setDocument(KEduVocDocument * doc)
 {
   m_doc = doc;
+  reset();
 }
 
 bool KWQTableModel::isEmpty()

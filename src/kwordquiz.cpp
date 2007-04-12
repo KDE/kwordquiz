@@ -98,6 +98,7 @@ KWordQuizApp::KWordQuizApp(QWidget*):KMainWindow(0)
     fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml")));
     Prefs::setFirstRun(false);
   }
+  m_doc->setModified(false);
 }
 
 KWordQuizApp::~KWordQuizApp()
@@ -659,6 +660,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
     fileOpenRecent->addUrl(url);
     QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
     slotModeActionGroupTriggered(a);
+    m_doc->setModified(false);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -946,8 +948,6 @@ void KWordQuizApp::slotFileClose()
       initDocument();
       setCaption(m_doc->url().fileName(), m_doc->isModified());
       m_tableModel->setDocument(m_doc);
-      //delete (m_tableView);
-      //initView();
       slotQuizEditor();
       slotUndoChange(i18n("Cannot &Undo"), false);
       QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
@@ -1230,6 +1230,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
     case WQQuiz::qtEditor:
       m_tableView->show();
       m_tableView -> setFocus();
+      m_searchWidget->setVisible(Prefs::showSearch());
       m_quizType = qt;
       break;
     case WQQuiz::qtFlash:
@@ -1240,6 +1241,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       if (m_quiz -> init())
       {
         m_tableView->hide();
+        m_searchWidget->hide();
         m_flashView = new FlashView(this);
         connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
         connect(flashKnow, SIGNAL(activated()), m_flashView, SLOT(slotKnow()));
@@ -1269,6 +1271,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       {
         //m_tableView->saveCurrentSelection(true);
         m_tableView->hide();
+        m_searchWidget->hide();
         m_multipleView = new MultipleView(this);
         connect(quizCheck, SIGNAL(activated()), m_multipleView, SLOT(slotCheck()));
         connect(quizRestart, SIGNAL(activated()), m_multipleView, SLOT(slotRestart()));
@@ -1296,6 +1299,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       {
         //m_tableView->saveCurrentSelection(true);
         m_tableView->hide();
+        m_searchWidget->hide();
         m_qaView = new QAView(this);
         connect(quizCheck, SIGNAL(activated()), m_qaView, SLOT(slotCheck()));
         connect(qaHint, SIGNAL(activated()), m_qaView, SLOT(slotHint()));
