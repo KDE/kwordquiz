@@ -35,7 +35,7 @@ public:
   enum QuizType {qtEditor, qtFlash, qtMultiple, qtQA};
   enum QuizIcon {qiLeftCol, qiRightCol, qiQuestion, qiCorrect, qiError};
 
-  WQQuiz(QWidget *parent, KEduVocDocument *doc);
+  WQQuiz(QObject *parent, KEduVocDocument *doc);
 
   void activateErrorList();
   void activateBaseList();
@@ -67,7 +67,6 @@ signals:
   void checkingAnswer(int );
 
 private:
-  QWidget *m_app;
   KEduVocDocument *m_doc;
   int m_quizMode;
   int m_questionCount;

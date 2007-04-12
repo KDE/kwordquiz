@@ -781,13 +781,13 @@ bool KWordQuizApp::checkSyntax(bool blanks)
 
   for (int r = 0; r < m_tableModel->rowCount(QModelIndex()); ++r)
   {
-    QString s = m_doc->entry(r)->original();
+    QString s = m_tableModel->data(m_tableModel->index(r, 0, QModelIndex()), Qt::DisplayRole).toString();
     if (s.length() > 0)
       for (int i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
           if (!m_tableView->checkForBlank(s, blanks))
             errorCount++;
-    s = m_doc->entry(r)->translation(1);
+    s = m_tableModel->data(m_tableModel->index(r, 1, QModelIndex()), Qt::DisplayRole).toString();
     if (s.length() > 0)
       for (int i = 0; i <= s.length(); ++i)
         if (s[i] == delim_start || s[i] == delim_end)
@@ -1224,6 +1224,11 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_qaView = 0;
       }
       break;
+  }
+
+  if ((qt != WQQuiz::qtEditor) && Prefs::enableBlanks()) {
+    if (!checkSyntax(true))
+      return;
   }
 
   switch (qt){

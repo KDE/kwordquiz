@@ -538,7 +538,7 @@ bool KWQTableView::checkForBlank(const QString  & s, bool blank)
 
   if (openCount > 0 && closeCount > 0)
     if (openPos.size() == closePos.size())
-      for (int i = 0; i <= openPos.size(); ++i)
+      for (int i = 0; i < openPos.size(); ++i)
         result = (openPos[i] < closePos[i]);
 
   return result;

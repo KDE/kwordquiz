@@ -22,13 +22,11 @@
 
 #include "keduvocexpression.h"
 #include "leitnersystem.h"
-#include "kwordquiz.h"
 #include "wqquiz.h"
 #include "prefs.h"
 
-WQQuiz::WQQuiz(QWidget * parent, KEduVocDocument * doc) : QObject(parent)
+WQQuiz::WQQuiz(QObject * parent, KEduVocDocument * doc) : QObject(parent)
 {
-  m_app = parent;
   m_doc = doc;
 
   m_list.clear();
@@ -107,23 +105,7 @@ void WQQuiz::addToList(int aCol, int /*bCol*/)
 
 bool WQQuiz::init()
 {
-
   bool result = false;
-  if (Prefs::enableBlanks())
-  {
-    KWordQuizApp *theApp=(KWordQuizApp *) m_app;
-    result = theApp->checkSyntax(true);
-  }
-  else
-  {
-    result = true;
-  }
-
-  if (!result)
-  {
-    return false;
-  }
-
   int aCol;
   int bCol;
 
