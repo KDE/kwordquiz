@@ -20,8 +20,8 @@
 #include <QCheckBox>
 
 #include <kactioncollection.h>
-#include <kactionmenu.h>
 #include <kapplication.h>
+#include <kactionmenu.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <kstatusbar.h>

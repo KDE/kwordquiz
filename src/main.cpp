@@ -18,11 +18,11 @@
 #include <QByteArray>
 #include <QAction>
 
-#include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
 #include <kactioncollection.h>
+#include <kapplication.h>
 
 #include "kwordquiz.h"
 #include "version.h"
