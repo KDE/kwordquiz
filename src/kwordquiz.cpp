@@ -59,7 +59,7 @@
 
 KWordQuizApp * KWordQuizApp::m_self = 0;
 
-KWordQuizApp::KWordQuizApp(QWidget*):KMainWindow(0)
+KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 {
   m_self = this;
 

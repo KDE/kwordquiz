@@ -25,7 +25,7 @@
 #include <QActionGroup>
 
 // include files for KDE
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 #include <kaction.h>
 #include <kdirwatch.h>
 #include <kurl.h>
@@ -49,13 +49,13 @@ class FlashView;
   * The base class for KWordQuiz application windows. It sets up the main
   * window and reads the config file as well as providing a menubar, toolbar
   * and statusbar.
-  * KWordQuizApp reimplements the methods that KMainWindow provides for main window handling and supports
+  * KWordQuizApp reimplements the methods that KXmlGuiWindow provides for main window handling and supports
   * full session management as well as using KActions.
-  * @see KMainWindow
+  * @see KXmlGuiWindow
   * @see KApplication
   * @see KConfig
   */
-class KWordQuizApp : public KMainWindow
+class KWordQuizApp : public KXmlGuiWindow
 {
   Q_OBJECT
 
@@ -77,7 +77,7 @@ class KWordQuizApp : public KMainWindow
     void openDocumentFile(const KUrl& url=KUrl());
 
     /**
-     * returns a pointer to the current document connected to the KMainWindow instance
+     * returns a pointer to the current document connected to the KXmlGuiWindow instance
      * @return
      */
     KEduVocDocument * document() const;
@@ -114,31 +114,31 @@ class KWordQuizApp : public KMainWindow
      * @see initView();
      */
     void initModel();
-    /** creates the centerwidget of the KMainWindow instance and sets it as the view
+    /** creates the centerwidget of the KXmlGuiWindow instance and sets it as the view
      */
     void initView();
-    /** queryClose is called by KMainWindow on each closeEvent of a window. Against the
+    /** queryClose is called by KXmlGuiWindow on each closeEvent of a window. Against the
      * default implementation (only returns true), this calles saveModified() on the document object to ask if the document shall
      * be saved if Modified; on cancel the closeEvent is rejected.
-     * @see KMainWindow#queryClose
-     * @see KMainWindow#closeEvent
+     * @see KXmlGuiWindow#queryClose
+     * @see KXmlGuiWindow#closeEvent
      */
     virtual bool queryClose();
-    /** queryExit is called by KMainWindow when the last window of the application is going to be closed during the closeEvent().
+    /** queryExit is called by KXmlGuiWindow when the last window of the application is going to be closed during the closeEvent().
      * Against the default implementation that just returns true, this calls saveOptions() to save the settings of the last window's
      * properties.
-     * @see KMainWindow#queryExit
-     * @see KMainWindow#closeEvent
+     * @see KXmlGuiWindow#queryExit
+     * @see KXmlGuiWindow#closeEvent
      */
     virtual bool queryExit();
     /** saves the window properties for each open window during session end to the session config file, including saving the currently
      * opened file by a temporary filename provided by KApplication.
-     * @see KMainWindow#saveProperties
+     * @see KXmlGuiWindow#saveProperties
      */
     virtual void saveProperties(KConfigGroup &_cfg);
     /** reads the session config file and restores the application's state including the last opened files and documents by reading the
      * temporary files saved by saveProperties()
-     * @see KMainWindow#readProperties
+     * @see KXmlGuiWindow#readProperties
      */
     virtual void readProperties(const KConfigGroup &_cfg);
 
