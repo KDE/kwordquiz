@@ -39,11 +39,14 @@
 #include "kwordquiz.h"
 
 KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, FaceType dialogType, int dialogButtons, ButtonCode defaultButton, bool modal)
-  : KConfigDialog(parent, name, config, dialogType, Default|Ok|Apply|Cancel|Help, Ok, false)
+  : KConfigDialog(parent, name, config)
 {
   Q_UNUSED(dialogButtons);
   Q_UNUSED(defaultButton);
   Q_UNUSED(modal);
+  setFaceType(dialogType);
+  setButtons(Default|Ok|Apply|Cancel|Help);
+  setDefaultButton(Ok);
 
   m_config = config;
 
