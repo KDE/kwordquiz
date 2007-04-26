@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Wed Mar 1 19:17:30 PST 2006
-    copyright            : (C) 2006 by Peter Hedlund
+    copyright            : (C) 2006-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -99,13 +99,11 @@ void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewIte
     if (str == "@empty@")
       str = "";
 
-    if (painter->fontMetrics().width(text) > textRect.width() && !text.contains(QLatin1Char('\n')))
-        str = elidedText(option.fontMetrics, textRect.width(), option.textElideMode, str);
-
-    painter->drawText(textRect, option.displayAlignment, str);
+    painter->drawText(textRect, option.displayAlignment | Qt::TextWordWrap, str);
     painter->setFont(font);
     painter->setPen(pen);
 }
+
 
 void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect) const
 {
@@ -115,18 +113,12 @@ void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem 
     pen.setColor(Qt::black);
     pen.setWidth(0);
     painter->setBrush(Qt::NoBrush);
-    painter->drawRect(rect.adjusted(0,0,-1,-1));
-    painter->drawRect(rect.adjusted(1,1,-2,-2));
+    painter->drawRect(rect.adjusted(0, 0, -1, -1));
+    painter->drawRect(rect.adjusted(1, 1, -2, -2));
     painter->restore();
   }
 }
 
-QSize KWQTableDelegate::sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const
-{
-  Q_UNUSED(option);
-  Q_UNUSED(index);
-  return QSize(300, 25);
-}
 
 void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {

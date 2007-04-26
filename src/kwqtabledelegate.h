@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Wed Mar 1 19:17:30 PST 2006
-    copyright            : (C) 2006 by Peter Hedlund
+    copyright            : (C) 2006-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -38,14 +38,14 @@ public:
   void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const;
 
   void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
-  QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const;
   void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const;
+
 protected:
   void drawDisplay(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QString &text) const;
   void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const;
 
 private slots:
-    void commitAndCloseEditor();
+  void commitAndCloseEditor();
 };
 
 #endif

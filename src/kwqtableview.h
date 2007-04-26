@@ -2,7 +2,7 @@
                           kwqtableview.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2006 by Peter Hedlund
+    copyright            : (C) 2002-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -76,7 +76,7 @@ protected:
   void keyPressEvent(QKeyEvent*);
 
 public slots:
-  void adjustCurrentRow();
+  void adjustRow(int );
   void slotSpecChar(const QChar &);
   void slotCheckedAnswer(int );
   void slotModelReset();

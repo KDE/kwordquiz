@@ -2,7 +2,7 @@
                           kwordquiz.cpp  -  description
                              -------------------
     begin         : Wed Jul 24 20:12:30 PDT 2002
-    copyright     : (C) 2002-2006 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright     : (C) 2002-2007 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -240,6 +240,14 @@ void KWordQuizApp::initActions()
   vocabRC->setToolTip(vocabRC->whatsThis());
   vocabRC->setStatusTip(vocabRC->whatsThis());
   connect(vocabRC, SIGNAL(triggered(bool)), this, SLOT(slotVocabRC()));
+
+  vocabAdjustRows = actionCollection()->addAction("vocab_adjust_rows");
+  vocabAdjustRows->setIcon(KIcon());
+  vocabAdjustRows->setText(i18n("&Adjust Row Heights"));
+  vocabAdjustRows->setWhatsThis(i18n("Automatically adjusts the height of selected rows"));
+  vocabAdjustRows->setToolTip(vocabAdjustRows->whatsThis());
+  vocabAdjustRows->setStatusTip(vocabAdjustRows->whatsThis());
+  connect(vocabAdjustRows, SIGNAL(triggered(bool)), this, SLOT(slotVocabAdjustRows()));
 
   vocabSort = actionCollection()->addAction("vocab_sort");
   vocabSort->setIcon(KIcon("sort_incr"));
@@ -1133,6 +1141,16 @@ void KWordQuizApp::slotVocabRC()
   m_tableView->doVocabRC();
   slotStatusMsg(i18n("Ready"));
 }
+
+
+void KWordQuizApp::slotVocabAdjustRows()
+{
+  slotStatusMsg(i18n("Adjusting row heights..."));
+  foreach(QModelIndex index, m_tableView->selectionModel()->selectedIndexes())
+    m_tableView->adjustRow(index.row());
+  slotStatusMsg(i18n("Ready"));
+}
+
 
 void KWordQuizApp::slotVocabSort()
 {

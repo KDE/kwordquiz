@@ -2,7 +2,7 @@
                           kwqtableview.cpp  -  description
                              -------------------
     begin          : Wed Jul 24 20:12:30 PDT 2002
-    copyright      : (C) 2002-2006 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2007 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -49,6 +49,7 @@ KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
   connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
+  setWordWrap(true);
 }
 
 void KWQTableView::print(KPrinter *pPrinter)
@@ -886,7 +887,7 @@ void KWQTableView::setModel(KWQTableModel * model)
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
 {
   QTableView::closeEditor(editor, hint);
-  adjustCurrentRow();
+  adjustRow(currentIndex().row());
 //   if (hint == QAbstractItemDelegate::SubmitModelCache)
 //     activateNextCell();
 }
@@ -908,15 +909,15 @@ void KWQTableView::commitData(QWidget * editor)
   QTableView::commitData(editor);
 }
 
-void KWQTableView::adjustCurrentRow()
+void KWQTableView::adjustRow(int row)
 {
   // we want to make the row high enough to display content, but
   // if the user already made it even higher we keep that height
-  int r = currentIndex().row();
-  int rh = rowHeight(r);
-  resizeRowToContents(r);
-  if (rh > rowHeight(r))
-    setRowHeight(r, rh);
+  //int r = currentIndex().row();
+  int rh = rowHeight(row);
+  resizeRowToContents(row);
+  if (rh > rowHeight(row))
+    setRowHeight(row, rh);
 }
 
 QRect KWQTableView::selection() const

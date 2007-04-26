@@ -2,7 +2,7 @@
                           kwordquiz.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2006 by Peter Hedlund
+    copyright            : (C) 2002-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -195,6 +195,8 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotVocabKeyboard();
     /** define row and column properties */
     void slotVocabRC();
+    /** automatically adjust row heights */
+    void slotVocabAdjustRows();
     /** sort vocabulary */
     void slotVocabSort();
     /** shuffle the vocabulary */
@@ -288,6 +290,7 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* vocabFont;
     //QAction* vocabKeyboard;
     QAction* vocabRC;
+    QAction* vocabAdjustRows;
     QAction* vocabSort;
     QAction* vocabShuffle;
     QAction* vocabLeitner;
