@@ -1506,7 +1506,7 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
 
   qaHint->setEnabled(qt == WQQuiz::qtQA);
 
-  //toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
+  toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
 
 }
 
