@@ -49,12 +49,6 @@ private:
     WQQuiz *m_quiz;
     WQScore *m_score;
 
-    QAction* actFlip;
-    QAction* actKnow;
-    QAction* actDontKnow;
-    QAction* actRepeat;
-    QAction* actRestart;
-
     QTimer* m_timer;
 
     int m_question;

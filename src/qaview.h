@@ -48,11 +48,6 @@ private:
     WQQuiz *m_quiz;
     WQScore *m_score;
 
-    QAction* actCheck;
-    QAction* actHint;
-    QAction* actRepeat;
-    QAction* actRestart;
-
     int m_question;
     int m_error;
 
