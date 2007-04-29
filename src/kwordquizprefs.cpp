@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "kwordquizprefs.h"
+
 #include <QLayout>
 #include <QRadioButton>
 #include <QCheckBox>
@@ -31,7 +33,6 @@
 #include <kcolorbutton.h>
 #include <kfontrequester.h>
 
-#include "kwordquizprefs.h"
 #include "prefeditor.h"
 #include "prefquiz.h"
 #include "prefcharacter.h"

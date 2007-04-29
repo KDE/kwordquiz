@@ -14,6 +14,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "qaview.h"
+
 #include <QLabel>
 
 #include <kactioncollection.h>
@@ -22,9 +24,9 @@
 #include <klineedit.h>
 #include <knotification.h>
 
-#include "qaview.h"
 #include "prefs.h"
 #include "kwordquiz.h"
+#include "wqscore.h"
 
 QString highlightError(const QString & c, const QString & e)
 {

@@ -14,6 +14,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "dlglanguage.h"
+
 #include <QLabel>
 
 #include <klocale.h>
@@ -21,7 +23,6 @@
 #include <kiconloader.h>
 
 #include "prefs.h"
-#include "dlglanguage.h"
 
 DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent)
 {

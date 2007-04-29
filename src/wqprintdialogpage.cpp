@@ -16,14 +16,14 @@
   Boston, MA 02110-1301, USA.
 */
 
+#include "wqprintdialogpage.h"
+
 #include <QtGui/QRadioButton>
 #include <QtGui/QGridLayout>
 #include <QtGui/QSpacerItem>
 
 #include <klocale.h>
 #include <kdialog.h>
-
-#include "wqprintdialogpage.h"
 
 WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : KPrintDialogPage(parent)
 {

@@ -19,9 +19,8 @@
 
 #include "ui_flashviewbase.h"
 
-#include "wqscore.h"
-
 class WQQuiz;
+class WQScore;
 
 /**
 @author Peter Hedlund
@@ -50,11 +49,11 @@ private:
     WQQuiz *m_quiz;
     WQScore *m_score;
 
-    KAction* actFlip;
-    KAction* actKnow;
-    KAction* actDontKnow;
-    KAction* actRepeat;
-    KAction* actRestart;
+    QAction* actFlip;
+    QAction* actKnow;
+    QAction* actDontKnow;
+    QAction* actRepeat;
+    QAction* actRestart;
 
     QTimer* m_timer;
 

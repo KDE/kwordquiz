@@ -17,12 +17,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "kwqtabledelegate.h"
+
 #include <QLineEdit>
 #include <QPainter>
 
 #include "kdebug.h"
 
-#include "kwqtabledelegate.h"
 #include "kwqtablemodel.h"
 
 KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)

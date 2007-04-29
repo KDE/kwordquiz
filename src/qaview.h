@@ -19,12 +19,10 @@
 #ifndef QAVIEW_H
 #define QAVIEW_H
 
-#include <kaction.h>
-
 #include "ui_qaviewbase.h"
 
-#include "wqquiz.h"
-#include "wqscore.h"
+class WQQuiz;
+class WQScore;
 
 /**
 @author Peter Hedlund
@@ -50,10 +48,10 @@ private:
     WQQuiz *m_quiz;
     WQScore *m_score;
 
-    KAction* actCheck;
-    KAction* actHint;
-    KAction* actRepeat;
-    KAction* actRestart;
+    QAction* actCheck;
+    QAction* actHint;
+    QAction* actRepeat;
+    QAction* actRestart;
 
     int m_question;
     int m_error;

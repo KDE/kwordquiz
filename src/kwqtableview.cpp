@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "kwqtableview.h"
+
 #include <QHeaderView>
 #include <QPainter>
 #include <QClipboard>
@@ -31,7 +33,6 @@
 #include <knotification.h>
 #include <kdebug.h>
 
-#include "kwqtableview.h"
 #include "kwqtablemodel.h"
 #include "keduvocdocument.h"
 #include "kwordquiz.h"

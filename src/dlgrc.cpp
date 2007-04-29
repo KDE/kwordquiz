@@ -14,10 +14,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "dlgrc.h"
+
 #include <klocale.h>
 #include <krestrictedline.h>
-
-#include "dlgrc.h"
 
 DlgRC::DlgRC(QWidget *parent): KDialog(parent)
 {
@@ -59,6 +59,5 @@ int DlgRC::colWidth( )
 {
   return dlgBase->txtColWidth->value();
 }
-
 
 #include "dlgrc.moc"

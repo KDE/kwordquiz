@@ -14,6 +14,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "multipleview.h"
+
 #include <QLabel>
 #include <QRadioButton>
 
@@ -23,7 +25,7 @@
 #include <knotification.h>
 
 #include "kwordquiz.h"
-#include "multipleview.h"
+#include "wqscore.h"
 #include "prefs.h"
 
 MultipleView::MultipleView(QWidget *parent) : QWidget(parent)

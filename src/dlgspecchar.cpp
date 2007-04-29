@@ -14,13 +14,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "dlgspecchar.h"
+
 #include <QGridLayout>
 
 #include <klocale.h>
 #include <kcharselect.h>
 #include <kdebug.h>
-
-#include "dlgspecchar.h"
 
 DlgSpecChar::DlgSpecChar( QWidget *parent, const char *name, const QString &_font, const QChar &_chr, bool _modal )
     : KDialog( parent )

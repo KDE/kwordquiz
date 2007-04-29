@@ -16,13 +16,14 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include <krandomsequence.h>
+#include "wqquiz.h"
 
 #include <QRegExp>
 
+#include <krandomsequence.h>
+
 #include "keduvocexpression.h"
 #include "leitnersystem.h"
-#include "wqquiz.h"
 #include "prefs.h"
 
 WQQuiz::WQQuiz(QObject * parent, KEduVocDocument * doc) : QObject(parent)

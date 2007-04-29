@@ -14,6 +14,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "flashview.h"
+
 #include <QLabel>
 
 #include <kactioncollection.h>
@@ -22,7 +24,7 @@
 #include <knotification.h>
 
 #include "kwordquiz.h"
-#include "flashview.h"
+#include "wqscore.h"
 #include "prefs.h"
 
 FlashView::FlashView(QWidget *parent) : QWidget(parent)

@@ -16,11 +16,11 @@
   Boston, MA 02110-1301, USA.
 */
 
+#include "prefquiz.h"
+
 #include <QCheckBox>
 
 #include <knuminput.h>
-
-#include "prefquiz.h"
 
 PrefQuiz::PrefQuiz(QWidget *parent) : QWidget(parent)
 {

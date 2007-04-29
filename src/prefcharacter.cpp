@@ -16,10 +16,11 @@
   Boston, MA 02110-1301, USA.
 */
 
+#include "prefcharacter.h"
+
 #include <kaction.h>
 #include <klocale.h>
 
-#include "prefcharacter.h"
 #include "prefs.h"
 #include "dlgspecchar.h"
 

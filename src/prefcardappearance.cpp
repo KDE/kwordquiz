@@ -1,14 +1,21 @@
-//
-// C++ Implementation:
-//
-// Description: KWordQuiz flashcard appearance preferences
-//
-//
-// Author: Peter Hedlund <peter.hedlund@kdemail.net>, (C) 2004-2005
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/***************************************************************************
+                          prefcardappearance.cpp
+                             -------------------
+
+    copyright            : (C) 2004-2007 by Peter Hedlund
+    email                : peter.hedlund@kdemail.net
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#include "prefcardappearance.h"
 
 #include <QStackedWidget>
 #include <QLabel>
@@ -16,8 +23,6 @@
 #include <kfontrequester.h>
 #include <kcolorbutton.h>
 #include <klocale.h>
-
-#include "prefcardappearance.h"
 
 PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
 {

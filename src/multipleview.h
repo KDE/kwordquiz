@@ -21,7 +21,8 @@
 
 #include "ui_multipleviewbase.h"
 
-#include "wqscore.h"
+class WQQuiz;
+class WQScore;
 
 /**
 @author Peter Hedlund

@@ -20,6 +20,7 @@
 #define WQPRINTDIALOGPAGE_H
 
 #include <QtGui/QGroupBox>
+#include <QtGui/QRadioButton>
 
 #include <kdeprint/kprintdialogpage.h>
 
