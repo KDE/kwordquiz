@@ -25,7 +25,7 @@
 
 #include <kprinter.h>
 
-#include "kwqtablemodel.h"
+#include "kwqsortfiltermodel.h"
 #include "kwqtabledelegate.h"
 #include "wqundo.h"
 
@@ -47,7 +47,7 @@ public:
   /** Constructor for the main view */
   KWQTableView(QWidget *parent = 0);
 
-  void setModel(KWQTableModel * model);
+  void setModel(KWQSortFilterModel * model);
 
   /** contains the implementation for printing functionality */
   void print(KPrinter *pPrinter);
@@ -61,7 +61,6 @@ public:
   void doEditDelete();
   void doEditMarkBlank();
   void doEditUnmarkBlank();
-  void doVocabSort();
   void doVocabShuffle();
   void doVocabRC();
 
@@ -81,6 +80,8 @@ public slots:
   void slotCheckedAnswer(int );
   void slotModelReset();
 
+  void slotSortByColumn(int);
+
 protected slots:
   void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint);
   void commitData (QWidget * editor);
@@ -99,6 +100,7 @@ private:
 
   /** the list of the undo objects */
   WQUndoList m_undoList;
+  KWQSortFilterModel *m_model;
 
   void doNewPage(QPainter & painter, int res, int type);
   void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);

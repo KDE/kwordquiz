@@ -39,6 +39,7 @@ class KToggleAction;
 class KLineEdit;
 class KEduVocDocument;
 class KWQTableModel;
+class KWQSortFilterModel;
 class KWQTableView;
 class KWordQuizPrefs;
 class QAView;
@@ -197,8 +198,6 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotVocabRC();
     /** automatically adjust row heights */
     void slotVocabAdjustRows();
-    /** sort vocabulary */
-    void slotVocabSort();
     /** shuffle the vocabulary */
     void slotVocabShuffle();
     /** enable the Leitner system */
@@ -250,6 +249,7 @@ class KWordQuizApp : public KXmlGuiWindow
      */
     KWQTableView *m_tableView;
     KWQTableModel *m_tableModel;
+    KWQSortFilterModel *m_sortFilterModel;
     FlashView *m_flashView;
     MultipleView *m_multipleView;
     QAView *m_qaView;
@@ -291,7 +291,7 @@ class KWordQuizApp : public KXmlGuiWindow
     //QAction* vocabKeyboard;
     QAction* vocabRC;
     QAction* vocabAdjustRows;
-    QAction* vocabSort;
+    //QAction* vocabSort;
     QAction* vocabShuffle;
     QAction* vocabLeitner;
     QAction* vocabConfigLeitner;

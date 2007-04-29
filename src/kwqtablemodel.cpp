@@ -152,13 +152,13 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
   m_doc->setModified(true);
   return true;
 }
-
+/*
 void KWQTableModel::sort(int column, Qt::SortOrder order)
 {
   m_doc->sort(column, order);
   m_doc->setModified(true);
 }
-
+*/
 void KWQTableModel::shuffle( )
 {
   m_doc->shuffle();

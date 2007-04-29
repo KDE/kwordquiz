@@ -32,24 +32,30 @@
 #include <kdebug.h>
 
 #include "kwqtableview.h"
+#include "kwqtablemodel.h"
 #include "keduvocdocument.h"
 #include "kwordquiz.h"
-#include "dlgsort.h"
 #include "prefs.h"
 #include "dlgrc.h"
 
 KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
 {
   m_undoList.clear();
+  m_model = 0;
 
   setSelectionMode(QAbstractItemView::ContiguousSelection);
   setSelectionBehavior(QAbstractItemView::SelectItems);
   setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
   connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
+  connect(horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(slotSortByColumn(int)));
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
+
+  setSortingEnabled(true);
+  horizontalHeader()->setSortIndicatorShown(false);
   setWordWrap(true);
+
 }
 
 void KWQTableView::print(KPrinter *pPrinter)
@@ -294,6 +300,7 @@ void KWQTableView::doEditUndo()
     {
       setUpdatesEnabled(false);
       undo = m_undoList.takeFirst();
+
       Prefs::setEditorFont(undo.font());
       model()->setHeaderData(0, Qt::Horizontal, undo.colWidth1(), Qt::SizeHintRole);
       model()->setHeaderData(1, Qt::Horizontal, undo.colWidth2(), Qt::SizeHintRole);
@@ -315,6 +322,11 @@ void KWQTableView::doEditUndo()
       selectCells(undo.selection());
       selectionModel()->setCurrentIndex(undo.currentCell(), QItemSelectionModel::Current);
       reset();
+
+      if (undo.text() == i18n("&Undo Sort")) {
+        static_cast<KWQSortFilterModel*>(model())->restoreNativeOrder();
+        horizontalHeader()->setSortIndicatorShown(false);
+      }
       setUpdatesEnabled(true);
     }
 
@@ -655,27 +667,14 @@ void KWQTableView::doEditUnmarkBlank()
   }
 }
 
-void KWQTableView::doVocabSort()
-{
-  DlgSort* dlg;
-  dlg = new DlgSort(this);
-  dlg->setLanguage(1, model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
-  dlg->setLanguage(2, model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
-
-  if (dlg->exec() == KDialog::Accepted)
-  {
-    addUndo(i18n("&Undo Sort"));
-    model()->sort(dlg->base() ? 0 : 1, dlg->ascending() ? Qt::AscendingOrder : Qt::DescendingOrder);
-  }
-}
 
 void KWQTableView::doVocabShuffle()
 {
   addUndo(i18n("&Undo Shuffle"));
   QRect sel = selection();
   int currentRow = currentIndex().row();
-  int currentColumn = currentIndex().column();  
-  qobject_cast<KWQTableModel *> (model())->shuffle();
+  int currentColumn = currentIndex().column();
+  qobject_cast<KWQTableModel *> (m_model->sourceModel())->shuffle();
   setCurrentIndex(model()->index(currentRow, currentColumn));
   selectCells(sel);
 }
@@ -875,9 +874,10 @@ void KWQTableView::slotCheckedAnswer(int i)
   }
 }
 
-void KWQTableView::setModel(KWQTableModel * model)
+void KWQTableView::setModel(KWQSortFilterModel * model)
 {
   QTableView::setModel(model);
+  m_model = model;
   setCurrentIndex(model->index(0, 0));
   scrollTo(currentIndex());
   connect(verticalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(verticalHeaderResized(int, int, int)));
@@ -956,7 +956,7 @@ void KWQTableView::selectCells(const QRect & selection)
 
 void KWQTableView::verticalHeaderResized(int , int , int)
 {
-  kDebug() << "Row resized\n";
+  //kDebug() << "Row resized\n";
 }
 
 void KWQTableView::horizontalHeaderResized(int logicalIndex, int oldSize, int newSize)
@@ -985,6 +985,14 @@ void KWQTableView::setCurrentCell(const QPoint & currentCell)
   if (!model()->hasIndex(currentCell.y(), currentCell.x(), rootIndex()))
     return;
   selectionModel()->setCurrentIndex(model()->index(currentCell.y(), currentCell.x(), rootIndex()), QItemSelectionModel::Current);
+}
+
+void KWQTableView::slotSortByColumn(int column)
+{
+  addUndo(i18n("&Undo Sort"));
+  QTableView::sortByColumn(column);
+  horizontalHeader()->setSortIndicatorShown(true);
+  horizontalHeader()->setSortIndicator(column, horizontalHeader()->sortIndicatorOrder());
 }
 
 #include "kwqtableview.moc"

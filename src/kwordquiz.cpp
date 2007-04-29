@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "kwordquiz.h"
+
 #include <QPainter>
 #include <QBitmap>
 #include <QCheckBox>
@@ -43,9 +45,9 @@
 #include <knewstuff2/engine.h>
 #include <knewstuff2/ui/knewstuffaction.h>
 
-#include "kwordquiz.h"
 #include "keduvocdocument.h"
 #include "kwqtablemodel.h"
+#include "kwqsortfiltermodel.h"
 #include "kwqtableview.h"
 #include "dlglanguage.h"
 #include "kwordquizprefs.h"
@@ -248,14 +250,6 @@ void KWordQuizApp::initActions()
   vocabAdjustRows->setToolTip(vocabAdjustRows->whatsThis());
   vocabAdjustRows->setStatusTip(vocabAdjustRows->whatsThis());
   connect(vocabAdjustRows, SIGNAL(triggered(bool)), this, SLOT(slotVocabAdjustRows()));
-
-  vocabSort = actionCollection()->addAction("vocab_sort");
-  vocabSort->setIcon(KIcon("sort_incr"));
-  vocabSort->setText(i18n("&Sort..."));
-  vocabSort->setWhatsThis(i18n("Sorts the vocabulary in ascending or descending order based on the left or right column"));
-  vocabSort->setToolTip(vocabSort->whatsThis());
-  vocabSort->setStatusTip(vocabSort->whatsThis());
-  connect(vocabSort, SIGNAL(triggered(bool)), this, SLOT(slotVocabSort()));
 
   vocabShuffle = actionCollection()->addAction("vocab_shuffle");
   vocabShuffle->setIcon(KIcon("shuffle"));
@@ -573,6 +567,8 @@ void KWordQuizApp::initModel()
   m_tableModel->setDocument(m_doc);
   m_tableModel->setHeaderData(0, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
   m_tableModel->setHeaderData(1, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
+  m_sortFilterModel = new KWQSortFilterModel(this);
+  m_sortFilterModel->setSourceModel(m_tableModel);
 }
 
 void KWordQuizApp::initView()
@@ -606,7 +602,7 @@ void KWordQuizApp::initView()
   m_topLayout->addWidget(m_searchWidget);
   m_topLayout->addWidget(m_tableView);
 
-  m_tableView->setModel(m_tableModel);
+  m_tableView->setModel(m_sortFilterModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
   setCaption(m_doc->url().fileName(),false);
@@ -1073,25 +1069,7 @@ void KWordQuizApp::slotEditUnmarkBlank()
 
 void KWordQuizApp::slotEditFind(const QString & find)
 {
-  if (find.isEmpty()) {
-    for (int i = 0; i < m_tableModel->rowCount(QModelIndex()); i++)
-      m_tableView->setRowHidden(i, false);
-    return;
-  }
-  for (int i = 0; i < m_tableModel->rowCount(QModelIndex()); i++)
-    m_tableView->setRowHidden(i, true);
-
-  QModelIndexList list = m_tableModel->match(m_tableModel->index(0, 0, QModelIndex()), Qt::DisplayRole, QVariant(find), m_tableModel->rowCount(QModelIndex()),
-                                             Qt::MatchContains | Qt::MatchWrap);
-
-  QModelIndexList list2 = m_tableModel->match(m_tableModel->index(0, 1, QModelIndex()), Qt::DisplayRole, QVariant(find), m_tableModel->rowCount(QModelIndex()),
-                                              Qt::MatchContains | Qt::MatchWrap);
-
-  foreach(QModelIndex index, list2)
-    list.append(index);
-
-  foreach(QModelIndex index, list)
-    m_tableView->setRowHidden(index.row(), false);
+  m_sortFilterModel->setFilterRegExp(QRegExp(find, Qt::CaseInsensitive));
 }
 
 void KWordQuizApp::slotVocabLanguages()
@@ -1151,13 +1129,6 @@ void KWordQuizApp::slotVocabAdjustRows()
   slotStatusMsg(i18n("Ready"));
 }
 
-
-void KWordQuizApp::slotVocabSort()
-{
-  slotStatusMsg(i18n("Sorting the vocabulary..."));
-  m_tableView->doVocabSort();
-  slotStatusMsg(i18n("Ready"));
-}
 
 void KWordQuizApp::slotVocabShuffle()
 {
@@ -1518,7 +1489,7 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
   vocabFont->setEnabled(fEdit);
   //vocabKeyboard->setEnabled(fEdit);
   vocabRC->setEnabled(fEdit);
-  vocabSort->setEnabled(fEdit);
+  //vocabSort->setEnabled(fEdit);
   vocabShuffle->setEnabled(fEdit);
 
   quizEditor->setEnabled(qt != WQQuiz::qtEditor);

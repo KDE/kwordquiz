@@ -17,8 +17,7 @@ set(kwordquiz_SRCS
    wqquiz.cpp 
    wqscore.cpp 
    prefeditor.cpp 
-   prefquiz.cpp 
-   dlgsort.cpp 
+   prefquiz.cpp
    dlgrc.cpp 
    dlgspecchar.cpp 
    dlglanguage.cpp 
@@ -26,9 +25,10 @@ set(kwordquiz_SRCS
    prefcharacter.cpp 
    wqundo.cpp 
    prefcardappearance.cpp 
-   kwqtablemodel.cpp 
-   kwqtableview.cpp 
+   kwqtablemodel.cpp
+   kwqtableview.cpp
    kwqtabledelegate.cpp
+   kwqsortfiltermodel.cpp
    )
 
 kde4_automoc(${kwordquiz_SRCS})
@@ -39,8 +39,7 @@ kde4_add_ui_files(kwordquiz_SRCS
    multipleviewbase.ui 
    qaviewbase.ui 
    prefeditorbase.ui 
-   prefquizbase.ui 
-   dlgsortbase.ui 
+   prefquizbase.ui
    dlgrcbase.ui 
    prefcharacterbase.ui 
    prefcardappearancebase.ui )
