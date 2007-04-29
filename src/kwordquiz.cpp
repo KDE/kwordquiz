@@ -1237,11 +1237,11 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_tableView->hide();
         m_searchWidget->hide();
         m_flashView = new FlashView(this);
-        connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
-        connect(flashKnow, SIGNAL(activated()), m_flashView, SLOT(slotKnow()));
-        connect(flashDontKnow, SIGNAL(activated()), m_flashView, SLOT(slotDontKnow()));
-        connect(quizRestart, SIGNAL(activated()), m_flashView, SLOT(slotRestart()));
-        connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
+        connect(quizCheck, SIGNAL(triggered(bool)), m_flashView, SLOT(slotFlip()));
+        connect(flashKnow, SIGNAL(triggered(bool)), m_flashView, SLOT(slotKnow()));
+        connect(flashDontKnow, SIGNAL(triggered(bool)), m_flashView, SLOT(slotDontKnow()));
+        connect(quizRestart, SIGNAL(triggered(bool)), m_flashView, SLOT(slotRestart()));
+        connect(quizRepeatErrors, SIGNAL(triggered(bool)), m_flashView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
 
         m_flashView->setQuiz(m_quiz);
@@ -1267,9 +1267,9 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_tableView->hide();
         m_searchWidget->hide();
         m_multipleView = new MultipleView(this);
-        connect(quizCheck, SIGNAL(activated()), m_multipleView, SLOT(slotCheck()));
-        connect(quizRestart, SIGNAL(activated()), m_multipleView, SLOT(slotRestart()));
-        connect(quizRepeatErrors, SIGNAL(activated()), m_multipleView, SLOT(slotRepeat()));
+        connect(quizCheck, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotCheck()));
+        connect(quizRestart, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotRestart()));
+        connect(quizRepeatErrors, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
 
         m_multipleView -> setQuiz(m_quiz);
@@ -1295,10 +1295,10 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_tableView->hide();
         m_searchWidget->hide();
         m_qaView = new QAView(this);
-        connect(quizCheck, SIGNAL(activated()), m_qaView, SLOT(slotCheck()));
-        connect(qaHint, SIGNAL(activated()), m_qaView, SLOT(slotHint()));
-        connect(quizRestart, SIGNAL(activated()), m_qaView, SLOT(slotRestart()));
-        connect(quizRepeatErrors, SIGNAL(activated()), m_qaView, SLOT(slotRepeat()));
+        connect(quizCheck, SIGNAL(triggered(bool)), m_qaView, SLOT(slotCheck()));
+        connect(qaHint, SIGNAL(triggered(bool)), m_qaView, SLOT(slotHint()));
+        connect(quizRestart, SIGNAL(triggered(bool)), m_qaView, SLOT(slotRestart()));
+        connect(quizRepeatErrors, SIGNAL(triggered(bool)), m_qaView, SLOT(slotRepeat()));
         connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
 
         m_qaView -> setQuiz(m_quiz);
