@@ -1506,8 +1506,8 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
 
   qaHint->setEnabled(qt == WQQuiz::qtQA);
 
+  addToolBar(Qt::RightToolBarArea, toolBar("quizToolBar"));
   toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
-
 }
 
 void KWordQuizApp::slotLeitnerSystem()
