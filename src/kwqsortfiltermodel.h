@@ -1,19 +1,25 @@
-//
-// C++ Interface: kwqsortfiltermodel
-//
-// Description:
-//
-//
-// Author:  (C) 2007 Peter Hedlund <peter.hedlund@kdemail.net>
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/***************************************************************************
+                               kwqsortfiltermodel.h
+                             -------------------
+
+    copyright            : (C) 2007 by Peter Hedlund
+    email                : peter.hedlund@kdemail.net
+
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
 #ifndef KWQSORTFILTERMODEL_H
 #define KWQSORTFILTERMODEL_H
 
 #include <QSortFilterProxyModel>
-
 
 /**
   @author Peter Hedlund <peter.hedlund@kdemail.net>

@@ -39,21 +39,15 @@
 #include "prefcardappearance.h"
 #include "kwordquiz.h"
 
-KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const char *name,  KConfigSkeleton *config, FaceType dialogType, ButtonCodes dialogButtons, ButtonCode defaultButton, bool modal)
-  : KConfigDialog(parent, name, config)
+KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkeleton *config) : KConfigDialog(parent, name, config)
 {
-  setFaceType(dialogType);
-  setButtons(dialogButtons);
-  setDefaultButton(defaultButton);
-  setModal(modal);
-
   m_config = config;
 
   m_prefEditor = new PrefEditor(0);
   addPage(m_prefEditor, i18n("Editor"), "editor", i18n("Editor Settings"), true);
 
   m_prefQuiz = new PrefQuiz(0);
-  addPage(m_prefQuiz, i18n("Quiz"),  "qa", i18n("Quiz Settings"), true);
+  addPage(m_prefQuiz, i18n("Quiz"), "qa", i18n("Quiz Settings"), true);
 
   m_prefCardAppearance = new PrefCardAppearance(0);
   addPage(m_prefCardAppearance, i18n("Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);

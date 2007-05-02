@@ -1,15 +1,20 @@
-//
-// C++ Implementation: kwqsortfiltermodel
-//
-// Description:
-//
-//
-// Author:  (C) 2007 Peter Hedlund <peter.hedlund@kdemail.net>
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
-#include <KDebug>
+/***************************************************************************
+                               kwqsortfiltermodel.cpp
+                             -------------------
+
+    copyright            : (C) 2007 by Peter Hedlund
+    email                : peter.hedlund@kdemail.net
+
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 
 #include "kwqsortfiltermodel.h"
 #include "kwqtablemodel.h"
@@ -45,7 +50,6 @@ bool KWQSortFilterModel::lessThan(const QModelIndex & left, const QModelIndex & 
 
 void KWQSortFilterModel::restoreNativeOrder()
 {
-    kDebug() << "Restoring native order" << endl;
     m_restoreNativeOrder = true;
     sort(-1, Qt::AscendingOrder);
     invalidate();

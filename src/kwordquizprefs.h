@@ -33,8 +33,7 @@ class KWordQuizPrefs : public KConfigDialog
 {
   Q_OBJECT
 public:
-  KWordQuizPrefs(QWidget *parent = 0, const char *name = 0, KConfigSkeleton *config = 0, FaceType dialogType = List,
-    ButtonCodes dialogButtons = Default|Ok|Apply|Cancel|Help, ButtonCode defaultButton = Ok, bool modal = false);
+  KWordQuizPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config);
 
 protected slots:
   void updateSettings();

@@ -1330,18 +1330,17 @@ void KWordQuizApp::slotConfigureNotifications( )
 /** Configure kwordquiz */
 void KWordQuizApp::slotConfigure()
 {
-  if ( KWordQuizPrefs::showDialog( "settings" ) )
+  if (KWordQuizPrefs::showDialog("settings"))
     return;
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
-  KWordQuizPrefs* dialog = new KWordQuizPrefs( this, "settings",  Prefs::self() );
+  KWordQuizPrefs* dialog = new KWordQuizPrefs(this, "settings",  Prefs::self());
   connect(dialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplyPreferences()));
   dialog->show();
 }
 
 void KWordQuizApp::slotApplyPreferences()
 {
-  kDebug() << "Prefs Update" << endl;
   editMarkBlank->setEnabled(Prefs::enableBlanks());
   editUnmarkBlank->setEnabled(Prefs::enableBlanks());
   m_tableView->reset();
