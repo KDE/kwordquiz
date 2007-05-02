@@ -19,7 +19,7 @@
 
 #include "ui_flashviewbase.h"
 
-class WQQuiz;
+class KWQQuiz;
 class WQScore;
 
 /**
@@ -31,7 +31,7 @@ Q_OBJECT
 public:
     FlashView(QWidget *parent);
 
-    void setQuiz(WQQuiz *quiz);
+    void setQuiz(KWQQuiz *quiz);
     void init();
 
 private slots:
@@ -46,7 +46,7 @@ public slots:
     void slotApplySettings();
 
 private:
-    WQQuiz *m_quiz;
+    KWQQuiz *m_quiz;
     WQScore *m_score;
 
     QTimer* m_timer;

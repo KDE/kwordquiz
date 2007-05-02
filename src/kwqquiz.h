@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2003-2007 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -16,26 +16,28 @@
   Boston, MA 02110-1301, USA.
 */
 
-#ifndef WQQUIZ_H
-#define WQQUIZ_H
+#ifndef KWQQUIZ_H
+#define KWQQUIZ_H
 
+#include <QAbstractItemModel>
 #include <QList>
 
 #include "wqlistitem.h"
-#include "keduvocdocument.h"
 
 /**
 @author Peter Hedlund
 */
 
-class WQQuiz : public QObject
+class KWQQuiz : public QObject
 {
 Q_OBJECT
 public:
-  enum QuizType {qtEditor, qtFlash, qtMultiple, qtQA};
-  enum QuizIcon {qiLeftCol, qiRightCol, qiQuestion, qiCorrect, qiError};
+  enum QuizType {QuizEditor, QuizFlashCard, QuizMultipleChoice, QuizQuestionAnswer};
+  enum QuizIcon {IconLeftCol, IconRightCol, IconQuestion, IconCorrect, IconError};
 
-  WQQuiz(QObject *parent, KEduVocDocument *doc);
+  KWQQuiz(QObject *parent);
+
+  void setModel(QAbstractItemModel *);
 
   void activateErrorList();
   void activateBaseList();
@@ -45,7 +47,7 @@ public:
   bool checkAnswer(int i, const QString & );
   QStringList multiOptions(int i);
   QString quizIcon(int i, QuizIcon ico);
-  QString yourAnswer(int i, const QString & s);
+  QString yourAnswer(const QString & s);
   QString hint(int i);
 
   QuizType quizType() const {return m_quizType;}
@@ -67,7 +69,7 @@ signals:
   void checkingAnswer(int );
 
 private:
-  KEduVocDocument *m_doc;
+  QAbstractItemModel *m_model;
   int m_quizMode;
   int m_questionCount;
   QList<WQListItem> m_list;
@@ -78,7 +80,7 @@ private:
   QString m_correctBlank;
   QString m_answerBlank;
 
-  void addToList(int aCol, int bCol);
+  void buildList(int );
 };
 
 #endif

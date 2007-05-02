@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2003-2007 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -16,26 +16,27 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include "wqquiz.h"
+#include "kwqquiz.h"
 
 #include <QRegExp>
 
-#include <krandomsequence.h>
+#include <KRandomSequence>
 
 #include "keduvocexpression.h"
 #include "leitnersystem.h"
 #include "prefs.h"
 
-WQQuiz::WQQuiz(QObject * parent, KEduVocDocument * doc) : QObject(parent)
+KWQQuiz::KWQQuiz(QObject * parent) : QObject(parent)
 {
-  m_doc = doc;
+  m_model = 0;
 
   m_list.clear();
   m_errorList.clear();
   m_quizList.clear();
 }
 
-void WQQuiz::activateErrorList()
+
+void KWQQuiz::activateErrorList()
 {
   m_list.clear();
   foreach(const WQListItem &l, m_errorList)
@@ -45,14 +46,15 @@ void WQQuiz::activateErrorList()
   m_questionCount = m_list.count();
 }
 
-void WQQuiz::activateBaseList()
+
+void KWQQuiz::activateBaseList()
 {
   m_list.clear();
 
   if (m_quizMode > 2)
   {
-    KRandomSequence *rs = new KRandomSequence(0);
-    rs->randomize(m_quizList);
+    KRandomSequence rs;
+    rs.randomize(m_quizList);
   };
 
   foreach(const WQListItem &l, m_quizList)
@@ -61,17 +63,17 @@ void WQQuiz::activateBaseList()
   m_questionCount = m_list.count();
 }
 
-void WQQuiz::addToList(int aCol, int /*bCol*/)
+
+void KWQQuiz::buildList(int column)
 {
   //build a list of row numbers containing text in both columns
-
   QList<int> tempList;
-  for (int current = 0; current < m_doc->entryCount(); ++current)
+  for (int current = 0; current < m_model->rowCount(QModelIndex()); ++current)
   {
-    if (!m_doc->entry(current)->original().isEmpty() && !m_doc->entry(current)->translation(1).isEmpty())
-    {
+    QString front = m_model->data(m_model->index(current, 0, QModelIndex()), Qt::DisplayRole).toString();
+    QString back  = m_model->data(m_model->index(current, 1, QModelIndex()), Qt::DisplayRole).toString();
+    if (!front.isEmpty() && !back.isEmpty())
       tempList.append(current);
-    }
   }
 
   KRandomSequence rs(0);
@@ -81,7 +83,7 @@ void WQQuiz::addToList(int aCol, int /*bCol*/)
   foreach(int i, tempList)
   {
     WQListItem li;
-    li.setQuestion(aCol);
+    li.setQuestion(column);
     li.setCorrect(1);
     li.setOneOp(i);
 
@@ -104,66 +106,47 @@ void WQQuiz::addToList(int aCol, int /*bCol*/)
   }
 }
 
-bool WQQuiz::init()
+
+bool KWQQuiz::init()
 {
   bool result = false;
   int aCol;
-  int bCol;
 
   switch (m_quizMode)
   {
-  case 1:
-    aCol = 0;
-    bCol = 1;
-    break;
-  case 2:
-    aCol = 1;
-    bCol = 0;
-    break;
-  case 3:
-    aCol = 0;
-    bCol = 1;
-    break;
-  case 4:
-    aCol = 1;
-    bCol = 0;
-    break;
-  case 5:
-  default:
-    aCol = 0;
-    bCol = 1;
-    break;
+    case 1: aCol = 0; break;
+    case 2: aCol = 1; break;
+    case 3: aCol = 0; break;
+    case 4: aCol = 1; break;
+    case 5: aCol = 0; break;
   }
 
-  addToList(aCol, bCol);
+  buildList(aCol);
 
   //check if enough in list
   switch (m_quizType)
   {
-  case qtEditor:
+  case QuizEditor:
     //
     break;
-  case qtFlash:
+  case QuizFlashCard:
     result = (m_quizList.count() > 0);
     break;
-  case qtQA:
+  case QuizQuestionAnswer:
     result = (m_quizList.count() > 0);
     break;
-  case qtMultiple:
+  case QuizMultipleChoice:
     result = (m_quizList.count() > 2);
     break;
   }
 
   if (!result)
-  {
     return false;
-  }
 
   if (m_quizMode == 5)
   {
     aCol = 1;
-    bCol = 0;
-    addToList(aCol, bCol);
+    buildList(aCol);
   }
 
   //Prepare final lists
@@ -171,24 +154,18 @@ bool WQQuiz::init()
   return true;
 }
 
-bool WQQuiz::checkAnswer(int i, const QString & a)
+
+bool KWQQuiz::checkAnswer(int i, const QString & a)
 {
   bool result = false;
   WQListItem li = m_list.at(i);
   QString ans = a;
-  QString tTemp;
-  if (li.question() == 0)
-  {
-    tTemp = m_doc->entry(li.oneOp())->translation(1);
-  }
-  else
-  {
-    tTemp = m_doc->entry(li.oneOp())->original();
-  }
+  QString tTemp = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
+
   tTemp = tTemp.simplified();
   ans = ans.simplified();
 
-  if (m_quizType == qtQA)
+  if (m_quizType == QuizQuestionAnswer)
   {
     if (QString(m_correctBlank).length() > 0)
     {
@@ -221,7 +198,7 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
   }
   else
   {
-    if (m_quizType == qtMultiple)
+    if (m_quizType == QuizMultipleChoice)
     {
       if (Prefs::enableBlanks())
       {
@@ -251,62 +228,35 @@ bool WQQuiz::checkAnswer(int i, const QString & a)
   return result;
 }
 
-QStringList WQQuiz::multiOptions(int i)
+
+QStringList KWQQuiz::multiOptions(int i)
 {
-  QString s;
-  QStringList Result;
   QStringList ls;
 
   WQListItem li = m_list.at(i);
 
-  int j;
-  if (li.question() == 0)
-  {
-    j = 1;
+  ls.append(m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
+  ls.append(m_model->data(m_model->index(li.twoOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
+  ls.append(m_model->data(m_model->index(li.threeOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
+  if (Prefs::enableBlanks()) {
+    for (int i = 0; i < ls.count(); i++) {
+      ls[i].remove("[");
+      ls[i].remove("]");
+      }
   }
-  else
-  {
-    j= 0;
-  }
-
-  s = (j ?  m_doc->entry(li.oneOp())->translation(1) :  m_doc->entry(li.oneOp())->original());
-  if (Prefs::enableBlanks())
-  {
-    s.remove("[");
-    s.remove("]");
-  }
-  ls.append(s);
-
-  s =(j ? m_doc->entry(li.twoOp())->translation(1) : m_doc->entry(li.twoOp())->original());
-  if (Prefs::enableBlanks())
-  {
-    s.remove("[");
-    s.remove("]");
-  }
-  ls.append(s);
-
-  s = (j ? m_doc->entry(li.threeOp())->translation(1) : m_doc->entry(li.threeOp())->original());
-  if (Prefs::enableBlanks())
-  {
-    s.remove("[");
-    s.remove("]");
-  }
-  ls.append(s);
 
   KRandomSequence rs(0);
   rs.randomize(ls);
 
-  foreach(const QString &s, ls)
-    Result.append(s);
-
-  return Result;
+  return ls;
 }
 
-QString WQQuiz::quizIcon(int i, QuizIcon ico)
+
+QString KWQQuiz::quizIcon(int i, QuizIcon ico)
 {
   QString s;
   WQListItem li = m_list.at(i);
-  if (ico == qiLeftCol)
+  if (ico == IconLeftCol)
   {
     if (li.question() == 0)
       s = "question";
@@ -314,7 +264,7 @@ QString WQQuiz::quizIcon(int i, QuizIcon ico)
       s = "answer";
   }
 
-  if (ico == qiRightCol)
+  if (ico == IconRightCol)
   {
     if (li.question() == 0)
       s = "answer";
@@ -324,7 +274,8 @@ QString WQQuiz::quizIcon(int i, QuizIcon ico)
   return s;
 }
 
-QString WQQuiz::yourAnswer(int /*i*/, const QString & s)
+
+QString KWQQuiz::yourAnswer(const QString & s)
 {
   QString result ="";
 
@@ -360,7 +311,8 @@ QString WQQuiz::yourAnswer(int /*i*/, const QString & s)
   return result;
 }
 
-QString WQQuiz::hint(int i)
+
+QString KWQQuiz::hint(int i)
 {
   if (QString(m_correctBlank).length() > 0)
   {
@@ -372,27 +324,30 @@ QString WQQuiz::hint(int i)
   }
 }
 
-void WQQuiz::setQuizType(QuizType qt)
+
+void KWQQuiz::setQuizType(QuizType qt)
 {
   m_quizType = qt;
 }
 
-void WQQuiz::setQuizMode(int qm)
+
+void KWQQuiz::setQuizMode(int qm)
 {
   m_quizMode = qm;
 }
 
 
-QString WQQuiz::question(int i)
+QString KWQQuiz::question(int i)
 {
   WQListItem li = m_list.at(i);
-  QString s = (li.question() ? m_doc->entry(li.oneOp())->translation(1) : m_doc->entry(li.oneOp())->original());
+  QString s = m_model->data(m_model->index(li.oneOp(), li.question() ? 1 : 0, QModelIndex()), Qt::DisplayRole).toString();
+
   if (Prefs::enableBlanks())
   {
     s.remove("[");
     s.remove("]");
   }
-  if (m_quizType != qtFlash && i > 0)
+  if (m_quizType != QuizFlashCard && i > 0)
   {
     WQListItem li2 = m_list.at(i - 1);
     emit checkingAnswer(li2.oneOp());
@@ -403,7 +358,8 @@ QString WQQuiz::question(int i)
   return s;
 }
 
-QString WQQuiz::blankAnswer(int i)
+
+QString KWQQuiz::blankAnswer(int i)
 {
 
   QString r = "";
@@ -411,10 +367,10 @@ QString WQQuiz::blankAnswer(int i)
   m_answerBlank = "";
   QString tTemp;
 
-  if (m_quizType == qtQA && Prefs::enableBlanks())
+  if (m_quizType == QuizQuestionAnswer && Prefs::enableBlanks())
   {
     WQListItem li = m_list.at(i);
-    tTemp = (li.question() ? m_doc->entry(li.oneOp())->original() : m_doc->entry(li.oneOp())->translation(1));
+    tTemp = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     r = tTemp;
     QRegExp rx;
     rx.setMinimal(true);
@@ -443,14 +399,15 @@ QString WQQuiz::blankAnswer(int i)
   return m_answerBlank;
 }
 
-QString WQQuiz::answer(int i)
+
+QString KWQQuiz::answer(int i)
 {
   QString s;
   WQListItem li = m_list.at(i);
 
-  if (m_quizType == qtQA)
+  if (m_quizType == QuizQuestionAnswer)
   {
-    s = (li.question() ? m_doc->entry(li.oneOp())->original() : m_doc->entry(li.oneOp())->translation(1));
+    s = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     if (Prefs::enableBlanks())
     {
       s.replace("[", "<u>");
@@ -461,7 +418,7 @@ QString WQQuiz::answer(int i)
   }
   else
   {
-    s = (li.question() ? m_doc->entry(li.oneOp())->original() : m_doc->entry(li.oneOp())->translation(1));
+    s = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     if (Prefs::enableBlanks())
     {
       s.remove("[");
@@ -471,26 +428,28 @@ QString WQQuiz::answer(int i)
   return s;
 }
 
-QString WQQuiz::langQuestion(int i)
+
+QString KWQQuiz::langQuestion(int i)
 {
   WQListItem li = m_list.at(i);
   if (li.question() == 0)
-    return m_doc->originalIdentifier();
+    return m_model->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
   else
-    return m_doc->identifier(1);
+    return m_model->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
 }
 
-QString WQQuiz::langAnswer(int i)
-{
 
+QString KWQQuiz::langAnswer(int i)
+{
   WQListItem li = m_list.at(i);
   if (li.question() == 1)
-    return m_doc->originalIdentifier();
+    return m_model->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
   else
-    return m_doc->identifier(1);
+    return m_model->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();;
 }
 
-int WQQuiz::kbAnswer(int /*i*/)
+
+int KWQQuiz::kbAnswer(int /*i*/)
 {
 /*  WQListItem *li = m_list->at(i);
   if (li->question() == 0)
@@ -504,14 +463,22 @@ int WQQuiz::kbAnswer(int /*i*/)
   return 0;
 }
 
-int WQQuiz::questionCount()
+
+int KWQQuiz::questionCount()
 {
   return m_questionCount;
 }
 
-void WQQuiz::finish()
+
+void KWQQuiz::finish()
 {
   emit checkingAnswer(-1);
 }
 
-#include "wqquiz.moc"
+
+void KWQQuiz::setModel(QAbstractItemModel * model)
+{
+  m_model = model;
+}
+
+#include "kwqquiz.moc"

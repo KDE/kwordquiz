@@ -75,7 +75,7 @@ KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
   initView();
 
   m_dirWatch = KDirWatch::self();
-  m_quizType = WQQuiz::qtEditor;
+  m_quizType = KWQQuiz::QuizEditor;
   m_quiz = 0;
   m_flashView = 0;
   m_multipleView = 0;
@@ -1155,32 +1155,32 @@ void KWordQuizApp::slotModeChange()
 void KWordQuizApp::slotQuizEditor()
 {
   slotStatusMsg(i18n("Starting editor session..."));
-  updateSession(WQQuiz::qtEditor);
+  updateSession(KWQQuiz::QuizEditor);
   slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotQuizFlash()
 {
   slotStatusMsg(i18n("Starting flashcard session..."));
-  updateSession(WQQuiz::qtFlash);
+  updateSession(KWQQuiz::QuizFlashCard);
   slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotQuizMultiple()
 {
   slotStatusMsg(i18n("Starting multiple choice session..."));
-  updateSession(WQQuiz::qtMultiple);
+  updateSession(KWQQuiz::QuizMultipleChoice);
   slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotQuizQA()
 {
   slotStatusMsg(i18n("Starting question & answer session..."));
-  updateSession(WQQuiz::qtQA);
+  updateSession(KWQQuiz::QuizQuestionAnswer);
   slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
+void KWordQuizApp::updateSession(KWQQuiz::QuizType qt)
 {
   if (m_quiz != 0)
   {
@@ -1189,24 +1189,24 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
   }
 
   switch( m_quizType ){
-    case WQQuiz::qtEditor:
+    case KWQQuiz::QuizEditor:
       //
       break;
-    case WQQuiz::qtFlash:
+    case KWQQuiz::QuizFlashCard:
       if (m_flashView != 0)
       {
         delete(m_flashView);
         m_flashView = 0;
       }
       break;
-    case WQQuiz::qtMultiple:
+    case KWQQuiz::QuizMultipleChoice:
       if (m_multipleView != 0)
       {
         delete(m_multipleView);
         m_multipleView = 0;
       }
       break;
-    case WQQuiz::qtQA:
+    case KWQQuiz::QuizQuestionAnswer:
       if (m_qaView != 0)
       {
         delete(m_qaView);
@@ -1215,22 +1215,23 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
   }
 
-  if ((qt != WQQuiz::qtEditor) && Prefs::enableBlanks()) {
+  if ((qt != KWQQuiz::QuizEditor) && Prefs::enableBlanks()) {
     if (!checkSyntax(true))
       return;
   }
 
   switch (qt){
-    case WQQuiz::qtEditor:
+    case KWQQuiz::QuizEditor:
       m_tableView->show();
       m_tableView -> setFocus();
       m_searchWidget->setVisible(Prefs::showSearch());
       m_quizType = qt;
       break;
-    case WQQuiz::qtFlash:
-      m_quiz = new WQQuiz(this, m_doc);
+    case KWQQuiz::QuizFlashCard:
+      m_quiz = new KWQQuiz(this);
+      m_quiz->setModel(m_sortFilterModel);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-      m_quiz ->setQuizType(WQQuiz::qtFlash);
+      m_quiz ->setQuizType(KWQQuiz::QuizFlashCard);
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
       {
@@ -1256,10 +1257,11 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_quiz = 0;
       }
       break;
-    case WQQuiz::qtMultiple:
-      m_quiz = new WQQuiz(this, m_doc);
+    case KWQQuiz::QuizMultipleChoice:
+      m_quiz = new KWQQuiz(this);
+      m_quiz->setModel(m_sortFilterModel);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-      m_quiz ->setQuizType(WQQuiz::qtMultiple);
+      m_quiz ->setQuizType(KWQQuiz::QuizMultipleChoice);
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
       {
@@ -1284,10 +1286,11 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_quiz = 0;
       }
       break;
-    case WQQuiz::qtQA:
-      m_quiz = new WQQuiz(this, m_doc);
+    case KWQQuiz::QuizQuestionAnswer:
+      m_quiz = new KWQQuiz(this);
+      m_quiz->setModel(m_sortFilterModel);
       connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-      m_quiz ->setQuizType(WQQuiz::qtQA);
+      m_quiz ->setQuizType(KWQQuiz::QuizQuestionAnswer);
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
       {
@@ -1472,9 +1475,9 @@ void KWordQuizApp::contextMenuEvent(QContextMenuEvent * event)
   popup->exec( QPoint( event->globalX(), event->globalY() ) );
 }
 
-void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
+void KWordQuizApp::updateActions(KWQQuiz::QuizType qt)
 {
-  bool fEdit = (qt == WQQuiz::qtEditor);
+  bool fEdit = (qt == KWQQuiz::QuizEditor);
 
   fileSave->setEnabled(fEdit);
   fileSaveAs->setEnabled(fEdit);
@@ -1492,22 +1495,22 @@ void KWordQuizApp::updateActions( WQQuiz::QuizType qt )
   //vocabSort->setEnabled(fEdit);
   vocabShuffle->setEnabled(fEdit);
 
-  quizEditor->setEnabled(qt != WQQuiz::qtEditor);
-  quizFlash->setEnabled(qt != WQQuiz::qtFlash);
-  quizMultiple->setEnabled(qt != WQQuiz::qtMultiple);
-  quizQA->setEnabled(qt != WQQuiz::qtQA);
+  quizEditor->setEnabled(qt != KWQQuiz::QuizEditor);
+  quizFlash->setEnabled(qt != KWQQuiz::QuizFlashCard);
+  quizMultiple->setEnabled(qt != KWQQuiz::QuizMultipleChoice);
+  quizQA->setEnabled(qt != KWQQuiz::QuizQuestionAnswer);
 
-  quizCheck->setEnabled(qt != WQQuiz::qtEditor);
-  quizRestart->setEnabled(qt != WQQuiz::qtEditor);
+  quizCheck->setEnabled(qt != KWQQuiz::QuizEditor);
+  quizRestart->setEnabled(qt != KWQQuiz::QuizEditor);
   quizRepeatErrors->setEnabled(false);
 
-  flashKnow->setEnabled(qt == WQQuiz::qtFlash);
-  flashDontKnow->setEnabled(qt == WQQuiz::qtFlash);
+  flashKnow->setEnabled(qt == KWQQuiz::QuizFlashCard);
+  flashDontKnow->setEnabled(qt == KWQQuiz::QuizFlashCard);
 
-  qaHint->setEnabled(qt == WQQuiz::qtQA);
+  qaHint->setEnabled(qt == KWQQuiz::QuizQuestionAnswer);
 
   addToolBar(Qt::RightToolBarArea, toolBar("quizToolBar"));
-  toolBar("quizToolBar")->setHidden(qt == WQQuiz::qtEditor);
+  toolBar("quizToolBar")->setHidden(qt == KWQQuiz::QuizEditor);
 }
 
 void KWordQuizApp::slotLeitnerSystem()

@@ -21,7 +21,7 @@
 
 #include "ui_multipleviewbase.h"
 
-class WQQuiz;
+class KWQQuiz;
 class WQScore;
 
 /**
@@ -33,7 +33,7 @@ Q_OBJECT
 public:
     MultipleView(QWidget *parent);
 
-    void setQuiz(WQQuiz *quiz);
+    void setQuiz(KWQQuiz *quiz);
     void init();
 
 public slots:
@@ -46,7 +46,7 @@ public slots:
     void slotApplySettings();
 
 private:
-    WQQuiz *m_quiz;
+    KWQQuiz *m_quiz;
     WQScore *m_score;
 
     int m_question;

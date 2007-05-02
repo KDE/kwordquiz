@@ -14,7 +14,7 @@ set(kwordquiz_SRCS
    qaview.cpp 
    flashview.cpp 
    multipleview.cpp 
-   wqquiz.cpp 
+   kwqquiz.cpp 
    wqscore.cpp 
    prefeditor.cpp 
    prefquiz.cpp

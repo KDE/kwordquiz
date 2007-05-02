@@ -66,7 +66,7 @@ QAView::QAView(QWidget *parent) : QWidget(parent)
   m_score = new WQScore();
 }
 
-void QAView::setQuiz(WQQuiz *quiz)
+void QAView::setQuiz(KWQQuiz *quiz)
 {
   m_quiz = quiz;
 }
@@ -143,7 +143,7 @@ void QAView::slotCheck()
     {
 
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
-      lblYourAnswer->setText(m_quiz->yourAnswer(m_question, txtAnswer->text()));
+      lblYourAnswer->setText(m_quiz->yourAnswer(txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
@@ -156,7 +156,7 @@ void QAView::slotCheck()
       m_error++;
 
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", K3Icon::Panel));
-      lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(m_question, txtAnswer->text())));
+      lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer(m_question));
       //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
       picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
@@ -267,7 +267,7 @@ void QAView::showQuestion(int i)
   lblQuestion -> setText(m_quiz ->question(i));
   //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
-  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), K3Icon::Panel));
+  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconLeftCol), K3Icon::Panel));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
@@ -283,7 +283,7 @@ void QAView::showQuestion(int i)
   //txtAnswer->setFont(m_quiz->fontAnswer(i));
   txtAnswer -> setText("");
 
-  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), K3Icon::Panel));
+  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconRightCol), K3Icon::Panel));
 
   //@todo handle keyboard layouts
 }

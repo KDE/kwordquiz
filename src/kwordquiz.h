@@ -18,20 +18,17 @@
 #ifndef KWORDQUIZ_H
 #define KWORDQUIZ_H
 
-// include files for Qt
 #include <QSignalMapper>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QActionGroup>
 
-// include files for KDE
 #include <kxmlguiwindow.h>
 #include <kaction.h>
 #include <kdirwatch.h>
 #include <kurl.h>
 
-// forward declaration of the KWordQuiz classes
-#include "wqquiz.h"
+#include "kwqquiz.h"
 
 class KActionMenu;
 class KRecentFilesAction;
@@ -238,9 +235,9 @@ class KWordQuizApp : public KXmlGuiWindow
     void contextMenuEvent(QContextMenuEvent * event);
   private:
 
-    WQQuiz::QuizType m_quizType;
+    KWQQuiz::QuizType m_quizType;
 
-    WQQuiz *m_quiz;
+    KWQQuiz *m_quiz;
 
     /** view is the main widget which represents your working area. The View
      * class should handle all events of the view widget.  It is kept empty so
@@ -338,8 +335,8 @@ class KWordQuizApp : public KXmlGuiWindow
 
     static KWordQuizApp * m_self;
 
-    void updateSession(WQQuiz::QuizType qt);
-    void updateActions(WQQuiz::QuizType qt);
+    void updateSession(KWQQuiz::QuizType qt);
+    void updateActions(KWQQuiz::QuizType qt);
     void updateSpecialCharIcons();
     QString charIcon(const QChar &);
     void openUrl(const KUrl& url);

@@ -37,7 +37,7 @@ MultipleView::MultipleView(QWidget *parent) : QWidget(parent)
   connect(opt3, SIGNAL(clicked()), this, SLOT(slotOpt3Clicked()));
 }
 
-void MultipleView::setQuiz(WQQuiz *quiz)
+void MultipleView::setQuiz(KWQQuiz *quiz)
 {
   m_quiz = quiz;
 }
@@ -149,7 +149,7 @@ void MultipleView::slotCheck()
     picPrevious->setPixmap(KIconLoader::global()->loadIcon("question", K3Icon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
-    lblYourAnswer->setText(m_quiz->yourAnswer(m_question, ans));
+    lblYourAnswer->setText(m_quiz->yourAnswer(ans));
     //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
@@ -253,7 +253,7 @@ void MultipleView::showQuestion(int i)
   lblQuestion -> setText(m_quiz ->question(i));
   //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
-  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiLeftCol), K3Icon::Panel));
+  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconLeftCol), K3Icon::Panel));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
@@ -278,7 +278,7 @@ void MultipleView::showQuestion(int i)
   opt2->setChecked(false);
   opt3->setChecked(false);
 
-  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), K3Icon::Panel));
+  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconRightCol), K3Icon::Panel));
 }
 
 void MultipleView::slotApplySettings( )

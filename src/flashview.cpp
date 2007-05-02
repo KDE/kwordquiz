@@ -35,7 +35,7 @@ FlashView::FlashView(QWidget *parent) : QWidget(parent)
   connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
 }
 
-void FlashView::setQuiz(WQQuiz *quiz)
+void FlashView::setQuiz(KWQQuiz *quiz)
 {
   m_quiz = quiz;
 }
