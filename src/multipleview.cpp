@@ -1,7 +1,7 @@
 /***************************************************************************
                           multipleview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003-2006 Peter Hedlund
+   copyright            : (C) 2003-2007 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -19,10 +19,10 @@
 #include <QLabel>
 #include <QRadioButton>
 
-#include <kactioncollection.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <knotification.h>
+#include <KActionCollection>
+#include <KIconLoader>
+#include <KLocale>
+#include <KNotification>
 
 #include "kwordquiz.h"
 #include "wqscore.h"
@@ -135,7 +135,6 @@ void MultipleView::slotCheck()
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", K3Icon::Panel));
 
       lblCorrect->setText(m_quiz->answer(m_question));
-      //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
       picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
@@ -145,12 +144,10 @@ void MultipleView::slotCheck()
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question(m_question));
-    //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
     picPrevious->setPixmap(KIconLoader::global()->loadIcon("question", K3Icon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
     lblYourAnswer->setText(m_quiz->yourAnswer(ans));
-    //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
     {
@@ -251,28 +248,16 @@ void MultipleView::showQuestion(int i)
 
   lblQuestionLanguage -> setText(m_quiz ->langQuestion(i));
   lblQuestion -> setText(m_quiz ->question(i));
-  //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
   picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconLeftCol), K3Icon::Panel));
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
-  //opt1->setFont(m_quiz->fontAnswer(i));
-  //opt2->setFont(m_quiz->fontAnswer(i));
-  //opt3->setFont(m_quiz->fontAnswer(i));
-
   QStringList sl = m_quiz->multiOptions(i);
-  QString s[10];
-  int j = 0;
-  for(QStringList::Iterator it = sl.begin(); it != sl.end(); ++it)
-  {
-    s[j] = *it;
-    j++;
-  }
 
-  opt1->setText("&1 " + s[0]);
-  opt2->setText("&2 " + s[1]);
-  opt3->setText("&3 " + s[2]);
+  opt1->setText("&1 " + sl[0]);
+  opt2->setText("&2 " + sl[1]);
+  opt3->setText("&3 " + sl[2]);
 
   opt1->setChecked(false);
   opt2->setChecked(false);
@@ -281,9 +266,9 @@ void MultipleView::showQuestion(int i)
   picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconRightCol), K3Icon::Panel));
 }
 
-void MultipleView::slotApplySettings( )
+void MultipleView::slotApplySettings()
 {
-  m_score ->setAsPercent(Prefs::percent());
+  m_score->setAsPercent(Prefs::percent());
   updateScore();
 }
 

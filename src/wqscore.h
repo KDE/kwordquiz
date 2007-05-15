@@ -1,7 +1,7 @@
 /***************************************************************************
                           wqscore.h  -  description
                              -------------------
-   copyright            : (C) 2003 by Peter Hedlund
+   copyright            : (C) 2003, 2007 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -17,34 +17,33 @@
 #ifndef WQSCORE_H
 #define WQSCORE_H
 
-#include <QWidget>
+#include <QString>
 
 /**
 @author Peter Hedlund
 */
-class WQScore{
+
+class WQScore
+{
 public:
-    enum CountDirection {cdCorrect, cdError, cdNone};
-    WQScore();
+  enum CountDirection {cdCorrect, cdError, cdNone};
+  WQScore();
 
-    ~WQScore();
+  void setAsPercent(bool p);
+  void setQuestionCount(int c);
+  void countIncrement(CountDirection d);
 
-    void setAsPercent(bool p);
-    void setQuestionCount(int c);
-    void countIncrement(CountDirection d);
+  QString answerText();
+  QString correctText();
+  QString errorText();
 
-    QString answerText();
-    QString correctText();
-    QString errorText();
 private:
-
-
-    bool m_percent;
-    int m_questionCount;
-    int m_error;
-    int m_correct;
-    int m_answerCount;
-    QString valueToString(int i);
+  bool m_percent;
+  int m_questionCount;
+  int m_error;
+  int m_correct;
+  int m_answerCount;
+  QString valueToString(int i);
 };
 
 #endif

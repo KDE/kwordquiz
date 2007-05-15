@@ -1,7 +1,7 @@
 /***************************************************************************
                           flashview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003-2006 Peter Hedlund
+   copyright            : (C) 2003-2007 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -18,10 +18,10 @@
 
 #include <QLabel>
 
-#include <kactioncollection.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <knotification.h>
+#include <KActionCollection>
+#include <KIconLoader>
+#include <KLocale>
+#include <KNotification>
 
 #include "kwordquiz.h"
 #include "wqscore.h"
@@ -117,18 +117,18 @@ void FlashView::slotFlip()
     QPalette pal;
     pal.setColor(lblLanguageQuestion->backgroundRole(), Prefs::frontCardColor());
     lblLanguageQuestion->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(lblQuestion->foregroundRole(), Prefs::frontTextColor());
     pal.setColor(lblQuestion->backgroundRole(), Prefs::frontCardColor());
     lblQuestion->setPalette(pal);
     lblQuestion->setFont(Prefs::frontFont());
-    
+
     pal = QPalette();
     pal.setColor(fraCard->foregroundRole(), Prefs::frontFrameColor());
     pal.setColor(fraCard->backgroundRole(), Prefs::frontCardColor());
     fraCard->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(linFlash->foregroundRole(), Prefs::frontFrameColor());
     pal.setColor(linFlash->backgroundRole(), Prefs::frontCardColor());
@@ -142,23 +142,23 @@ void FlashView::slotFlip()
     QPalette pal;
     pal.setColor(lblLanguageQuestion->backgroundRole(), Prefs::backCardColor());
     lblLanguageQuestion->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(lblQuestion->foregroundRole(), Prefs::backTextColor());
     pal.setColor(lblQuestion->backgroundRole(), Prefs::backCardColor());
     lblQuestion->setPalette(pal);
     lblQuestion->setFont(Prefs::backFont());
-    
+
     pal = QPalette();
     pal.setColor(fraCard->foregroundRole(), Prefs::backFrameColor());
     pal.setColor(fraCard->backgroundRole(), Prefs::backCardColor());
     fraCard->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(linFlash->foregroundRole(), Prefs::backFrameColor());
     pal.setColor(linFlash->backgroundRole(), Prefs::backCardColor());
     linFlash->setPalette(pal);
-    //linFlash->setPaletteForegroundColor(QColor(0, 0, 255));
+
     showBack(m_question);
     m_showFirst = true;
   }
@@ -239,18 +239,18 @@ void FlashView::slotApplySettings( )
     QPalette pal;
     pal.setColor(lblQuestion->backgroundRole(), Prefs::frontCardColor());
     lblLanguageQuestion->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(lblQuestion->foregroundRole(), Prefs::frontTextColor());
     pal.setColor(lblQuestion->backgroundRole(), Prefs::frontCardColor());
     lblQuestion->setPalette(pal);
     lblQuestion->setFont(Prefs::frontFont());
-    
+
     pal = QPalette();
     pal.setColor(fraCard->foregroundRole(), Prefs::frontFrameColor());
     pal.setColor(fraCard->backgroundRole(), Prefs::frontCardColor());
     fraCard->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(linFlash->foregroundRole(), Prefs::frontFrameColor());
     pal.setColor(linFlash->backgroundRole(), Prefs::frontCardColor());
@@ -261,18 +261,18 @@ void FlashView::slotApplySettings( )
     QPalette pal;
     pal.setColor(lblLanguageQuestion->backgroundRole(), Prefs::backCardColor());
     lblLanguageQuestion->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(lblQuestion->foregroundRole(), Prefs::backTextColor());
     pal.setColor(lblQuestion->backgroundRole(), Prefs::backCardColor());
     lblQuestion->setPalette(pal);
     lblQuestion->setFont(Prefs::backFont());
-    
+
     pal = QPalette();
     pal.setColor(fraCard->foregroundRole(), Prefs::backFrameColor());
     pal.setColor(fraCard->backgroundRole(), Prefs::backCardColor());
     fraCard->setPalette(pal);
-    
+
     pal = QPalette();
     pal.setColor(linFlash->foregroundRole(), Prefs::backFrameColor());
     pal.setColor(linFlash->backgroundRole(), Prefs::backCardColor());
@@ -289,6 +289,5 @@ void FlashView::slotApplySettings( )
   m_score ->setAsPercent(Prefs::percent());
   updateScore();
 }
-
 
 #include "flashview.moc"

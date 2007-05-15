@@ -1,7 +1,7 @@
 /***************************************************************************
                           qaview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003-2006 Peter Hedlund
+   copyright            : (C) 2003-2007 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -18,11 +18,11 @@
 
 #include <QLabel>
 
-#include <kactioncollection.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <klineedit.h>
-#include <knotification.h>
+#include <KActionCollection>
+#include <KIconLoader>
+#include <KLocale>
+#include <KLineEdit>
+#include <KNotification>
 
 #include "prefs.h"
 #include "kwordquiz.h"
@@ -85,17 +85,11 @@ void QAView::init()
   QFont f = Prefs::editorFont();
   f.setWeight(QFont::Normal);
   lblQuestion -> setFont(f);
-  //lblQuestion -> font().setBold(false);
   lblAnswerBlank -> setFont(f);
-  //lblAnswerBlank -> font().setBold(false);
   txtAnswer -> setFont(f);
-  //txtAnswer -> font().setBold(false);
   lblPreviousQuestion -> setFont(f);
-  //lblPreviousQuestion -> font().setBold(false);
   lblYourAnswer -> setFont(f);
-  //lblYourAnswer -> font().setBold(false);
   lblCorrect -> setFont(f);
-  //lblCorrect -> font().setBold(false);
 
   lblPreviousQuestionHeader->clear();
   lblPreviousQuestion->clear();
@@ -158,7 +152,6 @@ void QAView::slotCheck()
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", K3Icon::Panel));
       lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer(m_question));
-      //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
       picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("check", K3Icon::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
@@ -172,8 +165,6 @@ void QAView::slotCheck()
     picPrevious->setPixmap(KIconLoader::global()->loadIcon("question", K3Icon::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
-
-    //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
     {
@@ -262,10 +253,8 @@ void QAView::updateScore()
  */
 void QAView::showQuestion(int i)
 {
-  //m_quiz->setColumn(i);
   lblQuestionLanguage -> setText(m_quiz ->langQuestion(i));
   lblQuestion -> setText(m_quiz ->question(i));
-  //lblQuestion -> setFont(m_quiz->fontQuestion(i));
 
   picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconLeftCol), K3Icon::Panel));
 
@@ -274,18 +263,16 @@ void QAView::showQuestion(int i)
   if (!QString(m_quiz ->blankAnswer(i)).isEmpty())
   {
     lblAnswerBlank->show();
-    //lblAnswerBlank->setFont(m_quiz->fontAnswer(i));
     lblAnswerBlank->setText(m_quiz->blankAnswer(i));
   }
   else
     lblAnswerBlank->hide();
 
-  //txtAnswer->setFont(m_quiz->fontAnswer(i));
   txtAnswer -> setText("");
 
   picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconRightCol), K3Icon::Panel));
 
-  //@todo handle keyboard layouts
+  ///@todo handle keyboard layouts
 }
 
 void QAView::slotApplySettings( )

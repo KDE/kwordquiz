@@ -1,7 +1,7 @@
 /***************************************************************************
                           wqscore.cpp  -  description
                              -------------------
-   copyright            : (C) 2003 by Peter Hedlund
+   copyright            : (C) 2003, 2007 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -25,11 +25,6 @@ WQScore::WQScore()
   m_answerCount = 0;
 }
 
-
-WQScore::~WQScore()
-{}
-
-
 void WQScore::setAsPercent(bool p)
 {
   m_percent = p;
@@ -38,7 +33,6 @@ void WQScore::setAsPercent(bool p)
 void WQScore::setQuestionCount(int c)
 {
   m_questionCount = c;
-  //m_percent = false;
   m_error = 0;
   m_correct = 0;
   m_answerCount = 0;
@@ -46,7 +40,6 @@ void WQScore::setQuestionCount(int c)
 
 void WQScore::countIncrement(CountDirection d)
 {
-
   if (d != cdNone)
     m_answerCount++;
   if (d == cdCorrect)
