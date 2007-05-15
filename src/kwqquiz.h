@@ -22,11 +22,38 @@
 #include <QAbstractItemModel>
 #include <QList>
 
-#include "wqlistitem.h"
-
 /**
 @author Peter Hedlund
 */
+
+class KWQListItem
+{
+public:
+  /**
+   * Constructs an empty KWQListItem
+   */
+  KWQListItem(){}
+  /**
+   * Constructs a KWQListItem
+   * @param question the column containing the question
+   * @param first the row containing the correct answer (also the first choice for multiple choice)
+   * @param second the row containing the second choice for multiple choice
+   * @param third the row containing the third choice for multiple choice
+   */
+  KWQListItem(int question, int first, int second, int third) : m_question(question), m_firstChoice(first), m_secondChoice(second), m_thirdChoice(third) {}
+
+  int question()     {return m_question;}
+  int firstChoice()  {return m_firstChoice;}
+  int secondChoice() {return m_secondChoice;}
+  int thirdChoice()  {return m_thirdChoice;}
+
+private:
+  int m_question;
+  int m_firstChoice;
+  int m_secondChoice;
+  int m_thirdChoice;
+};
+
 
 class KWQQuiz : public QObject
 {
@@ -72,9 +99,9 @@ private:
   QAbstractItemModel *m_model;
   int m_quizMode;
   int m_questionCount;
-  QList<WQListItem> m_list;
-  QList<WQListItem> m_errorList;
-  QList<WQListItem> m_quizList;
+  QList<KWQListItem> m_list;
+  QList<KWQListItem> m_errorList;
+  QList<KWQListItem> m_quizList;
 
   QuizType m_quizType;
   QString m_correctBlank;

@@ -39,7 +39,7 @@ KWQQuiz::KWQQuiz(QObject * parent) : QObject(parent)
 void KWQQuiz::activateErrorList()
 {
   m_list.clear();
-  foreach(const WQListItem &l, m_errorList)
+  foreach(const KWQListItem &l, m_errorList)
     m_list.append(l);
 
   m_errorList.clear();
@@ -57,7 +57,7 @@ void KWQQuiz::activateBaseList()
     rs.randomize(m_quizList);
   };
 
-  foreach(const WQListItem &l, m_quizList)
+  foreach(const KWQListItem &l, m_quizList)
     m_list.append(l);
 
   m_questionCount = m_list.count();
@@ -82,27 +82,18 @@ void KWQQuiz::buildList(int column)
 
   foreach(int i, tempList)
   {
-    WQListItem li;
-    li.setQuestion(column);
-    li.setCorrect(1);
-    li.setOneOp(i);
-
+    int a, b;
     if (count > 2)
     {
-      int a, b;
       do
         a = rs.getLong(count);
-      while(a==i);
-
-      li.setTwoOp(a);
+      while(a == i);
 
       do
         b = rs.getLong(count);
       while(b == i || b == a);
-
-      li.setThreeOp(b);
     }
-    m_quizList.append(li);
+    m_quizList.append(KWQListItem(column, i, a, b));
   }
 }
 
@@ -158,9 +149,9 @@ bool KWQQuiz::init()
 bool KWQQuiz::checkAnswer(int i, const QString & a)
 {
   bool result = false;
-  WQListItem li = m_list.at(i);
+  KWQListItem li = m_list.at(i);
   QString ans = a;
-  QString tTemp = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
+  QString tTemp = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
 
   tTemp = tTemp.simplified();
   ans = ans.simplified();
@@ -233,11 +224,11 @@ QStringList KWQQuiz::multiOptions(int i)
 {
   QStringList ls;
 
-  WQListItem li = m_list.at(i);
+  KWQListItem li = m_list.at(i);
 
-  ls.append(m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
-  ls.append(m_model->data(m_model->index(li.twoOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
-  ls.append(m_model->data(m_model->index(li.threeOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
+  ls.append(m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
+  ls.append(m_model->data(m_model->index(li.secondChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
+  ls.append(m_model->data(m_model->index(li.thirdChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
   if (Prefs::enableBlanks()) {
     for (int i = 0; i < ls.count(); i++) {
       ls[i].remove("[");
@@ -255,7 +246,7 @@ QStringList KWQQuiz::multiOptions(int i)
 QString KWQQuiz::quizIcon(int i, QuizIcon ico)
 {
   QString s;
-  WQListItem li = m_list.at(i);
+  KWQListItem li = m_list.at(i);
   if (ico == IconLeftCol)
   {
     if (li.question() == 0)
@@ -339,8 +330,8 @@ void KWQQuiz::setQuizMode(int qm)
 
 QString KWQQuiz::question(int i)
 {
-  WQListItem li = m_list.at(i);
-  QString s = m_model->data(m_model->index(li.oneOp(), li.question() ? 1 : 0, QModelIndex()), Qt::DisplayRole).toString();
+  KWQListItem li = m_list.at(i);
+  QString s = m_model->data(m_model->index(li.firstChoice(), li.question() ? 1 : 0, QModelIndex()), Qt::DisplayRole).toString();
 
   if (Prefs::enableBlanks())
   {
@@ -349,11 +340,11 @@ QString KWQQuiz::question(int i)
   }
   if (m_quizType != QuizFlashCard && i > 0)
   {
-    WQListItem li2 = m_list.at(i - 1);
-    emit checkingAnswer(li2.oneOp());
+    KWQListItem li2 = m_list.at(i - 1);
+    emit checkingAnswer(li2.firstChoice());
   }
   else
-    emit checkingAnswer(li.oneOp());
+    emit checkingAnswer(li.firstChoice());
 
   return s;
 }
@@ -369,8 +360,8 @@ QString KWQQuiz::blankAnswer(int i)
 
   if (m_quizType == QuizQuestionAnswer && Prefs::enableBlanks())
   {
-    WQListItem li = m_list.at(i);
-    tTemp = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
+    KWQListItem li = m_list.at(i);
+    tTemp = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     r = tTemp;
     QRegExp rx;
     rx.setMinimal(true);
@@ -403,11 +394,11 @@ QString KWQQuiz::blankAnswer(int i)
 QString KWQQuiz::answer(int i)
 {
   QString s;
-  WQListItem li = m_list.at(i);
+  KWQListItem li = m_list.at(i);
 
   if (m_quizType == QuizQuestionAnswer)
   {
-    s = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
+    s = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     if (Prefs::enableBlanks())
     {
       s.replace("[", "<u>");
@@ -418,7 +409,7 @@ QString KWQQuiz::answer(int i)
   }
   else
   {
-    s = m_model->data(m_model->index(li.oneOp(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
+    s = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     if (Prefs::enableBlanks())
     {
       s.remove("[");
@@ -431,7 +422,7 @@ QString KWQQuiz::answer(int i)
 
 QString KWQQuiz::langQuestion(int i)
 {
-  WQListItem li = m_list.at(i);
+  KWQListItem li = m_list.at(i);
   if (li.question() == 0)
     return m_model->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
   else
@@ -441,7 +432,7 @@ QString KWQQuiz::langQuestion(int i)
 
 QString KWQQuiz::langAnswer(int i)
 {
-  WQListItem li = m_list.at(i);
+  KWQListItem li = m_list.at(i);
   if (li.question() == 1)
     return m_model->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
   else
@@ -451,7 +442,7 @@ QString KWQQuiz::langAnswer(int i)
 
 int KWQQuiz::kbAnswer(int /*i*/)
 {
-/*  WQListItem *li = m_list->at(i);
+/*  KWQListItem *li = m_list->at(i);
   if (li->question() == 0)
   {
     //@todo return m_table ->layoutLeft();
