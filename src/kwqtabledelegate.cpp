@@ -22,8 +22,6 @@
 #include <QLineEdit>
 #include <QPainter>
 
-#include "kdebug.h"
-
 #include "kwqtablemodel.h"
 
 KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
@@ -36,7 +34,6 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
   QLineEdit *editor = new QLineEdit(parent);
   editor->setFrame(false);
   editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
-  //editor->installEventFilter(const_cast<KWQTableDelegate*>(this));
   connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
   return editor;
 }
@@ -44,9 +41,6 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
 void KWQTableDelegate::setEditorData(QWidget * editor, const QModelIndex & index) const
 {
   QString value = index.model()->data(index, Qt::DisplayRole).toString();
-
-  if (value == "@empty@")
-    value = "";
 
   QLineEdit *lineEdit = static_cast<QLineEdit*>(editor);
   lineEdit->setText(value);
@@ -60,15 +54,16 @@ void KWQTableDelegate::setModelData(QWidget * editor, QAbstractItemModel * model
   model->setData(index, value);
 }
 
-void KWQTableDelegate::updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & /*index*/) const
+void KWQTableDelegate::updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
+  Q_UNUSED(index);
   editor->setGeometry(option.rect);
 }
 
 void KWQTableDelegate::commitAndCloseEditor()
 {
   QWidget *editor = qobject_cast<QWidget *>(sender());
-  kDebug() << "Committing and closing\n";
+
   emit commitData(editor);
   emit closeEditor(editor, QAbstractItemDelegate::NoHint);
 }
@@ -97,8 +92,6 @@ void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewIte
     painter->setFont(option.font);
     QRect textRect = rect.adjusted(3, 0, -3, 0); // remove width padding
     QString str = text;
-    if (str == "@empty@")
-      str = "";
 
     painter->drawText(textRect, option.displayAlignment | Qt::TextWordWrap, str);
     painter->setFont(font);

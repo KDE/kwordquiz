@@ -26,12 +26,12 @@
 #include <QList>
 #include <QApplication>
 
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <krandomsequence.h>
-#include <kglobalsettings.h>
-#include <knotification.h>
-#include <kdebug.h>
+#include <KLocale>
+#include <KMessageBox>
+#include <KRandomSequence>
+#include <KGlobalSettings>
+#include <KNotification>
+#include <KDebug>
 
 #include "kwqtablemodel.h"
 #include "keduvocdocument.h"
@@ -802,7 +802,7 @@ void KWQTableView::activateNextCell()
     QModelIndex newIndex = model()->index(newRow, newColumn);
     setCurrentIndex(newIndex/*, QItemSelectionModel::SelectCurrent*/);
   }
-  else //a larger selection, move within it
+  else if (indexes.count() > 1) //a larger selection, move within it
   {
     QModelIndex topLeft = indexes.first();
     QModelIndex bottomRight = indexes.last();

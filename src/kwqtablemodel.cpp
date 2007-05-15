@@ -29,13 +29,15 @@ KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
   m_doc = 0;
 }
 
-int KWQTableModel::rowCount(const QModelIndex & /*parent*/) const
+int KWQTableModel::rowCount(const QModelIndex & parent) const
 {
+  Q_UNUSED(parent);
   return m_doc->entryCount();
 }
 
-int KWQTableModel::columnCount(const QModelIndex & /*parent*/) const
+int KWQTableModel::columnCount(const QModelIndex & parent) const
 {
+  Q_UNUSED(parent);
   return 2;
 }
 
@@ -53,9 +55,6 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
     result = m_doc->entry(index.row())->original();
   else
     result = m_doc->entry(index.row())->translation(1);
-
-  if (result.toString().isEmpty())
-    result = "@empty@";
 
   return result;
 }
@@ -152,13 +151,7 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
   m_doc->setModified(true);
   return true;
 }
-/*
-void KWQTableModel::sort(int column, Qt::SortOrder order)
-{
-  m_doc->sort(column, order);
-  m_doc->setModified(true);
-}
-*/
+
 void KWQTableModel::shuffle( )
 {
   m_doc->shuffle();
@@ -176,7 +169,7 @@ bool KWQTableModel::isEmpty()
   if (m_doc->url().fileName() == i18n("Untitled")){
     int rc = rowCount(QModelIndex());
     for (int i = 0; i < rc; i++)
-      if (data(index(i, 0), Qt::DisplayRole).toString() != "@empty@" || data(index(i, 1), Qt::DisplayRole).toString() != "@empty@")
+      if (!data(index(i, 0), Qt::DisplayRole).toString().isEmpty() || !data(index(i, 1), Qt::DisplayRole).toString().isEmpty())
         return false;
 
     return true;
