@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="14" name="kwordquiz" >
+<kpartgui version="15" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -71,7 +71,7 @@
     <Separator />-->
     <Action name="mode_0"/>
   </ToolBar>
-  <ToolBar name="sessionToolBar">
+  <ToolBar name="sessionToolBar" iconText="icontextbottom">
     <text>Go to</text>
     <Action name="quiz_editor" />
     <Action name="quiz_flash" />

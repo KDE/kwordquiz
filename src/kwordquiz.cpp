@@ -279,6 +279,7 @@ void KWordQuizApp::initActions()
   mode = actionCollection()->add<KActionMenu>("mode_0");
   mode->setIcon(KIcon("mode1"));
   mode->setText(i18n("Change Mode"));
+  mode->setIconText(i18n("Mode"));
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
   mode->setStatusTip(mode->whatsThis());
@@ -372,6 +373,7 @@ void KWordQuizApp::initActions()
   quizQA = actionCollection()->addAction("quiz_qa");
   quizQA->setIcon(KIcon("qa"));
   quizQA->setText(i18n("&Question && Answer"));
+  quizQA->setIconText(i18n("Q&&A"));
   quizQA->setShortcut(QKeySequence(Qt::Key_F9));
   quizQA->setWhatsThis(i18n("Starts a question and answer session using the active vocabulary"));
   quizQA->setToolTip(quizQA->whatsThis());
