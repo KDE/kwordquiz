@@ -101,7 +101,7 @@ void KWQQuiz::buildList(int column)
 bool KWQQuiz::init()
 {
   bool result = false;
-  int aCol;
+  int aCol = 0;
 
   switch (m_quizMode)
   {
