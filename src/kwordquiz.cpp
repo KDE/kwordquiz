@@ -679,7 +679,7 @@ KEduVocDocument *KWordQuizApp::document() const
 void KWordQuizApp::saveOptions()
 {
   fileOpenRecent->saveEntries(KGlobal::config()->group( "Recent Files") );
-  Prefs::writeConfig();
+  Prefs::self()->writeConfig();
 }
 
 void KWordQuizApp::readOptions()
