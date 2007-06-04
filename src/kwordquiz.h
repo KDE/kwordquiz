@@ -32,7 +32,6 @@
 
 class KActionMenu;
 class KRecentFilesAction;
-class KToggleAction;
 class KLineEdit;
 class KEduVocDocument;
 class KWQTableModel;

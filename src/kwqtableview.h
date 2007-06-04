@@ -29,7 +29,6 @@
 #include "kwqtabledelegate.h"
 #include "wqundo.h"
 
-class KEduVocDocument;
 
 const char delim_start = '[';
 const char delim_end = ']';
