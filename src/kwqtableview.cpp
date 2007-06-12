@@ -271,7 +271,7 @@ void KWQTableView::addUndo(const QString & caption)
   for(int i = 0; i < model()->rowCount(); i++)
   {
     KEduVocExpression expression;
-    expression.setOriginal(model()->data(model()->index(i, 0), Qt::DisplayRole).toString());
+    expression.setTranslation(0, model()->data(model()->index(i, 0), Qt::DisplayRole).toString());
     expression.setTranslation(1, model()->data(model()->index(i, 1), Qt::DisplayRole).toString());
     list.append(expression);
   }
@@ -316,8 +316,8 @@ void KWQTableView::doEditUndo()
       for(int i = 0; i < items.count(); i++)
       {
         expression = items[i];
-        model()->setData(model()->index(i, 0), QVariant(expression.original()), Qt::EditRole);
-        model()->setData(model()->index(i, 1), QVariant(expression.translation(1)), Qt::EditRole);
+        model()->setData(model()->index(i, 0), QVariant(expression.translation(0).translation()), Qt::EditRole);
+        model()->setData(model()->index(i, 1), QVariant(expression.translation(1).translation()), Qt::EditRole);
       }
 
       selectCells(undo.selection());

@@ -52,9 +52,9 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
 
   QVariant result;
   if (index.column() == 0)
-    result = m_doc->entry(index.row())->original();
+    result = m_doc->entry(index.row())->translation(0).translation();
   else
-    result = m_doc->entry(index.row())->translation(1);
+    result = m_doc->entry(index.row())->translation(1).translation();
 
   return result;
 }
@@ -89,7 +89,7 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
 {
   if (index.isValid() && role == Qt::EditRole) {
     if (index.column() == 0)
-      m_doc->entry(index.row())->setOriginal(value.toString());
+      m_doc->entry(index.row())->setTranslation(0, value.toString());
     else
       m_doc->entry(index.row())->setTranslation(1, value.toString());
 
