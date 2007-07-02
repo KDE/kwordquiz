@@ -29,33 +29,30 @@
 
 static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
 
-static KCmdLineOptions options[] =
-{
-  { "m", 0, 0 },
-  { "mode <number>", I18N_NOOP("A number 1-5 corresponding to the \nentries in the Mode menu"), 0 },
-  { "g", 0, 0 },
-  { "goto <session>", I18N_NOOP("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer"), 0 },
-  { "+[File]", I18N_NOOP("File to open"), 0 },
-  { 0, 0, 0 }
-};
-
 int main(int argc, char *argv[])
 {
-  KAboutData aboutData("kwordquiz",
-                       I18N_NOOP("KWordQuiz"),
+  KAboutData aboutData("kwordquiz", 0,
+                       ki18n("KWordQuiz"),
                        KWQ_VERSION,
-                       description,
+                       ki18n(description),
                        KAboutData::License_GPL,
-                       "(c) 2003-2007, Peter Hedlund",
-                       0,
+                       ki18n("(c) 2003-2007, Peter Hedlund"),
+                       KLocalizedString(),
                        "http://edu.kde.org/kwordquiz",
                        "submit@bugs.kde.org");
 
-  aboutData.addAuthor("Peter Hedlund", 0, "peter.hedlund@kdemail.net");
-  aboutData.addCredit("Anne-Marie Mahfouf", I18N_NOOP("KDE Edutainment Maintainer"), "annma@kde.org", 0);
-  aboutData.addCredit("Martin Pfeiffer", I18N_NOOP("Leitner System and several code contributions"), "hubipete@gmx.net", 0);
+  aboutData.addAuthor(ki18n("Peter Hedlund"), KLocalizedString(), "peter.hedlund@kdemail.net");
+  aboutData.addCredit(ki18n("Anne-Marie Mahfouf"), ki18n("KDE Edutainment Maintainer"), "annma@kde.org");
+  aboutData.addCredit(ki18n("Martin Pfeiffer"), ki18n("Leitner System and several code contributions"), "hubipete@gmx.net");
 
   KCmdLineArgs::init( argc, argv, &aboutData );
+
+  KCmdLineOptions options;
+  options.add("m");
+  options.add("mode <number>", ki18n("A number 1-5 corresponding to the \nentries in the Mode menu"));
+  options.add("g");
+  options.add("goto <session>", ki18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer"));
+  options.add("+[File]", ki18n("File to open"));
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
@@ -75,7 +72,7 @@ int main(int argc, char *argv[])
     {
       kwordquiz->openDocumentFile(KUrl(args->arg(args->count() - 1)));
 
-      QByteArray mode = args->getOption("mode");
+      QString mode = args->getOption("mode");
 
       if (!mode.isEmpty())
       {
@@ -83,7 +80,7 @@ int main(int argc, char *argv[])
         kwordquiz->slotModeActionGroupTriggered(a);
       }
 
-      QByteArray go_to = args->getOption("goto");
+      QString go_to = args->getOption("goto");
       if (!go_to.isEmpty())
       {
         if (go_to == "flash")
