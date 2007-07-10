@@ -31,7 +31,6 @@ set(kwordquiz_SRCS
    kwqsortfiltermodel.cpp
    )
 
-kde4_automoc(${kwordquiz_SRCS})
 
 kde4_add_ui_files(kwordquiz_SRCS 
    dlglanguagebase.ui 
