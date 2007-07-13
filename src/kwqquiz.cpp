@@ -92,8 +92,8 @@ void KWQQuiz::buildList(int column)
       do
         b = rs.getLong(count);
       while(b == i || b == a);
+      m_quizList.append(KWQListItem(column, i, a, b));
     }
-    m_quizList.append(KWQListItem(column, i, a, b));
   }
 }
 
