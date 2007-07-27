@@ -1493,7 +1493,7 @@ void KWordQuizApp::updateActions(KWQQuiz::QuizType qt)
   vocabFont->setEnabled(fEdit);
   //vocabKeyboard->setEnabled(fEdit);
   vocabRC->setEnabled(fEdit);
-  //vocabSort->setEnabled(fEdit);
+  vocabAdjustRows->setEnabled(fEdit);
   vocabShuffle->setEnabled(fEdit);
 
   quizEditor->setEnabled(qt != KWQQuiz::QuizEditor);
@@ -1510,8 +1510,10 @@ void KWordQuizApp::updateActions(KWQQuiz::QuizType qt)
 
   qaHint->setEnabled(qt == KWQQuiz::QuizQuestionAnswer);
 
+  configShowSearchBar->setEnabled(fEdit);
+
   addToolBar(Qt::RightToolBarArea, toolBar("quizToolBar"));
-  toolBar("quizToolBar")->setHidden(qt == KWQQuiz::QuizEditor);
+  toolBar("quizToolBar")->setHidden(fEdit);
 }
 
 void KWordQuizApp::slotLeitnerSystem()
