@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KWORDQUIZVIEW_H
-#define KWORDQUIZVIEW_H
+#ifndef KWQTABLEVIEW_H
+#define KWQTABLEVIEW_H
 
 #include <QTableView>
 #include <QList>
