@@ -886,6 +886,12 @@ void KWordQuizApp::slotFileSave()
 
 void KWordQuizApp::slotFileGHNS()
 {
+  ///Make sure the installation directory exists
+  KConfig conf("kwordquiz.knsrc");
+  KConfigGroup confGroup = conf.group("KNewStuff2");
+  QString installDir = confGroup.readEntry("InstallPath", "Vocabularies");
+  KStandardDirs::makeDir(QDir::home().path() + "/" + installDir);
+
   KNS::Entry::List entries = KNS::Engine::download();
 }
 
