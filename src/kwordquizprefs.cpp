@@ -44,17 +44,17 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkel
   m_config = config;
 
   m_prefEditor = new PrefEditor(0);
-  addPage(m_prefEditor, i18n("Editor"), "editor", i18n("Editor Settings"), true);
+  addPage(m_prefEditor, i18nc("@title:group editor settings", "Editor"), "editor", i18n("Editor Settings"), true);
 
   m_prefQuiz = new PrefQuiz(0);
-  addPage(m_prefQuiz, i18n("Quiz"), "qa", i18n("Quiz Settings"), true);
+  addPage(m_prefQuiz, i18nc("@title:group quiz settings", "Quiz"), "qa", i18n("Quiz Settings"), true);
 
   m_prefCardAppearance = new PrefCardAppearance(0);
-  addPage(m_prefCardAppearance, i18n("Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);
+  addPage(m_prefCardAppearance, i18nc("@title:group flash appearance settings", "Flashcard\nAppearance"), "flash", i18n("Flashcard Appearance Settings"), true);
 
   KWordQuizApp *win = KWordQuizApp::self();
   m_prefCharacter = new PrefCharacter(0, win->actionCollection());
-  addPage(m_prefCharacter, i18n("Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
+  addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
   connect(m_prefCharacter, SIGNAL(widgetModified()), this, SLOT(updateButtons()));
 }
 
