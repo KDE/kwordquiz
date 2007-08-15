@@ -19,7 +19,7 @@
 
 #include "kwqtabledelegate.h"
 
-#include <QLineEdit>
+#include <KLineEdit>
 #include <QPainter>
 
 #include "kwqtablemodel.h"
@@ -31,7 +31,7 @@ KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
 QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
   Q_UNUSED(option);
-  QLineEdit *editor = new QLineEdit(parent);
+  KLineEdit *editor = new KLineEdit(parent);
   editor->setFrame(false);
   editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
   connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
@@ -42,13 +42,13 @@ void KWQTableDelegate::setEditorData(QWidget * editor, const QModelIndex & index
 {
   QString value = index.model()->data(index, Qt::DisplayRole).toString();
 
-  QLineEdit *lineEdit = static_cast<QLineEdit*>(editor);
+  KLineEdit *lineEdit = static_cast<KLineEdit*>(editor);
   lineEdit->setText(value);
 }
 
 void KWQTableDelegate::setModelData(QWidget * editor, QAbstractItemModel * model, const QModelIndex & index) const
 {
-  QLineEdit *lineEdit = static_cast<QLineEdit*>(editor);
+  KLineEdit *lineEdit = static_cast<KLineEdit*>(editor);
   QString value = lineEdit->text();
 
   model->setData(index, value);

@@ -890,7 +890,7 @@ void KWordQuizApp::slotFileGHNS()
   KConfig conf("kwordquiz.knsrc");
   KConfigGroup confGroup = conf.group("KNewStuff2");
   QString installDir = confGroup.readEntry("InstallPath", "Vocabularies");
-  KStandardDirs::makeDir(QDir::home().path() + "/" + installDir);
+  KStandardDirs::makeDir(QDir::home().path() + '/' + installDir);
 
   KNS::Entry::List entries = KNS::Engine::download();
 }
@@ -1436,7 +1436,7 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
   mode2->setText(i18n("&2 %1 -> %2 In Order", s2, s1));
   mode3->setText(i18n("&3 %1 -> %2 Randomly", s1, s2));
   mode4->setText(i18n("&4 %1 -> %2 Randomly", s2, s1));
-  mode5->setText(i18n("&5 %1 <-> %2 Randomly", s1, s2));
+  mode5->setText(i18n("&5 %1 &lt;-&gt; %2 Randomly", s1, s2));
 
   Prefs::setMode(act->data().toInt());
   mode->setIcon(KIcon("mode" + QString::number(Prefs::mode())));
@@ -1455,7 +1455,7 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
     m_modeLabel->setText(i18n("%1 -> %2 Randomly", s2, s1));
     break;
   case 5:
-    m_modeLabel->setText(i18n("%1 <-> %2 Randomly", s1, s2));
+    m_modeLabel->setText(i18n("%1 &lt;-&gt; %2 Randomly", s1, s2));
     break;
   }
 
