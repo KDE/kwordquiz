@@ -701,7 +701,7 @@ void KWordQuizApp::saveProperties(KConfigGroup &_cfg)
     QString tempname = kapp->tempSaveName(url.url());
     QString tempurl = KUrl::toPercentEncoding(tempname);
     KUrl _url(tempurl);
-    m_doc->saveAs(_url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    m_doc->saveAs(_url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
   }
 }
 
@@ -753,7 +753,7 @@ bool KWordQuizApp::queryClose()
         }
         else
         {
-          completed = m_doc->saveAs(m_doc->url(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+          completed = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         }
 
         break;
@@ -877,7 +877,7 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    if (!m_doc->saveAs(m_doc->url(), KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION))) {
+    if (!m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION))) {
       slotFileSaveAs();
     }
   }
@@ -935,7 +935,7 @@ bool KWordQuizApp::saveAsFileName( )
       {
         if (m_dirWatch ->contains(m_doc->url().path()))
           m_dirWatch ->removeFile(m_doc->url().path());
-        m_doc->saveAs(url, KEduVocDocument::automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        m_doc->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addUrl(url);
         setCaption(m_doc->url().fileName(), m_doc->isModified());
