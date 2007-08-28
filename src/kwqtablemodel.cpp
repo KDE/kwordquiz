@@ -52,9 +52,9 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
 
   QVariant result;
   if (index.column() == 0)
-    result = m_doc->entry(index.row())->translation(0).translation();
+    result = m_doc->entry(index.row())->translation(0).text();
   else
-    result = m_doc->entry(index.row())->translation(1).translation();
+    result = m_doc->entry(index.row())->translation(1).text();
 
   return result;
 }
