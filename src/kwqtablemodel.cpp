@@ -65,7 +65,7 @@ QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int
   {
     if (role == Qt::DisplayRole) {
       if (section == 0)
-        return m_doc->originalIdentifier();
+        return m_doc->identifier(0);
       else
         return m_doc->identifier(1);
     }
@@ -105,7 +105,7 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
   if (orientation == Qt::Horizontal) {
     if (role == Qt::EditRole) {
       if (section == 0)
-        m_doc->setOriginalIdentifier(value.toString());
+        m_doc->setIdentifier(0, value.toString());
       if (section == 1)
         m_doc->setIdentifier(1, value.toString());
     }
