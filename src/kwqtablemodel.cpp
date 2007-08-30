@@ -65,9 +65,9 @@ QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int
   {
     if (role == Qt::DisplayRole) {
       if (section == 0)
-        return m_doc->identifier(0);
+        return m_doc->identifier(0).name();
       else
-        return m_doc->identifier(1);
+        return m_doc->identifier(1).name();
     }
     if (role == Qt::SizeHintRole)
       return QSize(m_doc->sizeHint(section), 25);
@@ -105,9 +105,9 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
   if (orientation == Qt::Horizontal) {
     if (role == Qt::EditRole) {
       if (section == 0)
-        m_doc->setIdentifier(0, value.toString());
+        m_doc->identifier(0).setName(value.toString());
       if (section == 1)
-        m_doc->setIdentifier(1, value.toString());
+        m_doc->identifier(1).setName(value.toString());
     }
     if (role == Qt::SizeHintRole)
       m_doc->setSizeHint(section, qvariant_cast<QSize>(value).width());

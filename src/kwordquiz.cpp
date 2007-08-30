@@ -554,8 +554,15 @@ void KWordQuizApp::initStatusBar()
 void KWordQuizApp::initDocument()
 {
   m_doc = new KEduVocDocument(this);
-  m_doc->appendIdentifier(i18n("Column 1"));
-  m_doc->appendIdentifier(i18n("Column 2"));
+  ///@todo New kvtml documents have a locale setting which should contain the language they are written in.
+  /* it would be nice to support that somehow. get hot new stuff for KHangman and KAnagram already uses this. */
+  m_doc->appendIdentifier();
+  m_doc->identifier(0).setName(i18n("Column 1"));
+  // m_doc->identifier(0).setLocale("en");
+  m_doc->appendIdentifier();
+  m_doc->identifier(1).setName(i18n("Column 2"));
+  // m_doc->identifier(1).setLocale("en");
+
   for (int i=0; i<20; i++)
   {
     m_doc->appendEntry(new KEduVocExpression());
