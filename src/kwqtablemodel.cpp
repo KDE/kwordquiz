@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Mon Feb 27 18:27:30 PST 2006
-    copyright            : (C) 2006 by Peter Hedlund
+    copyright            : (C) 2006-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -23,6 +23,7 @@
 
 #include "prefs.h"
 #include "keduvocexpression.h"
+
 
 KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
@@ -176,6 +177,69 @@ bool KWQTableModel::isEmpty()
   }
   else
     return false;
+}
+
+
+bool KWQTableModel::checkBlanksSyntax(const QString & text)
+{
+  if (!Prefs::enableBlanks())
+    return true;
+
+  bool result = false;
+  int openCount = 0;
+  int closeCount = 0;
+  QVector<int> openPos(0);
+  QVector<int> closePos(0);
+
+  for (int i = 0; i< text.length(); ++i)
+  {
+    if (text[i] == delim_start)
+    {
+      openCount++;
+      openPos.resize(openCount);
+      openPos[openCount - 1] = i;
+    }
+
+    if (text[i] == delim_end)
+    {
+      closeCount++;
+      closePos.resize(closeCount);
+      closePos[closeCount - 1] = i;
+    }
+  }
+
+  if (openCount == 0 && closeCount == 0)
+    return true;
+
+  if (openCount > 0 && closeCount > 0)
+    if (openPos.size() == closePos.size())
+      for (int i = 0; i < openPos.size(); ++i)
+        result = (openPos[i] < closePos[i]);
+
+  return result;
+}
+
+bool KWQTableModel::checkSyntax()
+{
+  int errorCount = 0;
+
+  for (int r = 0; r < rowCount(QModelIndex()); ++r)
+  {
+    QString s = data(index(r, 0, QModelIndex()), Qt::DisplayRole).toString();
+    if (s.length() > 0)
+      for (int i = 0; i <= s.length(); ++i)
+        if (s[i] == delim_start || s[i] == delim_end)
+          if (!checkBlanksSyntax(s))
+            errorCount++;
+    s = data(index(r, 1, QModelIndex()), Qt::DisplayRole).toString();
+    if (s.length() > 0)
+      for (int i = 0; i <= s.length(); ++i)
+        if (s[i] == delim_start || s[i] == delim_end)
+          if (!checkBlanksSyntax(s))
+            errorCount++;
+    }
+
+  return (errorCount == 0);
 }
 
 #include "kwqtablemodel.moc"

@@ -84,8 +84,6 @@ class KWordQuizApp : public KXmlGuiWindow
      */
     bool saveAsFileName();
 
-    bool checkSyntax(bool blanks);
-
     static KWordQuizApp * self() { return m_self; }
 
   protected:

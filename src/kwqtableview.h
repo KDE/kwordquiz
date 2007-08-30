@@ -29,10 +29,6 @@
 #include "kwqtabledelegate.h"
 #include "wqundo.h"
 
-
-const char delim_start = '[';
-const char delim_end = ']';
-
 /**
 @author Peter Hedlund
 */
@@ -62,8 +58,6 @@ public:
   void doEditUnmarkBlank();
   void doVocabShuffle();
   void doVocabRC();
-
-  bool checkForBlank(const QString & s, bool blank);
 
 protected:
   QRect selection() const;

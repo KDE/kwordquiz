@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Mon Feb 27 18:27:30 PST 2006
-    copyright            : (C) 2006 by Peter Hedlund
+    copyright            : (C) 2006-2007 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -27,6 +27,10 @@
 /**
   @author Peter Hedlund <peter.hedlund@kdemail.net>
 */
+
+const char delim_start = '[';
+const char delim_end = ']';
+
 class KWQTableModel : public QAbstractTableModel
 {
 Q_OBJECT
@@ -52,10 +56,12 @@ public:
   void shuffle();
 
   bool isEmpty();
+  bool checkSyntax();
+  bool checkBlanksSyntax(const QString & text);
 
 private:
   KEduVocDocument * m_doc;
-  
+
   friend class KWordQuizApp;
 };
 

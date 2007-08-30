@@ -116,7 +116,13 @@ void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem 
 
 void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
-  QItemDelegate::paint(painter, option, index);
+  KWQTableModel * model = static_cast<const KWQTableModel *>(index.model());
+  QStyleOptionViewItem opt = option;
+  if (!model->checkBlanksSyntax(index.model()->data(index, Qt::DisplayRole).toString())) {
+    QPalette::ColorGroup cg = QPalette::Normal;
+    opt.palette.setColor(cg, QPalette::Text, Qt::red);
+  }
+  QItemDelegate::paint(painter, opt, index);
 }
 
 #include "kwqtabledelegate.moc"

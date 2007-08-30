@@ -788,27 +788,6 @@ bool KWordQuizApp::queryExit()
   return true;
 }
 
-bool KWordQuizApp::checkSyntax(bool blanks)
-{
-  int errorCount = 0;
-
-  for (int r = 0; r < m_tableModel->rowCount(QModelIndex()); ++r)
-  {
-    QString s = m_tableModel->data(m_tableModel->index(r, 0, QModelIndex()), Qt::DisplayRole).toString();
-    if (s.length() > 0)
-      for (int i = 0; i <= s.length(); ++i)
-        if (s[i] == delim_start || s[i] == delim_end)
-          if (!m_tableView->checkForBlank(s, blanks))
-            errorCount++;
-    s = m_tableModel->data(m_tableModel->index(r, 1, QModelIndex()), Qt::DisplayRole).toString();
-    if (s.length() > 0)
-      for (int i = 0; i <= s.length(); ++i)
-        if (s[i] == delim_start || s[i] == delim_end)
-          if (!m_tableView->checkForBlank(s, blanks))
-            errorCount++;
-    }
-  return (errorCount == 0);
-}
 
 void KWordQuizApp::slotFileNew()
 {
@@ -1231,7 +1210,7 @@ void KWordQuizApp::updateSession(KWQQuiz::QuizType qt)
   }
 
   if ((qt != KWQQuiz::QuizEditor) && Prefs::enableBlanks()) {
-    if (!checkSyntax(true))
+    if (!m_tableModel->checkSyntax())
       return;
   }
 

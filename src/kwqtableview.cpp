@@ -519,44 +519,6 @@ void KWQTableView::doEditDelete()
   selectCells(sel);
 }
 
-bool KWQTableView::checkForBlank(const QString  & s, bool blank)
-{
-  if (!blank)
-    return true;
-
-  bool result = false;
-  int openCount = 0;
-  int closeCount = 0;
-  QVector<int> openPos(0);
-  QVector<int> closePos(0);
-
-  for (int i = 0; i< s.length(); ++i)
-  {
-    if (s[i] == delim_start)
-    {
-      openCount++;
-      openPos.resize(openCount);
-      openPos[openCount - 1] = i;
-    }
-
-    if (s[i] == delim_end)
-    {
-      closeCount++;
-      closePos.resize(closeCount);
-      closePos[closeCount - 1] = i;
-    }
-  }
-
-  if (openCount == 0 && closeCount == 0)
-    return true;
-
-  if (openCount > 0 && closeCount > 0)
-    if (openPos.size() == closePos.size())
-      for (int i = 0; i < openPos.size(); ++i)
-        result = (openPos[i] < closePos[i]);
-
-  return result;
-}
 
 void KWQTableView::doEditMarkBlank()
 {
@@ -903,7 +865,7 @@ void KWQTableView::commitData(QWidget * editor)
 
   if (!newText.isEmpty()) {
     if (Prefs::enableBlanks())
-      if (!checkForBlank(newText, true))
+      if (!m_model->sourceModel()->checkBlanksSyntax(newText) /*checkForBlank(newText, true)*/)
         KNotification::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
   }
 
