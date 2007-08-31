@@ -290,13 +290,8 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* vocabLeitner;
     QAction* vocabConfigLeitner;
 
-    KActionMenu* mode;
+    KActionMenu *m_modeActionMenu;
     QActionGroup *m_modeActionGroup;
-    QAction* mode1;
-    QAction* mode2;
-    QAction* mode3;
-    QAction* mode4;
-    QAction* mode5;
 
     QAction* quizEditor;
     QAction* quizFlash;

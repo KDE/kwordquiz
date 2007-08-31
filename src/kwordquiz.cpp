@@ -276,72 +276,31 @@ void KWordQuizApp::initActions()
   vocabConfigLeitner->setEnabled(false);
   connect(vocabConfigLeitner, SIGNAL(triggered(bool)), this, SLOT(slotConfigLeitner()));
 
-  mode = actionCollection()->add<KActionMenu>("mode_0");
-  mode->setIcon(KIcon("mode1"));
-  mode->setText(i18n("Change Mode"));
-  mode->setIconText(i18n("Mode"));
-  mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
-  mode->setToolTip(mode->whatsThis());
-  mode->setStatusTip(mode->whatsThis());
-  connect(mode, SIGNAL(triggered(bool)), this, SLOT(slotModeChange()));
+  m_modeActionMenu = actionCollection()->add<KActionMenu>("mode_0");
+  m_modeActionMenu->setIcon(KIcon("mode1"));
+  m_modeActionMenu->setText(i18n("Change Mode"));
+  m_modeActionMenu->setIconText(i18n("Mode"));
+  m_modeActionMenu->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
+  m_modeActionMenu->setToolTip(m_modeActionMenu->whatsThis());
+  m_modeActionMenu->setStatusTip(m_modeActionMenu->whatsThis());
+  connect(m_modeActionMenu, SIGNAL(triggered(bool)), this, SLOT(slotModeChange()));
 
   m_modeActionGroup = new QActionGroup(this);
   connect(m_modeActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotModeActionGroupTriggered(QAction *)));
 
-  mode1 = actionCollection()->addAction("mode_1");
-  mode1->setData(1);
-  mode1->setCheckable(true);
-  mode1->setIcon(KIcon("mode1"));
-  mode1->setText("");
-  mode1->setWhatsThis(i18n("Selects this mode"));
-  mode1->setToolTip(mode1->whatsThis());
-  mode1->setStatusTip(mode1->whatsThis());
-  mode->addAction(mode1);
-  m_modeActionGroup->addAction(mode1);
+  QAction * a;
 
-  mode2 = actionCollection()->addAction("mode_2");
-  mode2->setData(2);
-  mode2->setCheckable(true);
-  mode2->setIcon(KIcon("mode2"));
-  mode2->setText("");
-  mode2->setWhatsThis(i18n("Selects this mode"));
-  mode2->setToolTip(mode2->whatsThis());
-  mode2->setStatusTip(mode2->whatsThis());
-  mode->addAction(mode2);
-  m_modeActionGroup->addAction(mode2);
-
-  mode3 = actionCollection()->addAction("mode_3");
-  mode3->setData(3);
-  mode3->setCheckable(true);
-  mode3->setIcon(KIcon("mode3"));
-  mode3->setText("");
-  mode3->setWhatsThis(i18n("Selects this mode"));
-  mode3->setToolTip(mode3->whatsThis());
-  mode3->setStatusTip(mode3->whatsThis());
-  mode->addAction(mode3);
-  m_modeActionGroup->addAction(mode3);
-
-  mode4 = actionCollection()->addAction("mode_4");
-  mode4->setData(4);
-  mode4->setCheckable(true);
-  mode4->setIcon(KIcon("mode4"));
-  mode4->setText("");
-  mode4->setWhatsThis(i18n("Selects this mode"));
-  mode4->setToolTip(mode4->whatsThis());
-  mode4->setStatusTip(mode4->whatsThis());
-  mode->addAction(mode4);
-  m_modeActionGroup->addAction(mode4);
-
-  mode5 = actionCollection()->addAction("mode_5");
-  mode5->setData(5);
-  mode5->setCheckable(true);
-  mode5->setIcon(KIcon("mode5"));
-  mode5->setText("");
-  mode5->setWhatsThis(i18n("Selects this mode"));
-  mode5->setToolTip(mode5->whatsThis());
-  mode5->setStatusTip(mode5->whatsThis());
-  mode->addAction(mode5);
-  m_modeActionGroup->addAction(mode5);
+  for (int i = 1; i <=5; ++i) {
+    a = actionCollection()->addAction(QString("mode_%1").arg(QString::number(i)));
+    a->setData(i);
+    a->setCheckable(true);
+    a->setIcon(KIcon(QString("mode%1").arg(QString::number(i))));
+    a->setWhatsThis(i18n("Selects this mode"));
+    a->setToolTip(a->whatsThis());
+    a->setStatusTip(a->whatsThis());
+    m_modeActionMenu->addAction(a);
+    m_modeActionGroup->addAction(a);
+  }
 
   quizEditor = actionCollection()->addAction("quiz_editor");
   quizEditor->setIcon(KIcon("editor"));
@@ -448,14 +407,12 @@ void KWordQuizApp::initActions()
   charMapper = new QSignalMapper(this);
   connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
 
-  QAction * a;
-
   for (int i = 1; i <=9; ++i) {
-    a = new QAction(i18n("Special Character %1", QString::number(i)), this);
+    a = actionCollection()->addAction(QString("char_%1").arg(QString::number(i)));
+    a->setText(i18n("Special Character %1", QString::number(i)));
     a->setShortcut(QKeySequence(QString("Ctrl+%1").arg(QString::number(i))));
     connect(a, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
     charMapper->setMapping(a, i);
-    actionCollection()->addAction(QString("char_%1").arg(QString::number(i)), a) ;
   }
 
   updateSpecialCharIcons();
@@ -1336,11 +1293,11 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
     if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStandardGuiItem::cont(), KStandardGuiItem::cancel(), "askModeQuiz")
       != KMessageBox::Continue)
       {
-        mode1->setChecked(Prefs::mode() == 1);
-        mode2->setChecked(Prefs::mode() == 2);
-        mode3->setChecked(Prefs::mode() == 3);
-        mode4->setChecked(Prefs::mode() == 4);
-        mode5->setChecked(Prefs::mode() == 5);
+        m_modeActionGroup->actions()[0]->setChecked(Prefs::mode() == 1);
+        m_modeActionGroup->actions()[1]->setChecked(Prefs::mode() == 2);
+        m_modeActionGroup->actions()[2]->setChecked(Prefs::mode() == 3);
+        m_modeActionGroup->actions()[3]->setChecked(Prefs::mode() == 4);
+        m_modeActionGroup->actions()[4]->setChecked(Prefs::mode() == 5);
         return;
       }
 
@@ -1349,14 +1306,14 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
   QString s1 = m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
   QString s2 = m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
 
-  mode1->setText(i18n("&1 %1 -> %2 In Order", s1, s2));
-  mode2->setText(i18n("&2 %1 -> %2 In Order", s2, s1));
-  mode3->setText(i18n("&3 %1 -> %2 Randomly", s1, s2));
-  mode4->setText(i18n("&4 %1 -> %2 Randomly", s2, s1));
-  mode5->setText(i18n("&5 %1 &lt;-&gt; %2 Randomly", s1, s2));
+  m_modeActionGroup->actions()[0]->setText(i18n("&1 %1 -> %2 In Order", s1, s2));
+  m_modeActionGroup->actions()[1]->setText(i18n("&2 %1 -> %2 In Order", s2, s1));
+  m_modeActionGroup->actions()[2]->setText(i18n("&3 %1 -> %2 Randomly", s1, s2));
+  m_modeActionGroup->actions()[3]->setText(i18n("&4 %1 -> %2 Randomly", s2, s1));
+  m_modeActionGroup->actions()[4]->setText(i18n("&5 %1 &lt;-&gt; %2 Randomly", s1, s2));
 
   Prefs::setMode(act->data().toInt());
-  mode->setIcon(KIcon("mode" + QString::number(Prefs::mode())));
+  m_modeActionMenu->setIcon(KIcon("mode" + QString::number(Prefs::mode())));
 
   switch (Prefs::mode()){
   case 1:
