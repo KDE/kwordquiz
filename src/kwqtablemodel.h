@@ -56,8 +56,8 @@ public:
   void shuffle();
 
   bool isEmpty();
-  bool checkSyntax();
-  bool checkBlanksSyntax(const QString & text);
+  bool checkSyntax() const;
+  bool checkBlanksSyntax(const QString & text) const;
 
 private:
   KEduVocDocument * m_doc;

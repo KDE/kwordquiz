@@ -180,7 +180,7 @@ bool KWQTableModel::isEmpty()
 }
 
 
-bool KWQTableModel::checkBlanksSyntax(const QString & text)
+bool KWQTableModel::checkBlanksSyntax(const QString & text) const
 {
   if (!Prefs::enableBlanks())
     return true;
@@ -219,7 +219,7 @@ bool KWQTableModel::checkBlanksSyntax(const QString & text)
   return result;
 }
 
-bool KWQTableModel::checkSyntax()
+bool KWQTableModel::checkSyntax() const
 {
   int errorCount = 0;
 
