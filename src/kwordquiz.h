@@ -313,15 +313,6 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* qaHint;
 
     QSignalMapper* charMapper;
-    QAction* specialChar1;
-    QAction* specialChar2;
-    QAction* specialChar3;
-    QAction* specialChar4;
-    QAction* specialChar5;
-    QAction* specialChar6;
-    QAction* specialChar7;
-    QAction* specialChar8;
-    QAction* specialChar9;
 
     QAction* configShowSearchBar;
 

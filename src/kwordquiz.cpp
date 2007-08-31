@@ -448,87 +448,15 @@ void KWordQuizApp::initActions()
   charMapper = new QSignalMapper(this);
   connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
 
-  specialChar1 = actionCollection()->addAction("char_1") ;
-  specialChar1->setText(i18n("Special Character 1"));
-  specialChar1->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_1));
-  specialChar1->setWhatsThis(i18n("Insert this character"));
-  specialChar1->setToolTip(specialChar1->whatsThis());
-  specialChar1->setStatusTip(specialChar1->whatsThis());
-  connect(specialChar1, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+  QAction * a;
 
-  specialChar2 = actionCollection()->addAction("char_2") ;
-  specialChar2->setText(i18n("Special Character 2"));
-  specialChar2->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_2));
-  specialChar2->setWhatsThis(i18n("Insert this character"));
-  specialChar2->setToolTip(specialChar2->whatsThis());
-  specialChar2->setStatusTip(specialChar2->whatsThis());
-  connect(specialChar2, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  specialChar3 = actionCollection()->addAction("char_3") ;
-  specialChar3->setText(i18n("Special Character 3"));
-  specialChar3->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_3));
-  specialChar3->setWhatsThis(i18n("Insert this character"));
-  specialChar3->setToolTip(specialChar3->whatsThis());
-  specialChar3->setStatusTip(specialChar3->whatsThis());
-  connect(specialChar3, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  specialChar4 = actionCollection()->addAction("char_4") ;
-  specialChar4->setText(i18n("Special Character 4"));
-  specialChar4->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_4));
-  specialChar4->setWhatsThis(i18n("Insert this character"));
-  specialChar4->setToolTip(specialChar4->whatsThis());
-  specialChar4->setStatusTip(specialChar4->whatsThis());
-  connect(specialChar4, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  specialChar5 = actionCollection()->addAction("char_5") ;
-  specialChar5->setText(i18n("Special Character 5"));
-  specialChar5->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
-  specialChar5->setWhatsThis(i18n("Insert this character"));
-  specialChar5->setToolTip(specialChar5->whatsThis());
-  specialChar5->setStatusTip(specialChar5->whatsThis());
-  connect(specialChar5, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  specialChar6 = actionCollection()->addAction("char_6") ;
-  specialChar6->setText(i18n("Special Character 6"));
-  specialChar6->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
-  specialChar6->setWhatsThis(i18n("Insert this character"));
-  specialChar6->setToolTip(specialChar6->whatsThis());
-  specialChar6->setStatusTip(specialChar6->whatsThis());
-  connect(specialChar6, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  specialChar7 = actionCollection()->addAction("char_7") ;
-  specialChar7->setText(i18n("Special Character 7"));
-  specialChar7->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
-  specialChar7->setWhatsThis(i18n("Insert this character"));
-  specialChar7->setToolTip(specialChar7->whatsThis());
-  specialChar7->setStatusTip(specialChar7->whatsThis());
-  connect(specialChar7, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  specialChar8 = actionCollection()->addAction("char_8") ;
-  specialChar8->setText(i18n("Special Character 8"));
-  specialChar8->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_8));
-  specialChar8->setWhatsThis(i18n("Insert this character"));
-  specialChar8->setToolTip(specialChar8->whatsThis());
-  specialChar8->setStatusTip(specialChar8->whatsThis());
-  connect(specialChar8, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  specialChar9 = actionCollection()->addAction("char_9") ;
-  specialChar9->setText(i18n("Special Character 9"));
-  specialChar9->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_9));
-  specialChar9->setWhatsThis(i18n("Insert this character"));
-  specialChar9->setToolTip(specialChar9->whatsThis());
-  specialChar9->setStatusTip(specialChar9->whatsThis());
-  connect(specialChar9, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-
-  charMapper->setMapping(specialChar1, 1);
-  charMapper->setMapping(specialChar2, 2);
-  charMapper->setMapping(specialChar3, 3);
-  charMapper->setMapping(specialChar4, 4);
-  charMapper->setMapping(specialChar5, 5);
-  charMapper->setMapping(specialChar6, 6);
-  charMapper->setMapping(specialChar7, 7);
-  charMapper->setMapping(specialChar8, 8);
-  charMapper->setMapping(specialChar9, 9);
+  for (int i = 1; i <=9; ++i) {
+    a = new QAction(i18n("Special Character %1", QString::number(i)), this);
+    a->setShortcut(QKeySequence(QString("Ctrl+%1").arg(QString::number(i))));
+    connect(a, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
+    charMapper->setMapping(a, i);
+    actionCollection()->addAction(QString("char_%1").arg(QString::number(i)), a) ;
+  }
 
   updateSpecialCharIcons();
 
@@ -1342,12 +1270,15 @@ void KWordQuizApp::slotApplyPreferences()
   emit settingsChanged();
 }
 
-void KWordQuizApp::updateSpecialCharIcons( )
+void KWordQuizApp::updateSpecialCharIcons()
 {
   for (int i = 0; i < 9; i++){
-    QAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)));
-    act->setIcon(KIcon(charIcon(Prefs::specialCharacters()[i])));
-    act->setToolTip(i18n("Inserts the character %1", Prefs::specialCharacters()[i]));
+    QAction * a = actionCollection()->action(QString("char_" + QString::number(i + 1)));
+    a->setIcon(KIcon(charIcon(Prefs::specialCharacters()[i])));
+    a->setIconText(i18n("Insert %1", Prefs::specialCharacters()[i]));
+    a->setWhatsThis(i18n("Inserts the character %1", Prefs::specialCharacters()[i]));
+    a->setToolTip(a->whatsThis());
+    a->setStatusTip(a->whatsThis());
   }
 }
 

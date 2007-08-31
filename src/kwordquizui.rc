@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="15" name="kwordquiz" >
+<kpartgui version="16" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -90,7 +90,7 @@
    <Action name="quiz_restart" />
    <Action name="quiz_repeat_errors" />
   </ToolBar>
-  <ToolBar name="characterToolBar" hidden="true">
+  <ToolBar name="characterToolBar" iconText="icontextbottom" hidden="true">
    <text>Special Characters</text>
    <Action name="char_1" />
    <Action name="char_2" />
