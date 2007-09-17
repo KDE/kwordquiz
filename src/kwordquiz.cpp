@@ -551,6 +551,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
+    ///@todo open returns KEduVocDocument::ErrorCode to check for errors when opening a file.
     m_doc->open(url);
     m_tableModel->reset();
     m_dirWatch->addFile(url.path());
@@ -806,6 +807,7 @@ bool KWordQuizApp::saveAsFileName( )
       {
         if (m_dirWatch ->contains(m_doc->url().path()))
           m_dirWatch ->removeFile(m_doc->url().path());
+        ///@todo saveAs returns KEduVocDocument::ErrorCode
         m_doc->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         m_dirWatch->addFile(url.path());
         fileOpenRecent->addUrl(url);
