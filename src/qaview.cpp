@@ -29,9 +29,15 @@
 
 QString highlightError(const QString & c, const QString & e)
 {
+  if (c == e)
+    return c;
+
   QString s = c;
   if (s.left(4) == "<qt>" && e.left(4) != "<qt>")
       s = s.mid(4, s.length() - 9);
+
+  if (s == e)
+    return s;
 
   QString result = "<qt>";
   int i = 0;
@@ -160,7 +166,6 @@ void QAView::slotCheck()
       picYourAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("error", KIcon::Panel));
       lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(m_question, txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer(m_question));
-      //lblCorrect->setFont(m_quiz->fontAnswer(m_question));
       picCorrectAnswer->setPixmap(KGlobal::iconLoader()->loadIcon("check", KIcon::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
@@ -170,12 +175,8 @@ void QAView::slotCheck()
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question(m_question));
-    //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
     picPrevious->setPixmap(KGlobal::iconLoader()->loadIcon("question", KIcon::Panel));
-
     lblYourAnswerHeader->setText(i18n("Your Answer"));
-    
-    //lblYourAnswer->setFont(m_quiz->fontAnswer(m_question));
 
     if (++m_question < m_quiz->questionCount())
     {
@@ -203,6 +204,11 @@ void QAView::slotHint()
 {
   QString answer = txtAnswer->text();
   QString correctAnswer = m_quiz->hint(m_question);
+  if (correctAnswer.left(4) == "<qt>")
+  {
+    correctAnswer = correctAnswer.remove("<qt>");
+    correctAnswer = correctAnswer.remove("</qt>");
+  }
 
   int correctCharCount = 1;
 
