@@ -170,19 +170,19 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
       doc_url.setFileName(i18n("Untitled")); //To invoke Save As...,
     else
       doc_url = url;
-    
+
     QTable* g = m_view;
     g->setUpdatesEnabled(false);
-    
+
     int i = 0;
     if (append && index > 0)
       i = g->numRows();
-    
+
     if (url.path().right(7) == ".xml.gz")
     {
       doc_url.setFileName(i18n("Untitled"));//To invoke Save As..., since we don't have save support for this format
       PaukerData * paukerDoc = new PaukerData;
-      PaukerDataItemList dataList = paukerDoc->parse(url.path());
+      PaukerDataItemList dataList = paukerDoc->parse(tmpfile);
       if (!dataList.isEmpty())
       {      
         g->setNumRows(dataList.count() + i);
@@ -204,7 +204,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
     if (url.path().right(6) == ".kvtml")
     {
       KEduVocData * kvtmldoc = new KEduVocData;
-      KEduVocDataItemList dataList = kvtmldoc->parse(url.path());
+      KEduVocDataItemList dataList = kvtmldoc->parse(tmpfile);
       if (!dataList.isEmpty())
       {
         if ((uint) kvtmldoc->numRows() > dataList.count())
@@ -237,7 +237,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
     if (url.path().right(4) == ".wql")
     {
       WqlReader * wqldoc = new WqlReader;
-      KWqlDataItemList dataList = wqldoc->parse(url.path());
+      KWqlDataItemList dataList = wqldoc->parse(tmpfile);
       if (!dataList.isEmpty())
       {
         if ((uint) wqldoc->numRows() > dataList.count())
@@ -268,21 +268,21 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
             g->setText(i, 1, s);
           g->setRowHeight(i, (*dataIt).rowHeight());
           i++;
-        }  
-      }    
+        }
+      }
     }
-    
+
     if (url.path().right(4) == ".csv")
     {
       QTextStream ts(&file);
-      ts.setEncoding(QTextStream::UnicodeUTF8);      
-      
+      ts.setEncoding(QTextStream::UnicodeUTF8);
+
       QString f = ts.read();
       QStringList fl = QStringList::split('\n', f, true);
       g->setNumRows(fl.count() - 1 + i);
 
       QStringList sl = QStringList::split(",", fl[0], true);
-      
+
       if (!append)
       {
         if (!sl[0].isEmpty())
@@ -290,7 +290,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
         if (!sl[1].isEmpty())
           g->horizontalHeader()->setLabel(1, sl[1]);
       }
-          
+
       for(int j = 1; j < fl.count(); j++)
       {
         QStringList sl = QStringList::split(",", fl[j], true);
@@ -298,10 +298,9 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           g->setText(i + j - 1, 0, sl[0]);
         if (!sl[1].isEmpty())
           g->setText(i + j - 1, 1, sl[1]);
-      }      
-      
-    }    
-    
+      }
+    }
+
     file.close();
     KIO::NetAccess::removeTempFile( tmpfile );
 
@@ -323,7 +322,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
   modified=false;
   if (append)
     modified = true;
-    
+
   return true;
 }
 
