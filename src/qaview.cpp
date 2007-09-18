@@ -30,9 +30,15 @@
 
 QString highlightError(const QString & c, const QString & e)
 {
+  if (c == e)
+    return c;
+
   QString s = c;
   if (s.left(4) == "<qt>" && e.left(4) != "<qt>")
       s = s.mid(4, s.length() - 9);
+
+  if (s == e)
+    return s;
 
   QString result = "<qt>";
   int i = 0;
@@ -192,6 +198,11 @@ void QAView::slotHint()
 {
   QString answer = txtAnswer->text();
   QString correctAnswer = m_quiz->hint(m_question);
+  if (correctAnswer.left(4) == "<qt>")
+  {
+    correctAnswer = correctAnswer.remove("<qt>");
+    correctAnswer = correctAnswer.remove("</qt>");
+  }
   int minLength = qMin(answer.length(), correctAnswer.length());
 
   int correctCharCount = 1;
