@@ -54,7 +54,7 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkel
 
   KWordQuizApp *win = KWordQuizApp::self();
   m_prefCharacter = new PrefCharacter(0, win->actionCollection());
-  addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special\nCharacters"), "kcharselect", i18n("Special Characters"), true);
+  addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special\nCharacters"), "accessories-character-map", i18n("Special Characters"), true);
   connect(m_prefCharacter, SIGNAL(widgetModified()), this, SLOT(updateButtons()));
 }
 
