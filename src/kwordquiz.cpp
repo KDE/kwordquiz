@@ -551,15 +551,17 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
-    ///@todo open returns KEduVocDocument::ErrorCode to check for errors when opening a file.
-    m_doc->open(url);
-    m_tableModel->reset();
-    m_dirWatch->addFile(url.path());
-    setCaption(m_doc->url().fileName(), false);
-    fileOpenRecent->addUrl(url);
-    QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
-    slotModeActionGroupTriggered(a);
-    m_doc->setModified(false);
+    int result = m_doc->open(url);
+    if (result == KEduVocDocument::NoError) {
+      m_tableModel->reset();
+      m_dirWatch->addFile(url.path());
+      setCaption(m_doc->url().fileName(), false);
+      fileOpenRecent->addUrl(url);
+      slotModeActionGroupTriggered(m_modeActionGroup->checkedAction());
+      m_doc->setModified(false);
+    }
+    else
+      KMessageBox::error(this, KEduVocDocument::errorDescription(result));
   }
   slotStatusMsg(i18n("Ready"));
 }
