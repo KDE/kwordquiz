@@ -778,7 +778,6 @@ void KWordQuizApp::slotFileSaveAs()
 
 bool KWordQuizApp::saveAsFileName( )
 {
-
   bool success = false;
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Writing);
@@ -807,14 +806,19 @@ bool KWordQuizApp::saveAsFileName( )
       }
       else
       {
-        if (m_dirWatch ->contains(m_doc->url().path()))
-          m_dirWatch ->removeFile(m_doc->url().path());
-        ///@todo saveAs returns KEduVocDocument::ErrorCode
-        m_doc->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
-        m_dirWatch->addFile(url.path());
-        fileOpenRecent->addUrl(url);
-        setCaption(m_doc->url().fileName(), m_doc->isModified());
-        success = true;
+        if (m_dirWatch->contains(m_doc->url().path()))
+          m_dirWatch->removeFile(m_doc->url().path());
+        int result = m_doc->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        if (result == KEduVocDocument::NoError) {
+          m_dirWatch->addFile(url.path());
+          fileOpenRecent->addUrl(url);
+          setCaption(m_doc->url().fileName(), m_doc->isModified());
+          success = true;
+        }
+        else {
+          KMessageBox::error(this, KEduVocDocument::errorDescription(result));
+          success = false;
+        }
       }
     }
   }
