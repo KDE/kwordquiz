@@ -1106,6 +1106,12 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     delete(m_quiz);
     m_quiz = 0;
   }
+  disconnect(quizCheck, 0, 0, 0);
+  disconnect(flashKnow, 0, 0, 0);
+  disconnect(flashDontKnow, 0, 0, 0);
+  disconnect(quizRestart, 0, 0, 0);
+  disconnect(quizRepeatErrors, 0, 0, 0);
+  disconnect(qaHint, 0, 0, 0);
 
   if (current == m_editorPage) {
     m_tableView->setFocus();
