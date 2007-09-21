@@ -231,7 +231,6 @@ class KWordQuizApp : public KXmlGuiWindow
 
     void slotInsertChar(int i);
 
-    void contextMenuEvent(QContextMenuEvent * event);
     void slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *before);
 
   private:

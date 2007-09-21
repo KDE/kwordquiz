@@ -497,6 +497,8 @@ void KWordQuizApp::initView()
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
   setCaption(m_doc->url().fileName(),false);
+  m_tableView->addActions(guiFactory()->container("editor_popup", this)->actions());
+  m_tableView->setContextMenuPolicy(Qt::ActionsContextMenu);
   connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
 
@@ -1351,14 +1353,6 @@ void KWordQuizApp::slotInsertChar( int i )
     }
 }
 
-
-void KWordQuizApp::contextMenuEvent(QContextMenuEvent * event)
-{
-  QWidget * w = guiFactory()->container("editor_popup", this);
-  KMenu *popup = static_cast<KMenu *>(w);
-  ///@todo constrain to table
-  popup->exec( QPoint( event->globalX(), event->globalY() ) );
-}
 
 void KWordQuizApp::updateActions()
 {
