@@ -68,7 +68,7 @@ void KWQQuiz::buildList(int column)
 {
   //build a list of row numbers containing text in both columns
   QList<int> tempList;
-  for (int current = 0; current < m_model->rowCount(QModelIndex()); ++current)
+  for (int current = 0; current < m_model->rowCount(QModelIndex()); current++)
   {
     QString front = m_model->data(m_model->index(current, 0, QModelIndex()), Qt::DisplayRole).toString();
     QString back  = m_model->data(m_model->index(current, 1, QModelIndex()), Qt::DisplayRole).toString();
@@ -82,7 +82,8 @@ void KWQQuiz::buildList(int column)
 
   foreach(int i, tempList)
   {
-    int a, b;
+    int a = -1;
+    int b = -1;
     if (count > 2)
     {
       do
@@ -92,8 +93,8 @@ void KWQQuiz::buildList(int column)
       do
         b = rs.getLong(count);
       while(b == i || b == a);
-      m_quizList.append(KWQListItem(column, i, a, b));
     }
+    m_quizList.append(KWQListItem(column, i, a, b));
   }
 }
 

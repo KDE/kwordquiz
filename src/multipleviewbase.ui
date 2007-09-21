@@ -1,21 +1,17 @@
 <ui version="4.0" >
  <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>MultipleViewBase</class>
  <widget class="QWidget" name="MultipleViewBase" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>596</width>
-    <height>619</height>
+    <width>666</width>
+    <height>529</height>
    </rect>
   </property>
   <property name="sizePolicy" >
-   <sizepolicy>
-    <hsizetype>5</hsizetype>
-    <vsizetype>5</vsizetype>
+   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -27,910 +23,969 @@
    </size>
   </property>
   <layout class="QGridLayout" >
-   <property name="margin" >
-    <number>10</number>
+   <property name="leftMargin" >
+    <number>0</number>
    </property>
-   <property name="spacing" >
-    <number>6</number>
+   <property name="topMargin" >
+    <number>0</number>
+   </property>
+   <property name="rightMargin" >
+    <number>0</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>0</number>
    </property>
    <item row="0" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
+    <widget class="QStackedWidget" name="stackedWidget" >
+     <property name="currentIndex" >
       <number>0</number>
      </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item row="0" column="1" >
-      <widget class="QLabel" name="lblQuestionLanguage" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="font" >
-        <font>
-         <family></family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-         <underline>false</underline>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="toolTip" >
-        <string>The question</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Language or other identifier for the question</string>
-       </property>
-       <property name="text" >
-        <string>Language 1</string>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" >
-      <widget class="QLabel" name="lblQuestion" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>5</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="toolTip" >
-        <string>The question</string>
-       </property>
-       <property name="whatsThis" >
-        <string>The question</string>
-       </property>
-       <property name="text" >
-        <string>This is your question</string>
-       </property>
-       <property name="textFormat" >
-        <enum>Qt::AutoText</enum>
-       </property>
-       <property name="scaledContents" >
-        <bool>false</bool>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="picQuestion" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>The question</string>
-       </property>
-       <property name="pixmap" >
-        <pixmap/>
-       </property>
-       <property name="scaledContents" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="4" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="picYourAnswer" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Your previous answer</string>
-       </property>
-       <property name="pixmap" >
-        <pixmap/>
-       </property>
-       <property name="scaledContents" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1" >
-      <widget class="QLabel" name="lblYourAnswerHeader" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="font" >
-        <font>
-         <family></family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-         <underline>false</underline>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="toolTip" >
-        <string>Your previous answer</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Your answer to the previous question</string>
-       </property>
-       <property name="text" >
-        <string>Your Answer</string>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" >
-      <widget class="QLabel" name="lblYourAnswer" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>5</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="toolTip" >
-        <string>Your previous answer</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Your answer to the previous question</string>
-       </property>
-       <property name="text" >
-        <string>This was your answer</string>
-       </property>
-       <property name="textFormat" >
-        <enum>Qt::AutoText</enum>
-       </property>
-       <property name="scaledContents" >
-        <bool>false</bool>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="6" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item row="0" column="0" >
-      <widget class="Line" name="line1_2" >
-       <property name="frameShape" >
-        <enum>QFrame::HLine</enum>
-       </property>
-       <property name="frameShadow" >
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" >
+     <widget class="QWidget" name="pageQuiz" >
       <layout class="QGridLayout" >
-       <property name="margin" >
-        <number>0</number>
-       </property>
-       <property name="spacing" >
-        <number>6</number>
-       </property>
-       <item row="0" column="1" >
-        <widget class="QLabel" name="lblScoreCount" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>5</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font" >
-          <font>
-           <family></family>
-           <pointsize>24</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-           <underline>false</underline>
-           <strikeout>false</strikeout>
-          </font>
-         </property>
-         <property name="toolTip" >
-          <string>Questions</string>
-         </property>
-         <property name="whatsThis" >
-          <string>The number of questions in the session</string>
-         </property>
-         <property name="text" >
-          <string>00</string>
-         </property>
-         <property name="alignment" >
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4" >
-        <widget class="QLabel" name="picCorrect" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Correct answers</string>
-         </property>
-         <property name="whatsThis" >
-          <string>The number of questions answered correctly. May be shown as a percentage.</string>
-         </property>
-         <property name="pixmap" >
-          <pixmap/>
-         </property>
-         <property name="scaledContents" >
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5" >
-        <widget class="QLabel" name="lblScoreCorrect" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>5</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font" >
-          <font>
-           <family></family>
-           <pointsize>24</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-           <underline>false</underline>
-           <strikeout>false</strikeout>
-          </font>
-         </property>
-         <property name="toolTip" >
-          <string>Correct answers</string>
-         </property>
-         <property name="whatsThis" >
-          <string>The number of questions answered correctly. May be shown as a percentage.</string>
-         </property>
-         <property name="text" >
-          <string>00</string>
-         </property>
-         <property name="alignment" >
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="6" >
-        <widget class="QLabel" name="picError" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Incorrect answers</string>
-         </property>
-         <property name="whatsThis" >
-          <string>The number of questions answered incorrectly. May be shown as a percentage.</string>
-         </property>
-         <property name="pixmap" >
-          <pixmap/>
-         </property>
-         <property name="scaledContents" >
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="0" >
-        <widget class="QLabel" name="picCount" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>0</number>
          </property>
-         <property name="maximumSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
+         <property name="topMargin" >
+          <number>0</number>
          </property>
-         <property name="toolTip" >
-          <string>Questions</string>
+         <property name="rightMargin" >
+          <number>0</number>
          </property>
-         <property name="whatsThis" >
-          <string>The number of questions in the session</string>
+         <property name="bottomMargin" >
+          <number>0</number>
          </property>
-         <property name="pixmap" >
-          <pixmap/>
+         <property name="horizontalSpacing" >
+          <number>6</number>
          </property>
-         <property name="scaledContents" >
-          <bool>true</bool>
+         <property name="verticalSpacing" >
+          <number>6</number>
+         </property>
+         <item row="0" column="1" >
+          <widget class="QLabel" name="lblQuestionLanguage" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="toolTip" >
+            <string>The question</string>
+           </property>
+           <property name="whatsThis" >
+            <string>Language or other identifier for the question</string>
+           </property>
+           <property name="text" >
+            <string>Language 1</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLabel" name="lblQuestion" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip" >
+            <string>The question</string>
+           </property>
+           <property name="whatsThis" >
+            <string>The question</string>
+           </property>
+           <property name="text" >
+            <string>This is your question</string>
+           </property>
+           <property name="textFormat" >
+            <enum>Qt::AutoText</enum>
+           </property>
+           <property name="scaledContents" >
+            <bool>false</bool>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="picQuestion" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>The question</string>
+           </property>
+           <property name="pixmap" >
+            <pixmap/>
+           </property>
+           <property name="scaledContents" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" >
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>6</number>
+         </property>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="picAnswer" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Your choices</string>
+           </property>
+           <property name="pixmap" >
+            <pixmap/>
+           </property>
+           <property name="scaledContents" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" >
+          <widget class="QRadioButton" name="opt2" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Your choices</string>
+           </property>
+           <property name="whatsThis" >
+            <string>Three choices for the answer. One is correct.</string>
+           </property>
+           <property name="text" >
+            <string>&amp;2 Option</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QRadioButton" name="opt1" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Your choices</string>
+           </property>
+           <property name="whatsThis" >
+            <string>Three choices for the answer. One is correct.</string>
+           </property>
+           <property name="text" >
+            <string>&amp;1 Option</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="QLabel" name="lblAnswerLanguage" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="toolTip" >
+            <string>Your choices</string>
+           </property>
+           <property name="whatsThis" >
+            <string>Language or other identifier for the answer</string>
+           </property>
+           <property name="text" >
+            <string>Language 2</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QRadioButton" name="opt3" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Your choices</string>
+           </property>
+           <property name="whatsThis" >
+            <string>Three choices for the answer. One is correct.</string>
+           </property>
+           <property name="text" >
+            <string>&amp;3 Option</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" >
+        <widget class="Line" name="line1" >
+         <property name="frameShape" >
+          <enum>QFrame::HLine</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="0" column="3" >
-        <widget class="QLabel" name="lblScoreAnswered" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>5</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+       <item row="3" column="0" >
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>0</number>
          </property>
-         <property name="font" >
-          <font>
-           <family></family>
-           <pointsize>24</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-           <underline>false</underline>
-           <strikeout>false</strikeout>
-          </font>
+         <property name="topMargin" >
+          <number>0</number>
          </property>
-         <property name="toolTip" >
-          <string>Answered questions</string>
+         <property name="rightMargin" >
+          <number>0</number>
          </property>
-         <property name="whatsThis" >
-          <string>The number of questions already answered. May be shown as a percentage.</string>
+         <property name="bottomMargin" >
+          <number>0</number>
          </property>
+         <property name="horizontalSpacing" >
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>6</number>
+         </property>
+         <item row="0" column="1" >
+          <widget class="QLabel" name="lblPreviousQuestionHeader" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="toolTip" >
+            <string>Previous question</string>
+           </property>
+           <property name="whatsThis" >
+            <string>The previous question</string>
+           </property>
+           <property name="text" >
+            <string>Previous Question</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLabel" name="lblPreviousQuestion" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip" >
+            <string>Previous question</string>
+           </property>
+           <property name="whatsThis" >
+            <string>The previous question</string>
+           </property>
+           <property name="text" >
+            <string>This was your question</string>
+           </property>
+           <property name="textFormat" >
+            <enum>Qt::AutoText</enum>
+           </property>
+           <property name="scaledContents" >
+            <bool>false</bool>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+           <property name="indent" >
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="picPrevious" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Previous question</string>
+           </property>
+           <property name="pixmap" >
+            <pixmap/>
+           </property>
+           <property name="scaledContents" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0" >
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>6</number>
+         </property>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="picYourAnswer" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Your previous answer</string>
+           </property>
+           <property name="pixmap" >
+            <pixmap/>
+           </property>
+           <property name="scaledContents" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="QLabel" name="lblYourAnswerHeader" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="toolTip" >
+            <string>Your previous answer</string>
+           </property>
+           <property name="whatsThis" >
+            <string>Your answer to the previous question</string>
+           </property>
+           <property name="text" >
+            <string>Your Answer</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLabel" name="lblYourAnswer" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip" >
+            <string>Your previous answer</string>
+           </property>
+           <property name="whatsThis" >
+            <string>Your answer to the previous question</string>
+           </property>
+           <property name="text" >
+            <string>This was your answer</string>
+           </property>
+           <property name="textFormat" >
+            <enum>Qt::AutoText</enum>
+           </property>
+           <property name="scaledContents" >
+            <bool>false</bool>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0" >
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>6</number>
+         </property>
+         <item row="0" column="1" >
+          <widget class="QLabel" name="lblCorrectHeader" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="toolTip" >
+            <string>Previous correct answer</string>
+           </property>
+           <property name="whatsThis" >
+            <string>The correct answer to the previous question</string>
+           </property>
+           <property name="text" >
+            <string>Correct Answer</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLabel" name="lblCorrect" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip" >
+            <string>Previous correct answer</string>
+           </property>
+           <property name="whatsThis" >
+            <string>The correct answer to the previous question</string>
+           </property>
+           <property name="text" >
+            <string>This was the correct answer</string>
+           </property>
+           <property name="textFormat" >
+            <enum>Qt::AutoText</enum>
+           </property>
+           <property name="scaledContents" >
+            <bool>false</bool>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="picCorrectAnswer" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Previous correct answer</string>
+           </property>
+           <property name="pixmap" >
+            <pixmap/>
+           </property>
+           <property name="scaledContents" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="0" >
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>6</number>
+         </property>
+         <item row="0" column="0" >
+          <widget class="Line" name="line1_2" >
+           <property name="frameShape" >
+            <enum>QFrame::HLine</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <layout class="QGridLayout" >
+           <property name="leftMargin" >
+            <number>0</number>
+           </property>
+           <property name="topMargin" >
+            <number>0</number>
+           </property>
+           <property name="rightMargin" >
+            <number>0</number>
+           </property>
+           <property name="bottomMargin" >
+            <number>0</number>
+           </property>
+           <property name="horizontalSpacing" >
+            <number>6</number>
+           </property>
+           <property name="verticalSpacing" >
+            <number>6</number>
+           </property>
+           <item row="0" column="1" >
+            <widget class="QLabel" name="lblScoreCount" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font" >
+              <font>
+               <pointsize>24</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="toolTip" >
+              <string>Questions</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions in the session</string>
+             </property>
+             <property name="text" >
+              <string>00</string>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4" >
+            <widget class="QLabel" name="picCorrect" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="toolTip" >
+              <string>Correct answers</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions answered correctly. May be shown as a percentage.</string>
+             </property>
+             <property name="pixmap" >
+              <pixmap/>
+             </property>
+             <property name="scaledContents" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5" >
+            <widget class="QLabel" name="lblScoreCorrect" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font" >
+              <font>
+               <pointsize>24</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="toolTip" >
+              <string>Correct answers</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions answered correctly. May be shown as a percentage.</string>
+             </property>
+             <property name="text" >
+              <string>00</string>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6" >
+            <widget class="QLabel" name="picError" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="toolTip" >
+              <string>Incorrect answers</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions answered incorrectly. May be shown as a percentage.</string>
+             </property>
+             <property name="pixmap" >
+              <pixmap/>
+             </property>
+             <property name="scaledContents" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" >
+            <widget class="QLabel" name="picCount" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="toolTip" >
+              <string>Questions</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions in the session</string>
+             </property>
+             <property name="pixmap" >
+              <pixmap/>
+             </property>
+             <property name="scaledContents" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3" >
+            <widget class="QLabel" name="lblScoreAnswered" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font" >
+              <font>
+               <pointsize>24</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="toolTip" >
+              <string>Answered questions</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions already answered. May be shown as a percentage.</string>
+             </property>
+             <property name="text" >
+              <string>00</string>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2" >
+            <widget class="QLabel" name="picAnswered" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="toolTip" >
+              <string>Answered questions</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions already answered. May be shown as a percentage.</string>
+             </property>
+             <property name="pixmap" >
+              <pixmap/>
+             </property>
+             <property name="scaledContents" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7" >
+            <widget class="QLabel" name="lblScoreError" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font" >
+              <font>
+               <pointsize>24</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="toolTip" >
+              <string>Incorrect answers</string>
+             </property>
+             <property name="whatsThis" >
+              <string>The number of questions answered incorrectly. May be shown as a percentage.</string>
+             </property>
+             <property name="text" >
+              <string>00</string>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageWarning" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label" >
          <property name="text" >
-          <string>00</string>
+          <string>&lt;html>There are too few entries in your vocabulary.&lt;br />You need at least three entries for a multiple choice quiz.&lt;/html></string>
          </property>
          <property name="alignment" >
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          <set>Qt::AlignCenter</set>
          </property>
-        </widget>
-       </item>
-       <item row="0" column="2" >
-        <widget class="QLabel" name="picAnswered" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Answered questions</string>
-         </property>
-         <property name="whatsThis" >
-          <string>The number of questions already answered. May be shown as a percentage.</string>
-         </property>
-         <property name="pixmap" >
-          <pixmap/>
-         </property>
-         <property name="scaledContents" >
+         <property name="wordWrap" >
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="7" >
-        <widget class="QLabel" name="lblScoreError" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>5</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font" >
-          <font>
-           <family></family>
-           <pointsize>24</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-           <underline>false</underline>
-           <strikeout>false</strikeout>
-          </font>
-         </property>
-         <property name="toolTip" >
-          <string>Incorrect answers</string>
-         </property>
-         <property name="whatsThis" >
-          <string>The number of questions answered incorrectly. May be shown as a percentage.</string>
-         </property>
-         <property name="text" >
-          <string>00</string>
-         </property>
-         <property name="alignment" >
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
       </layout>
-     </item>
-    </layout>
-   </item>
-   <item row="5" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item row="0" column="1" >
-      <widget class="QLabel" name="lblCorrectHeader" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="font" >
-        <font>
-         <family></family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-         <underline>false</underline>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="toolTip" >
-        <string>Previous correct answer</string>
-       </property>
-       <property name="whatsThis" >
-        <string>The correct answer to the previous question</string>
-       </property>
-       <property name="text" >
-        <string>Correct Answer</string>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" >
-      <widget class="QLabel" name="lblCorrect" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>5</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="toolTip" >
-        <string>Previous correct answer</string>
-       </property>
-       <property name="whatsThis" >
-        <string>The correct answer to the previous question</string>
-       </property>
-       <property name="text" >
-        <string>This was the correct answer</string>
-       </property>
-       <property name="textFormat" >
-        <enum>Qt::AutoText</enum>
-       </property>
-       <property name="scaledContents" >
-        <bool>false</bool>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="picCorrectAnswer" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Previous correct answer</string>
-       </property>
-       <property name="pixmap" >
-        <pixmap/>
-       </property>
-       <property name="scaledContents" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="picAnswer" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Your choices</string>
-       </property>
-       <property name="pixmap" >
-        <pixmap/>
-       </property>
-       <property name="scaledContents" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1" >
-      <widget class="QRadioButton" name="opt2" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>5</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Your choices</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Three choices for the answer. One is correct.</string>
-       </property>
-       <property name="text" >
-        <string>&amp;2 Option</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" >
-      <widget class="QRadioButton" name="opt1" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>5</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Your choices</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Three choices for the answer. One is correct.</string>
-       </property>
-       <property name="text" >
-        <string>&amp;1 Option</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1" >
-      <widget class="QLabel" name="lblAnswerLanguage" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="font" >
-        <font>
-         <family></family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-         <underline>false</underline>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="toolTip" >
-        <string>Your choices</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Language or other identifier for the answer</string>
-       </property>
-       <property name="text" >
-        <string>Language 2</string>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1" >
-      <widget class="QRadioButton" name="opt3" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>5</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Your choices</string>
-       </property>
-       <property name="whatsThis" >
-        <string>Three choices for the answer. One is correct.</string>
-       </property>
-       <property name="text" >
-        <string>&amp;3 Option</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="3" column="0" >
-    <layout class="QGridLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item row="0" column="1" >
-      <widget class="QLabel" name="lblPreviousQuestionHeader" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="font" >
-        <font>
-         <family></family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-         <underline>false</underline>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="toolTip" >
-        <string>Previous question</string>
-       </property>
-       <property name="whatsThis" >
-        <string>The previous question</string>
-       </property>
-       <property name="text" >
-        <string>Previous Question</string>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" >
-      <widget class="QLabel" name="lblPreviousQuestion" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>7</hsizetype>
-         <vsizetype>5</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="toolTip" >
-        <string>Previous question</string>
-       </property>
-       <property name="whatsThis" >
-        <string>The previous question</string>
-       </property>
-       <property name="text" >
-        <string>This was your question</string>
-       </property>
-       <property name="textFormat" >
-        <enum>Qt::AutoText</enum>
-       </property>
-       <property name="scaledContents" >
-        <bool>false</bool>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignTop</set>
-       </property>
-       <property name="indent" >
-        <number>-1</number>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="picPrevious" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Previous question</string>
-       </property>
-       <property name="pixmap" >
-        <pixmap/>
-       </property>
-       <property name="scaledContents" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="0" >
-    <widget class="Line" name="line1" >
-     <property name="frameShape" >
-      <enum>QFrame::HLine</enum>
-     </property>
-     <property name="frameShadow" >
-      <enum>QFrame::Sunken</enum>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
+     </widget>
     </widget>
    </item>
   </layout>

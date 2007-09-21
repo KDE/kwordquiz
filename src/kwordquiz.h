@@ -33,6 +33,8 @@
 class KActionMenu;
 class KRecentFilesAction;
 class KLineEdit;
+class KPageWidget;
+class KPageWidgetItem;
 class KEduVocDocument;
 class KWQTableModel;
 class KWQSortFilterModel;
@@ -230,10 +232,9 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotInsertChar(int i);
 
     void contextMenuEvent(QContextMenuEvent * event);
+    void slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *before);
+
   private:
-
-    KWQQuiz::QuizType m_quizType;
-
     KWQQuiz *m_quiz;
 
     /** view is the main widget which represents your working area. The View
@@ -241,12 +242,19 @@ class KWordQuizApp : public KXmlGuiWindow
      * you can create your view according to your application's needs by
      * changing the view class.
      */
+    KPageWidget *m_pageWidget;
+    QWidget *m_editorView;
     KWQTableView *m_tableView;
     KWQTableModel *m_tableModel;
     KWQSortFilterModel *m_sortFilterModel;
     FlashView *m_flashView;
     MultipleView *m_multipleView;
     QAView *m_qaView;
+
+    KPageWidgetItem *m_editorPage;
+    KPageWidgetItem *m_flashPage;
+    KPageWidgetItem *m_multiplePage;
+    KPageWidgetItem *m_qaPage;
 
     KWordQuizPrefs *m_prefDialog;
 
@@ -314,12 +322,11 @@ class KWordQuizApp : public KXmlGuiWindow
     KDirWatch * m_dirWatch;
 
     QLabel * m_modeLabel;
-    QVBoxLayout * m_topLayout;
+    //QVBoxLayout * m_topLayout;
 
     static KWordQuizApp * m_self;
 
-    void updateSession(KWQQuiz::QuizType qt);
-    void updateActions(KWQQuiz::QuizType qt);
+    void updateActions();
     void updateSpecialCharIcons();
     QString charIcon(const QChar &);
     void openUrl(const KUrl& url);

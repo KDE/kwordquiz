@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="16" name="kwordquiz" >
+<kpartgui version="17" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -12,13 +12,13 @@
    <Action name="edit_mark_blank" />
    <Action name="edit_unmark_blank" />
   </Menu>
-  <Menu name="session" >
+  <!-- <Menu name="session" >
    <text>&amp;Go To</text>
    <Action name="quiz_editor" />
    <Action name="quiz_flash" />
    <Action name="quiz_multiple" />
    <Action name="quiz_qa" />
-  </Menu>
+  </Menu> -->
   <Menu name="vocabulary" >
    <text>V&amp;ocabulary</text>
    <Action name="vocab_languages" />
@@ -71,13 +71,13 @@
     <Separator />-->
     <Action name="mode_0"/>
   </ToolBar>
-  <ToolBar name="sessionToolBar" iconText="icontextbottom">
+  <!-- <ToolBar name="sessionToolBar" iconText="icontextbottom">
     <text>Go to</text>
     <Action name="quiz_editor" />
     <Action name="quiz_flash" />
     <Action name="quiz_multiple" />
     <Action name="quiz_qa" />
-   </ToolBar>
+   </ToolBar> -->
   <ToolBar name="quizToolBar" position="right" iconText="icontextright" >
    <text>Quiz</text>
    <Action name="quiz_check" />
