@@ -430,9 +430,8 @@ void KWQTableView::doEditPaste()
       br = br + sl.count() - 1;
 
       if (lc == 0) //left col?
-        if (sl[0].indexOf("\t") < ((int) sl[0].length() - 1))
+        if (sl[0].indexOf("\t") > -1)
           rc = 1; //expand to second column;
-
 
       while (i < sl.count() && br <= model()->rowCount())
       {
