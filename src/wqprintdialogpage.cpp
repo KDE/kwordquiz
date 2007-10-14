@@ -25,9 +25,9 @@
 #include <klocale.h>
 #include <kdialog.h>
 
-WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : KPrintDialogPage(parent)
+WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : QWidget(parent)
 {
-  setTitle(i18n("Vocabulary Options"));
+  setWindowTitle(i18n("Vocabulary Options"));
 
   QGridLayout * l = new QGridLayout(this);
   l->setSpacing(KDialog::spacingHint());
@@ -55,24 +55,24 @@ WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : KPrintDialogPage(parent)
   l->addWidget(g, 0, 0, 1, 1);
 }
 
-void WQPrintDialogPage::getOptions(QMap< QString, QString > & opts, bool /*incldef*/)
+WQPrintDialogPage::PrintStyle WQPrintDialogPage::printStyle()
 {
   if (rb0->isChecked())
-    opts[ "kde-kwordquiz-type" ] = "0";
+    return(WQPrintDialogPage::List);
   if (rb1->isChecked())
-    opts[ "kde-kwordquiz-type" ] = "1";
+    return(WQPrintDialogPage::Exam);
   if (rb2->isChecked())
-    opts[ "kde-kwordquiz-type" ] = "2";
+    return(WQPrintDialogPage::Flashcard);
+  return(WQPrintDialogPage::List);
 }
 
-void WQPrintDialogPage::setOptions(const QMap< QString, QString > & opts )
+void WQPrintDialogPage::setPrintStyle(WQPrintDialogPage::PrintStyle style)
 {
-  QString type = opts[ "kde-kwordquiz-type" ];
-  switch (type.toInt())
+  switch (style)
   {
-    case 0: rb0->setChecked(true); break;
-    case 1: rb1->setChecked(true); break;
-    case 2: rb2->setChecked(true); break;
+    case WQPrintDialogPage::List: rb0->setChecked(true); break;
+    case WQPrintDialogPage::Exam: rb1->setChecked(true); break;
+    case WQPrintDialogPage::Flashcard: rb2->setChecked(true); break;
   }
 }
 

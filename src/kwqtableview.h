@@ -23,11 +23,12 @@
 #include <QKeyEvent>
 #include <QEvent>
 
-#include <kprinter.h>
+class QPrinter;
 
 #include "kwqsortfiltermodel.h"
 #include "kwqtabledelegate.h"
 #include "wqundo.h"
+#include "wqprintdialogpage.h"
 
 /**
 @author Peter Hedlund
@@ -45,7 +46,7 @@ public:
   void setModel(KWQSortFilterModel * model);
 
   /** contains the implementation for printing functionality */
-  void print(KPrinter *pPrinter);
+  void print(QPrinter *pPrinter, WQPrintDialogPage::PrintStyle type);
   void addUndo(const QString & caption);
   void doEditUndo();
   void doEditCut();
@@ -95,8 +96,8 @@ private:
   WQUndoList m_undoList;
   KWQSortFilterModel *m_model;
 
-  void doNewPage(QPainter & painter, int res, int type);
-  void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
+  void doNewPage(QPainter & painter, int res, WQPrintDialogPage::PrintStyle type);
+  void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, WQPrintDialogPage::PrintStyle type);
 };
 
 #endif // KWORDQUIZVIEW_H

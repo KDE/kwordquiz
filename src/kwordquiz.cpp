@@ -21,6 +21,8 @@
 #include <QBitmap>
 #include <QCheckBox>
 #include <QStackedWidget>
+#include <QtGui/QPrinter>
+#include <QtGui/QPrintDialog>
 
 #include <kactioncollection.h>
 #include <kapplication.h>
@@ -46,6 +48,7 @@
 #include <knewstuff2/engine.h>
 #include <knewstuff2/ui/knewstuffaction.h>
 #include <KPageWidget>
+#include <kdeprintdialog.h>
 
 #include "keduvocdocument.h"
 #include "kwqtablemodel.h"
@@ -883,12 +886,12 @@ void KWordQuizApp::slotFilePrint()
 {
   slotStatusMsg(i18n("Printing..."));
   WQPrintDialogPage * p = new WQPrintDialogPage(this);
-  KPrinter printer;
-  printer.addDialogPage(p);
+  QPrinter printer;
+  QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
   printer.setFullPage(true);
-  if (printer.setup(this))
+  if (printDialog->exec())
   {
-    m_tableView->print(&printer);
+    m_tableView->print(&printer, p->printStyle());
   }
 
   slotStatusMsg(i18n("Ready"));

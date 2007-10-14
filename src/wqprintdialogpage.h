@@ -22,21 +22,26 @@
 #include <QtGui/QGroupBox>
 #include <QtGui/QRadioButton>
 
-#include <kdeprint/kprintdialogpage.h>
-
 /**
 Print dialog page to provide specific print options for KWordQuiz
 
 @author Peter Hedlund
 */
-class WQPrintDialogPage : public KPrintDialogPage
+class WQPrintDialogPage : public QWidget
 {
 Q_OBJECT
 public:
   WQPrintDialogPage(QWidget *parent = 0);
 
-  void getOptions(QMap<QString,QString>& opts, bool incldef = false);
-  void setOptions(const QMap<QString,QString>& opts);
+  enum PrintStyle
+  {
+    List,
+    Exam,
+    Flashcard
+  };
+
+  WQPrintDialogPage::PrintStyle printStyle();
+  void setPrintStyle(WQPrintDialogPage::PrintStyle style);
 
 private:
   QGroupBox * g;

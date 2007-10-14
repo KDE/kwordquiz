@@ -25,6 +25,7 @@
 #include <QEvent>
 #include <QList>
 #include <QApplication>
+#include <QtGui/QPrinter>
 
 #include <KLocale>
 #include <KMessageBox>
@@ -59,14 +60,13 @@ KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
 
 }
 
-void KWQTableView::print(KPrinter *pPrinter)
+void KWQTableView::print(QPrinter *pPrinter, WQPrintDialogPage::PrintStyle type)
 {
   QPainter painter;
 
   //type 0 Vocabulary list
   //type 1 Vocabulary exam
   //type 2 Flashcards
-  int type = pPrinter->option("kde-kwordquiz-type").toInt();
 
   //I think working with screen resolution is enough for our purposes
   int res = pPrinter->resolution();
@@ -78,8 +78,8 @@ void KWQTableView::print(KPrinter *pPrinter)
   int card_text_marg = res /5;
   int card_line_top = 30;
 
-  if (type == 2)
-    pPrinter->setOrientation(KPrinter::Landscape);
+  if (type == WQPrintDialogPage::Flashcard)
+    pPrinter->setOrientation(QPrinter::Landscape);
 
   painter.begin(pPrinter);
 
@@ -93,7 +93,7 @@ void KWQTableView::print(KPrinter *pPrinter)
 
 
 
-  if (type == 1)
+  if (type == WQPrintDialogPage::Exam)
     cw3 = 50;
 
   int gridWidth = cw0 + cw1 + cw2 + cw3;
@@ -105,7 +105,7 @@ void KWQTableView::print(KPrinter *pPrinter)
 
   doNewPage(painter, res, type);
 
-  if (type == 2)
+  if (type == WQPrintDialogPage::Flashcard)
   {
     tPos = card_marg;
     for (int rc = 0; rc < model()->rowCount(); ++rc)
@@ -159,7 +159,7 @@ void KWQTableView::print(KPrinter *pPrinter)
       painter.setFont(font());
       painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, model()->data(model()->index(rc, 0)).toString());
 
-      if (type == 0)
+      if (type == WQPrintDialogPage::List)
         painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter,
           model()->data(model()->index(rc, 1)).toString());
 
@@ -178,7 +178,7 @@ void KWQTableView::print(KPrinter *pPrinter)
   painter.end();
 }
 
-void KWQTableView::doNewPage(QPainter & painter, int res, int type)
+void KWQTableView::doNewPage(QPainter & painter, int res, WQPrintDialogPage::PrintStyle type)
 {
     int cw0 = verticalHeader()->width();
     int cw1 = columnWidth(0);
@@ -188,14 +188,14 @@ void KWQTableView::doNewPage(QPainter & painter, int res, int type)
     int card_marg = res / 2;
     int pad = 2;
 
-    if (type == 1)
+    if (type == WQPrintDialogPage::Exam)
       cw3 = 50;
 
     QRect w = painter.window();
 
     painter.setFont(KGlobalSettings::generalFont());
 
-    if (type == 2)
+    if (type == WQPrintDialogPage::Flashcard)
     {
       /// @todo find a more elegant way to retrieve the caption
       painter.drawText(card_marg, card_marg - 20, KGlobal::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
@@ -205,7 +205,7 @@ void KWQTableView::doNewPage(QPainter & painter, int res, int type)
 
     painter.drawText(marg, marg - 20, KGlobal::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
 
-    if (type == 1)
+    if (type == WQPrintDialogPage::Exam)
     {
       QString score = i18n("Name:_____________________________ Date:__________");
       QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignLeft, score);
@@ -217,12 +217,12 @@ void KWQTableView::doNewPage(QPainter & painter, int res, int type)
     painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
     painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
-    if (type == 1)
+    if (type == WQPrintDialogPage::Exam)
       painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, i18n("Score"));
 
 }
 
-void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type)
+void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, WQPrintDialogPage::PrintStyle type)
 {
     int marg = res;
     painter.setFont(KGlobalSettings::generalFont());
@@ -230,7 +230,7 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
     QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignLeft, QString::number(pageNum));
     painter.drawText((w.width()/2) - (r.width()/2), w.height() - marg + 20, QString::number(pageNum));
 
-    if (type == 2)
+    if (type == WQPrintDialogPage::Flashcard)
       return;
 
     int cw0 = verticalHeader()->width();
@@ -238,7 +238,7 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
     int cw2 = columnWidth(1);
     int cw3 = 0;
 
-    if (type == 1)
+    if (type == WQPrintDialogPage::Exam)
       cw3 = 50;
 
     //Last horizontal line
@@ -249,7 +249,7 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
     painter.drawLine(marg + cw0 + cw1, marg, marg + cw0 + cw1, vPos);
     painter.drawLine(marg + cw0 + cw1 + cw2, marg, marg + cw0 + cw1 + cw2, vPos);
 
-    if (type == 1)
+    if (type == WQPrintDialogPage::Exam)
       painter.drawLine(marg + cw0 + cw1 + cw2 + cw3, marg, marg + cw0 + cw1 + cw2 + cw3, vPos);
 
 }
