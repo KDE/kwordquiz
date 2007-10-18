@@ -40,6 +40,8 @@ PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
   connect(widgetStack, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentChanged(int)));
 
   widgetStack->setCurrentWidget(frontStackPage);
+  // initialize the buddies, etc.
+  slotCurrentChanged(widgetStack->indexOf(frontStackPage));
 }
 
 void PrefCardAppearance::slotFlipButtonClicked( )
