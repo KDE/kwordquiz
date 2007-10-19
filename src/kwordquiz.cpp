@@ -62,7 +62,6 @@
 #include "wqprintdialogpage.h"
 #include "prefs.h"
 #include "version.h"
-#include "prefleitner.h"
 
 KWordQuizApp * KWordQuizApp::m_self = 0;
 
@@ -265,15 +264,6 @@ void KWordQuizApp::initActions()
   vocabLeitner->setToolTip(vocabLeitner->whatsThis());
   vocabLeitner->setStatusTip(vocabLeitner->whatsThis());
   connect(vocabLeitner, SIGNAL(triggered(bool)), this, SLOT(slotLeitnerSystem()));
-
-  vocabConfigLeitner = actionCollection()->addAction("vocab_leitner_config");
-  vocabConfigLeitner->setIcon(KIcon("config_leitner"));
-  vocabConfigLeitner->setText(i18n("Configure Leitner system"));
-  vocabConfigLeitner->setWhatsThis(i18n("Configure the Leitner system used for the active vocabulary"));
-  vocabConfigLeitner->setToolTip(vocabConfigLeitner->whatsThis());
-  vocabConfigLeitner->setStatusTip(vocabConfigLeitner->whatsThis());
-  vocabConfigLeitner->setEnabled(false);
-  connect(vocabConfigLeitner, SIGNAL(triggered(bool)), this, SLOT(slotConfigLeitner()));
 
   m_modeActionMenu = actionCollection()->add<KActionMenu>("mode_0");
   m_modeActionMenu->setIcon(KIcon("mode1"));
@@ -1398,30 +1388,6 @@ void KWordQuizApp::updateActions()
   toolBar("quizToolBar")->setHidden(fEdit);
 }
 
-void KWordQuizApp::slotLeitnerSystem()
-{
-  if(m_doc->leitnerSystemActive())
-  {
-    m_doc->setLeitnerSystemActive(false);
-    vocabLeitner->setText(i18n("Enable Leitner system"));
-    vocabConfigLeitner->setEnabled( false );
-  }
-  else
-  {
-    m_doc->setLeitnerSystemActive(true);
-    vocabLeitner->setText(i18n("Disable Leitner system"));
-    vocabConfigLeitner->setEnabled( true );
-  }
-}
-
-void KWordQuizApp::slotConfigLeitner()
-{
-  PrefLeitner* config = new PrefLeitner(m_doc->leitnerSystem(), this);
-  if (config->exec() == QDialog::Accepted)
-    m_doc->setLeitnerSystem(config->system());
-
-  delete config;
-}
 
 void KWordQuizApp::slotConfigShowSearch()
 {

@@ -23,7 +23,6 @@
 #include <KRandomSequence>
 
 #include "keduvocexpression.h"
-#include "leitnersystem.h"
 #include "prefs.h"
 
 KWQQuiz::KWQQuiz(QObject * parent) : QObject(parent)

@@ -196,10 +196,6 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotVocabAdjustRows();
     /** shuffle the vocabulary */
     void slotVocabShuffle();
-    /** enable the Leitner system */
-    void slotLeitnerSystem();
-    /** configure the Leitner system */
-    void slotConfigLeitner();
 
     void slotModeChange();
     void slotModeActionGroupTriggered(QAction *);
