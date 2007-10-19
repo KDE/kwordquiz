@@ -52,7 +52,7 @@ void KWQQuiz::activateBaseList()
 
   if (m_quizMode > 2)
   {
-    KRandomSequence rs;
+    KRandomSequence rs( QDateTime::currentDateTime().toTime_t() );
     rs.randomize(m_quizList);
   };
 
@@ -75,7 +75,7 @@ void KWQQuiz::buildList(int column)
       tempList.append(current);
   }
 
-  KRandomSequence rs(0);
+  KRandomSequence rs( QDateTime::currentDateTime().toTime_t() );
 
   int count = tempList.count();
 
@@ -236,7 +236,7 @@ QStringList KWQQuiz::multiOptions(int i)
       }
   }
 
-  KRandomSequence rs(0);
+  KRandomSequence rs( QDateTime::currentDateTime().toTime_t() );
   rs.randomize(ls);
 
   return ls;

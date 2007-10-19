@@ -29,7 +29,6 @@
 
 #include <KLocale>
 #include <KMessageBox>
-#include <KRandomSequence>
 #include <KGlobalSettings>
 #include <KNotification>
 #include <KDebug>
