@@ -45,6 +45,14 @@ kde4_add_ui_files(kwordquiz_SRCS
 
 kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc )
 
+if(MSVC)
+  set(kwordquiz_SRCS ${kwordquiz_SRCS} kwordquiz.rc)
+endif(MSVC)
+
+if(MINGW)
+   KDE_ADD_RESOURCES2(kwordquiz_SRCS kwordquiz.rc)
+endif(MINGW)
+
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
 
 target_link_libraries(kwordquiz  keduvocdocument ${KDE4_KIO_LIBS} ${KDE4_KNEWSTUFF2_LIBS} ${KDE4_KNOTIFYCONFIG_LIBS})
