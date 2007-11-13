@@ -63,4 +63,7 @@ Name[tg]=KҲарфИмтиҳон
 Name[vi]=Đố Từ K
 Name[x-test]=xxKWordQuizxx
 GenericName=Flash Card Trainer
+GenericName[ga]=Oiliúnóir Luaschártaí
+GenericName[pt]=Treinador de Cartões
+GenericName[pt_BR]=Treinador de Cartões
 Categories=Qt;KDE;Education;Languages;
