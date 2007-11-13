@@ -1356,11 +1356,16 @@ void KWordQuizApp::slotInsertChar( int i )
 void KWordQuizApp::updateActions()
 {
   bool fEdit = (m_pageWidget->currentPage() == m_editorPage);
+  bool fQuiz = !fEdit && (m_quiz != 0);
 
   fileSave->setEnabled(fEdit);
   fileSaveAs->setEnabled(fEdit);
   filePrint->setEnabled(fEdit);
   //editFind->setEnabled(fEdit);
+  editUndo->setEnabled(fEdit);
+  editCopy->setEnabled(fEdit);
+  editCut->setEnabled(fEdit);
+  editPaste->setEnabled(fEdit);
   editClear->setEnabled(fEdit);
   editInsert->setEnabled(fEdit);
   editDelete->setEnabled(fEdit);
@@ -1373,14 +1378,14 @@ void KWordQuizApp::updateActions()
   vocabAdjustRows->setEnabled(fEdit);
   vocabShuffle->setEnabled(fEdit);
 
-  quizCheck->setEnabled(!fEdit);
-  quizRestart->setEnabled(!fEdit);
+  quizCheck->setEnabled(fQuiz);
+  quizRestart->setEnabled(fQuiz);
   quizRepeatErrors->setEnabled(false);
 
-  flashKnow->setEnabled(m_pageWidget->currentPage() == m_flashPage);
-  flashDontKnow->setEnabled(m_pageWidget->currentPage() == m_flashPage);
+  flashKnow->setEnabled((m_pageWidget->currentPage() == m_flashPage) && fQuiz);
+  flashDontKnow->setEnabled((m_pageWidget->currentPage() == m_flashPage) && fQuiz);
 
-  qaHint->setEnabled(m_pageWidget->currentPage() == m_qaPage);
+  qaHint->setEnabled((m_pageWidget->currentPage() == m_qaPage) && fQuiz);
 
   configShowSearchBar->setEnabled(fEdit);
 
