@@ -60,7 +60,7 @@ set(kwordquiz_icons
     ${CMAKE_CURRENT_SOURCE_DIR}/kwordquiz/src/pics/hi64-app-kwordquiz.png
     ${CMAKE_CURRENT_SOURCE_DIR}/kwordquiz/src/pics/hi128-app-kwordquiz.png
 )
-kde4_add_win32_app_icon(kwordquiz kwordquiz_SRCS ${kwordquiz_icons})
+kde4_add_win32_app_icon(kwordquiz_SRCS ${kwordquiz_icons})
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
 
 target_link_libraries(kwordquiz  keduvocdocument ${KDE4_KNEWSTUFF2_LIBS} ${KDE4_KNOTIFYCONFIG_LIBS})
