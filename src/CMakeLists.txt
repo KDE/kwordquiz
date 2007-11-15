@@ -54,11 +54,10 @@ kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc )
 #    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/128x128/apps/kwordquiz.png
 #)
 set(kwordquiz_icons
-    ${CMAKE_CURRENT_SOURCE_DIR}/kwordquiz/src/pics/hi16-app-kwordquiz.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/kwordquiz/src/pics/hi32-app-kwordquiz.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/kwordquiz/src/pics/hi48-app-kwordquiz.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/kwordquiz/src/pics/hi64-app-kwordquiz.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/kwordquiz/src/pics/hi128-app-kwordquiz.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi16-app-kwordquiz.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi32-app-kwordquiz.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi48-app-kwordquiz.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi128-app-kwordquiz.png
 )
 kde4_add_win32_app_icon(kwordquiz_SRCS ${kwordquiz_icons})
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
