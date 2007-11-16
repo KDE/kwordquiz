@@ -1065,7 +1065,7 @@ void KWordQuizApp::slotModeChange()
 void KWordQuizApp::slotQuizEditor()
 {
   slotStatusMsg(i18n("Starting editor session..."));
-  kDebug() << "I'm here" << endl;
+  kDebug() << "I'm here";
   m_pageWidget->setCurrentPage(m_editorPage);
   slotStatusMsg(i18n("Ready"));
 }
