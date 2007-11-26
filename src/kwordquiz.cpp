@@ -505,23 +505,19 @@ void KWordQuizApp::initView()
 
   m_editorPage = m_pageWidget->addPage(m_editorView, i18n("Editor"));
   m_editorPage->setIcon(KIcon("editor"));
-  m_editorPage->setHeader(i18n("Vocabulary Editor")); ///@todo remove when message freeze is lifted
   m_editorPage->setHeader("");
   m_editorPage->widget()->setLayout(editorLayout);
 
   m_flashPage = m_pageWidget->addPage(m_flashView, i18n("Flashcard"));
   m_flashPage->setIcon(KIcon("flash"));
-  m_flashPage->setHeader(i18n("Flashcard Quiz")); ///@todo remove when message freeze is lifted
   m_flashPage->setHeader("");
 
   m_multiplePage = m_pageWidget->addPage(m_multipleView, i18n("Multiple\nChoice"));
   m_multiplePage->setIcon(KIcon("multiple"));
-  m_multiplePage->setHeader(i18n("Multiple Choice Quiz")); ///@todo remove when message freeze is lifted
   m_multiplePage->setHeader("");
 
   m_qaPage = m_pageWidget->addPage(m_qaView, i18n("Q&A"));
   m_qaPage->setIcon(KIcon("qa"));
-  m_qaPage->setHeader(i18n("Question and Answer Quiz")); ///@todo remove when message freeze is lifted
   m_qaPage->setHeader("");
 
   m_pageWidget->addAction(quizEditor);
@@ -1366,7 +1362,7 @@ void KWordQuizApp::updateActions()
   fileSaveAs->setEnabled(fEdit);
   filePrint->setEnabled(fEdit);
   //editFind->setEnabled(fEdit);
-  editUndo->setEnabled(fEdit);
+  //editUndo->setEnabled(fEdit);
   editCopy->setEnabled(fEdit);
   editCut->setEnabled(fEdit);
   editPaste->setEnabled(fEdit);
