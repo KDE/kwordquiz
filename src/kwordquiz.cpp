@@ -719,7 +719,7 @@ void KWordQuizApp::slotFileOpen()
   cb -> setEnabled(true);
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Reading);
-  KFileDialog *fd = new KFileDialog(QString(), filter, this, cb);
+  KFileDialog *fd = new KFileDialog(KUrl(), filter, this, cb);
   fd->setOperationMode(KFileDialog::Opening);
   fd->setMode(KFile::Files | KFile::ExistingOnly);
   fd->setCaption(i18n("Open Vocabulary Document"));
@@ -804,7 +804,7 @@ bool KWordQuizApp::saveAsFileName( )
   bool success = false;
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Writing);
-  KFileDialog *fd = new KFileDialog(QString(), filter, this);
+  KFileDialog *fd = new KFileDialog(KUrl(), filter, this);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save Vocabulary Document As"));
 
