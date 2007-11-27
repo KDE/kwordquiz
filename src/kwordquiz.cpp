@@ -180,7 +180,7 @@ void KWordQuizApp::initActions()
   editClear->setStatusTip(editClear->whatsThis());
 
   editInsert = actionCollection()->addAction("edit_insert");
-  editInsert->setIcon(KIcon("insert_table_row"));
+  editInsert->setIcon(KIcon("insert-table-row"));
   editInsert->setText(i18n("&Insert Row"));
   editInsert->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));
   editInsert->setWhatsThis(i18n("Inserts a new row above the current row"));
@@ -189,7 +189,7 @@ void KWordQuizApp::initActions()
   connect(editInsert, SIGNAL(triggered(bool)), this, SLOT(slotEditInsert()));
 
   editDelete = actionCollection()->addAction("edit_delete");
-  editDelete->setIcon(KIcon("delete_table_row"));
+  editDelete->setIcon(KIcon("delete-table-row"));
   editDelete->setText(i18n("&Delete Row"));
   editDelete->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_K));
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
