@@ -1,149 +1,420 @@
-<?xml version="1.0"?>
-<!DOCTYPE kvtml SYSTEM "kvoctrain.dtd">
-<kvtml
- generator="kwordquiz 0.4"
- cols="2"
- lines="36"
- title="french_verbs.kvtml">
-
- <e>
-  <o width="250" l="French">je suis</o>
-  <t width="250" l="English">I am</t>
- </e>
- <e>
-  <o>tu es</o>
-  <t>you are (fam)</t>
- </e>
- <e>
-  <o>il est</o>
-  <t>he is </t>
- </e>
- <e>
-  <o>elle est</o>
-  <t>she is</t>
- </e>
- <e>
-  <o>nous sommes</o>
-  <t>we are</t>
- </e>
- <e>
-  <o>vous êtes</o>
-  <t>you are (formal)</t>
- </e>
- <e>
-  <o>ils sont</o>
-  <t>they are (m)</t>
- </e>
- <e>
-  <o>elles sont</o>
-  <t>they are (f)</t>
- </e>
- <e>
-  <o></o>
-  <t></t>
- </e>
- <e>
-  <o>je étais</o>
-  <t>I was</t>
- </e>
- <e>
-  <o>tu étais</o>
-  <t>you were (fam)</t>
- </e>
- <e>
-  <o>il était</o>
-  <t>he was</t>
- </e>
- <e>
-  <o>elle était</o>
-  <t>she was</t>
- </e>
- <e>
-  <o>nous étions</o>
-  <t>we were</t>
- </e>
- <e>
-  <o>vous étiez</o>
-  <t>you were (form)</t>
- </e>
- <e>
-  <o>ils étaient</o>
-  <t>they were (m)</t>
- </e>
- <e>
-  <o>elles étaient</o>
-  <t>they were (f)</t>
- </e>
- <e>
-  <o></o>
-  <t></t>
- </e>
- <e>
-  <o>je serai</o>
-  <t>I will be</t>
- </e>
- <e>
-  <o>tu seras</o>
-  <t>you will be (fam)</t>
- </e>
- <e>
-  <o>il sera</o>
-  <t>he will be</t>
- </e>
- <e>
-  <o>elle sera</o>
-  <t>she will be</t>
- </e>
- <e>
-  <o>nous serons</o>
-  <t>we will be</t>
- </e>
- <e>
-  <o>vous serez</o>
-  <t>you will be (form)</t>
- </e>
- <e>
-  <o>ils seront</o>
-  <t>they will be (m)</t>
- </e>
- <e>
-  <o>elles seront</o>
-  <t>they will be (f)</t>
- </e>
- <e>
-  <o></o>
-  <t></t>
- </e>
- <e>
-  <o>je serais</o>
-  <t>I would be</t>
- </e>
- <e>
-  <o>tu serais</o>
-  <t>you would be (fam)</t>
- </e>
- <e>
-  <o>il serait</o>
-  <t>he would be </t>
- </e>
- <e>
-  <o>elle serait</o>
-  <t>she would be</t>
- </e>
- <e>
-  <o>nous serions</o>
-  <t>we would be</t>
- </e>
- <e>
-  <o>vous seriez</o>
-  <t>you would be (form)</t>
- </e>
- <e>
-  <o>ils seraient</o>
-  <t>they would be (m)</t>
- </e>
- <e>
-  <o>elles seraient</o>
-  <t>they would be (f)</t>
- </e>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kvtml PUBLIC "kvtml2.dtd" "http://edu.kde.org/kanagram/kvtml2.dtd">
+<kvtml version="2.0" >
+  <information>
+    <generator>kwordquiz 0.8.9</generator>
+    <title>french_verbs.kvtml</title>
+  </information>
+  <identifiers>
+    <identifier id="0" >
+      <name>French</name>
+      <locale>French</locale>
+    </identifier>
+    <identifier id="1" >
+      <name>English</name>
+      <locale>English</locale>
+    </identifier>
+  </identifiers>
+  <entries>
+    <entry id="0" >
+      <translation id="0" >
+        <text>je suis</text>
+      </translation>
+      <translation id="1" >
+        <text>I am</text>
+      </translation>
+    </entry>
+    <entry id="1" >
+      <translation id="0" >
+        <text>tu es</text>
+      </translation>
+      <translation id="1" >
+        <text>you are (fam)</text>
+      </translation>
+    </entry>
+    <entry id="2" >
+      <translation id="0" >
+        <text>il est</text>
+      </translation>
+      <translation id="1" >
+        <text>he is</text>
+      </translation>
+    </entry>
+    <entry id="3" >
+      <translation id="0" >
+        <text>elle est</text>
+      </translation>
+      <translation id="1" >
+        <text>she is</text>
+      </translation>
+    </entry>
+    <entry id="4" >
+      <translation id="0" >
+        <text>nous sommes</text>
+      </translation>
+      <translation id="1" >
+        <text>we are</text>
+      </translation>
+    </entry>
+    <entry id="5" >
+      <translation id="0" >
+        <text>vous êtes</text>
+      </translation>
+      <translation id="1" >
+        <text>you are (formal)</text>
+      </translation>
+    </entry>
+    <entry id="6" >
+      <translation id="0" >
+        <text>ils sont</text>
+      </translation>
+      <translation id="1" >
+        <text>they are (m)</text>
+      </translation>
+    </entry>
+    <entry id="7" >
+      <translation id="0" >
+        <text>elles sont</text>
+      </translation>
+      <translation id="1" >
+        <text>they are (f)</text>
+      </translation>
+    </entry>
+    <entry id="8" >
+      <translation id="0" >
+        <text></text>
+      </translation>
+      <translation id="1" >
+        <text></text>
+      </translation>
+    </entry>
+    <entry id="9" >
+      <translation id="0" >
+        <text>je étais</text>
+      </translation>
+      <translation id="1" >
+        <text>I was</text>
+      </translation>
+    </entry>
+    <entry id="10" >
+      <translation id="0" >
+        <text>tu étais</text>
+      </translation>
+      <translation id="1" >
+        <text>you were (fam)</text>
+      </translation>
+    </entry>
+    <entry id="11" >
+      <translation id="0" >
+        <text>il était</text>
+      </translation>
+      <translation id="1" >
+        <text>he was</text>
+      </translation>
+    </entry>
+    <entry id="12" >
+      <translation id="0" >
+        <text>elle était</text>
+      </translation>
+      <translation id="1" >
+        <text>she was</text>
+      </translation>
+    </entry>
+    <entry id="13" >
+      <translation id="0" >
+        <text>nous étions</text>
+      </translation>
+      <translation id="1" >
+        <text>we were</text>
+      </translation>
+    </entry>
+    <entry id="14" >
+      <translation id="0" >
+        <text>vous étiez</text>
+      </translation>
+      <translation id="1" >
+        <text>you were (form)</text>
+      </translation>
+    </entry>
+    <entry id="15" >
+      <translation id="0" >
+        <text>ils étaient</text>
+      </translation>
+      <translation id="1" >
+        <text>they were (m)</text>
+      </translation>
+    </entry>
+    <entry id="16" >
+      <translation id="0" >
+        <text>elles étaient</text>
+      </translation>
+      <translation id="1" >
+        <text>they were (f)</text>
+      </translation>
+    </entry>
+    <entry id="17" >
+      <translation id="0" >
+        <text></text>
+      </translation>
+      <translation id="1" >
+        <text></text>
+      </translation>
+    </entry>
+    <entry id="18" >
+      <translation id="0" >
+        <text>je serai</text>
+      </translation>
+      <translation id="1" >
+        <text>I will be</text>
+      </translation>
+    </entry>
+    <entry id="19" >
+      <translation id="0" >
+        <text>tu seras</text>
+      </translation>
+      <translation id="1" >
+        <text>you will be (fam)</text>
+      </translation>
+    </entry>
+    <entry id="20" >
+      <translation id="0" >
+        <text>il sera</text>
+      </translation>
+      <translation id="1" >
+        <text>he will be</text>
+      </translation>
+    </entry>
+    <entry id="21" >
+      <translation id="0" >
+        <text>elle sera</text>
+      </translation>
+      <translation id="1" >
+        <text>she will be</text>
+      </translation>
+    </entry>
+    <entry id="22" >
+      <translation id="0" >
+        <text>nous serons</text>
+      </translation>
+      <translation id="1" >
+        <text>we will be</text>
+      </translation>
+    </entry>
+    <entry id="23" >
+      <translation id="0" >
+        <text>vous serez</text>
+      </translation>
+      <translation id="1" >
+        <text>you will be (form)</text>
+      </translation>
+    </entry>
+    <entry id="24" >
+      <translation id="0" >
+        <text>ils seront</text>
+      </translation>
+      <translation id="1" >
+        <text>they will be (m)</text>
+      </translation>
+    </entry>
+    <entry id="25" >
+      <translation id="0" >
+        <text>elles seront</text>
+      </translation>
+      <translation id="1" >
+        <text>they will be (f)</text>
+      </translation>
+    </entry>
+    <entry id="26" >
+      <translation id="0" >
+        <text></text>
+      </translation>
+      <translation id="1" >
+        <text></text>
+      </translation>
+    </entry>
+    <entry id="27" >
+      <translation id="0" >
+        <text>je serais</text>
+      </translation>
+      <translation id="1" >
+        <text>I would be</text>
+      </translation>
+    </entry>
+    <entry id="28" >
+      <translation id="0" >
+        <text>tu serais</text>
+      </translation>
+      <translation id="1" >
+        <text>you would be (fam)</text>
+      </translation>
+    </entry>
+    <entry id="29" >
+      <translation id="0" >
+        <text>il serait</text>
+      </translation>
+      <translation id="1" >
+        <text>he would be</text>
+      </translation>
+    </entry>
+    <entry id="30" >
+      <translation id="0" >
+        <text>elle serait</text>
+      </translation>
+      <translation id="1" >
+        <text>she would be</text>
+      </translation>
+    </entry>
+    <entry id="31" >
+      <translation id="0" >
+        <text>nous serions</text>
+      </translation>
+      <translation id="1" >
+        <text>we would be</text>
+      </translation>
+    </entry>
+    <entry id="32" >
+      <translation id="0" >
+        <text>vous seriez</text>
+      </translation>
+      <translation id="1" >
+        <text>you would be (form)</text>
+      </translation>
+    </entry>
+    <entry id="33" >
+      <translation id="0" >
+        <text>ils seraient</text>
+      </translation>
+      <translation id="1" >
+        <text>they would be (m)</text>
+      </translation>
+    </entry>
+    <entry id="34" >
+      <translation id="0" >
+        <text>elles seraient</text>
+      </translation>
+      <translation id="1" >
+        <text>they would be (f)</text>
+      </translation>
+    </entry>
+  </entries>
+  <lessons>
+    <container>
+      <name>Default Lesson</name>
+      <inpractice>true</inpractice>
+      <current>true</current>
+      <entry id="0" />
+      <entry id="1" />
+      <entry id="2" />
+      <entry id="3" />
+      <entry id="4" />
+      <entry id="5" />
+      <entry id="6" />
+      <entry id="7" />
+      <entry id="8" />
+      <entry id="9" />
+      <entry id="10" />
+      <entry id="11" />
+      <entry id="12" />
+      <entry id="13" />
+      <entry id="14" />
+      <entry id="15" />
+      <entry id="16" />
+      <entry id="17" />
+      <entry id="18" />
+      <entry id="19" />
+      <entry id="20" />
+      <entry id="21" />
+      <entry id="22" />
+      <entry id="23" />
+      <entry id="24" />
+      <entry id="25" />
+      <entry id="26" />
+      <entry id="27" />
+      <entry id="28" />
+      <entry id="29" />
+      <entry id="30" />
+      <entry id="31" />
+      <entry id="32" />
+      <entry id="33" />
+      <entry id="34" />
+    </container>
+  </lessons>
+  <wordtypes>
+    <container>
+      <name>Noun</name>
+      <specialwordtype>noun</specialwordtype>
+      <container>
+        <name>Male</name>
+        <specialwordtype>noun/male</specialwordtype>
+      </container>
+      <container>
+        <name>Female</name>
+        <specialwordtype>noun/female</specialwordtype>
+      </container>
+      <container>
+        <name>Neutral</name>
+        <specialwordtype>noun/neutral</specialwordtype>
+      </container>
+    </container>
+    <container>
+      <name>Verb</name>
+      <specialwordtype>verb</specialwordtype>
+      <container>
+        <name>Regular</name>
+      </container>
+      <container>
+        <name>Irregular</name>
+      </container>
+    </container>
+    <container>
+      <name>Adjective</name>
+      <specialwordtype>adjective</specialwordtype>
+    </container>
+    <container>
+      <name>Adverb</name>
+      <specialwordtype>adverb</specialwordtype>
+    </container>
+    <container>
+      <name>Question</name>
+    </container>
+    <container>
+      <name>Name</name>
+    </container>
+    <container>
+      <name>Article</name>
+      <container>
+        <name>Definite</name>
+      </container>
+      <container>
+        <name>Indefinite</name>
+      </container>
+    </container>
+    <container>
+      <name>Pronoun</name>
+      <container>
+        <name>Possessive</name>
+      </container>
+      <container>
+        <name>Personal</name>
+      </container>
+    </container>
+    <container>
+      <name>Phrase</name>
+    </container>
+    <container>
+      <name>Numeral</name>
+      <container>
+        <name>Ordinal</name>
+      </container>
+      <container>
+        <name>Cardinal</name>
+      </container>
+    </container>
+    <container>
+      <name>Conjunction</name>
+    </container>
+    <container>
+      <name>Preposition</name>
+    </container>
+  </wordtypes>
 </kvtml>

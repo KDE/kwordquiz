@@ -1,69 +1,240 @@
-<?xml version="1.0"?>
-<!DOCTYPE kvtml SYSTEM "kvoctrain.dtd">
-<kvtml
- generator="kwordquiz 0.4"
- cols="2"
- lines="16"
- title="fill_in_the_blank.kvtml">
-
- <e>
-  <o width="280" l="English">the lawyer reads the newspaper</o>
-  <t width="280" l="Deutsch">der Rechtsanwalt liest [die Zeitung]</t>
- </e>
- <e>
-  <o>kids like ice-cream</o>
-  <t>Kinder mögen [Eis]</t>
- </e>
- <e>
-  <o>they have bought a Porsche</o>
-  <t>sie haben [einen Porsche] gekauft</t>
- </e>
- <e>
-  <o>they have many secrets</o>
-  <t>sie haben viele [Geheimnisse]</t>
- </e>
- <e>
-  <o>these exercises help the students</o>
-  <t>diese Übungen helfen [den Schülern]</t>
- </e>
- <e>
-  <o>it only takes a word</o>
-  <t>es bedarf nur [eines Wortes]</t>
- </e>
- <e>
-  <o>there is only one exit</o>
-  <t>es gibt nur [einen Ausweg]</t>
- </e>
- <e>
-  <o>there are many women here</o>
-  <t>es sind viele [Frauen] hier</t>
- </e>
- <e>
-  <o>the tires on the bus are new</o>
-  <t>die Reifen [des Busses] sind neu</t>
- </e>
- <e>
-  <o>she is a doctor</o>
-  <t>sie ist [Ärztin]</t>
- </e>
- <e>
-  <o>I will buy a TV</o>
-  <t>ich werde mir [einen Fernseher] kaufen</t>
- </e>
- <e>
-  <o>Earth is a planet</o>
-  <t>die Erde ist [ein Planet]</t>
- </e>
- <e>
-  <o>the rooms have three beds</o>
-  <t>die Zimmer haben [drei Betten]</t>
- </e>
- <e>
-  <o>we travel through Turkey</o>
-  <t>wir reisen durch [die Türkei]</t>
- </e>
- <e>
-  <o>we own a computer</o>
-  <t>wir besitzen [einen Computer]</t>
- </e>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kvtml PUBLIC "kvtml2.dtd" "http://edu.kde.org/kanagram/kvtml2.dtd">
+<kvtml version="2.0" >
+  <information>
+    <generator>kwordquiz 0.8.9</generator>
+    <title>fill_in_the_blank.kvtml</title>
+  </information>
+  <identifiers>
+    <identifier id="0" >
+      <name>English</name>
+      <locale>English</locale>
+    </identifier>
+    <identifier id="1" >
+      <name>Deutsch</name>
+      <locale>Deutsch</locale>
+    </identifier>
+  </identifiers>
+  <entries>
+    <entry id="0" >
+      <translation id="0" >
+        <text>the lawyer reads the newspaper</text>
+      </translation>
+      <translation id="1" >
+        <text>der Rechtsanwalt liest [die Zeitung]</text>
+      </translation>
+    </entry>
+    <entry id="1" >
+      <translation id="0" >
+        <text>kids like ice-cream</text>
+      </translation>
+      <translation id="1" >
+        <text>Kinder mögen [Eis]</text>
+      </translation>
+    </entry>
+    <entry id="2" >
+      <translation id="0" >
+        <text>they have bought a Porsche</text>
+      </translation>
+      <translation id="1" >
+        <text>sie haben [einen Porsche] gekauft</text>
+      </translation>
+    </entry>
+    <entry id="3" >
+      <translation id="0" >
+        <text>they have many secrets</text>
+      </translation>
+      <translation id="1" >
+        <text>sie haben viele [Geheimnisse]</text>
+      </translation>
+    </entry>
+    <entry id="4" >
+      <translation id="0" >
+        <text>these exercises help the students</text>
+      </translation>
+      <translation id="1" >
+        <text>diese Übungen helfen [den Schülern]</text>
+      </translation>
+    </entry>
+    <entry id="5" >
+      <translation id="0" >
+        <text>it only takes a word</text>
+      </translation>
+      <translation id="1" >
+        <text>es bedarf nur [eines Wortes]</text>
+      </translation>
+    </entry>
+    <entry id="6" >
+      <translation id="0" >
+        <text>there is only one exit</text>
+      </translation>
+      <translation id="1" >
+        <text>es gibt nur [einen Ausweg]</text>
+      </translation>
+    </entry>
+    <entry id="7" >
+      <translation id="0" >
+        <text>there are many women here</text>
+      </translation>
+      <translation id="1" >
+        <text>es sind viele [Frauen] hier</text>
+      </translation>
+    </entry>
+    <entry id="8" >
+      <translation id="0" >
+        <text>the tires on the bus are new</text>
+      </translation>
+      <translation id="1" >
+        <text>die Reifen [des Busses] sind neu</text>
+      </translation>
+    </entry>
+    <entry id="9" >
+      <translation id="0" >
+        <text>she is a doctor</text>
+      </translation>
+      <translation id="1" >
+        <text>sie ist [Ärztin]</text>
+      </translation>
+    </entry>
+    <entry id="10" >
+      <translation id="0" >
+        <text>I will buy a TV</text>
+      </translation>
+      <translation id="1" >
+        <text>ich werde mir [einen Fernseher] kaufen</text>
+      </translation>
+    </entry>
+    <entry id="11" >
+      <translation id="0" >
+        <text>Earth is a planet</text>
+      </translation>
+      <translation id="1" >
+        <text>die Erde ist [ein Planet]</text>
+      </translation>
+    </entry>
+    <entry id="12" >
+      <translation id="0" >
+        <text>the rooms have three beds</text>
+      </translation>
+      <translation id="1" >
+        <text>die Zimmer haben [drei Betten]</text>
+      </translation>
+    </entry>
+    <entry id="13" >
+      <translation id="0" >
+        <text>we travel through Turkey</text>
+      </translation>
+      <translation id="1" >
+        <text>wir reisen durch [die Türkei]</text>
+      </translation>
+    </entry>
+    <entry id="14" >
+      <translation id="0" >
+        <text>we own a computer</text>
+      </translation>
+      <translation id="1" >
+        <text>wir besitzen [einen Computer]</text>
+      </translation>
+    </entry>
+  </entries>
+  <lessons>
+    <container>
+      <name>Default Lesson</name>
+      <inpractice>true</inpractice>
+      <current>true</current>
+      <entry id="0" />
+      <entry id="1" />
+      <entry id="2" />
+      <entry id="3" />
+      <entry id="4" />
+      <entry id="5" />
+      <entry id="6" />
+      <entry id="7" />
+      <entry id="8" />
+      <entry id="9" />
+      <entry id="10" />
+      <entry id="11" />
+      <entry id="12" />
+      <entry id="13" />
+      <entry id="14" />
+    </container>
+  </lessons>
+  <wordtypes>
+    <container>
+      <name>Noun</name>
+      <specialwordtype>noun</specialwordtype>
+      <container>
+        <name>Male</name>
+        <specialwordtype>noun/male</specialwordtype>
+      </container>
+      <container>
+        <name>Female</name>
+        <specialwordtype>noun/female</specialwordtype>
+      </container>
+      <container>
+        <name>Neutral</name>
+        <specialwordtype>noun/neutral</specialwordtype>
+      </container>
+    </container>
+    <container>
+      <name>Verb</name>
+      <specialwordtype>verb</specialwordtype>
+      <container>
+        <name>Regular</name>
+      </container>
+      <container>
+        <name>Irregular</name>
+      </container>
+    </container>
+    <container>
+      <name>Adjective</name>
+      <specialwordtype>adjective</specialwordtype>
+    </container>
+    <container>
+      <name>Adverb</name>
+      <specialwordtype>adverb</specialwordtype>
+    </container>
+    <container>
+      <name>Question</name>
+    </container>
+    <container>
+      <name>Name</name>
+    </container>
+    <container>
+      <name>Article</name>
+      <container>
+        <name>Definite</name>
+      </container>
+      <container>
+        <name>Indefinite</name>
+      </container>
+    </container>
+    <container>
+      <name>Pronoun</name>
+      <container>
+        <name>Possessive</name>
+      </container>
+      <container>
+        <name>Personal</name>
+      </container>
+    </container>
+    <container>
+      <name>Phrase</name>
+    </container>
+    <container>
+      <name>Numeral</name>
+      <container>
+        <name>Ordinal</name>
+      </container>
+      <container>
+        <name>Cardinal</name>
+      </container>
+    </container>
+    <container>
+      <name>Conjunction</name>
+    </container>
+    <container>
+      <name>Preposition</name>
+    </container>
+  </wordtypes>
 </kvtml>

@@ -1,209 +1,555 @@
-<?xml version="1.0"?>
-<!DOCTYPE kvtml SYSTEM "kvoctrain.dtd">
-<kvtml
- generator="kwordquiz 0.4"
- cols="2"
- lines="51"
- title="us_states_and_capitals.kvtml">
-
- <e>
-  <o width="225" l="State">Alabama</o>
-  <t width="225" l="Capital">Montgomery</t>
- </e>
- <e>
-  <o>Alaska</o>
-  <t>Juneau</t>
- </e>
- <e>
-  <o>Arizona</o>
-  <t>Phoenix</t>
- </e>
- <e>
-  <o>Arkansas</o>
-  <t>Little Rock</t>
- </e>
- <e>
-  <o>California</o>
-  <t>Sacramento</t>
- </e>
- <e>
-  <o>Colorado</o>
-  <t>Denver</t>
- </e>
- <e>
-  <o>Connecticut</o>
-  <t>Hartford</t>
- </e>
- <e>
-  <o>Delaware</o>
-  <t>Dover</t>
- </e>
- <e>
-  <o>Florida</o>
-  <t>Tallahassee</t>
- </e>
- <e>
-  <o>Georgia</o>
-  <t>Atlanta</t>
- </e>
- <e>
-  <o>Hawaii</o>
-  <t>Honolulu</t>
- </e>
- <e>
-  <o>Idaho</o>
-  <t>Boise</t>
- </e>
- <e>
-  <o>Illinois</o>
-  <t>Springfield</t>
- </e>
- <e>
-  <o>Indiana</o>
-  <t>Indianapolis</t>
- </e>
- <e>
-  <o>Iowa</o>
-  <t>Des Moines</t>
- </e>
- <e>
-  <o>Kansas</o>
-  <t>Topeka</t>
- </e>
- <e>
-  <o>Kentucky</o>
-  <t>Frankfort</t>
- </e>
- <e>
-  <o>Louisiana</o>
-  <t>Baton Rouge</t>
- </e>
- <e>
-  <o>Maine</o>
-  <t>Augusta</t>
- </e>
- <e>
-  <o>Maryland</o>
-  <t>Annapolis</t>
- </e>
- <e>
-  <o>Massachusetts</o>
-  <t>Boston</t>
- </e>
- <e>
-  <o>Michigan</o>
-  <t>Lansing</t>
- </e>
- <e>
-  <o>Minnesota</o>
-  <t>St. Paul</t>
- </e>
- <e>
-  <o>Mississippi</o>
-  <t>Jackson</t>
- </e>
- <e>
-  <o>Missouri</o>
-  <t>Jefferson City</t>
- </e>
- <e>
-  <o>Montana</o>
-  <t>Helena</t>
- </e>
- <e>
-  <o>Nebraska</o>
-  <t>Lincoln</t>
- </e>
- <e>
-  <o>Nevada</o>
-  <t>Carson City</t>
- </e>
- <e>
-  <o>New Hampshire</o>
-  <t>Concord</t>
- </e>
- <e>
-  <o>New Jersey</o>
-  <t>Trenton</t>
- </e>
- <e>
-  <o>New Mexico</o>
-  <t>Santa Fe</t>
- </e>
- <e>
-  <o>New York</o>
-  <t>Albany</t>
- </e>
- <e>
-  <o>North Carolina</o>
-  <t>Raleigh</t>
- </e>
- <e>
-  <o>North Dakota</o>
-  <t>Bismarck</t>
- </e>
- <e>
-  <o>Ohio</o>
-  <t>Columbus</t>
- </e>
- <e>
-  <o>Oklahoma</o>
-  <t>Oklahoma City</t>
- </e>
- <e>
-  <o>Oregon</o>
-  <t>Salem</t>
- </e>
- <e>
-  <o>Pennsylvania</o>
-  <t>Harrisburg</t>
- </e>
- <e>
-  <o>Rhode Island</o>
-  <t>Providence</t>
- </e>
- <e>
-  <o>South Carolina</o>
-  <t>Columbia</t>
- </e>
- <e>
-  <o>South Dakota</o>
-  <t>Pierre</t>
- </e>
- <e>
-  <o>Tennessee</o>
-  <t>Nashville</t>
- </e>
- <e>
-  <o>Texas</o>
-  <t>Austin</t>
- </e>
- <e>
-  <o>Utah</o>
-  <t>Salt Lake City</t>
- </e>
- <e>
-  <o>Vermont</o>
-  <t>Montpelier</t>
- </e>
- <e>
-  <o>Virginia</o>
-  <t>Richmond</t>
- </e>
- <e>
-  <o>Washington</o>
-  <t>Olympia</t>
- </e>
- <e>
-  <o>West Virginia</o>
-  <t>Charleston</t>
- </e>
- <e>
-  <o>Wisconsin</o>
-  <t>Madison</t>
- </e>
- <e>
-  <o>Wyoming</o>
-  <t>Cheyenne</t>
- </e>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kvtml PUBLIC "kvtml2.dtd" "http://edu.kde.org/kanagram/kvtml2.dtd">
+<kvtml version="2.0" >
+  <information>
+    <generator>kwordquiz 0.8.9</generator>
+    <title>us_states_and_capitals.kvtml</title>
+  </information>
+  <identifiers>
+    <identifier id="0" >
+      <name>State</name>
+      <locale>State</locale>
+    </identifier>
+    <identifier id="1" >
+      <name>Capital</name>
+      <locale>Capital</locale>
+    </identifier>
+  </identifiers>
+  <entries>
+    <entry id="0" >
+      <translation id="0" >
+        <text>Alabama</text>
+      </translation>
+      <translation id="1" >
+        <text>Montgomery</text>
+      </translation>
+    </entry>
+    <entry id="1" >
+      <translation id="0" >
+        <text>Alaska</text>
+      </translation>
+      <translation id="1" >
+        <text>Juneau</text>
+      </translation>
+    </entry>
+    <entry id="2" >
+      <translation id="0" >
+        <text>Arizona</text>
+      </translation>
+      <translation id="1" >
+        <text>Phoenix</text>
+      </translation>
+    </entry>
+    <entry id="3" >
+      <translation id="0" >
+        <text>Arkansas</text>
+      </translation>
+      <translation id="1" >
+        <text>Little Rock</text>
+      </translation>
+    </entry>
+    <entry id="4" >
+      <translation id="0" >
+        <text>California</text>
+      </translation>
+      <translation id="1" >
+        <text>Sacramento</text>
+      </translation>
+    </entry>
+    <entry id="5" >
+      <translation id="0" >
+        <text>Colorado</text>
+      </translation>
+      <translation id="1" >
+        <text>Denver</text>
+      </translation>
+    </entry>
+    <entry id="6" >
+      <translation id="0" >
+        <text>Connecticut</text>
+      </translation>
+      <translation id="1" >
+        <text>Hartford</text>
+      </translation>
+    </entry>
+    <entry id="7" >
+      <translation id="0" >
+        <text>Delaware</text>
+      </translation>
+      <translation id="1" >
+        <text>Dover</text>
+      </translation>
+    </entry>
+    <entry id="8" >
+      <translation id="0" >
+        <text>Florida</text>
+      </translation>
+      <translation id="1" >
+        <text>Tallahassee</text>
+      </translation>
+    </entry>
+    <entry id="9" >
+      <translation id="0" >
+        <text>Georgia</text>
+      </translation>
+      <translation id="1" >
+        <text>Atlanta</text>
+      </translation>
+    </entry>
+    <entry id="10" >
+      <translation id="0" >
+        <text>Hawaii</text>
+      </translation>
+      <translation id="1" >
+        <text>Honolulu</text>
+      </translation>
+    </entry>
+    <entry id="11" >
+      <translation id="0" >
+        <text>Idaho</text>
+      </translation>
+      <translation id="1" >
+        <text>Boise</text>
+      </translation>
+    </entry>
+    <entry id="12" >
+      <translation id="0" >
+        <text>Illinois</text>
+      </translation>
+      <translation id="1" >
+        <text>Springfield</text>
+      </translation>
+    </entry>
+    <entry id="13" >
+      <translation id="0" >
+        <text>Indiana</text>
+      </translation>
+      <translation id="1" >
+        <text>Indianapolis</text>
+      </translation>
+    </entry>
+    <entry id="14" >
+      <translation id="0" >
+        <text>Iowa</text>
+      </translation>
+      <translation id="1" >
+        <text>Des Moines</text>
+      </translation>
+    </entry>
+    <entry id="15" >
+      <translation id="0" >
+        <text>Kansas</text>
+      </translation>
+      <translation id="1" >
+        <text>Topeka</text>
+      </translation>
+    </entry>
+    <entry id="16" >
+      <translation id="0" >
+        <text>Kentucky</text>
+      </translation>
+      <translation id="1" >
+        <text>Frankfort</text>
+      </translation>
+    </entry>
+    <entry id="17" >
+      <translation id="0" >
+        <text>Louisiana</text>
+      </translation>
+      <translation id="1" >
+        <text>Baton Rouge</text>
+      </translation>
+    </entry>
+    <entry id="18" >
+      <translation id="0" >
+        <text>Maine</text>
+      </translation>
+      <translation id="1" >
+        <text>Augusta</text>
+      </translation>
+    </entry>
+    <entry id="19" >
+      <translation id="0" >
+        <text>Maryland</text>
+      </translation>
+      <translation id="1" >
+        <text>Annapolis</text>
+      </translation>
+    </entry>
+    <entry id="20" >
+      <translation id="0" >
+        <text>Massachusetts</text>
+      </translation>
+      <translation id="1" >
+        <text>Boston</text>
+      </translation>
+    </entry>
+    <entry id="21" >
+      <translation id="0" >
+        <text>Michigan</text>
+      </translation>
+      <translation id="1" >
+        <text>Lansing</text>
+      </translation>
+    </entry>
+    <entry id="22" >
+      <translation id="0" >
+        <text>Minnesota</text>
+      </translation>
+      <translation id="1" >
+        <text>St. Paul</text>
+      </translation>
+    </entry>
+    <entry id="23" >
+      <translation id="0" >
+        <text>Mississippi</text>
+      </translation>
+      <translation id="1" >
+        <text>Jackson</text>
+      </translation>
+    </entry>
+    <entry id="24" >
+      <translation id="0" >
+        <text>Missouri</text>
+      </translation>
+      <translation id="1" >
+        <text>Jefferson City</text>
+      </translation>
+    </entry>
+    <entry id="25" >
+      <translation id="0" >
+        <text>Montana</text>
+      </translation>
+      <translation id="1" >
+        <text>Helena</text>
+      </translation>
+    </entry>
+    <entry id="26" >
+      <translation id="0" >
+        <text>Nebraska</text>
+      </translation>
+      <translation id="1" >
+        <text>Lincoln</text>
+      </translation>
+    </entry>
+    <entry id="27" >
+      <translation id="0" >
+        <text>Nevada</text>
+      </translation>
+      <translation id="1" >
+        <text>Carson City</text>
+      </translation>
+    </entry>
+    <entry id="28" >
+      <translation id="0" >
+        <text>New Hampshire</text>
+      </translation>
+      <translation id="1" >
+        <text>Concord</text>
+      </translation>
+    </entry>
+    <entry id="29" >
+      <translation id="0" >
+        <text>New Jersey</text>
+      </translation>
+      <translation id="1" >
+        <text>Trenton</text>
+      </translation>
+    </entry>
+    <entry id="30" >
+      <translation id="0" >
+        <text>New Mexico</text>
+      </translation>
+      <translation id="1" >
+        <text>Santa Fe</text>
+      </translation>
+    </entry>
+    <entry id="31" >
+      <translation id="0" >
+        <text>New York</text>
+      </translation>
+      <translation id="1" >
+        <text>Albany</text>
+      </translation>
+    </entry>
+    <entry id="32" >
+      <translation id="0" >
+        <text>North Carolina</text>
+      </translation>
+      <translation id="1" >
+        <text>Raleigh</text>
+      </translation>
+    </entry>
+    <entry id="33" >
+      <translation id="0" >
+        <text>North Dakota</text>
+      </translation>
+      <translation id="1" >
+        <text>Bismarck</text>
+      </translation>
+    </entry>
+    <entry id="34" >
+      <translation id="0" >
+        <text>Ohio</text>
+      </translation>
+      <translation id="1" >
+        <text>Columbus</text>
+      </translation>
+    </entry>
+    <entry id="35" >
+      <translation id="0" >
+        <text>Oklahoma</text>
+      </translation>
+      <translation id="1" >
+        <text>Oklahoma City</text>
+      </translation>
+    </entry>
+    <entry id="36" >
+      <translation id="0" >
+        <text>Oregon</text>
+      </translation>
+      <translation id="1" >
+        <text>Salem</text>
+      </translation>
+    </entry>
+    <entry id="37" >
+      <translation id="0" >
+        <text>Pennsylvania</text>
+      </translation>
+      <translation id="1" >
+        <text>Harrisburg</text>
+      </translation>
+    </entry>
+    <entry id="38" >
+      <translation id="0" >
+        <text>Rhode Island</text>
+      </translation>
+      <translation id="1" >
+        <text>Providence</text>
+      </translation>
+    </entry>
+    <entry id="39" >
+      <translation id="0" >
+        <text>South Carolina</text>
+      </translation>
+      <translation id="1" >
+        <text>Columbia</text>
+      </translation>
+    </entry>
+    <entry id="40" >
+      <translation id="0" >
+        <text>South Dakota</text>
+      </translation>
+      <translation id="1" >
+        <text>Pierre</text>
+      </translation>
+    </entry>
+    <entry id="41" >
+      <translation id="0" >
+        <text>Tennessee</text>
+      </translation>
+      <translation id="1" >
+        <text>Nashville</text>
+      </translation>
+    </entry>
+    <entry id="42" >
+      <translation id="0" >
+        <text>Texas</text>
+      </translation>
+      <translation id="1" >
+        <text>Austin</text>
+      </translation>
+    </entry>
+    <entry id="43" >
+      <translation id="0" >
+        <text>Utah</text>
+      </translation>
+      <translation id="1" >
+        <text>Salt Lake City</text>
+      </translation>
+    </entry>
+    <entry id="44" >
+      <translation id="0" >
+        <text>Vermont</text>
+      </translation>
+      <translation id="1" >
+        <text>Montpelier</text>
+      </translation>
+    </entry>
+    <entry id="45" >
+      <translation id="0" >
+        <text>Virginia</text>
+      </translation>
+      <translation id="1" >
+        <text>Richmond</text>
+      </translation>
+    </entry>
+    <entry id="46" >
+      <translation id="0" >
+        <text>Washington</text>
+      </translation>
+      <translation id="1" >
+        <text>Olympia</text>
+      </translation>
+    </entry>
+    <entry id="47" >
+      <translation id="0" >
+        <text>West Virginia</text>
+      </translation>
+      <translation id="1" >
+        <text>Charleston</text>
+      </translation>
+    </entry>
+    <entry id="48" >
+      <translation id="0" >
+        <text>Wisconsin</text>
+      </translation>
+      <translation id="1" >
+        <text>Madison</text>
+      </translation>
+    </entry>
+    <entry id="49" >
+      <translation id="0" >
+        <text>Wyoming</text>
+      </translation>
+      <translation id="1" >
+        <text>Cheyenne</text>
+      </translation>
+    </entry>
+  </entries>
+  <lessons>
+    <container>
+      <name>Default Lesson</name>
+      <inpractice>true</inpractice>
+      <current>true</current>
+      <entry id="0" />
+      <entry id="1" />
+      <entry id="2" />
+      <entry id="3" />
+      <entry id="4" />
+      <entry id="5" />
+      <entry id="6" />
+      <entry id="7" />
+      <entry id="8" />
+      <entry id="9" />
+      <entry id="10" />
+      <entry id="11" />
+      <entry id="12" />
+      <entry id="13" />
+      <entry id="14" />
+      <entry id="15" />
+      <entry id="16" />
+      <entry id="17" />
+      <entry id="18" />
+      <entry id="19" />
+      <entry id="20" />
+      <entry id="21" />
+      <entry id="22" />
+      <entry id="23" />
+      <entry id="24" />
+      <entry id="25" />
+      <entry id="26" />
+      <entry id="27" />
+      <entry id="28" />
+      <entry id="29" />
+      <entry id="30" />
+      <entry id="31" />
+      <entry id="32" />
+      <entry id="33" />
+      <entry id="34" />
+      <entry id="35" />
+      <entry id="36" />
+      <entry id="37" />
+      <entry id="38" />
+      <entry id="39" />
+      <entry id="40" />
+      <entry id="41" />
+      <entry id="42" />
+      <entry id="43" />
+      <entry id="44" />
+      <entry id="45" />
+      <entry id="46" />
+      <entry id="47" />
+      <entry id="48" />
+      <entry id="49" />
+    </container>
+  </lessons>
+  <wordtypes>
+    <container>
+      <name>Noun</name>
+      <specialwordtype>noun</specialwordtype>
+      <container>
+        <name>Male</name>
+        <specialwordtype>noun/male</specialwordtype>
+      </container>
+      <container>
+        <name>Female</name>
+        <specialwordtype>noun/female</specialwordtype>
+      </container>
+      <container>
+        <name>Neutral</name>
+        <specialwordtype>noun/neutral</specialwordtype>
+      </container>
+    </container>
+    <container>
+      <name>Verb</name>
+      <specialwordtype>verb</specialwordtype>
+      <container>
+        <name>Regular</name>
+      </container>
+      <container>
+        <name>Irregular</name>
+      </container>
+    </container>
+    <container>
+      <name>Adjective</name>
+      <specialwordtype>adjective</specialwordtype>
+    </container>
+    <container>
+      <name>Adverb</name>
+      <specialwordtype>adverb</specialwordtype>
+    </container>
+    <container>
+      <name>Question</name>
+    </container>
+    <container>
+      <name>Name</name>
+    </container>
+    <container>
+      <name>Article</name>
+      <container>
+        <name>Definite</name>
+      </container>
+      <container>
+        <name>Indefinite</name>
+      </container>
+    </container>
+    <container>
+      <name>Pronoun</name>
+      <container>
+        <name>Possessive</name>
+      </container>
+      <container>
+        <name>Personal</name>
+      </container>
+    </container>
+    <container>
+      <name>Phrase</name>
+    </container>
+    <container>
+      <name>Numeral</name>
+      <container>
+        <name>Ordinal</name>
+      </container>
+      <container>
+        <name>Cardinal</name>
+      </container>
+    </container>
+    <container>
+      <name>Conjunction</name>
+    </container>
+    <container>
+      <name>Preposition</name>
+    </container>
+  </wordtypes>
 </kvtml>
