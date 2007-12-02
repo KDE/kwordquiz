@@ -790,6 +790,8 @@ void KWordQuizApp::slotFileGHNS()
   KStandardDirs::makeDir(QDir::home().path() + '/' + installDir);
 
   KNS::Entry::List entries = KNS::Engine::download();
+  // we need to delete the entry* items in the returned list
+  qDeleteAll(entries);
 }
 
 void KWordQuizApp::slotFileSaveAs()
