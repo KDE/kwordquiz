@@ -224,7 +224,7 @@ void KWordQuizApp::initActions()
   connect(vocabLanguages, SIGNAL(triggered(bool)), this, SLOT(slotVocabLanguages()));
 
   vocabFont = actionCollection()->addAction("vocab_font");
-  vocabFont->setIcon(KIcon("fonts"));
+  vocabFont->setIcon(KIcon("preferences-desktop-font"));
   vocabFont->setText(i18n("&Font..."));
   vocabFont->setWhatsThis(i18n("Defines the font used by the editor"));
   vocabFont->setToolTip(vocabFont->whatsThis());
