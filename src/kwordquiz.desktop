@@ -4,6 +4,7 @@ Type=Application
 Exec=kwordquiz -caption "%c" %i
 Icon=kwordquiz
 X-DocPath=kwordquiz/index.html
+MimeType=application/x-kvtml;
 Comment=A flashcard and vocabulary learning program
 Comment[af]='n Flitskaart- en woordeskat-aanleerprogram
 Comment[be]=Праграма паляпшэння слоўнікавага запасу (флэшкарткі)
@@ -83,3 +84,4 @@ GenericName[x-test]=xxFlash Card Trainerxx
 GenericName[zh_CN]=卡片式训练程序
 GenericName[zh_TW]=閃卡訓練師
 Categories=Qt;KDE;Education;Languages;
+
