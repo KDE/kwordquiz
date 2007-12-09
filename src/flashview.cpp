@@ -17,6 +17,7 @@
 #include "flashview.h"
 
 #include <QLabel>
+#include <QTimer>
 
 #include <KActionCollection>
 #include <KIconLoader>
