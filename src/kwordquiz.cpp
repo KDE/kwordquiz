@@ -158,6 +158,7 @@ void KWordQuizApp::initActions()
   editUndo->setWhatsThis(i18n("Undoes the last command"));
   editUndo->setToolTip(editUndo->whatsThis());
   editUndo->setStatusTip(editUndo->whatsThis());
+  editUndo->setIconText(editUndo->text());
 
   editCut = KStandardAction::cut(this, SLOT(slotEditCut()), actionCollection());
   editCut->setWhatsThis(i18n("Cuts the text from the selected cells and places it on the clipboard"));
