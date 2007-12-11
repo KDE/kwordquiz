@@ -49,6 +49,7 @@
 #include <knewstuff2/ui/knewstuffaction.h>
 #include <KPageWidget>
 #include <kdeprintdialog.h>
+#include <KProcess>
 
 #include "keduvocdocument.h"
 #include "kwqtablemodel.h"
@@ -784,14 +785,21 @@ void KWordQuizApp::slotFileSave()
 
 void KWordQuizApp::slotFileGHNS()
 {
-  ///Make sure the installation directory exists
-  KConfig conf("kwordquiz.knsrc");
-  KConfigGroup confGroup = conf.group("KNewStuff2");
-  QString installDir = confGroup.readEntry("InstallPath", "Vocabularies");
-  KStandardDirs::makeDir(QDir::home().path() + '/' + installDir);
-
   KNS::Entry::List entries = KNS::Engine::download();
-  // we need to delete the entry* items in the returned list
+  // list of changed entries
+  foreach(KNS::Entry::Entry* entry, entries) {
+    // care only about installed ones
+    if (entry->status() == KNS::Entry::Installed) {
+      // check mime type and if kvtml, open it
+      foreach(QString file, entry->installedFiles()) {
+        KMimeType::Ptr mimeType = KMimeType::findByPath(file);
+        kDebug() << "KNS2 file of mime type:" << KMimeType::findByPath(file)->name();
+        if (mimeType->name() == "application/x-kvtml") {
+          KProcess::startDetached("kwordquiz", QStringList() << file);
+        }
+      }
+    }
+  }
   qDeleteAll(entries);
 }
 
