@@ -259,14 +259,6 @@ void KWordQuizApp::initActions()
   vocabShuffle->setStatusTip(vocabShuffle->whatsThis());
   connect(vocabShuffle, SIGNAL(triggered(bool)), this, SLOT(slotVocabShuffle()));
 
-  vocabLeitner = actionCollection()->addAction("vocab_leitner");
-  vocabLeitner->setIcon(KIcon("leitner"));
-  vocabLeitner->setText(i18n("Enable Leitner system"));
-  vocabLeitner->setWhatsThis(i18n("Enables the Leitner system for the active vocabulary"));
-  vocabLeitner->setToolTip(vocabLeitner->whatsThis());
-  vocabLeitner->setStatusTip(vocabLeitner->whatsThis());
-  connect(vocabLeitner, SIGNAL(triggered(bool)), this, SLOT(slotLeitnerSystem()));
-
   m_modeActionMenu = actionCollection()->add<KActionMenu>("mode_0");
   m_modeActionMenu->setIcon(KIcon("mode1"));
   m_modeActionMenu->setText(i18n("Change Mode"));

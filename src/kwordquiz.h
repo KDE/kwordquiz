@@ -290,8 +290,6 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* vocabAdjustRows;
     //QAction* vocabSort;
     QAction* vocabShuffle;
-    QAction* vocabLeitner;
-    QAction* vocabConfigLeitner;
 
     KActionMenu *m_modeActionMenu;
     QActionGroup *m_modeActionGroup;
