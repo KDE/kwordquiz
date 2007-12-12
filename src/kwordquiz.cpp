@@ -1254,15 +1254,8 @@ void KWordQuizApp::updateSpecialCharIcons()
   }
 }
 
-QString KWordQuizApp::charIcon(const QChar & c)
+QIcon KWordQuizApp::charIcon(const QChar & c)
 {
-  ///Create a name and path for the icon
-  QString s = KStandardDirs::locateLocal("icon", "char" + QString::number(c.unicode()) + ".png");
-
-  ///No need to redraw if it already exists
-  if (KStandardDirs::exists(s))
-    return s;
-
   QRect r(4, 4, 120, 120);
 
   ///A font to draw the character with
@@ -1273,26 +1266,27 @@ QString KWordQuizApp::charIcon(const QChar & c)
   ///Create the pixmap
   QPixmap pm(128, 128);
   pm.fill(Qt::white);
-  QPainter p(&pm);
+  QPainter p;
+  p.begin(&pm);
   p.setFont(font);
   p.setPen(Qt::blue);
   p.drawText(r, Qt::AlignCenter, (QString) c);
+  p.end();
 
   ///Create transparency mask
   QBitmap bm(128, 128);
   bm.fill(Qt::color0);
-  QPainter b(&bm);
+  QPainter b;
+  b.begin(&bm);
   b.setFont(font);
   b.setPen(Qt::color1);
   b.drawText(r, Qt::AlignCenter, (QString) c);
+  b.end();
 
   ///Mask the pixmap
   pm.setMask(bm);
 
-  ///Save the icon to disk
-  pm.save(s, "PNG");
-
-  return s;
+  return QIcon(pm);
 }
 
 void KWordQuizApp::slotStatusMsg(const QString &text)

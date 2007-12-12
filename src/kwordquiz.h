@@ -323,7 +323,7 @@ class KWordQuizApp : public KXmlGuiWindow
 
     void updateActions();
     void updateSpecialCharIcons();
-    QString charIcon(const QChar &);
+    QIcon charIcon(const QChar &);
     void openUrl(const KUrl& url);
 };
 
