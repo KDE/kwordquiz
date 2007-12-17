@@ -779,7 +779,7 @@ void KWordQuizApp::slotFileGHNS()
 {
   KNS::Entry::List entries = KNS::Engine::download();
   // list of changed entries
-  foreach(KNS::Entry::Entry* entry, entries) {
+  foreach(KNS::Entry* entry, entries) {
     // care only about installed ones
     if (entry->status() == KNS::Entry::Installed) {
       // check mime type and if kvtml, open it
