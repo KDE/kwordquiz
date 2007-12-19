@@ -1,6 +1,7 @@
 [Global]
 IconName=kwordquiz
 Comment=KWordQuiz
+Comment[bn]=কে-ওয়ার্ড-কুইজ
 Comment[mk]=К светски квиз
 Comment[pl]=Quiz słowny
 Comment[sv]=Kwordquiz
@@ -11,6 +12,7 @@ Comment[x-test]=xxKWordQuizxx
 
 [Event/QuizCorrect]
 Name=QuizCorrect
+Name[bn]==কুইজ-সঠিক
 Name[cs]=Správně
 Name[de]=QuizKorrekt
 Name[el]=Σωστό ερώτημα
@@ -35,6 +37,7 @@ Name[zh_TW]=答對
 Comment=Correct answer
 Comment[af]=Regte antwoord
 Comment[be]=Правільны адказ
+Comment[bn]=সঠিক উত্তর
 Comment[br]=Eilger reizh
 Comment[ca]=Resposta correcta
 Comment[cs]=Správná odpověď
@@ -69,6 +72,7 @@ Comment[pl]=Poprawna odpowiedź
 Comment[pt]=Resposta certa
 Comment[pt_BR]=Resposta correta
 Comment[ru]=Правильный ответ
+Comment[sk]=Správna odpoveď
 Comment[sl]=Pravilen odgovor
 Comment[sr]=Tačan odgovor
 Comment[sr@latin]=Tačan odgovor
@@ -85,6 +89,7 @@ Action=Sound
 
 [Event/QuizError]
 Name=QuizError
+Name[bn]=কুইজ-বেঠিক
 Name[cs]=Chyba
 Name[de]=QuizFehler
 Name[el]=Λάθος ερώτημα
@@ -109,6 +114,7 @@ Name[zh_TW]=答錯
 Comment=Wrong answer
 Comment[af]=Verkeerde antwoord
 Comment[be]=Няправільны адказ
+Comment[bn]=ভুল উত্তর
 Comment[br]=Respont fall
 Comment[ca]=Resposta errònia
 Comment[cs]=Spatná odpověď
@@ -143,6 +149,7 @@ Comment[pl]=Niepoprawna odpowiedź
 Comment[pt]=Resposta errada
 Comment[pt_BR]=Resposta incorreta
 Comment[ru]=Неправильный ответ
+Comment[sk]=Nesprávna odpoveď
 Comment[sl]=Napačen odgovor
 Comment[sr]=Pogrešan odgovor
 Comment[sr@latin]=Pogrešan odgovor
@@ -160,6 +167,7 @@ Action=Sound
 [Event/SyntaxError]
 Name=syntaxerror
 Name[af]=sintaksfout
+Name[bn]=ভুল-বানান
 Name[cs]=chyba v syntaxi
 Name[da]=syntaksfejl
 Name[de]=Syntaxfehler
@@ -190,6 +198,7 @@ Name[zh_TW]=語法錯誤
 Comment=Error in syntax
 Comment[af]=Fout met sintaks
 Comment[be]=Сінтаксічная памылка
+Comment[bn]=বানানে ভুল রয়েছে
 Comment[br]=Fazi ereadurezh
 Comment[ca]=Error de sintaxi
 Comment[cs]=Chyba v syntaxy
@@ -224,6 +233,7 @@ Comment[pl]=Błąd w składni
 Comment[pt]=Erro de sintaxe
 Comment[pt_BR]=Erro de sintaxe
 Comment[ru]=Ошибка синтаксиса
+Comment[sk]=Chyba v syntaxi
 Comment[sl]=Napaka v skladnji
 Comment[sr]=Greška u sintaksi
 Comment[sr@latin]=Greška u sintaksi
