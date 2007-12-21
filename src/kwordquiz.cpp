@@ -473,7 +473,7 @@ void KWordQuizApp::initView()
   m_searchWidget = new QWidget(this);
   QHBoxLayout* layout = new QHBoxLayout(m_searchWidget);
   layout->setSpacing(KDialog::spacingHint());
-  layout->setMargin(KDialog::marginHint());
+  layout->setMargin(0);
   layout->addWidget(label);
   layout->addWidget(m_searchLine);
 
