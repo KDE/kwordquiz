@@ -710,7 +710,7 @@ void KWordQuizApp::slotFileOpen()
 
   QCheckBox * cb = new QCheckBox(i18n("&Merge selected files with the current document"), 0);
   cb -> setChecked(false);
-  cb -> setEnabled(true);
+  cb -> setEnabled(false);
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Reading);
   KFileDialog *fd = new KFileDialog(KUrl(), filter, this, cb);
