@@ -20,7 +20,6 @@
 #include <QPainter>
 #include <QBitmap>
 #include <QCheckBox>
-#include <QStackedWidget>
 #include <QtGui/QPrinter>
 #include <QtGui/QPrintDialog>
 

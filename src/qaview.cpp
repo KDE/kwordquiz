@@ -16,12 +16,9 @@
 
 #include "qaview.h"
 
-#include <QLabel>
-
 #include <KActionCollection>
 #include <KIconLoader>
 #include <KLocale>
-#include <KLineEdit>
 #include <KNotification>
 
 #include "prefs.h"

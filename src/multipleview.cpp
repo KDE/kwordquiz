@@ -16,13 +16,11 @@
 
 #include "multipleview.h"
 
-#include <QLabel>
-#include <QRadioButton>
 
-#include <KActionCollection>
 #include <KIconLoader>
 #include <KLocale>
 #include <KNotification>
+#include <KActionCollection>
 
 #include "kwordquiz.h"
 #include "wqscore.h"

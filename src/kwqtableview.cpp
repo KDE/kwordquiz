@@ -17,18 +17,16 @@
 
 #include "kwqtableview.h"
 
-#include <QHeaderView>
 #include <QPainter>
 #include <QClipboard>
 #include <QLineEdit>
 #include <QKeyEvent>
-#include <QEvent>
 #include <QList>
 #include <QApplication>
 #include <QtGui/QPrinter>
+#include <QHeaderView>
 
 #include <KLocale>
-#include <KMessageBox>
 #include <KGlobalSettings>
 #include <KNotification>
 #include <KDebug>

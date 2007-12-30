@@ -17,10 +17,7 @@
 
 #include "kwordquizprefs.h"
 
-#include <QLayout>
-#include <QRadioButton>
 #include <QCheckBox>
-#include <QLabel>
 
 #include <klocale.h>
 #include <kstandarddirs.h>

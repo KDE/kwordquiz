@@ -16,13 +16,12 @@
 
 #include "flashview.h"
 
-#include <QLabel>
 #include <QTimer>
 
-#include <KActionCollection>
 #include <KIconLoader>
 #include <KLocale>
 #include <KNotification>
+#include <KActionCollection>
 
 #include "kwordquiz.h"
 #include "wqscore.h"

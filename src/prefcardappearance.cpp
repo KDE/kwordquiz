@@ -17,8 +17,6 @@
 
 #include "prefcardappearance.h"
 
-#include <QStackedWidget>
-#include <QLabel>
 
 #include <kfontrequester.h>
 #include <kcolorbutton.h>

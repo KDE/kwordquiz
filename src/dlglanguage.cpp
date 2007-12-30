@@ -16,7 +16,6 @@
 
 #include "dlglanguage.h"
 
-#include <QLabel>
 
 #include <klocale.h>
 #include <klineedit.h>

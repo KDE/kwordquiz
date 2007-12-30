@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QByteArray>
 #include <QAction>
 
 #include <kcmdlineargs.h>

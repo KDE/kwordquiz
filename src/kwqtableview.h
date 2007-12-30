@@ -21,7 +21,6 @@
 #include <QTableView>
 #include <QList>
 #include <QKeyEvent>
-#include <QEvent>
 
 class QPrinter;
 
