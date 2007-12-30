@@ -46,20 +46,9 @@ kde4_add_ui_files(kwordquiz_SRCS
 kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc )
 
 #uncomment this if oxygen icons for kwordquiz are available
-#set(kwordquiz_icons
-#    ${KDE4_ICON_DIR}/oxygen/16x16/apps/kwordquiz.png
-#    ${KDE4_ICON_DIR}/oxygen/32x32/apps/kwordquiz.png
-#    ${KDE4_ICON_DIR}/oxygen/48x48/apps/kwordquiz.png
-#    ${KDE4_ICON_DIR}/oxygen/64x64/apps/kwordquiz.png
-#    ${KDE4_ICON_DIR}/oxygen/128x128/apps/kwordquiz.png
-#)
-set(kwordquiz_icons
-    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi16-app-kwordquiz.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi32-app-kwordquiz.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi48-app-kwordquiz.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/pics/hi128-app-kwordquiz.png
-)
-kde4_add_win32_app_icon(kwordquiz_SRCS ${kwordquiz_icons})
+#kde4_add_app_icon(kwordquiz_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/kwordquiz.png")
+kde4_add_app_icon(kwordquiz_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pics/hi*-app-kwordquiz.png")
+
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
 
 target_link_libraries(kwordquiz  keduvocdocument ${KDE4_KNEWSTUFF2_LIBS} ${KDE4_KNOTIFYCONFIG_LIBS})
