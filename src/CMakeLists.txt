@@ -1,5 +1,6 @@
 
-add_subdirectory( pics ) 
+add_subdirectory( pics ) # private icons
+add_subdirectory( icons ) # global icons
 add_subdirectory( examples ) 
 
 include_directories( ${CMAKE_SOURCE_DIR}/libkdeedu/keduvocdocument )
