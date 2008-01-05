@@ -313,8 +313,8 @@ void KWQTableView::doEditUndo()
       for(int i = 0; i < items.count(); i++)
       {
         expression = items[i];
-        model()->setData(model()->index(i, 0), QVariant(expression.translation(0).text()), Qt::EditRole);
-        model()->setData(model()->index(i, 1), QVariant(expression.translation(1).text()), Qt::EditRole);
+        model()->setData(model()->index(i, 0), QVariant(expression.translation(0)->text()), Qt::EditRole);
+        model()->setData(model()->index(i, 1), QVariant(expression.translation(1)->text()), Qt::EditRole);
       }
 
       selectCells(undo.selection());

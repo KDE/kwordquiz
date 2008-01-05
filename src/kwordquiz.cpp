@@ -432,7 +432,7 @@ void KWordQuizApp::initDocument()
 
   for (int i=0; i<20; i++)
   {
-    m_doc->appendEntry(new KEduVocExpression());
+    m_doc->lesson()->appendEntry(new KEduVocExpression());
   }
   m_doc->setModified(false);
 }

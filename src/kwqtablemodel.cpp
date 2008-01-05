@@ -22,6 +22,7 @@
 #include <klocale.h>
 
 #include "prefs.h"
+#include "documentsettings.h"
 #include "keduvocexpression.h"
 
 
@@ -33,7 +34,7 @@ KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 int KWQTableModel::rowCount(const QModelIndex & parent) const
 {
   Q_UNUSED(parent);
-  return m_doc->entryCount();
+  return m_doc->lesson()->entryCount();
 }
 
 int KWQTableModel::columnCount(const QModelIndex & parent) const
@@ -53,9 +54,9 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
 
   QVariant result;
   if (index.column() == 0)
-    result = m_doc->entry(index.row())->translation(0).text();
+    result = m_doc->lesson()->entry(index.row())->translation(0)->text();
   else
-    result = m_doc->entry(index.row())->translation(1).text();
+    result = m_doc->lesson()->entry(index.row())->translation(1)->text();
 
   return result;
 }
@@ -70,8 +71,18 @@ QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int
       else
         return m_doc->identifier(1).name();
     }
-    if (role == Qt::SizeHintRole)
-      return QSize(m_doc->sizeHint(section), 25);
+
+    if (role == Qt::SizeHintRole) {
+      DocumentSettings documentSettings(m_doc->url().url());
+      documentSettings.readConfig();
+      switch (section) {
+      case 0:
+        return QSize(documentSettings.sizeHintColumn1(), 25);
+      case 1:
+        return QSize(documentSettings.sizeHintColumn2(), 25);
+      }
+    }
+
     return QVariant();
   }
   else
@@ -90,9 +101,9 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
 {
   if (index.isValid() && role == Qt::EditRole) {
     if (index.column() == 0)
-      m_doc->entry(index.row())->setTranslation(0, value.toString());
+      m_doc->lesson()->entry(index.row())->setTranslation(0, value.toString());
     else
-      m_doc->entry(index.row())->setTranslation(1, value.toString());
+      m_doc->lesson()->entry(index.row())->setTranslation(1, value.toString());
 
     emit dataChanged(index, index);
     m_doc->setModified(true);
@@ -110,8 +121,20 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
       if (section == 1)
         m_doc->identifier(1).setName(value.toString());
     }
-    if (role == Qt::SizeHintRole)
-      m_doc->setSizeHint(section, qvariant_cast<QSize>(value).width());
+
+    if (role == Qt::SizeHintRole) {
+      DocumentSettings documentSettings(m_doc->url().url());
+      switch (section) {
+      case 0:
+        documentSettings.setSizeHintColumn1(qvariant_cast<QSize>(value).width());
+        documentSettings.writeConfig();
+        break;
+      case 1:
+        documentSettings.setSizeHintColumn2(qvariant_cast<QSize>(value).width());
+        documentSettings.writeConfig();
+        break;
+      }
+    }
 
     emit headerDataChanged(orientation, section, section);
     m_doc->setModified(true);
@@ -123,13 +146,13 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
 bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
 {
   Q_UNUSED(parent);
-  if (count < 1 || row < 0 || row > m_doc->entryCount())
+  if (count < 1 || row < 0 || row > m_doc->lesson()->entryCount())
     return false;
 
   beginInsertRows(QModelIndex(), row, row + count - 1);
 
   for (int i = row; i < row + count; i++)
-    m_doc->insertEntry(new KEduVocExpression, i);
+    m_doc->lesson()->insertEntry(i, new KEduVocExpression);
 
   endInsertRows();
   m_doc->setModified(true);
@@ -139,14 +162,14 @@ bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
 bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 {
   Q_UNUSED(parent);
-  if (count < 1 || row < 0 || row + count > m_doc->entryCount() || count >= m_doc->entryCount())
+  if (count < 1 || row < 0 || row + count > m_doc->lesson()->entriesRecursive().count() || count >= m_doc->lesson()->entriesRecursive().count())
     return false;
 
   int bottomRow = row + count -1;
   beginRemoveRows(QModelIndex(), row, row + count - 1);
 
   for (int i = bottomRow; i >= row; i--)
-    m_doc->removeEntry(i);
+    m_doc->lesson()->removeEntry(m_doc->lesson()->entry(i));
 
   endRemoveRows();
   m_doc->setModified(true);
@@ -155,7 +178,7 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 
 void KWQTableModel::shuffle( )
 {
-  m_doc->shuffle();
+  m_doc->lesson()->randomizeEntries();
   reset();
 }
 

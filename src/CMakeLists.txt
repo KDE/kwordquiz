@@ -44,7 +44,7 @@ kde4_add_ui_files(kwordquiz_SRCS
    prefcharacterbase.ui 
    prefcardappearancebase.ui )
 
-kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc )
+kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
 
 #uncomment this if oxygen icons for kwordquiz are available
 #kde4_add_app_icon(kwordquiz_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/kwordquiz.png")
