@@ -782,7 +782,7 @@ void KWordQuizApp::slotFileGHNS()
     // care only about installed ones
     if (entry->status() == KNS::Entry::Installed) {
       // check mime type and if kvtml, open it
-      foreach(QString file, entry->installedFiles()) {
+      foreach(const QString &file, entry->installedFiles()) {
         KMimeType::Ptr mimeType = KMimeType::findByPath(file);
         kDebug() << "KNS2 file of mime type:" << KMimeType::findByPath(file)->name();
         if (mimeType->name() == "application/x-kvtml") {
@@ -1036,7 +1036,7 @@ void KWordQuizApp::slotVocabRC()
 void KWordQuizApp::slotVocabAdjustRows()
 {
   slotStatusMsg(i18n("Adjusting row heights..."));
-  foreach(QModelIndex index, m_tableView->selectionModel()->selectedIndexes())
+  foreach(const QModelIndex &index, m_tableView->selectionModel()->selectedIndexes())
     m_tableView->adjustRow(index.row());
   slotStatusMsg(i18n("Ready"));
 }
