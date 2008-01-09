@@ -34,7 +34,7 @@ KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 int KWQTableModel::rowCount(const QModelIndex & parent) const
 {
   Q_UNUSED(parent);
-  return m_doc->lesson()->entryCount();
+  return m_doc->lesson()->entriesRecursive().count();
 }
 
 int KWQTableModel::columnCount(const QModelIndex & parent) const
@@ -54,9 +54,9 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
 
   QVariant result;
   if (index.column() == 0)
-    result = m_doc->lesson()->entry(index.row())->translation(0)->text();
+    result = m_doc->lesson()->entriesRecursive().value(index.row())->translation(0)->text();
   else
-    result = m_doc->lesson()->entry(index.row())->translation(1)->text();
+    result = m_doc->lesson()->entriesRecursive().value(index.row())->translation(1)->text();
 
   return result;
 }
@@ -101,9 +101,9 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
 {
   if (index.isValid() && role == Qt::EditRole) {
     if (index.column() == 0)
-      m_doc->lesson()->entry(index.row())->setTranslation(0, value.toString());
+      m_doc->lesson()->entriesRecursive().value(index.row())->setTranslation(0, value.toString());
     else
-      m_doc->lesson()->entry(index.row())->setTranslation(1, value.toString());
+      m_doc->lesson()->entriesRecursive().value(index.row())->setTranslation(1, value.toString());
 
     emit dataChanged(index, index);
     m_doc->setModified(true);
@@ -168,8 +168,13 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
   int bottomRow = row + count -1;
   beginRemoveRows(QModelIndex(), row, row + count - 1);
 
-  for (int i = bottomRow; i >= row; i--)
-    m_doc->lesson()->removeEntry(m_doc->lesson()->entry(i));
+  for (int i = bottomRow; i >= row; i--) {
+    KEduVocExpression* entry = m_doc->lesson()->entriesRecursive().value(i);
+    foreach(KEduVocLesson* lesson, entry->lessons()) {
+      lesson->removeEntry(entry);
+      delete entry;
+    }
+  }
 
   endRemoveRows();
   m_doc->setModified(true);
@@ -178,6 +183,7 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 
 void KWQTableModel::shuffle( )
 {
+///@todo not sure how to solve this. now it only shuffles the root lesson. but randomizing everything and thus destroying the lesson structure doesn't sound very good to me either.
   m_doc->lesson()->randomizeEntries();
   reset();
 }
@@ -260,7 +266,7 @@ bool KWQTableModel::checkSyntax() const
         if (s[i] == delim_start || s[i] == delim_end)
           if (!checkBlanksSyntax(s))
             errorCount++;
-    }
+  }
 
   return (errorCount == 0);
 }
