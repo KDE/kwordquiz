@@ -34,7 +34,7 @@ KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 int KWQTableModel::rowCount(const QModelIndex & parent) const
 {
   Q_UNUSED(parent);
-  return m_doc->lesson()->entriesRecursive().count();
+  return m_doc->lesson()->entryCount(KEduVocLesson::Recursive);
 }
 
 int KWQTableModel::columnCount(const QModelIndex & parent) const
@@ -54,9 +54,9 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
 
   QVariant result;
   if (index.column() == 0)
-    result = m_doc->lesson()->entriesRecursive().value(index.row())->translation(0)->text();
+    result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->text();
   else
-    result = m_doc->lesson()->entriesRecursive().value(index.row())->translation(1)->text();
+    result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->text();
 
   return result;
 }
@@ -101,9 +101,9 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
 {
   if (index.isValid() && role == Qt::EditRole) {
     if (index.column() == 0)
-      m_doc->lesson()->entriesRecursive().value(index.row())->setTranslation(0, value.toString());
+      m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(0, value.toString());
     else
-      m_doc->lesson()->entriesRecursive().value(index.row())->setTranslation(1, value.toString());
+      m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(1, value.toString());
 
     emit dataChanged(index, index);
     m_doc->setModified(true);
@@ -162,14 +162,14 @@ bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
 bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 {
   Q_UNUSED(parent);
-  if (count < 1 || row < 0 || row + count > m_doc->lesson()->entriesRecursive().count() || count >= m_doc->lesson()->entriesRecursive().count())
+  if (count < 1 || row < 0 || row + count > m_doc->lesson()->entryCount(KEduVocLesson::Recursive) || count >= m_doc->lesson()->entryCount(KEduVocLesson::Recursive))
     return false;
 
   int bottomRow = row + count -1;
   beginRemoveRows(QModelIndex(), row, row + count - 1);
 
   for (int i = bottomRow; i >= row; i--) {
-    KEduVocExpression* entry = m_doc->lesson()->entriesRecursive().value(i);
+    KEduVocExpression* entry = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(i);
     foreach(KEduVocLesson* lesson, entry->lessons()) {
       lesson->removeEntry(entry);
       delete entry;
