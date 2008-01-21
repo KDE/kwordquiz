@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Mon Feb 27 18:27:30 PST 2006
-    copyright            : (C) 2006-2007 by Peter Hedlund
+    copyright            : (C) 2006-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -51,9 +51,6 @@ public:
   Qt::ItemFlags flags (const QModelIndex & index) const;
   bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
   bool setHeaderData (int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole);
-
-//  void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
-  void shuffle();
 
   bool isEmpty();
   bool checkSyntax() const;

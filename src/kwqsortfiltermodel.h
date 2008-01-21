@@ -2,7 +2,7 @@
                                kwqsortfiltermodel.h
                              -------------------
 
-    copyright            : (C) 2007 by Peter Hedlund
+    copyright            : (C) 2007-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -40,6 +40,7 @@ public:
 
 public slots:
     void restoreNativeOrder();
+    void shuffle();
 
 protected:
     bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
@@ -48,6 +49,8 @@ private:
     KWQTableModel * m_sourceModel;
 
     bool m_restoreNativeOrder;
+    bool m_shuffle;
+    QList<int> m_shuffleList;
 };
 
 #endif

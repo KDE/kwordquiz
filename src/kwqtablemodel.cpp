@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Mon Feb 27 18:27:30 PST 2006
-    copyright            : (C) 2006-2007 by Peter Hedlund
+    copyright            : (C) 2006-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -179,13 +179,6 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
   endRemoveRows();
   m_doc->setModified(true);
   return true;
-}
-
-void KWQTableModel::shuffle( )
-{
-///@todo not sure how to solve this. now it only shuffles the root lesson. but randomizing everything and thus destroying the lesson structure doesn't sound very good to me either.
-  m_doc->lesson()->randomizeEntries();
-  reset();
 }
 
 void KWQTableModel::setDocument(KEduVocDocument * doc)

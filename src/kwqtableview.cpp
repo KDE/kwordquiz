@@ -2,7 +2,7 @@
                           kwqtableview.cpp  -  description
                              -------------------
     begin          : Wed Jul 24 20:12:30 PDT 2002
-    copyright      : (C) 2002-2007 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -633,7 +633,7 @@ void KWQTableView::doVocabShuffle()
   QRect sel = selection();
   int currentRow = currentIndex().row();
   int currentColumn = currentIndex().column();
-  qobject_cast<KWQTableModel *> (m_model->sourceModel())->shuffle();
+  qobject_cast<KWQSortFilterModel *> (m_model)->shuffle();
   setCurrentIndex(model()->index(currentRow, currentColumn));
   selectCells(sel);
 }
