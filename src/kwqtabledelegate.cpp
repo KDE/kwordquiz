@@ -34,7 +34,7 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
   KLineEdit *editor = new KLineEdit(parent);
   editor->setFrame(false);
   editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
-  connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
+  //connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
   return editor;
 }
 

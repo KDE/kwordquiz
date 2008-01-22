@@ -2,7 +2,7 @@
                           kwqtableview.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2007 by Peter Hedlund
+    copyright            : (C) 2002-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -24,6 +24,8 @@
 
 class QPrinter;
 
+#include <KUndoStack>
+
 #include "kwqsortfiltermodel.h"
 #include "kwqtabledelegate.h"
 #include "wqundo.h"
@@ -40,9 +42,10 @@ class KWQTableView : public QTableView
 Q_OBJECT
 public:
   /** Constructor for the main view */
-  KWQTableView(QWidget *parent = 0);
+  KWQTableView(KUndoStack *undoStack, QWidget *parent = 0);
 
   void setModel(KWQSortFilterModel * model);
+  KWQSortFilterModel * model() {return m_model;};
 
   /** contains the implementation for printing functionality */
   void print(QPrinter *pPrinter, WQPrintDialogPage::PrintStyle type);
@@ -64,7 +67,7 @@ protected:
   QPoint currentCell() const;
   void selectCells(const QRect & selection);
   void setCurrentCell(const QPoint & currentCell);
-  void activateNextCell();
+  void nextCell();
   void keyPressEvent(QKeyEvent*);
 
 public slots:
@@ -73,6 +76,7 @@ public slots:
   void slotCheckedAnswer(int );
   void slotModelReset();
 
+  void slotHeaderClicked(int);
   void slotSortByColumn(int);
 
 protected slots:
@@ -94,6 +98,8 @@ private:
   /** the list of the undo objects */
   WQUndoList m_undoList;
   KWQSortFilterModel *m_model;
+  
+  KUndoStack *m_undoStack;
 
   void doNewPage(QPainter & painter, int res, WQPrintDialogPage::PrintStyle type);
   void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, WQPrintDialogPage::PrintStyle type);

@@ -38,9 +38,11 @@ public:
   KWQTableModel(QObject * parent = 0);
 
   void setDocument(KEduVocDocument * doc);
-
+  KEduVocDocument * document() { return m_doc;};
   bool insertRows(int row, int count = 1, const QModelIndex &parent = QModelIndex());
   bool removeRows(int row, int count = 1, const QModelIndex &parent = QModelIndex());
+
+  KEduVocLesson * currentLesson(int row);
 
   int rowCount(const QModelIndex &parent) const;
   int columnCount(const QModelIndex &parent) const;

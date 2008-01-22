@@ -36,8 +36,9 @@
 #include "kwordquiz.h"
 #include "prefs.h"
 #include "dlgrc.h"
+#include "kwqcommands.h"
 
-KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
+KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(parent), m_undoStack(undoStack)
 {
   m_undoList.clear();
   m_model = 0;
@@ -47,7 +48,7 @@ KWQTableView::KWQTableView(QWidget *parent) : QTableView(parent)
   setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
   connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
-  connect(horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(slotSortByColumn(int)));
+  connect(horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(slotHeaderClicked(int)));
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
 
@@ -350,6 +351,9 @@ void KWQTableView::doEditCut()
   }
   else
   {
+    KWQCommandEdit *kwqc = new KWQCommandEdit(this, KWQCommandEdit::EditCut);
+    m_undoStack->push(kwqc);
+    /* 
     addUndo(i18n("&Undo Cut"));
 
     doEditCopy();
@@ -357,7 +361,7 @@ void KWQTableView::doEditCut()
     QModelIndexList items = selectionModel()->selectedIndexes();
 
     foreach (const QModelIndex &index, items)
-      model()->setData(index, QVariant());
+      model()->setData(index, QVariant());*/
   }
 }
 
@@ -373,7 +377,8 @@ void KWQTableView::doEditCopy()
   }
   else
   {
-    QRect sel = selection();
+    copyToClipboard(this);
+    /*QRect sel = selection();
     QString s;
     QString rs;
     for (int r = sel.top(); r <= sel.bottom(); ++r)
@@ -386,7 +391,7 @@ void KWQTableView::doEditCopy()
       }
       s += '\n';
     }
-    QApplication::clipboard()->setText(s);
+    QApplication::clipboard()->setText(s);*/
   }
 }
 
@@ -402,6 +407,9 @@ void KWQTableView::doEditPaste()
   }
   else
   {
+    KWQCommandPaste *kwqc = new KWQCommandPaste(this);
+    m_undoStack->push(kwqc);
+    /*
     addUndo(i18n("&Undo Paste"));
     QRect sel = selection();
     int tr = sel.top();
@@ -464,7 +472,7 @@ void KWQTableView::doEditPaste()
         i++;
       }
     }
-    selectCells(QRect(lc, tr, ac - lc, ar - tr));
+    selectCells(QRect(lc, tr, ac - lc, ar - tr));*/
   }
 }
 
@@ -480,24 +488,34 @@ void KWQTableView::doEditClear()
   }
   else
   {
+    KWQCommandEdit *kwqc = new KWQCommandEdit(this, KWQCommandEdit::EditClear);
+    m_undoStack->push(kwqc);
+    /* 
     addUndo(i18n("&Undo Clear"));
 
     QModelIndexList items = selectionModel()->selectedIndexes();
 
     foreach (const QModelIndex &index, items)
-      model()->setData(index, QVariant());
+      model()->setData(index, QVariant());*/
   }
 }
 
 void KWQTableView::doEditInsert()
 {
-  addUndo(i18n("&Undo Insert"));
+  //addUndo(i18n("&Undo Insert"));
   QRect sel = selection();
   int currentRow = currentIndex().row();
   int currentColumn = currentIndex().column();
   model()->insertRows(sel.top(), sel.height(), QModelIndex());
-  setCurrentIndex(model()->index(currentRow, currentColumn));
-  selectCells(sel);
+  //KEduVocExpression * expr = new KEduVocExpression("zzzzzzzzzzzzzzzz");
+  //expr->setTranslation(1, "yyyyyyyyyyyyy");
+  //qDebug() << "Current row: " << currentIndex().row();
+  //model()->sourceModel()->currentLesson(currentIndex().row())->insertEntry(currentIndex().row(), expr);
+
+  //model()->invalidate();
+  reset();
+  //setCurrentIndex(model()->index(currentRow, currentColumn));
+  //selectCells(sel);
 }
 
 void KWQTableView::doEditDelete()
@@ -627,17 +645,6 @@ void KWQTableView::doEditUnmarkBlank()
 }
 
 
-void KWQTableView::doVocabShuffle()
-{
-  addUndo(i18n("&Undo Shuffle"));
-  QRect sel = selection();
-  int currentRow = currentIndex().row();
-  int currentColumn = currentIndex().column();
-  qobject_cast<KWQSortFilterModel *> (m_model)->shuffle();
-  setCurrentIndex(model()->index(currentRow, currentColumn));
-  selectCells(sel);
-}
-
 void KWQTableView::doVocabRC()
 {
   DlgRC* dlg;
@@ -711,7 +718,7 @@ void KWQTableView::slotSpecChar(const QChar & c)
   }
 }
 
-void KWQTableView::activateNextCell()
+void KWQTableView::nextCell()
 {
   QItemSelectionModel * selModel = selectionModel();
   QModelIndexList indexes = selModel->selectedIndexes();
@@ -758,7 +765,7 @@ void KWQTableView::activateNextCell()
     }
 
     QModelIndex newIndex = model()->index(newRow, newColumn);
-    setCurrentIndex(newIndex/*, QItemSelectionModel::SelectCurrent*/);
+    selModel->setCurrentIndex(newIndex, QItemSelectionModel::SelectCurrent);
   }
   else if (indexes.count() > 1) //a larger selection, move within it
   {
@@ -801,6 +808,7 @@ void KWQTableView::activateNextCell()
         //do nothing
         break;
     }
+
     QModelIndex newIndex = model()->index(newRow, newColumn);
     selModel->setCurrentIndex(newIndex, QItemSelectionModel::Current);
   }
@@ -811,7 +819,8 @@ void KWQTableView::keyPressEvent(QKeyEvent * e)
   if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter)
   {
     e->accept();
-    activateNextCell();
+    if (state() != QAbstractItemView::EditingState)
+      nextCell();
     return;
   }
   QTableView::keyPressEvent(e);
@@ -847,8 +856,7 @@ void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditH
 {
   QTableView::closeEditor(editor, hint);
   adjustRow(currentIndex().row());
-//   if (hint == QAbstractItemDelegate::SubmitModelCache)
-//     activateNextCell();
+  nextCell();
 }
 
 void KWQTableView::commitData(QWidget * editor)
@@ -856,15 +864,15 @@ void KWQTableView::commitData(QWidget * editor)
   QString currentText = model()->data(currentIndex(), Qt::DisplayRole).toString();
   QLineEdit *l = static_cast<QLineEdit*>(editor);
   QString newText = l->text();
-  if (newText != currentText)
-    addUndo(i18n("&Undo Entry"));
-
+  if (newText != currentText) {
+    KWQCommandEntry *kwqc = new KWQCommandEntry(this, currentText, newText);
+    m_undoStack->push(kwqc);
+  }
   if (!newText.isEmpty()) {
     if (Prefs::enableBlanks())
       if (!m_model->sourceModel()->checkBlanksSyntax(newText) /*checkForBlank(newText, true)*/)
         KNotification::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
   }
-
   QTableView::commitData(editor);
 }
 
@@ -946,12 +954,27 @@ void KWQTableView::setCurrentCell(const QPoint & currentCell)
   selectionModel()->setCurrentIndex(model()->index(currentCell.y(), currentCell.x(), rootIndex()), QItemSelectionModel::Current);
 }
 
+
 void KWQTableView::slotSortByColumn(int column)
 {
-  addUndo(i18n("&Undo Sort"));
+  //addUndo(i18n("&Undo Sort"));
   QTableView::sortByColumn(column);
-  horizontalHeader()->setSortIndicatorShown(true);
-  horizontalHeader()->setSortIndicator(column, horizontalHeader()->sortIndicatorOrder());
+  //horizontalHeader()->setSortIndicatorShown(true);
+  //horizontalHeader()->setSortIndicator(column, horizontalHeader()->sortIndicatorOrder());
+}
+
+
+void KWQTableView::slotHeaderClicked(int column)
+{
+  KWQCommandSort *kwqc = new KWQCommandSort(this, column);
+  m_undoStack->push(kwqc);
+}
+
+
+void KWQTableView::doVocabShuffle()
+{
+  KWQCommandShuffle *kwqc = new KWQCommandShuffle(this, 0);
+  m_undoStack->push(kwqc);
 }
 
 #include "kwqtableview.moc"

@@ -2,7 +2,7 @@
                           kwordquiz.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2007 by Peter Hedlund
+    copyright            : (C) 2002-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -23,10 +23,11 @@
 #include <QVBoxLayout>
 #include <QActionGroup>
 
-#include <kxmlguiwindow.h>
-#include <kaction.h>
-#include <kdirwatch.h>
-#include <kurl.h>
+#include <KXmlGuiWindow>
+#include <KAction>
+#include <KDirWatch>
+#include <KUrl>
+#include <KUndoStack>
 
 #include "kwqquiz.h"
 
@@ -229,6 +230,8 @@ class KWordQuizApp : public KXmlGuiWindow
 
     void slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *before);
 
+    void slotSetHistoryClean(bool);
+
   private:
     KWQQuiz *m_quiz;
 
@@ -316,6 +319,8 @@ class KWordQuizApp : public KXmlGuiWindow
 
     QLabel * m_modeLabel;
     //QVBoxLayout * m_topLayout;
+
+    KUndoStack * m_undoStack;
 
     static KWordQuizApp * m_self;
 

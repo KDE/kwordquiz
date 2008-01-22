@@ -143,16 +143,19 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
   return false;
 }
 
+
 bool KWQTableModel::insertRows(int row, int count, const QModelIndex & parent)
 {
   Q_UNUSED(parent);
-  if (count < 1 || row < 0 || row > m_doc->lesson()->entryCount())
+  if (count < 1 || row < 0 || row > m_doc->lesson()->entryCount(KEduVocLesson::Recursive))
     return false;
+
+  KEduVocLesson * cl = currentLesson(row);
 
   beginInsertRows(QModelIndex(), row, row + count - 1);
 
   for (int i = row; i < row + count; i++)
-    m_doc->lesson()->insertEntry(i, new KEduVocExpression);
+    cl->insertEntry(i, new KEduVocExpression); //m_doc->lesson()->insertEntry(i, new KEduVocExpression);
 
   endInsertRows();
   m_doc->setModified(true);
@@ -262,6 +265,20 @@ bool KWQTableModel::checkSyntax() const
   }
 
   return (errorCount == 0);
+}
+
+KEduVocLesson * KWQTableModel::currentLesson(int row)
+{
+  int i = 0;
+  QList<KEduVocContainer *>  lessons = m_doc->lesson()->childContainers();
+  foreach(KEduVocContainer * c, lessons) {
+    if (c->containerType() == KEduVocLesson::Lesson) {
+      i += c->entryCount();
+      if (i >= row)
+        return static_cast<KEduVocLesson *>(c);
+    }
+  }
+  return m_doc->lesson();
 }
 
 #include "kwqtablemodel.moc"

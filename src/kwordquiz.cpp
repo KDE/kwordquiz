@@ -2,7 +2,7 @@
                           kwordquiz.cpp  -  description
                              -------------------
     begin         : Wed Jul 24 20:12:30 PDT 2002
-    copyright     : (C) 2002-2007 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright     : (C) 2002-2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -54,6 +54,7 @@
 #include "kwqtablemodel.h"
 #include "kwqsortfiltermodel.h"
 #include "kwqtableview.h"
+#include "kwqcommands.h"
 #include "dlglanguage.h"
 #include "kwordquizprefs.h"
 #include "qaview.h"
@@ -154,12 +155,17 @@ void KWordQuizApp::initActions()
   fileQuit->setToolTip(fileQuit->whatsThis());
   fileQuit->setStatusTip(fileQuit->whatsThis());
 
+  m_undoStack = new KUndoStack();
+  m_undoStack->createUndoAction(actionCollection());
+  m_undoStack->createRedoAction(actionCollection());
+  connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(slotSetHistoryClean(bool)));
+/*
   editUndo = KStandardAction::undo(this, SLOT(slotEditUndo()), actionCollection());
   editUndo->setWhatsThis(i18n("Undoes the last command"));
   editUndo->setToolTip(editUndo->whatsThis());
   editUndo->setStatusTip(editUndo->whatsThis());
   editUndo->setIconText(editUndo->text());
-
+*/
   editCut = KStandardAction::cut(this, SLOT(slotEditCut()), actionCollection());
   editCut->setWhatsThis(i18n("Cuts the text from the selected cells and places it on the clipboard"));
   editCut->setToolTip(editCut->whatsThis());
@@ -476,7 +482,7 @@ void KWordQuizApp::initView()
   layout->addWidget(label);
   layout->addWidget(m_searchLine);
 
-  m_tableView = new KWQTableView(this);
+  m_tableView = new KWQTableView(m_undoStack, this);
   editorLayout->addWidget(m_searchWidget);
   editorLayout->addWidget(m_tableView);
   m_tableView->setModel(m_sortFilterModel);
@@ -911,8 +917,8 @@ void KWordQuizApp::slotFileQuit()
 
 void KWordQuizApp::slotUndoChange(const QString & text, bool enabled)
 {
-  editUndo->setText(text);
-  editUndo->setEnabled(enabled);
+  //editUndo->setText(text);
+  //editUndo->setEnabled(enabled);
   m_doc->setModified(true);
 }
 
@@ -1010,9 +1016,8 @@ void KWordQuizApp::slotVocabFont()
   dlg->setFont(Prefs::editorFont());
   if (dlg->exec() == KFontDialog::Accepted)
   {
-    m_tableView->reset();
-    Prefs::setEditorFont(dlg->font());
-    m_doc->setModified(true);
+    KWQCommandFont *kwqc = new KWQCommandFont(m_tableView, Prefs::editorFont(), dlg->font());
+    m_undoStack->push(kwqc);
   }
   delete dlg;
   slotStatusMsg(i18n("Ready"));
@@ -1396,6 +1401,11 @@ void KWordQuizApp::slotConfigShowSearch()
     m_searchWidget->setVisible(m_searchWidget->isHidden());
     Prefs::setShowSearch(m_searchWidget->isVisible());
   }
+}
+
+void KWordQuizApp::slotSetHistoryClean(bool clean)
+{
+  m_doc->setModified(!clean);
 }
 
 #include "kwordquiz.moc"

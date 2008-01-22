@@ -30,6 +30,7 @@ set(kwordquiz_SRCS
    kwqtableview.cpp
    kwqtabledelegate.cpp
    kwqsortfiltermodel.cpp
+   kwqcommands.cpp
    )
 
 
