@@ -55,19 +55,19 @@ private:
 };
 
 
-class KWQCommandEdit : public KWQUndoCommand
+class KWQCommandClear : public KWQUndoCommand
 {
 public:
-
-  enum EditCommand {
-    EditCut,
-    EditClear,
-  };
-
-   KWQCommandEdit(KWQTableView *view, EditCommand cmd);
+   KWQCommandClear(KWQTableView *view);
    virtual void redo();
-private:
-  EditCommand m_command;
+};
+
+
+class KWQCommandCut : public KWQCommandClear
+{
+public:
+   KWQCommandCut(KWQTableView *view);
+   virtual void redo();
 };
 
 
@@ -127,6 +127,7 @@ private:
   int m_column;
 };
 
+
 class KWQCommandShuffle : public KWQCommandSort
 {
 public:
@@ -136,4 +137,24 @@ public:
 private:
   QTableView *m_view;
   int m_column;
+};
+
+
+class KWQCommandInsert : public KWQUndoCommand
+{
+public:
+  KWQCommandInsert(KWQTableView *view);
+  virtual void undo();
+  virtual void redo();
+};
+
+
+class KWQCommandDelete : public KWQUndoCommand
+{
+public:
+  KWQCommandDelete(KWQTableView *view);
+  virtual void undo();
+  virtual void redo();
+private:
+  IndexAndDataList m_deleteIndexAndData;
 };

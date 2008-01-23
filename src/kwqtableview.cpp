@@ -351,7 +351,7 @@ void KWQTableView::doEditCut()
   }
   else
   {
-    KWQCommandEdit *kwqc = new KWQCommandEdit(this, KWQCommandEdit::EditCut);
+    KWQCommandCut *kwqc = new KWQCommandCut(this);
     m_undoStack->push(kwqc);
     /* 
     addUndo(i18n("&Undo Cut"));
@@ -488,7 +488,7 @@ void KWQTableView::doEditClear()
   }
   else
   {
-    KWQCommandEdit *kwqc = new KWQCommandEdit(this, KWQCommandEdit::EditClear);
+    KWQCommandClear *kwqc = new KWQCommandClear(this);
     m_undoStack->push(kwqc);
     /* 
     addUndo(i18n("&Undo Clear"));
@@ -502,8 +502,10 @@ void KWQTableView::doEditClear()
 
 void KWQTableView::doEditInsert()
 {
+  KWQCommandInsert *kwqc = new KWQCommandInsert(this);
+  m_undoStack->push(kwqc);
   //addUndo(i18n("&Undo Insert"));
-  QRect sel = selection();
+  /*QRect sel = selection();
   int currentRow = currentIndex().row();
   int currentColumn = currentIndex().column();
   model()->insertRows(sel.top(), sel.height(), QModelIndex());
@@ -515,12 +517,14 @@ void KWQTableView::doEditInsert()
   //model()->invalidate();
   reset();
   //setCurrentIndex(model()->index(currentRow, currentColumn));
-  //selectCells(sel);
+  //selectCells(sel);*/
 }
 
 void KWQTableView::doEditDelete()
 {
-  addUndo(i18n("&Undo Delete"));
+  KWQCommandDelete *kwqc = new KWQCommandDelete(this);
+  m_undoStack->push(kwqc);
+  /*addUndo(i18n("&Undo Delete"));
   QRect sel = selection();
   int currentRow = currentIndex().row();
   int currentColumn = currentIndex().column();
@@ -530,7 +534,7 @@ void KWQTableView::doEditDelete()
     currentRow--;
 
   setCurrentIndex(model()->index(currentRow, currentColumn));
-  selectCells(sel);
+  selectCells(sel);*/
 }
 
 

@@ -25,36 +25,18 @@
 #include "kwqtablemodel.h"
 #include "prefs.h"
 
-QRect selection(QTableView * view)
-{
-  const QList<QItemSelectionRange> ranges = view->selectionModel()->selection();
-  QRect result;
-  if (ranges.count() > 0)
-  {
-    result.setTop(ranges.at(0).top());
-    result.setLeft(ranges.at(0).left());
-    result.setBottom(ranges.at(0).bottom());
-    result.setRight(ranges.at(0).right());
-  }
-  else
-  {
-    result.setTop(0);
-    result.setLeft(0);
-    result.setBottom(0);
-    result.setRight(0);
-  }
-  return result;
-}
-
-
 void copyToClipboard(QTableView * view)
 {
-    QRect sel = selection(view);
+    QModelIndexList selIndexes = view->selectionModel()->selectedIndexes();
+    int tr = selIndexes.first().row();
+    int lc = selIndexes.first().column();
+    int br = selIndexes.last().row();
+    int rc = selIndexes.last().column();
+
     QString s;
-    QString rs;
-    for (int r = sel.top(); r <= sel.bottom(); ++r)
+    for (int r = tr; r <= br; ++r)
     {
-      for (int c = sel.left(); c <= sel.right(); ++c)
+      for (int c = lc; c <= rc; ++c)
       {
         QVariant v =  view->model()->data(view->model()->index(r, c, QModelIndex()), Qt::DisplayRole);
         s.append(v.toString());
@@ -93,25 +75,14 @@ void KWQUndoCommand::undo()
 }
 
 
-KWQCommandEdit::KWQCommandEdit(KWQTableView * view, EditCommand cmd) : KWQUndoCommand(view)
+KWQCommandClear::KWQCommandClear(KWQTableView * view) : KWQUndoCommand(view)
 {
-  m_command = cmd;
-  switch (m_command) {
-    case EditCut:
-      setText(i18n("Cut"));
-      break;
-    case EditClear:
-      setText(i18n("Clear"));
-      break;
-  }
+  setText(i18n("Clear"));
 }
 
 
-void KWQCommandEdit::redo()
+void KWQCommandClear::redo()
 {
-  if (m_command == EditCut)
-    copyToClipboard(view());
-
   view()->selectionModel()->clear();
   foreach (const QModelIndex &index, oldSelectedIndexes())
   {
@@ -121,6 +92,20 @@ void KWQCommandEdit::redo()
   }
   view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);
 };
+
+
+KWQCommandCut::KWQCommandCut(KWQTableView * view) : KWQCommandClear(view)
+{
+  setText(i18n("Cut"));
+}
+
+
+void KWQCommandCut::redo()
+{
+  copyToClipboard(view());
+  KWQCommandClear::redo();
+};
+
 
 KWQCommandPaste::KWQCommandPaste(KWQTableView * view) : KWQUndoCommand(view)
 {
@@ -272,6 +257,87 @@ void KWQCommandShuffle::redo()
   static_cast<KWQSortFilterModel*>(m_view->model())->shuffle();
   m_view->horizontalHeader()->setSortIndicatorShown(false);
   m_view->setCurrentIndex(m_view->model()->index(currentRow, currentColumn, QModelIndex()));
+}
+
+
+KWQCommandInsert::KWQCommandInsert(KWQTableView * view) : KWQUndoCommand(view)
+{
+  setText(i18n("Insert"));
+}
+
+void KWQCommandInsert::undo()
+{
+  QModelIndexList selIndexes = oldSelectedIndexes();
+  QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
+  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
+
+  view()->model()->removeRows(topLeft.row(), bottomRight.row() - topLeft.row() + 1, QModelIndex());
+
+  view()->selectionModel()->clear();
+  view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
+  view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
+}
+
+void KWQCommandInsert::redo()
+{
+  QModelIndexList selIndexes = oldSelectedIndexes();
+  QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
+  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
+
+  view()->model()->insertRows(topLeft.row(), bottomRight.row() - topLeft.row() + 1, QModelIndex());
+
+  view()->selectionModel()->clear();
+  view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
+  view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
+}
+
+
+KWQCommandDelete::KWQCommandDelete(KWQTableView * view) : KWQUndoCommand(view)
+{
+  setText(i18n("Delete"));
+}
+
+
+void KWQCommandDelete::undo()
+{
+  QModelIndexList selIndexes = oldSelectedIndexes();
+  QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
+  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
+
+  view()->model()->insertRows(topLeft.row(), bottomRight.row() - topLeft.row() + 1, QModelIndex());
+
+  foreach (const IndexAndData &id, m_deleteIndexAndData)
+    view()->model()->setData(id.index, id.data, Qt::EditRole);
+
+  view()->selectionModel()->clear();
+  view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
+  view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
+}
+
+
+void KWQCommandDelete::redo()
+{
+  QModelIndexList selIndexes = oldSelectedIndexes();
+  QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
+  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
+
+  QModelIndex topLeftDeletion = view()->model()->index(selIndexes.first().row(), 0, QModelIndex());
+  QModelIndex bottomRightDeletion = view()->model()->index(selIndexes.last().row(), 1, QModelIndex());
+
+  QItemSelection deletion(topLeftDeletion, bottomRightDeletion);
+  m_deleteIndexAndData.clear();
+  foreach (const QModelIndex &idx, deletion.indexes()) {
+    IndexAndData id;
+    id.index = idx;
+    id.data = view()->model()->data(id.index, Qt::DisplayRole);
+    m_deleteIndexAndData.append(id);
+  }
+
+  view()->model()->removeRows(topLeft.row(), bottomRight.row() - topLeft.row() + 1, QModelIndex());
+
+  view()->selectionModel()->clear();
+  view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
+  view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
 }
 
 
