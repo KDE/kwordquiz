@@ -158,3 +158,12 @@ public:
 private:
   IndexAndDataList m_deleteIndexAndData;
 };
+
+
+class KWQCommandUnmarkBlank : public KWQUndoCommand
+{
+public:
+  KWQCommandUnmarkBlank(KWQTableView *view);
+  //virtual void undo();
+  virtual void redo();
+};

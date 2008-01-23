@@ -545,8 +545,6 @@ void KWQTableView::doEditMarkBlank()
     if (QApplication::focusWidget())
     {
       QLineEdit *l = static_cast<QLineEdit*>(QApplication::focusWidget());
-      addUndo(i18n("&Undo Mark Blank"));
-
       if (l->text().length() > 0)
       {
         QString s = l->text();
@@ -591,7 +589,6 @@ void KWQTableView::doEditMarkBlank()
 
 void KWQTableView::doEditUnmarkBlank()
 {
-  addUndo(i18n("&Undo Unmark Blank"));
   QString s;
 
   if (state() == QAbstractItemView::EditingState)
@@ -636,15 +633,8 @@ void KWQTableView::doEditUnmarkBlank()
   }
   else
   {
-    QModelIndexList items = selectionModel()->selectedIndexes();
-
-    foreach (const QModelIndex &index, items)
-    {
-      s = model()->data(index, Qt::DisplayRole).toString();
-      s = s.remove(delim_start);
-      s = s.remove(delim_end);
-      model()->setData(index, QVariant(s));
-    }
+    KWQCommandUnmarkBlank *kwqc = new KWQCommandUnmarkBlank(this);
+    m_undoStack->push(kwqc);
   }
 }
 

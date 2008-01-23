@@ -341,3 +341,24 @@ void KWQCommandDelete::redo()
 }
 
 
+KWQCommandUnmarkBlank::KWQCommandUnmarkBlank(KWQTableView * view) : KWQUndoCommand(view)
+{
+  setText(i18n("Unmark Blank"));
+}
+
+void KWQCommandUnmarkBlank::redo()
+{
+  QString s;
+  view()->selectionModel()->clear();
+  foreach (const QModelIndex &index, oldSelectedIndexes())
+  {
+    s = view()->model()->data(index, Qt::DisplayRole).toString();
+    s = s.remove(delim_start);
+    s = s.remove(delim_end);
+    view()->model()->setData(index, QVariant(s));
+    view()->selectionModel()->select(index, QItemSelectionModel::Select);
+  }
+  view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);
+}
+
+
