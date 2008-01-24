@@ -1,7 +1,5 @@
 <ui version="4.0" >
  <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>DlgRCBase</class>
  <widget class="QWidget" name="DlgRCBase" >
   <property name="geometry" >
@@ -19,10 +17,22 @@
    </size>
   </property>
   <layout class="QGridLayout" >
-   <property name="margin" >
+   <property name="leftMargin" >
     <number>0</number>
    </property>
-   <property name="spacing" >
+   <property name="topMargin" >
+    <number>0</number>
+   </property>
+   <property name="rightMargin" >
+    <number>0</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>0</number>
+   </property>
+   <property name="horizontalSpacing" >
+    <number>6</number>
+   </property>
+   <property name="verticalSpacing" >
     <number>6</number>
    </property>
    <item row="3" column="0" >
@@ -52,6 +62,9 @@
      <property name="minimum" >
       <number>1</number>
      </property>
+     <property name="maximum" >
+      <number>100000</number>
+     </property>
     </widget>
    </item>
    <item row="1" column="0" >
@@ -66,7 +79,10 @@
       <string>&amp;Row height:</string>
      </property>
      <property name="minimum" >
-      <number>0</number>
+      <number>5</number>
+     </property>
+     <property name="maximum" >
+      <number>500</number>
      </property>
     </widget>
    </item>
@@ -82,20 +98,20 @@
       <string>Column &amp;width:</string>
      </property>
      <property name="minimum" >
-      <number>0</number>
+      <number>5</number>
+     </property>
+     <property name="maximum" >
+      <number>750</number>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
- <pixmapfunction></pixmapfunction>
  <customwidgets>
   <customwidget>
    <class>KIntNumInput</class>
-   <extends></extends>
+   <extends>QWidget</extends>
    <header>knuminput.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
   </customwidget>
  </customwidgets>
  <resources/>
