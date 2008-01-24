@@ -824,7 +824,7 @@ bool KWordQuizApp::saveAsFileName( )
 
       QFileInfo fileinfo(url.path());
       if (fileinfo.exists() && KMessageBox::warningContinueCancel(0,
-          i18n("The file<br /><b>%1</b><br />already exists. Do you want to overwrite it?",
+          i18n("<html>The file<br /><b>%1</b><br />already exists. Do you want to overwrite it?</html>",
                url.path()),QString(),KStandardGuiItem::overwrite()) == KMessageBox::Cancel)
       {
       // do nothing
