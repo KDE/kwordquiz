@@ -85,8 +85,6 @@ KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 
   m_dirWatch = KDirWatch::self();
 
-  slotUndoChange(i18n("Cannot &Undo"), false);
-
   QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
   slotModeActionGroupTriggered(a);
 
@@ -101,12 +99,10 @@ KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
     fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml")));
     Prefs::setFirstRun(false);
   }
-  m_doc->setModified(false);
 }
 
 KWordQuizApp::~KWordQuizApp()
 {
-
 }
 
 void KWordQuizApp::initActions()
@@ -438,7 +434,6 @@ void KWordQuizApp::initDocument()
   {
     m_doc->lesson()->appendEntry(new KEduVocExpression());
   }
-  m_doc->setModified(false);
 }
 
 void KWordQuizApp::initModel()
@@ -524,8 +519,6 @@ void KWordQuizApp::initView()
   m_pageWidget->setCurrentPage(m_editorPage);
   m_tableView->setFocus();
   updateActions();
-
-  m_doc->setModified(false);
 }
 
 void KWordQuizApp::openUrl(const KUrl& url)
@@ -577,7 +570,7 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
       setCaption(m_doc->url().fileName(), false);
       fileOpenRecent->addUrl(url);
       slotModeActionGroupTriggered(m_modeActionGroup->checkedAction());
-      m_doc->setModified(false);
+      m_undoStack->clear();
     }
     else
       KMessageBox::error(this, KEduVocDocument::errorDescription(result));
@@ -633,7 +626,6 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
     if(canRecover)
     {
       m_doc->open(_url);
-      m_doc->setModified();
       setCaption(_url.fileName(),true);
       QFile::remove(tempname);
     }
@@ -673,7 +665,6 @@ bool KWordQuizApp::queryClose()
         break;
 
       case KMessageBox::No:
-        m_doc->setModified(false);
         completed = true;
         break;
 
@@ -770,7 +761,8 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    if (!m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION))) {
+    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    if (saveStatus != KEduVocDocument::NoError) {
       slotFileSaveAs();
     }
   }
@@ -827,7 +819,7 @@ bool KWordQuizApp::saveAsFileName( )
 
       QFileInfo fileinfo(url.path());
       if (fileinfo.exists() && KMessageBox::warningContinueCancel(0,
-          i18n("The file<br /><b>%1</b><br />already exists. Do you want to overwrite it?",
+          i18n("<html>The file<br /><b>%1</b><br />already exists. Do you want to overwrite it?</html>",
                url.path()),QString(),KStandardGuiItem::overwrite()) == KMessageBox::Cancel)
       {
       // do nothing
@@ -868,10 +860,10 @@ void KWordQuizApp::slotFileClose()
       setCaption(m_doc->url().fileName(), m_doc->isModified());
       m_tableModel->setDocument(m_doc);
       slotQuizEditor();
-      slotUndoChange(i18n("Cannot &Undo"), false);
       QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
       slotModeActionGroupTriggered(a);
       m_tableView ->setFocus();
+      m_undoStack->clear();
     }
 
   slotStatusMsg(i18n("Ready"));
@@ -912,12 +904,6 @@ void KWordQuizApp::slotFileQuit()
   }
 }
 
-void KWordQuizApp::slotUndoChange(const QString & text, bool enabled)
-{
-  //editUndo->setText(text);
-  //editUndo->setEnabled(enabled);
-  m_doc->setModified(true);
-}
 
 void KWordQuizApp::slotEditUndo()
 {
@@ -1401,6 +1387,7 @@ void KWordQuizApp::slotConfigShowSearch()
 void KWordQuizApp::slotCleanChanged(bool clean)
 {
   m_doc->setModified(!clean);
+  setCaption(m_doc->url().fileName(), m_doc->isModified());
 }
 
 

@@ -224,8 +224,6 @@ class KWordQuizApp : public KXmlGuiWindow
     /** applies changes from the preferences dialog */
     void slotApplyPreferences();
 
-    void slotUndoChange(const QString & text, bool enabled);
-
     void slotInsertChar(int i);
 
     void slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *before);
