@@ -51,6 +51,8 @@
 #include <KProcess>
 
 #include "keduvocdocument.h"
+#include "keduvoclesson.h"
+#include "keduvocexpression.h"
 #include "kwqtablemodel.h"
 #include "kwqsortfiltermodel.h"
 #include "kwqtableview.h"
@@ -159,13 +161,7 @@ void KWordQuizApp::initActions()
   m_undoStack->createUndoAction(actionCollection());
   m_undoStack->createRedoAction(actionCollection());
   connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(slotSetHistoryClean(bool)));
-/*
-  editUndo = KStandardAction::undo(this, SLOT(slotEditUndo()), actionCollection());
-  editUndo->setWhatsThis(i18n("Undoes the last command"));
-  editUndo->setToolTip(editUndo->whatsThis());
-  editUndo->setStatusTip(editUndo->whatsThis());
-  editUndo->setIconText(editUndo->text());
-*/
+
   editCut = KStandardAction::cut(this, SLOT(slotEditCut()), actionCollection());
   editCut->setWhatsThis(i18n("Cuts the text from the selected cells and places it on the clipboard"));
   editCut->setToolTip(editCut->whatsThis());
@@ -491,7 +487,6 @@ void KWordQuizApp::initView()
   setCaption(m_doc->url().fileName(),false);
   m_tableView->addActions(guiFactory()->container("editor_popup", this)->actions());
   m_tableView->setContextMenuPolicy(Qt::ActionsContextMenu);
-  connect(m_tableView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
 
   m_searchWidget->setVisible(Prefs::showSearch());
@@ -925,7 +920,7 @@ void KWordQuizApp::slotUndoChange(const QString & text, bool enabled)
 void KWordQuizApp::slotEditUndo()
 {
   slotStatusMsg(i18n("Undoing previous command..."));
-  m_tableView->doEditUndo();
+//  m_tableView->doEditUndo();
   slotStatusMsg(i18n("Ready"));
 }
 

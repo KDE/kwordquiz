@@ -58,6 +58,7 @@ KWQUndoCommand::KWQUndoCommand(KWQTableView * view) : QUndoCommand()
     IndexAndData id;
     id.index = index;
     id.data = m_view->model()->data(index, Qt::DisplayRole);
+    id.height = m_view->rowHeight(index.row());
     m_indexAndData.append(id);
   }
 }
@@ -346,6 +347,7 @@ KWQCommandUnmarkBlank::KWQCommandUnmarkBlank(KWQTableView * view) : KWQUndoComma
   setText(i18n("Unmark Blank"));
 }
 
+
 void KWQCommandUnmarkBlank::redo()
 {
   QString s;
@@ -356,6 +358,95 @@ void KWQCommandUnmarkBlank::redo()
     s = s.remove(delim_start);
     s = s.remove(delim_end);
     view()->model()->setData(index, QVariant(s));
+    view()->selectionModel()->select(index, QItemSelectionModel::Select);
+  }
+  view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);
+}
+
+
+KWQCommandFormat::KWQCommandFormat(KWQTableView * view, int newRowCount, int newRowHeight, int newColumnWidth) : KWQUndoCommand(view)
+{
+  setText(i18n("Formatting"));
+  m_newRowCount = newRowCount;
+  m_newRowHeight = newRowHeight;
+  m_newColumnWidth = newColumnWidth;
+  m_oldRowCount = view->model()->rowCount(QModelIndex());
+  m_oldColumnWidthLeft = view->columnWidth(0);
+  m_oldColumnWidthRight = view->columnWidth(1);
+}
+
+
+void KWQCommandFormat::undo()
+{
+  QModelIndexList selIndexes = oldSelectedIndexes();
+  QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
+  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());  
+
+  if (m_newRowCount < m_oldRowCount)
+  {
+    view()->model()->insertRows(m_newRowCount, m_oldRowCount - m_newRowCount, QModelIndex());
+
+    foreach (const IndexAndData &id, m_deleteIndexAndData)
+      view()->model()->setData(id.index, id.data, Qt::EditRole);
+  }
+
+  if (m_newRowCount > m_oldRowCount)
+  {
+    view()->model()->removeRows(m_oldRowCount, m_newRowCount - m_oldRowCount, QModelIndex());
+  }
+
+  view()->setColumnWidth(0, m_oldColumnWidthLeft);
+  view()->setColumnWidth(1, m_oldColumnWidthRight);
+
+  foreach (const IndexAndData &id, oldData()) {
+    view()->model()->setData(id.index, id.data, Qt::EditRole);
+    view()->setRowHeight(id.index.row(), id.height);
+  }
+
+  view()->selectionModel()->clear();
+  view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
+  view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
+}
+
+
+void KWQCommandFormat::redo()
+{
+  if (m_newRowCount < m_oldRowCount)
+  {
+    QModelIndexList selIndexes = oldSelectedIndexes();
+    QModelIndex topLeft = view()->model()->index(m_newRowCount, 0, QModelIndex());
+    QModelIndex bottomRight = view()->model()->index(m_oldRowCount, 1, QModelIndex());
+
+    QModelIndex topLeftDeletion = view()->model()->index(m_newRowCount - 1, 0, QModelIndex());
+    QModelIndex bottomRightDeletion = view()->model()->index(m_oldRowCount - 1, 1, QModelIndex());
+
+    QItemSelection deletion(topLeftDeletion, bottomRightDeletion);
+    m_deleteIndexAndData.clear();
+    foreach (const QModelIndex &idx, deletion.indexes()) {
+      IndexAndData id;
+      id.index = idx;
+      id.data = view()->model()->data(id.index, Qt::DisplayRole);
+      m_deleteIndexAndData.append(id);
+    }
+
+    view()->model()->removeRows(m_newRowCount, m_oldRowCount - m_newRowCount, QModelIndex());
+
+    view()->selectionModel()->clear();
+    view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
+    view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
+
+  }
+
+  if (m_newRowCount > m_oldRowCount)
+  {
+    view()->model()->insertRows(m_oldRowCount, m_newRowCount - m_oldRowCount, QModelIndex());
+  }
+
+  view()->selectionModel()->clear();
+  foreach (const QModelIndex &index, oldSelectedIndexes())
+  {
+    view()->setRowHeight(index.row(), m_newRowHeight);
+    view()->setColumnWidth(index.column(), m_newColumnWidth);
     view()->selectionModel()->select(index, QItemSelectionModel::Select);
   }
   view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);

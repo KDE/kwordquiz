@@ -40,7 +40,6 @@
 
 KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(parent), m_undoStack(undoStack)
 {
-  m_undoList.clear();
   m_model = 0;
 
   setSelectionMode(QAbstractItemView::ContiguousSelection);
@@ -252,92 +251,6 @@ void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int re
 
 }
 
-void KWQTableView::addUndo(const QString & caption)
-{
-  while (m_undoList.count() > 10)
-    m_undoList.removeLast();
-
-  WQUndo undo;
-  undo.setText(caption);
-  undo.setFont(Prefs::editorFont());
-  undo.setColWidth1(columnWidth(0));
-  undo.setColWidth2(columnWidth(1));
-  undo.setCurrentCell(selectionModel()->currentIndex());
-  undo.setSelection(selection());
-
-  QList<KEduVocExpression> list;
-  for(int i = 0; i < model()->rowCount(); i++)
-  {
-    KEduVocExpression expression;
-    expression.setTranslation(0, model()->data(model()->index(i, 0), Qt::DisplayRole).toString());
-    expression.setTranslation(1, model()->data(model()->index(i, 1), Qt::DisplayRole).toString());
-    list.append(expression);
-  }
-
-  undo.setList(list);
-
-  m_undoList.prepend(undo);
-
-  emit undoChange(caption, true);
-}
-
-void KWQTableView::doEditUndo()
-{
-  if (state() == QAbstractItemView::EditingState)
-  {
-    if (QApplication::focusWidget())
-    {
-      QLineEdit *lineEdit = static_cast<QLineEdit*>(QApplication::focusWidget());
-      if (lineEdit->isUndoAvailable())
-        lineEdit->undo();
-    }
-  }
-  else
-  {
-    WQUndo undo;
-    if (m_undoList.count() > 0)
-    {
-      setUpdatesEnabled(false);
-      undo = m_undoList.takeFirst();
-
-      Prefs::setEditorFont(undo.font());
-      model()->setHeaderData(0, Qt::Horizontal, undo.colWidth1(), Qt::SizeHintRole);
-      model()->setHeaderData(1, Qt::Horizontal, undo.colWidth2(), Qt::SizeHintRole);
-
-      model()->removeRows(0, model()->rowCount() - 1, QModelIndex());
-      model()->insertRows(0, undo.list().count(), QModelIndex());
-      model()->removeRows(0, 1, QModelIndex());
-
-      KEduVocExpression expression;
-      QList<KEduVocExpression> items = undo.list();
-
-      for(int i = 0; i < items.count(); i++)
-      {
-        expression = items[i];
-        model()->setData(model()->index(i, 0), QVariant(expression.translation(0)->text()), Qt::EditRole);
-        model()->setData(model()->index(i, 1), QVariant(expression.translation(1)->text()), Qt::EditRole);
-      }
-
-      selectCells(undo.selection());
-      selectionModel()->setCurrentIndex(undo.currentCell(), QItemSelectionModel::Current);
-      reset();
-
-      if (undo.text() == i18n("&Undo Sort")) {
-        static_cast<KWQSortFilterModel*>(model())->restoreNativeOrder();
-        horizontalHeader()->setSortIndicatorShown(false);
-      }
-      setUpdatesEnabled(true);
-    }
-
-    if (m_undoList.count() > 0)
-    {
-      undo = m_undoList.first();
-      emit undoChange(undo.text(), true);
-    }
-    else
-      emit undoChange(i18n("Cannot &Undo"), false);
-  }
-}
 
 void KWQTableView::doEditCut()
 {
@@ -353,15 +266,6 @@ void KWQTableView::doEditCut()
   {
     KWQCommandCut *kwqc = new KWQCommandCut(this);
     m_undoStack->push(kwqc);
-    /* 
-    addUndo(i18n("&Undo Cut"));
-
-    doEditCopy();
-
-    QModelIndexList items = selectionModel()->selectedIndexes();
-
-    foreach (const QModelIndex &index, items)
-      model()->setData(index, QVariant());*/
   }
 }
 
@@ -378,20 +282,6 @@ void KWQTableView::doEditCopy()
   else
   {
     copyToClipboard(this);
-    /*QRect sel = selection();
-    QString s;
-    QString rs;
-    for (int r = sel.top(); r <= sel.bottom(); ++r)
-    {
-      for (int c = sel.left(); c <= sel.right(); ++c)
-      {
-        QVariant v =  model()->data(model()->index(r, c, QModelIndex()), Qt::DisplayRole);
-        rs = v.toString();
-        s += rs + '\t';
-      }
-      s += '\n';
-    }
-    QApplication::clipboard()->setText(s);*/
   }
 }
 
@@ -409,70 +299,6 @@ void KWQTableView::doEditPaste()
   {
     KWQCommandPaste *kwqc = new KWQCommandPaste(this);
     m_undoStack->push(kwqc);
-    /*
-    addUndo(i18n("&Undo Paste"));
-    QRect sel = selection();
-    int tr = sel.top();
-    int br = sel.bottom();
-    int lc = sel.left();
-    int rc = sel.right();
-
-    QString s = QApplication::clipboard()->text();
-    QStringList sl;
-    sl = s.split("\n", QString::SkipEmptyParts);
-
-    int i = 0;
-    int ar = tr;
-    int ac = 0;
-    QStringList sr;
-
-    if (lc == rc && tr == br) //one cell selected
-    {
-      //Do we need to add entries (rows)?
-      while (sl.count() > model()->rowCount() - tr)
-        model()->insertRows(model()->rowCount(), 1, QModelIndex());
-
-      br = br + sl.count() - 1;
-
-      if (lc == 0) //left col?
-        if (sl[0].indexOf("\t") > -1)
-          rc = 1; //expand to second column;
-
-      while (i < sl.count() && br <= model()->rowCount())
-      {
-        ac = lc;
-
-        sr = sl.at(i).split("\t", QString::SkipEmptyParts);
-        int c = 0;
-        while (ac <= rc)
-        {
-          model()->setData(model()->index(ar, ac), QVariant(sr[c]), Qt::EditRole);
-          ac++;
-          c++;
-        }
-        ar++;
-        i++;
-      }
-    }
-    else
-    {
-      while(i < sl.count() && ar <= br )
-      {
-        ac = lc;
-
-        sr = sl.at(i).split("\t", QString::SkipEmptyParts);
-        int c = 0;
-        while (ac <= rc)
-        {
-          model()->setData(model()->index(ar, ac), QVariant(sr[c]), Qt::EditRole);
-          ac++;
-          c++;
-        }
-        ar++;
-        i++;
-      }
-    }
-    selectCells(QRect(lc, tr, ac - lc, ar - tr));*/
   }
 }
 
@@ -490,13 +316,6 @@ void KWQTableView::doEditClear()
   {
     KWQCommandClear *kwqc = new KWQCommandClear(this);
     m_undoStack->push(kwqc);
-    /* 
-    addUndo(i18n("&Undo Clear"));
-
-    QModelIndexList items = selectionModel()->selectedIndexes();
-
-    foreach (const QModelIndex &index, items)
-      model()->setData(index, QVariant());*/
   }
 }
 
@@ -504,37 +323,12 @@ void KWQTableView::doEditInsert()
 {
   KWQCommandInsert *kwqc = new KWQCommandInsert(this);
   m_undoStack->push(kwqc);
-  //addUndo(i18n("&Undo Insert"));
-  /*QRect sel = selection();
-  int currentRow = currentIndex().row();
-  int currentColumn = currentIndex().column();
-  model()->insertRows(sel.top(), sel.height(), QModelIndex());
-  //KEduVocExpression * expr = new KEduVocExpression("zzzzzzzzzzzzzzzz");
-  //expr->setTranslation(1, "yyyyyyyyyyyyy");
-  //qDebug() << "Current row: " << currentIndex().row();
-  //model()->sourceModel()->currentLesson(currentIndex().row())->insertEntry(currentIndex().row(), expr);
-
-  //model()->invalidate();
-  reset();
-  //setCurrentIndex(model()->index(currentRow, currentColumn));
-  //selectCells(sel);*/
 }
 
 void KWQTableView::doEditDelete()
 {
   KWQCommandDelete *kwqc = new KWQCommandDelete(this);
   m_undoStack->push(kwqc);
-  /*addUndo(i18n("&Undo Delete"));
-  QRect sel = selection();
-  int currentRow = currentIndex().row();
-  int currentColumn = currentIndex().column();
-  model()->removeRows(sel.top(), sel.height(), QModelIndex());
-
-  while (!model()->hasIndex(currentRow, currentColumn))
-    currentRow--;
-
-  setCurrentIndex(model()->index(currentRow, currentColumn));
-  selectCells(sel);*/
 }
 
 
@@ -648,28 +442,9 @@ void KWQTableView::doVocabRC()
   dlg->setRowHeight(rowHeight(currentIndex().row()));
   dlg->setColWidth(columnWidth(currentIndex().column()));
 
-  if (dlg->exec() == KDialog::Accepted)
-  {
-    int newRowCount = dlg->numRows();
-    if (newRowCount < rowCount)
-    {
-      addUndo(i18n("&Undo Delete"));
-      model()->removeRows(newRowCount, rowCount - newRowCount, QModelIndex());
-    }
-
-    if (newRowCount > rowCount)
-    {
-      addUndo(i18n("&Undo Insert"));
-      model()->insertRows(rowCount, newRowCount - rowCount, QModelIndex());
-    }
-
-    QModelIndexList items = selectionModel()->selectedIndexes();
-
-    foreach (const QModelIndex &index, items)
-    {
-      setRowHeight(index.row(), dlg->rowHeight());
-      setColumnWidth(index.column(), dlg->colWidth());
-    }
+  if (dlg->exec() == KDialog::Accepted) {
+    KWQCommandFormat *kwqc = new KWQCommandFormat(this, dlg->numRows(), dlg->rowHeight(), dlg->colWidth());
+    m_undoStack->push(kwqc);
   }
 }
 
@@ -951,10 +726,7 @@ void KWQTableView::setCurrentCell(const QPoint & currentCell)
 
 void KWQTableView::slotSortByColumn(int column)
 {
-  //addUndo(i18n("&Undo Sort"));
   QTableView::sortByColumn(column);
-  //horizontalHeader()->setSortIndicatorShown(true);
-  //horizontalHeader()->setSortIndicator(column, horizontalHeader()->sortIndicatorOrder());
 }
 
 

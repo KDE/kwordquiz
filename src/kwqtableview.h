@@ -28,14 +28,11 @@ class QPrinter;
 
 #include "kwqsortfiltermodel.h"
 #include "kwqtabledelegate.h"
-#include "wqundo.h"
 #include "wqprintdialogpage.h"
 
 /**
 @author Peter Hedlund
 */
-
-typedef QList<WQUndo> WQUndoList;
 
 class KWQTableView : public QTableView
 {
@@ -49,8 +46,7 @@ public:
 
   /** contains the implementation for printing functionality */
   void print(QPrinter *pPrinter, WQPrintDialogPage::PrintStyle type);
-  void addUndo(const QString & caption);
-  void doEditUndo();
+
   void doEditCut();
   void doEditCopy();
   void doEditPaste();
@@ -85,20 +81,12 @@ protected slots:
   void verticalHeaderResized(int, int, int);
   void horizontalHeaderResized(int, int, int);
 
-signals:
-  void undoChange(const QString & text, bool enabled);
-
 private:
   QString m_currentText;
 
   QWidget * cellEditor;
-
   KWQTableDelegate * m_delegate;
-
-  /** the list of the undo objects */
-  WQUndoList m_undoList;
   KWQSortFilterModel *m_model;
-  
   KUndoStack *m_undoStack;
 
   void doNewPage(QPainter & painter, int res, WQPrintDialogPage::PrintStyle type);

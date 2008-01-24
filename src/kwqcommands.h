@@ -30,6 +30,7 @@ struct IndexAndData
 {
   QModelIndex index;
   QVariant data;
+  int height;
 };
 
 typedef QList<IndexAndData> IndexAndDataList;
@@ -166,4 +167,22 @@ public:
   KWQCommandUnmarkBlank(KWQTableView *view);
   //virtual void undo();
   virtual void redo();
+};
+
+
+class KWQCommandFormat : public KWQUndoCommand
+{
+public:
+  KWQCommandFormat(KWQTableView *view, int newRowCount, int newRowHeight, int newColumnWidth);
+  virtual void undo();
+  virtual void redo();
+
+private:
+  IndexAndDataList m_deleteIndexAndData;
+  int m_newRowCount;
+  int m_newRowHeight;
+  int m_newColumnWidth;
+  int m_oldRowCount;
+  int m_oldColumnWidthLeft;
+  int m_oldColumnWidthRight;
 };

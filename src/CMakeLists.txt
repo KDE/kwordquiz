@@ -24,7 +24,6 @@ set(kwordquiz_SRCS
    dlglanguage.cpp 
    wqprintdialogpage.cpp 
    prefcharacter.cpp 
-   wqundo.cpp 
    prefcardappearance.cpp 
    kwqtablemodel.cpp
    kwqtableview.cpp
