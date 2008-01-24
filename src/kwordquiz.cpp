@@ -767,7 +767,8 @@ void KWordQuizApp::slotFileSave()
   }
   else
   {
-    if (!m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION))) {
+    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    if (saveStatus != KEduVocDocument::NoError) {
       slotFileSaveAs();
     }
   }
