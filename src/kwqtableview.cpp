@@ -656,39 +656,6 @@ void KWQTableView::adjustRow(int row)
     setRowHeight(row, rh);
 }
 
-QRect KWQTableView::selection() const
-{
-  const QList<QItemSelectionRange> ranges = selectionModel()->selection();
-  QRect result;
-  if (ranges.count() > 0)
-  {
-    result.setTop(ranges.at(0).top());
-    result.setLeft(ranges.at(0).left());
-    result.setBottom(ranges.at(0).bottom());
-    result.setRight(ranges.at(0).right());
-  }
-  else
-  {
-    result.setTop(0);
-    result.setLeft(0);
-    result.setBottom(0);
-    result.setRight(0);
-  }
-  return result;
-}
-
-void KWQTableView::selectCells(const QRect & selection)
-{
-  if (!model()->hasIndex(selection.top(), selection.left(), rootIndex()) ||
-      !model()->hasIndex(selection.bottom(), selection.right(), rootIndex()))
-    return;
-
-  QModelIndex topLeft = model()->index(selection.top(), selection.left(), rootIndex());
-  QModelIndex bottomRight = model()->index(selection.bottom(), selection.right(), rootIndex());
-
-  selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::ClearAndSelect);
-}
-
 
 void KWQTableView::verticalHeaderResized(int , int , int)
 {
@@ -705,22 +672,6 @@ void KWQTableView::slotModelReset()
 {
   setColumnWidth(0, qvariant_cast<QSize>(model()->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   setColumnWidth(1, qvariant_cast<QSize>(model()->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
-}
-
-QPoint KWQTableView::currentCell() const
-{
-  QModelIndex index = selectionModel()->currentIndex();
-  QPoint result;
-  result.setX(index.column());
-  result.setY(index.row());
-  return result;
-}
-
-void KWQTableView::setCurrentCell(const QPoint & currentCell)
-{
-  if (!model()->hasIndex(currentCell.y(), currentCell.x(), rootIndex()))
-    return;
-  selectionModel()->setCurrentIndex(model()->index(currentCell.y(), currentCell.x(), rootIndex()), QItemSelectionModel::Current);
 }
 
 

@@ -59,10 +59,6 @@ public:
   void doVocabRC();
 
 protected:
-  QRect selection() const;
-  QPoint currentCell() const;
-  void selectCells(const QRect & selection);
-  void setCurrentCell(const QPoint & currentCell);
   void nextCell();
   void keyPressEvent(QKeyEvent*);
 

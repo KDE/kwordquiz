@@ -27,24 +27,24 @@
 
 void copyToClipboard(QTableView * view)
 {
-    QModelIndexList selIndexes = view->selectionModel()->selectedIndexes();
-    int tr = selIndexes.first().row();
-    int lc = selIndexes.first().column();
-    int br = selIndexes.last().row();
-    int rc = selIndexes.last().column();
+  QModelIndexList selIndexes = view->selectionModel()->selectedIndexes();
+  int tr = selIndexes.first().row();
+  int lc = selIndexes.first().column();
+  int br = selIndexes.last().row();
+  int rc = selIndexes.last().column();
 
-    QString s;
-    for (int r = tr; r <= br; ++r)
+  QString s;
+  for (int r = tr; r <= br; ++r)
+  {
+    for (int c = lc; c <= rc; ++c)
     {
-      for (int c = lc; c <= rc; ++c)
-      {
-        QVariant v =  view->model()->data(view->model()->index(r, c, QModelIndex()), Qt::DisplayRole);
-        s.append(v.toString());
-        s.append('\t');
-      }
-      s.append('\n');
+      QVariant v =  view->model()->data(view->model()->index(r, c, QModelIndex()), Qt::DisplayRole);
+      s.append(v.toString());
+      s.append('\t');
     }
-    QApplication::clipboard()->setText(s.trimmed());
+    s.append('\n');
+  }
+  QApplication::clipboard()->setText(s.trimmed());
 }
 
 
@@ -128,26 +128,27 @@ void KWQCommandPaste::undo()
 
 void KWQCommandPaste::redo()
 {
+  QModelIndexList selIndexes = oldSelectedIndexes();
+  QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
+  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
+
   int tr;
-  int br;
   int lc;
-  int rc;
-  int i = 0;
-  int ar = 0;
-  int ac = 0;
+  int ar = tr = topLeft.row();
+  int ac = lc = topLeft.column();
+  int rc = bottomRight.column();
+  int br = bottomRight.row();
 
   QString s = QApplication::clipboard()->text();
   QStringList sl;
   sl = s.split("\n", QString::SkipEmptyParts);
 
   QStringList sr;
+  int i = 0;
 
-  if (view()->selectionModel()->selectedIndexes().count() == 1) //one cell selected
+  if (selIndexes.count() == 1) //one cell selected
   {
     //Do we need to add entries (rows)?
-    ar = tr = view()->selectionModel()->currentIndex().row();
-    lc = view()->selectionModel()->currentIndex().column();
-
     while (sl.count() + tr > view()->model()->rowCount(QModelIndex())) {
       view()->model()->insertRows(view()->model()->rowCount(), 1, QModelIndex());
     }
@@ -158,14 +159,12 @@ void KWQCommandPaste::redo()
       if (sl[0].indexOf("\t") > -1)
         rc = 1; //expand to second column;
 
-    while (i < sl.count() && br <= view()->model()->rowCount(QModelIndex()))
-    {
+    while (i < sl.count() && br <= view()->model()->rowCount(QModelIndex())) {
       ac = lc;
 
       sr = sl.at(i).split("\t", QString::SkipEmptyParts);
       int c = 0;
-      while (ac <= rc)
-      {
+      while (ac <= rc) {
         IndexAndData id;
         id.index = view()->model()->index(ar, ac);
         id.data = view()->model()->data(id.index, Qt::DisplayRole);
@@ -182,24 +181,12 @@ void KWQCommandPaste::redo()
   }
   else
   {
-    if (view()->selectionModel()->columnIntersectsSelection(0, QModelIndex())) {
-      lc = 0;
-      if (view()->selectionModel()->columnIntersectsSelection(1, QModelIndex()))
-        rc = 1;
-      else
-        rc =0;
-    }
-    else
-      lc = rc = 1;
-
-    while (i < sl.count() && ar <= br )
-    {
+    while (i < sl.count() && ar <= br) {
       ac = lc;
 
       sr = sl.at(i).split("\t", QString::SkipEmptyParts);
       int c = 0;
-      while (ac <= rc)
-      {
+      while (ac <= rc) {
         if (view()->selectionModel()->isSelected(view()->model()->index(ar, ac)))
           view()->model()->setData(view()->model()->index(ar, ac), QVariant(sr[c]), Qt::EditRole);
         ac++;
@@ -380,7 +367,7 @@ void KWQCommandFormat::undo()
 {
   QModelIndexList selIndexes = oldSelectedIndexes();
   QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
-  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());  
+  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
 
   if (m_newRowCount < m_oldRowCount)
   {
