@@ -230,7 +230,9 @@ class KWordQuizApp : public KXmlGuiWindow
 
     void slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *before);
 
-    void slotSetHistoryClean(bool);
+    void slotCleanChanged(bool);
+    void slotUndoTextChanged(const QString &);
+    void slotRedoTextChanged(const QString &);
 
   private:
     KWQQuiz *m_quiz;
@@ -276,6 +278,7 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* fileQuit;
 
     QAction* editUndo;
+    QAction* editRedo;
     QAction* editCut;
     QAction* editCopy;
     QAction* editPaste;

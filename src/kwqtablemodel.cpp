@@ -106,7 +106,6 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
       m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(1, value.toString());
 
     emit dataChanged(index, index);
-    m_doc->setModified(true);
     return true;
   }
   return false;
@@ -137,7 +136,6 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
     }
 
     emit headerDataChanged(orientation, section, section);
-    m_doc->setModified(true);
     return true;
   }
   return false;

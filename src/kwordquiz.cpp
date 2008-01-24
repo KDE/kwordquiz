@@ -158,9 +158,11 @@ void KWordQuizApp::initActions()
   fileQuit->setStatusTip(fileQuit->whatsThis());
 
   m_undoStack = new KUndoStack();
-  m_undoStack->createUndoAction(actionCollection());
-  m_undoStack->createRedoAction(actionCollection());
-  connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(slotSetHistoryClean(bool)));
+  editUndo = m_undoStack->createUndoAction(actionCollection());
+  editRedo = m_undoStack->createRedoAction(actionCollection());
+  connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(slotCleanChanged(bool)));
+  connect(m_undoStack, SIGNAL(undoTextChanged(const QString &)), this, SLOT(slotUndoTextChanged(const QString &)));
+  connect(m_undoStack, SIGNAL(redoTextChanged(const QString &)), this, SLOT(slotRedoTextChanged(const QString &)));
 
   editCut = KStandardAction::cut(this, SLOT(slotEditCut()), actionCollection());
   editCut->setWhatsThis(i18n("Cuts the text from the selected cells and places it on the clipboard"));
@@ -992,12 +994,9 @@ void KWordQuizApp::slotVocabLanguages()
   dlg = new DlgLanguage(this);
   dlg->setLanguage(1, m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
   dlg->setLanguage(2, m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
-  if (dlg->exec() == KDialog::Accepted)
-  {
-    m_tableModel->setHeaderData(0, Qt::Horizontal, dlg->Language(1), Qt::EditRole);
-    m_tableModel->setHeaderData(1, Qt::Horizontal, dlg->Language(2), Qt::EditRole);
-    QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
-    slotModeActionGroupTriggered(a);
+  if (dlg->exec() == KDialog::Accepted) {
+    KWQCommandIdentifiers *kwqc = new KWQCommandIdentifiers(m_tableView, dlg->Language(1), dlg->Language(2));
+    m_undoStack->push(kwqc);
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -1398,9 +1397,30 @@ void KWordQuizApp::slotConfigShowSearch()
   }
 }
 
-void KWordQuizApp::slotSetHistoryClean(bool clean)
+
+void KWordQuizApp::slotCleanChanged(bool clean)
 {
   m_doc->setModified(!clean);
+}
+
+
+void KWordQuizApp::slotUndoTextChanged(const QString & undoText)
+{
+  editUndo->setWhatsThis(editUndo->text());
+  editUndo->setStatusTip(editUndo->text());
+
+  QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
+  slotModeActionGroupTriggered(a);
+}
+
+
+void KWordQuizApp::slotRedoTextChanged(const QString &redoText)
+{
+  editRedo->setWhatsThis(editRedo->text());
+  editRedo->setStatusTip(editRedo->text());
+
+  QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
+  slotModeActionGroupTriggered(a);
 }
 
 #include "kwordquiz.moc"

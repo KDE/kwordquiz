@@ -453,3 +453,26 @@ void KWQCommandFormat::redo()
 }
 
 
+KWQCommandIdentifiers::KWQCommandIdentifiers(KWQTableView * view, const QString & newIdentifierLeft, const QString & newIdentifierRight) : KWQUndoCommand(view)
+{
+  setText(i18n("Column Titles"));
+  m_oldIdentifierLeft = view->model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
+  m_oldIdentifierRight = view->model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
+  m_newIdentifierLeft = newIdentifierLeft;
+  m_newIdentifierRight = newIdentifierRight;
+}
+
+
+void KWQCommandIdentifiers::undo()
+{
+  view()->model()->setHeaderData(0, Qt::Horizontal, m_oldIdentifierLeft, Qt::EditRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, m_oldIdentifierRight, Qt::EditRole);
+}
+
+
+void KWQCommandIdentifiers::redo()
+{
+  view()->model()->setHeaderData(0, Qt::Horizontal, m_newIdentifierLeft, Qt::EditRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, m_newIdentifierRight, Qt::EditRole);
+}
+

@@ -87,7 +87,7 @@ private:
 class KWQCommandFont : public KWQUndoCommand
 {
 public:
-  KWQCommandFont(KWQTableView *view, const QFont oldFont, const QFont newFont) : KWQUndoCommand(view), m_oldFont(oldFont), m_newFont(newFont)
+  KWQCommandFont(KWQTableView *view, const QFont &oldFont, const QFont &newFont) : KWQUndoCommand(view), m_oldFont(oldFont), m_newFont(newFont)
     { setText(i18n("Font")); }
   virtual void undo()
     { Prefs::setEditorFont(m_oldFont);
@@ -185,4 +185,18 @@ private:
   int m_oldRowCount;
   int m_oldColumnWidthLeft;
   int m_oldColumnWidthRight;
+};
+
+
+class KWQCommandIdentifiers : public KWQUndoCommand
+{
+public:
+  KWQCommandIdentifiers(KWQTableView *view, const QString &newIdentifierLeft, const QString &newIdentifierRight);
+  virtual void undo();
+  virtual void redo();
+private:
+  QString m_oldIdentifierLeft;
+  QString m_oldIdentifierRight;
+  QString m_newIdentifierLeft;
+  QString m_newIdentifierRight;
 };
