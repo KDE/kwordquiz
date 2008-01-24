@@ -780,7 +780,6 @@ void KWordQuizApp::slotFileGHNS()
       // check mime type and if kvtml, open it
       foreach(const QString &file, entry->installedFiles()) {
         KMimeType::Ptr mimeType = KMimeType::findByPath(file);
-        kDebug() << "KNS2 file of mime type:" << KMimeType::findByPath(file)->name();
         if (mimeType->name() == "application/x-kvtml") {
           KProcess::startDetached("kwordquiz", QStringList() << file);
         }
@@ -1045,7 +1044,6 @@ void KWordQuizApp::slotModeChange()
 void KWordQuizApp::slotQuizEditor()
 {
   slotStatusMsg(i18n("Starting editor session..."));
-  kDebug() << "I'm here";
   m_pageWidget->setCurrentPage(m_editorPage);
   slotStatusMsg(i18n("Ready"));
 }
