@@ -765,6 +765,7 @@ void KWordQuizApp::slotFileSave()
     if (saveStatus != KEduVocDocument::NoError) {
       slotFileSaveAs();
     }
+    m_undoStack->setClean();
   }
   slotStatusMsg(i18n("Ready"));
 }
@@ -832,7 +833,7 @@ bool KWordQuizApp::saveAsFileName( )
         if (result == KEduVocDocument::NoError) {
           m_dirWatch->addFile(url.path());
           fileOpenRecent->addUrl(url);
-          setCaption(m_doc->url().fileName(), m_doc->isModified());
+          m_undoStack->setClean(); //emits cleanChanged()
           success = true;
         }
         else {
@@ -902,14 +903,6 @@ void KWordQuizApp::slotFileQuit()
         break;
     }
   }
-}
-
-
-void KWordQuizApp::slotEditUndo()
-{
-  slotStatusMsg(i18n("Undoing previous command..."));
-//  m_tableView->doEditUndo();
-  slotStatusMsg(i18n("Ready"));
 }
 
 void KWordQuizApp::slotEditCut()

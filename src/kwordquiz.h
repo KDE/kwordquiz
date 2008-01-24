@@ -164,8 +164,6 @@ class KWordQuizApp : public KXmlGuiWindow
      * If queryClose() returns false because the user canceled the saveModified() dialog, the closing breaks.*/
     void slotFileQuit();
 
-    /** undo the last command */
-    void slotEditUndo();
     /** put the marked text/object into the clipboard and remove it from the document */
     void slotEditCut();
     /** put the marked text/object into the clipboard */
