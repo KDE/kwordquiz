@@ -15,6 +15,16 @@
       <label>Toggle display of the search bar.</label>
       <default>true</default>
     </entry>
+    <entry name="StartSession" type="Enum">
+      <label>Type of session to use when opening files</label>
+      <choices>
+        <choice name="Editor"/>
+        <choice name="Flashcard"/>
+        <choice name="MultipleChoice"/>
+        <choice name="QA"/>
+      </choices>
+      <default>Editor</default>
+    </entry>
   </group>
   <group name="Editor">
     <entry name="ColumnTitles1" type="StringList">

@@ -2,7 +2,7 @@
                           kwordquizprefs.cpp  -  description
                              -------------------
     begin                : Sun Aug 18 2002
-    copyright            : (C) 2002-2007 by Peter Hedlund
+    copyright            : (C) 2002-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -30,6 +30,7 @@
 #include <kcolorbutton.h>
 #include <kfontrequester.h>
 
+#include "prefgeneral.h"
 #include "prefeditor.h"
 #include "prefquiz.h"
 #include "prefcharacter.h"
@@ -39,6 +40,9 @@
 KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkeleton *config) : KConfigDialog(parent, name, config)
 {
   m_config = config;
+
+  m_prefGeneral = new PrefGeneral(0);
+  addPage(m_prefGeneral, i18nc("@title:group general settings", "General"), "kwordquiz", i18n("General Settings"), true);
 
   m_prefEditor = new PrefEditor(0);
   addPage(m_prefEditor, i18nc("@title:group editor settings", "Editor"), "editor", i18n("Editor Settings"), true);

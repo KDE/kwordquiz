@@ -571,6 +571,20 @@ void KWordQuizApp::openDocumentFile(const KUrl& url)
       fileOpenRecent->addUrl(url);
       slotModeActionGroupTriggered(m_modeActionGroup->checkedAction());
       m_undoStack->clear();
+      switch (Prefs::startSession()) {
+        case Prefs::EnumStartSession::Flashcard:
+          slotQuizFlash();
+          break;
+        case Prefs::EnumStartSession::MultipleChoice:
+          slotQuizMultiple();
+          break;
+        case Prefs::EnumStartSession::QA:
+          slotQuizQA();
+          break;
+        default:
+          slotQuizEditor();
+          break;
+      }
     }
     else
       KMessageBox::error(this, KEduVocDocument::errorDescription(result));

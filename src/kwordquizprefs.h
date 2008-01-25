@@ -2,7 +2,7 @@
                           kwordquizprefs.h  -  description
                              -------------------
     begin                : Sun Aug 18 2002
-    copyright            : (C) 2002-2007 by Peter Hedlund
+    copyright            : (C) 2002-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -24,6 +24,7 @@
   *@author Peter Hedlund
 */
 
+class PrefGeneral;
 class PrefEditor;
 class PrefQuiz;
 class PrefCharacter;
@@ -44,6 +45,7 @@ protected:
   bool isDefault();
 
 private:
+  PrefGeneral *m_prefGeneral;
   PrefEditor *m_prefEditor;
   PrefQuiz *m_prefQuiz;
   PrefCharacter* m_prefCharacter;

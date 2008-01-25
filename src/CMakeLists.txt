@@ -17,6 +17,7 @@ set(kwordquiz_SRCS
    multipleview.cpp 
    kwqquiz.cpp 
    wqscore.cpp 
+   prefgeneral.cpp
    prefeditor.cpp 
    prefquiz.cpp
    dlgrc.cpp 
@@ -42,7 +43,8 @@ kde4_add_ui_files(kwordquiz_SRCS
    prefquizbase.ui
    dlgrcbase.ui 
    prefcharacterbase.ui 
-   prefcardappearancebase.ui )
+   prefcardappearancebase.ui
+   prefgeneralbase.ui )
 
 kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
 
