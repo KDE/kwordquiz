@@ -22,6 +22,8 @@
 #include <QAbstractItemModel>
 #include <QList>
 
+#include "prefs.h"
+
 /**
 @author Peter Hedlund
 */
@@ -59,7 +61,6 @@ class KWQQuiz : public QObject
 {
 Q_OBJECT
 public:
-  enum QuizType {QuizEditor, QuizFlashCard, QuizMultipleChoice, QuizQuestionAnswer};
   enum QuizIcon {IconLeftCol, IconRightCol, IconQuestion, IconCorrect, IconError};
 
   KWQQuiz(QObject *parent);
@@ -77,8 +78,8 @@ public:
   QString yourAnswer(const QString & s);
   QString hint(int i);
 
-  QuizType quizType() const {return m_quizType;}
-  void setQuizType(QuizType qt);
+  Prefs::EnumStartSession::type quizType() const {return m_quizType;}
+  void setQuizType(Prefs::EnumStartSession::type qt);
 
   int quizMode() const {return m_quizMode;}
   void setQuizMode(int qm);
@@ -103,7 +104,7 @@ private:
   QList<KWQListItem> m_errorList;
   QList<KWQListItem> m_quizList;
 
-  QuizType m_quizType;
+  Prefs::EnumStartSession::type m_quizType;
   QString m_correctBlank;
   QString m_answerBlank;
 

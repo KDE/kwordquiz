@@ -117,16 +117,16 @@ bool KWQQuiz::init()
   //check if enough in list
   switch (m_quizType)
   {
-  case QuizEditor:
+  case Prefs::EnumStartSession::Editor:
     //
     break;
-  case QuizFlashCard:
+  case Prefs::EnumStartSession::Flashcard:
     result = (m_quizList.count() > 0);
     break;
-  case QuizQuestionAnswer:
+  case Prefs::EnumStartSession::QA:
     result = (m_quizList.count() > 0);
     break;
-  case QuizMultipleChoice:
+  case Prefs::EnumStartSession::MultipleChoice:
     result = (m_quizList.count() > 2);
     break;
   }
@@ -156,7 +156,7 @@ bool KWQQuiz::checkAnswer(int i, const QString & a)
   tTemp = tTemp.simplified();
   ans = ans.simplified();
 
-  if (m_quizType == QuizQuestionAnswer)
+  if (m_quizType == Prefs::EnumStartSession::QA)
   {
     if (QString(m_correctBlank).length() > 0)
     {
@@ -189,7 +189,7 @@ bool KWQQuiz::checkAnswer(int i, const QString & a)
   }
   else
   {
-    if (m_quizType == QuizMultipleChoice)
+    if (m_quizType == Prefs::EnumStartSession::MultipleChoice)
     {
       if (Prefs::enableBlanks())
       {
@@ -316,7 +316,7 @@ QString KWQQuiz::hint(int i)
 }
 
 
-void KWQQuiz::setQuizType(QuizType qt)
+void KWQQuiz::setQuizType(Prefs::EnumStartSession::type qt)
 {
   m_quizType = qt;
 }
@@ -338,7 +338,7 @@ QString KWQQuiz::question(int i)
     s.remove("[");
     s.remove("]");
   }
-  if (m_quizType != QuizFlashCard && i > 0)
+  if (m_quizType != Prefs::EnumStartSession::Flashcard && i > 0)
   {
     KWQListItem li2 = m_list.at(i - 1);
     emit checkingAnswer(li2.firstChoice());
@@ -358,7 +358,7 @@ QString KWQQuiz::blankAnswer(int i)
   m_answerBlank = "";
   QString tTemp;
 
-  if (m_quizType == QuizQuestionAnswer && Prefs::enableBlanks())
+  if (m_quizType == Prefs::EnumStartSession::QA && Prefs::enableBlanks())
   {
     KWQListItem li = m_list.at(i);
     tTemp = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
@@ -396,7 +396,7 @@ QString KWQQuiz::answer(int i)
   QString s;
   KWQListItem li = m_list.at(i);
 
-  if (m_quizType == QuizQuestionAnswer)
+  if (m_quizType == Prefs::EnumStartSession::QA)
   {
     s = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     if (Prefs::enableBlanks())

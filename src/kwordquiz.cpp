@@ -1111,7 +1111,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     m_quiz = new KWQQuiz(this);
     m_quiz->setModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-    m_quiz ->setQuizType(KWQQuiz::QuizFlashCard);
+    m_quiz ->setQuizType(Prefs::EnumStartSession::Flashcard);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
     {
@@ -1142,7 +1142,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     m_quiz = new KWQQuiz(this);
     m_quiz->setModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-    m_quiz ->setQuizType(KWQQuiz::QuizMultipleChoice);
+    m_quiz ->setQuizType(Prefs::EnumStartSession::MultipleChoice);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
     {
@@ -1171,7 +1171,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     m_quiz = new KWQQuiz(this);
     m_quiz->setModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-    m_quiz ->setQuizType(KWQQuiz::QuizQuestionAnswer);
+    m_quiz ->setQuizType(Prefs::EnumStartSession::QA);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
     {
