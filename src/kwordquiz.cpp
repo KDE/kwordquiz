@@ -123,7 +123,7 @@ void KWordQuizApp::initActions()
 
   fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
 
-  fileGHNS = KNS::standardAction(i18n("Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
+  fileGHNS = KNS::standardAction(i18n("Download New Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
   fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
