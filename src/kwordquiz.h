@@ -83,9 +83,10 @@ class KWordQuizApp : public KXmlGuiWindow
     KEduVocDocument * document() const;
 
     /**
+     * @param document the @see KEduVocDocument to save
      * @return whether the saving was successful
      */
-    bool saveAsFileName();
+    bool saveDocAsFileName(KEduVocDocument * document);
 
     static KWordQuizApp * self() { return m_self; }
 
@@ -207,6 +208,8 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotQuizMultiple();
     /** question and answer session */
     void slotQuizQA();
+    /** create a new vocabulary document from quiz errors */
+    void slotCreateErrorListDocument();
 
     void slotConfigShowSearch();
     /** configure notifications */
@@ -304,6 +307,7 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* quizCheck;
     QAction* quizRestart;
     QAction* quizRepeatErrors;
+    QAction* quizExportErrors;
 
     QAction* flashKnow;
     QAction* flashDontKnow;

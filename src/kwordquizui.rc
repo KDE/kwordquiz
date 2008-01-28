@@ -53,6 +53,8 @@
    <Separator/>
    <Action name="quiz_restart" />
    <Action name="quiz_repeat_errors" />
+   <Separator/>
+   <Action name="quiz_export_errors" />
   </Menu>
   <Menu name="settings" >
     <Action name="config_show_search" />

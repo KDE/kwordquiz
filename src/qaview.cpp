@@ -109,6 +109,7 @@ void QAView::init()
   win->actionCollection()->action("quiz_check")->setEnabled(true);
   win->actionCollection()->action("qa_hint")->setEnabled(true);
   win->actionCollection()->action("quiz_repeat_errors")->setEnabled(false);
+  win->actionCollection()->action("quiz_export_errors")->setEnabled(false);
 
   updateScore();
   showQuestion(0);
@@ -118,7 +119,7 @@ void QAView::init()
 
 void QAView::slotCheck()
 {
-  KWordQuizApp *win=KWordQuizApp::self();
+  KWordQuizApp *win = KWordQuizApp::self();
   if (win->actionCollection()->action("quiz_check")->isEnabled())
   {
     bool fIsCorrect;
@@ -179,6 +180,7 @@ void QAView::slotCheck()
       win->actionCollection()->action("quiz_check")->setEnabled(false);
       win->actionCollection()->action("qa_hint")->setEnabled(false);
       win->actionCollection()->action("quiz_repeat_errors")->setEnabled((m_error > 0));
+      win->actionCollection()->action("quiz_export_errors")->setEnabled((m_error > 0));
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();

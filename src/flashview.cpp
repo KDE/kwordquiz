@@ -58,6 +58,7 @@ void FlashView::init()
   win->actionCollection()->action("flash_know")->setEnabled(true);
   win->actionCollection()->action("flash_dont_know")->setEnabled(true);
   win->actionCollection()->action("quiz_repeat_errors")->setEnabled(false);
+  win->actionCollection()->action("quiz_export_errors")->setEnabled(false);
 
   m_showFirst = true;
   slotFlip();
@@ -102,11 +103,12 @@ void FlashView::keepDiscardCard(bool keep)
   else
   {
     m_quiz->finish();
-    KWordQuizApp *win=KWordQuizApp::self();
+    KWordQuizApp *win = KWordQuizApp::self();
     win->actionCollection()->action("quiz_check")->setEnabled(false);
     win->actionCollection()->action("flash_know")->setEnabled(false);
     win->actionCollection()->action("flash_dont_know")->setEnabled(false);
     win->actionCollection()->action("quiz_repeat_errors")->setEnabled((m_error > 0));
+    win->actionCollection()->action("quiz_export_errors")->setEnabled((m_error > 0));
   }
 }
 

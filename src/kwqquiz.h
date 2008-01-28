@@ -56,6 +56,7 @@ private:
   int m_thirdChoice;
 };
 
+typedef QList<KWQListItem> KWQQuizList;
 
 class KWQQuiz : public QObject
 {
@@ -93,6 +94,8 @@ public:
 
   int kbAnswer(int i);
 
+  KWQQuizList errorList() const {return m_errorList;}
+
 signals:
   void checkingAnswer(int );
 
@@ -100,9 +103,9 @@ private:
   QAbstractItemModel *m_model;
   int m_quizMode;
   int m_questionCount;
-  QList<KWQListItem> m_list;
-  QList<KWQListItem> m_errorList;
-  QList<KWQListItem> m_quizList;
+  KWQQuizList m_list;
+  KWQQuizList m_errorList;
+  KWQQuizList m_quizList;
 
   Prefs::EnumStartSession::type m_quizType;
   QString m_correctBlank;

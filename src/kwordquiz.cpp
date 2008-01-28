@@ -49,6 +49,7 @@
 #include <KPageWidget>
 #include <kdeprintdialog.h>
 #include <KProcess>
+#include <KTemporaryFile>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
@@ -369,6 +370,14 @@ void KWordQuizApp::initActions()
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
   quizRepeatErrors->setStatusTip(quizRepeatErrors->whatsThis());
 
+  quizExportErrors = actionCollection()->addAction("quiz_export_errors");
+  quizExportErrors->setIcon(KStandardGuiItem::saveAs().icon());
+  quizExportErrors->setText(i18n("Export Errors &As..."));
+  quizExportErrors->setWhatsThis(i18n("Exports all errros as a new vocabulary document"));
+  quizExportErrors->setToolTip(quizExportErrors->whatsThis());
+  quizExportErrors->setStatusTip(quizExportErrors->whatsThis());
+  connect(quizExportErrors, SIGNAL(triggered(bool)), this, SLOT(slotCreateErrorListDocument()));
+
   configShowSearchBar = actionCollection()->add<KToggleAction>("config_show_search");
   configShowSearchBar->setText(i18n("Show Se&arch"));
   connect(configShowSearchBar, SIGNAL(triggered(bool)), this, SLOT(slotConfigShowSearch()));
@@ -533,7 +542,7 @@ void KWordQuizApp::openUrl(const KUrl& url)
         {
           w = memberList().at(i);
           KWordQuizApp *a =(KWordQuizApp *) w;
-          if(a->m_doc->url().path() == url.path())
+          if(a->document()->url().path() == url.path())
           {
             if (w->isMinimized())
               w->showNormal();
@@ -669,7 +678,7 @@ bool KWordQuizApp::queryClose()
       case KMessageBox::Yes:
         if (m_doc->url().fileName() == i18n("Untitled"))
         {
-          completed = saveAsFileName();
+          completed = saveDocAsFileName(m_doc);
         }
         else
         {
@@ -766,23 +775,6 @@ void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
   slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotFileSave()
-{
-  slotStatusMsg(i18n("Saving file..."));
-  if (m_doc->url().fileName() == i18n("Untitled") )
-  {
-    slotFileSaveAs();
-  }
-  else
-  {
-    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
-    if (saveStatus != KEduVocDocument::NoError) {
-      slotFileSaveAs();
-    }
-    m_undoStack->setClean();
-  }
-  slotStatusMsg(i18n("Ready"));
-}
 
 void KWordQuizApp::slotFileGHNS()
 {
@@ -803,21 +795,45 @@ void KWordQuizApp::slotFileGHNS()
   qDeleteAll(entries);
 }
 
-void KWordQuizApp::slotFileSaveAs()
+
+void KWordQuizApp::slotFileSave()
 {
-  slotStatusMsg(i18n("Saving file with a new filename..."));
-  saveAsFileName();
+  bool success = false;
+  slotStatusMsg(i18n("Saving file..."));
+  if (m_doc->url().fileName() == i18n("Untitled")) {
+    success = saveDocAsFileName(m_doc);
+  }
+  else {
+    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    if (saveStatus == KEduVocDocument::NoError)
+      success = true;
+    else
+      success = saveDocAsFileName(m_doc);
+  }
+  if (success)
+    m_undoStack->setClean(); //emits cleanChanged()
   slotStatusMsg(i18n("Ready"));
 }
 
-bool KWordQuizApp::saveAsFileName( )
+
+void KWordQuizApp::slotFileSaveAs()
+{
+  slotStatusMsg(i18n("Saving file with a new filename..."));
+  bool success = saveDocAsFileName(m_doc);
+  if (success)
+    m_undoStack->setClean(); //emits cleanChanged()
+  slotStatusMsg(i18n("Ready"));
+}
+
+
+bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
 {
   bool success = false;
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Writing);
   KFileDialog *fd = new KFileDialog(KUrl(), filter, this);
-  fd -> setOperationMode(KFileDialog::Saving);
-  fd -> setCaption(i18n("Save Vocabulary Document As"));
+  fd->setOperationMode(KFileDialog::Saving);
+  fd->setCaption(i18n("Save Vocabulary Document As"));
 
   if (fd->exec() == QDialog::Accepted)
   {
@@ -840,13 +856,12 @@ bool KWordQuizApp::saveAsFileName( )
       }
       else
       {
-        if (m_dirWatch->contains(m_doc->url().path()))
-          m_dirWatch->removeFile(m_doc->url().path());
-        int result = m_doc->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        if (m_dirWatch->contains(document->url().path()))
+          m_dirWatch->removeFile(document->url().path());
+        int result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
         if (result == KEduVocDocument::NoError) {
           m_dirWatch->addFile(url.path());
           fileOpenRecent->addUrl(url);
-          m_undoStack->setClean(); //emits cleanChanged()
           success = true;
         }
         else {
@@ -1347,8 +1362,7 @@ void KWordQuizApp::updateActions()
   fileSave->setEnabled(fEdit);
   fileSaveAs->setEnabled(fEdit);
   filePrint->setEnabled(fEdit);
-  //editFind->setEnabled(fEdit);
-  //editUndo->setEnabled(fEdit);
+
   editCopy->setEnabled(fEdit);
   editCut->setEnabled(fEdit);
   editPaste->setEnabled(fEdit);
@@ -1367,6 +1381,7 @@ void KWordQuizApp::updateActions()
   quizCheck->setEnabled(fQuiz);
   quizRestart->setEnabled(fQuiz);
   quizRepeatErrors->setEnabled(false);
+  quizExportErrors->setEnabled(false);
 
   flashKnow->setEnabled((m_pageWidget->currentPage() == m_flashPage) && fQuiz);
   flashDontKnow->setEnabled((m_pageWidget->currentPage() == m_flashPage) && fQuiz);
@@ -1413,6 +1428,27 @@ void KWordQuizApp::slotRedoTextChanged(const QString &redoText)
 
   QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
   slotModeActionGroupTriggered(a);
+}
+
+void KWordQuizApp::slotCreateErrorListDocument()
+{
+  if (m_quiz) {
+    KEduVocDocument *errorDoc = new KEduVocDocument(this);
+    errorDoc->appendIdentifier();
+    errorDoc->identifier(0).setName(m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+    errorDoc->appendIdentifier();
+    errorDoc->identifier(1).setName(m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+
+    foreach (KWQListItem item, m_quiz->errorList()) {
+      KEduVocExpression *errorExpr = new KEduVocExpression();
+      errorDoc->lesson()->appendEntry(errorExpr);
+      errorExpr->setTranslation(0, m_tableModel->data(m_tableModel->index(item.firstChoice(), 0), Qt::DisplayRole).toString());
+      errorExpr->setTranslation(1, m_tableModel->data(m_tableModel->index(item.firstChoice(), 1), Qt::DisplayRole).toString());
+    }
+    saveDocAsFileName(errorDoc);
+    if (m_dirWatch->contains(errorDoc->url().path()))
+      m_dirWatch->removeFile(errorDoc->url().path());
+  }
 }
 
 #include "kwordquiz.moc"

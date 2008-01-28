@@ -78,6 +78,7 @@ void MultipleView::init()
   KWordQuizApp *win=KWordQuizApp::self();
   win->actionCollection()->action("quiz_check")->setEnabled(true);
   win->actionCollection()->action("quiz_repeat_errors")->setEnabled(false);
+  win->actionCollection()->action("quiz_export_errors")->setEnabled(false);
 
   updateScore();
   showQuestion(0);
@@ -85,7 +86,7 @@ void MultipleView::init()
 
 void MultipleView::slotCheck()
 {
-  KWordQuizApp *win=KWordQuizApp::self();
+  KWordQuizApp *win = KWordQuizApp::self();
   if (win->actionCollection()->action("quiz_check")->isEnabled())
   {
 
@@ -156,6 +157,7 @@ void MultipleView::slotCheck()
       m_quiz->finish();
       win->actionCollection()->action("quiz_check")->setEnabled(false);
       win->actionCollection()->action("quiz_repeat_errors")->setEnabled((m_error > 0));
+      win->actionCollection()->action("quiz_export_errors")->setEnabled((m_error > 0));
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();
