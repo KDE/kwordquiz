@@ -92,7 +92,7 @@ void KWQCommandClear::redo()
 
   }
   view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);
-};
+}
 
 
 KWQCommandCut::KWQCommandCut(KWQTableView * view) : KWQCommandClear(view)
@@ -105,7 +105,7 @@ void KWQCommandCut::redo()
 {
   copyToClipboard(view());
   KWQCommandClear::redo();
-};
+}
 
 
 KWQCommandPaste::KWQCommandPaste(KWQTableView * view) : KWQUndoCommand(view)
