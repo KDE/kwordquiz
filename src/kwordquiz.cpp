@@ -682,7 +682,7 @@ bool KWordQuizApp::queryClose()
         }
         else
         {
-          completed = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+          completed = (m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION)) == KEduVocDocument::NoError);
         }
 
         break;
