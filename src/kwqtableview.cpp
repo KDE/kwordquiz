@@ -534,6 +534,7 @@ void KWQTableView::nextCell()
     }
 
     QModelIndex newIndex = model()->index(newRow, newColumn);
+    selModel->clear();
     selModel->setCurrentIndex(newIndex, QItemSelectionModel::SelectCurrent);
   }
   else if (indexes.count() > 1) //a larger selection, move within it
