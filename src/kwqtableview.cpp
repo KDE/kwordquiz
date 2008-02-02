@@ -625,8 +625,10 @@ void KWQTableView::setModel(KWQSortFilterModel * model)
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
 {
   QTableView::closeEditor(editor, hint);
-  adjustRow(currentIndex().row());
-  nextCell();
+  if (hint == QAbstractItemDelegate::SubmitModelCache) {
+    adjustRow(currentIndex().row());
+    nextCell();
+  }
 }
 
 void KWQTableView::commitData(QWidget * editor)
