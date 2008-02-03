@@ -5,7 +5,7 @@
     <Action append="open_merge" name="file_ghns" />
   </Menu>
   <Menu name="edit" >
-   <Separator/>
+   <!--<Separator/>-->
    <Action name="edit_insert" />
    <Action name="edit_delete" />
    <Separator/>
@@ -23,9 +23,9 @@
    <text>V&amp;ocabulary</text>
    <Action name="vocab_languages" />
    <Action name="vocab_font" />
-   <!--<Action name="vocab_keyboard" />-->
+   <!--<Action name="vocab_keyboard" />
    <Separator/>
-   <Action name="vocab_char" />
+   <Action name="vocab_char" />-->
    <Separator/>
    <Action name="vocab_rc" />
    <Action name="vocab_adjust_rows" />
