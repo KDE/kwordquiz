@@ -15,6 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
+#ifndef KWQCOMMANDS_H
+#define KWQCOMMANDS_H
+
 #include <QHeaderView>
 #include <QUndoCommand>
 
@@ -200,3 +203,5 @@ private:
   QString m_newIdentifierLeft;
   QString m_newIdentifierRight;
 };
+
+#endif // KWQCOMMANDS_H

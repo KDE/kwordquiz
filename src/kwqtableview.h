@@ -39,7 +39,7 @@ class KWQTableView : public QTableView
 Q_OBJECT
 public:
   /** Constructor for the main view */
-  KWQTableView(KUndoStack *undoStack, QWidget *parent = 0);
+  explicit KWQTableView(KUndoStack *undoStack, QWidget *parent = 0);
 
   void setModel(KWQSortFilterModel * model);
   KWQSortFilterModel * model() {return m_model;};

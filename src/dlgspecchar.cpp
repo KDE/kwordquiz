@@ -33,7 +33,7 @@ DlgSpecChar::DlgSpecChar( QWidget *parent, const char *name, const QString &_fon
 
   initDialog(_chr,_font,true);
 
-  setButtonText( User1, i18n("&Select") );
+  setButtonText( User1, i18nc("@action:button select", "&Select") );
   setButtonToolTip( User1, i18n("Select this character") );
   connect(this,SIGNAL(user1Clicked()),this,SLOT(slotUser1()));
 

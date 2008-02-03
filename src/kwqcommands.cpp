@@ -78,7 +78,7 @@ void KWQUndoCommand::undo()
 
 KWQCommandClear::KWQCommandClear(KWQTableView * view) : KWQUndoCommand(view)
 {
-  setText(i18n("Clear"));
+  setText(i18nc("@item:inmenu undo clear", "Clear"));
 }
 
 
@@ -97,7 +97,7 @@ void KWQCommandClear::redo()
 
 KWQCommandCut::KWQCommandCut(KWQTableView * view) : KWQCommandClear(view)
 {
-  setText(i18n("Cut"));
+  setText(i18nc("@item:inmenu undo cut", "Cut"));
 }
 
 
@@ -110,7 +110,7 @@ void KWQCommandCut::redo()
 
 KWQCommandPaste::KWQCommandPaste(KWQTableView * view) : KWQUndoCommand(view)
 {
-  setText(i18n("Paste"));
+  setText(i18nc("@item:inmenu undo paste", "Paste"));
   m_rowCount = view->model()->rowCount();
 }
 
@@ -203,7 +203,7 @@ KWQCommandSort::KWQCommandSort(QTableView * view, int column)
 {
   m_view = view;
   m_column = column;
-  setText(i18n("Sort"));
+  setText(i18nc("@item:inmenu undo sort", "Sort"));
 }
 
 
@@ -230,7 +230,7 @@ void KWQCommandSort::redo()
 KWQCommandShuffle::KWQCommandShuffle(QTableView * view, int column) : KWQCommandSort(view, column)
 {
   m_view = view;
-  setText(i18n("Shuffle"));
+  setText(i18nc("@item:inmenu undo shuffle", "Shuffle"));
 }
 
 void KWQCommandShuffle::undo()
@@ -250,7 +250,7 @@ void KWQCommandShuffle::redo()
 
 KWQCommandInsert::KWQCommandInsert(KWQTableView * view) : KWQUndoCommand(view)
 {
-  setText(i18n("Insert"));
+  setText(i18nc("@item:inmenu undo insert", "Insert"));
 }
 
 void KWQCommandInsert::undo()
@@ -282,7 +282,7 @@ void KWQCommandInsert::redo()
 
 KWQCommandDelete::KWQCommandDelete(KWQTableView * view) : KWQUndoCommand(view)
 {
-  setText(i18n("Delete"));
+  setText(i18nc("@item:inmenu undo delete", "Delete"));
 }
 
 
@@ -331,7 +331,7 @@ void KWQCommandDelete::redo()
 
 KWQCommandUnmarkBlank::KWQCommandUnmarkBlank(KWQTableView * view) : KWQUndoCommand(view)
 {
-  setText(i18n("Unmark Blank"));
+  setText(i18nc("@item:inmenu undo unmark blank", "Unmark Blank"));
 }
 
 
@@ -353,7 +353,7 @@ void KWQCommandUnmarkBlank::redo()
 
 KWQCommandFormat::KWQCommandFormat(KWQTableView * view, int newRowCount, int newRowHeight, int newColumnWidth) : KWQUndoCommand(view)
 {
-  setText(i18n("Formatting"));
+  setText(i18nc("@item:inmenu undo formatting", "Formatting"));
   m_newRowCount = newRowCount;
   m_newRowHeight = newRowHeight;
   m_newColumnWidth = newColumnWidth;
@@ -442,7 +442,7 @@ void KWQCommandFormat::redo()
 
 KWQCommandIdentifiers::KWQCommandIdentifiers(KWQTableView * view, const QString & newIdentifierLeft, const QString & newIdentifierRight) : KWQUndoCommand(view)
 {
-  setText(i18n("Column Titles"));
+  setText(i18nc("@item:inmenu undo column titles", "Column Titles"));
   m_oldIdentifierLeft = view->model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
   m_oldIdentifierRight = view->model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
   m_newIdentifierLeft = newIdentifierLeft;
