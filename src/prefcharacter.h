@@ -19,7 +19,7 @@
 #ifndef PREFCHARACTER_H
 #define PREFCHARACTER_H
 
-#include <kactioncollection.h>
+#include <KActionCollection>
 
 #include "ui_prefcharacterbase.h"
 
@@ -32,7 +32,6 @@ class PrefCharacter :  public QWidget, public Ui::PrefCharacterBase
 {
 Q_OBJECT
 public:
-
   PrefCharacter(QWidget *parent, KActionCollection * ac);
   void updateWidgets();
   bool hasChanged();

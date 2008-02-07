@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlgspecchar.cpp  -  description
                              -------------------
-   copyright       : (C) 2003-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2003-2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -18,48 +18,39 @@
 
 #include <QGridLayout>
 
-#include <klocale.h>
-#include <kcharselect.h>
-#include <kdebug.h>
+#include <KLocale>
+#include <KCharSelect>
 
-DlgSpecChar::DlgSpecChar( QWidget *parent, const char *name, const QString &_font, const QChar &_chr, bool _modal )
-    : KDialog( parent )
+DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) : KDialog(parent)
 {
-  setCaption( i18n("Select Character") );
-  setButtons( User1 | Cancel );
-  setDefaultButton( User1 );
-  setModal( _modal );
-  setObjectName( QLatin1String(name) );
+  setCaption( i18nc("@title:window select character dialog", "Select Character") );
+  setButtons(User1 | Cancel);
+  setDefaultButton(User1);
+  setModal(true);
 
-  initDialog(_chr,_font,true);
+  initDialog(font, chr);
 
   setButtonText( User1, i18nc("@action:button select", "&Select") );
-  setButtonToolTip( User1, i18n("Select this character") );
+  setButtonToolTip( User1, i18nc("@info:tooltip select this character", "Select this character") );
   connect(this,SIGNAL(user1Clicked()),this,SLOT(slotUser1()));
-
 }
 
-void DlgSpecChar::initDialog(const QChar &_chr, const QString &_font, bool /*_enableFont*/)
+void DlgSpecChar::initDialog(const QFont &font, const QChar &chr)
 {
-  QWidget *page = new QWidget( this );
-  setMainWidget( page );
+  QWidget *page = new QWidget(this);
+  setMainWidget(page);
 
-  grid = new QGridLayout( page );
-  grid->setMargin( KDialog::marginHint() );
-  grid->setSpacing( KDialog::spacingHint() );
+  m_layout = new QGridLayout(page);
+  m_layout->setMargin(KDialog::marginHint());
+  m_layout->setSpacing(KDialog::spacingHint());
 
-  charSelect = new KCharSelect( page );
-  charSelect->setCurrentChar( _chr );
-  charSelect->setCurrentFont( _font );
-  connect(charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
-  charSelect->resize( charSelect->sizeHint() );
-//   charSelect->enableFontCombo( false );
-  grid->addWidget( charSelect, 0, 0 );
-
-//   grid->addItem( new QSpacerItem( charSelect->width(), 0 ), 0, 0 );
-//   grid->addItem( new QSpacerItem( 0, charSelect->height() ), 0, 0 );
-//   grid->setRowStretch( 0, 0 );
-  charSelect->setFocus();
+  m_charSelect = new KCharSelect(page);
+  m_charSelect->setCurrentChar(chr);
+  m_charSelect->setCurrentFont(font);
+  connect(m_charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
+  m_charSelect->resize(m_charSelect->sizeHint());
+  m_layout->addWidget(m_charSelect, 0, 0);
+  m_charSelect->setFocus();
 }
 
 void DlgSpecChar::closeDialog()
@@ -69,7 +60,7 @@ void DlgSpecChar::closeDialog()
 
 QChar DlgSpecChar::chr()
 {
-  return charSelect->currentChar();
+  return m_charSelect->currentChar();
 }
 
 void DlgSpecChar::slotDoubleClicked()

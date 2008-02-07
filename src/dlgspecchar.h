@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlgspecchar.h  -  description
                              -------------------
-   copyright       : (C) 2003-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2003-2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -17,13 +17,11 @@
 #ifndef DLGSPECCHAR_H
 #define DLGSPECCHAR_H
 
-#include <kdialog.h>
+#include <KDialog>
 
 class QWidget;
 class QGridLayout;
-class QPushButton;
 class KCharSelect;
-class KButtonBox;
 
 /**
 @author Peter Hedlund
@@ -32,31 +30,22 @@ class DlgSpecChar : public KDialog
 {
 Q_OBJECT
 public:
-    //constructor when you want to insert multi char
-    DlgSpecChar( QWidget *parent, const char *name, const QString &_font,
-                     const QChar &_chr, bool _modal=true );
+  DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr);
+  void closeDialog();
 
-    // internal
-    QChar chr();
-
-    void closeDialog();
-
-private:
-    void initDialog(const QChar &_chr, const QString &_font, bool _enableFont);
+signals:
+  void insertChar(QChar);
 
 private slots:
-    void slotUser1();
-    void slotDoubleClicked();
+  void slotUser1();
+  void slotDoubleClicked();
 
-protected:
-    // dialog objects
-    QGridLayout *grid;
-    KButtonBox  *bbox;
-    QPushButton *bOk, *bCancel;
-    KCharSelect *charSelect;
+private:
+  void initDialog(const QFont &font, const QChar &chr);
+  QChar chr();
 
- signals:
-    void insertChar(QChar);
+  QGridLayout *m_layout;
+  KCharSelect *m_charSelect;
 };
 
 #endif

@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2004, 2007 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2004, 2007, 2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -18,8 +18,8 @@
 
 #include "prefcharacter.h"
 
-#include <kaction.h>
-#include <klocale.h>
+#include <KAction>
+#include <KLocale>
 
 #include "prefs.h"
 #include "dlgspecchar.h"
@@ -35,7 +35,7 @@ PrefCharacter::PrefCharacter(QWidget *parent, KActionCollection * ac) : QWidget(
   fillWidgets();
   updateWidgets();
 
-  m_dlgSpecChar = 0L;
+  m_dlgSpecChar = 0;
 }
 
 void PrefCharacter::fillWidgets()
@@ -111,19 +111,18 @@ void PrefCharacter::slotDlgSpecCharClosed()
     disconnect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
     disconnect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
     m_dlgSpecChar->deleteLater();
-    m_dlgSpecChar = 0L;
+    m_dlgSpecChar = 0;
   }
 }
 
 void PrefCharacter::slotSelectSpecChar()
 {
-  QString f = Prefs::editorFont().family();
   QString s = CharacterTree->currentItem()->text(2);
   QChar c = s[0];
 
   if (m_dlgSpecChar == 0)
   {
-    m_dlgSpecChar = new DlgSpecChar( this, "insert special char", f, c, true );
+    m_dlgSpecChar = new DlgSpecChar(this, Prefs::editorFont(), c);
     connect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
     connect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
   }
@@ -136,7 +135,5 @@ void PrefCharacter::slotSpecChar(QChar c)
   lblPreview->setText(CharacterTree->currentItem()->text(2));
   emit widgetModified();
 }
-
-
 
 #include "prefcharacter.moc"

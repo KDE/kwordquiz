@@ -915,7 +915,7 @@ void KWordQuizApp::slotFilePrint()
 
 void KWordQuizApp::slotFileQuit()
 {
-  slotStatusMsg(i18n("Exiting..."));
+  slotStatusMsg(i18nc("@info:status quitting", "Quitting..."));
   saveOptions();
   // close the first window, the list makes the next one the first again.
   // This ensures that queryClose() is called on each window to ask for closing
