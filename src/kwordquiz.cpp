@@ -462,7 +462,7 @@ void KWordQuizApp::initView()
   setCentralWidget(m_pageWidget);
   connect(m_pageWidget, SIGNAL(currentPageChanged(KPageWidgetItem *, KPageWidgetItem *)), this, SLOT(slotCurrentPageChanged(KPageWidgetItem *, KPageWidgetItem *)));
 
-  QVBoxLayout *editorLayout = new QVBoxLayout(this);
+  QVBoxLayout *editorLayout = new QVBoxLayout();
   editorLayout->setMargin(0);
   editorLayout->setSpacing(KDialog::spacingHint());
 
@@ -668,7 +668,7 @@ bool KWordQuizApp::queryClose()
   bool completed=true;
   if(m_doc->isModified())
   {
-    int want_save = KMessageBox::warningYesNoCancel(this, i18n("The current document has been modified.\nDo you want to save it?"));
+    int want_save = KMessageBox::warningYesNoCancel(this, i18n("The current document has been modified.\nDo you want to save it?"), QString(), KStandardGuiItem::save(), KStandardGuiItem::discard());
     switch(want_save)
     {
       case KMessageBox::Cancel:
