@@ -8,24 +8,24 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdeedu/keduvocdocument )
 
 ########### next target ###############
 
-set(kwordquiz_SRCS 
-   kwordquizprefs.cpp 
-   kwordquiz.cpp 
-   main.cpp 
-   qaview.cpp 
-   flashview.cpp 
-   multipleview.cpp 
-   kwqquiz.cpp 
-   wqscore.cpp 
+set(kwordquiz_SRCS
+   kwordquizprefs.cpp
+   kwordquiz.cpp
+   main.cpp
+   qaview.cpp
+   flashview.cpp
+   multipleview.cpp
+   kwqquiz.cpp
+   wqscore.cpp
    prefgeneral.cpp
-   prefeditor.cpp 
+   prefeditor.cpp
    prefquiz.cpp
-   dlgrc.cpp 
-   dlgspecchar.cpp 
-   dlglanguage.cpp 
-   wqprintdialogpage.cpp 
-   prefcharacter.cpp 
-   prefcardappearance.cpp 
+   dlgrc.cpp
+   dlgspecchar.cpp
+   dlglanguage.cpp
+   wqprintdialogpage.cpp
+   prefcharacter.cpp
+   prefcardappearance.cpp
    kwqtablemodel.cpp
    kwqtableview.cpp
    kwqtabledelegate.cpp

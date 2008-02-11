@@ -119,7 +119,7 @@ void MultipleView::slotCheck()
     if (fIsCorrect)
     {
 
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("check", KIconLoader::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
@@ -134,7 +134,7 @@ void MultipleView::slotCheck()
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
 
       lblCorrect->setText(m_quiz->answer(m_question));
-      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("check", KIconLoader::Panel));
+      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
       updateScore();
@@ -231,7 +231,7 @@ void MultipleView::updateScore()
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KIconLoader::global()->loadIcon("check", KIconLoader::Panel));
+    picCorrect->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);

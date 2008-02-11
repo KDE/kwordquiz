@@ -140,7 +140,7 @@ void QAView::slotCheck()
     if (fIsCorrect)
     {
 
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("check", KIconLoader::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblYourAnswer->setText(m_quiz->yourAnswer(txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
@@ -156,7 +156,7 @@ void QAView::slotCheck()
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
       lblYourAnswer->setText(highlightError(m_quiz->answer(m_question), m_quiz->yourAnswer(txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer(m_question));
-      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("check", KIconLoader::Panel));
+      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       m_score->countIncrement(WQScore::cdError);
       updateScore();
@@ -249,7 +249,7 @@ void QAView::updateScore()
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KIconLoader::global()->loadIcon("check", KIconLoader::Panel));
+    picCorrect->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);

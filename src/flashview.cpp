@@ -214,7 +214,7 @@ void FlashView::updateScore()
   s = m_score->correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KIconLoader::global()->loadIcon("check", KIconLoader::Panel));
+    picCorrect->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
 
   s = m_score->errorText();
   lblScoreError->setText(s);

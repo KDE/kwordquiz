@@ -323,7 +323,7 @@ void KWordQuizApp::initActions()
   connect(quizQA, SIGNAL(triggered(bool)), this, SLOT(slotQuizQA()));
 
   quizCheck = actionCollection()->addAction("quiz_check");
-  quizCheck->setIcon(KIcon("check"));
+  quizCheck->setIcon(KIcon("answer-correct"));
   quizCheck->setText(i18n("&Check"));
   quizCheck->setShortcut(QKeySequence(Qt::Key_Return));
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
@@ -355,7 +355,7 @@ void KWordQuizApp::initActions()
   qaHint->setStatusTip(qaHint->whatsThis());
 
   quizRestart = actionCollection()->addAction("quiz_restart");
-  quizRestart->setIcon(KIcon("restart"));
+  quizRestart->setIcon(KIcon("start-over"));
   quizRestart->setText(i18n("&Restart"));
   quizRestart->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
