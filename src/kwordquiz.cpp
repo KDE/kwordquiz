@@ -373,7 +373,7 @@ void KWordQuizApp::initActions()
   quizExportErrors = actionCollection()->addAction("quiz_export_errors");
   quizExportErrors->setIcon(KStandardGuiItem::saveAs().icon());
   quizExportErrors->setText(i18n("Export Errors &As..."));
-  quizExportErrors->setWhatsThis(i18n("Exports all errros as a new vocabulary document"));
+  quizExportErrors->setWhatsThis(i18n("Exports all errors as a new vocabulary document"));
   quizExportErrors->setToolTip(quizExportErrors->whatsThis());
   quizExportErrors->setStatusTip(quizExportErrors->whatsThis());
   connect(quizExportErrors, SIGNAL(triggered(bool)), this, SLOT(slotCreateErrorListDocument()));
