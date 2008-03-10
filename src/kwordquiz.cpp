@@ -49,6 +49,7 @@
 #include <KPageWidget>
 #include <kdeprintdialog.h>
 #include <KProcess>
+#include <kwindowsystem.h>
 
 #include "keduvocdocument.h"
 #include "kwqtablemodel.h"
@@ -540,7 +541,7 @@ void KWordQuizApp::openUrl(const KUrl& url)
           if(a->m_doc->url().path() == url.path())
           {
             if (w->isMinimized())
-              w->showNormal();
+              KWindowSystem::unminimizeWindow(w->winId());
             w->activateWindow();
             w->raise();
             break;
