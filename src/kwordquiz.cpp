@@ -50,6 +50,7 @@
 #include <kdeprintdialog.h>
 #include <KProcess>
 #include <KTemporaryFile>
+#include <kwindowsystem.h>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
@@ -545,7 +546,7 @@ void KWordQuizApp::openUrl(const KUrl& url)
           if(a->document()->url().path() == url.path())
           {
             if (w->isMinimized())
-              w->showNormal();
+              KWindowSystem::unminimizeWindow(w->winId());
             w->activateWindow();
             w->raise();
             break;
