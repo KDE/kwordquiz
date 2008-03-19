@@ -73,7 +73,7 @@
          <string>Open vocabulary documents in a multiple choice quiz</string>
         </property>
         <property name="whatsThis" >
-         <string>Select if the vocabulary documents should be opened in the editorSelect if the vocabulary documents should be opened in a multiple choice quiz</string>
+         <string>Select if the vocabulary documents should be opened in a multiple choice quiz</string>
         </property>
         <property name="text" >
          <string>&amp;Multiple Choice Quiz</string>
