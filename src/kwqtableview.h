@@ -45,7 +45,7 @@ public:
   KWQSortFilterModel * model() {return m_model;};
 
   /** contains the implementation for printing functionality */
-  void print(QPrinter *pPrinter, WQPrintDialogPage::PrintStyle type);
+  void print();
 
   void doEditCut();
   void doEditCopy();
@@ -84,9 +84,6 @@ private:
   KWQTableDelegate * m_delegate;
   KWQSortFilterModel *m_model;
   KUndoStack *m_undoStack;
-
-  void doNewPage(QPainter & painter, int res, WQPrintDialogPage::PrintStyle type);
-  void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, WQPrintDialogPage::PrintStyle type);
 };
 
 #endif // KWORDQUIZVIEW_H

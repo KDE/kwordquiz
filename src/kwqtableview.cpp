@@ -24,12 +24,19 @@
 #include <QList>
 #include <QApplication>
 #include <QtGui/QPrinter>
+#include <QtGui/QPrintDialog>
+#include <QtGui/QTextDocument>
+#include <QtGui/QTextCursor>
+#include <QtGui/QTextTable>
+#include <QtGui/QTextLayout>
+#include <QtGui/QAbstractTextDocumentLayout>
 #include <QHeaderView>
 
 #include <KLocale>
 #include <KGlobalSettings>
 #include <KNotification>
 #include <KDebug>
+#include <kdeprintdialog.h>
 
 #include "kwqtablemodel.h"
 #include "keduvocdocument.h"
@@ -37,6 +44,7 @@
 #include "prefs.h"
 #include "dlgrc.h"
 #include "kwqcommands.h"
+
 
 KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(parent), m_undoStack(undoStack)
 {
@@ -57,200 +65,150 @@ KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(
 
 }
 
-void KWQTableView::print(QPrinter *pPrinter, WQPrintDialogPage::PrintStyle type)
+void KWQTableView::print()
 {
-  QPainter painter;
+  WQPrintDialogPage * p = new WQPrintDialogPage(this);
+  p->setPrintStyle(WQPrintDialogPage::List);
+  QPrinter printer;
+  QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
+  printer.setFullPage(true);
+  if (printDialog->exec() != QDialog::Accepted)
+    return;
 
-  //type 0 Vocabulary list
-  //type 1 Vocabulary exam
-  //type 2 Flashcards
+  WQPrintDialogPage::PrintStyle type = p->printStyle();
 
-  //I think working with screen resolution is enough for our purposes
-  int res = pPrinter->resolution();
-  int pad = 2;
-  int marg = res;
-  int card_marg = res / 2;
-  int card_width = 5 * res;
-  int card_height = 3 * res;
-  int card_text_marg = res /5;
-  int card_line_top = 30;
+  QTextDocument td;
 
-  if (type == WQPrintDialogPage::Flashcard)
-    pPrinter->setOrientation(QPrinter::Landscape);
+  if (type == WQPrintDialogPage::Flashcard) {
+    printer.setOrientation(QPrinter::Landscape);
 
-  painter.begin(pPrinter);
+    int cardWidth = qRound(5 * logicalDpiY());
+    int cardHeight = qRound(3 * logicalDpiY());
 
-  int pageNum = 1;
+    QTextTable *table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount(), 2);
 
-  int cw0 = verticalHeader()->width();
-  //int cw0 = 50;
-  int cw1 = columnWidth(0);
-  int cw2 = columnWidth(1);
-  int cw3 = 0;
+    QTextTableFormat tableFormat = table->format();
+    tableFormat.setHeaderRowCount(0);
+    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+    tableFormat.setCellSpacing(0);
+    tableFormat.setCellPadding(0);
 
+    QVector<QTextLength> constraints;
+    constraints.append(QTextLength(QTextLength::FixedLength, cardWidth));
+    constraints.append(QTextLength(QTextLength::FixedLength, cardWidth));
 
+    tableFormat.setColumnWidthConstraints(constraints);
+    table->setFormat(tableFormat);
 
-  if (type == WQPrintDialogPage::Exam)
-    cw3 = 50;
+    QTextBlockFormat headerFormat;
+    headerFormat.setAlignment(Qt::AlignLeft);
 
-  int gridWidth = cw0 + cw1 + cw2 + cw3;
-  int lPos = marg;
-  int tPos = marg + horizontalHeader()->height();
-  //int tPos = marg + 20;
+    QTextCharFormat headerCharFormat;
+    headerCharFormat.setFont(KGlobalSettings::generalFont());
 
-  QRect w = painter.window();
+    QTextBlockFormat cellFormat;
+    cellFormat.setAlignment(Qt::AlignCenter);
 
-  doNewPage(painter, res, type);
+    QTextCharFormat cellCharFormat;
+    cellCharFormat.setFont(Prefs::editorFont());
 
-  if (type == WQPrintDialogPage::Flashcard)
-  {
-    tPos = card_marg;
-    for (int rc = 0; rc < model()->rowCount(); ++rc)
-    {
+    QTextFrameFormat cardFormat;
+    cardFormat.setBorder(0.5);
+    cardFormat.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
+    cardFormat.setBorderBrush(QBrush(Qt::black));
+    cardFormat.setWidth(QTextLength(QTextLength::FixedLength, cardWidth));
+    cardFormat.setHeight(QTextLength(QTextLength::FixedLength, cardHeight));
+    cardFormat.setPadding(qRound(0.25 * logicalDpiY()));
 
-      //draw rectangle 2 cards wide
-      painter.drawRect(card_marg, tPos, 2 * card_width, card_height);
-      //divide into 2 cards with line
-      painter.drawLine(card_marg + card_width, tPos, card_marg + card_width, tPos + card_height);
-      //draw line inside card
-      painter.drawLine(card_marg + card_text_marg, tPos + card_line_top,
-        card_marg + card_width - card_text_marg, tPos + card_line_top);
-      painter.drawLine(card_marg + card_width + card_text_marg, tPos + card_line_top,
-        card_marg + card_width + card_width - card_text_marg, tPos + card_line_top);
-      //draw headers
-      painter.setFont(KGlobalSettings::generalFont());
-      painter.drawText(card_marg + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter,
-          model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
-      painter.drawText(card_marg + card_width + card_text_marg, tPos, card_width, card_line_top, Qt::AlignLeft | Qt::AlignVCenter,
-          model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
-      //draw text
-      painter.setFont(font());
-      painter.drawText(card_marg + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
-          card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, model()->data(model()->index(rc, 0)).toString());
+    QTextFrameFormat lineFormat;
+    lineFormat.setBorder(0.5);
+    lineFormat.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
+    lineFormat.setBorderBrush(QBrush(Qt::black));
+    lineFormat.setWidth(QTextLength(QTextLength::FixedLength, qRound(4.5 * logicalDpiY())));
+    lineFormat.setHeight(0.5);
+    lineFormat.setPadding(0);
 
-      painter.drawText(card_marg + card_width + card_text_marg, tPos + card_line_top, card_width - (2 * card_text_marg),
-          card_height - card_line_top, Qt::AlignHCenter | Qt::AlignVCenter, model()->data(model()->index(rc, 1)).toString());
-
-      tPos = tPos + card_height + card_line_top;
-
-      if (tPos + card_height + card_line_top > w.height() - card_marg)
-      {
-        doEndOfPage(painter, tPos, pageNum++, res, type);
-        tPos = card_marg;
-        pPrinter->newPage();
-        doNewPage(painter, res, type);
+    QTextFrame *card;
+    for (int i = 0; i < model()->rowCount(); i++) {
+      for (int j = 0; j < model()->columnCount(); j++) {
+        cardFormat.setPosition(QTextFrameFormat::FloatLeft);
+        card = table->cellAt(i, j).firstCursorPosition().insertFrame(cardFormat);
+        card->lastCursorPosition().insertText(model()->headerData(j, Qt::Horizontal, Qt::DisplayRole).toString(), headerCharFormat);
+        card->lastCursorPosition().insertFrame(lineFormat);
+        card->lastCursorPosition().insertBlock();
+        card->lastCursorPosition().insertBlock();
+        card->lastCursorPosition().insertBlock(cellFormat, cellCharFormat);
+        card->lastCursorPosition().insertText(model()->data(model()->index(i, j)).toString(), cellCharFormat);
       }
     }
-
   }
   else
   {
+    td.rootFrame()->lastCursorPosition().insertText(KGlobal::caption());
 
-    for (int rc = 0; rc < model()->rowCount(); ++rc)
-    {
-      painter.drawLine(lPos, tPos, lPos + gridWidth, tPos);
-      painter.setFont(KGlobalSettings::generalFont());
+    if (type == WQPrintDialogPage::Exam)
+      td.rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
 
-      painter.drawText(lPos, tPos, cw0 - pad, rowHeight(rc), Qt::AlignRight | Qt::AlignVCenter, QString::number(rc + 1));
+    QTextTable* table;
+    if (type == WQPrintDialogPage::Exam)
+      table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 2);
+    else
+      table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 1);
 
-      painter.setFont(font());
-      painter.drawText(lPos + cw0 + pad, tPos, cw1, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter, model()->data(model()->index(rc, 0)).toString());
+    QTextTableFormat tableFormat = table->format();
+    tableFormat.setHeaderRowCount(1);
+    tableFormat.setBorder(0.5);
+    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
+    tableFormat.setCellSpacing(0);
+    tableFormat.setBorderBrush(QBrush(Qt::black));
+    tableFormat.setCellPadding(2);
 
+    QVector<QTextLength> constraints;
+    constraints.append(QTextLength(QTextLength::FixedLength, verticalHeader()->width()));
+    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(0)));
+    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(1)));
+    constraints.append(QTextLength(QTextLength::FixedLength, 50));
+    tableFormat.setColumnWidthConstraints(constraints);
+
+    table->setFormat(tableFormat);
+
+    QTextBlockFormat headerFormat;
+    headerFormat.setAlignment(Qt::AlignHCenter);
+
+    QTextCharFormat headerCharFormat;
+    headerCharFormat.setFont(KGlobalSettings::generalFont());
+
+    QTextCursor cellCursor;
+    cellCursor = table->cellAt(0, 1).firstCursorPosition();
+    cellCursor.mergeBlockFormat(headerFormat);
+    cellCursor.mergeCharFormat(headerCharFormat);
+    cellCursor.insertText(model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+
+    cellCursor = table->cellAt(0, 2).firstCursorPosition();
+    cellCursor.mergeBlockFormat(headerFormat);
+    cellCursor.mergeCharFormat(headerCharFormat);
+    cellCursor.insertText(model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
+
+    if (type == WQPrintDialogPage::Exam) {
+      cellCursor = table->cellAt(0, 3).firstCursorPosition();
+      cellCursor.mergeBlockFormat(headerFormat);
+      cellCursor.mergeCharFormat(headerCharFormat);
+      cellCursor.insertText(i18n("Score"));
+    }
+
+    headerCharFormat = cellCursor.charFormat();
+    QTextCharFormat cellCharFormat = cellCursor.charFormat();
+    cellCharFormat.setFont(Prefs::editorFont());
+
+    for (int i = 0; i < model()->rowCount(); i++) {
+      table->cellAt(i + 1, 0).firstCursorPosition().insertText(model()->headerData(i, Qt::Vertical, Qt::DisplayRole).toString(), headerCharFormat);
+      table->cellAt(i + 1, 1).firstCursorPosition().insertText(model()->data(model()->index(i, 0)).toString(), cellCharFormat);
       if (type == WQPrintDialogPage::List)
-        painter.drawText(lPos + cw0 + cw1 + pad, tPos, cw2, rowHeight(rc), Qt::AlignLeft | Qt::AlignVCenter,
-          model()->data(model()->index(rc, 1)).toString());
-
-      tPos = tPos + rowHeight(rc);
-
-      if (tPos + rowHeight(rc + 1) > w.height() - marg)
-      {
-        doEndOfPage(painter, tPos, pageNum++, res, type);
-        tPos = marg + horizontalHeader()->height();
-        pPrinter->newPage();
-        doNewPage(painter, res, type);
-      }
+        table->cellAt(i + 1, 2).firstCursorPosition().insertText(model()->data(model()->index(i, 1)).toString(), cellCharFormat);
     }
   }
-  doEndOfPage(painter, tPos, pageNum++,  res, type);
-  painter.end();
+  td.print(&printer);
 }
-
-void KWQTableView::doNewPage(QPainter & painter, int res, WQPrintDialogPage::PrintStyle type)
-{
-    int cw0 = verticalHeader()->width();
-    int cw1 = columnWidth(0);
-    int cw2 = columnWidth(1);
-    int cw3 = 0;
-    int marg = res;
-    int card_marg = res / 2;
-    int pad = 2;
-
-    if (type == WQPrintDialogPage::Exam)
-      cw3 = 50;
-
-    QRect w = painter.window();
-
-    painter.setFont(KGlobalSettings::generalFont());
-
-    if (type == WQPrintDialogPage::Flashcard)
-    {
-      /// @todo find a more elegant way to retrieve the caption
-      painter.drawText(card_marg, card_marg - 20, KGlobal::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
-      return;
-    }
-    painter.drawLine(marg, marg, marg + cw0 + cw1 + cw2 + cw3, marg);
-
-    painter.drawText(marg, marg - 20, KGlobal::caption() /*i18n("KWordQuiz - %1").arg(getDocument()->URL().fileName())*/);
-
-    if (type == WQPrintDialogPage::Exam)
-    {
-      QString score = i18n("Name:_____________________________ Date:__________");
-      QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignLeft, score);
-      painter.drawText(w.width() - r.width() - marg, marg - 20, score);
-    }
-
-    painter.drawText(marg, marg, cw0, horizontalHeader()->height(), Qt::AlignRight | Qt::AlignVCenter, "");
-
-    painter.drawText(marg + cw0 + pad, marg, cw1, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
-    painter.drawText(marg + cw0 + cw1 + pad, marg, cw2, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
-
-    if (type == WQPrintDialogPage::Exam)
-      painter.drawText(marg + cw0 + cw1 + cw2 + pad, marg, cw3, horizontalHeader()->height(), Qt::AlignLeft | Qt::AlignVCenter, i18n("Score"));
-
-}
-
-void KWQTableView::doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, WQPrintDialogPage::PrintStyle type)
-{
-    int marg = res;
-    painter.setFont(KGlobalSettings::generalFont());
-    QRect w = painter.window();
-    QRect r = painter.boundingRect(0, 0, 0, 0, Qt::AlignLeft, QString::number(pageNum));
-    painter.drawText((w.width()/2) - (r.width()/2), w.height() - marg + 20, QString::number(pageNum));
-
-    if (type == WQPrintDialogPage::Flashcard)
-      return;
-
-    int cw0 = verticalHeader()->width();
-    int cw1 = columnWidth(0);
-    int cw2 = columnWidth(1);
-    int cw3 = 0;
-
-    if (type == WQPrintDialogPage::Exam)
-      cw3 = 50;
-
-    //Last horizontal line
-    painter.drawLine(marg, vPos, marg + cw0 + cw1 + cw2 + cw3, vPos);
-   //Four vertical lines
-    painter.drawLine(marg, marg, marg, vPos);
-    painter.drawLine(marg + cw0, marg, marg + cw0, vPos);
-    painter.drawLine(marg + cw0 + cw1, marg, marg + cw0 + cw1, vPos);
-    painter.drawLine(marg + cw0 + cw1 + cw2, marg, marg + cw0 + cw1 + cw2, vPos);
-
-    if (type == WQPrintDialogPage::Exam)
-      painter.drawLine(marg + cw0 + cw1 + cw2 + cw3, marg, marg + cw0 + cw1 + cw2 + cw3, vPos);
-
-}
-
 
 void KWQTableView::doEditCut()
 {
