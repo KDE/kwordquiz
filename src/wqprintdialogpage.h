@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2004-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2004-2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -20,7 +20,9 @@
 #define WQPRINTDIALOGPAGE_H
 
 #include <QtGui/QGroupBox>
-#include <QtGui/QRadioButton>
+#include <QtGui/QButtonGroup>
+
+#include "prefs.h"
 
 /**
 Print dialog page to provide specific print options for KWordQuiz
@@ -33,21 +35,12 @@ Q_OBJECT
 public:
   WQPrintDialogPage(QWidget *parent = 0);
 
-  enum PrintStyle
-  {
-    List,
-    Exam,
-    Flashcard
-  };
-
-  WQPrintDialogPage::PrintStyle printStyle();
-  void setPrintStyle(WQPrintDialogPage::PrintStyle style);
+  int printStyle();
+  void setPrintStyle(int style);
 
 private:
-  QGroupBox * g;
-  QRadioButton * rb0;
-  QRadioButton * rb1;
-  QRadioButton * rb2;
+  QGroupBox *g;
+  QButtonGroup *bg;
 };
 
 #endif

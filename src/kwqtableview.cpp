@@ -68,18 +68,18 @@ KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(
 void KWQTableView::print()
 {
   WQPrintDialogPage * p = new WQPrintDialogPage(this);
-  p->setPrintStyle(WQPrintDialogPage::List);
+  p->setPrintStyle(Prefs::printStyle());
   QPrinter printer;
   QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
   printer.setFullPage(true);
   if (printDialog->exec() != QDialog::Accepted)
     return;
 
-  WQPrintDialogPage::PrintStyle type = p->printStyle();
+  Prefs::setPrintStyle(p->printStyle());
 
   QTextDocument td;
 
-  if (type == WQPrintDialogPage::Flashcard) {
+  if (Prefs::printStyle() == Prefs::EnumPrintStyle::Flashcard) {
     printer.setOrientation(QPrinter::Landscape);
 
     int cardWidth = qRound(5 * logicalDpiY());
@@ -146,11 +146,11 @@ void KWQTableView::print()
   {
     td.rootFrame()->lastCursorPosition().insertText(KGlobal::caption());
 
-    if (type == WQPrintDialogPage::Exam)
+    if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
       td.rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
 
     QTextTable* table;
-    if (type == WQPrintDialogPage::Exam)
+    if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
       table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 2);
     else
       table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 1);
@@ -189,7 +189,7 @@ void KWQTableView::print()
     cellCursor.mergeCharFormat(headerCharFormat);
     cellCursor.insertText(model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
-    if (type == WQPrintDialogPage::Exam) {
+    if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam) {
       cellCursor = table->cellAt(0, 3).firstCursorPosition();
       cellCursor.mergeBlockFormat(headerFormat);
       cellCursor.mergeCharFormat(headerCharFormat);
@@ -203,7 +203,7 @@ void KWQTableView::print()
     for (int i = 0; i < model()->rowCount(); i++) {
       table->cellAt(i + 1, 0).firstCursorPosition().insertText(model()->headerData(i, Qt::Vertical, Qt::DisplayRole).toString(), headerCharFormat);
       table->cellAt(i + 1, 1).firstCursorPosition().insertText(model()->data(model()->index(i, 0)).toString(), cellCharFormat);
-      if (type == WQPrintDialogPage::List)
+      if (Prefs::printStyle() == Prefs::EnumPrintStyle::List)
         table->cellAt(i + 1, 2).firstCursorPosition().insertText(model()->data(model()->index(i, 1)).toString(), cellCharFormat);
     }
   }

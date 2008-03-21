@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2004-2005 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2004-2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -22,8 +22,8 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QSpacerItem>
 
-#include <klocale.h>
-#include <kdialog.h>
+#include <KLocale>
+#include <KDialog>
 
 WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : QWidget(parent)
 {
@@ -40,40 +40,34 @@ WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : QWidget(parent)
   vboxLayout->setSpacing(KDialog::spacingHint());
   vboxLayout->setMargin(KDialog::marginHint());
 
-  rb0 = new QRadioButton(i18n("Vocabulary &list"),g);
-  rb0->setWhatsThis(i18n("Select to print the vocabulary as displayed in the editor"));
-  vboxLayout->addWidget(rb0);
+  bg = new QButtonGroup(this);
 
-  rb1 = new QRadioButton(i18n("Vocabulary e&xam"),g);
-  rb1->setWhatsThis(i18n("Select to print the vocabulary as a vocabulary exam"));
-  vboxLayout->addWidget(rb1);
+  QRadioButton *rb = new QRadioButton(i18n("Vocabulary &list"),g);
+  rb->setWhatsThis(i18n("Select to print the vocabulary as displayed in the editor"));
+  vboxLayout->addWidget(rb);
+  bg->addButton(rb, Prefs::EnumPrintStyle::List);
 
-  rb2 = new QRadioButton(i18n("&Flashcards"),g);
-  rb2->setWhatsThis(i18n("Select to print flashcards"));
-  vboxLayout->addWidget(rb2);
+  rb = new QRadioButton(i18n("Vocabulary e&xam"),g);
+  rb->setWhatsThis(i18n("Select to print the vocabulary as a vocabulary exam"));
+  vboxLayout->addWidget(rb);
+  bg->addButton(rb, Prefs::EnumPrintStyle::Exam);
+
+  rb = new QRadioButton(i18n("&Flashcards"),g);
+  rb->setWhatsThis(i18n("Select to print flashcards"));
+  vboxLayout->addWidget(rb);
+  bg->addButton(rb, Prefs::EnumPrintStyle::Flashcard);
 
   l->addWidget(g, 0, 0, 1, 1);
 }
 
-WQPrintDialogPage::PrintStyle WQPrintDialogPage::printStyle()
+int WQPrintDialogPage::printStyle()
 {
-  if (rb0->isChecked())
-    return(WQPrintDialogPage::List);
-  if (rb1->isChecked())
-    return(WQPrintDialogPage::Exam);
-  if (rb2->isChecked())
-    return(WQPrintDialogPage::Flashcard);
-  return(WQPrintDialogPage::List);
+  return bg->checkedId();
 }
 
-void WQPrintDialogPage::setPrintStyle(WQPrintDialogPage::PrintStyle style)
+void WQPrintDialogPage::setPrintStyle(int style)
 {
-  switch (style)
-  {
-    case WQPrintDialogPage::List: rb0->setChecked(true); break;
-    case WQPrintDialogPage::Exam: rb1->setChecked(true); break;
-    case WQPrintDialogPage::Flashcard: rb2->setChecked(true); break;
-  }
+  bg->button(style)->setChecked(true);
 }
 
 #include "wqprintdialogpage.moc"
