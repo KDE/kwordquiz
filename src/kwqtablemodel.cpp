@@ -171,10 +171,8 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 
   for (int i = bottomRow; i >= row; i--) {
     KEduVocExpression* entry = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(i);
-    foreach(KEduVocLesson* lesson, entry->lessons()) {
-      lesson->removeEntry(entry);
-      delete entry;
-    }
+    entry->lesson()->removeEntry(entry);
+    delete entry;
   }
 
   endRemoveRows();
