@@ -67,11 +67,8 @@
 #include "prefs.h"
 #include "version.h"
 
-KWordQuizApp * KWordQuizApp::m_self = 0;
-
 KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 {
-  m_self = this;
   m_quiz = 0;
   m_prefDialog = 0;
 
@@ -499,9 +496,9 @@ void KWordQuizApp::initView()
   configShowSearchBar->setChecked(Prefs::showSearch());
 
   m_editorView = new QWidget(this);
-  m_flashView = new FlashView(this);
-  m_multipleView = new MultipleView(this);
-  m_qaView = new QAView(this);
+  m_flashView = new FlashView(this, actionCollection());
+  m_multipleView = new MultipleView(this, actionCollection());
+  m_qaView = new QAView(this, actionCollection());
 
   m_editorPage = m_pageWidget->addPage(m_editorView, i18nc("@item:inlistbox vocabulary editor", "Editor"));
   m_editorPage->setIcon(KIcon("editor"));
@@ -1216,7 +1213,7 @@ void KWordQuizApp::slotConfigure()
     return;
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
-  KWordQuizPrefs* dialog = new KWordQuizPrefs(this, "settings",  Prefs::self());
+  KWordQuizPrefs* dialog = new KWordQuizPrefs(this, "settings",  Prefs::self(), actionCollection());
   connect(dialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplyPreferences()));
   dialog->show();
 }

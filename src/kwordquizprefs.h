@@ -18,7 +18,8 @@
 #ifndef KWORDQUIZPREFS_H
 #define KWORDQUIZPREFS_H
 
-#include <kconfigdialog.h>
+#include <KActionCollection>
+#include <KConfigDialog>
 
 /**
   *@author Peter Hedlund
@@ -34,7 +35,7 @@ class KWordQuizPrefs : public KConfigDialog
 {
   Q_OBJECT
 public:
-  KWordQuizPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config);
+  KWordQuizPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config, KActionCollection *actionCollection);
 
 protected slots:
   void updateSettings();

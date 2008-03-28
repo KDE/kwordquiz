@@ -1,7 +1,7 @@
 /***************************************************************************
                           multipleview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003-2007 Peter Hedlund
+   copyright            : (C) 2003-2008 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -22,11 +22,11 @@
 #include <KNotification>
 #include <KActionCollection>
 
-#include "kwordquiz.h"
+#include "kwqquiz.h"
 #include "wqscore.h"
 #include "prefs.h"
 
-MultipleView::MultipleView(QWidget *parent) : QWidget(parent)
+MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection) : QWidget(parent), m_actionCollection(actionCollection)
 {
   setupUi(this);
   m_score = new WQScore();
@@ -42,7 +42,6 @@ void MultipleView::setQuiz(KWQQuiz *quiz)
 
 void MultipleView::init()
 {
-
   m_score ->setQuestionCount(m_quiz->questionCount());
   m_score ->setAsPercent(Prefs::percent());
   m_question = 0;
@@ -75,10 +74,9 @@ void MultipleView::init()
   picYourAnswer->clear();
   picCorrectAnswer->clear();
 
-  KWordQuizApp *win=KWordQuizApp::self();
-  win->actionCollection()->action("quiz_check")->setEnabled(true);
-  win->actionCollection()->action("quiz_repeat_errors")->setEnabled(false);
-  win->actionCollection()->action("quiz_export_errors")->setEnabled(false);
+  m_actionCollection->action("quiz_check")->setEnabled(true);
+  m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
+  m_actionCollection->action("quiz_export_errors")->setEnabled(false);
 
   updateScore();
   showQuestion(0);
@@ -86,8 +84,7 @@ void MultipleView::init()
 
 void MultipleView::slotCheck()
 {
-  KWordQuizApp *win = KWordQuizApp::self();
-  if (win->actionCollection()->action("quiz_check")->isEnabled())
+  if (m_actionCollection->action("quiz_check")->isEnabled())
   {
 
     QString ans;
@@ -155,9 +152,9 @@ void MultipleView::slotCheck()
     else
     {
       m_quiz->finish();
-      win->actionCollection()->action("quiz_check")->setEnabled(false);
-      win->actionCollection()->action("quiz_repeat_errors")->setEnabled((m_error > 0));
-      win->actionCollection()->action("quiz_export_errors")->setEnabled((m_error > 0));
+      m_actionCollection->action("quiz_check")->setEnabled(false);
+      m_actionCollection->action("quiz_repeat_errors")->setEnabled((m_error > 0));
+      m_actionCollection->action("quiz_export_errors")->setEnabled((m_error > 0));
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();

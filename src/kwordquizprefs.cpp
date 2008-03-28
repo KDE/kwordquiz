@@ -19,25 +19,16 @@
 
 #include <QCheckBox>
 
-#include <klocale.h>
-#include <kstandarddirs.h>
-#include <kiconloader.h>
-#include <krestrictedline.h>
-#include <kmessagebox.h>
-#include <kpushbutton.h>
-#include <kdebug.h>
-#include <kconfigskeleton.h>
-#include <kcolorbutton.h>
-#include <kfontrequester.h>
+#include <KLocale>
+#include <KConfigSkeleton>
 
 #include "prefgeneral.h"
 #include "prefeditor.h"
 #include "prefquiz.h"
 #include "prefcharacter.h"
 #include "prefcardappearance.h"
-#include "kwordquiz.h"
 
-KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkeleton *config) : KConfigDialog(parent, name, config)
+KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkeleton *config, KActionCollection *actionCollection) : KConfigDialog(parent, name, config)
 {
   m_config = config;
 
@@ -53,8 +44,7 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkel
   m_prefCardAppearance = new PrefCardAppearance(0);
   addPage(m_prefCardAppearance, i18nc("@title:group flash appearance settings", "Flashcard\nAppearance"), "flash", i18nc("@title:group flash appearance settings", "Flashcard Appearance Settings"), true);
 
-  KWordQuizApp *win = KWordQuizApp::self();
-  m_prefCharacter = new PrefCharacter(0, win->actionCollection());
+  m_prefCharacter = new PrefCharacter(0, actionCollection);
   addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special\nCharacters"), "accessories-character-map", i18nc("@title:group special character settings", "Special Characters"), true);
   setHelp(QString(), "kwordquiz");
 }

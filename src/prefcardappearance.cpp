@@ -2,7 +2,7 @@
                           prefcardappearance.cpp
                              -------------------
 
-    copyright            : (C) 2004-2007 by Peter Hedlund
+    copyright            : (C) 2004-2008 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -17,10 +17,9 @@
 
 #include "prefcardappearance.h"
 
-
-#include <kfontrequester.h>
-#include <kcolorbutton.h>
-#include <klocale.h>
+#include <KFontRequester>
+#include <KColorButton>
+#include <KLocale>
 
 PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
 {

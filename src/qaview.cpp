@@ -1,7 +1,7 @@
 /***************************************************************************
                           qaview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003-2007 Peter Hedlund
+   copyright            : (C) 2003-2008 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -16,13 +16,12 @@
 
 #include "qaview.h"
 
-#include <KActionCollection>
 #include <KIconLoader>
 #include <KLocale>
 #include <KNotification>
 
 #include "prefs.h"
-#include "kwordquiz.h"
+#include "kwqquiz.h"
 #include "wqscore.h"
 
 QString highlightError(const QString & c, const QString & e)
@@ -60,7 +59,7 @@ QString highlightError(const QString & c, const QString & e)
   return result;
 }
 
-QAView::QAView(QWidget *parent) : QWidget(parent)
+QAView::QAView(QWidget *parent, KActionCollection * actionCollection) : QWidget(parent), m_actionCollection(actionCollection)
 {
   setupUi(this);
 
@@ -105,11 +104,10 @@ void QAView::init()
   picYourAnswer->clear();
   picCorrectAnswer->clear();
 
-  KWordQuizApp *win=KWordQuizApp::self();
-  win->actionCollection()->action("quiz_check")->setEnabled(true);
-  win->actionCollection()->action("qa_hint")->setEnabled(true);
-  win->actionCollection()->action("quiz_repeat_errors")->setEnabled(false);
-  win->actionCollection()->action("quiz_export_errors")->setEnabled(false);
+  m_actionCollection->action("quiz_check")->setEnabled(true);
+  m_actionCollection->action("qa_hint")->setEnabled(true);
+  m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
+  m_actionCollection->action("quiz_export_errors")->setEnabled(false);
 
   updateScore();
   showQuestion(0);
@@ -119,8 +117,7 @@ void QAView::init()
 
 void QAView::slotCheck()
 {
-  KWordQuizApp *win = KWordQuizApp::self();
-  if (win->actionCollection()->action("quiz_check")->isEnabled())
+  if (m_actionCollection->action("quiz_check")->isEnabled())
   {
     bool fIsCorrect;
 
@@ -177,10 +174,10 @@ void QAView::slotCheck()
     else
     {
       m_quiz->finish();
-      win->actionCollection()->action("quiz_check")->setEnabled(false);
-      win->actionCollection()->action("qa_hint")->setEnabled(false);
-      win->actionCollection()->action("quiz_repeat_errors")->setEnabled((m_error > 0));
-      win->actionCollection()->action("quiz_export_errors")->setEnabled((m_error > 0));
+      m_actionCollection->action("quiz_check")->setEnabled(false);
+      m_actionCollection->action("qa_hint")->setEnabled(false);
+      m_actionCollection->action("quiz_repeat_errors")->setEnabled((m_error > 0));
+      m_actionCollection->action("quiz_export_errors")->setEnabled((m_error > 0));
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();

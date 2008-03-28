@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2003-2008 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -21,6 +21,8 @@
 
 #include "ui_multipleviewbase.h"
 
+#include <KActionCollection>
+
 class KWQQuiz;
 class WQScore;
 
@@ -31,7 +33,7 @@ class MultipleView : public QWidget, public Ui::MultipleViewBase
 {
 Q_OBJECT
 public:
-    MultipleView(QWidget *parent);
+    MultipleView(QWidget *parent, KActionCollection *actionCollection);
 
     void setQuiz(KWQQuiz *quiz);
     void init();
@@ -48,6 +50,7 @@ public slots:
 private:
     KWQQuiz *m_quiz;
     WQScore *m_score;
+    KActionCollection *m_actionCollection;
 
     int m_question;
     int m_error;

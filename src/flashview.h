@@ -1,7 +1,7 @@
 /***************************************************************************
                           flashview.h -  description
                              -------------------
-   copyright            : (C) 2003 by Peter Hedlund
+   copyright            : (C) 2003-2008 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -13,11 +13,13 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
- 
+
 #ifndef FLASHVIEW_H
 #define FLASHVIEW_H
 
 #include "ui_flashviewbase.h"
+
+#include <KActionCollection>
 
 class KWQQuiz;
 class WQScore;
@@ -29,7 +31,7 @@ class FlashView : public QWidget, public Ui::FlashViewBase
 {
 Q_OBJECT
 public:
-    FlashView(QWidget *parent);
+    FlashView(QWidget *parent, KActionCollection *actionCollection);
 
     void setQuiz(KWQQuiz *quiz);
     void init();
@@ -48,6 +50,7 @@ public slots:
 private:
     KWQQuiz *m_quiz;
     WQScore *m_score;
+    KActionCollection *m_actionCollection;
 
     QTimer* m_timer;
 

@@ -88,8 +88,6 @@ class KWordQuizApp : public KXmlGuiWindow
      */
     bool saveDocAsFileName(KEduVocDocument * document);
 
-    static KWordQuizApp * self() { return m_self; }
-
   protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file
@@ -321,11 +319,8 @@ class KWordQuizApp : public KXmlGuiWindow
     KDirWatch * m_dirWatch;
 
     QLabel * m_modeLabel;
-    //QVBoxLayout * m_topLayout;
 
     KUndoStack * m_undoStack;
-
-    static KWordQuizApp * m_self;
 
     void updateActions();
     void updateSpecialCharIcons();
