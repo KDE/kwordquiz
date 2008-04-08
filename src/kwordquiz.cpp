@@ -1428,7 +1428,7 @@ void KWordQuizApp::slotCreateErrorListDocument()
     errorDoc->appendIdentifier();
     errorDoc->identifier(0).setName(m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
     errorDoc->appendIdentifier();
-    errorDoc->identifier(1).setName(m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+    errorDoc->identifier(1).setName(m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
     foreach (KWQListItem item, m_quiz->errorList()) {
       KEduVocExpression *errorExpr = new KEduVocExpression();
