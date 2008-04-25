@@ -44,10 +44,10 @@ public:
    */
   KWQListItem(int question, int first, int second, int third) : m_question(question), m_firstChoice(first), m_secondChoice(second), m_thirdChoice(third) {}
 
-  int question()     {return m_question;}
-  int firstChoice()  {return m_firstChoice;}
-  int secondChoice() {return m_secondChoice;}
-  int thirdChoice()  {return m_thirdChoice;}
+  int question() const     {return m_question;}
+  int firstChoice() const  {return m_firstChoice;}
+  int secondChoice() const {return m_secondChoice;}
+  int thirdChoice() const  {return m_thirdChoice;}
 
 private:
   int m_question;
