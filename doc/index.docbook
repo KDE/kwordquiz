@@ -28,14 +28,15 @@
   <year>2003</year>
   <year>2004</year>
   <year>2005</year>
+  <year>2008</year>
   <holder>Peter B. Hedlund</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
 
-<date>2006-02-24</date>
-<releaseinfo>0.8.1</releaseinfo>
+<date>2008-05-06</date>
+<releaseinfo>0.8.9</releaseinfo>
 
 <abstract>
 <para>
@@ -73,20 +74,24 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="practice-modes">
 <title>Practice modes</title>
 
-<para>Before you start a quiz you select how you want to practice. &kwordquiz; offers five different modes to make practicing more efficient. The different modes make it possible to have the quiz go through your vocabulary in sequential or random order in one or both directions.</para>
+<para>Before you start a quiz you select how you want to practice. &kwordquiz; offers five different modes to make practicing more efficient. The different modes make it possible to have the quiz go through your vocabulary in sequential or random order in one or both directions.
+</para>
 </sect2>
+
 <sect2 id="quiz-types">
 <title>Quiz types</title>
 
-<para>When you have entered your vocabulary and selected a mode you are ready to start a quiz. The vocabulary document is hidden during the quiz so you cannot cheat. Maybe you want to start with a flashcard session, then you can move on to a multiple choice quiz or do the powerful question and answer quiz. You get instant feedback on correct and incorrect answers and you have the option to repeat any errors, further improving your learning efficiency. If you need a little extra help you can use the hint function.</para>
+<para>When you have entered your vocabulary and selected a mode you are ready to start a quiz. Maybe you want to start with a flashcard session, then you can move on to a multiple choice quiz or do the powerful question and answer quiz. You get instant feedback on correct and incorrect answers and you have the option to repeat any errors, further improving your learning efficiency. If you need a little extra help you can use the hint function.
+</para>
 </sect2>
+
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-&kwordquiz; can open several types of vocabulary data. Supported are .kvtml used by other &kde; programs such as &kvoctrain;, .wql used by WordQuiz for &Windows;, .csv files with comma-separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net). You can automatically combine several documents to one large list if you need to practice for &eg; a final exam.
+&kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. KWordQuiz can also open .wql files created by WordQuiz for &Windows;, .csv files with comma separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net).
 </para>
 <para>
-&kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other &kde; programs. Other available options are the .wql format used by WordQuiz for &Windows; allowing exchange with &Windows; users, .csv, and .html.
+&kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other &kde; programs. Another available option is comma separated text .csv.
 </para>
 <para>
 You can have several files open at the same time and easily copy or move entries between files.
@@ -131,7 +136,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Open</action> one or more existing vocabulary documents. Several documents can be combined to one larger list.
+        <action>Open</action> one or more existing vocabulary documents.
       </para>
     </listitem>
   </varlistentry>
@@ -139,16 +144,13 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
-<!--         <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
-        </shortcut> -->
         <guimenu>File</guimenu>
         <guimenuitem>Open Recent</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Open</action> a recently used vocabulary document
+        <action>Open</action> a recently used vocabulary document.
       </para>
     </listitem>
   </varlistentry>
@@ -182,7 +184,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Save</action> the active vocabulary document to disk
+        <action>Save</action> the active vocabulary document to disk.
       </para>
     </listitem>
   </varlistentry>
@@ -190,16 +192,13 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
-        </shortcut> -->
         <guimenu>File</guimenu>
         <guimenuitem>Save As...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Save</action> the active vocabulary document with a new name
+        <action>Save</action> the active vocabulary document with a new name.
       </para>
     </listitem>
   </varlistentry>
@@ -233,7 +232,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Close</action> the active vocabulary document
+        <action>Close</action> the active vocabulary document.
       </para>
     </listitem>
   </varlistentry>
@@ -284,6 +283,23 @@ You can have several files open at the same time and easily copy or move entries
     <term>
       <menuchoice>
         <shortcut>
+          <keycombo action="simul">&Ctrl;&Shift;<keycap>Z</keycap></keycombo>
+        </shortcut>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Redo</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Redo</action> the last command. The name of this item will change to reflect what will be redone.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
           <keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
         </shortcut>
         <guimenu>Edit</guimenu>
@@ -292,7 +308,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Cut</action> the current selection and place it on the clipboard
+        <action>Cut</action> the current selection and place it on the clipboard.
       </para>
     </listitem>
   </varlistentry>
@@ -309,7 +325,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Copy</action> the current selection and place it on the clipboard
+        <action>Copy</action> the current selection and place it on the clipboard.
       </para>
     </listitem>
   </varlistentry>
@@ -343,7 +359,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Clear</action> the current selection
+        <action>Clear</action> the current selection.
       </para>
     </listitem>
   </varlistentry>
@@ -419,7 +435,7 @@ You can have several files open at the same time and easily copy or move entries
 
 </variablelist>
 </sect1>
-
+<!--
 <sect1 id="go-to-menu">
 <title>The <guimenu>Go to</guimenu> Menu</title>
 
@@ -495,7 +511,7 @@ You can have several files open at the same time and easily copy or move entries
 
 </variablelist>
 </sect1>
-
+-->
 <sect1 id="vocabulary-menu">
 <title>The <guimenu>Vocabulary</guimenu> Menu</title>
 
@@ -521,36 +537,16 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Vocabulary</guimenu>
         <guimenuitem>Font...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Change</action> the font used to display the vocabulary. If you are in flashcard session the font used to diplay the card will be changed. Displays the standard &kde; font dialog.
+        <action>Change</action> the font used to display the vocabulary.
       </para>
     </listitem>
   </varlistentry>
-
-  <!-- <varlistentry>
-    <term>
-      <menuchoice>
-        <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
-        </shortcut>
-        <guimenu>Vocabulary</guimenu>
-        <guimenuitem>Special Characters...</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Select</action> a special character for insertion in the vocabulary. Displays a <link linkend="dlg-special-characters">dialog</link>.
-      </para>
-    </listitem>
-  </varlistentry>-->
 
   <varlistentry>
     <term>
@@ -569,19 +565,16 @@ You can have several files open at the same time and easily copy or move entries
     </listitem>
   </varlistentry>
 
-  <varlistentry>
+ <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Vocabulary</guimenu>
-        <guimenuitem>Sort...</guimenuitem>
+        <guimenuitem>Adjust Row Heights</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Sort</action> the vocabulary entries. Displays a <link linkend="dlg-sort">dialog</link>.
+        <action>Adjust</action> the height of the rows to fit the content.
       </para>
     </listitem>
   </varlistentry>
@@ -598,7 +591,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Shuffle</action> the vocabulary entries in a random order
+        <action>Shuffle</action> the vocabulary entries in a random order. The order of the entries in the actual vocabulary document is not changed.
       </para>
     </listitem>
   </varlistentry>
@@ -618,9 +611,6 @@ Note that the menu names will change to reflect the column titles of the current
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Mode</guimenu>
         <guimenuitem>Column 1 -&gt; Column 2 In Order</guimenuitem>
       </menuchoice>
@@ -635,9 +625,6 @@ Note that the menu names will change to reflect the column titles of the current
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Mode</guimenu>
         <guimenuitem>Column 2 -&gt; Column 1 In Order</guimenuitem>
       </menuchoice>
@@ -652,9 +639,6 @@ Note that the menu names will change to reflect the column titles of the current
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Mode</guimenu>
         <guimenuitem>Column 1 -&gt; Column 2 Randomly</guimenuitem>
       </menuchoice>
@@ -669,9 +653,6 @@ Note that the menu names will change to reflect the column titles of the current
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Mode</guimenu>
         <guimenuitem>Column 2 -&gt; Column 1 Randomly</guimenuitem>
       </menuchoice>
@@ -686,9 +667,6 @@ Note that the menu names will change to reflect the column titles of the current
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Mode</guimenu>
         <guimenuitem>Column 1 &lt;-&gt; Column 2 Randomly</guimenuitem>
       </menuchoice>
@@ -810,6 +788,20 @@ Note that the menu names will change to reflect the column titles of the current
     </listitem>
   </varlistentry>
 
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>Export Errors As...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Export</action> any questions you answered incorrectly as a new vocabulary document. Becomes available once you have answered all questions once.
+      </para>
+    </listitem>
+  </varlistentry>
+
 </variablelist>
 </sect1>
 
@@ -821,13 +813,12 @@ Note that the menu names will change to reflect the column titles of the current
     <term>
       <menuchoice>
         <guimenu>Settings</guimenu>
-        <guimenuitem>Toolbars</guimenuitem>
-        <guimenuitem>Main Toolbar (KWordQuiz)</guimenuitem>
+        <guimenuitem>Show Search</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Toggle</action> the Main Toolbar
+        <action>Toggle</action> display of the search bar.
       </para>
     </listitem>
   </varlistentry>
@@ -837,12 +828,12 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guimenuitem>Toolbars</guimenuitem>
-        <guimenuitem>Go to (KWordQuiz)</guimenuitem>
+        <guimenuitem>Main Toolbar (KWordQuiz)</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Toggle</action> the Go to Toolbar
+        <action>Toggle</action> the Main Toolbar
       </para>
     </listitem>
   </varlistentry>
@@ -956,6 +947,38 @@ Note that the menu names will change to reflect the column titles of the current
 </sect1>
 </chapter>
 
+<chapter id="main-window">
+<title>The Main Window</title>
+
+<para>
+The main window has a sidebar on the left side from which the main components of the program can be activated.
+</para>
+<para>
+The <link linkend="editor">editor</link> can be activated by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F6</keycap></keycombo></shortcut><interface/></menuchoice>.
+</para>
+<para>
+A <link linkend="flashcard">flashcard</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F7</keycap></keycombo></shortcut><interface/></menuchoice>.
+</para>
+<para>
+A <link linkend="multiple">multiple choice</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F8</keycap></keycombo></shortcut><interface/></menuchoice>.
+</para>
+<para>
+A <link linkend="question-and-answer">question and answer</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut><interface/></menuchoice>.
+</para>
+
+<screenshot>
+  <screeninfo>The Main Window</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>The Main Window</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
 <chapter id="editor">
 <title>The Vocabulary Editor</title>
 
@@ -963,9 +986,11 @@ Note that the menu names will change to reflect the column titles of the current
 The vocabulary document area has the appearance of a spreadsheet-like grid. The grid consists of cells organized in two columns and a number of rows. Each column and row has a header. The column headers are used to specify the titles of the vocabulary document. They can be set by selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Titles...</guimenuitem></menuchoice>. The row headers number the rows consecutively.
 </para>
 <para>
-You can click in a cell of the grid to make it the active cell. You can select several cells for copying or other editing by dragging over them with the left mouse button down. To select entire rows or columns click in the headers.
+The column headers can also be used to sort the vocabulary. Simply click on the header of the column you want to sort by. 
 </para>
-
+<para>
+You can click in a cell of the grid to make it the active cell. You can select several cells for copying or other editing by dragging over them with the left mouse button down. To select entire rows click in the header.
+</para>
 
 <screenshot>
   <screeninfo>The Vocabulary Editor</screeninfo>
@@ -983,7 +1008,7 @@ You can click in a cell of the grid to make it the active cell. You can select s
 In the document you build a vocabulary of pair-wise entries in the two columns. You can enter text into the active cell simply by starting to type. The cell will now be in edit mode and you can select all or part of the text. You can also edit a cell by double-clicking it or pressing F2 and make changes directly in the cell.
 </para>
 <para>
-When you have finished typing one entry, press the return key and the next cell will automatically become active. Hence, it's easy to quickly type several entries. You can customize this behavior by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice>. When you reach the bottom row of the grid, a new row will be added as you press return, so you can just continue to type. When a new window is created it has 50 rows, but there is really no limit to the number of rows you can have in a document.
+When you have finished typing one entry, press the return key and the next cell will automatically become active. Hence, it's easy to quickly type several entries. You can customize this behavior by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice>. When you reach the bottom row of the grid, a new row will be added as you press return, so you can just continue to type. When a new window is created it has 20 rows, but there is really no limit to the number of rows you can have in a document.
 </para>
 </chapter>
 
@@ -991,9 +1016,11 @@ When you have finished typing one entry, press the return key and the next cell 
 
 <title>Flashcard Session</title>
 
-<para>Select <menuchoice><guimenu>Go to</guimenu><guimenuitem>Flashcard</guimenuitem></menuchoice> to start a flashcard session on the entries of the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.</para>
+<para>Select Flashcard from the sidebar to start a flashcard session on the entries of the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+</para>
 
-<para>If you are working with long expressions the window can be resized to make more space available. The font size will also influence how much will fit in the different parts of the window. By selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Font</guimenuitem></menuchoice> you can specify the font used for the flashcards.
+<para>
+If you are working with long expressions the window can be resized to make more space available. The font size will also influence how much will fit in the different parts of the window. By selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> you can configure the appearance of the flashcards.
 </para>
 
 <screenshot>
@@ -1034,7 +1061,7 @@ The score sections at the bottom of the screen shows the number of cards, the nu
 <title>Multiple Choice Session</title>
 
 <para>
-Select <menuchoice><guimenu>Go to</guimenu><guimenuitem>Multiple Choice</guimenuitem></menuchoice> to start a multiple choice quiz on the entries in the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+Select Multiple Choice from the sidebar to start a multiple choice quiz on the entries in the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
 </para>
 <para>
 If you are working with long expressions the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
@@ -1080,7 +1107,7 @@ The score sections at the bottom of the screen shows the number of questions, th
 
 <title>Question &amp; Answer Session</title>
 <para>
-Select <menuchoice><guimenu>Go to</guimenu><guimenuitem>Question &amp; Answer</guimenuitem></menuchoice> to start a question &amp; answer session on the entries in the active vocabulary. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+Select Question &amp; Answer from the sidebar to start a question &amp; answer session on the entries in the active vocabulary. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
 </para>
 <para>
 If you are working with long expressions the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
@@ -1187,10 +1214,10 @@ In 2. &kwordquiz; would display the question but also 'Wir ........ einen Comput
 In 4. there are two separate blanks. To specify that in the answer you have to write 'besitzen; Computer', i.e separate the blanks with a semicolon in order to get a correct answer.
 </para>
 <para>
-Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are toolbar and menu commands to mark and unmark blanks. Of course you can also just type the brackets. &kwordquiz; checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz cannot be started.
+Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are menu commands to mark and unmark blanks. Of course you can also just type the brackets. &kwordquiz; checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz cannot be started.
 </para>
 <para>
-The 'Fill-in-the-blank' features can be turned on and off in the Options dialog. Turning them of will make it possible to use fonts that map other characters to the positions of the brackets. It will also speed up performance slightly.
+The 'Fill-in-the-blank' features can be turned on and off in the Configuration dialog. Turning them of will make it possible to use fonts that map other characters to the positions of the brackets. It will also speed up performance slightly.
 </para>
 </chapter>
 
@@ -1263,16 +1290,38 @@ The 'Fill-in-the-blank' features can be turned on and off in the Options dialog.
 
 <chapter id="dialogs">
 <title>Dialogs</title>
-<sect1 id="dlg-config-editor">
-<title>Configure Editor</title>
+
+<sect1 id="dlg-config-general">
+<title>General Settings</title>
 <screenshot>
-  <screeninfo>Configure Editor</screeninfo>
+  <screeninfo>General Settings</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>General Settings</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+You can select what type of session a newly opened vocabulary should start in. Going directly to a quiz can prevent you from seeing any entries in advance.
+</para>
+<para>
+Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
+</para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title>Editor Settings</title>
+<screenshot>
+  <screeninfo>Editor Settings</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG" />
     </imageobject>
     <textobject>
-      <phrase>Configure Editor</phrase>
+      <phrase>Editor Settings</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
@@ -1288,15 +1337,15 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
 </sect1>
 
 <sect1 id="dlg-config-quiz">
-<title>Configure Quiz</title>
+<title>Quiz Settings</title>
 <screenshot>
-  <screeninfo>Configure Quiz</screeninfo>
+  <screeninfo>Quiz Settings</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG" />
     </imageobject>
     <textobject>
-      <phrase>Configure Quiz</phrase>
+      <phrase>Quiz Settings</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
@@ -1307,7 +1356,7 @@ For flashcard sessions you can select if the cards should be flipped automatical
 For multiple choice sessions you can select if your choice should be checked immediately or if you have to select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> first.
 </para>
 <para>
-For question &amp; answer sessions you can select if questions where you use  <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> should be counted as incorrect.
+For question &amp; answer sessions you can select if questions where you use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> should be counted as incorrect.
 </para>
 <para>
 For all sessions you can select if the scores should be displayed as percent instead of absolute numbers.
@@ -1315,19 +1364,18 @@ For all sessions you can select if the scores should be displayed as percent ins
 <para>
 Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
-
 </sect1>
 
 <sect1 id="dlg-config-appearance">
-<title>Configure Flashcard Appearance</title>
+<title>Flashcard Appearance Settings</title>
 <screenshot>
-  <screeninfo>Configure Flashcard Appearance</screeninfo>
+  <screeninfo>Flashcard Appearance Settings</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG" />
     </imageobject>
     <textobject>
-      <phrase>Configure Flashcard Appearance</phrase>
+      <phrase>Flashcard Appearance Settings</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
@@ -1336,19 +1384,18 @@ For flashcard sessions you can select the <guilabel>Font:</guilabel> and the col
 </para>
 <para>Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
-
 </sect1>
 
 <sect1 id="dlg-config-characters">
-<title>Configure Special Characters</title>
+<title>Special Characters Settings</title>
 <screenshot>
-  <screeninfo>Configure Special Characters</screeninfo>
+  <screeninfo>Special Characters Settings</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG" />
     </imageobject>
     <textobject>
-      <phrase>Configure Special Characters</phrase>
+      <phrase>Special Characters Settings</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
@@ -1362,7 +1409,6 @@ Changing the keyboard shortcut associated with each action can be done by select
 <para>
 Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
-
 </sect1>
 
 <sect1 id="dlg-languages">
@@ -1426,24 +1472,6 @@ Specifying a number of rows lower than what currently is in the vocabulary may l
 
 </sect1>
 
-<sect1 id="dlg-sort">
-<title>Sort</title>
-<screenshot>
-  <screeninfo>Sort</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="kwq-dlg-sort.png" format="PNG" />
-    </imageobject>
-    <textobject>
-      <phrase>Sort</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-<para>
-Use this dialog to sort the vocabulary alphabetically. You can specify if the sort should be based on the left (French in this example) or right (English in this example) column and if it should be in ascending or descending order. Select <guibutton>OK</guibutton> to do the sort or <guibutton>Cancel</guibutton> to leave the vocabulary unchanged.
-</para>
-</sect1>
-
 </chapter>
 
 <chapter id="faq">
@@ -1451,7 +1479,7 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
 
 &reporting.bugs;
 &updating.documentation;
-
+<!--
 <qandaset id="faqlist">
 
   <qandaentry>
@@ -1468,6 +1496,7 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
   </qandaentry>
 
 </qandaset>
+-->
 </chapter>
 
 <chapter id="credits">
@@ -1478,11 +1507,11 @@ Use this dialog to sort the vocabulary alphabetically. You can specify if the so
 &kwordquiz;
 </para>
 <para>
-Program copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
+Program copyright 2003-2008 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
 </para>
 
 <para>
-Documentation copyright 2003-2004 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
+Documentation copyright 2003-2008 Peter B. Hedlund <email>peter.hedlund@kdemail.net</email>
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
