@@ -88,7 +88,7 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-&kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. KWordQuiz can also open .wql files created by WordQuiz for &Windows;, .csv files with comma separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net).
+&kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. &kwordquiz; can also open .wql files created by &kwordquiz; for &Windows;, .csv files with comma separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net).
 </para>
 <para>
 &kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other &kde; programs. Another available option is comma separated text .csv.
@@ -951,7 +951,7 @@ Note that the menu names will change to reflect the column titles of the current
 <title>The Main Window</title>
 
 <para>
-The main window has a sidebar on the left side from which the main components of the program can be activated.
+The main window has a nagivation panel on the left side from which the main components of the program can be activated.
 </para>
 <para>
 The <link linkend="editor">editor</link> can be activated by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F6</keycap></keycombo></shortcut><interface/></menuchoice>.
@@ -1016,7 +1016,7 @@ When you have finished typing one entry, press the return key and the next cell 
 
 <title>Flashcard Session</title>
 
-<para>Select Flashcard from the sidebar to start a flashcard session on the entries of the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+<para>Select Flashcard from the nagivation panel to start a flashcard session on the entries of the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
 </para>
 
 <para>
@@ -1061,7 +1061,7 @@ The score sections at the bottom of the screen shows the number of cards, the nu
 <title>Multiple Choice Session</title>
 
 <para>
-Select Multiple Choice from the sidebar to start a multiple choice quiz on the entries in the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+Select Multiple Choice from the nagivation panel to start a multiple choice quiz on the entries in the active vocabulary document. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
 </para>
 <para>
 If you are working with long expressions the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
@@ -1107,7 +1107,7 @@ The score sections at the bottom of the screen shows the number of questions, th
 
 <title>Question &amp; Answer Session</title>
 <para>
-Select Question &amp; Answer from the sidebar to start a question &amp; answer session on the entries in the active vocabulary. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
+Select Question &amp; Answer from the nagivation panel to start a question &amp; answer session on the entries in the active vocabulary. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
 </para>
 <para>
 If you are working with long expressions the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
