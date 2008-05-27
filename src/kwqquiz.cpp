@@ -193,8 +193,8 @@ bool KWQQuiz::checkAnswer(int i, const QString & a)
     {
       if (Prefs::enableBlanks())
       {
-        tTemp.remove("[");
-        tTemp.remove("]");
+        tTemp.remove('[');
+        tTemp.remove(']');
       }
       result = (ans == tTemp);
 
@@ -231,8 +231,8 @@ QStringList KWQQuiz::multiOptions(int i)
   ls.append(m_model->data(m_model->index(li.thirdChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString());
   if (Prefs::enableBlanks()) {
     for (int i = 0; i < ls.count(); i++) {
-      ls[i].remove("[");
-      ls[i].remove("]");
+      ls[i].remove('[');
+      ls[i].remove(']');
       }
   }
 
@@ -335,8 +335,8 @@ QString KWQQuiz::question(int i)
 
   if (Prefs::enableBlanks())
   {
-    s.remove("[");
-    s.remove("]");
+    s.remove('[');
+    s.remove(']');
   }
   if (m_quizType != Prefs::EnumStartSession::Flashcard && i > 0)
   {
@@ -412,8 +412,8 @@ QString KWQQuiz::answer(int i)
     s = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     if (Prefs::enableBlanks())
     {
-      s.remove("[");
-      s.remove("]");
+      s.remove('[');
+      s.remove(']');
     }
   }
   return s;
