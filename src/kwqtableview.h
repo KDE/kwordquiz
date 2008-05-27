@@ -22,7 +22,6 @@
 #include <QList>
 #include <QKeyEvent>
 
-class QPrinter;
 
 #include <KUndoStack>
 
