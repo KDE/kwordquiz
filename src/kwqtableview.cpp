@@ -73,8 +73,10 @@ void KWQTableView::print()
   QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
   printer.setFullPage(true);
   if (printDialog->exec() != QDialog::Accepted)
+  {
+    delete printDialog;
     return;
-
+  }
   Prefs::setPrintStyle(p->printStyle());
 
   QTextDocument td;
@@ -209,6 +211,7 @@ void KWQTableView::print()
     }
   }
   td.print(&printer);
+  delete printDialog;
 }
 
 void KWQTableView::doEditCut()
