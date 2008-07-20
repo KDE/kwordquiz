@@ -954,16 +954,16 @@ Note that the menu names will change to reflect the column titles of the current
 The main window has a nagivation panel on the left side from which the main components of the program can be activated.
 </para>
 <para>
-The <link linkend="editor">editor</link> can be activated by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F6</keycap></keycombo></shortcut><interface/></menuchoice>.
+The <link linkend="editor">editor</link> can be activated by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F6</keycap></keycombo></shortcut><interface></interface></menuchoice>.
 </para>
 <para>
-A <link linkend="flashcard">flashcard</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F7</keycap></keycombo></shortcut><interface/></menuchoice>.
+A <link linkend="flashcard">flashcard</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F7</keycap></keycombo></shortcut><interface></interface></menuchoice>.
 </para>
 <para>
-A <link linkend="multiple">multiple choice</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F8</keycap></keycombo></shortcut><interface/></menuchoice>.
+A <link linkend="multiple">multiple choice</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F8</keycap></keycombo></shortcut><interface></interface></menuchoice>.
 </para>
 <para>
-A <link linkend="question-and-answer">question and answer</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut><interface/></menuchoice>.
+A <link linkend="question-and-answer">question and answer</link> session can be started by pressing <menuchoice><shortcut><keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut><interface></interface></menuchoice>.
 </para>
 
 <screenshot>
