@@ -35,6 +35,11 @@ MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection)
   connect(opt3, SIGNAL(clicked()), this, SLOT(slotOpt3Clicked()));
 }
 
+MultipleView::~MultipleView()
+{
+  delete m_score;
+}
+
 void MultipleView::setQuiz(KWQQuiz *quiz)
 {
   m_quiz = quiz;
