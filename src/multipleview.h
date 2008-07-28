@@ -34,7 +34,7 @@ class MultipleView : public QWidget, public Ui::MultipleViewBase
 Q_OBJECT
 public:
     MultipleView(QWidget *parent, KActionCollection *actionCollection);
-
+    ~MultipleView();
     void setQuiz(KWQQuiz *quiz);
     void init();
 
