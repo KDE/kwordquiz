@@ -141,7 +141,7 @@ void KWQCommandPaste::redo()
 
   QString s = QApplication::clipboard()->text();
   QStringList sl;
-  sl = s.split("\n", QString::SkipEmptyParts);
+  sl = s.split('\n', QString::SkipEmptyParts);
 
   QStringList sr;
   int i = 0;
@@ -156,13 +156,13 @@ void KWQCommandPaste::redo()
     br = tr + sl.count() - 1;
 
     if (lc == 0) //left col?
-      if (sl[0].indexOf("\t") > -1)
+      if (sl[0].indexOf('\t') > -1)
         rc = 1; //expand to second column;
 
     while (i < sl.count() && br <= view()->model()->rowCount(QModelIndex())) {
       ac = lc;
 
-      sr = sl.at(i).split("\t", QString::SkipEmptyParts);
+      sr = sl.at(i).split('\t', QString::SkipEmptyParts);
       int c = 0;
       while (ac <= rc) {
         IndexAndData id;
@@ -184,7 +184,7 @@ void KWQCommandPaste::redo()
     while (i < sl.count() && ar <= br) {
       ac = lc;
 
-      sr = sl.at(i).split("\t", QString::SkipEmptyParts);
+      sr = sl.at(i).split('\t', QString::SkipEmptyParts);
       int c = 0;
       while (ac <= rc) {
         if (view()->selectionModel()->isSelected(view()->model()->index(ar, ac)))

@@ -161,13 +161,13 @@ bool KWQQuiz::checkAnswer(int i, const QString & a)
     if (QString(m_correctBlank).length() > 0)
     {
       QStringList la, ls;
-      if (ans.indexOf(";") > 0)
-        ls = ans.split(";", QString::SkipEmptyParts);
+      if (ans.indexOf(';') > 0)
+        ls = ans.split(';', QString::SkipEmptyParts);
       else
         ls.append(ans);
 
-      if (m_correctBlank.indexOf(";") > 0)
-        la = m_correctBlank.split(";", QString::SkipEmptyParts);
+      if (m_correctBlank.indexOf(';') > 0)
+        la = m_correctBlank.split(';', QString::SkipEmptyParts);
       else
         la.append(m_correctBlank);
 
@@ -274,8 +274,8 @@ QString KWQQuiz::yourAnswer(const QString & s)
   {
     QStringList ls;
 
-    if (s.indexOf(";") > 0)
-      ls = s.split(";");
+    if (s.indexOf(';') > 0)
+      ls = s.split(';');
     else
       ls.append(s);
 
@@ -401,8 +401,8 @@ QString KWQQuiz::answer(int i)
     s = m_model->data(m_model->index(li.firstChoice(), li.question() ? 0 : 1, QModelIndex()), Qt::DisplayRole).toString();
     if (Prefs::enableBlanks())
     {
-      s.replace("[", "<u>");
-      s.replace("]", "</u>");
+      s.replace('[', "<u>");
+      s.replace(']', "</u>");
       s.prepend("<qt>");
       s.append("</qt>");
     }
