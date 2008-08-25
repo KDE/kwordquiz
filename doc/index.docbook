@@ -35,7 +35,7 @@
 <legalnotice>&FDLNotice;</legalnotice>
 
 
-<date>2008-05-06</date>
+<date>2008-08-24</date>
 <releaseinfo>0.8.9</releaseinfo>
 
 <abstract>
@@ -828,7 +828,7 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guisubmenu>Toolbars</guisubmenu>
-        <guimenuitem>Main Toolbar (KWordQuiz)</guimenuitem>
+        <guimenuitem>Main Toolbar</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -843,7 +843,7 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guisubmenu>Toolbars</guisubmenu>
-        <guimenuitem>Quiz (KWordQuiz)</guimenuitem>
+        <guimenuitem>Quiz</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -858,7 +858,7 @@ Note that the menu names will change to reflect the column titles of the current
       <menuchoice>
         <guimenu>Settings</guimenu>
         <guisubmenu>Toolbars</guisubmenu>
-        <guimenuitem>Special Characters (KWordQuiz)</guimenuitem>
+        <guimenuitem>Special Characters</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -1413,6 +1413,7 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
 
 <sect1 id="dlg-languages">
 <title>Column Titles</title>
+<para>You can open this dialog from the menubar with <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Titles...</guimenuitem></menuchoice></para>
 <screenshot>
   <screeninfo>Column Titles</screeninfo>
   <mediaobject>
@@ -1431,6 +1432,7 @@ Use this dialog to define the column titles of the vocabulary. Select <guibutton
 
 <sect1 id="dlg-special-characters">
 <title>Special Characters</title>
+<para>Click the <guibutton>Character...</guibutton> button on the <guilabel>Special Characters</guilabel> page in &kwordquiz; settings dialog to open this window.</para>
 <screenshot>
   <screeninfo>Special Characters</screeninfo>
   <mediaobject>
@@ -1450,6 +1452,7 @@ Use this dialog to select any special character you want to associate with the c
 
 <sect1 id="dlg-rows-columns">
 <title>Rows/Columns</title>
+<para>You can open this dialog from the menubar with <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Rows/Columns...</guimenuitem></menuchoice></para>
 <screenshot>
   <screeninfo>Rows/Columns</screeninfo>
   <mediaobject>
