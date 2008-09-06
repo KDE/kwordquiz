@@ -105,7 +105,7 @@
    <Action name="char_9" />
   </ToolBar>
   <State name="switchEditQuiz">
-    <Enable>
+    <enable>
       <Action name="file_save" />
       <Action name="file_save_as" />
       <Action name="file_print" />
@@ -124,15 +124,15 @@
       <Action name="vocab_shuffle" />
       <Action name="vocab_leitner" />
       <Action name="vocab_leitner_config" />
-    </Enable>
+    </enable>
   </State>
   <State name="showingEdit">
-    <Enable>
+    <enable>
       <Action name="quiz_flash" />
       <Action name="quiz_multiple" />
       <Action name="quiz_qa" />
-    </Enable>
-    <Disable>
+    </enable>
+    <disable>
       <Action name="quiz_editor" />
       <Action name="quiz_repeat_errors" />
       <Action name="quiz_restart" />
@@ -140,11 +140,11 @@
       <Action name="flash_know" />
       <Action name="flash_dont_know" />
       <Action name="qa_hint" />
-    </Disable>
+    </disable>
   </State>
 
   <State name="showingFlash">
-    <Enable>
+    <enable>
       <Action name="quiz_editor" />
       <Action name="quiz_multiple" />
       <Action name="quiz_qa" />
@@ -153,44 +153,44 @@
       <Action name="flash_know" />
       <Action name="flash_dont_know" />
       <Action name="quiz_restart" />
-    </Enable>
-    <Disable>
+    </enable>
+    <disable>
       <Action name="quiz_flash" />
       <Action name="quiz_repeat_errors" />
       <Action name="qa_hint" />
-    </Disable>
+    </disable>
   </State>
   <State name="showingMultiple">
-    <Enable>
+    <enable>
       <Action name="quiz_editor" />
       <Action name="quiz_flash" />
       <Action name="quiz_qa" />
       <Action name="quiz_check" />
       <Action name="quiz_restart" />
-    </Enable>
-    <Disable>
+    </enable>
+    <disable>
       <Action name="quiz_multiple" />
       <Action name="flash_know" />
       <Action name="flash_dont_know" />
       <Action name="qa_hint" />
       <Action name="quiz_repeat_errors" />
-    </Disable>
+    </disable>
   </State>
   <State name="showingQA">
-    <Enable>
+    <enable>
       <Action name="quiz_editor" />
       <Action name="quiz_flash" />
       <Action name="quiz_multiple" />
       <Action name="quiz_check" />
       <Action name="qa_hint" />
       <Action name="quiz_restart" />
-    </Enable>
-    <Disable>
+    </enable>
+    <disable>
       <Action name="quiz_qa" />
       <Action name="flash_know" />
       <Action name="flash_dont_know" />
       <Action name="quiz_repeat_errors" />
-    </Disable>
+    </disable>
   </State>
   <Menu name="editor_popup">
     <Action name="edit_undo" />
