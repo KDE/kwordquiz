@@ -28,6 +28,8 @@
 void copyToClipboard(QTableView * view)
 {
   QModelIndexList selIndexes = view->selectionModel()->selectedIndexes();
+  if( selIndexes.isEmpty())
+     return;
   int tr = selIndexes.first().row();
   int lc = selIndexes.first().column();
   int br = selIndexes.last().row();
@@ -129,6 +131,8 @@ void KWQCommandPaste::undo()
 void KWQCommandPaste::redo()
 {
   QModelIndexList selIndexes = oldSelectedIndexes();
+  if(selIndexes.isEmpty())
+     return;
   QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
   QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
 
