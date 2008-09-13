@@ -311,7 +311,7 @@ void KWordQuizApp::initActions()
 
   quizQA = actionCollection()->addAction("quiz_qa");
   quizQA->setIcon(KIcon("qa"));
-  quizQA->setText(i18n("&Question && Answer"));
+  quizQA->setText(i18n("&Question and Answer"));
   quizQA->setIconText(i18n("Q&&A"));
   quizQA->setShortcut(QKeySequence(Qt::Key_F9));
   quizQA->setWhatsThis(i18n("Starts a question and answer session using the active vocabulary"));
