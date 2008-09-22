@@ -44,7 +44,7 @@ void DlgSpecChar::initDialog(const QFont &font, const QChar &chr)
   m_layout->setMargin(KDialog::marginHint());
   m_layout->setSpacing(KDialog::spacingHint());
 
-  m_charSelect = new KCharSelect(page);
+  m_charSelect = new KCharSelect(page, 0);
   m_charSelect->setCurrentChar(chr);
   m_charSelect->setCurrentFont(font);
   connect(m_charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
