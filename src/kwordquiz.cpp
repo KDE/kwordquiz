@@ -406,7 +406,7 @@ void KWordQuizApp::initActions()
   updateSpecialCharIcons();
 
   if (!initialGeometrySet())
-    resize( QSize(650, 500).expandedTo(minimumSizeHint()));
+    resize( QSize(650, 450).expandedTo(minimumSizeHint()));
   setupGUI(ToolBar | Keys | StatusBar | Create);
   setAutoSaveSettings();
 
