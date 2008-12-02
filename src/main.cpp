@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 
     if (args->count())
     {
-      kwordquiz->openDocumentFile(KUrl(args->arg(args->count() - 1)));
+      kwordquiz->openDocumentFile(KUrl(args->url(args->count() - 1)));
 
       QString mode = args->getOption("mode");
 

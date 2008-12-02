@@ -50,6 +50,7 @@
 #include <KProcess>
 #include <KTemporaryFile>
 #include <kwindowsystem.h>
+#include <kio/netaccess.h>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
@@ -568,7 +569,7 @@ void KWordQuizApp::openUrl(const KUrl& url)
 void KWordQuizApp::openDocumentFile(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
-  if (!url.isEmpty()) {
+  if (!url.isEmpty() && KIO::NetAccess::exists(url, KIO::NetAccess::SourceSide, this)) {
     int result = m_doc->open(url);
     if (result == KEduVocDocument::NoError) {
       m_tableModel->reset();
