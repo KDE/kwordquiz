@@ -888,7 +888,7 @@ void KWordQuizApp::slotFileClose()
       slotQuizEditor();
       QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
       slotModeActionGroupTriggered(a);
-      m_tableView ->setFocus();
+      m_tableView ->selectionModel()->setCurrentIndex(m_sortFilterModel->index(0, 0), QItemSelectionModel::SelectCurrent);
       m_undoStack->clear();
     }
 
