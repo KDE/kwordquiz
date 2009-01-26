@@ -267,7 +267,7 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* fileNew;
     QAction* fileOpen;
     KRecentFilesAction* fileOpenRecent;
-    QAction* fileGHNS;
+    KAction* fileGHNS;
     QAction* fileSave;
     QAction* fileSaveAs;
     QAction* fileClose;
@@ -280,13 +280,13 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* editCopy;
     QAction* editPaste;
     QAction* editClear;
-    QAction* editInsert;
-    QAction* editDelete;
-    QAction* editMarkBlank;
-    QAction* editUnmarkBlank;
+    KAction* editInsert;
+    KAction* editDelete;
+    KAction* editMarkBlank;
+    KAction* editUnmarkBlank;
     //QAction* editFind;
 
-    QAction* vocabLanguages;
+    KAction* vocabLanguages;
     QAction* vocabFont;
     //QAction* vocabKeyboard;
     QAction* vocabRC;
@@ -297,20 +297,20 @@ class KWordQuizApp : public KXmlGuiWindow
     KActionMenu *m_modeActionMenu;
     QActionGroup *m_modeActionGroup;
 
-    QAction* quizEditor;
-    QAction* quizFlash;
-    QAction* quizMultiple;
-    QAction* quizQA;
+    KAction* quizEditor;
+    KAction* quizFlash;
+    KAction* quizMultiple;
+    KAction* quizQA;
 
-    QAction* quizCheck;
-    QAction* quizRestart;
-    QAction* quizRepeatErrors;
-    QAction* quizExportErrors;
+    KAction* quizCheck;
+    KAction* quizRestart;
+    KAction* quizRepeatErrors;
+    KAction* quizExportErrors;
 
-    QAction* flashKnow;
-    QAction* flashDontKnow;
+    KAction* flashKnow;
+    KAction* flashDontKnow;
 
-    QAction* qaHint;
+    KAction* qaHint;
 
     QSignalMapper* charMapper;
 
