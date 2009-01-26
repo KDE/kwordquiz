@@ -269,7 +269,7 @@ void KWordQuizApp::initActions()
   m_modeActionGroup = new QActionGroup(this);
   connect(m_modeActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotModeActionGroupTriggered(QAction *)));
 
-  QAction * a;
+  KAction * a;
 
   for (int i = 1; i <=5; ++i) {
     a = actionCollection()->addAction(QString("mode_%1").arg(QString::number(i)));
