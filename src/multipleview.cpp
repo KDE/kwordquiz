@@ -82,6 +82,9 @@ void MultipleView::init()
   m_actionCollection->action("quiz_check")->setEnabled(true);
   m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
   m_actionCollection->action("quiz_export_errors")->setEnabled(false);
+  m_actionCollection->action("quiz_Opt1")->setEnabled(true);
+  m_actionCollection->action("quiz_Opt2")->setEnabled(true);
+  m_actionCollection->action("quiz_Opt3")->setEnabled(true);
 
   updateScore();
   showQuestion(0);
@@ -158,6 +161,9 @@ void MultipleView::slotCheck()
     {
       m_quiz->finish();
       m_actionCollection->action("quiz_check")->setEnabled(false);
+      m_actionCollection->action("quiz_Opt1")->setEnabled(false);
+      m_actionCollection->action("quiz_Opt2")->setEnabled(false);
+      m_actionCollection->action("quiz_Opt3")->setEnabled(false);
       m_actionCollection->action("quiz_repeat_errors")->setEnabled((m_error > 0));
       m_actionCollection->action("quiz_export_errors")->setEnabled((m_error > 0));
 
@@ -175,6 +181,7 @@ void MultipleView::slotCheck()
 
 void MultipleView::slotOpt1Clicked()
 {
+  opt1->setChecked(true);
   if (Prefs::autoCheck())
     slotCheck();
   else
@@ -186,6 +193,7 @@ void MultipleView::slotOpt1Clicked()
 
 void MultipleView::slotOpt2Clicked()
 {
+  opt2->setChecked(true);
   if (Prefs::autoCheck())
     slotCheck();
   else
@@ -197,6 +205,7 @@ void MultipleView::slotOpt2Clicked()
 
 void MultipleView::slotOpt3Clicked()
 {
+  opt3->setChecked(true);
   if (Prefs::autoCheck())
     slotCheck();
   else

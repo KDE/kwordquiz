@@ -328,6 +328,18 @@ void KWordQuizApp::initActions()
   quizCheck->setToolTip(quizCheck->whatsThis());
   quizCheck->setStatusTip(quizCheck->whatsThis());
 
+  quizOpt1 = actionCollection()->addAction("quiz_Opt1");
+  quizOpt1->setText(i18n("choose option &1"));
+  quizOpt1->setShortcut(QKeySequence(Qt::Key_1));
+
+  quizOpt2 = actionCollection()->addAction("quiz_Opt2");
+  quizOpt2->setText(i18n("choose option &2"));
+  quizOpt2->setShortcut(QKeySequence(Qt::Key_2));
+
+  quizOpt3 = actionCollection()->addAction("quiz_Opt3");
+  quizOpt3->setText(("choose option &3"));
+  quizOpt3->setShortcut(QKeySequence(Qt::Key_3));
+
   flashKnow = actionCollection()->addAction("flash_know");
   flashKnow->setIcon(KIcon("know"));
   flashKnow->setText(i18n("I &Know"));
@@ -1097,6 +1109,9 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     m_quiz = 0;
   }
   disconnect(quizCheck, 0, 0, 0);
+  disconnect(quizOpt1, 0, 0, 0);
+  disconnect(quizOpt2, 0, 0, 0);
+  disconnect(quizOpt3, 0, 0, 0);
   disconnect(flashKnow, 0, 0, 0);
   disconnect(flashDontKnow, 0, 0, 0);
   disconnect(quizRestart, 0, 0, 0);
@@ -1154,6 +1169,9 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
       connect(quizCheck, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotCheck()));
       connect(quizRestart, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotRestart()));
       connect(quizRepeatErrors, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotRepeat()));
+      connect(quizOpt1, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotOpt1Clicked()));
+      connect(quizOpt2, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotOpt2Clicked()));
+      connect(quizOpt3, SIGNAL(triggered(bool)), m_multipleView, SLOT(slotOpt3Clicked()));
       connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
 
       m_multipleView->setQuiz(m_quiz);
@@ -1377,6 +1395,10 @@ void KWordQuizApp::updateActions()
   flashDontKnow->setEnabled((m_pageWidget->currentPage() == m_flashPage) && fQuiz);
 
   qaHint->setEnabled((m_pageWidget->currentPage() == m_qaPage) && fQuiz);
+
+  quizOpt1->setEnabled((m_pageWidget->currentPage() == m_multiplePage) && fQuiz);
+  quizOpt2->setEnabled((m_pageWidget->currentPage() == m_multiplePage) && fQuiz);
+  quizOpt3->setEnabled((m_pageWidget->currentPage() == m_multiplePage) && fQuiz);
 
   configShowSearchBar->setEnabled(fEdit);
 

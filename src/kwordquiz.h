@@ -312,6 +312,10 @@ class KWordQuizApp : public KXmlGuiWindow
 
     KAction* qaHint;
 
+    KAction* quizOpt1;
+    KAction* quizOpt2;
+    KAction* quizOpt3;
+
     QSignalMapper* charMapper;
 
     QAction* configShowSearchBar;
