@@ -2,7 +2,7 @@
                           kwqcommands.cpp  -  description
                              -------------------
     begin          : Fri Jan 18 10:37:00 PST 2008
-    copyright      : (C) 2002-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -146,7 +146,8 @@ void KWQCommandPaste::redo()
   QString s = QApplication::clipboard()->text();
   QStringList sl;
   sl = s.split('\n', QString::SkipEmptyParts);
-
+  if (sl.isEmpty())
+    return;
   QStringList sr;
   int i = 0;
 
