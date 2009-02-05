@@ -79,7 +79,6 @@ protected slots:
 private:
   QString m_currentText;
 
-  QWidget * cellEditor;
   KWQTableDelegate * m_delegate;
   KWQSortFilterModel *m_model;
   KUndoStack *m_undoStack;
