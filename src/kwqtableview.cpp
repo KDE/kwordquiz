@@ -2,7 +2,7 @@
                           kwqtableview.cpp  -  description
                              -------------------
     begin          : Wed Jul 24 20:12:30 PDT 2002
-    copyright      : (C) 2002-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -655,6 +655,7 @@ void KWQTableView::slotHeaderClicked(int column)
 
 void KWQTableView::doVocabShuffle()
 {
+  setFocus();
   KWQCommandShuffle *kwqc = new KWQCommandShuffle(this, 0);
   m_undoStack->push(kwqc);
 }
