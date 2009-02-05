@@ -2,7 +2,7 @@
                           kwordquiz.cpp  -  description
                              -------------------
     begin         : Wed Jul 24 20:12:30 PDT 2002
-    copyright     : (C) 2002-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright     : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -534,6 +534,18 @@ void KWordQuizApp::initView()
   m_pageWidget->addAction(quizFlash);
   m_pageWidget->addAction(quizMultiple);
   m_pageWidget->addAction(quizQA);
+
+  const QList<QObject*> listOfChildren = m_pageWidget->children();
+
+  foreach (QObject *object, listOfChildren) {
+    if(!object->isWidgetType())
+      continue;
+
+    QWidget *childWidget = static_cast<QWidget *>(object);
+
+    if (childWidget->inherits("QListView"))
+      childWidget->setFocusPolicy(Qt::NoFocus);
+  }
 
   m_pageWidget->setCurrentPage(m_editorPage);
   m_tableView->setFocus();
