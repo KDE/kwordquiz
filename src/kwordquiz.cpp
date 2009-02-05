@@ -856,40 +856,29 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
   KFileDialog *fd = new KFileDialog(KUrl(), filter, this);
   fd->setOperationMode(KFileDialog::Saving);
   fd->setCaption(i18n("Save Vocabulary Document As"));
+  fd->setConfirmOverwrite(true);
 
-  if (fd->exec() == QDialog::Accepted)
-  {
-    KUrl url = fd -> selectedUrl();
-    if(!url.isEmpty()){
-      if (!url.fileName().contains('.'))
-      {
+  if (fd->exec() == QDialog::Accepted) {
+    KUrl url = fd->selectedUrl();
+    if (!url.isEmpty()) {
+      if (!url.fileName().contains('.')) {
         if (fd->currentFilter() == "*.csv")
           url = KUrl(url.path() + ".csv");
         else
           url = KUrl(url.path() + ".kvtml");
       }
 
-      QFileInfo fileinfo(url.path());
-      if (fileinfo.exists() && KMessageBox::warningContinueCancel(0,
-          i18n("<html>The file<br /><b>%1</b><br />already exists. Do you want to overwrite it?</html>",
-               url.path()),QString(),KStandardGuiItem::overwrite()) == KMessageBox::Cancel)
-      {
-      // do nothing
+      if (m_dirWatch->contains(document->url().path()))
+        m_dirWatch->removeFile(document->url().path());
+      int result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+      if (result == KEduVocDocument::NoError) {
+        m_dirWatch->addFile(url.path());
+        fileOpenRecent->addUrl(url);
+        success = true;
       }
-      else
-      {
-        if (m_dirWatch->contains(document->url().path()))
-          m_dirWatch->removeFile(document->url().path());
-        int result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
-        if (result == KEduVocDocument::NoError) {
-          m_dirWatch->addFile(url.path());
-          fileOpenRecent->addUrl(url);
-          success = true;
-        }
-        else {
-          KMessageBox::error(this, KEduVocDocument::errorDescription(result));
-          success = false;
-        }
+      else {
+        KMessageBox::error(this, KEduVocDocument::errorDescription(result));
+        success = false;
       }
     }
   }
