@@ -337,7 +337,7 @@ void KWordQuizApp::initActions()
   quizOpt2->setShortcut(QKeySequence(Qt::Key_2));
 
   quizOpt3 = actionCollection()->addAction("quiz_Opt3");
-  quizOpt3->setText(("choose option &3"));
+  quizOpt3->setText(i18n("choose option &3"));
   quizOpt3->setShortcut(QKeySequence(Qt::Key_3));
 
   flashKnow = actionCollection()->addAction("flash_know");
