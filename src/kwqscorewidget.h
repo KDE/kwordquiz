@@ -1,8 +1,10 @@
 /***************************************************************************
-                          wqscore.h  -  description
+                               kwqscorewidget.h
                              -------------------
-   copyright            : (C) 2003, 2007 by Peter Hedlund
-   email                : peter.hedlund@kdemail.net
+
+    copyright            : (C) 2009 by Peter Hedlund
+    email                : peter.hedlund@kdemail.net
+
  ***************************************************************************/
 
 /***************************************************************************
@@ -14,20 +16,20 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef WQSCORE_H
-#define WQSCORE_H
+#ifndef KWQSCOREWIDGET_H
+#define KWQSCOREWIDGET_H
 
-#include <QString>
+#include "ui_kwqscorewidgetbase.h"
 
-/**
-@author Peter Hedlund
-*/
+#include <QWidget>
 
-class WQScore
+class KWQScoreWidget : public QWidget, public Ui::KWQScoreWidgetBase
 {
 public:
-  enum CountDirection {cdCorrect, cdError, cdNone};
-  WQScore();
+  enum CountDirection {cdCorrect, cdError};
+  KWQScoreWidget(QWidget *parent);
+
+  void clear();
 
   void setAsPercent(bool p);
   void setQuestionCount(int c);
@@ -44,6 +46,7 @@ private:
   int m_correct;
   int m_answerCount;
   QString valueToString(int i);
+  void update();
 };
 
-#endif
+#endif // KWQSCOREWIDGET_H

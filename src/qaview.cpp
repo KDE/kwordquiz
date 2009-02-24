@@ -1,7 +1,7 @@
 /***************************************************************************
                           qaview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003-2008 Peter Hedlund
+   copyright            : (C) 2003-2009 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -22,7 +22,7 @@
 
 #include "prefs.h"
 #include "kwqquiz.h"
-#include "wqscore.h"
+#include "kwqscorewidget.h"
 
 QString highlightError(const QString & c, const QString & e)
 {
@@ -64,8 +64,6 @@ QAView::QAView(QWidget *parent, KActionCollection * actionCollection) : QWidget(
   setupUi(this);
 
   connect(txtAnswer, SIGNAL(returnPressed()), this, SLOT(slotCheck()));
-
-  m_score = new WQScore();
 }
 
 void QAView::setQuiz(KWQQuiz *quiz)
@@ -75,23 +73,22 @@ void QAView::setQuiz(KWQQuiz *quiz)
 
 void QAView::init()
 {
-  m_score -> setQuestionCount(m_quiz->questionCount());
-  m_score -> setAsPercent(Prefs::percent());
+  score->clear();
+  score->setQuestionCount(m_quiz->questionCount());
+  score->setAsPercent(Prefs::percent());
+
   m_hintUsed = false;
   m_question = 0;
   m_error = 0;
-  picAnswered -> clear();
-  picCorrect -> clear();
-  picError -> clear();
 
   QFont f = Prefs::editorFont();
   f.setWeight(QFont::Normal);
-  lblQuestion -> setFont(f);
-  lblAnswerBlank -> setFont(f);
-  txtAnswer -> setFont(f);
-  lblPreviousQuestion -> setFont(f);
-  lblYourAnswer -> setFont(f);
-  lblCorrect -> setFont(f);
+  lblQuestion->setFont(f);
+  lblAnswerBlank->setFont(f);
+  txtAnswer->setFont(f);
+  lblPreviousQuestion->setFont(f);
+  lblYourAnswer->setFont(f);
+  lblCorrect->setFont(f);
 
   lblPreviousQuestionHeader->clear();
   lblPreviousQuestion->clear();
@@ -109,7 +106,6 @@ void QAView::init()
   m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
   m_actionCollection->action("quiz_export_errors")->setEnabled(false);
 
-  updateScore();
   showQuestion(0);
   txtAnswer->show();
   txtAnswer->setFocus();
@@ -136,14 +132,12 @@ void QAView::slotCheck()
 
     if (fIsCorrect)
     {
-
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblYourAnswer->setText(m_quiz->yourAnswer(txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
-      m_score->countIncrement(WQScore::cdCorrect);
-      updateScore();
+      score->countIncrement(KWQScoreWidget::cdCorrect);
       KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
     }
     else
@@ -155,8 +149,7 @@ void QAView::slotCheck()
       lblCorrect->setText(m_quiz->answer(m_question));
       picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
-      m_score->countIncrement(WQScore::cdError);
-      updateScore();
+      score->countIncrement(KWQScoreWidget::cdError);
       KNotification::event("QuizError", i18n("Your answer was incorrect."));
     }
 
@@ -231,43 +224,20 @@ void QAView::slotRepeat()
   init();
 }
 
-void QAView::updateScore()
-{
-  QString s;
-  s = s.setNum(m_quiz->questionCount(), 10);
-  lblScoreCount->setText(s);
-  picCount->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", KIconLoader::Panel));
-
-  s = m_score->answerText();
-  lblScoreAnswered->setText(s);
-  if (!s.isEmpty())
-    picAnswered->setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
-
-  s = m_score->correctText();
-  lblScoreCorrect->setText(s);
-  if (!s.isEmpty())
-    picCorrect->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
-
-  s = m_score->errorText();
-  lblScoreError->setText(s);
-  if (!s.isEmpty())
-    picError->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
-}
-
 
 /*!
     \fn QAView::showQuestion(int i)
  */
 void QAView::showQuestion(int i)
 {
-  lblQuestionLanguage -> setText(m_quiz ->langQuestion(i));
-  lblQuestion -> setText(m_quiz ->question(i));
+  lblQuestionLanguage->setText(m_quiz ->langQuestion(i));
+  lblQuestion->setText(m_quiz ->question(i));
 
   picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconLeftCol), KIconLoader::Panel));
 
-  lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
+  lblAnswerLanguage->setText(m_quiz ->langAnswer(i));
 
-  if (!QString(m_quiz ->blankAnswer(i)).isEmpty())
+  if (!QString(m_quiz->blankAnswer(i)).isEmpty())
   {
     lblAnswerBlank->show();
     lblAnswerBlank->setText(m_quiz->blankAnswer(i));
@@ -275,7 +245,7 @@ void QAView::showQuestion(int i)
   else
     lblAnswerBlank->hide();
 
-  txtAnswer -> setText("");
+  txtAnswer->setText("");
 
   picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconRightCol), KIconLoader::Panel));
 
@@ -284,8 +254,7 @@ void QAView::showQuestion(int i)
 
 void QAView::slotApplySettings( )
 {
-  m_score ->setAsPercent(Prefs::percent());
-  updateScore();
+  score->setAsPercent(Prefs::percent());
 }
 
 void QAView::slotSpecChar( const QChar & c)

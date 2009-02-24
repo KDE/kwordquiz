@@ -1,5 +1,5 @@
 /* This file is part of KWordQuiz
-  Copyright (C) 2003-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+  Copyright (C) 2003-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -24,7 +24,6 @@
 #include <KActionCollection>
 
 class KWQQuiz;
-class WQScore;
 
 /**
 @author Peter Hedlund
@@ -48,15 +47,12 @@ public slots:
 
 private:
     KWQQuiz *m_quiz;
-    WQScore *m_score;
     KActionCollection *m_actionCollection;
 
     int m_question;
     int m_error;
-
     bool m_hintUsed;
 
-    void updateScore();
     void showQuestion(int i);
 };
 

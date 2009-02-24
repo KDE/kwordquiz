@@ -16,7 +16,6 @@ set(kwordquiz_SRCS
    flashview.cpp
    multipleview.cpp
    kwqquiz.cpp
-   wqscore.cpp
    prefgeneral.cpp
    prefeditor.cpp
    prefquiz.cpp
@@ -31,6 +30,7 @@ set(kwordquiz_SRCS
    kwqtabledelegate.cpp
    kwqsortfiltermodel.cpp
    kwqcommands.cpp
+   kwqscorewidget.cpp
    )
 
 
@@ -41,7 +41,8 @@ kde4_add_ui_files(kwordquiz_SRCS
    qaviewbase.ui 
    prefeditorbase.ui 
    prefquizbase.ui
-   dlgrcbase.ui 
+   dlgrcbase.ui
+   kwqscorewidgetbase.ui
    prefcharacterbase.ui 
    prefcardappearancebase.ui
    prefgeneralbase.ui )

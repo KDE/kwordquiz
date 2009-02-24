@@ -1,7 +1,7 @@
 /***************************************************************************
                           flashview.h -  description
                              -------------------
-   copyright            : (C) 2003-2008 by Peter Hedlund
+   copyright            : (C) 2003-2009 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -22,7 +22,6 @@
 #include <KActionCollection>
 
 class KWQQuiz;
-class WQScore;
 
 /**
 @author Peter Hedlund
@@ -49,7 +48,6 @@ public slots:
 
 private:
     KWQQuiz *m_quiz;
-    WQScore *m_score;
     KActionCollection *m_actionCollection;
 
     QTimer* m_timer;
@@ -64,7 +62,6 @@ private:
     void showFront(int i);
     void showBack(int i);
     void keepDiscardCard(bool keep);
-    void updateScore();
 };
 
 #endif

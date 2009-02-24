@@ -1,7 +1,7 @@
 /***************************************************************************
                           flashview.cpp  -  description
                              -------------------
-   copyright            : (C) 2003-2008 Peter Hedlund
+   copyright            : (C) 2003-2009 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -23,13 +23,12 @@
 #include <KNotification>
 
 #include "kwqquiz.h"
-#include "wqscore.h"
+#include "kwqscorewidget.h"
 #include "prefs.h"
 
 FlashView::FlashView(QWidget *parent, KActionCollection *actionCollection) : QWidget(parent), m_actionCollection(actionCollection)
 {
   setupUi(this);
-  m_score = new WQScore();
   m_timer = new QTimer(this);
   connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
 }
@@ -41,16 +40,12 @@ void FlashView::setQuiz(KWQQuiz *quiz)
 
 void FlashView::init()
 {
-  m_score ->setQuestionCount(m_quiz->questionCount());
-  m_score ->setAsPercent(Prefs::percent());
+  score->clear();
+  score->setQuestionCount(m_quiz->questionCount());
+  score->setAsPercent(Prefs::percent());
 
   m_question = 0;
   m_error = 0;
-  picAnswered->clear();
-  picCorrect->clear();
-  picError->clear();
-
-  updateScore();
 
   m_actionCollection->action("quiz_check")->setEnabled(true);
   m_actionCollection->action("flash_know")->setEnabled(true);
@@ -64,14 +59,14 @@ void FlashView::init()
 
 void FlashView::showFront(int i)
 {
-  lblLanguageQuestion -> setText(m_quiz ->langQuestion(i));
-  lblQuestion -> setText(m_quiz -> question(i));
+  lblLanguageQuestion->setText(m_quiz ->langQuestion(i));
+  lblQuestion->setText(m_quiz->question(i));
 }
 
 void FlashView::showBack(int i)
 {
-  lblLanguageQuestion -> setText(m_quiz->langAnswer(i));
-  lblQuestion -> setText(m_quiz->answer(i));
+  lblLanguageQuestion->setText(m_quiz->langAnswer(i));
+  lblQuestion->setText(m_quiz->answer(i));
 }
 
 
@@ -79,16 +74,14 @@ void FlashView::keepDiscardCard(bool keep)
 {
   if (!keep)
   {
-    m_score->countIncrement(WQScore::cdCorrect);
-    updateScore();
+    score->countIncrement(KWQScoreWidget::cdCorrect);
     KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
   }
   else
   {
     m_error++;
     m_quiz->checkAnswer(m_question, "");
-    m_score->countIncrement(WQScore::cdError);
-    updateScore();
+    score->countIncrement(KWQScoreWidget::cdError);
     KNotification::event("QuizError", i18n("Your answer was incorrect."));
   }
 
@@ -193,35 +186,8 @@ void FlashView::slotRepeat()
   init();
 }
 
-/*!
-    \fn FlashView::updateScore
- */
-void FlashView::updateScore()
-{
-  QString s;
-  s = s.setNum(m_quiz->questionCount(), 10);
-  lblScoreCount->setText(s);
-  picCount->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", KIconLoader::Panel));
-
-  s = m_score->answerText();
-  lblScoreAnswered->setText(s);
-  if (!s.isEmpty())
-    picAnswered->setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
-
-  s = m_score->correctText();
-  lblScoreCorrect->setText(s);
-  if (!s.isEmpty())
-    picCorrect->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
-
-  s = m_score->errorText();
-  lblScoreError->setText(s);
-  if (!s.isEmpty())
-    picError->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
-}
-
 void FlashView::slotTimer( )
 {
-
   if (!m_showFirst)
     slotFlip();
   else
@@ -277,6 +243,7 @@ void FlashView::slotApplySettings( )
     pal.setColor(linFlash->backgroundRole(), Prefs::backCardColor());
     linFlash->setPalette(pal);
   }
+
   if (Prefs::autoFlip())
   {
     m_timer->setSingleShot(true);
@@ -285,8 +252,7 @@ void FlashView::slotApplySettings( )
   else
     m_timer->stop();
 
-  m_score ->setAsPercent(Prefs::percent());
-  updateScore();
+  score ->setAsPercent(Prefs::percent());
 }
 
 #include "flashview.moc"

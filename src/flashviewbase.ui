@@ -1,35 +1,36 @@
-<ui version="4.0" >
- <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Peter Hedlund &lt;peter.hedlund@kdemail.net&gt;</author>
  <class>FlashViewBase</class>
- <widget class="QWidget" name="FlashViewBase" >
-  <property name="geometry" >
+ <widget class="QWidget" name="FlashViewBase">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>416</width>
+    <width>439</width>
     <height>383</height>
    </rect>
   </property>
-  <layout class="QGridLayout" >
-   <property name="margin" >
+  <layout class="QGridLayout">
+   <property name="margin">
     <number>0</number>
    </property>
-   <item row="0" column="0" >
-    <widget class="QStackedWidget" name="stackedWidget" >
-     <property name="currentIndex" >
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="pageQuiz" >
-      <layout class="QGridLayout" >
-       <item row="0" column="1" >
+     <widget class="QWidget" name="pageQuiz">
+      <layout class="QGridLayout">
+       <item row="0" column="1">
         <spacer>
-         <property name="orientation" >
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeType" >
+         <property name="sizeType">
           <enum>QSizePolicy::Fixed</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>340</width>
            <height>30</height>
@@ -37,15 +38,15 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="0" >
+       <item row="1" column="0">
         <spacer>
-         <property name="orientation" >
+         <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
-         <property name="sizeType" >
+         <property name="sizeType">
           <enum>QSizePolicy::Fixed</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>30</width>
            <height>250</height>
@@ -53,36 +54,36 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="1" >
-        <widget class="QFrame" name="fraCard" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+       <item row="1" column="1">
+        <widget class="QFrame" name="fraCard">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="toolTip" >
+         <property name="toolTip">
           <string>The flashcard</string>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <property name="frameShape" >
+         <property name="frameShape">
           <enum>QFrame::Box</enum>
          </property>
-         <property name="frameShadow" >
+         <property name="frameShadow">
           <enum>QFrame::Plain</enum>
          </property>
-         <layout class="QGridLayout" >
-          <item row="0" column="0" >
-           <widget class="QLabel" name="lblLanguageQuestion" >
-            <property name="sizePolicy" >
-             <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+         <layout class="QGridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblLanguageQuestion">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="font" >
+            <property name="font">
              <font>
               <pointsize>12</pointsize>
               <weight>50</weight>
@@ -92,60 +93,60 @@
               <strikeout>false</strikeout>
              </font>
             </property>
-            <property name="toolTip" >
+            <property name="toolTip">
              <string>The flashcard</string>
             </property>
-            <property name="whatsThis" >
+            <property name="whatsThis">
              <string>Language or other identifier for this card</string>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>Language 1</string>
             </property>
-            <property name="alignment" >
+            <property name="alignment">
              <set>Qt::AlignTop</set>
             </property>
            </widget>
           </item>
-          <item row="1" column="0" >
-           <widget class="QFrame" name="linFlash" >
-            <property name="autoFillBackground" >
+          <item row="1" column="0">
+           <widget class="QFrame" name="linFlash">
+            <property name="autoFillBackground">
              <bool>true</bool>
             </property>
-            <property name="frameShape" >
+            <property name="frameShape">
              <enum>QFrame::HLine</enum>
             </property>
-            <property name="frameShadow" >
+            <property name="frameShadow">
              <enum>QFrame::Plain</enum>
             </property>
            </widget>
           </item>
-          <item row="2" column="0" >
-           <widget class="QLabel" name="lblQuestion" >
-            <property name="sizePolicy" >
-             <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+          <item row="2" column="0">
+           <widget class="QLabel" name="lblQuestion">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="toolTip" >
+            <property name="toolTip">
              <string>The flashcard</string>
             </property>
-            <property name="whatsThis" >
-             <string>The flashcard. Select Quiz -> Check to see the other side.</string>
+            <property name="whatsThis">
+             <string>The flashcard. Select Quiz -&gt; Check to see the other side.</string>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>This is your question</string>
             </property>
-            <property name="textFormat" >
+            <property name="textFormat">
              <enum>Qt::AutoText</enum>
             </property>
-            <property name="scaledContents" >
+            <property name="scaledContents">
              <bool>false</bool>
             </property>
-            <property name="alignment" >
+            <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
-            <property name="wordWrap" >
+            <property name="wordWrap">
              <bool>true</bool>
             </property>
            </widget>
@@ -153,15 +154,15 @@
          </layout>
         </widget>
        </item>
-       <item row="1" column="2" >
+       <item row="1" column="2">
         <spacer>
-         <property name="orientation" >
+         <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
-         <property name="sizeType" >
+         <property name="sizeType">
           <enum>QSizePolicy::Fixed</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>30</width>
            <height>250</height>
@@ -169,15 +170,15 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="1" >
+       <item row="2" column="1">
         <spacer>
-         <property name="orientation" >
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeType" >
+         <property name="sizeType">
           <enum>QSizePolicy::Fixed</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>340</width>
            <height>30</height>
@@ -185,292 +186,41 @@
          </property>
         </spacer>
        </item>
-       <item row="3" column="0" colspan="3" >
-        <layout class="QGridLayout" >
-         <property name="margin" >
-          <number>0</number>
+       <item row="6" column="0" colspan="3">
+        <widget class="KWQScoreWidget" name="score" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <property name="spacing" >
-          <number>6</number>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>32</height>
+          </size>
          </property>
-         <item row="0" column="0" >
-          <widget class="Line" name="line1_2" >
-           <property name="frameShape" >
-            <enum>QFrame::HLine</enum>
-           </property>
-           <property name="frameShadow" >
-            <enum>QFrame::Sunken</enum>
-           </property>
-           <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" >
-          <layout class="QGridLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <item row="0" column="1" >
-            <widget class="QLabel" name="lblScoreCount" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font" >
-              <font>
-               <pointsize>24</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-               <underline>false</underline>
-               <strikeout>false</strikeout>
-              </font>
-             </property>
-             <property name="toolTip" >
-              <string>Questions</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards in the session</string>
-             </property>
-             <property name="text" >
-              <string>00</string>
-             </property>
-             <property name="alignment" >
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="4" >
-            <widget class="QLabel" name="picCorrect" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
-             <property name="toolTip" >
-              <string>Correct answers</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards counted as correct (I know). May be shown as a percentage.</string>
-             </property>
-             <property name="pixmap" >
-              <pixmap/>
-             </property>
-             <property name="scaledContents" >
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="5" >
-            <widget class="QLabel" name="lblScoreCorrect" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font" >
-              <font>
-               <pointsize>24</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-               <underline>false</underline>
-               <strikeout>false</strikeout>
-              </font>
-             </property>
-             <property name="toolTip" >
-              <string>Correct answers</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards counted as correct (I know). May be shown as a percentage.</string>
-             </property>
-             <property name="text" >
-              <string>00</string>
-             </property>
-             <property name="alignment" >
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="6" >
-            <widget class="QLabel" name="picError" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
-             <property name="toolTip" >
-              <string>Incorrect answers</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards counted as incorrect (I do not know). May be shown as a percentage.</string>
-             </property>
-             <property name="pixmap" >
-              <pixmap/>
-             </property>
-             <property name="scaledContents" >
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0" >
-            <widget class="QLabel" name="picCount" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
-             <property name="toolTip" >
-              <string>Questions</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards in the session</string>
-             </property>
-             <property name="pixmap" >
-              <pixmap/>
-             </property>
-             <property name="scaledContents" >
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3" >
-            <widget class="QLabel" name="lblScoreAnswered" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font" >
-              <font>
-               <pointsize>24</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-               <underline>false</underline>
-               <strikeout>false</strikeout>
-              </font>
-             </property>
-             <property name="toolTip" >
-              <string>Answered questions</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards already seen. May be shown as a percentage.</string>
-             </property>
-             <property name="text" >
-              <string>00</string>
-             </property>
-             <property name="alignment" >
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2" >
-            <widget class="QLabel" name="picAnswered" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
-             <property name="toolTip" >
-              <string>Answered questions</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards already seen. May be shown as a percentage.</string>
-             </property>
-             <property name="pixmap" >
-              <pixmap/>
-             </property>
-             <property name="scaledContents" >
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="7" >
-            <widget class="QLabel" name="lblScoreError" >
-             <property name="sizePolicy" >
-              <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font" >
-              <font>
-               <pointsize>24</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-               <underline>false</underline>
-               <strikeout>false</strikeout>
-              </font>
-             </property>
-             <property name="toolTip" >
-              <string>Incorrect answers</string>
-             </property>
-             <property name="whatsThis" >
-              <string>The number of cards counted as incorrect (I do not know). May be shown as a percentage.</string>
-             </property>
-             <property name="text" >
-              <string>00</string>
-             </property>
-             <property name="alignment" >
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
+         <property name="baseSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pageWarning" >
-      <layout class="QGridLayout" >
-       <item row="0" column="0" >
-        <widget class="QLabel" name="label" >
-         <property name="text" >
-          <string>&lt;html>There are too few entries in your vocabulary.&lt;br />You need at least one entry for a flashcard quiz.&lt;/html></string>
+     <widget class="QWidget" name="pageWarning">
+      <layout class="QGridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>&lt;html&gt;There are too few entries in your vocabulary.&lt;br /&gt;You need at least one entry for a flashcard quiz.&lt;/html&gt;</string>
          </property>
-         <property name="alignment" >
+         <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <property name="wordWrap" >
+         <property name="wordWrap">
           <bool>true</bool>
          </property>
         </widget>
@@ -481,6 +231,14 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KWQScoreWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">kwqscorewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
