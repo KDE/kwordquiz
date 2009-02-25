@@ -21,7 +21,7 @@
 
 #include <KActionCollection>
 
-class KWQQuiz;
+class KWQQuizModel;
 
 /**
 @author Peter Hedlund
@@ -32,7 +32,7 @@ Q_OBJECT
 public:
     FlashView(QWidget *parent, KActionCollection *actionCollection);
 
-    void setQuiz(KWQQuiz *quiz);
+    void setQuiz(KWQQuizModel *quiz);
     void init();
 
 private slots:
@@ -47,20 +47,18 @@ public slots:
     void slotApplySettings();
 
 private:
-    KWQQuiz *m_quiz;
+    KWQQuizModel *m_quiz;
     KActionCollection *m_actionCollection;
 
     QTimer* m_timer;
 
-    int m_question;
-    int m_error;
     bool m_showFirst;
     bool m_soundFeedBack;
     bool m_flipAuto;
     bool m_keepDiscard;
 
-    void showFront(int i);
-    void showBack(int i);
+    void showFront();
+    void showBack();
     void keepDiscardCard(bool keep);
 };
 

@@ -22,7 +22,6 @@
 #include <QCheckBox>
 #include <QtGui/QPrinter>
 
-
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kactionmenu.h>
@@ -1129,10 +1128,10 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
       if (!m_tableModel->checkSyntax())
         m_pageWidget->setCurrentPage(m_editorPage);
     }
-    m_quiz = new KWQQuiz(this);
-    m_quiz->setModel(m_sortFilterModel);
+    m_quiz = new KWQQuizModel(this);
+    m_quiz->setSourceModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-    m_quiz ->setQuizType(Prefs::EnumStartSession::Flashcard);
+    m_quiz->setQuizType(Prefs::EnumStartSession::Flashcard);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
     {
@@ -1160,10 +1159,10 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
       if (!m_tableModel->checkSyntax())
         m_pageWidget->setCurrentPage(m_editorPage);
     }
-    m_quiz = new KWQQuiz(this);
-    m_quiz->setModel(m_sortFilterModel);
+    m_quiz = new KWQQuizModel(this);
+    m_quiz->setSourceModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-    m_quiz ->setQuizType(Prefs::EnumStartSession::MultipleChoice);
+    m_quiz->setQuizType(Prefs::EnumStartSession::MultipleChoice);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
     {
@@ -1192,10 +1191,10 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
       if (!m_tableModel->checkSyntax())
         m_pageWidget->setCurrentPage(m_editorPage);
     }
-    m_quiz = new KWQQuiz(this);
-    m_quiz->setModel(m_sortFilterModel);
+    m_quiz = new KWQQuizModel(this);
+    m_quiz->setSourceModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
-    m_quiz ->setQuizType(Prefs::EnumStartSession::QA);
+    m_quiz->setQuizType(Prefs::EnumStartSession::QA);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
     {
@@ -1454,11 +1453,11 @@ void KWordQuizApp::slotCreateErrorListDocument()
     errorDoc->appendIdentifier();
     errorDoc->identifier(1).setName(m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
-    foreach (const KWQListItem &item, m_quiz->errorList()) {
+    foreach (int item, m_quiz->errorList()) {
       KEduVocExpression *errorExpr = new KEduVocExpression();
       errorDoc->lesson()->appendEntry(errorExpr);
-      errorExpr->setTranslation(0, m_tableModel->data(m_tableModel->index(item.firstChoice(), 0), Qt::DisplayRole).toString());
-      errorExpr->setTranslation(1, m_tableModel->data(m_tableModel->index(item.firstChoice(), 1), Qt::DisplayRole).toString());
+      errorExpr->setTranslation(0, m_quiz->data(m_quiz->index(item, 0), Qt::DisplayRole).toString());
+      errorExpr->setTranslation(1, m_quiz->data(m_quiz->index(item, 1), Qt::DisplayRole).toString());
     }
     saveDocAsFileName(errorDoc);
     if (m_dirWatch->contains(errorDoc->url().path()))

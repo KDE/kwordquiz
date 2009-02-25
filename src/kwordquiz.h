@@ -29,7 +29,7 @@
 #include <KUrl>
 #include <KUndoStack>
 
-#include "kwqquiz.h"
+#include "kwqquizmodel.h"
 
 class KActionMenu;
 class KRecentFilesAction;
@@ -232,7 +232,7 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotRedoTextChanged(const QString &);
 
   private:
-    KWQQuiz *m_quiz;
+    KWQQuizModel *m_quiz;
 
     /** view is the main widget which represents your working area. The View
      * class should handle all events of the view widget.  It is kept empty so

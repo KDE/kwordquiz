@@ -22,7 +22,7 @@
 #include <KLocale>
 #include <KNotification>
 
-#include "kwqquiz.h"
+#include "kwqquizmodel.h"
 #include "kwqscorewidget.h"
 #include "prefs.h"
 
@@ -33,7 +33,7 @@ FlashView::FlashView(QWidget *parent, KActionCollection *actionCollection) : QWi
   connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
 }
 
-void FlashView::setQuiz(KWQQuiz *quiz)
+void FlashView::setQuiz(KWQQuizModel *quiz)
 {
   m_quiz = quiz;
 }
@@ -43,9 +43,6 @@ void FlashView::init()
   score->clear();
   score->setQuestionCount(m_quiz->questionCount());
   score->setAsPercent(Prefs::percent());
-
-  m_question = 0;
-  m_error = 0;
 
   m_actionCollection->action("quiz_check")->setEnabled(true);
   m_actionCollection->action("flash_know")->setEnabled(true);
@@ -57,16 +54,16 @@ void FlashView::init()
   slotFlip();
 }
 
-void FlashView::showFront(int i)
+void FlashView::showFront()
 {
-  lblLanguageQuestion->setText(m_quiz ->langQuestion(i));
-  lblQuestion->setText(m_quiz->question(i));
+  lblLanguageQuestion->setText(m_quiz ->langQuestion());
+  lblQuestion->setText(m_quiz->question());
 }
 
-void FlashView::showBack(int i)
+void FlashView::showBack()
 {
-  lblLanguageQuestion->setText(m_quiz->langAnswer(i));
-  lblQuestion->setText(m_quiz->answer(i));
+  lblLanguageQuestion->setText(m_quiz->langAnswer());
+  lblQuestion->setText(m_quiz->answer());
 }
 
 
@@ -79,15 +76,15 @@ void FlashView::keepDiscardCard(bool keep)
   }
   else
   {
-    m_error++;
-    m_quiz->checkAnswer(m_question, "");
+    m_quiz->checkAnswer("");
     score->countIncrement(KWQScoreWidget::cdError);
     KNotification::event("QuizError", i18n("Your answer was incorrect."));
   }
 
   m_showFirst = true;
 
-  if (++m_question < m_quiz->questionCount())
+  m_quiz->toNext();
+  if (!m_quiz->atEnd())
   {
     slotFlip();
   }
@@ -97,8 +94,8 @@ void FlashView::keepDiscardCard(bool keep)
     m_actionCollection->action("quiz_check")->setEnabled(false);
     m_actionCollection->action("flash_know")->setEnabled(false);
     m_actionCollection->action("flash_dont_know")->setEnabled(false);
-    m_actionCollection->action("quiz_repeat_errors")->setEnabled((m_error > 0));
-    m_actionCollection->action("quiz_export_errors")->setEnabled((m_error > 0));
+    m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
+    m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
   }
 }
 
@@ -126,7 +123,7 @@ void FlashView::slotFlip()
     pal.setColor(linFlash->backgroundRole(), Prefs::frontCardColor());
     linFlash->setPalette(pal);
     //linFlash->setPaletteForegroundColor(QColor(255, 0, 0));
-    showFront(m_question);
+    showFront();
     m_showFirst = false;
   }
   else
@@ -151,7 +148,7 @@ void FlashView::slotFlip()
     pal.setColor(linFlash->backgroundRole(), Prefs::backCardColor());
     linFlash->setPalette(pal);
 
-    showBack(m_question);
+    showBack();
     m_showFirst = true;
   }
 

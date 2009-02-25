@@ -23,7 +23,7 @@
 
 #include <KActionCollection>
 
-class KWQQuiz;
+class KWQQuizModel;
 
 /**
 @author Peter Hedlund
@@ -34,7 +34,7 @@ Q_OBJECT
 public:
     MultipleView(QWidget *parent, KActionCollection *actionCollection);
 
-    void setQuiz(KWQQuiz *quiz);
+    void setQuiz(KWQQuizModel *quiz);
     void init();
 
 public slots:
@@ -47,13 +47,10 @@ public slots:
     void slotApplySettings();
 
 private:
-    KWQQuiz *m_quiz;
+    KWQQuizModel *m_quiz;
     KActionCollection *m_actionCollection;
 
-    int m_question;
-    int m_error;
-
-    void showQuestion(int i);
+    void showQuestion();
 };
 
 #endif

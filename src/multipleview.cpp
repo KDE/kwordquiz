@@ -21,7 +21,7 @@
 #include <KNotification>
 #include <KActionCollection>
 
-#include "kwqquiz.h"
+#include "kwqquizmodel.h"
 #include "kwqscorewidget.h"
 #include "prefs.h"
 
@@ -33,7 +33,7 @@ MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection)
   connect(opt3, SIGNAL(clicked()), this, SLOT(slotOpt3Clicked()));
 }
 
-void MultipleView::setQuiz(KWQQuiz *quiz)
+void MultipleView::setQuiz(KWQQuizModel *quiz)
 {
   m_quiz = quiz;
 }
@@ -43,9 +43,6 @@ void MultipleView::init()
   score->clear();
   score->setQuestionCount(m_quiz->questionCount());
   score->setAsPercent(Prefs::percent());
-
-  m_question = 0;
-  m_error = 0;
 
   opt1->show();
   opt2->show();
@@ -77,7 +74,7 @@ void MultipleView::init()
   m_actionCollection->action("quiz_Opt2")->setEnabled(true);
   m_actionCollection->action("quiz_Opt3")->setEnabled(true);
 
-  showQuestion(0);
+  showQuestion();
 }
 
 void MultipleView::slotCheck()
@@ -109,7 +106,7 @@ void MultipleView::slotCheck()
     if (!oneIsChecked)
       return;
 
-    bool fIsCorrect = m_quiz->checkAnswer(m_question, ans);
+    bool fIsCorrect = m_quiz->checkAnswer(ans);
 
     if (fIsCorrect)
     {
@@ -122,11 +119,9 @@ void MultipleView::slotCheck()
     }
     else
     {
-      m_error++;
-
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
 
-      lblCorrect->setText(m_quiz->answer(m_question));
+      lblCorrect->setText(m_quiz->answer());
       picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       score->countIncrement(KWQScoreWidget::cdError);
@@ -134,15 +129,16 @@ void MultipleView::slotCheck()
     }
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
-    lblPreviousQuestion->setText(m_quiz->question(m_question));
+    lblPreviousQuestion->setText(m_quiz->question());
     picPrevious->setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
     lblYourAnswer->setText(m_quiz->yourAnswer(ans));
 
-    if (++m_question < m_quiz->questionCount())
+    m_quiz->toNext();
+    if (!m_quiz->atEnd())
     {
-      showQuestion(m_question);
+      showQuestion();
     }
     else
     {
@@ -151,8 +147,8 @@ void MultipleView::slotCheck()
       m_actionCollection->action("quiz_Opt1")->setEnabled(false);
       m_actionCollection->action("quiz_Opt2")->setEnabled(false);
       m_actionCollection->action("quiz_Opt3")->setEnabled(false);
-      m_actionCollection->action("quiz_repeat_errors")->setEnabled((m_error > 0));
-      m_actionCollection->action("quiz_export_errors")->setEnabled((m_error > 0));
+      m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
+      m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();
@@ -217,16 +213,16 @@ void MultipleView::slotRepeat()
 /*!
     \fn MultipleView::showQuestion(int i)
  */
-void MultipleView::showQuestion(int i)
+void MultipleView::showQuestion()
 {
-  lblQuestionLanguage->setText(m_quiz ->langQuestion(i));
-  lblQuestion->setText(m_quiz ->question(i));
+  lblQuestionLanguage->setText(m_quiz ->langQuestion());
+  lblQuestion->setText(m_quiz ->question());
 
-  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconLeftCol), KIconLoader::Panel));
+  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconLeftCol), KIconLoader::Panel));
 
-  lblAnswerLanguage->setText(m_quiz ->langAnswer(i));
+  lblAnswerLanguage->setText(m_quiz ->langAnswer());
 
-  QStringList sl = m_quiz->multiOptions(i);
+  QStringList sl = m_quiz->multiOptions();
 
   opt1->setText("&1 " + sl[0]);
   opt2->setText("&2 " + sl[1]);
@@ -236,7 +232,7 @@ void MultipleView::showQuestion(int i)
   opt2->setChecked(false);
   opt3->setChecked(false);
 
-  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(i, KWQQuiz::IconRightCol), KIconLoader::Panel));
+  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconRightCol), KIconLoader::Panel));
 }
 
 void MultipleView::slotApplySettings()
