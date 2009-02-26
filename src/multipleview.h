@@ -23,6 +23,8 @@
 
 #include <KActionCollection>
 
+class QActionGroup;
+class QButtonGroup;
 class KWQQuizModel;
 
 /**
@@ -41,12 +43,13 @@ public slots:
     void slotCheck();
     void slotRepeat();
     void slotRestart();
-    void slotOpt1Clicked();
-    void slotOpt2Clicked();
-    void slotOpt3Clicked();
+    void slotChoiceClicked(int );
+    void slotChoiceActionTriggered(QAction *);
     void slotApplySettings();
 
 private:
+    QActionGroup *m_choicesActions;
+    QButtonGroup *m_choicesButtons;
     KWQQuizModel *m_quiz;
     KActionCollection *m_actionCollection;
 

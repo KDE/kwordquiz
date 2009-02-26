@@ -16,6 +16,8 @@
 
 #include "multipleview.h"
 
+#include <QtGui/QButtonGroup>
+
 #include <KIconLoader>
 #include <KLocale>
 #include <KNotification>
@@ -28,9 +30,19 @@
 MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection) : QWidget(parent), m_actionCollection(actionCollection)
 {
   setupUi(this);
-  connect(opt1, SIGNAL(clicked()), this, SLOT(slotOpt1Clicked()));
-  connect(opt2, SIGNAL(clicked()), this, SLOT(slotOpt2Clicked()));
-  connect(opt3, SIGNAL(clicked()), this, SLOT(slotOpt3Clicked()));
+  m_choicesButtons = new QButtonGroup(this);
+  m_choicesButtons->addButton(opt1, 1);
+  m_choicesButtons->addButton(opt2, 2);
+  m_choicesButtons->addButton(opt3, 3);
+  connect(m_choicesButtons, SIGNAL(buttonClicked(int )), this, SLOT(slotChoiceClicked(int )));
+  m_choicesActions = new QActionGroup(this);
+  connect(m_choicesActions, SIGNAL(triggered(QAction *)), this, SLOT(slotChoiceActionTriggered(QAction *)));
+  m_choicesActions->addAction(m_actionCollection->action("quiz_Opt1"));
+  m_choicesActions->addAction(m_actionCollection->action("quiz_Opt2"));
+  m_choicesActions->addAction(m_actionCollection->action("quiz_Opt3"));
+  m_actionCollection->action("quiz_Opt1")->setData(1);
+  m_actionCollection->action("quiz_Opt2")->setData(2);
+  m_actionCollection->action("quiz_Opt3")->setData(3);
 }
 
 void MultipleView::setQuiz(KWQQuizModel *quiz)
@@ -81,30 +93,10 @@ void MultipleView::slotCheck()
 {
   if (m_actionCollection->action("quiz_check")->isEnabled())
   {
-
-    QString ans;
-    bool oneIsChecked = false;
-
-    if (opt1->isChecked())
-    {
-      ans = opt1->text().mid(3, opt1->text().length());
-      oneIsChecked = true;
-    }
-
-    if (opt2->isChecked())
-    {
-      ans = opt2->text().mid(3, opt2->text().length());
-      oneIsChecked = true;
-    }
-
-    if (opt3->isChecked())
-    {
-      ans = opt3->text().mid(3, opt3->text().length());
-      oneIsChecked = true;
-    }
-
-    if (!oneIsChecked)
-      return;
+    if (m_choicesButtons->checkedButton() == 0)
+        return;
+    
+    QString ans = m_choicesButtons->checkedButton()->text().mid(3, opt1->text().length());
 
     bool fIsCorrect = m_quiz->checkAnswer(ans);
 
@@ -120,7 +112,6 @@ void MultipleView::slotCheck()
     else
     {
       picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
-
       lblCorrect->setText(m_quiz->answer());
       picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
@@ -162,40 +153,16 @@ void MultipleView::slotCheck()
   }
 }
 
-void MultipleView::slotOpt1Clicked()
+void MultipleView::slotChoiceActionTriggered(QAction *choice)
 {
-  opt1->setChecked(true);
-  if (Prefs::autoCheck())
-    slotCheck();
-  else
-  {
-    opt2->setChecked(false);
-    opt3->setChecked(false);
-  }
+  slotChoiceClicked(choice->data().toInt());
 }
 
-void MultipleView::slotOpt2Clicked()
+void MultipleView::slotChoiceClicked(int choice)
 {
-  opt2->setChecked(true);
+  m_choicesButtons->button(choice)->setChecked(true);
   if (Prefs::autoCheck())
     slotCheck();
-  else
-  {
-    opt1->setChecked(false);
-    opt3->setChecked(false);
-  }
-}
-
-void MultipleView::slotOpt3Clicked()
-{
-  opt3->setChecked(true);
-  if (Prefs::autoCheck())
-    slotCheck();
-  else
-  {
-    opt1->setChecked(false);
-    opt2->setChecked(false);
-  }
 }
 
 void MultipleView::slotRestart()
@@ -211,7 +178,7 @@ void MultipleView::slotRepeat()
 }
 
 /*!
-    \fn MultipleView::showQuestion(int i)
+    \fn MultipleView::showQuestion()
  */
 void MultipleView::showQuestion()
 {
@@ -228,10 +195,12 @@ void MultipleView::showQuestion()
   opt2->setText("&2 " + sl[1]);
   opt3->setText("&3 " + sl[2]);
 
+  m_choicesButtons->setExclusive(false);
   opt1->setChecked(false);
   opt2->setChecked(false);
   opt3->setChecked(false);
-
+  m_choicesButtons->setExclusive(true);
+  setFocus();
   picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconRightCol), KIconLoader::Panel));
 }
 
