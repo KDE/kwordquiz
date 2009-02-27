@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Wed Mar 1 19:17:30 PST 2006
-    copyright            : (C) 2006-2007 by Peter Hedlund
+    copyright            : (C) 2006-2009 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -19,10 +19,13 @@
 
 #include "kwqtabledelegate.h"
 
-#include <KLineEdit>
 #include <QPainter>
+#include <QtDBus/QDBusInterface>
+
+#include <KLineEdit>
 
 #include "kwqtablemodel.h"
+#include "prefs.h"
 
 KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
 {
@@ -34,6 +37,20 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
   KLineEdit *editor = new KLineEdit(parent);
   editor->setFrame(false);
   editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
+
+  QString layout;
+  layout.clear();
+
+  if (index.column() == 0)
+    layout = Prefs::keyboardLayout1();
+  if (index.column() == 1)
+    layout = Prefs::keyboardLayout2();
+
+  if (!layout.isEmpty()) {
+    QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+    if (kxkb.isValid())
+      kxkb.call("setLayout", layout);
+  }
   //connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
   return editor;
 }

@@ -20,6 +20,7 @@
 
 #include "kwqsortfiltermodel.h"
 #include "krandomsequence.h"
+#include "prefs.h"
 
 KWQQuizModel::KWQQuizModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -251,14 +252,14 @@ QStringList KWQQuizModel::multiOptions()
 QString KWQQuizModel::quizIcon(QuizIcon ico)
 {
     QString s = "question";
-    int col = column(m_currentQuestion);
+    int col = column(m_list.at(m_currentQuestion));
     if (ico == IconLeftCol) {
-        if (col != 0)
+        if (col == 0)
             s = "answer";
     }
 
     if (ico == IconRightCol) {
-        if (col == 0)
+        if (col != 0)
             s = "answer";
     }
     return s;
@@ -409,18 +410,17 @@ QString KWQQuizModel::langAnswer()
 }
 
 
-int KWQQuizModel::kbAnswer()
+QString KWQQuizModel::kbAnswer()
 {
-/*  KWQListItem *li = m_list->at(m_currentQuestion);
-  if (li->question() == 0)
-  {
-    //@todo return m_table ->layoutLeft();
-  }
-  else
-  {
-    //@todo return m_table -> layoutRight();
-  }*/
-  return 0;
+    int col = column(m_list.at(m_currentQuestion));
+    QString result;
+
+    if (col == 0)
+        result = Prefs::keyboardLayout1();
+    if (col == 1)
+        result = Prefs::keyboardLayout2();
+
+    return result;
 }
 
 

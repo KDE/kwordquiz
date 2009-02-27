@@ -70,7 +70,7 @@ public:
     QString langQuestion();
     QString langAnswer();
 
-    int kbAnswer();
+    QString kbAnswer();
 
     QList<int> errorList() const {return m_errorList;}
 

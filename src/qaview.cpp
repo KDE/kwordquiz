@@ -16,6 +16,8 @@
 
 #include "qaview.h"
 
+#include <QtDBus/QDBusInterface>
+
 #include <KIconLoader>
 #include <KLocale>
 #include <KNotification>
@@ -246,7 +248,12 @@ void QAView::showQuestion()
 
   picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconRightCol), KIconLoader::Panel));
 
-  ///@todo handle keyboard layouts
+  QString layout = m_quiz->kbAnswer();
+  if (!layout.isEmpty()) {
+    QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+    if (kxkb.isValid())
+      kxkb.call("setLayout", layout);
+  }
 }
 
 void QAView::slotApplySettings( )

@@ -230,7 +230,10 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotCleanChanged(bool);
     void slotUndoTextChanged(const QString &);
     void slotRedoTextChanged(const QString &);
-
+    
+    void slotTableContextMenuRequested(const QPoint &);
+    void slotLayoutActionGroupTriggered(QAction *);
+    
   private:
     KWQQuizModel *m_quiz;
 
@@ -293,7 +296,9 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* vocabAdjustRows;
     //QAction* vocabSort;
     QAction* vocabShuffle;
-
+    QAction* vocabLayouts;
+    QActionGroup *m_layoutActionGroup;
+    
     KActionMenu *m_modeActionMenu;
     QActionGroup *m_modeActionGroup;
 

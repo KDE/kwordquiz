@@ -21,6 +21,8 @@
 #include <QBitmap>
 #include <QCheckBox>
 #include <QtGui/QPrinter>
+#include <QtDBus/QDBusInterface>
+#include <QtDBus/QDBusReply>
 
 #include <kactioncollection.h>
 #include <kapplication.h>
@@ -256,6 +258,17 @@ void KWordQuizApp::initActions()
   vocabShuffle->setStatusTip(vocabShuffle->whatsThis());
   connect(vocabShuffle, SIGNAL(triggered(bool)), this, SLOT(slotVocabShuffle()));
 
+  vocabLayouts = actionCollection()->addAction("vocab_layouts");;
+  vocabLayouts->setText(i18n("&Keyboard Layout"));
+  vocabLayouts->setWhatsThis(i18n("Shows available keyboard layouts"));
+  vocabLayouts->setToolTip(vocabLayouts->whatsThis());
+  vocabLayouts->setStatusTip(vocabLayouts->whatsThis());
+  QMenu *m = new QMenu(this);
+  vocabLayouts->setMenu(m);
+  
+  m_layoutActionGroup = new QActionGroup(this);
+  connect(m_layoutActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotLayoutActionGroupTriggered(QAction *)));
+  
   m_modeActionMenu = actionCollection()->add<KActionMenu>("mode_0");
   m_modeActionMenu->setIcon(KIcon("mode1"));
   m_modeActionMenu->setText(i18n("Change Mode"));
@@ -500,8 +513,8 @@ void KWordQuizApp::initView()
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
   setCaption(m_doc->url().fileName(),false);
-  m_tableView->addActions(guiFactory()->container("editor_popup", this)->actions());
-  m_tableView->setContextMenuPolicy(Qt::ActionsContextMenu);
+  m_tableView->setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(m_tableView, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(slotTableContextMenuRequested(const QPoint &)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
 
   m_searchWidget->setVisible(Prefs::showSearch());
@@ -1457,6 +1470,50 @@ void KWordQuizApp::slotCreateErrorListDocument()
     if (m_dirWatch->contains(errorDoc->url().path()))
       m_dirWatch->removeFile(errorDoc->url().path());
   }
+}
+
+void KWordQuizApp::slotTableContextMenuRequested(const QPoint & pos)
+{
+    QMenu *popup = static_cast<QMenu*>(guiFactory()->container("editor_popup",this));
+    QAction *a;
+    int column = m_tableView->currentIndex().column();
+    QString currentLayout = "";
+    if (column == 0)
+        currentLayout = Prefs::keyboardLayout1();
+    if (column == 1)
+        currentLayout = Prefs::keyboardLayout2();
+
+    // keyboard layout
+    // try to talk to kxbk - get a list of keyboard layouts
+    QDBusInterface kxbk("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+    QDBusReply<QStringList> reply = kxbk.call("getLayoutsList");
+    if (reply.isValid()) {
+        QStringList layouts = reply;
+        //layouts.prepend(QString());
+        QMenu *m = vocabLayouts->menu();
+        m->clear();
+        foreach (const QString &s, layouts) {
+            a = m->addAction(s);
+            a->setData(s);
+            a->setCheckable(true);
+            a->setActionGroup(m_layoutActionGroup);
+            if (s == currentLayout)
+              a->setChecked(true);
+        }
+    } else {
+        kDebug() << "kxkb dbus error";
+    }
+
+    popup->exec(m_tableView->viewport()->mapToGlobal(pos));
+}
+
+void KWordQuizApp::slotLayoutActionGroupTriggered(QAction *act)
+{
+    int column = m_tableView->currentIndex().column();
+    if (column == 0)
+        Prefs::setKeyboardLayout1(act->data().toString());
+    if (column == 1)
+        Prefs::setKeyboardLayout2(act->data().toString());
 }
 
 #include "kwordquiz.moc"

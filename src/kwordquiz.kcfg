@@ -44,6 +44,14 @@
       <label>Titles for column 2</label>
       <default></default>
     </entry>
+    <entry name="KeyboardLayout1" type="String">
+      <label>Keyboard layout for column 1</label>
+      <default></default>
+    </entry>
+    <entry name="KeyboardLayout2" type="String">
+      <label>Keyboard layout for column 2</label>
+      <default></default>
+    </entry>
     <entry name="EditorFont" type="Font">
       <label>Font used in the editor</label>
       <default code="true">KGlobalSettings::generalFont()</default>

@@ -203,5 +203,7 @@
     <Action name="edit_delete" />
     <Separator/>
     <Action name="vocab_languages" />
+    <Separator/>
+    <Action name="vocab_layouts" />
   </Menu>
 </kpartgui>
