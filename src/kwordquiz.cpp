@@ -732,8 +732,8 @@ bool KWordQuizApp::queryClose()
   }
 
   if (completed)
-    if (m_dirWatch->contains(m_doc->url().path()))
-      m_dirWatch->removeFile(m_doc->url().path());
+    if (m_dirWatch->contains(m_doc->url().toLocalFile()))
+      m_dirWatch->removeFile(m_doc->url().toLocalFile());
   return completed;
 }
 
@@ -880,8 +880,8 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
           url = KUrl(url.path() + ".kvtml");
       }
 
-      if (m_dirWatch->contains(document->url().path()))
-        m_dirWatch->removeFile(document->url().path());
+      if (m_dirWatch->contains(document->url().toLocalFile()))
+        m_dirWatch->removeFile(document->url().toLocalFile());
       int result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
       if (result == KEduVocDocument::NoError) {
         m_dirWatch->addFile(url.path());
@@ -1467,8 +1467,8 @@ void KWordQuizApp::slotCreateErrorListDocument()
       errorExpr->setTranslation(1, m_quiz->data(m_quiz->index(item, 1), Qt::DisplayRole).toString());
     }
     saveDocAsFileName(errorDoc);
-    if (m_dirWatch->contains(errorDoc->url().path()))
-      m_dirWatch->removeFile(errorDoc->url().path());
+    if (m_dirWatch->contains(errorDoc->url().toLocalFile()))
+      m_dirWatch->removeFile(errorDoc->url().toLocalFile());
   }
 }
 
