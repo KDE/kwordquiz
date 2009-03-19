@@ -20,12 +20,10 @@
 #include "kwqtabledelegate.h"
 
 #include <QPainter>
-#include <QtDBus/QDBusInterface>
 
 #include <KLineEdit>
 
 #include "kwqtablemodel.h"
-#include "prefs.h"
 
 KWQTableDelegate::KWQTableDelegate(QObject * parent) : QItemDelegate(parent)
 {
@@ -38,19 +36,6 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
   editor->setFrame(false);
   editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
 
-  QString layout;
-  layout.clear();
-
-  if (index.column() == 0)
-    layout = Prefs::keyboardLayout1();
-  if (index.column() == 1)
-    layout = Prefs::keyboardLayout2();
-
-  if (!layout.isEmpty()) {
-    QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
-    if (kxkb.isValid())
-      kxkb.call("setLayout", layout);
-  }
   //connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
   return editor;
 }

@@ -31,6 +31,7 @@
 #include <QtGui/QTextLayout>
 #include <QtGui/QAbstractTextDocumentLayout>
 #include <QHeaderView>
+#include <QtDBus/QDBusInterface>
 
 #include <KLocale>
 #include <KGlobalSettings>
@@ -543,6 +544,22 @@ void KWQTableView::nextCell()
 
     QModelIndex newIndex = model()->index(newRow, newColumn);
     selModel->setCurrentIndex(newIndex, QItemSelectionModel::Current);
+  }
+
+  if (newColumn != currentColumn) {
+    QString layout;
+    layout.clear();
+
+    if (newColumn == 0)
+        layout = Prefs::keyboardLayout1();
+    if (newColumn == 1)
+        layout = Prefs::keyboardLayout2();
+
+    if (!layout.isEmpty()) {
+        QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+        if (kxkb.isValid())
+            kxkb.call("setLayout", layout);
+    }
   }
 }
 
