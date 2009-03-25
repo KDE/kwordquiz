@@ -217,9 +217,9 @@ void KWordQuizApp::initActions()
 
   vocabLanguages = actionCollection()->addAction("vocab_languages");
   vocabLanguages->setIcon(KIcon("languages"));
-  vocabLanguages->setText(i18n("&Column Titles..."));
+  vocabLanguages->setText(i18n("&Column Settings..."));
   vocabLanguages->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
-  vocabLanguages->setWhatsThis(i18n("Defines the column titles for the active vocabulary"));
+  vocabLanguages->setWhatsThis(i18n("Defines the column settings for the active vocabulary"));
   vocabLanguages->setToolTip(vocabLanguages->whatsThis());
   vocabLanguages->setStatusTip(vocabLanguages->whatsThis());
   connect(vocabLanguages, SIGNAL(triggered(bool)), this, SLOT(slotVocabLanguages()));
@@ -231,16 +231,6 @@ void KWordQuizApp::initActions()
   vocabFont->setToolTip(vocabFont->whatsThis());
   vocabFont->setStatusTip(vocabFont->whatsThis());
   connect(vocabFont, SIGNAL(triggered(bool)), this, SLOT(slotVocabFont()));
-
-  //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
-
-  vocabRC = actionCollection()->addAction("vocab_rc");
-  vocabRC->setIcon(KIcon("rowcol"));
-  vocabRC->setText(i18n("&Rows/Columns..."));
-  vocabRC->setWhatsThis(i18n("Defines the number of rows, row heights, and column widths for the active vocabulary"));
-  vocabRC->setToolTip(vocabRC->whatsThis());
-  vocabRC->setStatusTip(vocabRC->whatsThis());
-  connect(vocabRC, SIGNAL(triggered(bool)), this, SLOT(slotVocabRC()));
 
   vocabAdjustRows = actionCollection()->addAction("vocab_adjust_rows");
   vocabAdjustRows->setIcon(KIcon());
@@ -1013,11 +1003,10 @@ void KWordQuizApp::slotVocabLanguages()
 {
   slotStatusMsg(i18n("Setting the column titles of the vocabulary..."));
   DlgLanguage* dlg;
-  dlg = new DlgLanguage(this);
-  dlg->setLanguage(1, m_tableModel->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
-  dlg->setLanguage(2, m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
+  dlg = new DlgLanguage(m_tableModel, this);
+
   if (dlg->exec() == KDialog::Accepted) {
-    KWQCommandIdentifiers *kwqc = new KWQCommandIdentifiers(m_tableView, dlg->Language(1), dlg->Language(2));
+    KWQCommandIdentifiers *kwqc = new KWQCommandIdentifiers(m_tableView, dlg->columnData());
     m_undoStack->push(kwqc);
   }
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
@@ -1036,20 +1025,6 @@ void KWordQuizApp::slotVocabFont()
     m_undoStack->push(kwqc);
   }
   delete dlg;
-  slotStatusMsg(i18nc("@info:status ready", "Ready"));
-}
-
-void KWordQuizApp::slotVocabKeyboard()
-{
-  slotStatusMsg(i18n("Changing the keyboard layout..."));
-  KMessageBox::sorry(0, i18n("Not implemented yet"));
-  slotStatusMsg(i18nc("@info:status ready", "Ready"));
-}
-
-void KWordQuizApp::slotVocabRC()
-{
-  slotStatusMsg(i18n("Changing row and column properties..."));
-  m_tableView->doVocabRC();
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
 
@@ -1388,8 +1363,6 @@ void KWordQuizApp::updateActions()
   editUnmarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
   vocabLanguages->setEnabled(fEdit);
   vocabFont->setEnabled(fEdit);
-  //vocabKeyboard->setEnabled(fEdit);
-  vocabRC->setEnabled(fEdit);
   vocabAdjustRows->setEnabled(fEdit);
   vocabShuffle->setEnabled(fEdit);
 
@@ -1478,10 +1451,7 @@ void KWordQuizApp::slotTableContextMenuRequested(const QPoint & pos)
     QAction *a;
     int column = m_tableView->currentIndex().column();
     QString currentLayout = "";
-    if (column == 0)
-        currentLayout = Prefs::keyboardLayout1();
-    if (column == 1)
-        currentLayout = Prefs::keyboardLayout2();
+    currentLayout = m_tableModel->headerData(column, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
 
     // keyboard layout
     // try to talk to kxbk - get a list of keyboard layouts
@@ -1510,10 +1480,7 @@ void KWordQuizApp::slotTableContextMenuRequested(const QPoint & pos)
 void KWordQuizApp::slotLayoutActionGroupTriggered(QAction *act)
 {
     int column = m_tableView->currentIndex().column();
-    if (column == 0)
-        Prefs::setKeyboardLayout1(act->data().toString());
-    if (column == 1)
-        Prefs::setKeyboardLayout2(act->data().toString());
+    m_tableModel->setHeaderData(column, Qt::Horizontal, act->data().toString(), KWQTableModel::KeyboardLayoutRole);
 }
 
 #include "kwordquiz.moc"

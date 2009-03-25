@@ -2,7 +2,7 @@
                           kwqtableview.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2008 by Peter Hedlund
+    copyright            : (C) 2002-2009 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -21,7 +21,6 @@
 #include <QTableView>
 #include <QList>
 #include <QKeyEvent>
-
 
 #include <KUndoStack>
 
@@ -55,11 +54,11 @@ public:
   void doEditMarkBlank();
   void doEditUnmarkBlank();
   void doVocabShuffle();
-  void doVocabRC();
 
 protected:
   void nextCell();
   void keyPressEvent(QKeyEvent*);
+  void updateKeyboardLayout();
 
 public slots:
   void adjustRow(int );
@@ -75,6 +74,7 @@ protected slots:
   void commitData (QWidget * editor);
   void verticalHeaderResized(int, int, int);
   void horizontalHeaderResized(int, int, int);
+  void horizontalHeaderDataChanged(Qt::Orientation, int, int);
 
 private:
   QString m_currentText;

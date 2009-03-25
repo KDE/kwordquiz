@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Mon Feb 27 18:27:30 PST 2006
-    copyright            : (C) 2006-2008 by Peter Hedlund
+    copyright            : (C) 2006-2009 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -35,6 +35,10 @@ class KWQTableModel : public QAbstractTableModel
 {
 Q_OBJECT
 public:
+  enum roles {
+    KeyboardLayoutRole = Qt::UserRole
+  };
+
   KWQTableModel(QObject * parent = 0);
 
   void setDocument(KEduVocDocument * doc);

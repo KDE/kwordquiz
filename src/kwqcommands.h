@@ -2,7 +2,7 @@
                           kwqcommands.h  -  description
                              -------------------
     begin          : Fri Jan 18 10:37:00 PST 2008
-    copyright      : (C) 2002-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -37,6 +37,16 @@ struct IndexAndData
 };
 
 typedef QList<IndexAndData> IndexAndDataList;
+
+struct ColumnData
+{
+    QString identifier;
+    QString layout;
+    int width;
+};
+
+typedef QList<ColumnData> ColumnDataList;
+
 
 class KWQUndoCommand : public QUndoCommand
 {
@@ -173,35 +183,15 @@ public:
 };
 
 
-class KWQCommandFormat : public KWQUndoCommand
-{
-public:
-  KWQCommandFormat(KWQTableView *view, int newRowCount, int newRowHeight, int newColumnWidth);
-  virtual void undo();
-  virtual void redo();
-
-private:
-  IndexAndDataList m_deleteIndexAndData;
-  int m_newRowCount;
-  int m_newRowHeight;
-  int m_newColumnWidth;
-  int m_oldRowCount;
-  int m_oldColumnWidthLeft;
-  int m_oldColumnWidthRight;
-};
-
-
 class KWQCommandIdentifiers : public KWQUndoCommand
 {
 public:
-  KWQCommandIdentifiers(KWQTableView *view, const QString &newIdentifierLeft, const QString &newIdentifierRight);
+  KWQCommandIdentifiers(KWQTableView *view, const ColumnDataList &newColumnData);
   virtual void undo();
   virtual void redo();
 private:
-  QString m_oldIdentifierLeft;
-  QString m_oldIdentifierRight;
-  QString m_newIdentifierLeft;
-  QString m_newIdentifierRight;
+  ColumnDataList m_oldColumnData;
+  ColumnDataList m_newColumnData;
 };
 
 #endif // KWQCOMMANDS_H

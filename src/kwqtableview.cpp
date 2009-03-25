@@ -43,7 +43,6 @@
 #include "keduvocdocument.h"
 #include "kwordquiz.h"
 #include "prefs.h"
-#include "dlgrc.h"
 #include "kwqcommands.h"
 
 
@@ -396,21 +395,6 @@ void KWQTableView::doEditUnmarkBlank()
 }
 
 
-void KWQTableView::doVocabRC()
-{
-  DlgRC* dlg;
-  dlg = new DlgRC(this);
-  int rowCount = model()->rowCount();
-  dlg->setNumRows(rowCount);
-  dlg->setRowHeight(rowHeight(currentIndex().row()));
-  dlg->setColWidth(columnWidth(currentIndex().column()));
-
-  if (dlg->exec() == KDialog::Accepted) {
-    KWQCommandFormat *kwqc = new KWQCommandFormat(this, dlg->numRows(), dlg->rowHeight(), dlg->colWidth());
-    m_undoStack->push(kwqc);
-  }
-}
-
 void KWQTableView::slotSpecChar(const QChar & c)
 {
   if (state() == QAbstractItemView::EditingState)
@@ -546,21 +530,8 @@ void KWQTableView::nextCell()
     selModel->setCurrentIndex(newIndex, QItemSelectionModel::Current);
   }
 
-  if (newColumn != currentColumn) {
-    QString layout;
-    layout.clear();
-
-    if (newColumn == 0)
-        layout = Prefs::keyboardLayout1();
-    if (newColumn == 1)
-        layout = Prefs::keyboardLayout2();
-
-    if (!layout.isEmpty()) {
-        QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
-        if (kxkb.isValid())
-            kxkb.call("setLayout", layout);
-    }
-  }
+  if (newColumn != currentColumn)
+    updateKeyboardLayout();
 }
 
 void KWQTableView::keyPressEvent(QKeyEvent * e)
@@ -599,6 +570,7 @@ void KWQTableView::setModel(KWQSortFilterModel * model)
   scrollTo(currentIndex());
   connect(verticalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(verticalHeaderResized(int, int, int)));
   connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
+  connect(m_model, SIGNAL(headerDataChanged(Qt::Orientation, int, int)), this, SLOT(horizontalHeaderDataChanged(Qt::Orientation, int, int)));
 }
 
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
@@ -650,6 +622,16 @@ void KWQTableView::horizontalHeaderResized(int logicalIndex, int oldSize, int ne
   model()->setHeaderData(logicalIndex, Qt::Horizontal, QSize(newSize, 25), Qt::SizeHintRole);
 }
 
+void KWQTableView::horizontalHeaderDataChanged(Qt::Orientation orientation, int logicalFirst, int logicalLast)
+{
+    Q_UNUSED(orientation);
+    Q_UNUSED(logicalFirst);
+    Q_UNUSED(logicalLast);
+    slotModelReset();
+    updateKeyboardLayout();
+}
+
+
 void KWQTableView::slotModelReset()
 {
   setColumnWidth(0, qvariant_cast<QSize>(model()->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
@@ -675,6 +657,19 @@ void KWQTableView::doVocabShuffle()
   setFocus();
   KWQCommandShuffle *kwqc = new KWQCommandShuffle(this, 0);
   m_undoStack->push(kwqc);
+}
+
+void KWQTableView::updateKeyboardLayout()
+{
+    QString layout;
+    layout.clear();
+    layout = model()->headerData(currentIndex().column(), Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
+
+    if (!layout.isEmpty()) {
+        QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+        if (kxkb.isValid())
+            kxkb.call("setLayout", layout);
+    }
 }
 
 #include "kwqtableview.moc"

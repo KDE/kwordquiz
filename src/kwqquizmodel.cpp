@@ -19,6 +19,7 @@
 #include "kwqquizmodel.h"
 
 #include "kwqsortfiltermodel.h"
+#include "kwqtablemodel.h"
 #include "krandomsequence.h"
 #include "prefs.h"
 
@@ -416,9 +417,9 @@ QString KWQQuizModel::kbAnswer()
     QString result;
 
     if (col == 0)
-        result = Prefs::keyboardLayout1();
+        return headerData(0, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
     if (col == 1)
-        result = Prefs::keyboardLayout2();
+        return headerData(1, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
 
     return result;
 }

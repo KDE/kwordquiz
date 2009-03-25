@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Mon Feb 27 18:27:30 PST 2006
-    copyright            : (C) 2006-2008 by Peter Hedlund
+    copyright            : (C) 2006-2009 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -83,6 +83,17 @@ QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int
       }
     }
 
+    if (role == KWQTableModel::KeyboardLayoutRole) {
+      DocumentSettings documentSettings(m_doc->url().url());
+      documentSettings.readConfig();
+      switch (section) {
+      case 0:
+        return documentSettings.keyboardLayoutColumn1();
+      case 1:
+        return documentSettings.keyboardLayoutColumn2();
+      }
+    }
+
     return QVariant();
   }
   else
@@ -130,6 +141,20 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
         break;
       case 1:
         documentSettings.setSizeHintColumn2(qvariant_cast<QSize>(value).width());
+        documentSettings.writeConfig();
+        break;
+      }
+    }
+
+    if (role == KWQTableModel::KeyboardLayoutRole) {
+      DocumentSettings documentSettings(m_doc->url().url());
+      switch (section) {
+      case 0:
+        documentSettings.setKeyboardLayoutColumn1(value.toString());
+        documentSettings.writeConfig();
+        break;
+      case 1:
+        documentSettings.setKeyboardLayoutColumn2(value.toString());
         documentSettings.writeConfig();
         break;
       }

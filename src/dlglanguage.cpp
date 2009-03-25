@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlglanguage.cpp  -  description
                              -------------------
-   copyright       : (C) 2004-2006 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2004-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -16,58 +16,87 @@
 
 #include "dlglanguage.h"
 
+#include <QtDBus/QDBusInterface>
+#include <QtDBus/QDBusReply>
 
-#include <klocale.h>
-#include <klineedit.h>
-#include <kiconloader.h>
+#include <KLocale>
+#include <KLineEdit>
+#include <KIconLoader>
 
+#include "kwqtablemodel.h"
 #include "prefs.h"
 
-DlgLanguage::DlgLanguage(QWidget *parent): KDialog(parent)
+DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): KDialog(parent)
 {
-  setCaption(i18n("Column Titles"));
-  setButtons(Ok|Cancel);
+    setCaption(i18n("Column Settings"));
+    setButtons(Ok|Cancel);
 
-  QWidget * w = new QWidget();
-  setMainWidget(w);
+    QWidget * w = new QWidget();
+    setMainWidget(w);
 
-  dlgBase = new Ui::DlgLanguageBase();
-  dlgBase->setupUi(mainWidget());
+    dlgBase = new Ui::ColumnDialogBase();
+    dlgBase->setupUi(mainWidget());
 
-  dlgBase -> picLanguage1 -> setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
-  dlgBase -> picLanguage2 -> setPixmap(KIconLoader::global()->loadIcon("answer", KIconLoader::Panel));
+    dlgBase -> column1Picture -> setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
+    dlgBase -> column2Picture -> setPixmap(KIconLoader::global()->loadIcon("answer", KIconLoader::Panel));
 
-  dlgBase->txtLanguage1->completionObject(true)->setItems(Prefs::columnTitles1());
-  dlgBase->txtLanguage1->setCompletionMode(KGlobalSettings::CompletionAuto);
+    dlgBase->column1TitleLineEdit->completionObject(true)->setItems(Prefs::columnTitles1());
+    dlgBase->column1TitleLineEdit->setCompletionMode(KGlobalSettings::CompletionAuto);
 
-  dlgBase->txtLanguage2->completionObject(true)->setItems(Prefs::columnTitles2());
-  dlgBase->txtLanguage2->setCompletionMode(KGlobalSettings::CompletionAuto);
+    dlgBase->column2TitleLineEdit->completionObject(true)->setItems(Prefs::columnTitles2());
+    dlgBase->column2TitleLineEdit->setCompletionMode(KGlobalSettings::CompletionAuto);
 
-  dlgBase->txtLanguage1->setFocus();
+    dlgBase->column1TitleLineEdit->setText(model->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
+    dlgBase->column2TitleLineEdit->setText(model->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
+
+    // keyboard layout
+    // try to talk to kxbk - get a list of keyboard layouts
+    QDBusInterface kxbk("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+    QDBusReply<QStringList> reply = kxbk.call("getLayoutsList");
+    if (reply.isValid()) {
+        QStringList layouts = reply;
+        dlgBase->column1LayoutComboBox->addItems(layouts);
+        dlgBase->column2LayoutComboBox->addItems(layouts);
+        dlgBase->column1LayoutComboBox->setEnabled(true);
+        dlgBase->column2LayoutComboBox->setEnabled(true);
+
+        QString layout = model->headerData(0, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
+        dlgBase->column1LayoutComboBox->setCurrentIndex(dlgBase->column1LayoutComboBox->findText(layout));
+
+        layout = model->headerData(1, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
+        dlgBase->column2LayoutComboBox->setCurrentIndex(dlgBase->column2LayoutComboBox->findText(layout));
+
+    } else {
+        kDebug() << "kxkb dbus error";
+        dlgBase->column1LayoutComboBox->setEnabled(false);
+        dlgBase->column2LayoutComboBox->setEnabled(false);
+    }
+
+    QSize s = model->headerData(0, Qt::Horizontal, Qt::SizeHintRole).toSize();
+    dlgBase->column1WidthSpinBox->setValue(s.width());
+
+    s = model->headerData(1, Qt::Horizontal, Qt::SizeHintRole).toSize();
+    dlgBase->column2WidthSpinBox->setValue(s.width());
+
+    dlgBase->column1TitleLineEdit->setFocus();
 }
 
-void DlgLanguage::setLanguage(int index, const QString &lang) {
-  if (index == 1) {
-    dlgBase->txtLanguage1->setText(lang);
-  }
-  else
-  {
-    dlgBase->txtLanguage2->setText(lang);
-  }
-}
+ColumnDataList DlgLanguage::columnData()
+{
+    ColumnDataList result;
+    ColumnData cd;
 
-QString DlgLanguage::Language(int index){
-  if (index == 1) {
-    dlgBase->txtLanguage1->completionObject(true)->addItem(dlgBase->txtLanguage1 -> text());
-    Prefs::setColumnTitles1(dlgBase->txtLanguage1->completionObject(true)->items());
-    return dlgBase->txtLanguage1->text();
-  }
-  else
-  {
-    dlgBase->txtLanguage2->completionObject(true)->addItem(dlgBase->txtLanguage2 -> text());
-    Prefs::setColumnTitles2(dlgBase->txtLanguage2->completionObject(true)->items());
-    return dlgBase->txtLanguage2->text();
-  }
+    cd.identifier = dlgBase->column1TitleLineEdit->text();
+    cd.layout = dlgBase->column1LayoutComboBox->currentText();
+    cd.width = dlgBase->column1WidthSpinBox->value();
+    result.append(cd);
+
+    cd.identifier = dlgBase->column2TitleLineEdit->text();
+    cd.layout = dlgBase->column2LayoutComboBox->currentText();
+    cd.width = dlgBase->column2WidthSpinBox->value();
+    result.append(cd);
+
+    return result;
 }
 
 #include "dlglanguage.moc"

@@ -19,7 +19,6 @@ set(kwordquiz_SRCS
    prefgeneral.cpp
    prefeditor.cpp
    prefquiz.cpp
-   dlgrc.cpp
    dlgspecchar.cpp
    dlglanguage.cpp
    wqprintdialogpage.cpp
@@ -35,13 +34,12 @@ set(kwordquiz_SRCS
 
 
 kde4_add_ui_files(kwordquiz_SRCS 
-   dlglanguagebase.ui 
+   columndialogbase.ui 
    flashviewbase.ui 
    multipleviewbase.ui 
    qaviewbase.ui 
    prefeditorbase.ui 
    prefquizbase.ui
-   dlgrcbase.ui
    kwqscorewidgetbase.ui
    prefcharacterbase.ui 
    prefcardappearancebase.ui

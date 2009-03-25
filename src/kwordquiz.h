@@ -182,14 +182,10 @@ class KWordQuizApp : public KXmlGuiWindow
     /** find and replace text */
     void slotEditFind(const QString &);
 
-    /** define vocabulary languages */
+    /** define vocabulary settings */
     void slotVocabLanguages();
     /** define vocabulary fonts */
     void slotVocabFont();
-    /** define keyboard layouts */
-    void slotVocabKeyboard();
-    /** define row and column properties */
-    void slotVocabRC();
     /** automatically adjust row heights */
     void slotVocabAdjustRows();
     /** shuffle the vocabulary */
@@ -291,10 +287,7 @@ class KWordQuizApp : public KXmlGuiWindow
 
     KAction* vocabLanguages;
     QAction* vocabFont;
-    //QAction* vocabKeyboard;
-    QAction* vocabRC;
     QAction* vocabAdjustRows;
-    //QAction* vocabSort;
     QAction* vocabShuffle;
     QAction* vocabLayouts;
     QActionGroup *m_layoutActionGroup;

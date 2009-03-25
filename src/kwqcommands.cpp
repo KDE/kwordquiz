@@ -356,115 +356,47 @@ void KWQCommandUnmarkBlank::redo()
 }
 
 
-KWQCommandFormat::KWQCommandFormat(KWQTableView * view, int newRowCount, int newRowHeight, int newColumnWidth) : KWQUndoCommand(view)
+KWQCommandIdentifiers::KWQCommandIdentifiers(KWQTableView * view, const ColumnDataList &newColumnData) : KWQUndoCommand(view)
 {
-  setText(i18nc("@item:inmenu undo formatting", "Formatting"));
-  m_newRowCount = newRowCount;
-  m_newRowHeight = newRowHeight;
-  m_newColumnWidth = newColumnWidth;
-  m_oldRowCount = view->model()->rowCount(QModelIndex());
-  m_oldColumnWidthLeft = view->columnWidth(0);
-  m_oldColumnWidthRight = view->columnWidth(1);
-}
+  setText(i18nc("@item:inmenu undo column titles", "Column Settings"));
+  m_oldColumnData.clear();
+  ColumnData columnData;
+  columnData.identifier = view->model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
+  columnData.layout = view->model()->headerData(0, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
+  columnData.width = view->model()->headerData(0, Qt::Horizontal, Qt::SizeHintRole).toSize().width();
+  m_oldColumnData.append(columnData);
 
+  columnData.identifier = view->model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
+  columnData.layout = view->model()->headerData(1, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
+  columnData.width = view->model()->headerData(1, Qt::Horizontal, Qt::SizeHintRole).toSize().width();
+  m_oldColumnData.append(columnData);
 
-void KWQCommandFormat::undo()
-{
-  QModelIndexList selIndexes = oldSelectedIndexes();
-  QModelIndex topLeft = view()->model()->index(selIndexes.first().row(), selIndexes.first().column(), QModelIndex());
-  QModelIndex bottomRight = view()->model()->index(selIndexes.last().row(), selIndexes.last().column(), QModelIndex());
-
-  if (m_newRowCount < m_oldRowCount)
-  {
-    view()->model()->insertRows(m_newRowCount, m_oldRowCount - m_newRowCount, QModelIndex());
-
-    foreach (const IndexAndData &id, m_deleteIndexAndData)
-      view()->model()->setData(id.index, id.data, Qt::EditRole);
-  }
-
-  if (m_newRowCount > m_oldRowCount)
-  {
-    view()->model()->removeRows(m_oldRowCount, m_newRowCount - m_oldRowCount, QModelIndex());
-  }
-
-  view()->setColumnWidth(0, m_oldColumnWidthLeft);
-  view()->setColumnWidth(1, m_oldColumnWidthRight);
-
-  foreach (const IndexAndData &id, oldData()) {
-    view()->model()->setData(id.index, id.data, Qt::EditRole);
-    view()->setRowHeight(id.index.row(), id.height);
-  }
-
-  view()->selectionModel()->clear();
-  view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
-  view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
-}
-
-
-void KWQCommandFormat::redo()
-{
-  if (m_newRowCount < m_oldRowCount)
-  {
-    QModelIndexList selIndexes = oldSelectedIndexes();
-    QModelIndex topLeft = view()->model()->index(m_newRowCount, 0, QModelIndex());
-    QModelIndex bottomRight = view()->model()->index(m_oldRowCount, 1, QModelIndex());
-
-    QModelIndex topLeftDeletion = view()->model()->index(m_newRowCount - 1, 0, QModelIndex());
-    QModelIndex bottomRightDeletion = view()->model()->index(m_oldRowCount - 1, 1, QModelIndex());
-
-    QItemSelection deletion(topLeftDeletion, bottomRightDeletion);
-    m_deleteIndexAndData.clear();
-    foreach (const QModelIndex &idx, deletion.indexes()) {
-      IndexAndData id;
-      id.index = idx;
-      id.data = view()->model()->data(id.index, Qt::DisplayRole);
-      m_deleteIndexAndData.append(id);
-    }
-
-    view()->model()->removeRows(m_newRowCount, m_oldRowCount - m_newRowCount, QModelIndex());
-
-    view()->selectionModel()->clear();
-    view()->setCurrentIndex(view()->model()->index(oldCurrentIndex().row(), oldCurrentIndex().column(), QModelIndex()));
-    view()->selectionModel()->select(QItemSelection(topLeft, bottomRight), QItemSelectionModel::Select);
-
-  }
-
-  if (m_newRowCount > m_oldRowCount)
-  {
-    view()->model()->insertRows(m_oldRowCount, m_newRowCount - m_oldRowCount, QModelIndex());
-  }
-
-  view()->selectionModel()->clear();
-  foreach (const QModelIndex &index, oldSelectedIndexes())
-  {
-    view()->setRowHeight(index.row(), m_newRowHeight);
-    view()->setColumnWidth(index.column(), m_newColumnWidth);
-    view()->selectionModel()->select(index, QItemSelectionModel::Select);
-  }
-  view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);
-}
-
-
-KWQCommandIdentifiers::KWQCommandIdentifiers(KWQTableView * view, const QString & newIdentifierLeft, const QString & newIdentifierRight) : KWQUndoCommand(view)
-{
-  setText(i18nc("@item:inmenu undo column titles", "Column Titles"));
-  m_oldIdentifierLeft = view->model()->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
-  m_oldIdentifierRight = view->model()->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
-  m_newIdentifierLeft = newIdentifierLeft;
-  m_newIdentifierRight = newIdentifierRight;
+  m_newColumnData = newColumnData;
 }
 
 
 void KWQCommandIdentifiers::undo()
 {
-  view()->model()->setHeaderData(0, Qt::Horizontal, m_oldIdentifierLeft, Qt::EditRole);
-  view()->model()->setHeaderData(1, Qt::Horizontal, m_oldIdentifierRight, Qt::EditRole);
+  view()->model()->setHeaderData(0, Qt::Horizontal, m_oldColumnData[0].identifier, Qt::EditRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, m_oldColumnData[1].identifier, Qt::EditRole);
+
+  view()->model()->setHeaderData(0, Qt::Horizontal, m_oldColumnData[0].layout, KWQTableModel::KeyboardLayoutRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, m_oldColumnData[1].layout, KWQTableModel::KeyboardLayoutRole);
+
+  view()->model()->setHeaderData(0, Qt::Horizontal, QSize(m_oldColumnData[0].width, 25), Qt::SizeHintRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, QSize(m_oldColumnData[1].width, 25), Qt::SizeHintRole);
 }
 
 
 void KWQCommandIdentifiers::redo()
 {
-  view()->model()->setHeaderData(0, Qt::Horizontal, m_newIdentifierLeft, Qt::EditRole);
-  view()->model()->setHeaderData(1, Qt::Horizontal, m_newIdentifierRight, Qt::EditRole);
+  view()->model()->setHeaderData(0, Qt::Horizontal, m_newColumnData[0].identifier, Qt::EditRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, m_newColumnData[1].identifier, Qt::EditRole);
+
+  view()->model()->setHeaderData(0, Qt::Horizontal, m_newColumnData[0].layout, KWQTableModel::KeyboardLayoutRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, m_newColumnData[1].layout, KWQTableModel::KeyboardLayoutRole);
+
+  view()->model()->setHeaderData(0, Qt::Horizontal, QSize(m_newColumnData[0].width, 25), Qt::SizeHintRole);
+  view()->model()->setHeaderData(1, Qt::Horizontal, QSize(m_newColumnData[1].width, 25), Qt::SizeHintRole);
 }
 

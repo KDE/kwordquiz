@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlglanguage.h  -  description
                              -------------------
-   copyright       : (C) 2004-2006 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2004-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -19,21 +19,24 @@
 
 #include <kdialog.h>
 
-#include "ui_dlglanguagebase.h"
+#include "ui_columndialogbase.h"
+#include "kwqcommands.h"
 
 /**
 @author Peter Hedlund
 */
+
+class KWQTableModel;
+
 class DlgLanguage : public KDialog {
   Q_OBJECT
 public:
-  DlgLanguage(QWidget *parent = 0);
+  DlgLanguage(KWQTableModel *model, QWidget *parent = 0);
 
-  void setLanguage(int index, const QString &lang);
-  QString Language(int index);
+  ColumnDataList columnData();
 
 private:
-  Ui::DlgLanguageBase *dlgBase;
+  Ui::ColumnDialogBase *dlgBase;
 };
 
 #endif

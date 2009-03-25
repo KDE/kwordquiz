@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="17" name="kwordquiz" >
+<kpartgui version="18" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -12,22 +12,11 @@
    <Action name="edit_mark_blank" />
    <Action name="edit_unmark_blank" />
   </Menu>
-  <!-- <Menu name="session" >
-   <text>&amp;Go To</text>
-   <Action name="quiz_editor" />
-   <Action name="quiz_flash" />
-   <Action name="quiz_multiple" />
-   <Action name="quiz_qa" />
-  </Menu> -->
   <Menu name="vocabulary" >
    <text>V&amp;ocabulary</text>
    <Action name="vocab_languages" />
    <Action name="vocab_font" />
-   <!--<Action name="vocab_keyboard" />
    <Separator/>
-   <Action name="vocab_char" />-->
-   <Separator/>
-   <Action name="vocab_rc" />
    <Action name="vocab_adjust_rows" />
    <Separator/>
    <Action name="vocab_shuffle" />
@@ -61,25 +50,8 @@
   </Menu>
   </MenuBar>
   <ToolBar name="mainToolBar">
-    <!--<Action name="edit_insert"/>
-    <Action name="edit_delete"/>
-    <Separator/>
-    <Action name="edit_mark_blank"/>
-    <Action name="edit_unmark_blank"/>
-    <Separator />
-    <Action name="vocab_languages"/>
-    <Action name="vocab_font"/>
-    <Action name="vocab_sort"/>
-    <Separator />-->
     <Action name="mode_0"/>
   </ToolBar>
-  <!-- <ToolBar name="sessionToolBar" iconText="icontextbottom">
-    <text>Go to</text>
-    <Action name="quiz_editor" />
-    <Action name="quiz_flash" />
-    <Action name="quiz_multiple" />
-    <Action name="quiz_qa" />
-   </ToolBar> -->
   <ToolBar name="quizToolBar" position="right" iconText="icontextright" >
    <text>Quiz</text>
    <Action name="quiz_check" />
@@ -117,9 +89,6 @@
       <Action name="edit_unmark_blank" />
       <Action name="vocab_languages" />
       <Action name="vocab_font" />
-      <Action name="vocab_keyboard" />
-      <Action name="vocab_char" />
-      <Action name="vocab_rc" />
       <Action name="vocab_sort" />
       <Action name="vocab_shuffle" />
       <Action name="vocab_leitner" />
