@@ -85,8 +85,7 @@ KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 
   m_dirWatch = KDirWatch::self();
 
-  QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
-  slotModeActionGroupTriggered(a);
+  slotModeActionGroupTriggered(m_modeActionGroup->actions().at(Prefs::mode() - 1));
 
   editMarkBlank->setEnabled(Prefs::enableBlanks());
   editUnmarkBlank->setEnabled(Prefs::enableBlanks());
@@ -902,8 +901,7 @@ void KWordQuizApp::slotFileClose()
       setCaption(m_doc->url().fileName(), m_doc->isModified());
       m_tableModel->setDocument(m_doc);
       slotQuizEditor();
-      QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
-      slotModeActionGroupTriggered(a);
+      slotModeActionGroupTriggered(m_modeActionGroup->actions().at(Prefs::mode() - 1));
       m_tableView ->selectionModel()->setCurrentIndex(m_sortFilterModel->index(0, 0), QItemSelectionModel::SelectCurrent);
       m_undoStack->clear();
     }
@@ -1409,8 +1407,7 @@ void KWordQuizApp::slotUndoTextChanged(const QString & undoText)
   editUndo->setWhatsThis(editUndo->text());
   editUndo->setStatusTip(editUndo->text());
 
-  QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
-  slotModeActionGroupTriggered(a);
+  slotModeActionGroupTriggered(m_modeActionGroup->actions().at(Prefs::mode() - 1));;
 }
 
 
@@ -1420,8 +1417,7 @@ void KWordQuizApp::slotRedoTextChanged(const QString &redoText)
   editRedo->setWhatsThis(editRedo->text());
   editRedo->setStatusTip(editRedo->text());
 
-  QAction *a = actionCollection()->action(QString("mode_%1").arg(QString::number(Prefs::mode())));
-  slotModeActionGroupTriggered(a);
+  slotModeActionGroupTriggered(m_modeActionGroup->actions().at(Prefs::mode() - 1));
 }
 
 void KWordQuizApp::slotCreateErrorListDocument()
