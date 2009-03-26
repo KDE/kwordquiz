@@ -17,7 +17,7 @@
 #ifndef DLGLANGUAGE_H
 #define DLGLANGUAGE_H
 
-#include <kdialog.h>
+#include <KDialog>
 
 #include "ui_columndialogbase.h"
 #include "kwqcommands.h"
@@ -28,15 +28,12 @@
 
 class KWQTableModel;
 
-class DlgLanguage : public KDialog {
+class DlgLanguage : public KDialog, private Ui::ColumnDialogBase {
   Q_OBJECT
 public:
   DlgLanguage(KWQTableModel *model, QWidget *parent = 0);
 
   ColumnDataList columnData();
-
-private:
-  Ui::ColumnDialogBase *dlgBase;
 };
 
 #endif
