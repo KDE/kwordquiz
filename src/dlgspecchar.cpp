@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlgspecchar.cpp  -  description
                              -------------------
-   copyright       : (C) 2003-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2003-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -15,8 +15,6 @@
  ***************************************************************************/
 
 #include "dlgspecchar.h"
-
-#include <QGridLayout>
 
 #include <KLocale>
 #include <KCharSelect>
@@ -37,20 +35,13 @@ DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) :
 
 void DlgSpecChar::initDialog(const QFont &font, const QChar &chr)
 {
-  QWidget *page = new QWidget(this);
-  setMainWidget(page);
-
-  m_layout = new QGridLayout(page);
-  m_layout->setMargin(KDialog::marginHint());
-  m_layout->setSpacing(KDialog::spacingHint());
-
-  m_charSelect = new KCharSelect(page, 0);
+  m_charSelect = new KCharSelect(this, 0);
   m_charSelect->setCurrentChar(chr);
   m_charSelect->setCurrentFont(font);
   connect(m_charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
   m_charSelect->resize(m_charSelect->sizeHint());
-  m_layout->addWidget(m_charSelect, 0, 0);
   m_charSelect->setFocus();
+  setMainWidget(m_charSelect);
 }
 
 void DlgSpecChar::closeDialog()
@@ -74,6 +65,5 @@ void DlgSpecChar::slotUser1( )
   emit insertChar(chr());
   closeDialog();
 }
-
 
 #include "dlgspecchar.moc"

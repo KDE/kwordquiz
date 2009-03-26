@@ -1,7 +1,7 @@
 /***************************************************************************
                           dlgspecchar.h  -  description
                              -------------------
-   copyright       : (C) 2003-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+   copyright       : (C) 2003-2009 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -20,7 +20,6 @@
 #include <KDialog>
 
 class QWidget;
-class QGridLayout;
 class KCharSelect;
 
 /**
@@ -44,7 +43,6 @@ private:
   void initDialog(const QFont &font, const QChar &chr);
   QChar chr();
 
-  QGridLayout *m_layout;
   KCharSelect *m_charSelect;
 };
 
