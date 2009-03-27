@@ -52,6 +52,7 @@
 #include <KTemporaryFile>
 #include <kwindowsystem.h>
 #include <kio/netaccess.h>
+#include <KFilterProxySearchLine>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
@@ -477,26 +478,13 @@ void KWordQuizApp::initView()
   editorLayout->setMargin(0);
   editorLayout->setSpacing(KDialog::spacingHint());
 
-  m_searchLine = new KLineEdit(this);
-  m_searchLine->show();
-  m_searchLine->setFocusPolicy(Qt::ClickFocus);
-  m_searchLine->setClearButtonShown(true);
-  m_searchLine->setClickMessage(i18n("Enter search terms here"));
-  connect(m_searchLine, SIGNAL(textChanged(const QString&)), this, SLOT(slotEditFind(const QString&)));
-
-  QLabel *label = new QLabel(i18nc("@label:textbox search", "S&earch:"), this);
-  label->setBuddy(m_searchLine);
-  label->show();
-
-  m_searchWidget = new QWidget(this);
-  QHBoxLayout* layout = new QHBoxLayout(m_searchWidget);
-  layout->setSpacing(KDialog::spacingHint());
-  layout->setMargin(0);
-  layout->addWidget(label);
-  layout->addWidget(m_searchLine);
+  m_searchLine = new KFilterProxySearchLine(this);
+  m_searchLine->lineEdit()->setFocusPolicy(Qt::ClickFocus);
+  m_searchLine->lineEdit()->setClickMessage(i18n("Enter search terms here"));
+  m_searchLine->setProxy(m_sortFilterModel);
 
   m_tableView = new KWQTableView(m_undoStack, this);
-  editorLayout->addWidget(m_searchWidget);
+  editorLayout->addWidget(m_searchLine);
   editorLayout->addWidget(m_tableView);
   m_tableView->setModel(m_sortFilterModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
@@ -506,7 +494,7 @@ void KWordQuizApp::initView()
   connect(m_tableView, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(slotTableContextMenuRequested(const QPoint &)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
 
-  m_searchWidget->setVisible(Prefs::showSearch());
+  m_searchLine->setVisible(Prefs::showSearch());
   configShowSearchBar->setChecked(Prefs::showSearch());
 
   m_editorView = new QWidget(this);
@@ -992,11 +980,6 @@ void KWordQuizApp::slotEditUnmarkBlank()
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
 
-void KWordQuizApp::slotEditFind(const QString & find)
-{
-  m_sortFilterModel->setFilterRegExp(QRegExp(find, Qt::CaseInsensitive));
-}
-
 void KWordQuizApp::slotVocabLanguages()
 {
   slotStatusMsg(i18n("Setting the column titles of the vocabulary..."));
@@ -1103,7 +1086,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
 
   if (current == m_editorPage) {
     m_tableView->setFocus();
-    m_searchWidget->setVisible(Prefs::showSearch());
+    m_searchLine->setVisible(Prefs::showSearch());
   }
 
   else  if (current == m_flashPage) {
@@ -1387,9 +1370,9 @@ void KWordQuizApp::updateActions()
 
 void KWordQuizApp::slotConfigShowSearch()
 {
-  if (m_searchWidget) {
-    m_searchWidget->setVisible(m_searchWidget->isHidden());
-    Prefs::setShowSearch(m_searchWidget->isVisible());
+  if (m_searchLine) {
+    m_searchLine->setVisible(m_searchLine->isHidden());
+    Prefs::setShowSearch(m_searchLine->isVisible());
   }
 }
 

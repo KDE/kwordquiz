@@ -36,6 +36,7 @@ class KRecentFilesAction;
 class KLineEdit;
 class KPageWidget;
 class KPageWidgetItem;
+class KFilterProxySearchLine;
 class KEduVocDocument;
 class KWQTableModel;
 class KWQSortFilterModel;
@@ -179,8 +180,6 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotEditMarkBlank();
     /** unmark word as blank */
     void slotEditUnmarkBlank();
-    /** find and replace text */
-    void slotEditFind(const QString &);
 
     /** define vocabulary settings */
     void slotVocabLanguages();
@@ -254,8 +253,7 @@ class KWordQuizApp : public KXmlGuiWindow
 
     KWordQuizPrefs *m_prefDialog;
 
-    KLineEdit *m_searchLine;
-    QWidget *m_searchWidget;
+    KFilterProxySearchLine *m_searchLine;
 
     /** m_doc represents your actual document and is created only once. It keeps
      * information such as filename and does the serialization of your files.
@@ -283,7 +281,6 @@ class KWordQuizApp : public KXmlGuiWindow
     KAction* editDelete;
     KAction* editMarkBlank;
     KAction* editUnmarkBlank;
-    //QAction* editFind;
 
     KAction* vocabLanguages;
     QAction* vocabFont;
@@ -291,7 +288,7 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* vocabShuffle;
     QAction* vocabLayouts;
     QActionGroup *m_layoutActionGroup;
-    
+
     KActionMenu *m_modeActionMenu;
     QActionGroup *m_modeActionGroup;
 
