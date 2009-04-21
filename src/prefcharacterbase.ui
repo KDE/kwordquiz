@@ -1,7 +1,5 @@
 <ui version="4.0" >
   <author>Peter Hedlund &lt;peter.hedlund@kdemail.net></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>PrefCharacterBase</class>
  <widget class="QWidget" name="PrefCharacterBase" >
   <property name="geometry" >
