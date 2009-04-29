@@ -31,6 +31,7 @@ FlashView::FlashView(QWidget *parent, KActionCollection *actionCollection) : QWi
   setupUi(this);
   m_timer = new QTimer(this);
   connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
+  connect(flashcard, SIGNAL(cardClicked()), this, SLOT(slotFlip()));
 }
 
 void FlashView::setQuiz(KWQQuizModel *quiz)
@@ -56,26 +57,24 @@ void FlashView::init()
 
 void FlashView::showFront()
 {
-  lblLanguageQuestion->setText(m_quiz ->langQuestion());
-  lblQuestion->setText(m_quiz->question());
+  flashcard->setIdentifier(m_quiz ->langQuestion());
+  flashcard->setText(m_quiz->question());
 }
 
 void FlashView::showBack()
 {
-  lblLanguageQuestion->setText(m_quiz->langAnswer());
-  lblQuestion->setText(m_quiz->answer());
+  flashcard->setIdentifier(m_quiz->langAnswer());
+  flashcard->setText(m_quiz->answer());
 }
 
 
 void FlashView::keepDiscardCard(bool keep)
 {
-  if (!keep)
-  {
+  if (!keep) {
     score->countIncrement(KWQScoreWidget::cdCorrect);
     KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
   }
-  else
-  {
+  else {
     m_quiz->checkAnswer("");
     score->countIncrement(KWQScoreWidget::cdError);
     KNotification::event("QuizError", i18n("Your answer was incorrect."));
@@ -84,12 +83,10 @@ void FlashView::keepDiscardCard(bool keep)
   m_showFirst = true;
 
   m_quiz->toNext();
-  if (!m_quiz->atEnd())
-  {
+  if (!m_quiz->atEnd()) {
     slotFlip();
   }
-  else
-  {
+  else {
     m_quiz->finish();
     m_actionCollection->action("quiz_check")->setEnabled(false);
     m_actionCollection->action("flash_know")->setEnabled(false);
@@ -101,59 +98,24 @@ void FlashView::keepDiscardCard(bool keep)
 
 void FlashView::slotFlip()
 {
-  if (m_showFirst)
-  {
-    QPalette pal;
-    pal.setColor(lblLanguageQuestion->backgroundRole(), Prefs::frontCardColor());
-    lblLanguageQuestion->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(lblQuestion->foregroundRole(), Prefs::frontTextColor());
-    pal.setColor(lblQuestion->backgroundRole(), Prefs::frontCardColor());
-    lblQuestion->setPalette(pal);
-    lblQuestion->setFont(Prefs::frontFont());
-
-    pal = QPalette();
-    pal.setColor(fraCard->foregroundRole(), Prefs::frontFrameColor());
-    pal.setColor(fraCard->backgroundRole(), Prefs::frontCardColor());
-    fraCard->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(linFlash->foregroundRole(), Prefs::frontFrameColor());
-    pal.setColor(linFlash->backgroundRole(), Prefs::frontCardColor());
-    linFlash->setPalette(pal);
-    //linFlash->setPaletteForegroundColor(QColor(255, 0, 0));
+  if (m_showFirst) {
+    flashcard->setCardColor(Prefs::frontCardColor());
+    flashcard->setTextColor(Prefs::frontTextColor());
+    flashcard->setFrameColor(Prefs::frontFrameColor());
+    flashcard->setTextFont(Prefs::frontFont());
     showFront();
     m_showFirst = false;
   }
-  else
-  {
-    QPalette pal;
-    pal.setColor(lblLanguageQuestion->backgroundRole(), Prefs::backCardColor());
-    lblLanguageQuestion->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(lblQuestion->foregroundRole(), Prefs::backTextColor());
-    pal.setColor(lblQuestion->backgroundRole(), Prefs::backCardColor());
-    lblQuestion->setPalette(pal);
-    lblQuestion->setFont(Prefs::backFont());
-
-    pal = QPalette();
-    pal.setColor(fraCard->foregroundRole(), Prefs::backFrameColor());
-    pal.setColor(fraCard->backgroundRole(), Prefs::backCardColor());
-    fraCard->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(linFlash->foregroundRole(), Prefs::backFrameColor());
-    pal.setColor(linFlash->backgroundRole(), Prefs::backCardColor());
-    linFlash->setPalette(pal);
-
+  else {
+    flashcard->setCardColor(Prefs::backCardColor());
+    flashcard->setTextColor(Prefs::backTextColor());
+    flashcard->setFrameColor(Prefs::backFrameColor());
+    flashcard->setTextFont(Prefs::backFont());
     showBack();
     m_showFirst = true;
   }
 
-  if (Prefs::autoFlip())
-  {
+  if (Prefs::autoFlip()) {
     m_timer->setSingleShot(true);
     m_timer->start(Prefs::flipDelay() * 1000);
   }
@@ -196,53 +158,20 @@ void FlashView::slotTimer( )
 
 void FlashView::slotApplySettings( )
 {
-  if (!m_showFirst)
-  {
-    QPalette pal;
-    pal.setColor(lblQuestion->backgroundRole(), Prefs::frontCardColor());
-    lblLanguageQuestion->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(lblQuestion->foregroundRole(), Prefs::frontTextColor());
-    pal.setColor(lblQuestion->backgroundRole(), Prefs::frontCardColor());
-    lblQuestion->setPalette(pal);
-    lblQuestion->setFont(Prefs::frontFont());
-
-    pal = QPalette();
-    pal.setColor(fraCard->foregroundRole(), Prefs::frontFrameColor());
-    pal.setColor(fraCard->backgroundRole(), Prefs::frontCardColor());
-    fraCard->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(linFlash->foregroundRole(), Prefs::frontFrameColor());
-    pal.setColor(linFlash->backgroundRole(), Prefs::frontCardColor());
-    linFlash->setPalette(pal);
+  if (!m_showFirst) {
+    flashcard->setCardColor(Prefs::frontCardColor());
+    flashcard->setTextColor(Prefs::frontTextColor());
+    flashcard->setFrameColor(Prefs::frontFrameColor());
+    flashcard->setTextFont(Prefs::frontFont());
   }
-  else
-  {
-    QPalette pal;
-    pal.setColor(lblLanguageQuestion->backgroundRole(), Prefs::backCardColor());
-    lblLanguageQuestion->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(lblQuestion->foregroundRole(), Prefs::backTextColor());
-    pal.setColor(lblQuestion->backgroundRole(), Prefs::backCardColor());
-    lblQuestion->setPalette(pal);
-    lblQuestion->setFont(Prefs::backFont());
-
-    pal = QPalette();
-    pal.setColor(fraCard->foregroundRole(), Prefs::backFrameColor());
-    pal.setColor(fraCard->backgroundRole(), Prefs::backCardColor());
-    fraCard->setPalette(pal);
-
-    pal = QPalette();
-    pal.setColor(linFlash->foregroundRole(), Prefs::backFrameColor());
-    pal.setColor(linFlash->backgroundRole(), Prefs::backCardColor());
-    linFlash->setPalette(pal);
+  else {
+    flashcard->setCardColor(Prefs::backCardColor());
+    flashcard->setTextColor(Prefs::backTextColor());
+    flashcard->setFrameColor(Prefs::backFrameColor());
+    flashcard->setTextFont(Prefs::backFont());
   }
 
-  if (Prefs::autoFlip())
-  {
+  if (Prefs::autoFlip()) {
     m_timer->setSingleShot(true);
     m_timer->start(Prefs::flipDelay() * 1000);
   }

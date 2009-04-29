@@ -55,15 +55,21 @@
         </spacer>
        </item>
        <item row="1" column="1">
-        <widget class="QFrame" name="fraCard">
+        <widget class="KWQCardView" name="flashcard">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>30</height>
+          </size>
+         </property>
          <property name="toolTip">
-          <string>The flashcard</string>
+          <string/>
          </property>
          <property name="autoFillBackground">
           <bool>true</bool>
@@ -74,84 +80,9 @@
          <property name="frameShadow">
           <enum>QFrame::Plain</enum>
          </property>
-         <layout class="QGridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="lblLanguageQuestion">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-              <underline>false</underline>
-              <strikeout>false</strikeout>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>The flashcard</string>
-            </property>
-            <property name="whatsThis">
-             <string>Language or other identifier for this card</string>
-            </property>
-            <property name="text">
-             <string>Language 1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignTop</set>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QFrame" name="linFlash">
-            <property name="autoFillBackground">
-             <bool>true</bool>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::HLine</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="lblQuestion">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="toolTip">
-             <string>The flashcard</string>
-            </property>
-            <property name="whatsThis">
-             <string>The flashcard. Select Quiz -&gt; Check to see the other side.</string>
-            </property>
-            <property name="text">
-             <string>This is your question</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::AutoText</enum>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <property name="interactive">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item row="1" column="2">
@@ -236,6 +167,12 @@
    <class>KWQScoreWidget</class>
    <extends>QWidget</extends>
    <header location="global">kwqscorewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KWQCardView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">kwqcardview.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

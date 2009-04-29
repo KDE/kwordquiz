@@ -30,6 +30,8 @@ set(kwordquiz_SRCS
    kwqsortfiltermodel.cpp
    kwqcommands.cpp
    kwqscorewidget.cpp
+   kwqcardscene.cpp
+   kwqcardview.cpp
    )
 
 
