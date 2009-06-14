@@ -157,4 +157,3 @@ void KWQScoreWidget::update()
     picError->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
 }
 
-#include "kwqscorewidget.moc"
