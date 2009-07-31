@@ -33,7 +33,6 @@
 
 class KActionMenu;
 class KRecentFilesAction;
-class KLineEdit;
 class KPageWidget;
 class KPageWidgetItem;
 class KFilterProxySearchLine;
