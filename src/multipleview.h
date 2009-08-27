@@ -52,6 +52,7 @@ private:
     QButtonGroup *m_choicesButtons;
     KWQQuizModel *m_quiz;
     KActionCollection *m_actionCollection;
+    QStringList m_choices;
 
     void showQuestion();
 };

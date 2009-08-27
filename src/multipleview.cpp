@@ -52,6 +52,8 @@ void MultipleView::setQuiz(KWQQuizModel *quiz)
 
 void MultipleView::init()
 {
+  m_choices.clear();
+
   score->clear();
   score->setQuestionCount(m_quiz->questionCount());
   score->setAsPercent(Prefs::percent());
@@ -93,10 +95,10 @@ void MultipleView::slotCheck()
 {
   if (m_actionCollection->action("quiz_check")->isEnabled())
   {
-    if (m_choicesButtons->checkedButton() == 0)
+    if (m_choicesButtons->checkedId() == -1)
         return;
     
-    QString ans = m_choicesButtons->checkedButton()->text().mid(3, opt1->text().length());
+    QString ans = m_choices[m_choicesButtons->checkedId() - 1];
 
     bool fIsCorrect = m_quiz->checkAnswer(ans);
 
@@ -189,11 +191,11 @@ void MultipleView::showQuestion()
 
   lblAnswerLanguage->setText(m_quiz ->langAnswer());
 
-  QStringList sl = m_quiz->multiOptions();
+  m_choices = m_quiz->multiOptions();
 
-  opt1->setText("&1 " + sl[0]);
-  opt2->setText("&2 " + sl[1]);
-  opt3->setText("&3 " + sl[2]);
+  opt1->setText("&1 " + m_choices[0]);
+  opt2->setText("&2 " + m_choices[1]);
+  opt3->setText("&3 " + m_choices[2]);
 
   m_choicesButtons->setExclusive(false);
   opt1->setChecked(false);
