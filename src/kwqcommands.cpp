@@ -167,15 +167,15 @@ void KWQCommandPaste::redo()
     while (i < sl.count() && br <= view()->model()->rowCount(QModelIndex())) {
       ac = lc;
 
-      sr = sl.at(i).split('\t', QString::SkipEmptyParts);
+      sr = sl.at(i).split('\t');
       int c = 0;
       while (ac <= rc) {
         IndexAndData id;
         id.index = view()->model()->index(ar, ac);
         id.data = view()->model()->data(id.index, Qt::DisplayRole);
         m_pasteIndexAndData.append(id);
-
-        view()->model()->setData(id.index, QVariant(sr[c]), Qt::EditRole);
+        if (c < sr.count())
+            view()->model()->setData(id.index, QVariant(sr[c]), Qt::EditRole);
         view()->selectionModel()->select(id.index, QItemSelectionModel::Select);
         ac++;
         c++;
@@ -189,11 +189,12 @@ void KWQCommandPaste::redo()
     while (i < sl.count() && ar <= br) {
       ac = lc;
 
-      sr = sl.at(i).split('\t', QString::SkipEmptyParts);
+      sr = sl.at(i).split('\t');
       int c = 0;
       while (ac <= rc) {
         if (view()->selectionModel()->isSelected(view()->model()->index(ar, ac)))
-          view()->model()->setData(view()->model()->index(ar, ac), QVariant(sr[c]), Qt::EditRole);
+            if (c < sr.count())
+                view()->model()->setData(view()->model()->index(ar, ac), QVariant(sr[c]), Qt::EditRole);
         ac++;
         c++;
       }
