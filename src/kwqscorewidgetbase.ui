@@ -87,9 +87,6 @@
        <property name="whatsThis">
         <string>The number of questions answered correctly. May be shown as a percentage.</string>
        </property>
-       <property name="pixmap">
-        <pixmap/>
-       </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
@@ -147,9 +144,6 @@
        <property name="whatsThis">
         <string>The number of questions answered incorrectly. May be shown as a percentage.</string>
        </property>
-       <property name="pixmap">
-        <pixmap/>
-       </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
@@ -174,9 +168,6 @@
        </property>
        <property name="whatsThis">
         <string>The number of questions in the session</string>
-       </property>
-       <property name="pixmap">
-        <pixmap/>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -234,9 +225,6 @@
        </property>
        <property name="whatsThis">
         <string>The number of questions already answered. May be shown as a percentage.</string>
-       </property>
-       <property name="pixmap">
-        <pixmap/>
        </property>
        <property name="scaledContents">
         <bool>true</bool>

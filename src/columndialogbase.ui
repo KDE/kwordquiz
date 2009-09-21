@@ -74,9 +74,6 @@
         <property name="whatsThis">
          <string>Enter a title (identifier) for the left column</string>
         </property>
-        <property name="pixmap">
-         <pixmap/>
-        </property>
         <property name="scaledContents">
          <bool>true</bool>
         </property>
@@ -245,9 +242,6 @@
         </property>
         <property name="whatsThis">
          <string>Enter a title (identifier) for the left column</string>
-        </property>
-        <property name="pixmap">
-         <pixmap/>
         </property>
         <property name="scaledContents">
          <bool>true</bool>

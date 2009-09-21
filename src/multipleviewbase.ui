@@ -128,9 +128,6 @@
            <property name="toolTip">
             <string>The question</string>
            </property>
-           <property name="pixmap">
-            <pixmap/>
-           </property>
            <property name="scaledContents">
             <bool>true</bool>
            </property>
@@ -162,9 +159,6 @@
            </property>
            <property name="toolTip">
             <string>Your choices</string>
-           </property>
-           <property name="pixmap">
-            <pixmap/>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -414,9 +408,6 @@
            <property name="toolTip">
             <string>Previous question</string>
            </property>
-           <property name="pixmap">
-            <pixmap/>
-           </property>
            <property name="scaledContents">
             <bool>true</bool>
            </property>
@@ -448,9 +439,6 @@
            </property>
            <property name="toolTip">
             <string>Your previous answer</string>
-           </property>
-           <property name="pixmap">
-            <pixmap/>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -621,9 +609,6 @@
            </property>
            <property name="toolTip">
             <string>Previous correct answer</string>
-           </property>
-           <property name="pixmap">
-            <pixmap/>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
