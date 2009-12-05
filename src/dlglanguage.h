@@ -31,7 +31,7 @@ class KWQTableModel;
 class DlgLanguage : public KDialog, private Ui::ColumnDialogBase {
   Q_OBJECT
 public:
-  DlgLanguage(KWQTableModel *model, QWidget *parent = 0);
+  explicit DlgLanguage(KWQTableModel *model, QWidget *parent = 0);
 
   ColumnDataList columnData();
 };
