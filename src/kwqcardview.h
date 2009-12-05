@@ -44,7 +44,7 @@ signals:
 
 protected:
     ///Overloaded to resize card.
-    void resizeEvent(QResizeEvent* event) {if (scene() != 0) fitInView(scene()->sceneRect(), Qt::KeepAspectRatio); QGraphicsView::resizeEvent(event);}
+    void resizeEvent(QResizeEvent* event);
 
 private:
     KWQCardScene *m_scene;

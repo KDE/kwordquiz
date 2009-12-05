@@ -18,19 +18,23 @@
 
 #include <QFontMetrics>
 #include <QGraphicsSceneMouseEvent>
+#include <QGraphicsDropShadowEffect>
 
 static const int cardWidth = 500;
 static const int cardHeight = 300;
 static const int cardMargin = 20;
 static const int textMargin = 30;
-static const int shadowOffset = 3;
+static const int shadowOffset = 2;
 
 KWQCardScene::KWQCardScene(QObject *parent) : QGraphicsScene(parent)
 {
-    addRect(shadowOffset, shadowOffset, cardWidth, cardHeight, QPen(Qt::NoPen), QBrush(Qt::darkGray));
+    QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect(this);
+    shadowEffect->setBlurRadius(5);
+    shadowEffect->setOffset(shadowOffset);
 
     m_card = addRect(0, 0, cardWidth, cardHeight);
-
+    m_card->setGraphicsEffect(shadowEffect);
+    
     m_line = addLine(cardMargin, cardMargin * 3, cardWidth - cardMargin, cardMargin * 3);
     m_identifier = addSimpleText("");
 

@@ -23,12 +23,21 @@ KWQCardView::KWQCardView(QWidget *parent) : QGraphicsView(parent)
     setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     setInteractive(true);
     setStyleSheet("background: transparent; border: none");
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     m_scene = new KWQCardScene(this);
     setScene(m_scene);
     connect(m_scene, SIGNAL(cardClicked()), this, SIGNAL(cardClicked()));
 }
 
+void KWQCardView::resizeEvent(QResizeEvent* event)
+{
+    if (scene() != 0)
+        fitInView(scene()->sceneRect().adjusted(0, 0, 30, 30), Qt::KeepAspectRatio);
+
+    QGraphicsView::resizeEvent(event);
+}
 
 void KWQCardView::setIdentifier(const QString &identifier)
 {
