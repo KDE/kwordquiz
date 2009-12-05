@@ -45,6 +45,7 @@
 #include "prefs.h"
 #include "kwqcommands.h"
 
+//krazy:excludeall=qclasses
 
 KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(parent), m_undoStack(undoStack)
 {
