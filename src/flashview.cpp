@@ -31,7 +31,6 @@ FlashView::FlashView(QWidget *parent, KActionCollection *actionCollection) : QWi
   setupUi(this);
   m_timer = new QTimer(this);
   connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
-  connect(flashcard, SIGNAL(cardClicked()), this, SLOT(slotFlip()));
 }
 
 void FlashView::setQuiz(KWQQuizModel *quiz)
@@ -50,6 +49,7 @@ void FlashView::init()
   m_actionCollection->action("flash_dont_know")->setEnabled(true);
   m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
   m_actionCollection->action("quiz_export_errors")->setEnabled(false);
+  connect(flashcard, SIGNAL(cardClicked()), this, SLOT(slotFlip()), Qt::UniqueConnection);
 
   m_showFirst = true;
   slotFlip();
@@ -93,6 +93,7 @@ void FlashView::keepDiscardCard(bool keep)
     m_actionCollection->action("flash_dont_know")->setEnabled(false);
     m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
     m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
+    disconnect(flashcard, SIGNAL(cardClicked()), 0, 0);
   }
 }
 
