@@ -85,7 +85,10 @@ void KWQQuizModel::toNext()
 
 bool KWQQuizModel::hasErrors()
 {
-  return !m_errorList.isEmpty();
+    if (m_quizType == Prefs::EnumStartSession::MultipleChoice)
+        return m_errorList.count() > 2; //this is a hack until better multiple choice is written
+    else
+        return !m_errorList.isEmpty();
 }
 
 bool KWQQuizModel::init()
