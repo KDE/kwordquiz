@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
                        KWQ_VERSION,
                        ki18n(description),
                        KAboutData::License_GPL,
-                       ki18n("(c) 2003-2007, Peter Hedlund"),
+                       ki18n("(c) 2003-2010, Peter Hedlund"),
                        KLocalizedString(),
                        "http://edu.kde.org/kwordquiz",
                        "submit@bugs.kde.org");
