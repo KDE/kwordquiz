@@ -70,7 +70,7 @@ void KWQTableView::print()
 {
   WQPrintDialogPage * p = new WQPrintDialogPage(this);
   p->setPrintStyle(Prefs::printStyle());
-  QPrinter printer(QPrinter::HighResolution);
+  QPrinter printer(QPrinter::ScreenResolution);
   QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
   printer.setFullPage(true);
   if (printDialog->exec() != QDialog::Accepted)
