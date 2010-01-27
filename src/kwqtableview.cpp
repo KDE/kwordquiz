@@ -17,6 +17,7 @@
 
 #include "kwqtableview.h"
 
+#include <QtCore/QFile>
 #include <QPainter>
 #include <QClipboard>
 #include <QLineEdit>
@@ -25,7 +26,6 @@
 #include <QApplication>
 #include <QtGui/QPrinter>
 #include <QtGui/QPrintDialog>
-#include <QtGui/QTextDocument>
 #include <QtGui/QTextCursor>
 #include <QtGui/QTextTable>
 #include <QtGui/QTextLayout>
@@ -70,13 +70,14 @@ KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(
 void KWQTableView::doPrint()
 {
   QPrinter printer;
-  
+
   WQPrintDialogPage * p = new WQPrintDialogPage(this);
   p->setPrintStyle(Prefs::printStyle());
   QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
   if (printDialog->exec() == QDialog::Accepted) {
-    Prefs::setPrintStyle(p->printStyle());    
-    print(&printer);
+    Prefs::setPrintStyle(p->printStyle());
+    QTextDocument td;
+    createPages(&printer, &td);
   }
   delete printDialog;
 }
@@ -85,14 +86,33 @@ void KWQTableView::doPrintPreview()
 {
   QPrinter printer;
   KPrintPreview preview(&printer, this);
-  print(&printer);
+  QTextDocument td;
+  createPages(&printer, &td);
   preview.exec();
 }
 
-void KWQTableView::print(QPrinter *printer)
+bool KWQTableView::doHtmlExport(const KUrl &url)
+{
+  bool success = false;
+
+  KUrl tmp(url);
+  QFile data(tmp.path());
+  if (data.open(QFile::WriteOnly)) {
+    QPrinter printer;
+    QTextDocument td;
+    td.setMetaInformation(QTextDocument::DocumentTitle, model()->sourceModel()->document()->title());
+    QTextStream out(&data);
+    createPages(&printer, &td);
+    out << td.toHtml("utf-8");
+    data.close();
+    success = true;
+  }
+  return success;
+}
+
+void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc)
 {
   printer->setFullPage(true);
-  QTextDocument td;
 
   if (Prefs::printStyle() == Prefs::EnumPrintStyle::Flashcard) {
     printer->setOrientation(QPrinter::Landscape);
@@ -100,7 +120,7 @@ void KWQTableView::print(QPrinter *printer)
     int cardWidth = qRound(5 * printer->logicalDpiY());
     int cardHeight = qRound(3 * printer->logicalDpiY());
 
-    QTextTable *table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount(), 2);
+    QTextTable *table = textDoc->rootFrame()->lastCursorPosition().insertTable(model()->rowCount(), 2);
 
     QTextTableFormat tableFormat = table->format();
     tableFormat.setHeaderRowCount(0);
@@ -159,16 +179,16 @@ void KWQTableView::print(QPrinter *printer)
   }
   else
   {
-    td.rootFrame()->lastCursorPosition().insertText(KGlobal::caption());
+    textDoc->rootFrame()->lastCursorPosition().insertText(KGlobal::caption());
 
     if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
-      td.rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
+      textDoc->rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
 
     QTextTable* table;
     if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
-      table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 2);
+      table = textDoc->rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 2);
     else
-      table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 1);
+      table = textDoc->rootFrame()->lastCursorPosition().insertTable(model()->rowCount() + 1, model()->columnCount() + 1);
 
     QTextTableFormat tableFormat = table->format();
     tableFormat.setHeaderRowCount(1);
@@ -222,9 +242,9 @@ void KWQTableView::print(QPrinter *printer)
       if (Prefs::printStyle() == Prefs::EnumPrintStyle::List)
         table->cellAt(i + 1, 2).firstCursorPosition().insertText(model()->data(model()->index(i, 1)).toString(), cellCharFormat);
     }
-  }  
-  
-  td.print(printer);
+  }
+
+  textDoc->print(printer);
 }
 
 

@@ -21,6 +21,7 @@
 #include <QTableView>
 #include <QList>
 #include <QKeyEvent>
+#include <QtGui/QTextDocument>
 
 #include <KUndoStack>
 
@@ -45,6 +46,7 @@ public:
   /** contains the implementation for printing functionality */
   void doPrint();
   void doPrintPreview();
+  bool doHtmlExport(const KUrl &);
 
   void doEditCut();
   void doEditCopy();
@@ -78,8 +80,8 @@ protected slots:
   void horizontalHeaderDataChanged(Qt::Orientation, int, int);
 
 private:
-  void print(QPrinter *);
-  
+  void createPages(QPrinter *, QTextDocument *);
+
   QString m_currentText;
 
   KWQTableDelegate * m_delegate;

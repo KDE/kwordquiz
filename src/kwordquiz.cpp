@@ -840,8 +840,10 @@ void KWordQuizApp::slotFileSaveAs()
 {
   slotStatusMsg(i18n("Saving file with a new filename..."));
   bool success = saveDocAsFileName(m_doc);
-  if (success)
+  if (success) {
     m_undoStack->setClean(); //emits cleanChanged()
+    setCaption(m_doc->url().fileName(), m_doc->isModified()); //if clean to begin with
+  }
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
 
@@ -849,8 +851,12 @@ void KWordQuizApp::slotFileSaveAs()
 bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
 {
   bool success = false;
+  int result = KEduVocDocument::Unknown;
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Writing);
+  filter.append('\n');
+  filter.append(i18n("*.html|HTML Document"));
+
   QPointer<KFileDialog> fd = new KFileDialog(KUrl(), filter, this);
   fd->setOperationMode(KFileDialog::Saving);
   fd->setCaption(i18n("Save Vocabulary Document As"));
@@ -861,20 +867,32 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
     if (!url.isEmpty()) {
       if (!url.fileName().contains('.')) {
         if (fd->currentFilter() == "*.csv")
-          url = KUrl(url.path() + ".csv");
-        else
-          url = KUrl(url.path() + ".kvtml");
+          url = KUrl(url.path().append(".csv"));
+        else if (fd->currentFilter() == "*.kvtml")
+          url = KUrl(url.path().append(".kvtml"));
+        else if (fd->currentFilter() == "*.html")
+          url = KUrl(url.path().append(".html"));
       }
 
-      if (m_dirWatch->contains(document->url().toLocalFile()))
-        m_dirWatch->removeFile(document->url().toLocalFile());
-      int result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
-      if (result == KEduVocDocument::NoError) {
-        m_dirWatch->addFile(url.path());
-        fileOpenRecent->addUrl(url);
-        success = true;
+      if (fd->currentFilter() == "*.html") {
+        if (m_tableView->doHtmlExport(url))
+          result = KEduVocDocument::NoError;
+        else
+          result = KEduVocDocument::FileCannotWrite;
+        success = false; //export only, do not consider really saved
       }
       else {
+        if (m_dirWatch->contains(document->url().toLocalFile()))
+          m_dirWatch->removeFile(document->url().toLocalFile());
+        result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        if (result == KEduVocDocument::NoError) {
+          m_dirWatch->addFile(url.path());
+          fileOpenRecent->addUrl(url);
+          success = true;
+        }
+      }
+
+      if (result != KEduVocDocument::NoError) {
         KMessageBox::error(this, KEduVocDocument::errorDescription(result));
         success = false;
       }
