@@ -2,7 +2,7 @@
                           kwqtableview.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2009 by Peter Hedlund
+    copyright            : (C) 2002-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -43,7 +43,8 @@ public:
   KWQSortFilterModel * model() {return m_model;};
 
   /** contains the implementation for printing functionality */
-  void print();
+  void doPrint();
+  void doPrintPreview();
 
   void doEditCut();
   void doEditCopy();
@@ -77,6 +78,8 @@ protected slots:
   void horizontalHeaderDataChanged(Qt::Orientation, int, int);
 
 private:
+  void print(QPrinter *);
+  
   QString m_currentText;
 
   KWQTableDelegate * m_delegate;

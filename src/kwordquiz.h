@@ -2,7 +2,7 @@
                           kwordquiz.h  -  description
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2008 by Peter Hedlund
+    copyright            : (C) 2002-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -159,6 +159,8 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotFileClose();
     /** print the actual file */
     void slotFilePrint();
+    /** preview the appearance of the vocabulary as printed */
+    void slotFilePrintPreview();
     /** closes all open windows by calling close() on each memberList item until the list is empty, then quits the application.
      * If queryClose() returns false because the user canceled the saveModified() dialog, the closing breaks.*/
     void slotFileQuit();
@@ -268,6 +270,7 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* fileSaveAs;
     QAction* fileClose;
     QAction* filePrint;
+    QAction* filePrintPreview;
     QAction* fileQuit;
 
     QAction* editUndo;

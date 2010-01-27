@@ -2,7 +2,7 @@
                           kwordquiz.cpp  -  description
                              -------------------
     begin         : Wed Jul 24 20:12:30 PDT 2002
-    copyright     : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright     : (C) 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -148,6 +148,11 @@ void KWordQuizApp::initActions()
   filePrint->setToolTip(filePrint->whatsThis());
   filePrint->setStatusTip(filePrint->whatsThis());
 
+  filePrintPreview = KStandardAction::printPreview(this, SLOT(slotFilePrintPreview()), actionCollection());
+  filePrintPreview->setWhatsThis(i18n("Shows a preview of the active vocabulary document"));
+  filePrintPreview->setToolTip(filePrintPreview->whatsThis());
+  filePrintPreview->setStatusTip(filePrintPreview->whatsThis());
+  
   fileQuit = KStandardAction::quit(this, SLOT(slotFileQuit()), actionCollection());
   fileQuit->setWhatsThis(i18n("Quits KWordQuiz"));
   fileQuit->setToolTip(fileQuit->whatsThis());
@@ -904,9 +909,16 @@ void KWordQuizApp::slotFileClose()
 void KWordQuizApp::slotFilePrint()
 {
   slotStatusMsg(i18n("Printing..."));
-  m_tableView->print();
+  m_tableView->doPrint();
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
+
+void KWordQuizApp::slotFilePrintPreview() {
+  slotStatusMsg(i18n("Showing Preview..."));
+  m_tableView->doPrintPreview();
+  slotStatusMsg(i18nc("@info:status ready", "Ready"));    
+}
+
 
 void KWordQuizApp::slotFileQuit()
 {
@@ -1337,7 +1349,8 @@ void KWordQuizApp::updateActions()
   fileSave->setEnabled(fEdit);
   fileSaveAs->setEnabled(fEdit);
   filePrint->setEnabled(fEdit);
-
+  filePrintPreview->setEnabled(fEdit);
+  
   editCopy->setEnabled(fEdit);
   editCut->setEnabled(fEdit);
   editPaste->setEnabled(fEdit);

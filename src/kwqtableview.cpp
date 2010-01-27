@@ -2,7 +2,7 @@
                           kwqtableview.cpp  -  description
                              -------------------
     begin          : Wed Jul 24 20:12:30 PDT 2002
-    copyright      : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -38,6 +38,7 @@
 #include <KNotification>
 #include <KDebug>
 #include <kdeprintdialog.h>
+#include <KPrintPreview>
 
 #include "kwqtablemodel.h"
 #include "keduvocdocument.h"
@@ -66,27 +67,38 @@ KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(
 
 }
 
-void KWQTableView::print()
+void KWQTableView::doPrint()
 {
+  QPrinter printer;
+  
   WQPrintDialogPage * p = new WQPrintDialogPage(this);
   p->setPrintStyle(Prefs::printStyle());
-  QPrinter printer(QPrinter::ScreenResolution);
   QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
-  printer.setFullPage(true);
-  if (printDialog->exec() != QDialog::Accepted)
-  {
-    delete printDialog;
-    return;
+  if (printDialog->exec() == QDialog::Accepted) {
+    Prefs::setPrintStyle(p->printStyle());    
+    print(&printer);
   }
-  Prefs::setPrintStyle(p->printStyle());
+  delete printDialog;
+}
 
+void KWQTableView::doPrintPreview()
+{
+  QPrinter printer;
+  KPrintPreview preview(&printer, this);
+  print(&printer);
+  preview.exec();
+}
+
+void KWQTableView::print(QPrinter *printer)
+{
+  printer->setFullPage(true);
   QTextDocument td;
 
   if (Prefs::printStyle() == Prefs::EnumPrintStyle::Flashcard) {
-    printer.setOrientation(QPrinter::Landscape);
+    printer->setOrientation(QPrinter::Landscape);
 
-    int cardWidth = qRound(5 * printer.logicalDpiY());
-    int cardHeight = qRound(3 * printer.logicalDpiY());
+    int cardWidth = qRound(5 * printer->logicalDpiY());
+    int cardHeight = qRound(3 * printer->logicalDpiY());
 
     QTextTable *table = td.rootFrame()->lastCursorPosition().insertTable(model()->rowCount(), 2);
 
@@ -121,13 +133,13 @@ void KWQTableView::print()
     cardFormat.setBorderBrush(QBrush(Qt::black));
     cardFormat.setWidth(QTextLength(QTextLength::FixedLength, cardWidth));
     cardFormat.setHeight(QTextLength(QTextLength::FixedLength, cardHeight));
-    cardFormat.setPadding(qRound(0.25 * printer.logicalDpiY()));
+    cardFormat.setPadding(qRound(0.25 * printer->logicalDpiY()));
 
     QTextFrameFormat lineFormat;
     lineFormat.setBorder(logicalDpiY()/72);
     lineFormat.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
     lineFormat.setBorderBrush(QBrush(Qt::black));
-    lineFormat.setWidth(QTextLength(QTextLength::FixedLength, qRound(4.5 * printer.logicalDpiY())));
+    lineFormat.setWidth(QTextLength(QTextLength::FixedLength, qRound(4.5 * printer->logicalDpiY())));
     lineFormat.setHeight(logicalDpiY()/38);
     lineFormat.setPadding(0);
 
@@ -168,10 +180,10 @@ void KWQTableView::print()
     tableFormat.setCellPadding(2);
 
     QVector<QTextLength> constraints;
-    constraints.append(QTextLength(QTextLength::FixedLength, verticalHeader()->width() * printer.logicalDpiY()/logicalDpiY()));
-    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(0) * printer.logicalDpiY()/logicalDpiY()));
-    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(1) * printer.logicalDpiY()/logicalDpiY()));
-    constraints.append(QTextLength(QTextLength::FixedLength, 50 * printer.logicalDpiY()/logicalDpiY()));
+    constraints.append(QTextLength(QTextLength::FixedLength, verticalHeader()->width() * printer->logicalDpiY()/logicalDpiY()));
+    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(0) * printer->logicalDpiY()/logicalDpiY()));
+    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(1) * printer->logicalDpiY()/logicalDpiY()));
+    constraints.append(QTextLength(QTextLength::FixedLength, 50 * printer->logicalDpiY()/logicalDpiY()));
     tableFormat.setColumnWidthConstraints(constraints);
 
     table->setFormat(tableFormat);
@@ -210,10 +222,11 @@ void KWQTableView::print()
       if (Prefs::printStyle() == Prefs::EnumPrintStyle::List)
         table->cellAt(i + 1, 2).firstCursorPosition().insertText(model()->data(model()->index(i, 1)).toString(), cellCharFormat);
     }
-  }
-  td.print(&printer);
-  delete printDialog;
+  }  
+  
+  td.print(printer);
 }
+
 
 void KWQTableView::doEditCut()
 {
