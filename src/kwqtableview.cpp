@@ -113,12 +113,13 @@ bool KWQTableView::doHtmlExport(const KUrl &url)
 void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc)
 {
   printer->setFullPage(true);
+  int myDpi = printer->logicalDpiY();
 
   if (Prefs::printStyle() == Prefs::EnumPrintStyle::Flashcard) {
     printer->setOrientation(QPrinter::Landscape);
 
-    int cardWidth = qRound(5 * printer->logicalDpiY());
-    int cardHeight = qRound(3 * printer->logicalDpiY());
+    int cardWidth = qRound(5 * myDpi);
+    int cardHeight = qRound(3 * myDpi);
 
     QTextTable *table = textDoc->rootFrame()->lastCursorPosition().insertTable(model()->rowCount(), 2);
 
@@ -148,19 +149,19 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc)
     cellCharFormat.setFont(Prefs::editorFont());
 
     QTextFrameFormat cardFormat;
-    cardFormat.setBorder(logicalDpiY()/72);
+    cardFormat.setBorder(1);
     cardFormat.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
     cardFormat.setBorderBrush(QBrush(Qt::black));
     cardFormat.setWidth(QTextLength(QTextLength::FixedLength, cardWidth));
     cardFormat.setHeight(QTextLength(QTextLength::FixedLength, cardHeight));
-    cardFormat.setPadding(qRound(0.25 * printer->logicalDpiY()));
+    cardFormat.setPadding(qRound(0.25 * myDpi));
 
     QTextFrameFormat lineFormat;
-    lineFormat.setBorder(logicalDpiY()/72);
+    lineFormat.setBorder(1);
     lineFormat.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
     lineFormat.setBorderBrush(QBrush(Qt::black));
-    lineFormat.setWidth(QTextLength(QTextLength::FixedLength, qRound(4.5 * printer->logicalDpiY())));
-    lineFormat.setHeight(logicalDpiY()/38);
+    lineFormat.setWidth(QTextLength(QTextLength::FixedLength, qRound(4.5 * myDpi)));
+    lineFormat.setHeight(1.1); //1 is drawn as a box whereas this is drawn as a line. Strange...
     lineFormat.setPadding(0);
 
     QTextFrame *card;
@@ -192,18 +193,17 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc)
 
     QTextTableFormat tableFormat = table->format();
     tableFormat.setHeaderRowCount(1);
-    tableFormat.setBorder(logicalDpiY()/72 /*0.5*/);
-    kDebug() << logicalDpiY();
+    tableFormat.setBorder(1);
     tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
     tableFormat.setCellSpacing(0);
     tableFormat.setBorderBrush(QBrush(Qt::black));
     tableFormat.setCellPadding(2);
 
     QVector<QTextLength> constraints;
-    constraints.append(QTextLength(QTextLength::FixedLength, verticalHeader()->width() * printer->logicalDpiY()/logicalDpiY()));
-    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(0) * printer->logicalDpiY()/logicalDpiY()));
-    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(1) * printer->logicalDpiY()/logicalDpiY()));
-    constraints.append(QTextLength(QTextLength::FixedLength, 50 * printer->logicalDpiY()/logicalDpiY()));
+    constraints.append(QTextLength(QTextLength::FixedLength, verticalHeader()->width()));
+    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(0)));
+    constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(1)));
+    constraints.append(QTextLength(QTextLength::FixedLength, 50));
     tableFormat.setColumnWidthConstraints(constraints);
 
     table->setFormat(tableFormat);
