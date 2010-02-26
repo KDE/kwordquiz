@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="18" name="kwordquiz" >
+<kpartgui version="19" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -35,6 +35,7 @@
    <text>&amp;Quiz</text>
    <Action name="quiz_check" />
    <Separator/>
+   <Action name="qa_mark_last_correct" />
    <Action name="flash_know" />
    <Action name="flash_dont_know" />
    <Separator/>
@@ -56,6 +57,7 @@
    <text>Quiz</text>
    <Action name="quiz_check" />
    <Separator/>
+   <Action name="qa_mark_last_correct" />
    <Action name="flash_know" />
    <Action name="flash_dont_know" />
    <Separator/>

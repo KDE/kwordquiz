@@ -2,7 +2,7 @@
                                kwqscorewidget.cpp
                              -------------------
 
-    copyright            : (C) 2009 by Peter Hedlund
+    copyright            : (C) 2009-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -153,7 +153,15 @@ void KWQScoreWidget::update()
 
   s = errorText();
   lblScoreError->setText(s);
-  if (!s.isEmpty())
+  if (s.isEmpty())
+    picError->setPixmap(0);
+  else
     picError->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
 }
 
+void KWQScoreWidget::swapCount()
+{
+  m_error--;
+  m_correct++;
+  update();
+}

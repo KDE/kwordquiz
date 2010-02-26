@@ -1,5 +1,5 @@
 /***************************************************************************
-                          kwordquiz.cpp  -  description
+                                kwordquiz.cpp
                              -------------------
     begin         : Wed Jul 24 20:12:30 PDT 2002
     copyright     : (C) 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
@@ -370,6 +370,14 @@ void KWordQuizApp::initActions()
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
   qaHint->setToolTip(qaHint->whatsThis());
   qaHint->setStatusTip(qaHint->whatsThis());
+
+  qaMarkLastCorrect = actionCollection()->addAction("qa_mark_last_correct");
+  qaMarkLastCorrect->setIcon(KIcon("answer-correct"));
+  qaMarkLastCorrect->setText(i18n("Mark Last Correct"));
+  qaMarkLastCorrect->setShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Return));
+  qaMarkLastCorrect->setWhatsThis(i18n("Marks last answer as correct"));
+  qaMarkLastCorrect->setToolTip(qaMarkLastCorrect->whatsThis());
+  qaMarkLastCorrect->setStatusTip(qaMarkLastCorrect->whatsThis());
 
   quizRestart = actionCollection()->addAction("quiz_restart");
   quizRestart->setIcon(KIcon("start-over"));
@@ -1195,6 +1203,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     {
       connect(quizCheck, SIGNAL(triggered(bool)), m_qaView, SLOT(slotCheck()));
       connect(qaHint, SIGNAL(triggered(bool)), m_qaView, SLOT(slotHint()));
+      connect(qaMarkLastCorrect, SIGNAL(triggered(bool)), m_qaView, SLOT(slotMarkLastCorrect()));
       connect(quizRestart, SIGNAL(triggered(bool)), m_qaView, SLOT(slotRestart()));
       connect(quizRepeatErrors, SIGNAL(triggered(bool)), m_qaView, SLOT(slotRepeat()));
       connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
@@ -1366,7 +1375,7 @@ void KWordQuizApp::updateActions()
   fileSaveAs->setEnabled(fEdit);
   filePrint->setEnabled(fEdit);
   filePrintPreview->setEnabled(fEdit);
-  
+
   editCopy->setEnabled(fEdit);
   editCut->setEnabled(fEdit);
   editPaste->setEnabled(fEdit);
@@ -1389,6 +1398,7 @@ void KWordQuizApp::updateActions()
   flashDontKnow->setEnabled((m_pageWidget->currentPage() == m_flashPage) && fQuiz);
 
   qaHint->setEnabled((m_pageWidget->currentPage() == m_qaPage) && fQuiz);
+  qaMarkLastCorrect->setVisible((m_pageWidget->currentPage() == m_qaPage) && fQuiz);
 
   quizOpt1->setEnabled((m_pageWidget->currentPage() == m_multiplePage) && fQuiz);
   quizOpt2->setEnabled((m_pageWidget->currentPage() == m_multiplePage) && fQuiz);

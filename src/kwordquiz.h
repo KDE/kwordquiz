@@ -1,5 +1,5 @@
 /***************************************************************************
-                          kwordquiz.h  -  description
+                                 kwordquiz.h
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002-2010 by Peter Hedlund
@@ -308,6 +308,7 @@ class KWordQuizApp : public KXmlGuiWindow
     KAction* flashDontKnow;
 
     KAction* qaHint;
+    KAction* qaMarkLastCorrect;
 
     KAction* quizOpt1;
     KAction* quizOpt2;

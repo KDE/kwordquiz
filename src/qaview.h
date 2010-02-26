@@ -44,6 +44,7 @@ public slots:
     void slotRestart();
     void slotApplySettings();
     void slotSpecChar(const QChar &);
+    void slotMarkLastCorrect();
 
 private:
     KWQQuizModel *m_quiz;

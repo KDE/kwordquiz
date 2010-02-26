@@ -1,7 +1,7 @@
 /***************************************************************************
-                          qaview.cpp  -  description
+                                 qaview.cpp
                              -------------------
-   copyright            : (C) 2003-2009 Peter Hedlund
+   copyright            : (C) 2003-2010 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -102,6 +102,7 @@ void QAView::init()
   picCorrectAnswer->clear();
 
   m_actionCollection->action("quiz_check")->setEnabled(true);
+  m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
   m_actionCollection->action("qa_hint")->setEnabled(true);
   m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
   m_actionCollection->action("quiz_export_errors")->setEnabled(false);
@@ -139,6 +140,7 @@ void QAView::slotCheck()
       lblCorrect->clear();
       score->countIncrement(KWQScoreWidget::cdCorrect);
       KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
+      m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
     }
     else
     {
@@ -149,6 +151,7 @@ void QAView::slotCheck()
       lblCorrectHeader->setText(i18n("Correct Answer"));
       score->countIncrement(KWQScoreWidget::cdError);
       KNotification::event("QuizError", i18n("Your answer was incorrect."));
+      m_actionCollection->action("qa_mark_last_correct")->setEnabled(true);
     }
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
@@ -170,6 +173,7 @@ void QAView::slotCheck()
       m_actionCollection->action("qa_hint")->setEnabled(false);
       m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
       m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
+      m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();
@@ -284,6 +288,13 @@ void QAView::slotSpecChar( const QChar & c)
       txtAnswer->setCursorPosition(i + 1);
     }
   }
+}
+
+void QAView::slotMarkLastCorrect( )
+{
+  m_quiz->errorList().removeLast();
+  score->swapCount();
+  m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
 }
 
 #include "qaview.moc"

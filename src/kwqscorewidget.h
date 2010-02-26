@@ -2,7 +2,7 @@
                                kwqscorewidget.h
                              -------------------
 
-    copyright            : (C) 2009 by Peter Hedlund
+    copyright            : (C) 2009-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -34,6 +34,8 @@ public:
   void setAsPercent(bool p);
   void setQuestionCount(int c);
   void countIncrement(CountDirection d);
+  /* if Mark Last Correct is selected */
+  void swapCount();
 
   QString answerText();
   QString correctText();
