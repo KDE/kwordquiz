@@ -45,8 +45,8 @@
 #include <ktoggleaction.h>
 #include <ktoolbar.h>
 #include <kicon.h>
-#include <knewstuff2/engine.h>
-#include <knewstuff2/ui/knewstuffaction.h>
+#include <knewstuff3/downloaddialog.h> 
+#include <knewstuff3/knewstuffaction.h>
 #include <KPageWidget>
 #include <KProcess>
 #include <KTemporaryFile>
@@ -122,13 +122,13 @@ void KWordQuizApp::initActions()
   fileOpen->setStatusTip(fileOpen->whatsThis());
 
   fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
-
-  fileGHNS = KNS::standardAction(i18n("Download New Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
+  
+  fileGHNS = KNS3::standardAction(i18n("Download New Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
   fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
   fileGHNS->setStatusTip(fileGHNS->whatsThis());
-
+   
   fileSave = KStandardAction::save(this, SLOT(slotFileSave()), actionCollection());
   fileSave->setWhatsThis(i18n("Saves the active vocabulary document"));
   fileSave->setToolTip(fileSave->whatsThis());
@@ -798,21 +798,19 @@ void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
 
 void KWordQuizApp::slotFileGHNS()
 {
-  KNS::Entry::List entries = KNS::Engine::download();
+  KNS3::DownloadDialog getHotNewStuffDialog("kwordquiz.knsrc", this);
+  getHotNewStuffDialog.exec();  
+  
   // list of changed entries
-  foreach(KNS::Entry* entry, entries) {
-    // care only about installed ones
-    if (entry->status() == KNS::Entry::Installed) {
-      // check mime type and if kvtml, open it
-      foreach(const QString &file, entry->installedFiles()) {
-        KMimeType::Ptr mimeType = KMimeType::findByPath(file);
-        if (mimeType->name() == "application/x-kvtml") {
-          KProcess::startDetached("kwordquiz", QStringList() << file);
-        }
+  foreach(const KNS3::Entry& entry, getHotNewStuffDialog.changedEntries()) {
+    // check mime type and if kvtml, open it	
+    foreach(const QString &file, entry.installedFiles()) { 
+      KMimeType::Ptr mimeType = KMimeType::findByPath(file);
+      if (mimeType->name() == "application/x-kvtml") {
+	KProcess::startDetached("kwordquiz", QStringList() << file);
       }
     }
   }
-  qDeleteAll(entries);
 }
 
 

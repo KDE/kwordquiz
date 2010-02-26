@@ -56,7 +56,7 @@ kde4_add_app_icon(kwordquiz_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hi*-app-kwor
 
 kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
 
-target_link_libraries(kwordquiz  keduvocdocument ${KDE4_KIO_LIBS} ${KDE4_KNEWSTUFF2_LIBS} ${KDE4_KNOTIFYCONFIG_LIBS} ${KDE4_KUTILS_LIBS})
+target_link_libraries(kwordquiz  keduvocdocument ${KDE4_KIO_LIBS} ${KDE4_KNEWSTUFF3_LIBS} ${KDE4_KNOTIFYCONFIG_LIBS} ${KDE4_KUTILS_LIBS})
 
 install(TARGETS kwordquiz  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
