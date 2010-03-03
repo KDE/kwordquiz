@@ -446,10 +446,8 @@ void KWordQuizApp::initActions()
 
 void KWordQuizApp::initStatusBar()
 {
-  m_modeLabel = new QLabel();
-  m_modeLabel->setFixedWidth(250);
-  m_modeLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-  statusBar()->addPermanentWidget(m_modeLabel, 0);
+  statusBar()->insertPermanentFixedItem(QString(), 1);
+  statusBar()->setItemFixed(1, 250);
 }
 
 void KWordQuizApp::initDocument()
@@ -1335,19 +1333,19 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
 
   switch (Prefs::mode()){
   case 1:
-    m_modeLabel->setText(i18n("%1 -> %2 In Order", s1, s2));
+    statusBar()->changeItem(i18n("%1 -> %2 In Order", s1, s2), 1);
     break;
   case 2:
-    m_modeLabel->setText(i18n("%1 -> %2 In Order", s2, s1));
+    statusBar()->changeItem(i18n("%1 -> %2 In Order", s2, s1), 1);
     break;
   case 3:
-    m_modeLabel->setText(i18n("%1 -> %2 Randomly", s1, s2));
+   statusBar()->changeItem(i18n("%1 -> %2 Randomly", s1, s2), 1);
     break;
   case 4:
-    m_modeLabel->setText(i18n("%1 -> %2 Randomly", s2, s1));
+    statusBar()->changeItem(i18n("%1 -> %2 Randomly", s2, s1), 1);
     break;
   case 5:
-    m_modeLabel->setText(i18n("%1 &lt;-&gt; %2 Randomly", s1, s2));
+    statusBar()->changeItem(i18n("%1 &lt;-&gt; %2 Randomly", s1, s2), 1);
     break;
   }
 

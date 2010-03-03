@@ -320,8 +320,6 @@ class KWordQuizApp : public KXmlGuiWindow
 
     KDirWatch * m_dirWatch;
 
-    QLabel * m_modeLabel;
-
     KUndoStack * m_undoStack;
 
     void updateActions();
