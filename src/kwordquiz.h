@@ -186,6 +186,10 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotVocabLanguages();
     /** define vocabulary fonts */
     void slotVocabFont();
+    /** link an image to the current entry */
+    void slotVocabImage();
+    /** link a sound to the current entry */
+    void slotVocabSound();
     /** automatically adjust row heights */
     void slotVocabAdjustRows();
     /** shuffle the vocabulary */
@@ -226,10 +230,10 @@ class KWordQuizApp : public KXmlGuiWindow
     void slotCleanChanged(bool);
     void slotUndoTextChanged(const QString &);
     void slotRedoTextChanged(const QString &);
-    
+
     void slotTableContextMenuRequested(const QPoint &);
     void slotLayoutActionGroupTriggered(QAction *);
-    
+
   private:
     KWQQuizModel *m_quiz;
 

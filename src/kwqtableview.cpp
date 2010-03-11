@@ -1,5 +1,5 @@
 /***************************************************************************
-                          kwqtableview.cpp  -  description
+                              kwqtableview.cpp
                              -------------------
     begin          : Wed Jul 24 20:12:30 PDT 2002
     copyright      : (C) 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
@@ -39,6 +39,7 @@
 #include <KDebug>
 #include <kdeprintdialog.h>
 #include <KPrintPreview>
+#include <KFileDialog>
 
 #include "kwqtablemodel.h"
 #include "keduvocdocument.h"
@@ -686,12 +687,37 @@ void KWQTableView::slotHeaderClicked(int column)
 }
 
 
+void KWQTableView::doVocabImage()
+{
+  KUrl currentUrl = model()->data(currentIndex(), KWQTableModel::ImageRole).toString();
+
+  KUrl imageUrl = KFileDialog::getImageOpenUrl(currentUrl, this, i18n("Select Image"));
+  if (!imageUrl.isEmpty()) {
+    KWQCommandImage *kwqc = new KWQCommandImage(this, imageUrl);
+    m_undoStack->push(kwqc);
+  }
+}
+
+
+void KWQTableView::doVocabSound()
+{
+  KUrl currentUrl = model()->data(currentIndex(), KWQTableModel::SoundRole).toString();
+
+  KUrl soundUrl = KFileDialog::getOpenUrl(currentUrl, i18n("*|All Files"), this, i18n("Select Sound"));
+  if (!soundUrl.isEmpty()) {
+    KWQCommandSound *kwqc = new KWQCommandSound(this, soundUrl);
+    m_undoStack->push(kwqc);
+  }
+}
+
+
 void KWQTableView::doVocabShuffle()
 {
   setFocus();
   KWQCommandShuffle *kwqc = new KWQCommandShuffle(this, 0);
   m_undoStack->push(kwqc);
 }
+
 
 void KWQTableView::updateKeyboardLayout()
 {

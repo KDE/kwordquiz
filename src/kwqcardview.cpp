@@ -1,7 +1,7 @@
 /***************************************************************************
                                kwqcardview.cpp
                              -------------------
-   copyright            : (C) 2009 by Peter Hedlund
+   copyright            : (C) 2009-2010 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -73,6 +73,12 @@ void KWQCardView::setFrameColor(const QColor &frameColor)
 {
     if (scene() != 0)
         m_scene->setFrameColor(frameColor);
+}
+
+void KWQCardView::setImage(const QPixmap &image)
+{
+    if (scene() != 0)
+        m_scene->setImage(image);
 }
 
 #include "kwqcardview.moc"

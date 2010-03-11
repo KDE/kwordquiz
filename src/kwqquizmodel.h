@@ -2,7 +2,7 @@
                                kwqquizmodel.h
                              -------------------
 
-    copyright            : (C) 2008 by Peter Hedlund
+    copyright            : (C) 2008-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -69,6 +69,8 @@ public:
     QString answer();
     QString langQuestion();
     QString langAnswer();
+    QPixmap imageQuestion();
+    QPixmap imageAnswer();
 
     QString kbAnswer();
 

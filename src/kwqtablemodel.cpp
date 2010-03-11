@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Mon Feb 27 18:27:30 PST 2006
-    copyright            : (C) 2006-2009 by Peter Hedlund
+    copyright            : (C) 2006-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -20,6 +20,7 @@
 #include "kwqtablemodel.h"
 
 #include <klocale.h>
+#include <KIcon>
 
 #include "prefs.h"
 #include "documentsettings.h"
@@ -47,18 +48,51 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
 {
   if (!index.isValid())
     return QVariant();
-  else if (role == Qt::FontRole)
-    return QVariant(Prefs::editorFont());
-  else if (role != Qt::DisplayRole)
-    return QVariant();
 
   QVariant result;
-  if (index.column() == 0)
-    result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->text();
-  else
-    result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->text();
 
-  return result;
+  switch (role) {
+    case Qt::FontRole:
+      return QVariant(Prefs::editorFont());
+
+    case Qt::DisplayRole:
+      if (index.column() == 0)
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->text();
+      else
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->text();
+
+      return result;
+
+    case Qt::DecorationRole:
+      if (index.column() == 0)
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->imageUrl().toLocalFile();
+      else
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->imageUrl().toLocalFile();
+
+      if (!result.isNull())
+        result = QPixmap(KIcon("image-x-generic").pixmap(QSize(22, 22), QIcon::Active));
+
+      return result;
+
+    case KWQTableModel::ImageRole:
+      if (index.column() == 0)
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->imageUrl().toLocalFile();
+      else
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->imageUrl().toLocalFile();
+
+      return result;
+
+    case KWQTableModel::SoundRole:
+      if (index.column() == 0)
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->soundUrl().toLocalFile();
+      else
+        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->soundUrl().toLocalFile();
+
+      return result;
+
+    default:
+      return QVariant();
+  }
 }
 
 QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -110,16 +144,34 @@ Qt::ItemFlags KWQTableModel::flags(const QModelIndex & index) const
 
 bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, int role)
 {
-  if (index.isValid() && role == Qt::EditRole) {
-    if (index.column() == 0)
-      m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(0, value.toString());
-    else
-      m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(1, value.toString());
+  if (!index.isValid())
+    return false;
 
-    emit dataChanged(index, index);
-    return true;
+  switch (role) {
+    case Qt::EditRole:
+      if (index.column() == 0)
+        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(0, value.toString());
+      else
+        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(1, value.toString());
+      break;
+
+    case KWQTableModel::ImageRole:
+      if (index.column() == 0)
+        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->setImageUrl(value.toUrl());
+      else
+        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->setImageUrl(value.toUrl());
+      break;
+
+    case KWQTableModel::SoundRole:
+      if (index.column() == 0)
+        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->setSoundUrl(value.toUrl());
+      else
+        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->setSoundUrl(value.toUrl());
+      break;
   }
-  return false;
+
+  emit dataChanged(index, index);
+  return true;
 }
 
 bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)

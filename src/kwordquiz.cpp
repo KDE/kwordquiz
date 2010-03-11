@@ -111,6 +111,8 @@ void KWordQuizApp::initActions()
   QAction* configNotifications;
   QAction* configApp;
 
+  KAction* a;
+
   fileNew = KStandardAction::openNew(this, SLOT(slotFileNew()), actionCollection());
   fileNew->setWhatsThis(i18n("Creates a new blank vocabulary document"));
   fileNew->setToolTip(fileNew->whatsThis());
@@ -237,6 +239,22 @@ void KWordQuizApp::initActions()
   vocabFont->setStatusTip(vocabFont->whatsThis());
   connect(vocabFont, SIGNAL(triggered(bool)), this, SLOT(slotVocabFont()));
 
+  a = actionCollection()->addAction("vocab_image");
+  a->setIcon(KIcon("image-x-generic"));
+  a->setText(i18n("Link &Image..."));
+  a->setWhatsThis(i18n("Links an image with the current entry"));
+  a->setToolTip(a->whatsThis());
+  a->setStatusTip(a->whatsThis());
+  connect(a, SIGNAL(triggered(bool)), this, SLOT(slotVocabImage()));
+
+  a = actionCollection()->addAction("vocab_sound");
+  a->setIcon(KIcon("audio-x-generic"));
+  a->setText(i18n("Link &Sound..."));
+  a->setWhatsThis(i18n("Links a sound with the current entry"));
+  a->setToolTip(a->whatsThis());
+  a->setStatusTip(a->whatsThis());
+  connect(a, SIGNAL(triggered(bool)), this, SLOT(slotVocabSound()));
+
   vocabAdjustRows = actionCollection()->addAction("vocab_adjust_rows");
   vocabAdjustRows->setIcon(KIcon());
   vocabAdjustRows->setText(i18n("&Adjust Row Heights"));
@@ -275,8 +293,6 @@ void KWordQuizApp::initActions()
 
   m_modeActionGroup = new QActionGroup(this);
   connect(m_modeActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotModeActionGroupTriggered(QAction *)));
-
-  KAction * a;
 
   for (int i = 1; i <=5; ++i) {
     a = actionCollection()->addAction(QString("mode_%1").arg(QString::number(i)));
@@ -1048,6 +1064,22 @@ void KWordQuizApp::slotVocabFont()
 }
 
 
+void KWordQuizApp::slotVocabImage()
+{
+  slotStatusMsg(i18n("Linking an image with the current entry..."));
+  m_tableView->doVocabImage();
+  slotStatusMsg(i18nc("@info:status ready", "Ready"));
+}
+
+
+void KWordQuizApp::slotVocabSound()
+{
+  slotStatusMsg(i18n("Linking a sound with the current entry..."));
+  m_tableView->doVocabSound();
+  slotStatusMsg(i18nc("@info:status ready", "Ready"));
+}
+
+
 void KWordQuizApp::slotVocabAdjustRows()
 {
   slotStatusMsg(i18n("Adjusting row heights..."));
@@ -1383,8 +1415,11 @@ void KWordQuizApp::updateActions()
   editDelete->setEnabled(fEdit);
   editMarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
   editUnmarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
+
   vocabLanguages->setEnabled(fEdit);
   vocabFont->setEnabled(fEdit);
+  actionCollection()->action("vocab_image")->setEnabled(fEdit);
+  actionCollection()->action("vocab_sound")->setEnabled(fEdit);
   vocabAdjustRows->setEnabled(fEdit);
   vocabShuffle->setEnabled(fEdit);
 

@@ -1,7 +1,7 @@
 /***************************************************************************
                                kwqcardscene.h
                              -------------------
-   copyright            : (C) 2009 by Peter Hedlund
+   copyright            : (C) 2009-2010 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -42,6 +42,7 @@ public:
     void setTextFont(const QFont &);
     void setCardColor(const QColor &);
     void setFrameColor(const QColor &);
+    void setImage(const QPixmap &);
 
 signals:
     void cardClicked();
@@ -55,7 +56,10 @@ private:
     QGraphicsSimpleTextItem *m_identifier;
     QGraphicsRectItem *m_textArea;
     QGraphicsTextItem *m_text;
+    QGraphicsRectItem *m_imageArea;
+    QGraphicsPixmapItem *m_pixmap;
 
+    void realign(bool );
     void repositionText();
 };
 

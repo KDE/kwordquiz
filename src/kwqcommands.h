@@ -1,8 +1,8 @@
 /***************************************************************************
-                          kwqcommands.h  -  description
+                               kwqcommands.h
                              -------------------
     begin          : Fri Jan 18 10:37:00 PST 2008
-    copyright      : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -192,6 +192,32 @@ public:
 private:
   ColumnDataList m_oldColumnData;
   ColumnDataList m_newColumnData;
+};
+
+
+class KWQCommandImage : public KWQUndoCommand
+{
+public:
+  KWQCommandImage(KWQTableView *view, const KUrl &);
+  virtual void undo();
+  virtual void redo();
+
+private:
+  KUrl m_oldUrl;
+  KUrl m_newUrl;
+};
+
+
+class KWQCommandSound : public KWQUndoCommand
+{
+public:
+  KWQCommandSound(KWQTableView *view, const KUrl &);
+  virtual void undo();
+  virtual void redo();
+
+private:
+  KUrl m_oldUrl;
+  KUrl m_newUrl;
 };
 
 #endif // KWQCOMMANDS_H

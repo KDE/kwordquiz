@@ -1,5 +1,5 @@
 /***************************************************************************
-                          kwqtableview.h  -  description
+                               kwqtableview.h
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
     copyright            : (C) 2002-2010 by Peter Hedlund
@@ -56,6 +56,8 @@ public:
   void doEditDelete();
   void doEditMarkBlank();
   void doEditUnmarkBlank();
+  void doVocabImage();
+  void doVocabSound();
   void doVocabShuffle();
 
 protected:

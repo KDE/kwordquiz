@@ -1,7 +1,7 @@
 /***************************************************************************
                               kwqcardscene.cpp
                              -------------------
-   copyright            : (C) 2009 by Peter Hedlund
+   copyright            : (C) 2009-2010 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -34,7 +34,7 @@ KWQCardScene::KWQCardScene(QObject *parent) : QGraphicsScene(parent)
 
     m_card = addRect(0, 0, cardWidth, cardHeight);
     m_card->setGraphicsEffect(shadowEffect);
-    
+
     m_line = addLine(cardMargin, cardMargin * 3, cardWidth - cardMargin, cardMargin * 3);
     m_identifier = addSimpleText("");
 
@@ -46,12 +46,20 @@ KWQCardScene::KWQCardScene(QObject *parent) : QGraphicsScene(parent)
     m_textArea = addRect(textMargin, cardMargin * 4, cardWidth - (textMargin * 2), cardHeight - (cardMargin * 5));
     m_textArea->setPen(Qt::NoPen);
     m_textArea->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
-    m_textArea->setZValue(2);
+    m_textArea->setZValue(4);
 
     m_text = addText("");
     m_text->setTextWidth(cardWidth - (textMargin * 2));
     f.setPointSize(12);
     m_text->setParentItem(m_textArea);
+
+    m_imageArea = addRect(textMargin, cardMargin * 4, cardWidth - (textMargin * 2), cardHeight - (cardMargin * 5));
+    m_imageArea->setPen(Qt::NoPen);
+    m_imageArea->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
+    m_imageArea->setZValue(3);
+
+    m_pixmap = addPixmap(QPixmap());
+    m_pixmap->setParentItem(m_imageArea);
 
     setIdentifier("");
     setText("");
@@ -105,10 +113,48 @@ void KWQCardScene::setFrameColor(const QColor &frameColor)
     m_line->setPen(QPen(frameColor));
 }
 
+void KWQCardScene::setImage(const QPixmap &image)
+{
+    if (!image.isNull()) {
+        realign(false);
+        QSize s;
+        s.setWidth(m_imageArea->rect().width());
+        s.setHeight(m_imageArea->rect().height());
+        m_pixmap->setPixmap(image.scaled(s, Qt::KeepAspectRatio));
+    }
+    else
+    {
+        realign(true);
+        m_pixmap->setPixmap(image); //clear image
+    }
+    repositionText();
+}
+
+void KWQCardScene::realign(bool textOnly)
+{
+    if (textOnly) {
+        m_textArea->setRect(textMargin, cardMargin * 4, cardWidth - (textMargin * 2), cardHeight - (cardMargin * 5));
+    } else {
+        m_imageArea->setRect(textMargin, cardMargin * 4, (cardWidth / 2) - textMargin,  cardHeight - (cardMargin * 5));
+        m_textArea->setRect((cardWidth / 2), cardMargin * 4, (cardWidth / 2) - textMargin, cardHeight - (cardMargin * 5));
+    }
+}
+
 void KWQCardScene::repositionText()
 {
-    int h = ((cardMargin * 4) + ((cardHeight - (cardMargin * 5)) - m_text->boundingRect().height())/2);
-    m_text->setPos(textMargin, h);
+    int h = 0;
+
+    if (m_pixmap->pixmap().isNull()) {
+        h = ((cardMargin * 4) + ((cardHeight - (cardMargin * 5)) - m_text->boundingRect().height()) / 2);
+        m_text->setTextWidth(cardWidth - (textMargin * 2));
+        m_text->setPos(textMargin, h);
+    } else {
+        h = ((cardMargin * 4) + ((cardHeight - (cardMargin * 5)) - m_pixmap->boundingRect().height()) / 2);
+        m_pixmap->setPos(textMargin, h);
+        h = ((cardMargin * 4) + ((cardHeight - (cardMargin * 5)) - m_text->boundingRect().height()) / 2);
+        m_text->setTextWidth((cardWidth / 2) - textMargin);
+        m_text->setPos((cardWidth + (cardWidth / 2) - m_text->boundingRect().width() - textMargin) / 2, h);
+    }
 }
 
 void KWQCardScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)

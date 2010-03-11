@@ -1,7 +1,7 @@
 /***************************************************************************
-                          flashview.h -  description
+                                 flashview.h
                              -------------------
-   copyright            : (C) 2003-2009 by Peter Hedlund
+   copyright            : (C) 2003-2010 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -57,8 +57,6 @@ private:
     bool m_flipAuto;
     bool m_keepDiscard;
 
-    void showFront();
-    void showBack();
     void keepDiscardCard(bool keep);
 };
 

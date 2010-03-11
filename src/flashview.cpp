@@ -1,7 +1,7 @@
 /***************************************************************************
-                          flashview.cpp  -  description
+                                flashview.cpp
                              -------------------
-   copyright            : (C) 2003-2009 Peter Hedlund
+   copyright            : (C) 2003-2010 Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -55,19 +55,6 @@ void FlashView::init()
   slotFlip();
 }
 
-void FlashView::showFront()
-{
-  flashcard->setIdentifier(m_quiz ->langQuestion());
-  flashcard->setText(m_quiz->question());
-}
-
-void FlashView::showBack()
-{
-  flashcard->setIdentifier(m_quiz->langAnswer());
-  flashcard->setText(m_quiz->answer());
-}
-
-
 void FlashView::keepDiscardCard(bool keep)
 {
   if (!keep) {
@@ -104,7 +91,9 @@ void FlashView::slotFlip()
     flashcard->setTextColor(Prefs::frontTextColor());
     flashcard->setFrameColor(Prefs::frontFrameColor());
     flashcard->setTextFont(Prefs::frontFont());
-    showFront();
+    flashcard->setIdentifier(m_quiz ->langQuestion());
+    flashcard->setImage(m_quiz->imageQuestion());
+    flashcard->setText(m_quiz->question());
     m_showFirst = false;
   }
   else {
@@ -112,7 +101,9 @@ void FlashView::slotFlip()
     flashcard->setTextColor(Prefs::backTextColor());
     flashcard->setFrameColor(Prefs::backFrameColor());
     flashcard->setTextFont(Prefs::backFont());
-    showBack();
+    flashcard->setIdentifier(m_quiz->langAnswer());
+    flashcard->setImage(m_quiz->imageAnswer());
+    flashcard->setText(m_quiz->answer());
     m_showFirst = true;
   }
 

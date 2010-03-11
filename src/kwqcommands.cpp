@@ -1,8 +1,8 @@
 /***************************************************************************
-                          kwqcommands.cpp  -  description
+                               kwqcommands.cpp
                              -------------------
     begin          : Fri Jan 18 10:37:00 PST 2008
-    copyright      : (C) 2002-2009 Peter Hedlund <peter.hedlund@kdemail.net>
+    copyright      : (C) 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
  ***************************************************************************/
 
@@ -89,7 +89,7 @@ void KWQCommandClear::redo()
   view()->selectionModel()->clear();
   foreach (const QModelIndex &index, oldSelectedIndexes())
   {
-    view()->model()->setData(index, QVariant());
+    view()->model()->setData(index, QVariant(), Qt::EditRole);
     view()->selectionModel()->select(index, QItemSelectionModel::Select);
 
   }
@@ -350,7 +350,7 @@ void KWQCommandUnmarkBlank::redo()
     s = view()->model()->data(index, Qt::DisplayRole).toString();
     s = s.remove(delim_start);
     s = s.remove(delim_end);
-    view()->model()->setData(index, QVariant(s));
+    view()->model()->setData(index, QVariant(s), Qt::EditRole);
     view()->selectionModel()->select(index, QItemSelectionModel::Select);
   }
   view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);
@@ -401,3 +401,40 @@ void KWQCommandIdentifiers::redo()
   view()->model()->setHeaderData(1, Qt::Horizontal, QSize(m_newColumnData[1].width, 25), Qt::SizeHintRole);
 }
 
+
+KWQCommandImage::KWQCommandImage(KWQTableView *view, const KUrl &newUrl) : KWQUndoCommand(view), m_newUrl(newUrl)
+{
+  setText(i18nc("@item:inmenu undo link image", "Link Image"));
+  m_oldUrl = view->model()->data(oldCurrentIndex(), KWQTableModel::ImageRole).toString();
+}
+
+
+void KWQCommandImage::undo()
+{
+  view()->model()->setData(oldCurrentIndex(), QVariant(m_oldUrl), KWQTableModel::ImageRole);
+}
+
+
+void KWQCommandImage::redo()
+{
+  view()->model()->setData(oldCurrentIndex(), QVariant(m_newUrl), KWQTableModel::ImageRole);
+}
+
+
+KWQCommandSound::KWQCommandSound(KWQTableView *view, const KUrl &newUrl) : KWQUndoCommand(view), m_newUrl(newUrl)
+{
+  setText(i18nc("@item:inmenu undo link sound", "Link Sound"));
+  m_oldUrl = view->model()->data(oldCurrentIndex(), KWQTableModel::SoundRole).toString();
+}
+
+
+void KWQCommandSound::undo()
+{
+  view()->model()->setData(oldCurrentIndex(), QVariant(m_oldUrl), KWQTableModel::SoundRole);
+}
+
+
+void KWQCommandSound::redo()
+{
+  view()->model()->setData(oldCurrentIndex(), QVariant(m_newUrl), KWQTableModel::SoundRole);
+}

@@ -1,9 +1,9 @@
 /***************************************************************************
-                               kwqtabledelegate.h
+                              kwqtabledelegate.h
                              -------------------
 
     begin                : Wed Mar 1 19:17:30 PST 2006
-    copyright            : (C) 2006-2007 by Peter Hedlund
+    copyright            : (C) 2006-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -28,24 +28,25 @@
 
 class KWQTableDelegate : public QItemDelegate
 {
-Q_OBJECT
-public:
-  KWQTableDelegate(QObject *parent = 0);
+  Q_OBJECT
+  public:
+    KWQTableDelegate(QObject *parent = 0);
 
-  QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
-  void setEditorData(QWidget *editor, const QModelIndex &index) const;
-  void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const;
+    void setEditorData(QWidget *editor, const QModelIndex &index) const;
+    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const;
 
-  void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
-  void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const;
+    void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const;
 
-protected:
-  void drawDisplay(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QString &text) const;
-  void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const;
+  protected:
+    void drawDisplay(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QString &text) const;
+    void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const;
+    void drawDecoration(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QPixmap &pixmap ) const;
 
-private slots:
-  void commitAndCloseEditor();
+  private slots:
+    void commitAndCloseEditor();
 };
 
 #endif

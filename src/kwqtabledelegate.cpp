@@ -3,7 +3,7 @@
                              -------------------
 
     begin                : Wed Mar 1 19:17:30 PST 2006
-    copyright            : (C) 2006-2009 by Peter Hedlund
+    copyright            : (C) 2006-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -20,6 +20,7 @@
 #include "kwqtabledelegate.h"
 
 #include <QPainter>
+#include <QDebug>
 
 #include <KLineEdit>
 
@@ -34,7 +35,7 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
   Q_UNUSED(option);
   KLineEdit *editor = new KLineEdit(parent);
   editor->setFrame(false);
-  editor->setFont(index.model()->data(index, Qt::FontRole).value<QFont>());
+  editor->setFont(index.data(Qt::FontRole).value<QFont>());
 
   //connect(editor, SIGNAL(returnPressed()), this, SLOT(commitAndCloseEditor()));
   return editor;
@@ -42,18 +43,14 @@ QWidget * KWQTableDelegate::createEditor(QWidget * parent, const QStyleOptionVie
 
 void KWQTableDelegate::setEditorData(QWidget * editor, const QModelIndex & index) const
 {
-  QString value = index.model()->data(index, Qt::DisplayRole).toString();
-
   KLineEdit *lineEdit = static_cast<KLineEdit*>(editor);
-  lineEdit->setText(value);
+  lineEdit->setText(index.data(Qt::DisplayRole).toString());
 }
 
 void KWQTableDelegate::setModelData(QWidget * editor, QAbstractItemModel * model, const QModelIndex & index) const
 {
   KLineEdit *lineEdit = static_cast<KLineEdit*>(editor);
-  QString value = lineEdit->text();
-
-  model->setData(index, value);
+  model->setData(index, lineEdit->text());
 }
 
 void KWQTableDelegate::updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index) const
@@ -69,6 +66,23 @@ void KWQTableDelegate::commitAndCloseEditor()
   emit commitData(editor);
   emit closeEditor(editor, QAbstractItemDelegate::NoHint);
 }
+
+void KWQTableDelegate::drawDecoration(QPainter* painter, const QStyleOptionViewItem& option, const QRect& rect, const QPixmap& pixmap) const
+{
+  if (pixmap.isNull() || !rect.isValid())
+    return;
+  QPoint p = QStyle::alignedRect(option.direction, option.decorationAlignment, pixmap.size(), rect).topLeft();
+  QPalette::ColorGroup cg = option.state & QStyle::State_Enabled ? QPalette::Normal : QPalette::Disabled;
+  if (option.state & QStyle::State_Selected) {
+    painter->fillRect(rect, option.palette.brush(cg, option.state & QStyle::State_HasFocus ?
+          QPalette::Base : QPalette::Highlight));
+    QPixmap *pm = selected(pixmap, option.palette, option.state & QStyle::State_Enabled);
+    painter->drawPixmap(p, *pm);
+  } else {
+    painter->drawPixmap(p, pixmap);
+  }
+}
+
 
 void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect, const QString & text) const
 {
@@ -93,9 +107,7 @@ void KWQTableDelegate::drawDisplay(QPainter * painter, const QStyleOptionViewIte
     QFont font = painter->font();
     painter->setFont(option.font);
     QRect textRect = rect.adjusted(3, 0, -3, 0); // remove width padding
-    QString str = text;
-
-    painter->drawText(textRect, option.displayAlignment | Qt::TextWordWrap, str);
+    painter->drawText(textRect, option.displayAlignment | Qt::TextWordWrap, text);
     painter->setFont(font);
     painter->setPen(pen);
 }
@@ -118,13 +130,33 @@ void KWQTableDelegate::drawFocus(QPainter * painter, const QStyleOptionViewItem 
 
 void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
-  const KWQTableModel * model = static_cast<const KWQTableModel *>(index.model());
+  painter->save();
+  drawBackground(painter, option, index);
+
   QStyleOptionViewItem opt = option;
-  if (!model->checkBlanksSyntax(index.model()->data(index, Qt::DisplayRole).toString())) {
+  opt.decorationSize = QSize(0, 0);
+  QPixmap decorationPixmap;
+  QVariant decorationVariant = index.data(Qt::DecorationRole);
+  if (!decorationVariant.isNull()) {
+    decorationPixmap = decoration(option, decorationVariant);
+    opt.decorationPosition = QStyleOptionViewItem::Right;
+    opt.decorationAlignment = Qt::AlignRight | Qt::AlignVCenter;
+    opt.decorationSize = QSize(22, 22);
+    drawDecoration(painter, opt, opt.rect, decorationPixmap);
+  }
+
+  opt.rect.adjust(0, 0, -opt.decorationSize.width(), 0);
+  const KWQTableModel *model = static_cast<const KWQTableModel *>(index.model());
+
+  if (!model->checkBlanksSyntax(index.data(Qt::DisplayRole).toString())) {
     QPalette::ColorGroup cg = QPalette::Normal;
     opt.palette.setColor(cg, QPalette::Text, Qt::red);
   }
-  QItemDelegate::paint(painter, opt, index);
+
+  drawDisplay(painter, opt, opt.rect, index.data(Qt::DisplayRole).toString());
+  drawFocus(painter, opt, option.rect);
+
+  painter->restore();
 }
 
 #include "kwqtabledelegate.moc"

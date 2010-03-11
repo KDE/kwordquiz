@@ -2,7 +2,7 @@
                                kwqquizmodel.cpp
                              -------------------
 
-    copyright            : (C) 2008-2009 by Peter Hedlund
+    copyright            : (C) 2008-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -393,6 +393,25 @@ QString KWQQuizModel::answer()
         }
     }
     return s;
+}
+
+
+QPixmap KWQQuizModel::imageQuestion()
+{
+    int row =  m_list.at(m_currentQuestion);
+    int col = column(row);
+    col == 0 ? col = 1 : col = 0;
+
+    KUrl imageUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::ImageRole).toString();
+    return QPixmap(imageUrl.toLocalFile());
+}
+
+
+QPixmap KWQQuizModel::imageAnswer()
+{
+    int row =  m_list.at(m_currentQuestion);
+    KUrl imageUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::ImageRole).toString();
+    return QPixmap(imageUrl.toLocalFile());
 }
 
 
