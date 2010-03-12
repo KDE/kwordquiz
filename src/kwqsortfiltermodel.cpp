@@ -2,7 +2,7 @@
                                kwqsortfiltermodel.cpp
                              -------------------
 
-    copyright            : (C) 2007-2008 by Peter Hedlund
+    copyright            : (C) 2007-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -45,7 +45,7 @@ KWQTableModel * KWQSortFilterModel::sourceModel() const
 bool KWQSortFilterModel::lessThan(const QModelIndex & left, const QModelIndex & right) const
 {
     if (m_shuffle)
-        return m_shuffleList[right.row()] < m_shuffleList[left.row()];
+        return m_shuffleList.at(right.row()) < m_shuffleList.at(left.row());
     else if (m_restoreNativeOrder)
         return sourceModel()->index(right.row(),  right.column(),  QModelIndex()).row() <
                sourceModel()->index(left.row(), left.column(), QModelIndex()).row();
@@ -61,29 +61,18 @@ void KWQSortFilterModel::restoreNativeOrder()
     m_restoreNativeOrder = false;
 }
 
-bool KWQSortFilterModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
-{
-    QModelIndex index;
-    for (int i = 0 ; i < 2; i++) {
-        index = sourceModel()->index(sourceRow, i, sourceParent);
-        if (sourceModel()->data(index, Qt::DisplayRole).toString().contains(filterRegExp()))
-            return true;
-    }
-    return false;
-}
-
 void KWQSortFilterModel::shuffle()
 {
-  m_shuffleList.clear();
-  for (int i = 0; i < rowCount(QModelIndex()); ++i)
-    m_shuffleList.append(i);
+    m_shuffleList.clear();
+    for (int i = 0; i < rowCount(QModelIndex()); ++i)
+        m_shuffleList.append(i);
 
-  KRandomSequence rs;
-  rs.randomize(m_shuffleList);
-  m_shuffle = true;
-  sort(0, Qt::AscendingOrder);
-  invalidate();
-  m_shuffle = false;
+    KRandomSequence rs;
+    rs.randomize(m_shuffleList);
+    m_shuffle = true;
+    sort(0, Qt::AscendingOrder);
+    invalidate();
+    m_shuffle = false;
 }
 
 #include "kwqsortfiltermodel.moc"

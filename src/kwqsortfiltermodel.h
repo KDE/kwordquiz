@@ -1,8 +1,8 @@
 /***************************************************************************
-                               kwqsortfiltermodel.h
+                             kwqsortfiltermodel.h
                              -------------------
 
-    copyright            : (C) 2007-2008 by Peter Hedlund
+    copyright            : (C) 2007-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
 
  ***************************************************************************/
@@ -19,7 +19,7 @@
 #ifndef KWQSORTFILTERMODEL_H
 #define KWQSORTFILTERMODEL_H
 
-#include <QSortFilterProxyModel>
+#include <QtGui/QSortFilterProxyModel>
 
 /**
   @author Peter Hedlund <peter.hedlund@kdemail.net>
@@ -29,23 +29,21 @@ class KWQTableModel;
 
 class KWQSortFilterModel : public QSortFilterProxyModel
 {
-    Q_OBJECT
-public:
+  Q_OBJECT
+  public:
     KWQSortFilterModel(QObject *parent = 0);
 
     void setSourceModel(KWQTableModel * sourceModel);
     KWQTableModel * sourceModel() const;
 
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
-
-public slots:
+  public slots:
     void restoreNativeOrder();
     void shuffle();
 
-protected:
+  protected:
     bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
 
-private:
+  private:
     KWQTableModel * m_sourceModel;
 
     bool m_restoreNativeOrder;
