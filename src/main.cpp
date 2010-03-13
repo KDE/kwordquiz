@@ -1,8 +1,8 @@
 /***************************************************************************
-                          main.cpp  -  description
+                                 main.cpp
                              -------------------
     begin                : Wed Jul 24 20:12:30 PDT 2002
-    copyright            : (C) 2002-2003 by Peter Hedlund
+    copyright            : (C) 2002-2010 by Peter Hedlund
     email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -15,19 +15,19 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QAction>
+#include <QtGui/QAction>
 
-#include <kcmdlineargs.h>
-#include <kaboutdata.h>
-#include <klocale.h>
-#include <kactioncollection.h>
-#include <kapplication.h>
+#include <KCmdLineArgs>
+#include <KAboutData>
+#include <KLocale>
+#include <KActionCollection>
+#include <KApplication>
 
+#include "kwqtutor.h"
 #include "kwordquiz.h"
 #include "version.h"
 
 static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
-
 int main(int argc, char *argv[])
 {
   KAboutData aboutData("kwordquiz", 0,
@@ -50,38 +50,40 @@ int main(int argc, char *argv[])
   options.add("m");
   options.add("mode <number>", ki18n("A number 1-5 corresponding to the \nentries in the Mode menu"));
   options.add("g");
-  options.add("goto <session>", ki18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer"));
+  options.add("goto <session>", ki18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer, \n'tutor' for tutor"));
   options.add("+[File]", ki18n("File to open"));
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-  KApplication app;
+  if (KCmdLineArgs::parsedArgs()->getOption("goto") == "tutor") {
+    KApplication tutorapp;
+    tutorapp.setQuitOnLastWindowClosed(false);
+    KWQTutor* m_tutor = new KWQTutor(KCmdLineArgs::parsedArgs()->count() ?
+                                  KCmdLineArgs::parsedArgs()->url(KCmdLineArgs::parsedArgs()->count() - 1) : KUrl()); //last arg - file to open
+    return tutorapp.exec();
+  }
 
-  if (app.isSessionRestored())
-  {
+  KApplication app;
+  if (app.isSessionRestored()) {
     RESTORE(KWordQuizApp);
   }
-  else 
-  {
+  else {
     KWordQuizApp *kwordquiz = new KWordQuizApp();
     kwordquiz->show();
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    if (args->count())
-    {
+    if (args->count()) {
       kwordquiz->openDocumentFile(KUrl(args->url(args->count() - 1)));
 
       QString mode = args->getOption("mode");
 
-      if (!mode.isEmpty())
-      {
+      if (!mode.isEmpty()) {
         QAction *a = kwordquiz->actionCollection()->action(QString("mode_%1").arg(QString(mode)));
         kwordquiz->slotModeActionGroupTriggered(a);
       }
 
       QString go_to = args->getOption("goto");
-      if (!go_to.isEmpty())
-      {
+      if (!go_to.isEmpty()) {
         if (go_to == "flash")
           kwordquiz->slotQuizFlash();
         if (go_to == "mc")
@@ -90,11 +92,11 @@ int main(int argc, char *argv[])
           kwordquiz->slotQuizQA();
       }
     }
-    else
-    {
+    else {
       kwordquiz->openDocumentFile();
     }
     args->clear();
   }
-  return app.exec();
+ return app.exec();
+
 }

@@ -19,6 +19,7 @@ set(kwordquiz_SRCS
    prefgeneral.cpp
    prefeditor.cpp
    prefquiz.cpp
+   preftutor.cpp
    dlgspecchar.cpp
    dlglanguage.cpp
    wqprintdialogpage.cpp
@@ -27,6 +28,9 @@ set(kwordquiz_SRCS
    kwqtablemodel.cpp
    kwqtableview.cpp
    kwqtabledelegate.cpp
+   kwqtutor.cpp
+   kwqtutorflashcard.cpp
+   kwqtutorprefs.cpp
    kwqsortfiltermodel.cpp
    kwqcommands.cpp
    kwqscorewidget.cpp
@@ -45,7 +49,8 @@ kde4_add_ui_files(kwordquiz_SRCS
    kwqscorewidgetbase.ui
    prefcharacterbase.ui 
    prefcardappearancebase.ui
-   prefgeneralbase.ui )
+   prefgeneralbase.ui
+   preftutorbase.ui )
 
 kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
 

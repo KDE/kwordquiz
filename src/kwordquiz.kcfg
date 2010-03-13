@@ -127,8 +127,8 @@
   </group>
   <group name="KNewStuff">
     <entry name="ProvidersUrl" type="Path">
-       <label>The Providers path for KWordQuiz</label>
-         <default code="true">"http://edu.kde.org/kvoctrain/providers.xml"</default>
+      <label>The Providers path for KWordQuiz</label>
+      <default code="true">"http://edu.kde.org/kvoctrain/providers.xml"</default>
     </entry>
     <entry name="InstallationCommand" type="String">
        <label>The command used to start a downloaded vocabulary</label>
@@ -137,6 +137,48 @@
     <entry name="InstallPath" type="Path">
        <label>The folder where downloaded vocabularies are saved by default (relative to $HOME)</label>
        <default>Vocabularies</default>
+    </entry>
+  </group>
+  <group name="Tutor">
+    <entry name="TutorTiming" type="Enum">
+      <label>Pop up flashcards at fixed or random intervals</label>
+       <choices>
+        <choice name="FixedInterval"/>
+        <choice name="RandomInterval"/>
+      </choices>
+      <default>FixedInterval</default>
+    </entry>
+    <entry name="TutorEvery" type="Int">
+      <label>The interval in minutes at which to pop up a flash card</label>
+      <default>10</default>
+    </entry>
+    <entry name="TutorMin" type="Int">
+      <label>The minimum interval in minutes at which to pop up a flash card</label>
+      <default>20</default>
+    </entry>
+    <entry name="TutorMax" type="Int">
+      <label>The maximum interval in minutes at which to pop up a flash card</label>
+      <default>40</default>
+    </entry>
+    <entry name="TutorFlashCardGeometry" type="Rect">
+      <label>Geometry of the last flash card</label>
+      <default>QRect(2,2,200,80)</default>
+    </entry>
+    <entry name="TutorCardAppearance" type="Enum">
+      <label>Show flash card in a native KWordQuiz style</label>
+      <choices>
+        <choice name="Native"/>
+        <choice name="Minimalistic"/>
+      </choices>
+      <default>Native</default>
+    </entry>
+    <entry name="LastVocabFile" type="String">
+      <label>Last open vocabulary file to be opened automatically if none other is specified on the command line</label>
+      <default></default>
+    </entry>
+    <entry name="StartExerciseAsSoonAsFileIsLoaded" type="Bool">
+      <label>Start exercise as soon as the user opens vocabulary file</label>
+      <default>true</default>
     </entry>
   </group>
 </kcfg>
