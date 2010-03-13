@@ -37,12 +37,12 @@
 
 KWQTutor::KWQTutor(KUrl fileToOpen, QWidget *parent) : KSystemTrayIcon(parent)
 {
-  KMessageBox::information(0, i18n("<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows \
-                           you to set a certain time interval at which flashcards will pop up.<br /><br /> \
-                           The flashcards pop up in a non-intrusive way allowing you to carry on working \
-                           without stealing the focus from other programs you might be working with.<br /><br /> \
-                           Be sure to rigth-click KWordQuiz Tutor icon on the panel and select Preferences. \
-                           There you can assign keyboard shortcuts.</qt>"),
+  KMessageBox::information(0, i18n("<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
+                           "you to set a certain time interval at which flashcards will pop up.<br /><br />"
+                           "The flashcards pop up in a non-intrusive way allowing you to carry on working "
+                           "without stealing the focus from other programs you might be working with.<br /><br />"
+                           "Be sure to right-click KWordQuiz Tutor icon on the panel and select Preferences. "
+                           "There you can assign keyboard shortcuts.</qt>"),
                            i18n("Tutor"), QString("firstTutorRun"));
 
   m_isRunning = false;
