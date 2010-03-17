@@ -1,18 +1,22 @@
-/***************************************************************************
-                          multipleview.cpp  -  description
-                             -------------------
-   copyright            : (C) 2003-2009 Peter Hedlund
-   email                : peter.hedlund@kdemail.net
- ***************************************************************************/
+/*
+    This file is part of KWordQuiz
+    Copyright (C) 2003-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+*/
 
 #include "multipleview.h"
 
@@ -27,7 +31,7 @@
 #include "kwqscorewidget.h"
 #include "prefs.h"
 
-MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection) : QWidget(parent), m_actionCollection(actionCollection)
+MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection) : KWQQuizView(parent, actionCollection)
 {
   setupUi(this);
   m_choicesButtons = new QButtonGroup(this);
@@ -43,11 +47,6 @@ MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection)
   m_actionCollection->action("quiz_Opt1")->setData(1);
   m_actionCollection->action("quiz_Opt2")->setData(2);
   m_actionCollection->action("quiz_Opt3")->setData(3);
-}
-
-void MultipleView::setQuiz(KWQQuizModel *quiz)
-{
-  m_quiz = quiz;
 }
 
 void MultipleView::init()
@@ -84,6 +83,7 @@ void MultipleView::init()
   m_actionCollection->action("quiz_check")->setEnabled(true);
   m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
   m_actionCollection->action("quiz_export_errors")->setEnabled(false);
+  m_actionCollection->action("quiz_audio_play")->setEnabled(false);
   m_actionCollection->action("quiz_Opt1")->setEnabled(true);
   m_actionCollection->action("quiz_Opt2")->setEnabled(true);
   m_actionCollection->action("quiz_Opt3")->setEnabled(true);
@@ -97,7 +97,7 @@ void MultipleView::slotCheck()
   {
     if (m_choicesButtons->checkedId() == -1)
         return;
-    
+
     QString ans = m_choices[m_choicesButtons->checkedId() - 1];
 
     bool fIsCorrect = m_quiz->checkAnswer(ans);
@@ -142,6 +142,7 @@ void MultipleView::slotCheck()
       m_actionCollection->action("quiz_Opt3")->setEnabled(false);
       m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
       m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
+      m_actionCollection->action("quiz_audio_play")->setEnabled(false);
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();
@@ -165,18 +166,6 @@ void MultipleView::slotChoiceClicked(int choice)
   m_choicesButtons->button(choice)->setChecked(true);
   if (Prefs::autoCheck())
     slotCheck();
-}
-
-void MultipleView::slotRestart()
-{
-  m_quiz->activateBaseList();
-  init();
-}
-
-void MultipleView::slotRepeat()
-{
-  m_quiz->activateErrorList();
-  init();
 }
 
 /*!

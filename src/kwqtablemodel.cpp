@@ -19,13 +19,15 @@
 
 #include "kwqtablemodel.h"
 
-#include <klocale.h>
+#include <QtGui/QPainter>
+
+#include <KLocale>
 #include <KIcon>
 
 #include "prefs.h"
 #include "documentsettings.h"
 #include "keduvocexpression.h"
-
+#include "kdebug.h"
 
 KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
@@ -49,46 +51,56 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
   if (!index.isValid())
     return QVariant();
 
-  QVariant result;
+  int l = 0;
+  QPixmap ip;
+  QPixmap sp;
+  QString image;
+  QString sound;
 
   switch (role) {
     case Qt::FontRole:
       return QVariant(Prefs::editorFont());
 
     case Qt::DisplayRole:
-      if (index.column() == 0)
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->text();
-      else
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->text();
-
-      return result;
+      return m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->text();
 
     case Qt::DecorationRole:
-      if (index.column() == 0)
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->imageUrl().toLocalFile();
-      else
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->imageUrl().toLocalFile();
+      image = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->imageUrl().toLocalFile();
+      if (!image.isEmpty()) {
+        ip = QPixmap(KIcon("image-x-generic").pixmap(QSize(22, 22), QIcon::Active));
+        l++;
+      }
 
-      if (!result.isNull())
-        result = QPixmap(KIcon("image-x-generic").pixmap(QSize(22, 22), QIcon::Active));
+      sound = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->soundUrl().toLocalFile();
+      if (!sound.isEmpty()) {
+        sp = QPixmap(KIcon("audio-x-generic").pixmap(QSize(22, 22), QIcon::Active));
+        l++;
+      }
 
-      return result;
+      if (l == 0)
+        return QVariant();
+
+      if (l == 1) {
+         if (sp.isNull())
+           return ip;
+         else
+           return sp;
+      }
+
+      if (l == 2) {
+        QPixmap combined(QSize(46, 22));
+        combined.fill(Qt::transparent);
+        QPainter merger(&combined);
+        merger.drawPixmap(0, 0, sp);
+        merger.drawPixmap(24, 0, ip);
+        return combined;
+      }
 
     case KWQTableModel::ImageRole:
-      if (index.column() == 0)
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->imageUrl().toLocalFile();
-      else
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->imageUrl().toLocalFile();
-
-      return result;
+      return m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->imageUrl().toLocalFile();
 
     case KWQTableModel::SoundRole:
-      if (index.column() == 0)
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->soundUrl().toLocalFile();
-      else
-        result = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->soundUrl().toLocalFile();
-
-      return result;
+      return m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->soundUrl().toLocalFile();
 
     default:
       return QVariant();

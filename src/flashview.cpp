@@ -1,18 +1,22 @@
-/***************************************************************************
-                                flashview.cpp
-                             -------------------
-   copyright            : (C) 2003-2010 Peter Hedlund
-   email                : peter.hedlund@kdemail.net
- ***************************************************************************/
+/*
+    This file is part of KWordQuiz
+    Copyright (C) 2003-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+*/
 
 #include "flashview.h"
 
@@ -26,16 +30,11 @@
 #include "kwqscorewidget.h"
 #include "prefs.h"
 
-FlashView::FlashView(QWidget *parent, KActionCollection *actionCollection) : QWidget(parent), m_actionCollection(actionCollection)
+FlashView::FlashView(QWidget *parent, KActionCollection *actionCollection) : KWQQuizView(parent, actionCollection)
 {
   setupUi(this);
   m_timer = new QTimer(this);
   connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
-}
-
-void FlashView::setQuiz(KWQQuizModel *quiz)
-{
-  m_quiz = quiz;
 }
 
 void FlashView::init()
@@ -49,10 +48,15 @@ void FlashView::init()
   m_actionCollection->action("flash_dont_know")->setEnabled(true);
   m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
   m_actionCollection->action("quiz_export_errors")->setEnabled(false);
-  connect(flashcard, SIGNAL(cardClicked()), this, SLOT(slotFlip()), Qt::UniqueConnection);
+  m_actionCollection->action("quiz_audio_play")->setEnabled(false);
+
+  // reset last file
+  audioPlayFile(KUrl::KUrl(), true);
+
+  connect(flashcard, SIGNAL(cardClicked()), this, SLOT(slotCheck()), Qt::UniqueConnection);
 
   m_showFirst = true;
-  slotFlip();
+  slotCheck();
 }
 
 void FlashView::keepDiscardCard(bool keep)
@@ -71,7 +75,7 @@ void FlashView::keepDiscardCard(bool keep)
 
   m_quiz->toNext();
   if (!m_quiz->atEnd()) {
-    slotFlip();
+    slotCheck();
   }
   else {
     m_quiz->finish();
@@ -80,11 +84,12 @@ void FlashView::keepDiscardCard(bool keep)
     m_actionCollection->action("flash_dont_know")->setEnabled(false);
     m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
     m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
+    m_actionCollection->action("quiz_audio_play")->setEnabled(false);
     disconnect(flashcard, SIGNAL(cardClicked()), 0, 0);
   }
 }
 
-void FlashView::slotFlip()
+void FlashView::slotCheck()
 {
   if (m_showFirst) {
     flashcard->setCardColor(Prefs::frontCardColor());
@@ -94,6 +99,7 @@ void FlashView::slotFlip()
     flashcard->setIdentifier(m_quiz ->langQuestion());
     flashcard->setImage(m_quiz->imageQuestion());
     flashcard->setText(m_quiz->question());
+    audioPlayQuestion();
     m_showFirst = false;
   }
   else {
@@ -104,6 +110,7 @@ void FlashView::slotFlip()
     flashcard->setIdentifier(m_quiz->langAnswer());
     flashcard->setImage(m_quiz->imageAnswer());
     flashcard->setText(m_quiz->answer());
+    audioPlayAnswer();
     m_showFirst = true;
   }
 
@@ -125,22 +132,10 @@ void FlashView::slotDontKnow()
   keepDiscardCard(true);
 }
 
-void FlashView::slotRestart()
-{
-  m_quiz->activateBaseList();
-  init();
-}
-
-void FlashView::slotRepeat()
-{
-  m_quiz->activateErrorList();
-  init();
-}
-
 void FlashView::slotTimer( )
 {
   if (!m_showFirst)
-    slotFlip();
+    slotCheck();
   else
     if (Prefs::keepDiscard())
       slotDontKnow();

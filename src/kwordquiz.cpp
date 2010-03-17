@@ -403,6 +403,14 @@ void KWordQuizApp::initActions()
   quizRestart->setToolTip(quizRestart->whatsThis());
   quizRestart->setStatusTip(quizRestart->whatsThis());
 
+  a = actionCollection()->addAction("quiz_audio_play");
+  a->setIcon(KIcon("media-playback-start"));
+  a->setText(i18n("&Play Audio"));
+  a->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_B));
+  a->setWhatsThis(i18n("Play associated audio"));
+  a->setToolTip(a->whatsThis());
+  a->setStatusTip(a->whatsThis());
+
   quizRepeatErrors = actionCollection()->addAction("quiz_repeat_errors");
   quizRepeatErrors->setIcon(KIcon("repeat"));
   quizRepeatErrors->setText(i18n("Repeat &Errors"));
@@ -1151,6 +1159,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
   disconnect(flashKnow, 0, 0, 0);
   disconnect(flashDontKnow, 0, 0, 0);
   disconnect(quizRestart, 0, 0, 0);
+  disconnect(actionCollection()->action("quiz_audio_play"), 0, 0, 0);
   disconnect(quizRepeatErrors, 0, 0, 0);
   disconnect(qaHint, 0, 0, 0);
   disconnect(qaMarkLastCorrect, 0, 0, 0);
@@ -1172,9 +1181,10 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
     {
-      connect(quizCheck, SIGNAL(triggered(bool)), m_flashView, SLOT(slotFlip()));
+      connect(quizCheck, SIGNAL(triggered(bool)), m_flashView, SLOT(slotCheck()));
       connect(flashKnow, SIGNAL(triggered(bool)), m_flashView, SLOT(slotKnow()));
       connect(flashDontKnow, SIGNAL(triggered(bool)), m_flashView, SLOT(slotDontKnow()));
+      connect(actionCollection()->action("quiz_audio_play"), SIGNAL(triggered(bool)), m_flashView, SLOT(slotAudioPlay()));
       connect(quizRestart, SIGNAL(triggered(bool)), m_flashView, SLOT(slotRestart()));
       connect(quizRepeatErrors, SIGNAL(triggered(bool)), m_flashView, SLOT(slotRepeat()));
       connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
@@ -1236,6 +1246,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
       connect(qaHint, SIGNAL(triggered(bool)), m_qaView, SLOT(slotHint()));
       connect(qaMarkLastCorrect, SIGNAL(triggered(bool)), m_qaView, SLOT(slotMarkLastCorrect()));
       connect(quizRestart, SIGNAL(triggered(bool)), m_qaView, SLOT(slotRestart()));
+      connect(actionCollection()->action("quiz_audio_play"), SIGNAL(triggered(bool)), m_qaView, SLOT(slotAudioPlay()));
       connect(quizRepeatErrors, SIGNAL(triggered(bool)), m_qaView, SLOT(slotRepeat()));
       connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
 
@@ -1433,6 +1444,7 @@ void KWordQuizApp::updateActions()
 
   qaHint->setEnabled((m_pageWidget->currentPage() == m_qaPage) && fQuiz);
   qaMarkLastCorrect->setVisible((m_pageWidget->currentPage() == m_qaPage) && fQuiz);
+  actionCollection()->action("quiz_audio_play")->setEnabled(false);
 
   quizOpt1->setEnabled((m_pageWidget->currentPage() == m_multiplePage) && fQuiz);
   quizOpt2->setEnabled((m_pageWidget->currentPage() == m_multiplePage) && fQuiz);

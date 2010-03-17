@@ -396,6 +396,25 @@ QString KWQQuizModel::answer()
 }
 
 
+KUrl KWQQuizModel::soundQuestion()
+{
+    int row =  m_list.at(m_currentQuestion);
+    int col = column(row);
+    col == 0 ? col = 1 : col = 0;
+ 
+    KUrl soundUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::SoundRole).toString();
+    return soundUrl.toLocalFile();
+}
+ 
+
+KUrl KWQQuizModel::soundAnswer()
+{
+    int row =  m_list.at(m_currentQuestion);
+    KUrl soundUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::SoundRole).toString();
+    return soundUrl.toLocalFile();
+}
+
+
 QPixmap KWQQuizModel::imageQuestion()
 {
     int row =  m_list.at(m_currentQuestion);

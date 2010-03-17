@@ -141,7 +141,7 @@ void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & op
     decorationPixmap = decoration(option, decorationVariant);
     opt.decorationPosition = QStyleOptionViewItem::Right;
     opt.decorationAlignment = Qt::AlignRight | Qt::AlignVCenter;
-    opt.decorationSize = QSize(22, 22);
+    opt.decorationSize = QSize(decorationPixmap.width(), decorationPixmap.height());
     drawDecoration(painter, opt, opt.rect, decorationPixmap);
   }
 

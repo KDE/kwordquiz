@@ -36,6 +36,7 @@ set(kwordquiz_SRCS
    kwqscorewidget.cpp
    kwqcardscene.cpp
    kwqcardview.cpp
+   kwqquizview.cpp
    )
 
 

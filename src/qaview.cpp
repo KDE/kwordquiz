@@ -1,18 +1,22 @@
-/***************************************************************************
-                                 qaview.cpp
-                             -------------------
-   copyright            : (C) 2003-2010 Peter Hedlund
-   email                : peter.hedlund@kdemail.net
- ***************************************************************************/
+/*
+    This file is part of KWordQuiz
+    Copyright (C) 2003-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+*/
 
 #include "qaview.h"
 
@@ -21,6 +25,7 @@
 #include <KIconLoader>
 #include <KLocale>
 #include <KNotification>
+#include <KUrl>
 
 #include "prefs.h"
 #include "kwqquizmodel.h"
@@ -61,16 +66,11 @@ QString highlightError(const QString & c, const QString & e)
   return result;
 }
 
-QAView::QAView(QWidget *parent, KActionCollection * actionCollection) : QWidget(parent), m_actionCollection(actionCollection)
+QAView::QAView(QWidget *parent, KActionCollection * actionCollection) : KWQQuizView(parent, actionCollection)
 {
   setupUi(this);
 
   connect(txtAnswer, SIGNAL(returnPressed()), this, SLOT(slotCheck()));
-}
-
-void QAView::setQuiz(KWQQuizModel *quiz)
-{
-  m_quiz = quiz;
 }
 
 void QAView::init()
@@ -106,6 +106,10 @@ void QAView::init()
   m_actionCollection->action("qa_hint")->setEnabled(true);
   m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
   m_actionCollection->action("quiz_export_errors")->setEnabled(false);
+  m_actionCollection->action("quiz_audio_play")->setEnabled(false);
+
+  // reset last file
+  audioPlayFile(KUrl::KUrl(), true);
 
   showQuestion();
   txtAnswer->show();
@@ -153,6 +157,8 @@ void QAView::slotCheck()
       KNotification::event("QuizError", i18n("Your answer was incorrect."));
       m_actionCollection->action("qa_mark_last_correct")->setEnabled(true);
     }
+
+    audioPlayAnswer();
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question());
@@ -215,19 +221,6 @@ void QAView::slotHint()
   m_hintUsed = true;
 }
 
-void QAView::slotRestart()
-{
-  m_quiz->activateBaseList();
-  init();
-}
-
-void QAView::slotRepeat()
-{
-  m_quiz->activateErrorList();
-  init();
-}
-
-
 /*!
     \fn QAView::showQuestion(int i)
  */
@@ -235,6 +228,7 @@ void QAView::showQuestion()
 {
   lblQuestionLanguage->setText(m_quiz ->langQuestion());
   lblQuestion->setText(m_quiz ->question());
+  //audioPlayQuestion();
 
   picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconLeftCol), KIconLoader::Panel));
 

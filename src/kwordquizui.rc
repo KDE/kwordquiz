@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="20" name="kwordquiz" >
+<kpartgui version="21" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -18,7 +18,7 @@
    <Action name="vocab_font" />
    <Separator/>
    <Action name="vocab_image" />
-   <!-- <Action name="vocab_sound" /> -->
+   <Action name="vocab_sound" />
    <Separator />
    <Action name="vocab_adjust_rows" />
    <Separator/>
@@ -43,6 +43,7 @@
    <Action name="flash_dont_know" />
    <Separator/>
    <Action name="qa_hint" />
+   <Action name="quiz_audio_play" />
    <Separator/>
    <Action name="quiz_restart" />
    <Action name="quiz_repeat_errors" />
@@ -65,6 +66,7 @@
    <Action name="flash_dont_know" />
    <Separator/>
    <Action name="qa_hint" />
+   <Action name="quiz_audio_play" />
    <Separator/>
    <Action name="quiz_restart" />
    <Action name="quiz_repeat_errors" />
@@ -105,6 +107,7 @@
       <Action name="quiz_flash" />
       <Action name="quiz_multiple" />
       <Action name="quiz_qa" />
+      <Action name="quiz_audio_play" />
     </enable>
     <disable>
       <Action name="quiz_editor" />
@@ -127,6 +130,7 @@
       <Action name="flash_know" />
       <Action name="flash_dont_know" />
       <Action name="quiz_restart" />
+      <Action name="quiz_audio_play" />
     </enable>
     <disable>
       <Action name="quiz_flash" />
@@ -141,6 +145,7 @@
       <Action name="quiz_qa" />
       <Action name="quiz_check" />
       <Action name="quiz_restart" />
+      <Action name="quiz_audio_play" />
     </enable>
     <disable>
       <Action name="quiz_multiple" />
@@ -158,6 +163,7 @@
       <Action name="quiz_check" />
       <Action name="qa_hint" />
       <Action name="quiz_restart" />
+      <Action name="quiz_audio_play" />
     </enable>
     <disable>
       <Action name="quiz_qa" />

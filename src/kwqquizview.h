@@ -1,6 +1,6 @@
 /*
     This file is part of KWordQuiz
-    Copyright (C) 2003-2010 Peter Hedlund <peter.hedlund@kdemail.net>
+    Copyright (C) 2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,42 +18,51 @@
 
 */
 
-#ifndef QAVIEW_H
-#define QAVIEW_H
+#ifndef KWQQUIZVIEW_H
+#define KWQQUIZVIEW_H
 
-#include "ui_qaviewbase.h"
-
-#include <KActionCollection>
+#include <QtGui/QWidget>
 #include <Phonon/MediaObject>
 #include <Phonon/Path>
 #include <Phonon/AudioOutput>
 #include <Phonon/Global>
-#include "kwqquizview.h"
+
+#include <KActionCollection>
+#include <KUrl>
 
 class KWQQuizModel;
 
 /**
 @author Peter Hedlund
 */
-class QAView : public KWQQuizView, public Ui::QAViewBase
+
+class KWQQuizView : public QWidget
 {
-Q_OBJECT
-public:
-    QAView(QWidget *parent, KActionCollection * actionCollection);
+  Q_OBJECT
+  public:
+    KWQQuizView(QWidget *parent, KActionCollection * actionCollection);
 
-    void init();
+    void setQuiz(KWQQuizModel *quiz);
+    virtual void init() = 0;
 
-public slots:
-    void slotCheck();
-    void slotHint();
-    void slotApplySettings();
-    void slotSpecChar(const QChar &);
-    void slotMarkLastCorrect();
+  public slots:
+    virtual void slotCheck() = 0;
+    virtual void slotApplySettings() = 0;
+    void slotRepeat();
+    void slotRestart();
+    void slotAudioPlay();
 
-private:
-    bool m_hintUsed;
+  protected:
+    KWQQuizModel *m_quiz;
+    KActionCollection *m_actionCollection;
 
-    void showQuestion();
+    void audioPlayAnswer();
+    void audioPlayQuestion(); 
+    void audioPlayFile(const KUrl & soundFile, bool);
+
+  private:
+    class Phonon::MediaObject *m_player;
+
 };
 
-#endif
+#endif // KWQQUIZVIEW_H
