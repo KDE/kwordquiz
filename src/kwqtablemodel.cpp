@@ -110,33 +110,23 @@ QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int
 {
   if (orientation == Qt::Horizontal)
   {
+    if (section < 0 || section > 1)
+      return QVariant();
+
     if (role == Qt::DisplayRole) {
-      if (section == 0)
-        return m_doc->identifier(0).name();
-      else
-        return m_doc->identifier(1).name();
+      return m_doc->identifier(section).name();
     }
 
     if (role == Qt::SizeHintRole) {
       DocumentSettings documentSettings(m_doc->url().url());
       documentSettings.readConfig();
-      switch (section) {
-      case 0:
-        return QSize(documentSettings.sizeHintColumn1(), 25);
-      case 1:
-        return QSize(documentSettings.sizeHintColumn2(), 25);
-      }
+      return QSize(documentSettings.sizeHintColumn(section), 25);
     }
 
     if (role == KWQTableModel::KeyboardLayoutRole) {
       DocumentSettings documentSettings(m_doc->url().url());
       documentSettings.readConfig();
-      switch (section) {
-      case 0:
-        return documentSettings.keyboardLayoutColumn1();
-      case 1:
-        return documentSettings.keyboardLayoutColumn2();
-      }
+      return documentSettings.keyboardLayoutColumn(section);
     }
 
     return QVariant();
@@ -179,39 +169,23 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
 bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
 {
   if (orientation == Qt::Horizontal) {
+    if (section < 0 || section > 1)
+      return false;
+
     if (role == Qt::EditRole) {
-      if (section == 0)
-        m_doc->identifier(0).setName(value.toString());
-      if (section == 1)
-        m_doc->identifier(1).setName(value.toString());
+      m_doc->identifier(section).setName(value.toString());
     }
 
     if (role == Qt::SizeHintRole) {
       DocumentSettings documentSettings(m_doc->url().url());
-      switch (section) {
-      case 0:
-        documentSettings.setSizeHintColumn1(qvariant_cast<QSize>(value).width());
-        documentSettings.writeConfig();
-        break;
-      case 1:
-        documentSettings.setSizeHintColumn2(qvariant_cast<QSize>(value).width());
-        documentSettings.writeConfig();
-        break;
-      }
+      documentSettings.setSizeHintColumn(section, qvariant_cast<QSize>(value).width());
+      documentSettings.writeConfig();
     }
 
     if (role == KWQTableModel::KeyboardLayoutRole) {
       DocumentSettings documentSettings(m_doc->url().url());
-      switch (section) {
-      case 0:
-        documentSettings.setKeyboardLayoutColumn1(value.toString());
-        documentSettings.writeConfig();
-        break;
-      case 1:
-        documentSettings.setKeyboardLayoutColumn2(value.toString());
-        documentSettings.writeConfig();
-        break;
-      }
+      documentSettings.setKeyboardLayoutColumn(section, value.toString());
+      documentSettings.writeConfig();
     }
 
     emit headerDataChanged(orientation, section, section);
