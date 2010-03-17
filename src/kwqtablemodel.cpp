@@ -27,7 +27,6 @@
 #include "prefs.h"
 #include "documentsettings.h"
 #include "keduvocexpression.h"
-#include "kdebug.h"
 
 KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
@@ -161,24 +160,15 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
 
   switch (role) {
     case Qt::EditRole:
-      if (index.column() == 0)
-        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(0, value.toString());
-      else
-        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(1, value.toString());
+      m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->setTranslation(index.column(), value.toString());
       break;
 
     case KWQTableModel::ImageRole:
-      if (index.column() == 0)
-        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->setImageUrl(value.toUrl());
-      else
-        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->setImageUrl(value.toUrl());
+      m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->setImageUrl(value.toUrl());
       break;
 
     case KWQTableModel::SoundRole:
-      if (index.column() == 0)
-        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(0)->setSoundUrl(value.toUrl());
-      else
-        m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(1)->setSoundUrl(value.toUrl());
+      m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->setSoundUrl(value.toUrl());
       break;
   }
 
