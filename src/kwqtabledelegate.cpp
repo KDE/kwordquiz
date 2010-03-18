@@ -19,8 +19,7 @@
 
 #include "kwqtabledelegate.h"
 
-#include <QPainter>
-#include <QDebug>
+#include <QtGui/QPainter>
 
 #include <KLineEdit>
 
@@ -154,6 +153,8 @@ void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & op
   }
 
   drawDisplay(painter, opt, opt.rect, index.data(Qt::DisplayRole).toString());
+  if (!index.data(KWQTableModel::SoundRole).isNull())
+    painter->fillRect(option.rect.right() - 3, option.rect.top(), 4, 4, Qt::red);
   drawFocus(painter, opt, option.rect);
 
   painter->restore();

@@ -19,8 +19,6 @@
 
 #include "kwqtablemodel.h"
 
-#include <QtGui/QPainter>
-
 #include <KLocale>
 #include <KIcon>
 
@@ -51,11 +49,8 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
   if (!index.isValid())
     return QVariant();
 
-  int l = 0;
   QPixmap ip;
-  QPixmap sp;
   QString image;
-  QString sound;
 
   switch (role) {
     case Qt::FontRole:
@@ -71,33 +66,8 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
           ip = QPixmap(image).scaled(QSize(22, 22), Qt::KeepAspectRatio);
           m_decorationCache->insert(image, ip);
         }
-        l++;
       }
-
-      sound = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->soundUrl().toLocalFile();
-      if (!sound.isEmpty()) {
-        sp = QPixmap(KIcon("audio-x-generic").pixmap(QSize(22, 22), QIcon::Active));
-        l++;
-      }
-
-      if (l == 0)
-        return QVariant();
-
-      if (l == 1) {
-         if (sp.isNull())
-           return ip;
-         else
-           return sp;
-      }
-
-      if (l == 2) {
-        QPixmap combined(QSize(46, 22));
-        combined.fill(Qt::transparent);
-        QPainter merger(&combined);
-        merger.drawPixmap(0, 0, sp);
-        merger.drawPixmap(24, 0, ip);
-        return combined;
-      }
+      return ip;
 
     case KWQTableModel::ImageRole:
       return m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->imageUrl().toLocalFile();
