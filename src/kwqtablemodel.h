@@ -22,6 +22,8 @@
 
 #include <QAbstractTableModel>
 
+#include <KPixmapCache>
+
 #include <keduvocdocument.h>
 
 /**
@@ -66,6 +68,7 @@ public:
 
 private:
   KEduVocDocument * m_doc;
+  KPixmapCache *m_decorationCache;
 
   friend class KWordQuizApp;
 };

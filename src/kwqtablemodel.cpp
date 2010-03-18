@@ -31,6 +31,7 @@
 KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
   m_doc = 0;
+  m_decorationCache = new KPixmapCache("kwordquiz");
 }
 
 int KWQTableModel::rowCount(const QModelIndex & parent) const
@@ -66,7 +67,10 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
     case Qt::DecorationRole:
       image = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->imageUrl().toLocalFile();
       if (!image.isEmpty()) {
-        ip = QPixmap(KIcon("image-x-generic").pixmap(QSize(22, 22), QIcon::Active));
+        if (!m_decorationCache->find(image, ip)) {
+          ip = QPixmap(image).scaled(QSize(22, 22), Qt::KeepAspectRatio);
+          m_decorationCache->insert(image, ip);
+        }
         l++;
       }
 
