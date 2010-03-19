@@ -32,6 +32,11 @@ KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
   m_decorationCache = new KPixmapCache("kwordquiz");
 }
 
+KWQTableModel::~KWQTableModel()
+{
+  delete m_decorationCache;
+}
+
 int KWQTableModel::rowCount(const QModelIndex & parent) const
 {
   Q_UNUSED(parent);

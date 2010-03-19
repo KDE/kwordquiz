@@ -44,6 +44,7 @@ public:
   };
 
   KWQTableModel(QObject * parent = 0);
+  ~KWQTableModel();
 
   void setDocument(KEduVocDocument * doc);
   KEduVocDocument * document() { return m_doc;};
