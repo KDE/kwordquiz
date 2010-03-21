@@ -109,7 +109,7 @@ void QAView::init()
   m_actionCollection->action("quiz_audio_play")->setEnabled(false);
 
   // reset last file
-  audioPlayFile(KUrl::KUrl(), true);
+  audioPlayFile(KUrl(), true);
 
   showQuestion();
   txtAnswer->show();

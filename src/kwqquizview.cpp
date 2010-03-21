@@ -50,7 +50,7 @@ void KWQQuizView::slotRepeat()
 void KWQQuizView::slotAudioPlay()
 {
     // repeat playing last file
-    audioPlayFile(KUrl::KUrl(), false);
+    audioPlayFile(KUrl(), false);
 }
 
 void KWQQuizView::audioPlayAnswer()

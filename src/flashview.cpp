@@ -51,7 +51,7 @@ void FlashView::init()
   m_actionCollection->action("quiz_audio_play")->setEnabled(false);
 
   // reset last file
-  audioPlayFile(KUrl::KUrl(), true);
+  audioPlayFile(KUrl(), true);
 
   connect(flashcard, SIGNAL(cardClicked()), this, SLOT(slotCheck()), Qt::UniqueConnection);
 
