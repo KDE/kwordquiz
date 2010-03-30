@@ -32,7 +32,7 @@ class KWQTutor : public KSystemTrayIcon
 
   public:
     /* init systray icon, meny, actions */
-    KWQTutor (KUrl fileToOpen, QWidget *parent = 0);
+    explicit KWQTutor (KUrl fileToOpen, QWidget *parent = 0);
 
   public slots:
     /* self-calling function: it sets the time interval,calls itself and call func to display flashcard*/
