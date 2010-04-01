@@ -183,6 +183,7 @@ void KWordQuizApp::initActions()
   editPaste->setStatusTip(editPaste->whatsThis());
 
   editClear = KStandardAction::clear(this, SLOT(slotEditClear()), actionCollection());
+  editClear->setShortcut(Qt::Key_Delete);
   editClear->setWhatsThis(i18n("Clears the content of the selected cells"));
   editClear->setToolTip(editClear->whatsThis());
   editClear->setStatusTip(editClear->whatsThis());

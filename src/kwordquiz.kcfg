@@ -60,6 +60,22 @@
       <label>Characters for the special character toolbar</label>
       <default>abcdefghi</default>
     </entry>
+    <entry name="ClearAll" type="Bool">
+      <label>Clear all data in selected entries</label>
+      <default>false</default>
+    </entry>
+    <entry name="ClearText" type="Bool">
+      <label>Clear the text in selected entries</label>
+      <default>true</default>
+    </entry>
+    <entry name="ClearImageLink" type="Bool">
+      <label>Clear the image link in selected entries</label>
+      <default>false</default>
+    </entry>
+    <entry name="ClearSoundLink" type="Bool">
+      <label>Clear the sound link in selected entries</label>
+      <default>false</default>
+    </entry>
   </group>
   <group name="Quiz">
     <entry name="AutoCheck" type="Bool">

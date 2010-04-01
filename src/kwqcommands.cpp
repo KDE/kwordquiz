@@ -55,11 +55,12 @@ KWQUndoCommand::KWQUndoCommand(KWQTableView * view) : QUndoCommand()
   m_view = view;
   m_currentIndex = m_view->selectionModel()->currentIndex();  
   m_selectedIndexes = m_view->selectionModel()->selectedIndexes();
-  foreach (const QModelIndex &index, m_selectedIndexes)
-  {
+  foreach (const QModelIndex &index, m_selectedIndexes) {
     IndexAndData id;
     id.index = index;
     id.data = m_view->model()->data(index, Qt::DisplayRole);
+    id.image = m_view->model()->data(index, KWQTableModel::ImageRole);
+    id.sound = m_view->model()->data(index, KWQTableModel::SoundRole);
     id.height = m_view->rowHeight(index.row());
     m_indexAndData.append(id);
   }
@@ -69,9 +70,10 @@ KWQUndoCommand::KWQUndoCommand(KWQTableView * view) : QUndoCommand()
 void KWQUndoCommand::undo()
 {
   m_view->selectionModel()->clear();
-  foreach (const IndexAndData &id, m_indexAndData)
-  {
+  foreach (const IndexAndData &id, m_indexAndData) {
     m_view->model()->setData(id.index, id.data, Qt::EditRole);
+    m_view->model()->setData(id.index, id.image, KWQTableModel::ImageRole);
+    m_view->model()->setData(id.index, id.sound, KWQTableModel::SoundRole);
     m_view->selectionModel()->select(id.index, QItemSelectionModel::Select);
   }
   m_view->selectionModel()->setCurrentIndex(m_currentIndex, QItemSelectionModel::Current);
@@ -87,11 +89,14 @@ KWQCommandClear::KWQCommandClear(KWQTableView * view) : KWQUndoCommand(view)
 void KWQCommandClear::redo()
 {
   view()->selectionModel()->clear();
-  foreach (const QModelIndex &index, oldSelectedIndexes())
-  {
-    view()->model()->setData(index, QVariant(), Qt::EditRole);
+  foreach (const QModelIndex &index, oldSelectedIndexes()) {
+    if (Prefs::clearText() || Prefs::clearAll())
+      view()->model()->setData(index, QVariant(), Qt::EditRole);
+    if (Prefs::clearImageLink() || Prefs::clearAll())
+      view()->model()->setData(index, QVariant(), KWQTableModel::ImageRole);
+    if (Prefs::clearSoundLink() || Prefs::clearAll())
+      view()->model()->setData(index, QVariant(), KWQTableModel::SoundRole);
     view()->selectionModel()->select(index, QItemSelectionModel::Select);
-
   }
   view()->selectionModel()->setCurrentIndex(oldCurrentIndex(), QItemSelectionModel::Current);
 }

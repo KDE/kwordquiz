@@ -18,6 +18,7 @@
 #include "kwqtableview.h"
 
 #include <QtCore/QFile>
+#include <QtCore/QPointer>
 #include <QPainter>
 #include <QClipboard>
 #include <QLineEdit>
@@ -46,6 +47,7 @@
 #include "kwordquiz.h"
 #include "prefs.h"
 #include "kwqcommands.h"
+#include "kwqcleardialog.h"
 
 //krazy:excludeall=qclasses
 
@@ -311,6 +313,18 @@ void KWQTableView::doEditClear()
   }
   else
   {
+    if (selectionHasMoreThanText()) {
+      QPointer<KWQClearDialog> clearDialog = new KWQClearDialog(this);
+      if (clearDialog->exec() == KDialog::Rejected)
+        return;
+    }
+    else
+    {
+      Prefs::setClearAll(false);
+      Prefs::setClearText(true);
+      Prefs::setClearImageLink(false);
+      Prefs::setClearSoundLink(false);
+    }
     KWQCommandClear *kwqc = new KWQCommandClear(this);
     m_undoStack->push(kwqc);
   }
@@ -730,6 +744,20 @@ void KWQTableView::updateKeyboardLayout()
         if (kxkb.isValid())
             kxkb.call("setLayout", layout);
     }
+}
+
+bool KWQTableView::selectionHasMoreThanText()
+{
+  bool result = false;
+  QModelIndexList indexes = selectionModel()->selectedIndexes();
+  foreach (QModelIndex idx, indexes) {
+     result = (!model()->data(idx, KWQTableModel::SoundRole).isNull() ||
+               !model()->data(idx, KWQTableModel::ImageRole).isNull());
+     if (result)
+       break;
+  }
+
+  return result;
 }
 
 #include "kwqtableview.moc"

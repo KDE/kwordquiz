@@ -1,7 +1,7 @@
 
 add_subdirectory( pics ) # private icons
 add_subdirectory( icons ) # global icons
-add_subdirectory( examples ) 
+add_subdirectory( examples )
 
 include_directories( ${CMAKE_SOURCE_DIR}/libkdeedu/keduvocdocument )
 
@@ -37,21 +37,24 @@ set(kwordquiz_SRCS
    kwqcardscene.cpp
    kwqcardview.cpp
    kwqquizview.cpp
+   kwqcleardialog.cpp
    )
 
 
 kde4_add_ui_files(kwordquiz_SRCS 
-   columndialogbase.ui 
-   flashviewbase.ui 
-   multipleviewbase.ui 
-   qaviewbase.ui 
-   prefeditorbase.ui 
+   columndialogbase.ui
+   flashviewbase.ui
+   multipleviewbase.ui
+   qaviewbase.ui
+   prefeditorbase.ui
    prefquizbase.ui
    kwqscorewidgetbase.ui
-   prefcharacterbase.ui 
+   prefcharacterbase.ui
    prefcardappearancebase.ui
    prefgeneralbase.ui
-   preftutorbase.ui )
+   preftutorbase.ui
+   cleardialogbase.ui
+   )
 
 kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
 

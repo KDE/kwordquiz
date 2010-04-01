@@ -83,6 +83,7 @@ protected slots:
 
 private:
   void createPages(QPrinter *, QTextDocument *);
+  bool selectionHasMoreThanText();
 
   QString m_currentText;
 

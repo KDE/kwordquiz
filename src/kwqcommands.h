@@ -33,6 +33,8 @@ struct IndexAndData
 {
   QModelIndex index;
   QVariant data;
+  QVariant image;
+  QVariant sound;
   int height;
 };
 
