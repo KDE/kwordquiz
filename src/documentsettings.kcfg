@@ -8,13 +8,13 @@
   </kcfgfile>
   <group name="Document $(fileurl)">
     <entry name="SizeHintColumn$(Section)" type="Int" key="SizeHintColumn$(Section)">
-      <parameter name="Section" type="Int" min="0" max="1" />
+      <parameter name="Section" type="Int" max="1" />
       <label>Column widths</label>
       <default param="0">200</default>
       <default param="1">200</default>
     </entry>
     <entry name="KeyboardLayoutColumn$(Section)" type="String" key="KeyboardLayoutColumn$(Section)">
-      <parameter name="Section" type="Int" min="0" max="1" />
+      <parameter name="Section" type="Int" max="1" />
       <label>Keyboard layouts</label>
       <default param="0"></default>
       <default param="1"></default>
