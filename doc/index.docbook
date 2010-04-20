@@ -1217,7 +1217,7 @@ In 4. there are two separate blanks. To specify that in the answer you have to w
 Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are menu commands to mark and unmark blanks. Of course you can also just type the brackets. &kwordquiz; checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz cannot be started.
 </para>
 <para>
-The 'Fill-in-the-blank' features can be turned on and off in the Configuration dialog. Turning them of will make it possible to use fonts that map other characters to the positions of the brackets. It will also speed up performance slightly.
+The 'Fill-in-the-blank' features can be turned on and off in the Configuration dialog. Turning them off will make it possible to use fonts that map other characters to the positions of the brackets. It will also speed up performance slightly.
 </para>
 </chapter>
 
