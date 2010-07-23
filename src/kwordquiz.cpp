@@ -547,11 +547,11 @@ void KWordQuizApp::initView()
   m_flashPage->setIcon(KIcon("flash"));
   m_flashPage->setHeader("");
 
-  m_multiplePage = m_pageWidget->addPage(m_multipleView, i18n("Multiple\nChoice"));
+  m_multiplePage = m_pageWidget->addPage(m_multipleView, i18n("Multiple Choice"));
   m_multiplePage->setIcon(KIcon("multiple"));
   m_multiplePage->setHeader("");
 
-  m_qaPage = m_pageWidget->addPage(m_qaView, i18n("Q&A"));
+  m_qaPage = m_pageWidget->addPage(m_qaView, i18n("Question & Answer"));
   m_qaPage->setIcon(KIcon("qa"));
   m_qaPage->setHeader("");
 

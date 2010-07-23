@@ -42,10 +42,10 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkel
   addPage(m_prefQuiz, i18nc("@title:group quiz settings", "Quiz"), "qa", i18nc("@title:group quiz settings", "Quiz Settings"), true);
 
   m_prefCardAppearance = new PrefCardAppearance(0);
-  addPage(m_prefCardAppearance, i18nc("@title:group flash appearance settings", "Flashcard\nAppearance"), "flash", i18nc("@title:group flash appearance settings", "Flashcard Appearance Settings"), true);
+  addPage(m_prefCardAppearance, i18nc("@title:group flash appearance settings", "Flashcard Appearance"), "flash", i18nc("@title:group flash appearance settings", "Flashcard Appearance Settings"), true);
 
   m_prefCharacter = new PrefCharacter(0, actionCollection);
-  addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special\nCharacters"), "accessories-character-map", i18nc("@title:group special character settings", "Special Characters"), true);
+  addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special Characters"), "accessories-character-map", i18nc("@title:group special character settings", "Special Characters"), true);
   setHelp(QString(), "kwordquiz");
 }
 
