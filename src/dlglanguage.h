@@ -29,11 +29,11 @@ class KCompletion;
 class DlgLanguage : public KDialogBase {
     Q_OBJECT
   public:
-    DlgLanguage(QWidget *parent = 0, const char *name = 0, bool modal=true);
+    DlgLanguage(TQWidget *parent = 0, const char *name = 0, bool modal=true);
     ~DlgLanguage();
 
-    void setLanguage(int index, const QString &lang);
-    QString Language(int index);
+    void setLanguage(int index, const TQString &lang);
+    TQString Language(int index);
 
   private:
     DlgLanguageBase *dlgBase;

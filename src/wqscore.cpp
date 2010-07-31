@@ -58,9 +58,9 @@ void WQScore::countIncrement(CountDirection d)
 /*!
     \fn WQScore::answerText()
  */
-QString WQScore::answerText()
+TQString WQScore::answerText()
 {
-  QString s;
+  TQString s;
   if (m_percent)
   {
     float f = ((m_answerCount * 100.0) / m_questionCount);
@@ -82,9 +82,9 @@ QString WQScore::answerText()
 /*!
     \fn WQScore::correctText()
  */
-QString WQScore::correctText()
+TQString WQScore::correctText()
 {
-  QString s;
+  TQString s;
   if (m_percent)
   {
     if (m_correct > 0)
@@ -104,9 +104,9 @@ QString WQScore::correctText()
 /*!
     \fn WQScore::errorText()
  */
-QString WQScore::errorText()
+TQString WQScore::errorText()
 {
-  QString s;
+  TQString s;
   if (m_percent)
   {
     if (m_error > 0)
@@ -126,9 +126,9 @@ QString WQScore::errorText()
 /*!
     \fn WQScore::valueToString(int i)
  */
-QString WQScore::valueToString(int i)
+TQString WQScore::valueToString(int i)
 {
-  QString s = ""; //return empty string for 0
+  TQString s = ""; //return empty string for 0
 
   if (i > 0)
     s = s.setNum(i, 10);

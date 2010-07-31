@@ -16,15 +16,15 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include <qcheckbox.h>
-#include <qbuttongroup.h>
+#include <tqcheckbox.h>
+#include <tqbuttongroup.h>
 
 #include <knuminput.h>
 
 #include "prefquiz.h"
 
 
-PrefQuiz::PrefQuiz(QWidget *parent, const char *name, WFlags f)
+PrefQuiz::PrefQuiz(TQWidget *parent, const char *name, WFlags f)
  : PrefQuizBase(parent, name, f)
 {
   kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());

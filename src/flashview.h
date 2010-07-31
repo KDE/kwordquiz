@@ -32,7 +32,7 @@ class FlashView : public FlashViewBase
 {
 Q_OBJECT
 public:
-    FlashView(QWidget *parent = 0, const char *name = 0, WFlags f = 0);
+    FlashView(TQWidget *parent = 0, const char *name = 0, WFlags f = 0);
 
     ~FlashView();
 
@@ -60,7 +60,7 @@ private:
     KAction* actRepeat;
     KAction* actRestart;
 
-    QTimer* m_timer;
+    TQTimer* m_timer;
 
     int m_question;
     int m_error;

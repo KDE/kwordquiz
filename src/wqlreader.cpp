@@ -14,8 +14,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qtextstream.h>
-#include <qfile.h>
+#include <tqtextstream.h>
+#include <tqfile.h>
 
 #include <kmessagebox.h>
 #include <klocale.h>
@@ -27,7 +27,7 @@ KWqlDataItem::KWqlDataItem()
 
 }
 
-KWqlDataItem::KWqlDataItem(const QString &front, const QString &back, int height)
+KWqlDataItem::KWqlDataItem(const TQString &front, const TQString &back, int height)
 {
   m_front = front;
   m_back = back;
@@ -47,15 +47,15 @@ WqlReader::WqlReader()
 
 }
 
-KWqlDataItemList WqlReader::parse(const QString &fileName)
+KWqlDataItemList WqlReader::parse(const TQString &fileName)
 {
     KWqlDataItemList list;
-    QFile file(fileName);
+    TQFile file(fileName);
     file.open(IO_ReadOnly);
-    QTextStream ts(&file);
-    ts.setEncoding(QTextStream::Latin1);
+    TQTextStream ts(&file);
+    ts.setEncoding(TQTextStream::Latin1);
 
-    QString s = "";
+    TQString s = "";
     s=ts.readLine();
     if (s != "WordQuiz")
     {
@@ -76,7 +76,7 @@ KWqlDataItemList WqlReader::parse(const QString &fileName)
     while (ts.readLine() != "[Font Info]");
     s = ts.readLine();
     int p = s.find("=", 0);
-    QString fam = s.right(s.length() - (p + 1));
+    TQString fam = s.right(s.length() - (p + 1));
     fam = fam.mid(1, fam.length() - 2);
     //g->font().setFamily(s);
 
@@ -91,7 +91,7 @@ KWqlDataItemList WqlReader::parse(const QString &fileName)
     int b = 0;
     if (s == "1")
     {
-      b = QFont::Bold;
+      b = TQFont::Bold;
     }
 
     s = ts.readLine();
@@ -99,7 +99,7 @@ KWqlDataItemList WqlReader::parse(const QString &fileName)
     s = s.right(s.length() - (p + 1));
     bool it = (s == "1");
 
-    QFont m_font(fam, ps, b, it);
+    TQFont m_font(fam, ps, b, it);
 
     while (ts.readLine() != "[Character Info]");  
     s = ts.readLine();    
@@ -158,12 +158,12 @@ KWqlDataItemList WqlReader::parse(const QString &fileName)
     {
       s = ts.readLine();
       p = s.find("[", 0);
-      QString r = s.mid(p + 1, 10);
+      TQString r = s.mid(p + 1, 10);
       int h = r.toInt(0, 10);
       s = s.left(p);
       s = s.stripWhiteSpace();
       
-      QString b;
+      TQString b;
       b = ts.readLine();
       
       KWqlDataItem item(s, b, h /15);
@@ -189,7 +189,7 @@ int WqlReader::colWidth(int col)
 /*!
     \fn WqlReader::language(int col)
  */
-QString WqlReader::language(int col)
+TQString WqlReader::language(int col)
 {
   if (col == 0)
     return m_language1;

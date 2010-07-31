@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qdir.h>
+#include <tqdir.h>
 
 #include <kprocess.h>
 #include <klocale.h>
@@ -27,68 +27,68 @@
 #include "kwqnewstuff.h"
 #include "prefs.h"
 
-KWQNewStuff::KWQNewStuff(QWidget *parent, const char *name) : QObject(), KNewStuff("kdeedu/vocabulary", parent)
+KWQNewStuff::KWQNewStuff(TQWidget *parent, const char *name) : TQObject(), KNewStuff("kdeedu/vocabulary", parent)
 {
   m_app = (KWordQuizApp *) parent;
 }
 
 
-bool KWQNewStuff::install(const QString & fileName)
+bool KWQNewStuff::install(const TQString & fileName)
 {
   m_app->slotFileOpenRecent(KURL(fileName));
   return true;
 }
 
 
-bool KWQNewStuff::createUploadFile(const QString & fileName)
+bool KWQNewStuff::createUploadFile(const TQString & fileName)
 {
   return true;
 }
 
 
-QString KWQNewStuff::destinationPath(KNS::Entry * entry)
+TQString KWQNewStuff::destinationPath(KNS::Entry * entry)
 {
   if (entry)
   {
     KURL url = entry->payload();
-    QString fileName = url.fileName();
+    TQString fileName = url.fileName();
 
-    QString path = Prefs::installPath(); //default is Vocabularies which will be created in the user's home directory
-    QString file;
+    TQString path = Prefs::installPath(); //default is Vocabularies which will be created in the user's home directory
+    TQString file;
 
     if (path.isEmpty())
       file = KNewStuff::downloadDestination(entry); //fall back on a temp file, should never happen
     else
     {
-      file = QDir::home().path() + "/" + path + "/";
+      file = TQDir::home().path() + "/" + path + "/";
       KStandardDirs::makeDir(file); //ensure the directory exists
       file += fileName;
     }
     return file;
   }
   else
-    return QString::null;
+    return TQString::null;
 }
 
 
-QString KWQNewStuff::downloadDestination(KNS::Entry * entry)
+TQString KWQNewStuff::downloadDestination(KNS::Entry * entry)
 {
-  QString file = destinationPath(entry);
+  TQString file = destinationPath(entry);
 
   if (KStandardDirs::exists(file))
   {
     int result = KMessageBox::questionYesNo(parentWidget(),
         i18n("The file '%1' already exists. Do you want to overwrite it?")
         .arg(file),
-        QString::null,
+        TQString::null,
         i18n("Overwrite"),i18n("Do Not Overwrite"));
     if (result == KMessageBox::No)
-      return QString::null;
+      return TQString::null;
   }
   KMessageBox::information(parentWidget(),
     i18n("<qt>The selected file will now be downloaded and saved as\n<b>'%1'</b>.</qt>")
     .arg(file),
-    QString::null,
+    TQString::null,
     "NewStuffDownloadLocation");
   return file;
 }

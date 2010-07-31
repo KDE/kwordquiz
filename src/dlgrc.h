@@ -28,7 +28,7 @@ class DlgRC : public KDialogBase
 {
 Q_OBJECT
 public:
-  DlgRC(QWidget *parent = 0, const char *name = 0, bool modal=true);
+  DlgRC(TQWidget *parent = 0, const char *name = 0, bool modal=true);
 
   ~DlgRC();
   void setNumRows(int r);

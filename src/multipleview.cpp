@@ -16,8 +16,8 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include <qlabel.h>
-#include <qradiobutton.h>
+#include <tqlabel.h>
+#include <tqradiobutton.h>
 
 #include <kiconloader.h>
 #include <klocale.h>
@@ -27,7 +27,7 @@
 #include "multipleview.h"
 #include "prefs.h"
 
-MultipleView::MultipleView(QWidget *parent, const char *name, WFlags f)
+MultipleView::MultipleView(TQWidget *parent, const char *name, WFlags f)
     : MultipleViewBase(parent, name, f)
 {
   m_score = new WQScore();
@@ -91,7 +91,7 @@ void MultipleView::slotCheck()
   if (win->actionCollection()->action("quiz_check")->isEnabled())
   {
 
-    QString ans;
+    TQString ans;
     bool oneIsChecked = false;
     
     if (opt1->isChecked())
@@ -221,7 +221,7 @@ void MultipleView::slotRepeat()
 
 void MultipleView::updateScore()
 {
-  QString s;
+  TQString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
   picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", KIcon::Panel));
@@ -261,10 +261,10 @@ void MultipleView::showQuestion(int i)
   //opt2->setFont(m_quiz->fontAnswer(i));
   //opt3->setFont(m_quiz->fontAnswer(i));
 
-  QStringList sl = m_quiz->multiOptions(i);
-  QString s[10];
+  TQStringList sl = m_quiz->multiOptions(i);
+  TQString s[10];
   int j = 0;
-  for(QStringList::Iterator it = sl.begin(); it != sl.end(); ++it)
+  for(TQStringList::Iterator it = sl.begin(); it != sl.end(); ++it)
   {
     s[j] = *it;
     j++;

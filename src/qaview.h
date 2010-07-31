@@ -33,7 +33,7 @@ class QAView : public QAViewBase
 {
 Q_OBJECT
 public:
-    QAView(QWidget *parent = 0, const char *name = 0, WFlags f = 0);
+    QAView(TQWidget *parent = 0, const char *name = 0, WFlags f = 0);
 
     ~QAView();
 
@@ -46,7 +46,7 @@ public slots:
     void slotRepeat();
     void slotRestart();
     void slotApplySettings();
-    void slotSpecChar(const QChar &);
+    void slotSpecChar(const TQChar &);
     
 private:
     WQQuiz *m_quiz;

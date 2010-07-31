@@ -17,7 +17,7 @@
 #ifndef WQSCORE_H
 #define WQSCORE_H
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 /**
 @author Peter Hedlund
@@ -33,9 +33,9 @@ public:
     void setQuestionCount(int c);
     void countIncrement(CountDirection d);
 
-    QString answerText();
-    QString correctText();
-    QString errorText();
+    TQString answerText();
+    TQString correctText();
+    TQString errorText();
 private:
 
 
@@ -44,7 +44,7 @@ private:
     int m_error;
     int m_correct;
     int m_answerCount;
-    QString valueToString(int i);
+    TQString valueToString(int i);
 };
 
 #endif

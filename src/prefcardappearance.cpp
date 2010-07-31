@@ -9,8 +9,8 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-#include <qwidgetstack.h>
-#include <qlabel.h>
+#include <tqwidgetstack.h>
+#include <tqlabel.h>
 
 #include <kfontrequester.h>
 #include <kcolorbutton.h>
@@ -18,7 +18,7 @@
 
 #include "prefcardappearance.h"
 
-PrefCardAppearance::PrefCardAppearance(QWidget *parent, const char *name)
+PrefCardAppearance::PrefCardAppearance(TQWidget *parent, const char *name)
  : PrefCardAppearanceBase(parent, name)
 {
   widgetStack->raiseWidget(frontStackPage);
@@ -37,17 +37,17 @@ void PrefCardAppearance::slotFlipButtonClicked( )
     widgetStack->raiseWidget(frontStackPage);
 }
 
-void PrefCardAppearance::slotFontChanged(const QFont & font)
+void PrefCardAppearance::slotFontChanged(const TQFont & font)
 {
   textLabel->setFont(font);
 }
 
-void PrefCardAppearance::slotTextColorChanged( const QColor & color)
+void PrefCardAppearance::slotTextColorChanged( const TQColor & color)
 {
   textLabel->setPaletteForegroundColor(color);
 }
 
-void PrefCardAppearance::slotCardColorChanged( const QColor & color)
+void PrefCardAppearance::slotCardColorChanged( const TQColor & color)
 {
   cardFrame->setPaletteBackgroundColor(color);
   titleLabel->setPaletteBackgroundColor(color);
@@ -55,13 +55,13 @@ void PrefCardAppearance::slotCardColorChanged( const QColor & color)
   line->setPaletteBackgroundColor(color);
 }
 
-void PrefCardAppearance::slotFrameColorChanged( const QColor & color)
+void PrefCardAppearance::slotFrameColorChanged( const TQColor & color)
 {
   cardFrame->setPaletteForegroundColor(color);
   line->setPaletteForegroundColor(color);
 }
 
-void PrefCardAppearance::slotAboutToShowWidget(QWidget * widget)
+void PrefCardAppearance::slotAboutToShowWidget(TQWidget * widget)
 {
   if (widget == backStackPage)
   {

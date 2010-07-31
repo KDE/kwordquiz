@@ -18,7 +18,7 @@
 
 #include "prefcharacter.h"
 
-PrefCharacter::PrefCharacter(QWidget *parent, const char *name)
+PrefCharacter::PrefCharacter(TQWidget *parent, const char *name)
  : PrefCharacterBase(parent, name)
 {
 }

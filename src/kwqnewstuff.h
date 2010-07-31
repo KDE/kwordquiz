@@ -25,11 +25,11 @@ class KWordQuizApp;
 /**
 @author Peter Hedlund
 */
-class KWQNewStuff : public QObject, public KNewStuff
+class KWQNewStuff : public TQObject, public KNewStuff
 {
 Q_OBJECT
 public:
-  KWQNewStuff(QWidget *parent = 0, const char *name = 0);
+  KWQNewStuff(TQWidget *parent = 0, const char *name = 0);
 
   /**
     Installs a downloaded file according to the application's configuration.
@@ -37,7 +37,7 @@ public:
     @param fileName filename of the donwloaded file
     @return @c true in case of installation success, @c false otherwise
   */
-  bool install(const QString &fileName);
+  bool install(const TQString &fileName);
 
   /**
     Creates a file suitable for upload.
@@ -47,7 +47,7 @@ public:
     @param fileName the name of the file to upload after its creation
     @return @c true in case of creation success, @c false otherwise
   */
-  bool createUploadFile(const QString &fileName);
+  bool createUploadFile(const TQString &fileName);
 
   /**
     Queries the preferred destination file for a download.
@@ -55,10 +55,10 @@ public:
     @param entry a Hotstuff data entry
     @return destination filename, or 0 to return directory only
   */
-  QString downloadDestination(KNS::Entry *entry);
+  TQString downloadDestination(KNS::Entry *entry);
 
 private:
-  QString destinationPath(KNS::Entry *entry);
+  TQString destinationPath(KNS::Entry *entry);
 
   KWordQuizApp * m_app;
 };

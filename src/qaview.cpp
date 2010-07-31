@@ -16,7 +16,7 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include <qlabel.h>
+#include <tqlabel.h>
 
 #include <kiconloader.h>
 #include <klocale.h>
@@ -27,24 +27,24 @@
 #include "prefs.h"
 #include "kwordquiz.h"
 
-QString highlightError(const QString & c, const QString & e)
+TQString highlightError(const TQString & c, const TQString & e)
 {
   if (c == e)
     return c;
 
-  QString s = c;
+  TQString s = c;
   if (s.left(4) == "<qt>" && e.left(4) != "<qt>")
       s = s.mid(4, s.length() - 9);
 
   if (s == e)
     return s;
 
-  QString result = "<qt>";
+  TQString result = "<qt>";
   int i = 0;
   while (s[i] == e[i])
     result.append(e[i++]);
   result.append("<b>");
-  QString result2 = "</qt>";
+  TQString result2 = "</qt>";
   int j = s.length() - 1;
   int k = e.length() - 1;
   while (s[j] == e[k] && k > i)
@@ -63,7 +63,7 @@ QString highlightError(const QString & c, const QString & e)
 }
 
 
-QAView::QAView(QWidget *parent, const char *name, WFlags f):QAViewBase(parent, name, f)
+QAView::QAView(TQWidget *parent, const char *name, WFlags f):QAViewBase(parent, name, f)
 {
   m_score = new WQScore();
 }
@@ -90,8 +90,8 @@ void QAView::init()
   picCorrect -> clear();
   picError -> clear();
 
-  QFont f = Prefs::editorFont();
-  f.setWeight(QFont::Normal);
+  TQFont f = Prefs::editorFont();
+  f.setWeight(TQFont::Normal);
   lblQuestion -> setFont(f);
   //lblQuestion -> font().setBold(false);
   lblAnswerBlank -> setFont(f);
@@ -202,8 +202,8 @@ void QAView::slotCheck()
 
 void QAView::slotHint()
 {
-  QString answer = txtAnswer->text();
-  QString correctAnswer = m_quiz->hint(m_question);
+  TQString answer = txtAnswer->text();
+  TQString correctAnswer = m_quiz->hint(m_question);
   if (correctAnswer.left(4) == "<qt>")
   {
     correctAnswer = correctAnswer.remove("<qt>");
@@ -242,7 +242,7 @@ void QAView::slotRepeat()
 
 void QAView::updateScore()
 {
-  QString s;
+  TQString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
   picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", KIcon::Panel));
@@ -278,7 +278,7 @@ void QAView::showQuestion(int i)
 
   lblAnswerLanguage -> setText(m_quiz ->langAnswer(i));
 
-  if (!QString(m_quiz ->blankAnswer(i)).isEmpty())
+  if (!TQString(m_quiz ->blankAnswer(i)).isEmpty())
   {
     lblAnswerBlank->show();
     //lblAnswerBlank->setFont(m_quiz->fontAnswer(i));
@@ -301,14 +301,14 @@ void QAView::slotApplySettings( )
   updateScore();
 }
 
-void QAView::slotSpecChar( const QChar & c)
+void QAView::slotSpecChar( const TQChar & c)
 {
   if (txtAnswer->hasFocus())
   {
     if (txtAnswer->hasSelectedText())
     {
-      QString ls = txtAnswer->text();
-      QString s = txtAnswer->selectedText();
+      TQString ls = txtAnswer->text();
+      TQString s = txtAnswer->selectedText();
       int len = s.length();
       int ss = txtAnswer->selectionStart();
       ls = ls.replace(ss, len, c);
@@ -317,7 +317,7 @@ void QAView::slotSpecChar( const QChar & c)
     }
     else
     {
-      QString s = txtAnswer->text();
+      TQString s = txtAnswer->text();
       int i = txtAnswer->cursorPosition();
       s.insert(i, c);
       txtAnswer->setText(s);

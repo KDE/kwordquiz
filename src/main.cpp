@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
     if (args->count())
     {
       kwordquiz->openDocumentFile(args->arg(args->count() - 1));
-      QCString mode = args->getOption("mode");
+      TQCString mode = args->getOption("mode");
       if (!mode.isEmpty())
       {
         if (mode == "1")
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
         if (mode == "5")
           kwordquiz->slotMode5();
       }
-      QCString go_to = args->getOption("goto");
+      TQCString go_to = args->getOption("goto");
       if (!go_to.isEmpty())
       {
         if (go_to == "flash")

@@ -20,45 +20,45 @@
 @author Peter Hedlund
 */
 
-#include <qstring.h>
-#include <qvaluelist.h>
-#include <qfont.h>
+#include <tqstring.h>
+#include <tqvaluelist.h>
+#include <tqfont.h>
 
 class KWqlDataItem
 {
 public:
   KWqlDataItem();
-  KWqlDataItem(const QString &front, const QString &back, int height);
+  KWqlDataItem(const TQString &front, const TQString &back, int height);
   virtual ~KWqlDataItem();
 
-  QString frontText() const {return m_front;}
-  QString backText() const {return m_back;}
+  TQString frontText() const {return m_front;}
+  TQString backText() const {return m_back;}
   int rowHeight() const {return m_height;}
 
 private:
-  QString m_front;
-  QString m_back;
+  TQString m_front;
+  TQString m_back;
   int m_height;
 };
 
-typedef QValueList<KWqlDataItem> KWqlDataItemList;
+typedef TQValueList<KWqlDataItem> KWqlDataItemList;
 
 class WqlReader{
 public:
   WqlReader();
-  KWqlDataItemList parse(const QString &fileName);
+  KWqlDataItemList parse(const TQString &fileName);
   int colWidth(int col);
   int numRows() {return m_numRows;}
   int startCol() {return m_topLeft;}
   int startRow() {return m_topRight;}
   int endCol() {return m_bottomLeft;}
   int endRow() {return m_bottomRight;}
-  QString language(int col);
-  QFont font() {return m_font;}
-  QString specialCharacters() {return m_specialCharacters;}
+  TQString language(int col);
+  TQFont font() {return m_font;}
+  TQString specialCharacters() {return m_specialCharacters;}
   
 private:
-  QFont m_font;
+  TQFont m_font;
   int m_colWidth1;
   int m_colWidth2;
   int m_numRows;
@@ -66,9 +66,9 @@ private:
   int m_topRight;
   int m_bottomLeft;
   int m_bottomRight;
-  QString m_language1;
-  QString m_language2;
-  QString m_specialCharacters;
+  TQString m_language1;
+  TQString m_language2;
+  TQString m_specialCharacters;
 
 };
 

@@ -45,7 +45,7 @@ class KWordQuizDoc : public QObject
   Q_OBJECT
   public:
     /** Constructor for the fileclass of the application */
-    KWordQuizDoc(QWidget *parent, const char *name=0);
+    KWordQuizDoc(TQWidget *parent, const char *name=0);
     /** Destructor for the fileclass of the application */
     ~KWordQuizDoc();
 
@@ -79,7 +79,7 @@ class KWordQuizDoc : public QObject
      * As this view normally repaints itself, it is excluded from the paintEvent.
      */
     void slotUpdateAllViews(KWordQuizView *sender);
-    void slotModifiedOnDisk(const QString &);
+    void slotModifiedOnDisk(const TQString &);
  	
   public:	
     /** the list of the views currently connected to the document */

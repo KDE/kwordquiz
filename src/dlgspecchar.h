@@ -33,17 +33,17 @@ class DlgSpecChar : public KDialogBase
 Q_OBJECT
 public:
     //constructor when you want to insert multi char
-    DlgSpecChar( QWidget *parent, const char *name, const QString &_font,
-                     const QChar &_chr, bool _modal=true );
+    DlgSpecChar( TQWidget *parent, const char *name, const TQString &_font,
+                     const TQChar &_chr, bool _modal=true );
     ~DlgSpecChar();
 
     // internal
-    QChar chr();
+    TQChar chr();
 
     void closeDialog();
 
 private:
-    void initDialog(const QChar &_chr, const QString &_font, bool _enableFont);
+    void initDialog(const TQChar &_chr, const TQString &_font, bool _enableFont);
 
 private slots:
     void slotUser1();
@@ -51,13 +51,13 @@ private slots:
 
 protected:
     // dialog objects
-    QGridLayout *grid;
+    TQGridLayout *grid;
     KButtonBox *bbox;
-    QPushButton *bOk, *bCancel;
+    TQPushButton *bOk, *bCancel;
     KCharSelect *charSelect;
 
  signals:
-    void insertChar(QChar);
+    void insertChar(TQChar);
 };
 
 #endif

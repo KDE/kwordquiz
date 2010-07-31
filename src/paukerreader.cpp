@@ -18,8 +18,8 @@
 
 #include "paukerreader.h"
 
-#include <qiodevice.h>
-#include <qfile.h>
+#include <tqiodevice.h>
+#include <tqfile.h>
 
 #include <kdebug.h>
 #include <kfilterdev.h>
@@ -28,7 +28,7 @@ PaukerDataItem::PaukerDataItem()
 {
 }
 
-PaukerDataItem::PaukerDataItem(QDomElement &entry)
+PaukerDataItem::PaukerDataItem(TQDomElement &entry)
 {
   domElement = entry;
 }
@@ -37,37 +37,37 @@ PaukerDataItem::~PaukerDataItem()
 {
 }
 
-QString PaukerDataItem::frontSide() const
+TQString PaukerDataItem::frontSide() const
 {
   return getText("FrontSide");
 }
 
-QString PaukerDataItem::backSide() const
+TQString PaukerDataItem::backSide() const
 {
   return getText("BackSide");
 }
 
-QString PaukerDataItem::getText(const QString &tagName) const
+TQString PaukerDataItem::getText(const TQString &tagName) const
 {
   if(!domElement.isNull()) {
 
-    QDomNodeList list = domElement.elementsByTagName(tagName);
+    TQDomNodeList list = domElement.elementsByTagName(tagName);
 
     if(list.count() > 0) {
 
-      QDomElement element = list.item(0).toElement();
+      TQDomElement element = list.item(0).toElement();
 
       if(!element.isNull()) {
         return element.text();
       }
       else
-        return QString::null;
+        return TQString::null;
     }
     else
-      return QString::null;
+      return TQString::null;
   }
   else
-    return QString::null;
+    return TQString::null;
 }
 
 /*!
@@ -75,23 +75,23 @@ QString PaukerDataItem::getText(const QString &tagName) const
  */
 PaukerData::PaukerData()
 {
-  document = new QDomDocument();
+  document = new TQDomDocument();
 }
 
-PaukerDataItemList PaukerData::parse(const QString &fileName)
+PaukerDataItemList PaukerData::parse(const TQString &fileName)
 {
   PaukerDataItemList list;
 
-  QIODevice * file = KFilterDev::deviceForFile(fileName);
+  TQIODevice * file = KFilterDev::deviceForFile(fileName);
   document->setContent(file);
 
-  QDomNodeList entries = document->elementsByTagName("Card");
+  TQDomNodeList entries = document->elementsByTagName("Card");
 
   // loop through the "Card" tags looking for data
   for(uint i = 0 ; i < entries.count() ; i++) {
 
     // get an entry to operate on
-    QDomElement entry = entries.item(i).toElement();
+    TQDomElement entry = entries.item(i).toElement();
 
     // if the "node" is in fact an element -- i.e. not null
     if(!entry.isNull()) {

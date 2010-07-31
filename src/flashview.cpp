@@ -14,7 +14,7 @@
  *                                                                         *
  ***************************************************************************/
  
-#include <qlabel.h>
+#include <tqlabel.h>
 
 #include <kiconloader.h>
 #include <klocale.h>
@@ -25,12 +25,12 @@
 #include "prefs.h"
 
 
-FlashView::FlashView(QWidget *parent, const char *name, WFlags f)
+FlashView::FlashView(TQWidget *parent, const char *name, WFlags f)
     : FlashViewBase(parent, name, f)
 {
   m_score = new WQScore();
-  m_timer = new QTimer(this);
-  connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
+  m_timer = new TQTimer(this);
+  connect(m_timer, TQT_SIGNAL(timeout()), this, TQT_SLOT(slotTimer()));
 }
 
 
@@ -126,7 +126,7 @@ void FlashView::slotFlip()
     fraCard->setPaletteForegroundColor(Prefs::frontFrameColor());
     linFlash->setPaletteForegroundColor(Prefs::frontFrameColor());
     linFlash->setPaletteBackgroundColor(Prefs::frontCardColor());
-    //linFlash->setPaletteForegroundColor(QColor(255, 0, 0));
+    //linFlash->setPaletteForegroundColor(TQColor(255, 0, 0));
     showFront(m_question);
     m_showFirst = false;
   }
@@ -140,7 +140,7 @@ void FlashView::slotFlip()
     fraCard->setPaletteForegroundColor(Prefs::backFrameColor());
     linFlash->setPaletteForegroundColor(Prefs::backFrameColor());
     linFlash->setPaletteBackgroundColor(Prefs::backCardColor());
-    //linFlash->setPaletteForegroundColor(QColor(0, 0, 255));
+    //linFlash->setPaletteForegroundColor(TQColor(0, 0, 255));
     showBack(m_question);
     m_showFirst = true;
   }
@@ -178,7 +178,7 @@ void FlashView::slotRepeat()
  */
 void FlashView::updateScore()
 {
-  QString s;
+  TQString s;
   s = s.setNum(m_quiz->questionCount(), 10);
   lblScoreCount->setText(s);
   picCount->setPixmap(KGlobal::iconLoader()->loadIcon("kwordquiz", KIcon::Panel));

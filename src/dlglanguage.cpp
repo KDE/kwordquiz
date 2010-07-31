@@ -18,12 +18,12 @@
 #include <klineedit.h>
 #include <kiconloader.h>
 
-#include <qlabel.h>
+#include <tqlabel.h>
 
 #include "prefs.h"
 #include "dlglanguage.h"
 
-DlgLanguage::DlgLanguage(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Column Titles"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgLanguage::DlgLanguage(TQWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Column Titles"), Ok|Cancel, Ok, parent, name, modal, true)
 {
   dlgBase = new DlgLanguageBase( this, "Dlg" );
   setMainWidget(dlgBase);
@@ -49,7 +49,7 @@ DlgLanguage::~DlgLanguage()
 }
 
 
-void DlgLanguage::setLanguage(int index, const QString &lang) {
+void DlgLanguage::setLanguage(int index, const TQString &lang) {
   if (index == 1) {
     dlgBase->txtLanguage1 -> setText(lang);
   }
@@ -60,7 +60,7 @@ void DlgLanguage::setLanguage(int index, const QString &lang) {
 }
 
 
-QString DlgLanguage::Language(int index){
+TQString DlgLanguage::Language(int index){
   if (index == 1) {
     completion1->addItem(dlgBase->txtLanguage1 -> text());
     Prefs::setColumnTitles1(completion1->items());

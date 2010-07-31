@@ -19,40 +19,40 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <qdom.h>
-#include <qvaluelist.h>
+#include <tqdom.h>
+#include <tqvaluelist.h>
 
 class KEduVocDataItem
 {
 public:
     KEduVocDataItem();
-    KEduVocDataItem(QDomElement &entry);
+    KEduVocDataItem(TQDomElement &entry);
     virtual ~KEduVocDataItem();
 
-    QString originalText() const;
-    QString translatedText() const;
+    TQString originalText() const;
+    TQString translatedText() const;
 
 protected:
-    QString getText(const QString &tagName) const;
+    TQString getText(const TQString &tagName) const;
 
 private:
-    QDomElement domElement;
+    TQDomElement domElement;
 };
 
-typedef QValueList<KEduVocDataItem> KEduVocDataItemList;
+typedef TQValueList<KEduVocDataItem> KEduVocDataItemList;
 
 class KEduVocData
 {
 public:
     KEduVocData();
-    KEduVocDataItemList parse(const QString &fileName);
+    KEduVocDataItemList parse(const TQString &fileName);
     int colWidth(int col);
     int numRows();
-    QString language(int col);
+    TQString language(int col);
 
 
 private:
-    QDomDocument* document;
+    TQDomDocument* document;
 };
 
 #endif

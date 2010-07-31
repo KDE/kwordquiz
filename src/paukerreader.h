@@ -19,39 +19,39 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include <qdom.h>
-#include <qvaluelist.h>
+#include <tqdom.h>
+#include <tqvaluelist.h>
 
 class PaukerDataItem
 {
 public:
   PaukerDataItem();
-  PaukerDataItem(QDomElement &entry);
+  PaukerDataItem(TQDomElement &entry);
   virtual ~PaukerDataItem();
 
-  QString frontSide() const;
-  QString backSide() const;
+  TQString frontSide() const;
+  TQString backSide() const;
 
 protected:
-  QString getText(const QString &tagName) const;
+  TQString getText(const TQString &tagName) const;
 
 private:
-  QDomElement domElement;
+  TQDomElement domElement;
 };
 
-typedef QValueList<PaukerDataItem> PaukerDataItemList;
+typedef TQValueList<PaukerDataItem> PaukerDataItemList;
 
 class PaukerData
 {
 public:
   PaukerData();
-  PaukerDataItemList parse(const QString &fileName);
+  PaukerDataItemList parse(const TQString &fileName);
   int colWidth(int col);
   int numRows();
-  QString language(int col);
+  TQString language(int col);
 
 private:
-  QDomDocument* document;
+  TQDomDocument* document;
 };
 
 #endif

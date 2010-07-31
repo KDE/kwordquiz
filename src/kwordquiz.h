@@ -24,7 +24,7 @@
 #endif
 
 // include files for Qt
-#include <qsignalmapper.h>
+#include <tqsignalmapper.h>
 
 // include files for KDE
 #include <kapplication.h>
@@ -66,7 +66,7 @@ class KWordQuizApp : public KMainWindow
   public:
     /** construtor of KWordQuizApp, calls all init functions to create the application.
      */
-    KWordQuizApp(QWidget* parent=0, const char* name=0);
+    KWordQuizApp(TQWidget* parent=0, const char* name=0);
     ~KWordQuizApp();
     /** opens a file specified by commandline option
      */
@@ -212,18 +212,18 @@ class KWordQuizApp : public KMainWindow
 
     /** changes the statusbar contents for the standard label permanently, used to indicate current actions.
      * @param text the text that is displayed in the statusbar */
-    void slotStatusMsg(const QString &text);
+    void slotStatusMsg(const TQString &text);
 
     /** applies changes from the preferences dialog */
     void slotApplyPreferences();
 
-    void slotUndoChange(const QString & text, bool enabled);
+    void slotUndoChange(const TQString & text, bool enabled);
 
     void slotInsertChar(int i);
 
     void slotActionHighlighted(KAction *, bool);
 
-    void slotContextMenuRequested(int, int, const QPoint &);
+    void slotContextMenuRequested(int, int, const TQPoint &);
   private:
 
     WQQuiz::QuizType m_quizType;
@@ -297,7 +297,7 @@ class KWordQuizApp : public KMainWindow
 
     KAction* qaHint;
 
-    QSignalMapper* charMapper;
+    TQSignalMapper* charMapper;
     KAction* specialChar1;
     KAction* specialChar2;
     KAction* specialChar3;
@@ -315,7 +315,7 @@ class KWordQuizApp : public KMainWindow
     void updateSession(WQQuiz::QuizType qt);
     void updateActions(WQQuiz::QuizType qt);
     void updateSpecialCharIcons();
-    QString charIcon(const QChar &);
+    TQString charIcon(const TQChar &);
     void openURL(const KURL& url);
 };
 

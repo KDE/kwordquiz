@@ -19,7 +19,7 @@
 
 #include "dlgrc.h"
 
-DlgRC::DlgRC(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Rows & Columns"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgRC::DlgRC(TQWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Rows & Columns"), Ok|Cancel, Ok, parent, name, modal, true)
 {
   dlgBase = new DlgRCBase( this, "Dlg" );
   setMainWidget(dlgBase);
@@ -33,17 +33,17 @@ DlgRC::~DlgRC()
 
 void DlgRC::setNumRows( int r )
 {
-  dlgBase->txtNumRows->setText(QString::number(r, 10));
+  dlgBase->txtNumRows->setText(TQString::number(r, 10));
 }
 
 void DlgRC::setRowHeight( int h )
 {
-  dlgBase->txtRowHeight->setText(QString::number(h, 10));
+  dlgBase->txtRowHeight->setText(TQString::number(h, 10));
 }
 
 void DlgRC::setColWidth( int w )
 {
-  dlgBase->txtColWidth->setText(QString::number(w, 10));
+  dlgBase->txtColWidth->setText(TQString::number(w, 10));
 }
 
 int DlgRC::numRows( )

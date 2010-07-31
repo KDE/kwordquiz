@@ -17,24 +17,24 @@
 #ifndef KVTMLWRITER_H
 #define KVTMLWRITER_H
 
-#include <qfile.h>
-#include <qtextstream.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
 
 /**
 @author Peter Hedlund
 */
 class KVTMLWriter{
 public:
-  KVTMLWriter(QFile *file);
+  KVTMLWriter(TQFile *file);
 
   ~KVTMLWriter();
-  void addFirstItem(const QString &ll, int lwidth, const QString &left, const QString &rl, int rwidth, const QString &right);
-  void addHeader(const QString &generator, int cols, int rows, const QString &title);
-  void addItem(const QString &left, const QString &right);
+  void addFirstItem(const TQString &ll, int lwidth, const TQString &left, const TQString &rl, int rwidth, const TQString &right);
+  void addHeader(const TQString &generator, int cols, int rows, const TQString &title);
+  void addItem(const TQString &left, const TQString &right);
 private:
-  QString escape(const QString &);
-  QFile *outputFile;
-  QTextStream outputStream;
+  TQString escape(const TQString &);
+  TQFile *outputFile;
+  TQTextStream outputStream;
 };
 
 #endif

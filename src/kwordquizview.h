@@ -23,7 +23,7 @@
 #endif
 
 // include files for Qt
-#include <qtable.h>
+#include <tqtable.h>
 
 #include <kprinter.h>
 
@@ -44,7 +44,7 @@ class DlgSpecChar;
 class KWQTableItem :public QTableItem
 {
 public:
-  KWQTableItem( QTable* table, EditType et, const QString & text );
+  KWQTableItem( TQTable* table, EditType et, const TQString & text );
   virtual int alignment() const;
 };
 
@@ -53,7 +53,7 @@ class KWordQuizView : public QTable
   Q_OBJECT
   public:
     /** Constructor for the main view */
-    KWordQuizView(QWidget *parent = 0, const char *name=0);
+    KWordQuizView(TQWidget *parent = 0, const char *name=0);
     /** Destructor for the main view */
     ~KWordQuizView();
 
@@ -65,14 +65,14 @@ class KWordQuizView : public QTable
     KWordQuizDoc *getDocument() const;
 
     //Reimplemented from QTable
-    void paintCell ( QPainter * p, int row, int col, const QRect & cr, bool selected, const QColorGroup & cg );
-    void setFont( const QFont &);
-    void setText( int row, int col, const QString &text );
+    void paintCell ( TQPainter * p, int row, int col, const TQRect & cr, bool selected, const TQColorGroup & cg );
+    void setFont( const TQFont &);
+    void setText( int row, int col, const TQString &text );
 
     /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);
     bool gridIsEmpty();
-    void addUndo(const QString & caption);
+    void addUndo(const TQString & caption);
     void doEditUndo();
     void doEditCut();
     void doEditCopy();
@@ -89,35 +89,35 @@ class KWordQuizView : public QTable
     bool checkSyntax(bool all, bool blanks);
     void saveCurrentSelection(bool clear);
   protected:
-    QWidget * beginEdit(int row, int col, bool replace);
+    TQWidget * beginEdit(int row, int col, bool replace);
     void endEdit ( int row, int col, bool accept, bool replace );
     void activateNextCell();
-    void keyPressEvent( QKeyEvent* );
-    bool eventFilter( QObject*, QEvent* );
+    void keyPressEvent( TQKeyEvent* );
+    bool eventFilter( TQObject*, TQEvent* );
   public slots:
     void adjustRow(int row);
-    void slotSpecChar(const QChar &);
+    void slotSpecChar(const TQChar &);
     void slotCheckedAnswer(int );
 
   private slots:
     void slotDlgSpecCharClosed();
 
   signals:
-    void undoChange(const QString & text, bool enabled);
+    void undoChange(const TQString & text, bool enabled);
 
   private:
     int m_currentRow;
     int m_currentCol;
-    QString m_currentText;
-    QTableSelection m_currentSel;
+    TQString m_currentText;
+    TQTableSelection m_currentSel;
     DlgSpecChar* dlgSpecChar;
-    QWidget * cellEditor;
+    TQWidget * cellEditor;
     /** the list of the undo objects */
-    static QValueList<WQUndo> *m_undoList;
+    static TQValueList<WQUndo> *m_undoList;
 
-    void doNewPage(QPainter & painter, int res, int type);
-    void doEndOfPage(QPainter & painter, int vPos, int pageNum, int res, int type);
-    bool checkForBlank(const QString & s, bool blank);
+    void doNewPage(TQPainter & painter, int res, int type);
+    void doEndOfPage(TQPainter & painter, int vPos, int pageNum, int res, int type);
+    bool checkForBlank(const TQString & s, bool blank);
 };
 
 #endif // KWORDQUIZVIEW_H

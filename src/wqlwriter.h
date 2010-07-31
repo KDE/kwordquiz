@@ -16,27 +16,27 @@
 #ifndef WQLWRITER_H
 #define WQLWRITER_H
 
-#include <qfile.h>
-#include <qtextstream.h>
-#include <qfont.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
+#include <tqfont.h>
 
 /**
 @author Peter Hedlund
 */
 class WqlWriter{
 public:
-  WqlWriter(QFile *file);
+  WqlWriter(TQFile *file);
 
   ~WqlWriter();
-  void writeFont(const QFont & font);
-  void writeCharacters(const QString & s);
+  void writeFont(const TQFont & font);
+  void writeCharacters(const TQString & s);
   void writeGridInfo(int col0, int col1, int col2, int numRows);
   void writeSelection(int lc, int tr, int rc, int br);
-  void writeFirstItem(const QString &ll, const QString &rl);
-  void writeItem(const QString &left, const QString &right, int rh);
+  void writeFirstItem(const TQString &ll, const TQString &rl);
+  void writeItem(const TQString &left, const TQString &right, int rh);
 private:
-  QFile *outputFile;
-  QTextStream outputStream;
+  TQFile *outputFile;
+  TQTextStream outputStream;
 };
 
 #endif

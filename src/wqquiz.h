@@ -19,7 +19,7 @@
 #ifndef WQQUIZ_H
 #define WQQUIZ_H
 
-#include <qtable.h>
+#include <tqtable.h>
 
 #include "wqlistitem.h"
 #include "kwordquizview.h"
@@ -28,7 +28,7 @@
 @author Peter Hedlund
 */
 
-typedef QValueList<WQListItem> QuizList;
+typedef TQValueList<WQListItem> QuizList;
 
 class WQQuiz : public QObject
 {
@@ -44,11 +44,11 @@ class WQQuiz : public QObject
 
     bool init();
     void finish();
-    bool checkAnswer(int i, const QString & );
-    QStringList multiOptions(int i);
-    QString quizIcon(int i, QuizIcon ico);
-    QString yourAnswer(int i, const QString & s);
-    QString hint(int i);
+    bool checkAnswer(int i, const TQString & );
+    TQStringList multiOptions(int i);
+    TQString quizIcon(int i, QuizIcon ico);
+    TQString yourAnswer(int i, const TQString & s);
+    TQString hint(int i);
 
     QuizType quizType() const {return m_quizType;}
     void setQuizType(QuizType qt);
@@ -57,11 +57,11 @@ class WQQuiz : public QObject
     void setQuizMode(int qm);
 
     int questionCount();
-    QString question(int i);
-    QString blankAnswer(int i);
-    QString answer(int i);
-    QString langQuestion(int i);
-    QString langAnswer(int i);
+    TQString question(int i);
+    TQString blankAnswer(int i);
+    TQString answer(int i);
+    TQString langQuestion(int i);
+    TQString langAnswer(int i);
 
     int kbAnswer(int i);
 
@@ -77,8 +77,8 @@ class WQQuiz : public QObject
     QuizList m_quizList;
 
     QuizType m_quizType;
-    QString m_correctBlank;
-    QString m_answerBlank;
+    TQString m_correctBlank;
+    TQString m_answerBlank;
 
     void addToList(int aCol, int bCol);
     void listRandom();

@@ -16,12 +16,12 @@
 
 #include <klocale.h>
 
-#include <qradiobutton.h>
+#include <tqradiobutton.h>
 
 #include "dlgsort.h"
 
 
-DlgSort::DlgSort(QWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Sort"), Ok|Cancel, Ok, parent, name, modal, true)
+DlgSort::DlgSort(TQWidget *parent, const char *name, bool modal): KDialogBase(Swallow, i18n("Sort"), Ok|Cancel, Ok, parent, name, modal, true)
 {
   dlgBase = new DlgSortBase( this, "Dlg" );
   setMainWidget(dlgBase);
@@ -45,7 +45,7 @@ bool DlgSort::ascending( )
   return dlgBase->optAscending->isChecked();
 }
 
-void DlgSort::setLanguage( int index, const QString & lang )
+void DlgSort::setLanguage( int index, const TQString & lang )
 {
   if (index == 1) {
     dlgBase->optLang1 -> setText("&1 " + lang);

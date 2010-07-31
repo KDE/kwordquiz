@@ -16,9 +16,9 @@
  ***************************************************************************/
 //
 // include files for QT
-#include <qpainter.h>
-#include <qbitmap.h>
-#include <qcheckbox.h>
+#include <tqpainter.h>
+#include <tqbitmap.h>
+#include <tqcheckbox.h>
 
 // include files for KDE
 #include <kmessagebox.h>
@@ -54,7 +54,7 @@
 
 #define ID_MENU_QUIZ 1001
 
-KWordQuizApp::KWordQuizApp(QWidget* , const char* name):KMainWindow(0, name)
+KWordQuizApp::KWordQuizApp(TQWidget* , const char* name):KMainWindow(0, name)
 {
 
   ///////////////////////////////////////////////////////////////////
@@ -105,117 +105,117 @@ void KWordQuizApp::initActions()
   KAction* configNotifications;
   KAction* configApp;
 
-  fileNew = KStdAction::openNew(this, SLOT(slotFileNew()), actionCollection());
+  fileNew = KStdAction::openNew(this, TQT_SLOT(slotFileNew()), actionCollection());
   fileNew->setWhatsThis(i18n("Creates a new blank vocabulary document"));
   fileNew->setToolTip(fileNew->whatsThis());
 
-  fileOpen = KStdAction::open(this, SLOT(slotFileOpen()), actionCollection());
+  fileOpen = KStdAction::open(this, TQT_SLOT(slotFileOpen()), actionCollection());
   fileOpen->setWhatsThis(i18n("Opens an existing vocabulary document"));
   fileOpen->setToolTip(fileOpen->whatsThis());
 
-  fileOpenRecent = KStdAction::openRecent(this, SLOT(slotFileOpenRecent(const KURL&)), actionCollection());
+  fileOpenRecent = KStdAction::openRecent(this, TQT_SLOT(slotFileOpenRecent(const KURL&)), actionCollection());
 
-  fileGHNS = new KAction(i18n("&Get New Vocabularies..."), "knewstuff", "CTRL+G", this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
+  fileGHNS = new KAction(i18n("&Get New Vocabularies..."), "knewstuff", "CTRL+G", this, TQT_SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
 
-  fileSave = KStdAction::save(this, SLOT(slotFileSave()), actionCollection());
+  fileSave = KStdAction::save(this, TQT_SLOT(slotFileSave()), actionCollection());
   fileSave->setWhatsThis(i18n("Saves the active vocabulary document"));
   fileSave->setToolTip(fileSave->whatsThis());
 
-  fileSaveAs = KStdAction::saveAs(this, SLOT(slotFileSaveAs()), actionCollection());
+  fileSaveAs = KStdAction::saveAs(this, TQT_SLOT(slotFileSaveAs()), actionCollection());
   fileSaveAs->setWhatsThis(i18n("Saves the active vocabulary document with a different name"));
   fileSaveAs->setToolTip(fileSaveAs->whatsThis());
 
-  fileClose = KStdAction::close(this, SLOT(slotFileClose()), actionCollection());
+  fileClose = KStdAction::close(this, TQT_SLOT(slotFileClose()), actionCollection());
   fileClose->setWhatsThis(i18n("Closes the active vocabulary document"));
   fileClose->setToolTip(fileClose->whatsThis());
 
-  filePrint = KStdAction::print(this, SLOT(slotFilePrint()), actionCollection());
+  filePrint = KStdAction::print(this, TQT_SLOT(slotFilePrint()), actionCollection());
   filePrint->setWhatsThis(i18n("Prints the active vocabulary document"));
   filePrint->setToolTip(filePrint->whatsThis());
 
-  fileQuit = KStdAction::quit(this, SLOT(slotFileQuit()), actionCollection());
+  fileQuit = KStdAction::quit(this, TQT_SLOT(slotFileQuit()), actionCollection());
   fileQuit->setWhatsThis(i18n("Quits KWordQuiz"));
   fileQuit->setToolTip(fileQuit->whatsThis());
 
-  editUndo = KStdAction::undo(this, SLOT(slotEditUndo()), actionCollection());
+  editUndo = KStdAction::undo(this, TQT_SLOT(slotEditUndo()), actionCollection());
   editUndo->setWhatsThis(i18n("Undoes the last command"));
   editUndo->setToolTip(editUndo->whatsThis());
 
-  editCut = KStdAction::cut(this, SLOT(slotEditCut()), actionCollection());
+  editCut = KStdAction::cut(this, TQT_SLOT(slotEditCut()), actionCollection());
   editCut->setWhatsThis(i18n("Cuts the text from the selected cells and places it on the clipboard"));
   editCut->setToolTip(editCut->whatsThis());
 
-  editCopy = KStdAction::copy(this, SLOT(slotEditCopy()), actionCollection());
+  editCopy = KStdAction::copy(this, TQT_SLOT(slotEditCopy()), actionCollection());
   editCopy->setWhatsThis(i18n("Copies the text from the selected cells and places it on the clipboard"));
   editCopy->setToolTip(editCopy->whatsThis());
 
-  editPaste = KStdAction::paste(this, SLOT(slotEditPaste()), actionCollection());
+  editPaste = KStdAction::paste(this, TQT_SLOT(slotEditPaste()), actionCollection());
   editPaste->setWhatsThis(i18n("Pastes previously cut or copied text from the clipboard into the selected cells"));
   editPaste->setToolTip(editPaste->whatsThis());
 
-  editClear = KStdAction::clear(this, SLOT(slotEditClear()), actionCollection());
+  editClear = KStdAction::clear(this, TQT_SLOT(slotEditClear()), actionCollection());
   editClear->setWhatsThis(i18n("Clears the content of the selected cells"));
   editClear->setToolTip(editClear->whatsThis());
 
-  editInsert = new KAction(i18n("&Insert Row"), "insert_table_row", "CTRL+I", this, SLOT(slotEditInsert()), actionCollection(),"edit_insert");
+  editInsert = new KAction(i18n("&Insert Row"), "insert_table_row", "CTRL+I", this, TQT_SLOT(slotEditInsert()), actionCollection(),"edit_insert");
   editInsert->setWhatsThis(i18n("Inserts a new row above the current row"));
   editInsert->setToolTip(editInsert->whatsThis());
 
-  editDelete = new KAction(i18n("&Delete Row"), "delete_table_row", "CTRL+K", this, SLOT(slotEditDelete()), actionCollection(),"edit_delete");
+  editDelete = new KAction(i18n("&Delete Row"), "delete_table_row", "CTRL+K", this, TQT_SLOT(slotEditDelete()), actionCollection(),"edit_delete");
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
   editDelete->setToolTip(editDelete->whatsThis());
 
-  editMarkBlank = new KAction(i18n("&Mark as Blank"), "markasblank", "CTRL+M", this, SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
+  editMarkBlank = new KAction(i18n("&Mark as Blank"), "markasblank", "CTRL+M", this, TQT_SLOT(slotEditMarkBlank()), actionCollection(),"edit_mark_blank");
   editMarkBlank->setWhatsThis(i18n("Marks the current or selected word as a blank for Fill-in-the-blank"));
   editMarkBlank->setToolTip(editMarkBlank->whatsThis());
 
-  editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), "unmarkasblank", 0, this, SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
+  editUnmarkBlank = new KAction(i18n("&Unmark Blanks"), "unmarkasblank", 0, this, TQT_SLOT(slotEditUnmarkBlank()), actionCollection(),"edit_unmark_blank");
   editUnmarkBlank->setWhatsThis(i18n("Removes blanks from the current or selected word"));
   editUnmarkBlank->setToolTip(editUnmarkBlank->whatsThis());
 
-  //@todo implement editFind = KStdAction::find(this, SLOT(slotEditFind()), actionCollection());
+  //@todo implement editFind = KStdAction::find(this, TQT_SLOT(slotEditFind()), actionCollection());
 
-  vocabLanguages = new KAction(i18n("&Column Titles..."), "languages", "CTRL+L", this, SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
+  vocabLanguages = new KAction(i18n("&Column Titles..."), "languages", "CTRL+L", this, TQT_SLOT(slotVocabLanguages()), actionCollection(),"vocab_languages");
   vocabLanguages->setWhatsThis(i18n("Defines the column titles for the active vocabulary"));
   vocabLanguages->setToolTip(vocabLanguages->whatsThis());
 
-  vocabFont = new KAction(i18n("&Font..."), "fonts", 0, this, SLOT(slotVocabFont()), actionCollection(),"vocab_font");
+  vocabFont = new KAction(i18n("&Font..."), "fonts", 0, this, TQT_SLOT(slotVocabFont()), actionCollection(),"vocab_font");
   vocabFont->setWhatsThis(i18n("Defines the font used by the editor"));
   vocabFont->setToolTip(vocabFont->whatsThis());
 
-  //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
+  //@todo implement vocabKeyboard = new KAction(i18n("&Keyboard..."), "kxkb", 0, this, TQT_SLOT(slotVocabKeyboard()), actionCollection(),"vocab_keyboard");
 
-  vocabRC = new KAction(i18n("&Rows/Columns..."), "rowcol", 0, this, SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
+  vocabRC = new KAction(i18n("&Rows/Columns..."), "rowcol", 0, this, TQT_SLOT(slotVocabRC()), actionCollection(),"vocab_rc");
   vocabRC->setWhatsThis(i18n("Defines the number of rows, row heights, and column widths for the active vocabulary"));
   vocabRC->setToolTip(vocabRC->whatsThis());
 
-  vocabSort = new KAction(i18n("&Sort..."), "sort_incr", 0, this, SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
+  vocabSort = new KAction(i18n("&Sort..."), "sort_incr", 0, this, TQT_SLOT(slotVocabSort()), actionCollection(),"vocab_sort");
   vocabSort->setWhatsThis(i18n("Sorts the vocabulary in ascending or descending order based on the left or right column"));
   vocabSort->setToolTip(vocabSort->whatsThis());
 
-  vocabShuffle = new KAction(i18n("Sh&uffle"), "shuffle", 0, this, SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
+  vocabShuffle = new KAction(i18n("Sh&uffle"), "shuffle", 0, this, TQT_SLOT(slotVocabShuffle()), actionCollection(),"vocab_shuffle");
   vocabShuffle->setWhatsThis(i18n("Shuffles the entries of the active vocabulary"));
   vocabShuffle->setToolTip(vocabShuffle->whatsThis());
 
-  mode = new KToolBarPopupAction(i18n("Change Mode"), "mode1", 0, this, SLOT(slotMode0()), actionCollection(),"mode_0");
+  mode = new KToolBarPopupAction(i18n("Change Mode"), "mode1", 0, this, TQT_SLOT(slotMode0()), actionCollection(),"mode_0");
   mode->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
   mode->setToolTip(mode->whatsThis());
 
   KPopupMenu *popup = mode->popupMenu();
   popup->clear();
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", KIcon::Toolbar), "", this, SLOT(slotMode1()), 0, 0);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", KIcon::Toolbar), "", this, SLOT(slotMode2()), 0, 1);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode3", KIcon::Toolbar), "", this, SLOT(slotMode3()), 0, 2);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode4", KIcon::Toolbar), "", this, SLOT(slotMode4()), 0, 3);
-  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode5", KIcon::Toolbar), "", this, SLOT(slotMode5()), 0, 4);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode1", KIcon::Toolbar), "", this, TQT_SLOT(slotMode1()), 0, 0);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode2", KIcon::Toolbar), "", this, TQT_SLOT(slotMode2()), 0, 1);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode3", KIcon::Toolbar), "", this, TQT_SLOT(slotMode3()), 0, 2);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode4", KIcon::Toolbar), "", this, TQT_SLOT(slotMode4()), 0, 3);
+  popup->insertItem(KGlobal::iconLoader()->loadIconSet("mode5", KIcon::Toolbar), "", this, TQT_SLOT(slotMode5()), 0, 4);
 
-  mode1 = new KToggleAction("", "mode1", 0, this, SLOT(slotMode1()), actionCollection(),"mode_1");
-  mode2 = new KToggleAction("", "mode2", 0, this, SLOT(slotMode2()), actionCollection(),"mode_2");
-  mode3 = new KToggleAction("", "mode3", 0, this, SLOT(slotMode3()), actionCollection(),"mode_3");
-  mode4 = new KToggleAction("", "mode4", 0, this, SLOT(slotMode4()), actionCollection(),"mode_4");
-  mode5 = new KToggleAction("", "mode5", 0, this, SLOT(slotMode5()), actionCollection(),"mode_5");
+  mode1 = new KToggleAction("", "mode1", 0, this, TQT_SLOT(slotMode1()), actionCollection(),"mode_1");
+  mode2 = new KToggleAction("", "mode2", 0, this, TQT_SLOT(slotMode2()), actionCollection(),"mode_2");
+  mode3 = new KToggleAction("", "mode3", 0, this, TQT_SLOT(slotMode3()), actionCollection(),"mode_3");
+  mode4 = new KToggleAction("", "mode4", 0, this, TQT_SLOT(slotMode4()), actionCollection(),"mode_4");
+  mode5 = new KToggleAction("", "mode5", 0, this, TQT_SLOT(slotMode5()), actionCollection(),"mode_5");
   mode1->setWhatsThis(i18n("Selects this mode"));
   mode2->setWhatsThis(i18n("Selects this mode"));
   mode3->setWhatsThis(i18n("Selects this mode"));
@@ -227,19 +227,19 @@ void KWordQuizApp::initActions()
   mode4->setToolTip(mode4->whatsThis());
   mode5->setToolTip(mode5->whatsThis());
 
-  quizEditor = new KAction(i18n("&Editor"), "editor", "F6", this, SLOT(slotQuizEditor()), actionCollection(),"quiz_editor");
+  quizEditor = new KAction(i18n("&Editor"), "editor", "F6", this, TQT_SLOT(slotQuizEditor()), actionCollection(),"quiz_editor");
   quizEditor->setWhatsThis(i18n("Activates the vocabulary editor"));
   quizEditor->setToolTip(quizEditor->whatsThis());
 
-  quizFlash = new KAction(i18n("&Flashcard"), "flash", "F7", this, SLOT(slotQuizFlash()), actionCollection(),"quiz_flash");
+  quizFlash = new KAction(i18n("&Flashcard"), "flash", "F7", this, TQT_SLOT(slotQuizFlash()), actionCollection(),"quiz_flash");
   quizFlash->setWhatsThis(i18n("Starts a flashcard session using the active vocabulary"));
   quizFlash->setToolTip(quizFlash->whatsThis());
 
-  quizMultiple = new KAction(i18n("&Multiple Choice"), "multiple", "F8", this, SLOT(slotQuizMultiple()), actionCollection(),"quiz_multiple");
+  quizMultiple = new KAction(i18n("&Multiple Choice"), "multiple", "F8", this, TQT_SLOT(slotQuizMultiple()), actionCollection(),"quiz_multiple");
   quizMultiple->setWhatsThis(i18n("Starts a multiple choice session using the active vocabulary"));
   quizMultiple->setToolTip(quizMultiple->whatsThis());
 
-  quizQA = new KAction(i18n("&Question && Answer"), "qa", "F9", this, SLOT(slotQuizQA()), actionCollection(),"quiz_qa");
+  quizQA = new KAction(i18n("&Question && Answer"), "qa", "F9", this, TQT_SLOT(slotQuizQA()), actionCollection(),"quiz_qa");
   quizQA->setWhatsThis(i18n("Starts a question and answer session using the active vocabulary"));
   quizQA->setToolTip(quizQA->whatsThis());
 
@@ -267,26 +267,26 @@ void KWordQuizApp::initActions()
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
 
-  configNotifications = KStdAction::configureNotifications(this, SLOT(slotConfigureNotifications()), actionCollection());
+  configNotifications = KStdAction::configureNotifications(this, TQT_SLOT(slotConfigureNotifications()), actionCollection());
   configNotifications->setWhatsThis(i18n("Configures sound and other notifications for certain events"));
   configNotifications->setToolTip(configNotifications->whatsThis());
 
-  configApp = KStdAction::preferences(this, SLOT( slotConfigure()), actionCollection());
+  configApp = KStdAction::preferences(this, TQT_SLOT( slotConfigure()), actionCollection());
   configApp->setWhatsThis(i18n("Specifies preferences for the vocabulary editor and quiz sessions"));
   configApp->setToolTip(configApp->whatsThis());
 
-  charMapper = new QSignalMapper(this);
-  connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
+  charMapper = new TQSignalMapper(this);
+  connect(charMapper, TQT_SIGNAL(mapped(int)), this, TQT_SLOT(slotInsertChar(int)));
 
-  specialChar1 = new KAction(i18n("Special Character 1"), "", "CTRL+1", charMapper, SLOT(map()), actionCollection(), "char_1") ;
-  specialChar2 = new KAction(i18n("Special Character 2"), 0, "CTRL+2", charMapper, SLOT(map()), actionCollection(), "char_2") ;
-  specialChar3 = new KAction(i18n("Special Character 3"), 0, "CTRL+3", charMapper, SLOT(map()), actionCollection(), "char_3") ;
-  specialChar4 = new KAction(i18n("Special Character 4"), 0, "CTRL+4", charMapper, SLOT(map()), actionCollection(), "char_4") ;
-  specialChar5 = new KAction(i18n("Special Character 5"), 0, "CTRL+5", charMapper, SLOT(map()), actionCollection(), "char_5") ;
-  specialChar6 = new KAction(i18n("Special Character 6"), 0, "CTRL+6", charMapper, SLOT(map()), actionCollection(), "char_6") ;
-  specialChar7 = new KAction(i18n("Special Character 7"), 0, "CTRL+7", charMapper, SLOT(map()), actionCollection(), "char_7") ;
-  specialChar8 = new KAction(i18n("Special Character 8"), 0, "CTRL+8", charMapper, SLOT(map()), actionCollection(), "char_8") ;
-  specialChar9 = new KAction(i18n("Special Character 9"), 0, "CTRL+9", charMapper, SLOT(map()), actionCollection(), "char_9") ;
+  specialChar1 = new KAction(i18n("Special Character 1"), "", "CTRL+1", charMapper, TQT_SLOT(map()), actionCollection(), "char_1") ;
+  specialChar2 = new KAction(i18n("Special Character 2"), 0, "CTRL+2", charMapper, TQT_SLOT(map()), actionCollection(), "char_2") ;
+  specialChar3 = new KAction(i18n("Special Character 3"), 0, "CTRL+3", charMapper, TQT_SLOT(map()), actionCollection(), "char_3") ;
+  specialChar4 = new KAction(i18n("Special Character 4"), 0, "CTRL+4", charMapper, TQT_SLOT(map()), actionCollection(), "char_4") ;
+  specialChar5 = new KAction(i18n("Special Character 5"), 0, "CTRL+5", charMapper, TQT_SLOT(map()), actionCollection(), "char_5") ;
+  specialChar6 = new KAction(i18n("Special Character 6"), 0, "CTRL+6", charMapper, TQT_SLOT(map()), actionCollection(), "char_6") ;
+  specialChar7 = new KAction(i18n("Special Character 7"), 0, "CTRL+7", charMapper, TQT_SLOT(map()), actionCollection(), "char_7") ;
+  specialChar8 = new KAction(i18n("Special Character 8"), 0, "CTRL+8", charMapper, TQT_SLOT(map()), actionCollection(), "char_8") ;
+  specialChar9 = new KAction(i18n("Special Character 9"), 0, "CTRL+9", charMapper, TQT_SLOT(map()), actionCollection(), "char_9") ;
 
   charMapper->setMapping(specialChar1, 1);
   charMapper->setMapping(specialChar2, 2);
@@ -299,12 +299,12 @@ void KWordQuizApp::initActions()
   charMapper->setMapping(specialChar9, 9);
 
   actionCollection()->setHighlightingEnabled(true);
-  connect(actionCollection(), SIGNAL(actionStatusText(const QString &)), this, SLOT(slotStatusMsg(const QString &)));
-  connect(actionCollection(), SIGNAL(actionHighlighted(KAction *, bool)), this, SLOT(slotActionHighlighted(KAction *, bool)));
+  connect(actionCollection(), TQT_SIGNAL(actionStatusText(const TQString &)), this, TQT_SLOT(slotStatusMsg(const TQString &)));
+  connect(actionCollection(), TQT_SIGNAL(actionHighlighted(KAction *, bool)), this, TQT_SLOT(slotActionHighlighted(KAction *, bool)));
   updateSpecialCharIcons();
 
   if (!initialGeometrySet())
-    resize( QSize(650, 500).expandedTo(minimumSizeHint()));
+    resize( TQSize(650, 500).expandedTo(minimumSizeHint()));
   setupGUI(ToolBar | Keys | StatusBar | Create);
   setAutoSaveSettings();
 
@@ -333,8 +333,8 @@ void KWordQuizApp::initView()
   setCentralWidget(m_editView);
   setCaption(doc->URL().fileName(),false);
   m_editView->setFont(Prefs::editorFont());
-  connect(m_editView, SIGNAL(undoChange(const QString&, bool )), this, SLOT(slotUndoChange(const QString&, bool)));
-  connect(m_editView, SIGNAL(contextMenuRequested(int, int, const QPoint &)), this, SLOT(slotContextMenuRequested(int, int, const QPoint& )));
+  connect(m_editView, TQT_SIGNAL(undoChange(const TQString&, bool )), this, TQT_SLOT(slotUndoChange(const TQString&, bool)));
+  connect(m_editView, TQT_SIGNAL(contextMenuRequested(int, int, const TQPoint &)), this, TQT_SLOT(slotContextMenuRequested(int, int, const TQPoint& )));
 }
 
 void KWordQuizApp::openURL(const KURL& url)
@@ -419,8 +419,8 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
     KURL url=doc->URL();
     _cfg->writeEntry("filename", url.url());
     _cfg->writeEntry("modified", doc->isModified());
-    QString tempname = kapp->tempSaveName(url.url());
-    QString tempurl= KURL::encode_string(tempname);
+    TQString tempname = kapp->tempSaveName(url.url());
+    TQString tempurl= KURL::encode_string(tempname);
     KURL _url(tempurl);
     doc->saveDocument(_url);
   }
@@ -429,13 +429,13 @@ void KWordQuizApp::saveProperties(KConfig *_cfg)
 
 void KWordQuizApp::readProperties(KConfig* _cfg)
 {
-  QString filename = _cfg->readEntry("filename", "");
+  TQString filename = _cfg->readEntry("filename", "");
   KURL url(filename);
   bool modified = _cfg->readBoolEntry("modified", false);
   if(modified)
   {
     bool canRecover;
-    QString tempname = kapp->checkRecoverFile(filename, canRecover);
+    TQString tempname = kapp->checkRecoverFile(filename, canRecover);
     KURL _url(tempname);
 
     if(canRecover)
@@ -443,7 +443,7 @@ void KWordQuizApp::readProperties(KConfig* _cfg)
       doc->openDocument(_url);
       doc->setModified();
       setCaption(_url.fileName(),true);
-      QFile::remove(tempname);
+      TQFile::remove(tempname);
     }
   }
   else
@@ -472,7 +472,7 @@ bool KWordQuizApp::queryExit()
 }
 
 /////////////////////////////////////////////////////////////////////
-// SLOT IMPLEMENTATION
+// TQT_SLOT IMPLEMENTATION
 /////////////////////////////////////////////////////////////////////
 
 void KWordQuizApp::slotFileNew()
@@ -493,16 +493,16 @@ void KWordQuizApp::slotFileOpen()
 {
   slotStatusMsg(i18n("Opening file..."));
 
-  QCheckBox * cb = new QCheckBox(i18n("&Join selected files into one list"), 0, 0);
+  TQCheckBox * cb = new TQCheckBox(i18n("&Join selected files into one list"), 0, 0);
   cb -> setChecked(false);
 
-  QString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
-  KFileDialog *fd = new KFileDialog(QString::null, filter, this, 0, true, cb);
+  TQString filter = i18n("*.kvtml *.wql *.xml.gz *.csv|All Supported Documents\n*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.xml.gz|Pauker Lesson\n*.csv|Comma-Separated Values");
+  KFileDialog *fd = new KFileDialog(TQString::null, filter, this, 0, true, cb);
   fd -> setOperationMode(KFileDialog::Opening);
   fd -> setMode(KFile::Files | KFile::ExistingOnly);
   fd -> setCaption(i18n("Open Vocabulary Document"));
 
-  if (fd->exec() == QDialog::Accepted)
+  if (fd->exec() == TQDialog::Accepted)
   {
     KURL::List l = fd -> selectedURLs();
     bool append = ((cb -> isChecked()) && (l.count() > 1));
@@ -584,12 +584,12 @@ bool KWordQuizApp::saveAsFileName( )
 
   bool success = false;
 
-  QString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language");
-  KFileDialog *fd = new KFileDialog(QString::null, filter, this, 0, true);
+  TQString filter = i18n("*.kvtml|KDE Vocabulary Document\n*.wql|KWordQuiz Document\n*.csv|Comma-Separated Values\n*.html|Hypertext Markup Language");
+  KFileDialog *fd = new KFileDialog(TQString::null, filter, this, 0, true);
   fd -> setOperationMode(KFileDialog::Saving);
   fd -> setCaption(i18n("Save Vocabulary Document As"));
 
-  if (fd->exec() == QDialog::Accepted)
+  if (fd->exec() == TQDialog::Accepted)
   {
     KURL url = fd -> selectedURL();
     if(!url.isEmpty()){
@@ -607,10 +607,10 @@ bool KWordQuizApp::saveAsFileName( )
           url = KURL(url.path() + ".kvtml");
       }
 
-      QFileInfo fileinfo(url.path());
+      TQFileInfo fileinfo(url.path());
       if (fileinfo.exists() && KMessageBox::warningContinueCancel(0,
           i18n("<qt>The file<br><b>%1</b><br>already exists. Do you want to overwrite it?</qt>")
-              .arg(url.path()),QString::null,i18n("Overwrite")) == KMessageBox::Cancel)
+              .arg(url.path()),TQString::null,i18n("Overwrite")) == KMessageBox::Cancel)
       {
       // do nothing
       }
@@ -691,7 +691,7 @@ void KWordQuizApp::slotFileQuit()
   }
 }
 
-void KWordQuizApp::slotUndoChange( const QString & text, bool enabled )
+void KWordQuizApp::slotUndoChange( const TQString & text, bool enabled )
 {
   editUndo->setText(text);
   editUndo->setEnabled(enabled);
@@ -956,7 +956,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
     case WQQuiz::qtFlash:
       m_quiz = new WQQuiz(m_editView);
-      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
+      connect(m_quiz, TQT_SIGNAL(checkingAnswer(int )), m_editView, TQT_SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtFlash);
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
@@ -964,12 +964,12 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_editView->saveCurrentSelection(true);
         m_editView->hide();
         m_flashView = new FlashView(this);
-        connect(quizCheck, SIGNAL(activated()), m_flashView, SLOT(slotFlip()));
-        connect(flashKnow, SIGNAL(activated()), m_flashView, SLOT(slotKnow()));
-        connect(flashDontKnow, SIGNAL(activated()), m_flashView, SLOT(slotDontKnow()));
-        connect(quizRestart, SIGNAL(activated()), m_flashView, SLOT(slotRestart()));
-        connect(quizRepeatErrors, SIGNAL(activated()), m_flashView, SLOT(slotRepeat()));
-        connect(this, SIGNAL(settingsChanged()), m_flashView, SLOT(slotApplySettings()));
+        connect(quizCheck, TQT_SIGNAL(activated()), m_flashView, TQT_SLOT(slotFlip()));
+        connect(flashKnow, TQT_SIGNAL(activated()), m_flashView, TQT_SLOT(slotKnow()));
+        connect(flashDontKnow, TQT_SIGNAL(activated()), m_flashView, TQT_SLOT(slotDontKnow()));
+        connect(quizRestart, TQT_SIGNAL(activated()), m_flashView, TQT_SLOT(slotRestart()));
+        connect(quizRepeatErrors, TQT_SIGNAL(activated()), m_flashView, TQT_SLOT(slotRepeat()));
+        connect(this, TQT_SIGNAL(settingsChanged()), m_flashView, TQT_SLOT(slotApplySettings()));
 
         setCentralWidget(m_flashView);
         m_flashView -> setQuiz(m_quiz);
@@ -984,7 +984,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
     case WQQuiz::qtMultiple:
       m_quiz = new WQQuiz(m_editView);
-      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
+      connect(m_quiz, TQT_SIGNAL(checkingAnswer(int )), m_editView, TQT_SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtMultiple);
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
@@ -992,10 +992,10 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_editView->saveCurrentSelection(true);
         m_editView->hide();
         m_multipleView = new MultipleView(this);
-        connect(quizCheck, SIGNAL(activated()), m_multipleView, SLOT(slotCheck()));
-        connect(quizRestart, SIGNAL(activated()), m_multipleView, SLOT(slotRestart()));
-        connect(quizRepeatErrors, SIGNAL(activated()), m_multipleView, SLOT(slotRepeat()));
-        connect(this, SIGNAL(settingsChanged()), m_multipleView, SLOT(slotApplySettings()));
+        connect(quizCheck, TQT_SIGNAL(activated()), m_multipleView, TQT_SLOT(slotCheck()));
+        connect(quizRestart, TQT_SIGNAL(activated()), m_multipleView, TQT_SLOT(slotRestart()));
+        connect(quizRepeatErrors, TQT_SIGNAL(activated()), m_multipleView, TQT_SLOT(slotRepeat()));
+        connect(this, TQT_SIGNAL(settingsChanged()), m_multipleView, TQT_SLOT(slotApplySettings()));
 
         setCentralWidget(m_multipleView);
 
@@ -1011,7 +1011,7 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
       break;
     case WQQuiz::qtQA:
       m_quiz = new WQQuiz(m_editView);
-      connect(m_quiz, SIGNAL(checkingAnswer(int )), m_editView, SLOT(slotCheckedAnswer(int )));
+      connect(m_quiz, TQT_SIGNAL(checkingAnswer(int )), m_editView, TQT_SLOT(slotCheckedAnswer(int )));
       m_quiz ->setQuizType(WQQuiz::qtQA);
       m_quiz->setQuizMode(Prefs::mode());
       if (m_quiz -> init())
@@ -1019,11 +1019,11 @@ void KWordQuizApp::updateSession(WQQuiz::QuizType qt)
         m_editView->saveCurrentSelection(true);
         m_editView->hide();
         m_qaView = new QAView(this);
-        connect(quizCheck, SIGNAL(activated()), m_qaView, SLOT(slotCheck()));
-        connect(qaHint, SIGNAL(activated()), m_qaView, SLOT(slotHint()));
-        connect(quizRestart, SIGNAL(activated()), m_qaView, SLOT(slotRestart()));
-        connect(quizRepeatErrors, SIGNAL(activated()), m_qaView, SLOT(slotRepeat()));
-        connect(this, SIGNAL(settingsChanged()), m_qaView, SLOT(slotApplySettings()));
+        connect(quizCheck, TQT_SIGNAL(activated()), m_qaView, TQT_SLOT(slotCheck()));
+        connect(qaHint, TQT_SIGNAL(activated()), m_qaView, TQT_SLOT(slotHint()));
+        connect(quizRestart, TQT_SIGNAL(activated()), m_qaView, TQT_SLOT(slotRestart()));
+        connect(quizRepeatErrors, TQT_SIGNAL(activated()), m_qaView, TQT_SLOT(slotRepeat()));
+        connect(this, TQT_SIGNAL(settingsChanged()), m_qaView, TQT_SLOT(slotApplySettings()));
 
         setCentralWidget(m_qaView);
 
@@ -1055,7 +1055,7 @@ void KWordQuizApp::slotConfigure()
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
   KWordQuizPrefs* dialog = new KWordQuizPrefs( this, "settings",  Prefs::self() );
-  connect(dialog, SIGNAL(settingsChanged()), this, SLOT(slotApplyPreferences()));
+  connect(dialog, TQT_SIGNAL(settingsChanged()), this, TQT_SLOT(slotApplyPreferences()));
   dialog->show();
 }
 
@@ -1072,43 +1072,43 @@ void KWordQuizApp::slotApplyPreferences()
 void KWordQuizApp::updateSpecialCharIcons( )
 {
   for (int i = 0; i < 9; i++){
-    KAction * act = actionCollection()->action(QString("char_" + QString::number(i + 1)).latin1());
+    KAction * act = actionCollection()->action(TQString("char_" + TQString::number(i + 1)).latin1());
     act->setIcon(charIcon(Prefs::specialCharacters()[i]));
     act->setToolTip(i18n("Inserts the character %1").arg(Prefs::specialCharacters()[i]));
   }
 }
 
-QString KWordQuizApp::charIcon(const QChar & c)
+TQString KWordQuizApp::charIcon(const TQChar & c)
 {
   ///Create a name and path for the icon
-  QString s = locateLocal("icon", "char" + QString::number(c.unicode()) + ".png");
+  TQString s = locateLocal("icon", "char" + TQString::number(c.unicode()) + ".png");
 
   ///No need to redraw if it already exists
   if (KStandardDirs::exists(s))
     return s;
 
-  QRect r(4, 4, 120, 120);
+  TQRect r(4, 4, 120, 120);
 
   ///A font to draw the character with
-  QFont font("sans");
+  TQFont font("sans");
   font.setPixelSize(100);
-  font.setWeight(QFont::Bold);
+  font.setWeight(TQFont::Bold);
 
   ///Create the pixmap
-  QPixmap pm(128, 128);
+  TQPixmap pm(128, 128);
   pm.fill(Qt::white);
-  QPainter p(&pm);
+  TQPainter p(&pm);
   p.setFont(font);
   p.setPen(Qt::blue);
-  p.drawText(r, Qt::AlignCenter, (QString) c);
+  p.drawText(r, Qt::AlignCenter, (TQString) c);
 
   ///Create transparency mask
-  QBitmap bm(128, 128);
+  TQBitmap bm(128, 128);
   bm.fill(Qt::color0);
-  QPainter b(&bm);
+  TQPainter b(&bm);
   b.setFont(font);
   b.setPen(Qt::color1);
-  b.drawText(r, Qt::AlignCenter, (QString) c);
+  b.drawText(r, Qt::AlignCenter, (TQString) c);
 
   ///Mask the pixmap
   pm.setMask(bm);
@@ -1119,7 +1119,7 @@ QString KWordQuizApp::charIcon(const QChar & c)
   return s;
 }
 
-void KWordQuizApp::slotStatusMsg(const QString &text)
+void KWordQuizApp::slotStatusMsg(const TQString &text)
 {
   statusBar()->clear();
   statusBar()->message(text);
@@ -1131,7 +1131,7 @@ void KWordQuizApp::slotStatusMsg(const QString &text)
 void KWordQuizApp::updateMode(int m)
 {
   if (m_quiz != 0)
-    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString::null, KStdGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
+    if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), TQString::null, KStdGuiItem::cont(), "askModeQuiz") != KMessageBox::Continue)
     {
       mode1->setChecked(Prefs::mode() == 1);
       mode2->setChecked(Prefs::mode() == 2);
@@ -1142,8 +1142,8 @@ void KWordQuizApp::updateMode(int m)
     }
 
   Prefs::setMode(m);
-  QString s1 = m_editView -> horizontalHeader()->label(0);
-  QString s2 = m_editView -> horizontalHeader()->label(1);
+  TQString s1 = m_editView -> horizontalHeader()->label(0);
+  TQString s2 = m_editView -> horizontalHeader()->label(1);
 
   mode1->setText(i18n("&1 %1 -> %2 In Order").arg(s1).arg(s2));
   mode2->setText(i18n("&2 %1 -> %2 In Order").arg(s2).arg(s1));
@@ -1170,7 +1170,7 @@ void KWordQuizApp::updateMode(int m)
   popup->changeItem(3, i18n("&4 %1 -> %2 Randomly").arg(s2).arg(s1));
   popup->changeItem(4, i18n("&5 %1 <-> %2 Randomly").arg(s1).arg(s2));
 
-  QString s;
+  TQString s;
   mode->setIcon("mode" + s.setNum(Prefs::mode()));
 
   switch( Prefs::mode() ){
@@ -1210,10 +1210,10 @@ void KWordQuizApp::slotActionHighlighted( KAction * action, bool hl)
     slotStatusMsg(i18n("Ready"));
 }
 
-void KWordQuizApp::slotContextMenuRequested(int row, int col, const QPoint & pos)
+void KWordQuizApp::slotContextMenuRequested(int row, int col, const TQPoint & pos)
 {
-  QWidget *w = factory()->container("editor_popup", this);
-  QPopupMenu *popup = static_cast<QPopupMenu *>(w);
+  TQWidget *w = factory()->container("editor_popup", this);
+  TQPopupMenu *popup = static_cast<TQPopupMenu *>(w);
   popup->exec(pos);
 }
 

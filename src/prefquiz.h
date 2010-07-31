@@ -29,7 +29,7 @@ class PrefQuiz : public PrefQuizBase
 Q_OBJECT
 public:
 
-  PrefQuiz(QWidget *parent, const char *name=0, WFlags f=0);
+  PrefQuiz(TQWidget *parent, const char *name=0, WFlags f=0);
   ~PrefQuiz();
 };
 

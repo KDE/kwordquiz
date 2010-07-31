@@ -36,9 +36,9 @@
 //QList<KWordQuizView> *KWordQuizDoc::pViewList = 0L;
 //KWordQuizView *KWordQuizDoc::m_view;
 
-KWordQuizDoc::KWordQuizDoc(QWidget *parent, const char *name) : QObject(parent, name)
+KWordQuizDoc::KWordQuizDoc(TQWidget *parent, const char *name) : TQObject(parent, name)
 {
-  connect(KDirWatch::self(), SIGNAL(dirty(const QString& )), this, SLOT(slotModifiedOnDisk(const QString& )));
+  connect(KDirWatch::self(), TQT_SIGNAL(dirty(const TQString& )), this, TQT_SLOT(slotModifiedOnDisk(const TQString& )));
   /* if(!pViewList)
    {
      pViewList = new QList<KWordQuizView>();
@@ -156,10 +156,10 @@ bool KWordQuizDoc::newDocument()
 
 bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
 {
-  QString tmpfile;
+  TQString tmpfile;
   if (KIO::NetAccess::download( url, tmpfile, 0 ))
   {
-    QFile file(tmpfile);
+    TQFile file(tmpfile);
     if (!file.open(IO_ReadOnly))
     {
       KMessageBox::error(0, i18n("<qt>Cannot open file<br><b>%1</b></qt>").arg(url.path()));
@@ -171,7 +171,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
     else
       doc_url = url;
 
-    QTable* g = m_view;
+    TQTable* g = m_view;
     g->setUpdatesEnabled(false);
 
     int i = 0;
@@ -186,7 +186,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
       if (!dataList.isEmpty())
       {      
         g->setNumRows(dataList.count() + i);
-        QString s;
+        TQString s;
         PaukerDataItemList::ConstIterator end(dataList.end());
         for(PaukerDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
         {
@@ -219,7 +219,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           g->setColumnWidth(0, kvtmldoc->colWidth(0));
           g->setColumnWidth(1, kvtmldoc->colWidth(1));
         }
-        QString s;
+        TQString s;
         KEduVocDataItemList::ConstIterator end(dataList.end());
         for(KEduVocDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
         {
@@ -256,7 +256,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
           g->selectCells(wqldoc->startRow(), wqldoc->startCol(), wqldoc->endRow(), wqldoc->endCol());
           Prefs::setSpecialCharacters(wqldoc->specialCharacters());
         }
-        QString s;
+        TQString s;
         KWqlDataItemList::ConstIterator end(dataList.end());
         for(KWqlDataItemList::ConstIterator dataIt = dataList.begin(); dataIt != end; ++dataIt)
         {
@@ -274,14 +274,14 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
 
     if (url.path().right(4) == ".csv")
     {
-      QTextStream ts(&file);
-      ts.setEncoding(QTextStream::UnicodeUTF8);
+      TQTextStream ts(&file);
+      ts.setEncoding(TQTextStream::UnicodeUTF8);
 
-      QString f = ts.read();
-      QStringList fl = QStringList::split('\n', f, true);
+      TQString f = ts.read();
+      TQStringList fl = TQStringList::split('\n', f, true);
       g->setNumRows(fl.count() - 1 + i);
 
-      QStringList sl = QStringList::split(",", fl[0], true);
+      TQStringList sl = TQStringList::split(",", fl[0], true);
 
       if (!append)
       {
@@ -293,7 +293,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
 
       for(int j = 1; j < fl.count(); j++)
       {
-        QStringList sl = QStringList::split(",", fl[j], true);
+        TQStringList sl = TQStringList::split(",", fl[j], true);
         if (!sl[0].isEmpty())
           g->setText(i + j - 1, 0, sl[0]);
         if (!sl[1].isEmpty())
@@ -305,7 +305,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
     KIO::NetAccess::removeTempFile( tmpfile );
 
     //Apply word wrap to cell with text
-    QTableItem* itm;
+    TQTableItem* itm;
     for (int r = 0; r <= g->numRows() -1; ++r)
     {
       itm = g->item(r, 0);
@@ -329,7 +329,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
 bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
 {
 
-  QFile file(url.path());
+  TQFile file(url.path());
   if (!file.open(IO_WriteOnly))
   {
     KMessageBox::error(0, i18n("<qt>Cannot write to file<br><b>%1</b></qt>")
@@ -339,15 +339,15 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     return false;
   }
 
-  QTable* g = m_view;
-  QString s = "";
+  TQTable* g = m_view;
+  TQString s = "";
   int w = 0;
 
   if (url.path().right(6) == ".kvtml")
   {
     file.close();
     KVTMLWriter writer(&file);
-    writer.addHeader(QString("kwordquiz %1").arg(KWQ_VERSION), 2, g->numRows(), url.fileName());
+    writer.addHeader(TQString("kwordquiz %1").arg(KWQ_VERSION), 2, g->numRows(), url.fileName());
     writer.addFirstItem(g->horizontalHeader()->label(0), g->columnWidth(0), g->text(w, 0), g->horizontalHeader()->label(1), g->columnWidth(1), g->text(w, 1));
     w++;
     int r = g->numRows();
@@ -367,7 +367,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     writer.writeGridInfo(g->verticalHeader()->width(), g->columnWidth(0), g->columnWidth(1), g->numRows());
     if (g->numSelections() > 0)
     {
-      QTableSelection qts = g->selection(0);
+      TQTableSelection qts = g->selection(0);
       writer.writeSelection(qts.leftCol(), qts.topRow(), qts.rightCol(), qts.bottomRow());
     }
     else
@@ -385,8 +385,8 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
   
   if (url.path().right(4) == ".csv")
   {
-    QTextStream ts(&file);
-    ts.setEncoding(QTextStream::UnicodeUTF8);
+    TQTextStream ts(&file);
+    ts.setEncoding(TQTextStream::UnicodeUTF8);
     ts << g->horizontalHeader()->label(0)  << "," << g->horizontalHeader()->label(1)  << endl; 
 
     int i = 0;
@@ -400,13 +400,13 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
   
   if (url.path().right(5) == ".html")
   {
-    QString cw1 = "width: " + QString::number(g->columnWidth(0)) + "; ";
-    QString cw2 = "width: " + QString::number(g->columnWidth(1)) + "; ";
+    TQString cw1 = "width: " + TQString::number(g->columnWidth(0)) + "; ";
+    TQString cw2 = "width: " + TQString::number(g->columnWidth(1)) + "; ";
     
-    QString fn = "font-family: '" + g->font().family() + "'; ";
-    QString fs = "font-size: " + QString::number(g->font().pointSize()) + "pt; ";
-    QString fb;
-    QString fi;
+    TQString fn = "font-family: '" + g->font().family() + "'; ";
+    TQString fs = "font-size: " + TQString::number(g->font().pointSize()) + "pt; ";
+    TQString fb;
+    TQString fi;
     
     if (g->font().bold())
       fb = "font-weight: bold; ";
@@ -418,15 +418,15 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     else
       fi = "font-style: normal; ";      
     
-    QString hstyle0 = "style=\"text-align: right; width: " + QString::number(g->verticalHeader()->sectionSize(0)) + "; font-size: 12pt; background-color: darkgray\"";
-    QString hstyle1 = "style=\"" + cw1 + "font-size: 12pt; background-color: darkgray\"";
-    QString hstyle2 = "style=\"" + cw2 + "font-size: 12pt; background-color: darkgray\"";
+    TQString hstyle0 = "style=\"text-align: right; width: " + TQString::number(g->verticalHeader()->sectionSize(0)) + "; font-size: 12pt; background-color: darkgray\"";
+    TQString hstyle1 = "style=\"" + cw1 + "font-size: 12pt; background-color: darkgray\"";
+    TQString hstyle2 = "style=\"" + cw2 + "font-size: 12pt; background-color: darkgray\"";
     
-    QString style1 = "style=\"" + cw1 + fn + fs + fb + fi + "background-color: white\"";
-    QString style2 = "style=\"" + cw2 + fn + fs + fb + fi + "background-color: white\"";      
+    TQString style1 = "style=\"" + cw1 + fn + fs + fb + fi + "background-color: white\"";
+    TQString style2 = "style=\"" + cw2 + fn + fs + fb + fi + "background-color: white\"";      
    
-    QTextStream ts(&file);
-    ts.setEncoding(QTextStream::UnicodeUTF8);
+    TQTextStream ts(&file);
+    ts.setEncoding(TQTextStream::UnicodeUTF8);
     
     ts << "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">" << endl; 
     ts << "<html>" << endl;
@@ -439,7 +439,7 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     
     ts << "<table cols=\"3\" border=\"0\" cellspacing=\"1\" cellpadding=\"2\" bgcolor=\"silver\">" << endl;    
 
-    ts << "<tr height=" << QString::number(g->horizontalHeader()->height()) << ">" << endl;
+    ts << "<tr height=" << TQString::number(g->horizontalHeader()->height()) << ">" << endl;
     ts << "<td " << hstyle0 << "></td>" << endl; 
     ts << "<td " << hstyle1 << "><p>" << g->horizontalHeader()->label(0) << "</p></td>" << endl;        
     ts << "<td " << hstyle2 << "><p>" + g->horizontalHeader()->label(1) << "</p></td>" << endl;
@@ -449,8 +449,8 @@ bool KWordQuizDoc::saveDocument(const KURL& url, const char *format /*=0*/)
     int r = g->numRows();
     while (i < r)
     {
-      ts << "<tr height=" << QString::number(g->rowHeight(i)) << ">" << endl;
-      ts << "<td " << hstyle0 << "><p>" << QString::number(i + 1) << "</p></td>" << endl; 
+      ts << "<tr height=" << TQString::number(g->rowHeight(i)) << ">" << endl;
+      ts << "<td " << hstyle0 << "><p>" << TQString::number(i + 1) << "</p></td>" << endl; 
       ts << "<td " << style1 << "><p>" << g->text(i, 0) << "</p></td>" << endl;        
       ts << "<td " << style2 << "><p>" << g->text(i, 1) << "</p></td>" << endl;   
       ts << "</tr>" << endl;
@@ -474,13 +474,13 @@ void KWordQuizDoc::deleteContents()
 {
 }
 
-void KWordQuizDoc::slotModifiedOnDisk( const QString & path)
+void KWordQuizDoc::slotModifiedOnDisk( const TQString & path)
 {
   /*@todo this code doesn't work very well. Have to look in more detail on how Kate does it.
   if (doc_url.path() == path)
   {
-    QString str = i18n("The file %1 was changed (modified) on disc by another program!\n\n").arg(doc_url.fileName());    
-    int i = KMessageBox::warningYesNoCancel(0, str + i18n("Do you want to reload the modified file? Data loss may occur."),QString::null,i18n("Reload"),i18n("Do Not Reload"));
+    TQString str = i18n("The file %1 was changed (modified) on disc by another program!\n\n").arg(doc_url.fileName());    
+    int i = KMessageBox::warningYesNoCancel(0, str + i18n("Do you want to reload the modified file? Data loss may occur."),TQString::null,i18n("Reload"),i18n("Do Not Reload"));
     if ( i == KMessageBox::Yes)
       openDocument(doc_url);
   }

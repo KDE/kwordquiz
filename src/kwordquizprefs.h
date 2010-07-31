@@ -34,7 +34,7 @@ class KWordQuizPrefs : public KConfigDialog
 {
   Q_OBJECT
 public:
-  KWordQuizPrefs(QWidget *parent=0, const char *name=0, KConfigSkeleton *config=0, DialogType dialogType=IconList,
+  KWordQuizPrefs(TQWidget *parent=0, const char *name=0, KConfigSkeleton *config=0, DialogType dialogType=IconList,
     int dialogButtons=Default|Ok|Apply|Cancel|Help, ButtonCode defaultButton=Ok, bool modal=false);
 
 protected slots:
@@ -45,7 +45,7 @@ private slots:
   void slotCharListSelectionChanged();
   void slotDlgSpecCharClosed();
   void slotSelectSpecChar();
-  void slotSpecChar(QChar);
+  void slotSpecChar(TQChar);
 
 protected:
   bool hasChanged();

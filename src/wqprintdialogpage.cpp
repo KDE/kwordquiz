@@ -16,41 +16,41 @@
   Boston, MA 02110-1301, USA.
 */
 
-#include <qbuttongroup.h>
-#include <qradiobutton.h>
-#include <qlayout.h>
-#include <qwhatsthis.h>
+#include <tqbuttongroup.h>
+#include <tqradiobutton.h>
+#include <tqlayout.h>
+#include <tqwhatsthis.h>
 
 #include <klocale.h>
 
 #include "wqprintdialogpage.h"
 
-WQPrintDialogPage::WQPrintDialogPage(QWidget *parent, const char *name )
+WQPrintDialogPage::WQPrintDialogPage(TQWidget *parent, const char *name )
  : KPrintDialogPage( parent, name )
 {
   setTitle(i18n("Vocabulary Options"));
   
-  QGridLayout * l = new QGridLayout( this, 1, 1, 11, 6);
+  TQGridLayout * l = new TQGridLayout( this, 1, 1, 11, 6);
 
-  g = new QButtonGroup(i18n("Select Type of Printout"), this );
+  g = new TQButtonGroup(i18n("Select Type of Printout"), this );
   g->setColumnLayout(0, Qt::Vertical );
   g->layout()->setSpacing( 6 );
   g->layout()->setMargin( 11 );
-  QGridLayout * v = new QGridLayout( g->layout() );
+  TQGridLayout * v = new TQGridLayout( g->layout() );
   v->setAlignment( Qt::AlignTop );
 
-  rb0 = new QRadioButton(i18n("Vocabulary &list"), g );
+  rb0 = new TQRadioButton(i18n("Vocabulary &list"), g );
   v->addWidget( rb0, 0, 0 );
-  rb1 = new QRadioButton(i18n("Vocabulary e&xam"), g);
+  rb1 = new TQRadioButton(i18n("Vocabulary e&xam"), g);
   v->addWidget( rb1, 1, 0 );
-  rb2 = new QRadioButton(i18n("&Flashcards"), g);
+  rb2 = new TQRadioButton(i18n("&Flashcards"), g);
   v->addWidget( rb2, 2, 0 );
   l->addWidget( g, 0, 0 );
   
-  QWhatsThis::add(g, i18n("Specify type of printout to make"));
-  QWhatsThis::add(rb0, i18n("Select to print the vocabulary as displayed in the editor"));
-  QWhatsThis::add(rb1, i18n("Select to print the vocabulary as a vocabulary exam"));
-  QWhatsThis::add(rb2, i18n("Select to print flashcards"));
+  TQWhatsThis::add(g, i18n("Specify type of printout to make"));
+  TQWhatsThis::add(rb0, i18n("Select to print the vocabulary as displayed in the editor"));
+  TQWhatsThis::add(rb1, i18n("Select to print the vocabulary as a vocabulary exam"));
+  TQWhatsThis::add(rb2, i18n("Select to print flashcards"));
 }
 
 
@@ -58,14 +58,14 @@ WQPrintDialogPage::~WQPrintDialogPage()
 {
 }
 
-void WQPrintDialogPage::getOptions(QMap< QString, QString > & opts, bool incldef)
+void WQPrintDialogPage::getOptions(TQMap< TQString, TQString > & opts, bool incldef)
 {
-  opts[ "kde-kwordquiz-type" ] = QString::number(g->selectedId());
+  opts[ "kde-kwordquiz-type" ] = TQString::number(g->selectedId());
 }
 
-void WQPrintDialogPage::setOptions(const QMap< QString, QString > & opts )
+void WQPrintDialogPage::setOptions(const TQMap< TQString, TQString > & opts )
 {
-  QString type = opts[ "kde-kwordquiz-type" ];
+  TQString type = opts[ "kde-kwordquiz-type" ];
   switch (type.toInt())
   {
     case 0: rb0->setChecked(true); break;
@@ -74,7 +74,7 @@ void WQPrintDialogPage::setOptions(const QMap< QString, QString > & opts )
   }
 }
 
-bool WQPrintDialogPage::isValid(const QString & msg )
+bool WQPrintDialogPage::isValid(const TQString & msg )
 {
   return true;
 }

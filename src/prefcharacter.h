@@ -28,7 +28,7 @@ class PrefCharacter : public PrefCharacterBase
 {
 Q_OBJECT
 public:
-    PrefCharacter(QWidget *parent = 0, const char *name = 0);
+    PrefCharacter(TQWidget *parent = 0, const char *name = 0);
 
     ~PrefCharacter();
 };

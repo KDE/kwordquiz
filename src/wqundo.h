@@ -16,7 +16,7 @@
 #ifndef WQUNDO_H
 #define WQUNDO_H
 
-#include <qtable.h>
+#include <tqtable.h>
 
 #include "wqlreader.h"
 
@@ -25,8 +25,8 @@
 */
 class WQUndo{
 public:
-  QFont font() const {return m_font;}
-  void setFont(const QFont & font) {m_font = font;}
+  TQFont font() const {return m_font;}
+  void setFont(const TQFont & font) {m_font = font;}
   
   int colWidth0() {return m_colWidth0;}
   void setColWidth0(int cw) {m_colWidth0 = cw;}
@@ -41,27 +41,27 @@ public:
   void setCurrentRow(int r) {m_currentRow = r;}
   int currentCol() {return m_currentCol;}
   void setCurrentCol(int c) {m_currentCol = c;}
-  QTableSelection selection() const {return m_selection;}
-  void setSelection(const QTableSelection & sel) {m_selection = sel;}
+  TQTableSelection selection() const {return m_selection;}
+  void setSelection(const TQTableSelection & sel) {m_selection = sel;}
   
   KWqlDataItemList list() const {return m_list;}
   void setList(const KWqlDataItemList & list) {m_list = list;}
   
-  QString text() const {return m_text;}
-  void setText(const QString & s) {m_text = s;}
+  TQString text() const {return m_text;}
+  void setText(const TQString & s) {m_text = s;}
 
 private:
-  QFont m_font;
+  TQFont m_font;
   int m_colWidth0;
   int m_colWidth1;
   int m_colWidth2;
   int m_numRows;
   int m_currentRow;
   int m_currentCol;
-  QTableSelection m_selection;
+  TQTableSelection m_selection;
   KWqlDataItemList m_list;
   
-  QString m_text;
+  TQString m_text;
 };
 
 #endif

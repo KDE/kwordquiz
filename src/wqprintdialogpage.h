@@ -31,19 +31,19 @@ class WQPrintDialogPage : public KPrintDialogPage
 {
 Q_OBJECT
 public:
-    WQPrintDialogPage( QWidget *parent = 0, const char *name = 0 );
+    WQPrintDialogPage( TQWidget *parent = 0, const char *name = 0 );
 
     ~WQPrintDialogPage();
    //reimplement virtual functions
-   void getOptions(QMap<QString,QString>& opts, bool incldef = false);
-   void setOptions(const QMap<QString,QString>& opts);
-   bool isValid(const QString& msg );
+   void getOptions(TQMap<TQString,TQString>& opts, bool incldef = false);
+   void setOptions(const TQMap<TQString,TQString>& opts);
+   bool isValid(const TQString& msg );
 
 private:
-  QButtonGroup * g;
-  QRadioButton * rb0;
-  QRadioButton * rb1;
-  QRadioButton * rb2;
+  TQButtonGroup * g;
+  TQRadioButton * rb0;
+  TQRadioButton * rb1;
+  TQRadioButton * rb2;
 };
 
 #endif

@@ -21,16 +21,16 @@ class PrefCardAppearance : public PrefCardAppearanceBase
 {
 Q_OBJECT
 public:
-  PrefCardAppearance(QWidget *parent = 0, const char *name = 0);
+  PrefCardAppearance(TQWidget *parent = 0, const char *name = 0);
   ~PrefCardAppearance();
 
 public slots:
   void slotFlipButtonClicked();
-  void slotFontChanged(const QFont &);
-  void slotTextColorChanged(const QColor &);
-  void slotCardColorChanged(const QColor &);
-  void slotFrameColorChanged(const QColor &);
-  void slotAboutToShowWidget(QWidget *);
+  void slotFontChanged(const TQFont &);
+  void slotTextColorChanged(const TQColor &);
+  void slotCardColorChanged(const TQColor &);
+  void slotFrameColorChanged(const TQColor &);
+  void slotAboutToShowWidget(TQWidget *);
 };
 
 #endif

@@ -19,7 +19,7 @@
 #include "prefeditor.h"
 
 
-PrefEditor::PrefEditor(QWidget *parent, const char *name, WFlags f)
+PrefEditor::PrefEditor(TQWidget *parent, const char *name, WFlags f)
  : PrefEditorBase(parent, name, f)
 {
 }

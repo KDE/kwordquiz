@@ -16,13 +16,13 @@
  
 #include "kvtmlwriter.h"
 
-KVTMLWriter::KVTMLWriter(QFile *file)
+KVTMLWriter::KVTMLWriter(TQFile *file)
 {
   outputFile = file;
   if(outputFile->open(IO_WriteOnly))
     {
       outputStream.setDevice(outputFile);
-      outputStream.setEncoding(QTextStream::UnicodeUTF8);
+      outputStream.setEncoding(TQTextStream::UnicodeUTF8);
 
       outputStream << "<?xml version=\"1.0\"?>" << endl;
       outputStream << "<!DOCTYPE kvtml SYSTEM \"kvoctrain.dtd\">" << endl;
@@ -30,11 +30,11 @@ KVTMLWriter::KVTMLWriter(QFile *file)
 }
 
 /*!
-    \fn KVTMLWriter::addHeader(const QString &generator, int cols, int rows, const QString &title)
+    \fn KVTMLWriter::addHeader(const TQString &generator, int cols, int rows, const TQString &title)
  */
-void KVTMLWriter::addHeader(const QString &generator, int cols, int rows, const QString &title)
+void KVTMLWriter::addHeader(const TQString &generator, int cols, int rows, const TQString &title)
 {
-  QString s = QString("<kvtml\n generator=\"%1\"\n cols=\"%2\"\n lines=\"%3\"\n title=\"%4\">")
+  TQString s = TQString("<kvtml\n generator=\"%1\"\n cols=\"%2\"\n lines=\"%3\"\n title=\"%4\">")
     .arg(generator)
     .arg(cols)
     .arg(rows)
@@ -44,16 +44,16 @@ void KVTMLWriter::addHeader(const QString &generator, int cols, int rows, const 
 }
 
 /*!
-    \fn KVTMLWriter::addFirstItem(const QString &ll, int lwidth, const QString &left, const QString &rl, int rwidth, const QString &right)
+    \fn KVTMLWriter::addFirstItem(const TQString &ll, int lwidth, const TQString &left, const TQString &rl, int rwidth, const TQString &right)
  */
-void KVTMLWriter::addFirstItem(const QString &ll, int lwidth, const QString &left, const QString &rl, int rwidth, const QString &right)
+void KVTMLWriter::addFirstItem(const TQString &ll, int lwidth, const TQString &left, const TQString &rl, int rwidth, const TQString &right)
 {
   outputStream << " <e>" << endl;
-  QString s = QString("  <o width=\"%1\" l=\"%2\">")
+  TQString s = TQString("  <o width=\"%1\" l=\"%2\">")
     .arg(lwidth)
     .arg(ll);
   outputStream << s << escape(left) << "</o>" << endl;
-  s = QString("  <t width=\"%1\" l=\"%2\">")
+  s = TQString("  <t width=\"%1\" l=\"%2\">")
     .arg(rwidth)
     .arg(rl);
   outputStream << s << escape(right) << "</t>" << endl;
@@ -61,9 +61,9 @@ void KVTMLWriter::addFirstItem(const QString &ll, int lwidth, const QString &lef
 }
 
 /*!
-    \fn KVTMLWriter::addItem(const QString &left, const QString &right)
+    \fn KVTMLWriter::addItem(const TQString &left, const TQString &right)
  */
-void KVTMLWriter::addItem(const QString &left, const QString &right)
+void KVTMLWriter::addItem(const TQString &left, const TQString &right)
 {
   outputStream << " <e>" << endl;
   outputStream << "  <o>" << escape(left) << "</o>" << endl;
@@ -78,12 +78,12 @@ KVTMLWriter::~KVTMLWriter()
   outputFile->close();
 }
 
-QString KVTMLWriter::escape( const QString & s)
+TQString KVTMLWriter::escape( const TQString & s)
 {
-  QString result = s;
-  result.replace(QChar('&'), "&amp;"); //must be done first 
-  result.replace(QChar('<'), "&lt;");
-  result.replace(QChar('>'), "&gt;");
+  TQString result = s;
+  result.replace(TQChar('&'), "&amp;"); //must be done first 
+  result.replace(TQChar('<'), "&lt;");
+  result.replace(TQChar('>'), "&gt;");
 
   return result;  
 }
