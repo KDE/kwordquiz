@@ -19,9 +19,9 @@
 
 #include <kdialogbase.h>
 
-class QWidget;
-class QGridLayout;
-class QPushButton;
+class TQWidget;
+class TQGridLayout;
+class TQPushButton;
 class KCharSelect;
 class KButtonBox;
 
