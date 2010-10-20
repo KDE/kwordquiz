@@ -72,7 +72,7 @@ install(TARGETS kwordquiz  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( FILES kwordquiz.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS kwordquiz.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kwordquiz.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kwordquiz.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
 install( FILES kwordquizui.rc kwordquiz.notifyrc  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz )
