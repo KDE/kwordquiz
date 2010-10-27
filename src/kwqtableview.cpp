@@ -754,7 +754,7 @@ bool KWQTableView::selectionHasMoreThanText()
 {
   bool result = false;
   QModelIndexList indexes = selectionModel()->selectedIndexes();
-  foreach (QModelIndex idx, indexes) {
+  foreach (const QModelIndex &idx, indexes) {
      result = (!model()->data(idx, KWQTableModel::SoundRole).isNull() ||
                !model()->data(idx, KWQTableModel::ImageRole).isNull());
      if (result)
