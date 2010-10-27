@@ -19,6 +19,8 @@
 #include <QFontMetrics>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsDropShadowEffect>
+#include <QTextOption>
+#include <QTextDocument>
 
 static const int cardWidth = 500;
 static const int cardHeight = 300;
@@ -85,8 +87,10 @@ void KWQCardScene::setIdentifier(const QString &identifier)
 
 void KWQCardScene::setText(const QString &text)
 {
-    QString t = QString("<html><div align=center>%1</div></html>").arg(text);
-    m_text->setHtml(t);
+    QTextOption option = m_text->document()->defaultTextOption();
+    option.setAlignment(Qt::AlignCenter);
+    m_text->document()->setDefaultTextOption(option);
+    m_text->setPlainText(text);
     repositionText();
 }
 
