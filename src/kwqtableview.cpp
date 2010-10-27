@@ -332,14 +332,18 @@ void KWQTableView::doEditClear()
 
 void KWQTableView::doEditInsert()
 {
-  KWQCommandInsert *kwqc = new KWQCommandInsert(this);
-  m_undoStack->push(kwqc);
+  if (selectionModel()->currentIndex().isValid()) {
+    KWQCommandInsert *kwqc = new KWQCommandInsert(this);
+    m_undoStack->push(kwqc);
+  }
 }
 
 void KWQTableView::doEditDelete()
 {
-  KWQCommandDelete *kwqc = new KWQCommandDelete(this);
-  m_undoStack->push(kwqc);
+  if (selectionModel()->currentIndex().isValid()) {
+    KWQCommandDelete *kwqc = new KWQCommandDelete(this);
+    m_undoStack->push(kwqc);
+  }
 }
 
 
