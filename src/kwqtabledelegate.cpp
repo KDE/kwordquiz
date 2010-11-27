@@ -151,7 +151,7 @@ void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & op
     QPalette::ColorGroup cg = QPalette::Normal;
     opt.palette.setColor(cg, QPalette::Text, Qt::red);
   }
-
+  opt.font = index.data(Qt::FontRole).value<QFont>();
   drawDisplay(painter, opt, opt.rect, index.data(Qt::DisplayRole).toString());
   if (!index.data(KWQTableModel::SoundRole).isNull())
     painter->fillRect(option.rect.right() - 3, option.rect.top(), 4, 4, Qt::red);
