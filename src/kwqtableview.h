@@ -82,7 +82,7 @@ protected slots:
   void horizontalHeaderDataChanged(Qt::Orientation, int, int);
 
 private:
-  void createPages(QPrinter *, QTextDocument *);
+  void createPages(QPrinter *, QTextDocument *, bool);
   bool selectionHasMoreThanText();
 
   QString m_currentText;

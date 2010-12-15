@@ -80,7 +80,7 @@ void KWQTableView::doPrint()
   if (printDialog->exec() == QDialog::Accepted) {
     Prefs::setPrintStyle(p->printStyle());
     QTextDocument td;
-    createPages(&printer, &td);
+    createPages(&printer, &td, true);
   }
   delete printDialog;
 }
@@ -90,7 +90,7 @@ void KWQTableView::doPrintPreview()
   QPrinter printer;
   KPrintPreview preview(&printer, this);
   QTextDocument td;
-  createPages(&printer, &td);
+  createPages(&printer, &td, true);
   preview.exec();
 }
 
@@ -105,7 +105,8 @@ bool KWQTableView::doHtmlExport(const KUrl &url)
     QTextDocument td;
     td.setMetaInformation(QTextDocument::DocumentTitle, model()->sourceModel()->document()->title());
     QTextStream out(&data);
-    createPages(&printer, &td);
+    out.setCodec("utf-8");
+    createPages(&printer, &td, false);
     out << td.toHtml("utf-8");
     data.close();
     success = true;
@@ -113,7 +114,7 @@ bool KWQTableView::doHtmlExport(const KUrl &url)
   return success;
 }
 
-void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc)
+void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool sendToPrinter)
 {
   printer->setFullPage(true);
   int myDpi = printer->logicalDpiY();
@@ -206,7 +207,8 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc)
     constraints.append(QTextLength(QTextLength::FixedLength, verticalHeader()->width()));
     constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(0)));
     constraints.append(QTextLength(QTextLength::FixedLength, columnWidth(1)));
-    constraints.append(QTextLength(QTextLength::FixedLength, 50));
+    if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
+        constraints.append(QTextLength(QTextLength::FixedLength, 50));
     tableFormat.setColumnWidthConstraints(constraints);
 
     table->setFormat(tableFormat);
@@ -247,7 +249,8 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc)
     }
   }
 
-  textDoc->print(printer);
+  if (sendToPrinter)
+    textDoc->print(printer);
 }
 
 
