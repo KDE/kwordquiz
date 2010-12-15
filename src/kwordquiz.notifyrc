@@ -60,7 +60,7 @@ Comment[uk]=KWordQuiz
 Comment[vi]=Đố Từ K
 Comment[x-test]=xxKWordQuizxx
 Comment[zh_CN]=KWordQuiz
-Comment[zh_TW]=KWordQuiz
+Comment[zh_TW]=語言訓練
 
 [Event/QuizCorrect]
 Name=QuizCorrect
