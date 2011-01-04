@@ -292,7 +292,7 @@ void QAView::showQuestion(int i)
 
   picAnswer->setPixmap(KGlobal::iconLoader()->loadIcon(m_quiz->quizIcon(i, WQQuiz::qiRightCol), KIcon::Panel));  
 
-  //@todo handle keyboard layouts
+  //@todo handle keyboard tqlayouts
 }
 
 void QAView::slotApplySettings( )
@@ -311,7 +311,7 @@ void QAView::slotSpecChar( const TQChar & c)
       TQString s = txtAnswer->selectedText();
       int len = s.length();
       int ss = txtAnswer->selectionStart();
-      ls = ls.replace(ss, len, c);
+      ls = ls.tqreplace(ss, len, c);
       txtAnswer->setText(ls);
       txtAnswer->setSelection(ss, 1);
     }

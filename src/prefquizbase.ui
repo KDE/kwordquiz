@@ -4,7 +4,7 @@
     <property name="name">
         <cstring>PrefQuizBase</cstring>
     </property>
-    <property name="geometry">
+    <property name="tqgeometry">
         <rect>
             <x>0</x>
             <y>0</y>
@@ -12,7 +12,7 @@
             <height>356</height>
         </rect>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>300</width>
             <height>350</height>
@@ -128,7 +128,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>21</width>
                     <height>31</height>
@@ -162,7 +162,7 @@
                     <property name="sizeType">
                         <enum>Fixed</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>70</height>
@@ -287,7 +287,7 @@
 <slots>
     <slot>slotAutoFlipClicked()</slot>
 </slots>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>knuminput.h</includehint>
     <includehint>knuminput.h</includehint>

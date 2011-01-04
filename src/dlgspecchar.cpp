@@ -38,11 +38,11 @@ void DlgSpecChar::initDialog(const TQChar &_chr, const TQString &_font, bool /*_
 
     grid = new TQGridLayout( page, 1, 1, KDialog::marginHint(), KDialog::spacingHint() );
 
-    int t = (_chr.unicode()/256);
+    int t = (_chr.tqunicode()/256);
     
     charSelect = new KCharSelect( page, "", _font, _chr, t);
     connect(charSelect, TQT_SIGNAL(doubleClicked()),this, TQT_SLOT(slotDoubleClicked()));
-    charSelect->resize( charSelect->sizeHint() );
+    charSelect->resize( charSelect->tqsizeHint() );
     charSelect->enableFontCombo( false );
     grid->addWidget( charSelect, 0, 0 );
 

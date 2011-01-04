@@ -4,7 +4,7 @@
     <property name="name">
         <cstring>PrefCharacterBase</cstring>
     </property>
-    <property name="geometry">
+    <property name="tqgeometry">
         <rect>
             <x>0</x>
             <y>0</y>
@@ -12,7 +12,7 @@
             <height>356</height>
         </rect>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>300</width>
             <height>350</height>
@@ -52,7 +52,7 @@
             <property name="text">
                 <string>Note: Select Settings -&gt; Configure Shortcuts... to change the shortcut associated with each action.</string>
             </property>
-            <property name="alignment">
+            <property name="tqalignment">
                 <set>WordBreak|AlignVCenter</set>
             </property>
         </widget>
@@ -299,7 +299,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>220</width>
                     <height>30</height>
@@ -308,7 +308,7 @@
         </spacer>
         <widget class="QLayoutWidget" row="1" column="1">
             <property name="name">
-                <cstring>layout9</cstring>
+                <cstring>tqlayout9</cstring>
             </property>
             <grid>
                 <property name="name">
@@ -324,7 +324,7 @@
                     <property name="sizeType">
                         <enum>Fixed</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>30</width>
                             <height>50</height>
@@ -355,7 +355,7 @@
                     <property name="sizeType">
                         <enum>Fixed</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>31</width>
                             <height>31</height>
@@ -382,7 +382,7 @@
                     <property name="text">
                         <string>A</string>
                     </property>
-                    <property name="alignment">
+                    <property name="tqalignment">
                         <set>AlignBottom</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -402,7 +402,7 @@
     <tabstop>lstCharacters</tabstop>
     <tabstop>btnCharacter</tabstop>
 </tabstops>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kpushbutton.h</includehint>
 </includehints>

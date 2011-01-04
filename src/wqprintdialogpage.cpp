@@ -34,10 +34,10 @@ WQPrintDialogPage::WQPrintDialogPage(TQWidget *parent, const char *name )
 
   g = new TQButtonGroup(i18n("Select Type of Printout"), this );
   g->setColumnLayout(0, Qt::Vertical );
-  g->layout()->setSpacing( 6 );
-  g->layout()->setMargin( 11 );
-  TQGridLayout * v = new TQGridLayout( g->layout() );
-  v->setAlignment( Qt::AlignTop );
+  g->tqlayout()->setSpacing( 6 );
+  g->tqlayout()->setMargin( 11 );
+  TQGridLayout * v = new TQGridLayout( g->tqlayout() );
+  v->tqsetAlignment( Qt::AlignTop );
 
   rb0 = new TQRadioButton(i18n("Vocabulary &list"), g );
   v->addWidget( rb0, 0, 0 );

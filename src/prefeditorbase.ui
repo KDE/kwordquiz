@@ -4,7 +4,7 @@
     <property name="name">
         <cstring>PrefEditorBase</cstring>
     </property>
-    <property name="geometry">
+    <property name="tqgeometry">
         <rect>
             <x>0</x>
             <y>0</y>
@@ -12,7 +12,7 @@
             <height>256</height>
         </rect>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>250</width>
             <height>250</height>
@@ -113,7 +113,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>41</width>
                     <height>81</height>
@@ -122,5 +122,5 @@
         </spacer>
     </grid>
 </widget>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>
