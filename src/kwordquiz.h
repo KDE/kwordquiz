@@ -78,7 +78,7 @@ class KWordQuizApp : public KMainWindow
 
     bool saveAsFileName();
   protected:
-    /** save general Options like all bar positions and status as well as the tqgeometry and the recent file list to the configuration
+    /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file
      */
     void saveOptions();
@@ -165,14 +165,14 @@ class KWordQuizApp : public KMainWindow
     void slotEditMarkBlank();
     /** unmark word as blank */
     void slotEditUnmarkBlank();
-    /** find and tqreplace text */
+    /** find and replace text */
     void slotEditFind();
 
     /** define vocabulary languages */
     void slotVocabLanguages();
     /** define vocabulary fonts */
     void slotVocabFont();
-    /** define keyboard tqlayouts */
+    /** define keyboard layouts */
     void slotVocabKeyboard();
     /** define special characters */
     void slotVocabChar();
@@ -212,7 +212,7 @@ class KWordQuizApp : public KMainWindow
 
     /** changes the statusbar contents for the standard label permanently, used to indicate current actions.
      * @param text the text that is displayed in the statusbar */
-    void slotqStatusMsg(const TQString &text);
+    void slotStatusMsg(const TQString &text);
 
     /** applies changes from the preferences dialog */
     void slotApplyPreferences();

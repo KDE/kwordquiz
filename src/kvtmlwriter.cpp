@@ -81,9 +81,9 @@ KVTMLWriter::~KVTMLWriter()
 TQString KVTMLWriter::escape( const TQString & s)
 {
   TQString result = s;
-  result.tqreplace(TQChar('&'), "&amp;"); //must be done first 
-  result.tqreplace(TQChar('<'), "&lt;");
-  result.tqreplace(TQChar('>'), "&gt;");
+  result.replace(TQChar('&'), "&amp;"); //must be done first 
+  result.replace(TQChar('<'), "&lt;");
+  result.replace(TQChar('>'), "&gt;");
 
   return result;  
 }

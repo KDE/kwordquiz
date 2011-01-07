@@ -4,7 +4,7 @@
     <property name="name">
         <cstring>DlgSortBase</cstring>
     </property>
-    <property name="tqgeometry">
+    <property name="geometry">
         <rect>
             <x>0</x>
             <y>0</y>
@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="tqminimumSize">
+    <property name="minimumSize">
         <size>
             <width>200</width>
             <height>170</height>
@@ -35,7 +35,7 @@
         </property>
         <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>tqlayout6</cstring>
+                <cstring>layout6</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -139,5 +139,5 @@
         </widget>
     </grid>
 </widget>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 </UI>

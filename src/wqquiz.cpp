@@ -382,7 +382,7 @@ TQString WQQuiz::yourAnswer(int i, const TQString & s)
     else
       ls.append(s);
 
-    result = m_answerBlank.tqreplace("..........", "<u></u>");
+    result = m_answerBlank.replace("..........", "<u></u>");
 
     int offset = 0, counter = 0;
     while (offset >= 0)
@@ -474,7 +474,7 @@ TQString WQQuiz::blankAnswer(int i)
     rx.setMinimal(true);
     rx.setPattern("\\[.*\\]");
 
-    r.tqreplace(rx, "..........");
+    r.replace(rx, "..........");
 
     if (r != tTemp)
     {
@@ -517,8 +517,8 @@ TQString WQQuiz::answer(int i)
     s = m_table->text(li.oneOp(), j);
     if (Prefs::enableBlanks())
     {
-      s.tqreplace("[", "<u>");
-      s.tqreplace("]", "</u>");
+      s.replace("[", "<u>");
+      s.replace("]", "</u>");
       s.prepend("<qt>");
       s.append("</qt>");
     }
@@ -564,11 +564,11 @@ int WQQuiz::kbAnswer(int i)
 /*  WQListItem *li = m_list->at(i);
   if (li->question() == 0)
   {
-    //@todo return m_table ->tqlayoutLeft();
+    //@todo return m_table ->layoutLeft();
   }
   else
   {
-    //@todo return m_table -> tqlayoutRight();
+    //@todo return m_table -> layoutRight();
   }*/
   return 0;
 }

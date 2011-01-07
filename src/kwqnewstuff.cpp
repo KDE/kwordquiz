@@ -77,7 +77,7 @@ TQString KWQNewStuff::downloadDestination(KNS::Entry * entry)
 
   if (KStandardDirs::exists(file))
   {
-    int result = KMessageBox::questionYesNo(tqparentWidget(),
+    int result = KMessageBox::questionYesNo(parentWidget(),
         i18n("The file '%1' already exists. Do you want to overwrite it?")
         .arg(file),
         TQString::null,
@@ -85,7 +85,7 @@ TQString KWQNewStuff::downloadDestination(KNS::Entry * entry)
     if (result == KMessageBox::No)
       return TQString::null;
   }
-  KMessageBox::information(tqparentWidget(),
+  KMessageBox::information(parentWidget(),
     i18n("<qt>The selected file will now be downloaded and saved as\n<b>'%1'</b>.</qt>")
     .arg(file),
     TQString::null,

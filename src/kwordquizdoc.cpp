@@ -73,14 +73,14 @@ const KURL& KWordQuizDoc::URL() const
 
 void KWordQuizDoc::slotUpdateAllViews(KWordQuizView *sender)
 {
-  //m_view->tqrepaint();
+  //m_view->repaint();
   /*KWordQuizView *w;
   if(pViewList)
   {
     for(w=pViewList->first(); w!=0; w=pViewList->next())
     {
       if(w!=sender)
-        w->tqrepaint();
+        w->repaint();
     }
   }*/
 
@@ -317,7 +317,7 @@ bool KWordQuizDoc::openDocument(const KURL& url, bool append, int index)
     }
 
     g->setUpdatesEnabled(true);
-    g->tqrepaintContents();
+    g->repaintContents();
   }
   modified=false;
   if (append)

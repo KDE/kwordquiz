@@ -45,7 +45,7 @@ class KWQTableItem :public QTableItem
 {
 public:
   KWQTableItem( TQTable* table, EditType et, const TQString & text );
-  virtual int tqalignment() const;
+  virtual int alignment() const;
 };
 
 class KWordQuizView : public QTable
@@ -69,7 +69,7 @@ class KWordQuizView : public QTable
     void setFont( const TQFont &);
     void setText( int row, int col, const TQString &text );
 
-    /** tqcontains the implementation for printing functionality */
+    /** contains the implementation for printing functionality */
     void print(KPrinter *pPrinter);
     bool gridIsEmpty();
     void addUndo(const TQString & caption);
@@ -89,8 +89,8 @@ class KWordQuizView : public QTable
     bool checkSyntax(bool all, bool blanks);
     void saveCurrentSelection(bool clear);
   protected:
-    TQWidget * beginEdit(int row, int col, bool tqreplace);
-    void endEdit ( int row, int col, bool accept, bool tqreplace );
+    TQWidget * beginEdit(int row, int col, bool replace);
+    void endEdit ( int row, int col, bool accept, bool replace );
     void activateNextCell();
     void keyPressEvent( TQKeyEvent* );
     bool eventFilter( TQObject*, TQEvent* );

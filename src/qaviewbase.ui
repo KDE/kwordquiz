@@ -4,7 +4,7 @@
     <property name="name">
         <cstring>QAViewBase</cstring>
     </property>
-    <property name="tqgeometry">
+    <property name="geometry">
         <rect>
             <x>0</x>
             <y>0</y>
@@ -32,7 +32,7 @@
         </widget>
         <widget class="QLayoutWidget" row="7" column="0">
             <property name="name">
-                <cstring>tqlayout23</cstring>
+                <cstring>layout23</cstring>
             </property>
             <grid>
                 <property name="name">
@@ -50,7 +50,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -88,7 +88,7 @@
                     <property name="text">
                         <string>00</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignLeft</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -110,7 +110,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -141,7 +141,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -179,7 +179,7 @@
                     <property name="text">
                         <string>00</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignLeft</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -208,7 +208,7 @@
                     <property name="text">
                         <string>00</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignLeft</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -237,7 +237,7 @@
                     <property name="text">
                         <string>00</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignLeft</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -259,7 +259,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -282,7 +282,7 @@
         </widget>
         <widget class="QLayoutWidget" row="3" column="0">
             <property name="name">
-                <cstring>tqlayout51</cstring>
+                <cstring>layout51</cstring>
             </property>
             <grid>
                 <property name="name">
@@ -300,7 +300,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqminimumSize">
+                    <property name="minimumSize">
                         <size>
                             <width>0</width>
                             <height>32</height>
@@ -314,7 +314,7 @@
                     <property name="text">
                         <string>Previous Question</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -345,7 +345,7 @@
                     <property name="scaledContents">
                         <bool>false</bool>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>WordBreak|AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -367,7 +367,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -387,7 +387,7 @@
         </widget>
         <widget class="QLayoutWidget" row="4" column="0">
             <property name="name">
-                <cstring>tqlayout52</cstring>
+                <cstring>layout52</cstring>
             </property>
             <grid>
                 <property name="name">
@@ -405,7 +405,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqminimumSize">
+                    <property name="minimumSize">
                         <size>
                             <width>0</width>
                             <height>32</height>
@@ -419,7 +419,7 @@
                     <property name="text">
                         <string>Your Answer</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -450,7 +450,7 @@
                     <property name="scaledContents">
                         <bool>false</bool>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>WordBreak|AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -472,7 +472,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -492,7 +492,7 @@
         </widget>
         <widget class="QLayoutWidget" row="5" column="0">
             <property name="name">
-                <cstring>tqlayout53</cstring>
+                <cstring>layout53</cstring>
             </property>
             <grid>
                 <property name="name">
@@ -510,7 +510,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -538,7 +538,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqminimumSize">
+                    <property name="minimumSize">
                         <size>
                             <width>0</width>
                             <height>32</height>
@@ -552,7 +552,7 @@
                     <property name="text">
                         <string>Correct Answer</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -583,7 +583,7 @@
                     <property name="scaledContents">
                         <bool>false</bool>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>WordBreak|AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -597,7 +597,7 @@
         </widget>
         <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
-                <cstring>tqlayout54</cstring>
+                <cstring>layout54</cstring>
             </property>
             <grid>
                 <property name="name">
@@ -624,7 +624,7 @@
                     <property name="scaledContents">
                         <bool>false</bool>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>WordBreak|AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -646,7 +646,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignAuto</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -668,7 +668,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqminimumSize">
+                    <property name="minimumSize">
                         <size>
                             <width>0</width>
                             <height>32</height>
@@ -682,7 +682,7 @@
                     <property name="text">
                         <string>Language 2</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -704,7 +704,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -738,7 +738,7 @@
         </widget>
         <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>tqlayout57</cstring>
+                <cstring>layout57</cstring>
             </property>
             <grid>
                 <property name="name">
@@ -756,7 +756,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqminimumSize">
+                    <property name="minimumSize">
                         <size>
                             <width>0</width>
                             <height>20</height>
@@ -770,7 +770,7 @@
                     <property name="text">
                         <string>Language 1</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -792,7 +792,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqmaximumSize">
+                    <property name="maximumSize">
                         <size>
                             <width>32</width>
                             <height>32</height>
@@ -829,7 +829,7 @@
                     <property name="scaledContents">
                         <bool>false</bool>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>WordBreak|AlignTop</set>
                     </property>
                     <property name="toolTip" stdset="0">
@@ -865,5 +865,5 @@
 <slots>
     <slot access="private">slotCheck()</slot>
 </slots>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 </UI>

@@ -42,7 +42,7 @@ TQValueList<WQUndo> *KWordQuizView::m_undoList = 0L;
 KWQTableItem::KWQTableItem(TQTable* table, EditType et, const TQString & text) : TQTableItem(table, et, text)
 {}
 
-int KWQTableItem::tqalignment() const
+int KWQTableItem::alignment() const
 {
   bool num;
   bool ok1 = false;
@@ -77,7 +77,7 @@ KWordQuizView::~KWordQuizView()
 
 KWordQuizDoc *KWordQuizView::getDocument() const
 {
-  KWordQuizApp *theApp=(KWordQuizApp *) tqparentWidget();
+  KWordQuizApp *theApp=(KWordQuizApp *) parentWidget();
   return theApp->getDocument();
 }
 
@@ -284,16 +284,16 @@ bool KWordQuizView::gridIsEmpty()
   return true;
 }
 
-TQWidget * KWordQuizView::beginEdit( int row, int col, bool tqreplace )
+TQWidget * KWordQuizView::beginEdit( int row, int col, bool replace )
 {
   m_currentText = text(row, col);
-  cellEditor = TQTable::beginEdit(row, col, tqreplace);
+  cellEditor = TQTable::beginEdit(row, col, replace);
   if (cellEditor)
     cellEditor->installEventFilter(this);
   return cellEditor;
 }
 
-void KWordQuizView::endEdit( int row, int col, bool accept, bool tqreplace )
+void KWordQuizView::endEdit( int row, int col, bool accept, bool replace )
 {
   // this code gets called after enter and arrow keys, now we
   // only process if editing really has been done
@@ -302,7 +302,7 @@ void KWordQuizView::endEdit( int row, int col, bool accept, bool tqreplace )
   {
     if (((TQLineEdit *) cellWidget(row, col))->text() != m_currentText)
       addUndo(i18n("&Undo Entry"));
-    TQTable::endEdit(row, col, accept, tqreplace); //this will destroy the cellWidget
+    TQTable::endEdit(row, col, accept, replace); //this will destroy the cellWidget
     if (!text(row, col).isEmpty())
     {
       TQTableItem* itm;
@@ -555,7 +555,7 @@ void KWordQuizView::doEditInsert( )
   addSelection(TQTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
   setUpdatesEnabled(true);
-  tqrepaintContents();
+  repaintContents();
   getDocument()->setModified(true);
 }
 
@@ -666,7 +666,7 @@ void KWordQuizView::doEditMarkBlank( )
         st = st.prepend(delim_start);
         st = st.append(delim_end);
         int ss = l->selectionStart();
-        s = s.tqreplace(ss, len, st);
+        s = s.replace(ss, len, st);
         l->setText(s);
         l->setSelection(ss, st.length());
       }
@@ -691,7 +691,7 @@ void KWordQuizView::doEditUnmarkBlank( )
       s.remove(delim_start);
       s.remove(delim_end);
       int ss = l->selectionStart();
-      ls = ls.tqreplace(ss, len, s);
+      ls = ls.replace(ss, len, s);
       l->setText(ls);
       l->setSelection(ss, s.length());
     }
@@ -705,12 +705,12 @@ void KWordQuizView::doEditUnmarkBlank( )
         int fr = s.findRev(delim_start, cs);
         if (fr > 0)
         {
-          s = s.tqreplace(fr, 1, "");
+          s = s.replace(fr, 1, "");
           cs--;
         }
         int ff = s.find(delim_end, cs);
         if (ff > 0)
-          s = s.tqreplace(ff, 1, "");
+          s = s.replace(ff, 1, "");
 
         l->setText(s);
         l->setCursorPosition(cs);
@@ -805,7 +805,7 @@ void KWordQuizView::doVocabShuffle( )
   addSelection(TQTableSelection(m_currentSel.topRow(), m_currentSel.leftCol(), m_currentSel.bottomRow(), m_currentSel.rightCol()));
   setCurrentCell(m_currentRow, m_currentCol);
   setUpdatesEnabled(true);
-  tqrepaintContents();
+  repaintContents();
   getDocument()->setModified(true);
 }
 
@@ -870,7 +870,7 @@ void KWordQuizView::slotSpecChar(const TQChar & c)
       TQString s = l->selectedText();
       int len = s.length();
       int ss = l->selectionStart();
-      ls = ls.tqreplace(ss, len, c);
+      ls = ls.replace(ss, len, c);
       l->setText(ls);
       l->setSelection(ss, 1);
     }
