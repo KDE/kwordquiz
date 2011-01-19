@@ -147,6 +147,7 @@ void KWQTutor::loadFile()
     if (Prefs::startExerciseAsSoonAsFileIsLoaded())
       startStopPressed();
   }
+  delete fd;
 }
 
 void KWQTutor::showPrefMenu()
