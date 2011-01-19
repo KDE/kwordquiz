@@ -318,8 +318,11 @@ void KWQTableView::doEditClear()
   {
     if (selectionHasMoreThanText()) {
       QPointer<KWQClearDialog> clearDialog = new KWQClearDialog(this);
-      if (clearDialog->exec() == KDialog::Rejected)
+      if (clearDialog->exec() == KDialog::Rejected) {
+        delete clearDialog;
         return;
+      }
+      delete clearDialog;
     }
     else
     {
