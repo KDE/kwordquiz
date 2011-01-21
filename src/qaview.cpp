@@ -248,7 +248,7 @@ void QAView::showQuestion()
 
   QString layout = m_quiz->kbAnswer();
   if (!layout.isEmpty()) {
-    QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+    QDBusInterface kxkb("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts");
     if (kxkb.isValid())
       kxkb.call("setLayout", layout);
   }
