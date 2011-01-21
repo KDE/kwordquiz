@@ -750,7 +750,7 @@ void KWQTableView::updateKeyboardLayout()
     layout = model()->headerData(currentIndex().column(), Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
 
     if (!layout.isEmpty()) {
-        QDBusInterface kxkb("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+        QDBusInterface kxkb("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts");
         if (kxkb.isValid())
             kxkb.call("setLayout", layout);
     }

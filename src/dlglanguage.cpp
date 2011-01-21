@@ -47,7 +47,7 @@ DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): KDialog(parent)
 
     // keyboard layout
     // try to talk to kxbk - get a list of keyboard layouts
-    QDBusInterface kxbk("org.kde.kxkb", "/kxkb", "org.kde.KXKB");
+    QDBusInterface kxbk("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts");
     QDBusReply<QStringList> reply = kxbk.call("getLayoutsList");
     if (reply.isValid()) {
         QStringList layouts = reply;
