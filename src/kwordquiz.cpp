@@ -53,6 +53,7 @@
 #include <kwindowsystem.h>
 #include <kio/netaccess.h>
 #include <KFilterProxySearchLine>
+#include <KTemporaryFile>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
@@ -679,7 +680,7 @@ void KWordQuizApp::saveProperties(KConfigGroup &_cfg)
     KUrl url = m_doc->url();
     _cfg.writeEntry("filename", url.url());
     _cfg.writeEntry("modified", m_doc->isModified());
-    QString tempname = kapp->tempSaveName(url.url());
+    QString tempname = KTemporaryFile().fileName();
     QString tempurl = KUrl::toPercentEncoding(tempname);
     KUrl _url(tempurl);
     m_doc->saveAs(_url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
