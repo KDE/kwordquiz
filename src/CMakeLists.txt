@@ -3,7 +3,8 @@ add_subdirectory( pics ) # private icons
 add_subdirectory( icons ) # global icons
 add_subdirectory( examples )
 
-include_directories( ${CMAKE_SOURCE_DIR}/libkdeedu/keduvocdocument )
+find_path(LIBKEDUVOCDOCUMENT_INCLUDE_DIR keduvocdocument.h PATH_SUFFIXES libkdeedu)
+include_directories( ${LIBKEDUVOCDOCUMENT_INCLUDE_DIR} )
 
 
 ########### next target ###############
