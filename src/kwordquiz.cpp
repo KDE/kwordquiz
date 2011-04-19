@@ -1152,11 +1152,8 @@ void KWordQuizApp::slotQuizQA()
 void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *before)
 {
   Q_UNUSED(before);
-  if (m_quiz != 0)
-  {
-    delete(m_quiz);
-    m_quiz = 0;
-  }
+  delete(m_quiz);
+  m_quiz = 0;
   disconnect(quizCheck, 0, 0, 0);
   disconnect(flashKnow, 0, 0, 0);
   disconnect(flashDontKnow, 0, 0, 0);
