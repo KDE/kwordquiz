@@ -3,8 +3,13 @@ add_subdirectory( pics ) # private icons
 add_subdirectory( icons ) # global icons
 add_subdirectory( examples )
 
-find_package(LibKdeEdu REQUIRED)
-include_directories( ${LIBKEDUVOCDOCUMENT_INCLUDE_DIR} )
+if(${CMAKE_SOURCE_DIR} STREQUAL ${kwordquiz_SOURCE_DIR})
+    find_package(LibKdeEdu REQUIRED)
+    include_directories( ${LIBKDEEDU_INCLUDE_DIR} )
+else()
+    include_directories("${CMAKE_SOURCE_DIR}/libkdeedu/keduvocdocument")
+    set(LIBKDEEDU_KEDUVOCDOCUMENT_LIBRARIES keduvocdocument)
+endif()
 
 
 ########### next target ###############
