@@ -1,7 +1,7 @@
 /***************************************************************************
                                kwqcardscene.h
                              -------------------
-   copyright            : (C) 2009-2010 by Peter Hedlund
+   copyright            : (C) 2009-2011 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -22,6 +22,9 @@
 #include <QGraphicsSimpleTextItem>
 #include <QGraphicsRectItem>
 #include <QGraphicsLineItem>
+#include <QGraphicsPixmapItem>
+
+#include "kwqpixmapitem.h"
 
 class KWQCardScene : public QGraphicsScene
 {
@@ -56,8 +59,7 @@ private:
     QGraphicsSimpleTextItem *m_identifier;
     QGraphicsRectItem *m_textArea;
     QGraphicsTextItem *m_text;
-    QGraphicsRectItem *m_imageArea;
-    QGraphicsPixmapItem *m_pixmap;
+    KWQPixmapItem *m_pixmap;
 
     void realign(bool );
     void repositionText();

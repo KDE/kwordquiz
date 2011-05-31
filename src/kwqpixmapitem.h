@@ -1,7 +1,7 @@
 /***************************************************************************
-                                kwqcardview.h
+                               kwqpixmapitem.h
                              -------------------
-   copyright            : (C) 2009-2011 by Peter Hedlund
+   copyright            : (C) 2011 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -14,41 +14,24 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KWQCARDVIEW_H
-#define KWQCARDVIEW_H
 
-#include <QGraphicsView>
+#ifndef KWQPIXMAPITEM_H
+#define KWQPIXMAPITEM_H
 
-#include "kwqcardscene.h"
+#include <QGraphicsPixmapItem>
 
-class KWQCardScene;
-
-class KWQCardView : public QGraphicsView
+class KWQPixmapItem: public QGraphicsPixmapItem
 {
-Q_OBJECT
 public:
+    KWQPixmapItem(const QPixmap &pixmap, QGraphicsItem *parentItem = 0);
 
-    KWQCardView(QWidget *parent = 0);
-
-    QSize minimumSizeHint() const {if(scene()==0) return QSize(); else return qobject_cast<KWQCardScene*>(scene())->minimumSizeHint();}
-
-    void setIdentifier(const QString &);
-    void setText(const QString &);
-    void setTextColor(const QColor &);
-    void setTextFont(const QFont &);
-    void setCardColor(const QColor &);
-    void setFrameColor(const QColor &);
-    void setImage(const QPixmap &);
-
-signals:
-    void cardClicked();
-
-protected:
-    ///Overloaded to resize card.
-    void resizeEvent(QResizeEvent* event);
+public:
+    QRectF boundingRect() const;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0);
+    void setImageRect(const QRect &rect);
 
 private:
-    KWQCardScene *m_scene;
+    QRect m_imageRect;
 };
 
-#endif // KWQCARDVIEW_H
+#endif // KWQPIXMAPITEM_H

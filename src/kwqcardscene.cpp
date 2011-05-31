@@ -1,7 +1,7 @@
 /***************************************************************************
                               kwqcardscene.cpp
                              -------------------
-   copyright            : (C) 2009-2010 by Peter Hedlund
+   copyright            : (C) 2009-2011 by Peter Hedlund
    email                : peter.hedlund@kdemail.net
  ***************************************************************************/
 
@@ -55,13 +55,8 @@ KWQCardScene::KWQCardScene(QObject *parent) : QGraphicsScene(parent)
     f.setPointSize(12);
     m_text->setParentItem(m_textArea);
 
-    m_imageArea = addRect(textMargin, cardMargin * 4, cardWidth - (textMargin * 2), cardHeight - (cardMargin * 5));
-    m_imageArea->setPen(Qt::NoPen);
-    m_imageArea->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
-    m_imageArea->setZValue(3);
-
-    m_pixmap = addPixmap(QPixmap());
-    m_pixmap->setParentItem(m_imageArea);
+    m_pixmap = new KWQPixmapItem(QPixmap(), m_card);
+    m_pixmap->setImageRect(QRect(textMargin, cardMargin * 4, cardWidth - (textMargin * 2), cardHeight - (cardMargin * 5)));
 
     setIdentifier("");
     setText("");
@@ -119,18 +114,8 @@ void KWQCardScene::setFrameColor(const QColor &frameColor)
 
 void KWQCardScene::setImage(const QPixmap &image)
 {
-    if (!image.isNull()) {
-        realign(false);
-        QSize s;
-        s.setWidth(m_imageArea->rect().width());
-        s.setHeight(m_imageArea->rect().height());
-        m_pixmap->setPixmap(image.scaled(s, Qt::KeepAspectRatio));
-    }
-    else
-    {
-        realign(true);
-        m_pixmap->setPixmap(image); //clear image
-    }
+    realign(image.isNull());
+    m_pixmap->setPixmap(image);
     repositionText();
 }
 
@@ -139,7 +124,7 @@ void KWQCardScene::realign(bool textOnly)
     if (textOnly) {
         m_textArea->setRect(textMargin, cardMargin * 4, cardWidth - (textMargin * 2), cardHeight - (cardMargin * 5));
     } else {
-        m_imageArea->setRect(textMargin, cardMargin * 4, (cardWidth / 2) - textMargin,  cardHeight - (cardMargin * 5));
+        m_pixmap->setImageRect(QRect(textMargin, cardMargin * 4, (cardWidth / 2) - textMargin,  cardHeight - (cardMargin * 5)));
         m_textArea->setRect((cardWidth / 2), cardMargin * 4, (cardWidth / 2) - textMargin, cardHeight - (cardMargin * 5));
     }
 }
@@ -153,7 +138,7 @@ void KWQCardScene::repositionText()
         m_text->setTextWidth(cardWidth - (textMargin * 2));
         m_text->setPos(textMargin, h);
     } else {
-        h = ((cardMargin * 4) + ((cardHeight - (cardMargin * 5)) - m_pixmap->boundingRect().height()) / 2);
+        h = ((cardMargin * 4) + ((cardHeight - (cardMargin * 5)) - m_textArea->boundingRect().height()) / 2);
         m_pixmap->setPos(textMargin, h);
         h = ((cardMargin * 4) + ((cardHeight - (cardMargin * 5)) - m_text->boundingRect().height()) / 2);
         m_text->setTextWidth((cardWidth / 2) - textMargin);

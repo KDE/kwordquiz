@@ -38,6 +38,7 @@ set(kwordquiz_SRCS
    kwqcardview.cpp
    kwqquizview.cpp
    kwqcleardialog.cpp
+   kwqpixmapitem.cpp
    )
 
 
