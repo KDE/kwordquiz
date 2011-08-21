@@ -35,8 +35,8 @@
 <legalnotice>&FDLNotice;</legalnotice>
 
 
-<date>2008-08-24</date>
-<releaseinfo>0.8.9</releaseinfo>
+<date>2011-08-20</date>
+<releaseinfo>0.9.1 (&kde; 4.7)</releaseinfo>
 
 <abstract>
 <para>
@@ -88,7 +88,7 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-&kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. &kwordquiz; can also open .wql files created by &kwordquiz; for &Windows;, .csv files with comma separated text, and .xml.gz files created by Pauker (http://pauker.sourceforge.net).
+  &kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. &kwordquiz; should also open .wql files created by &kwordquiz; for &Windows;, .csv files with comma separated text, <ulink url="http://www.vokabeln.de/v1/download.htm">.voc files</ulink> created by the old version of Vokabeltrainer, <ulink url="http://xdxf.revdanica.com/down/">.xdxf files</ulink>, and .xml.gz files created by the old versions of <ulink url="http://pauker.sourceforge.net">Pauker</ulink>.
 </para>
 <para>
 &kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other &kde; programs. Another available option is comma separated text .csv.
@@ -104,7 +104,7 @@ You can have several files open at the same time and easily copy or move entries
 <title>Command Reference</title>
 
 <sect1 id="file_menu">
-<title>The <guimenu>File</guimenu> Menu</title>
+<title>The File Menu</title>
 
 <variablelist>
   <varlistentry>
@@ -162,12 +162,12 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo>
         </shortcut>
         <guimenu>File</guimenu>
-        <guimenuitem>Get New Vocabularies...</guimenuitem>
+        <guimenuitem>Download New Vocabularies...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Downloads</action> new vocabularies.
+        <action>Downloads</action> new vocabularies. Downloaded vocabularies can be found in <filename class="directory">$KDEHOME/share/apps/kvtml</filename> directory.
       </para>
     </listitem>
   </varlistentry>
@@ -223,6 +223,20 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
+        <guimenu>File</guimenu>
+        <guimenuitem>Print Preview</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Show</action> preview of the active vocabulary document printed by &kwordquiz;.
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
         <shortcut>
           <keycombo action="simul">&Ctrl;<keycap>W</keycap></keycombo>
         </shortcut>
@@ -258,7 +272,7 @@ You can have several files open at the same time and easily copy or move entries
 </sect1>
 
 <sect1 id="edit-menu">
-<title>The <guimenu>Edit</guimenu> Menu</title>
+<title>The Edit Menu</title>
 
 <variablelist>
 
@@ -350,9 +364,9 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-        </shortcut> -->
+        <shortcut>
+          <keycap>Del</keycap>
+        </shortcut>
         <guimenu>Edit</guimenu>
         <guimenuitem>Clear</guimenuitem>
       </menuchoice>
@@ -418,9 +432,6 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
-        </shortcut> -->
         <guimenu>Edit</guimenu>
         <guimenuitem>Unmark Blanks</guimenuitem>
       </menuchoice>
@@ -513,7 +524,7 @@ You can have several files open at the same time and easily copy or move entries
 </sect1>
 -->
 <sect1 id="vocabulary-menu">
-<title>The <guimenu>Vocabulary</guimenu> Menu</title>
+<title>The Vocabulary Menu</title>
 
 <variablelist>
 
@@ -524,12 +535,12 @@ You can have several files open at the same time and easily copy or move entries
           <keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo>
         </shortcut>
         <guimenu>Vocabulary</guimenu>
-        <guimenuitem>Column Titles...</guimenuitem>
+        <guimenuitem>Column Settings...</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
       <para>
-        <action>Define</action> the titles of the two columns in the vocabulary. Displays a <link linkend="dlg-languages">dialog</link>.
+        <action>Define</action> the titles, the keyboard layouts, and the widths of the two columns in the vocabulary. Displays a <link linkend="dlg-languages">dialog</link>.
       </para>
     </listitem>
   </varlistentry>
@@ -551,9 +562,38 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Link Image...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Specify</action> the image that should be linked with the current entry.
+      </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Vocabulary</guimenu>
+        <guimenuitem>Link Sound...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>Specify</action> the sound that should be linked with the current entry.
+      </para>
+    </listitem>
+  </varlistentry>
+
+<!-- Not in 0.9.1
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
           <keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
-        </shortcut> -->
+        </shortcut>
         <guimenu>Vocabulary</guimenu>
         <guimenuitem>Rows/Columns...</guimenuitem>
       </menuchoice>
@@ -564,6 +604,7 @@ You can have several files open at the same time and easily copy or move entries
       </para>
     </listitem>
   </varlistentry>
+-->
 
  <varlistentry>
     <term>
@@ -582,9 +623,6 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
-        <!-- <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
-        </shortcut>  -->
         <guimenu>Vocabulary</guimenu>
         <guimenuitem>Shuffle</guimenuitem>
       </menuchoice>
@@ -600,7 +638,7 @@ You can have several files open at the same time and easily copy or move entries
 </sect1>
 
 <sect1 id="mode-menu">
-<title>The <guimenu>Mode</guimenu> Menu</title>
+<title>The Mode Menu</title>
 <para>
 The menu provides five different modes for the quiz.</para>
 <para>
@@ -682,7 +720,7 @@ Note that the menu names will change to reflect the column titles of the current
 </sect1>
 
 <sect1 id="quiz-menu">
-<title>The <guimenu>Quiz</guimenu> Menu</title>
+<title>The Quiz Menu</title>
 
 <variablelist>
 
@@ -757,6 +795,20 @@ Note that the menu names will change to reflect the column titles of the current
   <varlistentry>
     <term>
       <menuchoice>
+        <guimenu>Quiz</guimenu>
+        <guimenuitem>Play Audio</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+	<action>Play</action> sound that was linked to the entry with <menuchoice><guimenu>Edit</guimenu> <guimenuitem>Link Sound</guimenuitem></menuchoice>.
+      </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice>
         <shortcut>
           <keycombo action="simul">&Ctrl;<keycap>R</keycap></keycombo>
         </shortcut>
@@ -806,7 +858,7 @@ Note that the menu names will change to reflect the column titles of the current
 </sect1>
 
 <sect1 id="settings-menu">
-<title>The <guimenu>Settings</guimenu> Menu</title>
+<title>The Settings Menu</title>
 
 <variablelist>
   <varlistentry>
@@ -942,7 +994,7 @@ Note that the menu names will change to reflect the column titles of the current
 </sect1>
 
 <sect1 id="help-menu">
-<title>The <guimenu>Help</guimenu> Menu</title>
+<title>The Help Menu</title>
 &help.menu.documentation;
 </sect1>
 </chapter>
@@ -983,7 +1035,7 @@ A <link linkend="question-and-answer">question and answer</link> session can be 
 <title>The Vocabulary Editor</title>
 
 <para>
-The vocabulary document area has the appearance of a spreadsheet-like grid. The grid consists of cells organized in two columns and a number of rows. Each column and row has a header. The column headers are used to specify the titles of the vocabulary document. They can be set by selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Titles...</guimenuitem></menuchoice>. The row headers number the rows consecutively.
+The vocabulary document area has the appearance of a spreadsheet-like grid. The grid consists of cells organized in two columns and a number of rows. Each column and row has a header. The column headers are used to specify the titles of the vocabulary document. They can be set by selecting <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Settings...</guimenuitem></menuchoice>. The row headers number the rows consecutively.
 </para>
 <para>
 The column headers can also be used to sort the vocabulary. Simply click on the header of the column you want to sort by. 
@@ -1224,7 +1276,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
 <chapter id="printing">
 <title>Printing</title>
 <para>
-&kwordquiz; provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard &kde; print dialog. In order to get access to the special &kwordquiz; features you need to click on the <guibutton>Options&gt;&gt;</guibutton> to see the Vocabulary Options tab. On this tab you can select to print the document as a vocabulary list (&ie; as displayed in the editor), a vocabulary exam, or as flashcards.
+  &kwordquiz; provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard &kde; print dialog. In order to get access to the special &kwordquiz; features you need to click on the <guibutton>Options&gt;&gt;</guibutton> to see the <guilabel>Vocabulary Options</guilabel> tab. On this tab you can select to print the document as a vocabulary list (&ie; as displayed in the editor), a vocabulary exam, or as flashcards.
 </para>
 <screenshot>
   <screeninfo>Vocabulary Printing Options</screeninfo>
@@ -1271,7 +1323,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
 </screenshot>
 
 <formalpara>
-<title>Flashcard</title>
+<title>Flashcards</title>
 <para> Two 3" x 5" cards per page. The cards will always be printed in landscape.</para>
 </formalpara>
 <screenshot>
@@ -1287,6 +1339,131 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
 </screenshot>
 
 </chapter>
+
+<chapter id="tutor">
+<title>The Tutor Mode</title>
+
+<para>
+  &kwordquiz; can be started in the Tutor mode. In this mode application pops up words in the chosen vocabulary randomly at certain time intervals. To start &kwordquiz; in the Tutor mode press <keycombo>&Alt;<keycap>F2</keycap></keycombo> and enter <userinput><command>kwordquiz</command> <option>-g tutor <replaceable>vocabulary_file.kvtml</replaceable></option></userinput>. The part with <replaceable>vocabulary_file.kvtml</replaceable> can be omitted.
+</para>
+<screenshot>
+  <screeninfo>Welcome message of the Tutor mode</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG" />
+    </imageobject>
+    <textobject>
+      <phrase>Welcome message of the Tutor mode</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+  After press <guibutton>OK</guibutton> button &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject> <imageobject> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject> </inlinemediaobject> menu (it can be opened with &RMB; click on the icon).
+</para>
+
+<para>
+  There are four items in this menu:
+   <variablelist>
+     <varlistentry>
+       <term><guimenuitem>Start Exercise</guimenuitem></term>
+       <listitem>
+	 <para>
+	   <action>Start</action> the Tutor exercise.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term><guimenuitem>Open...</guimenuitem></term>
+       <listitem>
+	 <para>
+	   <action>Open</action> an existing vocabulary documents.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term><guimenuitem>Configure &kwordquiz; Tutor...</guimenuitem></term>
+       <listitem>
+	 <para>
+	   <action>Open</action> the Tutor configuration dialog.
+	 </para>
+	 <screenshot>
+	   <screeninfo>The Tutor Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG" />
+	     </imageobject>
+	     <textobject>
+	       <phrase>The Tutor Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel>Tutor Settings</guilabel> page you can configure time intervals between the flashcards changes, flashcard appearance, and choose the option to <guilabel>Start exercise as soon as the user opens vocabulary file</guilabel>.
+	 </para>
+	 <para>
+	   In the current version, you can choose between <guilabel>Native</guilabel> and <guilabel>Minimalistic</guilabel> flashcard appearances.
+	 </para>
+	 <screenshot>
+	   <screeninfo>The Native flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG" />
+	     </imageobject>
+	     <textobject>
+	       <phrase>The Native flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Native appearance for the fancy vocabularies with images.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo>The Minimalistic flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG" />
+	     </imageobject>
+	     <textobject>
+	       <phrase>The Minimalistic flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Minimalistic appearance for the simple vocabularies.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo>The Shortcuts Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG" />
+	     </imageobject>
+	     <textobject>
+	       <phrase>The Shortcuts Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel>Shortcuts Settings</guilabel> page you can configure shortcuts for the Tutor actions. The defaults are <keycombo>&Ctrl;&Alt;<keycap>J</keycap></keycombo> for the closing and <keycombo>&Ctrl;&Alt;<keycap>H</keycap></keycombo> for the flipping of the flashcard.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term><guimenuitem>Quit</guimenuitem></term>
+       <listitem>
+	 <para>
+	   <action>Quit</action> &kwordquiz;.
+	 </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+
 
 <chapter id="dialogs">
 <title>Dialogs</title>
@@ -1412,8 +1589,8 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
 </sect1>
 
 <sect1 id="dlg-languages">
-<title>Column Titles</title>
-<para>You can open this dialog from the menubar with <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Titles...</guimenuitem></menuchoice></para>
+<title>Column Settings</title>
+<para>You can open this dialog from the menubar with <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Settings...</guimenuitem></menuchoice></para>
 <screenshot>
   <screeninfo>Column Titles</screeninfo>
   <mediaobject>
@@ -1421,12 +1598,12 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
       <imagedata fileref="kwq-dlg-languages.png" format="PNG" />
     </imageobject>
     <textobject>
-      <phrase>Column Titles</phrase>
+      <phrase>Column Settings</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
 <para>
-Use this dialog to define the column titles of the vocabulary. Select <guibutton>OK</guibutton> to make your changes or <guibutton>Cancel</guibutton> to discard any changes.
+Use this dialog to define the column titles, keyboard layouts and widths of the vocabulary. Select <guibutton>OK</guibutton> to make your changes or <guibutton>Cancel</guibutton> to discard any changes.
 </para>
 </sect1>
 
@@ -1450,6 +1627,7 @@ Use this dialog to select any special character you want to associate with the c
 
 </sect1>
 
+<!-- Not in 0.9.1
 <sect1 id="dlg-rows-columns">
 <title>Rows/Columns</title>
 <para>You can open this dialog from the menubar with <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Rows/Columns...</guimenuitem></menuchoice></para>
@@ -1474,7 +1652,7 @@ Specifying a number of rows lower than what currently is in the vocabulary may l
 </warning>
 
 </sect1>
-
+-->
 </chapter>
 
 <chapter id="faq">
