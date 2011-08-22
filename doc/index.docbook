@@ -801,7 +801,7 @@ Note that the menu names will change to reflect the column titles of the current
     </term>
     <listitem>
       <para>
-	<action>Play</action> sound that was linked to the entry with <menuchoice><guimenu>Edit</guimenu> <guimenuitem>Link Sound</guimenuitem></menuchoice>.
+	<action>Play</action> sound that was linked to the entry with <menuchoice><guimenu>Vocabulary</guimenu> <guimenuitem>Link Sound</guimenuitem></menuchoice>.
       </para>
     </listitem>
   </varlistentry>
@@ -1359,7 +1359,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
 </screenshot>
 
 <para>
-  After press <guibutton>OK</guibutton> button &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject> <imageobject> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject> </inlinemediaobject> menu (it can be opened with &RMB; click on the icon).
+  After pressing <guibutton>OK</guibutton> button, &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject> <imageobject> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject> </inlinemediaobject> menu (it can be opened with &RMB; click on the icon).
 </para>
 
 <para>
@@ -1592,7 +1592,7 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
 <title>Column Settings</title>
 <para>You can open this dialog from the menubar with <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Column Settings...</guimenuitem></menuchoice></para>
 <screenshot>
-  <screeninfo>Column Titles</screeninfo>
+  <screeninfo>Column Settings</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="kwq-dlg-languages.png" format="PNG" />
