@@ -167,7 +167,15 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Downloads</action> new vocabularies. Downloaded vocabularies can be found in <filename class="directory">$KDEHOME/share/apps/kvtml</filename> directory.
+        <action>Downloads</action> new vocabularies. Downloaded vocabularies 
+	can be found in <filename class="directory">$KDEHOME/share/apps/kvtml</filename> 
+	directory. <envar>$KDEHOME</envar> is usually
+	a hidden folder in your Home folder called <filename class="directory">.kde</filename> 
+	or <filename class="directory">.kde4</filename>
+	<!-- "$KDEHOME" is not always defined eg not in kubuntu 11.04
+	<filename class="directory">`kde4-config - -localprefix`/share/apps/kvtml</filename> 
+	(without whitespace between '- -') is afaik always defined
+	  -->
       </para>
     </listitem>
   </varlistentry>
@@ -795,6 +803,9 @@ Note that the menu names will change to reflect the column titles of the current
   <varlistentry>
     <term>
       <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;<keycap>B</keycap></keycombo>
+        </shortcut>
         <guimenu>Quiz</guimenu>
         <guimenuitem>Play Audio</guimenuitem>
       </menuchoice>
@@ -1180,7 +1191,7 @@ In the example below the user gave a correct answer to the previous question (to
   </mediaobject>
 </screenshot>
 <para>
-Your question is shown on the top left. Type your answer in the edit field. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> or <keycap>Enter</keycap> to see if the answer is correct.
+Your question is shown on the top left. Type your answer in the edit field. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> or &Enter; to see if the answer is correct.
 </para>
 <para>
 The previous question is shown below the current. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
@@ -1503,7 +1514,7 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
   </mediaobject>
 </screenshot>
 <para>
-You can configure the behavior of the <keycap>Enter</keycap> key when working in the editor.
+You can configure the behavior of the &Enter; key when working in the editor.
 </para>
 <para>
 You can also select if the functions for <link linkend="fill-in-the-blank">Fill-in-the-blank</link> should be activated. Turning them off will speed up performance a little.
