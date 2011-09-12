@@ -1388,7 +1388,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
        <term><guimenuitem>Open...</guimenuitem></term>
        <listitem>
 	 <para>
-	   <action>Open</action> an existing vocabulary documents.
+	   <action>Open</action> an existing vocabulary document.
 	 </para>
        </listitem>
      </varlistentry>
