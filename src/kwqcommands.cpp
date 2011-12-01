@@ -55,6 +55,9 @@ KWQUndoCommand::KWQUndoCommand(KWQTableView * view) : QUndoCommand()
   m_view = view;
   m_currentIndex = m_view->selectionModel()->currentIndex();  
   m_selectedIndexes = m_view->selectionModel()->selectedIndexes();
+  if (m_selectedIndexes.isEmpty())
+      m_selectedIndexes.append(m_currentIndex);
+      
   foreach (const QModelIndex &index, m_selectedIndexes) {
     IndexAndData id;
     id.index = index;
