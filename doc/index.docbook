@@ -1228,6 +1228,7 @@ Consider the following table. It could be a vocabulary in &kwordquiz;:
 <informaltable><tgroup cols="3">
 <thead>
 <row>
+<entry></entry>
 <entry>English</entry>
 <entry>German</entry>
 </row>
