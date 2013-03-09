@@ -63,7 +63,7 @@ class KWordQuizApp : public KXmlGuiWindow
     /**
      * construtor of KWordQuizApp, calls all init functions to create the application.
      */
-    KWordQuizApp(QWidget* parent=0);
+    explicit KWordQuizApp(QWidget* parent=0);
 
     /**
      * destructor

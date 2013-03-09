@@ -30,7 +30,7 @@ class KWQTableDelegate : public QItemDelegate
 {
   Q_OBJECT
   public:
-    KWQTableDelegate(QObject *parent = 0);
+    explicit KWQTableDelegate(QObject *parent = 0);
 
     QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 

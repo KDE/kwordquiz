@@ -23,7 +23,7 @@
 class KWQPixmapItem: public QGraphicsPixmapItem
 {
 public:
-    KWQPixmapItem(const QPixmap &pixmap, QGraphicsItem *parentItem = 0);
+    explicit KWQPixmapItem(const QPixmap &pixmap, QGraphicsItem *parentItem = 0);
 
 public:
     QRectF boundingRect() const;

@@ -28,7 +28,7 @@ class KWQCardView : public QGraphicsView
 Q_OBJECT
 public:
 
-    KWQCardView(QWidget *parent = 0);
+    explicit KWQCardView(QWidget *parent = 0);
 
     QSize minimumSizeHint() const {if(scene()==0) return QSize(); else return qobject_cast<KWQCardScene*>(scene())->minimumSizeHint();}
 

@@ -27,7 +27,7 @@ class KWQScoreWidget : public QWidget, public Ui::KWQScoreWidgetBase
 {
 public:
   enum CountDirection {cdCorrect, cdError};
-  KWQScoreWidget(QWidget *parent);
+  explicit KWQScoreWidget(QWidget *parent);
 
   void clear();
 

@@ -28,7 +28,7 @@ class PrefGeneral : public QWidget, public Ui::PrefGeneralBase
 {
 Q_OBJECT
 public:
-  PrefGeneral(QWidget *parent);
+  explicit PrefGeneral(QWidget *parent);
 };
 
 #endif

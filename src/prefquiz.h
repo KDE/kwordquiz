@@ -28,7 +28,7 @@ class PrefQuiz : public QWidget, public Ui::PrefQuizBase
 {
 Q_OBJECT
 public:
-  PrefQuiz(QWidget *parent);
+  explicit PrefQuiz(QWidget *parent);
 
 };
 

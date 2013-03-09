@@ -28,7 +28,7 @@ class PrefTutor : public QWidget, public Ui::PrefTutorBase
 {
 Q_OBJECT
 public:
-  PrefTutor(QWidget *parent);
+  explicit PrefTutor(QWidget *parent);
 
 private slots:
   void timingChanged(int);

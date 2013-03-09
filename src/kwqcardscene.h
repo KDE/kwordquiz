@@ -31,7 +31,7 @@ class KWQCardScene : public QGraphicsScene
 Q_OBJECT
 public:
 
-    KWQCardScene(QObject *parent = 0);
+    explicit KWQCardScene(QObject *parent = 0);
 
     /**
     * The smallest the view can be when 'auto-zoom' is off

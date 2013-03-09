@@ -43,7 +43,7 @@ public:
     SoundRole
   };
 
-  KWQTableModel(QObject * parent = 0);
+  explicit KWQTableModel(QObject * parent = 0);
   ~KWQTableModel();
 
   void setDocument(KEduVocDocument * doc);

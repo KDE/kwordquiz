@@ -53,7 +53,7 @@ typedef QList<ColumnData> ColumnDataList;
 class KWQUndoCommand : public QUndoCommand
 {
 public:
-  KWQUndoCommand(KWQTableView *view);
+  explicit KWQUndoCommand(KWQTableView *view);
 
   virtual void undo();
   virtual void redo() {};
@@ -74,7 +74,7 @@ private:
 class KWQCommandClear : public KWQUndoCommand
 {
 public:
-   KWQCommandClear(KWQTableView *view);
+   explicit KWQCommandClear(KWQTableView *view);
    virtual void redo();
 };
 
@@ -82,7 +82,7 @@ public:
 class KWQCommandCut : public KWQCommandClear
 {
 public:
-   KWQCommandCut(KWQTableView *view);
+   explicit KWQCommandCut(KWQTableView *view);
    virtual void redo();
 };
 
@@ -90,7 +90,7 @@ public:
 class KWQCommandPaste : public KWQUndoCommand
 {
 public:
-  KWQCommandPaste(KWQTableView *view);
+  explicit KWQCommandPaste(KWQTableView *view);
   virtual void undo();
   virtual void redo();
 private:
@@ -159,7 +159,7 @@ private:
 class KWQCommandInsert : public KWQUndoCommand
 {
 public:
-  KWQCommandInsert(KWQTableView *view);
+  explicit KWQCommandInsert(KWQTableView *view);
   virtual void undo();
   virtual void redo();
 };
@@ -168,7 +168,7 @@ public:
 class KWQCommandDelete : public KWQUndoCommand
 {
 public:
-  KWQCommandDelete(KWQTableView *view);
+  explicit KWQCommandDelete(KWQTableView *view);
   virtual void undo();
   virtual void redo();
 private:
@@ -179,7 +179,7 @@ private:
 class KWQCommandUnmarkBlank : public KWQUndoCommand
 {
 public:
-  KWQCommandUnmarkBlank(KWQTableView *view);
+  explicit KWQCommandUnmarkBlank(KWQTableView *view);
   //virtual void undo();
   virtual void redo();
 };

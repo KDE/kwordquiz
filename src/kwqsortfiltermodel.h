@@ -31,7 +31,7 @@ class KWQSortFilterModel : public QSortFilterProxyModel
 {
   Q_OBJECT
   public:
-    KWQSortFilterModel(QObject *parent = 0);
+    explicit KWQSortFilterModel(QObject *parent = 0);
 
     void setSourceModel(KWQTableModel * sourceModel);
     KWQTableModel * sourceModel() const;

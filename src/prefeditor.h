@@ -28,7 +28,7 @@ class PrefEditor : public QWidget, public Ui::PrefEditorBase
 {
 Q_OBJECT
 public:
-  PrefEditor(QWidget *parent);
+  explicit PrefEditor(QWidget *parent);
 
 };
 
