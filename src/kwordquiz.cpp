@@ -53,7 +53,6 @@
 #include <kwindowsystem.h>
 #include <kio/netaccess.h>
 #include <KFilterProxySearchLine>
-#include <KTemporaryFile>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
