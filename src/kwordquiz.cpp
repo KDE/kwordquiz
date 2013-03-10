@@ -829,19 +829,21 @@ void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
 
 void KWordQuizApp::slotFileGHNS()
 {
-  KNS3::DownloadDialog getHotNewStuffDialog("kwordquiz.knsrc", this);
-  getHotNewStuffDialog.exec();  
+  QPointer<KNS3::DownloadDialog> getHotNewStuffDialog = new KNS3::DownloadDialog("kwordquiz.knsrc", this);
+  getHotNewStuffDialog->exec();
+  KNS3::Entry::List entries = getHotNewStuffDialog->changedEntries();
   
   // list of changed entries
-  foreach(const KNS3::Entry& entry, getHotNewStuffDialog.changedEntries()) {
+  foreach(const KNS3::Entry& entry, entries) {
     // check mime type and if kvtml, open it	
     foreach(const QString &file, entry.installedFiles()) { 
       KMimeType::Ptr mimeType = KMimeType::findByPath(file);
       if (mimeType->name() == "application/x-kvtml") {
-	KProcess::startDetached("kwordquiz", QStringList() << file);
+	    KProcess::startDetached("kwordquiz", QStringList() << file);
       }
     }
   }
+  delete getHotNewStuffDialog;
 }
 
 

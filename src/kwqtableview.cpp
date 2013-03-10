@@ -88,10 +88,11 @@ void KWQTableView::doPrint()
 void KWQTableView::doPrintPreview()
 {
   QPrinter printer;
-  KPrintPreview preview(&printer, this);
+  QPointer<KPrintPreview> preview = new KPrintPreview(&printer, this);
   QTextDocument td;
   createPages(&printer, &td, true);
-  preview.exec();
+  preview->exec();
+  delete preview;
 }
 
 bool KWQTableView::doHtmlExport(const KUrl &url)
