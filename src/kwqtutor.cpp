@@ -157,7 +157,7 @@ void KWQTutor::showPrefMenu()
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
   KWQTutorPrefs* dialog = new KWQTutorPrefs(0, "settings",  Prefs::self(), m_globalCollection);
-  connect(dialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplyPreferences()));
+  connect(dialog, SIGNAL(settingsChanged(QString)), this, SLOT(slotApplyPreferences()));
   dialog->show();
 }
 

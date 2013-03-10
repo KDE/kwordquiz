@@ -26,14 +26,14 @@ PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
   setupUi(this);
 
   connect(flipButton, SIGNAL(clicked()), this, SLOT(slotFlipButtonClicked()));
-  connect(kcfg_FrontFont, SIGNAL(fontSelected(const QFont&)), this, SLOT(slotFontChanged(const QFont&)));
-  connect(kcfg_FrontTextColor, SIGNAL(changed(const QColor&)), this, SLOT(slotTextColorChanged(const QColor&)));
-  connect(kcfg_FrontCardColor, SIGNAL(changed(const QColor&)), this, SLOT(slotCardColorChanged(const QColor&)));
-  connect(kcfg_FrontFrameColor, SIGNAL(changed(const QColor&)), this, SLOT(slotFrameColorChanged(const QColor&)));
-  connect(kcfg_BackFont, SIGNAL(fontSelected(const QFont&)), this, SLOT(slotFontChanged(const QFont&)));
-  connect(kcfg_BackTextColor, SIGNAL(changed(const QColor&)), this, SLOT(slotTextColorChanged(const QColor&)));
-  connect(kcfg_BackCardColor, SIGNAL(changed(const QColor&)), this, SLOT(slotCardColorChanged(const QColor&)));
-  connect(kcfg_BackFrameColor, SIGNAL(changed(const QColor&)), this, SLOT(slotFrameColorChanged(const QColor&)));
+  connect(kcfg_FrontFont, SIGNAL(fontSelected(QFont)), this, SLOT(slotFontChanged(QFont&)));
+  connect(kcfg_FrontTextColor, SIGNAL(changed(QColor)), this, SLOT(slotTextColorChanged(QColor)));
+  connect(kcfg_FrontCardColor, SIGNAL(changed(QColor)), this, SLOT(slotCardColorChanged(QColor)));
+  connect(kcfg_FrontFrameColor, SIGNAL(changed(QColor)), this, SLOT(slotFrameColorChanged(QColor)));
+  connect(kcfg_BackFont, SIGNAL(fontSelected(QFont)), this, SLOT(slotFontChanged(QFont)));
+  connect(kcfg_BackTextColor, SIGNAL(changed(QColor)), this, SLOT(slotTextColorChanged(QColor)));
+  connect(kcfg_BackCardColor, SIGNAL(changed(QColor)), this, SLOT(slotCardColorChanged(QColor)));
+  connect(kcfg_BackFrameColor, SIGNAL(changed(QColor)), this, SLOT(slotFrameColorChanged(QColor)));
   connect(widgetStack, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentChanged(int)));
 
   widgetStack->setCurrentWidget(frontStackPage);

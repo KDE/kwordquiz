@@ -38,9 +38,9 @@ MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection)
   m_choicesButtons->addButton(opt1, 1);
   m_choicesButtons->addButton(opt2, 2);
   m_choicesButtons->addButton(opt3, 3);
-  connect(m_choicesButtons, SIGNAL(buttonClicked(int )), this, SLOT(slotChoiceClicked(int )));
+  connect(m_choicesButtons, SIGNAL(buttonClicked(int)), this, SLOT(slotChoiceClicked(int)));
   m_choicesActions = new QActionGroup(this);
-  connect(m_choicesActions, SIGNAL(triggered(QAction *)), this, SLOT(slotChoiceActionTriggered(QAction *)));
+  connect(m_choicesActions, SIGNAL(triggered(QAction*)), this, SLOT(slotChoiceActionTriggered(QAction*)));
   m_choicesActions->addAction(m_actionCollection->action("quiz_Opt1"));
   m_choicesActions->addAction(m_actionCollection->action("quiz_Opt2"));
   m_choicesActions->addAction(m_actionCollection->action("quiz_Opt3"));

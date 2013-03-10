@@ -28,7 +28,7 @@ KWQClearDialog::KWQClearDialog(QWidget* parent): KDialog(parent)
     setButtons(Ok|Cancel);
     setupUi(mainWidget());
 
-    connect(clearButtonGroup, SIGNAL(changed(int )), this, SLOT(buttonGroupChanged(int)));
+    connect(clearButtonGroup, SIGNAL(changed(int)), this, SLOT(buttonGroupChanged(int)));
 
     updateCheckBoxes();
 }

@@ -123,7 +123,7 @@ void KWordQuizApp::initActions()
   fileOpen->setToolTip(fileOpen->whatsThis());
   fileOpen->setStatusTip(fileOpen->whatsThis());
 
-  fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(const KUrl&)), actionCollection());
+  fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(KUrl)), actionCollection());
   
   fileGHNS = KNS3::standardAction(i18n("Download New Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
   fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
@@ -164,8 +164,8 @@ void KWordQuizApp::initActions()
   editUndo = m_undoStack->createUndoAction(actionCollection());
   editRedo = m_undoStack->createRedoAction(actionCollection());
   connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(slotCleanChanged(bool)));
-  connect(m_undoStack, SIGNAL(undoTextChanged(const QString &)), this, SLOT(slotUndoTextChanged(const QString &)));
-  connect(m_undoStack, SIGNAL(redoTextChanged(const QString &)), this, SLOT(slotRedoTextChanged(const QString &)));
+  connect(m_undoStack, SIGNAL(undoTextChanged(QString)), this, SLOT(slotUndoTextChanged(QString)));
+  connect(m_undoStack, SIGNAL(redoTextChanged(QString)), this, SLOT(slotRedoTextChanged(QString)));
 
   editCut = KStandardAction::cut(this, SLOT(slotEditCut()), actionCollection());
   editCut->setWhatsThis(i18n("Cuts the text from the selected cells and places it on the clipboard"));
@@ -281,7 +281,7 @@ void KWordQuizApp::initActions()
   vocabLayouts->setMenu(m);
   
   m_layoutActionGroup = new QActionGroup(this);
-  connect(m_layoutActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotLayoutActionGroupTriggered(QAction *)));
+  connect(m_layoutActionGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotLayoutActionGroupTriggered(QAction*)));
   
   m_modeActionMenu = actionCollection()->add<KActionMenu>("mode_0");
   m_modeActionMenu->setIcon(KIcon("mode1"));
@@ -293,7 +293,7 @@ void KWordQuizApp::initActions()
   connect(m_modeActionMenu, SIGNAL(triggered(bool)), this, SLOT(slotModeChange()));
 
   m_modeActionGroup = new QActionGroup(this);
-  connect(m_modeActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotModeActionGroupTriggered(QAction *)));
+  connect(m_modeActionGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotModeActionGroupTriggered(QAction*)));
 
   for (int i = 1; i <=5; ++i) {
     a = actionCollection()->addAction(QString("mode_%1").arg(QString::number(i)));
@@ -440,7 +440,7 @@ void KWordQuizApp::initActions()
   configNotifications->setToolTip(configNotifications->whatsThis());
   configNotifications->setStatusTip(configNotifications->whatsThis());
 
-  configApp = KStandardAction::preferences(this, SLOT( slotConfigure()), actionCollection());
+  configApp = KStandardAction::preferences(this, SLOT(slotConfigure()), actionCollection());
   configApp->setWhatsThis(i18n("Specifies preferences for the vocabulary editor and quiz sessions"));
   configApp->setToolTip(configApp->whatsThis());
   configApp->setToolTip(configApp->whatsThis());
@@ -508,7 +508,7 @@ void KWordQuizApp::initView()
   m_pageWidget = new KPageWidget(this);
   m_pageWidget->setFaceType( KPageView::List );
   setCentralWidget(m_pageWidget);
-  connect(m_pageWidget, SIGNAL(currentPageChanged(KPageWidgetItem *, KPageWidgetItem *)), this, SLOT(slotCurrentPageChanged(KPageWidgetItem *, KPageWidgetItem *)));
+  connect(m_pageWidget, SIGNAL(currentPageChanged(KPageWidgetItem*, KPageWidgetItem*)), this, SLOT(slotCurrentPageChanged(KPageWidgetItem*, KPageWidgetItem*)));
 
   QVBoxLayout *editorLayout = new QVBoxLayout();
   editorLayout->setMargin(0);
@@ -527,7 +527,7 @@ void KWordQuizApp::initView()
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
   setCaption(m_doc->url().fileName(),false);
   m_tableView->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(m_tableView, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(slotTableContextMenuRequested(const QPoint &)));
+  connect(m_tableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotTableContextMenuRequested(QPoint)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
 
   m_searchLine->setVisible(Prefs::showSearch());
@@ -1174,7 +1174,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     }
     m_quiz = new KWQQuizModel(this);
     m_quiz->setSourceModel(m_sortFilterModel);
-    connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
+    connect(m_quiz, SIGNAL(checkingAnswer(int)), m_tableView, SLOT(slotCheckedAnswer(int)));
     m_quiz->setQuizType(Prefs::EnumStartSession::Flashcard);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
@@ -1206,7 +1206,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     }
     m_quiz = new KWQQuizModel(this);
     m_quiz->setSourceModel(m_sortFilterModel);
-    connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
+    connect(m_quiz, SIGNAL(checkingAnswer(int)), m_tableView, SLOT(slotCheckedAnswer(int)));
     m_quiz->setQuizType(Prefs::EnumStartSession::MultipleChoice);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
@@ -1235,7 +1235,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     }
     m_quiz = new KWQQuizModel(this);
     m_quiz->setSourceModel(m_sortFilterModel);
-    connect(m_quiz, SIGNAL(checkingAnswer(int )), m_tableView, SLOT(slotCheckedAnswer(int )));
+    connect(m_quiz, SIGNAL(checkingAnswer(int)), m_tableView, SLOT(slotCheckedAnswer(int)));
     m_quiz->setQuizType(Prefs::EnumStartSession::QA);
     m_quiz->setQuizMode(Prefs::mode());
     if (m_quiz->init())
@@ -1277,7 +1277,7 @@ void KWordQuizApp::slotConfigure()
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
   KWordQuizPrefs* dialog = new KWordQuizPrefs(this, "settings",  Prefs::self(), actionCollection());
-  connect(dialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplyPreferences()));
+  connect(dialog, SIGNAL(settingsChanged(QString)), this, SLOT(slotApplyPreferences()));
   dialog->show();
 }
 

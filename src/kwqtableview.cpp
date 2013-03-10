@@ -59,7 +59,7 @@ KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(
   setSelectionBehavior(QAbstractItemView::SelectItems);
   setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
-  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
+  connect(horizontalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(horizontalHeaderResized(int,int,int)));
   connect(horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(slotHeaderClicked(int)));
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
@@ -627,9 +627,9 @@ void KWQTableView::setModel(KWQSortFilterModel * model)
   m_model = model;
   setCurrentIndex(model->index(0, 0));
   scrollTo(currentIndex());
-  connect(verticalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(verticalHeaderResized(int, int, int)));
-  connect(horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(horizontalHeaderResized(int, int, int)));
-  connect(m_model, SIGNAL(headerDataChanged(Qt::Orientation, int, int)), this, SLOT(horizontalHeaderDataChanged(Qt::Orientation, int, int)));
+  connect(verticalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(verticalHeaderResized(int,int,int)));
+  connect(horizontalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(horizontalHeaderResized(int,int,int)));
+  connect(m_model, SIGNAL(headerDataChanged(Qt::Orientation,int,int)), this, SLOT(horizontalHeaderDataChanged(Qt::Orientation,int,int)));
 }
 
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)

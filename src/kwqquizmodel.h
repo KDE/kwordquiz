@@ -35,7 +35,7 @@ class KWQQuizModel : public QSortFilterProxyModel
 public:
     enum QuizIcon {IconLeftCol, IconRightCol, IconQuestion, IconCorrect, IconError};
 
-    KWQQuizModel(QObject *parent);
+    explicit KWQQuizModel(QObject *parent);
 
     void setSourceModel(KWQSortFilterModel * sourceModel);
     KWQSortFilterModel * sourceModel() const;
