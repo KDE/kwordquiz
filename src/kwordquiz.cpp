@@ -508,7 +508,7 @@ void KWordQuizApp::initView()
   m_pageWidget = new KPageWidget(this);
   m_pageWidget->setFaceType( KPageView::List );
   setCentralWidget(m_pageWidget);
-  connect(m_pageWidget, SIGNAL(currentPageChanged(KPageWidgetItem*, KPageWidgetItem*)), this, SLOT(slotCurrentPageChanged(KPageWidgetItem*, KPageWidgetItem*)));
+  connect(m_pageWidget, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), this, SLOT(slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
 
   QVBoxLayout *editorLayout = new QVBoxLayout();
   editorLayout->setMargin(0);
