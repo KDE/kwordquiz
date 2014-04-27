@@ -751,13 +751,8 @@ bool KWordQuizApp::queryClose()
   if (completed)
     if (m_dirWatch->contains(m_doc->url().toLocalFile()))
       m_dirWatch->removeFile(m_doc->url().toLocalFile());
-  return completed;
-}
-
-bool KWordQuizApp::queryExit()
-{
   saveOptions();
-  return true;
+  return completed;
 }
 
 
