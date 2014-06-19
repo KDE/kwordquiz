@@ -12,3 +12,4 @@ find_package(LibKdeEdu REQUIRED)
 add_subdirectory( doc )
 add_subdirectory( src ) 
 
+install(FILES kwordquiz.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/)
