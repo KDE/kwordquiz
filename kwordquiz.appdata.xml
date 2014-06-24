@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KWordQuiz</name>
+  <name xml:lang="cs">KWordQuiz</name>
   <name xml:lang="fi">KWordQuiz</name>
   <name xml:lang="nds">KWordQuiz</name>
   <name xml:lang="nl">KWordQuiz</name>
@@ -14,6 +15,7 @@
   <name xml:lang="uk">KWordQuiz</name>
   <name xml:lang="x-test">xxKWordQuizxx</name>
   <summary>Flash Card Trainer</summary>
+  <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
   <summary xml:lang="fi">Sanaston harjoittelu kysymyskorteilla</summary>
   <summary xml:lang="nds">Koorten-Lehrprogramm</summary>
   <summary xml:lang="nl">Woorden oefenen</summary>
