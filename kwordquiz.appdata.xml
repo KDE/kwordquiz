@@ -28,6 +28,7 @@
   <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
   <summary xml:lang="de">Karteikartentrainer</summary>
   <summary xml:lang="en-GB">Flash Card Trainer</summary>
+  <summary xml:lang="es">Entrenador de tarjetas</summary>
   <summary xml:lang="et">Sähvikute treening</summary>
   <summary xml:lang="fi">Sanaston harjoittelu kysymyskorteilla</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
@@ -46,6 +47,7 @@
     <p>KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
     <p xml:lang="ca">El KWordQuiz és un programa de targetes ràpides de propòsit general. Es pot utilitzar per aprendre vocabulari altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar fitxers de col·laboracions a l'aplicació.</p>
     <p xml:lang="en-GB">KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
+    <p xml:lang="es">KWordQuiz es un programa de tarjetas de propósito general. Se puede utilizar para aprender vocabulario y otras muchas tareas. Proporciona un editor y cinco modos de tarjetas diferentes. Utiliza el formato de archivo KVTML y los archivos con los que han contribuido los usuarios se pueden descargar desde la aplicación.</p>
     <p xml:lang="et">KWordQuiz on üldotstarbeline sähvikute rakendus. Seda saab kasutada sõnavara omandamiseks, aga veel paljuks muuks. Rakendus pakub redaktorit ja viit eri viisi korraldada sähvikute abil viktoriine. Failivorminguks on KVTML, mis lubab otse rakenduses alla laadida teiste kasutajate loodud huvitavaid faile.</p>
     <p xml:lang="fi">KWordQuiz on yleiskäyttöinen kysymyskorttiohjelma. Sitä voi käyttää sanastojen ja monen muun harjoittelemiseen. Siinä on muokkain ja viisi erilaista kyselytapaa. Se käyttää KVTML-tiedostomuotoa ja lahjoitettuja tiedostoja voi ladata suoraan ohjelmasta.</p>
     <p xml:lang="it">KWordQuiz è un programma di carte mnemoniche. Può essere usato per l'apprendimento di vocaboli e moltre altre materie. Fornisce un editor e cinque diversi tipi di quiz con carte menmoniche. Usa il formato di file KVTML e permette di scaricare file inviati da altri utenti.</p>
