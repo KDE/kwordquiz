@@ -19,28 +19,27 @@
 
 #include <QtCore/QFile>
 #include <QtCore/QPointer>
-#include <QPainter>
-#include <QClipboard>
 #include <QLineEdit>
 #include <QKeyEvent>
 #include <QList>
 #include <QApplication>
-#include <QtGui/QPrinter>
-#include <QtGui/QPrintDialog>
-#include <QtGui/QTextCursor>
-#include <QtGui/QTextTable>
-#include <QtGui/QTextLayout>
-#include <QtGui/QAbstractTextDocumentLayout>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QFileDialog>
+#include <QTextCursor>
+#include <QTextTable>
+#include <QTextLayout>
+#include <QAbstractTextDocumentLayout>
 #include <QHeaderView>
 #include <QtDBus/QDBusInterface>
+#include <QDebug>
 
-#include <KLocale>
-#include <KGlobalSettings>
+#include <KLocalizedString>
 #include <KNotification>
-#include <KDebug>
 #include <kdeprintdialog.h>
 #include <KPrintPreview>
 #include <KFileDialog>
+#include <KConfigGroup>
 
 #include "kwqtablemodel.h"
 #include "keduvocdocument.h"
@@ -48,10 +47,13 @@
 #include "prefs.h"
 #include "kwqcommands.h"
 #include "kwqcleardialog.h"
+#include "version.h"
 
 //krazy:excludeall=qclasses
 
-KWQTableView::KWQTableView(KUndoStack *undoStack, QWidget *parent) : QTableView(parent), m_undoStack(undoStack)
+KWQTableView::KWQTableView(QUndoStack *undoStack, QWidget *parent)
+    : QTableView(parent)
+    , m_undoStack(undoStack)
 {
   m_model = 0;
 
@@ -95,11 +97,11 @@ void KWQTableView::doPrintPreview()
   delete preview;
 }
 
-bool KWQTableView::doHtmlExport(const KUrl &url)
+bool KWQTableView::doHtmlExport(const QUrl &url)
 {
   bool success = false;
 
-  KUrl tmp(url);
+  QUrl tmp(url);
   QFile data(tmp.path());
   if (data.open(QFile::WriteOnly)) {
     QPrinter printer;
@@ -123,8 +125,8 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool s
   if (Prefs::printStyle() == Prefs::EnumPrintStyle::Flashcard) {
     printer->setOrientation(QPrinter::Landscape);
 
-    int cardWidth = qRound(5 * myDpi);
-    int cardHeight = qRound(3 * myDpi);
+    int cardWidth = qRound(5 * qreal(myDpi));
+    int cardHeight = qRound(3 * qreal(myDpi));
 
     QTextTable *table = textDoc->rootFrame()->lastCursorPosition().insertTable(model()->rowCount(), 2);
 
@@ -145,7 +147,7 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool s
     headerFormat.setAlignment(Qt::AlignLeft);
 
     QTextCharFormat headerCharFormat;
-    headerCharFormat.setFont(KGlobalSettings::generalFont());
+    headerCharFormat.setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
 
     QTextBlockFormat cellFormat;
     cellFormat.setAlignment(Qt::AlignCenter);
@@ -185,7 +187,7 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool s
   }
   else
   {
-    textDoc->rootFrame()->lastCursorPosition().insertText(KGlobal::caption());
+    textDoc->rootFrame()->lastCursorPosition().insertText(QString("kwordquiz %1").arg(KWQ_VERSION));
 
     if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
       textDoc->rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
@@ -218,7 +220,7 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool s
     headerFormat.setAlignment(Qt::AlignHCenter);
 
     QTextCharFormat headerCharFormat;
-    headerCharFormat.setFont(KGlobalSettings::generalFont());
+    headerCharFormat.setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
 
     QTextCursor cellCursor;
     cellCursor = table->cellAt(0, 1).firstCursorPosition();
@@ -319,7 +321,7 @@ void KWQTableView::doEditClear()
   {
     if (selectionHasMoreThanText()) {
       QPointer<KWQClearDialog> clearDialog = new KWQClearDialog(this);
-      if (clearDialog->exec() == KDialog::Rejected) {
+      if (clearDialog->exec() == QDialog::Rejected) {
         delete clearDialog;
         return;
       }
@@ -622,7 +624,7 @@ void KWQTableView::slotCheckedAnswer(int i)
   }
 }
 
-void KWQTableView::setModel(KWQSortFilterModel * model)
+void KWQTableView::setFilterModel(KWQSortFilterModel *model)
 {
   QTableView::setModel(model);
   m_model = model;
@@ -673,7 +675,7 @@ void KWQTableView::adjustRow(int row)
 
 void KWQTableView::verticalHeaderResized(int , int , int)
 {
-  //kDebug() << "Row resized\n";
+  //qDebug() << "Row resized\n";
 }
 
 void KWQTableView::horizontalHeaderResized(int logicalIndex, int oldSize, int newSize)
@@ -714,9 +716,9 @@ void KWQTableView::slotHeaderClicked(int column)
 
 void KWQTableView::doVocabImage()
 {
-  KUrl currentUrl = model()->data(currentIndex(), KWQTableModel::ImageRole).toString();
+  QUrl currentUrl = model()->data(currentIndex(), KWQTableModel::ImageRole).toString();
 
-  KUrl imageUrl = KFileDialog::getImageOpenUrl(currentUrl, this, i18n("Select Image"));
+  QUrl imageUrl = KFileDialog::getImageOpenUrl(currentUrl, this, i18n("Select Image"));
   if (!imageUrl.isEmpty()) {
     KWQCommandImage *kwqc = new KWQCommandImage(this, imageUrl);
     m_undoStack->push(kwqc);
@@ -726,9 +728,9 @@ void KWQTableView::doVocabImage()
 
 void KWQTableView::doVocabSound()
 {
-  KUrl currentUrl = model()->data(currentIndex(), KWQTableModel::SoundRole).toString();
+  QUrl currentUrl = model()->data(currentIndex(), KWQTableModel::SoundRole).toString();
 
-  KUrl soundUrl = KFileDialog::getOpenUrl(currentUrl, i18n("*|All Files"), this, i18n("Select Sound"));
+  QUrl soundUrl = QFileDialog::getOpenFileUrl(this, i18n("Select Sound"), currentUrl, i18n("*|All Files"));
   if (!soundUrl.isEmpty()) {
     KWQCommandSound *kwqc = new KWQCommandSound(this, soundUrl);
     m_undoStack->push(kwqc);
@@ -770,5 +772,3 @@ bool KWQTableView::selectionHasMoreThanText()
 
   return result;
 }
-
-#include "kwqtableview.moc"

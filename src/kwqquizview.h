@@ -21,14 +21,14 @@
 #ifndef KWQQUIZVIEW_H
 #define KWQQUIZVIEW_H
 
-#include <QtGui/QWidget>
-#include <Phonon/MediaObject>
-#include <Phonon/Path>
-#include <Phonon/AudioOutput>
-#include <Phonon/Global>
+#include <QWidget>
+#include <phonon/MediaObject>
+#include <phonon/Path>
+#include <phonon/AudioOutput>
+#include <phonon/Global>
 
 #include <KActionCollection>
-#include <KUrl>
+#include <QUrl>
 
 class KWQQuizModel;
 
@@ -57,8 +57,8 @@ class KWQQuizView : public QWidget
     KActionCollection *m_actionCollection;
 
     void audioPlayAnswer();
-    void audioPlayQuestion(); 
-    void audioPlayFile(const KUrl & soundFile, bool);
+    void audioPlayQuestion();
+    void audioPlayFile(const QUrl &soundFile, bool);
 
   private:
     class Phonon::MediaObject *m_player;

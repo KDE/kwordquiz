@@ -18,10 +18,9 @@
 #ifndef KWQCOMMANDS_H
 #define KWQCOMMANDS_H
 
-#include <QHeaderView>
 #include <QUndoCommand>
 
-#include <KLocale>
+#include <KLocalizedString>
 
 #include "kwqtableview.h"
 #include "kwqsortfiltermodel.h"
@@ -120,7 +119,7 @@ class KWQCommandEntry : public KWQUndoCommand
 {
 public:
   KWQCommandEntry(KWQTableView *view, const QString oldText, const QString newText)
-    : KWQUndoCommand(view), m_oldText(oldText), m_newText(newText) 
+    : KWQUndoCommand(view), m_oldText(oldText), m_newText(newText)
       { setText(i18n("Entry")); }
 
   virtual void redo()
@@ -200,26 +199,26 @@ private:
 class KWQCommandImage : public KWQUndoCommand
 {
 public:
-  KWQCommandImage(KWQTableView *view, const KUrl &);
+  KWQCommandImage(KWQTableView *view, const QUrl &);
   virtual void undo();
   virtual void redo();
 
 private:
-  KUrl m_oldUrl;
-  KUrl m_newUrl;
+  QUrl m_oldUrl;
+  QUrl m_newUrl;
 };
 
 
 class KWQCommandSound : public KWQUndoCommand
 {
 public:
-  KWQCommandSound(KWQTableView *view, const KUrl &);
+  KWQCommandSound(KWQTableView *view, const QUrl &);
   virtual void undo();
   virtual void redo();
 
 private:
-  KUrl m_oldUrl;
-  KUrl m_newUrl;
+  QUrl m_oldUrl;
+  QUrl m_newUrl;
 };
 
 #endif // KWQCOMMANDS_H

@@ -19,8 +19,7 @@
 
 #include "kwqtablemodel.h"
 
-#include <KLocale>
-#include <KIcon>
+#include <KLocalizedString>
 
 #include "prefs.h"
 #include "documentsettings.h"
@@ -29,7 +28,7 @@
 KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
   m_doc = 0;
-  m_decorationCache = new KPixmapCache("kwordquiz");
+  m_decorationCache = new KImageCache("kwordquiz", 10485760);
 }
 
 KWQTableModel::~KWQTableModel()
@@ -67,9 +66,9 @@ QVariant KWQTableModel::data(const QModelIndex & index, int role) const
     case Qt::DecorationRole:
       image = m_doc->lesson()->entries(KEduVocLesson::Recursive).value(index.row())->translation(index.column())->imageUrl().toLocalFile();
       if (!image.isEmpty()) {
-        if (!m_decorationCache->find(image, ip)) {
+        if (!m_decorationCache->findPixmap(image, &ip)) {
           ip = QPixmap(image).scaled(QSize(22, 22), Qt::KeepAspectRatio);
-          m_decorationCache->insert(image, ip);
+          m_decorationCache->insertPixmap(image, ip);
         }
       }
       return ip;
@@ -308,5 +307,3 @@ KEduVocLesson * KWQTableModel::currentLesson(int row)
   }
   return m_doc->lesson();
 }
-
-#include "kwqtablemodel.moc"

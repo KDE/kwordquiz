@@ -410,7 +410,7 @@ void KWQCommandIdentifiers::redo()
 }
 
 
-KWQCommandImage::KWQCommandImage(KWQTableView *view, const KUrl &newUrl) : KWQUndoCommand(view), m_newUrl(newUrl)
+KWQCommandImage::KWQCommandImage(KWQTableView *view, const QUrl &newUrl) : KWQUndoCommand(view), m_newUrl(newUrl)
 {
   setText(i18nc("@item:inmenu undo link image", "Link Image"));
   m_oldUrl = view->model()->data(oldCurrentIndex(), KWQTableModel::ImageRole).toString();
@@ -429,7 +429,7 @@ void KWQCommandImage::redo()
 }
 
 
-KWQCommandSound::KWQCommandSound(KWQTableView *view, const KUrl &newUrl) : KWQUndoCommand(view), m_newUrl(newUrl)
+KWQCommandSound::KWQCommandSound(KWQTableView *view, const QUrl &newUrl) : KWQUndoCommand(view), m_newUrl(newUrl)
 {
   setText(i18nc("@item:inmenu undo link sound", "Link Sound"));
   m_oldUrl = view->model()->data(oldCurrentIndex(), KWQTableModel::SoundRole).toString();

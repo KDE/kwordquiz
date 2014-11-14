@@ -22,8 +22,7 @@
 
 #include <QTimer>
 
-#include <KIconLoader>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KNotification>
 
 #include "kwqquizmodel.h"
@@ -51,7 +50,7 @@ void FlashView::init()
   m_actionCollection->action("quiz_audio_play")->setEnabled(false);
 
   // reset last file
-  audioPlayFile(KUrl(), true);
+  audioPlayFile(QUrl(), true);
 
   connect(flashcard, SIGNAL(cardClicked()), this, SLOT(slotCheck()), Qt::UniqueConnection);
 
@@ -167,5 +166,3 @@ void FlashView::slotApplySettings( )
 
   score ->setAsPercent(Prefs::percent());
 }
-
-#include "flashview.moc"

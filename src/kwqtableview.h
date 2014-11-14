@@ -19,11 +19,10 @@
 #define KWQTABLEVIEW_H
 
 #include <QTableView>
-#include <QList>
 #include <QKeyEvent>
-#include <QtGui/QTextDocument>
+#include <QTextDocument>
 
-#include <KUndoStack>
+#include <QUndoStack>
 
 #include "kwqsortfiltermodel.h"
 #include "kwqtabledelegate.h"
@@ -33,20 +32,22 @@
 @author Peter Hedlund
 */
 
+class QPrinter;
+
 class KWQTableView : public QTableView
 {
 Q_OBJECT
 public:
   /** Constructor for the main view */
-  explicit KWQTableView(KUndoStack *undoStack, QWidget *parent = 0);
+  explicit KWQTableView(QUndoStack *undoStack, QWidget *parent = 0);
 
-  void setModel(KWQSortFilterModel * model);
+  void setFilterModel(KWQSortFilterModel * model);
   KWQSortFilterModel * model() {return m_model;};
 
   /** contains the implementation for printing functionality */
   void doPrint();
   void doPrintPreview();
-  bool doHtmlExport(const KUrl &);
+  bool doHtmlExport(const QUrl &);
 
   void doEditCut();
   void doEditCopy();
@@ -82,6 +83,9 @@ protected slots:
   void horizontalHeaderDataChanged(Qt::Orientation, int, int);
 
 private:
+  // Disable from public calling; use setFilterModel() instead.
+  //void setModel(QAbstractItemModel *model);
+
   void createPages(QPrinter *, QTextDocument *, bool);
   bool selectionHasMoreThanText();
 
@@ -89,7 +93,7 @@ private:
 
   KWQTableDelegate * m_delegate;
   KWQSortFilterModel *m_model;
-  KUndoStack *m_undoStack;
+  QUndoStack *m_undoStack;
 };
 
 #endif // KWORDQUIZVIEW_H

@@ -20,10 +20,10 @@
 
 #include "multipleview.h"
 
-#include <QtGui/QButtonGroup>
+#include <QButtonGroup>
 
 #include <KIconLoader>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KNotification>
 #include <KActionCollection>
 
@@ -199,5 +199,3 @@ void MultipleView::slotApplySettings()
 {
   score->setAsPercent(Prefs::percent());
 }
-
-#include "multipleview.moc"

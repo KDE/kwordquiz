@@ -19,8 +19,8 @@
 #ifndef WQPRINTDIALOGPAGE_H
 #define WQPRINTDIALOGPAGE_H
 
-#include <QtGui/QGroupBox>
-#include <QtGui/QButtonGroup>
+#include <QGroupBox>
+#include <QButtonGroup>
 
 #include "prefs.h"
 

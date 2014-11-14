@@ -36,7 +36,7 @@ KWQQuizModel::KWQQuizModel(QObject *parent) : QSortFilterProxyModel(parent)
 }
 
 
-void KWQQuizModel::setSourceModel(KWQSortFilterModel * sourceModel)
+void KWQQuizModel::setFilterModel(KWQSortFilterModel * sourceModel)
 {
     m_sourceModel = sourceModel;
     QSortFilterProxyModel::setSourceModel(sourceModel);
@@ -396,21 +396,21 @@ QString KWQQuizModel::answer()
 }
 
 
-KUrl KWQQuizModel::soundQuestion()
+QUrl KWQQuizModel::soundQuestion()
 {
     int row =  m_list.at(m_currentQuestion);
     int col = column(row);
     col == 0 ? col = 1 : col = 0;
  
-    KUrl soundUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::SoundRole).toString();
+    QUrl soundUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::SoundRole).toString();
     return soundUrl.toLocalFile();
 }
  
 
-KUrl KWQQuizModel::soundAnswer()
+QUrl KWQQuizModel::soundAnswer()
 {
     int row =  m_list.at(m_currentQuestion);
-    KUrl soundUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::SoundRole).toString();
+    QUrl soundUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::SoundRole).toString();
     return soundUrl.toLocalFile();
 }
 
@@ -421,7 +421,7 @@ QPixmap KWQQuizModel::imageQuestion()
     int col = column(row);
     col == 0 ? col = 1 : col = 0;
 
-    KUrl imageUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::ImageRole).toString();
+    QUrl imageUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::ImageRole).toString();
     return QPixmap(imageUrl.toLocalFile());
 }
 
@@ -429,7 +429,7 @@ QPixmap KWQQuizModel::imageQuestion()
 QPixmap KWQQuizModel::imageAnswer()
 {
     int row =  m_list.at(m_currentQuestion);
-    KUrl imageUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::ImageRole).toString();
+    QUrl imageUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::ImageRole).toString();
     return QPixmap(imageUrl.toLocalFile());
 }
 

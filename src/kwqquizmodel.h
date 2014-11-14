@@ -37,7 +37,7 @@ public:
 
     explicit KWQQuizModel(QObject *parent);
 
-    void setSourceModel(KWQSortFilterModel * sourceModel);
+    void setFilterModel(KWQSortFilterModel * sourceModel);
     KWQSortFilterModel * sourceModel() const;
 
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
@@ -71,8 +71,8 @@ public:
     QString langAnswer();
     QPixmap imageQuestion();
     QPixmap imageAnswer();
-    KUrl soundQuestion();
-    KUrl soundAnswer();
+    QUrl soundQuestion();
+    QUrl soundAnswer();
 
     QString kbAnswer();
 
@@ -83,6 +83,10 @@ signals:
 
 protected:
     bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
+
+    // Disable from external calls; use setFilterModel() instead
+    // (It's not even implemented so will give a link error anyway.)
+    //void setSourceModel(QAbstractItemModel * sourceModel);
 
 private:
     KWQSortFilterModel * m_sourceModel;

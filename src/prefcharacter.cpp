@@ -18,8 +18,7 @@
 
 #include "prefcharacter.h"
 
-#include <KAction>
-#include <KLocale>
+#include <KLocalizedString>
 
 #include "prefs.h"
 #include "dlgspecchar.h"
@@ -135,5 +134,3 @@ void PrefCharacter::slotSpecChar(QChar c)
   lblPreview->setText(CharacterTree->currentItem()->text(2));
   emit widgetModified();
 }
-
-#include "prefcharacter.moc"

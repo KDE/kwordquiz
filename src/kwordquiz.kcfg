@@ -3,9 +3,8 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
-  <include>kglobalsettings.h</include>
   <kcfgfile name="kwordquizrc"/>
-
+  <include>QFontDatabase</include>
   <group name="General">
     <entry name="FirstRun" type="Bool">
       <label>Is this the first time KWordQuiz is run?</label>
@@ -46,7 +45,7 @@
     </entry>
     <entry name="EditorFont" type="Font">
       <label>Font used in the editor</label>
-      <default code="true">KGlobalSettings::generalFont()</default>
+      <default code="true">QFontDatabase::systemFont(QFontDatabase::GeneralFont)</default>
     </entry>
     <entry name="EnableBlanks" type="Bool">
       <label>If Fill-in-the-blank should be enabled</label>
@@ -110,7 +109,7 @@
   <group name="FlashCard">
     <entry name="FrontFont" type="Font">
       <label>Font used for front of flashcard</label>
-      <default code="true">KGlobalSettings::generalFont()</default>
+      <default code="true">QFontDatabase::systemFont(QFontDatabase::GeneralFont)</default>
     </entry>
     <entry name="FrontTextColor" type="Color">
       <label>Color used for text on front of flashcard</label>
@@ -126,7 +125,7 @@
     </entry>
     <entry name="BackFont" type="Font">
       <label>Font used for back of flashcard</label>
-      <default code="true">KGlobalSettings::generalFont()</default>
+      <default code="true">QFontDatabase::systemFont(QFontDatabase::GeneralFont)</default>
     </entry>
     <entry name="BackTextColor" type="Color">
       <label>Color used for text on back of flashcard</label>

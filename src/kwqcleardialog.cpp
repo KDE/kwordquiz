@@ -18,15 +18,32 @@
 
 */
 
+// Own
 #include "kwqcleardialog.h"
 
+// Qt
+#include <QPushButton>
+#include <QDialogButtonBox>
+
+// Kwq
 #include "prefs.h"
 
-KWQClearDialog::KWQClearDialog(QWidget* parent): KDialog(parent)
+KWQClearDialog::KWQClearDialog(QWidget* parent): QDialog(parent)
 {
-    setCaption(i18n("Clear Contents"));
-    setButtons(Ok|Cancel);
-    setupUi(mainWidget());
+    setWindowTitle(i18n("Clear Contents"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
+    mainLayout->addWidget(buttonBox);
+    setupUi(mainWidget);
 
     connect(clearButtonGroup, SIGNAL(changed(int)), this, SLOT(buttonGroupChanged(int)));
 
@@ -56,17 +73,11 @@ void KWQClearDialog::updateCheckBoxes()
     clearSoundCheckBox->setEnabled(!all);
 }
 
-void KWQClearDialog::slotButtonClicked(int button)
+void KWQClearDialog::accept()
 {
-    if (button == KDialog::Ok) {
-      Prefs::setClearAll(clearAllCheckBox->isChecked());
-      Prefs::setClearText(clearTextCheckBox->isChecked());
-      Prefs::setClearImageLink(clearImageCheckBox->isChecked());
-      Prefs::setClearSoundLink(clearSoundCheckBox->isChecked());
-      accept();
-    }
-    else
-        KDialog::slotButtonClicked(button);
+  Prefs::setClearAll(clearAllCheckBox->isChecked());
+  Prefs::setClearText(clearTextCheckBox->isChecked());
+  Prefs::setClearImageLink(clearImageCheckBox->isChecked());
+  Prefs::setClearSoundLink(clearSoundCheckBox->isChecked());
+  QDialog::accept();
 }
-
-#include "kwqcleardialog.moc"

@@ -20,7 +20,7 @@
 
 #include "kwqquizview.h"
 
-#include <QtGui/QAction>
+#include <QAction>
 
 #include "kwqquizmodel.h"
 
@@ -50,7 +50,7 @@ void KWQQuizView::slotRepeat()
 void KWQQuizView::slotAudioPlay()
 {
     // repeat playing last file
-    audioPlayFile(KUrl(), false);
+    audioPlayFile(QUrl(), false);
 }
 
 void KWQQuizView::audioPlayAnswer()
@@ -63,11 +63,11 @@ void KWQQuizView::audioPlayQuestion()
     audioPlayFile(m_quiz->soundQuestion(), true);
 }
 
-void KWQQuizView::audioPlayFile(const KUrl &soundUrl, bool overwrite)
+void KWQQuizView::audioPlayFile(const QUrl &soundUrl, bool overwrite)
 {
-    static KUrl lastUrl;
+    static QUrl lastUrl;
 
-    KUrl *url = const_cast<KUrl *>(&soundUrl);
+    QUrl *url = const_cast<QUrl *>(&soundUrl);
     if (overwrite)
        lastUrl = *url;
 
@@ -81,7 +81,7 @@ void KWQQuizView::audioPlayFile(const KUrl &soundUrl, bool overwrite)
     lastUrl = *url;
     m_actionCollection->action("quiz_audio_play")->setEnabled(true);
 
-    kDebug() << "Attempting to play sound: " << *url;
+    qDebug() << "Attempting to play sound: " << *url;
 
     if (!m_player) {
         m_player = new Phonon::MediaObject(this);
@@ -93,5 +93,3 @@ void KWQQuizView::audioPlayFile(const KUrl &soundUrl, bool overwrite)
     m_player->setCurrentSource(*url);
     m_player->play();
 }
-
-#include "kwqquizview.moc"

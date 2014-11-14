@@ -18,12 +18,17 @@
 
 #include "kwqtutorprefs.h"
 
-#include <KLocale>
+#include <QPushButton>
+
+#include <KLocalizedString>
 #include <KConfigSkeleton>
+#include <KConfigGroup>
 
 #include "preftutor.h"
 
-KWQTutorPrefs::KWQTutorPrefs(QWidget *parent, const QString &name, KConfigSkeleton *config, KActionCollection *actionCollection) : KConfigDialog(parent, name, config)
+KWQTutorPrefs::KWQTutorPrefs(QWidget *parent, const QString &name, KConfigSkeleton *config,
+			     KActionCollection *actionCollection)
+  : KConfigDialog(parent, name, config)
 {
   m_config = config;
 
@@ -57,7 +62,5 @@ void KWQTutorPrefs::updateWidgetsDefault()
 
 void KWQTutorPrefs::slotEnableApplyButton()
 {
-  enableButtonApply(true);
+  buttonBox()->button(QDialogButtonBox::Apply)->setEnabled(true);
 }
-
-#include "kwqtutorprefs.moc"

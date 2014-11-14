@@ -17,9 +17,7 @@
 
 #include "prefcardappearance.h"
 
-#include <KFontRequester>
-#include <KColorButton>
-#include <KLocale>
+#include <KLocalizedString>
 
 PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
 {
@@ -104,5 +102,3 @@ void PrefCardAppearance::slotCurrentChanged(int index)
     cardColorLabel->setBuddy(kcfg_FrontCardColor);
   }
 }
-
-#include "prefcardappearance.moc"

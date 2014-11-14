@@ -19,28 +19,44 @@
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusReply>
 
-#include <KLocale>
-#include <KLineEdit>
+#include <KLocalizedString>
 #include <KIconLoader>
+#include <KConfigGroup>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 #include "kwqtablemodel.h"
 #include "prefs.h"
 
-DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): KDialog(parent)
+DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): QDialog(parent)
 {
-    setCaption(i18n("Column Settings"));
-    setButtons(Ok|Cancel);
+    setWindowTitle(i18n("Column Settings"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
+    mainLayout->addWidget(buttonBox);
 
-    setupUi(mainWidget());
+    setupUi(mainWidget);
 
     column1Picture -> setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
     column2Picture -> setPixmap(KIconLoader::global()->loadIcon("answer", KIconLoader::Panel));
 
+#if 0  // FIXME KF5: Use QCompleter for this
     column1TitleLineEdit->completionObject(true)->setItems(Prefs::columnTitles1());
     column1TitleLineEdit->setCompletionMode(KGlobalSettings::CompletionAuto);
 
     column2TitleLineEdit->completionObject(true)->setItems(Prefs::columnTitles2());
     column2TitleLineEdit->setCompletionMode(KGlobalSettings::CompletionAuto);
+#endif
 
     column1TitleLineEdit->setText(model->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString());
     column2TitleLineEdit->setText(model->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
@@ -63,7 +79,7 @@ DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): KDialog(parent)
         column2LayoutComboBox->setCurrentIndex(column2LayoutComboBox->findText(layout));
 
     } else {
-        kDebug() << "kxkb dbus error";
+        qDebug() << "kxkb dbus error";
         column1LayoutComboBox->setEnabled(false);
         column2LayoutComboBox->setEnabled(false);
     }
@@ -94,5 +110,3 @@ ColumnDataList DlgLanguage::columnData()
 
     return result;
 }
-
-#include "dlglanguage.moc"

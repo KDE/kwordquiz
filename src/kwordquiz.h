@@ -19,15 +19,13 @@
 #define KWORDQUIZ_H
 
 #include <QSignalMapper>
-#include <QLabel>
-#include <QVBoxLayout>
 #include <QActionGroup>
 
 #include <KXmlGuiWindow>
-#include <KAction>
+#include <QAction>
 #include <KDirWatch>
-#include <KUrl>
-#include <KUndoStack>
+#include <QUrl>
+#include <QUndoStack>
 
 #include "kwqquizmodel.h"
 
@@ -42,6 +40,7 @@ class KWQSortFilterModel;
 class KWQTableView;
 class KWordQuizPrefs;
 class QAView;
+class QLabel;
 class MultipleView;
 class FlashView;
 
@@ -50,9 +49,8 @@ class FlashView;
   * window and reads the config file as well as providing a menubar, toolbar
   * and statusbar.
   * KWordQuizApp reimplements the methods that KXmlGuiWindow provides for main window handling and supports
-  * full session management as well as using KActions.
+  * full session management.
   * @see KXmlGuiWindow
-  * @see KApplication
   * @see KConfig
   */
 class KWordQuizApp : public KXmlGuiWindow
@@ -74,7 +72,7 @@ class KWordQuizApp : public KXmlGuiWindow
      * opens a file specified by commandline option
      * @param url the URL to be opened
      */
-    void openDocumentFile(const KUrl& url=KUrl());
+    void openDocumentFile(const QUrl &url=QUrl());
 
     /**
      * returns a pointer to the current document connected to the KXmlGuiWindow instance
@@ -122,7 +120,7 @@ class KWordQuizApp : public KXmlGuiWindow
      */
     virtual bool queryClose();
     /** saves the window properties for each open window during session end to the session config file, including saving the currently
-     * opened file by a temporary filename provided by KApplication.
+     * opened file by a temporary filename provided by QApplication.
      * @see KXmlGuiWindow#saveProperties
      */
     virtual void saveProperties(KConfigGroup &_cfg);
@@ -141,7 +139,7 @@ class KWordQuizApp : public KXmlGuiWindow
     /** open a file and load it into the document*/
     void slotFileOpen();
     /** opens a file from the recent files menu */
-    void slotFileOpenRecent(const KUrl& url);
+    void slotFileOpenRecent(const QUrl &url);
     /** download vocabularies from the Internet */
     void slotFileGHNS();
     /** save a document */
@@ -258,11 +256,11 @@ class KWordQuizApp : public KXmlGuiWindow
      */
     KEduVocDocument * m_doc;
 
-    // KAction pointers to enable/disable actions
+    // QAction pointers to enable/disable actions
     QAction* fileNew;
     QAction* fileOpen;
     KRecentFilesAction* fileOpenRecent;
-    KAction* fileGHNS;
+    QAction * fileGHNS;
     QAction* fileSave;
     QAction* fileSaveAs;
     QAction* fileClose;
@@ -276,12 +274,12 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction* editCopy;
     QAction* editPaste;
     QAction* editClear;
-    KAction* editInsert;
-    KAction* editDelete;
-    KAction* editMarkBlank;
-    KAction* editUnmarkBlank;
+    QAction * editInsert;
+    QAction * editDelete;
+    QAction * editMarkBlank;
+    QAction * editUnmarkBlank;
 
-    KAction* vocabLanguages;
+    QAction * vocabLanguages;
     QAction* vocabFont;
     QAction* vocabAdjustRows;
     QAction* vocabShuffle;
@@ -291,25 +289,25 @@ class KWordQuizApp : public KXmlGuiWindow
     KActionMenu *m_modeActionMenu;
     QActionGroup *m_modeActionGroup;
 
-    KAction* quizEditor;
-    KAction* quizFlash;
-    KAction* quizMultiple;
-    KAction* quizQA;
+    QAction * quizEditor;
+    QAction * quizFlash;
+    QAction * quizMultiple;
+    QAction * quizQA;
 
-    KAction* quizCheck;
-    KAction* quizRestart;
-    KAction* quizRepeatErrors;
-    KAction* quizExportErrors;
+    QAction * quizCheck;
+    QAction * quizRestart;
+    QAction * quizRepeatErrors;
+    QAction * quizExportErrors;
 
-    KAction* flashKnow;
-    KAction* flashDontKnow;
+    QAction * flashKnow;
+    QAction * flashDontKnow;
 
-    KAction* qaHint;
-    KAction* qaMarkLastCorrect;
+    QAction * qaHint;
+    QAction * qaMarkLastCorrect;
 
-    KAction* quizOpt1;
-    KAction* quizOpt2;
-    KAction* quizOpt3;
+    QAction * quizOpt1;
+    QAction * quizOpt2;
+    QAction * quizOpt3;
 
     QSignalMapper* charMapper;
 
@@ -317,12 +315,14 @@ class KWordQuizApp : public KXmlGuiWindow
 
     KDirWatch * m_dirWatch;
 
-    KUndoStack * m_undoStack;
+    QUndoStack * m_undoStack;
+
+    QLabel * m_statusLabel;
 
     void updateActions();
     void updateSpecialCharIcons();
     QIcon charIcon(const QChar &);
-    void openUrl(const KUrl& url);
+    void openUrl(const QUrl &url);
 };
 
 #endif // KWORDQUIZ_H

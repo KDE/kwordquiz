@@ -17,7 +17,7 @@
 
 #include "kwqpixmapitem.h"
 
-#include <QtGui/QPainter>
+#include <QPainter>
 
 KWQPixmapItem::KWQPixmapItem(const QPixmap &pixmap, QGraphicsItem *parentItem) : QGraphicsPixmapItem(pixmap, parentItem)
 {

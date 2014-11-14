@@ -3,8 +3,13 @@ add_subdirectory( pics ) # private icons
 add_subdirectory( icons ) # global icons
 add_subdirectory( examples )
 
-include_directories( ${LIBKDEEDU_INCLUDE_DIR} )
+# include_directories( ${LIBKDEEDU_INCLUDE_DIR} )
 
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${PHONON_INCLUDES}
+)
 
 ########### next target ###############
 
@@ -42,7 +47,7 @@ set(kwordquiz_SRCS
    )
 
 
-kde4_add_ui_files(kwordquiz_SRCS 
+ki18n_wrap_ui(kwordquiz_SRCS
    columndialogbase.ui
    flashviewbase.ui
    multipleviewbase.ui
@@ -57,16 +62,34 @@ kde4_add_ui_files(kwordquiz_SRCS
    cleardialogbase.ui
    )
 
-kde4_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
+kconfig_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
 
 #uncomment this if oxygen icons for kwordquiz are available
 
 #kde4_add_app_icon(kwordquiz_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/kwordquiz.png")
-kde4_add_app_icon(kwordquiz_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hi*-app-kwordquiz.png")
+#kde4_add_app_icon(kwordquiz_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hi*-app-kwordquiz.png")
 
-kde4_add_executable(kwordquiz ${kwordquiz_SRCS})
+add_executable(kwordquiz ${kwordquiz_SRCS})
 
-target_link_libraries(kwordquiz  ${LIBKDEEDU_KEDUVOCDOCUMENT_LIBRARIES} ${KDE4_KIO_LIBS} ${KDE4_KNEWSTUFF3_LIBS} ${KDE4_KNOTIFYCONFIG_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${KDE4_PHONON_LIBRARY})
+target_link_libraries(kwordquiz
+    Qt5::Core
+    Qt5::PrintSupport
+    Qt5::Widgets
+    KF5::IconThemes
+    KF5::ConfigCore
+    KF5::I18n
+    KF5::ItemViews
+    KF5::NewStuff
+    KF5::Notifications
+    KF5::NotifyConfig
+    KF5::SonnetCore
+    KF5::Declarative
+    KF5::XmlGui
+    KF5::GuiAddons
+    KF5::KDELibs4Support
+    LibKEduVocDocumentImport__KEduVocDocument
+    Phonon::phonon4qt5
+)
 
 install(TARGETS kwordquiz  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
@@ -75,6 +98,9 @@ install(TARGETS kwordquiz  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install( PROGRAMS kwordquiz.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kwordquiz.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
-install( FILES kwordquiz.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
-install( FILES kwordquizui.rc kwordquiz.notifyrc  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz )
+install( FILES kwordquiz.knsrc  DESTINATION  ${KNOTIFYRC_INSTALL_DIR} )
+install( FILES kwordquiz.notifyrc  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz )
+install(FILES
+  kwordquizui.rc
+  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kwordquiz)
 

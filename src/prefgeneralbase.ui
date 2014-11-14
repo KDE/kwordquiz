@@ -30,7 +30,7 @@
     <number>6</number>
    </property>
    <item row="0" column="0" >
-    <widget class="KButtonGroup" name="kcfg_StartSession" >
+    <widget class="QGroupBox" name="kcfg_StartSession" >
      <property name="toolTip" >
       <string>How vocabulary documents are opened</string>
      </property>
@@ -112,12 +112,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KButtonGroup</class>
-   <extends>QGroupBox</extends>
-   <header>kbuttongroup.h</header>
-   <container>1</container>
-  </customwidget>
  </customwidgets>
  <includes/>
  <resources/>

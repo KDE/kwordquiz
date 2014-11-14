@@ -24,10 +24,10 @@
 #include "ui_qaviewbase.h"
 
 #include <KActionCollection>
-#include <Phonon/MediaObject>
-#include <Phonon/Path>
-#include <Phonon/AudioOutput>
-#include <Phonon/Global>
+#include <phonon/MediaObject>
+#include <phonon/Path>
+#include <phonon/AudioOutput>
+#include <phonon/Global>
 #include "kwqquizview.h"
 
 class KWQQuizModel;

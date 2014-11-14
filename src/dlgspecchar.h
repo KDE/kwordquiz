@@ -17,7 +17,7 @@
 #ifndef DLGSPECCHAR_H
 #define DLGSPECCHAR_H
 
-#include <KDialog>
+#include <QDialog>
 
 class QWidget;
 class KCharSelect;
@@ -25,7 +25,7 @@ class KCharSelect;
 /**
 @author Peter Hedlund
 */
-class DlgSpecChar : public KDialog
+class DlgSpecChar : public QDialog
 {
 Q_OBJECT
 public:
@@ -40,7 +40,6 @@ private slots:
   void slotDoubleClicked();
 
 private:
-  void initDialog(const QFont &font, const QChar &chr);
   QChar chr();
 
   KCharSelect *m_charSelect;

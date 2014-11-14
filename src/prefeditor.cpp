@@ -22,6 +22,3 @@ PrefEditor::PrefEditor(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
 }
-
-
-#include "prefeditor.moc"

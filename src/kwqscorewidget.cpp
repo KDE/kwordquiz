@@ -18,6 +18,8 @@
 
 #include "kwqscorewidget.h"
 
+#include <KIconLoader>
+
 KWQScoreWidget::KWQScoreWidget(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
@@ -154,7 +156,7 @@ void KWQScoreWidget::update()
   s = errorText();
   lblScoreError->setText(s);
   if (s.isEmpty())
-    picError->setPixmap(0);
+    picError->setPixmap(QPixmap());
   else
     picError->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
 }

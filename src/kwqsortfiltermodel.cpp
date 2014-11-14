@@ -31,7 +31,7 @@ KWQSortFilterModel::KWQSortFilterModel(QObject *parent) : QSortFilterProxyModel(
     m_shuffle = false;
 }
 
-void KWQSortFilterModel::setSourceModel(KWQTableModel * sourceModel)
+void KWQSortFilterModel::setTableModel(KWQTableModel * sourceModel)
 {
     m_sourceModel = sourceModel;
     QSortFilterProxyModel::setSourceModel(sourceModel);
@@ -74,5 +74,3 @@ void KWQSortFilterModel::shuffle()
     invalidate();
     m_shuffle = false;
 }
-
-#include "kwqsortfiltermodel.moc"

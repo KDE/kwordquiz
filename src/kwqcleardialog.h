@@ -21,17 +21,17 @@
 #ifndef KWQCLEARDIALOG_H
 #define KWQCLEARDIALOG_H
 
-#include <KDE/KDialog>
+#include <QDialog>
 
 #include "ui_cleardialogbase.h"
 
-class KWQClearDialog : public KDialog, private Ui::ClearDialogBase {
+class KWQClearDialog : public QDialog, private Ui::ClearDialogBase {
   Q_OBJECT
   public:
     explicit KWQClearDialog(QWidget *parent = 0);
 
-  protected slots:
-    virtual void slotButtonClicked(int );
+  public slots:
+    virtual void accept();
 
   private slots:
     void buttonGroupChanged(int );

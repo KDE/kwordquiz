@@ -23,9 +23,9 @@
 #include <QtDBus/QDBusInterface>
 
 #include <KIconLoader>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KNotification>
-#include <KUrl>
+#include <QUrl>
 
 #include "prefs.h"
 #include "kwqquizmodel.h"
@@ -109,7 +109,7 @@ void QAView::init()
   m_actionCollection->action("quiz_audio_play")->setEnabled(false);
 
   // reset last file
-  audioPlayFile(KUrl(), true);
+  audioPlayFile(QUrl(), true);
 
   showQuestion();
   txtAnswer->show();
@@ -290,5 +290,3 @@ void QAView::slotMarkLastCorrect( )
   score->swapCount();
   m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
 }
-
-#include "qaview.moc"

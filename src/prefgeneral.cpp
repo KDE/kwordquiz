@@ -22,5 +22,3 @@ PrefGeneral::PrefGeneral(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
 }
-
-#include "prefgeneral.moc"

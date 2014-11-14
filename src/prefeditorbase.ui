@@ -24,7 +24,7 @@
     <number>6</number>
    </property>
    <item>
-    <widget class="KButtonGroup" name="kcfg_EnterMove" >
+    <widget class="QGroupBox" name="kcfg_EnterMove" >
      <property name="toolTip" >
       <string>How enter key moves</string>
      </property>
@@ -112,12 +112,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KButtonGroup</class>
-   <extends>QGroupBox</extends>
-   <header>kbuttongroup.h</header>
-   <container>1</container>
-  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>

@@ -30,6 +30,7 @@ class PrefEditor;
 class PrefQuiz;
 class PrefCharacter;
 class PrefCardAppearance;
+class KConfigSkeleton;
 
 class KWordQuizPrefs : public KConfigDialog
 {

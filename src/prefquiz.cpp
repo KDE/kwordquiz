@@ -20,8 +20,6 @@
 
 #include <QCheckBox>
 
-#include <knuminput.h>
-
 PrefQuiz::PrefQuiz(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
@@ -32,5 +30,3 @@ PrefQuiz::PrefQuiz(QWidget *parent) : QWidget(parent)
   kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());
   kcfg_KeepDiscard->setEnabled(kcfg_AutoFlip->isChecked());
 }
-
-#include "prefquiz.moc"

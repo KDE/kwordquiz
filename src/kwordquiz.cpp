@@ -20,39 +20,42 @@
 #include <QPainter>
 #include <QBitmap>
 #include <QCheckBox>
-#include <QtGui/QPrinter>
+#include <QIcon>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusReply>
+#include <QFileDialog>
+#include <QFontDialog>
+#include <QMenu>
+#include <QStatusBar>
+#include <QPointer>
+#include <QDebug>
 
 #include <kactioncollection.h>
-#include <kapplication.h>
 #include <kactionmenu.h>
+#include <kapplication.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <kstatusbar.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kedittoolbar.h>
-#include <kstandarddirs.h>
-#include <kfontdialog.h>
-#include <kmenu.h>
+
 #include <knotifyconfigwidget.h>
 #include <kiconloader.h>
-#include <kdebug.h>
 #include <kxmlguifactory.h>
-#include <kglobal.h>
 #include <krecentfilesaction.h>
 #include <kstandardaction.h>
 #include <ktoggleaction.h>
 #include <ktoolbar.h>
-#include <kicon.h>
-#include <knewstuff3/downloaddialog.h> 
-#include <knewstuff3/knewstuffaction.h>
+#include <kns3/downloaddialog.h>
+#include <kns3/knewstuffaction.h>
 #include <KPageWidget>
 #include <KProcess>
-#include <KTemporaryFile>
+#include <QTemporaryFile>
 #include <kwindowsystem.h>
-#include <kio/netaccess.h>
 #include <KFilterProxySearchLine>
+#include <KConfigGroup>
+#include <QStandardPaths>
+#include <KUndoActions>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
@@ -93,10 +96,10 @@ KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 
   if (Prefs::firstRun())
   {
-    fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/example.kvtml")));
-    fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/french_verbs.kvtml")));
-    fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/fill_in_the_blank.kvtml")));
-    fileOpenRecent->addUrl(KUrl::fromPath(KStandardDirs::locate("data", "kwordquiz/examples/us_states_and_capitals.kvtml")));
+    fileOpenRecent->addUrl(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kwordquiz/examples/example.kvtml")));
+    fileOpenRecent->addUrl(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kwordquiz/examples/french_verbs.kvtml")));
+    fileOpenRecent->addUrl(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kwordquiz/examples/fill_in_the_blank.kvtml")));
+    fileOpenRecent->addUrl(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kwordquiz/examples/us_states_and_capitals.kvtml")));
     Prefs::setFirstRun(false);
   }
 }
@@ -111,7 +114,7 @@ void KWordQuizApp::initActions()
   QAction* configNotifications;
   QAction* configApp;
 
-  KAction* a;
+  QAction * a;
 
   fileNew = KStandardAction::openNew(this, SLOT(slotFileNew()), actionCollection());
   fileNew->setWhatsThis(i18n("Creates a new blank vocabulary document"));
@@ -123,14 +126,14 @@ void KWordQuizApp::initActions()
   fileOpen->setToolTip(fileOpen->whatsThis());
   fileOpen->setStatusTip(fileOpen->whatsThis());
 
-  fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(KUrl)), actionCollection());
-  
+  fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(QUrl)), actionCollection());
+
   fileGHNS = KNS3::standardAction(i18n("Download New Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
   fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
   fileGHNS->setStatusTip(fileGHNS->whatsThis());
-   
+
   fileSave = KStandardAction::save(this, SLOT(slotFileSave()), actionCollection());
   fileSave->setWhatsThis(i18n("Saves the active vocabulary document"));
   fileSave->setToolTip(fileSave->whatsThis());
@@ -154,15 +157,15 @@ void KWordQuizApp::initActions()
   filePrintPreview->setWhatsThis(i18n("Shows a preview of the active vocabulary document"));
   filePrintPreview->setToolTip(filePrintPreview->whatsThis());
   filePrintPreview->setStatusTip(filePrintPreview->whatsThis());
-  
+
   fileQuit = KStandardAction::quit(this, SLOT(slotFileQuit()), actionCollection());
   fileQuit->setWhatsThis(i18n("Quits KWordQuiz"));
   fileQuit->setToolTip(fileQuit->whatsThis());
   fileQuit->setStatusTip(fileQuit->whatsThis());
 
-  m_undoStack = new KUndoStack();
-  editUndo = m_undoStack->createUndoAction(actionCollection());
-  editRedo = m_undoStack->createRedoAction(actionCollection());
+  m_undoStack = new QUndoStack();
+  editUndo = KUndoActions::createUndoAction(m_undoStack, actionCollection());
+  editRedo = KUndoActions::createRedoAction(m_undoStack, actionCollection());
   connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(slotCleanChanged(bool)));
   connect(m_undoStack, SIGNAL(undoTextChanged(QString)), this, SLOT(slotUndoTextChanged(QString)));
   connect(m_undoStack, SIGNAL(redoTextChanged(QString)), this, SLOT(slotRedoTextChanged(QString)));
@@ -189,7 +192,7 @@ void KWordQuizApp::initActions()
   editClear->setStatusTip(editClear->whatsThis());
 
   editInsert = actionCollection()->addAction("edit_insert");
-  editInsert->setIcon(KIcon("insert-table-row"));
+  editInsert->setIcon(QIcon::fromTheme("insert-table-row"));
   editInsert->setText(i18n("&Insert Row"));
   editInsert->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));
   editInsert->setWhatsThis(i18n("Inserts a new row above the current row"));
@@ -198,7 +201,7 @@ void KWordQuizApp::initActions()
   connect(editInsert, SIGNAL(triggered(bool)), this, SLOT(slotEditInsert()));
 
   editDelete = actionCollection()->addAction("edit_delete");
-  editDelete->setIcon(KIcon("delete-table-row"));
+  editDelete->setIcon(QIcon::fromTheme("delete-table-row"));
   editDelete->setText(i18n("&Delete Row"));
   editDelete->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_K));
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
@@ -207,7 +210,7 @@ void KWordQuizApp::initActions()
   connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotEditDelete()));
 
   editMarkBlank = actionCollection()->addAction("edit_mark_blank");
-  editMarkBlank->setIcon(KIcon("markasblank"));
+  editMarkBlank->setIcon(QIcon::fromTheme("markasblank"));
   editMarkBlank->setText(i18n("&Mark as Blank"));
   editMarkBlank->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_M));
   editMarkBlank->setWhatsThis(i18n("Marks the current or selected word as a blank for Fill-in-the-blank"));
@@ -216,7 +219,7 @@ void KWordQuizApp::initActions()
   connect(editMarkBlank, SIGNAL(triggered(bool)), this, SLOT(slotEditMarkBlank()));
 
   editUnmarkBlank = actionCollection()->addAction("edit_unmark_blank");
-  editUnmarkBlank->setIcon(KIcon("unmarkasblank"));
+  editUnmarkBlank->setIcon(QIcon::fromTheme("unmarkasblank"));
   editUnmarkBlank->setText(i18n("&Unmark Blanks"));
   editUnmarkBlank->setWhatsThis(i18n("Removes blanks from the current or selected word"));
   editUnmarkBlank->setToolTip(editUnmarkBlank->whatsThis());
@@ -224,7 +227,7 @@ void KWordQuizApp::initActions()
   connect(editUnmarkBlank, SIGNAL(triggered(bool)), this, SLOT(slotEditUnmarkBlank()));
 
   vocabLanguages = actionCollection()->addAction("vocab_languages");
-  vocabLanguages->setIcon(KIcon("languages"));
+  vocabLanguages->setIcon(QIcon::fromTheme("languages"));
   vocabLanguages->setText(i18n("&Column Settings..."));
   vocabLanguages->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
   vocabLanguages->setWhatsThis(i18n("Defines the column settings for the active vocabulary"));
@@ -233,7 +236,7 @@ void KWordQuizApp::initActions()
   connect(vocabLanguages, SIGNAL(triggered(bool)), this, SLOT(slotVocabLanguages()));
 
   vocabFont = actionCollection()->addAction("vocab_font");
-  vocabFont->setIcon(KIcon("preferences-desktop-font"));
+  vocabFont->setIcon(QIcon::fromTheme("preferences-desktop-font"));
   vocabFont->setText(i18n("&Font..."));
   vocabFont->setWhatsThis(i18n("Defines the font used by the editor"));
   vocabFont->setToolTip(vocabFont->whatsThis());
@@ -241,7 +244,7 @@ void KWordQuizApp::initActions()
   connect(vocabFont, SIGNAL(triggered(bool)), this, SLOT(slotVocabFont()));
 
   a = actionCollection()->addAction("vocab_image");
-  a->setIcon(KIcon("image-x-generic"));
+  a->setIcon(QIcon::fromTheme("image-x-generic"));
   a->setText(i18n("Link &Image..."));
   a->setWhatsThis(i18n("Links an image with the current entry"));
   a->setToolTip(a->whatsThis());
@@ -249,7 +252,7 @@ void KWordQuizApp::initActions()
   connect(a, SIGNAL(triggered(bool)), this, SLOT(slotVocabImage()));
 
   a = actionCollection()->addAction("vocab_sound");
-  a->setIcon(KIcon("audio-x-generic"));
+  a->setIcon(QIcon::fromTheme("audio-x-generic"));
   a->setText(i18n("Link &Sound..."));
   a->setWhatsThis(i18n("Links a sound with the current entry"));
   a->setToolTip(a->whatsThis());
@@ -257,7 +260,7 @@ void KWordQuizApp::initActions()
   connect(a, SIGNAL(triggered(bool)), this, SLOT(slotVocabSound()));
 
   vocabAdjustRows = actionCollection()->addAction("vocab_adjust_rows");
-  vocabAdjustRows->setIcon(KIcon());
+  //vocabAdjustRows->setIcon(QIcon::fromTheme());
   vocabAdjustRows->setText(i18n("&Adjust Row Heights"));
   vocabAdjustRows->setWhatsThis(i18n("Automatically adjusts the height of selected rows"));
   vocabAdjustRows->setToolTip(vocabAdjustRows->whatsThis());
@@ -265,7 +268,7 @@ void KWordQuizApp::initActions()
   connect(vocabAdjustRows, SIGNAL(triggered(bool)), this, SLOT(slotVocabAdjustRows()));
 
   vocabShuffle = actionCollection()->addAction("vocab_shuffle");
-  vocabShuffle->setIcon(KIcon("shuffle"));
+  vocabShuffle->setIcon(QIcon::fromTheme("shuffle"));
   vocabShuffle->setText(i18n("Sh&uffle"));
   vocabShuffle->setWhatsThis(i18n("Shuffles the entries of the active vocabulary"));
   vocabShuffle->setToolTip(vocabShuffle->whatsThis());
@@ -279,12 +282,12 @@ void KWordQuizApp::initActions()
   vocabLayouts->setStatusTip(vocabLayouts->whatsThis());
   QMenu *m = new QMenu(this);
   vocabLayouts->setMenu(m);
-  
+
   m_layoutActionGroup = new QActionGroup(this);
   connect(m_layoutActionGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotLayoutActionGroupTriggered(QAction*)));
-  
+
   m_modeActionMenu = actionCollection()->add<KActionMenu>("mode_0");
-  m_modeActionMenu->setIcon(KIcon("mode1"));
+  m_modeActionMenu->setIcon(QIcon::fromTheme("mode1"));
   m_modeActionMenu->setText(i18n("Change Mode"));
   m_modeActionMenu->setIconText(i18n("Mode"));
   m_modeActionMenu->setWhatsThis(i18n("Changes the mode used in quiz sessions"));
@@ -299,7 +302,7 @@ void KWordQuizApp::initActions()
     a = actionCollection()->addAction(QString("mode_%1").arg(QString::number(i)));
     a->setData(i);
     a->setCheckable(true);
-    a->setIcon(KIcon(QString("mode%1").arg(QString::number(i))));
+    a->setIcon(QIcon::fromTheme(QString("mode%1").arg(QString::number(i))));
     a->setWhatsThis(i18n("Selects this mode"));
     a->setToolTip(a->whatsThis());
     a->setStatusTip(a->whatsThis());
@@ -308,7 +311,7 @@ void KWordQuizApp::initActions()
   }
 
   quizEditor = actionCollection()->addAction("quiz_editor");
-  quizEditor->setIcon(KIcon("editor"));
+  quizEditor->setIcon(QIcon::fromTheme("editor"));
   quizEditor->setText(i18nc("@item:inlistbox activate vocabulary editor", "&Editor"));
   quizEditor->setShortcut(QKeySequence(Qt::Key_F6));
   quizEditor->setWhatsThis(i18n("Activates the vocabulary editor"));
@@ -317,7 +320,7 @@ void KWordQuizApp::initActions()
   connect(quizEditor, SIGNAL(triggered(bool)), this, SLOT(slotQuizEditor()));
 
   quizFlash = actionCollection()->addAction("quiz_flash");
-  quizFlash->setIcon(KIcon("flash"));
+  quizFlash->setIcon(QIcon::fromTheme("flash"));
   quizFlash->setText(i18n("&Flashcard"));
   quizFlash->setShortcut(QKeySequence(Qt::Key_F7));
   quizFlash->setWhatsThis(i18n("Starts a flashcard session using the active vocabulary"));
@@ -326,7 +329,7 @@ void KWordQuizApp::initActions()
   connect(quizFlash, SIGNAL(triggered(bool)), this, SLOT(slotQuizFlash()));
 
   quizMultiple = actionCollection()->addAction("quiz_multiple");
-  quizMultiple->setIcon(KIcon("multiple"));
+  quizMultiple->setIcon(QIcon::fromTheme("multiple"));
   quizMultiple->setText(i18n("&Multiple Choice"));
   quizMultiple->setShortcut(QKeySequence(Qt::Key_F8));
   quizMultiple->setWhatsThis(i18n("Starts a multiple choice session using the active vocabulary"));
@@ -335,7 +338,7 @@ void KWordQuizApp::initActions()
   connect(quizMultiple, SIGNAL(triggered(bool)), this, SLOT(slotQuizMultiple()));
 
   quizQA = actionCollection()->addAction("quiz_qa");
-  quizQA->setIcon(KIcon("qa"));
+  quizQA->setIcon(QIcon::fromTheme("qa"));
   quizQA->setText(i18n("&Question and Answer"));
   quizQA->setIconText(i18n("Q&&A"));
   quizQA->setShortcut(QKeySequence(Qt::Key_F9));
@@ -345,7 +348,7 @@ void KWordQuizApp::initActions()
   connect(quizQA, SIGNAL(triggered(bool)), this, SLOT(slotQuizQA()));
 
   quizCheck = actionCollection()->addAction("quiz_check");
-  quizCheck->setIcon(KIcon("answer-correct"));
+  quizCheck->setIcon(QIcon::fromTheme("answer-correct"));
   quizCheck->setText(i18n("&Check"));
   quizCheck->setShortcut(QKeySequence(Qt::Key_Return));
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
@@ -365,7 +368,7 @@ void KWordQuizApp::initActions()
   quizOpt3->setShortcut(QKeySequence(Qt::Key_3));
 
   flashKnow = actionCollection()->addAction("flash_know");
-  flashKnow->setIcon(KIcon("know"));
+  flashKnow->setIcon(QIcon::fromTheme("know"));
   flashKnow->setText(i18n("I &Know"));
   flashKnow->setShortcut(QKeySequence(Qt::Key_K));
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
@@ -373,7 +376,7 @@ void KWordQuizApp::initActions()
   flashKnow->setStatusTip(flashKnow->whatsThis());
 
   flashDontKnow = actionCollection()->addAction("flash_dont_know");
-  flashDontKnow->setIcon(KIcon("dontknow"));
+  flashDontKnow->setIcon(QIcon::fromTheme("dontknow"));
   flashDontKnow->setText(i18n("I &Do Not Know"));
   flashDontKnow->setShortcut(QKeySequence(Qt::Key_D));
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
@@ -381,7 +384,7 @@ void KWordQuizApp::initActions()
   flashDontKnow->setStatusTip(flashDontKnow->whatsThis());
 
   qaHint = actionCollection()->addAction("qa_hint");
-  qaHint->setIcon(KIcon("hint"));
+  qaHint->setIcon(QIcon::fromTheme("hint"));
   qaHint->setText(i18n("&Hint"));
   qaHint->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_H));
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
@@ -389,7 +392,7 @@ void KWordQuizApp::initActions()
   qaHint->setStatusTip(qaHint->whatsThis());
 
   qaMarkLastCorrect = actionCollection()->addAction("qa_mark_last_correct");
-  qaMarkLastCorrect->setIcon(KIcon("answer-correct"));
+  qaMarkLastCorrect->setIcon(QIcon::fromTheme("answer-correct"));
   qaMarkLastCorrect->setText(i18n("Mark Last Correct"));
   qaMarkLastCorrect->setShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Return));
   qaMarkLastCorrect->setWhatsThis(i18n("Marks last answer as correct"));
@@ -397,7 +400,7 @@ void KWordQuizApp::initActions()
   qaMarkLastCorrect->setStatusTip(qaMarkLastCorrect->whatsThis());
 
   quizRestart = actionCollection()->addAction("quiz_restart");
-  quizRestart->setIcon(KIcon("start-over"));
+  quizRestart->setIcon(QIcon::fromTheme("start-over"));
   quizRestart->setText(i18n("&Restart"));
   quizRestart->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
@@ -405,7 +408,7 @@ void KWordQuizApp::initActions()
   quizRestart->setStatusTip(quizRestart->whatsThis());
 
   a = actionCollection()->addAction("quiz_audio_play");
-  a->setIcon(KIcon("media-playback-start"));
+  a->setIcon(QIcon::fromTheme("media-playback-start"));
   a->setText(i18n("&Play Audio"));
   a->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_B));
   a->setWhatsThis(i18n("Play associated audio"));
@@ -413,7 +416,7 @@ void KWordQuizApp::initActions()
   a->setStatusTip(a->whatsThis());
 
   quizRepeatErrors = actionCollection()->addAction("quiz_repeat_errors");
-  quizRepeatErrors->setIcon(KIcon("repeat"));
+  quizRepeatErrors->setIcon(QIcon::fromTheme("repeat"));
   quizRepeatErrors->setText(i18n("Repeat &Errors"));
   quizRepeatErrors->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_E));
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
@@ -471,13 +474,15 @@ void KWordQuizApp::initActions()
 
 void KWordQuizApp::initStatusBar()
 {
-  statusBar()->insertPermanentFixedItem(QString(), 1);
-  statusBar()->setItemFixed(1, 250);
+  m_statusLabel = new QLabel(statusBar());
+  statusBar()->insertPermanentWidget(1, m_statusLabel);
+  //statusBar()->setItemFixed(1, 250);
 }
 
 void KWordQuizApp::initDocument()
 {
   m_doc = new KEduVocDocument(this);
+  m_doc->setGenerator(QString("kwordquiz %1").arg(KWQ_VERSION));
   ///@todo New kvtml documents have a locale setting which should contain the language they are written in.
   /* it would be nice to support that somehow. get hot new stuff for KHangman and KAnagram already uses this. */
   m_doc->appendIdentifier();
@@ -500,7 +505,7 @@ void KWordQuizApp::initModel()
   m_tableModel->setHeaderData(0, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
   m_tableModel->setHeaderData(1, Qt::Horizontal, QSize(250, 25), Qt::SizeHintRole);
   m_sortFilterModel = new KWQSortFilterModel(this);
-  m_sortFilterModel->setSourceModel(m_tableModel);
+  m_sortFilterModel->setTableModel(m_tableModel);
 }
 
 void KWordQuizApp::initView()
@@ -512,20 +517,21 @@ void KWordQuizApp::initView()
 
   QVBoxLayout *editorLayout = new QVBoxLayout();
   editorLayout->setMargin(0);
-  editorLayout->setSpacing(KDialog::spacingHint());
+//TODO PORT QT5   editorLayout->setSpacing(QDialog::spacingHint());
 
   m_searchLine = new KFilterProxySearchLine(this);
   m_searchLine->lineEdit()->setFocusPolicy(Qt::ClickFocus);
-  m_searchLine->lineEdit()->setClickMessage(i18n("Enter search terms here"));
+  m_searchLine->lineEdit()->setPlaceholderText(i18n("Enter search terms here"));
   m_searchLine->setProxy(m_sortFilterModel);
 
   m_tableView = new KWQTableView(m_undoStack, this);
   editorLayout->addWidget(m_searchLine);
   editorLayout->addWidget(m_tableView);
-  m_tableView->setModel(m_sortFilterModel);
+  m_tableView->setFilterModel(m_sortFilterModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
-  setCaption(m_doc->url().fileName(),false);
+  setWindowTitle(m_doc->url().fileName() + "[*]");
+  setWindowModified(false);
   m_tableView->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(m_tableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotTableContextMenuRequested(QPoint)));
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
@@ -539,20 +545,20 @@ void KWordQuizApp::initView()
   m_qaView = new QAView(this, actionCollection());
 
   m_editorPage = m_pageWidget->addPage(m_editorView, i18nc("@item:inlistbox vocabulary editor", "Editor"));
-  m_editorPage->setIcon(KIcon("editor"));
+  m_editorPage->setIcon(QIcon::fromTheme("editor"));
   m_editorPage->setHeader("");
   m_editorPage->widget()->setLayout(editorLayout);
 
   m_flashPage = m_pageWidget->addPage(m_flashView, i18n("Flashcard"));
-  m_flashPage->setIcon(KIcon("flash"));
+  m_flashPage->setIcon(QIcon::fromTheme("flash"));
   m_flashPage->setHeader("");
 
   m_multiplePage = m_pageWidget->addPage(m_multipleView, i18n("Multiple Choice"));
-  m_multiplePage->setIcon(KIcon("multiple"));
+  m_multiplePage->setIcon(QIcon::fromTheme("multiple"));
   m_multiplePage->setHeader("");
 
   m_qaPage = m_pageWidget->addPage(m_qaView, i18n("Question & Answer"));
-  m_qaPage->setIcon(KIcon("qa"));
+  m_qaPage->setIcon(QIcon::fromTheme("qa"));
   m_qaPage->setHeader("");
 
   m_pageWidget->addAction(quizEditor);
@@ -577,7 +583,7 @@ void KWordQuizApp::initView()
   updateActions();
 }
 
-void KWordQuizApp::openUrl(const KUrl& url)
+void KWordQuizApp::openUrl(const QUrl &url)
 {
   if(!url.isEmpty()) {
     if (m_dirWatch->contains(url.path()))
@@ -615,19 +621,20 @@ void KWordQuizApp::openUrl(const KUrl& url)
   }
 }
 
-void KWordQuizApp::openDocumentFile(const KUrl& url)
+void KWordQuizApp::openDocumentFile(const QUrl &url)
 {
   slotStatusMsg(i18n("Opening file..."));
-  if (!url.isEmpty() && KIO::NetAccess::exists(url, KIO::NetAccess::SourceSide, this)) {
+  if (!url.isEmpty()) {
     int result = m_doc->open(url);
     if (result == KEduVocDocument::NoError) {
       while (m_doc->identifierCount() < 2) { //if we opened a TAB-less CSV, there
-        m_doc->appendIdentifier(); //may be 0 or 1 identifiers, we need at least 2  
+        m_doc->appendIdentifier(); //may be 0 or 1 identifiers, we need at least 2
       }
- 
-      m_tableModel->reset();
+
+      //m_tableModel->reset();
       m_dirWatch->addFile(url.path());
-      setCaption(m_doc->url().fileName(), false);
+      setWindowTitle(m_doc->url().fileName() + "[*]");
+      setWindowModified(false);
       fileOpenRecent->addUrl(url);
       slotModeActionGroupTriggered(m_modeActionGroup->checkedAction());
       m_undoStack->clear();
@@ -659,13 +666,13 @@ KEduVocDocument *KWordQuizApp::document() const
 
 void KWordQuizApp::saveOptions()
 {
-  fileOpenRecent->saveEntries(KGlobal::config()->group( "Recent Files") );
+  fileOpenRecent->saveEntries(KSharedConfig::openConfig()->group( "Recent Files") );
   Prefs::self()->writeConfig();
 }
 
 void KWordQuizApp::readOptions()
 {
-  fileOpenRecent->loadEntries(KGlobal::config()->group( "Recent Files") );
+  fileOpenRecent->loadEntries(KSharedConfig::openConfig()->group( "Recent Files") );
 }
 
 void KWordQuizApp::saveProperties(KConfigGroup &_cfg)
@@ -676,31 +683,32 @@ void KWordQuizApp::saveProperties(KConfigGroup &_cfg)
   }
   else
   {
-    KUrl url = m_doc->url();
+    QUrl url = m_doc->url();
     _cfg.writeEntry("filename", url.url());
     _cfg.writeEntry("modified", m_doc->isModified());
-    QString tempname = KTemporaryFile().fileName();
-    QString tempurl = KUrl::toPercentEncoding(tempname);
-    KUrl _url(tempurl);
-    m_doc->saveAs(_url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    QString tempname = QTemporaryFile().fileName();
+    QString tempurl = QUrl::toPercentEncoding(tempname);
+    QUrl _url(tempurl);
+    m_doc->saveAs(_url, KEduVocDocument::Automatic);
   }
 }
 
 void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
 {
   QString filename = _cfg.readEntry("filename", "");
-  KUrl url(filename);
+  QUrl url(filename);
   bool modified = _cfg.readEntry("modified", false);
   if(modified)
   {
     bool canRecover;
     QString tempname = kapp->checkRecoverFile(filename, canRecover);
-    KUrl _url(tempname);
+    QUrl _url(tempname);
 
     if(canRecover)
     {
       m_doc->open(_url);
-      setCaption(_url.fileName(),true);
+      setWindowTitle(_url.fileName() + "[*]");
+      setWindowModified(true);
       QFile::remove(tempname);
     }
   }
@@ -709,7 +717,8 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
     if(!filename.isEmpty())
     {
       m_doc->open(url);
-      setCaption(url.fileName(),false);
+      setWindowTitle(url.fileName() + "[*]");
+      setWindowModified(false);
     }
   }
 }
@@ -733,7 +742,7 @@ bool KWordQuizApp::queryClose()
         }
         else
         {
-          completed = (m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION)) == KEduVocDocument::NoError);
+          completed = (m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic) == KEduVocDocument::NoError);
         }
 
         break;
@@ -775,19 +784,17 @@ void KWordQuizApp::slotFileOpen()
   cb -> setEnabled(false);
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Reading);
-  QPointer<KFileDialog> fd = new KFileDialog(KUrl(), filter, this, cb);
-  fd->setOperationMode(KFileDialog::Opening);
-  fd->setMode(KFile::Files | KFile::ExistingOnly);
-  fd->setCaption(i18n("Open Vocabulary Document"));
+  QPointer<QFileDialog> fd = new QFileDialog(this, i18n("Open Vocabulary Document"), QString(), filter);
+  fd->setFileMode(QFileDialog::ExistingFiles);
 
   if (fd->exec() == QDialog::Accepted)
   {
-    KUrl::List l = fd->selectedUrls();
+    QList<QUrl> l = fd->selectedUrls();
     bool append = ((cb->isChecked()) && (l.count() >= 1));
 
     if (append)
     {
-      KUrl::List::iterator it;
+      QList<QUrl>::iterator it;
       for(it = l.begin(); it != l.end(); ++it)
       {
         KEduVocDocument *new_doc = new KEduVocDocument(this);
@@ -796,11 +803,11 @@ void KWordQuizApp::slotFileOpen()
         m_doc->merge(new_doc, false);
         delete (new_doc);
       }
-      m_tableModel->reset();
+      //m_tableModel->reset();
     }
     else
     {
-      KUrl::List::iterator it;
+      QList<QUrl>::iterator it;
       for(it = l.begin(); it != l.end(); ++it)
       {
         openUrl(*it);
@@ -813,7 +820,7 @@ void KWordQuizApp::slotFileOpen()
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
 
-void KWordQuizApp::slotFileOpenRecent(const KUrl& url)
+void KWordQuizApp::slotFileOpenRecent(const QUrl &url)
 {
   slotStatusMsg(i18n("Opening file..."));
   fileOpenRecent->setCurrentItem(-1);
@@ -827,13 +834,14 @@ void KWordQuizApp::slotFileGHNS()
   QPointer<KNS3::DownloadDialog> getHotNewStuffDialog = new KNS3::DownloadDialog("kwordquiz.knsrc", this);
   getHotNewStuffDialog->exec();
   KNS3::Entry::List entries = getHotNewStuffDialog->changedEntries();
-  
+  QMimeDatabase db;
+
   // list of changed entries
   foreach(const KNS3::Entry& entry, entries) {
-    // check mime type and if kvtml, open it	
-    foreach(const QString &file, entry.installedFiles()) { 
-      KMimeType::Ptr mimeType = KMimeType::findByPath(file);
-      if (mimeType->name() == "application/x-kvtml") {
+    // check mime type and if kvtml, open it
+    foreach(const QString &file, entry.installedFiles()) {
+      QMimeType mimeType = db.mimeTypeForFile(file);
+      if (mimeType.name() == "application/x-kvtml") {
 	    KProcess::startDetached("kwordquiz", QStringList() << file);
       }
     }
@@ -850,7 +858,7 @@ void KWordQuizApp::slotFileSave()
     success = saveDocAsFileName(m_doc);
   }
   else {
-    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic);
     if (saveStatus == KEduVocDocument::NoError)
       success = true;
     else
@@ -868,7 +876,8 @@ void KWordQuizApp::slotFileSaveAs()
   bool success = saveDocAsFileName(m_doc);
   if (success) {
     m_undoStack->setClean(); //emits cleanChanged()
-    setCaption(m_doc->url().fileName(), m_doc->isModified()); //if clean to begin with
+    setWindowTitle(m_doc->url().fileName() + "[*]"); //if clean to begin with
+    setWindowModified(m_doc->isModified());
   }
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
@@ -883,24 +892,24 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
   filter.append('\n');
   filter.append(i18n("*.html|HTML Document"));
 
-  QPointer<KFileDialog> fd = new KFileDialog(KUrl(), filter, this);
-  fd->setOperationMode(KFileDialog::Saving);
-  fd->setCaption(i18n("Save Vocabulary Document As"));
-  fd->setConfirmOverwrite(true);
+  QPointer<QFileDialog> fd = new QFileDialog(this, i18n("Save Vocabulary Document As"), QString(), filter);
+  fd->setAcceptMode(QFileDialog::AcceptSave);
 
   if (fd->exec() == QDialog::Accepted) {
-    KUrl url = fd->selectedUrl();
+    QUrl url = fd->selectedUrls().at(0);
     if (!url.isEmpty()) {
+      QString chosenFilter = fd->selectedNameFilter();
       if (!url.fileName().contains('.')) {
-        if (fd->currentFilter() == "*.csv")
-          url = KUrl(url.path().append(".csv"));
-        else if (fd->currentFilter() == "*.kvtml")
-          url = KUrl(url.path().append(".kvtml"));
-        else if (fd->currentFilter() == "*.html")
-          url = KUrl(url.path().append(".html"));
+        qDebug() << "Selected name filter is " << chosenFilter;
+        if (chosenFilter == "*.csv")
+          url = QUrl(url.path().append(".csv"));
+        else if (chosenFilter == "*.kvtml")
+          url = QUrl(url.path().append(".kvtml"));
+        else if (chosenFilter == "*.html")
+          url = QUrl(url.path().append(".html"));
       }
 
-      if (fd->currentFilter() == "*.html") {
+      if (chosenFilter == "*.html") {
         if (m_tableView->doHtmlExport(url))
           result = KEduVocDocument::NoError;
         else
@@ -910,7 +919,7 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
       else {
         if (m_dirWatch->contains(document->url().toLocalFile()))
           m_dirWatch->removeFile(document->url().toLocalFile());
-        result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(KWQ_VERSION));
+        result = document->saveAs(url, KEduVocDocument::Automatic);
         if (result == KEduVocDocument::NoError) {
           m_dirWatch->addFile(url.path());
           fileOpenRecent->addUrl(url);
@@ -939,7 +948,8 @@ void KWordQuizApp::slotFileClose()
     {
       delete m_doc;
       initDocument();
-      setCaption(m_doc->url().fileName(), m_doc->isModified());
+      setWindowTitle(m_doc->url().fileName() + "[*]");
+      setWindowModified(m_doc->isModified());
       m_tableModel->setDocument(m_doc);
       slotQuizEditor();
       slotModeActionGroupTriggered(m_modeActionGroup->actions().at(Prefs::mode() - 1));
@@ -960,7 +970,7 @@ void KWordQuizApp::slotFilePrint()
 void KWordQuizApp::slotFilePrintPreview() {
   slotStatusMsg(i18n("Showing Preview..."));
   m_tableView->doPrintPreview();
-  slotStatusMsg(i18nc("@info:status ready", "Ready"));    
+  slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
 
 
@@ -1046,7 +1056,7 @@ void KWordQuizApp::slotVocabLanguages()
   DlgLanguage* dlg;
   dlg = new DlgLanguage(m_tableModel, this);
 
-  if (dlg->exec() == KDialog::Accepted) {
+  if (dlg->exec() == QDialog::Accepted) {
     KWQCommandIdentifiers *kwqc = new KWQCommandIdentifiers(m_tableView, dlg->columnData());
     m_undoStack->push(kwqc);
   }
@@ -1056,11 +1066,10 @@ void KWordQuizApp::slotVocabLanguages()
 void KWordQuizApp::slotVocabFont()
 {
   slotStatusMsg(i18n("Setting the font of the vocabulary..."));
-  KFontDialog* dlg;
-  dlg = new KFontDialog(this);
+  QFontDialog* dlg = new QFontDialog(this);
   dlg->setObjectName("dlg_font");
   dlg->setFont(Prefs::editorFont());
-  if (dlg->exec() == KFontDialog::Accepted)
+  if (dlg->exec() == QDialog::Accepted)
   {
     KWQCommandFont *kwqc = new KWQCommandFont(m_tableView, Prefs::editorFont(), dlg->font());
     m_undoStack->push(kwqc);
@@ -1170,7 +1179,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
         m_pageWidget->setCurrentPage(m_editorPage);
     }
     m_quiz = new KWQQuizModel(this);
-    m_quiz->setSourceModel(m_sortFilterModel);
+    m_quiz->setFilterModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int)), m_tableView, SLOT(slotCheckedAnswer(int)));
     m_quiz->setQuizType(Prefs::EnumStartSession::Flashcard);
     m_quiz->setQuizMode(Prefs::mode());
@@ -1202,7 +1211,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
         m_pageWidget->setCurrentPage(m_editorPage);
     }
     m_quiz = new KWQQuizModel(this);
-    m_quiz->setSourceModel(m_sortFilterModel);
+    m_quiz->setFilterModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int)), m_tableView, SLOT(slotCheckedAnswer(int)));
     m_quiz->setQuizType(Prefs::EnumStartSession::MultipleChoice);
     m_quiz->setQuizMode(Prefs::mode());
@@ -1231,7 +1240,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
         m_pageWidget->setCurrentPage(m_editorPage);
     }
     m_quiz = new KWQQuizModel(this);
-    m_quiz->setSourceModel(m_sortFilterModel);
+    m_quiz->setFilterModel(m_sortFilterModel);
     connect(m_quiz, SIGNAL(checkingAnswer(int)), m_tableView, SLOT(slotCheckedAnswer(int)));
     m_quiz->setQuizType(Prefs::EnumStartSession::QA);
     m_quiz->setQuizMode(Prefs::mode());
@@ -1291,7 +1300,7 @@ void KWordQuizApp::updateSpecialCharIcons()
 {
   for (int i = 0; i < 9; i++){
     QAction * a = actionCollection()->action(QString("char_" + QString::number(i + 1)));
-    a->setIcon(KIcon(charIcon(Prefs::specialCharacters()[i])));
+    a->setIcon(charIcon(Prefs::specialCharacters()[i]));
     a->setIconText(i18n("Insert %1", Prefs::specialCharacters()[i]));
     a->setWhatsThis(i18n("Inserts the character %1", Prefs::specialCharacters()[i]));
     a->setToolTip(a->whatsThis());
@@ -1364,26 +1373,26 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
   m_modeActionGroup->actions()[1]->setText(i18n("&2 %1 -> %2 In Order", s2, s1));
   m_modeActionGroup->actions()[2]->setText(i18n("&3 %1 -> %2 Randomly", s1, s2));
   m_modeActionGroup->actions()[3]->setText(i18n("&4 %1 -> %2 Randomly", s2, s1));
-  m_modeActionGroup->actions()[4]->setText(i18n("&5 %1 &lt;-&gt; %2 Randomly", s1, s2));
+  m_modeActionGroup->actions()[4]->setText(i18n("&5 %1 <-> %2 Randomly", s1, s2));
 
   Prefs::setMode(act->data().toInt());
-  m_modeActionMenu->setIcon(KIcon("mode" + QString::number(Prefs::mode())));
+  m_modeActionMenu->setIcon(QIcon::fromTheme("mode" + QString::number(Prefs::mode())));
 
   switch (Prefs::mode()){
   case 1:
-    statusBar()->changeItem(i18n("%1 -> %2 In Order", s1, s2), 1);
+    m_statusLabel->setText(i18n("%1 -> %2 In Order", s1, s2));
     break;
   case 2:
-    statusBar()->changeItem(i18n("%1 -> %2 In Order", s2, s1), 1);
+    m_statusLabel->setText(i18n("%1 -> %2 In Order", s2, s1));
     break;
   case 3:
-   statusBar()->changeItem(i18n("%1 -> %2 Randomly", s1, s2), 1);
+    m_statusLabel->setText(i18n("%1 -> %2 Randomly", s1, s2));
     break;
   case 4:
-    statusBar()->changeItem(i18n("%1 -> %2 Randomly", s2, s1), 1);
+    m_statusLabel->setText(i18n("%1 -> %2 Randomly", s2, s1));
     break;
   case 5:
-    statusBar()->changeItem(i18n("%1 &lt;-&gt; %2 Randomly", s1, s2), 1);
+    m_statusLabel->setText(i18n("%1 &lt;-&gt; %2 Randomly", s1, s2));
     break;
   }
 
@@ -1464,7 +1473,8 @@ void KWordQuizApp::slotConfigShowSearch()
 void KWordQuizApp::slotCleanChanged(bool clean)
 {
   m_doc->setModified(!clean);
-  setCaption(m_doc->url().fileName(), m_doc->isModified());
+  setWindowTitle(m_doc->url().fileName() + "[*]");
+  setWindowModified(m_doc->isModified());
 }
 
 
@@ -1534,7 +1544,7 @@ void KWordQuizApp::slotTableContextMenuRequested(const QPoint & pos)
               a->setChecked(true);
         }
     } else {
-        kDebug() << "kxkb dbus error";
+        qDebug() << "kxkb dbus error";
     }
 
     popup->exec(m_tableView->viewport()->mapToGlobal(pos));
@@ -1545,5 +1555,3 @@ void KWordQuizApp::slotLayoutActionGroupTriggered(QAction *act)
     int column = m_tableView->currentIndex().column();
     m_tableModel->setHeaderData(column, Qt::Horizontal, act->data().toString(), KWQTableModel::KeyboardLayoutRole);
 }
-
-#include "kwordquiz.moc"

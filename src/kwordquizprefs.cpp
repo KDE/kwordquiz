@@ -19,7 +19,7 @@
 
 #include <QCheckBox>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KConfigSkeleton>
 
 #include "prefgeneral.h"
@@ -71,5 +71,3 @@ void KWordQuizPrefs::updateWidgetsDefault()
   m_prefCharacter->updateWidgets();
   m_config->useDefaults(bUseDefaults);
 }
-
-#include "kwordquizprefs.moc"

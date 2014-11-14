@@ -23,6 +23,8 @@
 #include <KConfigDialog>
 #include <KShortcutsEditor>
 
+class KConfigSkeleton;
+
 /**
   *@author Peter Hedlund
 */
@@ -33,7 +35,8 @@ class KWQTutorPrefs : public KConfigDialog
 {
   Q_OBJECT
 public:
-  KWQTutorPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config, KActionCollection *actionCollection);
+  KWQTutorPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config,
+		KActionCollection *actionCollection);
 
 protected slots:
   void updateSettings();

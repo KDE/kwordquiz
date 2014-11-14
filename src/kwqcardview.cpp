@@ -80,5 +80,3 @@ void KWQCardView::setImage(const QPixmap &image)
     if (scene() != 0)
         m_scene->setImage(image);
 }
-
-#include "kwqcardview.moc"

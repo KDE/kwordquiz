@@ -19,7 +19,7 @@
 #ifndef KWQSORTFILTERMODEL_H
 #define KWQSORTFILTERMODEL_H
 
-#include <QtGui/QSortFilterProxyModel>
+#include <QSortFilterProxyModel>
 
 /**
   @author Peter Hedlund <peter.hedlund@kdemail.net>
@@ -33,7 +33,7 @@ class KWQSortFilterModel : public QSortFilterProxyModel
   public:
     explicit KWQSortFilterModel(QObject *parent = 0);
 
-    void setSourceModel(KWQTableModel * sourceModel);
+    void setTableModel(KWQTableModel * sourceModel);
     KWQTableModel * sourceModel() const;
 
   public slots:
@@ -42,6 +42,9 @@ class KWQSortFilterModel : public QSortFilterProxyModel
 
   protected:
     bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
+
+    // Disable from public calls; use setTableModel instead.
+    //void setSourceModel(QAbstractItemModel *sourceModel);
 
   private:
     KWQTableModel * m_sourceModel;

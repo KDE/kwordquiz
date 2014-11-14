@@ -137,7 +137,7 @@
       <item row="0" column="2" rowspan="2">
        <layout class="QVBoxLayout" name="column1WidgetLayout">
         <item>
-         <widget class="KLineEdit" name="column1TitleLineEdit">
+         <widget class="QLineEdit" name="column1TitleLineEdit">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -153,7 +153,7 @@
          </widget>
         </item>
         <item>
-         <widget class="KComboBox" name="column1LayoutComboBox">
+         <widget class="QComboBox" name="column1LayoutComboBox">
           <property name="toolTip">
            <string>Keyboard layout for the left column</string>
           </property>
@@ -163,7 +163,7 @@
          </widget>
         </item>
         <item>
-         <widget class="KIntSpinBox" name="column1WidthSpinBox">
+         <widget class="QSpinBox" name="column1WidthSpinBox">
           <property name="toolTip">
            <string>Width of the left column</string>
           </property>
@@ -306,7 +306,7 @@
       <item row="0" column="2" rowspan="2">
        <layout class="QVBoxLayout" name="column2WidgetLayout">
         <item>
-         <widget class="KLineEdit" name="column2TitleLineEdit">
+         <widget class="QLineEdit" name="column2TitleLineEdit">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -322,10 +322,10 @@
          </widget>
         </item>
         <item>
-         <widget class="KComboBox" name="column2LayoutComboBox"/>
+         <widget class="QComboBox" name="column2LayoutComboBox"/>
         </item>
         <item>
-         <widget class="KIntSpinBox" name="column2WidthSpinBox">
+         <widget class="QSpinBox" name="column2WidthSpinBox">
           <property name="toolTip">
            <string>Width of the right column</string>
           </property>
@@ -374,21 +374,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>

@@ -42,5 +42,3 @@ void PrefTutor::maxChanged(int newValue)
  if (newValue <= kcfg_TutorMin->value())
    kcfg_TutorMax->setValue(kcfg_TutorMin->value()+1);
 }
-
-#include "preftutor.moc"

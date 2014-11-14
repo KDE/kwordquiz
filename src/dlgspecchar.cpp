@@ -16,37 +16,46 @@
 
 #include "dlgspecchar.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KCharSelect>
+#include <KConfigGroup>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
-DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) : KDialog(parent)
+DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) : QDialog(parent)
 {
-  setCaption( i18nc("@title:window select character dialog", "Select Character") );
-  setButtons(User1 | Cancel);
-  setDefaultButton(User1);
+  setWindowTitle( i18nc("@title:window select character dialog", "Select Character") );
+  QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
+  QWidget *mainWidget = new QWidget(this);
+  QVBoxLayout *mainLayout = new QVBoxLayout;
+  setLayout(mainLayout);
+  mainLayout->addWidget(mainWidget);
+  QPushButton *user1Button = new QPushButton;
+  buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
+  connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+  connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+  //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
+  mainLayout->addWidget(buttonBox);
+  user1Button->setDefault(true);
   setModal(true);
 
-  initDialog(font, chr);
-
-  setButtonText( User1, i18nc("@action:button select", "&Select") );
-  setButtonToolTip( User1, i18nc("@info:tooltip select this character", "Select this character") );
-  connect(this,SIGNAL(user1Clicked()),this,SLOT(slotUser1()));
-}
-
-void DlgSpecChar::initDialog(const QFont &font, const QChar &chr)
-{
   m_charSelect = new KCharSelect(this, 0);
   m_charSelect->setCurrentChar(chr);
   m_charSelect->setCurrentFont(font);
   connect(m_charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
   m_charSelect->resize(m_charSelect->sizeHint());
   m_charSelect->setFocus();
-  setMainWidget(m_charSelect);
+  mainLayout->addWidget(m_charSelect);
+
+  user1Button->setText(i18nc("@action:button", "select"));
+  user1Button->setToolTip(i18nc("@info:tooltip", "select this character"));
+  connect(user1Button,SIGNAL(clicked()),this,SLOT(slotUser1()));
 }
 
 void DlgSpecChar::closeDialog()
 {
-  KDialog::close();
+  QDialog::close();
 }
 
 QChar DlgSpecChar::chr()
@@ -65,5 +74,3 @@ void DlgSpecChar::slotUser1( )
   emit insertChar(chr());
   closeDialog();
 }
-
-#include "dlgspecchar.moc"

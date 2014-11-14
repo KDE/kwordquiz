@@ -18,7 +18,7 @@
 
 #include "kwqtutorflashcard.h"
 
-#include <QtGui/QVBoxLayout>
+#include <QVBoxLayout>
 
 #include "prefs.h"
 
@@ -77,5 +77,3 @@ void KWQTutorFlashCard::setText(const QString & text)
   if (m_card != 0)
     m_card->setText(text);
 }
-
-#include "kwqtutorflashcard.moc"

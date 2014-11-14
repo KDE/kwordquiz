@@ -20,13 +20,16 @@
 
 #include <QtCore/QPointer>
 #include <QtCore/QTimer>
-#include <QtGui/QMenu>
+#include <QMenu>
+#include <QAction>
 
-#include <KAction>
-#include <KMessageBox>
+#include <KActionCollection>
 #include <KStandardAction>
+#include <KMessageBox>
 #include <KFileDialog>
-#include <KLocale>
+#include <KLocalizedString>
+#include <KConfigGroup>
+#include <KIconLoader>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
@@ -35,7 +38,7 @@
 #include "kwqtutorprefs.h"
 #include "prefs.h"
 
-KWQTutor::KWQTutor(KUrl fileToOpen, QWidget *parent) : KSystemTrayIcon(parent)
+KWQTutor::KWQTutor(QUrl fileToOpen, QWidget *parent) : KStatusNotifierItem(parent)
 {
   KMessageBox::information(0, i18n("<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
                            "you to set a certain time interval at which flashcards will pop up.<br /><br />"
@@ -47,33 +50,35 @@ KWQTutor::KWQTutor(KUrl fileToOpen, QWidget *parent) : KSystemTrayIcon(parent)
 
   m_isRunning = false;
 
-  setIcon(KIcon(KIconLoader::global()->iconPath("kwordquiz", KIconLoader::Application)));
+  setIconByName("kwordquiz");
   connect (this, SIGNAL(quitSelected()),this, SLOT(quit()));
 
-  KAction* a;
+  QAction * a;
+  QMenu * menu = new QMenu();
 
-  a = actionCollection()->addAction("tutor_start");
-  a->setText(i18n("Start Exercise"));
-  a->setIcon(KIcon("media-playback-start"));
-  connect (a, SIGNAL(triggered()), this,  SLOT (startStopPressed()));
-  contextMenu()->addAction(a);
+  m_tutorStartAction = new QAction(menu);
+  m_tutorStartAction->setText(i18n("Start Exercise"));
+  m_tutorStartAction->setIcon(QIcon::fromTheme("media-playback-start"));
+  connect (m_tutorStartAction, SIGNAL(triggered()), this,  SLOT (startStopPressed()));
+  addAction("tutor_start", m_tutorStartAction);
+  menu->addAction(m_tutorStartAction);
 
-  a = KStandardAction::open(this, SLOT(loadFile()), actionCollection());
-  contextMenu()->addAction(a);
+  a = KStandardAction::open(this, SLOT(loadFile()), this);
+  menu->addAction(a);
 
-  a = KStandardAction::preferences(this, SLOT(showPrefMenu()), actionCollection());
+  a = KStandardAction::preferences(this, SLOT(showPrefMenu()), this);
   a->setText(i18n("Configure KWordQuiz Tutor..."));
-  contextMenu()->addAction(a);
+  menu->addAction(a);
 
   m_globalCollection = new KActionCollection(this);
   a = m_globalCollection->addAction("kwq_close_flash_card");
   a->setText(i18n("Close Flash Card"));
-  a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_J));
+  //a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_J));
   connect (a, SIGNAL(triggered()), this, SLOT(closeFlashcard()));
 
   a = m_globalCollection->addAction("kwq_flip_flash_card");
   a->setText(i18n("Flip Flash Card"));
-  a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_H));
+  //a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_H));
   connect (a, SIGNAL(triggered()), this, SLOT(flipFlashcard()));
 
   m_timer = new QTimer;
@@ -84,13 +89,12 @@ KWQTutor::KWQTutor(KUrl fileToOpen, QWidget *parent) : KSystemTrayIcon(parent)
 
   m_tutorDoc = new KEduVocDocument();
   if (fileToOpen.isEmpty())
-    m_tutorDoc->open(KUrl(Prefs::lastVocabFile()));
+    m_tutorDoc->open(QUrl(Prefs::lastVocabFile()));
   else {
     m_tutorDoc->open(fileToOpen);
-    Prefs::setLastVocabFile(fileToOpen.pathOrUrl());
+    Prefs::setLastVocabFile(fileToOpen.toLocalFile());
   }
-
-  show();
+  setContextMenu(menu);
 
   if (Prefs::startExerciseAsSoonAsFileIsLoaded() && !fileToOpen.isEmpty()) //starting immediately?
     startStopPressed();
@@ -102,11 +106,11 @@ void KWQTutor::updateTimer()
   if (Prefs::tutorTiming() == Prefs::EnumTutorTiming::FixedInterval)
     interval = Prefs::tutorEvery();
   else if (Prefs::tutorTiming() == Prefs::EnumTutorTiming::RandomInterval) {
-    do 
+    do
       interval = m_randomSequence->getLong(Prefs::tutorMax());
     while (interval < Prefs::tutorMin());
   }
-  kDebug() << interval;
+  qDebug() << interval;
   m_timer->start(1000 * 60 * interval);
   if (!m_flashcard->isVisible())
     showFlashcard(m_randomSequence->getLong(m_tutorDoc->lesson()->entryCount(KEduVocLesson::Recursive) - 1));
@@ -117,16 +121,16 @@ void KWQTutor::startStopPressed()
   if (!m_isRunning && m_tutorDoc->lesson()->entryCount(KEduVocLesson::Recursive))  //make sure the file's not empty
   {
     m_isRunning = true;
-    actionCollection()->action("tutor_start")->setText(i18n("Stop Exercise"));
-    actionCollection()->action("tutor_start")->setIcon(KIcon("media-playback-stop"));
+    m_tutorStartAction->setText(i18n("Stop Exercise"));
+    m_tutorStartAction->setIcon(QIcon::fromTheme("media-playback-stop"));
     updateTimer();
     return;
   }
   if (m_isRunning)
   {
     m_timer->stop();
-    actionCollection()->action("tutor_start")->setText(i18n("Start Exercise"));
-    actionCollection()->action("tutor_start")->setIcon(KIcon("media-playback-start"));
+    m_tutorStartAction->setText(i18n("Start Exercise"));
+    m_tutorStartAction->setIcon(QIcon::fromTheme("media-playback-start"));
     m_isRunning = false;
     m_flashcard->setVisible(false);
     Prefs::setTutorFlashCardGeometry(m_flashcard->geometry());
@@ -136,14 +140,14 @@ void KWQTutor::startStopPressed()
 void KWQTutor::loadFile()
 {
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Reading);
-  QPointer<KFileDialog> fd = new KFileDialog(KUrl(), filter, 0);
+  QPointer<KFileDialog> fd = new KFileDialog(QUrl(), filter, 0);
   fd->setOperationMode(KFileDialog::Opening);
   fd->setMode(KFile::File | KFile::ExistingOnly);
-  fd->setCaption(i18n("Open Vocabulary Document"));
+  fd->setWindowTitle(i18n("Open Vocabulary Document"));
   if (fd->exec() == QDialog::Accepted)
   {
     m_tutorDoc->open(fd->selectedUrl());
-    Prefs::setLastVocabFile(fd->selectedUrl().pathOrUrl());
+    Prefs::setLastVocabFile(fd->selectedUrl().toLocalFile());
     if (Prefs::startExerciseAsSoonAsFileIsLoaded())
       startStopPressed();
   }
@@ -184,7 +188,7 @@ void KWQTutor::showFlashcard(int numberShowing)
   QVariant entry (m_tutorDoc->lesson()->entry(numberShowing, KEduVocLesson::Recursive)->translation(m_currentColumn)->text());
   m_flashcard->setText((entry).toString());
   m_flashcard->setGeometry(Prefs::tutorFlashCardGeometry());
-  m_flashcard->show();  
+  m_flashcard->show();
   m_currentEntry = numberShowing;
 }
 
@@ -192,5 +196,3 @@ void KWQTutor::quit()
 {
   Prefs::self()->writeConfig();
 }
-
-#include "kwqtutor.moc"

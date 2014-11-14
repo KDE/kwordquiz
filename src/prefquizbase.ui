@@ -243,7 +243,7 @@
        </widget>
       </item>
       <item row="1" column="1" >
-       <widget class="KIntNumInput" name="kcfg_FlipDelay" >
+       <widget class="QSpinBox" name="kcfg_FlipDelay" >
         <property name="toolTip" >
          <string>Delay to flip card</string>
         </property>
@@ -253,7 +253,7 @@
        </widget>
       </item>
       <item row="2" column="1" colspan="2" >
-       <widget class="KButtonGroup" name="kcfg_KeepDiscard" >
+       <widget class="QGroupBox" name="kcfg_KeepDiscard" >
         <property name="styleSheet" >
          <string>QGroupBox {border-width: 0px; border-style: none;}</string>
         </property>
@@ -327,12 +327,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KIntNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-   <container>1</container>
-  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>

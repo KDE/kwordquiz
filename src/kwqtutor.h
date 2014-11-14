@@ -21,18 +21,18 @@
 
 #include <KRandomSequence>
 #include <KActionCollection>
-#include <KSystemTrayIcon>
+#include <KStatusNotifierItem>
 
 #include "keduvocdocument.h"
 #include "kwqtutorflashcard.h"
 
-class KWQTutor : public KSystemTrayIcon
+class KWQTutor : public KStatusNotifierItem
 {
   Q_OBJECT
 
   public:
     /* init systray icon, meny, actions */
-    explicit KWQTutor (KUrl fileToOpen, QWidget *parent = 0);
+    explicit KWQTutor (QUrl fileToOpen, QWidget *parent = 0);
 
   public slots:
     /* self-calling function: it sets the time interval,calls itself and call func to display flashcard*/
@@ -66,8 +66,10 @@ class KWQTutor : public KSystemTrayIcon
     QTimer * m_timer;
     /* the vocabulary doc being opened */
     KEduVocDocument* m_tutorDoc;
-    /* collection of KAction that holds Global Shortcuts */
+    /* collection of QAction that holds Global Shortcuts */
     KActionCollection* m_globalCollection;
+    /* tutor start action */
+    QAction* m_tutorStartAction;
     /* a flag to know whether the tutor exercise is runnig */
     bool m_isRunning;
 };
