@@ -187,4 +187,4 @@ GenericName[x-test]=xxFlash Card Trainerxx
 GenericName[zh_CN]=卡片式训练程序
 GenericName[zh_TW]=閃卡訓練師
 Categories=Qt;KDE;Education;Languages;
-
+X-DBUS-ServiceName=org.kde.kwordquiz
