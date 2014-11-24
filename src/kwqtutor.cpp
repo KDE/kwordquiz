@@ -194,5 +194,5 @@ void KWQTutor::showFlashcard(int numberShowing)
 
 void KWQTutor::quit()
 {
-  Prefs::self()->writeConfig();
+  Prefs::self()->save();
 }
