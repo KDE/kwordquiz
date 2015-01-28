@@ -13,6 +13,7 @@
   <name xml:lang="et">KWordQuiz</name>
   <name xml:lang="fi">KWordQuiz</name>
   <name xml:lang="it">KWordQuiz</name>
+  <name xml:lang="lt">KWordQuiz</name>
   <name xml:lang="nds">KWordQuiz</name>
   <name xml:lang="nl">KWordQuiz</name>
   <name xml:lang="pl">KWordQuiz</name>
@@ -33,6 +34,7 @@
   <summary xml:lang="et">Sähvikute treening</summary>
   <summary xml:lang="fi">Sanaston harjoittelu kysymyskorteilla</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
+  <summary xml:lang="lt">Mokymasis iš kortelių</summary>
   <summary xml:lang="nds">Koorten-Lehrprogramm</summary>
   <summary xml:lang="nl">Woorden oefenen</summary>
   <summary xml:lang="pl">Ćwiczenie z fiszkami</summary>
