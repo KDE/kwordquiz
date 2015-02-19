@@ -49,3 +49,4 @@ add_subdirectory(doc)
 add_subdirectory(src)
 
 install(FILES kwordquiz.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/)
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
