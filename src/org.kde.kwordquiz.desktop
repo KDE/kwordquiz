@@ -1,7 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Exec=kwordquiz -qwindowtitle %c %i
+Exec=kwordquiz %u -qwindowtitle %c %i
 Icon=kwordquiz
 X-DocPath=kwordquiz/index.html
 MimeType=application/x-kvtml;
