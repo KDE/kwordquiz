@@ -48,8 +48,8 @@ DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) :
   m_charSelect->setFocus();
   mainLayout->addWidget(m_charSelect);
 
-  user1Button->setText(i18nc("@action:button", "select"));
-  user1Button->setToolTip(i18nc("@info:tooltip", "select this character"));
+  user1Button->setText(i18nc("@action:button", "&Select"));
+  user1Button->setToolTip(i18nc("@info:tooltip", "Select this character"));
   connect(user1Button,SIGNAL(clicked()),this,SLOT(slotUser1()));
 }
 
