@@ -91,16 +91,16 @@ target_link_libraries(kwordquiz
     Phonon::phonon4qt5
 )
 
-install(TARGETS kwordquiz  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS kwordquiz  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.kwordquiz.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES kwordquiz.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
-install( FILES kwordquiz.knsrc  DESTINATION  ${KNOTIFYRC_INSTALL_DIR} )
-install( FILES kwordquiz.notifyrc  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz )
+install( PROGRAMS org.kde.kwordquiz.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
+install( FILES kwordquiz.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
+install( FILES kwordquiz.knsrc  DESTINATION  ${KDE_INSTALL_KNOTIFY5RCDIR} )
+install( FILES kwordquiz.notifyrc  DESTINATION  ${KDE_INSTALL_DATADIR}/kwordquiz )
 install(FILES
   kwordquizui.rc
-  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kwordquiz)
+  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kwordquiz)
 

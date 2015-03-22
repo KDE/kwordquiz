@@ -1,3 +1,3 @@
 
-install( FILES example.kvtml french_verbs.kvtml fill_in_the_blank.kvtml us_states_and_capitals.kvtml  DESTINATION  ${DATA_INSTALL_DIR}/kwordquiz/examples )
+install( FILES example.kvtml french_verbs.kvtml fill_in_the_blank.kvtml us_states_and_capitals.kvtml  DESTINATION  ${KDE_INSTALL_DATADIR}/kwordquiz/examples )
 
