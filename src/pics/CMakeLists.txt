@@ -112,6 +112,23 @@ ecm_install_icons(ICONS
     64-actions-qa.png
     64-actions-question.png
     64-actions-rowcol.png
+    128-action-answer-correct.png
+    128-action-answer.png
+    128-action-delete-table-row.png
+    128-action-editor.png
+    128-action-error.png
+    128-action-flash.png
+    128-action-insert-table-row.png
+    128-action-languages.png
+    128-action-mode1.png
+    128-action-mode2.png
+    128-action-mode3.png
+    128-action-mode4.png
+    128-action-mode5.png
+    128-action-multiple.png
+    128-action-qa.png
+    128-action-question.png
+    128-action-rowcol.png
     sc-actions-answer-correct.svgz
     sc-actions-answer.svgz
     sc-actions-delete-table-row.svgz
@@ -130,7 +147,7 @@ ecm_install_icons(ICONS
     sc-actions-qa.svgz
     sc-actions-question.svgz
     sc-actions-unmarkasblank.svgz
-    DESTINATION ${DATA_INSTALL_DIR}/kwordquiz/icons
+    DESTINATION ${KDE_INSTALL_DATADIR}/kwordquiz/icons
     THEME hicolor
 )
 
