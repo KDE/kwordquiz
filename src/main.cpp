@@ -33,6 +33,7 @@
 static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
 int main(int argc, char *argv[])
 {
+    KLocalizedString::setApplicationDomain("kwordquiz");
     QApplication::setApplicationName("kwordquiz");
     QApplication::setApplicationVersion(KWQ_VERSION);
     QApplication::setOrganizationDomain("kde.org");
