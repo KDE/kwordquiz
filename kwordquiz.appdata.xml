@@ -15,6 +15,7 @@
   <name xml:lang="fi">KWordQuiz</name>
   <name xml:lang="fr">KWordQuiz</name>
   <name xml:lang="it">KWordQuiz</name>
+  <name xml:lang="ko">KWordQuiz</name>
   <name xml:lang="lt">KWordQuiz</name>
   <name xml:lang="nds">KWordQuiz</name>
   <name xml:lang="nl">KWordQuiz</name>
@@ -40,6 +41,7 @@
   <summary xml:lang="fi">Sanaston harjoittelu kysymyskorteilla</summary>
   <summary xml:lang="fr">Entraînement aux cartes mémoire</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
+  <summary xml:lang="ko">플래시 카드 트레이너</summary>
   <summary xml:lang="lt">Mokymasis iš kortelių</summary>
   <summary xml:lang="nds">Koorten-Lehrprogramm</summary>
   <summary xml:lang="nl">Woorden oefenen</summary>
