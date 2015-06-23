@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KWordQuiz</name>
+  <name xml:lang="ast">KWordQuiz</name>
   <name xml:lang="bs">KWordQuiz</name>
   <name xml:lang="ca">KWordQuiz</name>
   <name xml:lang="cs">KWordQuiz</name>
@@ -32,6 +33,7 @@
   <name xml:lang="zh-CN">KWordQuiz</name>
   <name xml:lang="zh-TW">語言_KWordQuiz</name>
   <summary>Flash Card Trainer</summary>
+  <summary xml:lang="ast">Entrenador de tarxetes</summary>
   <summary xml:lang="bs">Učitelj fleš karticama</summary>
   <summary xml:lang="ca">Entrenador per targetes ràpides</summary>
   <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
@@ -59,6 +61,7 @@
   <summary xml:lang="zh-TW">閃卡訓練師</summary>
   <description>
     <p>KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
+    <p xml:lang="ast">KWordQuiz ye un programa de tarxetes. Pue usase pal deprendimientu de vocabulariu y munches otres asignatures. Apurre un editor y 5 moos estremaos de tarxetes. Usa'l formatu de ficheru KVTML y puen baxase dende l'aplicación ficheros d'otros contribuyentes.</p>
     <p xml:lang="bs">KWordQuiz je program opšte namjene fleš kartica. Može se koristiti za učenje riječi i s mnogim drugim temama. On pruža urednik i pet različitih flashcard kviz režima. Koristi format KVTML datoteke i doprinesni fajlovi mogu se preuzeti u okviru same aplikacije.</p>
     <p xml:lang="ca">El KWordQuiz és un programa de targetes ràpides de propòsit general. Es pot utilitzar per aprendre vocabulari altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar fitxers de col·laboracions a l'aplicació.</p>
     <p xml:lang="en-GB">KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
