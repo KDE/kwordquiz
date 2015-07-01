@@ -2,6 +2,7 @@
 IconName=kwordquiz
 Comment=KWordQuiz
 Comment[af]=KWordQuiz
+Comment[ast]=KWordQuiz
 Comment[be]=KWordQuiz
 Comment[bg]=KWordQuiz
 Comment[bn]=কে-ওয়ার্ড-কুইজ
@@ -69,6 +70,7 @@ Comment[zh_TW]=語言訓練
 [Event/QuizCorrect]
 Name=QuizCorrect
 Name[af]=QuizCorrect
+Name[ast]=QuizCorrect
 Name[be]=QuizCorrect
 Name[bg]=Верен отговор
 Name[bn]==কুইজ-সঠিক
@@ -132,6 +134,7 @@ Name[zh_CN]=答对
 Name[zh_TW]=答對
 Comment=Correct answer
 Comment[af]=Regte antwoord
+Comment[ast]=Rempuesta correuta
 Comment[be]=Правільны адказ
 Comment[bg]=Верен отговор
 Comment[bn]=সঠিক উত্তর
@@ -202,6 +205,7 @@ Action=Sound
 [Event/QuizError]
 Name=QuizError
 Name[af]=QuizError
+Name[ast]=QuizError
 Name[be]=QuizError
 Name[bg]=Грешен отговор
 Name[bn]=কুইজ-বেঠিক
@@ -265,6 +269,7 @@ Name[zh_CN]=答错
 Name[zh_TW]=答錯
 Comment=Wrong answer
 Comment[af]=Verkeerde antwoord
+Comment[ast]=Rempuesta incorreuta
 Comment[be]=Няправільны адказ
 Comment[bg]=Грешен отговор
 Comment[bn]=ভুল উত্তর
@@ -335,6 +340,7 @@ Action=Sound
 [Event/SyntaxError]
 Name=syntaxerror
 Name[af]=sintaksfout
+Name[ast]=syntaxerror
 Name[be]=syntaxerror
 Name[bg]=Синтактична грешка
 Name[bn]=ভুল-বানান
@@ -399,6 +405,7 @@ Name[zh_CN]=语法错误
 Name[zh_TW]=語法錯誤
 Comment=Error in syntax
 Comment[af]=Fout met sintaks
+Comment[ast]=Fallu na sintaxis
 Comment[be]=Сінтаксічная памылка
 Comment[bg]=Синтактична грешка
 Comment[bn]=বানানে ভুল রয়েছে
