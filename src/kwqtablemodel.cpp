@@ -97,13 +97,13 @@ QVariant KWQTableModel::headerData(int section, Qt::Orientation orientation, int
 
     if (role == Qt::SizeHintRole) {
       DocumentSettings documentSettings(m_doc->url().url());
-      documentSettings.readConfig();
+      documentSettings.read();
       return QSize(documentSettings.sizeHintColumn(section), 25);
     }
 
     if (role == KWQTableModel::KeyboardLayoutRole) {
       DocumentSettings documentSettings(m_doc->url().url());
-      documentSettings.readConfig();
+      documentSettings.read();
       return documentSettings.keyboardLayoutColumn(section);
     }
 
@@ -157,13 +157,13 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
     if (role == Qt::SizeHintRole) {
       DocumentSettings documentSettings(m_doc->url().url());
       documentSettings.setSizeHintColumn(section, qvariant_cast<QSize>(value).width());
-      documentSettings.writeConfig();
+      documentSettings.save();
     }
 
     if (role == KWQTableModel::KeyboardLayoutRole) {
       DocumentSettings documentSettings(m_doc->url().url());
       documentSettings.setKeyboardLayoutColumn(section, value.toString());
-      documentSettings.writeConfig();
+      documentSettings.save();
     }
 
     emit headerDataChanged(orientation, section, section);
