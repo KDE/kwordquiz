@@ -255,16 +255,16 @@ QStringList KWQQuizModel::multiOptions()
 
 QString KWQQuizModel::quizIcon(QuizIcon ico)
 {
-    QString s = "question";
+    QString s = QStringLiteral("question");
     int col = column(m_list.at(m_currentQuestion));
     if (ico == IconLeftCol) {
         if (col == 0)
-            s = "answer";
+            s = QStringLiteral("answer");
     }
 
     if (ico == IconRightCol) {
         if (col != 0)
-            s = "answer";
+            s = QStringLiteral("answer");
     }
     return s;
 }
@@ -283,11 +283,11 @@ QString KWQQuizModel::yourAnswer(const QString & s)
         else
             ls.append(s);
 
-        result = m_answerBlank.replace("..........", "<u></u>");
+        result = m_answerBlank.replace(QLatin1String(".........."), QLatin1String("<u></u>"));
 
         int offset = 0, counter = 0;
         while (offset >= 0) {
-            offset = result.indexOf("<u>", offset);
+            offset = result.indexOf(QStringLiteral("<u>"), offset);
             if (offset >= 0) {
                 result.insert(offset + 3, ls[counter]);
                 offset++;
@@ -338,7 +338,7 @@ QString KWQQuizModel::question()
 
 QString KWQQuizModel::blankAnswer()
 {
-    QString r = "";
+    QString r = QLatin1String("");
     m_correctBlank.clear();
     m_answerBlank.clear();
     QString tTemp;
@@ -349,9 +349,9 @@ QString KWQQuizModel::blankAnswer()
         r = tTemp;
         QRegExp rx;
         rx.setMinimal(true);
-        rx.setPattern("\\[.*\\]");
+        rx.setPattern(QStringLiteral("\\[.*\\]"));
 
-        r.replace(rx, "..........");
+        r.replace(rx, QStringLiteral(".........."));
 
         if (r != tTemp) {
             m_answerBlank = r;
@@ -379,8 +379,8 @@ QString KWQQuizModel::answer()
 
     if (m_quizType == Prefs::EnumStartSession::QA) {
         if (Prefs::enableBlanks()) {
-            s.replace('[', "<u>");
-            s.replace(']', "</u>");
+            s.replace('[', QLatin1String("<u>"));
+            s.replace(']', QLatin1String("</u>"));
             s.prepend("<qt>");
             s.append("</qt>");
         }

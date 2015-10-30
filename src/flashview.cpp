@@ -33,7 +33,7 @@ FlashView::FlashView(QWidget *parent, KActionCollection *actionCollection) : KWQ
 {
   setupUi(this);
   m_timer = new QTimer(this);
-  connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimer()));
+  connect(m_timer, &QTimer::timeout, this, &FlashView::slotTimer);
 }
 
 void FlashView::init()
@@ -42,12 +42,12 @@ void FlashView::init()
   score->setQuestionCount(m_quiz->questionCount());
   score->setAsPercent(Prefs::percent());
 
-  m_actionCollection->action("quiz_check")->setEnabled(true);
-  m_actionCollection->action("flash_know")->setEnabled(true);
-  m_actionCollection->action("flash_dont_know")->setEnabled(true);
-  m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
-  m_actionCollection->action("quiz_export_errors")->setEnabled(false);
-  m_actionCollection->action("quiz_audio_play")->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_check"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("flash_know"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("flash_dont_know"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("quiz_repeat_errors"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_export_errors"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
 
   // reset last file
   audioPlayFile(QUrl(), true);
@@ -62,12 +62,12 @@ void FlashView::keepDiscardCard(bool keep)
 {
   if (!keep) {
     score->countIncrement(KWQScoreWidget::cdCorrect);
-    KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
+    KNotification::event(QStringLiteral("QuizCorrect"), i18n("Your answer was correct!"));
   }
   else {
-    m_quiz->checkAnswer("");
+    m_quiz->checkAnswer(QLatin1String(""));
     score->countIncrement(KWQScoreWidget::cdError);
-    KNotification::event("QuizError", i18n("Your answer was incorrect."));
+    KNotification::event(QStringLiteral("QuizError"), i18n("Your answer was incorrect."));
   }
 
   m_showFirst = true;
@@ -78,12 +78,12 @@ void FlashView::keepDiscardCard(bool keep)
   }
   else {
     m_quiz->finish();
-    m_actionCollection->action("quiz_check")->setEnabled(false);
-    m_actionCollection->action("flash_know")->setEnabled(false);
-    m_actionCollection->action("flash_dont_know")->setEnabled(false);
-    m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
-    m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
-    m_actionCollection->action("quiz_audio_play")->setEnabled(false);
+    m_actionCollection->action(QStringLiteral("quiz_check"))->setEnabled(false);
+    m_actionCollection->action(QStringLiteral("flash_know"))->setEnabled(false);
+    m_actionCollection->action(QStringLiteral("flash_dont_know"))->setEnabled(false);
+    m_actionCollection->action(QStringLiteral("quiz_repeat_errors"))->setEnabled(m_quiz->hasErrors());
+    m_actionCollection->action(QStringLiteral("quiz_export_errors"))->setEnabled(m_quiz->hasErrors());
+    m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
     disconnect(flashcard, SIGNAL(cardClicked()), 0, 0);
   }
 }

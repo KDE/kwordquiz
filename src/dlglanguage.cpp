@@ -40,15 +40,15 @@ DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): QDialog(parent)
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
     mainLayout->addWidget(buttonBox);
 
     setupUi(mainWidget);
 
-    column1Picture -> setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
-    column2Picture -> setPixmap(KIconLoader::global()->loadIcon("answer", KIconLoader::Panel));
+    column1Picture -> setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
+    column2Picture -> setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer"), KIconLoader::Panel));
 
 #if 0  // FIXME KF5: Use QCompleter for this
     column1TitleLineEdit->completionObject(true)->setItems(Prefs::columnTitles1());
@@ -63,8 +63,8 @@ DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): QDialog(parent)
 
     // keyboard layout
     // try to talk to kxbk - get a list of keyboard layouts
-    QDBusInterface kxbk("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts");
-    QDBusReply<QStringList> reply = kxbk.call("getLayoutsList");
+    QDBusInterface kxbk(QStringLiteral("org.kde.keyboard"), QStringLiteral("/Layouts"), QStringLiteral("org.kde.KeyboardLayouts"));
+    QDBusReply<QStringList> reply = kxbk.call(QStringLiteral("getLayoutsList"));
     if (reply.isValid()) {
         QStringList layouts = reply;
         column1LayoutComboBox->addItems(layouts);

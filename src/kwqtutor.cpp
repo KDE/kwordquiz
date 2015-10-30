@@ -46,11 +46,11 @@ KWQTutor::KWQTutor(QUrl fileToOpen, QWidget *parent) : KStatusNotifierItem(paren
                            "without stealing the focus from other programs you might be working with.<br /><br />"
                            "Be sure to right-click KWordQuiz Tutor icon on the panel and select Preferences. "
                            "There you can assign keyboard shortcuts.</qt>"),
-                           i18n("Tutor"), QString("firstTutorRun"));
+                           i18n("Tutor"), QStringLiteral("firstTutorRun"));
 
   m_isRunning = false;
 
-  setIconByName("kwordquiz");
+  setIconByName(QStringLiteral("kwordquiz"));
   connect (this, SIGNAL(quitSelected()),this, SLOT(quit()));
 
   QAction * a;
@@ -58,9 +58,9 @@ KWQTutor::KWQTutor(QUrl fileToOpen, QWidget *parent) : KStatusNotifierItem(paren
 
   m_tutorStartAction = new QAction(menu);
   m_tutorStartAction->setText(i18n("Start Exercise"));
-  m_tutorStartAction->setIcon(QIcon::fromTheme("media-playback-start"));
-  connect (m_tutorStartAction, SIGNAL(triggered()), this,  SLOT (startStopPressed()));
-  addAction("tutor_start", m_tutorStartAction);
+  m_tutorStartAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-start")));
+  connect (m_tutorStartAction, &QAction::triggered, this,  &KWQTutor::startStopPressed);
+  addAction(QStringLiteral("tutor_start"), m_tutorStartAction);
   menu->addAction(m_tutorStartAction);
 
   a = KStandardAction::open(this, SLOT(loadFile()), this);
@@ -71,18 +71,18 @@ KWQTutor::KWQTutor(QUrl fileToOpen, QWidget *parent) : KStatusNotifierItem(paren
   menu->addAction(a);
 
   m_globalCollection = new KActionCollection(this);
-  a = m_globalCollection->addAction("kwq_close_flash_card");
+  a = m_globalCollection->addAction(QStringLiteral("kwq_close_flash_card"));
   a->setText(i18n("Close Flash Card"));
   //a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_J));
-  connect (a, SIGNAL(triggered()), this, SLOT(closeFlashcard()));
+  connect (a, &QAction::triggered, this, &KWQTutor::closeFlashcard);
 
-  a = m_globalCollection->addAction("kwq_flip_flash_card");
+  a = m_globalCollection->addAction(QStringLiteral("kwq_flip_flash_card"));
   a->setText(i18n("Flip Flash Card"));
   //a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_H));
-  connect (a, SIGNAL(triggered()), this, SLOT(flipFlashcard()));
+  connect (a, &QAction::triggered, this, &KWQTutor::flipFlashcard);
 
   m_timer = new QTimer;
-  connect (m_timer, SIGNAL(timeout()), this, SLOT(updateTimer()));
+  connect (m_timer, &QTimer::timeout, this, &KWQTutor::updateTimer);
 
   m_randomSequence = new KRandomSequence();
   m_flashcard = new KWQTutorFlashCard();
@@ -122,7 +122,7 @@ void KWQTutor::startStopPressed()
   {
     m_isRunning = true;
     m_tutorStartAction->setText(i18n("Stop Exercise"));
-    m_tutorStartAction->setIcon(QIcon::fromTheme("media-playback-stop"));
+    m_tutorStartAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-stop")));
     updateTimer();
     return;
   }
@@ -130,7 +130,7 @@ void KWQTutor::startStopPressed()
   {
     m_timer->stop();
     m_tutorStartAction->setText(i18n("Start Exercise"));
-    m_tutorStartAction->setIcon(QIcon::fromTheme("media-playback-start"));
+    m_tutorStartAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-start")));
     m_isRunning = false;
     m_flashcard->setVisible(false);
     Prefs::setTutorFlashCardGeometry(m_flashcard->geometry());
@@ -156,12 +156,12 @@ void KWQTutor::loadFile()
 
 void KWQTutor::showPrefMenu()
 {
-  if (KWQTutorPrefs::showDialog("settings"))
+  if (KWQTutorPrefs::showDialog(QStringLiteral("settings")))
     return;
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
-  KWQTutorPrefs* dialog = new KWQTutorPrefs(0, "settings",  Prefs::self(), m_globalCollection);
-  connect(dialog, SIGNAL(settingsChanged(QString)), this, SLOT(slotApplyPreferences()));
+  KWQTutorPrefs* dialog = new KWQTutorPrefs(0, QStringLiteral("settings"),  Prefs::self(), m_globalCollection);
+  connect(dialog, &KConfigDialog::settingsChanged, this, &KWQTutor::slotApplyPreferences);
   dialog->show();
 }
 

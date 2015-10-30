@@ -61,8 +61,8 @@ KWQTableView::KWQTableView(QUndoStack *undoStack, QWidget *parent)
   setSelectionBehavior(QAbstractItemView::SelectItems);
   setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
   setTabKeyNavigation(true);
-  connect(horizontalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(horizontalHeaderResized(int,int,int)));
-  connect(horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(slotHeaderClicked(int)));
+  connect(horizontalHeader(), &QHeaderView::sectionResized, this, &KWQTableView::horizontalHeaderResized);
+  connect(horizontalHeader(), &QHeaderView::sectionClicked, this, &KWQTableView::slotHeaderClicked);
   m_delegate = new KWQTableDelegate(this);
   setItemDelegate(m_delegate);
 
@@ -187,7 +187,7 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool s
   }
   else
   {
-    textDoc->rootFrame()->lastCursorPosition().insertText(QString("kwordquiz %1").arg(KWQ_VERSION));
+    textDoc->rootFrame()->lastCursorPosition().insertText(QStringLiteral("kwordquiz %1").arg(KWQ_VERSION));
 
     if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
       textDoc->rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
@@ -436,12 +436,12 @@ void KWQTableView::doEditUnmarkBlank()
           int fr = s.lastIndexOf(delim_start, cs);
           if (fr > 0)
           {
-            s = s.replace(fr, 1, "");
+            s = s.replace(fr, 1, QLatin1String(""));
             cs--;
           }
           int ff = s.indexOf(delim_end, cs);
           if (ff > 0)
-            s = s.replace(ff, 1, "");
+            s = s.replace(ff, 1, QLatin1String(""));
 
           l->setText(s);
           l->setCursorPosition(cs);
@@ -630,9 +630,9 @@ void KWQTableView::setFilterModel(KWQSortFilterModel *model)
   m_model = model;
   setCurrentIndex(model->index(0, 0));
   scrollTo(currentIndex());
-  connect(verticalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(verticalHeaderResized(int,int,int)));
-  connect(horizontalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(horizontalHeaderResized(int,int,int)));
-  connect(m_model, SIGNAL(headerDataChanged(Qt::Orientation,int,int)), this, SLOT(horizontalHeaderDataChanged(Qt::Orientation,int,int)));
+  connect(verticalHeader(), &QHeaderView::sectionResized, this, &KWQTableView::verticalHeaderResized);
+  connect(horizontalHeader(), &QHeaderView::sectionResized, this, &KWQTableView::horizontalHeaderResized);
+  connect(m_model, &QAbstractItemModel::headerDataChanged, this, &KWQTableView::horizontalHeaderDataChanged);
 }
 
 void KWQTableView::closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint)
@@ -656,7 +656,7 @@ void KWQTableView::commitData(QWidget * editor)
   if (!newText.isEmpty()) {
     if (Prefs::enableBlanks())
       if (!m_model->sourceModel()->checkBlanksSyntax(newText) /*checkForBlank(newText, true)*/)
-        KNotification::event("SyntaxError", i18n("There is an error with the Fill-in-the-blank brackets"));
+        KNotification::event(QStringLiteral("SyntaxError"), i18n("There is an error with the Fill-in-the-blank brackets"));
   }
   QTableView::commitData(editor);
 }
@@ -753,9 +753,9 @@ void KWQTableView::updateKeyboardLayout()
     layout = model()->headerData(currentIndex().column(), Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString();
 
     if (!layout.isEmpty()) {
-        QDBusInterface kxkb("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts");
+        QDBusInterface kxkb(QStringLiteral("org.kde.keyboard"), QStringLiteral("/Layouts"), QStringLiteral("org.kde.KeyboardLayouts"));
         if (kxkb.isValid())
-            kxkb.call("setLayout", layout);
+            kxkb.call(QStringLiteral("setLayout"), layout);
     }
 }
 

@@ -34,25 +34,25 @@ static const char *description = I18N_NOOP("A powerful flashcard and vocabulary 
 int main(int argc, char *argv[])
 {
     KLocalizedString::setApplicationDomain("kwordquiz");
-    QApplication::setApplicationName("kwordquiz");
+    QApplication::setApplicationName(QStringLiteral("kwordquiz"));
     QApplication::setApplicationVersion(KWQ_VERSION);
-    QApplication::setOrganizationDomain("kde.org");
+    QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QApplication::setApplicationDisplayName(i18n("kwordquiz"));
 
     QApplication app(argc, argv);
 
-    KAboutData aboutData("kwordquiz",
+    KAboutData aboutData(QStringLiteral("kwordquiz"),
                          i18n("KWordQuiz"),
                          KWQ_VERSION,
                          i18n(description),
                          KAboutLicense::GPL_V2,
                          i18n("(c) 2003-2010, Peter Hedlund"),
                          QString(),
-                         "http://edu.kde.org/kwordquiz",
-                         "submit@bugs.kde.org");
-    aboutData.addAuthor(i18n("Peter Hedlund"), QString(), "peter.hedlund@kdemail.net");
-    aboutData.addCredit(i18n("Anne-Marie Mahfouf"), i18n("KDE Edutainment Maintainer"), "annma@kde.org");
-    aboutData.addCredit(i18n("Martin Pfeiffer"), i18n("Leitner System and several code contributions"), "hubipete@gmx.net");
+                         QStringLiteral("http://edu.kde.org/kwordquiz"),
+                         QStringLiteral("submit@bugs.kde.org"));
+    aboutData.addAuthor(i18n("Peter Hedlund"), QString(), QStringLiteral("peter.hedlund@kdemail.net"));
+    aboutData.addCredit(i18n("Anne-Marie Mahfouf"), i18n("KDE Edutainment Maintainer"), QStringLiteral("annma@kde.org"));
+    aboutData.addCredit(i18n("Martin Pfeiffer"), i18n("Leitner System and several code contributions"), QStringLiteral("hubipete@gmx.net"));
 
     KAboutData::setApplicationData(aboutData);
 
@@ -61,15 +61,15 @@ int main(int argc, char *argv[])
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
 
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("m") << QLatin1String("mode"), i18n("A number 1-5 corresponding to the \nentries in the Mode menu"), QLatin1String("number")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("g") << QLatin1String("goto"), i18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer, \n'tutor' for tutor"), QLatin1String("session")));
-    parser.addOption(QCommandLineOption(QStringList() <<  QLatin1String("+[File]"), i18n("File to open")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("m") << QStringLiteral("mode"), i18n("A number 1-5 corresponding to the \nentries in the Mode menu"), QStringLiteral("number")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("g") << QStringLiteral("goto"), i18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer, \n'tutor' for tutor"), QStringLiteral("session")));
+    parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+[File]"), i18n("File to open")));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
     QStringList args = parser.positionalArguments();
 
-    if (parser.isSet("g") && parser.value("g") == "tutor") {
+    if (parser.isSet(QStringLiteral("g")) && parser.value(QStringLiteral("g")) == QLatin1String("tutor")) {
         QApplication tutorapp(argc, argv);
         tutorapp.setQuitOnLastWindowClosed(false);
         //KWQTutor* m_tutor = new KWQTutor(args.count() ?
@@ -86,20 +86,20 @@ int main(int argc, char *argv[])
         if (args.count()) {
             kwordquiz->openDocumentFile(QUrl::fromLocalFile(args.at(args.count() - 1)));
 
-            QString mode = parser.value("mode");
+            QString mode = parser.value(QStringLiteral("mode"));
 
             if (!mode.isEmpty()) {
-                QAction *a = kwordquiz->actionCollection()->action(QString("mode_%1").arg(QString(mode)));
+                QAction *a = kwordquiz->actionCollection()->action(QStringLiteral("mode_%1").arg(QString(mode)));
                 kwordquiz->slotModeActionGroupTriggered(a);
             }
 
-            QString go_to = parser.value("goto");
+            QString go_to = parser.value(QStringLiteral("goto"));
             if (!go_to.isEmpty()) {
-                if (go_to == "flash")
+                if (go_to == QLatin1String("flash"))
                     kwordquiz->slotQuizFlash();
-                if (go_to == "mc")
+                if (go_to == QLatin1String("mc"))
                     kwordquiz->slotQuizMultiple();
-                if (go_to == "qa")
+                if (go_to == QLatin1String("qa"))
                     kwordquiz->slotQuizQA();
             }
         } else {

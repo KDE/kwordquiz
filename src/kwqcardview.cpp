@@ -22,13 +22,13 @@ KWQCardView::KWQCardView(QWidget *parent) : QGraphicsView(parent)
 {
     setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     setInteractive(true);
-    setStyleSheet("background: transparent; border: none");
+    setStyleSheet(QStringLiteral("background: transparent; border: none"));
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     m_scene = new KWQCardScene(this);
     setScene(m_scene);
-    connect(m_scene, SIGNAL(cardClicked()), this, SIGNAL(cardClicked()));
+    connect(m_scene, &KWQCardScene::cardClicked, this, &KWQCardView::cardClicked);
 }
 
 void KWQCardView::resizeEvent(QResizeEvent* event)

@@ -28,7 +28,7 @@
 KWQTableModel::KWQTableModel(QObject * parent) : QAbstractTableModel(parent)
 {
   m_doc = 0;
-  m_decorationCache = new KImageCache("kwordquiz", 10485760);
+  m_decorationCache = new KImageCache(QStringLiteral("kwordquiz"), 10485760);
 }
 
 KWQTableModel::~KWQTableModel()

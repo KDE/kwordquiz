@@ -33,20 +33,20 @@ KWordQuizPrefs::KWordQuizPrefs(QWidget *parent, const QString &name, KConfigSkel
   m_config = config;
 
   m_prefGeneral = new PrefGeneral(0);
-  addPage(m_prefGeneral, i18nc("@title:group general settings", "General"), "kwordquiz", i18nc("@title:group general settings", "General Settings"), true);
+  addPage(m_prefGeneral, i18nc("@title:group general settings", "General"), QStringLiteral("kwordquiz"), i18nc("@title:group general settings", "General Settings"), true);
 
   m_prefEditor = new PrefEditor(0);
-  addPage(m_prefEditor, i18nc("@title:group editor settings", "Editor"), "editor", i18nc("@title:group editor settings", "Editor Settings"), true);
+  addPage(m_prefEditor, i18nc("@title:group editor settings", "Editor"), QStringLiteral("editor"), i18nc("@title:group editor settings", "Editor Settings"), true);
 
   m_prefQuiz = new PrefQuiz(0);
-  addPage(m_prefQuiz, i18nc("@title:group quiz settings", "Quiz"), "qa", i18nc("@title:group quiz settings", "Quiz Settings"), true);
+  addPage(m_prefQuiz, i18nc("@title:group quiz settings", "Quiz"), QStringLiteral("qa"), i18nc("@title:group quiz settings", "Quiz Settings"), true);
 
   m_prefCardAppearance = new PrefCardAppearance(0);
-  addPage(m_prefCardAppearance, i18nc("@title:group flash appearance settings", "Flashcard Appearance"), "flash", i18nc("@title:group flash appearance settings", "Flashcard Appearance Settings"), true);
+  addPage(m_prefCardAppearance, i18nc("@title:group flash appearance settings", "Flashcard Appearance"), QStringLiteral("flash"), i18nc("@title:group flash appearance settings", "Flashcard Appearance Settings"), true);
 
   m_prefCharacter = new PrefCharacter(0, actionCollection);
-  addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special Characters"), "accessories-character-map", i18nc("@title:group special character settings", "Special Characters"), true);
-  setHelp(QString(), "kwordquiz");
+  addPage(m_prefCharacter, i18nc("@title:group special character settings", "Special Characters"), QStringLiteral("accessories-character-map"), i18nc("@title:group special character settings", "Special Characters"), true);
+  setHelp(QString(), QStringLiteral("kwordquiz"));
 }
 
 bool KWordQuizPrefs::hasChanged()
@@ -62,7 +62,7 @@ bool KWordQuizPrefs::isDefault()
 void KWordQuizPrefs::updateSettings( )
 {
   m_prefCharacter->updateSettings();
-  emit settingsChanged("");
+  emit settingsChanged(QLatin1String(""));
 }
 
 void KWordQuizPrefs::updateWidgetsDefault()

@@ -38,7 +38,7 @@ KWQCardScene::KWQCardScene(QObject *parent) : QGraphicsScene(parent)
     m_card->setGraphicsEffect(shadowEffect);
 
     m_line = addLine(cardMargin, cardMargin * 3, cardWidth - cardMargin, cardMargin * 3);
-    m_identifier = addSimpleText("");
+    m_identifier = addSimpleText(QLatin1String(""));
 
     QFont f = m_identifier->font();
     f.setPixelSize(cardMargin);
@@ -50,7 +50,7 @@ KWQCardScene::KWQCardScene(QObject *parent) : QGraphicsScene(parent)
     m_textArea->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
     m_textArea->setZValue(4);
 
-    m_text = addText("");
+    m_text = addText(QLatin1String(""));
     m_text->setTextWidth(cardWidth - (textMargin * 2));
     f.setPointSize(12);
     m_text->setParentItem(m_textArea);
@@ -58,8 +58,8 @@ KWQCardScene::KWQCardScene(QObject *parent) : QGraphicsScene(parent)
     m_pixmap = new KWQPixmapItem(QPixmap(), m_card);
     m_pixmap->setImageRect(QRect(textMargin, cardMargin * 4, cardWidth - (textMargin * 2), cardHeight - (cardMargin * 5)));
 
-    setIdentifier("");
-    setText("");
+    setIdentifier(QLatin1String(""));
+    setText(QLatin1String(""));
     setTextColor(Qt::blue);
     setTextFont(f);
     setCardColor(Qt::white);

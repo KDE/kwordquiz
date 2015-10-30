@@ -23,16 +23,16 @@ PrefCardAppearance::PrefCardAppearance(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
 
-  connect(flipButton, SIGNAL(clicked()), this, SLOT(slotFlipButtonClicked()));
-  connect(kcfg_FrontFont, SIGNAL(fontSelected(QFont)), this, SLOT(slotFontChanged(QFont&)));
-  connect(kcfg_FrontTextColor, SIGNAL(changed(QColor)), this, SLOT(slotTextColorChanged(QColor)));
-  connect(kcfg_FrontCardColor, SIGNAL(changed(QColor)), this, SLOT(slotCardColorChanged(QColor)));
-  connect(kcfg_FrontFrameColor, SIGNAL(changed(QColor)), this, SLOT(slotFrameColorChanged(QColor)));
-  connect(kcfg_BackFont, SIGNAL(fontSelected(QFont)), this, SLOT(slotFontChanged(QFont)));
-  connect(kcfg_BackTextColor, SIGNAL(changed(QColor)), this, SLOT(slotTextColorChanged(QColor)));
-  connect(kcfg_BackCardColor, SIGNAL(changed(QColor)), this, SLOT(slotCardColorChanged(QColor)));
-  connect(kcfg_BackFrameColor, SIGNAL(changed(QColor)), this, SLOT(slotFrameColorChanged(QColor)));
-  connect(widgetStack, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentChanged(int)));
+  connect(flipButton, &QAbstractButton::clicked, this, &PrefCardAppearance::slotFlipButtonClicked);
+  connect(kcfg_FrontFont, &KFontRequester::fontSelected, this, &PrefCardAppearance::slotFontChanged);
+  connect(kcfg_FrontTextColor, &KColorButton::changed, this, &PrefCardAppearance::slotTextColorChanged);
+  connect(kcfg_FrontCardColor, &KColorButton::changed, this, &PrefCardAppearance::slotCardColorChanged);
+  connect(kcfg_FrontFrameColor, &KColorButton::changed, this, &PrefCardAppearance::slotFrameColorChanged);
+  connect(kcfg_BackFont, &KFontRequester::fontSelected, this, &PrefCardAppearance::slotFontChanged);
+  connect(kcfg_BackTextColor, &KColorButton::changed, this, &PrefCardAppearance::slotTextColorChanged);
+  connect(kcfg_BackCardColor, &KColorButton::changed, this, &PrefCardAppearance::slotCardColorChanged);
+  connect(kcfg_BackFrameColor, &KColorButton::changed, this, &PrefCardAppearance::slotFrameColorChanged);
+  connect(widgetStack, &QStackedWidget::currentChanged, this, &PrefCardAppearance::slotCurrentChanged);
 
   widgetStack->setCurrentWidget(frontStackPage);
   // initialize the buddies, etc.

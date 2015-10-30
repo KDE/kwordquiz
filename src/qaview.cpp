@@ -37,18 +37,18 @@ QString highlightError(const QString & c, const QString & e)
     return c;
 
   QString s = c;
-  if (s.left(4) == "<qt>" && e.left(4) != "<qt>")
+  if (s.left(4) == QLatin1String("<qt>") && e.left(4) != QLatin1String("<qt>"))
       s = s.mid(4, s.length() - 9);
 
   if (s == e)
     return s;
 
-  QString result = "<qt>";
+  QString result = QStringLiteral("<qt>");
   int i = 0;
   while (i < e.length() && s[i] == e[i])
     result.append(e[i++]);
   result.append("<b>");
-  QString result2 = "</qt>";
+  QString result2 = QStringLiteral("</qt>");
   int j = s.length() - 1;
   int k = e.length() - 1;
   while (j >= 0 && k >= 0 && s[j] == e[k])
@@ -101,12 +101,12 @@ void QAView::init()
   picYourAnswer->clear();
   picCorrectAnswer->clear();
 
-  m_actionCollection->action("quiz_check")->setEnabled(true);
-  m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
-  m_actionCollection->action("qa_hint")->setEnabled(true);
-  m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
-  m_actionCollection->action("quiz_export_errors")->setEnabled(false);
-  m_actionCollection->action("quiz_audio_play")->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_check"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("qa_mark_last_correct"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("qa_hint"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("quiz_repeat_errors"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_export_errors"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
 
   // reset last file
   audioPlayFile(QUrl(), true);
@@ -118,14 +118,14 @@ void QAView::init()
 
 void QAView::slotCheck()
 {
-  if (m_actionCollection->action("quiz_check")->isEnabled())
+  if (m_actionCollection->action(QStringLiteral("quiz_check"))->isEnabled())
   {
     bool fIsCorrect;
 
     if (m_hintUsed && Prefs::hintError())
     {
       //Force an Error
-      fIsCorrect = m_quiz->checkAnswer("");
+      fIsCorrect = m_quiz->checkAnswer(QLatin1String(""));
     }
     else
     {
@@ -137,25 +137,25 @@ void QAView::slotCheck()
 
     if (fIsCorrect)
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
       lblYourAnswer->setText(m_quiz->yourAnswer(txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
       score->countIncrement(KWQScoreWidget::cdCorrect);
-      KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
-      m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
+      KNotification::event(QStringLiteral("QuizCorrect"), i18n("Your answer was correct!"));
+      m_actionCollection->action(QStringLiteral("qa_mark_last_correct"))->setEnabled(false);
     }
     else
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("error"), KIconLoader::Panel));
       lblYourAnswer->setText(highlightError(m_quiz->answer(), m_quiz->yourAnswer(txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer());
-      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
+      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       score->countIncrement(KWQScoreWidget::cdError);
-      KNotification::event("QuizError", i18n("Your answer was incorrect."));
-      m_actionCollection->action("qa_mark_last_correct")->setEnabled(true);
+      KNotification::event(QStringLiteral("QuizError"), i18n("Your answer was incorrect."));
+      m_actionCollection->action(QStringLiteral("qa_mark_last_correct"))->setEnabled(true);
     }
 
     audioPlayAnswer();
@@ -163,7 +163,7 @@ void QAView::slotCheck()
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question());
     //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
-    picPrevious->setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
+    picPrevious->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
 
@@ -175,18 +175,18 @@ void QAView::slotCheck()
     else
     {
       m_quiz->finish();
-      m_actionCollection->action("quiz_check")->setEnabled(false);
-      m_actionCollection->action("qa_hint")->setEnabled(false);
-      m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
-      m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
-      m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("quiz_check"))->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("qa_hint"))->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("quiz_repeat_errors"))->setEnabled(m_quiz->hasErrors());
+      m_actionCollection->action(QStringLiteral("quiz_export_errors"))->setEnabled(m_quiz->hasErrors());
+      m_actionCollection->action(QStringLiteral("qa_mark_last_correct"))->setEnabled(false);
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();
       lblAnswerLanguage->clear();
       lblAnswerBlank->hide();
       txtAnswer->hide();
-      picQuestion->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", KIconLoader::Panel));
+      picQuestion->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("kwordquiz"), KIconLoader::Panel));
       picAnswer->clear();
     }
   }
@@ -196,10 +196,10 @@ void QAView::slotHint()
 {
   QString answer = txtAnswer->text();
   QString correctAnswer = m_quiz->hint();
-  if (correctAnswer.left(4) == "<qt>")
+  if (correctAnswer.left(4) == QLatin1String("<qt>"))
   {
-    correctAnswer = correctAnswer.remove("<qt>");
-    correctAnswer = correctAnswer.remove("</qt>");
+    correctAnswer = correctAnswer.remove(QStringLiteral("<qt>"));
+    correctAnswer = correctAnswer.remove(QStringLiteral("</qt>"));
   }
   int minLength = qMin(answer.length(), correctAnswer.length());
 
@@ -242,15 +242,15 @@ void QAView::showQuestion()
   else
     lblAnswerBlank->hide();
 
-  txtAnswer->setText("");
+  txtAnswer->setText(QLatin1String(""));
 
   picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconRightCol), KIconLoader::Panel));
 
   QString layout = m_quiz->kbAnswer();
   if (!layout.isEmpty()) {
-    QDBusInterface kxkb("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts");
+    QDBusInterface kxkb(QStringLiteral("org.kde.keyboard"), QStringLiteral("/Layouts"), QStringLiteral("org.kde.KeyboardLayouts"));
     if (kxkb.isValid())
-      kxkb.call("setLayout", layout);
+      kxkb.call(QStringLiteral("setLayout"), layout);
   }
 }
 
@@ -288,5 +288,5 @@ void QAView::slotMarkLastCorrect( )
 {
   m_quiz->errorList().removeLast();
   score->swapCount();
-  m_actionCollection->action("qa_mark_last_correct")->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("qa_mark_last_correct"))->setEnabled(false);
 }

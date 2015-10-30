@@ -28,8 +28,8 @@ PrefCharacter::PrefCharacter(QWidget *parent, KActionCollection * ac) : QWidget(
   setupUi(this);
   m_actionCollection = ac;
 
-  connect(CharacterTree, SIGNAL(itemSelectionChanged()), this, SLOT(slotCharListSelectionChanged()));
-  connect(btnCharacter, SIGNAL(clicked()), this, SLOT(slotSelectSpecChar()));
+  connect(CharacterTree, &QTreeWidget::itemSelectionChanged, this, &PrefCharacter::slotCharListSelectionChanged);
+  connect(btnCharacter, &QAbstractButton::clicked, this, &PrefCharacter::slotSelectSpecChar);
 
   fillWidgets();
   updateWidgets();
@@ -86,7 +86,7 @@ bool PrefCharacter::hasChanged()
 
 bool PrefCharacter::isDefault()
 {
-  QString def = "abcdefghi";
+  QString def = QStringLiteral("abcdefghi");
   QString s;
   for (int i = 0; i < 9; i++)
     s.append(CharacterTree->topLevelItem(i)->text(2));
@@ -107,8 +107,8 @@ void PrefCharacter::slotDlgSpecCharClosed()
 {
   if (m_dlgSpecChar)
   {
-    disconnect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    disconnect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
+    disconnect(m_dlgSpecChar, &DlgSpecChar::insertChar, this, &PrefCharacter::slotSpecChar);
+    disconnect(m_dlgSpecChar, &QDialog::finished, this, &PrefCharacter::slotDlgSpecCharClosed);
     m_dlgSpecChar->deleteLater();
     m_dlgSpecChar = 0;
   }
@@ -122,8 +122,8 @@ void PrefCharacter::slotSelectSpecChar()
   if (m_dlgSpecChar == 0)
   {
     m_dlgSpecChar = new DlgSpecChar(this, Prefs::editorFont(), c);
-    connect(m_dlgSpecChar, SIGNAL(insertChar(QChar)), this, SLOT(slotSpecChar(QChar)));
-    connect(m_dlgSpecChar, SIGNAL(finished()), this, SLOT(slotDlgSpecCharClosed()));
+    connect(m_dlgSpecChar, &DlgSpecChar::insertChar, this, &PrefCharacter::slotSpecChar);
+    connect(m_dlgSpecChar, &QDialog::finished, this, &PrefCharacter::slotDlgSpecCharClosed);
   }
   m_dlgSpecChar->show();
 }

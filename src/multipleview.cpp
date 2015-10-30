@@ -40,13 +40,13 @@ MultipleView::MultipleView(QWidget *parent, KActionCollection *actionCollection)
   m_choicesButtons->addButton(opt3, 3);
   connect(m_choicesButtons, SIGNAL(buttonClicked(int)), this, SLOT(slotChoiceClicked(int)));
   m_choicesActions = new QActionGroup(this);
-  connect(m_choicesActions, SIGNAL(triggered(QAction*)), this, SLOT(slotChoiceActionTriggered(QAction*)));
-  m_choicesActions->addAction(m_actionCollection->action("quiz_Opt1"));
-  m_choicesActions->addAction(m_actionCollection->action("quiz_Opt2"));
-  m_choicesActions->addAction(m_actionCollection->action("quiz_Opt3"));
-  m_actionCollection->action("quiz_Opt1")->setData(1);
-  m_actionCollection->action("quiz_Opt2")->setData(2);
-  m_actionCollection->action("quiz_Opt3")->setData(3);
+  connect(m_choicesActions, &QActionGroup::triggered, this, &MultipleView::slotChoiceActionTriggered);
+  m_choicesActions->addAction(m_actionCollection->action(QStringLiteral("quiz_Opt1")));
+  m_choicesActions->addAction(m_actionCollection->action(QStringLiteral("quiz_Opt2")));
+  m_choicesActions->addAction(m_actionCollection->action(QStringLiteral("quiz_Opt3")));
+  m_actionCollection->action(QStringLiteral("quiz_Opt1"))->setData(1);
+  m_actionCollection->action(QStringLiteral("quiz_Opt2"))->setData(2);
+  m_actionCollection->action(QStringLiteral("quiz_Opt3"))->setData(3);
 }
 
 void MultipleView::init()
@@ -80,20 +80,20 @@ void MultipleView::init()
   picYourAnswer->clear();
   picCorrectAnswer->clear();
 
-  m_actionCollection->action("quiz_check")->setEnabled(true);
-  m_actionCollection->action("quiz_repeat_errors")->setEnabled(false);
-  m_actionCollection->action("quiz_export_errors")->setEnabled(false);
-  m_actionCollection->action("quiz_audio_play")->setEnabled(false);
-  m_actionCollection->action("quiz_Opt1")->setEnabled(true);
-  m_actionCollection->action("quiz_Opt2")->setEnabled(true);
-  m_actionCollection->action("quiz_Opt3")->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("quiz_check"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("quiz_repeat_errors"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_export_errors"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
+  m_actionCollection->action(QStringLiteral("quiz_Opt1"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("quiz_Opt2"))->setEnabled(true);
+  m_actionCollection->action(QStringLiteral("quiz_Opt3"))->setEnabled(true);
 
   showQuestion();
 }
 
 void MultipleView::slotCheck()
 {
-  if (m_actionCollection->action("quiz_check")->isEnabled())
+  if (m_actionCollection->action(QStringLiteral("quiz_check"))->isEnabled())
   {
     if (m_choicesButtons->checkedId() == -1)
         return;
@@ -104,26 +104,26 @@ void MultipleView::slotCheck()
 
     if (fIsCorrect)
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
       score->countIncrement(KWQScoreWidget::cdCorrect);
-      KNotification::event("QuizCorrect", i18n("Your answer was correct!"));
+      KNotification::event(QStringLiteral("QuizCorrect"), i18n("Your answer was correct!"));
     }
     else
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
+      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("error"), KIconLoader::Panel));
       lblCorrect->setText(m_quiz->answer());
-      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
+      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       score->countIncrement(KWQScoreWidget::cdError);
-      KNotification::event("QuizError", i18n("Your answer was incorrect."));
+      KNotification::event(QStringLiteral("QuizError"), i18n("Your answer was incorrect."));
     }
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question());
-    picPrevious->setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
+    picPrevious->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
     lblYourAnswer->setText(m_quiz->yourAnswer(ans));
@@ -136,13 +136,13 @@ void MultipleView::slotCheck()
     else
     {
       m_quiz->finish();
-      m_actionCollection->action("quiz_check")->setEnabled(false);
-      m_actionCollection->action("quiz_Opt1")->setEnabled(false);
-      m_actionCollection->action("quiz_Opt2")->setEnabled(false);
-      m_actionCollection->action("quiz_Opt3")->setEnabled(false);
-      m_actionCollection->action("quiz_repeat_errors")->setEnabled(m_quiz->hasErrors());
-      m_actionCollection->action("quiz_export_errors")->setEnabled(m_quiz->hasErrors());
-      m_actionCollection->action("quiz_audio_play")->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("quiz_check"))->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("quiz_Opt1"))->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("quiz_Opt2"))->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("quiz_Opt3"))->setEnabled(false);
+      m_actionCollection->action(QStringLiteral("quiz_repeat_errors"))->setEnabled(m_quiz->hasErrors());
+      m_actionCollection->action(QStringLiteral("quiz_export_errors"))->setEnabled(m_quiz->hasErrors());
+      m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
 
       lblQuestionLanguage->setText(i18n("Summary"));
       lblQuestion->clear();
@@ -150,7 +150,7 @@ void MultipleView::slotCheck()
       opt1->hide();
       opt2->hide();
       opt3->hide();
-      picQuestion->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", KIconLoader::Panel));
+      picQuestion->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("kwordquiz"), KIconLoader::Panel));
       picAnswer->clear();
     }
   }

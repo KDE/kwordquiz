@@ -73,13 +73,13 @@ void KWQQuizView::audioPlayFile(const QUrl &soundUrl, bool overwrite)
 
     if (url->isEmpty()) {
         if (lastUrl.isEmpty()) {
-            m_actionCollection->action("quiz_audio_play")->setEnabled(false);
+            m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
             return;
         }
         url = &lastUrl;
     }
     lastUrl = *url;
-    m_actionCollection->action("quiz_audio_play")->setEnabled(true);
+    m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(true);
 
     qDebug() << "Attempting to play sound: " << *url;
 

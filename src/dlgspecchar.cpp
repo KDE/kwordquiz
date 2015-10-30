@@ -33,8 +33,8 @@ DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) :
   mainLayout->addWidget(mainWidget);
   QPushButton *user1Button = new QPushButton;
   buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
-  connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-  connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+  connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+  connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
   //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
   mainLayout->addWidget(buttonBox);
   user1Button->setDefault(true);
@@ -43,14 +43,14 @@ DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) :
   m_charSelect = new KCharSelect(this, 0);
   m_charSelect->setCurrentChar(chr);
   m_charSelect->setCurrentFont(font);
-  connect(m_charSelect, SIGNAL(charSelected(QChar)),this, SLOT(slotDoubleClicked()));
+  connect(m_charSelect, &KCharSelect::charSelected,this, &DlgSpecChar::slotDoubleClicked);
   m_charSelect->resize(m_charSelect->sizeHint());
   m_charSelect->setFocus();
   mainLayout->addWidget(m_charSelect);
 
   user1Button->setText(i18nc("@action:button", "&Select"));
   user1Button->setToolTip(i18nc("@info:tooltip", "Select this character"));
-  connect(user1Button,SIGNAL(clicked()),this,SLOT(slotUser1()));
+  connect(user1Button,&QAbstractButton::clicked,this,&DlgSpecChar::slotUser1);
 }
 
 void DlgSpecChar::closeDialog()

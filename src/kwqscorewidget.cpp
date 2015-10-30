@@ -141,24 +141,24 @@ void KWQScoreWidget::update()
   QString s;
   s = s.setNum(m_questionCount, 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(KIconLoader::global()->loadIcon("kwordquiz", KIconLoader::Panel));
+  picCount->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("kwordquiz"), KIconLoader::Panel));
 
   s = answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(KIconLoader::global()->loadIcon("question", KIconLoader::Panel));
+    picAnswered->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
 
   s = correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KIconLoader::global()->loadIcon("answer-correct", KIconLoader::Panel));
+    picCorrect->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
 
   s = errorText();
   lblScoreError->setText(s);
   if (s.isEmpty())
     picError->setPixmap(QPixmap());
   else
-    picError->setPixmap(KIconLoader::global()->loadIcon("error", KIconLoader::Panel));
+    picError->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("error"), KIconLoader::Panel));
 }
 
 void KWQScoreWidget::swapCount()
