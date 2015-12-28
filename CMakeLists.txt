@@ -48,5 +48,5 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_subdirectory(doc)
 add_subdirectory(src)
 
-install(FILES kwordquiz.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata/)
+install(FILES org.kde.kwordquiz.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata/)
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
