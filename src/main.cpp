@@ -22,9 +22,9 @@
 #include <KActionCollection>
 #include <QApplication>
 #include <KLocalizedString>
+#include <KCrash>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
-
 
 #include "kwqtutor.h"
 #include "kwordquiz.h"
@@ -55,6 +55,8 @@ int main(int argc, char *argv[])
     aboutData.addCredit(i18n("Martin Pfeiffer"), i18n("Leitner System and several code contributions"), QStringLiteral("hubipete@gmx.net"));
 
     KAboutData::setApplicationData(aboutData);
+
+    KCrash::initialize();
 
     QCommandLineParser parser;
     parser.addVersionOption();
