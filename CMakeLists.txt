@@ -23,7 +23,6 @@ include(ECMInstallIcons)
 find_package(KF5 REQUIRED COMPONENTS
     I18n
     Crash
-    Sonnet
     Config
     ConfigWidgets
     DocTools
@@ -31,12 +30,10 @@ find_package(KF5 REQUIRED COMPONENTS
     IconThemes
     ItemViews
     NotifyConfig
-    KIO
     NewStuff
     Notifications
     XmlGui
     KDELibs4Support
-    Declarative
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 

@@ -83,8 +83,6 @@ target_link_libraries(kwordquiz
     KF5::NewStuff
     KF5::Notifications
     KF5::NotifyConfig
-    KF5::SonnetCore
-    KF5::Declarative
     KF5::XmlGui
     KF5::GuiAddons
     KF5::KDELibs4Support
