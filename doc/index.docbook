@@ -2,7 +2,6 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
  "dtd/kdedbx45.dtd" [
   <!ENTITY kappname "&kwordquiz;">
-  <!ENTITY package "kdeedu">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
@@ -35,8 +34,8 @@
 <legalnotice>&FDLNotice;</legalnotice>
 
 
-<date>2011-08-20</date>
-<releaseinfo>0.9.1 (&kde; 4.7)</releaseinfo>
+<date>2016-05-07</date>
+<releaseinfo>0.9.2 (Applications 16.04)</releaseinfo>
 
 <abstract>
 <para>
@@ -168,14 +167,9 @@ You can have several files open at the same time and easily copy or move entries
     <listitem>
       <para>
         <action>Downloads</action> new vocabularies. Downloaded vocabularies 
-	can be found in <filename class="directory">$KDEHOME/share/apps/kvtml</filename> 
-	directory. <envar>$KDEHOME</envar> is usually
-	a hidden folder in your Home folder called <filename class="directory">.kde</filename> 
-	or <filename class="directory">.kde4</filename>
-	<!-- "$KDEHOME" is not always defined eg not in kubuntu 11.04
-	<filename class="directory">`kde4-config - -localprefix`/share/apps/kvtml</filename> 
-	(without whitespace between '- -') is afaik always defined
-	  -->
+	can be found in <filename class="directory">$XDG_DATA_HOME/kvtml</filename> 
+	directory. <envar>$XDG_DATA_HOME</envar> is usually
+	a hidden folder in your Home folder called <filename class="directory">.local</filename>.
       </para>
     </listitem>
   </varlistentry>
@@ -200,6 +194,9 @@ You can have several files open at the same time and easily copy or move entries
   <varlistentry>
     <term>
       <menuchoice>
+        <shortcut>
+          <keycombo action="simul">&Ctrl;&Shift;<keycap>S</keycap></keycombo>
+        </shortcut>
         <guimenu>File</guimenu>
         <guimenuitem>Save As...</guimenuitem>
       </menuchoice>
@@ -454,83 +451,7 @@ You can have several files open at the same time and easily copy or move entries
 
 </variablelist>
 </sect1>
-<!--
-<sect1 id="go-to-menu">
-<title>The <guimenu>Go to</guimenu> Menu</title>
 
-<variablelist>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <shortcut>
-          <keycombo action="simul"><keycap>F6</keycap></keycombo>
-        </shortcut>
-        <guimenu>Go to</guimenu>
-        <guimenuitem>Editor</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Activate</action> the vocabulary <link linkend="editor">editor</link>
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <shortcut>
-          <keycombo action="simul"><keycap>F7</keycap></keycombo>
-        </shortcut>
-        <guimenu>Go to</guimenu>
-        <guimenuitem>Flashcard</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Start</action> a <link linkend="flashcard">flashcard</link> session
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <shortcut>
-          <keycombo action="simul"><keycap>F8</keycap></keycombo>
-        </shortcut>
-        <guimenu>Go to</guimenu>
-        <guimenuitem>Multiple Choice</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Start</action> a <link linkend="multiple">multiple choice</link> quiz
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <shortcut>
-          <keycombo action="simul"><keycap>F9</keycap></keycombo>
-        </shortcut>
-        <guimenu>Go to</guimenu>
-        <guimenuitem>Question &amp; Answer</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Start</action> a <link linkend="question-and-answer">question &amp; answer</link> quiz
-      </para>
-    </listitem>
-  </varlistentry>
-
-</variablelist>
-</sect1>
--->
 <sect1 id="vocabulary-menu">
 <title>The Vocabulary Menu</title>
 
@@ -595,25 +516,6 @@ You can have several files open at the same time and easily copy or move entries
     </listitem>
   </varlistentry>
 
-<!-- Not in 0.9.1
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <shortcut>
-          <keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
-        </shortcut>
-        <guimenu>Vocabulary</guimenu>
-        <guimenuitem>Rows/Columns...</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Specify</action> the number of rows in the vocabulary, or define the height of selected rows or the width of selected columns. Displays a <link linkend="dlg-rows-columns">dialog</link>.
-      </para>
-    </listitem>
-  </varlistentry>
--->
-
  <varlistentry>
     <term>
       <menuchoice>
@@ -658,7 +560,7 @@ Note that the menu names will change to reflect the column titles of the current
     <term>
       <menuchoice>
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 1 -&gt; Column 2 In Order</guimenuitem>
+        <guimenuitem>1 Column 1 -&gt; Column 2 In Order</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -672,7 +574,7 @@ Note that the menu names will change to reflect the column titles of the current
     <term>
       <menuchoice>
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 2 -&gt; Column 1 In Order</guimenuitem>
+        <guimenuitem>2 Column 2 -&gt; Column 1 In Order</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -686,7 +588,7 @@ Note that the menu names will change to reflect the column titles of the current
     <term>
       <menuchoice>
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 1 -&gt; Column 2 Randomly</guimenuitem>
+        <guimenuitem>3 Column 1 -&gt; Column 2 Randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -700,7 +602,7 @@ Note that the menu names will change to reflect the column titles of the current
     <term>
       <menuchoice>
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 2 -&gt; Column 1 Randomly</guimenuitem>
+        <guimenuitem>4 Column 2 -&gt; Column 1 Randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -714,7 +616,7 @@ Note that the menu names will change to reflect the column titles of the current
     <term>
       <menuchoice>
         <guimenu>Mode</guimenu>
-        <guimenuitem>Column 1 &lt;-&gt; Column 2 Randomly</guimenuitem>
+        <guimenuitem>5 Column 1 &lt;-&gt; Column 2 Randomly</guimenuitem>
       </menuchoice>
     </term>
     <listitem>
@@ -868,8 +770,13 @@ Note that the menu names will change to reflect the column titles of the current
 </variablelist>
 </sect1>
 
-<sect1 id="settings-menu">
-<title>The Settings Menu</title>
+<sect1 id="settings-help-menu">
+<title>The Settings and Help Menu</title> 
+<para>Apart from the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items described in the the <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals &kwordquiz; this additional menu entry:
+</para>
 
 <variablelist>
   <varlistentry>
@@ -886,128 +793,9 @@ Note that the menu names will change to reflect the column titles of the current
     </listitem>
   </varlistentry>
 
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guisubmenu>Toolbars</guisubmenu>
-        <guimenuitem>Main Toolbar</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Toggle</action> the Main Toolbar
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guisubmenu>Toolbars</guisubmenu>
-        <guimenuitem>Quiz</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Toggle</action> the Quiz Toolbar
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guisubmenu>Toolbars</guisubmenu>
-        <guimenuitem>Special Characters</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Toggle</action> the Special Characters Toolbar
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guimenuitem>Show Statusbar</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Toggle</action> the Statusbar
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guimenuitem>Configure Shortcuts...</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Configure</action> the keyboard keys you use to access the different actions.
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guimenuitem>Configure Toolbars...</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Configure</action> the items you want to put in the toolbar
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guimenuitem>Configure Notifications...</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Configure</action> notifications for certain events in &kwordquiz;
-      </para>
-    </listitem>
-  </varlistentry>
-
-  <varlistentry>
-    <term>
-      <menuchoice>
-        <guimenu>Settings</guimenu>
-        <guimenuitem>Configure &kwordquiz;...</guimenuitem>
-      </menuchoice>
-    </term>
-    <listitem>
-      <para>
-        <action>Configure</action> preferences for the vocabulary editor and the quizzes. Displays a <link linkend="dlg-config-editor">dialog</link>.
-      </para>
-    </listitem>
-  </varlistentry>
-
 </variablelist>
 </sect1>
 
-<sect1 id="help-menu">
-<title>The Help Menu</title>
-&help.menu.documentation;
-</sect1>
 </chapter>
 
 <chapter id="main-window">
@@ -1351,7 +1139,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
 </screenshot>
 
 </chapter>
-
+<!--FIXME not ported to kf5
 <chapter id="tutor">
 <title>The Tutor Mode</title>
 
@@ -1475,7 +1263,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
    </variablelist>
 </para>
 </chapter>
-
+-->
 
 <chapter id="dialogs">
 <title>Dialogs</title>
@@ -1639,57 +1427,6 @@ Use this dialog to select any special character you want to associate with the c
 
 </sect1>
 
-<!-- Not in 0.9.1
-<sect1 id="dlg-rows-columns">
-<title>Rows/Columns</title>
-<para>You can open this dialog from the menubar with <menuchoice><guimenu>Vocabulary</guimenu><guimenuitem>Rows/Columns...</guimenuitem></menuchoice></para>
-<screenshot>
-  <screeninfo>Rows/Columns</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="kwq-dlg-rowscolumns.png" format="PNG" />
-    </imageobject>
-    <textobject>
-      <phrase>Rows/Columns</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-<para>
-Use this dialog to specify the number of rows you want in the vocabulary. You can also adjust the width (in pixels) of the selected columns and the height (in pixels) of the selected rows. Select <guibutton>OK</guibutton> to make your changes or <guibutton>Cancel</guibutton> to discard any changes.
-</para>
-<warning>
-<para>
-Specifying a number of rows lower than what currently is in the vocabulary may lead to loss of data.
-</para>
-</warning>
-
-</sect1>
--->
-</chapter>
-
-<chapter id="faq">
-<title>Questions and Answers</title>
-
-&reporting.bugs;
-&updating.documentation;
-<!--
-<qandaset id="faqlist">
-
-  <qandaentry>
-    <question>
-      <para>
-        Can I combine several vocabularies to one.
-      </para>
-    </question>
-    <answer>
-      <para>
-        Yes, when you select <menuchoice><guimenu>File</guimenu><guimenuitem>Open...</guimenuitem></menuchoice> you can highlight more than one file in the dialog. By default they will be opened in separate windows, but if you select the check box <guibutton>Join selected files into one list</guibutton>, then the data in all files will be combined into one new list.
-      </para>
-    </answer>
-  </qandaentry>
-
-</qandaset>
--->
 </chapter>
 
 <chapter id="credits">
@@ -1713,24 +1450,6 @@ Documentation copyright 2003-2008 Peter B. Hedlund <email>peter.hedlund@kdemail.
 &underGPL;   <!-- GPL License -->
 
 </chapter>
-
-<appendix id="installation">
-<title>Installation</title>
-
-<sect1 id="getting-kwordquiz">
-<title>How to obtain &kwordquiz;</title>
-
-&install.intro.documentation;
-
-</sect1>
-
-<sect1 id="compilation">
-<title>Compilation and installation</title>
-
-&install.compile.documentation;
-
-</sect1>
-</appendix>
 
 &documentation.index;
 </book>
