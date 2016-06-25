@@ -402,16 +402,16 @@ QUrl KWQQuizModel::soundQuestion()
     int col = column(row);
     col == 0 ? col = 1 : col = 0;
  
-    QUrl soundUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::SoundRole).toString();
-    return soundUrl.toLocalFile();
+    QUrl soundUrl(data(index(qAbs(row), col, QModelIndex()), KWQTableModel::SoundRole).toString());
+    return soundUrl;
 }
  
 
 QUrl KWQQuizModel::soundAnswer()
 {
     int row =  m_list.at(m_currentQuestion);
-    QUrl soundUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::SoundRole).toString();
-    return soundUrl.toLocalFile();
+    QUrl soundUrl(data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::SoundRole).toString());
+    return soundUrl;
 }
 
 
@@ -421,7 +421,7 @@ QPixmap KWQQuizModel::imageQuestion()
     int col = column(row);
     col == 0 ? col = 1 : col = 0;
 
-    QUrl imageUrl = data(index(qAbs(row), col, QModelIndex()), KWQTableModel::ImageRole).toString();
+    QUrl imageUrl(data(index(qAbs(row), col, QModelIndex()), KWQTableModel::ImageRole).toString());
     return QPixmap(imageUrl.toLocalFile());
 }
 
@@ -429,7 +429,7 @@ QPixmap KWQQuizModel::imageQuestion()
 QPixmap KWQQuizModel::imageAnswer()
 {
     int row =  m_list.at(m_currentQuestion);
-    QUrl imageUrl = data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::ImageRole).toString();
+    QUrl imageUrl(data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::ImageRole).toString());
     return QPixmap(imageUrl.toLocalFile());
 }
 

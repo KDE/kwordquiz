@@ -67,21 +67,22 @@ void KWQQuizView::audioPlayFile(const QUrl &soundUrl, bool overwrite)
 {
     static QUrl lastUrl;
 
-    QUrl *url = const_cast<QUrl *>(&soundUrl);
+    QUrl url = soundUrl;
     if (overwrite)
-       lastUrl = *url;
+       lastUrl = soundUrl;
 
-    if (url->isEmpty()) {
+    if (url.isEmpty()) {
         if (lastUrl.isEmpty()) {
             m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
             return;
         }
-        url = &lastUrl;
+        url = lastUrl;
+    } else {
+        lastUrl = url;
     }
-    lastUrl = *url;
     m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(true);
 
-    qDebug() << "Attempting to play sound: " << *url;
+    qDebug() << "Attempting to play sound: " << url;
 
     if (!m_player) {
         m_player = new Phonon::MediaObject(this);
@@ -90,6 +91,6 @@ void KWQQuizView::audioPlayFile(const QUrl &soundUrl, bool overwrite)
     } else {
         m_player->stop();
     }
-    m_player->setCurrentSource(*url);
+    m_player->setCurrentSource(url);
     m_player->play();
 }

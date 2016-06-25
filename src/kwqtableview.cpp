@@ -716,7 +716,7 @@ void KWQTableView::slotHeaderClicked(int column)
 
 void KWQTableView::doVocabImage()
 {
-  QUrl currentUrl = model()->data(currentIndex(), KWQTableModel::ImageRole).toString();
+  QUrl currentUrl(model()->data(currentIndex(), KWQTableModel::ImageRole).toString());
 
   QUrl imageUrl = KFileDialog::getImageOpenUrl(currentUrl, this, i18n("Select Image"));
   if (!imageUrl.isEmpty()) {
@@ -728,7 +728,7 @@ void KWQTableView::doVocabImage()
 
 void KWQTableView::doVocabSound()
 {
-  QUrl currentUrl = model()->data(currentIndex(), KWQTableModel::SoundRole).toString();
+  QUrl currentUrl(model()->data(currentIndex(), KWQTableModel::SoundRole).toString());
 
   QUrl soundUrl = QFileDialog::getOpenFileUrl(this, i18n("Select Sound"), currentUrl, i18n("*|All Files"));
   if (!soundUrl.isEmpty()) {
