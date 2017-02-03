@@ -772,7 +772,7 @@ Note that the menu names will change to reflect the column titles of the current
 <sect1 id="settings-help-menu">
 <title>The Settings and Help Menu</title> 
 <para>Apart from the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
-menu items described in the the <ulink url="help:/fundamentals/ui.html#menus-settings"
+menu items described in the <ulink url="help:/fundamentals/ui.html#menus-settings"
 >Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
 of the &kde; Fundamentals &kwordquiz; this additional menu entry:
 </para>
