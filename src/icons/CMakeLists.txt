@@ -8,6 +8,8 @@ ecm_install_icons(ICONS
     48-apps-kwordquiz.png
     48-mimetypes-application-x-kwordquiz.png
     64-apps-kwordquiz.png
+    128-apps-kwordquiz.png
+    128-mimetypes-application-x-kwordquiz.png
     DESTINATION ${KDE_INSTALL_ICONDIR}
     THEME hicolor
 )
