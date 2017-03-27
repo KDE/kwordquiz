@@ -64,10 +64,8 @@ ki18n_wrap_ui(kwordquiz_SRCS
 
 kconfig_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
 
-#uncomment this if oxygen icons for kwordquiz are available
-
-#kde4_add_app_icon(kwordquiz_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/kwordquiz.png")
-#kde4_add_app_icon(kwordquiz_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hi*-app-kwordquiz.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/*-apps-kwordquiz.png")
+ecm_add_app_icon(kwordquiz_SRCS ICONS ${ICONS_SRCS})
 
 add_executable(kwordquiz ${kwordquiz_SRCS})
 
