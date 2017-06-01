@@ -40,7 +40,7 @@ public:
     void setFilterModel(KWQSortFilterModel * sourceModel);
     KWQSortFilterModel * sourceModel() const;
 
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const Q_DECL_OVERRIDE;
 
     bool init();
 
@@ -82,7 +82,7 @@ signals:
   void checkingAnswer(int );
 
 protected:
-    bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
+    bool lessThan(const QModelIndex & left, const QModelIndex & right) const Q_DECL_OVERRIDE;
 
     // Disable from external calls; use setFilterModel() instead
     // (It's not even implemented so will give a link error anyway.)

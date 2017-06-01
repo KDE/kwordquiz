@@ -118,17 +118,17 @@ class KWordQuizApp : public KXmlGuiWindow
      * @see KXmlGuiWindow#queryClose
      * @see KXmlGuiWindow#closeEvent
      */
-    virtual bool queryClose();
+    bool queryClose() Q_DECL_OVERRIDE;
     /** saves the window properties for each open window during session end to the session config file, including saving the currently
      * opened file by a temporary filename provided by QApplication.
      * @see KXmlGuiWindow#saveProperties
      */
-    virtual void saveProperties(KConfigGroup &_cfg);
+    void saveProperties(KConfigGroup &_cfg) Q_DECL_OVERRIDE;
     /** reads the session config file and restores the application's state including the last opened files and documents by reading the
      * temporary files saved by saveProperties()
      * @see KXmlGuiWindow#readProperties
      */
-    virtual void readProperties(const KConfigGroup &_cfg);
+    void readProperties(const KConfigGroup &_cfg) Q_DECL_OVERRIDE;
 
   signals:
     void settingsChanged();

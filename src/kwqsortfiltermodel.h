@@ -41,7 +41,7 @@ class KWQSortFilterModel : public QSortFilterProxyModel
     void shuffle();
 
   protected:
-    bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
+    bool lessThan(const QModelIndex & left, const QModelIndex & right) const Q_DECL_OVERRIDE;
 
     // Disable from public calls; use setTableModel instead.
     //void setSourceModel(QAbstractItemModel *sourceModel);

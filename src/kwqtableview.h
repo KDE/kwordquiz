@@ -63,7 +63,7 @@ public:
 
 protected:
   void nextCell();
-  void keyPressEvent(QKeyEvent*);
+  void keyPressEvent(QKeyEvent*) Q_DECL_OVERRIDE;
   void updateKeyboardLayout();
 
 public slots:
@@ -76,8 +76,8 @@ public slots:
   void slotSortByColumn(int);
 
 protected slots:
-  void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint);
-  void commitData (QWidget * editor);
+  void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint) Q_DECL_OVERRIDE;
+  void commitData (QWidget * editor) Q_DECL_OVERRIDE;
   void verticalHeaderResized(int, int, int);
   void horizontalHeaderResized(int, int, int);
   void horizontalHeaderDataChanged(Qt::Orientation, int, int);

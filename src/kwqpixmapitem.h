@@ -26,8 +26,8 @@ public:
     explicit KWQPixmapItem(const QPixmap &pixmap, QGraphicsItem *parentItem = 0);
 
 public:
-    QRectF boundingRect() const;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0);
+    QRectF boundingRect() const Q_DECL_OVERRIDE;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0) Q_DECL_OVERRIDE;
     void setImageRect(const QRect &rect);
 
 private:

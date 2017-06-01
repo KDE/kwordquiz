@@ -31,7 +31,7 @@ class KWQClearDialog : public QDialog, private Ui::ClearDialogBase {
     explicit KWQClearDialog(QWidget *parent = 0);
 
   public slots:
-    virtual void accept();
+    void accept() Q_DECL_OVERRIDE;
 
   private slots:
     void buttonGroupChanged(int );

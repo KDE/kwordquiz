@@ -37,16 +37,16 @@ Q_OBJECT
 public:
     FlashView(QWidget *parent, KActionCollection *actionCollection);
 
-    void init();
+    void init() Q_DECL_OVERRIDE;
 
 private slots:
     void slotTimer();
 
 public slots:
-    void slotCheck();
+    void slotCheck() Q_DECL_OVERRIDE;
     void slotKnow();
     void slotDontKnow();
-    void slotApplySettings();
+    void slotApplySettings() Q_DECL_OVERRIDE;
 
 private:
     QTimer* m_timer;

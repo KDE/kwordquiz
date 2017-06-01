@@ -51,7 +51,7 @@ signals:
     void cardClicked();
 
 protected:
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent *);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *) Q_DECL_OVERRIDE;
 
 private:
     QGraphicsRectItem *m_card;
