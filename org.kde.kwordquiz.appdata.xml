@@ -61,6 +61,7 @@
   <summary xml:lang="tr">Fiş Çalıştırıcı</summary>
   <summary xml:lang="uk">Тренування словникового запасу</summary>
   <summary xml:lang="x-test">xxFlash Card Trainerxx</summary>
+  <summary xml:lang="zh-CN">卡片式训练程序</summary>
   <summary xml:lang="zh-TW">閃卡訓練師</summary>
   <description>
     <p>KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
