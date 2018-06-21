@@ -129,7 +129,7 @@ void KWordQuizApp::initActions()
   fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(QUrl)), actionCollection());
 
   fileGHNS = KNS3::standardAction(i18n("Download New Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
-  fileGHNS->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
+  actionCollection()->setDefaultShortcut(fileGHNS, QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
   fileGHNS->setStatusTip(fileGHNS->whatsThis());
@@ -186,7 +186,7 @@ void KWordQuizApp::initActions()
   editPaste->setStatusTip(editPaste->whatsThis());
 
   editClear = KStandardAction::clear(this, SLOT(slotEditClear()), actionCollection());
-  editClear->setShortcut(Qt::Key_Delete);
+  actionCollection()->setDefaultShortcut(editClear, Qt::Key_Delete);
   editClear->setWhatsThis(i18n("Clears the content of the selected cells"));
   editClear->setToolTip(editClear->whatsThis());
   editClear->setStatusTip(editClear->whatsThis());
@@ -194,7 +194,7 @@ void KWordQuizApp::initActions()
   editInsert = actionCollection()->addAction(QStringLiteral("edit_insert"));
   editInsert->setIcon(QIcon::fromTheme(QStringLiteral("insert-table-row")));
   editInsert->setText(i18n("&Insert Row"));
-  editInsert->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));
+  actionCollection()->setDefaultShortcut(editInsert, QKeySequence(Qt::CTRL + Qt::Key_I));
   editInsert->setWhatsThis(i18n("Inserts a new row above the current row"));
   editInsert->setToolTip(editInsert->whatsThis());
   editInsert->setStatusTip(editInsert->whatsThis());
@@ -203,7 +203,7 @@ void KWordQuizApp::initActions()
   editDelete = actionCollection()->addAction(QStringLiteral("edit_delete"));
   editDelete->setIcon(QIcon::fromTheme(QStringLiteral("delete-table-row")));
   editDelete->setText(i18n("&Delete Row"));
-  editDelete->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_K));
+  actionCollection()->setDefaultShortcut(editDelete, QKeySequence(Qt::CTRL + Qt::Key_K));
   editDelete->setWhatsThis(i18n("Deletes the selected row(s)"));
   editDelete->setToolTip(editDelete->whatsThis());
   editDelete->setStatusTip(editDelete->whatsThis());
@@ -212,7 +212,7 @@ void KWordQuizApp::initActions()
   editMarkBlank = actionCollection()->addAction(QStringLiteral("edit_mark_blank"));
   editMarkBlank->setIcon(QIcon::fromTheme(QStringLiteral("markasblank")));
   editMarkBlank->setText(i18n("&Mark as Blank"));
-  editMarkBlank->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_M));
+  actionCollection()->setDefaultShortcut(editMarkBlank, QKeySequence(Qt::CTRL + Qt::Key_M));
   editMarkBlank->setWhatsThis(i18n("Marks the current or selected word as a blank for Fill-in-the-blank"));
   editMarkBlank->setToolTip(editMarkBlank->whatsThis());
   editMarkBlank->setStatusTip(editMarkBlank->whatsThis());
@@ -229,7 +229,7 @@ void KWordQuizApp::initActions()
   vocabLanguages = actionCollection()->addAction(QStringLiteral("vocab_languages"));
   vocabLanguages->setIcon(QIcon::fromTheme(QStringLiteral("languages")));
   vocabLanguages->setText(i18n("&Column Settings..."));
-  vocabLanguages->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
+  actionCollection()->setDefaultShortcut(vocabLanguages, QKeySequence(Qt::CTRL + Qt::Key_L));
   vocabLanguages->setWhatsThis(i18n("Defines the column settings for the active vocabulary"));
   vocabLanguages->setToolTip(vocabLanguages->whatsThis());
   vocabLanguages->setStatusTip(vocabLanguages->whatsThis());
@@ -313,7 +313,7 @@ void KWordQuizApp::initActions()
   quizEditor = actionCollection()->addAction(QStringLiteral("quiz_editor"));
   quizEditor->setIcon(QIcon::fromTheme(QStringLiteral("editor")));
   quizEditor->setText(i18nc("@item:inlistbox activate vocabulary editor", "&Editor"));
-  quizEditor->setShortcut(QKeySequence(Qt::Key_F6));
+  actionCollection()->setDefaultShortcut(quizEditor, QKeySequence(Qt::Key_F6));
   quizEditor->setWhatsThis(i18n("Activates the vocabulary editor"));
   quizEditor->setToolTip(quizEditor->whatsThis());
   quizEditor->setStatusTip(quizEditor->whatsThis());
@@ -322,7 +322,7 @@ void KWordQuizApp::initActions()
   quizFlash = actionCollection()->addAction(QStringLiteral("quiz_flash"));
   quizFlash->setIcon(QIcon::fromTheme(QStringLiteral("flash")));
   quizFlash->setText(i18n("&Flashcard"));
-  quizFlash->setShortcut(QKeySequence(Qt::Key_F7));
+  actionCollection()->setDefaultShortcut(quizFlash, QKeySequence(Qt::Key_F7));
   quizFlash->setWhatsThis(i18n("Starts a flashcard session using the active vocabulary"));
   quizFlash->setToolTip(quizFlash->whatsThis());
   quizFlash->setStatusTip(quizFlash->whatsThis());
@@ -331,7 +331,7 @@ void KWordQuizApp::initActions()
   quizMultiple = actionCollection()->addAction(QStringLiteral("quiz_multiple"));
   quizMultiple->setIcon(QIcon::fromTheme(QStringLiteral("multiple")));
   quizMultiple->setText(i18n("&Multiple Choice"));
-  quizMultiple->setShortcut(QKeySequence(Qt::Key_F8));
+  actionCollection()->setDefaultShortcut(quizMultiple, QKeySequence(Qt::Key_F8));
   quizMultiple->setWhatsThis(i18n("Starts a multiple choice session using the active vocabulary"));
   quizMultiple->setToolTip(quizMultiple->whatsThis());
   quizMultiple->setStatusTip(quizMultiple->whatsThis());
@@ -341,7 +341,7 @@ void KWordQuizApp::initActions()
   quizQA->setIcon(QIcon::fromTheme(QStringLiteral("qa")));
   quizQA->setText(i18n("&Question and Answer"));
   quizQA->setIconText(i18n("Q&&A"));
-  quizQA->setShortcut(QKeySequence(Qt::Key_F9));
+  actionCollection()->setDefaultShortcut(quizQA, QKeySequence(Qt::Key_F9));
   quizQA->setWhatsThis(i18n("Starts a question and answer session using the active vocabulary"));
   quizQA->setToolTip(quizQA->whatsThis());
   quizQA->setStatusTip(quizQA->whatsThis());
@@ -350,27 +350,27 @@ void KWordQuizApp::initActions()
   quizCheck = actionCollection()->addAction(QStringLiteral("quiz_check"));
   quizCheck->setIcon(QIcon::fromTheme(QStringLiteral("answer-correct")));
   quizCheck->setText(i18n("&Check"));
-  quizCheck->setShortcut(QKeySequence(Qt::Key_Return));
+  actionCollection()->setDefaultShortcut(quizCheck, QKeySequence(Qt::Key_Return));
   quizCheck->setWhatsThis(i18n("Checks your answer to this question"));
   quizCheck->setToolTip(quizCheck->whatsThis());
   quizCheck->setStatusTip(quizCheck->whatsThis());
 
   quizOpt1 = actionCollection()->addAction(QStringLiteral("quiz_Opt1"));
   quizOpt1->setText(i18n("Choose Option &1"));
-  quizOpt1->setShortcut(QKeySequence(Qt::Key_1));
+  actionCollection()->setDefaultShortcut(quizOpt1, QKeySequence(Qt::Key_1));
 
   quizOpt2 = actionCollection()->addAction(QStringLiteral("quiz_Opt2"));
   quizOpt2->setText(i18n("Choose Option &2"));
-  quizOpt2->setShortcut(QKeySequence(Qt::Key_2));
+  actionCollection()->setDefaultShortcut(quizOpt2, QKeySequence(Qt::Key_2));
 
   quizOpt3 = actionCollection()->addAction(QStringLiteral("quiz_Opt3"));
   quizOpt3->setText(i18n("Choose Option &3"));
-  quizOpt3->setShortcut(QKeySequence(Qt::Key_3));
+  actionCollection()->setDefaultShortcut(quizOpt3, QKeySequence(Qt::Key_3));
 
   flashKnow = actionCollection()->addAction(QStringLiteral("flash_know"));
   flashKnow->setIcon(QIcon::fromTheme(QStringLiteral("know")));
   flashKnow->setText(i18n("I &Know"));
-  flashKnow->setShortcut(QKeySequence(Qt::Key_K));
+  actionCollection()->setDefaultShortcut(flashKnow, QKeySequence(Qt::Key_K));
   flashKnow->setWhatsThis(i18n("Counts this card as correct and shows the next card"));
   flashKnow->setToolTip(flashKnow->whatsThis());
   flashKnow->setStatusTip(flashKnow->whatsThis());
@@ -378,7 +378,7 @@ void KWordQuizApp::initActions()
   flashDontKnow = actionCollection()->addAction(QStringLiteral("flash_dont_know"));
   flashDontKnow->setIcon(QIcon::fromTheme(QStringLiteral("dontknow")));
   flashDontKnow->setText(i18n("I &Do Not Know"));
-  flashDontKnow->setShortcut(QKeySequence(Qt::Key_D));
+  actionCollection()->setDefaultShortcut(flashDontKnow, QKeySequence(Qt::Key_D));
   flashDontKnow->setWhatsThis(i18n("Counts this card as incorrect and shows the next card"));
   flashDontKnow->setToolTip(flashDontKnow->whatsThis());
   flashDontKnow->setStatusTip(flashDontKnow->whatsThis());
@@ -386,7 +386,7 @@ void KWordQuizApp::initActions()
   qaHint = actionCollection()->addAction(QStringLiteral("qa_hint"));
   qaHint->setIcon(QIcon::fromTheme(QStringLiteral("hint")));
   qaHint->setText(i18n("&Hint"));
-  qaHint->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_H));
+  actionCollection()->setDefaultShortcut(qaHint, QKeySequence(Qt::CTRL + Qt::Key_H));
   qaHint->setWhatsThis(i18n("Gets the next correct letter of the answer"));
   qaHint->setToolTip(qaHint->whatsThis());
   qaHint->setStatusTip(qaHint->whatsThis());
@@ -394,7 +394,7 @@ void KWordQuizApp::initActions()
   qaMarkLastCorrect = actionCollection()->addAction(QStringLiteral("qa_mark_last_correct"));
   qaMarkLastCorrect->setIcon(QIcon::fromTheme(QStringLiteral("answer-correct")));
   qaMarkLastCorrect->setText(i18n("Mark Last Correct"));
-  qaMarkLastCorrect->setShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Return));
+  actionCollection()->setDefaultShortcut(qaMarkLastCorrect, QKeySequence(Qt::SHIFT + Qt::Key_Return));
   qaMarkLastCorrect->setWhatsThis(i18n("Marks last answer as correct"));
   qaMarkLastCorrect->setToolTip(qaMarkLastCorrect->whatsThis());
   qaMarkLastCorrect->setStatusTip(qaMarkLastCorrect->whatsThis());
@@ -402,7 +402,7 @@ void KWordQuizApp::initActions()
   quizRestart = actionCollection()->addAction(QStringLiteral("quiz_restart"));
   quizRestart->setIcon(QIcon::fromTheme(QStringLiteral("start-over")));
   quizRestart->setText(i18n("&Restart"));
-  quizRestart->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
+  actionCollection()->setDefaultShortcut(quizRestart, QKeySequence(Qt::CTRL + Qt::Key_R));
   quizRestart->setWhatsThis(i18n("Restarts the quiz session from the beginning"));
   quizRestart->setToolTip(quizRestart->whatsThis());
   quizRestart->setStatusTip(quizRestart->whatsThis());
@@ -410,7 +410,7 @@ void KWordQuizApp::initActions()
   a = actionCollection()->addAction(QStringLiteral("quiz_audio_play"));
   a->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-start")));
   a->setText(i18n("&Play Audio"));
-  a->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_B));
+  actionCollection()->setDefaultShortcut(a, QKeySequence(Qt::CTRL + Qt::Key_B));
   a->setWhatsThis(i18n("Play associated audio"));
   a->setToolTip(a->whatsThis());
   a->setStatusTip(a->whatsThis());
@@ -418,7 +418,7 @@ void KWordQuizApp::initActions()
   quizRepeatErrors = actionCollection()->addAction(QStringLiteral("quiz_repeat_errors"));
   quizRepeatErrors->setIcon(QIcon::fromTheme(QStringLiteral("repeat")));
   quizRepeatErrors->setText(i18n("Repeat &Errors"));
-  quizRepeatErrors->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_E));
+  actionCollection()->setDefaultShortcut(quizRepeatErrors, QKeySequence(Qt::CTRL + Qt::Key_E));
   quizRepeatErrors->setWhatsThis(i18n("Repeats all incorrectly answered questions"));
   quizRepeatErrors->setToolTip(quizRepeatErrors->whatsThis());
   quizRepeatErrors->setStatusTip(quizRepeatErrors->whatsThis());
@@ -454,7 +454,7 @@ void KWordQuizApp::initActions()
   for (int i = 1; i <=9; ++i) {
     a = actionCollection()->addAction(QStringLiteral("char_%1").arg(QString::number(i)));
     a->setText(i18n("Special Character <numid>%1</numid>", i));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+%1").arg(QString::number(i))));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+%1").arg(QString::number(i))));
     connect(a, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
     charMapper->setMapping(a, i);
   }
