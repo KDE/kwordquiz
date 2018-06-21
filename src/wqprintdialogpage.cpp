@@ -31,15 +31,11 @@ WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : QWidget(parent)
   setWindowTitle(i18n("Vocabulary Options"));
 
   QGridLayout * l = new QGridLayout(this);
-//TODO PORT QT5   l->setSpacing(QDialog::spacingHint());
-//TODO PORT QT5   l->setMargin(QDialog::marginHint());
   QSpacerItem * s = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
   l->addItem(s, 1, 0, 1, 1);
 
   g = new QGroupBox(i18n("Select Type of Printout"), this );
   QVBoxLayout * vboxLayout = new QVBoxLayout(g);
-//TODO PORT QT5   vboxLayout->setSpacing(QDialog::spacingHint());
-//TODO PORT QT5   vboxLayout->setMargin(QDialog::marginHint());
 
   bg = new QButtonGroup(this);
 

@@ -517,7 +517,6 @@ void KWordQuizApp::initView()
 
   QVBoxLayout *editorLayout = new QVBoxLayout();
   editorLayout->setMargin(0);
-//TODO PORT QT5   editorLayout->setSpacing(QDialog::spacingHint());
 
   m_searchLine = new KFilterProxySearchLine(this);
   m_searchLine->lineEdit()->setFocusPolicy(Qt::ClickFocus);
