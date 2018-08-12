@@ -38,7 +38,7 @@ find_package(KF5 REQUIRED COMPONENTS
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 
-find_package(Phonon4Qt5 4.6.60 NO_MODULE)
+find_package(Phonon4Qt5 4.6.60 NO_MODULE REQUIRED)
 
 find_package(LibKEduVocDocument REQUIRED)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
