@@ -18,8 +18,8 @@
 
 #include "kwqtutor.h"
 
-#include <QtCore/QPointer>
-#include <QtCore/QTimer>
+#include <QPointer>
+#include <QTimer>
 #include <QMenu>
 #include <QAction>
 

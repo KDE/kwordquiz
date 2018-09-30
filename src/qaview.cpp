@@ -20,7 +20,7 @@
 
 #include "qaview.h"
 
-#include <QtDBus/QDBusInterface>
+#include <QDBusInterface>
 
 #include <KIconLoader>
 #include <KLocalizedString>

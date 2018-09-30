@@ -51,7 +51,7 @@ class KWQTutor : public KStatusNotifierItem
     void closeFlashcard();
     /* save preferences before exit */
     void quit();
-    /* apply any new prefrences */
+    /* apply any new preferences */
     void slotApplyPreferences();
 
   private:

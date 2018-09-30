@@ -16,8 +16,8 @@
 
 #include "dlglanguage.h"
 
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusReply>
+#include <QDBusInterface>
+#include <QDBusReply>
 
 #include <KLocalizedString>
 #include <KIconLoader>

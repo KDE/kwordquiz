@@ -17,8 +17,8 @@
 
 #include "kwqtableview.h"
 
-#include <QtCore/QFile>
-#include <QtCore/QPointer>
+#include <QFile>
+#include <QPointer>
 #include <QLineEdit>
 #include <QKeyEvent>
 #include <QList>
@@ -31,7 +31,7 @@
 #include <QTextLayout>
 #include <QAbstractTextDocumentLayout>
 #include <QHeaderView>
-#include <QtDBus/QDBusInterface>
+#include <QDBusInterface>
 #include <QDebug>
 
 #include <KLocalizedString>

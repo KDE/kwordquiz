@@ -21,8 +21,8 @@
 #include <QBitmap>
 #include <QCheckBox>
 #include <QIcon>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusReply>
+#include <QDBusInterface>
+#include <QDBusReply>
 #include <QFileDialog>
 #include <QFontDialog>
 #include <QMenu>

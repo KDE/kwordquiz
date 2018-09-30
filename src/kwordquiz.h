@@ -59,7 +59,7 @@ class KWordQuizApp : public KXmlGuiWindow
 
   public:
     /**
-     * construtor of KWordQuizApp, calls all init functions to create the application.
+     * constructor of KWordQuizApp, calls all init functions to create the application.
      */
     explicit KWordQuizApp(QWidget* parent=0);
 
@@ -97,7 +97,7 @@ class KWordQuizApp : public KXmlGuiWindow
     /** initializes the KActions of the application */
 
     void initActions();
-    /** sets up the statusbar for the main window by initialzing a statuslabel.
+    /** sets up the statusbar for the main window by initializing a statuslabel.
      */
     void initStatusBar();
     /** initializes the document object of the main window that is connected to the view in initView().
@@ -113,7 +113,7 @@ class KWordQuizApp : public KXmlGuiWindow
      */
     void initView();
     /** queryClose is called by KXmlGuiWindow on each closeEvent of a window. Against the
-     * default implementation (only returns true), this calles saveModified() on the document object to ask if the document shall
+     * default implementation (only returns true), this calls saveModified() on the document object to ask if the document shall
      * be saved if Modified; on cancel the closeEvent is rejected.
      * @see KXmlGuiWindow#queryClose
      * @see KXmlGuiWindow#closeEvent
