@@ -14,6 +14,7 @@ include_directories(
 ########### next target ###############
 
 set(kwordquiz_SRCS
+   filterproxysearchline.cpp
    kwordquizprefs.cpp
    kwordquiz.cpp
    main.cpp
@@ -83,7 +84,7 @@ target_link_libraries(kwordquiz
     KF5::NotifyConfig
     KF5::XmlGui
     KF5::GuiAddons
-    KF5::KDELibs4Support
+    KF5::WindowSystem
     LibKEduVocDocumentImport__KEduVocDocument
     Phonon::phonon4qt5
 )

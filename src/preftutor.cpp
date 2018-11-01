@@ -21,7 +21,7 @@
 PrefTutor::PrefTutor(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
-  connect(kcfg_TutorTiming, &KButtonGroup::changed, this, &PrefTutor::timingChanged);
+  connect(kcfg_TutorTiming, &QGroupBox::clicked, this, &PrefTutor::timingChanged);
 }
 
 void PrefTutor::timingChanged (int id)

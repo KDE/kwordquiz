@@ -41,11 +41,10 @@ KWQClearDialog::KWQClearDialog(QWidget* parent): QDialog(parent)
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
-    //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
     mainLayout->addWidget(buttonBox);
     setupUi(mainWidget);
 
-    connect(clearButtonGroup, &KButtonGroup::changed, this, &KWQClearDialog::buttonGroupChanged);
+    connect(clearButtonGroup, &QGroupBox::clicked, this, &KWQClearDialog::buttonGroupChanged);
 
     updateCheckBoxes();
 }

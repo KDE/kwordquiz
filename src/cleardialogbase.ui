@@ -16,7 +16,7 @@
     <number>0</number>
    </property>
    <item row="0" column="0">
-    <widget class="KButtonGroup" name="clearButtonGroup">
+    <widget class="QGroupBox" name="clearButtonGroup">
      <property name="title">
       <string>Selection</string>
      </property>
@@ -110,14 +110,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KButtonGroup</class>
-   <extends>QGroupBox</extends>
-   <header>kbuttongroup.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

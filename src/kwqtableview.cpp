@@ -17,28 +17,27 @@
 
 #include "kwqtableview.h"
 
-#include <QFile>
-#include <QPointer>
-#include <QLineEdit>
-#include <QKeyEvent>
-#include <QList>
-#include <QApplication>
-#include <QPrinter>
-#include <QPrintDialog>
-#include <QFileDialog>
-#include <QTextCursor>
-#include <QTextTable>
-#include <QTextLayout>
 #include <QAbstractTextDocumentLayout>
-#include <QHeaderView>
+#include <QApplication>
 #include <QDBusInterface>
 #include <QDebug>
+#include <QFile>
+#include <QFileDialog>
+#include <QHeaderView>
+#include <QImageReader>
+#include <QKeyEvent>
+#include <QLineEdit>
+#include <QList>
+#include <QPointer>
+#include <QPrintDialog>
+#include <QPrintPreviewDialog>
+#include <QPrinter>
+#include <QTextCursor>
+#include <QTextLayout>
+#include <QTextTable>
 
 #include <KLocalizedString>
 #include <KNotification>
-#include <kdeprintdialog.h>
-#include <KPrintPreview>
-#include <KFileDialog>
 #include <KConfigGroup>
 
 #include "kwqtablemodel.h"
@@ -78,7 +77,8 @@ void KWQTableView::doPrint()
 
   WQPrintDialogPage * p = new WQPrintDialogPage(this);
   p->setPrintStyle(Prefs::printStyle());
-  QPrintDialog *printDialog = KdePrint::createPrintDialog(&printer, QList<QWidget*>() << p, this);
+  QPrintDialog *printDialog = new QPrintDialog(&printer, this);
+  printDialog->setOptionTabs(QList<QWidget*>() << p);
   if (printDialog->exec() == QDialog::Accepted) {
     Prefs::setPrintStyle(p->printStyle());
     QTextDocument td;
@@ -90,11 +90,17 @@ void KWQTableView::doPrint()
 void KWQTableView::doPrintPreview()
 {
   QPrinter printer;
-  QPointer<KPrintPreview> preview = new KPrintPreview(&printer, this);
+  QPrintPreviewDialog preview(&printer);
+  
+  connect(&preview, &QPrintPreviewDialog::paintRequested, this, &KWQTableView::slotPrintPreviewRequested);
+  
+  preview.exec();
+}
+
+void KWQTableView::slotPrintPreviewRequested(QPrinter* printer)
+{
   QTextDocument td;
-  createPages(&printer, &td, true);
-  preview->exec();
-  delete preview;
+  KWQTableView::createPages(printer, &td, true);
 }
 
 bool KWQTableView::doHtmlExport(const QUrl &url)
@@ -717,11 +723,23 @@ void KWQTableView::slotHeaderClicked(int column)
 void KWQTableView::doVocabImage()
 {
   QUrl currentUrl(model()->data(currentIndex(), KWQTableModel::ImageRole).toString());
+  QStringList imageFormats;
+  for(const QByteArray b: QImageReader::supportedMimeTypes()) {
+      if (! b.isEmpty()) imageFormats.append(QString(b));
+  }
 
-  QUrl imageUrl = KFileDialog::getImageOpenUrl(currentUrl, this, i18n("Select Image"));
-  if (!imageUrl.isEmpty()) {
-    KWQCommandImage *kwqc = new KWQCommandImage(this, imageUrl);
-    m_undoStack->push(kwqc);
+  QFileDialog imageOpenDialog(this);
+  imageOpenDialog.setWindowTitle(i18nc("@title:window", "Select Image"));
+  imageOpenDialog.setDirectory(currentUrl.path());
+  imageOpenDialog.setMimeTypeFilters(imageFormats);
+  imageOpenDialog.setAcceptMode(QFileDialog::AcceptOpen);
+  imageOpenDialog.setFileMode(QFileDialog::ExistingFile);
+  if (imageOpenDialog.exec() == QDialog::Accepted) {
+      QUrl imageUrl = QUrl::fromLocalFile(imageOpenDialog.selectedFiles().first());
+      if (!imageUrl.isEmpty()) {
+          KWQCommandImage *kwqc = new KWQCommandImage(this, imageUrl);
+          m_undoStack->push(kwqc);
+      }
   }
 }
 
@@ -730,7 +748,7 @@ void KWQTableView::doVocabSound()
 {
   QUrl currentUrl(model()->data(currentIndex(), KWQTableModel::SoundRole).toString());
 
-  QUrl soundUrl = QFileDialog::getOpenFileUrl(this, i18n("Select Sound"), currentUrl, i18n("*|All Files"));
+  QUrl soundUrl = QFileDialog::getOpenFileUrl(this, i18n("Select Sound"), currentUrl, i18n("All Files (*)"));
   if (!soundUrl.isEmpty()) {
     KWQCommandSound *kwqc = new KWQCommandSound(this, soundUrl);
     m_undoStack->push(kwqc);

@@ -213,8 +213,9 @@ bool KWQTableModel::removeRows(int row, int count, const QModelIndex & parent)
 
 void KWQTableModel::setDocument(KEduVocDocument * doc)
 {
+  beginResetModel();
   m_doc = doc;
-  reset();
+  endResetModel();
 }
 
 bool KWQTableModel::isEmpty()

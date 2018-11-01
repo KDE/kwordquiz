@@ -32,7 +32,7 @@
 
 #include <kactioncollection.h>
 #include <kactionmenu.h>
-#include <kapplication.h>
+//#include <QApplication>
 #include <kmessagebox.h>
 #include <klocalizedstring.h>
 #include <kedittoolbar.h>
@@ -50,13 +50,13 @@
 #include <KProcess>
 #include <QTemporaryFile>
 #include <kwindowsystem.h>
-#include <KFilterProxySearchLine>
 #include <KConfigGroup>
 #include <QStandardPaths>
 #include <KUndoActions>
 #include <QMimeDatabase>
 #include <QMimeType>
 
+#include "filterproxysearchline.h"
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
 #include "keduvocexpression.h"
@@ -461,8 +461,7 @@ void KWordQuizApp::initActions()
 
   updateSpecialCharIcons();
 
-  if (!initialGeometrySet())
-    resize( QSize(650, 450).expandedTo(minimumSizeHint()));
+  resize( QSize(650, 450).expandedTo(minimumSizeHint()));
   setupGUI(ToolBar | Keys | StatusBar | Create);
   setAutoSaveSettings();
 
@@ -518,10 +517,10 @@ void KWordQuizApp::initView()
   QVBoxLayout *editorLayout = new QVBoxLayout();
   editorLayout->setMargin(0);
 
-  m_searchLine = new KFilterProxySearchLine(this);
-  m_searchLine->lineEdit()->setFocusPolicy(Qt::ClickFocus);
-  m_searchLine->lineEdit()->setPlaceholderText(i18n("Enter search terms here"));
-  m_searchLine->setProxy(m_sortFilterModel);
+  m_searchLine = new FilterProxySearchLine(this);
+  m_searchLine->setFocusPolicy(Qt::ClickFocus);
+  m_searchLine->setPlaceholderText(i18n("Enter search terms here"));
+  m_searchLine->setFilterProxyModel(m_sortFilterModel);
 
   m_tableView = new KWQTableView(m_undoStack, this);
   editorLayout->addWidget(m_searchLine);
@@ -699,16 +698,13 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
   bool modified = _cfg.readEntry("modified", false);
   if(modified)
   {
-    bool canRecover;
-    QString tempname = kapp->checkRecoverFile(filename, canRecover);
-    QUrl _url(tempname);
-
-    if(canRecover)
-    {
-      m_doc->open(_url);
-      setWindowTitle(_url.fileName() + "[*]");
-      setWindowModified(true);
-      QFile::remove(tempname);
+    QTemporaryFile tmpfile(filename);
+    if (tmpfile.open()) {
+        QUrl _url(QUrl::fromLocalFile(tmpfile.fileName()));
+        m_doc->open(_url);
+        m_doc->setModified();
+        setWindowTitle(_url.fileName() + "[*]");
+        setWindowModified(true);
     }
   }
   else

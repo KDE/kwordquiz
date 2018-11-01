@@ -12,7 +12,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="0">
-    <widget class="KButtonGroup" name="kcfg_TutorTiming">
+    <widget class="QGroupBox" name="kcfg_TutorTiming">
      <property name="title">
       <string>Tutor Timing</string>
      </property>
@@ -156,7 +156,7 @@
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="KButtonGroup" name="kcfg_TutorCardAppearance">
+    <widget class="QGroupBox" name="kcfg_TutorCardAppearance">
      <property name="title">
       <string>Flashcard Appearance</string>
      </property>
@@ -215,14 +215,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KButtonGroup</class>
-   <extends>QGroupBox</extends>
-   <header>kbuttongroup.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>kcfg_StartExerciseAsSoonAsFileIsLoaded</tabstop>
  </tabstops>

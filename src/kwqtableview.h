@@ -81,6 +81,7 @@ protected slots:
   void verticalHeaderResized(int, int, int);
   void horizontalHeaderResized(int, int, int);
   void horizontalHeaderDataChanged(Qt::Orientation, int, int);
+  void slotPrintPreviewRequested(QPrinter* printer);
 
 private:
   // Disable from public calling; use setFilterModel() instead.

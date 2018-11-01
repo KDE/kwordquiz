@@ -26,7 +26,7 @@
 #include <KActionCollection>
 #include <KStandardAction>
 #include <KMessageBox>
-#include <KFileDialog>
+#include <QFileDialog>
 #include <KLocalizedString>
 #include <KConfigGroup>
 #include <KIconLoader>
@@ -140,14 +140,12 @@ void KWQTutor::startStopPressed()
 void KWQTutor::loadFile()
 {
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Reading);
-  QPointer<KFileDialog> fd = new KFileDialog(QUrl(), filter, 0);
-  fd->setOperationMode(KFileDialog::Opening);
-  fd->setMode(KFile::File | KFile::ExistingOnly);
-  fd->setWindowTitle(i18n("Open Vocabulary Document"));
+  QPointer<QFileDialog> fd = new QFileDialog(nullptr, i18n("Open Vocabulary Document"), QString(), filter);
+  fd->setFileMode(QFileDialog::ExistingFiles);
   if (fd->exec() == QDialog::Accepted)
   {
-    m_tutorDoc->open(fd->selectedUrl());
-    Prefs::setLastVocabFile(fd->selectedUrl().toLocalFile());
+    m_tutorDoc->open(fd->selectedUrls().at(0));
+    Prefs::setLastVocabFile(fd->selectedUrls().at(0).toLocalFile());
     if (Prefs::startExerciseAsSoonAsFileIsLoaded())
       startStopPressed();
   }

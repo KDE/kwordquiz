@@ -33,8 +33,8 @@ find_package(KF5 REQUIRED COMPONENTS
     NotifyConfig
     NewStuff
     Notifications
+    WindowSystem
     XmlGui
-    KDELibs4Support
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 

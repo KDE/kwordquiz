@@ -27,13 +27,14 @@
 #include <QUrl>
 #include <QUndoStack>
 
+#include "filterproxysearchline.h"
 #include "kwqquizmodel.h"
 
 class KActionMenu;
 class KRecentFilesAction;
 class KPageWidget;
 class KPageWidgetItem;
-class KFilterProxySearchLine;
+class FilterProxySearchLine;
 class KEduVocDocument;
 class KWQTableModel;
 class KWQSortFilterModel;
@@ -249,7 +250,7 @@ class KWordQuizApp : public KXmlGuiWindow
 
     KWordQuizPrefs *m_prefDialog;
 
-    KFilterProxySearchLine *m_searchLine;
+    FilterProxySearchLine *m_searchLine;
 
     /** m_doc represents your actual document and is created only once. It keeps
      * information such as filename and does the serialization of your files.
