@@ -735,7 +735,7 @@ void KWQTableView::doVocabImage()
   imageOpenDialog->setAcceptMode(QFileDialog::AcceptOpen);
   imageOpenDialog->setFileMode(QFileDialog::ExistingFile);
   if (imageOpenDialog->exec() == QDialog::Accepted) {
-      QUrl imageUrl = QUrl::fromLocalFile(imageOpenDialog->selectedFiles().first());
+      QUrl imageUrl = imageOpenDialog->selectedUrls().first();
       if (!imageUrl.isEmpty()) {
           KWQCommandImage *kwqc = new KWQCommandImage(this, imageUrl);
           m_undoStack->push(kwqc);
