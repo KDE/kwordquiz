@@ -24,8 +24,8 @@
 // KF
 #include <KLocalizedString>
 // Qt
-#include <QTimer>
 #include <QSortFilterProxyModel>
+#include <QTimer>
 
 
 FilterProxySearchLine::FilterProxySearchLine(QWidget *parent)

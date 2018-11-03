@@ -22,10 +22,10 @@
 
 #include <QButtonGroup>
 
+#include <KActionCollection>
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <KNotification>
-#include <KActionCollection>
 
 #include "kwqquizmodel.h"
 #include "kwqscorewidget.h"

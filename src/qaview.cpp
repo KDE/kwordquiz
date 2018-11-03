@@ -21,11 +21,11 @@
 #include "qaview.h"
 
 #include <QDBusInterface>
+#include <QUrl>
 
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <KNotification>
-#include <QUrl>
 
 #include "prefs.h"
 #include "kwqquizmodel.h"

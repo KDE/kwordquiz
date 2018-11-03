@@ -20,9 +20,9 @@
 
 #include <QPushButton>
 
-#include <KLocalizedString>
-#include <KConfigSkeleton>
 #include <KConfigGroup>
+#include <KConfigSkeleton>
+#include <KLocalizedString>
 
 #include "preftutor.h"
 

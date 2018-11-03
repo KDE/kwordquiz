@@ -19,8 +19,8 @@
 
 #include <QCheckBox>
 
-#include <KLocalizedString>
 #include <KConfigSkeleton>
+#include <KLocalizedString>
 
 #include "prefgeneral.h"
 #include "prefeditor.h"

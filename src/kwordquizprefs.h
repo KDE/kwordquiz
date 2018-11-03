@@ -18,8 +18,8 @@
 #ifndef KWORDQUIZPREFS_H
 #define KWORDQUIZPREFS_H
 
-#include <KActionCollection>
 #include <KConfigDialog>
+#include <KActionCollection>
 
 /**
   *@author Peter Hedlund

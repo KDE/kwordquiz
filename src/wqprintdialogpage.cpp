@@ -18,13 +18,13 @@
 
 #include "wqprintdialogpage.h"
 
-#include <QRadioButton>
+#include <QDialog>
 #include <QGridLayout>
+#include <QRadioButton>
 #include <QSpacerItem>
 
-#include <KLocalizedString>
-#include <QDialog>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : QWidget(parent)
 {

@@ -19,9 +19,9 @@
 #ifndef KWQTUTORFLASHCARD_H
 #define KWQTUTORFLASHCARD_H
 
+#include <QCloseEvent>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <QCloseEvent>
 
 #include "kwqcardview.h"
 

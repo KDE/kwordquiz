@@ -18,10 +18,9 @@
 #ifndef KWQTABLEVIEW_H
 #define KWQTABLEVIEW_H
 
-#include <QTableView>
 #include <QKeyEvent>
+#include <QTableView>
 #include <QTextDocument>
-
 #include <QUndoStack>
 
 #include "kwqsortfiltermodel.h"

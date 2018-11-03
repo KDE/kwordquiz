@@ -19,8 +19,8 @@
 
 #include "kwqtabledelegate.h"
 
-#include <QPainter>
 #include <QLineEdit>
+#include <QPainter>
 
 #include "kwqtablemodel.h"
 

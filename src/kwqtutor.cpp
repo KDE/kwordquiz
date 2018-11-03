@@ -18,18 +18,18 @@
 
 #include "kwqtutor.h"
 
+#include <QAction>
+#include <QFileDialog>
+#include <QMenu>
 #include <QPointer>
 #include <QTimer>
-#include <QMenu>
-#include <QAction>
 
 #include <KActionCollection>
-#include <KStandardAction>
-#include <KMessageBox>
-#include <QFileDialog>
-#include <KLocalizedString>
 #include <KConfigGroup>
 #include <KIconLoader>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KStandardAction>
 
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"

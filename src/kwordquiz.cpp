@@ -17,44 +17,38 @@
 
 #include "kwordquiz.h"
 
-#include <QPainter>
 #include <QBitmap>
 #include <QCheckBox>
-#include <QIcon>
 #include <QDBusInterface>
 #include <QDBusReply>
+#include <QDebug>
 #include <QFileDialog>
 #include <QFontDialog>
+#include <QIcon>
 #include <QMenu>
-#include <QStatusBar>
-#include <QPointer>
-#include <QDebug>
-
-#include <kactioncollection.h>
-#include <kactionmenu.h>
-//#include <QApplication>
-#include <kmessagebox.h>
-#include <klocalizedstring.h>
-#include <kedittoolbar.h>
-
-#include <knotifyconfigwidget.h>
-#include <kiconloader.h>
-#include <kxmlguifactory.h>
-#include <krecentfilesaction.h>
-#include <kstandardaction.h>
-#include <ktoggleaction.h>
-#include <ktoolbar.h>
-#include <kns3/downloaddialog.h>
-#include <kns3/knewstuffaction.h>
-#include <KPageWidget>
-#include <KProcess>
-#include <QTemporaryFile>
-#include <kwindowsystem.h>
-#include <KConfigGroup>
-#include <QStandardPaths>
-#include <KUndoActions>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QPainter>
+#include <QPointer>
+#include <QStandardPaths>
+#include <QStatusBar>
+#include <QTemporaryFile>
+
+#include <KActionCollection>
+#include <KActionMenu>
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KNS3/DownloadDialog>
+#include <kns3/knewstuffaction.h>
+#include <KNotifyConfigWidget>
+#include <KPageWidget>
+#include <KProcess>
+#include <KToggleAction>
+#include <KToolBar>
+#include <KUndoActions>
+#include <KWindowSystem>
+#include <KXMLGUIFactory>
 
 #include "filterproxysearchline.h"
 #include "keduvocdocument.h"

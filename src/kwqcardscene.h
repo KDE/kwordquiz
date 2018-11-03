@@ -17,12 +17,12 @@
 #ifndef KWQCARDSCENE_H
 #define KWQCARDSCENE_H
 
-#include <QGraphicsScene>
-#include <QGraphicsTextItem>
-#include <QGraphicsSimpleTextItem>
-#include <QGraphicsRectItem>
 #include <QGraphicsLineItem>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsRectItem>
+#include <QGraphicsScene>
+#include <QGraphicsSimpleTextItem>
+#include <QGraphicsTextItem>
 
 #include "kwqpixmapitem.h"
 

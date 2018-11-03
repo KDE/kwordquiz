@@ -16,15 +16,14 @@
  ***************************************************************************/
 
 #include <QAction>
-
+#include <QApplication>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 
 #include <KAboutData>
 #include <KActionCollection>
-#include <QApplication>
-#include <KLocalizedString>
 #include <KCrash>
-#include <QCommandLineParser>
-#include <QCommandLineOption>
+#include <KLocalizedString>
 
 #include "kwqtutor.h"
 #include "kwordquiz.h"

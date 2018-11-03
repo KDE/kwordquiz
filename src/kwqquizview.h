@@ -21,6 +21,7 @@
 #ifndef KWQQUIZVIEW_H
 #define KWQQUIZVIEW_H
 
+#include <QUrl>
 #include <QWidget>
 #include <phonon/MediaObject>
 #include <phonon/Path>
@@ -28,7 +29,6 @@
 #include <phonon/Global>
 
 #include <KActionCollection>
-#include <QUrl>
 
 class KWQQuizModel;
 

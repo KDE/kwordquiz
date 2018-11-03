@@ -16,12 +16,13 @@
 
 #include "dlgspecchar.h"
 
-#include <KLocalizedString>
-#include <KCharSelect>
-#include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+
+#include <KCharSelect>
+#include <KConfigGroup>
+#include <KLocalizedString>
 
 DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) : QDialog(parent)
 {

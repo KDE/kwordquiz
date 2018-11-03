@@ -18,14 +18,14 @@
 #ifndef KWORDQUIZ_H
 #define KWORDQUIZ_H
 
-#include <QSignalMapper>
-#include <QActionGroup>
-
-#include <KXmlGuiWindow>
 #include <QAction>
-#include <KDirWatch>
-#include <QUrl>
+#include <QActionGroup>
+#include <QSignalMapper>
 #include <QUndoStack>
+#include <QUrl>
+
+#include <KDirWatch>
+#include <KXmlGuiWindow>
 
 #include "filterproxysearchline.h"
 #include "kwqquizmodel.h"

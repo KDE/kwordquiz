@@ -18,13 +18,13 @@
 
 #include <QDBusInterface>
 #include <QDBusReply>
-
-#include <KLocalizedString>
-#include <KIconLoader>
-#include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+
+#include <KConfigGroup>
+#include <KIconLoader>
+#include <KLocalizedString>
 
 #include "kwqtablemodel.h"
 #include "prefs.h"
