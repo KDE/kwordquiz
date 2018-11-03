@@ -468,7 +468,7 @@ void KWordQuizApp::initActions()
 void KWordQuizApp::initStatusBar()
 {
   m_statusLabel = new QLabel(statusBar());
-  statusBar()->insertPermanentWidget(1, m_statusLabel);
+  statusBar()->insertPermanentWidget(0, m_statusLabel);
   //statusBar()->setItemFixed(1, 250);
 }
 
