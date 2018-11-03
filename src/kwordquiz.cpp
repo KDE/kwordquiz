@@ -1055,7 +1055,7 @@ void KWordQuizApp::slotVocabLanguages()
 void KWordQuizApp::slotVocabFont()
 {
   slotStatusMsg(i18n("Setting the font of the vocabulary..."));
-  QFontDialog* dlg = new QFontDialog(this);
+  QPointer<QFontDialog> dlg = new QFontDialog(this);
   dlg->setObjectName(QStringLiteral("dlg_font"));
   dlg->setFont(Prefs::editorFont());
   if (dlg->exec() == QDialog::Accepted)

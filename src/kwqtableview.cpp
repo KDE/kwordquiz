@@ -77,7 +77,7 @@ void KWQTableView::doPrint()
 
   WQPrintDialogPage * p = new WQPrintDialogPage(this);
   p->setPrintStyle(Prefs::printStyle());
-  QPrintDialog *printDialog = new QPrintDialog(&printer, this);
+  QPointer<QPrintDialog> printDialog = new QPrintDialog(&printer, this);
   printDialog->setOptionTabs(QList<QWidget*>() << p);
   if (printDialog->exec() == QDialog::Accepted) {
     Prefs::setPrintStyle(p->printStyle());
@@ -728,19 +728,20 @@ void KWQTableView::doVocabImage()
       if (! b.isEmpty()) imageFormats.append(QString(b));
   }
 
-  QFileDialog imageOpenDialog(this);
-  imageOpenDialog.setWindowTitle(i18nc("@title:window", "Select Image"));
-  imageOpenDialog.setDirectory(currentUrl.path());
-  imageOpenDialog.setMimeTypeFilters(imageFormats);
-  imageOpenDialog.setAcceptMode(QFileDialog::AcceptOpen);
-  imageOpenDialog.setFileMode(QFileDialog::ExistingFile);
-  if (imageOpenDialog.exec() == QDialog::Accepted) {
-      QUrl imageUrl = QUrl::fromLocalFile(imageOpenDialog.selectedFiles().first());
+  QPointer<QFileDialog> imageOpenDialog = new QFileDialog(this);
+  imageOpenDialog->setWindowTitle(i18nc("@title:window", "Select Image"));
+  imageOpenDialog->setDirectory(currentUrl.path());
+  imageOpenDialog->setMimeTypeFilters(imageFormats);
+  imageOpenDialog->setAcceptMode(QFileDialog::AcceptOpen);
+  imageOpenDialog->setFileMode(QFileDialog::ExistingFile);
+  if (imageOpenDialog->exec() == QDialog::Accepted) {
+      QUrl imageUrl = QUrl::fromLocalFile(imageOpenDialog->selectedFiles().first());
       if (!imageUrl.isEmpty()) {
           KWQCommandImage *kwqc = new KWQCommandImage(this, imageUrl);
           m_undoStack->push(kwqc);
       }
   }
+  delete imageOpenDialog;
 }
 
 
