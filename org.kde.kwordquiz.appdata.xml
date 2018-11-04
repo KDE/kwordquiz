@@ -96,6 +96,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>Flashcard quiz in KWordQuiz</caption>
+      <caption xml:lang="ca">Qüestionari de fitxes ràpides al KWordQuiz</caption>
       <caption xml:lang="gl">Proba de cartas en KWordQuiz</caption>
       <caption xml:lang="nl">Flashkaart-toets in KWordQuiz</caption>
       <caption xml:lang="pt">Questionário com cartões no KWordQuiz</caption>
