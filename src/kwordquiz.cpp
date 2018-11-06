@@ -269,7 +269,7 @@ void KWordQuizApp::initActions()
   vocabShuffle->setStatusTip(vocabShuffle->whatsThis());
   connect(vocabShuffle, &QAction::triggered, this, &KWordQuizApp::slotVocabShuffle);
 
-  vocabLayouts = actionCollection()->addAction(QStringLiteral("vocab_layouts"));;
+  vocabLayouts = actionCollection()->addAction(QStringLiteral("vocab_layouts"));
   vocabLayouts->setText(i18n("&Keyboard Layout"));
   vocabLayouts->setWhatsThis(i18n("Shows available keyboard layouts"));
   vocabLayouts->setToolTip(vocabLayouts->whatsThis());
@@ -1190,7 +1190,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     {
       delete(m_quiz);
       m_quiz = 0;
-      m_flashView->stackedWidget->setCurrentIndex(1);;
+      m_flashView->stackedWidget->setCurrentIndex(1);
     }
   }
 
@@ -1473,7 +1473,7 @@ void KWordQuizApp::slotUndoTextChanged(const QString & undoText)
   editUndo->setWhatsThis(editUndo->text());
   editUndo->setStatusTip(editUndo->text());
 
-  slotModeActionGroupTriggered(m_modeActionGroup->actions().at(Prefs::mode() - 1));;
+  slotModeActionGroupTriggered(m_modeActionGroup->actions().at(Prefs::mode() - 1));
 }
 
 

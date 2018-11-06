@@ -448,7 +448,7 @@ QString KWQQuizModel::langAnswer()
     if (column(m_list.at(m_currentQuestion)) == 0)
         return headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
     else
-        return headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();;
+        return headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
 }
 
 
