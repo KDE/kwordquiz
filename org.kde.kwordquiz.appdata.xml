@@ -93,6 +93,7 @@
   <url type="homepage">http://edu.kde.org/kwordquiz/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kwordquiz</url>
   <url type="help">http://docs.kde.org/stable/en/kdeedu/kwordquiz/index.html</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kwordquiz&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
       <caption>Flashcard quiz in KWordQuiz</caption>
