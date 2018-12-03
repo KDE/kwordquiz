@@ -100,6 +100,7 @@
       <caption xml:lang="ca">Qüestionari de fitxes ràpides al KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Qüestionari de fitxes ràpides al KWordQuiz</caption>
       <caption xml:lang="de">Karteikartenquiz in KWordQuiz</caption>
+      <caption xml:lang="en-GB">Flashcard quiz in KWordQuiz</caption>
       <caption xml:lang="es">Juego de tarjetas de KWordQuiz</caption>
       <caption xml:lang="gl">Proba de cartas en KWordQuiz</caption>
       <caption xml:lang="nl">Flashkaart-toets in KWordQuiz</caption>
@@ -108,6 +109,7 @@
       <caption xml:lang="sv">Snabbkortsprov i KWordQuiz</caption>
       <caption xml:lang="uk">Тест за допомогою карток у KWordQuiz</caption>
       <caption xml:lang="x-test">xxFlashcard quiz in KWordQuizxx</caption>
+      <caption xml:lang="zh-TW">在 KWordQuiz 中測驗閃卡</caption>
       <image>http://kde.org/images/screenshots/kwordquiz.png</image>
     </screenshot>
   </screenshots>
