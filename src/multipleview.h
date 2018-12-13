@@ -37,14 +37,14 @@ class MultipleView : public KWQQuizView, public Ui::MultipleViewBase
 {
 Q_OBJECT
 public:
-    MultipleView(QWidget *parent, KActionCollection *actionCollection);
-    void init() Q_DECL_OVERRIDE;
+    explicit MultipleView(QWidget *parent, KActionCollection *actionCollection);
+    void init() override;
 
 public slots:
-    void slotCheck() Q_DECL_OVERRIDE;
+    void slotCheck() override;
     void slotChoiceClicked(int );
     void slotChoiceActionTriggered(QAction *);
-    void slotApplySettings() Q_DECL_OVERRIDE;
+    void slotApplySettings() override;
 
 private:
     QActionGroup *m_choicesActions;

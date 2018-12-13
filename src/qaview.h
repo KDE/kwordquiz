@@ -41,12 +41,12 @@ Q_OBJECT
 public:
     QAView(QWidget *parent, KActionCollection * actionCollection);
 
-    void init() Q_DECL_OVERRIDE;
+    void init() override;
 
 public slots:
-    void slotCheck() Q_DECL_OVERRIDE;
+    void slotCheck() override;
     void slotHint();
-    void slotApplySettings() Q_DECL_OVERRIDE;
+    void slotApplySettings() override;
     void slotSpecChar(const QChar &);
     void slotMarkLastCorrect();
 

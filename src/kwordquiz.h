@@ -62,12 +62,12 @@ class KWordQuizApp : public KXmlGuiWindow
     /**
      * constructor of KWordQuizApp, calls all init functions to create the application.
      */
-    explicit KWordQuizApp(QWidget* parent=0);
+    explicit KWordQuizApp(QWidget* parent=nullptr);
 
     /**
      * destructor
      */
-    ~KWordQuizApp();
+    ~KWordQuizApp() override;
 
     /**
      * opens a file specified by commandline option
@@ -119,17 +119,17 @@ class KWordQuizApp : public KXmlGuiWindow
      * @see KXmlGuiWindow#queryClose
      * @see KXmlGuiWindow#closeEvent
      */
-    bool queryClose() Q_DECL_OVERRIDE;
+    bool queryClose() override;
     /** saves the window properties for each open window during session end to the session config file, including saving the currently
      * opened file by a temporary filename provided by QApplication.
      * @see KXmlGuiWindow#saveProperties
      */
-    void saveProperties(KConfigGroup &_cfg) Q_DECL_OVERRIDE;
+    void saveProperties(KConfigGroup &_cfg) override;
     /** reads the session config file and restores the application's state including the last opened files and documents by reading the
      * temporary files saved by saveProperties()
      * @see KXmlGuiWindow#readProperties
      */
-    void readProperties(const KConfigGroup &_cfg) Q_DECL_OVERRIDE;
+    void readProperties(const KConfigGroup &_cfg) override;
 
   signals:
     void settingsChanged();

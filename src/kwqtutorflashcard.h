@@ -30,10 +30,10 @@ class KWQTutorFlashCard : public QWidget
   Q_OBJECT
 
   public:
-    explicit KWQTutorFlashCard(QWidget* parent = 0);
+    explicit KWQTutorFlashCard(QWidget* parent = nullptr);
     void init();
     /* reimplemented func to save flashcard geometry before closing */
-    void closeEvent (QCloseEvent* event) Q_DECL_OVERRIDE;
+    void closeEvent (QCloseEvent* event) override;
     void setText(const QString &);
 
   private:

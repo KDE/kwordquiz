@@ -38,7 +38,7 @@ class KWQTableView : public QTableView
 Q_OBJECT
 public:
   /** Constructor for the main view */
-  explicit KWQTableView(QUndoStack *undoStack, QWidget *parent = 0);
+  explicit KWQTableView(QUndoStack *undoStack, QWidget *parent = nullptr);
 
   void setFilterModel(KWQSortFilterModel * model);
   KWQSortFilterModel * model() {return m_model;};
@@ -62,7 +62,7 @@ public:
 
 protected:
   void nextCell();
-  void keyPressEvent(QKeyEvent*) Q_DECL_OVERRIDE;
+  void keyPressEvent(QKeyEvent*) override;
   void updateKeyboardLayout();
 
 public slots:
@@ -75,8 +75,8 @@ public slots:
   void slotSortByColumn(int);
 
 protected slots:
-  void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint) Q_DECL_OVERRIDE;
-  void commitData (QWidget * editor) Q_DECL_OVERRIDE;
+  void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint) override;
+  void commitData (QWidget * editor) override;
   void verticalHeaderResized(int, int, int);
   void horizontalHeaderResized(int, int, int);
   void horizontalHeaderDataChanged(Qt::Orientation, int, int);

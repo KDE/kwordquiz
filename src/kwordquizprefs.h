@@ -39,12 +39,12 @@ public:
   KWordQuizPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config, KActionCollection *actionCollection);
 
 protected slots:
-  void updateSettings() Q_DECL_OVERRIDE;
-  void updateWidgetsDefault() Q_DECL_OVERRIDE;
+  void updateSettings() override;
+  void updateWidgetsDefault() override;
 
 protected:
-  bool hasChanged() Q_DECL_OVERRIDE;
-  bool isDefault() Q_DECL_OVERRIDE;
+  bool hasChanged() override;
+  bool isDefault() override;
 
 private:
   PrefGeneral *m_prefGeneral;

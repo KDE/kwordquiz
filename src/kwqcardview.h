@@ -28,9 +28,9 @@ class KWQCardView : public QGraphicsView
 Q_OBJECT
 public:
 
-    explicit KWQCardView(QWidget *parent = 0);
+    explicit KWQCardView(QWidget *parent = nullptr);
 
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE {if(scene()==0) return QSize(); else return qobject_cast<KWQCardScene*>(scene())->minimumSizeHint();}
+    QSize minimumSizeHint() const override {if(scene()==nullptr) return QSize(); else return qobject_cast<KWQCardScene*>(scene())->minimumSizeHint();}
 
     void setIdentifier(const QString &);
     void setText(const QString &);
@@ -45,7 +45,7 @@ signals:
 
 protected:
     ///Overloaded to resize card.
-    void resizeEvent(QResizeEvent* event) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent* event) override;
 
 private:
     KWQCardScene *m_scene;

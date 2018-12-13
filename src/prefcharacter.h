@@ -32,7 +32,7 @@ class PrefCharacter :  public QWidget, public Ui::PrefCharacterBase
 {
 Q_OBJECT
 public:
-  PrefCharacter(QWidget *parent, KActionCollection * ac);
+  explicit PrefCharacter(QWidget *parent, KActionCollection * ac);
   void updateWidgets();
   bool hasChanged();
   bool isDefault();
