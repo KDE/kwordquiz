@@ -29,7 +29,7 @@ class DlgSpecChar : public QDialog
 {
 Q_OBJECT
 public:
-  DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr);
+  explicit DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr);
   void closeDialog();
 
 signals:

@@ -42,7 +42,7 @@ private:
     void updateFilter();
 
 private:
-    QTimer* m_delayTimer;
+    QTimer* m_delayTimer = nullptr;
     QSortFilterProxyModel* m_filterProxyModel = nullptr;
 };
 

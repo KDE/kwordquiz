@@ -33,7 +33,7 @@ class WQPrintDialogPage : public QWidget
 {
 Q_OBJECT
 public:
-  explicit WQPrintDialogPage(QWidget *parent = 0);
+  explicit WQPrintDialogPage(QWidget *parent = nullptr);
 
   int printStyle();
   void setPrintStyle(int style);

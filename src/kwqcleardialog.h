@@ -28,10 +28,10 @@
 class KWQClearDialog : public QDialog, private Ui::ClearDialogBase {
   Q_OBJECT
   public:
-    explicit KWQClearDialog(QWidget *parent = 0);
+    explicit KWQClearDialog(QWidget *parent = nullptr);
 
   public slots:
-    void accept() Q_DECL_OVERRIDE;
+    void accept() override;
 
   private slots:
     void buttonGroupChanged(int );

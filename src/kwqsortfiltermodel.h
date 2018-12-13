@@ -31,7 +31,7 @@ class KWQSortFilterModel : public QSortFilterProxyModel
 {
   Q_OBJECT
   public:
-    explicit KWQSortFilterModel(QObject *parent = 0);
+    explicit KWQSortFilterModel(QObject *parent = nullptr);
 
     void setTableModel(KWQTableModel * sourceModel);
     KWQTableModel * sourceModel() const;
@@ -41,7 +41,7 @@ class KWQSortFilterModel : public QSortFilterProxyModel
     void shuffle();
 
   protected:
-    bool lessThan(const QModelIndex & left, const QModelIndex & right) const Q_DECL_OVERRIDE;
+    bool lessThan(const QModelIndex & left, const QModelIndex & right) const override;
 
     // Disable from public calls; use setTableModel instead.
     //void setSourceModel(QAbstractItemModel *sourceModel);

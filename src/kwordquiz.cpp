@@ -157,7 +157,7 @@ void KWordQuizApp::initActions()
   fileQuit->setToolTip(fileQuit->whatsThis());
   fileQuit->setStatusTip(fileQuit->whatsThis());
 
-  m_undoStack = new QUndoStack();
+  m_undoStack = new QUndoStack(this);
   editUndo = KUndoActions::createUndoAction(m_undoStack, actionCollection());
   editRedo = KUndoActions::createRedoAction(m_undoStack, actionCollection());
   connect(m_undoStack, &QUndoStack::cleanChanged, this, &KWordQuizApp::slotCleanChanged);

@@ -54,8 +54,8 @@ class KWQUndoCommand : public QUndoCommand
 public:
   explicit KWQUndoCommand(KWQTableView *view);
 
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE {};
+  void undo() override;
+  void redo() override {};
 
   KWQTableView * view() {return m_view;};
   QModelIndex oldCurrentIndex() const {return m_currentIndex;};
@@ -74,7 +74,7 @@ class KWQCommandClear : public KWQUndoCommand
 {
 public:
    explicit KWQCommandClear(KWQTableView *view);
-   void redo() Q_DECL_OVERRIDE;
+   void redo() override;
 };
 
 
@@ -82,7 +82,7 @@ class KWQCommandCut : public KWQCommandClear
 {
 public:
    explicit KWQCommandCut(KWQTableView *view);
-   void redo() Q_DECL_OVERRIDE;
+   void redo() override;
 };
 
 
@@ -90,8 +90,8 @@ class KWQCommandPaste : public KWQUndoCommand
 {
 public:
   explicit KWQCommandPaste(KWQTableView *view);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 private:
   int m_rowCount;
   IndexAndDataList m_pasteIndexAndData;
@@ -103,10 +103,10 @@ class KWQCommandFont : public KWQUndoCommand
 public:
   KWQCommandFont(KWQTableView *view, const QFont &oldFont, const QFont &newFont) : KWQUndoCommand(view), m_oldFont(oldFont), m_newFont(newFont)
     { setText(i18n("Font")); }
-  void undo() Q_DECL_OVERRIDE
+  void undo() override
     { Prefs::setEditorFont(m_oldFont);
       view()->reset(); }
-  void redo() Q_DECL_OVERRIDE
+  void redo() override
     { Prefs::setEditorFont(m_newFont);
       view()->reset(); }
 private:
@@ -122,7 +122,7 @@ public:
     : KWQUndoCommand(view), m_oldText(oldText), m_newText(newText)
       { setText(i18n("Entry")); }
 
-  void redo() Q_DECL_OVERRIDE
+  void redo() override
       { view()->model()->setData(oldCurrentIndex(), m_newText, Qt::EditRole);
         view()->setCurrentIndex(oldCurrentIndex()); }
 private:
@@ -135,8 +135,8 @@ class KWQCommandSort : public QUndoCommand
 {
 public:
   KWQCommandSort(QTableView *view, int column);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 private:
   QTableView *m_view;
   int m_column;
@@ -147,8 +147,8 @@ class KWQCommandShuffle : public KWQCommandSort
 {
 public:
   KWQCommandShuffle(QTableView *view, int column);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 private:
   QTableView *m_view;
   int m_column;
@@ -159,8 +159,8 @@ class KWQCommandInsert : public KWQUndoCommand
 {
 public:
   explicit KWQCommandInsert(KWQTableView *view);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 };
 
 
@@ -168,8 +168,8 @@ class KWQCommandDelete : public KWQUndoCommand
 {
 public:
   explicit KWQCommandDelete(KWQTableView *view);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 private:
   IndexAndDataList m_deleteIndexAndData;
 };
@@ -180,7 +180,7 @@ class KWQCommandUnmarkBlank : public KWQUndoCommand
 public:
   explicit KWQCommandUnmarkBlank(KWQTableView *view);
   //virtual void undo();
-  void redo() Q_DECL_OVERRIDE;
+  void redo() override;
 };
 
 
@@ -188,8 +188,8 @@ class KWQCommandIdentifiers : public KWQUndoCommand
 {
 public:
   KWQCommandIdentifiers(KWQTableView *view, const ColumnDataList &newColumnData);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 private:
   ColumnDataList m_oldColumnData;
   ColumnDataList m_newColumnData;
@@ -200,8 +200,8 @@ class KWQCommandImage : public KWQUndoCommand
 {
 public:
   KWQCommandImage(KWQTableView *view, const QUrl &);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 
 private:
   QUrl m_oldUrl;
@@ -213,8 +213,8 @@ class KWQCommandSound : public KWQUndoCommand
 {
 public:
   KWQCommandSound(KWQTableView *view, const QUrl &);
-  void undo() Q_DECL_OVERRIDE;
-  void redo() Q_DECL_OVERRIDE;
+  void undo() override;
+  void redo() override;
 
 private:
   QUrl m_oldUrl;

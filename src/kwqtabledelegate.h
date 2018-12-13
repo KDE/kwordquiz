@@ -30,20 +30,20 @@ class KWQTableDelegate : public QItemDelegate
 {
   Q_OBJECT
   public:
-    explicit KWQTableDelegate(QObject *parent = 0);
+    explicit KWQTableDelegate(QObject *parent = nullptr);
 
-    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
-    void setEditorData(QWidget *editor, const QModelIndex &index) const Q_DECL_OVERRIDE;
-    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    void setEditorData(QWidget *editor, const QModelIndex &index) const override;
+    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;
 
-    void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
-    void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const Q_DECL_OVERRIDE;
+    void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const override;
 
   protected:
-    void drawDisplay(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QString &text) const Q_DECL_OVERRIDE;
-    void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const Q_DECL_OVERRIDE;
-    void drawDecoration(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QPixmap &pixmap ) const Q_DECL_OVERRIDE;
+    void drawDisplay(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QString &text) const override;
+    void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const override;
+    void drawDecoration(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QPixmap &pixmap ) const override;
 
   private slots:
     void commitAndCloseEditor();

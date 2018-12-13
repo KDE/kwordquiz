@@ -40,7 +40,7 @@ class KWQQuizView : public QWidget
 {
   Q_OBJECT
   public:
-    KWQQuizView(QWidget *parent, KActionCollection * actionCollection);
+    explicit KWQQuizView(QWidget *parent, KActionCollection * actionCollection);
 
     void setQuiz(KWQQuizModel *quiz);
     virtual void init() = 0;

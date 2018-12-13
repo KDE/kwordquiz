@@ -43,25 +43,25 @@ public:
     SoundRole
   };
 
-  explicit KWQTableModel(QObject * parent = 0);
-  ~KWQTableModel();
+  explicit KWQTableModel(QObject * parent = nullptr);
+  ~KWQTableModel() override;
 
   void setDocument(KEduVocDocument * doc);
   KEduVocDocument * document() { return m_doc;};
-  bool insertRows(int row, int count = 1, const QModelIndex &parent = QModelIndex()) Q_DECL_OVERRIDE;
-  bool removeRows(int row, int count = 1, const QModelIndex &parent = QModelIndex()) Q_DECL_OVERRIDE;
+  bool insertRows(int row, int count = 1, const QModelIndex &parent = QModelIndex()) override;
+  bool removeRows(int row, int count = 1, const QModelIndex &parent = QModelIndex()) override;
 
   KEduVocLesson * currentLesson(int row);
 
-  int rowCount(const QModelIndex &parent) const Q_DECL_OVERRIDE;
-  int columnCount(const QModelIndex &parent) const Q_DECL_OVERRIDE;
+  int rowCount(const QModelIndex &parent) const override;
+  int columnCount(const QModelIndex &parent) const override;
 
-  QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
-  QVariant headerData(int section, Qt::Orientation orientation, int role) const Q_DECL_OVERRIDE;
+  QVariant data(const QModelIndex &index, int role) const override;
+  QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
-  Qt::ItemFlags flags (const QModelIndex & index) const Q_DECL_OVERRIDE;
-  bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) Q_DECL_OVERRIDE;
-  bool setHeaderData (int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole) Q_DECL_OVERRIDE;
+  Qt::ItemFlags flags (const QModelIndex & index) const override;
+  bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
+  bool setHeaderData (int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole) override;
 
   bool isEmpty();
   bool checkSyntax() const;

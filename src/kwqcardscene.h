@@ -31,7 +31,7 @@ class KWQCardScene : public QGraphicsScene
 Q_OBJECT
 public:
 
-    explicit KWQCardScene(QObject *parent = 0);
+    explicit KWQCardScene(QObject *parent = nullptr);
 
     /**
     * The smallest the view can be when 'auto-zoom' is off
@@ -51,7 +51,7 @@ signals:
     void cardClicked();
 
 protected:
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent *) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *) override;
 
 private:
     QGraphicsRectItem *m_card;

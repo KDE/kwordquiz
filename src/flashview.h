@@ -35,18 +35,18 @@ class FlashView : public KWQQuizView, public Ui::FlashViewBase
 {
 Q_OBJECT
 public:
-    FlashView(QWidget *parent, KActionCollection *actionCollection);
+    explicit FlashView(QWidget *parent, KActionCollection *actionCollection);
 
-    void init() Q_DECL_OVERRIDE;
+    void init() override;
 
 private slots:
     void slotTimer();
 
 public slots:
-    void slotCheck() Q_DECL_OVERRIDE;
+    void slotCheck() override;
     void slotKnow();
     void slotDontKnow();
-    void slotApplySettings() Q_DECL_OVERRIDE;
+    void slotApplySettings() override;
 
 private:
     QTimer* m_timer;

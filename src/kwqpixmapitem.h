@@ -23,11 +23,11 @@
 class KWQPixmapItem: public QGraphicsPixmapItem
 {
 public:
-    explicit KWQPixmapItem(const QPixmap &pixmap, QGraphicsItem *parentItem = 0);
+    explicit KWQPixmapItem(const QPixmap &pixmap, QGraphicsItem *parentItem = nullptr);
 
 public:
-    QRectF boundingRect() const Q_DECL_OVERRIDE;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0) Q_DECL_OVERRIDE;
+    QRectF boundingRect() const override;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
     void setImageRect(const QRect &rect);
 
 private:

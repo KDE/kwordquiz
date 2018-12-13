@@ -39,12 +39,12 @@ public:
 		KActionCollection *actionCollection);
 
 protected slots:
-  void updateSettings() Q_DECL_OVERRIDE;
-  void updateWidgetsDefault() Q_DECL_OVERRIDE;
+  void updateSettings() override;
+  void updateWidgetsDefault() override;
   void slotEnableApplyButton();
 
 protected:
-  bool hasChanged() Q_DECL_OVERRIDE;
+  bool hasChanged() override;
 
 private:
   PrefTutor *m_prefTutor;
