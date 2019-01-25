@@ -878,8 +878,8 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
   int result = KEduVocDocument::Unknown;
 
   QString filter = KEduVocDocument::pattern(KEduVocDocument::Writing);
-  filter.append('\n');
-  filter.append(i18n("*.html|HTML Document"));
+  filter.append(QStringLiteral(";;"));
+  filter.append(i18n("HTML Document") + QStringLiteral(" (*.html)"));
 
   QPointer<QFileDialog> fd = new QFileDialog(this, i18n("Save Vocabulary Document As"), QString(), filter);
   fd->setAcceptMode(QFileDialog::AcceptSave);
