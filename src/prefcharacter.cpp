@@ -56,7 +56,7 @@ void PrefCharacter::fillWidgets()
     twi->setText(2, QString(sc[i]));
   }
   CharacterTree->resizeColumnToContents(0);
-  CharacterTree->setItemSelected(CharacterTree->topLevelItem(0), true);
+  CharacterTree->topLevelItem(0)->setSelected(true);
   CharacterTree->setCurrentItem(CharacterTree->topLevelItem(0));
   lblPreview->setText(CharacterTree->topLevelItem(0)->text(2));
 }

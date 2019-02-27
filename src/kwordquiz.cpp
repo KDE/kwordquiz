@@ -509,7 +509,7 @@ void KWordQuizApp::initView()
   connect(m_pageWidget, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), this, SLOT(slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
 
   QVBoxLayout *editorLayout = new QVBoxLayout();
-  editorLayout->setMargin(0);
+  editorLayout->setContentsMargins(0, 0, 0, 0);
 
   m_searchLine = new FilterProxySearchLine(this);
   m_searchLine->setFocusPolicy(Qt::ClickFocus);

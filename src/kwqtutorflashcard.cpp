@@ -28,7 +28,7 @@ KWQTutorFlashCard::KWQTutorFlashCard(QWidget* parent) : QWidget(parent)
   m_card = 0;
 
   m_cardLayout = new QVBoxLayout(this);
-  m_cardLayout->setMargin(0);
+  m_cardLayout->setContentsMargins(0, 0, 0, 0);
   m_cardLayout->setSpacing(0);
   setLayout(m_cardLayout);
   setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Tool);
