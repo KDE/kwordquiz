@@ -93,9 +93,9 @@
     <p xml:lang="x-test">xxKWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.xx</p>
     <p xml:lang="zh-TW">KWordQuiz 是一套閃卡記憶訓練程式。它可以用於字彙學習，還有許多其它的用途。它提供了一個編輯器與五種不同的閃卡模式。它使用 KVTML 檔案格式，並且可以下載其他人所製作的閃卡檔。</p>
   </description>
-  <url type="homepage">http://edu.kde.org/kwordquiz/</url>
+  <url type="homepage">https://edu.kde.org/kwordquiz/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kwordquiz</url>
-  <url type="help">http://docs.kde.org/stable/en/kdeedu/kwordquiz/index.html</url>
+  <url type="help">https://docs.kde.org/stable/en/kdeedu/kwordquiz/index.html</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kwordquiz&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
@@ -118,7 +118,7 @@
       <caption xml:lang="x-test">xxFlashcard quiz in KWordQuizxx</caption>
       <caption xml:lang="zh-CN">KWordQuiz 中的抽认卡测试</caption>
       <caption xml:lang="zh-TW">在 KWordQuiz 中測驗閃卡</caption>
-      <image>http://kde.org/images/screenshots/kwordquiz.png</image>
+      <image>https://kde.org/images/screenshots/kwordquiz.png</image>
     </screenshot>
   </screenshots>
   <project_group>KDE</project_group>

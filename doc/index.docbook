@@ -86,7 +86,7 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-  &kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. &kwordquiz; should also open .wql files created by &kwordquiz; for &Windows;, .csv files with comma separated text, <ulink url="http://www.vokabeln.de/v1/download.htm">.voc files</ulink> created by the old version of Vokabeltrainer, <ulink url="http://xdxf.revdanica.com/down/">.xdxf files</ulink>, and .xml.gz files created by the old versions of <ulink url="http://pauker.sourceforge.net">Pauker</ulink>.
+  &kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. &kwordquiz; should also open .wql files created by &kwordquiz; for &Windows;, .csv files with comma separated text, <ulink url="http://www.vokabeln.de/v1/download.htm">.voc files</ulink> created by the old version of Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/">.xdxf files</ulink>, and .xml.gz files created by the old versions of <ulink url="http://pauker.sourceforge.net">Pauker</ulink>.
 </para>
 <para>
 &kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other &kde; programs. Another available option is comma separated text .csv.

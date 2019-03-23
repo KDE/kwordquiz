@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
                          KAboutLicense::GPL_V2,
                          i18n("(c) 2003-2010, Peter Hedlund"),
                          QString(),
-                         QStringLiteral("http://edu.kde.org/kwordquiz"),
+                         QStringLiteral("https://kde.org/applications/education/kwordquiz"),
                          QStringLiteral("submit@bugs.kde.org"));
     aboutData.addAuthor(i18n("Peter Hedlund"), QString(), QStringLiteral("peter.hedlund@kdemail.net"));
     aboutData.addCredit(i18n("Anne-Marie Mahfouf"), i18n("KDE Edutainment Maintainer"), QStringLiteral("annma@kde.org"));
