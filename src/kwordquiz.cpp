@@ -669,7 +669,7 @@ void KWordQuizApp::readOptions()
 
 void KWordQuizApp::saveProperties(KConfigGroup &_cfg)
 {
-  if(m_doc->url().fileName()!=i18n("Untitled") && !m_doc->isModified())
+  if(!m_doc->url().fileName().isEmpty() && !m_doc->isModified())
   {
     // saving to tempfile not necessary
   }
@@ -725,7 +725,7 @@ bool KWordQuizApp::queryClose()
         break;
 
       case KMessageBox::Yes:
-        if (m_doc->url().fileName() == i18n("Untitled"))
+        if (m_doc->url().fileName().isEmpty())
         {
           completed = saveDocAsFileName(m_doc);
         }
@@ -843,7 +843,7 @@ void KWordQuizApp::slotFileSave()
 {
   bool success = false;
   slotStatusMsg(i18n("Saving file..."));
-  if (m_doc->url().fileName() == i18n("Untitled")) {
+  if (m_doc->url().fileName().isEmpty()) {
     success = saveDocAsFileName(m_doc);
   }
   else {
