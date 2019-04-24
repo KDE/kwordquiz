@@ -38,7 +38,7 @@
 #include "kwqtutorprefs.h"
 #include "prefs.h"
 
-KWQTutor::KWQTutor(QUrl fileToOpen, QWidget *parent) : KStatusNotifierItem(parent)
+KWQTutor::KWQTutor(const QUrl &fileToOpen, QWidget *parent) : KStatusNotifierItem(parent)
 {
   KMessageBox::information(0, i18n("<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
                            "you to set a certain time interval at which flashcards will pop up.<br /><br />"

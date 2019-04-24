@@ -32,7 +32,7 @@ class KWQTutor : public KStatusNotifierItem
 
   public:
     /* init systray icon, meny, actions */
-    explicit KWQTutor (QUrl fileToOpen, QWidget *parent = nullptr);
+    explicit KWQTutor (const QUrl &fileToOpen, QWidget *parent = nullptr);
 
   public slots:
     /* self-calling function: it sets the time interval,calls itself and call func to display flashcard*/

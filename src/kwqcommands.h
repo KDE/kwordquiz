@@ -118,7 +118,7 @@ private:
 class KWQCommandEntry : public KWQUndoCommand
 {
 public:
-  KWQCommandEntry(KWQTableView *view, const QString oldText, const QString newText)
+  KWQCommandEntry(KWQTableView *view, const QString &oldText, const QString &newText)
     : KWQUndoCommand(view), m_oldText(oldText), m_newText(newText)
       { setText(i18n("Entry")); }
 

@@ -724,7 +724,7 @@ void KWQTableView::doVocabImage()
 {
   QUrl currentUrl(model()->data(currentIndex(), KWQTableModel::ImageRole).toString());
   QStringList imageFormats;
-  for(const QByteArray b: QImageReader::supportedMimeTypes()) {
+  for(const QByteArray &b: QImageReader::supportedMimeTypes()) {
       if (! b.isEmpty()) imageFormats.append(QString(b));
   }
 
