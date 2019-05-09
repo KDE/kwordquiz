@@ -1,5 +1,5 @@
-<!DOCTYPE kpartgui>
-<kpartgui version="21" name="kwordquiz" >
+<!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<gui version="21" name="kwordquiz" >
  <MenuBar>
   <Menu name="file" >
     <Action append="open_merge" name="file_ghns" />
@@ -186,4 +186,4 @@
     <Separator/>
     <Action name="vocab_layouts" />
   </Menu>
-</kpartgui>
+</gui>
