@@ -30,7 +30,6 @@
 #include <phonon/Global>
 #include "kwqquizview.h"
 
-class KWQQuizModel;
 
 /**
 @author Peter Hedlund

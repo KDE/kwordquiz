@@ -26,7 +26,6 @@
 #include <KActionCollection>
 #include "kwqquizview.h"
 
-class KWQQuizModel;
 
 /**
 @author Peter Hedlund

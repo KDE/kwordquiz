@@ -28,7 +28,6 @@
 
 class QActionGroup;
 class QButtonGroup;
-class KWQQuizModel;
 
 /**
 @author Peter Hedlund
