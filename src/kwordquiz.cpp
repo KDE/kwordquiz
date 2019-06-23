@@ -65,7 +65,7 @@
 #include "multipleview.h"
 #include "wqprintdialogpage.h"
 #include "prefs.h"
-#include "version.h"
+#include "kwordquiz_version.h"
 
 KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 {
@@ -475,7 +475,7 @@ void KWordQuizApp::initStatusBar()
 void KWordQuizApp::initDocument()
 {
   m_doc = new KEduVocDocument(this);
-  m_doc->setGenerator(QStringLiteral("kwordquiz %1").arg(KWQ_VERSION));
+  m_doc->setGenerator(QStringLiteral("kwordquiz %1").arg(KWORDQUIZ_VERSION_STRING));
   ///@todo New kvtml documents have a locale setting which should contain the language they are written in.
   /* it would be nice to support that somehow. get hot new stuff for KHangman and KAnagram already uses this. */
   m_doc->appendIdentifier();

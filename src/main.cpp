@@ -27,14 +27,14 @@
 
 #include "kwqtutor.h"
 #include "kwordquiz.h"
-#include "version.h"
+#include "kwordquiz_version.h"
 
 static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
 int main(int argc, char *argv[])
 {
     KLocalizedString::setApplicationDomain("kwordquiz");
     QApplication::setApplicationName(QStringLiteral("kwordquiz"));
-    QApplication::setApplicationVersion(KWQ_VERSION);
+    QApplication::setApplicationVersion(KWORDQUIZ_VERSION_STRING);
     QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QApplication::setApplicationDisplayName(i18n("kwordquiz"));
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     KAboutData aboutData(QStringLiteral("kwordquiz"),
                          i18n("KWordQuiz"),
-                         KWQ_VERSION,
+                         KWORDQUIZ_VERSION_STRING,
                          i18n(description),
                          KAboutLicense::GPL_V2,
                          i18n("(c) 2003-2010, Peter Hedlund"),

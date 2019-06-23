@@ -46,7 +46,7 @@
 #include "prefs.h"
 #include "kwqcommands.h"
 #include "kwqcleardialog.h"
-#include "version.h"
+#include "kwordquiz_version.h"
 
 //krazy:excludeall=qclasses
 
@@ -193,7 +193,7 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool s
   }
   else
   {
-    textDoc->rootFrame()->lastCursorPosition().insertText(QStringLiteral("kwordquiz %1").arg(KWQ_VERSION));
+    textDoc->rootFrame()->lastCursorPosition().insertText(QStringLiteral("kwordquiz %1").arg(KWORDQUIZ_VERSION_STRING));
 
     if (Prefs::printStyle() == Prefs::EnumPrintStyle::Exam)
       textDoc->rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
