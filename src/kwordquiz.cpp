@@ -746,6 +746,8 @@ bool KWordQuizApp::queryClose()
     if (m_dirWatch->contains(m_doc->url().toLocalFile()))
       m_dirWatch->removeFile(m_doc->url().toLocalFile());
   saveOptions();
+  // Close the current document to get rid of its lock file
+  m_doc->close();
   return completed;
 }
 
@@ -975,6 +977,8 @@ void KWordQuizApp::slotFileQuit()
       // the window and the application stay open.
       if(!w->close())
         break;
+      // Close the corresponding document to remove its lock file
+      static_cast<KWordQuizApp *>(w)->document()->close();
     }
   }
 }
