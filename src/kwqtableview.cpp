@@ -709,7 +709,7 @@ void KWQTableView::slotModelReset()
 
 void KWQTableView::slotSortByColumn(int column)
 {
-  QTableView::sortByColumn(column);
+  QTableView::sortByColumn(column, Qt::AscendingOrder);
 }
 
 

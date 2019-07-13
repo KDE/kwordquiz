@@ -440,17 +440,13 @@ void KWordQuizApp::initActions()
   configApp = KStandardAction::preferences(this, SLOT(slotConfigure()), actionCollection());
   configApp->setWhatsThis(i18n("Specifies preferences for the vocabulary editor and quiz sessions"));
   configApp->setToolTip(configApp->whatsThis());
-  configApp->setToolTip(configApp->whatsThis());
-
-  charMapper = new QSignalMapper(this);
-  connect(charMapper, SIGNAL(mapped(int)), this, SLOT(slotInsertChar(int)));
+  configApp->setStatusTip(configApp->whatsThis());
 
   for (int i = 1; i <=9; ++i) {
     a = actionCollection()->addAction(QStringLiteral("char_%1").arg(QString::number(i)));
     a->setText(i18n("Special Character <numid>%1</numid>", i));
     actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+%1").arg(QString::number(i))));
-    connect(a, SIGNAL(triggered(bool)), charMapper, SLOT(map()));
-    charMapper->setMapping(a, i);
+    connect(a, &QAction::triggered, this, [this, i] () { slotInsertChar(i); });
   }
 
   updateSpecialCharIcons();

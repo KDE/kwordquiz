@@ -234,7 +234,7 @@ void KWQCommandSort::redo()
 {
   int currentRow = m_view->currentIndex().row();
   int currentColumn = m_view->currentIndex().column();
-  m_view->sortByColumn(m_column);
+  m_view->sortByColumn(m_column, Qt::AscendingOrder);
   m_view->horizontalHeader()->setSortIndicatorShown(true);
   m_view->horizontalHeader()->setSortIndicator(m_column, m_view->horizontalHeader()->sortIndicatorOrder());
   m_view->setCurrentIndex(m_view->model()->index(currentRow, currentColumn, QModelIndex()));
