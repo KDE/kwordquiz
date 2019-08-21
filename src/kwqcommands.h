@@ -151,7 +151,6 @@ public:
   void redo() override;
 private:
   QTableView *m_view;
-  int m_column;
 };
 
 
