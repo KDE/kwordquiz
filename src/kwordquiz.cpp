@@ -100,6 +100,8 @@ KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 
 KWordQuizApp::~KWordQuizApp()
 {
+  disconnect(m_undoStack, &QUndoStack::undoTextChanged, this, &KWordQuizApp::slotUndoTextChanged);
+  disconnect(m_undoStack, &QUndoStack::redoTextChanged, this, &KWordQuizApp::slotRedoTextChanged);
 }
 
 void KWordQuizApp::initActions()
