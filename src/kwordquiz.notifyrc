@@ -1,5 +1,6 @@
 [Global]
 IconName=kwordquiz
+DesktopEntry=org.kde.kwordquiz
 Comment=KWordQuiz
 Comment[af]=KWordQuiz
 Comment[be]=KWordQuiz
