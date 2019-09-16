@@ -20,7 +20,6 @@
 
 #include <QAction>
 #include <QActionGroup>
-#include <QSignalMapper>
 #include <QUndoStack>
 #include <QUrl>
 
@@ -309,8 +308,6 @@ class KWordQuizApp : public KXmlGuiWindow
     QAction * quizOpt1;
     QAction * quizOpt2;
     QAction * quizOpt3;
-
-    QSignalMapper* charMapper;
 
     QAction* configShowSearchBar;
 
