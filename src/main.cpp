@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
     }
 
     if (app.isSessionRestored()) {
-        RESTORE(KWordQuizApp);
+        kRestoreMainWindows<KWordQuizApp>();
     } else {
         KWordQuizApp *kwordquiz = new KWordQuizApp();
         kwordquiz->show();
