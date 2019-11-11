@@ -1,9 +1,9 @@
 [KNewStuff2]
-ProvidersUrl=http://edu.kde.org/contrib/kvtml/providers.xml
+ProvidersUrl=https://edu.kde.org/contrib/kvtml/providers.xml
 TargetDir=kvtml
 
 [KNewStuff3]
-ProvidersUrl=http://edu.kde.org/parley/newstuff/providers44.xml
+ProvidersUrl=https://edu.kde.org/parley/newstuff/providers44.xml
 TargetDir=kvtml
 Uncompress=archive
 Categories=Parley,KWordQuiz

@@ -143,7 +143,7 @@
   <group name="KNewStuff">
     <entry name="ProvidersUrl" type="Path">
       <label>The Providers path for KWordQuiz</label>
-      <default code="true">"http://edu.kde.org/kvoctrain/providers.xml"</default>
+      <default code="true">"https://edu.kde.org/contrib/kvtml/providers.xml"</default>
     </entry>
     <entry name="InstallationCommand" type="String">
        <label>The command used to start a downloaded vocabulary</label>
