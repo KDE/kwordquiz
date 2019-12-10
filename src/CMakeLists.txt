@@ -13,7 +13,7 @@ include_directories(
 
 ########### next target ###############
 
-ecm_setup_version(${KDE_APPLICATIONS_VERSION} VARIABLE_PREFIX KWORDQUIZ VERSION_HEADER kwordquiz_version.h)
+ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KWORDQUIZ VERSION_HEADER kwordquiz_version.h)
 
 set(kwordquiz_SRCS
    filterproxysearchline.cpp
