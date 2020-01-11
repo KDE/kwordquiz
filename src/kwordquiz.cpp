@@ -615,13 +615,14 @@ void KWordQuizApp::openDocumentFile(const QUrl &url)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
+    m_tableModel->beginResetModel();
     int result = m_doc->open(url);
     if (result == KEduVocDocument::NoError) {
       while (m_doc->identifierCount() < 2) { //if we opened a TAB-less CSV, there
         m_doc->appendIdentifier(); //may be 0 or 1 identifiers, we need at least 2
       }
+      m_tableModel->endResetModel();
 
-      //m_tableModel->reset();
       m_dirWatch->addFile(url.path());
       setWindowTitle(m_doc->url().fileName() + "[*]");
       setWindowModified(false);
@@ -643,8 +644,10 @@ void KWordQuizApp::openDocumentFile(const QUrl &url)
           break;
       }
     }
-    else
+    else {
       KMessageBox::error(this, KEduVocDocument::errorDescription(result));
+      m_tableModel->endResetModel();
+    }
   }
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }

@@ -38,13 +38,15 @@ KWQTableModel::~KWQTableModel()
 
 int KWQTableModel::rowCount(const QModelIndex & parent) const
 {
-  Q_UNUSED(parent);
+  if (parent.isValid())
+    return 0;
   return m_doc->lesson()->entryCount(KEduVocLesson::Recursive);
 }
 
 int KWQTableModel::columnCount(const QModelIndex & parent) const
 {
-  Q_UNUSED(parent);
+  if (parent.isValid())
+    return 0;
   return 2;
 }
 
