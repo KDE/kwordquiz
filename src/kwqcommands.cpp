@@ -153,7 +153,11 @@ void KWQCommandPaste::redo()
 
   QString s = QApplication::clipboard()->text();
   QStringList sl;
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
   sl = s.split('\n', QString::SkipEmptyParts);
+#else
+  sl = s.split('\n', Qt::SkipEmptyParts);
+#endif
   if (sl.isEmpty())
     return;
   QStringList sr;
