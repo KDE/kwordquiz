@@ -286,7 +286,7 @@ void QAView::slotSpecChar( const QChar & c)
 
 void QAView::slotMarkLastCorrect( )
 {
-  m_quiz->errorList().removeLast();
+  m_quiz->removeLastError();
   score->swapCount();
   m_actionCollection->action(QStringLiteral("qa_mark_last_correct"))->setEnabled(false);
 }

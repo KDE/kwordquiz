@@ -474,6 +474,12 @@ QString KWQQuizModel::kbAnswer()
 }
 
 
+void KWQQuizModel::removeLastError()
+{
+    m_errorList.removeLast();
+}
+
+
 int KWQQuizModel::questionCount()
 {
     return m_questionCount;

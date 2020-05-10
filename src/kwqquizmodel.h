@@ -77,6 +77,7 @@ public:
     QString kbAnswer();
 
     QList<int> errorList() const {return m_errorList;}
+    void removeLastError();
 
 signals:
   void checkingAnswer(int );
