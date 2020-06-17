@@ -34,7 +34,6 @@
   <name xml:lang="sv">KWordQuiz</name>
   <name xml:lang="tr">KWordQuiz</name>
   <name xml:lang="uk">KWordQuiz</name>
-  <name xml:lang="x-test">xxKWordQuizxx</name>
   <name xml:lang="zh-CN">KWordQuiz</name>
   <name xml:lang="zh-TW">語言_KWordQuiz</name>
   <summary>Flash Card Trainer</summary>
@@ -66,7 +65,6 @@
   <summary xml:lang="sv">Flash Card Trainer</summary>
   <summary xml:lang="tr">Fiş Çalıştırıcı</summary>
   <summary xml:lang="uk">Тренування словникового запасу</summary>
-  <summary xml:lang="x-test">xxFlash Card Trainerxx</summary>
   <summary xml:lang="zh-CN">卡片式训练程序</summary>
   <summary xml:lang="zh-TW">閃卡訓練師</summary>
   <description>
@@ -94,7 +92,6 @@
     <p xml:lang="sv">Kwordquiz är ett generellt program för snabbkort. Det kan användas för inlärning av ordförråd och många andra ämnen. Det tillhandahåller en editor och fem olika frågemetoder för snabbkort. Det använder filformatet KVTML, och bidragna filer kan laddas ner inne i programmet.</p>
     <p xml:lang="tr">KWordQuiz genel amaçlı bir fiş çalıştırma programıdır. Kelime öğrenmek veya başka bir çok konu için kullanılabilir. Bir düzenleyici ve beş farklı fiş sınav kipi içerir. KVTML dosya biçimini kullanır ve katkı verilmiş dosyalar uygulama içinden indirilebilir.</p>
     <p xml:lang="uk">KWordQuiz — програма для навчання за допомогою карток загального призначення. Нею можна скористатися для поповнення словникового запасу іноземною мовою або вивчення інших дисциплін. У програмі передбачено редактор та п’ять різних режимів навчання за допомогою карток. Для даних використовується формат файлів KVTML, файли даних, створені іншими користувачами, можна отримати безпосередньо за допомогою програми.</p>
-    <p xml:lang="x-test">xxKWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.xx</p>
     <p xml:lang="zh-TW">KWordQuiz 是一套閃卡記憶訓練程式。它可以用於字彙學習，還有許多其它的用途。它提供了一個編輯器與五種不同的閃卡模式。它使用 KVTML 檔案格式，並且可以下載其他人所製作的閃卡檔。</p>
   </description>
   <url type="homepage">https://edu.kde.org/kwordquiz/</url>
@@ -124,7 +121,6 @@
       <caption xml:lang="sl">Kviz s spominskimi kartami KWordQuiz</caption>
       <caption xml:lang="sv">Snabbkortsprov i KWordQuiz</caption>
       <caption xml:lang="uk">Тест за допомогою карток у KWordQuiz</caption>
-      <caption xml:lang="x-test">xxFlashcard quiz in KWordQuizxx</caption>
       <caption xml:lang="zh-CN">KWordQuiz 中的抽认卡测试</caption>
       <caption xml:lang="zh-TW">在 KWordQuiz 中測驗閃卡</caption>
       <image>https://kde.org/images/screenshots/kwordquiz.png</image>
