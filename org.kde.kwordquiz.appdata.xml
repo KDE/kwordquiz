@@ -39,8 +39,8 @@
   <name xml:lang="zh-TW">語言_KWordQuiz</name>
   <summary>Flash Card Trainer</summary>
   <summary xml:lang="bs">Učitelj fleš karticama</summary>
-  <summary xml:lang="ca">Entrenador per targetes ràpides</summary>
-  <summary xml:lang="ca-valencia">Entrenador per targetes ràpides</summary>
+  <summary xml:lang="ca">Entrenador amb targetes ràpides</summary>
+  <summary xml:lang="ca-valencia">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
   <summary xml:lang="de">Karteikartentrainer</summary>
   <summary xml:lang="el">Εκπαιδευτής ερωτήσεων με κάρτες</summary>
@@ -72,8 +72,8 @@
   <description>
     <p>KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
     <p xml:lang="bs">KWordQuiz je program opšte namjene fleš kartica. Može se koristiti za učenje riječi i s mnogim drugim temama. On pruža urednik i pet različitih flashcard kviz režima. Koristi format KVTML datoteke i doprinesni fajlovi mogu se preuzeti u okviru same aplikacije.</p>
-    <p xml:lang="ca">El KWordQuiz és un programa de targetes ràpides de propòsit general. Es pot utilitzar per aprendre vocabulari altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar fitxers de col·laboracions a l'aplicació.</p>
-    <p xml:lang="ca-valencia">El KWordQuiz és un programa de targetes ràpides de propòsit general. Es pot utilitzar per aprendre vocabulari altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar fitxers de col·laboracions a l'aplicació.</p>
+    <p xml:lang="ca">El KWordQuiz és un programa de targetes ràpides de propòsit general. Es pot utilitzar per a aprendre vocabulari i molts altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar a l'aplicació fitxers de col·laboracions.</p>
+    <p xml:lang="ca-valencia">El KWordQuiz és un programa de targetes ràpides de propòsit general. Es pot utilitzar per a aprendre vocabulari i molts altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar a l'aplicació fitxers de col·laboracions.</p>
     <p xml:lang="el">Το KWordQuiz είναι ένα γενικού σκοπύ πρόγραμμα εκπαίδευσης με κάρτες. Χρησιμοποιείται για εκμάθηση λεξιλογίου και σε διάφορους άλλους τομείς. Περιλαμβάνει έναν επεξεργαστή και πέντε διαφορετικές λειτουργίες ερωτήσεων με κάρτες. Χρησιμοποιεί τον τύπο αποθήκευσης KVTML και μπορεί να γίνει λήψη αρχείων συνεισφοράς μέσα από την εφαρμογή.</p>
     <p xml:lang="en-GB">KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
     <p xml:lang="es">KWordQuiz es un programa de tarjetas de propósito general. Se puede utilizar para aprender vocabulario y otras muchas tareas. Proporciona un editor y cinco modos de tarjetas diferentes. Utiliza el formato de archivo KVTML y los archivos con los que han contribuido los usuarios se pueden descargar desde la aplicación.</p>
@@ -104,8 +104,8 @@
   <screenshots>
     <screenshot type="default">
       <caption>Flashcard quiz in KWordQuiz</caption>
-      <caption xml:lang="ca">Qüestionari de fitxes ràpides al KWordQuiz</caption>
-      <caption xml:lang="ca-valencia">Qüestionari de fitxes ràpides al KWordQuiz</caption>
+      <caption xml:lang="ca">Qüestionari de targetes ràpides al KWordQuiz</caption>
+      <caption xml:lang="ca-valencia">Qüestionari de targetes ràpides al KWordQuiz</caption>
       <caption xml:lang="cs">Kvíz s kartičkami v KWordQuiz</caption>
       <caption xml:lang="de">Karteikartenquiz in KWordQuiz</caption>
       <caption xml:lang="el">Ερωτηματολόγιο με κάρτες στο KWordQuiz</caption>
