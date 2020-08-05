@@ -99,7 +99,7 @@
   </description>
   <url type="homepage">https://edu.kde.org/kwordquiz/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kwordquiz</url>
-  <url type="help">https://docs.kde.org/stable/en/kdeedu/kwordquiz/index.html</url>
+  <url type="help">https://docs.kde.org/?application=kwordquiz</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kwordquiz&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
