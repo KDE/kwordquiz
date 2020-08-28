@@ -98,7 +98,7 @@ install(TARGETS kwordquiz  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install( PROGRAMS org.kde.kwordquiz.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
 install( FILES kwordquiz.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
-install( FILES kwordquiz.knsrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
+install( FILES kwordquiz.knsrc  DESTINATION  ${KDE_INSTALL_KNSRCDIR} )
 install( FILES kwordquiz.notifyrc  DESTINATION  ${KDE_INSTALL_KNOTIFY5RCDIR} )
 install(FILES
   kwordquizui.rc
