@@ -32,6 +32,7 @@
 static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
 int main(int argc, char *argv[])
 {
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     QApplication app(argc, argv);
 
     KCrash::initialize();

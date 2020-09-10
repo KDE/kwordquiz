@@ -18,7 +18,7 @@
 
 #include "kwqscorewidget.h"
 
-#include <KIconLoader>
+#include <QIcon>
 
 KWQScoreWidget::KWQScoreWidget(QWidget *parent) : QWidget(parent)
 {
@@ -141,24 +141,24 @@ void KWQScoreWidget::update()
   QString s;
   s = s.setNum(m_questionCount, 10);
   lblScoreCount->setText(s);
-  picCount->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("kwordquiz"), KIconLoader::Panel));
+  picCount->setPixmap(QIcon::fromTheme(QStringLiteral("kwordquiz")).pixmap(32));
 
   s = answerText();
   lblScoreAnswered->setText(s);
   if (!s.isEmpty())
-    picAnswered->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
+    picAnswered->setPixmap(QIcon::fromTheme(QStringLiteral("question")).pixmap(32));
 
   s = correctText();
   lblScoreCorrect->setText(s);
   if (!s.isEmpty())
-    picCorrect->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
+    picCorrect->setPixmap(QIcon::fromTheme(QStringLiteral("answer-correct")).pixmap(32));
 
   s = errorText();
   lblScoreError->setText(s);
   if (s.isEmpty())
     picError->setPixmap(QPixmap());
   else
-    picError->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("error"), KIconLoader::Panel));
+    picError->setPixmap(QIcon::fromTheme(QStringLiteral("error")).pixmap(32));
 }
 
 void KWQScoreWidget::swapCount()

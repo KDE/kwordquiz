@@ -23,7 +23,6 @@
 #include <QVBoxLayout>
 
 #include <KConfigGroup>
-#include <KIconLoader>
 #include <KLocalizedString>
 
 #include "kwqtablemodel.h"
@@ -47,8 +46,9 @@ DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): QDialog(parent)
 
     setupUi(mainWidget);
 
-    column1Picture -> setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
-    column2Picture -> setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer"), KIconLoader::Panel));
+    const int iconSize = style()->pixelMetric(QStyle::PixelMetric::PM_LargeIconSize);
+    column1Picture->setPixmap(QIcon::fromTheme(QStringLiteral("question")).pixmap(iconSize));
+    column2Picture->setPixmap(QIcon::fromTheme(QStringLiteral("answer")).pixmap(iconSize));
 
 #if 0  // FIXME KF5: Use QCompleter for this
     column1TitleLineEdit->completionObject(true)->setItems(Prefs::columnTitles1());

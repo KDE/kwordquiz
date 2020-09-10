@@ -26,7 +26,6 @@
 
 #include <KActionCollection>
 #include <KConfigGroup>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KStandardAction>

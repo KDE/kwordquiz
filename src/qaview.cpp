@@ -23,7 +23,6 @@
 #include <QDBusInterface>
 #include <QUrl>
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KNotification>
 
@@ -137,7 +136,7 @@ void QAView::slotCheck()
 
     if (fIsCorrect)
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
+      picYourAnswer->setPixmap(QIcon::fromTheme(QStringLiteral("answer-correct")).pixmap(32));
       lblYourAnswer->setText(m_quiz->yourAnswer(txtAnswer->text()));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
@@ -148,10 +147,10 @@ void QAView::slotCheck()
     }
     else
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("error"), KIconLoader::Panel));
+      picYourAnswer->setPixmap(QIcon::fromTheme(QStringLiteral("error")).pixmap(32));
       lblYourAnswer->setText(highlightError(m_quiz->answer(), m_quiz->yourAnswer(txtAnswer->text())));
       lblCorrect->setText(m_quiz->answer());
-      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
+      picCorrectAnswer->setPixmap(QIcon::fromTheme(QStringLiteral("answer-correct")).pixmap(32));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       score->countIncrement(KWQScoreWidget::cdError);
       KNotification::event(QStringLiteral("QuizError"), i18n("Your answer was incorrect."));
@@ -163,7 +162,7 @@ void QAView::slotCheck()
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question());
     //lblPreviousQuestion->setFont(m_quiz->fontQuestion(m_question));
-    picPrevious->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
+    picPrevious->setPixmap(QIcon::fromTheme(QStringLiteral("question")).pixmap(32));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
 
@@ -186,7 +185,7 @@ void QAView::slotCheck()
       lblAnswerLanguage->clear();
       lblAnswerBlank->hide();
       txtAnswer->hide();
-      picQuestion->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("kwordquiz"), KIconLoader::Panel));
+      picQuestion->setPixmap(QIcon::fromTheme(QStringLiteral("kwordquiz")).pixmap(32));
       picAnswer->clear();
     }
   }
@@ -230,7 +229,7 @@ void QAView::showQuestion()
   lblQuestion->setText(m_quiz ->question());
   //audioPlayQuestion();
 
-  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconLeftCol), KIconLoader::Panel));
+  picQuestion->setPixmap(QIcon::fromTheme(m_quiz->quizIcon(KWQQuizModel::IconLeftCol)).pixmap(32));
 
   lblAnswerLanguage->setText(m_quiz ->langAnswer());
 
@@ -244,7 +243,7 @@ void QAView::showQuestion()
 
   txtAnswer->setText(QLatin1String(""));
 
-  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconRightCol), KIconLoader::Panel));
+  picAnswer->setPixmap(QIcon::fromTheme(m_quiz->quizIcon(KWQQuizModel::IconRightCol)).pixmap(32));
 
   QString layout = m_quiz->kbAnswer();
   if (!layout.isEmpty()) {

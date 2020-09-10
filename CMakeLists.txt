@@ -35,7 +35,6 @@ find_package(KF5 REQUIRED COMPONENTS
     ConfigWidgets
     DocTools
     GuiAddons
-    IconThemes
     ItemViews
     NotifyConfig
     NewStuff

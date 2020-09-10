@@ -77,7 +77,6 @@ target_link_libraries(kwordquiz
     Qt5::PrintSupport
     Qt5::Widgets
     KF5::Crash
-    KF5::IconThemes
     KF5::ConfigCore
     KF5::I18n
     KF5::ItemViews

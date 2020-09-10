@@ -23,7 +23,6 @@
 #include <QButtonGroup>
 
 #include <KActionCollection>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KNotification>
 
@@ -104,7 +103,7 @@ void MultipleView::slotCheck()
 
     if (fIsCorrect)
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
+      picYourAnswer->setPixmap(QIcon::fromTheme(QStringLiteral("answer-correct")).pixmap(32));
       lblCorrectHeader->clear();
       picCorrectAnswer->clear();
       lblCorrect->clear();
@@ -113,9 +112,9 @@ void MultipleView::slotCheck()
     }
     else
     {
-      picYourAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("error"), KIconLoader::Panel));
+      picYourAnswer->setPixmap(QIcon::fromTheme(QStringLiteral("error")).pixmap(32));
       lblCorrect->setText(m_quiz->answer());
-      picCorrectAnswer->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("answer-correct"), KIconLoader::Panel));
+      picCorrectAnswer->setPixmap(QIcon::fromTheme(QStringLiteral("answer-correct")).pixmap(32));
       lblCorrectHeader->setText(i18n("Correct Answer"));
       score->countIncrement(KWQScoreWidget::cdError);
       KNotification::event(QStringLiteral("QuizError"), i18n("Your answer was incorrect."));
@@ -123,7 +122,7 @@ void MultipleView::slotCheck()
 
     lblPreviousQuestionHeader->setText(i18n("Previous Question"));
     lblPreviousQuestion->setText(m_quiz->question());
-    picPrevious->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("question"), KIconLoader::Panel));
+    picPrevious->setPixmap(QIcon::fromTheme(QStringLiteral("question")).pixmap(32));
 
     lblYourAnswerHeader->setText(i18n("Your Answer"));
     lblYourAnswer->setText(m_quiz->yourAnswer(ans));
@@ -150,7 +149,7 @@ void MultipleView::slotCheck()
       opt1->hide();
       opt2->hide();
       opt3->hide();
-      picQuestion->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("kwordquiz"), KIconLoader::Panel));
+      picQuestion->setPixmap(QIcon::fromTheme(QStringLiteral("kwordquiz")).pixmap(32));
       picAnswer->clear();
     }
   }
@@ -176,7 +175,7 @@ void MultipleView::showQuestion()
   lblQuestionLanguage->setText(m_quiz ->langQuestion());
   lblQuestion->setText(m_quiz ->question());
 
-  picQuestion->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconLeftCol), KIconLoader::Panel));
+  picQuestion->setPixmap(QIcon::fromTheme(m_quiz->quizIcon(KWQQuizModel::IconLeftCol)).pixmap(32));
 
   lblAnswerLanguage->setText(m_quiz ->langAnswer());
 
@@ -192,7 +191,7 @@ void MultipleView::showQuestion()
   opt3->setChecked(false);
   m_choicesButtons->setExclusive(true);
   setFocus();
-  picAnswer->setPixmap(KIconLoader::global()->loadIcon(m_quiz->quizIcon(KWQQuizModel::IconRightCol), KIconLoader::Panel));
+  picAnswer->setPixmap(QIcon::fromTheme(m_quiz->quizIcon(KWQQuizModel::IconRightCol)).pixmap(32));
 }
 
 void MultipleView::slotApplySettings()
