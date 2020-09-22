@@ -18,7 +18,7 @@ include(FeatureSummary)
 find_package(Qt5 CONFIG REQUIRED Core Widgets PrintSupport)
 
 find_package(ECM 1.7.0 NO_MODULE REQUIRED)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
