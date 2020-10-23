@@ -16,7 +16,6 @@
 
 #include "kwqcardview.h"
 
-#include "kwqcardscene.h"
 
 KWQCardView::KWQCardView(QWidget *parent) : QGraphicsView(parent)
 {

@@ -25,7 +25,6 @@
 #include <QFileDialog>
 #include <QHeaderView>
 #include <QImageReader>
-#include <QKeyEvent>
 #include <QLineEdit>
 #include <QList>
 #include <QPointer>

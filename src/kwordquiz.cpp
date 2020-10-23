@@ -50,7 +50,6 @@
 #include <KWindowSystem>
 #include <KXMLGUIFactory>
 
-#include "filterproxysearchline.h"
 #include "keduvocdocument.h"
 #include "keduvoclesson.h"
 #include "keduvocexpression.h"

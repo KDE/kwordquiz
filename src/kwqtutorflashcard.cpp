@@ -18,7 +18,6 @@
 
 #include "kwqtutorflashcard.h"
 
-#include <QVBoxLayout>
 
 #include "prefs.h"
 

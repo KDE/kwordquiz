@@ -20,10 +20,8 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QHeaderView>
-#include <QUndoCommand>
 
 #include "kwqtablemodel.h"
-#include "prefs.h"
 
 void copyToClipboard(QTableView * view)
 {

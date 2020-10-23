@@ -22,7 +22,6 @@
 
 #include <QButtonGroup>
 
-#include <KActionCollection>
 #include <KLocalizedString>
 #include <KNotification>
 

@@ -21,7 +21,6 @@
 #include "kwqsortfiltermodel.h"
 #include "kwqtablemodel.h"
 #include "krandomsequence.h"
-#include "prefs.h"
 
 KWQQuizModel::KWQQuizModel(QObject *parent) : QSortFilterProxyModel(parent)
 {

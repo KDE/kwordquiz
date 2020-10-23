@@ -24,16 +24,13 @@
 #include <QPointer>
 #include <QTimer>
 
-#include <KActionCollection>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KStandardAction>
 
-#include "keduvocdocument.h"
 #include "keduvoclesson.h"
 #include "keduvocexpression.h"
-#include "kwqtutorflashcard.h"
 #include "kwqtutorprefs.h"
 #include "prefs.h"
 
