@@ -40,7 +40,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KNS3/DownloadDialog>
-#include <kns3/knewstuffaction.h>
 #include <KNotifyConfigWidget>
 #include <KPageWidget>
 #include <KProcess>
@@ -123,7 +122,9 @@ void KWordQuizApp::initActions()
 
   fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(QUrl)), actionCollection());
 
-  fileGHNS = KNS3::standardAction(i18n("Download New Vocabularies..."), this, SLOT(slotFileGHNS()), actionCollection(), "file_ghns");
+  fileGHNS = new QAction(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")), i18n("Download New Vocabularies..."), this);
+  connect(fileGHNS, &QAction::triggered, this, &KWordQuizApp::slotFileGHNS);
+  actionCollection()->addAction(QStringLiteral("file_ghns"), fileGHNS);
   actionCollection()->setDefaultShortcut(fileGHNS, QKeySequence(Qt::CTRL + Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
   fileGHNS->setToolTip(fileGHNS->whatsThis());
