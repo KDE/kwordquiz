@@ -69,12 +69,12 @@ KWQTutor::KWQTutor(const QUrl &fileToOpen, QWidget *parent) : KStatusNotifierIte
   m_globalCollection = new KActionCollection(this);
   a = m_globalCollection->addAction(QStringLiteral("kwq_close_flash_card"));
   a->setText(i18n("Close Flash Card"));
-  //a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_J));
+  //a->setGlobalShortcut(KShortcut(Qt::CTRL | Qt::ALT | Qt::Key_J));
   connect (a, &QAction::triggered, this, &KWQTutor::closeFlashcard);
 
   a = m_globalCollection->addAction(QStringLiteral("kwq_flip_flash_card"));
   a->setText(i18n("Flip Flash Card"));
-  //a->setGlobalShortcut(KShortcut(Qt::CTRL + Qt::ALT + Qt::Key_H));
+  //a->setGlobalShortcut(KShortcut(Qt::CTRL | Qt::ALT | Qt::Key_H));
   connect (a, &QAction::triggered, this, &KWQTutor::flipFlashcard);
 
   m_timer = new QTimer;
