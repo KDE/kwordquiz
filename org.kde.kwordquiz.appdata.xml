@@ -86,6 +86,7 @@
     <p xml:lang="ko">KWordQuiz는 플래시 카드 프로그램입니다. 단어 및 기타 다양한 학습 용도로 사용할 수 있습니다. 편집기와 다섯 가지 플래시 카드 모드를 지원합니다. KVTML 파일 형식을 사용하며 프로그램 내에서 다운로드할 수 있습니다.</p>
     <p xml:lang="nds">KWordQuiz is en allmeen Naslakoortprogramm. Du kannst dat för't Öven vun Wöör, man ok to anner Saken bruken. Dat hett en Editor un fief Affraag-Bedriefoorden. As Dateiformaat warrt dat KVTML-Formaat bruukt un vun Brukers bidragen Dateien laat sik binnen dat Programm daalladen.</p>
     <p xml:lang="nl">KWordQuiz is een draaikaart programma voor algemene doeleinden. Het kan gebruikt worden voor het leren van woordjes en vele andere onderwerpen. Het biedt een editor en vijf verschillende manieren om draaikaarten te gebruiken. Het gebruikt het KVTML bestandsformaat en aanvullende bestanden kunnen gedownload worden vanuit de toepassing.</p>
+    <p xml:lang="nn">KWordQuiz er eit program for øving med spørsmåls­kort. Det kan brukast til å utvida ordforrådet ditt eller til å læra ulike emne. Det har innebygd redigering av spørsmåls­kort og støttar fem ulike spørje­modusar. Det brukar filformatet KVTML, og du kan lasta ned spørsmåls­kort som andre har laga via programmet.</p>
     <p xml:lang="pl">KWordQuiz jest programem do ćwiczenia na fiszkach ogólnego przeznaczenia. Dostarcza edytor i pięć różnych trybów quizów na fiszkach. Program używa formatu plików KVTML, a pliki stworzone przez innych użytkowników można pobrać z wewnątrz programu.</p>
     <p xml:lang="pt">O KWordQuiz é um programa de cartões de uso geral. Poderá ser usado para a aprendizagem de vocabulário e para muitos outros assuntos. Oferece um editor e cinco modos diferentes de questionários por cartões. Ele usa o formato de ficheiros KVTML e os ficheiros contribuídos poderão ser transferidos a partir da aplicação.</p>
     <p xml:lang="pt-BR">KWordQuiz é um programa de cartões de uso geral. Ele pode ser usado para aprendizagem de vocabulário e muitos outros assuntos. Oferece um editor e cinco modos diferentes de perguntas em forma de cartões. Ele usa o formato de arquivo KVTML e os arquivos disponibilizados por terceiros podem ser baixados a partir do aplicativo.</p>
@@ -120,6 +121,7 @@
       <caption xml:lang="it">Quiz di carte mnemoniche in KWordQuiz</caption>
       <caption xml:lang="ko">KWordQuiz의 플래시카드 퀴즈</caption>
       <caption xml:lang="nl">Flashkaart-toets in KWordQuiz</caption>
+      <caption xml:lang="nn">Spørjekort-kviss i KWordQuiz</caption>
       <caption xml:lang="pl">Fiszki w KWordQuiz</caption>
       <caption xml:lang="pt">Questionário com cartões no KWordQuiz</caption>
       <caption xml:lang="pt-BR">Modo de perguntas em cartões no KWordQuiz</caption>
