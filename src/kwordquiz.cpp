@@ -39,7 +39,12 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <knewstuff_version.h>
+#if KNEWSTUFF_VERSION < QT_VERSION_CHECK(5, 78, 0)
 #include <KNS3/DownloadDialog>
+#else
+#include <KNS3/QtQuickDialogWrapper>
+#endif
 #include <KNotifyConfigWidget>
 #include <KPageWidget>
 #include <KProcess>
@@ -823,13 +828,18 @@ void KWordQuizApp::slotFileOpenRecent(const QUrl &url)
 
 void KWordQuizApp::slotFileGHNS()
 {
+#if KNEWSTUFF_VERSION < QT_VERSION_CHECK(5, 78, 0)
   QPointer<KNS3::DownloadDialog> getHotNewStuffDialog = new KNS3::DownloadDialog(QStringLiteral("kwordquiz.knsrc"), this);
   getHotNewStuffDialog->exec();
   KNS3::Entry::List entries = getHotNewStuffDialog->changedEntries();
+#else
+  KNS3::QtQuickDialogWrapper dialog(QStringLiteral("kwordquiz.knsrc"));
+  const QList<KNSCore::EntryInternal> entries = dialog.exec();
+#endif
   QMimeDatabase db;
 
   // list of changed entries
-  foreach(const KNS3::Entry& entry, entries) {
+  foreach(const auto &entry, entries) {
     // check mime type and if kvtml, open it
     foreach(const QString &file, entry.installedFiles()) {
       QMimeType mimeType = db.mimeTypeForFile(file);
@@ -838,7 +848,6 @@ void KWordQuizApp::slotFileGHNS()
       }
     }
   }
-  delete getHotNewStuffDialog;
 }
 
 
