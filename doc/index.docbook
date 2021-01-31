@@ -33,8 +33,8 @@
 <legalnotice>&FDLNotice;</legalnotice>
 
 
-<date>2016-05-07</date>
-<releaseinfo>0.9.2 (Applications 16.04)</releaseinfo>
+<date>2021-01-30</date>
+<releaseinfo>Applications 20.12</releaseinfo>
 
 <abstract>
 <para>
@@ -86,10 +86,10 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="vocabulary-documents">
 <title>Vocabulary documents</title>
 <para>
-  &kwordquiz; can open several types of vocabulary data. The default format is .kvtml, a file format shared by several &kde; programs. &kwordquiz; should also open .wql files created by &kwordquiz; for &Windows;, .csv files with comma separated text, <ulink url="http://www.vokabeln.de/v1/download.htm">.voc files</ulink> created by the old version of Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/">.xdxf files</ulink>, and .xml.gz files created by the old versions of <ulink url="http://pauker.sourceforge.net">Pauker</ulink>.
+&kwordquiz; can open several types of vocabulary data. The default format is <filename class="extension">.kvtml</filename>, a file format shared by several &kde; programs. &kwordquiz; should also open <filename class="extension">.wql</filename> files created by &kwordquiz; for &Windows;, <filename class="extension">.csv</filename> files with comma separated text, <ulink url="http://www.vokabeln.de/v1/download.htm"><filename class="extension">.voc</filename> files</ulink> created by the old version of Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"><filename class="extension">.xdxf</filename> files</ulink>, and <filename class="extension">.xml.gz</filename> files created by the old versions of <ulink url="http://pauker.sourceforge.net">Pauker</ulink>.
 </para>
 <para>
-&kwordquiz; can save your vocabulary documents several different formats. The default is the .kvtml format used by other &kde; programs. Another available option is comma separated text .csv.
+&kwordquiz; can save your vocabulary documents several different formats. The default is the <filename class="extension">.kvtml</filename> format used by other &kde; programs. Another available option is comma separated text <filename class="extension">.csv</filename>.
 </para>
 <para>
 You can have several files open at the same time and easily copy or move entries between files.
@@ -165,10 +165,10 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Downloads</action> new vocabularies. Downloaded vocabularies 
-	can be found in <filename class="directory">$XDG_DATA_HOME/kvtml</filename> 
-	directory. <envar>$XDG_DATA_HOME</envar> is usually
-	a hidden folder in your Home folder called <filename class="directory">.local</filename>.
+        <action>Downloads</action> new vocabularies. Downloaded vocabularies can
+        be found in <filename class="directory">$XDG_DATA_HOME/kvtml</filename>
+        folder. <envar>$XDG_DATA_HOME</envar> is usually a hidden folder in your
+        Home folder called <filename class="directory">.local</filename>.
       </para>
     </listitem>
   </varlistentry>
@@ -369,7 +369,7 @@ You can have several files open at the same time and easily copy or move entries
     <term>
       <menuchoice>
         <shortcut>
-          <keycap>Del</keycap>
+          &Del;
         </shortcut>
         <guimenu>Edit</guimenu>
         <guimenuitem>Clear</guimenuitem>
@@ -550,9 +550,9 @@ You can have several files open at the same time and easily copy or move entries
 <title>The Mode Menu</title>
 <para>
 The menu provides five different modes for the quiz.</para>
-<para>
-Note that the menu names will change to reflect the column titles of the currently active vocabulary document. The mode must be selected before a quiz is started. The selected mode will apply to Flashcard, Multiple Choice and Question &amp; Answer.
-</para>
+
+  <note><para>The menu names will change to reflect the column titles of the currently active vocabulary document. The mode must be selected before a quiz is started. The selected mode will apply to Flashcard, Multiple Choice and Question &amp; Answer.</para>
+  </note>
 <variablelist>
 
   <varlistentry>
@@ -855,7 +855,7 @@ You can click in a cell of the grid to make it the active cell. You can select s
 </screenshot>
 
 <para>
-In the document you build a vocabulary of pair-wise entries in the two columns. You can enter text into the active cell simply by starting to type. The cell will now be in edit mode and you can select all or part of the text. You can also edit a cell by double-clicking it or pressing F2 and make changes directly in the cell.
+In the document you build a vocabulary of pair-wise entries in the two columns. You can enter text into the active cell simply by starting to type. The cell will now be in edit mode and you can select all or part of the text. You can also edit a cell by double-clicking it or pressing <keycap>F2</keycap> and make changes directly in the cell.
 </para>
 <para>
 When you have finished typing one entry, press the return key and the next cell will automatically become active. Hence, it's easy to quickly type several entries. You can customize this behavior by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice>. When you reach the bottom row of the grid, a new row will be added as you press return, so you can just continue to type. When a new window is created it has 20 rows, but there is really no limit to the number of rows you can have in a document.
@@ -888,7 +888,7 @@ If you are working with long expressions the window can be resized to make more 
 Initially the front of the card is displayed. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> to see the other side.
 </para>
 <para>
-To move on to the next card either select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Know</guimenuitem></menuchoice> to count the card as correct or <guimenu>Quiz</guimenu><guimenuitem>I Don't Know</guimenuitem> to count the card as incorrect.
+To move on to the next card either select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Know</guimenuitem></menuchoice> to count the card as correct or <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Don't Know</guimenuitem></menuchoice> to count the card as incorrect.
 </para>
 <para>
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the cards you have counted as incorrect.
@@ -1062,7 +1062,7 @@ In 2. &kwordquiz; would display the question but also 'Wir ........ einen Comput
 3. shows that a blank can consist of more than one word. The correct answer is 'besitzen einen'.
 </para>
 <para>
-In 4. there are two separate blanks. To specify that in the answer you have to write 'besitzen; Computer', i.e separate the blanks with a semicolon in order to get a correct answer.
+In 4. there are two separate blanks. To specify that in the answer you have to write 'besitzen; Computer', &ie; separate the blanks with a semicolon in order to get a correct answer.
 </para>
 <para>
 Marked blanks are only of relevance if they appear in the answer. Otherwise the brackets are ignored. Furthermore, brackets have no effect in multiple choice quizzes. To simplify the creation of 'Fill-in-the-blank' vocabularies there are menu commands to mark and unmark blanks. Of course you can also just type the brackets. &kwordquiz; checks the syntax. If the text appears in red there is something wrong with the brackets and a quiz cannot be started.
@@ -1075,7 +1075,7 @@ The 'Fill-in-the-blank' features can be turned on and off in the Configuration d
 <chapter id="printing">
 <title>Printing</title>
 <para>
-  &kwordquiz; provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard &kde; print dialog. In order to get access to the special &kwordquiz; features you need to click on the <guibutton>Options&gt;&gt;</guibutton> to see the <guilabel>Vocabulary Options</guilabel> tab. On this tab you can select to print the document as a vocabulary list (&ie; as displayed in the editor), a vocabulary exam, or as flashcards.
+  &kwordquiz; provides the ability to print vocabulary documents in several different ways. When selecting <menuchoice><guimenu>File</guimenu><guimenuitem>Print...</guimenuitem></menuchoice> you are presented with the standard &kde; print dialog. In order to get access to the special &kwordquiz; features you need to click on the <guibutton>Options &gt;&gt;</guibutton> to see the <guilabel>Vocabulary Options</guilabel> tab. On this tab you can select to print the document as a vocabulary list (&ie; as displayed in the editor), a vocabulary exam, or as flashcards.
 </para>
 <screenshot>
   <screeninfo>Vocabulary Printing Options</screeninfo>
@@ -1356,7 +1356,7 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
   </mediaobject>
 </screenshot>
 <para>
-For flashcard sessions you can select the <guilabel>Font:</guilabel> and the colors of text, card and frames. Click the <guibutton>Flip</guibutton> to switch between the <guilabel>Front</guilabel> and the <guilabel>Back</guilabel> of the cards.
+For flashcard sessions you can select the <guilabel>Font:</guilabel> and the colors of text, card and frames. Click the <guibutton>Flip card</guibutton> button to switch between the <guilabel>Front</guilabel> and the <guilabel>Back</guilabel> of the cards.
 </para>
 <para>Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
