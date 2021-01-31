@@ -109,7 +109,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>&amp;Keyboard Layout:</string>
+           <string>&amp;Keyboard layout:</string>
           </property>
           <property name="buddy">
            <cstring>column1LayoutComboBox</cstring>

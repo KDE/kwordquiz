@@ -28,7 +28,7 @@
 
 WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : QWidget(parent)
 {
-  setWindowTitle(i18n("Vocabulary Options"));
+  setWindowTitle(i18nc("@title:window", "Vocabulary Options"));
 
   QGridLayout * l = new QGridLayout(this);
   QSpacerItem * s = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);

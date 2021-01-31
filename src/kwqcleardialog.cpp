@@ -30,7 +30,7 @@
 
 KWQClearDialog::KWQClearDialog(QWidget* parent): QDialog(parent)
 {
-    setWindowTitle(i18n("Clear Contents"));
+    setWindowTitle(i18nc("@title:window", "Clear Contents"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;

@@ -748,7 +748,7 @@ void KWQTableView::doVocabSound()
 {
   QUrl currentUrl(model()->data(currentIndex(), KWQTableModel::SoundRole).toString());
 
-  QUrl soundUrl = QFileDialog::getOpenFileUrl(this, i18n("Select Sound"), currentUrl, i18n("All Files (*)"));
+  QUrl soundUrl = QFileDialog::getOpenFileUrl(this, i18nc("@title:window", "Select Sound"), currentUrl, i18n("All Files (*)"));
   if (!soundUrl.isEmpty()) {
     KWQCommandSound *kwqc = new KWQCommandSound(this, soundUrl);
     m_undoStack->push(kwqc);

@@ -30,7 +30,7 @@
 
 DlgLanguage::DlgLanguage(KWQTableModel *model, QWidget *parent): QDialog(parent)
 {
-    setWindowTitle(i18n("Column Settings"));
+    setWindowTitle(i18nc("@title:window", "Column Settings"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
