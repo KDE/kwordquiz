@@ -113,7 +113,9 @@ bool KWQTableView::doHtmlExport(const QUrl &url)
     QTextDocument td;
     td.setMetaInformation(QTextDocument::DocumentTitle, model()->sourceModel()->document()->title());
     QTextStream out(&data);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     out.setCodec("utf-8");
+#endif
     createPages(&printer, &td, false);
     out << td.toHtml("utf-8");
     data.close();
