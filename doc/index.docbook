@@ -79,7 +79,7 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 <sect2 id="quiz-types">
 <title>Quiz types</title>
 
-<para>When you have entered your vocabulary and selected a mode you are ready to start a quiz. Maybe you want to start with a flashcard session, then you can move on to a multiple choice quiz or do the powerful question and answer quiz. You get instant feedback on correct and incorrect answers and you have the option to repeat any errors, further improving your learning efficiency. If you need a little extra help you can use the hint function.
+<para>When you have entered your vocabulary and selected a mode, you are ready to start a quiz. Maybe you want to start with a flashcard session. Later you can move on to a multiple choice quiz, or do the powerful question and answer quiz. You get instant feedback on correct and incorrect answers, and you have the option to repeat any errors, further improving your learning efficiency. If you need a little extra help you can use the hint function.
 </para>
 </sect2>
 
@@ -89,10 +89,10 @@ With &kwordquiz; you build your own vocabulary documents in a simple and intuiti
 &kwordquiz; can open several types of vocabulary data. The default format is <filename class="extension">.kvtml</filename>, a file format shared by several &kde; programs. &kwordquiz; should also open <filename class="extension">.wql</filename> files created by &kwordquiz; for &Windows;, <filename class="extension">.csv</filename> files with comma separated text, <ulink url="http://www.vokabeln.de/v1/download.htm"><filename class="extension">.voc</filename> files</ulink> created by the old version of Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"><filename class="extension">.xdxf</filename> files</ulink>, and <filename class="extension">.xml.gz</filename> files created by the old versions of <ulink url="http://pauker.sourceforge.net">Pauker</ulink>.
 </para>
 <para>
-&kwordquiz; can save your vocabulary documents several different formats. The default is the <filename class="extension">.kvtml</filename> format used by other &kde; programs. Another available option is comma separated text <filename class="extension">.csv</filename>.
+&kwordquiz; can save your vocabulary documents in several different formats. The default is the <filename class="extension">.kvtml</filename> format used by other &kde; programs. Another available option is comma separated text <filename class="extension">.csv</filename>.
 </para>
 <para>
-You can have several files open at the same time and easily copy or move entries between files.
+You can have several files open at the same time, and easily copy or move entries between files.
 </para>
 </sect2>
 </sect1>
@@ -166,7 +166,7 @@ You can have several files open at the same time and easily copy or move entries
     <listitem>
       <para>
         <action>Downloads</action> new vocabularies. Downloaded vocabularies can
-        be found in <filename class="directory">$XDG_DATA_HOME/kvtml</filename>
+        be found in the <filename class="directory">$XDG_DATA_HOME/kvtml</filename>
         folder. <envar>$XDG_DATA_HOME</envar> is usually a hidden folder in your
         Home folder called <filename class="directory">.local</filename>.
       </para>
@@ -428,7 +428,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Mark as Blank</action> marks selected text (or the word where the caret is) as a blank for a <link linkend="fill-in-the-blank">'Fill-in-the-blank'</link> quiz, &ie; it's enclosed in brackets. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
+        <action>Mark as Blank</action> marks selected text (or the word where the caret is) as a blank for a <link linkend="fill-in-the-blank">'Fill-in-the-blank'</link> quiz, &ie;, it's enclosed in brackets. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
       </para>
     </listitem>
   </varlistentry>
@@ -442,7 +442,7 @@ You can have several files open at the same time and easily copy or move entries
     </term>
     <listitem>
       <para>
-        <action>Unmark Blanks</action> clears previously assigned blanks, &ie; brackets are removed. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
+        <action>Unmark Blanks</action> clears previously assigned blanks, &ie;, brackets are removed. Only available if <link linkend="dlg-config-editor">Fill-in-the-blank</link> is enabled.
       </para>
     </listitem>
   </varlistentry>
@@ -592,7 +592,7 @@ The menu provides five different modes for the quiz.</para>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given the entries of Column 1 and asked to provide the corresponding Column 2 entries. This will be done in a random order, but each entry will be asked once.
+        During the quiz you will be given the entries of Column 1 and asked to provide the corresponding Column 2 entries. This will be done in a random order, but each entry will be processed once.
       </para>
     </listitem>
   </varlistentry>
@@ -606,7 +606,7 @@ The menu provides five different modes for the quiz.</para>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given the entries of Column 2 and asked to provide the corresponding Column 1 entries. This will be done in random order, but each entry will be asked once.
+        During the quiz you will be given the entries of Column 2 and asked to provide the corresponding Column 1 entries. This will be done in random order, but each entry will be processed once.
       </para>
     </listitem>
   </varlistentry>
@@ -620,7 +620,7 @@ The menu provides five different modes for the quiz.</para>
     </term>
     <listitem>
       <para>
-        During the quiz you will be given an entry of either Column 1 or Column 2 and asked to provide the corresponding entry in the other column. This will be done in a random order for both column and entry. Each possible combination will be asked once.
+        During the quiz you will be given an entry of either Column 1 or Column 2 and asked to provide the corresponding entry in the other column. This will be done in a random order for both column and entry. Each possible combination will be processed once.
       </para>
     </listitem>
   </varlistentry>
@@ -730,7 +730,7 @@ The menu provides five different modes for the quiz.</para>
     </term>
     <listitem>
       <para>
-        <action>Restart</action> the quiz session from the beginning. Will reset the scores.
+        <action>Restart</action> the quiz session from the beginning. This will reset the scores.
       </para>
     </listitem>
   </varlistentry>
@@ -747,7 +747,7 @@ The menu provides five different modes for the quiz.</para>
     </term>
     <listitem>
       <para>
-        <action>Repeat</action> any questions you answered incorrectly. Becomes available once you have answered all questions once.
+        <action>Repeat</action> any questions you answered incorrectly. This becomes available once you have answered all the questions once.
       </para>
     </listitem>
   </varlistentry>
@@ -761,7 +761,7 @@ The menu provides five different modes for the quiz.</para>
     </term>
     <listitem>
       <para>
-        <action>Export</action> any questions you answered incorrectly as a new vocabulary document. Becomes available once you have answered all questions once.
+        <action>Export</action> any questions you answered incorrectly as a new vocabulary document. This becomes available once you have answered all the questions once.
       </para>
     </listitem>
   </varlistentry>
@@ -774,7 +774,7 @@ The menu provides five different modes for the quiz.</para>
 <para>Apart from the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 menu items described in the <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Settings Menu</ulink> and <ulink url="help:/fundamentals/menus.html#menus-help">Help Menu</ulink>
-of the &kde; Fundamentals &kwordquiz; this additional menu entry:
+of the &kde; Fundamentals &kwordquiz; this additional menu entry is provided:
 </para>
 
 <variablelist>
@@ -855,7 +855,7 @@ You can click in a cell of the grid to make it the active cell. You can select s
 </screenshot>
 
 <para>
-In the document you build a vocabulary of pair-wise entries in the two columns. You can enter text into the active cell simply by starting to type. The cell will now be in edit mode and you can select all or part of the text. You can also edit a cell by double-clicking it or pressing <keycap>F2</keycap> and make changes directly in the cell.
+In the document, you build a vocabulary of pair-wise entries in the two columns. You can enter text into the active cell simply by starting to type. The cell will now be in edit mode and you can select all or part of the text. You can also edit a cell by double-clicking it or by pressing <keycap>F2</keycap> and making changes directly in the cell.
 </para>
 <para>
 When you have finished typing one entry, press the return key and the next cell will automatically become active. Hence, it's easy to quickly type several entries. You can customize this behavior by selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice>. When you reach the bottom row of the grid, a new row will be added as you press return, so you can just continue to type. When a new window is created it has 20 rows, but there is really no limit to the number of rows you can have in a document.
@@ -870,7 +870,7 @@ When you have finished typing one entry, press the return key and the next cell 
 </para>
 
 <para>
-If you are working with long expressions the window can be resized to make more space available. The font size will also influence how much will fit in the different parts of the window. By selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> you can configure the appearance of the flashcards.
+If you are working with long expressions, the window can be resized to make more space available. The font size will also influence how much will fit in the different parts of the window. By selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> you can configure the appearance of the flashcards.
 </para>
 
 <screenshot>
@@ -888,7 +888,7 @@ If you are working with long expressions the window can be resized to make more 
 Initially the front of the card is displayed. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> to see the other side.
 </para>
 <para>
-To move on to the next card either select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Know</guimenuitem></menuchoice> to count the card as correct or <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Don't Know</guimenuitem></menuchoice> to count the card as incorrect.
+To move on to the next card, either select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Know</guimenuitem></menuchoice> to count the card as correct or <menuchoice><guimenu>Quiz</guimenu><guimenuitem>I Don't Know</guimenuitem></menuchoice> to count the card as incorrect.
 </para>
 <para>
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the cards you have counted as incorrect.
@@ -897,7 +897,7 @@ Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuite
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Restart</guimenuitem></menuchoice> to start the session from the beginning again. If you are using a random mode the cards will be reshuffled.
 </para>
 <para>
-The score sections at the bottom of the screen shows the number of cards, the number of cards you have seen, the number of cards counted as correct, and the number counted as incorrect.
+The score section at the bottom of the screen shows the number of cards, the number of cards you have seen, the number of cards counted as correct, and the number counted as incorrect.
 </para>
 
 <tip>
@@ -935,7 +935,7 @@ In the example below the user gave an incorrect answer to the previous question.
 Your choices are shown on the top left. Select the one you think is correct. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> to see if the answer is correct. If you have activated the automatic mode in <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> your selection is checked immediately.
 </para>
 <para>
-The previous question is shown below the current. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
+The previous question is shown below the current one. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
 </para>
 <para>
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the questions you answered incorrectly.
@@ -944,7 +944,7 @@ Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuite
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Restart</guimenuitem></menuchoice> to start the session from the beginning again. If you are using a random mode the questions will be reshuffled.
 </para>
 <para>
-The score sections at the bottom of the screen shows the number of questions, the number of questions you have answered, the number of correct answers, and the number of incorrect answers.
+The score section at the bottom of the screen shows the number of questions, the number of questions you have answered, the number of correct answers, and the number of incorrect answers.
 </para>
 
 <tip>
@@ -960,7 +960,7 @@ The score sections at the bottom of the screen shows the number of questions, th
 Select Question &amp; Answer from the navigation panel to start a question &amp; answer session on the entries in the active vocabulary. The mode selected in the <guimenu>Mode</guimenu> menu will be used. If you change mode during a session, the session will be restarted.
 </para>
 <para>
-If you are working with long expressions the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
+If you are working with long expressions, the window can be resized to make more room. The font size (selected for the editor) will also influence how much will fit in the different parts of the window.
 </para>
 <para>
 In the example below the user gave a correct answer to the previous question (to see how incorrect answers are handled, see the <link linkend="multiple">Multiple Choice</link> chapter). He/she is now about to answer the next question.
@@ -981,10 +981,10 @@ In the example below the user gave a correct answer to the previous question (to
 Your question is shown on the top left. Type your answer in the edit field. Use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Check</guimenuitem></menuchoice> or &Enter; to see if the answer is correct.
 </para>
 <para>
-The previous question is shown below the current. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
+The previous question is shown below the current one. The answer you gave is also displayed. If you answered incorrectly the correct answer is shown.
 </para>
 <para>
-Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> to get the next correct letter of the answer. In <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> you can select that questions where you use the hint function are always counted as incorrect.
+Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> to get the next correct letter of the answer. In <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kwordquiz;...</guimenuitem></menuchoice> you may choose to count any questions where you use the hint function as incorrect.
 </para>
 <para>
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuitem></menuchoice> to repeat the questions you answered incorrectly.
@@ -993,7 +993,7 @@ Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Repeat Errors</guimenuite
 Select <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Restart</guimenuitem></menuchoice> to start the session from the beginning again. If you are using a random mode the questions will be reshuffled.
 </para>
 <para>
-The score sections at the bottom of the screen shows the number of questions, the number of questions you have answered, the number of correct answers, and the number of incorrect answers.
+The score section at the bottom of the screen shows the number of questions, the number of questions you have answered, the number of correct answers, and the number of incorrect answers.
 </para>
 
 <tip>
@@ -1335,7 +1335,7 @@ For multiple choice sessions you can select if your choice should be checked imm
 For question &amp; answer sessions you can select if questions where you use <menuchoice><guimenu>Quiz</guimenu><guimenuitem>Hint</guimenuitem></menuchoice> should be counted as incorrect.
 </para>
 <para>
-For all sessions you can select if the scores should be displayed as percent instead of absolute numbers.
+For all sessions you can select if the scores should be displayed as percentages instead of absolute numbers.
 </para>
 <para>
 Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
@@ -1356,7 +1356,7 @@ Select <guibutton>Defaults</guibutton> to restore all settings to predefined def
   </mediaobject>
 </screenshot>
 <para>
-For flashcard sessions you can select the <guilabel>Font:</guilabel> and the colors of text, card and frames. Click the <guibutton>Flip card</guibutton> button to switch between the <guilabel>Front</guilabel> and the <guilabel>Back</guilabel> of the cards.
+For flashcard sessions you can select the <guilabel>Font:</guilabel> and the colors of text, cards, and frames. Click the <guibutton>Flip card</guibutton> button to switch between the <guilabel>Front</guilabel> and the <guilabel>Back</guilabel> of the cards.
 </para>
 <para>Select <guibutton>Defaults</guibutton> to restore all settings to predefined defaults. Select <guibutton>Apply</guibutton> to make your changes without closing the dialog. Select <guibutton>OK</guibutton> to make your changes and close the dialog. Select <guibutton>Cancel</guibutton> to close the dialog without making any changes.
 </para>
