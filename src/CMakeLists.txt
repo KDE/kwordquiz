@@ -73,9 +73,9 @@ ecm_add_app_icon(kwordquiz_SRCS ICONS ${ICONS_SRCS})
 add_executable(kwordquiz ${kwordquiz_SRCS})
 
 target_link_libraries(kwordquiz
-    Qt5::Core
-    Qt5::PrintSupport
-    Qt5::Widgets
+    Qt::Core
+    Qt::PrintSupport
+    Qt::Widgets
     KF5::Crash
     KF5::ConfigCore
     KF5::I18n

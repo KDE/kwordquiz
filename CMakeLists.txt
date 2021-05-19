@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 # KDE Application Version, managed by release script
 set(RELEASE_SERVICE_VERSION_MAJOR "21")
@@ -17,7 +17,7 @@ endif(NOT MSVC)
 include(FeatureSummary)
 find_package(Qt5 CONFIG REQUIRED Core Widgets PrintSupport)
 
-find_package(ECM 1.7.0 NO_MODULE REQUIRED)
+find_package(ECM 5.83.0 NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
 include(KDEInstallDirs)
