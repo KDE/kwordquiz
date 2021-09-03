@@ -1,17 +1,14 @@
-/***************************************************************************
-                               kwqcommands.h
-                             -------------------
+/*
+    kwqcommands.h
+    -------------------
     begin          : Fri Jan 18 10:37:00 PST 2008
-    copyright      : (C) 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-FileCopyrightText: 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
 
- ***************************************************************************/
+*/
 
 /***************************************************************************
  *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
+ *   SPDX-License-Identifier: GPL-2.0-or-later
  *                                                                         *
  ***************************************************************************/
 
