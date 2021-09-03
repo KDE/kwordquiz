@@ -39,7 +39,7 @@ public:
     explicit MultipleView(QWidget *parent, KActionCollection *actionCollection);
     void init() override;
 
-public slots:
+public Q_SLOTS:
     void slotCheck() override;
     void slotChoiceClicked(int );
     void slotChoiceActionTriggered(QAction *);

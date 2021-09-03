@@ -1296,7 +1296,7 @@ void KWordQuizApp::slotApplyPreferences()
   editUnmarkBlank->setEnabled(Prefs::enableBlanks());
   m_tableView->reset();
   updateSpecialCharIcons();
-  emit settingsChanged();
+  Q_EMIT settingsChanged();
 }
 
 void KWordQuizApp::updateSpecialCharIcons()

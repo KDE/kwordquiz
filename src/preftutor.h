@@ -30,7 +30,7 @@ Q_OBJECT
 public:
   explicit PrefTutor(QWidget *parent);
 
-private slots:
+private Q_SLOTS:
   void timingChanged(int);
   void minChanged(int );
   void maxChanged(int );

@@ -38,10 +38,10 @@ public:
   bool isDefault();
   void updateSettings();
 
-signals:
+Q_SIGNALS:
   void widgetModified();
 
-private slots:
+private Q_SLOTS:
   void fillWidgets();
   void slotCharListSelectionChanged();
   void slotDlgSpecCharClosed();

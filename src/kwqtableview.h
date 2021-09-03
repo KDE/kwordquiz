@@ -65,7 +65,7 @@ protected:
   void keyPressEvent(QKeyEvent*) override;
   void updateKeyboardLayout();
 
-public slots:
+public Q_SLOTS:
   void adjustRow(int );
   void slotSpecChar(const QChar &);
   void slotCheckedAnswer(int );
@@ -74,7 +74,7 @@ public slots:
   void slotHeaderClicked(int);
   void slotSortByColumn(int);
 
-protected slots:
+protected Q_SLOTS:
   void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint) override;
   void commitData (QWidget * editor) override;
   void verticalHeaderResized(int, int, int);

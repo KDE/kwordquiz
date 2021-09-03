@@ -62,8 +62,8 @@ void KWQTableDelegate::commitAndCloseEditor()
 {
   QWidget *editor = qobject_cast<QWidget *>(sender());
 
-  emit commitData(editor);
-  emit closeEditor(editor, QAbstractItemDelegate::NoHint);
+  Q_EMIT commitData(editor);
+  Q_EMIT closeEditor(editor, QAbstractItemDelegate::NoHint);
 }
 
 void KWQTableDelegate::drawDecoration(QPainter* painter, const QStyleOptionViewItem& option, const QRect& rect, const QPixmap& pixmap) const

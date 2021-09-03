@@ -130,10 +130,10 @@ class KWordQuizApp : public KXmlGuiWindow
      */
     void readProperties(const KConfigGroup &_cfg) override;
 
-  signals:
+  Q_SIGNALS:
     void settingsChanged();
 
-  public slots:
+  public Q_SLOTS:
     /** open a new application window by creating a new instance of KWordQuizApp */
     void slotFileNew();
     /** open a file and load it into the document*/

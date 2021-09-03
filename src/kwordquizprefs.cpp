@@ -62,7 +62,7 @@ bool KWordQuizPrefs::isDefault()
 void KWordQuizPrefs::updateSettings( )
 {
   m_prefCharacter->updateSettings();
-  emit settingsChanged(QLatin1String(""));
+  Q_EMIT settingsChanged(QLatin1String(""));
 }
 
 void KWordQuizPrefs::updateWidgetsDefault()

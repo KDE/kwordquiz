@@ -142,7 +142,7 @@ bool KWQTableModel::setData(const QModelIndex & index, const QVariant & value, i
       break;
   }
 
-  emit dataChanged(index, index);
+  Q_EMIT dataChanged(index, index);
   return true;
 }
 
@@ -168,7 +168,7 @@ bool KWQTableModel::setHeaderData(int section, Qt::Orientation orientation, cons
       documentSettings.save();
     }
 
-    emit headerDataChanged(orientation, section, section);
+    Q_EMIT headerDataChanged(orientation, section, section);
     return true;
   }
   return false;

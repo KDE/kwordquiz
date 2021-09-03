@@ -38,7 +38,7 @@ class KWordQuizPrefs : public KConfigDialog
 public:
   KWordQuizPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config, KActionCollection *actionCollection);
 
-protected slots:
+protected Q_SLOTS:
   void updateSettings() override;
   void updateWidgetsDefault() override;
 

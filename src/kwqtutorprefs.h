@@ -38,7 +38,7 @@ public:
   KWQTutorPrefs(QWidget *parent, const QString & name, KConfigSkeleton *config,
 		KActionCollection *actionCollection);
 
-protected slots:
+protected Q_SLOTS:
   void updateSettings() override;
   void updateWidgetsDefault() override;
   void slotEnableApplyButton();

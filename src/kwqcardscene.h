@@ -47,7 +47,7 @@ public:
     void setFrameColor(const QColor &);
     void setImage(const QPixmap &);
 
-signals:
+Q_SIGNALS:
     void cardClicked();
 
 protected:

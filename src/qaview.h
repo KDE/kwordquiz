@@ -42,7 +42,7 @@ public:
 
     void init() override;
 
-public slots:
+public Q_SLOTS:
     void slotCheck() override;
     void slotHint();
     void slotApplySettings() override;

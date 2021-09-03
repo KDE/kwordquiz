@@ -45,7 +45,7 @@ class KWQTableDelegate : public QItemDelegate
     void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const override;
     void drawDecoration(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect, const QPixmap &pixmap ) const override;
 
-  private slots:
+  private Q_SLOTS:
     void commitAndCloseEditor();
 };
 

@@ -79,7 +79,7 @@ public:
     QList<int> errorList() const {return m_errorList;}
     void removeLastError();
 
-signals:
+Q_SIGNALS:
   void checkingAnswer(int );
 
 protected:

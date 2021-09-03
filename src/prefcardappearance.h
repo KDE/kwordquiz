@@ -29,7 +29,7 @@ Q_OBJECT
 public:
   explicit PrefCardAppearance(QWidget *parent);
 
-public slots:
+public Q_SLOTS:
   void slotFlipButtonClicked();
   void slotFontChanged(const QFont &);
   void slotTextColorChanged(const QColor &);

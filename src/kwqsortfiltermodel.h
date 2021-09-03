@@ -36,7 +36,7 @@ class KWQSortFilterModel : public QSortFilterProxyModel
     void setTableModel(KWQTableModel * sourceModel);
     KWQTableModel * sourceModel() const;
 
-  public slots:
+  public Q_SLOTS:
     void restoreNativeOrder();
     void shuffle();
 

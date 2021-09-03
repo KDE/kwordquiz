@@ -38,10 +38,10 @@ public:
 
     void init() override;
 
-private slots:
+private Q_SLOTS:
     void slotTimer();
 
-public slots:
+public Q_SLOTS:
     void slotCheck() override;
     void slotKnow();
     void slotDontKnow();

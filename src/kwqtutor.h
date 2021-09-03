@@ -34,7 +34,7 @@ class KWQTutor : public KStatusNotifierItem
     /* init systray icon, meny, actions */
     explicit KWQTutor (const QUrl &fileToOpen, QWidget *parent = nullptr);
 
-  public slots:
+  public Q_SLOTS:
     /* self-calling function: it sets the time interval,calls itself and call func to display flashcard*/
     void updateTimer();
     /*open keduvocdocument from the menu */

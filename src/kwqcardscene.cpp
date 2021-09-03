@@ -150,6 +150,6 @@ void KWQCardScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
     QGraphicsItem *item = itemAt(mouseEvent->scenePos(), QTransform());
     if (item != 0)
-        emit cardClicked();
+        Q_EMIT cardClicked();
     QGraphicsScene::mouseReleaseEvent(mouseEvent);
 }

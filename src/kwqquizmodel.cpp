@@ -335,9 +335,9 @@ QString KWQQuizModel::question()
     }
 
     if (m_quizType != Prefs::EnumStartSession::Flashcard && m_currentQuestion > 0)
-        emit checkingAnswer(m_list.at(m_currentQuestion - 1));
+        Q_EMIT checkingAnswer(m_list.at(m_currentQuestion - 1));
     else
-        emit checkingAnswer(row);
+        Q_EMIT checkingAnswer(row);
 
     return s;
 }
@@ -487,7 +487,7 @@ int KWQQuizModel::questionCount()
 
 void KWQQuizModel::finish()
 {
-    emit checkingAnswer(-1);
+    Q_EMIT checkingAnswer(-1);
 }
 
 

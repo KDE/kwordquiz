@@ -45,7 +45,7 @@ class KWQQuizView : public QWidget
     void setQuiz(KWQQuizModel *quiz);
     virtual void init() = 0;
 
-  public slots:
+  public Q_SLOTS:
     virtual void slotCheck() = 0;
     virtual void slotApplySettings() = 0;
     void slotRepeat();

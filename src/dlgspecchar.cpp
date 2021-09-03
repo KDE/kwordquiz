@@ -67,12 +67,12 @@ QChar DlgSpecChar::chr()
 
 void DlgSpecChar::slotDoubleClicked()
 {
-  emit insertChar(chr());
+  Q_EMIT insertChar(chr());
   closeDialog();
 }
 
 void DlgSpecChar::slotUser1( )
 {
-  emit insertChar(chr());
+  Q_EMIT insertChar(chr());
   closeDialog();
 }

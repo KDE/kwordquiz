@@ -132,5 +132,5 @@ void PrefCharacter::slotSpecChar(QChar c)
 {
   CharacterTree->currentItem()->setText(2, QString(c));
   lblPreview->setText(CharacterTree->currentItem()->text(2));
-  emit widgetModified();
+  Q_EMIT widgetModified();
 }

@@ -32,10 +32,10 @@ public:
   explicit DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr);
   void closeDialog();
 
-signals:
+Q_SIGNALS:
   void insertChar(QChar);
 
-private slots:
+private Q_SLOTS:
   void slotUser1();
   void slotDoubleClicked();
 
