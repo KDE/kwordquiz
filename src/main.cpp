@@ -1,16 +1,7 @@
 /*
-    main.cpp
-    -------------------
-    begin                : Wed Jul 24 20:12:30 PDT 2002
-    SPDX-FileCopyrightText: 2002-2010 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
+    SPDX-FileCopyrightText: 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #include <QAction>
 #include <QApplication>

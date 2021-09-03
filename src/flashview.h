@@ -1,9 +1,6 @@
 /*
-    This file is part of KWordQuiz
     SPDX-FileCopyrightText: 2003-2010 Peter Hedlund <peter.hedlund@kdemail.net>
-
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #ifndef FLASHVIEW_H

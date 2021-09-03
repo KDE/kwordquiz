@@ -1,15 +1,7 @@
 /*
-    dlglanguage.h  -  description
-    -------------------
     SPDX-FileCopyrightText: 2004-2009 Peter Hedlund <peter.hedlund@kdemail.net>
-
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #ifndef DLGLANGUAGE_H
 #define DLGLANGUAGE_H

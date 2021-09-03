@@ -1,17 +1,7 @@
 /*
-    kwqsortfiltermodel.cpp
-    -------------------
-
-    SPDX-FileCopyrightText: 2007-2010 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
-
+    SPDX-FileCopyrightText: 2007-2010 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #include "kwqsortfiltermodel.h"
 #include "kwqtablemodel.h"

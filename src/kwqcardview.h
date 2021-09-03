@@ -1,15 +1,7 @@
 /*
-    kwqcardview.h
-    -------------------
-    SPDX-FileCopyrightText: 2009-2011 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
+    SPDX-FileCopyrightText: 2009-2011 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #ifndef KWQCARDVIEW_H
 #define KWQCARDVIEW_H

@@ -1,6 +1,5 @@
-/* This file is part of KWordQuiz
+/*
     SPDX-FileCopyrightText: 2004, 2007, 2008 Peter Hedlund <peter.hedlund@kdemail.net>
-
     SPDX-License-Identifier: LGPL-2.0-only
 */
 

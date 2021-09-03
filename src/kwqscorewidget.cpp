@@ -1,17 +1,7 @@
 /*
-    kwqscorewidget.cpp
-    -------------------
-
-    SPDX-FileCopyrightText: 2009-2010 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
-
+    SPDX-FileCopyrightText: 2009-2010 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #include "kwqscorewidget.h"
 

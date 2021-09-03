@@ -1,16 +1,7 @@
 /*
-    kwordquizprefs.h  -  description
-    -------------------
-    begin                : Sun Aug 18 2002
-    SPDX-FileCopyrightText: 2002-2008 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
+    SPDX-FileCopyrightText: 2002-2008 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #ifndef KWORDQUIZPREFS_H
 #define KWORDQUIZPREFS_H

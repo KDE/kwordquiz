@@ -1,16 +1,7 @@
 /*
-    kwqcommands.cpp
-    -------------------
-    begin          : Fri Jan 18 10:37:00 PST 2008
     SPDX-FileCopyrightText: 2002-2010 Peter Hedlund <peter.hedlund@kdemail.net>
-
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #include "kwqcommands.h"
 

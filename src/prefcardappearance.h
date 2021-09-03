@@ -1,16 +1,7 @@
 /*
-    prefcardappearance.h
-    -------------------
-
-    SPDX-FileCopyrightText: 2004-2007 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
+    SPDX-FileCopyrightText: 2004-2007 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #ifndef PREFCARDAPPEARANCE_H
 #define PREFCARDAPPEARANCE_H

@@ -1,18 +1,7 @@
 /*
-    kwqtablemodel.cpp
-    -------------------
-
-    begin                : Mon Feb 27 18:27:30 PST 2006
-    SPDX-FileCopyrightText: 2006-2010 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
-
+    SPDX-FileCopyrightText: 2006-2010 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #include "kwqtablemodel.h"
 

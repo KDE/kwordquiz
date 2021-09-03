@@ -1,17 +1,7 @@
 /*
-    kwqtutorflashcard.h
-    -------------------
-
-    SPDX-FileCopyrightText: 2010 Peter Hedlund
-    email                : peter.hedlund@kdemail.net
-
+    SPDX-FileCopyrightText: 2010 Peter Hedlund <peter.hedlund@kdemail.net>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #ifndef KWQTUTORFLASHCARD_H
 #define KWQTUTORFLASHCARD_H
