@@ -98,6 +98,7 @@
     <p xml:lang="tr">KWordQuiz genel amaçlı bir fiş çalıştırma programıdır. Kelime öğrenmek veya başka bir çok konu için kullanılabilir. Bir düzenleyici ve beş farklı fiş sınav kipi içerir. KVTML dosya biçimini kullanır ve katkı verilmiş dosyalar uygulama içinden indirilebilir.</p>
     <p xml:lang="uk">KWordQuiz — програма для навчання за допомогою карток загального призначення. Нею можна скористатися для поповнення словникового запасу іноземною мовою або вивчення інших дисциплін. У програмі передбачено редактор та п’ять різних режимів навчання за допомогою карток. Для даних використовується формат файлів KVTML, файли даних, створені іншими користувачами, можна отримати безпосередньо за допомогою програми.</p>
     <p xml:lang="x-test">xxKWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.xx</p>
+    <p xml:lang="zh-CN">KWordQuiz 是一款通用题卡程序，它可用于词汇学习及其他许多问题上，并能提供编辑器及五个不同的题卡测验模式。本程序使用了 KVTML 格式的文件，程序内还可直接下载他人贡献的文件。</p>
     <p xml:lang="zh-TW">KWordQuiz 是一套閃卡記憶訓練程式。它可以用於字彙學習，還有許多其它的用途。它提供了一個編輯器與五種不同的閃卡模式。它使用 KVTML 檔案格式，並且可以下載其他人所製作的閃卡檔。</p>
   </description>
   <url type="homepage">https://edu.kde.org/kwordquiz/</url>
