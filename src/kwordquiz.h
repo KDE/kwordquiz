@@ -13,6 +13,7 @@
 
 #include <KDirWatch>
 #include <KXmlGuiWindow>
+#include <KNSWidgets/Action>
 
 #include "filterproxysearchline.h"
 #include "kwqquizmodel.h"
@@ -129,7 +130,7 @@ class KWordQuizApp : public KXmlGuiWindow
     /** opens a file from the recent files menu */
     void slotFileOpenRecent(const QUrl &url);
     /** download vocabularies from the Internet */
-    void slotFileGHNS();
+    void slotFileGHNS(const KNS3::Entry::List &changedEntries);
     /** save a document */
     void slotFileSave();
     /** save a document by a new filename*/

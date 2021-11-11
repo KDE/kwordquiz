@@ -27,7 +27,6 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KNS3/QtQuickDialogWrapper>
 #include <KNotifyConfigWidget>
 #include <KPageWidget>
 #include <KProcess>
@@ -110,8 +109,8 @@ void KWordQuizApp::initActions()
 
   fileOpenRecent = KStandardAction::openRecent(this, SLOT(slotFileOpenRecent(QUrl)), actionCollection());
 
-  fileGHNS = new QAction(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")), i18n("Download New Vocabularies..."), this);
-  connect(fileGHNS, &QAction::triggered, this, &KWordQuizApp::slotFileGHNS);
+  KNSWidgets::Action *fileGHNS = new KNSWidgets::Action(i18n("Download New Vocabularies..."), QStringLiteral("kwordquiz.knsrc"), this);
+  connect(fileGHNS, &KNSWidgets::Action::dialogFinished, this, &KWordQuizApp::slotFileGHNS);
   actionCollection()->addAction(QStringLiteral("file_ghns"), fileGHNS);
   actionCollection()->setDefaultShortcut(fileGHNS, QKeySequence(Qt::CTRL | Qt::Key_G));
   fileGHNS->setWhatsThis(i18n("Downloads new vocabularies"));
@@ -809,10 +808,8 @@ void KWordQuizApp::slotFileOpenRecent(const QUrl &url)
 }
 
 
-void KWordQuizApp::slotFileGHNS()
+void KWordQuizApp::slotFileGHNS(const QList<KNS3::Entry> &entries)
 {
-  KNS3::QtQuickDialogWrapper dialog(QStringLiteral("kwordquiz.knsrc"));
-  const QList<KNSCore::EntryInternal> entries = dialog.exec();
   QMimeDatabase db;
 
   // list of changed entries

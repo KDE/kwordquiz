@@ -110,7 +110,7 @@ target_link_libraries(kwordquiz
     KF5::ConfigCore
     KF5::I18n
     KF5::ItemViews
-    KF5::NewStuff
+    KF5::NewStuffWidgets
     KF5::Notifications
     KF5::NotifyConfig
     KF5::XmlGui
