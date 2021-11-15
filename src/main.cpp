@@ -17,7 +17,6 @@
 #include "kwordquiz.h"
 #include "kwordquiz_version.h"
 
-static const char *description = I18N_NOOP("A powerful flashcard and vocabulary learning program");
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
@@ -33,7 +32,7 @@ int main(int argc, char *argv[])
     KAboutData aboutData(QStringLiteral("kwordquiz"),
                          i18n("KWordQuiz"),
                          KWORDQUIZ_VERSION_STRING,
-                         i18n(description),
+                         i18n("A powerful flashcard and vocabulary learning program"),
                          KAboutLicense::GPL_V2,
                          i18n("(c) 2003-2010, Peter Hedlund"),
                          QString(),
