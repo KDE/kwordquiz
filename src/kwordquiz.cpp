@@ -871,6 +871,16 @@ void KWordQuizApp::slotFileSaveAs()
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
 }
 
+static QString extractSuffixFromQtPattern(const QString &qtPattern)
+{
+  static const QRegularExpression regexp(".*\\((.*)\\)");
+  const QRegularExpressionMatch match = regexp.match(qtPattern);
+  if (!match.hasMatch()) {
+    qWarning() << "extractSuffixesFromQtPattern regexp match failed" << qtPattern;
+    return { ".report_bug_please" };
+  }
+  return match.captured(1);
+}
 
 bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
 {
@@ -887,15 +897,16 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
   if (fd->exec() == QDialog::Accepted) {
     QUrl url = fd->selectedUrls().at(0);
     if (!url.isEmpty()) {
-      QString chosenFilter = fd->selectedNameFilter();
+      const QString chosenQtFilter = fd->selectedNameFilter();
+      const QString chosenFilter = extractSuffixFromQtPattern(chosenQtFilter);
       if (!url.fileName().contains('.')) {
-        qDebug() << "Selected name filter is " << chosenFilter;
+        qDebug() << "Selected name filter is " << chosenQtFilter << chosenFilter;
         if (chosenFilter == QLatin1String("*.csv"))
-          url = QUrl(url.path().append(".csv"));
+          url.setPath(url.path().append(".csv"));
         else if (chosenFilter == QLatin1String("*.kvtml"))
-          url = QUrl(url.path().append(".kvtml"));
+          url.setPath(url.path().append(".kvtml"));
         else if (chosenFilter == QLatin1String("*.html"))
-          url = QUrl(url.path().append(".html"));
+          url.setPath(url.path().append(".html"));
       }
 
       if (chosenFilter == QLatin1String("*.html")) {
