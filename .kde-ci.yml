@@ -17,3 +17,4 @@ Dependencies:
     'frameworks/knotifications': '@stable'
     'frameworks/kwindowsystem': '@stable'
     'frameworks/kxmlgui': '@stable'
+    'kdeedu/libkeduvocdocument': '@same'
