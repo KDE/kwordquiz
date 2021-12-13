@@ -46,6 +46,10 @@ int main(int argc, char *argv[])
 
     KCrash::initialize();
 
+#ifdef Q_OS_WIN
+    QApplication::setStyle(QStringLiteral("breeze"));
+#endif
+
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
 
