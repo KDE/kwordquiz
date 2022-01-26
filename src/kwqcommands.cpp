@@ -28,9 +28,9 @@ void copyToClipboard(QTableView * view)
     {
       QVariant v =  view->model()->data(view->model()->index(r, c, QModelIndex()), Qt::DisplayRole);
       s.append(v.toString());
-      s.append('\t');
+      s.append(QLatin1Char('\t'));
     }
-    s.append('\n');
+    s.append(QLatin1Char('\n'));
   }
   QApplication::clipboard()->setText(s.trimmed());
 }
@@ -138,12 +138,7 @@ void KWQCommandPaste::redo()
   int br = bottomRight.row();
 
   QString s = QApplication::clipboard()->text();
-  QStringList sl;
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-  sl = s.split('\n', QString::SkipEmptyParts);
-#else
-  sl = s.split('\n', Qt::SkipEmptyParts);
-#endif
+  QStringList sl = s.split('\n', Qt::SkipEmptyParts);
   if (sl.isEmpty())
     return;
   QStringList sr;
@@ -159,13 +154,13 @@ void KWQCommandPaste::redo()
     br = tr + sl.count() - 1;
 
     if (lc == 0) //left col?
-      if (sl[0].indexOf('\t') > -1)
+      if (sl[0].indexOf(QLatin1Char('\t')) > -1)
         rc = 1; //expand to second column;
 
     while (i < sl.count() && br <= view()->model()->rowCount(QModelIndex())) {
       ac = lc;
 
-      sr = sl.at(i).split('\t');
+      sr = sl.at(i).split(QLatin1Char('\t'));
       int c = 0;
       while (ac <= rc) {
         IndexAndData id;
@@ -187,7 +182,7 @@ void KWQCommandPaste::redo()
     while (i < sl.count() && ar <= br) {
       ac = lc;
 
-      sr = sl.at(i).split('\t');
+      sr = sl.at(i).split(QLatin1Char('\t'));
       int c = 0;
       while (ac <= rc) {
         if (view()->selectionModel()->isSelected(view()->model()->index(ar, ac)))
@@ -298,7 +293,7 @@ void KWQCommandDelete::undo()
 
   view()->model()->insertRows(topLeft.row(), bottomRight.row() - topLeft.row() + 1, QModelIndex());
 
-  foreach (const IndexAndData &id, m_deleteIndexAndData)
+  for (const IndexAndData &id : qAsConst(m_deleteIndexAndData))
     view()->model()->setData(id.index, id.data, Qt::EditRole);
 
   view()->selectionModel()->clear();

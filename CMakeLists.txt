@@ -15,10 +15,9 @@ if(NOT MSVC)
 endif(NOT MSVC)
 
 include(FeatureSummary)
-find_package(Qt5 CONFIG REQUIRED Core Widgets PrintSupport)
-
-find_package(ECM 5.83.0 NO_MODULE REQUIRED)
+find_package(ECM 5.82.0 NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
+
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -28,6 +27,7 @@ include(ECMAddAppIcon)
 include(ECMSetupVersion)
 
 
+find_package(Qt5 CONFIG REQUIRED Core Widgets PrintSupport)
 find_package(KF5 REQUIRED COMPONENTS
     I18n
     Crash
@@ -43,6 +43,7 @@ find_package(KF5 REQUIRED COMPONENTS
     XmlGui
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
+set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 
 find_package(Phonon4Qt5 4.6.60 NO_MODULE REQUIRED)
 

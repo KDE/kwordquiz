@@ -27,12 +27,7 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <knewstuff_version.h>
-#if KNEWSTUFF_VERSION < QT_VERSION_CHECK(5, 78, 0)
-#include <KNS3/DownloadDialog>
-#else
 #include <KNS3/QtQuickDialogWrapper>
-#endif
 #include <KNotifyConfigWidget>
 #include <KPageWidget>
 #include <KProcess>
@@ -513,7 +508,7 @@ void KWordQuizApp::initView()
   m_tableView->setFilterModel(m_sortFilterModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
   m_tableView->setColumnWidth(1, qvariant_cast<QSize>(m_tableModel->headerData(1, Qt::Horizontal, Qt::SizeHintRole)).width());
-  setWindowTitle(m_doc->url().fileName() + "[*]");
+  setWindowTitle(m_doc->url().fileName() + QStringLiteral("[*]"));
   setWindowModified(false);
   m_tableView->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(m_tableView, &QWidget::customContextMenuRequested, this, &KWordQuizApp::slotTableContextMenuRequested);
@@ -551,7 +546,7 @@ void KWordQuizApp::initView()
 
   const QList<QObject*> listOfChildren = m_pageWidget->children();
 
-  foreach (QObject *object, listOfChildren) {
+  for (QObject *object : listOfChildren) {
     if(!object->isWidgetType())
       continue;
 
@@ -617,7 +612,7 @@ void KWordQuizApp::openDocumentFile(const QUrl &url)
       m_tableModel->endResetModel();
 
       m_dirWatch->addFile(url.path());
-      setWindowTitle(m_doc->url().fileName() + "[*]");
+      setWindowTitle(m_doc->url().fileName() + QStringLiteral("[*]"));
       setWindowModified(false);
       fileOpenRecent->addUrl(url);
       slotModeActionGroupTriggered(m_modeActionGroup->checkedAction());
@@ -691,7 +686,7 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
         QUrl _url(QUrl::fromLocalFile(tmpfile.fileName()));
         m_doc->open(_url);
         m_doc->setModified();
-        setWindowTitle(_url.fileName() + "[*]");
+        setWindowTitle(_url.fileName() + QStringLiteral("[*]"));
         setWindowModified(true);
     }
   }
@@ -700,7 +695,7 @@ void KWordQuizApp::readProperties(const KConfigGroup &_cfg)
     if(!filename.isEmpty())
     {
       m_doc->open(url);
-      setWindowTitle(url.fileName() + "[*]");
+      setWindowTitle(url.fileName() + QStringLiteral("[*]"));
       setWindowModified(false);
     }
   }
@@ -816,21 +811,15 @@ void KWordQuizApp::slotFileOpenRecent(const QUrl &url)
 
 void KWordQuizApp::slotFileGHNS()
 {
-#if KNEWSTUFF_VERSION < QT_VERSION_CHECK(5, 78, 0)
-  QPointer<KNS3::DownloadDialog> getHotNewStuffDialog = new KNS3::DownloadDialog(QStringLiteral("kwordquiz.knsrc"), this);
-  getHotNewStuffDialog->exec();
-  KNS3::Entry::List entries = getHotNewStuffDialog->changedEntries();
-#else
   KNS3::QtQuickDialogWrapper dialog(QStringLiteral("kwordquiz.knsrc"));
   const QList<KNSCore::EntryInternal> entries = dialog.exec();
-#endif
   QMimeDatabase db;
 
   // list of changed entries
-  foreach(const auto &entry, entries) {
+  for(const auto &entry : entries) {
     // check mime type and if kvtml, open it
-    foreach(const QString &file, entry.installedFiles()) {
-      QMimeType mimeType = db.mimeTypeForFile(file);
+    for (const QString &file : entry.installedFiles()) {
+      const QMimeType mimeType = db.mimeTypeForFile(file);
       if (mimeType.name() == QLatin1String("application/x-kvtml")) {
 	    KProcess::startDetached(QStringLiteral("kwordquiz"), QStringList() << file);
       }
@@ -865,7 +854,7 @@ void KWordQuizApp::slotFileSaveAs()
   bool success = saveDocAsFileName(m_doc);
   if (success) {
     m_undoStack->setClean(); //emits cleanChanged()
-    setWindowTitle(m_doc->url().fileName() + "[*]"); //if clean to begin with
+    setWindowTitle(m_doc->url().fileName() + QStringLiteral("[*]")); //if clean to begin with
     setWindowModified(m_doc->isModified());
   }
   slotStatusMsg(i18nc("@info:status ready", "Ready"));
@@ -877,7 +866,7 @@ static QString extractSuffixFromQtPattern(const QString &qtPattern)
   const QRegularExpressionMatch match = regexp.match(qtPattern);
   if (!match.hasMatch()) {
     qWarning() << "extractSuffixesFromQtPattern regexp match failed" << qtPattern;
-    return { ".report_bug_please" };
+    return { QStringLiteral(".report_bug_please") };
   }
   return match.captured(1);
 }
@@ -899,14 +888,14 @@ bool KWordQuizApp::saveDocAsFileName(KEduVocDocument *document)
     if (!url.isEmpty()) {
       const QString chosenQtFilter = fd->selectedNameFilter();
       const QString chosenFilter = extractSuffixFromQtPattern(chosenQtFilter);
-      if (!url.fileName().contains('.')) {
+      if (!url.fileName().contains(QLatin1Char('.'))) {
         qDebug() << "Selected name filter is " << chosenQtFilter << chosenFilter;
         if (chosenFilter == QLatin1String("*.csv"))
-          url.setPath(url.path().append(".csv"));
+          url.setPath(url.path().append(QStringLiteral(".csv")));
         else if (chosenFilter == QLatin1String("*.kvtml"))
-          url.setPath(url.path().append(".kvtml"));
+          url.setPath(url.path().append(QStringLiteral(".kvtml")));
         else if (chosenFilter == QLatin1String("*.html"))
-          url.setPath(url.path().append(".html"));
+          url.setPath(url.path().append(QStringLiteral(".html")));
       }
 
       if (chosenFilter == QLatin1String("*.html")) {
@@ -1301,7 +1290,7 @@ void KWordQuizApp::slotApplyPreferences()
 void KWordQuizApp::updateSpecialCharIcons()
 {
   for (int i = 0; i < 9; i++){
-    QAction * a = actionCollection()->action(QString("char_" + QString::number(i + 1)));
+    QAction * a = actionCollection()->action(QStringLiteral("char_%1").arg(QString::number(i + 1)));
     a->setIcon(charIcon(Prefs::specialCharacters()[i]));
     a->setIconText(i18n("Insert %1", Prefs::specialCharacters()[i]));
     a->setWhatsThis(i18n("Inserts the character %1", Prefs::specialCharacters()[i]));
@@ -1378,7 +1367,7 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
   m_modeActionGroup->actions()[4]->setText(i18n("&5 %1 <-> %2 Randomly", s1, s2));
 
   Prefs::setMode(act->data().toInt());
-  m_modeActionMenu->setIcon(QIcon::fromTheme("mode" + QString::number(Prefs::mode())));
+  m_modeActionMenu->setIcon(QIcon::fromTheme(QStringLiteral("mode") + QString::number(Prefs::mode())));
 
   switch (Prefs::mode()){
   case 1:
@@ -1508,7 +1497,8 @@ void KWordQuizApp::slotCreateErrorListDocument()
     errorDoc->appendIdentifier();
     errorDoc->identifier(1).setName(m_tableModel->headerData(1, Qt::Horizontal, Qt::DisplayRole).toString());
 
-    foreach (int item, m_quiz->errorList()) {
+    const auto errors{m_quiz->errorList()};
+    for (int item : errors) {
       KEduVocExpression *errorExpr = new KEduVocExpression();
       errorDoc->lesson()->appendEntry(errorExpr);
       errorExpr->setTranslation(0, m_quiz->data(m_quiz->index(item, 0), Qt::DisplayRole).toString());
@@ -1533,11 +1523,11 @@ void KWordQuizApp::slotTableContextMenuRequested(const QPoint & pos)
     QDBusInterface kxbk(QStringLiteral("org.kde.keyboard"), QStringLiteral("/Layouts"), QStringLiteral("org.kde.KeyboardLayouts"));
     QDBusReply<QStringList> reply = kxbk.call(QStringLiteral("getLayoutsList"));
     if (reply.isValid()) {
-        QStringList layouts = reply;
+        const QStringList layouts = reply;
         //layouts.prepend(QString());
         QMenu *m = vocabLayouts->menu();
         m->clear();
-        foreach (const QString &s, layouts) {
+        for (const QString &s : layouts) {
             a = m->addAction(s);
             a->setData(s);
             a->setCheckable(true);
