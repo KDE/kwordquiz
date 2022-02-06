@@ -15,7 +15,9 @@ if(NOT MSVC)
 endif(NOT MSVC)
 
 include(FeatureSummary)
-find_package(ECM 5.82.0 NO_MODULE REQUIRED)
+set(KF5_MIN_VERSION "5.84.0")
+set(REQUIRED_QT_VERSION "5.15.0")
+find_package(ECM ${KF5_MIN_VERSION} NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
 
@@ -27,8 +29,8 @@ include(ECMAddAppIcon)
 include(ECMSetupVersion)
 
 
-find_package(Qt5 CONFIG REQUIRED Core Widgets PrintSupport)
-find_package(KF5 REQUIRED COMPONENTS
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Widgets PrintSupport)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     Crash
     Config
