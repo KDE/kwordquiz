@@ -80,7 +80,12 @@ KWQTutor::KWQTutor(const QUrl &fileToOpen, QWidget *parent) : KStatusNotifierIte
   setContextMenu(menu);
 
   if (Prefs::startExerciseAsSoonAsFileIsLoaded() && !fileToOpen.isEmpty()) //starting immediately?
-    startStopPressed();
+      startStopPressed();
+}
+
+KWQTutor::~KWQTutor()
+{
+    delete m_randomSequence;
 }
 
 void KWQTutor::updateTimer()
