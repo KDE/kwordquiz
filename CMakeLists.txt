@@ -30,7 +30,7 @@ include(ECMAddAppIcon)
 include(ECMSetupVersion)
 
 
-find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Widgets PrintSupport)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Widgets PrintSupport)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     Crash
@@ -48,7 +48,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 
-find_package(Phonon4Qt5 4.6.60 NO_MODULE REQUIRED)
+find_package(Phonon4Qt${QT_MAJOR_VERSION} 4.6.60 NO_MODULE REQUIRED)
 
 find_package(LibKEduVocDocument REQUIRED)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)

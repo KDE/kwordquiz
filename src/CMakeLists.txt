@@ -117,7 +117,7 @@ target_link_libraries(kwordquiz
     KF5::GuiAddons
     KF5::WindowSystem
     LibKEduVocDocumentImport__KEduVocDocument
-    Phonon::phonon4qt5
+    Phonon::phonon4qt${QT_MAJOR_VERSION}
 )
 
 install(TARGETS kwordquiz  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
