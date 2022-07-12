@@ -6,6 +6,7 @@
 #include "multipleview.h"
 
 #include <QButtonGroup>
+#include <QActionGroup>
 
 #include <KLocalizedString>
 #include <KNotification>
