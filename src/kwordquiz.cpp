@@ -633,6 +633,9 @@ void KWordQuizApp::openDocumentFile(const QUrl &url)
     }
     else {
       KMessageBox::error(this, KEduVocDocument::errorDescription(result));
+      while (m_doc->identifierCount() < 2) { //if we opened a TAB-less CSV, there
+        m_doc->appendIdentifier(); //may be 0 or 1 identifiers, we need at least 2
+      }
       m_tableModel->endResetModel();
     }
   }

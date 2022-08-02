@@ -231,10 +231,10 @@ class KWordQuizApp : public KXmlGuiWindow
     MultipleView *m_multipleView;
     QAView *m_qaView;
 
-    KPageWidgetItem *m_editorPage;
-    KPageWidgetItem *m_flashPage;
-    KPageWidgetItem *m_multiplePage;
-    KPageWidgetItem *m_qaPage;
+    KPageWidgetItem *m_editorPage = nullptr;
+    KPageWidgetItem *m_flashPage = nullptr;
+    KPageWidgetItem *m_multiplePage = nullptr;
+    KPageWidgetItem *m_qaPage = nullptr;
 
     KWordQuizPrefs *m_prefDialog;
 
