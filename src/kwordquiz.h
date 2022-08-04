@@ -17,13 +17,13 @@
 
 #include "filterproxysearchline.h"
 #include "kwqquizmodel.h"
+#include "keduvocdocument.h"
 
 class KActionMenu;
 class KRecentFilesAction;
 class KPageWidget;
 class KPageWidgetItem;
 class FilterProxySearchLine;
-class KEduVocDocument;
 class KWQTableModel;
 class KWQSortFilterModel;
 class KWQTableView;
@@ -61,7 +61,7 @@ class KWordQuizApp : public KXmlGuiWindow
      * opens a file specified by commandline option
      * @param url the URL to be opened
      */
-    void openDocumentFile(const QUrl &url=QUrl());
+    void openDocumentFile(const QUrl &url=QUrl(), KEduVocDocument::FileHandlingFlags flags = KEduVocDocument::FileDefaultHandling);
 
     /**
      * returns a pointer to the current document connected to the KXmlGuiWindow instance

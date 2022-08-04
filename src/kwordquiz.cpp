@@ -36,7 +36,6 @@
 #include <KWindowSystem>
 #include <KXMLGUIFactory>
 
-#include "keduvocdocument.h"
 #include "keduvoclesson.h"
 #include "keduvocexpression.h"
 #include "kwqtablemodel.h"
@@ -598,12 +597,12 @@ void KWordQuizApp::openUrl(const QUrl &url)
   }
 }
 
-void KWordQuizApp::openDocumentFile(const QUrl &url)
+void KWordQuizApp::openDocumentFile(const QUrl &url, KEduVocDocument::FileHandlingFlags flags)
 {
   slotStatusMsg(i18n("Opening file..."));
   if (!url.isEmpty()) {
     m_tableModel->beginResetModel();
-    int result = m_doc->open(url);
+    int result = m_doc->open(url, flags);
     if (result == KEduVocDocument::NoError) {
       while (m_doc->identifierCount() < 2) { //if we opened a TAB-less CSV, there
         m_doc->appendIdentifier(); //may be 0 or 1 identifiers, we need at least 2
@@ -632,7 +631,14 @@ void KWordQuizApp::openDocumentFile(const QUrl &url)
       }
     }
     else {
-      KMessageBox::error(this, KEduVocDocument::errorDescription(result));
+      if (result == KEduVocDocument::FileLocked) {
+        const KMessageBox::ButtonCode userAnswer = KMessageBox::questionYesNo(this, i18nc("%1 is an error message", "%1\nIf you are sure no other program is using the file you can choose to ignore the lock and open the file anyway.\nDo you want to open the file?", KEduVocDocument::errorDescription(result)));
+        if (userAnswer == KMessageBox::Yes) {
+          return openDocumentFile(url, KEduVocDocument::FileIgnoreLock);
+        }
+      } else {
+        KMessageBox::error(this, KEduVocDocument::errorDescription(result));
+      }
       while (m_doc->identifierCount() < 2) { //if we opened a TAB-less CSV, there
         m_doc->appendIdentifier(); //may be 0 or 1 identifiers, we need at least 2
       }
