@@ -27,7 +27,6 @@ int main(int argc, char *argv[])
     QApplication::setApplicationName(QStringLiteral("kwordquiz"));
     QApplication::setApplicationVersion(KWORDQUIZ_VERSION_STRING);
     QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
-    QApplication::setApplicationDisplayName(i18n("kwordquiz"));
 
     KAboutData aboutData(QStringLiteral("kwordquiz"),
                          i18n("KWordQuiz"),
