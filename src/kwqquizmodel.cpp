@@ -147,20 +147,12 @@ bool KWQQuizModel::checkAnswer(const QString & a)
         if (!m_correctBlank.isEmpty()) {
             QStringList la, ls;
             if (ans.indexOf(';') > 0)
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-                ls = ans.split(';', QString::SkipEmptyParts);
-#else
                 ls = ans.split(';', Qt::SkipEmptyParts);
-#endif
             else
                 ls.append(ans);
 
             if (m_correctBlank.indexOf(';') > 0)
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-                la = m_correctBlank.split(';', QString::SkipEmptyParts);
-#else
                 la = m_correctBlank.split(';', Qt::SkipEmptyParts);
-#endif
             else
                 la.append(m_correctBlank);
 

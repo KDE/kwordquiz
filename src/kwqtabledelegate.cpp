@@ -61,13 +61,8 @@ void KWQTableDelegate::drawDecoration(QPainter* painter, const QStyleOptionViewI
   if (option.state & QStyle::State_Selected) {
     painter->fillRect(rect, option.palette.brush(cg, option.state & QStyle::State_HasFocus ?
           QPalette::Base : QPalette::Highlight));
-#if QT_VERSION >= QT_VERSION_CHECK(5, 13, 0)
     const QPixmap pm = selectedPixmap(pixmap, option.palette, option.state & QStyle::State_Enabled);
     painter->drawPixmap(p, pm);
-#else
-    QPixmap *pm = selected(pixmap, option.palette, option.state & QStyle::State_Enabled);
-    painter->drawPixmap(p, *pm);
-#endif
   } else {
     painter->drawPixmap(p, pixmap);
   }
