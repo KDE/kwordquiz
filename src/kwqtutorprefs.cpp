@@ -7,7 +7,6 @@
 
 #include <QPushButton>
 
-#include <KConfigGroup>
 #include <KConfigSkeleton>
 #include <KLocalizedString>
 

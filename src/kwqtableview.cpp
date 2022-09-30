@@ -20,12 +20,10 @@
 #include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QTextCursor>
-#include <QTextLayout>
 #include <QTextTable>
 
 #include <KLocalizedString>
 #include <KNotification>
-#include <KConfigGroup>
 
 #include "kwqtablemodel.h"
 #include "keduvocdocument.h"

@@ -11,7 +11,6 @@
 #include <QPointer>
 #include <QTimer>
 
-#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KStandardAction>

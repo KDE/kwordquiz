@@ -11,7 +11,6 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-#include <KConfigGroup>
 #include <KLocalizedString>
 
 #include "kwqtablemodel.h"

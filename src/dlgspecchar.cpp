@@ -10,7 +10,6 @@
 #include <QVBoxLayout>
 
 #include <KCharSelect>
-#include <KConfigGroup>
 #include <KLocalizedString>
 
 DlgSpecChar::DlgSpecChar(QWidget *parent, const QFont &font, const QChar &chr) : QDialog(parent)

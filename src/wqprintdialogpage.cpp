@@ -6,12 +6,10 @@
 
 #include "wqprintdialogpage.h"
 
-#include <QDialog>
 #include <QGridLayout>
 #include <QRadioButton>
 #include <QSpacerItem>
 
-#include <KConfigGroup>
 #include <KLocalizedString>
 
 WQPrintDialogPage::WQPrintDialogPage(QWidget *parent) : QWidget(parent)

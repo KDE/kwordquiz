@@ -5,7 +5,6 @@
 
 #include "kwqquizview.h"
 
-#include <QAction>
 
 #include "kwqquizmodel.h"
 
