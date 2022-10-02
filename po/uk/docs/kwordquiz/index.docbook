@@ -1,0 +1,2096 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Ukrainian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>Підручник з &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>30 січня 2021 року</date>
+<releaseinfo
+>Програми 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; — програма для навчання і поповнення словника за допомогою карток, розроблена &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>картка</keyword>
+<keyword
+>словник</keyword>
+<keyword
+>мова</keyword>
+<keyword
+>освіта</keyword>
+<keyword
+>школа</keyword>
+<keyword
+>коледж</keyword>
+<keyword
+>університет</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Вступ</title>
+<para
+>&kwordquiz; — потужний інструмент роботи з вивчення словників. Словник може бути словником іноземної мови або будь-яким списком слів, пов’язаним з термінологією. </para>
+<sect1 id="easy-to-use">
+<title
+>Простота використання</title>
+
+<para
+>За допомогою &kwordquiz; ви зможете створювати власні документи списків слів у простий і зрозумілий спосіб. Базовою формою є аркуш з двома стовпчиками, у одному з яких ви вводите відому вам частину запису списку слів, а у іншому — частину, яку ви бажаєте вивчити. Ви можете змінювати заголовки стовпчиків так, щоб вони відображали суть того, що ви вивчаєте. </para>
+
+<sect2 id="practice-modes">
+<title
+>Режими роботи</title>
+
+<para
+>Перш ніж почати виконання тесту, вам слід вибрати спосіб, у який ви виконуватимете тренування. &kwordquiz; пропонує вам вибір з п’яти різних режимів з метою зробити тренування якомога ефективнішим. Ці режими роблять можливим виконання тесту за всім списком слів у послідовному або випадковому порядку, у одному або двох напрямках. </para>
+</sect2>
+
+<sect2 id="quiz-types">
+<title
+>Типи тестів</title>
+
+<para
+>Після того, як ви ввели свій список слів і вибрали режим, можна починати тест. Можливо вам захочеться почати сеанс вправ з картками, потім ви можете перейти до вправи з варіантами відповідей або до тесту з питаннями та відповідями. Ви миттєво отримуватимете інформацію щодо правильності або неправильності відповідей і зможете повторити всі тести, у яких припустилися помилок, покращуючи знання списку слів. Якщо вам знадобиться невеличка допомога, ви можете скористатися функцією підказки. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Документи списків слів</title>
+<para
+>Програма &kwordquiz; здатна відкривати декілька типів файлів з даними списків слів. Типовим форматом файлів є <filename class="extension"
+>.kvtml</filename
+>, формат файлів, який використовують і деякі інші програми &kde;. &kwordquiz; також може відкривати файли <filename class="extension"
+>.wql</filename
+>, створені програмою &kwordquiz; для &Windows;, файли <filename class="extension"
+>.csv</filename
+> з текстом, розділеним комами, <ulink url="http://www.vokabeln.de/v1/download.htm"
+>файли <filename class="extension"
+>.voc</filename
+></ulink
+>, створені старою версією програми Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+>файли <filename class="extension"
+>.xdxf</filename
+></ulink
+> і файли <filename class="extension"
+>.xml.gz</filename
+>, створені застарілими версіями програми <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>Програма &kwordquiz; може зберігати документи списків слів у декількох різних форматах. Типовим є формат <filename class="extension"
+>.kvtml</filename
+>, який використовують і інші програми &kde;. Крім цього, можна зберігати дані у форматі тексту, розділеного комами — <filename class="extension"
+>.csv</filename
+>. </para>
+<para
+>Ви можете відкривати по декілька файлів одночасно і без проблем копіювати або пересувати записи між файлами. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Довідка щодо команд</title>
+
+<sect1 id="file_menu">
+<title
+>Меню «Файл»</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Створити</action
+> створює новий порожній документ списку слів </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Відкрити...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Відкрити</action
+> один або декілька існуючих документів списків слів. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Відкрити недавній</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Відкрити</action
+> нещодавно використаний документ списку слів. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Отримати нові списки слів...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Отримати</action
+> нові списки слів. Отримані списки слів зберігатимуться у каталозі <filename class="directory"
+>$XDG_DATA_HOME/kvtml</filename
+>. <envar
+>$XDG_DATA_HOME</envar
+> — зазвичай прихована тека у вашій домашній теці з назвою <filename class="directory"
+>.local</filename
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Зберегти</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Зберегти</action
+> поточний документ списку слів на диску. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Зберегти як...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Зберегти</action
+> поточний документ списку слів з новою назвою. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Друкувати...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Надрукувати</action
+> активний документ списку слів. Програма &kwordquiz; надає вам можливість змінити деякі з параметрів <link linkend="printing"
+>друку</link
+> ваших списків слів. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Перегляд друку</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Показати</action
+> попередній перегляд активного документа списку слів, надрукованого &kwordquiz;. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Закрити</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Закрити</action
+> активний документ списку слів. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Завершити роботу</action
+> &kwordquiz; </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title
+>Меню «Зміни»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вернути</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Скасувати</action
+> дію останньої команди. Назва цього пункту змінюватиметься відповідно до дії, яку буде скасовано. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Повторити</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Повторює</action
+> дію останньої команди. Назва цього пункту змінюватиметься відповідно до дії, яку буде повторено. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вирізати</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вирізати</action
+> поточний вибраний фрагмент і покласти його до буфера. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Копіювати</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Копіювати</action
+> поточний позначений фрагмент і покласти копію до буфера. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вставити</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вставити</action
+> вміст буфера до поточного вибраного фрагмента. Якщо вибрано лише одну комірку, &kwordquiz; за допомогою функції кмітливого вставляння обчислить потрібний для фрагмента з буфера простір і, за необхідності, додасть рядків до списку. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Очистити</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Очищує</action
+> поточний вибраний фрагмент. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вставити рядок</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вставити</action
+> новий рядок у поточний вибраний фрагмент. Якщо вибраний фрагмент складається з декількох рядків, буде вставлено кількість рядків, рівну кількості рядків у фрагменті. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вилучити рядок</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вилучити</action
+> вибраний рядок. Якщо вибраний фрагмент складається з декількох рядків, буде вилучено всі вибрані рядки. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Позначити як порожнє</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Дія <action
+>Позначити як порожнє</action
+> позначає вибраний текст (або слово, у якому знаходиться курсор) як порожній для тесту на <link linkend="fill-in-the-blank"
+>«заповнення порожніх місць»</link
+>, тобто цей текст буде забрано у дужки. Ця дія доступна, лише якщо увімкнено <link linkend="dlg-config-editor"
+>Заповнення порожніх місць</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Зняти позначення з порожніх</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Дія <action
+>Зняти позначення з порожніх</action
+> знімає позначки порожніх фрагментів, тобто вилучає дужки. Ця дія доступна, лише якщо увімкнено <link linkend="dlg-config-editor"
+>Заповнення порожніх місць</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+
+</variablelist>
+</sect1>
+
+<sect1 id="vocabulary-menu">
+<title
+>Меню «Слова»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Слова</guimenu
+> <guimenuitem
+>Параметри стовпчиків...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Визначити</action
+> заголовки, розкладки клавіатури та ширину двох стовпчиків списку слів. Відкриває <link linkend="dlg-languages"
+>діалогове вікно</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Слова</guimenu
+> <guimenuitem
+>Шрифт...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Змінити</action
+> шрифт, що використовується для показу списку слів. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Слова</guimenu
+> <guimenuitem
+>Пов’язати зображення...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вказати</action
+> зображення, яке має бути пов’язано з поточним записом. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Слова</guimenu
+> <guimenuitem
+>Пов’язати звук...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вказати</action
+> звук, який має бути пов’язано з поточним записом. </para>
+    </listitem>
+  </varlistentry>
+
+ <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Слова</guimenu
+> <guimenuitem
+>Скоригувати висоту рядків</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Коригувати</action
+> висоту рядків у відповідності з їх вмістом. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Слова</guimenu
+> <guimenuitem
+>Перемішати</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Перемішати</action
+> записи списку слів випадковим чином. Порядок записів у самому списку слів змінено не буде. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title
+>Меню «Режим»</title>
+<para
+>У цьому меню міститься список п’ятьох різних режимів тестування.</para>
+
+  <note
+><para
+>Назви пунктів меню змінюватимуться відповідно до заголовків стовпчиків поточного документа списку слів. Режим слід вибрати до початку тесту. Вибраний режим стосуватиметься тестів з картками, варіантами вибору, і питаннями і відповідями.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Режим</guimenu
+> <guimenuitem
+>1 Стовпчик 1 -&gt; Стовпчик 2 за порядком</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Під час тесту вам буде показано записи зі Стовпчика 1. Ви повинні будете вказати відповідні їм записи зі Стовпчика 2. Тестування проводитиметься за порядком записів у документі списку слів. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Режим</guimenu
+> <guimenuitem
+>2 Стовпчик 2 -&gt; Стовпчик 1 за порядком</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Під час тесту вам буде показано записи зі Стовпчика 2. Ви повинні будете вказати відповідні їм записи зі Стовпчика 1. Тестування проводитиметься за порядком записів у документі списку слів. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Режим</guimenu
+> <guimenuitem
+>3 Стовпчик 1 -&gt; Стовпчик 2 випадково</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Під час тесту вам буде показано записи зі Стовпчика 1. Ви повинні будете вказати відповідні їм записи зі Стовпчика 2. Тестування проводитиметься у випадковому порядку, але питання щодо окремого запису буде задано лише один раз. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Режим</guimenu
+> <guimenuitem
+>4 Стовпчик 2 -&gt; Стовпчик 1 випадково</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Під час тесту вам буде показано записи зі Стовпчика 2. Ви повинні будете вказати відповідні їм записи зі Стовпчика 1. Тестування проводитиметься у випадковому порядку, але питання щодо окремого запису буде задано лише один раз. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Режим</guimenu
+> <guimenuitem
+>5 Стовпчик 1 &lt;-&gt; Стовпчик 2 випадково</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Під час тесту вам буде показано записи зі Стовпчика 1 або зі Стовпчика 2. Ви повинні будете вказати відповідні їм записи з іншого зі стовпчиків. Тестування проводитиметься у випадковому порядку, як за стовпчиком, так і за записом, але питання щодо окремого запису буде задано лише один раз. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title
+>Меню «Тест»</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Return</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Тест</guimenu
+> <guimenuitem
+>Перевірити</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Перевірити</action
+>, чи правильною була відповідь </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Тест</guimenu
+> <guimenuitem
+>Я це знаю</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вважати</action
+> відповідь правильною під час сеансу з картками. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Тест</guimenu
+> <guimenuitem
+>Не знаю</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Вважати</action
+> відповідь помилковою під час тестування картками. Пізніше ви зможете повторити вправу з цими картками за допомогою пункту меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Повторити помилкові</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Тест</guimenu
+> <guimenuitem
+>Підказка</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Показати</action
+> наступну правильну літеру під час сеансу тестування з «Питання і відповідь». </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Тест</guimenu
+> <guimenuitem
+>Відтворити звук</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Відтворити</action
+> звук, пов’язаний з записом за допомогою пункту меню <menuchoice
+><guimenu
+>Слова</guimenu
+> <guimenuitem
+>Пов’язати звук</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Тест</guimenu
+> <guimenuitem
+>Перезапустити</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Перезапустити</action
+> сеанс тестування з початку. Всі результати буде повернуто у початковий стан. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Тест</guimenu
+> <guimenuitem
+>Повторити помилкові</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Повторити</action
+> всі питання, на які ви дали неправильну відповідь. Цей пункт стає доступним лише після того, як ви відповісте на всі питання хоча б один раз. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Тест</guimenu
+> <guimenuitem
+>Експортувати помилки як...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Експортувати</action
+> всі питання, на які ви дали неправильну відповідь, у новий документ списку слів. Цей пункт стає доступним лише після того, як ви відповісте на всі питання хоча б один раз. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings-help-menu">
+<title
+>Меню «Параметри» і «Довідка»</title
+> 
+<para
+>Окрім типових пунктів меню <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+>, описаних у розділах <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню «Параметри»</ulink
+> та <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню «Довідка»</ulink
+> підручника з основ роботи у &kde; у &kwordquiz; передбачено такий додатковий пункт: </para>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Показати пошук</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Перемикає</action
+> видимість смужки пошуку. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+</chapter>
+
+<chapter id="main-window">
+<title
+>Головне вікно</title>
+
+<para
+>У головному вікні програми ліворуч знаходиться панель навігації, з якої можна отримати доступ до головних компонентів програми. </para>
+<para
+><link linkend="editor"
+>Редактор</link
+> можна відкрити за допомогою натискання на клавішу <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Сеанс роботи з <link linkend="flashcard"
+>картками</link
+> можна розпочати натисканням на кнопку <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Тестування з <link linkend="multiple"
+>вибором з варіантів</link
+> можна розпочати натисканням клавіші <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Тестування <link linkend="question-and-answer"
+>«Питання і відповідь»</link
+> можна розпочати натисканням клавіші <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+
+<screenshot>
+  <screeninfo
+>Головне вікно</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Головне вікно</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>Редактор списків слів</title>
+
+<para
+>Область документа списку слів виглядає як таблиця з намальованою сіткою. Комірки таблиці зібрано у два стовпчики і певну кількість рядків. Кожен стовпчик і рядок мають заголовки. Заголовки стовпчиків використовують для позначення характеру документа списку слів. Їх можна встановити за допомогою пункту меню <menuchoice
+><guimenu
+>Слова</guimenu
+><guimenuitem
+>Параметри стовпчиків...</guimenuitem
+></menuchoice
+>. Заголовками рядків є їх послідовні номери. </para>
+<para
+>Заголовки стовпчиків можна також використовувати для впорядкування списків слів. Просто наведіть вказівник миші на заголовок стовпчика, за яким ви бажаєте впорядкувати список, і клацніть лівою кнопкою миші. </para>
+<para
+>Для того, щоб зробити комірку таблиці активною, наведіть на неї вказівник миші і клацніть лівою кнопкою. Вибрати декілька комірок для копіювання або редагування ви можете, якщо затиснете ліву кнопку миші і потягнете вказівник так, щоб область, яка утвориться покрила потрібні вам комірки. Щоб вибрати весь рядок, наведіть вказівник миші на його заголовок і клацніть лівою кнопкою миші. </para>
+
+<screenshot>
+  <screeninfo
+>Редактор списків слів</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Редактор списків слів</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Документ складається з пар записів у двох стовпчиках. Текст у активну комірку можна ввести, якщо ви просто почнете набирати текст на клавіатурі. Комірка перейде у режим редагування і ви зможете виділити весь або частину тексту. Розпочати зміну вмісту комірки безпосередньо у ній самій можна також, якщо навести на неї вказівник миші і виконати подвійне клацання лівою кнопкою миші, або натисканням клавіші <keycap
+>F2</keycap
+>. </para>
+<para
+>Після того, як ви завершили набирання запису, натисніть клавішу Enter — автоматично активується наступна комірка. Отже, набирати записи послідовно дуже просто. Налаштувати спосіб поведінки програми під час такого введення можна за допомогою пункту меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати &kwordquiz;...</guimenuitem
+></menuchoice
+>. Коли ви досягнете останнього рядка таблиці і натиснете Enter, автоматично з’явиться наступний рядок, отже, ви просто можете продовжувати введення записів. Під час створення нового вікна у таблиці буде 20 рядків, але насправді ніяких обмежень (окрім суто технічних) на кількість рядків у документах списків слів немає. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Сеанс роботи з картками</title>
+
+<para
+>Щоб розпочати сеанс роботи з картками на основі записів у активному документі списків слів, виберіть пункт «Картка» на панелі навігації. Буде використано режим, вибраний у меню <guimenu
+>Режим</guimenu
+>. Якщо ви зміните режим посеред сеансу, сеанс буде відновлено з початку. </para>
+
+<para
+>Якщо ви працюєте з досить довгими виразами, розмір вікна можна змінити, щоб у нього вмістилося більше інформації. Розмір шрифту також відіграє роль у тому, скільки інформації зможуть вмістити різні частини вікна. За допомогою пункту меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати &kwordquiz;...</guimenuitem
+></menuchoice
+> ви зможете налаштувати зовнішній вигляд карток. </para>
+
+<screenshot>
+  <screeninfo
+>Сеанс роботи з картками</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Сеанс роботи з картками</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Спочатку буде показано передню частину картки. Скористайтесь пунктом меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Перевірити</guimenuitem
+></menuchoice
+>, щоб побачити зворотний бік картки. </para>
+<para
+>Щоб перейти до наступної картки, ви можете або вибрати пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Я це знаю</guimenuitem
+></menuchoice
+>, щоб вважати, що ви дали правильну відповідь, або <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Не знаю</guimenuitem
+></menuchoice
+>, щоб вважати відповідь неправильною. </para>
+<para
+>Виберіть пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Повторити помилкові</guimenuitem
+></menuchoice
+>, щоб повторити перегляд карток, для яких ви не змогли визначити відповідь. </para>
+<para
+>Виберіть пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Перезапустити</guimenuitem
+></menuchoice
+>, щоб розпочати сеанс від початку. Якщо ви використовуєте режим з випадковим вибором карток, порядок карток повторено не буде. </para>
+<para
+>Розділ рахунку внизу вікна показує загальну кількість карток, кількість карток, які ви вже бачили, кількість карток, на які отримано правильну відповідь, і кількість карток, відповідь на які вважається неправильною. </para>
+
+<tip>
+<para
+>Доступ до всіх пунктів меню <guimenu
+>Тест</guimenu
+> можна також отримати за допомогою пенала «Тест», який типово знаходиться у вікні праворуч.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Тестування з вибором з варіантів</title>
+
+<para
+>Виберіть пункт «Вибір з варіантів» на панелі навігації, щоб розпочати тестування з вибором з варіантів за записами у поточному документі списку слів. Для тестування буде використано режим, вибраний у меню <guimenu
+>Режим</guimenu
+>. Якщо ви зміните режим посеред сеансу, сеанс буде відновлено з початку. </para>
+<para
+>Якщо ви працюєте з досить довгими виразами, розмір вікна можна змінити, щоб у нього вмістилося більше інформації. Розмір шрифту (вибраний для редактора) також відіграє роль у тому, скільки інформації зможуть вмістити різні частини вікна. </para>
+<para
+>У наведеному нижче прикладі користувач дав неправильну відповідь на попереднє питання. Зараз йому або їй запропоновано відповісти на наступне питання. </para>
+
+<screenshot>
+  <screeninfo
+>Тестування з вибором з варіантів</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Тестування з вибором з варіантів</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Запропоновані варіанти буде показано згори ліворуч. Виберіть той, який ви вважаєте правильним. Потім скористайтесь пунктом меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Перевірити</guimenuitem
+></menuchoice
+>, щоб побачити, чи правильну ви дали відповідь. Якщо ви задіяли автоматичний режим за допомогою меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати &kwordquiz;...</guimenuitem
+></menuchoice
+>, ваш вибір буде негайно автоматично перевірено. </para>
+<para
+>Попереднє питання показано під поточним. Також показано відповідь, яку ви дали. Якщо ця відповідь була неправильною, буде показано правильну відповідь. </para>
+<para
+>Виберіть пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Повторити помилкові</guimenuitem
+></menuchoice
+>, щоб спробувати ще раз дати відповідь на питання, на які ви відповіли неправильно. </para>
+<para
+>Виберіть пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Перезапустити</guimenuitem
+></menuchoice
+>, щоб розпочати сеанс з початку. Якщо ви використовуєте режим з випадковим вибором карток, порядок карток повторено не буде. </para>
+<para
+>Розділи рахунку внизу вікна показують загальну кількість питань, кількість питань, на які ви вже дали відповідь, кількість питань, на які отримано правильну відповідь, і кількість питань, відповідь на які була неправильною. </para>
+
+<tip>
+<para
+>Доступ до всіх пунктів меню <guimenu
+>Тест</guimenu
+> можна також отримати за допомогою пенала «Тест», який типово знаходиться у вікні праворуч.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Тестування «Питання і відповідь»</title>
+<para
+>Щоб розпочати тестування типу «питання-відповідь» за записами поточного списку слів, виберіть пункт «Питання і відповідь» на навігаційній панелі. Для тестування буде використано режим, вибраний у меню <guimenu
+>Режим</guimenu
+>. Якщо ви зміните режим посеред сеансу, сеанс буде відновлено з початку. </para>
+<para
+>Якщо ви працюєте з досить довгими виразами, розмір вікна можна змінити, щоб у нього вмістилося більше інформації. Розмір шрифту (вибраний для редактора) також відіграє роль у тому, скільки інформації зможуть вмістити різні частини вікна. </para>
+<para
+>У наведеному нижче прикладі користувач дав правильну відповідь на попереднє питання (щоб побачити, як реагує програма на неправильну відповідь, прочитайте розділ про тест з <link linkend="multiple"
+>вибором з варіантів</link
+>). Зараз йому або їй запропоновано відповісти на наступне питання. </para>
+
+<screenshot>
+  <screeninfo
+>Тестування «Питання і відповідь»</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Тестування «Питання і відповідь»</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Задане питання буде показано згори ліворуч. Наберіть вашу відповідь у полі для редагування. Потім скористайтеся пунктом меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Перевірити</guimenuitem
+></menuchoice
+> або клавішею &Enter;, щоб перевірити правильність відповіді. </para>
+<para
+>Попереднє питання показано під поточним. Також показано відповідь, яку ви дали. Якщо ця відповідь була неправильною, буде показано правильну відповідь. </para>
+<para
+>Щоб побачити наступну правильну літеру відповіді, скористайтеся пунктом меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Підказка</guimenuitem
+></menuchoice
+>. За допомогою пункту меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати &kwordquiz;...</guimenuitem
+></menuchoice
+> ви можете вказати, що відповіді на ті питання, у яких ви скористалися підказкою, слід вважати неправильними. </para>
+<para
+>Виберіть пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Повторити помилкові</guimenuitem
+></menuchoice
+>, щоб спробувати ще раз дати відповідь на питання, на які ви відповіли неправильно. </para>
+<para
+>Виберіть пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Перезапустити</guimenuitem
+></menuchoice
+>, щоб розпочати сеанс з початку. Якщо ви використовуєте режим з випадковим вибором карток, порядок карток повторено не буде. </para>
+<para
+>Розділи рахунку внизу вікна показують загальну кількість питань, кількість питань, на які ви вже дали відповідь, кількість питань, на які отримано правильну відповідь, і кількість питань, відповідь на які була неправильною. </para>
+
+<tip>
+<para
+>Доступ до всіх пунктів меню <guimenu
+>Тест</guimenu
+> можна також отримати за допомогою пенала «Тест», який типово знаходиться у вікні праворуч.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Заповнення порожніх місць</title>
+
+<para
+>«Заповнення порожніх місць» — один з потужних методів навчання за допомогою &kwordquiz;. Це особливий випадок тесту «Питання і відповідь», який ми зараз розглянемо детальніше. Щоб використати цей метод, вам слід увімкнути його у <link linkend="dlg-config-editor"
+>діалоговому вікні налаштування</link
+>. </para>
+
+<para
+>Розглянемо наступну таблицю. Будемо вважати, що вона є частиною списку слів у &kwordquiz;: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Англійська</entry>
+<entry
+>Німецька</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>У нас є комп’ютер</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>У нас є комп’ютер</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>У нас є комп’ютер</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>У нас є комп’ютер</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>Важливо зрозуміти спосіб, у який розставлено дужки. Ці дужки вказують програмі &kwordquiz; як саме слід проводити тест. </para>
+<para
+>У першому рядку дужок немає. Припустімо, що український варіант є питанням, а німецький — відповіддю, тоді ви маєте дати її у вигляді фрази «Wir besitzen einen Computer». </para>
+<para
+>У випадку другого рядка &kwordquiz; покаже питання, але також і частину відповіді: «Wir ........ einen Computer». Щоб відповісти правильно, достатньо ввести «besitzen». </para>
+<para
+>Приклад третього рядка демонструє, що пропустити можна декілька слів. У цьому випадку правильною відповіддю буде: «besitzen einen». </para>
+<para
+>У четвертому випадку буде два окремих пропуски. Щоб дати правильну відповідь, вам слід написати «besitzen; Computer», тобто розділити вміст пропущених частин крапкою з комою. </para>
+<para
+>Позначення пропусків має сенс, лише якщо їх слід буде чимось заповнити у відповіді. Якщо вміст дужок порожній, їх буде проігноровано. Крім того, дужки не матимуть ніякого значення у тестах з вибором з варіантів. Щоб спростити створення списків слів для «заповнення порожніх місць», у меню додано команди для позначення і зняття позначення з пропусків. Ну і звичайно ж, ви можете просто ввести ці дужки у відповідні місця. &kwordquiz; автоматично перевіряє синтаксис введеного. Якщо раптом частина тексту стане червоною, це означає, що ви щось наплутали з дужками, отже тест не вдасться запустити. </para>
+<para
+>Режим «Заповнення порожніх місць» можна увімкнути і вимкнути у діалоговому вікні налаштування. Якщо цей режим вимкнути, можна буде використовувати шрифти, у яких символи квадратних дужок заміщено якимись іншими потрібними символами. Також вимкнення цього режиму трохи пришвидшить програму. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Друк</title>
+<para
+>Програма &kwordquiz; надає вам змогу друкувати документи списків слів у декілька способів. Якщо ви оберете пункт меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Друкувати...</guimenuitem
+></menuchoice
+>, перед вами з’явиться стандартне діалогове вікно друку у &kde;. Щоб отримати доступ до особливих можливостей &kwordquiz;, вам слід натиснути на кнопку <guibutton
+>Параметри &gt;&gt;</guibutton
+>. Якщо ви це зробите, перед вами з’явиться вкладка <guilabel
+>Параметри списку слів</guilabel
+>. На цій вкладці ви можете вказати, що документ слід друкувати як список слів (тобто у тому вигляді, у якому його показано у редакторі), як екзамен зі знання слів, або як картки. </para>
+<screenshot>
+  <screeninfo
+>Параметри друку списку слів</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Параметри друку списку слів</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Список слів</title>
+<para
+>Список слів буде надруковано саме у тому вигляді, у якому його показано у редакторі. Буде вибрано той самий шрифт, висоту рядків, ширину стовпчиків. Отже, перед друком вам слід переконатися, що стовпчики достатньо вузькі, щоб їх можна було розмістити на сторінці.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Друк списку слів</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Друк списку слів</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Перевірка знання слів</title>
+<para
+>Список слів буде надруковано у тому ж вигляді, як його показано у редакторі, але правий стовпчик буде залишено порожнім, і буде додано третій стовпчик для оцінювання. Шрифт, висота рядків, ширина стовпчиків залишаться тими ж, що і на екрані. Отже, перед друком вам слід переконатися, що стовпчики достатньо вузькі, щоб їх можна було розмістити на сторінці.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Друк перевірки зі знання слів</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Друк перевірки зі знання слів</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Картки</title>
+<para
+>Дві картки 3⨯5 дюймів на сторінку. Картки завжди буде зорієнтовано горизонтально.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Друк карток</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Друк карток</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+<!--FIXME not ported to kf5
+<chapter id="tutor">
+<title
+>The Tutor Mode</title>
+
+<para>
+  &kwordquiz; can be started in the Tutor mode. In this mode application pops up words in the chosen vocabulary randomly at certain time intervals. To start &kwordquiz; in the Tutor mode press <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> and enter <userinput
+><command
+>kwordquiz</command
+> <option
+>-g tutor <replaceable
+>vocabulary_file.kvtml</replaceable
+></option
+></userinput
+>. The part with <replaceable
+>vocabulary_file.kvtml</replaceable
+> can be omitted.
+</para>
+<screenshot>
+  <screeninfo
+>Welcome message of the Tutor mode</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Welcome message of the Tutor mode</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+  After pressing <guibutton
+>OK</guibutton
+> button, &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject
+> <imageobject
+> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> menu (it can be opened with &RMB; click on the icon).
+</para>
+
+<para>
+  There are four items in this menu:
+   <variablelist>
+     <varlistentry>
+       <term
+><guimenuitem
+>Start Exercise</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Start</action
+> the Tutor exercise.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Open...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> an existing vocabulary document.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Configure &kwordquiz; Tutor...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> the Tutor configuration dialog.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Tutor Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Tutor Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Tutor Settings</guilabel
+> page you can configure time intervals between the flashcards changes, flashcard appearance, and choose the option to <guilabel
+>Start exercise as soon as the user opens vocabulary file</guilabel
+>.
+	 </para>
+	 <para>
+	   In the current version, you can choose between <guilabel
+>Native</guilabel
+> and <guilabel
+>Minimalistic</guilabel
+> flashcard appearances.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Native flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Native flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Native appearance for the fancy vocabularies with images.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Minimalistic flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Minimalistic flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Minimalistic appearance for the simple vocabularies.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Shortcuts Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Shortcuts Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Shortcuts Settings</guilabel
+> page you can configure shortcuts for the Tutor actions. The defaults are <keycombo
+>&Ctrl;&Alt;<keycap
+>J</keycap
+></keycombo
+> for the closing and <keycombo
+>&Ctrl;&Alt;<keycap
+>H</keycap
+></keycombo
+> for the flipping of the flashcard.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Quit</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Quit</action
+> &kwordquiz;.
+	 </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+-->
+
+<chapter id="dialogs">
+<title
+>Діалогові вікна</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Загальні параметри</title>
+<screenshot>
+  <screeninfo
+>Загальні параметри</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Загальні параметри</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Ви можете вибрати тип сеансу, у якому слід починати роботу з щойно відкритим списком слів. Безпосередній перехід до тестування не дозволить вам підглянути відповіді на питання. </para>
+<para
+>Щоб відновити початкові параметри, натисніть кнопку <guibutton
+>Типові</guibutton
+>. Щоб застосувати ваші зміни без закриття діалогового вікна, натисніть кнопку <guibutton
+>Застосувати</guibutton
+>. Що застосувати зміни і закрити діалогове вікно, натисніть кнопку <guibutton
+>Гаразд</guibutton
+>. Щоб закрити діалогове вікно без застосування будь-яких змін, натисніть кнопку <guibutton
+>Скасувати</guibutton
+>. </para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title
+>Параметри редактора</title>
+<screenshot>
+  <screeninfo
+>Параметри редактора</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Параметри редактора</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Ви можете налаштувати дії програми, які виконуватимуться після натискання клавіші &Enter; під час роботи у редакторі. </para>
+<para
+>Також ви можете увімкнути або вимкнути можливість <link linkend="fill-in-the-blank"
+>«заповнення порожніх місць»</link
+>. Вимикання цих можливостей трохи пришвидшить роботу програми. </para>
+<para
+>Щоб відновити початкові параметри, натисніть кнопку <guibutton
+>Типові</guibutton
+>. Щоб застосувати ваші зміни без закриття діалогового вікна, натисніть кнопку <guibutton
+>Застосувати</guibutton
+>. Що застосувати зміни і закрити діалогове вікно, натисніть кнопку <guibutton
+>Гаразд</guibutton
+>. Щоб закрити діалогове вікно без застосування будь-яких змін, натисніть кнопку <guibutton
+>Скасувати</guibutton
+>. </para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title
+>Параметри тесту</title>
+<screenshot>
+  <screeninfo
+>Параметри тесту</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Параметри тесту</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Для сеансу роботи з картками ви можете увімкнути або вимкнути автоматичне перевертання карток і визначити чи вважатимуться в такому разі відповіді правильними. Також можна ввести затримку у секундах для автоматичного перевертання. </para>
+<para
+>Для тестування з вибором з варіантів ви можете визначити чи слід автоматично перевіряти вашу відповідь, чи ви віддаєте перевагу використанню пункту меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Перевірити</guimenuitem
+></menuchoice
+>. </para>
+<para
+>У тесті «питання і відповідь» ви можете вибрати те, чи слід вважати правильними відповіді, у яких ви використовували пункт меню <menuchoice
+><guimenu
+>Тест</guimenu
+><guimenuitem
+>Підказка</guimenuitem
+></menuchoice
+>. </para>
+<para
+>У всіх варіантах роботи зі списком слів ви можете визначити спосіб, у який буде показано рахунок: відсотки чи кількість питань. </para>
+<para
+>Щоб відновити початкові параметри, натисніть кнопку <guibutton
+>Типові</guibutton
+>. Щоб застосувати ваші зміни без закриття діалогового вікна, натисніть кнопку <guibutton
+>Застосувати</guibutton
+>. Що застосувати зміни і закрити діалогове вікно, натисніть кнопку <guibutton
+>Гаразд</guibutton
+>. Щоб закрити діалогове вікно без застосування будь-яких змін, натисніть кнопку <guibutton
+>Скасувати</guibutton
+>. </para>
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title
+>Параметри вигляду картки</title>
+<screenshot>
+  <screeninfo
+>Параметри вигляду картки</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Параметри вигляду картки</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Для сеансу роботи з картками ви можете вибрати <guilabel
+>Шрифт:</guilabel
+> і колір тексту, картки і рамки. Натисніть кнопку <guibutton
+>Перевернути картку</guibutton
+>, щоб перемкнутися між <guilabel
+>лицьовою</guilabel
+> та <guilabel
+>зворотною</guilabel
+> сторонами картки. </para>
+<para
+>Щоб відновити початкові параметри, натисніть кнопку <guibutton
+>Типові</guibutton
+>. Щоб застосувати ваші зміни без закриття діалогового вікна, натисніть кнопку <guibutton
+>Застосувати</guibutton
+>. Що застосувати зміни і закрити діалогове вікно, натисніть кнопку <guibutton
+>Гаразд</guibutton
+>. Щоб закрити діалогове вікно без застосування будь-яких змін, натисніть кнопку <guibutton
+>Скасувати</guibutton
+>. </para>
+</sect1>
+
+<sect1 id="dlg-config-characters">
+<title
+>Параметри спеціальних символів</title>
+<screenshot>
+  <screeninfo
+>Параметри спеціальних символів</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Параметри спеціальних символів</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Для вставлення спеціальних символів у список слів доступні дев’ять дій з параметрами, які можна налаштувати. Виберіть одну з цих дій зі списку, а потім натисніть кнопку <guibutton
+>Символ...</guibutton
+>, щоб <link linkend="dlg-special-characters"
+>вибрати</link
+> символ для цієї дії. Буде показано збільшений вигляд поточного символу. </para>
+<para
+>Зміну клавіатурного скорочення, пов’язаного з кожною з дій, можна виконати за допомогою меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати скорочення...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Щоб відновити початкові параметри, натисніть кнопку <guibutton
+>Типові</guibutton
+>. Щоб застосувати ваші зміни без закриття діалогового вікна, натисніть кнопку <guibutton
+>Застосувати</guibutton
+>. Що застосувати зміни і закрити діалогове вікно, натисніть кнопку <guibutton
+>Гаразд</guibutton
+>. Щоб закрити діалогове вікно без застосування будь-яких змін, натисніть кнопку <guibutton
+>Скасувати</guibutton
+>. </para>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Параметри стовпчиків</title>
+<para
+>Ви можете відкрити це діалогове вікно за допомогою пункту меню <menuchoice
+><guimenu
+>Слова</guimenu
+><guimenuitem
+>Параметри стовпчиків...</guimenuitem
+></menuchoice
+></para>
+<screenshot>
+  <screeninfo
+>Параметри стовпчиків</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Параметри стовпчиків</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Це діалогове вікно призначено для визначення заголовків, розкладок клавіатури та ширини стовпчиків вашого списку слів. Натисніть кнопку <guibutton
+>Гаразд</guibutton
+>, щоб застосувати виконані вами зміни, або кнопку <guibutton
+>Скасувати</guibutton
+>, щоб залишити заголовки незмінними. </para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title
+>Спеціальні символи</title>
+<para
+>Щоб відкрити це вікно, натисніть кнопку <guibutton
+>Символ...</guibutton
+> на сторінці <guilabel
+>Спеціальні символи</guilabel
+> діалогового вікна параметрів &kwordquiz;.</para>
+<screenshot>
+  <screeninfo
+>Спеціальні символи</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Спеціальні символи</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Це діалогове вікно призначено для того, щоб ви могли вибрати спеціальний символ, який ви бажаєте пов’язати з поточною <link linkend="dlg-config-characters"
+>дією</link
+> для спеціальних символів. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Подяки і ліцензія</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Авторські права на програму належать Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+>, ©2003-2008 </para>
+
+<para
+>Авторські права на документацію належать Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+>, ©2003-2008 </para>
+
+<para
+>Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

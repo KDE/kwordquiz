@@ -1,0 +1,2097 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2021-01-30</date>
+<releaseinfo
+>Program 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; är ett program för snabbkort och ordförrådsinlärning av &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Kwordquiz</keyword>
+<keyword
+>snabbkort</keyword>
+<keyword
+>ordförråd</keyword>
+<keyword
+>språk</keyword>
+<keyword
+>utbildning</keyword>
+<keyword
+>skola</keyword>
+<keyword
+>högskola</keyword>
+<keyword
+>universitet</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+<para
+>&kwordquiz; är ett verktyg som ger dig ett kraftfullt sätt att bemästra nya ordförråd. Det kan vara ett språk eller vilken annan sorts terminologi som helst. </para>
+<sect1 id="easy-to-use">
+<title
+>Enkelt att använda</title>
+
+<para
+>Du bygger upp dina egna ordförrådsdokument på ett enkelt och intuitivt sätt med &kwordquiz;. Den grundläggande layouten är ett kalkylblad med två kolumner, där du skriver in ordförrådsposter som du kan i ett formulär, och de som du vill lära dig i ett annat. Du ändrar kolumnernas rubriker för att motsvara det du övar på. </para>
+
+<sect2 id="practice-modes">
+<title
+>Övningslägen</title>
+
+<para
+>Innan du börjar ett prov, väljer du hur du vill öva. &kwordquiz; erbjuder fem olika lägen för att göra övningarna effektivare. De olika lägena gör det möjligt att låta provet gå igenom ordförrådet i sekvens eller i slumpmässig ordning i den ena eller båda riktningar. </para>
+</sect2>
+
+<sect2 id="quiz-types">
+<title
+>Provlägen</title>
+
+<para
+>När du har skrivit in ditt ordförråd och valt ett läge, är du klar att börja ett prov. Kanske vill du börja med en snabbkortsession. Senare kan du gå vidare med ett flervalsprov eller utföra det kraftfulla provet med frågor och svar. Du får omedelbar återmatning om riktiga eller felaktiga svar och du har möjlighet att upprepa eventuella fel, vilket ytterligare förbättrar effektiviteten hos inlärningen. Om du behöver lite extra hjälp kan du använda tipsfunktionen. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Ordförrådsdokument</title>
+<para
+>&kwordquiz; kan öppna flera typer av ordförrådsdata. Standardformatet är <filename class="extension"
+>.kvtml</filename
+>, ett format som används av flera &kde;-program. &kwordquiz; kan också öppna <filename class="extension"
+>.wql</filename
+>-filer skapade av &kwordquiz; för &Windows;, <filename class="extension"
+>.csv</filename
+>-filer med text åtskild av kommatecken, <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class="extension"
+>.voc</filename
+>-filer</ulink
+> skapade av den gamla versionen av Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>.xdxf</filename
+>-filer</ulink
+> och <filename class="extension"
+>.xml.gz</filename
+>-filer som skapats av de gamla versionerna av <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>&kwordquiz; kan spara ordförrådsdokument med flera olika format. Standardformatet är <filename class="extension"
+>.kvtml</filename
+>-formatet som används av andra &kde;-program. Ett annat tillgängligt alternativ är text åtskild av kommatecken, <filename class="extension"
+>.csv</filename
+>. </para>
+<para
+>Du kan ha flera filer öppna samtidigt, och enkelt kopiera eller flytta poster mellan filer. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Kommandoreferens</title>
+
+<sect1 id="file_menu">
+<title
+>Menyn Arkiv</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Ny</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ny</action
+> skapar ett nytt tomt ordförrådsdokument </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Öppna...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Öppna</action
+> ett eller flera befintliga ordförrådsdokument. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guisubmenu
+>Öppna senaste</guisubmenu
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Öppna</action
+> ett nyligen använt ordförrådsdokument. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Ladda ner nya ordförråd...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Laddar ner</action
+> nya ordförråd. Nerladdade ordförråd finns i katalogen <filename class="directory"
+>$XDG_DATA_HOME/kvtml</filename
+>. <envar
+>$XDG_DATA_HOME</envar
+> är oftast en dold katalog i hemkatalogen som heter <filename class="directory"
+>.local</filename
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Spara</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Spara</action
+> det aktiva ordförrådsdokumentet på disk. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Spara som...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Spara</action
+> det aktiva ordförrådsdokumentet med ett nytt namn. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Skriv ut...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Skriv ut</action
+> det aktiva ordförrådsdokumentet. &kwordquiz; tillhandahåller flera alternativ för att <link linkend="printing"
+>skriva ut</link
+> ordförråden. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Förhandsgranskning av utskrift</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Visa</action
+> en förhandsgranskning av det aktiva ordförrådsdokumentet utskrivet av &kwordquiz;. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Stäng</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Stäng</action
+> det aktiva ordförrådsdokumentet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Avsluta</action
+> &kwordquiz; </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title
+>Menyn Redigera</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Ångra</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ångra</action
+> senaste kommandot. Namnet på alternativet ändras för att motsvara vad som kommer att ångras. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Gör om</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Gör om</action
+> det senaste kommandot. Namnet på alternativet ändras för att motsvara vad som kommer att göras om. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Klipp ut</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Klipp ut</action
+> nuvarande markering och placera den på klippbordet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Kopiera</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kopiera</action
+> nuvarande markering och placera den på klippbordet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Klistra in</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Klistra in</action
+> innehållet på klippbordet i nuvarande markering. Om bara en cell är markerad, aktiverar &kwordquiz; smart inklistring och beräknar platsen som behövs för att klistra in och lägger till rader om det behövs. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycap
+>Delete</keycap
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Rensa</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Rensa</action
+> nuvarande markering. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Infoga rad</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Infoga</action
+> en ny rad vid nuvarande markering. Om markeringen omfattar mer än en rad, infogas lika många rader. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Ta bort rad</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ta bort</action
+> markerad rad. Om markeringen omfattar mer än en rad, tas alla markerade rader bort. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Markera som lucka</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Markera som lucka</action
+> markerar vald text (eller ordet där markören finns) som en lucka för provet <link linkend="fill-in-the-blank"
+>'Fyll i lucka'</link
+>, dvs. det omsluts av hakparenteser. Bara tillgängligt om <link linkend="dlg-config-editor"
+>Fyll i lucka</link
+> är aktiverat. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Avmarkera som lucka</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Avmarkera som lucka</action
+> rensar tidigare tilldelade luckor, dvs. hakparenteserna tas bort. Bara tillgängligt om <link linkend="dlg-config-editor"
+>Fyll i lucka</link
+> är aktiverat. </para>
+    </listitem>
+  </varlistentry>
+
+
+</variablelist>
+</sect1>
+
+<sect1 id="vocabulary-menu">
+<title
+>Menyn Ordförråd</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Kolumninställningar...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Definiera</action
+> rubrikerna, tangentbordslayouterna och bredderna för de två kolumnerna i ordförrådet. Visar en <link linkend="dlg-languages"
+>dialogruta</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Teckensnitt...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ändra</action
+> teckensnitt som används för att visa ordförrådet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Länka bild...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ange</action
+> bilden som ska länkas till den nuvarande posten. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Länka ljud...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ange</action
+> ljudet som ska länkas till den nuvarande posten. </para>
+    </listitem>
+  </varlistentry>
+
+ <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Justera radhöjder</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Justera</action
+> höjden på rader för att passa innehållet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Blanda</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Blanda</action
+> ordförrådsposterna i slumpmässig ordning. Posternas ordning i själva ordförrådsdokumentet ändras inte. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title
+>Menyn Läge</title>
+<para
+>Menyn tillhandahåller fem olika lägen för prov.</para>
+
+  <note
+><para
+>Menynamnen ändras för att motsvara kolumnrubrikerna för nuvarande aktiva ordförrådsdokument. Läget måste väljas innan ett prov startas. Det valda läget gäller snabbkort, flervalsfrågor samt frågor och svar.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Läge</guimenu
+> <guimenuitem
+>1 Kolumn 1 -&gt; Kolumn 2 i ordning</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden från kolumn 1 och du blir tillfrågad om motsvarande värden från kolumn 2. Detta görs i den ordning som posterna har i ordförrådsdokumentet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Läge</guimenu
+> <guimenuitem
+>2 Kolumn 2 -&gt; Kolumn 1 i ordning</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden från kolumn 2 och du blir tillfrågad om motsvarande värden från kolumn 1. Detta görs i den ordning som posterna har i ordförrådsdokumentet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Läge</guimenu
+> <guimenuitem
+>3 Kolumn 1 -&gt; Kolumn 2 slumpmässigt</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden från kolumn 1 och du blir tillfrågad om motsvarande värden från kolumn 2. Detta görs i en slumpmässig ordning, men varje värde behandlas bara en gång. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Läge</guimenu
+> <guimenuitem
+>4 Kolumn 2 -&gt; Kolumn 1 slumpmässigt</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden från kolumn 2 och du blir tillfrågad om motsvarande värden från kolumn 1. Detta görs i en slumpmässig ordning, men bara en fråga ges för varje värde. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Läge</guimenu
+> <guimenuitem
+>5 Kolumn 1 &lt;-&gt; Kolumn 2 slumpmässigt</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden antingen från kolumn 1 eller kolumn 2 och du blir tillfrågad om motsvarande värden från den andra kolumnen. Detta görs i en slumpmässig ordning, både för kolumn och värde. Varje möjlig kombination behandlas en gång. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title
+>Menyn Prov</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Retur</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Prov</guimenu
+> <guimenuitem
+>Kontrollera</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kontrollera</action
+> om ditt svar var riktigt </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>K</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Prov</guimenu
+> <guimenuitem
+>Jag vet</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Räkna</action
+> som riktigt under en snabbkortsession. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Prov</guimenu
+> <guimenuitem
+>Jag vet inte</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Räkna</action
+> som felaktigt under en snabbkortsession. Du kan senare upprepa dessa kort genom att välja <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Upprepa felaktiga</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Prov</guimenu
+> <guimenuitem
+>Tips</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Visa</action
+> nästa riktiga bokstav under en session med frågor och svar. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Prov</guimenu
+> <guimenuitem
+>Spela ljud</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Spela</action
+> ljud som länkats till posten med <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Länka ljud</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Prov</guimenu
+> <guimenuitem
+>Starta om</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Starta om</action
+> provsessionen från början. Det nollställer poängen. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Prov</guimenu
+> <guimenuitem
+>Upprepa felaktiga</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Upprepa</action
+> alla frågor du besvarade felaktigt. Det blir tillgänglig så fort du har svarat en gång på alla frågor. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Exportera fel som...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Exportera</action
+> alla frågor du besvarade felaktigt som ett nytt ordförrådsdokument. Det blir tillgänglig så fort du har svarat en gång på alla frågor. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings-help-menu">
+<title
+>Menyerna Inställningar och Hjälp</title
+> 
+<para
+>Förutom de vanliga menyalternativen i &kde;, <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> beskrivna i <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s grunder, tillhandahåller &kwordquiz; följande ytterligare menyalternativ: </para>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Visa sökrad</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Visa eller dölj</action
+> sökraden. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+</chapter>
+
+<chapter id="main-window">
+<title
+>Huvudfönstret</title>
+
+<para
+>Huvudfönstret har en navigationspanel på vänster sida, där programmets huvuddelar kan aktiveras. </para>
+<para
+><link linkend="editor"
+>Editorn</link
+> kan aktiveras genom att trycka på <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>En session med <link linkend="flashcard"
+>snabbkort</link
+> kan startas genom att trycka på <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>En session med <link linkend="multiple"
+>flervalsfrågor</link
+> kan startas genom att trycka på <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>En session med <link linkend="question-and-answer"
+>frågor och svar</link
+> kan startas genom att trycka på <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+
+<screenshot>
+  <screeninfo
+>Huvudfönstret</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Huvudfönstret</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>Ordförrådseditorn</title>
+
+<para
+>Ordförrådsdokumentets område ser ut som ett rutnät som liknar ett kalkylark. Rutnätet består av celler organiserade i två kolumner och ett antal rader. Varje kolumn och rad har en rubrik. Kolumnrubrikerna används för att ange rubriker i ordförrådsdokumentet. De kan anges genom att välja <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Kolumninställningar...</guimenuitem
+></menuchoice
+>. Radrubrikerna numrerar raderna i följd. </para>
+<para
+>Kolumnrubrikerna kan också användas för att sortera ordförrådet. Klicka helt enkelt på rubriken för kolumnen du vill sortera enligt. </para>
+<para
+>Du kan klicka i en av rutnätets celler för att göra den till den aktiva cellen. Du kan markera flera celler för kopiering eller annan redigering genom att dra över dem medan du håller nere vänster musknapp. För att markera hela rader klicka på rubriken. </para>
+
+<screenshot>
+  <screeninfo
+>Ordförrådseditorn</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Ordförrådseditorn</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Du bygger ett ordförråd av parvisa poster i de två kolumnerna i dokumentet. Du kan skriva in text i den aktiva cellen genom att helt enkelt börja skriva. Cellen är då i redigeringsläge och du kan markera hela eller delar av texten. Du kan också redigera en cell genom att dubbelklicka på den eller genom att trycka på <keycap
+>F2</keycap
+> och göra ändringarna direkt i cellen. </para>
+<para
+>När du är klar med att skriva in en post, tryck på returtangenten så blir nästa cell automatiskt aktiv. På så sätt är det enkelt att skriva in flera poster. Du kan anpassa beteendet genom att välja <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa &kwordquiz;...</guimenuitem
+></menuchoice
+>. När du når sista raden i rutnätet, läggs en ny rad till när du trycker på returtangenten, så du kan bara fortsätta att skriva. När ett nytt fönster skapas har det 20 rader, men det finns egentligen inte någon begränsning för hur många rader du kan ha i ett dokument. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Snabbkortsession</title>
+
+<para
+>Välj Snabbkort i navigationspanelen för att starta en session med snabbkort för posterna i det aktiva ordförrådsdokumentet. Läget som valts i menyn <guimenu
+>Läge</guimenu
+> används. Om du byter läge under en session, startas sessionen om. </para>
+
+<para
+>Om du arbetar med långa uttryck, kan fönstrets storlek ändras för att göra mer utrymme tillgängligt. Teckenstorleken påverkar också hur mycket som får plats i olika delar av fönstret. Genom att välja <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa &kwordquiz;...</guimenuitem
+></menuchoice
+> kan du anpassa snabbkortens utseende. </para>
+
+<screenshot>
+  <screeninfo
+>Snabbkortsession</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Snabbkortsession</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Från början visas kortets framsida. Använd <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Kontrollera</guimenuitem
+></menuchoice
+> för att se andra sidan. </para>
+<para
+>För att gå till nästa kort, kan du antingen välja <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Jag vet</guimenuitem
+></menuchoice
+> för att räkna kortet som riktigt, eller <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Jag vet inte</guimenuitem
+></menuchoice
+> för att räkna kortet som felaktigt. </para>
+<para
+>Välj <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Upprepa felaktiga</guimenuitem
+></menuchoice
+> för att repetera korten som du har räknat som felaktiga. </para>
+<para
+>Välj <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Starta om</guimenuitem
+></menuchoice
+> för att starta sessionen från början igen. Om du använder slumpmässigt läge blandas korten igen. </para>
+<para
+>Avdelningen med poäng längst ner på skärmen visar antal kort, antal kort du har sett, antal kort som räknas som riktiga och antal kort som räknas som felaktiga. </para>
+
+<tip>
+<para
+>Alla alternativ i menyn <guimenu
+>Prov</guimenu
+> är tillgängliga på verktygsraden Prov som normalt visas till höger.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Flervalssession</title>
+
+<para
+>Välj Flerval i navigationspanelen för att starta ett flervalsprov med posterna i det aktiva ordförrådsdokumentet. Läget som valts i menyn <guimenu
+>Läge</guimenu
+> används. Om du byter läge under en session, startas sessionen om. </para>
+<para
+>Om du arbetar med långa uttryck, kan fönstrets storlek ändras för att göra mer utrymme tillgängligt. Teckenstorleken (som valts för editorn) påverkar också hur mycket som får plats i olika delar av fönstret. </para>
+<para
+>I exemplet nedan svarade användaren fel på föregående fråga. Han eller hon ska nu just svara på nästa fråga. </para>
+
+<screenshot>
+  <screeninfo
+>Flervalssession</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Flervalssession</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Alternativen visas längst upp till vänster. Välj det som du tror är rätt. Använd <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Kontrollera</guimenuitem
+></menuchoice
+> för att se om svaret är riktigt. Om du har aktiverat automatiskt läge med <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa &kwordquiz;...</guimenuitem
+></menuchoice
+> kontrolleras ditt val omedelbart. </para>
+<para
+>Föregående fråga visas under den nuvarande. Svaret du gav visas också. Om du svarade fel visas det rätta svaret. </para>
+<para
+>Välj <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Upprepa felaktiga</guimenuitem
+></menuchoice
+> för att upprepa frågorna du besvarade felaktigt. </para>
+<para
+>Välj <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Starta om</guimenuitem
+></menuchoice
+> för att starta sessionen från början igen. Om du använder slumpmässigt läge blandas korten igen. </para>
+<para
+>Avdelningen med poäng längst ner på skärmen visar antal frågor, antal frågor du har besvarat, antal rätta svar och antal felaktiga svar. </para>
+
+<tip>
+<para
+>Alla alternativ i menyn <guimenu
+>Prov</guimenu
+> är tillgängliga på verktygsraden Prov som normalt visas till höger.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Session med frågor och svar</title>
+<para
+>Välj Frågor och svar i navigationspanelen för att starta en session med frågor och svar för posterna i det aktiva ordförrådet. Läget som valts i menyn <guimenu
+>Läge</guimenu
+> används. Om du byter läge under en session, startas sessionen om. </para>
+<para
+>Om du arbetar med långa uttryck, kan fönstrets storlek ändras för att göra mer utrymme tillgängligt. Teckenstorleken (som valts för editorn) påverkar också hur mycket som får plats i olika delar av fönstret. </para>
+<para
+>I exemplet nedan gav användaren ett riktigt svar på föregående fråga (för att se hur felaktiga svar hanteras, se kapitlet <link linkend="multiple"
+>Flerval</link
+>). Han eller hon ska nu just svara på nästa fråga. </para>
+
+<screenshot>
+  <screeninfo
+>Session med frågor och svar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Session med frågor och svar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Frågan visas längst upp till vänster. Skriv in svaret i redigeringsfältet. Använd <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Kontrollera</guimenuitem
+></menuchoice
+> eller returtangenten för att se om svaret är riktigt. </para>
+<para
+>Föregående fråga visas under den nuvarande. Svaret du gav visas också. Om du svarade fel visas det rätta svaret. </para>
+<para
+>Välj <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Tips</guimenuitem
+></menuchoice
+> för att se nästa riktiga bokstav i svaret. Under <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa &kwordquiz;...</guimenuitem
+></menuchoice
+> kan du välja att räkna alla frågor där du använder tipsfunktionen som felaktiga. </para>
+<para
+>Välj <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Upprepa felaktiga</guimenuitem
+></menuchoice
+> för att upprepa frågorna du besvarade felaktigt. </para>
+<para
+>Välj <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Starta om</guimenuitem
+></menuchoice
+> för att starta sessionen från början igen. Om du använder slumpmässigt läge blandas korten igen. </para>
+<para
+>Avdelningen med poäng längst ner på skärmen visar antal frågor, antal frågor du har besvarat, antal rätta svar och antal felaktiga svar. </para>
+
+<tip>
+<para
+>Alla alternativ i menyn <guimenu
+>Prov</guimenu
+> är tillgängliga på verktygsraden Prov som normalt visas till höger.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Fyll i luckan</title>
+
+<para
+>'Fyll i luckan' är ett kraftfullt sätt att öva med &kwordquiz;. Det är ett särskilt sorts prov med frågor och svar, som behöver beskrivas mer detaljerat. För att använda funktionen måste du aktivera den i <link linkend="dlg-config-editor"
+>inställningsdialogrutan</link
+>. </para>
+
+<para
+>Betrakta följande tabell. Den skulle kunna vara ett ordförråd i &kwordquiz;: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Engelska</entry>
+<entry
+>Tyska</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>Det viktiga att observera är placeringen av hakparenteserna. De talar om för &kwordquiz; hur provet ska utföras. </para>
+<para
+>För 1 finns inga hakparenteser. Med antagandet att frågan är på engelska och svaret på tyska, måste du skriva in hela uttrycket 'Wir besitzen einen Computer' för ett riktigt svar. </para>
+<para
+>För 2 skulle &kwordquiz; visa frågan, men också 'Wir ........ einen Computer'. Det är nog att skriva 'besitzen' för ett riktigt svar. </para>
+<para
+>Rad 3 visar att en lucka kan bestå av mer än ett ord. Det riktiga svaret är 'besitzen einen'. </para>
+<para
+>För 4 finns två åtskilda luckor. För att ange det i svaret måste du skriva 'besitzen; Computer', dvs. skilja luckorna med ett semikolon för att få rätt svar. </para>
+<para
+>Markerade luckor är bara relevanta om de finns i svaret. Annars ignoreras hakparenteserna. Dessutom har hakparenteser ingen effekt i flervalsprov. För att förenkla att skapa ordförråd med 'Fyll i luckan' finns det verktygsrads- och menykommandon för att markera och avmarkera luckor. Du kan naturligtvis också bara skriva in hakparenteserna. &kwordquiz; kontrollerar syntaxen. Om texten visas med rött är det något fel på hakparenteserna och ett prov kan inte startas. </para>
+<para
+>Funktionen 'Fyll i luckan' kan aktiveras eller inaktiveras i inställningsdialogrutan. Att inaktivera dem gör det möjligt att använda teckensnitt som använder hakparentesernas plats för andra tecken. Det ökar också prestanda något. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Utskrift</title>
+<para
+>&kwordquiz; tillhandahåller möjlighet att skriva ut ordförrådsdokument på flera olika sätt. När du väljer <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Skriv ut...</guimenuitem
+></menuchoice
+> visas den vanliga utskriftsdialogrutan i &kde;. För att komma åt de speciella funktionerna för &kwordquiz; måste du klicka på knappen <guibutton
+>Alternativ &gt;&gt;</guibutton
+> för att se fliken <guilabel
+>Ordförrådsalternativ</guilabel
+>. Under fliken kan du välja att skriva ut dokumentet som en ordförrådslista (dvs. som det visas i editorn), ett ordförrådsprov eller som snabbkort. </para>
+<screenshot>
+  <screeninfo
+>Alternativ för utskrift av ordförråd</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Alternativ för utskrift av ordförråd</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Ordförrådslista</title>
+<para
+>Ordförrådet skrivs ut som det visas i editorn. Det omfattar teckensnitt, radhöjder och kolumnbredder. Försäkra dig om att kolumnerna är smala nog att få plats på sidan.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Skriv ut ordförrådslista</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Skriv ut ordförrådslista</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Ordförrådsprov</title>
+<para
+>Ordförrådet skrivs ut som det visas i editorn, utom att högra kolumnen lämnas tom och en tredje kolumn för poängsättning läggs till. Inställningar som används omfattar teckensnitt, radhöjder och kolumnbredder. Försäkra dig om att kolumnerna är smala nog att få plats på sidan.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Skriv ut ordförrådsprov</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Skriv ut ordförrådsprov</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Snabbkort</title>
+<para
+>Två 3 x 5 tum kort per sida. Korten skrivs alltid ut med liggande format.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Skriv ut snabbkort</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Skriv ut snabbkort</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+<!--FIXME not ported to kf5
+<chapter id="tutor">
+<title
+>The Tutor Mode</title>
+
+<para>
+  &kwordquiz; can be started in the Tutor mode. In this mode application pops up words in the chosen vocabulary randomly at certain time intervals. To start &kwordquiz; in the Tutor mode press <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> and enter <userinput
+><command
+>kwordquiz</command
+> <option
+>-g tutor <replaceable
+>vocabulary_file.kvtml</replaceable
+></option
+></userinput
+>. The part with <replaceable
+>vocabulary_file.kvtml</replaceable
+> can be omitted.
+</para>
+<screenshot>
+  <screeninfo
+>Welcome message of the Tutor mode</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Welcome message of the Tutor mode</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+  After pressing <guibutton
+>OK</guibutton
+> button, &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject
+> <imageobject
+> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> menu (it can be opened with &RMB; click on the icon).
+</para>
+
+<para>
+  There are four items in this menu:
+   <variablelist>
+     <varlistentry>
+       <term
+><guimenuitem
+>Start Exercise</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Start</action
+> the Tutor exercise.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Open...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> an existing vocabulary document.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Configure &kwordquiz; Tutor...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> the Tutor configuration dialog.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Tutor Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Tutor Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Tutor Settings</guilabel
+> page you can configure time intervals between the flashcards changes, flashcard appearance, and choose the option to <guilabel
+>Start exercise as soon as the user opens vocabulary file</guilabel
+>.
+	 </para>
+	 <para>
+	   In the current version, you can choose between <guilabel
+>Native</guilabel
+> and <guilabel
+>Minimalistic</guilabel
+> flashcard appearances.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Native flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Native flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Native appearance for the fancy vocabularies with images.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Minimalistic flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Minimalistic flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Minimalistic appearance for the simple vocabularies.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Shortcuts Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Shortcuts Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Shortcuts Settings</guilabel
+> page you can configure shortcuts for the Tutor actions. The defaults are <keycombo
+>&Ctrl;&Alt;<keycap
+>J</keycap
+></keycombo
+> for the closing and <keycombo
+>&Ctrl;&Alt;<keycap
+>H</keycap
+></keycombo
+> for the flipping of the flashcard.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Quit</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Quit</action
+> &kwordquiz;.
+	 </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+-->
+
+<chapter id="dialogs">
+<title
+>Dialogrutor</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Allmänna inställningar</title>
+<screenshot>
+  <screeninfo
+>Allmänna inställningar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Allmänna inställningar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Du kan välja vilken typ av session som ett nyöppnat ordförråd ska börja med. Att gå direkt till ett prov kan förhindra att du ser några poster i förväg. </para>
+<para
+>Välj <guibutton
+>Förval</guibutton
+> för att återställa alla inställningar till fördefinierade standardvärden. Välj <guibutton
+>Verkställ</guibutton
+> för att verkställa ändringar utan att stänga dialogrutan. Välj <guibutton
+>Ok</guibutton
+> för att verkställa ändringarna och stänga dialogrutan. Välj <guibutton
+>Avbryt</guibutton
+> för att stänga dialogrutan utan att göra några ändringar. </para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title
+>Editorinställningar</title>
+<screenshot>
+  <screeninfo
+>Editorinställningar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Editorinställningar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Du kan ställa in beteendet hos returtangenten när du arbetar i editorn. </para>
+<para
+>Du kan också välja om funktionerna för <link linkend="fill-in-the-blank"
+>Fyll i luckan</link
+> ska aktiveras. Att stänga av dem snabbar upp prestanda litet grand. </para>
+<para
+>Välj <guibutton
+>Förval</guibutton
+> för att återställa alla inställningar till fördefinierade standardvärden. Välj <guibutton
+>Verkställ</guibutton
+> för att verkställa ändringar utan att stänga dialogrutan. Välj <guibutton
+>Ok</guibutton
+> för att verkställa ändringarna och stänga dialogrutan. Välj <guibutton
+>Avbryt</guibutton
+> för att stänga dialogrutan utan att göra några ändringar. </para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title
+>Frågeinställningar</title>
+<screenshot>
+  <screeninfo
+>Frågeinställningar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Provinställningar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>För snabbkortsessioner kan du välja om korten ska vändas automatiskt, och om de ska räknas som riktiga eller felaktiga. Skriv in en tid i sekunder för automatisk vändning. </para>
+<para
+>För flervalssessioner kan du välja om valet ska kontrolleras omedelbart eller om du först måste välja <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Kontrollera</guimenuitem
+></menuchoice
+>. </para>
+<para
+>För sessioner med frågor och svar kan du välja om frågor där du använder <menuchoice
+><guimenu
+>Prov</guimenu
+> <guimenuitem
+>Tips</guimenuitem
+></menuchoice
+> ska räknas som felaktiga. </para>
+<para
+>Du kan välja om poängen ska visas som procentvärden istället för absoluta tal för alla sessioner. </para>
+<para
+>Välj <guibutton
+>Förval</guibutton
+> för att återställa alla inställningar till fördefinierade standardvärden. Välj <guibutton
+>Verkställ</guibutton
+> för att verkställa ändringar utan att stänga dialogrutan. Välj <guibutton
+>Ok</guibutton
+> för att verkställa ändringarna och stänga dialogrutan. Välj <guibutton
+>Avbryt</guibutton
+> för att stänga dialogrutan utan att göra några ändringar. </para>
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title
+>Anpassa snabbkortens utseende</title>
+<screenshot>
+  <screeninfo
+>Anpassa snabbkortens utseende</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Anpassa snabbkortens utseende</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Du kan välja <guilabel
+>Teckensnitt:</guilabel
+> och färg på text, kort och ramar för snabbkortsessioner. Klicka på <guibutton
+>Vänd kort</guibutton
+> för att byta mellan kortens <guilabel
+>Framsida</guilabel
+> och <guilabel
+>Baksida</guilabel
+>. </para>
+<para
+>Välj <guibutton
+>Förval</guibutton
+> för att återställa alla inställningar till fördefinierade standardvärden. Välj <guibutton
+>Verkställ</guibutton
+> för att verkställa ändringar utan att stänga dialogrutan. Välj <guibutton
+>Ok</guibutton
+> för att verkställa ändringarna och stänga dialogrutan. Välj <guibutton
+>Avbryt</guibutton
+> för att stänga dialogrutan utan att göra några ändringar. </para>
+</sect1>
+
+<sect1 id="dlg-config-characters">
+<title
+>Anpassa specialtecken</title>
+<screenshot>
+  <screeninfo
+>Anpassa specialtecken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Anpassa specialtecken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Det finns nio anpassningsbara åtgärder för att infoga specialtecken i ordförrådet. Välj en av åtgärderna i listan och klicka på knappen <guibutton
+>Tecken...</guibutton
+> för att <link linkend="dlg-special-characters"
+>välja</link
+> ett tecken för åtgärden. En större förhandsgranskning av nuvarande tecken visas. </para>
+<para
+>Ändring av snabbtangenten som hör ihop med varje åtgärd kan göras genom att välja <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa genvägar...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Välj <guibutton
+>Förval</guibutton
+> för att återställa alla inställningar till fördefinierade standardvärden. Välj <guibutton
+>Verkställ</guibutton
+> för att verkställa ändringar utan att stänga dialogrutan. Välj <guibutton
+>Ok</guibutton
+> för att verkställa ändringarna och stänga dialogrutan. Välj <guibutton
+>Avbryt</guibutton
+> för att stänga dialogrutan utan att göra några ändringar. </para>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Kolumninställningar</title>
+<para
+>Du kan öppna dialogrutan via menyraden med <menuchoice
+><guimenu
+>Ordförråd</guimenu
+> <guimenuitem
+>Kolumninställningar...</guimenuitem
+></menuchoice
+></para>
+<screenshot>
+  <screeninfo
+>Kolumninställningar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Kolumninställningar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Använd dialogrutan för att definiera ordförrådets kolumnrubriker, tangentbordslayouter och bredder. Välj <guibutton
+>Ok</guibutton
+> för att utföra ändringarna eller <guibutton
+>Avbryt</guibutton
+> för att bortse från ändringarna. </para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title
+>Specialtecken</title>
+<para
+>Klicka på knappen <guibutton
+>Tecken...</guibutton
+> på sidan <guilabel
+>Specialtecken</guilabel
+> i &kwordquiz; inställningsdialogruta för att öppna fönstret.</para>
+<screenshot>
+  <screeninfo
+>Specialtecken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Specialtecken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Använd dialogrutan för att välja eventuella specialtecken som du vill ska höra ihop med nuvarande <link linkend="dlg-config-characters"
+>specialteckensåtgärd</link
+>. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Tack till och licens</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Program copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Dokumentation copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

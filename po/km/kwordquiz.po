@@ -1,0 +1,2496 @@
+# translation of kwordquiz.po to Khmer
+# Auk Piseth <piseth_dv@khmeros.info>, 2006, 2007, 2008.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2007, 2008, 2009, 2010, 2012.
+# Eng Vannak <evannak@khmeros.info>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwordquiz\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"PO-Revision-Date: 2012-07-06 16:02+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ​អេង វណ្ណៈ, អោក ពិសិដ្ឋ​"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@khmeros.info,​​evannak@khmeros.info,piseth_dv@khmeros.info"
+
+#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
+#: cleardialogbase.ui:21
+#, kde-format
+msgid "Selection"
+msgstr "កា​រជ្រើស"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:30
+#, kde-format
+msgid "Delete all information in selected entries"
+msgstr "លុប​ព័ត៌មាន​ទាំងអស់​ចេញ​ពី​ធាតុ​ដែល​បាន​ជ្រើស"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:33
+#, kde-format
+msgid "When checked all information will be deleted from the selected entries"
+msgstr "នៅពេល​បាន​គូ​សធីក ព័ត៌មាន​ទាំងអស់​នឹង​ត្រូវ​បានលុប​ពី​ធាតុ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:36
+#, kde-format
+msgid "Clear &All"
+msgstr "សម្អាត​ទាំងអស់"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:59
+#, kde-format
+msgid "Delete the text from selected entries"
+msgstr "លុប​អត្ថបទ​ពី​ធាតុ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:62
+#, kde-format
+msgid "When checked the text will be deleted from selected entries"
+msgstr "នៅ​ពេល​ដែលបានគូសធីក អត្ថបទ​នឹង​ត្រូវបាន​លុប​ពី​ធាតុ​ដែល​បាន​​ជ្រើស"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:65
+#, kde-format
+msgid "&Text"
+msgstr "អត្ថបទ"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:72
+#, kde-format
+msgid "Delete the image link from selected entries"
+msgstr "លុប​តំណ​រូបភាព​ពី​ធាតុ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:75
+#, kde-format
+msgid "When checked the image link will be deleted from selected entries"
+msgstr "នៅ​ពេល​គូសធីក តំណ​រូបភាព​នឹង​ត្រូវ​បាន​លុប​ពី​ធាតុ​ដែល​បាន​ជ្រើស"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:78
+#, kde-format
+msgid "&Image Links"
+msgstr "តំណ​រូបភាព"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:85
+#, kde-format
+msgid "Delete the sound link from selected entries"
+msgstr "លុប​តំណ​សំឡេង​ពី​ធាតុ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:88
+#, kde-format
+msgid "When checked the sound link will be deleted from selected entries"
+msgstr "នៅ​ពេល​គូសធីក តំណ​សំឡេង​នឹង​ត្រូវ​បាន​លុប​ពី​ធាតុ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:91
+#, kde-format
+msgid "&Sound Links"
+msgstr "តំណ​សំឡេង"
+
+#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
+#: columndialogbase.ui:45 kwordquiz.cpp:466
+#, kde-format
+msgid "Column 1"
+msgstr "ជួរឈរ 1"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
+#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
+#, kde-format
+msgid "Title for the left column"
+msgstr "ចំណង​ជើង​សម្រាប់​ជួរ​ឈរ​ខាងឆ្វេង"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
+#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
+#, kde-format
+msgid "Enter a title (identifier) for the left column"
+msgstr "បញ្ចូល​ចំណង​ជើង (សម្គាល់) ឲ្យ​ជួរឈរ​ខាងឆ្វេង"
+
+#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
+#: columndialogbase.ui:96
+#, kde-format
+msgid "&Title:"
+msgstr "ចំណង​ជើង ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
+#: columndialogbase.ui:112
+#, fuzzy, kde-format
+#| msgid "&Keyboard Layout:"
+msgid "&Keyboard layout:"
+msgstr "ប្លង់​ក្ដារចុច ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
+#: columndialogbase.ui:128
+#, kde-format
+msgid "&Width:"
+msgstr "ទទឹង ៖"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:158
+#, kde-format
+msgid "Keyboard layout for the left column"
+msgstr "ប្លង់​ក្ដារចុច​​សម្រាប់​ជួរឈរ​ខាង​ឆ្វេង"
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:161
+#, kde-format
+msgid "Select a keyboard layout for the left column"
+msgstr "ជ្រើស​ប្លង់​ក្ដារចុច​សម្រាប់​ជួរឈរ​ខាង​ឆ្វេង"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:168
+#, kde-format
+msgid "Width of the left column"
+msgstr "ទទឹង​របស់​ជួរឈរ​ខាង​ឆ្វេង"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:171
+#, kde-format
+msgid "Enter the width (in pixels) for the left column"
+msgstr "បញ្ចូល​ទទឹង (គិតជា​ភីកសែល) សម្រាប់ជួរឈរ​ខាង​ឆ្វេង"
+
+#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
+#: columndialogbase.ui:214 kwordquiz.cpp:469
+#, kde-format
+msgid "Column 2"
+msgstr "ជួរឈរ 2"
+
+#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
+#: columndialogbase.ui:265
+#, kde-format
+msgid "T&itle:"
+msgstr "ចំណង​ជើង ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
+#: columndialogbase.ui:281
+#, kde-format
+msgid "Keyboard &Layout:"
+msgstr "ប្លង់​ក្ដារចុច ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
+#: columndialogbase.ui:297
+#, kde-format
+msgid "Wi&dth:"
+msgstr "ទទឹង ៖"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:317
+#, kde-format
+msgid "Title for the right column"
+msgstr "ចំណង​ជើង​សម្រាប់​ជួរ​ឈរខាងស្ដាំ"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:320
+#, kde-format
+msgid "Enter a title (identifier) for the right column"
+msgstr "បញ្ចូល​ចំណងជើង​ (សម្គាល់) ឲ្យ​ជួរ​ឈរ​ខាងស្ដាំ"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:330
+#, kde-format
+msgid "Width of the right column"
+msgstr "ទទឹង​របស់​ជួរឈរ​ខាង​ស្ដាំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:333
+#, kde-format
+msgid "Enter the width (in pixels) for the right column"
+msgstr "បញ្ចូល​ទទឹង (គិត​ជា​ភីកសែល) សម្រាប់​ជួរឈរ​ខាង​ស្ដាំ"
+
+#: dlglanguage.cpp:21
+#, fuzzy, kde-format
+#| msgid "Column Settings"
+msgctxt "@title:window"
+msgid "Column Settings"
+msgstr "ការកំណត់​ជួរឈរ"
+
+#: dlgspecchar.cpp:17
+#, kde-format
+msgctxt "@title:window select character dialog"
+msgid "Select Character"
+msgstr "ជ្រើស​តួអក្សរ"
+
+#: dlgspecchar.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action:button select"
+#| msgid "&Select"
+msgctxt "@action:button"
+msgid "&Select"
+msgstr "ជ្រើស"
+
+#: dlgspecchar.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip select this character"
+#| msgid "Select this character"
+msgctxt "@info:tooltip"
+msgid "Select this character"
+msgstr "ជ្រើស​តួអក្សរ​នេះ"
+
+#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:12
+#, kde-format
+msgid "Column widths"
+msgstr "ទទឹង​ជួរឈរ"
+
+#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:18
+#, kde-format
+msgid "Keyboard layouts"
+msgstr "ប្លង់​ក្ដារចុច"
+
+#: filterproxysearchline.cpp:23
+#, fuzzy, kde-format
+#| msgid "Show Se&arch"
+msgid "Search"
+msgstr "បង្ហាញ​កា​រស្វែងរក"
+
+#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
+#, kde-format
+msgid "Your answer was correct!"
+msgstr "ចម្លើយ​របស់អ្នក​គឺ​ត្រឹមត្រូវ !"
+
+#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
+#, kde-format
+msgid "Your answer was incorrect."
+msgstr "ចម្លើយ​របស់អ្នក​មិនត្រឹមត្រូវ​ទេ !"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: flashviewbase.ui:149
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a flashcard quiz.</html>"
+msgstr ""
+"<html>មាន​ធាតុ​តិចពេក​នៅ​​ក្នុង​វាក្យស័ព្ទ​របស់​អ្នក ។<br />អ្នក​ត្រូវការ​ធាតុ​យ៉ាងហោចណាស់​មួយ​សម្រាប់​សំណួរ​ប័ណ្ណ​"
+"បង្ហាញ ។</html>"
+
+#: kwordquiz.cpp:100
+#, kde-format
+msgid "Creates a new blank vocabulary document"
+msgstr "បង្កើត​ឯកសារ​វាក្យសព្ទ​ទទេ​ថ្មី​មួយ"
+
+#: kwordquiz.cpp:105
+#, kde-format
+msgid "Opens an existing vocabulary document"
+msgstr "បើក​ឯកសារ​វាក្យសព្ទ​ដែល​មាន​ស្រាប់"
+
+#: kwordquiz.cpp:111
+#, kde-format
+msgid "Download New Vocabularies..."
+msgstr "ទាញយក​វាក្យសព្ទ​ថ្មី..."
+
+#: kwordquiz.cpp:115
+#, kde-format
+msgid "Downloads new vocabularies"
+msgstr "ទាញ​យក​វាក្យសព្ទ​ថ្មី"
+
+#: kwordquiz.cpp:120
+#, kde-format
+msgid "Saves the active vocabulary document"
+msgstr "រក្សាទុក​ឯកសារ​វាក្យសព្ទ​សកម្ម​"
+
+#: kwordquiz.cpp:125
+#, kde-format
+msgid "Saves the active vocabulary document with a different name"
+msgstr "រក្សាទុក​ឯកសារ​វាក្យសព្ទ​សកម្ម​ដោយ​ឈ្មោះ​ផ្សេង​មួយទៀត"
+
+#: kwordquiz.cpp:130
+#, kde-format
+msgid "Closes the active vocabulary document"
+msgstr "បិទ​ឯកសារ​វាក្យសព្ទ​សកម្ម"
+
+#: kwordquiz.cpp:134
+#, kde-format
+msgid "Prints the active vocabulary document"
+msgstr "បោះពុម្ព​ឯកសារ​វាក្យសព្ទ​សកម្ម"
+
+#: kwordquiz.cpp:139
+#, kde-format
+msgid "Shows a preview of the active vocabulary document"
+msgstr "បង្ហាញ​ការ​មើល​ឯកសារ​វាក្យស័ព្ទ​សកម្ម​ជា​មុន​"
+
+#: kwordquiz.cpp:144
+#, kde-format
+msgid "Quits KWordQuiz"
+msgstr "ចាកចេញពី KWordQuiz"
+
+#: kwordquiz.cpp:156
+#, kde-format
+msgid "Cuts the text from the selected cells and places it on the clipboard"
+msgstr "កាត់​អត្ថបទ​ចេញ​ពី​ក្រឡាដែលបានជ្រើស និង កន្លែង ដែល​វា​ស្ថិត​នៅលើ​ក្ដារ​តម្បៀត​ខ្ទាស់"
+
+#: kwordquiz.cpp:161
+#, kde-format
+msgid "Copies the text from the selected cells and places it on the clipboard"
+msgstr "ចម្លង​អត្ថបទ​ពី​ក្រឡា​ដែលបានជ្រើស និង កន្លែង​ដែល​វា​នៅលើ​ក្ដារ​តម្បៀត​ខ្ទាស់"
+
+#: kwordquiz.cpp:166
+#, kde-format
+msgid ""
+"Pastes previously cut or copied text from the clipboard into the selected "
+"cells"
+msgstr "បិទភ្ជាប់​អត្ថបទ​ដែលបាន​កាត់ ឬ ចម្លង​ពី​ក្ដារ​តម្បៀត​ខ្ទាស់​ទៅ​ក្នុង​ក្រឡាដែលបានជ្រើស"
+
+#: kwordquiz.cpp:172
+#, kde-format
+msgid "Clears the content of the selected cells"
+msgstr "សម្អាត​មាតិកា​ក្រឡា​ដែលបានជ្រើស"
+
+#: kwordquiz.cpp:178
+#, kde-format
+msgid "&Insert Row"
+msgstr "បញ្ចូល​ជួរ​ដេក"
+
+#: kwordquiz.cpp:180
+#, kde-format
+msgid "Inserts a new row above the current row"
+msgstr "បញ្ចូល​ជួរ​ដេក​ថ្មី​ពីលើ​ជួរ​ដេក​បច្ចុប្បន្ន"
+
+#: kwordquiz.cpp:187
+#, kde-format
+msgid "&Delete Row"
+msgstr "លុប​ជួរ​ដេក"
+
+#: kwordquiz.cpp:189
+#, kde-format
+msgid "Deletes the selected row(s)"
+msgstr "លុប​ជួរ​ដេក​ដែលបានជ្រើស"
+
+#: kwordquiz.cpp:196
+#, kde-format
+msgid "&Mark as Blank"
+msgstr "សម្គាល់​ថា​ទទេ"
+
+#: kwordquiz.cpp:198
+#, kde-format
+msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+msgstr "សម្គាល់​ពាក្យ​បច្ចុប្បន្ន ឬ ពាក្យ​ដែលបានជ្រើស​ថា​ជា​ទទេ សម្រាប់​ការបំពេញ​ចន្លោះ​ទទេ"
+
+#: kwordquiz.cpp:205
+#, kde-format
+msgid "&Unmark Blanks"
+msgstr "ដោះ​សម្គាល់​ទទេ"
+
+#: kwordquiz.cpp:206
+#, kde-format
+msgid "Removes blanks from the current or selected word"
+msgstr "យក​ចន្លោះ​ទទេ​ចេញពី​ពាក្យ​បច្ចុប្បន្ន​ ឬ ពាក្យដែល​បានជ្រើស"
+
+#: kwordquiz.cpp:213
+#, kde-format
+msgid "&Column Settings..."
+msgstr "ការ​កំណត់​ជួរឈរ..."
+
+#: kwordquiz.cpp:215
+#, kde-format
+msgid "Defines the column settings for the active vocabulary"
+msgstr "កំណត់​ការ​កំណត់ជួរឈរ​សម្រាប់​វាក្យស័ព្ទ​សកម្ម"
+
+#: kwordquiz.cpp:222
+#, kde-format
+msgid "&Font..."
+msgstr "ពុម្ព​អក្សរ..."
+
+#: kwordquiz.cpp:223
+#, kde-format
+msgid "Defines the font used by the editor"
+msgstr "កំណត់​ពុម្ព​អក្សរ​ដែលបាន​ប្រើ​ដោយ​កម្មវិធី​កែសម្រួល"
+
+#: kwordquiz.cpp:230
+#, kde-format
+msgid "Link &Image..."
+msgstr "តភ្ជាប់​រូបភាព..."
+
+#: kwordquiz.cpp:231
+#, kde-format
+msgid "Links an image with the current entry"
+msgstr "តភ្ជាប់​រូបភាព​ជា​មួយនឹង​ធាតុ​បច្ចុប្បន្ន"
+
+#: kwordquiz.cpp:238
+#, kde-format
+msgid "Link &Sound..."
+msgstr "តភ្ជាប់​សំឡេង..."
+
+#: kwordquiz.cpp:239
+#, kde-format
+msgid "Links a sound with the current entry"
+msgstr "តភ្ជាប់​សំឡេង​ជា​មួយ​នឹង​ធាតុ​បច្ចុប្បន្ន"
+
+#: kwordquiz.cpp:246
+#, kde-format
+msgid "&Adjust Row Heights"
+msgstr "លៃតម្រូវ​កម្ពស់​ជួរដេក"
+
+#: kwordquiz.cpp:247
+#, kde-format
+msgid "Automatically adjusts the height of selected rows"
+msgstr "លៃតម្រូវ​កម្ពស់​ជួរដេក​ដែល​បាន​ជ្រើស​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#: kwordquiz.cpp:254
+#, kde-format
+msgid "Sh&uffle"
+msgstr "គ្មាន​លំដាប់"
+
+#: kwordquiz.cpp:255
+#, kde-format
+msgid "Shuffles the entries of the active vocabulary"
+msgstr "ដាក់​ធាតុ​​របស់​វាក្យសព្ទ​សកម្ម​មិន​តាម​លំដាប់"
+
+#: kwordquiz.cpp:261
+#, kde-format
+msgid "&Keyboard Layout"
+msgstr "ប្លង់​ក្ដារចុច"
+
+#: kwordquiz.cpp:262
+#, kde-format
+msgid "Shows available keyboard layouts"
+msgstr "បង្ហាញ​ប្លង់ក្ដារចុច​ដែល​អាច​ប្រើបាន"
+
+#: kwordquiz.cpp:273
+#, kde-format
+msgid "Change Mode"
+msgstr "ផ្លាស់ប្ដូរ​របៀប"
+
+#: kwordquiz.cpp:274
+#, kde-format
+msgid "Mode"
+msgstr "របៀប​"
+
+#: kwordquiz.cpp:275
+#, kde-format
+msgid "Changes the mode used in quiz sessions"
+msgstr "ផ្លាស់ប្ដូរ​របៀប​ដែល​បាន​ប្រើ​នៅក្នុង​សម័យ​សំណួរ"
+
+#: kwordquiz.cpp:288
+#, kde-format
+msgid "Selects this mode"
+msgstr "ជ្រើស​របៀប​នេះ"
+
+#: kwordquiz.cpp:297
+#, kde-format
+msgctxt "@item:inlistbox activate vocabulary editor"
+msgid "&Editor"
+msgstr "កម្មវិធី​និពន្ធ"
+
+#: kwordquiz.cpp:299
+#, kde-format
+msgid "Activates the vocabulary editor"
+msgstr "ធ្វើ​ឲ្យ​កម្មវិធី​កែសម្រួល​វាក្យសព្ទ​សកម្ម"
+
+#: kwordquiz.cpp:306
+#, kde-format
+msgid "&Flashcard"
+msgstr "បណ្ណ​បង្ហាញ"
+
+#: kwordquiz.cpp:308
+#, kde-format
+msgid "Starts a flashcard session using the active vocabulary"
+msgstr "ចាប់ផ្ដើម​សម័យ​បណ្ណ​បង្ហាញ​ដោយ​ប្រើ​វាក្យ​សព្ទ​សកម្ម"
+
+#: kwordquiz.cpp:315
+#, kde-format
+msgid "&Multiple Choice"
+msgstr "ពហុ​ជ្រើស​រើស"
+
+#: kwordquiz.cpp:317
+#, kde-format
+msgid "Starts a multiple choice session using the active vocabulary"
+msgstr "ចាប់ផ្ដើម​​សម័យ​ពហុជ្រើសរើស​ដោយ​ប្រើ​វាក្យសព្ទ​សកម្ម"
+
+#: kwordquiz.cpp:324
+#, kde-format
+msgid "&Question and Answer"
+msgstr "សំណួរ​ចម្លើយ"
+
+#: kwordquiz.cpp:325
+#, kde-format
+msgid "Q&&A"
+msgstr "សំណួរ និង​ចម្លើយ"
+
+#: kwordquiz.cpp:327
+#, kde-format
+msgid "Starts a question and answer session using the active vocabulary"
+msgstr "ចាប់ផ្ដើម​សម័យ សំណួរ និង ចម្លើយ ដោយប្រើ​វាក្យសព្ទ​សកម្ម"
+
+#: kwordquiz.cpp:334
+#, kde-format
+msgid "&Check"
+msgstr "ពិនិត្យ"
+
+#: kwordquiz.cpp:336
+#, kde-format
+msgid "Checks your answer to this question"
+msgstr "ពិនិត្យ​ចម្លើយ​របស់អ្នក​ចំពោះ​សំណួរ​នេះ"
+
+#: kwordquiz.cpp:341
+#, kde-format
+msgid "Choose Option &1"
+msgstr "ជ្រើស​ជម្រើស ១"
+
+#: kwordquiz.cpp:345
+#, kde-format
+msgid "Choose Option &2"
+msgstr "ជ្រើស​ជម្រើស ២"
+
+#: kwordquiz.cpp:349
+#, kde-format
+msgid "Choose Option &3"
+msgstr "ជ្រើស​ជម្រើស​បី"
+
+#: kwordquiz.cpp:354
+#, kde-format
+msgid "I &Know"
+msgstr "ខ្ញុំ​ដឹង"
+
+#: kwordquiz.cpp:356
+#, kde-format
+msgid "Counts this card as correct and shows the next card"
+msgstr "រាប់​បណ្ណ​នេះ​ថាត្រឹមត្រូវ ហើយ​បង្ហាញ​បណ្ណ​បន្ទាប់"
+
+#: kwordquiz.cpp:362
+#, kde-format
+msgid "I &Do Not Know"
+msgstr "ខ្ញុំ​មិនដឹង"
+
+#: kwordquiz.cpp:364
+#, kde-format
+msgid "Counts this card as incorrect and shows the next card"
+msgstr "រាប់​បណ្ណ​នេះ​ថា​មិនត្រឹមត្រូវ ហើយ​បង្ហាញ​បណ្ណ​បន្ទាប់"
+
+#: kwordquiz.cpp:370
+#, kde-format
+msgid "&Hint"
+msgstr "ព័ត៌មាន​ជំនួយ"
+
+#: kwordquiz.cpp:372
+#, kde-format
+msgid "Gets the next correct letter of the answer"
+msgstr "យក​អក្សរ​ដែលជាចម្លើយ​ត្រឹមត្រូវ​បន្ទាប់"
+
+#: kwordquiz.cpp:378
+#, kde-format
+msgid "Mark Last Correct"
+msgstr "សម្គាល់​ថា​ត្រឹមត្រូវ​ចុងក្រោយ"
+
+#: kwordquiz.cpp:380
+#, kde-format
+msgid "Marks last answer as correct"
+msgstr "សម្គាល់​ចម្លើយ​ចុងក្រោយ​ថា​ត្រឹមត្រូវ"
+
+#: kwordquiz.cpp:386
+#, kde-format
+msgid "&Restart"
+msgstr "ចាប់ផ្ដើម​ឡើងវិញ"
+
+#: kwordquiz.cpp:388
+#, kde-format
+msgid "Restarts the quiz session from the beginning"
+msgstr "ចាប់ផ្ដើម​សម័យ​សំណួរ​តាំង​ពី​ចាប់ផ្ដើម"
+
+#: kwordquiz.cpp:394
+#, kde-format
+msgid "&Play Audio"
+msgstr "ចាក់​អូឌីយ៉ូ"
+
+#: kwordquiz.cpp:396
+#, kde-format
+msgid "Play associated audio"
+msgstr "ចាក់​អូឌីយ៉ូ​ដែល​បាន​ភ្ជាប់"
+
+#: kwordquiz.cpp:402
+#, kde-format
+msgid "Repeat &Errors"
+msgstr "ធ្វើ​ចម្លើយ​ដែលមាន​កំហុស​ឡើងវិញ"
+
+#: kwordquiz.cpp:404
+#, kde-format
+msgid "Repeats all incorrectly answered questions"
+msgstr "ឆ្លើយ​សំណួរ​ដែល​បានឆ្លើយខុស​ទាំងអស់​ឡើង​វិញ"
+
+#: kwordquiz.cpp:410
+#, kde-format
+msgid "Export Errors &As..."
+msgstr "នាំចេញ​កំហុស​ជា..."
+
+#: kwordquiz.cpp:411
+#, kde-format
+msgid "Exports all errors as a new vocabulary document"
+msgstr "នាំចេញ​កំហុស​ទាំងអស់​ជា​​ឯកសារ​វាក្យសព្ទ​ថ្មី"
+
+#: kwordquiz.cpp:417
+#, kde-format
+msgid "Show Se&arch"
+msgstr "បង្ហាញ​កា​រស្វែងរក"
+
+#: kwordquiz.cpp:419
+#, kde-format
+msgid "Toggle display of the search bar"
+msgstr "បិទ/បើក​កា​របង្ហាញ​របារ​ស្វែងរក"
+
+#: kwordquiz.cpp:424
+#, kde-format
+msgid "Configures sound and other notifications for certain events"
+msgstr "កំណត់​រចនាសម្ព័ន្ធ​​សម្លេង និង សេចក្ដី​ជូន​ដំណឹង​ផ្សេងទៀត​សម្រាប់​ព្រឹត្តិការណ៍​ជាក់លាក់"
+
+#: kwordquiz.cpp:429
+#, kde-format
+msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+msgstr "បញ្ជាក់​ចំណង់​ចំណូលចិត្ត​សម្រាប់​កម្មវិធី​កែសម្រួល​វាក្យសព្ទ និង សម័យ​សំណួរ"
+
+#: kwordquiz.cpp:435
+#, kde-format
+msgid "Special Character <numid>%1</numid>"
+msgstr "តួអក្សរ​ពិសេស <numid>%1</numid>"
+
+#: kwordquiz.cpp:447
+#, kde-format
+msgid "Toggles display of the toolbars"
+msgstr "បិទបើក​ការបង្ហាញ​របារ​ឧបករណ៍"
+
+#: kwordquiz.cpp:500
+#, kde-format
+msgid "Enter search terms here"
+msgstr "បញ្ចូល​ពាក្យ​ស្វែងរក​នៅ​ទីនេះ"
+
+#: kwordquiz.cpp:523
+#, kde-format
+msgctxt "@item:inlistbox vocabulary editor"
+msgid "Editor"
+msgstr "កម្មវិធី​និពន្ធ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
+#: kwordquiz.cpp:528 prefquizbase.ui:192
+#, kde-format
+msgid "Flashcard"
+msgstr "បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
+#: kwordquiz.cpp:532 prefquizbase.ui:149
+#, kde-format
+msgid "Multiple Choice"
+msgstr "ពហុជ្រើសរើស"
+
+#: kwordquiz.cpp:536
+#, kde-format
+msgid "Question & Answer"
+msgstr "សំណួរ & ចម្លើយ"
+
+#: kwordquiz.cpp:602 kwordquiz.cpp:768 kwordquiz.cpp:813
+#, kde-format
+msgid "Opening file..."
+msgstr "កំពុង​បើក​ឯកសារ..."
+
+#: kwordquiz.cpp:635
+#, kde-format
+msgctxt "%1 is an error message"
+msgid ""
+"%1\n"
+"If you are sure no other program is using the file you can choose to ignore "
+"the lock and open the file anyway.\n"
+"Do you want to open the file?"
+msgstr ""
+
+#: kwordquiz.cpp:648 kwordquiz.cpp:763 kwordquiz.cpp:808 kwordquiz.cpp:816
+#: kwordquiz.cpp:853 kwordquiz.cpp:866 kwordquiz.cpp:955 kwordquiz.cpp:962
+#: kwordquiz.cpp:968 kwordquiz.cpp:998 kwordquiz.cpp:1005 kwordquiz.cpp:1012
+#: kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033 kwordquiz.cpp:1040
+#: kwordquiz.cpp:1047 kwordquiz.cpp:1060 kwordquiz.cpp:1075 kwordquiz.cpp:1083
+#: kwordquiz.cpp:1091 kwordquiz.cpp:1100 kwordquiz.cpp:1108 kwordquiz.cpp:1122
+#: kwordquiz.cpp:1130 kwordquiz.cpp:1137 kwordquiz.cpp:1144 kwordquiz.cpp:1151
+#, kde-format
+msgctxt "@info:status ready"
+msgid "Ready"
+msgstr "រួចរាល់​ហើយ"
+
+#: kwordquiz.cpp:717
+#, kde-format
+msgid ""
+"The current document has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"ឯកសារ​បច្ចុប្បន្ន​ត្រូវ​បានកែប្រែ ។\n"
+"តើ​អ្នក​ចង់​រក្សាទុក​វា​ឬទេ ?"
+
+#: kwordquiz.cpp:758
+#, kde-format
+msgid "Opening a new document window..."
+msgstr "កំពុង​បើក​បង្អួច​ឯកសារ​ថ្មី..."
+
+#: kwordquiz.cpp:770
+#, kde-format
+msgid "&Merge selected files with the current document"
+msgstr "បញ្ចូល​​ឯកសារ​ដែលបាន​ជ្រើស​ជាមួយ​នឹង​ឯកសារ​បច្ចុប្បន្ន"
+
+#: kwordquiz.cpp:775 kwqtutor.cpp:130
+#, kde-format
+msgid "Open Vocabulary Document"
+msgstr "បើក​ឯកសារ​វាក្យសព្ទ"
+
+#: kwordquiz.cpp:840
+#, kde-format
+msgid "Saving file..."
+msgstr "កំពុង​រក្សាទុក​ឯកសារ..."
+
+#: kwordquiz.cpp:859
+#, kde-format
+msgid "Saving file with a new filename..."
+msgstr "កំពុង​រក្សាទុក​ឯកសារ​ដែលមាន​ឈ្មោះ​ថ្មី..."
+
+#: kwordquiz.cpp:887
+#, fuzzy, kde-format
+#| msgid "*.html|HTML Document"
+msgid "HTML Document"
+msgstr "*.html|ឯកសារ HTML"
+
+#: kwordquiz.cpp:889
+#, kde-format
+msgid "Save Vocabulary Document As"
+msgstr "រក្សាទុក​ឯកសារ​វាក្យសព្ទ​ជា"
+
+#: kwordquiz.cpp:937
+#, kde-format
+msgid "Closing file..."
+msgstr "កំពុង​បិទ​ឯកសារ..."
+
+#: kwordquiz.cpp:960
+#, kde-format
+msgid "Printing..."
+msgstr "កំពុង​បោះពុម្ព..."
+
+#: kwordquiz.cpp:966
+#, kde-format
+msgid "Showing Preview..."
+msgstr "កំពុង​បង្ហាញ​កា​រមើល​ជា​មុន..."
+
+#: kwordquiz.cpp:974
+#, kde-format
+msgctxt "@info:status quitting"
+msgid "Quitting..."
+msgstr "កំពុង​ចេញ..."
+
+#: kwordquiz.cpp:996
+#, kde-format
+msgid "Cutting selection..."
+msgstr "កំពុង​កាត់​ជម្រើស..."
+
+#: kwordquiz.cpp:1003
+#, kde-format
+msgid "Copying selection to clipboard..."
+msgstr "កំពុង​ចម្លង​ជម្រើស​ទៅ​ក្ដារ​តម្បៀត​ខ្ទាស់..."
+
+#: kwordquiz.cpp:1010
+#, kde-format
+msgid "Inserting clipboard contents..."
+msgstr "កំពុង​បញ្ចូល​មាតិកា​ក្ដារ​តម្បៀត​ខ្ទាស់..."
+
+#: kwordquiz.cpp:1017
+#, kde-format
+msgid "Clearing the selected cells..."
+msgstr "កំពុង​សម្អាត​ក្រឡា​ដែលបានជ្រើស..."
+
+#: kwordquiz.cpp:1024
+#, kde-format
+msgid "Inserting rows..."
+msgstr "កំពុង​បញ្ចូល​ជួរ​ដេក..."
+
+#: kwordquiz.cpp:1031
+#, kde-format
+msgid "Deleting selected rows..."
+msgstr "កំពុង​លុប​ជួរ​ដេក​ដែលបានជ្រើស..."
+
+#: kwordquiz.cpp:1038
+#, kde-format
+msgid "Marking selected text as a blank..."
+msgstr "កំពុង​សម្គាល់​អត្ថបទ​ដែល​បានជ្រើស​ថា​ទទេ..."
+
+#: kwordquiz.cpp:1045
+#, kde-format
+msgid "Removing blank markings..."
+msgstr "កំពុង​យក​ការសម្គាល់​ថា​ទទេ​ចេញ..."
+
+#: kwordquiz.cpp:1052
+#, kde-format
+msgid "Setting the column titles of the vocabulary..."
+msgstr "កំពុង​កំណត់​ក្រឡា​ជួរ​ឈរ​នៃ​វាក្យសព្ទ..."
+
+#: kwordquiz.cpp:1065
+#, kde-format
+msgid "Setting the font of the vocabulary..."
+msgstr "កំពុង​កំណត់​ពុម្ពអក្សរ​នៃ​វាក្យសព្ទ..."
+
+#: kwordquiz.cpp:1081
+#, kde-format
+msgid "Linking an image with the current entry..."
+msgstr "កំពុង​តភ្ជាប់​រូបភាព​ជា​មួយ​ធាតុ​បច្ចុប្បន្ន..."
+
+#: kwordquiz.cpp:1089
+#, kde-format
+msgid "Linking a sound with the current entry..."
+msgstr "កំពុង​តភ្ជាប់​សំឡេង​ជា​មួយ​ធាតុ​បច្ចុប្បន្ន..."
+
+#: kwordquiz.cpp:1097
+#, kde-format
+msgid "Adjusting row heights..."
+msgstr "កំពុង​លៃតម្រូវ​កម្ពស់​ជួរដេក..."
+
+#: kwordquiz.cpp:1106
+#, kde-format
+msgid "Randomizing the vocabulary..."
+msgstr "កំពុង​ធ្វើ​ការព្រាវ​វាក្យសព្ទ..."
+
+#: kwordquiz.cpp:1114
+#, kde-format
+msgid "Updating mode..."
+msgstr "កំពុង​ធ្វើ​បច្ចុប្បន្នភាព​​របៀប..."
+
+#: kwordquiz.cpp:1128
+#, kde-format
+msgid "Starting editor session..."
+msgstr "កំពុង​ចាប់ផ្ដើម​សម័យ​កម្មវិធី​កែសម្រួល..."
+
+#: kwordquiz.cpp:1135
+#, kde-format
+msgid "Starting flashcard session..."
+msgstr "កំពុង​ចាប់ផ្ដើម​សម័យ​បណ្ណ​បង្ហាញ..."
+
+#: kwordquiz.cpp:1142
+#, kde-format
+msgid "Starting multiple choice session..."
+msgstr "កំពុង​ចាប់ផ្ដើម​សម័យ​ពហុជ្រើសរើស..."
+
+#: kwordquiz.cpp:1149
+#, kde-format
+msgid "Starting question & answer session..."
+msgstr "កំពុង​ចាប់ផ្ដើម​សម័យ​សំណួរ និង ចម្លើយ..."
+
+#: kwordquiz.cpp:1301
+#, kde-format
+msgid "Insert %1"
+msgstr "បញ្ចូល %1"
+
+#: kwordquiz.cpp:1302
+#, kde-format
+msgid "Inserts the character %1"
+msgstr "បញ្ចូល​តួអក្សរ %1"
+
+#: kwordquiz.cpp:1353
+#, kde-format
+msgid "This will restart your quiz. Do you wish to continue?"
+msgstr "វា​នឹង​ចាប់​ផ្ដើម​សំណួរ​របស់អ្នក​ឡើងវិញ ។ តើអ្នក​ចង់​បន្ត​ទេ ?"
+
+#: kwordquiz.cpp:1369
+#, kde-format
+msgid "&1 %1 -> %2 In Order"
+msgstr "1 %1 -> %2 តាម​លំដាប់"
+
+#: kwordquiz.cpp:1370
+#, kde-format
+msgid "&2 %1 -> %2 In Order"
+msgstr "2 %1 -> %2 តាម​លំដាប់"
+
+#: kwordquiz.cpp:1371
+#, kde-format
+msgid "&3 %1 -> %2 Randomly"
+msgstr "3 %1 -> %2 ដោយ​ចៃដន្យ"
+
+#: kwordquiz.cpp:1372
+#, kde-format
+msgid "&4 %1 -> %2 Randomly"
+msgstr "4 %1 -> %2 ដោយ​ចៃដន្យ"
+
+#: kwordquiz.cpp:1373
+#, fuzzy, kde-format
+#| msgid "&3 %1 -> %2 Randomly"
+msgid "&5 %1 <-> %2 Randomly"
+msgstr "3 %1 -> %2 ដោយ​ចៃដន្យ"
+
+#: kwordquiz.cpp:1380 kwordquiz.cpp:1383
+#, kde-format
+msgid "%1 -> %2 In Order"
+msgstr "%1 -> %2 តាម​លំដាប់"
+
+#: kwordquiz.cpp:1386 kwordquiz.cpp:1389
+#, kde-format
+msgid "%1 -> %2 Randomly"
+msgstr "%1 -> %2 ដោយ​ចៃដន្យ"
+
+#: kwordquiz.cpp:1392
+#, kde-format
+msgid "%1 &lt;-&gt; %2 Randomly"
+msgstr "%1 &lt;-&gt; %2 ដោយ​ចៃដន្យ"
+
+#. i18n: ectx: label, entry (FirstRun), group (General)
+#: kwordquiz.kcfg:10
+#, kde-format
+msgid "Is this the first time KWordQuiz is run?"
+msgstr "តើនេះ​ជាលើក​ទី​មួយ​ឬ​ដែល​រត់ KWordQuiz ?"
+
+#. i18n: ectx: label, entry (ShowSearch), group (General)
+#: kwordquiz.kcfg:14
+#, kde-format
+msgid "Toggle display of the search bar."
+msgstr "បិទ/បើក​ការបង្ហាញ​របារ​ស្វែងរក"
+
+#. i18n: ectx: label, entry (StartSession), group (General)
+#: kwordquiz.kcfg:18
+#, kde-format
+msgid "Type of session to use when opening files"
+msgstr "ប្រភេទ​សម័យ​ត្រូវ​ប្រើ​នៅ​ពេល​បើក​ឯកសារ"
+
+#. i18n: ectx: label, entry (PrintStyle), group (General)
+#: kwordquiz.kcfg:28
+#, kde-format
+msgid "Type of printout to generate"
+msgstr "ប្រភេទ​​សន្លឹក​បោះពុម្ព​ត្រូវ​បង្កើត"
+
+#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
+#: kwordquiz.kcfg:39
+#, kde-format
+msgid "Titles for column 1"
+msgstr "ចំណងជើង​សម្រាប់​ជួរ​ឈរ 1"
+
+#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
+#: kwordquiz.kcfg:43
+#, kde-format
+msgid "Titles for column 2"
+msgstr "ចំណង​ជើង​សម្រាប់​ជួរឈរ 2"
+
+#. i18n: ectx: label, entry (EditorFont), group (Editor)
+#: kwordquiz.kcfg:47
+#, kde-format
+msgid "Font used in the editor"
+msgstr "ពុម្ព​អក្សរ​ដែល​ត្រូវបាន​ប្រើ​នៅក្នុង​កម្មវិធី​កែសម្រួល"
+
+#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
+#: kwordquiz.kcfg:51
+#, kde-format
+msgid "If Fill-in-the-blank should be enabled"
+msgstr "ប្រសិន​បើក​គួរតែ​អនុញ្ញាត ការបំពេញ​ចន្លោះ​ទទេ"
+
+#. i18n: ectx: label, entry (EnterMove), group (Editor)
+#: kwordquiz.kcfg:55
+#, kde-format
+msgid "Direction the Enter key moves in the editor"
+msgstr "ទិស​នៃ​គ្រាប់​ចុច​ បញ្ចូល(Enter) ផ្លាស់ទី​នៅក្នុង​កម្មវិធី​កែសម្រួល"
+
+#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
+#: kwordquiz.kcfg:59
+#, kde-format
+msgid "Characters for the special character toolbar"
+msgstr "តួអក្សរ​សម្រាប់​របារ​ឧបករណ៍​តួអក្សរ​ពិសេស"
+
+#. i18n: ectx: label, entry (ClearAll), group (Editor)
+#: kwordquiz.kcfg:63
+#, kde-format
+msgid "Clear all data in selected entries"
+msgstr "សម្អាត​ទិន្នន័យ​ទាំងអស់​នៅ​ក្នុង​ធាតុ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: label, entry (ClearText), group (Editor)
+#: kwordquiz.kcfg:67
+#, kde-format
+msgid "Clear the text in selected entries"
+msgstr "សម្អាត​អត្ថបទ​នៅ​ក្នុង​ធាតុ​ដែល​បាន​ជ្រើស"
+
+#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
+#: kwordquiz.kcfg:71
+#, kde-format
+msgid "Clear the image link in selected entries"
+msgstr "សម្អាត​តំណ​រូបភាព​នៅ​ក្នុង​ធាតុ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
+#: kwordquiz.kcfg:75
+#, kde-format
+msgid "Clear the sound link in selected entries"
+msgstr "សម្អាត​តំណ​សំឡេង​នៅ​ក្នុ​ងធាតុ​ដែល​បាន​ជ្រើស"
+
+#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
+#: kwordquiz.kcfg:81
+#, kde-format
+msgid "Automatically check selected answer in multiple choice"
+msgstr "ពិនិត្យ​ចម្លើយ​ដែលបាន​ជ្រើស​នៅក្នុង​ ពហុជ្រើស​រើស​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
+#: kwordquiz.kcfg:85
+#, kde-format
+msgid "Automatically flip flashcard"
+msgstr "ត្រឡប់​បណ្ណ​បង្ហាញ​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
+#: kwordquiz.kcfg:89
+#, kde-format
+msgid "Time delay for flipping flashcard"
+msgstr "ពេល​ដែល​ពន្យា​សម្រាប់​ការ​ត្រឡប់​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (HintError), group (Quiz)
+#: kwordquiz.kcfg:93
+#, kde-format
+msgid "Treat use of hint as error"
+msgstr "ដោះស្រាយ​កំហុស​ដោយប្រើ​ព័ត៌មាន​ជំនួយ"
+
+#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
+#: kwordquiz.kcfg:97
+#, kde-format
+msgid "Count flashcard as correct or error"
+msgstr "រាប់​បណ្ណ​បង្ហាញ​ថា ត្រូវ ឬ មាន​កំហុស"
+
+#. i18n: ectx: label, entry (Mode), group (Quiz)
+#: kwordquiz.kcfg:101
+#, kde-format
+msgid "Quiz mode"
+msgstr "របៀប​សំណួរ"
+
+#. i18n: ectx: label, entry (Percent), group (Quiz)
+#: kwordquiz.kcfg:105
+#, kde-format
+msgid "Show score as percentage"
+msgstr "បង្ហាញ​ពិន្ទុ​ជា​ភាគរយ"
+
+#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
+#: kwordquiz.kcfg:111
+#, kde-format
+msgid "Font used for front of flashcard"
+msgstr "ពុម្ពអក្សរ​ដែល​ត្រូវបាន​ប្រើ​សម្រាប់​ខាងមុខ​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
+#: kwordquiz.kcfg:115
+#, kde-format
+msgid "Color used for text on front of flashcard"
+msgstr "ពណ៌​ដែល​បាន​ប្រើ​សម្រាប់​អត្ថបទ​នៅលើ​ផ្ទៃ​ខាងមុខ​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
+#: kwordquiz.kcfg:119
+#, kde-format
+msgid "Color used for front of flashcard"
+msgstr "ពណ៌​ដែលបាន​ប្រើ​សម្រាប់​ផ្ទៃ​ខាងមុខ​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:123
+#, kde-format
+msgid "Color used for frame on front of flashcard"
+msgstr "ពណ៌​ដែលបាន​ប្រើ​​សម្រាប់​ស៊ុម​នៅលើ​ផ្ទៃ​ខាងមុខ​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (BackFont), group (FlashCard)
+#: kwordquiz.kcfg:127
+#, kde-format
+msgid "Font used for back of flashcard"
+msgstr "ពុម្ព​អក្សរ​ដែល​បាន​ប្រើ​សម្រាប់​ខ្នង​បណ្ណបង្ហាញ"
+
+#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
+#: kwordquiz.kcfg:131
+#, kde-format
+msgid "Color used for text on back of flashcard"
+msgstr "ពណ៌​ដែលបាន​ប្រើ​សម្រាប់​អត្ថបទ​នៅខ្នង​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
+#: kwordquiz.kcfg:135
+#, kde-format
+msgid "Color used for back of flashcard"
+msgstr "ពណ៌​ដែលបាន​ប្រើ​សម្រាប់​ខ្នង​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:139
+#, kde-format
+msgid "Color used for frame on back of flashcard"
+msgstr "ពណ៌​ដែលបាន​ប្រើ​សម្រាប់​ស៊ុម​នៅខ្នង​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
+#: kwordquiz.kcfg:145
+#, kde-format
+msgid "The Providers path for KWordQuiz"
+msgstr "អ្នក​ផ្ដល់​ផ្លូវ​សម្រាប់ KWordQuiz"
+
+#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
+#: kwordquiz.kcfg:149
+#, kde-format
+msgid "The command used to start a downloaded vocabulary"
+msgstr "ពាក្យ​បញ្ជា​ដែល​បាន​ប្រើ​ដើម្បី​ចាប់​ផ្ដើម​វាក្យសព្ទ​ដែល​បាន​ទាញយក"
+
+#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
+#: kwordquiz.kcfg:153
+#, kde-format
+msgid ""
+"The folder where downloaded vocabularies are saved by default (relative to "
+"$HOME)"
+msgstr "ថត​ដែល​វាក្យ​សព្ទ​បាន​ទាញ​យក​ពី គឺ​ត្រូវបាន​រក្សាទុក​តាម​លំនាំដើម (ទាក់ទង​ទៅនឹង$HOME)"
+
+#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
+#: kwordquiz.kcfg:159
+#, kde-format
+msgid "Pop up flashcards at fixed or random intervals"
+msgstr "flashcards លេច​ឡើង​នៅ​ចន្លោះពេល​ថេរ ឬ​ចៃដន្យ"
+
+#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
+#: kwordquiz.kcfg:167
+#, kde-format
+msgid "The interval in minutes at which to pop up a flash card"
+msgstr "ចន្លោះ​ពេល​គិត​ជា​នាទី ចំពោះ​​ប័ណ្ណ​បង្ហាញ​លេច​ឡើង"
+
+#. i18n: ectx: label, entry (TutorMin), group (Tutor)
+#: kwordquiz.kcfg:171
+#, kde-format
+msgid "The minimum interval in minutes at which to pop up a flash card"
+msgstr "ចន្លោះពេល​អប្បបរមា​គិត​ជា​នទី​ សម្រាប់​​ប័ណ្ណ​បង្ហាញ​លេច​ឡើង"
+
+#. i18n: ectx: label, entry (TutorMax), group (Tutor)
+#: kwordquiz.kcfg:175
+#, kde-format
+msgid "The maximum interval in minutes at which to pop up a flash card"
+msgstr "ចន្លោះពេល​អតិបរមា​គិត​ជា​នទី​ សម្រាប់​​ប័ណ្ណ​បង្ហាញ​លេច​ឡើង"
+
+#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
+#: kwordquiz.kcfg:179
+#, kde-format
+msgid "Geometry of the last flash card"
+msgstr "ធរណីមាត្រ​នៃ​​ប័ណ្ណ​បង្ហាញ​ចុង​ក្រោយ"
+
+#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
+#: kwordquiz.kcfg:183
+#, kde-format
+msgid "Show flash card in a native KWordQuiz style"
+msgstr "បង្ហាញ​ប័ណ្ណ​បង្ហាញ​ជា​រចនាប័ទ្ម KWordQuiz ដើម"
+
+#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
+#: kwordquiz.kcfg:191
+#, kde-format
+msgid ""
+"Last open vocabulary file to be opened automatically if none other is "
+"specified on the command line"
+msgstr ""
+"ឯកសារ​វាក្យស័ព្ទ​ដែល​បានបើក​ចុងក្រោយ​​ត្រូវ​បានបើក​ដោយ​ស្វ័យ​ប្រវត្តិ ប្រសិន​បើ​គ្មាន​វាក្យស័ព្ទ​ផ្សេង​ត្រូវ​បាន​"
+"បញ្ជាក់​ក្នុង​បន្ទាត់​ពាក្យ​បញ្ជា"
+
+#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
+#: kwordquiz.kcfg:195
+#, kde-format
+msgid "Start exercise as soon as the user opens vocabulary file"
+msgstr "ចាប់ផ្ដើម​លំហាត់​ឲ្យ​បាន​ឆាប់​នៅ​ពេល​ដែល​អ្នកប្រើ​បើក​ឯកសារ​វាក្យស័ព្ទ"
+
+#: kwordquizprefs.cpp:24
+#, kde-format
+msgctxt "@title:group general settings"
+msgid "General"
+msgstr "ទូទៅ"
+
+#: kwordquizprefs.cpp:24
+#, kde-format
+msgctxt "@title:group general settings"
+msgid "General Settings"
+msgstr "ការកំណត់​ទូទៅ"
+
+#: kwordquizprefs.cpp:27
+#, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor"
+msgstr "អ្នក​​​កែ​​សម្រួល​​"
+
+#: kwordquizprefs.cpp:27
+#, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor Settings"
+msgstr "ការកំណត់​កម្មវិធី​កែសម្រួល"
+
+#: kwordquizprefs.cpp:30
+#, kde-format
+msgctxt "@title:group quiz settings"
+msgid "Quiz"
+msgstr "សំណួរ"
+
+#: kwordquizprefs.cpp:30
+#, kde-format
+msgctxt "@title:group quiz settings"
+msgid "Quiz Settings"
+msgstr "ការកំណត់​សំណួរ"
+
+#: kwordquizprefs.cpp:33
+#, kde-format
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance"
+msgstr "រូបរាង​របស់​ប័ណ្ណ​បង្ហាញ"
+
+#: kwordquizprefs.cpp:33
+#, kde-format
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance Settings"
+msgstr "ការ​កំណត់​រូបរាង​របស់​ប័ណ្ណ​បង្ហាញ"
+
+#: kwordquizprefs.cpp:36
+#, kde-format
+msgctxt "@title:group special character settings"
+msgid "Special Characters"
+msgstr "តួអក្សរ​ពិសេស"
+
+#. i18n: ectx: Menu (vocabulary)
+#: kwordquizui.rc:16
+#, kde-format
+msgid "V&ocabulary"
+msgstr "វាក្យសព្ទ"
+
+#. i18n: ectx: Menu (mode)
+#: kwordquizui.rc:30
+#, kde-format
+msgid "&Mode"
+msgstr "របៀប"
+
+#. i18n: ectx: Menu (quiz)
+#: kwordquizui.rc:38
+#, kde-format
+msgid "&Quiz"
+msgstr "សំណួរ"
+
+#. i18n: ectx: ToolBar (quizToolBar)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
+#: kwordquizui.rc:61 prefquizbase.ui:20
+#, kde-format
+msgid "Quiz"
+msgstr "សំណួរ"
+
+#. i18n: ectx: ToolBar (characterToolBar)
+#: kwordquizui.rc:75
+#, kde-format
+msgid "Special Characters"
+msgstr "តួអក្សរ​ពិសេស"
+
+#: kwqcleardialog.cpp:18
+#, fuzzy, kde-format
+#| msgid "Clear Contents"
+msgctxt "@title:window"
+msgid "Clear Contents"
+msgstr "សម្អាត​មាតិកា"
+
+#: kwqcommands.cpp:74
+#, kde-format
+msgctxt "@item:inmenu undo clear"
+msgid "Clear"
+msgstr "ជម្រះ"
+
+#: kwqcommands.cpp:96
+#, kde-format
+msgctxt "@item:inmenu undo cut"
+msgid "Cut"
+msgstr "កាត់"
+
+#: kwqcommands.cpp:109
+#, kde-format
+msgctxt "@item:inmenu undo paste"
+msgid "Paste"
+msgstr "​បិទភ្ជាប់"
+
+#: kwqcommands.cpp:205
+#, kde-format
+msgctxt "@item:inmenu undo sort"
+msgid "Sort"
+msgstr "តម្រៀប"
+
+#: kwqcommands.cpp:232
+#, kde-format
+msgctxt "@item:inmenu undo shuffle"
+msgid "Shuffle"
+msgstr "សាប់"
+
+#: kwqcommands.cpp:252
+#, kde-format
+msgctxt "@item:inmenu undo insert"
+msgid "Insert"
+msgstr "បញ្ចូល"
+
+#: kwqcommands.cpp:284
+#, kde-format
+msgctxt "@item:inmenu undo delete"
+msgid "Delete"
+msgstr "លុប"
+
+#: kwqcommands.cpp:333
+#, kde-format
+msgctxt "@item:inmenu undo unmark blank"
+msgid "Unmark Blank"
+msgstr "ដោះ​សម្គាល់​ទទេ"
+
+#: kwqcommands.cpp:355
+#, kde-format
+msgctxt "@item:inmenu undo column titles"
+msgid "Column Settings"
+msgstr "ការកំណត់​​ជួរឈរ"
+
+#: kwqcommands.cpp:400
+#, kde-format
+msgctxt "@item:inmenu undo link image"
+msgid "Link Image"
+msgstr "តភ្ជាប់​រូបភាព"
+
+#: kwqcommands.cpp:419
+#, kde-format
+msgctxt "@item:inmenu undo link sound"
+msgid "Link Sound"
+msgstr "តភ្ជាប់​សំឡេង"
+
+#: kwqcommands.h:93
+#, kde-format
+msgid "Font"
+msgstr "ពុម្ពអក្សរ"
+
+#: kwqcommands.h:111
+#, kde-format
+msgid "Entry"
+msgstr "ធាតុ"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
+#, kde-format
+msgid "Questions"
+msgstr "សំណួរ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
+#, kde-format
+msgid "The number of questions in the session"
+msgstr "ចំនួន​សំណួរ​ក្នុង​សម័យ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
+#: kwqscorewidgetbase.ui:259
+#, kde-format
+msgid "00"
+msgstr "00"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
+#, kde-format
+msgid "Correct answers"
+msgstr "ចម្លើយ​ត្រឹមត្រូវ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
+#, kde-format
+msgid ""
+"The number of questions answered correctly. May be shown as a percentage."
+msgstr "ចំនួន​សំណួរ​ដែលបាន​ឆ្លើយ​ត្រឹមត្រូវ ។ ប្រហែល​ជាត្រូវបង្ហាញ​ជា​ភាគរយ ។"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picError)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
+#, kde-format
+msgid "Incorrect answers"
+msgstr "ចម្លើយ​មិនត្រឹមត្រូវ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
+#, kde-format
+msgid ""
+"The number of questions answered incorrectly. May be shown as a percentage."
+msgstr "ចំនួន​សំណួរ​ដែល​បាន​ឆ្លើយ​មិនត្រឹមត្រូវ ។ ប្រហែល​ជាត្រូវ​បង្ហាញ​ជាភាគរយ ។"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
+#, kde-format
+msgid "Answered questions"
+msgstr "សំណួរ​ដែលបាន​ឆ្លើយ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
+#, kde-format
+msgid "The number of questions already answered. May be shown as a percentage."
+msgstr "ចំនួន​សំណួរ​ដែល​បាន​ឆ្លើយ​រួច ។ ប្រហែល​ជាត្រូវ​បាន​បង្ហាញ​ជាភាគរយ ។"
+
+#: kwqtablemodel.cpp:211
+#, kde-format
+msgid "Untitled"
+msgstr "គ្មាន​ចំណងជើង"
+
+#: kwqtableview.cpp:186
+#, kde-format
+msgid "Name:_____________________________ Date:__________"
+msgstr "ឈ្មោះ ៖_____________________________ កាលបរិច្ឆេទ ៖__________"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
+#: kwqtableview.cpp:233 prefquizbase.ui:90
+#, kde-format
+msgid "Score"
+msgstr "ពិន្ទុ"
+
+#: kwqtableview.cpp:652
+#, kde-format
+msgid "There is an error with the Fill-in-the-blank brackets"
+msgstr "មាន​កំហុស​​ជាមួយ​ដង្កៀប​ បំពេញ​ចន្លោះ​ទទេ"
+
+#: kwqtableview.cpp:719
+#, fuzzy, kde-format
+#| msgid "Select Image"
+msgctxt "@title:window"
+msgid "Select Image"
+msgstr "ជ្រើស​រូបភាព"
+
+#: kwqtableview.cpp:739
+#, fuzzy, kde-format
+#| msgid "Select Sound"
+msgctxt "@title:window"
+msgid "Select Sound"
+msgstr "ជ្រើស​សំឡេង"
+
+#: kwqtableview.cpp:739
+#, fuzzy, kde-format
+#| msgid "*|All Files"
+msgid "All Files (*)"
+msgstr "*|ឯកសារ​ទាំងអស់"
+
+#: kwqtutor.cpp:25
+#, kde-format
+msgid ""
+"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
+"you to set a certain time interval at which flashcards will pop up.<br /"
+"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
+"working without stealing the focus from other programs you might be working "
+"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
+"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgstr ""
+"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
+"you to set a certain time interval at which flashcards will pop up.<br /"
+"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
+"working without stealing the focus from other programs you might be working "
+"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
+"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+
+#: kwqtutor.cpp:31
+#, kde-format
+msgid "Tutor"
+msgstr "បង្រៀន"
+
+#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#, kde-format
+msgid "Start Exercise"
+msgstr "ចាប់ផ្ដើម​លំហាត់"
+
+#: kwqtutor.cpp:52
+#, kde-format
+msgid "Configure KWordQuiz Tutor..."
+msgstr "កំណត់​រចនាសម្ព័ន្ធការ​បង្រៀន​តាម KWordQuiz​..."
+
+#: kwqtutor.cpp:57
+#, kde-format
+msgid "Close Flash Card"
+msgstr "បិទប័ណ្ណ​បង្ហាញ"
+
+#: kwqtutor.cpp:62
+#, kde-format
+msgid "Flip Flash Card"
+msgstr "ត្រឡប់​ប័ណ្ណ​បង្ហាញ"
+
+#: kwqtutor.cpp:111
+#, kde-format
+msgid "Stop Exercise"
+msgstr "បញ្ឈប់​លំហាត់"
+
+#: kwqtutorprefs.cpp:22
+#, kde-format
+msgctxt "@title:group tutor settings"
+msgid "Tutor"
+msgstr "បង្រៀន"
+
+#: kwqtutorprefs.cpp:22
+#, kde-format
+msgctxt "@title:group tutor settings"
+msgid "Tutor Settings"
+msgstr "​រកំណត​ការ​បង្រៀន់"
+
+#: kwqtutorprefs.cpp:25
+#, kde-format
+msgctxt "Shortcuts Config"
+msgid "Shortcuts"
+msgstr "ផ្លូវកាត់"
+
+#: kwqtutorprefs.cpp:25
+#, kde-format
+msgid "Shortcuts Settings"
+msgstr "ការកំណត់​ផ្លូវកាត់"
+
+#: main.cpp:32
+#, kde-format
+msgid "KWordQuiz"
+msgstr "KWordQuiz"
+
+#: main.cpp:34
+#, kde-format
+msgid "A powerful flashcard and vocabulary learning program"
+msgstr "កម្មវិធី​សិក្សា​វាក្យសព្ទ និង បណ្ណ​បង្ហាញ​ដែល​មាន​ប្រសិទ្ធិភាព"
+
+#: main.cpp:36
+#, kde-format
+msgid "(c) 2003-2010, Peter Hedlund"
+msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០០៣-២០១០ ដោយ Peter Hedlund"
+
+#: main.cpp:40
+#, kde-format
+msgid "Peter Hedlund"
+msgstr "Peter Hedlund"
+
+#: main.cpp:41
+#, kde-format
+msgid "Anne-Marie Mahfouf"
+msgstr "Anne-Marie Mahfouf"
+
+#: main.cpp:41
+#, kde-format
+msgid "KDE Edutainment Maintainer"
+msgstr "អ្នក​ថែ​ទាំ​ល្បែង​កំសាន្ត​បង្កើន​ចំណេះដឹង​របស់ KDE"
+
+#: main.cpp:42
+#, kde-format
+msgid "Martin Pfeiffer"
+msgstr "Martin Pfeiffer"
+
+#: main.cpp:42
+#, kde-format
+msgid "Leitner System and several code contributions"
+msgstr "ប្រព័ន្ធ Leitner និង​កា​រចែកចាយ​កូដ​ជា​ច្រើន"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"A number 1-5 corresponding to the \n"
+"entries in the Mode menu"
+msgstr ""
+"លេ 1-5 ទាក់ទង​ទៅនឹង\n"
+"ធាតុ​នៅក្នុង​ម៉ឺនុយ​ របៀប"
+
+#: main.cpp:56
+#, kde-format
+msgid ""
+"Type of session to start with: \n"
+"'flash' for flashcard, \n"
+"'mc' for multiple choice, \n"
+"'qa' for question and answer, \n"
+"'tutor' for tutor"
+msgstr ""
+"ប្រភេទ​សម័យ​ដែល​ត្រូវ​ចាប់​ផ្ដើម​ជាមួយ ៖ \n"
+"'flash' សម្រាប់​បណ្ណ​បង្ហាញ \n"
+"'mc' សម្រាប់​ពហុជ្រើសរើស \n"
+"'qa' សម្រាប់​សំណួរ​ និងចម្លើយ\n"
+"'tutor' សម្រាប់​ការ​បង្រៀន"
+
+#: main.cpp:57
+#, kde-format
+msgid "File to open"
+msgstr "ឯកសារ​ដែល​ត្រូវ​បើក"
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
+#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
+#: qaviewbase.ui:518
+#, kde-format
+msgid "Correct Answer"
+msgstr "ចម្លើយ​ត្រឹមត្រូវ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
+#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
+#: qaviewbase.ui:294
+#, kde-format
+msgid "Previous Question"
+msgstr "សំណួរ​មុន"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
+#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
+#: qaviewbase.ui:395
+#, kde-format
+msgid "Your Answer"
+msgstr "ចម្លើយ​របស់អ្នក"
+
+#: multipleview.cpp:131 qaview.cpp:169
+#, kde-format
+msgid "Summary"
+msgstr "សង្ខេប"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
+#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
+#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
+#: qaviewbase.ui:104
+#, kde-format
+msgid "The question"
+msgstr "សំណួរ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:73 qaviewbase.ui:60
+#, kde-format
+msgid "Language or other identifier for the question"
+msgstr "ភាសា​ឬ​​វត្ថុសម្គាល់​ផ្សេងទៀត​សម្រាប់​សំណួរ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:76 qaviewbase.ui:63
+#, kde-format
+msgid "Language 1"
+msgstr "ភាសា 1"
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
+#: multipleviewbase.ui:98 qaviewbase.ui:107
+#, kde-format
+msgid "This is your question"
+msgstr "នេះ​ជាសំណួរ​របស់អ្នក"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
+#: multipleviewbase.ui:255 multipleviewbase.ui:286
+#, kde-format
+msgid "Your choices"
+msgstr "ជម្រើស​របស់អ្នក"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
+#, kde-format
+msgid "Three choices for the answer. One is correct."
+msgstr "មានចម្លើយ​ដែល​ត្រូវ​ជ្រើស​​បី ។ មាន​មួយ​ត្រឹមត្រូវ ។"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt2)
+#: multipleviewbase.ui:192
+#, kde-format
+msgid "&2 Option"
+msgstr "2 ជម្រើស"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt1)
+#: multipleviewbase.ui:223
+#, kde-format
+msgid "&1 Option"
+msgstr "1 ជម្រើស"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:258 qaviewbase.ui:208
+#, kde-format
+msgid "Language or other identifier for the answer"
+msgstr "ភាសា​ ឬ វត្ថុ​សម្គាល់​ផ្សេងទៀត​សម្រាប់​ចម្លើយ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:261 qaviewbase.ui:211
+#, kde-format
+msgid "Language 2"
+msgstr "ភាសា 2"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:292
+#, kde-format
+msgid "&3 Option"
+msgstr "3 ជម្រើស"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
+#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
+#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
+#, kde-format
+msgid "Previous question"
+msgstr "សំណួរ​មុន"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
+#: qaviewbase.ui:313
+#, kde-format
+msgid "The previous question"
+msgstr "សំណួរ​មុន"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:375 qaviewbase.ui:316
+#, kde-format
+msgid "This was your question"
+msgstr "នេះ​គឺ​ជា​សំណួរ​របស់អ្នក"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
+#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
+#, kde-format
+msgid "Your previous answer"
+msgstr "ចម្លើយ​ពីមុន​របស់អ្នក"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
+#: qaviewbase.ui:414
+#, kde-format
+msgid "Your answer to the previous question"
+msgstr "ចម្លើយ​របស់អ្នក​ចំពោះ​សំណួរ​មុន"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:501 qaviewbase.ui:417
+#, kde-format
+msgid "This was your answer"
+msgstr "នេះ​គឺ​ជាចម្លើយ​របស់អ្នក"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
+#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
+#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
+#, kde-format
+msgid "Previous correct answer"
+msgstr "ចម្លើយ​ត្រឹមត្រូវ​ពីមុន"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
+#: qaviewbase.ui:537
+#, kde-format
+msgid "The correct answer to the previous question"
+msgstr "ចម្លើយ​ត្រឹមត្រូវ​ចំពោះ​សំណួរ​មុន"
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:580 qaviewbase.ui:540
+#, kde-format
+msgid "This was the correct answer"
+msgstr "នេះ​គឺ​ជាចម្លើយ​ត្រឹមត្រូវ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: multipleviewbase.ui:649
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"three entries for a multiple choice quiz.</html>"
+msgstr ""
+"<html>មាន​ធាតុ​​ច្រើន​នៅ​ក្នុង​វាក្យសព្ទ​របស់​​អ្នក ។<br />អ្នក​ត្រូវកា​រយ៉ាង​ហោចណស់​ធាតុ​បី​នៅ​ក្នុង​សំណួរ​"
+"ពហុជ្រើសរើស ។</html>"
+
+#: prefcardappearance.cpp:66
+#, kde-format
+msgctxt "Back of the flashcard"
+msgid "Back"
+msgstr "ខ្នង"
+
+#: prefcardappearance.cpp:67
+#, kde-format
+msgid "Answer"
+msgstr "ចម្លើយ"
+
+#: prefcardappearance.cpp:80
+#, kde-format
+msgid "Front"
+msgstr "មុខ"
+
+#: prefcardappearance.cpp:81
+#, kde-format
+msgid "Question"
+msgstr "សំណួរ"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
+#: prefcardappearancebase.ui:15
+#, kde-format
+msgid "Card Appearance"
+msgstr "រូបរាង​របស់​បណ្ណ"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:92
+#, kde-format
+msgid "Flip card"
+msgstr "ត្រឡប់​បណ្ណ"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:95
+#, kde-format
+msgid "Use to show the other side of the card"
+msgstr "ប្រើ​វា​ដើម្បី​បង្ហាញ​ផ្នែក​មួយ​ទៀត​របស់​បណ្ណ"
+
+#. i18n: ectx: property (text), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:98
+#, kde-format
+msgid "&Flip Card"
+msgstr "ត្រឡប់​កាត"
+
+#. i18n: ectx: property (text), widget (QLabel, fontLabel)
+#: prefcardappearancebase.ui:111
+#, kde-format
+msgid "F&ont:"
+msgstr "ពុម្ពអក្សរ ៖"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
+#: prefcardappearancebase.ui:146
+#, kde-format
+msgid "Use to select the font for displaying text on the back of the card"
+msgstr "ប្រើវា​ដើម្បី​ជ្រើស​ពុម្ព​អក្សរ​សម្រាប់​ការបង្ហាញ​អត្ថបទ​នៅខ្នង​របស់​បណ្ណ"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
+#, kde-format
+msgid "Select text color"
+msgstr "ជ្រើស​ពណ៌​អត្ថបទ"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
+#, kde-format
+msgid "Use to select the color for text shown on the card"
+msgstr "ប្រើ​វា​ដើម្បី​ជ្រើស​ពណ៌​សម្រាប់​អត្ថបទ​ដែលបាន​បង្ហាញ​នៅលើ​បណ្ណ"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
+#, kde-format
+msgid "Select card frame color"
+msgstr "ជ្រើស​ពណ៌ស៊ុម​របស់​បណ្ណ"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
+#, kde-format
+msgid "Use to select the color for drawing the frame of the card"
+msgstr "ប្រើ​វា​ដើម្បី​ជ្រើស​ពណ៌​សម្រាប់​ការគូរ​ស៊ុម​របស់​បណ្ណ"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
+#, kde-format
+msgid "Select card color"
+msgstr "ជ្រើស​ពណ៌​បណ្ណ"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
+#, kde-format
+msgid "Select color used to draw the card"
+msgstr "ជ្រើស​ពណ៌​ដែល​បាន​ប្រើ​ដើម្បី​គូរ​បណ្ណ"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
+#: prefcardappearancebase.ui:202
+#, kde-format
+msgid "Use to select the font for displaying text on the front of the card"
+msgstr "ប្រើវា​ដើម្បី​ជ្រើស​ពុម្ព​អក្សរ​សម្រាប់​ការ​បង្ហាញ​អត្ថបទ​នៅលើ​ផ្ទៃ​ខាង​មុខ​របស់​បណ្ណ"
+
+#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
+#: prefcardappearancebase.ui:249
+#, kde-format
+msgid "&Text color:"
+msgstr "ពណ៌​អត្ថបទ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
+#: prefcardappearancebase.ui:262
+#, kde-format
+msgid "&Card color:"
+msgstr "ពណ៌​​ប័ណ្ណ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
+#: prefcardappearancebase.ui:275
+#, kde-format
+msgid "Fra&me color:"
+msgstr "ពណ៌​ស៊ុម ៖"
+
+#: prefcharacter.cpp:30
+#, kde-format
+msgid "Action"
+msgstr "អំពើ"
+
+#: prefcharacter.cpp:31
+#, kde-format
+msgid "Shortcut"
+msgstr "ផ្លូវកាត់"
+
+#: prefcharacter.cpp:32
+#, kde-format
+msgid "Character"
+msgstr "តួអក្សរ"
+
+#: prefcharacter.cpp:41
+#, kde-format
+msgid "Special Character %1"
+msgstr "តួអក្សរ​ពិសេស %1"
+
+#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
+#: prefcharacterbase.ui:35
+#, kde-format
+msgid ""
+"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+"associated with each action."
+msgstr ""
+"ចំណាំ ៖ ជ្រើស​ ការកំណត់ -> កំណត់​រចនាសម្ព័ន្ធ​ ផ្លូវកាត់... ដើម្បី​ផ្លាស់ប្ដូរ​ផ្លូវកាត់ ដែលបាន​​ភ្ជាប់​ទោ​នឹង​"
+"អំពើ​នីមួយៗ ។"
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:48
+#, kde-format
+msgid "Select character to modify"
+msgstr "ជ្រើស​តួអក្សរ​ដើម្បី​កែប្រែ"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:51
+#, kde-format
+msgid "Customizable special character actions"
+msgstr "អំពើ​របស់​តួអក្សរ​ពិសេស​ដែល​អាច​ប្ដូរ​តាម​បំណង​បាន"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:61
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:66
+#, kde-format
+msgid "1"
+msgstr "១"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:71
+#, kde-format
+msgid "2"
+msgstr "២"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:103
+#, kde-format
+msgid "Click to choose a new character"
+msgstr "ចុច​ដើម្បី​ជ្រើស​តួអក្សរ​ថ្មី"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:106
+#, kde-format
+msgid "Choose a character for the selected action"
+msgstr "ជ្រើស​តួអក្សរ​ឲ្យ​អំពើ​ដែលបាន​ជ្រើស"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:109
+#, kde-format
+msgid "C&haracter..."
+msgstr "តួអក្សរ..."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:151
+#, kde-format
+msgid "Preview of current character"
+msgstr "មើល​តួអក្សរ​បច្ចុប្បន្ន​ជាមុន"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:154
+#, kde-format
+msgid "Preview of the character associated with the selected action"
+msgstr "មើល​តួអក្សរ​ដែល​ភ្ជាប់​ជាមួយ​នឹង​អំពើ​ដែលបាន​ជ្រើស​ជាមុន"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:157
+#, kde-format
+msgid "A"
+msgstr "A"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
+#: prefeditorbase.ui:73
+#, kde-format
+msgid "How enter key moves"
+msgstr "របៀប​ដែល​គ្រាប់ចុច បញ្ចូល (enter) ផ្លាស់ទី"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:32
+#, kde-format
+msgid "Select how the Enter key should behave in the editor"
+msgstr "ជ្រើស​របៀប​ដែល​គ្រាប់​ចុច​ បញ្ចូល(Enter) គួរ​តែ​ធ្វើ​នៅក្នុង​កម្មវិធី​កែសម្រួល"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:35
+#, kde-format
+msgid "Enter Ke&y Moves"
+msgstr "បម្លាស់ទី​គ្រាប់ចុច បញ្ចូល(Enter)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:50
+#, kde-format
+msgid "Select if the next cell below should become active when pressing Enter."
+msgstr ""
+"ជ្រើស​ថាតើ ក្រឡា​ខាងក្រោម​បន្ទាប់​គួរ​តែ​មាន​សកម្មភាព​នៅពេល​ធ្វើការចុច បញ្ចូល (Enter) ឬអត់ ។"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:53
+#, kde-format
+msgid "&Down"
+msgstr "ចុះក្រោម"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:63
+#, kde-format
+msgid ""
+"Select if the next cell to the right should become active when pressing Enter"
+msgstr "ជ្រើស​ថាតើ​ក្រឡា​បន្ទាប់​ខាងស្ដាំ គួរតែ​មាន​សកម្មភាព​នៅពេល​ធ្វើការចុច​ បញ្ចូល(Enter) ឬអត់"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:66
+#, kde-format
+msgid "&Right"
+msgstr "ស្ដាំ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:76
+#, kde-format
+msgid "Select if the current cell should remain active when pressing Enter"
+msgstr "ជ្រើស​ថាតើ​ក្រឡា​បច្ចុប្បន្ន​គួរតែ​នៅ​មាន​សកម្មភាព​នៅពេល​ដែល​ធ្វើការចុច​ បញ្ចូល(Enter) ឬអត់"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:79
+#, kde-format
+msgid "Does not &move"
+msgstr "មិន​ផ្លាស់ទី"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:89
+#, kde-format
+msgid "Check to enable fill-in-the-blank"
+msgstr "ធីក​ដើម្បី​បើក ការបំពេញ​ចន្លោះ​ទទេ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:92
+#, kde-format
+msgid "Select to enable the functions for Fill-in-the-blank"
+msgstr "ជ្រើស​ដើម្បី​បើក​អនុគមន៍​សម្រាប់​ ធ្វើការបំពេញ​ចន្លោះ​ទទេ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:95
+#, kde-format
+msgid "E&nable fill-in-the-blank"
+msgstr "បើក​ការ​បំពេញ​ចន្លោះ​ទទេ"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:35
+#, kde-format
+msgid "How vocabulary documents are opened"
+msgstr "របៀប​បើក​ឯកសារ​វាក្យស័ព្ទ"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:38
+#, kde-format
+msgid "Select the kind of session to load an opened vocabulary document in"
+msgstr "ជ្រើស​ប្រភេទ​សម័យ​របស់​ឯកសារ​វាក្យសព្ទ​ដែល​បាន​បើក​នៅ​ក្នុង"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:41
+#, kde-format
+msgid "&Open Vocabulary Documents in"
+msgstr "បើក​ឯកសារ​វាក្យសព្ទ​នៅ​ក្នុង"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:47
+#, kde-format
+msgid "Open vocabulary documents in the editor"
+msgstr "បើក​ឯកសារ​វាក្យសព្ទ​នៅ​ក្នុង​កម្មវិធីនិពន្ធ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:50
+#, kde-format
+msgid "Select if the vocabulary documents should be opened in the editor"
+msgstr "ជ្រើស ប្រសិន​បើ​ឯកសារ​វាក្យសព្ទ​គួរ​ត្រូវ​បានបើក​នៅ​ក្នុង​កម្មវិធីនិពន្ធ"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:53
+#, kde-format
+msgid "&Editor"
+msgstr "កម្មវិធី​កែសម្រួល"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:60
+#, kde-format
+msgid "Open vocabulary documents in a flashcard quiz"
+msgstr "បើក​ឯកសារ​វាក្យសព្ទ​នៅ​ក្នុង​សំណួរ​ការ​ហ្វ្លាស"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:63
+#, kde-format
+msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
+msgstr "ជ្រើស​ប្រសិន​បើ​ឯកសារ​វាក្យសព្ទ​គួរ​ត្រូវ​បានបើក​នៅ​ក្នុង​សំណួរ​កាត​ហ្វ្លាស"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:66
+#, kde-format
+msgid "&Flashcard Quiz"
+msgstr "សំណួរ​កាត​ហ្វ្លាស"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:73
+#, kde-format
+msgid "Open vocabulary documents in a multiple choice quiz"
+msgstr "បើក​ឯកសារ​វាក្យសព្ទ​នៅ​ក្នុង​សំណួរ​​ពហុ​ជ្រើសរើស"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:76
+#, kde-format
+msgid ""
+"Select if the vocabulary documents should be opened in a multiple choice quiz"
+msgstr "ជ្រើស​ប្រសិនបើ​​ឯកសារ​វាក្យសព្ទ​គួរ​ត្រូវ​បានបើក​នៅ​ក្នុង​សំណួរ​ពហុជ្រើស​រើស"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:79
+#, kde-format
+msgid "&Multiple Choice Quiz"
+msgstr "សំណួរ​ពហុ​ជ្រើសរើស"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:86
+#, kde-format
+msgid "Open vocabulary documents in a question and answer quiz"
+msgstr "បើក​ឯកសារ​វាក្យសព្ទ​នៅ​ក្នុង​សំណួរ សំណួរ​ចម្លើយ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:89
+#, kde-format
+msgid ""
+"Select if the vocabulary documents should be opened in a question and answer "
+"quiz"
+msgstr "ជ្រើស​ប្រសិនបើ​ឯកសារ​វាក្យសព្ទ​គួរ​ត្រូវ​បានបើក​នៅ​ក្នុង​សំណួរ និង​ចម្លើយ"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:92
+#, kde-format
+msgid "&Question and Answer Quiz"
+msgstr "សំណួរ​ សំណួរ​ចម្លើយ"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:44
+#, kde-format
+msgid "Specify behavior for a question and answer session"
+msgstr "បញ្ជាក់​ឥរិយាបទ​សម្រាប់​សម័យ​សំណួរ និង ចម្លើយ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:47
+#, kde-format
+msgid "Question && Answer"
+msgstr "សំណួរ && ចម្លើយ"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:71
+#, kde-format
+msgid "Check to count hint as error"
+msgstr "ធីក​ដើម្បី​រាប់​ព័ត៌មាន​ជំនួយ​នៅពេល​មាន​កំហុស"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:74
+#, kde-format
+msgid ""
+"Select if questions where the hint function has been used should be counted "
+"as errors"
+msgstr "ជ្រើស​ថាតើ​សំណួរ​​ដែល​អនុគមន៍​ព័ត៌មាន​ជំនួយ​ត្រូវបាន​ប្រើ​ដែលគួរ​តែ​ត្រូវ​បាន​រាប់​នៅពេល​មាន​កំហុស"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:77
+#, kde-format
+msgid "&Treat hint as error"
+msgstr "ព័ត៌មាន​ជំនួយក្នុង​ការ​ដោះស្រាយ​ពេល​មាន​កំហុស"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
+#: prefquizbase.ui:87
+#, kde-format
+msgid "Specify behavior of the score presentation in any session"
+msgstr "បញ្ជាក់​ឥរិយាបថ​នៃ​ការបង្ហាញ​ពិន្ទុ​នៅក្នុង​សម័យ​ណាមួយ"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:114
+#, kde-format
+msgid "Check to show score as a percentage"
+msgstr "ធីក ដើម្បី​បង្ហាញ​ពិន្ទុ​ជាភាគរយ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:117
+#, kde-format
+msgid "Select if the score should be shown as a percentage"
+msgstr "ជ្រើស​ថាតើ​ពិន្ទុ​គួរតែ​ត្រូវបាន​បង្ហាញ​ជា​ភាគ​រយ​ឬអត់"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:120
+#, kde-format
+msgid "&Show score as a percentage"
+msgstr "បង្ហាញ​ពិន្ទុ​ជា​ភាគរយ"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
+#: prefquizbase.ui:146
+#, kde-format
+msgid "Specify behavior for a multiple choice session"
+msgstr "បញ្ជាក់​ឥរិយាបថ​សម្រាប់​សម័យ​ពហុជ្រើសរើស"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:173
+#, kde-format
+msgid "Check to correct automatically"
+msgstr "ធីក​ដើម្បី​ឲ្យ​កែ​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:176
+#, kde-format
+msgid "Select if a choice should be checked immediately"
+msgstr "ជ្រើស​ថាតើ​​ជម្រើស​គួរ​តែ​ត្រូវ​បាន​ធីក​ភ្លាមៗ​ឬ​អត់"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:179
+#, kde-format
+msgid "Check selection a&utomatically"
+msgstr "ធីក​ជម្រើស​ដោ​យ​ស្វ័យ​ប្រវត្តិ"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
+#: prefquizbase.ui:189
+#, kde-format
+msgid "Specify behavior of a flashcard session"
+msgstr "បញ្ជាក់​ឥរិយាបថ​នៃ​សម័យ​បណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:238
+#, kde-format
+msgid "Specify the amount of time between card flips"
+msgstr "បញ្ជាក់​ចំនួន​ពេល​សរុប​នៅរវាង​ការត្រឡប់​បណ្ណ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:241
+#, kde-format
+msgid "seconds and"
+msgstr "វិនាទី និង"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:248
+#, kde-format
+msgid "Delay to flip card"
+msgstr "ពន្យាពេល​ក្នុង​ការ​ត្រឡប់​បណ្ណ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:251
+#, kde-format
+msgid "Delay in seconds to flip card"
+msgstr "ពន្យាពេល​ក្នុងការ​ត្រឡប់​បណ្ណ​ជាវិនាទី"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
+#: prefquizbase.ui:285 prefquizbase.ui:298
+#, kde-format
+msgid "Select how to count card"
+msgstr "ជ្រើស​របៀប​ក្នុងការ​រាប់​បណ្ណ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:288
+#, kde-format
+msgid ""
+"Select if the previous card should be counted as correct when moving to the "
+"next card"
+msgstr "ជ្រើស​ថាតើ​បណ្ណ​មុន​គួរ​តែ​ត្រូវបាន​រាប់​ថា​ត្រឹមត្រូវ​នៅពេល​ដែល​ទោ​កាន់​បណ្ណ​បន្ទាប់​ឬ​អត់"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:291
+#, kde-format
+msgid "Count &as correct"
+msgstr "រាប់​ថា​ត្រឹមត្រូវ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
+#: prefquizbase.ui:301
+#, kde-format
+msgid ""
+"Select if the previous card should be counted as incorrect when moving to "
+"the next card"
+msgstr "ជ្រើស​ថា​តើ​បណ្ណ​មុន​គួរ​តែ​ត្រូវបាន​រាប់​ថា​មិនត្រូវ​នៅពេល​ដែល​ទៅកាន់​បណ្ណ​បន្ទាប់​ឬ​អត់"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optError)
+#: prefquizbase.ui:304
+#, kde-format
+msgid "Count as &error"
+msgstr "រាប់​ថា​មាន​កំហុស"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:314
+#, kde-format
+msgid "Check to flip card automatically"
+msgstr "ធីក​ដើម្បី​ត្រឡប់​បណ្ណ​ដោយ​ស្វ័យប្រវត្តិ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:317
+#, kde-format
+msgid ""
+"Select if you want a card to turn over automatically after the given amount "
+"of time"
+msgstr "ជ្រើស​ថាតើ​អ្នកចង់​ផ្ងារ​បណ្ណសារ​ដោយស្វ័យ​ប្រវត្តិ បន្ទាប់ពី​បាន​ផ្ដល់​ពេលសរុប"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:320
+#, kde-format
+msgid "&Flip card automatically after"
+msgstr "ត្រឡប់​បណ្ណ​ដោយស្វ័យ​ប្រវត្តិ​បន្ទាប់ពី"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
+#: preftutorbase.ui:17
+#, kde-format
+msgid "Tutor Timing"
+msgstr "កំណត់​ពេល​បង្រៀន"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
+#: preftutorbase.ui:23
+#, kde-format
+msgid "&Every"
+msgstr "រៀងរាល់"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
+#: preftutorbase.ui:60
+#, kde-format
+msgid "&minutes"
+msgstr "នាទី"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
+#: preftutorbase.ui:72
+#, kde-format
+msgid "&Randomly"
+msgstr "ដោយ​ចៃដន្យ"
+
+#. i18n: ectx: property (text), widget (QLabel, labelBetween)
+#: preftutorbase.ui:100
+#, kde-format
+msgid "Between"
+msgstr "ចន្លោះ"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
+#: preftutorbase.ui:120
+#, kde-format
+msgid "m&inutes and"
+msgstr "នាទី និង"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
+#: preftutorbase.ui:146
+#, kde-format
+msgid "mi&nutes"
+msgstr "នាទី"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
+#: preftutorbase.ui:161
+#, kde-format
+msgid "Flashcard Appearance"
+msgstr "រូបរាង​របស់ប័ណ្ណ​បង្ហាញ"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
+#: preftutorbase.ui:167
+#, kde-format
+msgid "&Native"
+msgstr "ដើម"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
+#: preftutorbase.ui:177
+#, kde-format
+msgid "Minim&alistic"
+msgstr "តិច​បំផុត"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
+#: preftutorbase.ui:187
+#, kde-format
+msgid "Miscellaneous"
+msgstr "ផ្សេងៗ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
+#: preftutorbase.ui:193
+#, kde-format
+msgid "S&tart exercise as soon as vocabulary file is opened"
+msgstr "ចាប់ផ្ដើម​លំហាត់​ឲ្យ​បាន​ឆាប់​ពេល​ដែល​បើក​ឯកសារ​វាក្យស័ព្ទ"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
+#, kde-format
+msgid "Type your answer"
+msgstr "វាយ​ចម្លើយ​របស់អ្នក​ចូល"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:145
+#, kde-format
+msgid "The answer showing blanks for a Fill-in-the-blank question"
+msgstr "ត្រង់​ចម្លើយ​គឺ​បង្ហាញ​ទទេ សម្រាប់​សំណួរ​បំពេញ​ចន្លោះ​ទទេ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:148
+#, kde-format
+msgid "This is _____ answer"
+msgstr "នេះ​គឺ _____ ចម្លើយ"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
+#: qaviewbase.ui:176
+#, kde-format
+msgid "Type the answer to the question"
+msgstr "វាយ​ចម្លើយ​ចំពោះសំណួរ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: qaviewbase.ui:587
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a question and answer quiz.</html>"
+msgstr ""
+"<html>មាន​ធាតុច្រើន​​នៅ​ក្នុង​វាក្យសព្ទ​របស់​អ្នក ។<br />អ្នក​ត្រូវការ​យ៉ាង​ហោចណាស់​ធាតុ​មួយ​សម្រាប់​សំណួរ និង​"
+"ចម្លើយ ។</html>"
+
+#: wqprintdialogpage.cpp:17
+#, fuzzy, kde-format
+#| msgid "Vocabulary Options"
+msgctxt "@title:window"
+msgid "Vocabulary Options"
+msgstr "ជម្រើស​វាក្យសព្ទ"
+
+#: wqprintdialogpage.cpp:23
+#, kde-format
+msgid "Select Type of Printout"
+msgstr "ជ្រើស​ប្រភេទ​លទ្ធផល​បោះពុម្ព"
+
+#: wqprintdialogpage.cpp:28
+#, kde-format
+msgid "Vocabulary &list"
+msgstr "បញ្ជី​វាក្យសព្ទ"
+
+#: wqprintdialogpage.cpp:29
+#, kde-format
+msgid "Select to print the vocabulary as displayed in the editor"
+msgstr "ជ្រើស​​ដើម្បី​បោះ​ពុម្ព​ដូច​ដែលបាន​បង្ហាញ​នៅក្នុង​កម្មវិធី​កែសម្រួល"
+
+#: wqprintdialogpage.cpp:33
+#, kde-format
+msgid "Vocabulary e&xam"
+msgstr "ប្រឡង​វាក្យសព្ទ"
+
+#: wqprintdialogpage.cpp:34
+#, kde-format
+msgid "Select to print the vocabulary as a vocabulary exam"
+msgstr "ជ្រើស​ដើម្បី​បោះពុម្ព​វាក្យសព្ទ​ជា​ការប្រឡង​វាក្យសព្ទ"
+
+#: wqprintdialogpage.cpp:38
+#, kde-format
+msgid "&Flashcards"
+msgstr "បណ្ណ​បង្ហាញ"
+
+#: wqprintdialogpage.cpp:39
+#, kde-format
+msgid "Select to print flashcards"
+msgstr "ជ្រើស​ដើម្បី​បោះពុម្ព​បណ្ណ​បង្ហាញ"
+
+#~ msgid "&5 %1 &lt;-&gt; %2 Randomly"
+#~ msgstr "&5 %1 &lt;-&gt; %2 ដោយ​ចៃដន្យ"

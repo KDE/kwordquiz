@@ -1,0 +1,2709 @@
+# translation of kwordquiz.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2007.
+# Ravishankar Shrivastava <raviratlami@aol.in>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwordquiz\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"PO-Revision-Date: 2009-02-24 22:17+0530\n"
+"Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
+"Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
+"Language: hne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "रविसंकर सिरीवास्तव, जी. करूनाकर"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "raviratlami@aol.in,"
+
+#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
+#: cleardialogbase.ui:21
+#, fuzzy, kde-format
+#| msgctxt "@action:button select"
+#| msgid "&Select"
+msgid "Selection"
+msgstr "चुनव (&S)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:30
+#, fuzzy, kde-format
+#| msgid "Clears the content of the selected cells"
+msgid "Delete all information in selected entries"
+msgstr "चुने गे कक्छों के चीज मन ल साफ करथे "
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:33
+#, kde-format
+msgid "When checked all information will be deleted from the selected entries"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:36
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo clear"
+#| msgid "Clear"
+msgid "Clear &All"
+msgstr "साफ करव"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:59
+#, fuzzy, kde-format
+#| msgid "Deletes the selected row(s)"
+msgid "Delete the text from selected entries"
+msgstr "चुने गे पंक्तियों ल मत चुनव करथे "
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:62
+#, fuzzy, kde-format
+#| msgid "Deletes the selected row(s)"
+msgid "When checked the text will be deleted from selected entries"
+msgstr "चुने गे पंक्तियों ल मत चुनव करथे "
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:65
+#, kde-format
+msgid "&Text"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:72
+#, fuzzy, kde-format
+#| msgid "Deletes the selected row(s)"
+msgid "Delete the image link from selected entries"
+msgstr "चुने गे पंक्तियों ल मत चुनव करथे "
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:75
+#, fuzzy, kde-format
+#| msgid "Deletes the selected row(s)"
+msgid "When checked the image link will be deleted from selected entries"
+msgstr "चुने गे पंक्तियों ल मत चुनव करथे "
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:78
+#, kde-format
+msgid "&Image Links"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:85
+#, fuzzy, kde-format
+#| msgid "Deletes the selected row(s)"
+msgid "Delete the sound link from selected entries"
+msgstr "चुने गे पंक्तियों ल मत चुनव करथे "
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:88
+#, fuzzy, kde-format
+#| msgid "Deletes the selected row(s)"
+msgid "When checked the sound link will be deleted from selected entries"
+msgstr "चुने गे पंक्तियों ल मत चुनव करथे "
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:91
+#, kde-format
+msgid "&Sound Links"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
+#: columndialogbase.ui:45 kwordquiz.cpp:466
+#, kde-format
+msgid "Column 1"
+msgstr "खंभा 1"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
+#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
+#, kde-format
+msgid "Title for the left column"
+msgstr "डेरी खंभा बर सीर्सक"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
+#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
+#, kde-format
+msgid "Enter a title (identifier) for the left column"
+msgstr "डेरी खंभा बर सीर्सक (चिनहइया) भरव"
+
+#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
+#: columndialogbase.ui:96
+#, kde-format
+msgid "&Title:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
+#: columndialogbase.ui:112
+#, fuzzy, kde-format
+msgid "&Keyboard layout:"
+msgstr "कुंजीपटल खाका बदलत हे..."
+
+#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
+#: columndialogbase.ui:128
+#, kde-format
+msgid "&Width:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:158
+#, fuzzy, kde-format
+msgid "Keyboard layout for the left column"
+msgstr "डेरी खंभा बर सीर्सक"
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:161
+#, fuzzy, kde-format
+msgid "Select a keyboard layout for the left column"
+msgstr "डेरी खंभा बर सीर्सक"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:168
+#, fuzzy, kde-format
+msgid "Width of the left column"
+msgstr "चुने गे खंभा के चौड़ाई"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:171
+#, fuzzy, kde-format
+msgid "Enter the width (in pixels) for the left column"
+msgstr "चुने गे खंभा मन के चौड़ाई (पिक्सेल में) भरव"
+
+#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
+#: columndialogbase.ui:214 kwordquiz.cpp:469
+#, kde-format
+msgid "Column 2"
+msgstr "खंभा 2"
+
+#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
+#: columndialogbase.ui:265
+#, kde-format
+msgid "T&itle:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
+#: columndialogbase.ui:281
+#, fuzzy, kde-format
+msgid "Keyboard &Layout:"
+msgstr "कुंजीपटल खाका बदलत हे..."
+
+#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
+#: columndialogbase.ui:297
+#, kde-format
+msgid "Wi&dth:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:317
+#, kde-format
+msgid "Title for the right column"
+msgstr "जेवनी खंभा बर सीर्सक"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:320
+#, kde-format
+msgid "Enter a title (identifier) for the right column"
+msgstr "जेवनी खंभा बर सीर्सक (चिनहइया) भरव"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:330
+#, fuzzy, kde-format
+msgid "Width of the right column"
+msgstr "जेवनी खंभा बर सीर्सक"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:333
+#, fuzzy, kde-format
+msgid "Enter the width (in pixels) for the right column"
+msgstr "चुने गे खंभा मन के चौड़ाई (पिक्सेल में) भरव"
+
+#: dlglanguage.cpp:21
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Column Settings"
+msgstr "प्रस्नोत्तर सेटिंग"
+
+#: dlgspecchar.cpp:17
+#, kde-format
+msgctxt "@title:window select character dialog"
+msgid "Select Character"
+msgstr "अक्छर चुनव"
+
+#: dlgspecchar.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action:button select"
+#| msgid "&Select"
+msgctxt "@action:button"
+msgid "&Select"
+msgstr "चुनव (&S)"
+
+#: dlgspecchar.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip select this character"
+#| msgid "Select this character"
+msgctxt "@info:tooltip"
+msgid "Select this character"
+msgstr "ये अक्छर चुनव"
+
+#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:12
+#, fuzzy, kde-format
+#| msgid "Column &width:"
+msgid "Column widths"
+msgstr "खंभा चौडाईः (&w)"
+
+#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:18
+#, fuzzy, kde-format
+msgid "Keyboard layouts"
+msgstr "कुंजीपटल खाका बदलत हे..."
+
+#: filterproxysearchline.cpp:23
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox search"
+#| msgid "S&earch:"
+msgid "Search"
+msgstr "खोजव: (&e)"
+
+#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
+#, kde-format
+msgid "Your answer was correct!"
+msgstr "आप मन के उत्तर सही था!"
+
+#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
+#, kde-format
+msgid "Your answer was incorrect."
+msgstr "आप मन के उत्तर गलत था."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: flashviewbase.ui:149
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a flashcard quiz.</html>"
+msgstr ""
+
+#: kwordquiz.cpp:100
+#, kde-format
+msgid "Creates a new blank vocabulary document"
+msgstr "नवा सब्दकोस कागद बनाथे "
+
+#: kwordquiz.cpp:105
+#, kde-format
+msgid "Opens an existing vocabulary document"
+msgstr "अभी हाल के सब्दकोस कागद ल खोलथे "
+
+#: kwordquiz.cpp:111
+#, kde-format
+msgid "Download New Vocabularies..."
+msgstr "नवा सब्दावी डाउनलोड करव..."
+
+#: kwordquiz.cpp:115
+#, kde-format
+msgid "Downloads new vocabularies"
+msgstr "नवा सब्दावलेँ डाउनलोड करव"
+
+#: kwordquiz.cpp:120
+#, kde-format
+msgid "Saves the active vocabulary document"
+msgstr "सक्रिय सब्दावली कागद ल सहेजथे "
+
+#: kwordquiz.cpp:125
+#, kde-format
+msgid "Saves the active vocabulary document with a different name"
+msgstr "सक्रिय सब्दावली कागद ल एक नवा नाम से सहेजथे "
+
+#: kwordquiz.cpp:130
+#, kde-format
+msgid "Closes the active vocabulary document"
+msgstr "सक्रिय सब्दावली कागद ल बन्द करथे "
+
+#: kwordquiz.cpp:134
+#, kde-format
+msgid "Prints the active vocabulary document"
+msgstr "सक्रिय सब्दावली कागद ल छापथे "
+
+#: kwordquiz.cpp:139
+#, fuzzy, kde-format
+#| msgid "Saves the active vocabulary document"
+msgid "Shows a preview of the active vocabulary document"
+msgstr "सक्रिय सब्दावली कागद ल सहेजथे "
+
+#: kwordquiz.cpp:144
+#, kde-format
+msgid "Quits KWordQuiz"
+msgstr "के-वर्ड-क्विज से बाहिर होथे "
+
+#: kwordquiz.cpp:156
+#, kde-format
+msgid "Cuts the text from the selected cells and places it on the clipboard"
+msgstr "चुने गे कक्छों से पाठ ल काटथे  अउ एला क्लिपबोर्ड मं रखथे "
+
+#: kwordquiz.cpp:161
+#, kde-format
+msgid "Copies the text from the selected cells and places it on the clipboard"
+msgstr "चुने गे कक्छों से पाठ के नकल करथे  अउ एला क्लिपबोर्ड मं रखथे "
+
+#: kwordquiz.cpp:166
+#, kde-format
+msgid ""
+"Pastes previously cut or copied text from the clipboard into the selected "
+"cells"
+msgstr "पूर्व मं काटे या नकल करे क्लिपबोर्ड के पाठ ल चुने गे कक्छों मं चिपकाथे "
+
+#: kwordquiz.cpp:172
+#, kde-format
+msgid "Clears the content of the selected cells"
+msgstr "चुने गे कक्छों के चीज मन ल साफ करथे "
+
+#: kwordquiz.cpp:178
+#, kde-format
+msgid "&Insert Row"
+msgstr "लकीर भरव (&I)"
+
+#: kwordquiz.cpp:180
+#, kde-format
+msgid "Inserts a new row above the current row"
+msgstr "अभी हाल के लकीर के ऊपर एक नवा लकीर भरव"
+
+#: kwordquiz.cpp:187
+#, kde-format
+msgid "&Delete Row"
+msgstr "लकीर मेटाव (&D)"
+
+#: kwordquiz.cpp:189
+#, kde-format
+msgid "Deletes the selected row(s)"
+msgstr "चुने गे पंक्तियों ल मत चुनव करथे "
+
+#: kwordquiz.cpp:196
+#, kde-format
+msgid "&Mark as Blank"
+msgstr "खाली जगह के रूप मं चिनहा लगाव (&M)"
+
+#: kwordquiz.cpp:198
+#, kde-format
+msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+msgstr "खाली जगह भरे बर अभी हाल के या चुने गे सब्द ल खाली के रूप मं चिनहा लगाव"
+
+#: kwordquiz.cpp:205
+#, kde-format
+msgid "&Unmark Blanks"
+msgstr ""
+
+#: kwordquiz.cpp:206
+#, kde-format
+msgid "Removes blanks from the current or selected word"
+msgstr "अभी हाल के या चुने गे सब्द से खाली जगह ल हटाथे "
+
+#: kwordquiz.cpp:213
+#, fuzzy, kde-format
+msgid "&Column Settings..."
+msgstr "खंभा सीर्सक... (&C)"
+
+#: kwordquiz.cpp:215
+#, fuzzy, kde-format
+msgid "Defines the column settings for the active vocabulary"
+msgstr "सक्रिय सब्दावली बर खंभा सीर्सकों ल परिभासित करथे "
+
+#: kwordquiz.cpp:222
+#, kde-format
+msgid "&Font..."
+msgstr "फोंट... (&F)"
+
+#: kwordquiz.cpp:223
+#, kde-format
+msgid "Defines the font used by the editor"
+msgstr "संपादक से उपयोग बर फोंट परिभासित करथे "
+
+#: kwordquiz.cpp:230
+#, kde-format
+msgid "Link &Image..."
+msgstr ""
+
+#: kwordquiz.cpp:231
+#, kde-format
+msgid "Links an image with the current entry"
+msgstr ""
+
+#: kwordquiz.cpp:238
+#, kde-format
+msgid "Link &Sound..."
+msgstr ""
+
+#: kwordquiz.cpp:239
+#, kde-format
+msgid "Links a sound with the current entry"
+msgstr ""
+
+#: kwordquiz.cpp:246
+#, kde-format
+msgid "&Adjust Row Heights"
+msgstr "लकीर के ऊँचाई एडजस्ट करव (&A)"
+
+#: kwordquiz.cpp:247
+#, kde-format
+msgid "Automatically adjusts the height of selected rows"
+msgstr "चुने गे पंक्तियों के ऊँचाई ल अपने अपन एडजस्ट करथे "
+
+#: kwordquiz.cpp:254
+#, kde-format
+msgid "Sh&uffle"
+msgstr "फेंटव (&u)"
+
+#: kwordquiz.cpp:255
+#, kde-format
+msgid "Shuffles the entries of the active vocabulary"
+msgstr "सक्रिय सब्दावली के प्रविस्टि मन ल फेंटथे "
+
+#: kwordquiz.cpp:261
+#, kde-format
+msgid "&Keyboard Layout"
+msgstr ""
+
+#: kwordquiz.cpp:262
+#, fuzzy, kde-format
+msgid "Shows available keyboard layouts"
+msgstr "कुंजीपटल खाका बदलत हे..."
+
+#: kwordquiz.cpp:273
+#, kde-format
+msgid "Change Mode"
+msgstr "मोड बदलव"
+
+#: kwordquiz.cpp:274
+#, kde-format
+msgid "Mode"
+msgstr "मोड"
+
+#: kwordquiz.cpp:275
+#, kde-format
+msgid "Changes the mode used in quiz sessions"
+msgstr "क्विज सत्र मन मं उपयोग होए वाले मोड ल बदलथे "
+
+#: kwordquiz.cpp:288
+#, kde-format
+msgid "Selects this mode"
+msgstr "ये मोड ल चुनथे "
+
+#: kwordquiz.cpp:297
+#, kde-format
+msgctxt "@item:inlistbox activate vocabulary editor"
+msgid "&Editor"
+msgstr "संपादक (&E)"
+
+#: kwordquiz.cpp:299
+#, kde-format
+msgid "Activates the vocabulary editor"
+msgstr "सब्दावली संपादक ल सक्रिय करथे "
+
+#: kwordquiz.cpp:306
+#, kde-format
+msgid "&Flashcard"
+msgstr "फ्लैसकार्ड (&F)"
+
+#: kwordquiz.cpp:308
+#, kde-format
+msgid "Starts a flashcard session using the active vocabulary"
+msgstr "सक्रिय सब्दावली के उपयोग से फ्लैसकार्ड सत्र चालू करव"
+
+#: kwordquiz.cpp:315
+#, kde-format
+msgid "&Multiple Choice"
+msgstr "मल्टीपल चाये (&M)"
+
+#: kwordquiz.cpp:317
+#, kde-format
+msgid "Starts a multiple choice session using the active vocabulary"
+msgstr "सक्रिय सब्दावली के उपयोग से मल्टीपल चाये सत्र चालू करव"
+
+#: kwordquiz.cpp:324
+#, kde-format
+msgid "&Question and Answer"
+msgstr "प्रस्न अउ उत्तर क्विज (&Q)"
+
+#: kwordquiz.cpp:325
+#, kde-format
+msgid "Q&&A"
+msgstr "प्र. अउ उ."
+
+#: kwordquiz.cpp:327
+#, kde-format
+msgid "Starts a question and answer session using the active vocabulary"
+msgstr "सक्रिय सब्दावली के उपयोग से प्रस्न अउ उत्तर सत्र चालू करव"
+
+#: kwordquiz.cpp:334
+#, kde-format
+msgid "&Check"
+msgstr "जांचव(&C)"
+
+#: kwordquiz.cpp:336
+#, kde-format
+msgid "Checks your answer to this question"
+msgstr "ये प्रस्न का आप मन के उत्तर जांचथे "
+
+#: kwordquiz.cpp:341
+#, kde-format
+msgid "Choose Option &1"
+msgstr ""
+
+#: kwordquiz.cpp:345
+#, kde-format
+msgid "Choose Option &2"
+msgstr ""
+
+#: kwordquiz.cpp:349
+#, kde-format
+msgid "Choose Option &3"
+msgstr ""
+
+#: kwordquiz.cpp:354
+#, kde-format
+msgid "I &Know"
+msgstr "मोला मालूम हे (&K)"
+
+#: kwordquiz.cpp:356
+#, kde-format
+msgid "Counts this card as correct and shows the next card"
+msgstr "ये कार्ड ल सही के रूप मं गिनथे  अउ अगला कार्ड देखाथे "
+
+#: kwordquiz.cpp:362
+#, kde-format
+msgid "I &Do Not Know"
+msgstr "मोला मालूम नइ (&D)"
+
+#: kwordquiz.cpp:364
+#, kde-format
+msgid "Counts this card as incorrect and shows the next card"
+msgstr "ये कार्ड ल गलत के रूप मं गिनथे  अउ अगला कार्ड देखाथे "
+
+#: kwordquiz.cpp:370
+#, kde-format
+msgid "&Hint"
+msgstr "संकेत (&H)"
+
+#: kwordquiz.cpp:372
+#, kde-format
+msgid "Gets the next correct letter of the answer"
+msgstr "उत्तर के अगला सही अक्छर बताथे "
+
+#: kwordquiz.cpp:378
+#, kde-format
+msgid "Mark Last Correct"
+msgstr ""
+
+#: kwordquiz.cpp:380
+#, fuzzy, kde-format
+#| msgid "Your answer was correct!"
+msgid "Marks last answer as correct"
+msgstr "आप मन के उत्तर सही था!"
+
+#: kwordquiz.cpp:386
+#, kde-format
+msgid "&Restart"
+msgstr "फिर से चालू करव (&R)"
+
+#: kwordquiz.cpp:388
+#, kde-format
+msgid "Restarts the quiz session from the beginning"
+msgstr "प्रस्नोत्तर सत्र ल सुरू से फिर से चालू करव"
+
+#: kwordquiz.cpp:394
+#, kde-format
+msgid "&Play Audio"
+msgstr ""
+
+#: kwordquiz.cpp:396
+#, kde-format
+msgid "Play associated audio"
+msgstr ""
+
+#: kwordquiz.cpp:402
+#, kde-format
+msgid "Repeat &Errors"
+msgstr "गलती दुहराव (&E)"
+
+#: kwordquiz.cpp:404
+#, kde-format
+msgid "Repeats all incorrectly answered questions"
+msgstr "सब्बो गलत उत्तर दे प्रस्नों ल दोहराथे "
+
+#: kwordquiz.cpp:410
+#, kde-format
+msgid "Export Errors &As..."
+msgstr "गलती ल अइसन निर्यात करव (&A)..."
+
+#: kwordquiz.cpp:411
+#, kde-format
+msgid "Exports all errors as a new vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:417
+#, kde-format
+msgid "Show Se&arch"
+msgstr "ढूंढना देखाव (&a)"
+
+#: kwordquiz.cpp:419
+#, kde-format
+msgid "Toggle display of the search bar"
+msgstr "खोजक पट्टी के प्रदर्सन टागल करव"
+
+#: kwordquiz.cpp:424
+#, kde-format
+msgid "Configures sound and other notifications for certain events"
+msgstr "कुछ घटना बर अवाज ल कान्फिगर करथे "
+
+#: kwordquiz.cpp:429
+#, kde-format
+msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+msgstr "सब्दकोस संपादक अउ प्रस्नोत्तर सत्र मन बर वरीयताओं ल निरधारित करथे "
+
+#: kwordquiz.cpp:435
+#, kde-format
+msgid "Special Character <numid>%1</numid>"
+msgstr "विसिस्ट अक्छर <numid>%1</numid>"
+
+#: kwordquiz.cpp:447
+#, kde-format
+msgid "Toggles display of the toolbars"
+msgstr "औजारपट्टी गोठ दिखाना टागल करथे "
+
+#: kwordquiz.cpp:500
+#, kde-format
+msgid "Enter search terms here"
+msgstr "खोजइया वाक्यांस इहां भरव"
+
+#: kwordquiz.cpp:523
+#, kde-format
+msgctxt "@item:inlistbox vocabulary editor"
+msgid "Editor"
+msgstr "संपादक"
+
+#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
+#: kwordquiz.cpp:528 prefquizbase.ui:192
+#, kde-format
+msgid "Flashcard"
+msgstr "फ्लैसकार्ड"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
+#: kwordquiz.cpp:532 prefquizbase.ui:149
+#, kde-format
+msgid "Multiple Choice"
+msgstr "मल्टीपल चाइस"
+
+#: kwordquiz.cpp:536
+#, fuzzy, kde-format
+#| msgid "Question && Answer"
+msgid "Question & Answer"
+msgstr "प्रस्न अउ उत्तर"
+
+#: kwordquiz.cpp:602 kwordquiz.cpp:768 kwordquiz.cpp:813
+#, kde-format
+msgid "Opening file..."
+msgstr "फाइल खोलत हे..."
+
+#: kwordquiz.cpp:635
+#, kde-format
+msgctxt "%1 is an error message"
+msgid ""
+"%1\n"
+"If you are sure no other program is using the file you can choose to ignore "
+"the lock and open the file anyway.\n"
+"Do you want to open the file?"
+msgstr ""
+
+#: kwordquiz.cpp:648 kwordquiz.cpp:763 kwordquiz.cpp:808 kwordquiz.cpp:816
+#: kwordquiz.cpp:853 kwordquiz.cpp:866 kwordquiz.cpp:955 kwordquiz.cpp:962
+#: kwordquiz.cpp:968 kwordquiz.cpp:998 kwordquiz.cpp:1005 kwordquiz.cpp:1012
+#: kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033 kwordquiz.cpp:1040
+#: kwordquiz.cpp:1047 kwordquiz.cpp:1060 kwordquiz.cpp:1075 kwordquiz.cpp:1083
+#: kwordquiz.cpp:1091 kwordquiz.cpp:1100 kwordquiz.cpp:1108 kwordquiz.cpp:1122
+#: kwordquiz.cpp:1130 kwordquiz.cpp:1137 kwordquiz.cpp:1144 kwordquiz.cpp:1151
+#, kde-format
+msgctxt "@info:status ready"
+msgid "Ready"
+msgstr "तैयार"
+
+#: kwordquiz.cpp:717
+#, kde-format
+msgid ""
+"The current document has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"कागद़ सुधार दे गे हे.\n"
+" का आप मन एला सहेजना चाहथो ?"
+
+#: kwordquiz.cpp:758
+#, kde-format
+msgid "Opening a new document window..."
+msgstr "नवा कागद विंडो खोलत हे..."
+
+#: kwordquiz.cpp:770
+#, kde-format
+msgid "&Merge selected files with the current document"
+msgstr "चुने गे फाइल मन ल अभी हाल के कागद के साथ सम्मिलित करव (&M)"
+
+#: kwordquiz.cpp:775 kwqtutor.cpp:130
+#, kde-format
+msgid "Open Vocabulary Document"
+msgstr "सब्दावली कागद खोलव"
+
+#: kwordquiz.cpp:840
+#, kde-format
+msgid "Saving file..."
+msgstr "फाइल सहेजत हे..."
+
+#: kwordquiz.cpp:859
+#, kde-format
+msgid "Saving file with a new filename..."
+msgstr "फाइल नवा फाइलनाम के साथ सहेजत हे..."
+
+#: kwordquiz.cpp:887
+#, kde-format
+msgid "HTML Document"
+msgstr ""
+
+#: kwordquiz.cpp:889
+#, kde-format
+msgid "Save Vocabulary Document As"
+msgstr "सब्दावली कागद ल ए रूप मं सहेजव"
+
+#: kwordquiz.cpp:937
+#, kde-format
+msgid "Closing file..."
+msgstr "फाइल बंद करत हे..."
+
+#: kwordquiz.cpp:960
+#, kde-format
+msgid "Printing..."
+msgstr "छापत हे..."
+
+#: kwordquiz.cpp:966
+#, fuzzy, kde-format
+#| msgid "Saving file..."
+msgid "Showing Preview..."
+msgstr "फाइल सहेजत हे..."
+
+#: kwordquiz.cpp:974
+#, kde-format
+msgctxt "@info:status quitting"
+msgid "Quitting..."
+msgstr "बाहिर होवत हे..."
+
+#: kwordquiz.cpp:996
+#, kde-format
+msgid "Cutting selection..."
+msgstr "चयन ल काटत हे..."
+
+#: kwordquiz.cpp:1003
+#, kde-format
+msgid "Copying selection to clipboard..."
+msgstr "चुने हुए के नकल क्लिपबोर्ड मं बनात हे..."
+
+#: kwordquiz.cpp:1010
+#, kde-format
+msgid "Inserting clipboard contents..."
+msgstr "क्लिपबोर्ड के चीज मन ल घुसात हे..."
+
+#: kwordquiz.cpp:1017
+#, kde-format
+msgid "Clearing the selected cells..."
+msgstr "चुने गे कक्छों ल साफ करत हे..."
+
+#: kwordquiz.cpp:1024
+#, kde-format
+msgid "Inserting rows..."
+msgstr "पंक्तियाँ घुसात हे ... "
+
+#: kwordquiz.cpp:1031
+#, kde-format
+msgid "Deleting selected rows..."
+msgstr "चुने गे पंक्तियों ल मिटात हे..."
+
+#: kwordquiz.cpp:1038
+#, kde-format
+msgid "Marking selected text as a blank..."
+msgstr "चयनत पाठ ल खालीियों के रूप मं चिनहा लगाव..."
+
+#: kwordquiz.cpp:1045
+#, kde-format
+msgid "Removing blank markings..."
+msgstr "खाली मार्किंग ल मिटात हे..."
+
+#: kwordquiz.cpp:1052
+#, kde-format
+msgid "Setting the column titles of the vocabulary..."
+msgstr "सब्दावली के खंभा सीर्सक सेट करत हे..."
+
+#: kwordquiz.cpp:1065
+#, kde-format
+msgid "Setting the font of the vocabulary..."
+msgstr "सब्दावली के फोंट सेट करत हे..."
+
+#: kwordquiz.cpp:1081
+#, kde-format
+msgid "Linking an image with the current entry..."
+msgstr ""
+
+#: kwordquiz.cpp:1089
+#, kde-format
+msgid "Linking a sound with the current entry..."
+msgstr ""
+
+#: kwordquiz.cpp:1097
+#, kde-format
+msgid "Adjusting row heights..."
+msgstr "लकीर ऊँचाई एडजस्ट करत हे..."
+
+#: kwordquiz.cpp:1106
+#, kde-format
+msgid "Randomizing the vocabulary..."
+msgstr "सब्दावली ल बेतरतीब करत हे..."
+
+#: kwordquiz.cpp:1114
+#, kde-format
+msgid "Updating mode..."
+msgstr "मोड अपडेट करत हे..."
+
+#: kwordquiz.cpp:1128
+#, kde-format
+msgid "Starting editor session..."
+msgstr "संपादक सत्र चालू करत हे..."
+
+#: kwordquiz.cpp:1135
+#, kde-format
+msgid "Starting flashcard session..."
+msgstr "फ्लैसकार्ड सत्र चालू करत हे..."
+
+#: kwordquiz.cpp:1142
+#, kde-format
+msgid "Starting multiple choice session..."
+msgstr "मल्टीपल चाये सत्र चालू करत हे..."
+
+#: kwordquiz.cpp:1149
+#, kde-format
+msgid "Starting question & answer session..."
+msgstr "प्रस्न अउ उत्तर सत्र चालू करत हे..."
+
+#: kwordquiz.cpp:1301
+#, kde-format
+msgid "Insert %1"
+msgstr "प्रविस्ट %1"
+
+#: kwordquiz.cpp:1302
+#, kde-format
+msgid "Inserts the character %1"
+msgstr "अक्छर %1 ल भरव"
+
+#: kwordquiz.cpp:1353
+#, kde-format
+msgid "This will restart your quiz. Do you wish to continue?"
+msgstr "ये आप मन के प्रस्नोत्तरी ल फिर से चालू करही. का आप मन जारी रखना चाहथो ?"
+
+#: kwordquiz.cpp:1369
+#, kde-format
+msgid "&1 %1 -> %2 In Order"
+msgstr "&1 %1 -> %2 अनुक्रम में"
+
+#: kwordquiz.cpp:1370
+#, kde-format
+msgid "&2 %1 -> %2 In Order"
+msgstr "&2 %1 -> %2 अनुक्रम में"
+
+#: kwordquiz.cpp:1371
+#, kde-format
+msgid "&3 %1 -> %2 Randomly"
+msgstr "&3 %1 -> %2 बेतरतीब"
+
+#: kwordquiz.cpp:1372
+#, kde-format
+msgid "&4 %1 -> %2 Randomly"
+msgstr "&4 %1 -> %2 बेतरतीब"
+
+#: kwordquiz.cpp:1373
+#, fuzzy, kde-format
+#| msgid "&3 %1 -> %2 Randomly"
+msgid "&5 %1 <-> %2 Randomly"
+msgstr "&3 %1 -> %2 बेतरतीब"
+
+#: kwordquiz.cpp:1380 kwordquiz.cpp:1383
+#, kde-format
+msgid "%1 -> %2 In Order"
+msgstr "%1 -> %2 अनुक्रम में"
+
+#: kwordquiz.cpp:1386 kwordquiz.cpp:1389
+#, kde-format
+msgid "%1 -> %2 Randomly"
+msgstr "%1 -> %2 बेतरतीब"
+
+#: kwordquiz.cpp:1392
+#, kde-format
+msgid "%1 &lt;-&gt; %2 Randomly"
+msgstr "%1 &lt;-&gt; %2 बेतरतीब"
+
+#. i18n: ectx: label, entry (FirstRun), group (General)
+#: kwordquiz.kcfg:10
+#, kde-format
+msgid "Is this the first time KWordQuiz is run?"
+msgstr "का ए पहली दफा हे जब के-वर्ड-क्विज चलाय जात हे?"
+
+#. i18n: ectx: label, entry (ShowSearch), group (General)
+#: kwordquiz.kcfg:14
+#, kde-format
+msgid "Toggle display of the search bar."
+msgstr "खोज पट्टी के प्रदर्सन टागल करव."
+
+#. i18n: ectx: label, entry (StartSession), group (General)
+#: kwordquiz.kcfg:18
+#, kde-format
+msgid "Type of session to use when opening files"
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintStyle), group (General)
+#: kwordquiz.kcfg:28
+#, kde-format
+msgid "Type of printout to generate"
+msgstr ""
+
+#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
+#: kwordquiz.kcfg:39
+#, kde-format
+msgid "Titles for column 1"
+msgstr "खंभा 1 बर सीर्सक"
+
+#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
+#: kwordquiz.kcfg:43
+#, kde-format
+msgid "Titles for column 2"
+msgstr "खंभा 2 बर सीर्सक"
+
+#. i18n: ectx: label, entry (EditorFont), group (Editor)
+#: kwordquiz.kcfg:47
+#, kde-format
+msgid "Font used in the editor"
+msgstr "संपादक से उपयोग बर फोंट"
+
+#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
+#: kwordquiz.kcfg:51
+#, kde-format
+msgid "If Fill-in-the-blank should be enabled"
+msgstr "यदि खाली-जगह-भरव ल सक्छम करे जाही  या नइ"
+
+#. i18n: ectx: label, entry (EnterMove), group (Editor)
+#: kwordquiz.kcfg:55
+#, kde-format
+msgid "Direction the Enter key moves in the editor"
+msgstr "संपादन मं वटर कुंजी के खिसके के दिसा"
+
+#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
+#: kwordquiz.kcfg:59
+#, kde-format
+msgid "Characters for the special character toolbar"
+msgstr "विसिस्ट अक्छर औजार बर अक्छर"
+
+#. i18n: ectx: label, entry (ClearAll), group (Editor)
+#: kwordquiz.kcfg:63
+#, fuzzy, kde-format
+#| msgid "Clears the content of the selected cells"
+msgid "Clear all data in selected entries"
+msgstr "चुने गे कक्छों के चीज मन ल साफ करथे "
+
+#. i18n: ectx: label, entry (ClearText), group (Editor)
+#: kwordquiz.kcfg:67
+#, fuzzy, kde-format
+#| msgid "Clears the content of the selected cells"
+msgid "Clear the text in selected entries"
+msgstr "चुने गे कक्छों के चीज मन ल साफ करथे "
+
+#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
+#: kwordquiz.kcfg:71
+#, fuzzy, kde-format
+#| msgid "Clears the content of the selected cells"
+msgid "Clear the image link in selected entries"
+msgstr "चुने गे कक्छों के चीज मन ल साफ करथे "
+
+#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
+#: kwordquiz.kcfg:75
+#, fuzzy, kde-format
+#| msgid "Clears the content of the selected cells"
+msgid "Clear the sound link in selected entries"
+msgstr "चुने गे कक्छों के चीज मन ल साफ करथे "
+
+#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
+#: kwordquiz.kcfg:81
+#, kde-format
+msgid "Automatically check selected answer in multiple choice"
+msgstr "चुने गे उत्तर ल मल्टीपल चाये मं अपने अपन जांचव"
+
+#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
+#: kwordquiz.kcfg:85
+#, kde-format
+msgid "Automatically flip flashcard"
+msgstr "फ्लैसकार्ड ल अपने अपन लहुटाव करव"
+
+#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
+#: kwordquiz.kcfg:89
+#, kde-format
+msgid "Time delay for flipping flashcard"
+msgstr "फ्लैसकार्ड ल पलटने बर समयांतर"
+
+#. i18n: ectx: label, entry (HintError), group (Quiz)
+#: kwordquiz.kcfg:93
+#, kde-format
+msgid "Treat use of hint as error"
+msgstr "संकेत ल गलती के रूप मं मानें"
+
+#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
+#: kwordquiz.kcfg:97
+#, kde-format
+msgid "Count flashcard as correct or error"
+msgstr "फ्लैसकार्ड ल सही या गलती के रूप मं गिनें"
+
+#. i18n: ectx: label, entry (Mode), group (Quiz)
+#: kwordquiz.kcfg:101
+#, kde-format
+msgid "Quiz mode"
+msgstr "प्रस्नोत्तरी मोड"
+
+#. i18n: ectx: label, entry (Percent), group (Quiz)
+#: kwordquiz.kcfg:105
+#, kde-format
+msgid "Show score as percentage"
+msgstr "अंकों ल प्रतिसत मं देखाव"
+
+#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
+#: kwordquiz.kcfg:111
+#, kde-format
+msgid "Font used for front of flashcard"
+msgstr "फोंट जऊन फ्लैसकार्ड के आगू बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
+#: kwordquiz.kcfg:115
+#, kde-format
+msgid "Color used for text on front of flashcard"
+msgstr "रंग जऊन फ्लैसकार्ड के आगू पाठ बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
+#: kwordquiz.kcfg:119
+#, kde-format
+msgid "Color used for front of flashcard"
+msgstr "रंग जऊन फ्लैसकार्ड के आगू बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:123
+#, kde-format
+msgid "Color used for frame on front of flashcard"
+msgstr "रंग जऊन फ्लैसकार्ड के आगू फ्रेम बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (BackFont), group (FlashCard)
+#: kwordquiz.kcfg:127
+#, kde-format
+msgid "Font used for back of flashcard"
+msgstr "फोंट जऊन फ्लैसकार्ड के पीछू बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
+#: kwordquiz.kcfg:131
+#, kde-format
+msgid "Color used for text on back of flashcard"
+msgstr "रंग जऊन फ्लैसकार्ड के पीछू पाठ बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
+#: kwordquiz.kcfg:135
+#, kde-format
+msgid "Color used for back of flashcard"
+msgstr "रंग जऊन फ्लैसकार्ड के पीछू बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:139
+#, kde-format
+msgid "Color used for frame on back of flashcard"
+msgstr "रंग जऊन फ्लैसकार्ड के पीछू फ्रेम बर उपयोग मं आही"
+
+#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
+#: kwordquiz.kcfg:145
+#, kde-format
+msgid "The Providers path for KWordQuiz"
+msgstr "के-वर्ड-क्विज बर प्रोवाइडर के पथ"
+
+#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
+#: kwordquiz.kcfg:149
+#, kde-format
+msgid "The command used to start a downloaded vocabulary"
+msgstr "डाउनलोड करे सब्दावली ल चालू करे बर परयोग करे गे कमांड"
+
+#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
+#: kwordquiz.kcfg:153
+#, kde-format
+msgid ""
+"The folder where downloaded vocabularies are saved by default (relative to "
+"$HOME)"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
+#: kwordquiz.kcfg:159
+#, kde-format
+msgid "Pop up flashcards at fixed or random intervals"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
+#: kwordquiz.kcfg:167
+#, kde-format
+msgid "The interval in minutes at which to pop up a flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorMin), group (Tutor)
+#: kwordquiz.kcfg:171
+#, kde-format
+msgid "The minimum interval in minutes at which to pop up a flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorMax), group (Tutor)
+#: kwordquiz.kcfg:175
+#, kde-format
+msgid "The maximum interval in minutes at which to pop up a flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
+#: kwordquiz.kcfg:179
+#, kde-format
+msgid "Geometry of the last flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
+#: kwordquiz.kcfg:183
+#, kde-format
+msgid "Show flash card in a native KWordQuiz style"
+msgstr ""
+
+#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
+#: kwordquiz.kcfg:191
+#, kde-format
+msgid ""
+"Last open vocabulary file to be opened automatically if none other is "
+"specified on the command line"
+msgstr ""
+
+#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
+#: kwordquiz.kcfg:195
+#, kde-format
+msgid "Start exercise as soon as the user opens vocabulary file"
+msgstr ""
+
+#: kwordquizprefs.cpp:24
+#, kde-format
+msgctxt "@title:group general settings"
+msgid "General"
+msgstr ""
+
+#: kwordquizprefs.cpp:24
+#, kde-format
+msgctxt "@title:group general settings"
+msgid "General Settings"
+msgstr "सामान्य सेटिंग"
+
+#: kwordquizprefs.cpp:27
+#, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor"
+msgstr "संपादक"
+
+#: kwordquizprefs.cpp:27
+#, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor Settings"
+msgstr "संपादक सेटिंग"
+
+#: kwordquizprefs.cpp:30
+#, kde-format
+msgctxt "@title:group quiz settings"
+msgid "Quiz"
+msgstr "प्रस्नोत्तरी"
+
+#: kwordquizprefs.cpp:30
+#, kde-format
+msgctxt "@title:group quiz settings"
+msgid "Quiz Settings"
+msgstr "प्रस्नोत्तर सेटिंग"
+
+#: kwordquizprefs.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "@title:group flash appearance settings"
+#| msgid ""
+#| "Flashcard\n"
+#| "Appearance"
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance"
+msgstr ""
+"फ्लैसकार्ड\n"
+"रूप"
+
+#: kwordquizprefs.cpp:33
+#, kde-format
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance Settings"
+msgstr "फ्लैसकार्ड रूप सेटिंग"
+
+#: kwordquizprefs.cpp:36
+#, kde-format
+msgctxt "@title:group special character settings"
+msgid "Special Characters"
+msgstr "विसिस्ट अक्छर"
+
+#. i18n: ectx: Menu (vocabulary)
+#: kwordquizui.rc:16
+#, kde-format
+msgid "V&ocabulary"
+msgstr "सब्दावली (&o)"
+
+#. i18n: ectx: Menu (mode)
+#: kwordquizui.rc:30
+#, kde-format
+msgid "&Mode"
+msgstr "मोड (&M)"
+
+#. i18n: ectx: Menu (quiz)
+#: kwordquizui.rc:38
+#, kde-format
+msgid "&Quiz"
+msgstr "प्रस्नोत्तर (&Q)"
+
+#. i18n: ectx: ToolBar (quizToolBar)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
+#: kwordquizui.rc:61 prefquizbase.ui:20
+#, kde-format
+msgid "Quiz"
+msgstr "प्रस्नोत्तरी"
+
+#. i18n: ectx: ToolBar (characterToolBar)
+#: kwordquizui.rc:75
+#, kde-format
+msgid "Special Characters"
+msgstr "विसिस्ट अक्छर"
+
+#: kwqcleardialog.cpp:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear Contents"
+msgstr ""
+
+#: kwqcommands.cpp:74
+#, kde-format
+msgctxt "@item:inmenu undo clear"
+msgid "Clear"
+msgstr "साफ करव"
+
+#: kwqcommands.cpp:96
+#, kde-format
+msgctxt "@item:inmenu undo cut"
+msgid "Cut"
+msgstr "काटव"
+
+#: kwqcommands.cpp:109
+#, kde-format
+msgctxt "@item:inmenu undo paste"
+msgid "Paste"
+msgstr "चिपकाव"
+
+#: kwqcommands.cpp:205
+#, kde-format
+msgctxt "@item:inmenu undo sort"
+msgid "Sort"
+msgstr "छांटव"
+
+#: kwqcommands.cpp:232
+#, kde-format
+msgctxt "@item:inmenu undo shuffle"
+msgid "Shuffle"
+msgstr "फेंटव"
+
+#: kwqcommands.cpp:252
+#, kde-format
+msgctxt "@item:inmenu undo insert"
+msgid "Insert"
+msgstr "भरव"
+
+#: kwqcommands.cpp:284
+#, kde-format
+msgctxt "@item:inmenu undo delete"
+msgid "Delete"
+msgstr "मेटाव"
+
+#: kwqcommands.cpp:333
+#, kde-format
+msgctxt "@item:inmenu undo unmark blank"
+msgid "Unmark Blank"
+msgstr ""
+
+#: kwqcommands.cpp:355
+#, fuzzy, kde-format
+msgctxt "@item:inmenu undo column titles"
+msgid "Column Settings"
+msgstr "प्रस्नोत्तर सेटिंग"
+
+#: kwqcommands.cpp:400
+#, kde-format
+msgctxt "@item:inmenu undo link image"
+msgid "Link Image"
+msgstr ""
+
+#: kwqcommands.cpp:419
+#, kde-format
+msgctxt "@item:inmenu undo link sound"
+msgid "Link Sound"
+msgstr ""
+
+#: kwqcommands.h:93
+#, kde-format
+msgid "Font"
+msgstr "फोंट"
+
+#: kwqcommands.h:111
+#, kde-format
+msgid "Entry"
+msgstr "प्रविस्टि"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
+#, kde-format
+msgid "Questions"
+msgstr "प्रस्न"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
+#, kde-format
+msgid "The number of questions in the session"
+msgstr "सत्र मं प्रस्नों के संख्या"
+
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
+#: kwqscorewidgetbase.ui:259
+#, kde-format
+msgid "00"
+msgstr "00"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
+#, kde-format
+msgid "Correct answers"
+msgstr "सही उत्तर"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
+#, kde-format
+msgid ""
+"The number of questions answered correctly. May be shown as a percentage."
+msgstr "प्रस्नों के संख्या जेखर उत्तर सही दे गे हे. प्रतिसत के रूप मं देखाय  जा सकथे ."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picError)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
+#, kde-format
+msgid "Incorrect answers"
+msgstr "गलत उत्तर"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
+#, kde-format
+msgid ""
+"The number of questions answered incorrectly. May be shown as a percentage."
+msgstr "सही उत्तर के संख्या. प्रतिसत के रूप मं देखाय  जा सकथे ."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
+#, kde-format
+msgid "Answered questions"
+msgstr "उत्तर दे गे प्रस्न"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
+#, kde-format
+msgid "The number of questions already answered. May be shown as a percentage."
+msgstr "प्रस्नों के संख्या जेखर उत्तर पहिली ही दे गे हे. प्रतिसत के रूप मं देखाय  जा सकथे ."
+
+#: kwqtablemodel.cpp:211
+#, kde-format
+msgid "Untitled"
+msgstr "बिना सीर्सक"
+
+#: kwqtableview.cpp:186
+#, kde-format
+msgid "Name:_____________________________ Date:__________"
+msgstr "नाम:_____________________________ तारीक:__________"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
+#: kwqtableview.cpp:233 prefquizbase.ui:90
+#, kde-format
+msgid "Score"
+msgstr "अंक"
+
+#: kwqtableview.cpp:652
+#, kde-format
+msgid "There is an error with the Fill-in-the-blank brackets"
+msgstr "खाली जगह भरो कोस्ठकों मं गलती हे"
+
+#: kwqtableview.cpp:719
+#, fuzzy, kde-format
+#| msgctxt "@title:window select character dialog"
+#| msgid "Select Character"
+msgctxt "@title:window"
+msgid "Select Image"
+msgstr "अक्छर चुनव"
+
+#: kwqtableview.cpp:739
+#, fuzzy, kde-format
+#| msgctxt "@action:button select"
+#| msgid "&Select"
+msgctxt "@title:window"
+msgid "Select Sound"
+msgstr "चुनव (&S)"
+
+#: kwqtableview.cpp:739
+#, kde-format
+msgid "All Files (*)"
+msgstr ""
+
+#: kwqtutor.cpp:25
+#, kde-format
+msgid ""
+"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
+"you to set a certain time interval at which flashcards will pop up.<br /"
+"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
+"working without stealing the focus from other programs you might be working "
+"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
+"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgstr ""
+
+#: kwqtutor.cpp:31
+#, kde-format
+msgid "Tutor"
+msgstr ""
+
+#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#, kde-format
+msgid "Start Exercise"
+msgstr ""
+
+#: kwqtutor.cpp:52
+#, kde-format
+msgid "Configure KWordQuiz Tutor..."
+msgstr ""
+
+#: kwqtutor.cpp:57
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgid "Close Flash Card"
+msgstr "फ्लैसकार्ड"
+
+#: kwqtutor.cpp:62
+#, fuzzy, kde-format
+#| msgid "&Flip Card"
+msgid "Flip Flash Card"
+msgstr "कार्ड लहुटाव (&F)"
+
+#: kwqtutor.cpp:111
+#, kde-format
+msgid "Stop Exercise"
+msgstr ""
+
+#: kwqtutorprefs.cpp:22
+#, kde-format
+msgctxt "@title:group tutor settings"
+msgid "Tutor"
+msgstr ""
+
+#: kwqtutorprefs.cpp:22
+#, fuzzy, kde-format
+#| msgctxt "@title:group editor settings"
+#| msgid "Editor Settings"
+msgctxt "@title:group tutor settings"
+msgid "Tutor Settings"
+msgstr "संपादक सेटिंग"
+
+#: kwqtutorprefs.cpp:25
+#, fuzzy, kde-format
+#| msgid "Shortcut"
+msgctxt "Shortcuts Config"
+msgid "Shortcuts"
+msgstr "सार्टकट"
+
+#: kwqtutorprefs.cpp:25
+#, fuzzy, kde-format
+msgid "Shortcuts Settings"
+msgstr "प्रस्नोत्तर सेटिंग"
+
+#: main.cpp:32
+#, kde-format
+msgid "KWordQuiz"
+msgstr "के-वर्ड-क्विज"
+
+#: main.cpp:34
+#, kde-format
+msgid "A powerful flashcard and vocabulary learning program"
+msgstr "एक सक्तिसाली फ्लैसकार्ड अउ सब्दावली सीखने के प्रोग्राम"
+
+#: main.cpp:36
+#, fuzzy, kde-format
+#| msgid "(c) 2003-2007, Peter Hedlund"
+msgid "(c) 2003-2010, Peter Hedlund"
+msgstr "(c) 2003-2007, पीटर हेडलुंड"
+
+#: main.cpp:40
+#, kde-format
+msgid "Peter Hedlund"
+msgstr "पीटर हेडलुंड"
+
+#: main.cpp:41
+#, kde-format
+msgid "Anne-Marie Mahfouf"
+msgstr "एन्ने मैरी मेहफोफ"
+
+#: main.cpp:41
+#, kde-format
+msgid "KDE Edutainment Maintainer"
+msgstr "केडीई एजुटेनमेंट मेंटेनर"
+
+#: main.cpp:42
+#, kde-format
+msgid "Martin Pfeiffer"
+msgstr "मार्टिन फेइफर"
+
+#: main.cpp:42
+#, kde-format
+msgid "Leitner System and several code contributions"
+msgstr "लेटनर सिसटम अउ बहुत से कोड अंसदान"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"A number 1-5 corresponding to the \n"
+"entries in the Mode menu"
+msgstr ""
+"मोड मेन्यू मं संख्या १-५ से संबंधित \n"
+"प्रविस्टि"
+
+#: main.cpp:56
+#, kde-format
+msgid ""
+"Type of session to start with: \n"
+"'flash' for flashcard, \n"
+"'mc' for multiple choice, \n"
+"'qa' for question and answer, \n"
+"'tutor' for tutor"
+msgstr ""
+
+#: main.cpp:57
+#, kde-format
+msgid "File to open"
+msgstr "फाइल जऊन ल खोलना हे"
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
+#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
+#: qaviewbase.ui:518
+#, kde-format
+msgid "Correct Answer"
+msgstr "सही उत्तर"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
+#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
+#: qaviewbase.ui:294
+#, kde-format
+msgid "Previous Question"
+msgstr "पिछला प्रस्न"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
+#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
+#: qaviewbase.ui:395
+#, kde-format
+msgid "Your Answer"
+msgstr "आप मन के उत्तर"
+
+#: multipleview.cpp:131 qaview.cpp:169
+#, kde-format
+msgid "Summary"
+msgstr "सारांस"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
+#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
+#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
+#: qaviewbase.ui:104
+#, kde-format
+msgid "The question"
+msgstr "प्रस्न"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:73 qaviewbase.ui:60
+#, kde-format
+msgid "Language or other identifier for the question"
+msgstr "प्रस्न बर भाखा या अउ चिनहइया"
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:76 qaviewbase.ui:63
+#, kde-format
+msgid "Language 1"
+msgstr "भाखा 1"
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
+#: multipleviewbase.ui:98 qaviewbase.ui:107
+#, kde-format
+msgid "This is your question"
+msgstr "ये आप मन के प्रस्न हे"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
+#: multipleviewbase.ui:255 multipleviewbase.ui:286
+#, kde-format
+msgid "Your choices"
+msgstr "आप मन के चुनाव"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
+#, kde-format
+msgid "Three choices for the answer. One is correct."
+msgstr "उत्तर बर तीन चुनाव. एक सही हे."
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt2)
+#: multipleviewbase.ui:192
+#, kde-format
+msgid "&2 Option"
+msgstr "&2 विकल्प"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt1)
+#: multipleviewbase.ui:223
+#, kde-format
+msgid "&1 Option"
+msgstr "&1 विकल्प"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:258 qaviewbase.ui:208
+#, kde-format
+msgid "Language or other identifier for the answer"
+msgstr "उत्तर बर भाखा या अउ चिनहइया"
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:261 qaviewbase.ui:211
+#, kde-format
+msgid "Language 2"
+msgstr "भाखा 2"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:292
+#, kde-format
+msgid "&3 Option"
+msgstr "&3 विकल्प"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
+#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
+#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
+#, kde-format
+msgid "Previous question"
+msgstr "पिछला प्रस्न"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
+#: qaviewbase.ui:313
+#, kde-format
+msgid "The previous question"
+msgstr "पिछला प्रस्न"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:375 qaviewbase.ui:316
+#, kde-format
+msgid "This was your question"
+msgstr "ये आप मन के प्रस्न था"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
+#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
+#, kde-format
+msgid "Your previous answer"
+msgstr "आप मन के पिछला उत्तर"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
+#: qaviewbase.ui:414
+#, kde-format
+msgid "Your answer to the previous question"
+msgstr "पिछले प्रस्न का आप मन के उत्तर"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:501 qaviewbase.ui:417
+#, kde-format
+msgid "This was your answer"
+msgstr "ये आप मन के उत्तर था"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
+#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
+#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
+#, kde-format
+msgid "Previous correct answer"
+msgstr "पिछला सही उत्तर"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
+#: qaviewbase.ui:537
+#, kde-format
+msgid "The correct answer to the previous question"
+msgstr "पिछले प्रस्न के सही उत्तर"
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:580 qaviewbase.ui:540
+#, kde-format
+msgid "This was the correct answer"
+msgstr "ये उत्तर सही था"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: multipleviewbase.ui:649
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"three entries for a multiple choice quiz.</html>"
+msgstr ""
+
+#: prefcardappearance.cpp:66
+#, kde-format
+msgctxt "Back of the flashcard"
+msgid "Back"
+msgstr "पीछू"
+
+#: prefcardappearance.cpp:67
+#, kde-format
+msgid "Answer"
+msgstr "उत्तर"
+
+#: prefcardappearance.cpp:80
+#, kde-format
+msgid "Front"
+msgstr "अग्र भाग"
+
+#: prefcardappearance.cpp:81
+#, kde-format
+msgid "Question"
+msgstr "प्रस्न"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
+#: prefcardappearancebase.ui:15
+#, kde-format
+msgid "Card Appearance"
+msgstr "कार्ड के रूप"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:92
+#, kde-format
+msgid "Flip card"
+msgstr "कार्ड लहुटाव"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:95
+#, kde-format
+msgid "Use to show the other side of the card"
+msgstr "कार्ड के अउ साइड ल देखाय बर उपयोग मं लें"
+
+#. i18n: ectx: property (text), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:98
+#, kde-format
+msgid "&Flip Card"
+msgstr "कार्ड लहुटाव (&F)"
+
+#. i18n: ectx: property (text), widget (QLabel, fontLabel)
+#: prefcardappearancebase.ui:111
+#, kde-format
+msgid "F&ont:"
+msgstr "अग्रः (&o)"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
+#: prefcardappearancebase.ui:146
+#, kde-format
+msgid "Use to select the font for displaying text on the back of the card"
+msgstr "कार्ड के पेज हिस्सा मं पाठ प्रदर्सित करे बर फोंट ल चुने बर उपयोग मं लें"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
+#, kde-format
+msgid "Select text color"
+msgstr "पाठ रंग चुनव"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
+#, kde-format
+msgid "Use to select the color for text shown on the card"
+msgstr "कार्ड पाठ प्रदर्सित करे बर रंग ल चुने बर उपयोग मं लें"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
+#, kde-format
+msgid "Select card frame color"
+msgstr "कार्ड फ्रेम रंग चुनव"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
+#, kde-format
+msgid "Use to select the color for drawing the frame of the card"
+msgstr "कार्ड के फ्रेम बनाए बर रंग ल चुने बर उपयोग मं लें"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
+#, kde-format
+msgid "Select card color"
+msgstr "कार्ड रंग चुनव"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
+#, kde-format
+msgid "Select color used to draw the card"
+msgstr "कार्ड बनाए मं उपयोग बर रंग चुनव"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
+#: prefcardappearancebase.ui:202
+#, kde-format
+msgid "Use to select the font for displaying text on the front of the card"
+msgstr "कार्ड के अग्र हिस्सा मं पाठ प्रदर्सित करे बर फोंट ल चुने के उपयोग मं लें"
+
+#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
+#: prefcardappearancebase.ui:249
+#, kde-format
+msgid "&Text color:"
+msgstr "पाठ रंगः (&T)"
+
+#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
+#: prefcardappearancebase.ui:262
+#, kde-format
+msgid "&Card color:"
+msgstr "कार्ड रंग: (&C)"
+
+#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
+#: prefcardappearancebase.ui:275
+#, kde-format
+msgid "Fra&me color:"
+msgstr "फ्रेम रंग: (&m)"
+
+#: prefcharacter.cpp:30
+#, kde-format
+msgid "Action"
+msgstr "काम"
+
+#: prefcharacter.cpp:31
+#, kde-format
+msgid "Shortcut"
+msgstr "सार्टकट"
+
+#: prefcharacter.cpp:32
+#, kde-format
+msgid "Character"
+msgstr "अक्छर"
+
+#: prefcharacter.cpp:41
+#, kde-format
+msgid "Special Character %1"
+msgstr "विसिस्ट अक्छर %1"
+
+#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
+#: prefcharacterbase.ui:35
+#, kde-format
+msgid ""
+"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+"associated with each action."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:48
+#, kde-format
+msgid "Select character to modify"
+msgstr "परिवर्धन बर अक्छर चुनव"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:51
+#, kde-format
+msgid "Customizable special character actions"
+msgstr "मनमाफिक बनाए जा सके जा सके विसिस्ट अक्छर काम"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:61
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:66
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:71
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:103
+#, kde-format
+msgid "Click to choose a new character"
+msgstr "नवा अक्छर चुने बर किलिक करव"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:106
+#, kde-format
+msgid "Choose a character for the selected action"
+msgstr "चुने गे काम बर एक अक्छर चुनव"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:109
+#, kde-format
+msgid "C&haracter..."
+msgstr "अक्छर... (&h)"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:151
+#, kde-format
+msgid "Preview of current character"
+msgstr "अभी हाल के अक्छर के प्रिव्यू"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:154
+#, kde-format
+msgid "Preview of the character associated with the selected action"
+msgstr "चुने गे काम के साथ सम्बद्ध अक्छर के प्रिव्यू"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:157
+#, kde-format
+msgid "A"
+msgstr "अ"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
+#: prefeditorbase.ui:73
+#, kde-format
+msgid "How enter key moves"
+msgstr "वटर कुंजी कइसन खिसकेगा"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:32
+#, kde-format
+msgid "Select how the Enter key should behave in the editor"
+msgstr "चुनव कि वटर कुंजी संपादक मं कइसन व्यवहार करे"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:35
+#, kde-format
+msgid "Enter Ke&y Moves"
+msgstr "वटर कुंजी खिसकथे  (&y)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:50
+#, kde-format
+msgid "Select if the next cell below should become active when pressing Enter."
+msgstr "जब वटर दबाया जाय तहां आगू के निचला कक्छ सक्रिय करे बर एला चुनव."
+
+#. i18n: ectx: property (text), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:53
+#, kde-format
+msgid "&Down"
+msgstr "नीचे (&D)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:63
+#, kde-format
+msgid ""
+"Select if the next cell to the right should become active when pressing Enter"
+msgstr "जब वटर दबाया जाय तहां आगू के जेवनी कक्छ सक्रिय करे बर एला चुनव."
+
+#. i18n: ectx: property (text), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:66
+#, kde-format
+msgid "&Right"
+msgstr "जेवनी (&R)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:76
+#, kde-format
+msgid "Select if the current cell should remain active when pressing Enter"
+msgstr "यदि वटर दबाय मं अभी हाल के कक्छ ल सक्रिय बने रहन देना चाहथो तहां चुनव"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:79
+#, kde-format
+msgid "Does not &move"
+msgstr "खिसके नइ (&m)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:89
+#, kde-format
+msgid "Check to enable fill-in-the-blank"
+msgstr "खाली-जगह-भरव सक्छम करे बर जांचव"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:92
+#, kde-format
+msgid "Select to enable the functions for Fill-in-the-blank"
+msgstr "खाली-जगह-भरव बर फंक्सन सक्छम करे बर जांचव"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:95
+#, kde-format
+msgid "E&nable fill-in-the-blank"
+msgstr "खाली-जगह-भरव सक्छम करव (&n)"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:35
+#, kde-format
+msgid "How vocabulary documents are opened"
+msgstr "सब्दावली कागद कइसे खोले जाही"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:38
+#, kde-format
+msgid "Select the kind of session to load an opened vocabulary document in"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:41
+#, kde-format
+msgid "&Open Vocabulary Documents in"
+msgstr "एमा सब्दावली कागद खोलव (&O)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:47
+#, kde-format
+msgid "Open vocabulary documents in the editor"
+msgstr "सब्दावली कागद संपादक मं खोलव"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:50
+#, kde-format
+msgid "Select if the vocabulary documents should be opened in the editor"
+msgstr "सब्दावली कागद संपादक मं खोले बर चुनव"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:53
+#, kde-format
+msgid "&Editor"
+msgstr "संपादक (&E)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:60
+#, kde-format
+msgid "Open vocabulary documents in a flashcard quiz"
+msgstr "सब्दावली कागद ल फ्लेसकार्ड क्विज मं खोलव"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:63
+#, fuzzy, kde-format
+#| msgid ""
+#| "Select if the vocabulary documents should be opened in a multiple choice "
+#| "quiz"
+msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
+msgstr "सब्दावली कागद ल बहु उत्तर क्विज मं खोले बर चुनव"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:66
+#, kde-format
+msgid "&Flashcard Quiz"
+msgstr "फ्लैसकार्ड क्विज (&F)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:73
+#, kde-format
+msgid "Open vocabulary documents in a multiple choice quiz"
+msgstr "सब्दावली कागद ल बहु उत्तर क्विज मं खोलव"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:76
+#, kde-format
+msgid ""
+"Select if the vocabulary documents should be opened in a multiple choice quiz"
+msgstr "सब्दावली कागद ल बहु उत्तर क्विज मं खोले बर चुनव"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:79
+#, kde-format
+msgid "&Multiple Choice Quiz"
+msgstr "बहु उत्तर क्विज (&M)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:86
+#, kde-format
+msgid "Open vocabulary documents in a question and answer quiz"
+msgstr "सब्दावली कागद ल प्रस्न अउ उत्तर क्विज मं खोलव"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:89
+#, fuzzy, kde-format
+#| msgid ""
+#| "Select if the vocabulary documents should be opened in a multiple choice "
+#| "quiz"
+msgid ""
+"Select if the vocabulary documents should be opened in a question and answer "
+"quiz"
+msgstr "सब्दावली कागद ल बहु उत्तर क्विज मं खोले बर चुनव"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:92
+#, kde-format
+msgid "&Question and Answer Quiz"
+msgstr "प्रस्न अउ उत्तर क्विज (&Q)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:44
+#, kde-format
+msgid "Specify behavior for a question and answer session"
+msgstr "प्रस्न अउ उत्तर सत्र के व्यवहार ल निरधारित करव"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:47
+#, kde-format
+msgid "Question && Answer"
+msgstr "प्रस्न अउ उत्तर"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:71
+#, kde-format
+msgid "Check to count hint as error"
+msgstr "संकेत ल गलती के रूप मं गिनने बर जांचव"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:74
+#, kde-format
+msgid ""
+"Select if questions where the hint function has been used should be counted "
+"as errors"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:77
+#, kde-format
+msgid "&Treat hint as error"
+msgstr "संकेत ल गलती के रूप मं मानें (&T)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
+#: prefquizbase.ui:87
+#, kde-format
+msgid "Specify behavior of the score presentation in any session"
+msgstr "कोनो सत्र मं अंकों ल देखाय जाय वाले व्यवहार ल निरधारित करव"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:114
+#, kde-format
+msgid "Check to show score as a percentage"
+msgstr "अंकों ल प्रतिसत के रूप मं देखाय बर जांचव"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:117
+#, kde-format
+msgid "Select if the score should be shown as a percentage"
+msgstr "आप निरधारित कर सकथो कि अंकों ल प्रतिसत के रूप मं देखाय  जाए"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:120
+#, kde-format
+msgid "&Show score as a percentage"
+msgstr "अंकों ल प्रतिसत मं देखाव (&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
+#: prefquizbase.ui:146
+#, kde-format
+msgid "Specify behavior for a multiple choice session"
+msgstr "मल्टीपल चाये सत्र के व्यवहार ल निरधारित करव"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:173
+#, kde-format
+msgid "Check to correct automatically"
+msgstr "अपने अपन सुधारने बर जांचव"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:176
+#, kde-format
+msgid "Select if a choice should be checked immediately"
+msgstr "चुनव यदि एक चुनाव ल तुरंत चेक करे जाना हो"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:179
+#, kde-format
+msgid "Check selection a&utomatically"
+msgstr "चयन ल अपने अपन जांचव (&u)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
+#: prefquizbase.ui:189
+#, kde-format
+msgid "Specify behavior of a flashcard session"
+msgstr "फ्लैसकार्ड सत्र के व्यवहार निरधारित करव"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:238
+#, kde-format
+msgid "Specify the amount of time between card flips"
+msgstr "कार्ड ल पलटने के बीच मं समय अंतराल ल निरधारित करव"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:241
+#, kde-format
+msgid "seconds and"
+msgstr "सेकन्ड तथा"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:248
+#, kde-format
+msgid "Delay to flip card"
+msgstr "कार्ड ल पलटने बर अंतराल"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:251
+#, kde-format
+msgid "Delay in seconds to flip card"
+msgstr "कार्ड पलटने बर सेकन्ड्स मं समय अंतराल"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
+#: prefquizbase.ui:285 prefquizbase.ui:298
+#, kde-format
+msgid "Select how to count card"
+msgstr "कार्ड कइसन गिनना हे वो चुनव"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:288
+#, fuzzy, kde-format
+#| msgid "Select if the vocabulary documents should be opened in the editor"
+msgid ""
+"Select if the previous card should be counted as correct when moving to the "
+"next card"
+msgstr "सब्दावली कागद संपादक मं खोले बर चुनव"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:291
+#, kde-format
+msgid "Count &as correct"
+msgstr "सही के रूप मं गिनें (&a)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
+#: prefquizbase.ui:301
+#, fuzzy, kde-format
+#| msgid "Select if the vocabulary documents should be opened in the editor"
+msgid ""
+"Select if the previous card should be counted as incorrect when moving to "
+"the next card"
+msgstr "सब्दावली कागद संपादक मं खोले बर चुनव"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optError)
+#: prefquizbase.ui:304
+#, kde-format
+msgid "Count as &error"
+msgstr "गलती के रूप मं गिनें (&e)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:314
+#, kde-format
+msgid "Check to flip card automatically"
+msgstr "कार्ड ल अपने अपन पलटने बर जांचव"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:317
+#, kde-format
+msgid ""
+"Select if you want a card to turn over automatically after the given amount "
+"of time"
+msgstr "यदि दे गे समय के बाद कार्ड अपने अपन पलटना चाहथो तहां चुनव"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:320
+#, kde-format
+msgid "&Flip card automatically after"
+msgstr "कार्ड ल अपने अपन लहुटाव, एखर बाद् (&F)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
+#: preftutorbase.ui:17
+#, fuzzy, kde-format
+#| msgctxt "@title:group editor settings"
+#| msgid "Editor Settings"
+msgid "Tutor Timing"
+msgstr "संपादक सेटिंग"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
+#: preftutorbase.ui:23
+#, kde-format
+msgid "&Every"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
+#: preftutorbase.ui:60
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgid "&minutes"
+msgstr "संकेत (&H)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
+#: preftutorbase.ui:72
+#, fuzzy, kde-format
+#| msgid "&3 %1 -> %2 Randomly"
+msgid "&Randomly"
+msgstr "&3 %1 -> %2 बेतरतीब"
+
+#. i18n: ectx: property (text), widget (QLabel, labelBetween)
+#: preftutorbase.ui:100
+#, kde-format
+msgid "Between"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
+#: preftutorbase.ui:120
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgid "m&inutes and"
+msgstr "संकेत (&H)"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
+#: preftutorbase.ui:146
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgid "mi&nutes"
+msgstr "संकेत (&H)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
+#: preftutorbase.ui:161
+#, fuzzy, kde-format
+#| msgctxt "@title:group flash appearance settings"
+#| msgid ""
+#| "Flashcard\n"
+#| "Appearance"
+msgid "Flashcard Appearance"
+msgstr ""
+"फ्लैसकार्ड\n"
+"रूप"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
+#: preftutorbase.ui:167
+#, kde-format
+msgid "&Native"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
+#: preftutorbase.ui:177
+#, kde-format
+msgid "Minim&alistic"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
+#: preftutorbase.ui:187
+#, kde-format
+msgid "Miscellaneous"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
+#: preftutorbase.ui:193
+#, kde-format
+msgid "S&tart exercise as soon as vocabulary file is opened"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
+#, kde-format
+msgid "Type your answer"
+msgstr "अपन उत्तर टाइप करव"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:145
+#, kde-format
+msgid "The answer showing blanks for a Fill-in-the-blank question"
+msgstr "खाली-जगह-भरव प्रस्नों बर उत्तर खाली जगह दिखा रहा हे"
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:148
+#, kde-format
+msgid "This is _____ answer"
+msgstr "ये _____ उत्तर हे"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
+#: qaviewbase.ui:176
+#, kde-format
+msgid "Type the answer to the question"
+msgstr "प्रस्न का आप मन के उत्तर टाइप करव"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: qaviewbase.ui:587
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a question and answer quiz.</html>"
+msgstr ""
+
+#: wqprintdialogpage.cpp:17
+#, fuzzy, kde-format
+#| msgid "Vocabulary Options"
+msgctxt "@title:window"
+msgid "Vocabulary Options"
+msgstr "सब्दावली विकल्प"
+
+#: wqprintdialogpage.cpp:23
+#, kde-format
+msgid "Select Type of Printout"
+msgstr "प्रिंटआउट के किसिम चुनव"
+
+#: wqprintdialogpage.cpp:28
+#, kde-format
+msgid "Vocabulary &list"
+msgstr "सब्दावली सूची (&l)"
+
+#: wqprintdialogpage.cpp:29
+#, kde-format
+msgid "Select to print the vocabulary as displayed in the editor"
+msgstr "सब्दावली चुनव जइसन संपादक मं देखाय हे वइसन छापे बर"
+
+#: wqprintdialogpage.cpp:33
+#, kde-format
+msgid "Vocabulary e&xam"
+msgstr "सब्दावली परीक्छा (&x)"
+
+#: wqprintdialogpage.cpp:34
+#, kde-format
+msgid "Select to print the vocabulary as a vocabulary exam"
+msgstr "सब्दावली चुनव जऊन ल सब्दावली परीक्छा के रूप मं छापना हे"
+
+#: wqprintdialogpage.cpp:38
+#, kde-format
+msgid "&Flashcards"
+msgstr "फ्लैसकार्ड (&F)"
+
+#: wqprintdialogpage.cpp:39
+#, kde-format
+msgid "Select to print flashcards"
+msgstr "मुद्रन बर फ्लैसकार्ड चुनव"
+
+#~ msgid "&5 %1 &lt;-&gt; %2 Randomly"
+#~ msgstr "&5 %1 &lt;-&gt; %2 बेतरतीब"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid ""
+#~ "Flashcard\n"
+#~ "Appearance"
+#~ msgstr ""
+#~ "फ्लैसकार्ड\n"
+#~ "रूप"
+
+#~ msgctxt "@title:group special character settings"
+#~ msgid ""
+#~ "Special\n"
+#~ "Characters"
+#~ msgstr ""
+#~ "विसेस\n"
+#~ " अक्छर"
+
+#~ msgid ""
+#~ "Multiple\n"
+#~ "Choice"
+#~ msgstr ""
+#~ "बहु\n"
+#~ "उत्तरीय"
+
+#~ msgid "Q&A"
+#~ msgstr "प्र.उ. (&A)"
+
+#~ msgid "The width for the first table column."
+#~ msgstr "पहिली टेबल खंभा के चौड़ाई"
+
+#~ msgid "The width for the second table column."
+#~ msgstr "दुसरा टेबल खंभा के चौड़ाई"
+
+#~ msgid "The flashcard"
+#~ msgstr "फ्लैसकार्ड"
+
+#~ msgid "Language or other identifier for this card"
+#~ msgstr "ये कार्ड बर भाखा या अउ चिनहइया"
+
+#~ msgid "The flashcard. Select Quiz -> Check to see the other side."
+#~ msgstr "फ्लैसकार्ड. चुनव क्विज -> अउ साइड ल देखे बर जांचव."
+
+#~ msgid "This is the question"
+#~ msgstr "प्रस्न ए हे"
+
+#~ msgid "Rows & Columns"
+#~ msgstr "लकीर अउ खंभा"
+
+#~ msgid "Column Titles"
+#~ msgstr "खंभा सीर्सक"
+
+#~ msgid "C&olumn 2:"
+#~ msgstr "खंभा 2: (&o)"
+
+#~ msgid "&Column 1:"
+#~ msgstr "खंभा 1: (&C)"
+
+#~ msgid "Number of rows"
+#~ msgstr "पंक्तियों के संख्या"
+
+#~ msgid "Enter the number of rows the vocabulary should have"
+#~ msgstr "पंक्तियों के संख्या भरव जऊन सब्दावली मं हों"
+
+#~ msgid "&Number of rows:"
+#~ msgstr "पंक्तियों के संख्या: (&N)"
+
+#~ msgid "Height of selected row"
+#~ msgstr "चुने गे पंक्तियों के ऊँचाई"
+
+#~ msgid "Enter the height (in pixels) for the selected row(s)"
+#~ msgstr "चुने गे पंक्तियों के ऊँचाई (पिक्सेल में) भरव"
+
+#~ msgid "&Row height:"
+#~ msgstr "लकीर ऊँचाई: (&R)"
+
+#~ msgid "The number of cards in the session"
+#~ msgstr "सत्र मं कार्डों के संख्या"
+
+#~ msgid ""
+#~ "The number of cards counted as correct (I know). May be shown as a "
+#~ "percentage."
+#~ msgstr ""
+#~ "कार्डों के संख्या जऊन ल मैंने सही के रूप मं गिने हे(मोला मालूम हे). एला प्रतिसत के रूप मं "
+#~ "देखाय  जा सकथे ."
+
+#~ msgid ""
+#~ "The number of cards counted as incorrect (I do not know). May be shown as "
+#~ "a percentage."
+#~ msgstr ""
+#~ "कार्डों के संख्या जऊन ल मैंने गलत के रूप मं गिने हे(मोला नइ मालूम हे). एला प्रतिसत के रूप मं "
+#~ "देखाय  जा सकथे ."
+
+#~ msgid "The number of cards already seen. May be shown as a percentage."
+#~ msgstr "पहिली से देखे गे कार्डों के संख्या. प्रतिसत के रूप मं देखाय  जा सकथे ."
+
+#~ msgid "&Go To"
+#~ msgstr "इहां जाव (&G)"
+
+#~ msgid "Go to"
+#~ msgstr "इहां जाव"
+
+#~ msgid "&Rows/Columns..."
+#~ msgstr "पंक्ति/खंभा... (&R)"
+
+#~| msgid ""
+#~| "The file<br /><b>%1</b><br />already exists. Do you want to overwrite it?"
+#~ msgid ""
+#~ "<html>The file<br /><b>%1</b><br />already exists. Do you want to "
+#~ "overwrite it?</html>"
+#~ msgstr ""
+#~ "<html>फाइल<br /><b>%1</b><br />पहिली से ही मौजूद हे. का आप मन एला मेटाय के "
+#~ "लिखना चाहथो ?</html>"
+
+#~ msgid "Not implemented yet"
+#~ msgstr "अभी तक लागू नइ हे"
+
+#~ msgid "Changing row and column properties..."
+#~ msgstr "लकीर अउ खंभा मन के गुन मन ल बदलत हे..."
+
+#~ msgctxt "@item:inmenu undo formatting"
+#~ msgid "Formatting"
+#~ msgstr "फार्मेट करत हे"
+
+#~| msgid "Column Titles"
+#~ msgctxt "@item:inmenu undo column titles"
+#~ msgid "Column Titles"
+#~ msgstr "खंभा सीर्सक"
+
+#~ msgid "&Question && Answer"
+#~ msgstr "प्रस्न अउ उत्तर (&Q)"
+
+#~ msgid "Vocabularies..."
+#~ msgstr "सब्द संग्रह..."
+
+#~ msgid "Cannot &Undo"
+#~ msgstr "पूर्ववत् नइ कर सके"
+
+#~ msgid "Undoing previous command..."
+#~ msgstr "पिछले कमांड ल वापल ले जात हे..."
+
+#~ msgid "&Undo Sort"
+#~ msgstr "छाँटना वापस लेव (&U)"
+
+#~ msgid "&Undo Delete"
+#~ msgstr "मिटाना वापस लेव (&U)"
+
+#~ msgid "&Undo Mark Blank"
+#~ msgstr "खाली जगह चिनहित करना वापस लेव (&U)"
+
+#~ msgid "&Undo Unmark Blank"
+#~ msgstr "खाली जगह अचिनहित करना वापस लेव (&U)"
+
+#~ msgid "&Undo Insert"
+#~ msgstr "प्रविस्ट करना वापस लेव (&U)"
+
+#~ msgid "&Undo Cut"
+#~ msgstr "काटना वापस लेव (&U)"
+
+#~ msgid "&Undo Shuffle"
+#~ msgstr "फेंटना वापस लेव (&U)"
+
+#~ msgid "Undoes the last command"
+#~ msgstr "पिछले कमांड ल पूर्ववत् करथे "
+
+#~ msgid "QGroupBox {border-width: 0px; border-style: none;}"
+#~ msgstr "क्यू-ग्रुप-बाक्स {border-width: 0px; border-style: none;}"
+
+#~ msgid "Enable Leitner system"
+#~ msgstr "लेटनर सिसटम सक्छम करव"
+
+#~ msgid "Enables the Leitner system for the active vocabulary"
+#~ msgstr "सक्रिय सब्दावली बर लेटनर सिसटम सक्छम करथे "
+
+#~ msgid "Configure Leitner system"
+#~ msgstr "लेटनर सिसटम कान्फिगर करव"
+
+#~ msgid "Configure the Leitner system used for the active vocabulary"
+#~ msgstr "सक्रिय सब्दावली बर परयोग मं लेटनर सिसटम ल कान्फिगर करव"
+
+#~ msgid "Vocabulary Editor"
+#~ msgstr "सब्दावली संपादक"
+
+#~ msgid "Disable Leitner system"
+#~ msgstr "लेटनर तंत्र अक्छम करव"

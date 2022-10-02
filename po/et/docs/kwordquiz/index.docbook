@@ -1,0 +1,2400 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kwordquiz;">
+  <!ENTITY package "kdeedu">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>&kwordquiz;i käsiraamat</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2011-08-20</date>
+<releaseinfo
+>0.9.1 (&kde; 4.7)</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; on &kde; sähvikute ja sõnavara omandamise rakendus. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>sähvik</keyword>
+<keyword
+>sõnavara</keyword>
+<keyword
+>keel</keyword>
+<keyword
+>haridus</keyword>
+<keyword
+>kool</keyword>
+<keyword
+>keskkool</keyword>
+<keyword
+>ülikool</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Sissejuhatus</title>
+<para
+>&kwordquiz; pakub sulle võimsa abivahendi uue sõnavara omandamiseks, olgu siis tegemist uue keele või mingi eriala terminoloogiaga. </para>
+<sect1 id="easy-to-use">
+<title
+>Hõlpus kasutada</title>
+
+<para
+>&kwordquiz; võimaldab hõlpsasti luua omaenda sõnavaradokumente. Peamiseks tegutsemisalaks on kahe veeruga tabel, kus ühte ossa saab kirjutada sõnavarakirjed, mida sa tead, ja teise ossa need, mida soovid tundma õppida. Veergude tiitleid saab muuta vastavalt sellele, mida soovid parajasti harjutada. </para>
+
+<sect2 id="practice-modes">
+<title
+>Harjutamisrežiimid</title>
+
+<para
+>Enne viktoriini käivitamist saab valida, kuidas harjutusi sooritada. &kwordquiz; pakub viit erinevat harjutamisrežiimi, mis võimaldavad sõnavara läbida järjest või suvalises järjekorras ühes või mõlemas suunas. </para>
+</sect2>
+
+<sect2 id="quiz-types">
+<title
+>Viktoriinitüübid</title>
+
+<para
+>Kui oled sõnavara sisestanud ja valinud režiimi, võid alustada viktoriini. Sa võid näiteks alustada sähvikuseansiga ning seejärel võtta ette mitme valikuga või veelgi tõhusama küsimuste-vastuste viktoriini. Saad kohe teada, millised vastused olid õiged ja millised valed, ning sul on võimalus vigaseid vastuseid uuesti proovida, mis parandab sõnade omandamist. Kui vajad veidi abi, saab kasutada vihjeid. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Sõnavaradokumendid</title>
+<para
+>&kwordquiz; võib avada mitmes vormingus sõnavaradokumente. Vaikimisi vorming on .kvtml, mida kasutavad ka mitmed muud &kde; rakendused. &kwordquiz; peaks avama ka .wql-faile, mis on loodud &Windows; programmiga &kwordquiz;, komadega eraldatud .csv-tekstifaile, <ulink url="http://www.vokabeln.de/v1/download.htm"
+>.voc-faile</ulink
+>. mis on loodud Vokabeltraineri vana versiooniga, <ulink url="http://xdxf.revdanica.com/down/"
+>.xdxf-faile</ulink
+> ning .xml.gz-faile, mis on loodud <ulink url="http://pauker.sourceforge.net"
+>Paukeri</ulink
+> vanade versioonidega. </para>
+<para
+>&kwordquiz; võib sõnavaradokumendid salvestada mitmes erinevas vormingus. Üks neist on ka teiste &kde; rakenduste kasutatav vaikevorming .kvtml. Teine võimalus on komadega eraldatud tekst .csv. </para>
+<para
+>Korraga võib lahti olla ka mitu faili, nende vahel saab kirjeid hõlpsasti kopeerida või liigutada. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Käskude seletused</title>
+
+<sect1 id="file_menu">
+<title
+>Menüü Fail</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Uus</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Loob</action
+> uue tühja sõnavaradokumendi </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Ava...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Avab</action
+> olemasoleva sõnavaradokumendi. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Fail</guimenu
+> <guisubmenu
+>Ava viimati kasutatud</guisubmenu
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Avab</action
+> viimati kasutatud sõnavaradokumendi. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Laadi alla uut sõnavara...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Laadib alla</action
+> uusi sõnaraamatuid. Allalaaditud sõnaraamatud leiab kataloogist <filename class="directory"
+>$KDEHOME/share/apps/kvtml</filename
+>. <envar
+>$KDEHOME</envar
+> on tavaliselt peidetud kataloog sinu kodukataloogis, mille nimeks on <filename class="directory"
+>.kde</filename
+> või <filename class="directory"
+>.kde4</filename
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Salvesta</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Salvestab</action
+> aktiivse sõnavaradokumendi. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Fail</guimenu
+> <guimenuitem
+>Salvesta kui...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Salvestab</action
+> aktiivse sõnavaradokumendi uue nimega. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Trüki...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Trükib</action
+> aktiivse sõnavaradokumendi. &kwordquiz; pakub sõnavaradokumentide trükkimisel mitu <link linkend="printing"
+>valikuvõimalust</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Fail</guimenu
+> <guimenuitem
+>Trükkimise eelvaatlus</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Näitab</action
+> &kwordquiz;i trükitava aktiivse sõnavaradokumendi eelvaatlust. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Sulge</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Sulgeb</action
+> aktiivse sõnavaradokumendi. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lõpetab</action
+> &kwordquiz;i töö. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title
+>Menüü Redigeerimine</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Võta tagasi</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Võtab tagasi</action
+> viimase käsu. Selle kirje nimi muutub vastavalt sellele, millist käsku saab tagasi võtta. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Tee uuesti</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Võtab tagasi</action
+> viimase käsu. Selle kirje nimi muutub vastavalt sellele, millist käsku saab uuesti sooritada. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Lõika</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lõikab</action
+> valiku ja asetab selle lõikepuhvrisse. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Kopeeri</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kopeerib</action
+> valiku ja asetab selle lõikepuhvrisse. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Aseta</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Asetab</action
+> lõikepuhvri sisu parajasti valitud kohta. Kui valitud on ainult üks lahter, kasutab &kwordquiz; nutikat asetamist, arvutab lisamisel vajamineva ruumi ja vajadusel lisab ridu. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycap
+>Del</keycap
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Puhasta</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Puhastab</action
+> valiku. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Lisa rida</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lisab</action
+> uue rea valitud kohta. Kui valitud on enam kui üks rida, lisatakse sama palju ridu. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Kustuta rida</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kustutab</action
+> valitud rea. Kui valitud on enam kui üks rida, kustutatakse kõik valitud read. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Märgi tühikutega sõnaks</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Märgi tühikutega sõnaks</action
+> märgib valitud teksti või sõna, kus asub kursor, tühikutega sõnaks <link linkend="fill-in-the-blank"
+>tühikute täitmise</link
+> viktoriini tarbeks (võtab teksti/sõna sulgudesse). Saab kasutada ainult siis, kui <link linkend="dlg-config-editor"
+>tühikute kasutamine</link
+> on lubatud. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Eemalda tühikud</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Eemalda tühikud</action
+> kõrvaldab varem omistatud tühikud, &ie; eemaldab sulud. Saab kasutada ainult siis, kui <link linkend="dlg-config-editor"
+>tühikute kasutamine</link
+> on lubatud. </para>
+    </listitem>
+  </varlistentry>
+
+
+</variablelist>
+</sect1>
+<!--
+<sect1 id="go-to-menu">
+<title
+>The <guimenu
+>Go to</guimenu
+> Menu</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo>
+        </shortcut>
+        <guimenu
+>Go to</guimenu>
+        <guimenuitem
+>Editor</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Activate</action
+> the vocabulary <link linkend="editor"
+>editor</link>
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo>
+        </shortcut>
+        <guimenu
+>Go to</guimenu>
+        <guimenuitem
+>Flashcard</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Start</action
+> a <link linkend="flashcard"
+>flashcard</link
+> session
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo>
+        </shortcut>
+        <guimenu
+>Go to</guimenu>
+        <guimenuitem
+>Multiple Choice</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Start</action
+> a <link linkend="multiple"
+>multiple choice</link
+> quiz
+      </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo>
+        </shortcut>
+        <guimenu
+>Go to</guimenu>
+        <guimenuitem
+>Question &amp; Answer</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Start</action
+> a <link linkend="question-and-answer"
+>question &amp; answer</link
+> quiz
+      </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+-->
+<sect1 id="vocabulary-menu">
+<title
+>Menüü Sõnavara</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Sõnavara</guimenu
+> <guimenuitem
+>Veeru seadistused...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Võimaldab määrata</action
+> sõnavara kahe veeru tiitlid, klaviatuuriasetused ja laiused. Avab <link linkend="dlg-languages"
+>dialoogi</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Sõnavara</guimenu
+> <guimenuitem
+>Font...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Muudab</action
+> sõnavara esitamisel kasutatavat fonti. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Sõnavara</guimenu
+> <guimenuitem
+>Lingi pilt...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Määrab</action
+> pildi, mis lingitakse aktiivse kirjega. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Sõnavara</guimenu
+> <guimenuitem
+>Lingi heli...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Määrab</action
+> heli, mis lingitakse aktiivse kirjega. </para>
+    </listitem>
+  </varlistentry>
+
+<!-- Not in 0.9.1
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <shortcut>
+          <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo>
+        </shortcut>
+        <guimenu
+>Vocabulary</guimenu>
+        <guimenuitem
+>Rows/Columns...</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Specify</action
+> the number of rows in the vocabulary, or define the height of selected rows or the width of selected columns. Displays a <link linkend="dlg-rows-columns"
+>dialog</link
+>.
+      </para>
+    </listitem>
+  </varlistentry>
+-->
+
+ <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Sõnavara</guimenu
+> <guimenuitem
+>Kohanda rea kõrgust</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kohandab</action
+> ridade kõrgust sisu mahutamiseks. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Sõnavara</guimenu
+> <guimenuitem
+>Sega</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Segab</action
+> sõnavarakirjed juhuslikus järjekorras. Kirjete järjekorda sõnavaradokumendis endas ei muudeta. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title
+>Menüü Režiim</title>
+<para
+>See menüü võimaldab valida viktoriini viie režiimi seast.</para>
+<para
+>Pane tähele, et menüükirjed muutuvad vastavalt aktiivse sõnavaradokumendi tiitlile. Režiim tuleb valida enne viktoriini käivitamist. Valitud režiim puudutav sähvikuseanssi, mitme valikuga ja küsimuste-vastuste viktoriini. </para>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Režiim</guimenu
+> <guimenuitem
+>Veerg 1 -&gt; Veerg 2 järjekorras</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Viktoriinis antakse ette veeru 1 kirjed ja palutakse vastata sobivad veeru 2 kirjed. Seda tehakse sellises järjekorras, nagu kirjed esinevad sõnavaradokumendis. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Režiim</guimenu
+> <guimenuitem
+>Veerg 2 -&gt; Veerg 1 järjekorras</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Viktoriinis antakse ette veeru 2 kirjed ja palutakse vastata sobivad veeru 1 kirjed. Seda tehakse sellises järjekorras, nagu kirjed esinevad sõnavaradokumendis. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Režiim</guimenu
+> <guimenuitem
+>Veerg 1 -&gt; Veerg 2 suvaliselt</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Viktoriinis antakse ette veeru 1 kirjed ja palutakse vastata sobivad veeru 2 kirjed. Seda tehakse juhuslikus järjekorras, kuid iga kirjet päritakse ainult üks kord. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Režiim</guimenu
+> <guimenuitem
+>Veerg 2 -&gt; Veerg 1 suvaliselt</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Viktoriinis antakse ette veeru 2 kirjed ja palutakse vastata sobivad veeru 1 kirjed. Seda tehakse juhuslikus järjekorras, kuid iga kirjet päritakse ainult üks kord. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Režiim</guimenu
+> <guimenuitem
+>Veerg 1 &lt;-&gt; Veerg 2 suvaliselt</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Viktoriinis antakse ette veeru 1 või 2 kirjed ja palutakse vastata sobivad teise veeru  kirjed. Seda tehakse juhuslikus järjekorras nii veeru kui kirje osas. Iga võimalikku kombinatsiooni päritakse ainult üks kord. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title
+>Menüü Viktoriin</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Enter</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Kontrolli</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kontrollib</action
+>, kas sinu vastus on õige </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Ma tean</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Märgib</action
+> kirje sähvikuseansis õigesti vastatuks. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Ma ei tea</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Märgib</action
+> kirje sähvikuseansis valesti vastatuks. Neid kaarte saab hiljem korrata, kui valida menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Korda vigaseid</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Vihje</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Hangib</action
+> järgmise õige tähe küsimuste-vastuste seansis. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Esita heli</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Esitab</action
+> heli, mis on lingitud kirjega menüükäsu <menuchoice
+><guimenu
+>Sõnavara</guimenu
+> <guimenuitem
+>Lingi heli...</guimenuitem
+></menuchoice
+> abil. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Alusta uuesti</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Käivitab</action
+> viktoriiniseansi algusest peale uuesti. Ka tulemused nullitakse. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Korda vigaseid</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kordab</action
+> kõigi valesti vastatud küsimusi. Saab kasutada pärast seda, kui kõigile küsimustele on juba vähemalt üks kord vastatud. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Viktoriin</guimenu
+> <guimenuitem
+>Ekspordi vead kui...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ekspordib</action
+> kõik valesti vastatud küsimused uue sõnavaradokumendina. Saab kasutada pärast seda, kui kõigile küsimustele on juba vähemalt üks kord vastatud. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Menüü Seadistused</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Otsingu näitamine</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lülitab</action
+> otsinguriba näitamist. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guisubmenu
+>Tööriistaribad</guisubmenu
+> <guimenuitem
+>Peamine tööriistariba</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lülitab</action
+> peamise tööriistariba näitamist </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guisubmenu
+>Tööriistaribad</guisubmenu
+> <guimenuitem
+>Viktoriin</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lülitab</action
+> viktoriiniriba näitamist </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guisubmenu
+>Tööriistaribad</guisubmenu
+> <guimenuitem
+>Erimärgid</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lülitab</action
+> erimärkide riba näitamist </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Olekuriba näitamine</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Lülitab</action
+> olekuriba näitamist </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Kiirklahvide seadistamine...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Võimaldab seadistada</action
+> erinevateks toiminguteks kasutatavaid kiirklahve. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Tööriistaribade seadistamine...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Võimaldab seadistada</action
+> tööriistaribade elemente </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Märguannete seadistamine...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Võimaldab seadistada</action
+> &kwordquiz;i teatud sündmuste märguandeid </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>&kwordquiz;i seadistamine...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Võimaldab seadistada</action
+> sõnavararedaktori ja viktoriinide omadusi. Avab <link linkend="dlg-config-editor"
+>dialoogi</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title
+>Menüü Abi</title>
+&help.menu.documentation; </sect1>
+</chapter>
+
+<chapter id="main-window">
+<title
+>Peaaken</title>
+
+<para
+>Peaaknas on vasakul liikumispaneel, kus saab aktiveerida rakenduse peamised komponendid. </para>
+<para
+><link linkend="editor"
+>Redaktori</link
+> saab aktiveerida kiirklahviga <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+><link linkend="flashcard"
+>Sähvikuseansi</link
+> saab käivitada kiirklahviga <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+><link linkend="multiple"
+>Mitme valikuga</link
+> seansi saab käivitada kiirklahviga <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+><link linkend="question-and-answer"
+>Küsimuste ja vastuste</link
+> seansi saab käivitada kiirklahviga <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+
+<screenshot>
+  <screeninfo
+>Peaaken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Peaaken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>Sõnavararedaktor</title>
+
+<para
+>Sõnavaradokument näeb välja tabelina, mille lahtrid on jagatud kahte veergu ja mitmesse ritta. Igal veerul ja real on oma päsi. Veerupäiseid kasutatakse sõnavaradokumendi tiitlite määramiseks. Neid saab määrata menüükäsuga <menuchoice
+><guimenu
+>Sõnavara</guimenu
+><guimenuitem
+>Veeru seadistused...</guimenuitem
+></menuchoice
+>. Reapäised sisaldavad ridade järjekorranumbrit. </para>
+<para
+>Veerupäistega saab ka sõnavara sorteerida. Klõpsa selleks lihtsalt veerupäisele, mille järgi soovid sorteerimist ette võtta. </para>
+<para
+>Lahtri saab muuta aktiivseks sellele klõpsates. Hiire vasakut nuppu all hoides saab valida mitu lahtrit kopeerimiseks või mingiks muuks redigeerimistoiminguks. Terve rea valimiseks klõpsa selle päisel. </para>
+
+<screenshot>
+  <screeninfo
+>Sõnavararedaktor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sõnavararedaktor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Dokumendile saab sõnavara lisada kahte veergu omavahel paarisolevaid kirjeid lisades. Aktiivsesse lahtrisse saab teksti sisestada lihtsalt kirjutama hakates. See seab lahtri redigeerimisrežiimi, mille puhul saab soovi korral kas kogu teksti või osa sellest ka valida. Samuti saab lahtrit redigeerima asuda sellel topeltklõpsu tehes või klahvi F2 vajutades ning muudatusi otse lahtrisse kirjutades. </para>
+<para
+>Kui oled kirje sisestanud, vajuta klahvi Enter, mis muudab automaatselt aktiivseks järgmise lahtri. Nii saab kiiresti sisestada mitu kirjet järjest. Seda, mida klahvi Enter vajutamine teeb, saab määrata menüükäsuga <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kwordquiz;i seadistamine...</guimenuitem
+></menuchoice
+> Kui oled jõudnud viimasesse ritta, lisab vajutus klahvile Enter uue rea. Uue akna loomisel on sellel algul 20 rida, kuid dokumendis võib olla ridu ükspuha kui palju. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Sähvikuseanss</title>
+
+<para
+>Aktiivse sõnavaradokumendi kirjetega sähvikuseansi käivitamiseks vali liikumispaneelil Sähvik. Kasutatakse režiimi, mis on valitud menüüs <guimenu
+>Režiim</guimenu
+>. Kui muudad režiimi seansi ajal, käivitatakse seanss algusest peale uuesti. </para>
+
+<para
+>Kui tegemist on pika sõnakombinatsiooniga, saab selle nägemiseks muuta akna suurust. Seda, kui palju teksti akna mingisse ossa mahub, mõjutab ka fondi suurus. Sähvikute välimust saab seadistada menüükäsuga <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kwordquiz;i seadistamine...</guimenuitem
+></menuchoice
+> </para>
+
+<screenshot>
+  <screeninfo
+>Sähvikuseanss</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sähvikuseanss</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Algselt näidatakse kaardi esikülge. Teise külje nägemiseks vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Kontrolli</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Järgmisele kaardile liikumiseks vali kas menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Ma tean</guimenuitem
+></menuchoice
+>, mis märgib kaardi õigesti vastatuks, või <guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Ma ei tea</guimenuitem
+>, mis märgib selle valesti vastatuks. </para>
+<para
+>Valesti vastatuks märgitud kaartide kordamiseks vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Korda vigaseid</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Seansi alustamiseks algusest peale vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Alusta algusest</guimenuitem
+></menuchoice
+>. Kui kasutad juhuslikku režiimi, segatakse kaardid uuesti. </para>
+<para
+>Hinnangusektsioonid ekraani allosas näitavad kaartide arvu, vaadatud kaartide arvu ning õigesti ja valesti vastatud kaartide arvu. </para>
+
+<tip>
+<para
+>Kõik <guimenu
+>viktoriin</guimenu
+>imenüü kirjed on saadaval ka viktoriiniribal, mis vaikimisi asub paremal.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Mitme valikuga seanss</title>
+
+<para
+>Mitme valikuga viktoriini alustamiseks aktiivse sõnavaradokumendiga vali liikumispaneelil Mitmene valik. Kasutatakse menüüs <guimenu
+>Režiim</guimenu
+> valitud režiimi, Kui muudad režiimi seansi ajal, käivitatakse see algusest peale uuesti. </para>
+<para
+>Kui tegemist on pika sõnakombinatsiooniga, saab selle nägemiseks muuta akna suurust. Seda, kui palju teksti akna mingisse ossa mahub, mõjutab ka fondi suurus. </para>
+<para
+>Siintoodud näites on kasutaja andnud eelmisele küsimusele vale vastuse. Parajasti hakkab ta aga vastama järgmisele küsimusele. </para>
+
+<screenshot>
+  <screeninfo
+>Mitme valikuga seanss</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Mitme valikuga seanss</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Valikud on näha vasakul ülal. Vali see, mis sinu arvates on õige. Nägemaks, kas see ka tõesti nii on, vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Kontrolli</guimenuitem
+></menuchoice
+>. Kui <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kwordquiz;i seadistamine...</guimenuitem
+></menuchoice
+> vahendusel on sisse lülitatud automaatne režiim, kontrollitakse sinu valiku õigsust otsekohe. </para>
+<para
+>Eelmist küsimust näidatakse praeguse küsimuse all. Näha on ka eelmisele küsimusele antud vastus. Kui see oli vale, näidatakse lisaks õiget vastust. </para>
+<para
+>Valesti vastatud küsimuste kordamiseks vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Korda vigaseid</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Seansi alustamiseks algusest peale vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Alusta algusest</guimenuitem
+></menuchoice
+>. Kui kasutad juhuslikku režiimi, segatakse küsimused uuesti. </para>
+<para
+>Hinnangusektsioonid ekraani allosas näitavad küsimuste arvu, vaadatud küsimuste arvu ning õigesti ja valesti vastatud küsimuste arvu. </para>
+
+<tip>
+<para
+>Kõik <guimenu
+>viktoriin</guimenu
+>imenüü kirjed on saadaval ka viktoriiniribal, mis vaikimisi asub paremal.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Küsimuste-vastuste seanss</title>
+<para
+>Küsimuste-vastuste seansi alustamiseks aktiivse sõnavaradokumendiga vali liikumispaneelil Küsimused ja vastused. Kasutatakse menüüs <guimenu
+>Režiim</guimenu
+> valitud režiimi, Kui muudad režiimi seansi ajal, käivitatakse see algusest peale uuesti. </para>
+<para
+>Kui tegemist on pika sõnakombinatsiooniga, saab selle nägemiseks muuta akna suurust. Seda, kui palju teksti akna mingisse ossa mahub, mõjutab ka fondi suurus. </para>
+<para
+>Siintoodud näites on kasutaja andnud eelmisele küsimusele vale vastuse (seda, kuidas käsitletakase valesid vastuseid, vaata osast <link linkend="multiple"
+>Mitme valikuga seanss</link
+>). Parajasti hakkab ta aga vastama järgmisele küsimusele.. </para>
+
+<screenshot>
+  <screeninfo
+>Küsimuste-vastuste seanss</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Küsimuste-vastuste seanss</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Küsimus on vasakul ülal. Kirjuta vastus tekstiväljale. Kontrollimaks, kas see on ka õige, kasuta menüükäsku <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Kontrolli</guimenuitem
+></menuchoice
+> või klahvi &Enter;. </para>
+<para
+>Eelmist küsimust näidatakse praeguse küsimuse all. Näha on ka eelmisele küsimusele antud vastus. Kui see oli vale, näidatakse lisaks õiget vastust. </para>
+<para
+>Järgmise õige tähe etteandmiseks vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Vihje</guimenuitem
+></menuchoice
+>. Dialoogis <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kwordquiz;i seadistamine...</guimenuitem
+></menuchoice
+> saab määrata, kas küsimused, mille puhul kasutati vihjet, loetakse valesti vastatuks või mitte. </para>
+<para
+>Valesti vastatud küsimuste kordamiseks vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Korda vigaseid</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Seansi alustamiseks algusest peale vali menüükäsk <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Alusta algusest</guimenuitem
+></menuchoice
+>. Kui kasutad juhuslikku režiimi, segatakse küsimused uuesti. </para>
+<para
+>Hinnangusektsioonid ekraani allosas näitavad küsimuste arvu, vaadatud küsimuste arvu ning õigesti ja valesti vastatud küsimuste arvu. </para>
+
+<tip>
+<para
+>Kõik <guimenu
+>viktoriin</guimenu
+>imenüü kirjed on saadaval ka viktoriiniribal, mis vaikimisi asub paremal.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Tühikute täitmine</title>
+
+<para
+>Tühikute kasutamine on &kwordquiz;i üks tõhusamaid sõnavara omandamise viise. See on spetsiaalne küsimuste-vastuste viktoriin, mida tuleb veidi üksikasjalikumalt kirjeldada. Kasutamiseks tuleb see sisse lülitada <link linkend="dlg-config-editor"
+>seadistusdtedialoogis</link
+>. </para>
+
+<para
+>Vaata järgmist tabelit. Selline võib näiteks välja näha &kwordquiz;i sõnavaradokument: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Inglise</entry>
+<entry
+>Saksa</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>Oluline on tähele panna sulgude asukohta. Need teevad &kwordquiz;ile selgeks, mil moel viktoriini korraldada. </para>
+<para
+>Esimeses paaris sulge ei ole. Oletades, et ingliskeelne lause on küsimus ja saksakeelne vastus, tuleb õige vastusena sisestada terve lause 'Wir besitzen einen Computer'. </para>
+<para
+>Teises paaris näitab &kwordquiz; küsimust, aga ka vastust kujul 'Wir ........ einen Computer'. Õige vastuse jaoks piisab sõna 'besitzen' kirjutamiseks. </para>
+<para
+>Kolmandas paaris on tühikus enam kui üks sõna. Õige vastus on 'besitzen einen'. </para>
+<para
+>Neljandas paaris on kaks eraldi tühikut. Sellisel juhul tuleb vastuseks anda 'besitzen; Computer', s.t. eraldada erinevate tühikute vastused semikooloniga, sest ainult siis loetakse vastus õigeks. </para>
+<para
+>Tühikute märkimisel on mõtet ainult vastuste korral, sest muidu sulge lihtsalt ignoreeritakse. Sulgudel ei ole mingit rolli ka mitme valikuga viktoriinis. Tühikuid kasutavate sõnaraamatudokumentide loomise lihtsustamiseks on nende lisamise ja eemaldamise käsud toodud ära menüüs. &kwordquiz; kontrollib ka süntaksit. Kui tekst värvub punaseks, on sulgudega midagi valesti ja viktoriini ei saa käivitada. </para>
+<para
+>Tühikute kasutamise saab lubada või keelata seadistustedialoogis. Selle keelamisel suureneb veidi ka rakenduse jõudlus. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Trükkimine</title>
+<para
+>&kwordquiz; võimaldab sõnavaradokumente väga mitmel moel trükkida. Kui valid menüükäsu <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Trüki...</guimenuitem
+></menuchoice
+>, ilmub &kde; tavapärane trükkimisdialoog. &kwordquiz;i spetsiaalsete võimaluste kasutamiseks klõpsa nupule <guibutton
+>Valikud&gt;&gt;</guibutton
+>, mis toob nähtavale <guilabel
+>sõnavaravalikute</guilabel
+> kaardi. Sellel saab valida dokumendi trükkimise sõnavaraloendina (&ie; sellisena, nagu seda näitab redaktor), sõnavaraeksamina või sähvikutena. </para>
+<screenshot>
+  <screeninfo
+>Sõnavara trükkimise valikud</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sõnavara trükkimise valikud</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Sõnavaraloend</title>
+<para
+>Sõnavara trükitakse sellisena, nagu seda näitab redaktor. See tähendab fondi, ridade kõrguse ja veergude laiuse säilitamist. Kontrolli, et veerud ikka mahuks paberile ära.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Sõnavaraloendi trükkimine</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sõnavaraloendi trükkimine</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Sõnavaraeksam</title>
+<para
+>Sõnavara trükitakse sellisena, nagu seda näitab redaktor, kuid parempoolne veerg jäetakse tühjaks ning lisatakse kolmas veerg hindamise jaoks. Säilitatakse font, ridade kõrgus ja veergude laius. Kontrolli, et veerud ikka mahuksid paberile ära.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Sõnavaraeksami trükkimine</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sõnavaraeksami trükkimine</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Sähvikud</title>
+<para
+>Kaks 3" x 5" kaarti leheküljele. Kaardid trükitakse alati rõhtpaigutusega.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Sähvikute trükkimine</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sähvikute trükkimine</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="tutor">
+<title
+>Õpetajarežiim</title>
+
+<para
+>&kwordquiz;i võib käivitada ka õpetajarežiimis. Selles režiimis kuvab rakendus teatava ajavahemiku järel valitud sõnastiku sõnu. &kwordquiz;i käivitamiseks õpetajarežiimis vajuta klahve <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> ja kirjuta <userinput
+><command
+>kwordquiz</command
+> <option
+>-g tutor <replaceable
+>sõnastikufail.kvtml</replaceable
+></option
+></userinput
+>. Osa <replaceable
+>sõnastikufail.kvtml</replaceable
+> võib ka ära jätta. </para>
+<screenshot>
+  <screeninfo
+>Õpetajarežiimi tervitus</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Õpetajarežiimi tervitus</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Kui klõpsad nupule <guibutton
+>OK</guibutton
+>, jätkab &kwordquiz; tegutsemist taustal. &kwordquiz;i tegutsemist saab juhtida süsteemisalve ikooni <inlinemediaobject
+> <imageobject
+> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> menüüga (mille saab avada ikoonile &HPNga; klõpsates). </para>
+
+<para
+>Menüüs on neli elementi: <variablelist>
+     <varlistentry>
+       <term
+><guimenuitem
+>Alusta harjutamist</guimenuitem
+></term>
+       <listitem>
+	 <para
+><action
+>Alustab</action
+> õpetajarežiimi harjutust. </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Ava...</guimenuitem
+></term>
+       <listitem>
+	 <para
+><action
+>Avab</action
+> olemasoleva sõnavaradokumendi. </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Seadista &kwordquiz;i õpetajat...</guimenuitem
+></term>
+       <listitem>
+	 <para
+><action
+>Avab</action
+> õpetajarežiimi seadistustedialoogi. </para>
+	 <screenshot>
+	   <screeninfo
+>Õpetaja seadistused</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>Õpetaja seadistused</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para
+><guilabel
+>Üpetaja seadistuste</guilabel
+> kaardil saab kindlaks määrata intervalli, millega sähvikud vahetuvad, ja sähvikute välimuse ning sisse või välja lülitada valiku <guilabel
+>Harjutamise alustamine kohe sõnaraamatufaili avamisel</guilabel
+>. </para>
+	 <para
+>Praegu on võimalik sähvikute välimuse puhul valida <guilabel
+>omastiili</guilabel
+> ja <guilabel
+>minimalistliku</guilabel
+> stiili vahel. </para>
+	 <screenshot>
+	   <screeninfo
+>Sähvik omastiiliga</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>Sähvik omastiiliga</phrase>
+	     </textobject>
+	     <caption>
+	       <para
+>Omastiili on mõtet kasutada uhkete, pilte sisaldavate sõnastike puhul. </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>Sähvik minimalistliku stiiliga</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>Sähvik minimalistliku stiiliga</phrase>
+	     </textobject>
+	     <caption>
+	       <para
+>Minimalistlikku stiili on mõtet kasutada lihtsate sõnastike korral. </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>Kiirklahvide seadistused</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>Kiirklahvide seadistused</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para
+><guilabel
+>Kiirklahvide seadistuste</guilabel
+> kaardil saab määrata kindlaks kiirklahvid õpetajarežiimi toiminguteks. Vaikimisi kehtivad <keycombo
+>&Ctrl;&Alt;<keycap
+>J</keycap
+></keycombo
+> sulgemiseks ja <keycombo
+>&Ctrl;&Alt;<keycap
+>H</keycap
+></keycombo
+> sähviku pööramiseks. </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Välju</guimenuitem
+></term>
+       <listitem>
+	 <para
+><action
+>Lõpetab</action
+> &kwordquiz;i töö. </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+
+
+<chapter id="dialogs">
+<title
+>Dialoogid</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Üldised seadistused</title>
+<screenshot>
+  <screeninfo
+>Üldised seadistused</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Üldised seadistused</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Siin saab valida, millist tüüpi seanss avatud sõnavara puhul käivitada. Otse viktoriinile minnes ei näe sa eelnevalt ühtegi kirjet. </para>
+<para
+>Nupp <guibutton
+>Vaikeväärtused</guibutton
+> taastab rakenduse eelnevalt määratud vaikeseadistused. <guibutton
+>Rakenda</guibutton
+> kehtestab ettevõetud muudatused ja jätab dialoogi avatuks. <guibutton
+>OK</guibutton
+> kehtestab ettevõetud muudatused ja sulgeb dialoogi. <guibutton
+>Loobu</guibutton
+> sulgeb dialoogi muudatusi tegemata. </para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title
+>Redaktori seadistused</title>
+<screenshot>
+  <screeninfo
+>Redaktori seadistused</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Redaktori seadistused</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Siin saab määrata, mida võtab redaktori kasutamise ajal ette vajutus klahvile &Enter;. </para>
+<para
+>Samuti saab siin sisse lülitada <link linkend="fill-in-the-blank"
+>tühikute kasutamise</link
+>. Selle keelamine suurendab veidi rakenduse jõudlust. </para>
+<para
+>Nupp <guibutton
+>Vaikeväärtused</guibutton
+> taastab rakenduse eelnevalt määratud vaikeseadistused. <guibutton
+>Rakenda</guibutton
+> kehtestab ettevõetud muudatused ja jätab dialoogi avatuks. <guibutton
+>OK</guibutton
+> kehtestab ettevõetud muudatused ja sulgeb dialoogi. <guibutton
+>Loobu</guibutton
+> sulgeb dialoogi muudatusi tegemata. </para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title
+>Viktoriini seadistused</title>
+<screenshot>
+  <screeninfo
+>Viktoriini seadistused</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Viktoriini seadistused</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Sähvikuseansside puhul saab valida, kas kaarte keerata automaatselt, ja kas neid lugeda õigesti või valesti vastatuks. Samuti saab siin sisestada sekundites aja, mille järel kaardid automaatselt ümber keeratakse. </para>
+<para
+>Mitme valikuga viktoriini puhul saab määrata, kas valiku õigsust kontrollitakse kohe või tuleb selleks kasutada menüükäsku <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Kontrolli</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Küsimuste-vastuste viktoriini puhul saab valida, kas küsimused, mille puhul kasutad menüükäsku <menuchoice
+><guimenu
+>Viktoriin</guimenu
+><guimenuitem
+>Vihje</guimenuitem
+></menuchoice
+>, loetakse valesti vastatuks või mitte. </para>
+<para
+>Kõigi seansside jaoks saab määrata, kas hinnangut näidatakse protsentides või absoluutarvudes. </para>
+<para
+>Nupp <guibutton
+>Vaikeväärtused</guibutton
+> taastab rakenduse eelnevalt määratud vaikeseadistused. <guibutton
+>Rakenda</guibutton
+> kehtestab ettevõetud muudatused ja jätab dialoogi avatuks. <guibutton
+>OK</guibutton
+> kehtestab ettevõetud muudatused ja sulgeb dialoogi. <guibutton
+>Loobu</guibutton
+> sulgeb dialoogi muudatusi tegemata. </para>
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title
+>Sähviku välimuse seadistused</title>
+<screenshot>
+  <screeninfo
+>Sähviku välimuse seadistused</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sähviku välimuse seadistused</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Sähvikuseansside jaoks saab valida teksti, kaartide ja raamide <guilabel
+>fondi</guilabel
+> ning värvi. Klõpsuga nupule <guibutton
+>Vaheta</guibutton
+> saab omavahel vahetada kaartide <guilabel
+>esikülje</guilabel
+> ja <guilabel
+>tagakülje</guilabel
+>. </para>
+<para
+>Nupp <guibutton
+>Vaikeväärtused</guibutton
+> taastab rakenduse eelnevalt määratud vaikeseadistused. <guibutton
+>Rakenda</guibutton
+> kehtestab ettevõetud muudatused ja jätab dialoogi avatuks. <guibutton
+>OK</guibutton
+> kehtestab ettevõetud muudatused ja sulgeb dialoogi. <guibutton
+>Loobu</guibutton
+> sulgeb dialoogi muudatusi tegemata. </para>
+</sect1>
+
+<sect1 id="dlg-config-characters">
+<title
+>Erisümbolite seadistused</title>
+<screenshot>
+  <screeninfo
+>Erisümbolite seadistused</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Erisümbolite seadistused</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Erisümbolite lisamiseks sõnavarakirjetesse saab kasutada üheksat spetsiaalset toimingut. Vali loendist mõni toiming ja klõpsa nupule <guibutton
+>Sümbol...</guibutton
+>, misjärel saad <link linkend="dlg-special-characters"
+>valida</link
+> antud toiminguga seotud sümboli. Aknas näidatakse valitud sümbolit ka suurelt. </para>
+<para
+>Iga toiminguga seotud kiirklahvi saab muuta menüükäsuga <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Kiirklahvide seadistamine...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Nupp <guibutton
+>Vaikeväärtused</guibutton
+> taastab rakenduse eelnevalt määratud vaikeseadistused. <guibutton
+>Rakenda</guibutton
+> kehtestab ettevõetud muudatused ja jätab dialoogi avatuks. <guibutton
+>OK</guibutton
+> kehtestab ettevõetud muudatused ja sulgeb dialoogi. <guibutton
+>Loobu</guibutton
+> sulgeb dialoogi muudatusi tegemata. </para>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Veeru seadistused</title>
+<para
+>Selle dialoogi saab avada menüükäsuga <menuchoice
+><guimenu
+>Sõnavara</guimenu
+><guimenuitem
+>Veeru seadistused...</guimenuitem
+></menuchoice
+>.</para>
+<screenshot>
+  <screeninfo
+>Veeru seadistused</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Veeru seadistused</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Selles dialoogis saab määrata sõnavaradokumendi veergude tiitlid, klaviatuuriasetused ja laiuse. Muudatuste rakendamiseks klõpsa nupule <guibutton
+>OK</guibutton
+>, kui sa aga midagi muuta ei soovigi, siis nupule <guibutton
+>Loobu</guibutton
+>. </para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title
+>Erisümbolid</title>
+<para
+>Selle dialoogi avamiseks klõpsa nupule <guibutton
+>Märk...</guibutton
+> &kwordquiz;i seadistustedialoogi kaardil <guilabel
+>Erisümbolid</guilabel
+>.</para>
+<screenshot>
+  <screeninfo
+>Erisümbolid</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Erisümbolid</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Selles dialoogis saab valida mis tahes erisümboli, mida soovid siduda aktiivse <link linkend="dlg-config-characters"
+>erisümbolitoiminguga</link
+>. </para>
+
+</sect1>
+
+<!-- Not in 0.9.1
+<sect1 id="dlg-rows-columns">
+<title
+>Rows/Columns</title>
+<para
+>You can open this dialog from the menubar with <menuchoice
+><guimenu
+>Vocabulary</guimenu
+><guimenuitem
+>Rows/Columns...</guimenuitem
+></menuchoice
+></para>
+<screenshot>
+  <screeninfo
+>Rows/Columns</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-rowscolumns.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Rows/Columns</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para>
+Use this dialog to specify the number of rows you want in the vocabulary. You can also adjust the width (in pixels) of the selected columns and the height (in pixels) of the selected rows. Select <guibutton
+>OK</guibutton
+> to make your changes or <guibutton
+>Cancel</guibutton
+> to discard any changes.
+</para>
+<warning>
+<para>
+Specifying a number of rows lower than what currently is in the vocabulary may lead to loss of data.
+</para>
+</warning>
+
+</sect1>
+-->
+</chapter>
+
+<chapter id="faq">
+<title
+>Küsimused ja vastused</title>
+&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<title
+>Autorid ja litsents</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Rakenduse autoriõigus 2003-2008: Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Dokumentatsiooni autoriõigus 2003-2008: Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Tõlge eesti keelde: Marek Laane<email
+>bald@starman.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+
+<sect1 id="getting-kwordquiz">
+<title
+>&kwordquiz;i hankimine</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

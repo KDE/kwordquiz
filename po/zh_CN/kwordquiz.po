@@ -1,0 +1,2468 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"PO-Revision-Date: 2022-09-20 01:56\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/kwordquiz/kwordquiz.pot\n"
+"X-Crowdin-File-ID: 5139\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-china@kde.org"
+
+#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
+#: cleardialogbase.ui:21
+#, kde-format
+msgid "Selection"
+msgstr "选择"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:30
+#, kde-format
+msgid "Delete all information in selected entries"
+msgstr "在所选条目中删除所有信息"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:33
+#, kde-format
+msgid "When checked all information will be deleted from the selected entries"
+msgstr "如果选中此项，将删除所选条目里的所有信息"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:36
+#, kde-format
+msgid "Clear &All"
+msgstr "全部清除(&A)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:59
+#, kde-format
+msgid "Delete the text from selected entries"
+msgstr "删除选中项中的文本"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:62
+#, kde-format
+msgid "When checked the text will be deleted from selected entries"
+msgstr "如果选中此项，将删除所选条目里的文字"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:65
+#, kde-format
+msgid "&Text"
+msgstr "文本(&T)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:72
+#, kde-format
+msgid "Delete the image link from selected entries"
+msgstr "从所选条目中删除图像链接"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:75
+#, kde-format
+msgid "When checked the image link will be deleted from selected entries"
+msgstr "如果选中此项，将从所选条目中删除图像链接"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:78
+#, kde-format
+msgid "&Image Links"
+msgstr "图像链接(&I)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:85
+#, kde-format
+msgid "Delete the sound link from selected entries"
+msgstr "从所选条目中删除声音链接"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:88
+#, kde-format
+msgid "When checked the sound link will be deleted from selected entries"
+msgstr "如果选中此项，将从所选条目中删除声音链接"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:91
+#, kde-format
+msgid "&Sound Links"
+msgstr "声音链接(&S)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
+#: columndialogbase.ui:45 kwordquiz.cpp:466
+#, kde-format
+msgid "Column 1"
+msgstr "第一列"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
+#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
+#, kde-format
+msgid "Title for the left column"
+msgstr "左侧列的标题"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
+#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
+#, kde-format
+msgid "Enter a title (identifier) for the left column"
+msgstr "输入左侧列的标题(标识符)"
+
+#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
+#: columndialogbase.ui:96
+#, kde-format
+msgid "&Title:"
+msgstr "标题(&T)："
+
+#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
+#: columndialogbase.ui:112
+#, kde-format
+msgid "&Keyboard layout:"
+msgstr "键盘布局(&K)："
+
+#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
+#: columndialogbase.ui:128
+#, kde-format
+msgid "&Width:"
+msgstr "宽度(&W)："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:158
+#, kde-format
+msgid "Keyboard layout for the left column"
+msgstr "左侧列的键盘布局"
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:161
+#, kde-format
+msgid "Select a keyboard layout for the left column"
+msgstr "选择左侧列的键盘布局"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:168
+#, kde-format
+msgid "Width of the left column"
+msgstr "左侧列的宽度"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:171
+#, kde-format
+msgid "Enter the width (in pixels) for the left column"
+msgstr "输入左侧列的宽度(以像素计)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
+#: columndialogbase.ui:214 kwordquiz.cpp:469
+#, kde-format
+msgid "Column 2"
+msgstr "第二列"
+
+#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
+#: columndialogbase.ui:265
+#, kde-format
+msgid "T&itle:"
+msgstr "标题(&I)："
+
+#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
+#: columndialogbase.ui:281
+#, kde-format
+msgid "Keyboard &Layout:"
+msgstr "键盘布局(&L)："
+
+#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
+#: columndialogbase.ui:297
+#, kde-format
+msgid "Wi&dth:"
+msgstr "宽度(&D)："
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:317
+#, kde-format
+msgid "Title for the right column"
+msgstr "右侧列的标题"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:320
+#, kde-format
+msgid "Enter a title (identifier) for the right column"
+msgstr "输入右侧列的标题(标识符)"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:330
+#, kde-format
+msgid "Width of the right column"
+msgstr "右侧列的宽度"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:333
+#, kde-format
+msgid "Enter the width (in pixels) for the right column"
+msgstr "输入右侧列的宽度(以像素计)"
+
+#: dlglanguage.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Column Settings"
+msgstr "列设置"
+
+#: dlgspecchar.cpp:17
+#, kde-format
+msgctxt "@title:window select character dialog"
+msgid "Select Character"
+msgstr "选择字符"
+
+#: dlgspecchar.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "&Select"
+msgstr "选择(&S)"
+
+#: dlgspecchar.cpp:42
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select this character"
+msgstr "选择此字符"
+
+#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:12
+#, kde-format
+msgid "Column widths"
+msgstr "列宽"
+
+#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:18
+#, kde-format
+msgid "Keyboard layouts"
+msgstr "键盘布局"
+
+#: filterproxysearchline.cpp:23
+#, kde-format
+msgid "Search"
+msgstr "搜索"
+
+#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
+#, kde-format
+msgid "Your answer was correct!"
+msgstr "您答对了！"
+
+#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
+#, kde-format
+msgid "Your answer was incorrect."
+msgstr "您答错了。"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: flashviewbase.ui:149
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a flashcard quiz.</html>"
+msgstr ""
+"<html>您的词汇表中的条目太少了。<br />在答题卡问案中您最少需要一个条目</html>"
+
+#: kwordquiz.cpp:100
+#, kde-format
+msgid "Creates a new blank vocabulary document"
+msgstr "创建新的空词汇表文档"
+
+#: kwordquiz.cpp:105
+#, kde-format
+msgid "Opens an existing vocabulary document"
+msgstr "打开已有的词汇表文档"
+
+#: kwordquiz.cpp:111
+#, kde-format
+msgid "Download New Vocabularies..."
+msgstr "下载新词汇表..."
+
+#: kwordquiz.cpp:115
+#, kde-format
+msgid "Downloads new vocabularies"
+msgstr "下载新词汇表"
+
+#: kwordquiz.cpp:120
+#, kde-format
+msgid "Saves the active vocabulary document"
+msgstr "保存当前词汇表文档"
+
+#: kwordquiz.cpp:125
+#, kde-format
+msgid "Saves the active vocabulary document with a different name"
+msgstr "将当前词汇表文档以不同的名称保存"
+
+#: kwordquiz.cpp:130
+#, kde-format
+msgid "Closes the active vocabulary document"
+msgstr "关闭当前词汇表文档"
+
+#: kwordquiz.cpp:134
+#, kde-format
+msgid "Prints the active vocabulary document"
+msgstr "打印当前词汇表"
+
+#: kwordquiz.cpp:139
+#, kde-format
+msgid "Shows a preview of the active vocabulary document"
+msgstr "显示当前词汇表文档的预览"
+
+#: kwordquiz.cpp:144
+#, kde-format
+msgid "Quits KWordQuiz"
+msgstr "退出 KWordQuiz"
+
+#: kwordquiz.cpp:156
+#, kde-format
+msgid "Cuts the text from the selected cells and places it on the clipboard"
+msgstr "从选中单元格剪切文本，并将其放入剪贴板"
+
+#: kwordquiz.cpp:161
+#, kde-format
+msgid "Copies the text from the selected cells and places it on the clipboard"
+msgstr "从选中单元格复制文本，并将其放入剪贴板"
+
+#: kwordquiz.cpp:166
+#, kde-format
+msgid ""
+"Pastes previously cut or copied text from the clipboard into the selected "
+"cells"
+msgstr "将先前剪切或粘贴的文本从剪贴板粘贴到选中单元格"
+
+#: kwordquiz.cpp:172
+#, kde-format
+msgid "Clears the content of the selected cells"
+msgstr "清除选中单元格的内容"
+
+#: kwordquiz.cpp:178
+#, kde-format
+msgid "&Insert Row"
+msgstr "插入行(&I)"
+
+#: kwordquiz.cpp:180
+#, kde-format
+msgid "Inserts a new row above the current row"
+msgstr "在当前行之上插入新行"
+
+#: kwordquiz.cpp:187
+#, kde-format
+msgid "&Delete Row"
+msgstr "删除行(&D)"
+
+#: kwordquiz.cpp:189
+#, kde-format
+msgid "Deletes the selected row(s)"
+msgstr "删除选中行"
+
+#: kwordquiz.cpp:196
+#, kde-format
+msgid "&Mark as Blank"
+msgstr "标为空(&M)"
+
+#: kwordquiz.cpp:198
+#, kde-format
+msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+msgstr "将当前或选中单词标为填空题的空"
+
+#: kwordquiz.cpp:205
+#, kde-format
+msgid "&Unmark Blanks"
+msgstr "取消标为空(&U)"
+
+#: kwordquiz.cpp:206
+#, kde-format
+msgid "Removes blanks from the current or selected word"
+msgstr "删除当前或选中单词的空"
+
+#: kwordquiz.cpp:213
+#, kde-format
+msgid "&Column Settings..."
+msgstr "列设置(&C)..."
+
+#: kwordquiz.cpp:215
+#, kde-format
+msgid "Defines the column settings for the active vocabulary"
+msgstr "定义当前词汇表的列设置"
+
+#: kwordquiz.cpp:222
+#, kde-format
+msgid "&Font..."
+msgstr "字体(&F)..."
+
+#: kwordquiz.cpp:223
+#, kde-format
+msgid "Defines the font used by the editor"
+msgstr "定义编辑器所用的字体"
+
+#: kwordquiz.cpp:230
+#, kde-format
+msgid "Link &Image..."
+msgstr "链接图像(&I)..."
+
+#: kwordquiz.cpp:231
+#, kde-format
+msgid "Links an image with the current entry"
+msgstr "将图像与当前项链接"
+
+#: kwordquiz.cpp:238
+#, kde-format
+msgid "Link &Sound..."
+msgstr "链接声音(&S)..."
+
+#: kwordquiz.cpp:239
+#, kde-format
+msgid "Links a sound with the current entry"
+msgstr "将图像与当前项链接"
+
+#: kwordquiz.cpp:246
+#, kde-format
+msgid "&Adjust Row Heights"
+msgstr "调整行高(&A)"
+
+#: kwordquiz.cpp:247
+#, kde-format
+msgid "Automatically adjusts the height of selected rows"
+msgstr "自动调整选定行的高度"
+
+#: kwordquiz.cpp:254
+#, kde-format
+msgid "Sh&uffle"
+msgstr "打乱(&U)"
+
+#: kwordquiz.cpp:255
+#, kde-format
+msgid "Shuffles the entries of the active vocabulary"
+msgstr "打乱当前词汇表中各项的顺序"
+
+#: kwordquiz.cpp:261
+#, kde-format
+msgid "&Keyboard Layout"
+msgstr "键盘布局(&K)"
+
+#: kwordquiz.cpp:262
+#, kde-format
+msgid "Shows available keyboard layouts"
+msgstr "显示可用的键盘布局"
+
+#: kwordquiz.cpp:273
+#, kde-format
+msgid "Change Mode"
+msgstr "更改模式"
+
+#: kwordquiz.cpp:274
+#, kde-format
+msgid "Mode"
+msgstr "模式"
+
+#: kwordquiz.cpp:275
+#, kde-format
+msgid "Changes the mode used in quiz sessions"
+msgstr "更改闯关所用的模式"
+
+#: kwordquiz.cpp:288
+#, kde-format
+msgid "Selects this mode"
+msgstr "选择此模式"
+
+#: kwordquiz.cpp:297
+#, kde-format
+msgctxt "@item:inlistbox activate vocabulary editor"
+msgid "&Editor"
+msgstr "编辑器(&E)"
+
+#: kwordquiz.cpp:299
+#, kde-format
+msgid "Activates the vocabulary editor"
+msgstr "激活词汇表编辑器"
+
+#: kwordquiz.cpp:306
+#, kde-format
+msgid "&Flashcard"
+msgstr "答题卡(&F)"
+
+#: kwordquiz.cpp:308
+#, kde-format
+msgid "Starts a flashcard session using the active vocabulary"
+msgstr "使用当前词汇表开始答题卡闯关"
+
+#: kwordquiz.cpp:315
+#, kde-format
+msgid "&Multiple Choice"
+msgstr "选择题(&M)"
+
+#: kwordquiz.cpp:317
+#, kde-format
+msgid "Starts a multiple choice session using the active vocabulary"
+msgstr "使用当前词汇表开始选择题闯关"
+
+#: kwordquiz.cpp:324
+#, kde-format
+msgid "&Question and Answer"
+msgstr "问答(&Q)"
+
+#: kwordquiz.cpp:325
+#, kde-format
+msgid "Q&&A"
+msgstr "问答"
+
+#: kwordquiz.cpp:327
+#, kde-format
+msgid "Starts a question and answer session using the active vocabulary"
+msgstr "使用当前词汇表开始问答题闯关"
+
+#: kwordquiz.cpp:334
+#, kde-format
+msgid "&Check"
+msgstr "检查(&C)"
+
+#: kwordquiz.cpp:336
+#, kde-format
+msgid "Checks your answer to this question"
+msgstr "检查您对此问题的答案"
+
+#: kwordquiz.cpp:341
+#, kde-format
+msgid "Choose Option &1"
+msgstr "选择选项 &1"
+
+#: kwordquiz.cpp:345
+#, kde-format
+msgid "Choose Option &2"
+msgstr "选择选项 &2"
+
+#: kwordquiz.cpp:349
+#, kde-format
+msgid "Choose Option &3"
+msgstr "选择选项 &3"
+
+#: kwordquiz.cpp:354
+#, kde-format
+msgid "I &Know"
+msgstr "我知道(&K)"
+
+#: kwordquiz.cpp:356
+#, kde-format
+msgid "Counts this card as correct and shows the next card"
+msgstr "将此卡片计为正确并显示下张卡片"
+
+#: kwordquiz.cpp:362
+#, kde-format
+msgid "I &Do Not Know"
+msgstr "我不知道(&D)"
+
+#: kwordquiz.cpp:364
+#, kde-format
+msgid "Counts this card as incorrect and shows the next card"
+msgstr "将此卡片计为错误并显示下张卡片"
+
+#: kwordquiz.cpp:370
+#, kde-format
+msgid "&Hint"
+msgstr "提示(&H)"
+
+#: kwordquiz.cpp:372
+#, kde-format
+msgid "Gets the next correct letter of the answer"
+msgstr "获得答案的下个正确字母"
+
+#: kwordquiz.cpp:378
+#, kde-format
+msgid "Mark Last Correct"
+msgstr "标记上次回答为正确"
+
+#: kwordquiz.cpp:380
+#, kde-format
+msgid "Marks last answer as correct"
+msgstr "将最后的回答标为正确"
+
+#: kwordquiz.cpp:386
+#, kde-format
+msgid "&Restart"
+msgstr "重新开始(&R)"
+
+#: kwordquiz.cpp:388
+#, kde-format
+msgid "Restarts the quiz session from the beginning"
+msgstr "从头开始闯关"
+
+#: kwordquiz.cpp:394
+#, kde-format
+msgid "&Play Audio"
+msgstr "播放声音(&P)"
+
+#: kwordquiz.cpp:396
+#, kde-format
+msgid "Play associated audio"
+msgstr "播放相关的声音"
+
+#: kwordquiz.cpp:402
+#, kde-format
+msgid "Repeat &Errors"
+msgstr "重复错误(&E)"
+
+#: kwordquiz.cpp:404
+#, kde-format
+msgid "Repeats all incorrectly answered questions"
+msgstr "重答所有回答错误的问题"
+
+#: kwordquiz.cpp:410
+#, kde-format
+msgid "Export Errors &As..."
+msgstr "导出错误为(&A)..."
+
+#: kwordquiz.cpp:411
+#, kde-format
+msgid "Exports all errors as a new vocabulary document"
+msgstr "导出所有错误为新词汇表文档"
+
+#: kwordquiz.cpp:417
+#, kde-format
+msgid "Show Se&arch"
+msgstr "显示查找(&A)"
+
+#: kwordquiz.cpp:419
+#, kde-format
+msgid "Toggle display of the search bar"
+msgstr "切换查找栏显示"
+
+#: kwordquiz.cpp:424
+#, kde-format
+msgid "Configures sound and other notifications for certain events"
+msgstr "配置特定事件的声音和其他通知"
+
+#: kwordquiz.cpp:429
+#, kde-format
+msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+msgstr "指定词汇表编辑器和闯关的首选项"
+
+#: kwordquiz.cpp:435
+#, kde-format
+msgid "Special Character <numid>%1</numid>"
+msgstr "特殊字符 <numid>%1</numid>"
+
+#: kwordquiz.cpp:447
+#, kde-format
+msgid "Toggles display of the toolbars"
+msgstr "切换工具栏显示"
+
+#: kwordquiz.cpp:500
+#, kde-format
+msgid "Enter search terms here"
+msgstr "在此输入查找字符"
+
+#: kwordquiz.cpp:523
+#, kde-format
+msgctxt "@item:inlistbox vocabulary editor"
+msgid "Editor"
+msgstr "编辑器"
+
+#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
+#: kwordquiz.cpp:528 prefquizbase.ui:192
+#, kde-format
+msgid "Flashcard"
+msgstr "答题卡"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
+#: kwordquiz.cpp:532 prefquizbase.ui:149
+#, kde-format
+msgid "Multiple Choice"
+msgstr "选择题"
+
+#: kwordquiz.cpp:536
+#, kde-format
+msgid "Question & Answer"
+msgstr "问答"
+
+#: kwordquiz.cpp:602 kwordquiz.cpp:768 kwordquiz.cpp:813
+#, kde-format
+msgid "Opening file..."
+msgstr "打开文件..."
+
+#: kwordquiz.cpp:635
+#, kde-format
+msgctxt "%1 is an error message"
+msgid ""
+"%1\n"
+"If you are sure no other program is using the file you can choose to ignore "
+"the lock and open the file anyway.\n"
+"Do you want to open the file?"
+msgstr ""
+
+#: kwordquiz.cpp:648 kwordquiz.cpp:763 kwordquiz.cpp:808 kwordquiz.cpp:816
+#: kwordquiz.cpp:853 kwordquiz.cpp:866 kwordquiz.cpp:955 kwordquiz.cpp:962
+#: kwordquiz.cpp:968 kwordquiz.cpp:998 kwordquiz.cpp:1005 kwordquiz.cpp:1012
+#: kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033 kwordquiz.cpp:1040
+#: kwordquiz.cpp:1047 kwordquiz.cpp:1060 kwordquiz.cpp:1075 kwordquiz.cpp:1083
+#: kwordquiz.cpp:1091 kwordquiz.cpp:1100 kwordquiz.cpp:1108 kwordquiz.cpp:1122
+#: kwordquiz.cpp:1130 kwordquiz.cpp:1137 kwordquiz.cpp:1144 kwordquiz.cpp:1151
+#, kde-format
+msgctxt "@info:status ready"
+msgid "Ready"
+msgstr "就绪"
+
+#: kwordquiz.cpp:717
+#, kde-format
+msgid ""
+"The current document has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"当前文件已被修改。\n"
+"您想要保存吗？"
+
+#: kwordquiz.cpp:758
+#, kde-format
+msgid "Opening a new document window..."
+msgstr "打开新的文档窗口..."
+
+#: kwordquiz.cpp:770
+#, kde-format
+msgid "&Merge selected files with the current document"
+msgstr "将当前文档与已选文件合并在一起(&M)"
+
+#: kwordquiz.cpp:775 kwqtutor.cpp:130
+#, kde-format
+msgid "Open Vocabulary Document"
+msgstr "打开词汇表文档"
+
+#: kwordquiz.cpp:840
+#, kde-format
+msgid "Saving file..."
+msgstr "保存文件..."
+
+#: kwordquiz.cpp:859
+#, kde-format
+msgid "Saving file with a new filename..."
+msgstr "以新文件名保存文件..."
+
+#: kwordquiz.cpp:887
+#, kde-format
+msgid "HTML Document"
+msgstr "HTML 文档"
+
+#: kwordquiz.cpp:889
+#, kde-format
+msgid "Save Vocabulary Document As"
+msgstr "词汇表文档另存为"
+
+#: kwordquiz.cpp:937
+#, kde-format
+msgid "Closing file..."
+msgstr "关闭文件..."
+
+#: kwordquiz.cpp:960
+#, kde-format
+msgid "Printing..."
+msgstr "打印..."
+
+#: kwordquiz.cpp:966
+#, kde-format
+msgid "Showing Preview..."
+msgstr "显示预览..."
+
+#: kwordquiz.cpp:974
+#, kde-format
+msgctxt "@info:status quitting"
+msgid "Quitting..."
+msgstr "退出..."
+
+#: kwordquiz.cpp:996
+#, kde-format
+msgid "Cutting selection..."
+msgstr "剪切选中内容..."
+
+#: kwordquiz.cpp:1003
+#, kde-format
+msgid "Copying selection to clipboard..."
+msgstr "将选中内容复制到剪贴板..."
+
+#: kwordquiz.cpp:1010
+#, kde-format
+msgid "Inserting clipboard contents..."
+msgstr "插入剪贴板内容..."
+
+#: kwordquiz.cpp:1017
+#, kde-format
+msgid "Clearing the selected cells..."
+msgstr "清除选中单元格..."
+
+#: kwordquiz.cpp:1024
+#, kde-format
+msgid "Inserting rows..."
+msgstr "插入行..."
+
+#: kwordquiz.cpp:1031
+#, kde-format
+msgid "Deleting selected rows..."
+msgstr "删除选中行..."
+
+#: kwordquiz.cpp:1038
+#, kde-format
+msgid "Marking selected text as a blank..."
+msgstr "将选中文本标为空..."
+
+#: kwordquiz.cpp:1045
+#, kde-format
+msgid "Removing blank markings..."
+msgstr "删除留空标记..."
+
+#: kwordquiz.cpp:1052
+#, kde-format
+msgid "Setting the column titles of the vocabulary..."
+msgstr "设置词汇表的列标题..."
+
+#: kwordquiz.cpp:1065
+#, kde-format
+msgid "Setting the font of the vocabulary..."
+msgstr "设置词汇表的字体..."
+
+#: kwordquiz.cpp:1081
+#, kde-format
+msgid "Linking an image with the current entry..."
+msgstr "将当前条目与图像链接..."
+
+#: kwordquiz.cpp:1089
+#, kde-format
+msgid "Linking a sound with the current entry..."
+msgstr "将当前条目与声音链接..."
+
+#: kwordquiz.cpp:1097
+#, kde-format
+msgid "Adjusting row heights..."
+msgstr "调整行高..."
+
+#: kwordquiz.cpp:1106
+#, kde-format
+msgid "Randomizing the vocabulary..."
+msgstr "打乱词汇表..."
+
+#: kwordquiz.cpp:1114
+#, kde-format
+msgid "Updating mode..."
+msgstr "更新模式..."
+
+#: kwordquiz.cpp:1128
+#, kde-format
+msgid "Starting editor session..."
+msgstr "启动编辑器会话..."
+
+#: kwordquiz.cpp:1135
+#, kde-format
+msgid "Starting flashcard session..."
+msgstr "开始答题卡闯关..."
+
+#: kwordquiz.cpp:1142
+#, kde-format
+msgid "Starting multiple choice session..."
+msgstr "开始选择题闯关..."
+
+#: kwordquiz.cpp:1149
+#, kde-format
+msgid "Starting question & answer session..."
+msgstr "开始问答题闯关..."
+
+#: kwordquiz.cpp:1301
+#, kde-format
+msgid "Insert %1"
+msgstr "插入 %1"
+
+#: kwordquiz.cpp:1302
+#, kde-format
+msgid "Inserts the character %1"
+msgstr "插入字符 %1"
+
+#: kwordquiz.cpp:1353
+#, kde-format
+msgid "This will restart your quiz. Do you wish to continue?"
+msgstr "这将重新开始闯关。您想要继续吗？"
+
+#: kwordquiz.cpp:1369
+#, kde-format
+msgid "&1 %1 -> %2 In Order"
+msgstr "&1 %1 -> %2 按顺序"
+
+#: kwordquiz.cpp:1370
+#, kde-format
+msgid "&2 %1 -> %2 In Order"
+msgstr "&2 %1 -> %2 按顺序"
+
+#: kwordquiz.cpp:1371
+#, kde-format
+msgid "&3 %1 -> %2 Randomly"
+msgstr "&3 %1 -> %2 随机"
+
+#: kwordquiz.cpp:1372
+#, kde-format
+msgid "&4 %1 -> %2 Randomly"
+msgstr "&4 %1 -> %2 随机"
+
+#: kwordquiz.cpp:1373
+#, kde-format
+msgid "&5 %1 <-> %2 Randomly"
+msgstr "&5 %1 <-> %2 随机"
+
+#: kwordquiz.cpp:1380 kwordquiz.cpp:1383
+#, kde-format
+msgid "%1 -> %2 In Order"
+msgstr "%1 -> %2 按顺序"
+
+#: kwordquiz.cpp:1386 kwordquiz.cpp:1389
+#, kde-format
+msgid "%1 -> %2 Randomly"
+msgstr "%1 -> %2 随机"
+
+#: kwordquiz.cpp:1392
+#, kde-format
+msgid "%1 &lt;-&gt; %2 Randomly"
+msgstr "%1 -> %2 随机"
+
+#. i18n: ectx: label, entry (FirstRun), group (General)
+#: kwordquiz.kcfg:10
+#, kde-format
+msgid "Is this the first time KWordQuiz is run?"
+msgstr "这是否是 KWordQuiz 第一次运行？"
+
+#. i18n: ectx: label, entry (ShowSearch), group (General)
+#: kwordquiz.kcfg:14
+#, kde-format
+msgid "Toggle display of the search bar."
+msgstr "切换工具栏显示"
+
+#. i18n: ectx: label, entry (StartSession), group (General)
+#: kwordquiz.kcfg:18
+#, kde-format
+msgid "Type of session to use when opening files"
+msgstr "打开文件时使用的课程类型"
+
+#. i18n: ectx: label, entry (PrintStyle), group (General)
+#: kwordquiz.kcfg:28
+#, kde-format
+msgid "Type of printout to generate"
+msgstr "要生成的输出类型"
+
+#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
+#: kwordquiz.kcfg:39
+#, kde-format
+msgid "Titles for column 1"
+msgstr "第一列的标题"
+
+#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
+#: kwordquiz.kcfg:43
+#, kde-format
+msgid "Titles for column 2"
+msgstr "第二列的标题"
+
+#. i18n: ectx: label, entry (EditorFont), group (Editor)
+#: kwordquiz.kcfg:47
+#, kde-format
+msgid "Font used in the editor"
+msgstr "编辑器所用字体"
+
+#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
+#: kwordquiz.kcfg:51
+#, kde-format
+msgid "If Fill-in-the-blank should be enabled"
+msgstr "是否启用填空"
+
+#. i18n: ectx: label, entry (EnterMove), group (Editor)
+#: kwordquiz.kcfg:55
+#, kde-format
+msgid "Direction the Enter key moves in the editor"
+msgstr "Enter 键在编辑器移动的方向"
+
+#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
+#: kwordquiz.kcfg:59
+#, kde-format
+msgid "Characters for the special character toolbar"
+msgstr "特殊字符工具栏的字符"
+
+#. i18n: ectx: label, entry (ClearAll), group (Editor)
+#: kwordquiz.kcfg:63
+#, kde-format
+msgid "Clear all data in selected entries"
+msgstr "清除所选条目中的所有数据"
+
+#. i18n: ectx: label, entry (ClearText), group (Editor)
+#: kwordquiz.kcfg:67
+#, kde-format
+msgid "Clear the text in selected entries"
+msgstr "清除选中条目的文字"
+
+#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
+#: kwordquiz.kcfg:71
+#, kde-format
+msgid "Clear the image link in selected entries"
+msgstr "清除选中条目的图像链接"
+
+#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
+#: kwordquiz.kcfg:75
+#, kde-format
+msgid "Clear the sound link in selected entries"
+msgstr "清除选中条目的声音链接"
+
+#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
+#: kwordquiz.kcfg:81
+#, kde-format
+msgid "Automatically check selected answer in multiple choice"
+msgstr "选择题中自动检查所选答案"
+
+#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
+#: kwordquiz.kcfg:85
+#, kde-format
+msgid "Automatically flip flashcard"
+msgstr "自动翻过答题卡"
+
+#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
+#: kwordquiz.kcfg:89
+#, kde-format
+msgid "Time delay for flipping flashcard"
+msgstr "翻过答题卡的延迟时间"
+
+#. i18n: ectx: label, entry (HintError), group (Quiz)
+#: kwordquiz.kcfg:93
+#, kde-format
+msgid "Treat use of hint as error"
+msgstr "将使用提示视为错误"
+
+#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
+#: kwordquiz.kcfg:97
+#, kde-format
+msgid "Count flashcard as correct or error"
+msgstr "将答题卡计为正确或错误"
+
+#. i18n: ectx: label, entry (Mode), group (Quiz)
+#: kwordquiz.kcfg:101
+#, kde-format
+msgid "Quiz mode"
+msgstr "答题模式"
+
+#. i18n: ectx: label, entry (Percent), group (Quiz)
+#: kwordquiz.kcfg:105
+#, kde-format
+msgid "Show score as percentage"
+msgstr "将分数显示为百分比"
+
+#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
+#: kwordquiz.kcfg:111
+#, kde-format
+msgid "Font used for front of flashcard"
+msgstr "答题卡正面所用字体"
+
+#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
+#: kwordquiz.kcfg:115
+#, kde-format
+msgid "Color used for text on front of flashcard"
+msgstr "答题卡正面文字所用颜色"
+
+#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
+#: kwordquiz.kcfg:119
+#, kde-format
+msgid "Color used for front of flashcard"
+msgstr "答题卡正面所用颜色"
+
+#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:123
+#, kde-format
+msgid "Color used for frame on front of flashcard"
+msgstr "答题卡正面边框所用颜色"
+
+#. i18n: ectx: label, entry (BackFont), group (FlashCard)
+#: kwordquiz.kcfg:127
+#, kde-format
+msgid "Font used for back of flashcard"
+msgstr "答题卡背面所用字体"
+
+#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
+#: kwordquiz.kcfg:131
+#, kde-format
+msgid "Color used for text on back of flashcard"
+msgstr "答题卡背面文字所用颜色"
+
+#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
+#: kwordquiz.kcfg:135
+#, kde-format
+msgid "Color used for back of flashcard"
+msgstr "答题卡背面所用颜色"
+
+#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:139
+#, kde-format
+msgid "Color used for frame on back of flashcard"
+msgstr "答题卡背面边框所用颜色"
+
+#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
+#: kwordquiz.kcfg:145
+#, kde-format
+msgid "The Providers path for KWordQuiz"
+msgstr "KWordQuiz 的提供者路径"
+
+#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
+#: kwordquiz.kcfg:149
+#, kde-format
+msgid "The command used to start a downloaded vocabulary"
+msgstr "启动下载的词汇表所用的命令"
+
+#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
+#: kwordquiz.kcfg:153
+#, kde-format
+msgid ""
+"The folder where downloaded vocabularies are saved by default (relative to "
+"$HOME)"
+msgstr "下载的词汇表默认所保存的文件夹(相对于 $HOME)"
+
+#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
+#: kwordquiz.kcfg:159
+#, kde-format
+msgid "Pop up flashcards at fixed or random intervals"
+msgstr "按固定或随机时间间隔弹出答题卡"
+
+#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
+#: kwordquiz.kcfg:167
+#, kde-format
+msgid "The interval in minutes at which to pop up a flash card"
+msgstr "弹出答题卡的间隔时间(分钟)"
+
+#. i18n: ectx: label, entry (TutorMin), group (Tutor)
+#: kwordquiz.kcfg:171
+#, kde-format
+msgid "The minimum interval in minutes at which to pop up a flash card"
+msgstr "弹出答题卡的最短间隔时间(分钟)"
+
+#. i18n: ectx: label, entry (TutorMax), group (Tutor)
+#: kwordquiz.kcfg:175
+#, kde-format
+msgid "The maximum interval in minutes at which to pop up a flash card"
+msgstr "弹出答题卡的最长间隔时间(分钟)"
+
+#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
+#: kwordquiz.kcfg:179
+#, kde-format
+msgid "Geometry of the last flash card"
+msgstr "最后一张答题卡的位置"
+
+#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
+#: kwordquiz.kcfg:183
+#, kde-format
+msgid "Show flash card in a native KWordQuiz style"
+msgstr "以原生 KWordQuiz 风格显示答题卡"
+
+#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
+#: kwordquiz.kcfg:191
+#, kde-format
+msgid ""
+"Last open vocabulary file to be opened automatically if none other is "
+"specified on the command line"
+msgstr "如果没有在命令行里指定要打开的词汇文件，则自动打开之前最后使用的词汇表"
+
+#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
+#: kwordquiz.kcfg:195
+#, kde-format
+msgid "Start exercise as soon as the user opens vocabulary file"
+msgstr "用户打开词汇表文件后立即开始练习"
+
+#: kwordquizprefs.cpp:24
+#, kde-format
+msgctxt "@title:group general settings"
+msgid "General"
+msgstr "常规"
+
+#: kwordquizprefs.cpp:24
+#, kde-format
+msgctxt "@title:group general settings"
+msgid "General Settings"
+msgstr "常规设置"
+
+#: kwordquizprefs.cpp:27
+#, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor"
+msgstr "编辑器"
+
+#: kwordquizprefs.cpp:27
+#, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor Settings"
+msgstr "编辑器设置"
+
+#: kwordquizprefs.cpp:30
+#, kde-format
+msgctxt "@title:group quiz settings"
+msgid "Quiz"
+msgstr "题目"
+
+#: kwordquizprefs.cpp:30
+#, kde-format
+msgctxt "@title:group quiz settings"
+msgid "Quiz Settings"
+msgstr "题目设置"
+
+#: kwordquizprefs.cpp:33
+#, kde-format
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance"
+msgstr "答题卡外观"
+
+#: kwordquizprefs.cpp:33
+#, kde-format
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance Settings"
+msgstr "答题卡外观设置"
+
+#: kwordquizprefs.cpp:36
+#, kde-format
+msgctxt "@title:group special character settings"
+msgid "Special Characters"
+msgstr "特殊字符"
+
+#. i18n: ectx: Menu (vocabulary)
+#: kwordquizui.rc:16
+#, kde-format
+msgid "V&ocabulary"
+msgstr "词汇表(&O)"
+
+#. i18n: ectx: Menu (mode)
+#: kwordquizui.rc:30
+#, kde-format
+msgid "&Mode"
+msgstr "模式(&M)"
+
+#. i18n: ectx: Menu (quiz)
+#: kwordquizui.rc:38
+#, kde-format
+msgid "&Quiz"
+msgstr "答题(&Q)"
+
+#. i18n: ectx: ToolBar (quizToolBar)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
+#: kwordquizui.rc:61 prefquizbase.ui:20
+#, kde-format
+msgid "Quiz"
+msgstr "题目"
+
+#. i18n: ectx: ToolBar (characterToolBar)
+#: kwordquizui.rc:75
+#, kde-format
+msgid "Special Characters"
+msgstr "特殊字符"
+
+#: kwqcleardialog.cpp:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear Contents"
+msgstr "清除内容"
+
+#: kwqcommands.cpp:74
+#, kde-format
+msgctxt "@item:inmenu undo clear"
+msgid "Clear"
+msgstr "清除"
+
+#: kwqcommands.cpp:96
+#, kde-format
+msgctxt "@item:inmenu undo cut"
+msgid "Cut"
+msgstr "剪切"
+
+#: kwqcommands.cpp:109
+#, kde-format
+msgctxt "@item:inmenu undo paste"
+msgid "Paste"
+msgstr "粘贴"
+
+#: kwqcommands.cpp:205
+#, kde-format
+msgctxt "@item:inmenu undo sort"
+msgid "Sort"
+msgstr "排序"
+
+#: kwqcommands.cpp:232
+#, kde-format
+msgctxt "@item:inmenu undo shuffle"
+msgid "Shuffle"
+msgstr "打乱"
+
+#: kwqcommands.cpp:252
+#, kde-format
+msgctxt "@item:inmenu undo insert"
+msgid "Insert"
+msgstr "插入"
+
+#: kwqcommands.cpp:284
+#, kde-format
+msgctxt "@item:inmenu undo delete"
+msgid "Delete"
+msgstr "删除"
+
+#: kwqcommands.cpp:333
+#, kde-format
+msgctxt "@item:inmenu undo unmark blank"
+msgid "Unmark Blank"
+msgstr "取消标为空"
+
+#: kwqcommands.cpp:355
+#, kde-format
+msgctxt "@item:inmenu undo column titles"
+msgid "Column Settings"
+msgstr "列设置"
+
+#: kwqcommands.cpp:400
+#, kde-format
+msgctxt "@item:inmenu undo link image"
+msgid "Link Image"
+msgstr "链接图像"
+
+#: kwqcommands.cpp:419
+#, kde-format
+msgctxt "@item:inmenu undo link sound"
+msgid "Link Sound"
+msgstr "链接声音"
+
+#: kwqcommands.h:93
+#, kde-format
+msgid "Font"
+msgstr "字体"
+
+#: kwqcommands.h:111
+#, kde-format
+msgid "Entry"
+msgstr "条目"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
+#, kde-format
+msgid "Questions"
+msgstr "问题"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
+#, kde-format
+msgid "The number of questions in the session"
+msgstr "每关的问题数"
+
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
+#: kwqscorewidgetbase.ui:259
+#, kde-format
+msgid "00"
+msgstr "00"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
+#, kde-format
+msgid "Correct answers"
+msgstr "正确答案数"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
+#, kde-format
+msgid ""
+"The number of questions answered correctly. May be shown as a percentage."
+msgstr "已正确回答的问题数。可以显示为百分比。"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picError)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
+#, kde-format
+msgid "Incorrect answers"
+msgstr "错误答案数"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
+#, kde-format
+msgid ""
+"The number of questions answered incorrectly. May be shown as a percentage."
+msgstr "已错误回答的问题数。可以显示为百分比。"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
+#, kde-format
+msgid "Answered questions"
+msgstr "答过的问题数"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
+#, kde-format
+msgid "The number of questions already answered. May be shown as a percentage."
+msgstr "已经回答的问题数。可以显示为百分比。"
+
+#: kwqtablemodel.cpp:211
+#, kde-format
+msgid "Untitled"
+msgstr "无标题"
+
+#: kwqtableview.cpp:186
+#, kde-format
+msgid "Name:_____________________________ Date:__________"
+msgstr "姓名：_____________________________ 日期：__________"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
+#: kwqtableview.cpp:233 prefquizbase.ui:90
+#, kde-format
+msgid "Score"
+msgstr "得分"
+
+#: kwqtableview.cpp:652
+#, kde-format
+msgid "There is an error with the Fill-in-the-blank brackets"
+msgstr "填空题中有错误"
+
+#: kwqtableview.cpp:719
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Image"
+msgstr "选择图像"
+
+#: kwqtableview.cpp:739
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Sound"
+msgstr "选择声音"
+
+#: kwqtableview.cpp:739
+#, kde-format
+msgid "All Files (*)"
+msgstr "所有文件 (*)"
+
+#: kwqtutor.cpp:25
+#, kde-format
+msgid ""
+"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
+"you to set a certain time interval at which flashcards will pop up.<br /"
+"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
+"working without stealing the focus from other programs you might be working "
+"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
+"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgstr ""
+"<qt>KWordQuiz教程会在您屏幕上显示答题卡。您可以设置弹出的时间间隔。<br /"
+"><br />答题卡以非侵入方式弹出，允许您继续工作而不会从您可能正在使用的其他程序"
+"中夺取焦点。<br /><br />您可以右键单击面板上的KWordQuiz教程图标，然后选择首选"
+"项并指定键盘快捷键。</qt>"
+
+#: kwqtutor.cpp:31
+#, kde-format
+msgid "Tutor"
+msgstr "教学"
+
+#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#, kde-format
+msgid "Start Exercise"
+msgstr "开始练习"
+
+#: kwqtutor.cpp:52
+#, kde-format
+msgid "Configure KWordQuiz Tutor..."
+msgstr "配置 KWordQuiz 教学..."
+
+#: kwqtutor.cpp:57
+#, kde-format
+msgid "Close Flash Card"
+msgstr "关闭答题卡"
+
+#: kwqtutor.cpp:62
+#, kde-format
+msgid "Flip Flash Card"
+msgstr "翻开答题卡"
+
+#: kwqtutor.cpp:111
+#, kde-format
+msgid "Stop Exercise"
+msgstr "停止练习"
+
+#: kwqtutorprefs.cpp:22
+#, kde-format
+msgctxt "@title:group tutor settings"
+msgid "Tutor"
+msgstr "教学"
+
+#: kwqtutorprefs.cpp:22
+#, kde-format
+msgctxt "@title:group tutor settings"
+msgid "Tutor Settings"
+msgstr "教学设置"
+
+#: kwqtutorprefs.cpp:25
+#, kde-format
+msgctxt "Shortcuts Config"
+msgid "Shortcuts"
+msgstr "快捷键"
+
+#: kwqtutorprefs.cpp:25
+#, kde-format
+msgid "Shortcuts Settings"
+msgstr "快捷键设置"
+
+#: main.cpp:32
+#, kde-format
+msgid "KWordQuiz"
+msgstr "KWordQuiz"
+
+#: main.cpp:34
+#, kde-format
+msgid "A powerful flashcard and vocabulary learning program"
+msgstr "强大的答题卡和词汇表学习程序"
+
+#: main.cpp:36
+#, kde-format
+msgid "(c) 2003-2010, Peter Hedlund"
+msgstr "(c) 2003-2010, Peter Hedlund"
+
+#: main.cpp:40
+#, kde-format
+msgid "Peter Hedlund"
+msgstr "Peter Hedlund"
+
+#: main.cpp:41
+#, kde-format
+msgid "Anne-Marie Mahfouf"
+msgstr "Anne-Marie Mahfouf"
+
+#: main.cpp:41
+#, kde-format
+msgid "KDE Edutainment Maintainer"
+msgstr "KDE 教育娱乐类软件维护者"
+
+#: main.cpp:42
+#, kde-format
+msgid "Martin Pfeiffer"
+msgstr "Martin Pfeiffer"
+
+#: main.cpp:42
+#, kde-format
+msgid "Leitner System and several code contributions"
+msgstr "Leitner 学习系统并贡献了一些代码"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"A number 1-5 corresponding to the \n"
+"entries in the Mode menu"
+msgstr "数字 1-5 对应着模式菜单中的条目"
+
+#: main.cpp:56
+#, kde-format
+msgid ""
+"Type of session to start with: \n"
+"'flash' for flashcard, \n"
+"'mc' for multiple choice, \n"
+"'qa' for question and answer, \n"
+"'tutor' for tutor"
+msgstr ""
+"开启的学习关卡类型：\n"
+"“flash” 代表答题卡类\n"
+"“mc”代表多项选择类\n"
+"“qa”代表问答类\n"
+"“tutor”代表教学类"
+
+#: main.cpp:57
+#, kde-format
+msgid "File to open"
+msgstr "要打开的文件"
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
+#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
+#: qaviewbase.ui:518
+#, kde-format
+msgid "Correct Answer"
+msgstr "正确答案"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
+#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
+#: qaviewbase.ui:294
+#, kde-format
+msgid "Previous Question"
+msgstr "上个问题"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
+#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
+#: qaviewbase.ui:395
+#, kde-format
+msgid "Your Answer"
+msgstr "您的答案"
+
+#: multipleview.cpp:131 qaview.cpp:169
+#, kde-format
+msgid "Summary"
+msgstr "摘要"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
+#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
+#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
+#: qaviewbase.ui:104
+#, kde-format
+msgid "The question"
+msgstr "问题"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:73 qaviewbase.ui:60
+#, kde-format
+msgid "Language or other identifier for the question"
+msgstr "问题的语言其他标识符"
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:76 qaviewbase.ui:63
+#, kde-format
+msgid "Language 1"
+msgstr "第一种语言"
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
+#: multipleviewbase.ui:98 qaviewbase.ui:107
+#, kde-format
+msgid "This is your question"
+msgstr "这是您的问题"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
+#: multipleviewbase.ui:255 multipleviewbase.ui:286
+#, kde-format
+msgid "Your choices"
+msgstr "您的选择"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
+#, kde-format
+msgid "Three choices for the answer. One is correct."
+msgstr "答案可从三个选项中加以选择，其中只有一个是正确的。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt2)
+#: multipleviewbase.ui:192
+#, kde-format
+msgid "&2 Option"
+msgstr "第二选项(&2)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt1)
+#: multipleviewbase.ui:223
+#, kde-format
+msgid "&1 Option"
+msgstr "第一选项(&1)"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:258 qaviewbase.ui:208
+#, kde-format
+msgid "Language or other identifier for the answer"
+msgstr "答案的语言或其他标识符"
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:261 qaviewbase.ui:211
+#, kde-format
+msgid "Language 2"
+msgstr "第二种语言"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:292
+#, kde-format
+msgid "&3 Option"
+msgstr "第三选项(&3)"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
+#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
+#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
+#, kde-format
+msgid "Previous question"
+msgstr "上个问题"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
+#: qaviewbase.ui:313
+#, kde-format
+msgid "The previous question"
+msgstr "上一个问题"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:375 qaviewbase.ui:316
+#, kde-format
+msgid "This was your question"
+msgstr "这是您的问题"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
+#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
+#, kde-format
+msgid "Your previous answer"
+msgstr "您的上一个答案"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
+#: qaviewbase.ui:414
+#, kde-format
+msgid "Your answer to the previous question"
+msgstr "您对上个问题的答案"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:501 qaviewbase.ui:417
+#, kde-format
+msgid "This was your answer"
+msgstr "这是您的答案"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
+#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
+#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
+#, kde-format
+msgid "Previous correct answer"
+msgstr "上个正确答案"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
+#: qaviewbase.ui:537
+#, kde-format
+msgid "The correct answer to the previous question"
+msgstr "上个问题的正确答案"
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:580 qaviewbase.ui:540
+#, kde-format
+msgid "This was the correct answer"
+msgstr "这是正确答案"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: multipleviewbase.ui:649
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"three entries for a multiple choice quiz.</html>"
+msgstr ""
+"<html>您的词汇表中的条目太少了。<br />在多项选择问答中，您的词汇表中至少需要"
+"三个条目。</html>"
+
+#: prefcardappearance.cpp:66
+#, kde-format
+msgctxt "Back of the flashcard"
+msgid "Back"
+msgstr "背面"
+
+#: prefcardappearance.cpp:67
+#, kde-format
+msgid "Answer"
+msgstr "答案"
+
+#: prefcardappearance.cpp:80
+#, kde-format
+msgid "Front"
+msgstr "前面"
+
+#: prefcardappearance.cpp:81
+#, kde-format
+msgid "Question"
+msgstr "问题"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
+#: prefcardappearancebase.ui:15
+#, kde-format
+msgid "Card Appearance"
+msgstr "卡片外观"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:92
+#, kde-format
+msgid "Flip card"
+msgstr "翻开卡片"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:95
+#, kde-format
+msgid "Use to show the other side of the card"
+msgstr "用于显示卡片的另外一面"
+
+#. i18n: ectx: property (text), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:98
+#, kde-format
+msgid "&Flip Card"
+msgstr "翻开卡片(&F)"
+
+#. i18n: ectx: property (text), widget (QLabel, fontLabel)
+#: prefcardappearancebase.ui:111
+#, kde-format
+msgid "F&ont:"
+msgstr "字体(&O)："
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
+#: prefcardappearancebase.ui:146
+#, kde-format
+msgid "Use to select the font for displaying text on the back of the card"
+msgstr "用于选择显示卡片背面文字的字体"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
+#, kde-format
+msgid "Select text color"
+msgstr "选择文本颜色"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
+#, kde-format
+msgid "Use to select the color for text shown on the card"
+msgstr "用于选择卡片上显示文字的颜色"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
+#, kde-format
+msgid "Select card frame color"
+msgstr "选择卡片边框颜色"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
+#, kde-format
+msgid "Use to select the color for drawing the frame of the card"
+msgstr "用于选择绘制卡片边框的颜色"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
+#, kde-format
+msgid "Select card color"
+msgstr "选择卡片颜色"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
+#, kde-format
+msgid "Select color used to draw the card"
+msgstr "选择用于绘制卡片的颜色"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
+#: prefcardappearancebase.ui:202
+#, kde-format
+msgid "Use to select the font for displaying text on the front of the card"
+msgstr "用于选择卡片正面显示文本的字体"
+
+#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
+#: prefcardappearancebase.ui:249
+#, kde-format
+msgid "&Text color:"
+msgstr "文本颜色(&T)："
+
+#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
+#: prefcardappearancebase.ui:262
+#, kde-format
+msgid "&Card color:"
+msgstr "卡片颜色(&C)："
+
+#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
+#: prefcardappearancebase.ui:275
+#, kde-format
+msgid "Fra&me color:"
+msgstr "边框颜色(&M)："
+
+#: prefcharacter.cpp:30
+#, kde-format
+msgid "Action"
+msgstr "操作"
+
+#: prefcharacter.cpp:31
+#, kde-format
+msgid "Shortcut"
+msgstr "快捷键"
+
+#: prefcharacter.cpp:32
+#, kde-format
+msgid "Character"
+msgstr "字符"
+
+#: prefcharacter.cpp:41
+#, kde-format
+msgid "Special Character %1"
+msgstr "特殊字符 %1"
+
+#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
+#: prefcharacterbase.ui:35
+#, kde-format
+msgid ""
+"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+"associated with each action."
+msgstr "注意：选择 设置->配置快捷键...可更改与每个操作关联的快捷键。"
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:48
+#, kde-format
+msgid "Select character to modify"
+msgstr "选择要修改的字符"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:51
+#, kde-format
+msgid "Customizable special character actions"
+msgstr "自定义特殊字符操作"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:61
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:66
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:71
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:103
+#, kde-format
+msgid "Click to choose a new character"
+msgstr "单击可选择新字符"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:106
+#, kde-format
+msgid "Choose a character for the selected action"
+msgstr "为所选操作选择一个字符"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:109
+#, kde-format
+msgid "C&haracter..."
+msgstr "字符(&H)..."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:151
+#, kde-format
+msgid "Preview of current character"
+msgstr "当前字符预览"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:154
+#, kde-format
+msgid "Preview of the character associated with the selected action"
+msgstr "预览与所选操作关联的字符"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:157
+#, kde-format
+msgid "A"
+msgstr "A"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
+#: prefeditorbase.ui:73
+#, kde-format
+msgid "How enter key moves"
+msgstr "如何移动 Enter 键"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:32
+#, kde-format
+msgid "Select how the Enter key should behave in the editor"
+msgstr "选择编辑器中如何移动 Enter 键"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:35
+#, kde-format
+msgid "Enter Ke&y Moves"
+msgstr "Enter 键移动(&Y)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:50
+#, kde-format
+msgid "Select if the next cell below should become active when pressing Enter."
+msgstr "如果想要在按下 Enter 键时移动到下方的单元格，请选择此项。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:53
+#, kde-format
+msgid "&Down"
+msgstr "下(&D)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:63
+#, kde-format
+msgid ""
+"Select if the next cell to the right should become active when pressing Enter"
+msgstr "如果想要在按下 Enter 键时移动到右方的单元格，请选择此项。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:66
+#, kde-format
+msgid "&Right"
+msgstr "右(&R)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:76
+#, kde-format
+msgid "Select if the current cell should remain active when pressing Enter"
+msgstr "如果想要在按下 Enter 键时不移动当前单元格，请选择此项。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:79
+#, kde-format
+msgid "Does not &move"
+msgstr "不移动(&M)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:89
+#, kde-format
+msgid "Check to enable fill-in-the-blank"
+msgstr "选中可启用填空"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:92
+#, kde-format
+msgid "Select to enable the functions for Fill-in-the-blank"
+msgstr "如果想要启用填空功能，请选择此项"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:95
+#, kde-format
+msgid "E&nable fill-in-the-blank"
+msgstr "允许填空(&N)"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:35
+#, kde-format
+msgid "How vocabulary documents are opened"
+msgstr "词汇表文档打开方式"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:38
+#, kde-format
+msgid "Select the kind of session to load an opened vocabulary document in"
+msgstr "选择以哪种课程类型加载打开的词汇表文档"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:41
+#, kde-format
+msgid "&Open Vocabulary Documents in"
+msgstr "词汇表文档打开方式(&O)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:47
+#, kde-format
+msgid "Open vocabulary documents in the editor"
+msgstr "在编辑器中打开词汇表文档"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:50
+#, kde-format
+msgid "Select if the vocabulary documents should be opened in the editor"
+msgstr "选择是否在编辑器中打开词汇表"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:53
+#, kde-format
+msgid "&Editor"
+msgstr "编辑器(&E)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:60
+#, kde-format
+msgid "Open vocabulary documents in a flashcard quiz"
+msgstr "在答题卡中打开词汇表文档"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:63
+#, kde-format
+msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
+msgstr "选择是否在答题卡中打开词汇表文档"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:66
+#, kde-format
+msgid "&Flashcard Quiz"
+msgstr "答题卡问答(&F)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:73
+#, kde-format
+msgid "Open vocabulary documents in a multiple choice quiz"
+msgstr "在选择题中打开词汇表文档"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:76
+#, kde-format
+msgid ""
+"Select if the vocabulary documents should be opened in a multiple choice quiz"
+msgstr "选择是否在多选卡中打开词汇表文档"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:79
+#, kde-format
+msgid "&Multiple Choice Quiz"
+msgstr "选择题(&M)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:86
+#, kde-format
+msgid "Open vocabulary documents in a question and answer quiz"
+msgstr "在问答题中打开词汇表文档"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:89
+#, kde-format
+msgid ""
+"Select if the vocabulary documents should be opened in a question and answer "
+"quiz"
+msgstr "选择是否在问答题中打开词汇表文档"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:92
+#, kde-format
+msgid "&Question and Answer Quiz"
+msgstr "问答题(&Q)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:44
+#, kde-format
+msgid "Specify behavior for a question and answer session"
+msgstr "指定问答题闯关的行为"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:47
+#, kde-format
+msgid "Question && Answer"
+msgstr "问答题"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:71
+#, kde-format
+msgid "Check to count hint as error"
+msgstr "选中可将提示计为错误"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:74
+#, kde-format
+msgid ""
+"Select if questions where the hint function has been used should be counted "
+"as errors"
+msgstr "如果想要使用过提示功能的问题计为错误，请选择此项"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:77
+#, kde-format
+msgid "&Treat hint as error"
+msgstr "将提示视为错误(&T)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
+#: prefquizbase.ui:87
+#, kde-format
+msgid "Specify behavior of the score presentation in any session"
+msgstr "指定各种题型闯关的记分牌行为"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:114
+#, kde-format
+msgid "Check to show score as a percentage"
+msgstr "选中可将得分显示为百分比"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:117
+#, kde-format
+msgid "Select if the score should be shown as a percentage"
+msgstr "如果要将得分显示为百分比，请选择此项"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:120
+#, kde-format
+msgid "&Show score as a percentage"
+msgstr "将得分显示为百分比(&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
+#: prefquizbase.ui:146
+#, kde-format
+msgid "Specify behavior for a multiple choice session"
+msgstr "指定选择题闯关的行为"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:173
+#, kde-format
+msgid "Check to correct automatically"
+msgstr "选中可自动判分"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:176
+#, kde-format
+msgid "Select if a choice should be checked immediately"
+msgstr "如果想要立即检查选项，请选择此项"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:179
+#, kde-format
+msgid "Check selection a&utomatically"
+msgstr "自动检查选项(&U)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
+#: prefquizbase.ui:189
+#, kde-format
+msgid "Specify behavior of a flashcard session"
+msgstr "指定答题卡闯关的行为"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:238
+#, kde-format
+msgid "Specify the amount of time between card flips"
+msgstr "指定翻到下一道题的时间"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:241
+#, kde-format
+msgid "seconds and"
+msgstr "秒"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:248
+#, kde-format
+msgid "Delay to flip card"
+msgstr "翻卡延迟"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:251
+#, kde-format
+msgid "Delay in seconds to flip card"
+msgstr "翻卡延迟秒数"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
+#: prefquizbase.ui:285 prefquizbase.ui:298
+#, kde-format
+msgid "Select how to count card"
+msgstr "选择如何计分"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:288
+#, kde-format
+msgid ""
+"Select if the previous card should be counted as correct when moving to the "
+"next card"
+msgstr "如果想要在自动翻到下一道题时将上一道题计为正确，请选择此项。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:291
+#, kde-format
+msgid "Count &as correct"
+msgstr "计为正确(&A)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
+#: prefquizbase.ui:301
+#, kde-format
+msgid ""
+"Select if the previous card should be counted as incorrect when moving to "
+"the next card"
+msgstr "如果想要在自动翻到下一道题时将上一道题计为错误，请选择此项。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optError)
+#: prefquizbase.ui:304
+#, kde-format
+msgid "Count as &error"
+msgstr "计为错误(&E)"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:314
+#, kde-format
+msgid "Check to flip card automatically"
+msgstr "选中可自动翻过答题卡"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:317
+#, kde-format
+msgid ""
+"Select if you want a card to turn over automatically after the given amount "
+"of time"
+msgstr "如果您想要在给定时间后自动翻过答题卡，请选择此项。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:320
+#, kde-format
+msgid "&Flip card automatically after"
+msgstr "每道题的答题时限为(&F)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
+#: preftutorbase.ui:17
+#, kde-format
+msgid "Tutor Timing"
+msgstr "教学计时"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
+#: preftutorbase.ui:23
+#, kde-format
+msgid "&Every"
+msgstr "每(&E)"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
+#: preftutorbase.ui:60
+#, kde-format
+msgid "&minutes"
+msgstr "分钟(&M)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
+#: preftutorbase.ui:72
+#, kde-format
+msgid "&Randomly"
+msgstr "随机(&R)"
+
+#. i18n: ectx: property (text), widget (QLabel, labelBetween)
+#: preftutorbase.ui:100
+#, kde-format
+msgid "Between"
+msgstr "介于"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
+#: preftutorbase.ui:120
+#, kde-format
+msgid "m&inutes and"
+msgstr "分钟和(&I)"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
+#: preftutorbase.ui:146
+#, kde-format
+msgid "mi&nutes"
+msgstr " 分钟(&N)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
+#: preftutorbase.ui:161
+#, kde-format
+msgid "Flashcard Appearance"
+msgstr "答题卡外观"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
+#: preftutorbase.ui:167
+#, kde-format
+msgid "&Native"
+msgstr "原生(&N)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
+#: preftutorbase.ui:177
+#, kde-format
+msgid "Minim&alistic"
+msgstr "最小化(&A)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
+#: preftutorbase.ui:187
+#, kde-format
+msgid "Miscellaneous"
+msgstr "杂项"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
+#: preftutorbase.ui:193
+#, kde-format
+msgid "S&tart exercise as soon as vocabulary file is opened"
+msgstr "打开词汇表文件后立即开始练习(&T)"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
+#, kde-format
+msgid "Type your answer"
+msgstr "输入您的答案"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:145
+#, kde-format
+msgid "The answer showing blanks for a Fill-in-the-blank question"
+msgstr "填空题的答案"
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:148
+#, kde-format
+msgid "This is _____ answer"
+msgstr "这是 _____ 答案"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
+#: qaviewbase.ui:176
+#, kde-format
+msgid "Type the answer to the question"
+msgstr "输入问题的答案"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: qaviewbase.ui:587
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a question and answer quiz.</html>"
+msgstr ""
+"<html>您的词汇表中的条目太少了。<br />在问答题中，您至少在词汇表中需要一个条"
+"目。</html>"
+
+#: wqprintdialogpage.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Vocabulary Options"
+msgstr "词汇表选项"
+
+#: wqprintdialogpage.cpp:23
+#, kde-format
+msgid "Select Type of Printout"
+msgstr "选择输出类型"
+
+#: wqprintdialogpage.cpp:28
+#, kde-format
+msgid "Vocabulary &list"
+msgstr "词汇表列表(&L)"
+
+#: wqprintdialogpage.cpp:29
+#, kde-format
+msgid "Select to print the vocabulary as displayed in the editor"
+msgstr "将编辑器中显示的词汇表打印输出"
+
+#: wqprintdialogpage.cpp:33
+#, kde-format
+msgid "Vocabulary e&xam"
+msgstr "词汇表测验(&X)"
+
+#: wqprintdialogpage.cpp:34
+#, kde-format
+msgid "Select to print the vocabulary as a vocabulary exam"
+msgstr "将词汇表打印为词汇表测验"
+
+#: wqprintdialogpage.cpp:38
+#, kde-format
+msgid "&Flashcards"
+msgstr "答题卡(&F)"
+
+#: wqprintdialogpage.cpp:39
+#, kde-format
+msgid "Select to print flashcards"
+msgstr "打印答题卡"

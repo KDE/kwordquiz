@@ -1,0 +1,2078 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Korean "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>&kwordquiz; 도움말</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit lang="ko" role="translator"
+><surname
+>박</surname
+><firstname
+>신조</firstname
+><affiliation
+><address
+><email
+>kde@peremen.name</email
+></address
+></affiliation
+><contrib
+>한국어 교정 및 추가 번역</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2016-05-07</date>
+<releaseinfo
+>0.9.2(프로그램 16.04)</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz;는 &kde;의 플래시카드와 어휘 학습 도구입니다. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>플래시 카드</keyword>
+<keyword
+>어휘</keyword>
+<keyword
+>언어</keyword>
+<keyword
+>교육</keyword>
+<keyword
+>학교</keyword>
+<keyword
+>대학</keyword>
+<keyword
+>대학교</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>소개</title>
+<para
+>&kwordquiz;는 새로운 어휘  익힐 수 있는 강력한 방법을 제공하는 도구입니다. 다른 언어의 단어나 전문 용어를 익힐 수 있습니다. </para>
+<sect1 id="easy-to-use">
+<title
+>사용 편의성</title>
+
+<para
+>&kwordquiz;는 간단하고 직관적인 방법으로 단어장 문서를 만들 수 있습니다. 기본적인 레이아웃은 열 두 개인 스프레드시트로 구성되고, 첫 번째 열에는 사용자가 알고 있는 어휘, 두 번째 열에는 학습하고자 하는 어휘를 입력합니다. 사용자가 연습한 내용을 반영하도록 열 제목을 변경할 수 있습니다. </para>
+
+<sect2 id="practice-modes">
+<title
+>연습 모드</title>
+
+<para
+>퀴즈를 시작하기 전에 연습 방법을 선택해야 합니다. &kwordquiz;는 더욱 효과적인 연습을 할 수 있는 모드 5개를 제공합니다. 단어장의 단어를 한 방향이나 반대 방향으로 처음부터 순서대로, 무작위 순서로 연습할 수 있습니다. </para>
+</sect2>
+
+<sect2 id="quiz-types">
+<title
+>퀴즈 형식</title>
+
+<para
+>단어장에 단어를 입력하고 모드를 선택하면 퀴즈를 시작할 수 있습니다. 플래시카드 세션으로 시작한 다음 객관식 퀴즈나 주관식 퀴즈로 진행할 수 있습니다. 정답과 오답을 즉시 알 수 있으며, 오답을 반복하여 더 확실하게 기억할 수 있습니다. 도움이 필요하다면 힌트 기능을 사용할 수 있습니다. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>단어장 문서</title>
+<para
+>&kwordquiz;에서는 여러 형식의 단어장 데이터를 불러올 수 있습니다. 기본 형식은 여러 &kde; 프로그램에서 사용하는 .kvtml 형식입니다. &kwordquiz;는 &Windows;용 &kwordquiz;에서 제작된 .sql 파일, 쉼표로 구분된 텍스트가 들어 있는 .csv 파일, 구 버전 Vokabeltrainer에서 제작된 <ulink url="http://www.vokabeln.de/v1/download.htm"
+>.voc 파일</ulink
+>, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+>.xdxf 파일</ulink
+>, 구 버전 <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>에서 제작한 .xml.gz 파일을 불러올 수 있습니다. </para>
+<para
+>&kwordquiz;에서는 여러 종류의 다른 형식으로 단어장 문서를 저장할 수 있습니다. 기본 형식은 다른 &kde; 프로그램에서 사용하는 .kvtml 형식입니다. 이 외에도 쉼표로 구분된 텍스트 .csv 형식으로 저장할 수 있습니다. </para>
+<para
+>동시에 파일 여러 개를 불러올 수 있고, 파일간에 쉽게 복사 또는 이동을 할 수 있습니다. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>명령 참조</title>
+
+<sect1 id="file_menu">
+<title
+>파일 메뉴</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>새로 만들기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>새로 만들기</action
+>: 새로운 단어장 문서 작성 </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>열기...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>열기</action
+>: 하나 이상의 기존 문서를 불러옵니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>파일</guimenu
+><guisubmenu
+>최근에 연 파일</guisubmenu
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>최근에 사용한 단어장 문서를 <action
+>불러옵니다</action
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>새 단어장 다운로드...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>새 단어장을 <action
+>다운로드</action
+>합니다. 다운로드한 단어장은 <filename class="directory"
+>$XDG_DATA_HOME/kvtml</filename
+> 디렉터리에 저장되며, <envar
+>$XDG_DATA_HOME</envar
+> 디렉터리는 홈 폴더 아래의 숨김 폴더인 <filename class="directory"
+>.local</filename
+>을 가리킵니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>저장</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>활성 단어장 문서를 디스크에 <action
+>저장</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>다른 이름으로 저장...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>활성 단어장 문서를 다른 이름으로 <action
+>저장</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>인쇄...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>활성 단어장 문서를 <action
+>인쇄</action
+>합니다. &kwordquiz;에서는 여러 단어장 <link linkend="printing"
+>인쇄 옵션</link
+>을 제공합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>파일</guimenu
+> <guimenuitem
+>인쇄 미리 보기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>&kwordquiz;에서 인쇄할 단어장 문서를 <action
+>미리 봅니다</action
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>닫기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>활성 단어장 문서를 <action
+>닫습니다</action
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; <keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>파일</guimenu
+> <guimenuitem
+>끝내기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>&kwordquiz;를 <action
+>끝냅니다</action
+>. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title
+>편집 메뉴</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>실행 취소</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>마지막 명령의 <action
+>실행을 취소</action
+>합니다. 실행 취소할 동작의 이름이 나타납니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>다시 실행</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>마지막 명령을 <action
+>다시 실행</action
+>합니다. 다시 실행할 동작의 이름이 나타납니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>잘라내기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>현재 선택 영역을 <action
+>잘라내어</action
+> 클립보드에 복사합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; <keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>복사</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>현재 선택 영역을 <action
+>복사하여</action
+> 클립보드에 복사합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>붙여넣기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>클립보드에 있는 내용을 현재 선택 영역으로 <action
+>붙여 넣습니다</action
+>. 셀 한 개만 선택했다면 &kwordquiz;에서는 똑똑한 붙여넣기를 사용하여 데이터가 들어갈 충분한 공간을 계산합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycap
+>Del</keycap
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>지우기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>현재 선택 영역을 <action
+>지웁니다</action
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>행 삽입</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>현재 선택한 행에 새로운 행을 <action
+>삽입</action
+>합니다. 하나 이상의 행을 선택하면 선택한 개수만큼 행을 삽입합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>행 삭제</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>선택한 행을 <action
+>삭제</action
+>합니다. 하나 이상의 행을 선택하면 선택한 모든 행을 삭제합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>편집</guimenu
+> <guimenuitem
+>공백으로 표시</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>선택한 텍스트(또는 커서 아래의 단어)를 <link linkend="fill-in-the-blank"
+>빈칸 채우기</link
+> 퀴즈에서 <action
+>공백으로 표시</action
+>합니다. 빈 칸은 괄호로 둘러싸여 표시됩니다. <link linkend="fill-in-the-blank"
+>빈칸 채우기</link
+>가 활성화되어 있을 때에만 표시됩니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>편집</guimenu
+> <guimenuitem
+>공백 표시 해제</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>이전에 공백으로 표시했던 빈 칸을 <action
+>공백으로 표시 해제</action
+>합니다. 즉 괄호를 삭제합니다. <link linkend="fill-in-the-blank"
+>빈칸 채우기</link
+>가 활성화되어 있을 때에만 표시됩니다. </para>
+    </listitem>
+  </varlistentry>
+
+
+</variablelist>
+</sect1>
+
+<sect1 id="vocabulary-menu">
+<title
+>단어장 메뉴</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>단어장</guimenu
+> <guimenuitem
+>열 설정...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>단어장의 제목, 키보드 레이아웃, 두 열의 너비를 <action
+>정의</action
+>할 수 있습니다. <link linkend="dlg-languages"
+>대화 상자</link
+>를 표시합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>단어장</guimenu
+> <guimenuitem
+>글꼴...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>단어장을 표시할 글꼴을 <action
+>변경</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>단어장</guimenu
+> <guimenuitem
+>그림 연결하기...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>현재 항목과 연결할 그림을 <action
+>지정</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>단어장</guimenu
+> <guimenuitem
+>소리 연결하기...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>현재 항목과 연결할 소리를 <action
+>지정</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+
+ <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>단어장</guimenu
+> <guimenuitem
+>행 높이 조절</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>행 높이를 내용에 맞게 <action
+>조절</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>단어장</guimenu
+> <guimenuitem
+>섞기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>임의의 순서로 단어장 항목을 <action
+>섞습니다</action
+>. 실제 단어장 문서에 저장된 항목 순서는 변경되지 않습니다. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title
+>모드 메뉴</title>
+<para
+>퀴즈 모드 5가지를 사용할 수 있습니다.</para>
+<para
+>메뉴 이름은 현재 활성화된 단어장 문서의 열 머릿글로 대체됩니다. 퀴즈를 시작하기 전에 모드를 선택해야 합니다. 선택한 모드는 플래시 카드, 객관식, 질문과 답에 적용됩니다. </para>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>모드</guimenu
+> <guimenuitem
+>1 열 1 -&gt; 열 2 순서로</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>퀴즈를 푸는 동안 열 1의 항목이 주어지고 해당하는 열 2의 항목을 입력해야 합니다. 단어장에 있는 순서대로 진행됩니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>모드</guimenu
+> <guimenuitem
+>2 열 2 -&gt; 열 1 순서로</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>퀴즈를 푸는 동안 열 2의 항목이 주어지고 해당하는 열 1의 항목을 입력해야 합니다. 단어장에 있는 순서대로 진행됩니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>모드</guimenu
+> <guimenuitem
+>3 열 1 -&gt; 열 2 무작위로</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>퀴즈를 푸는 동안 열 1의 항목이 주어지고 해당하는 열 2의 항목을 입력해야 합니다. 임의 순서대로 진행하지만 단어장의 각 항목은 한 번만 물어 봅니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>모드</guimenu
+> <guimenuitem
+>4 열 2 -&gt; 열 1 무작위로</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>퀴즈를 푸는 동안 열 2의 항목이 주어지고 해당하는 열 1의 항목을 입력해야 합니다. 임의 순서대로 진행하지만 단어장의 각 항목은 한 번만 물어 봅니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>모드</guimenu
+> <guimenuitem
+>5 열 1 &lt;-&gt; 열 2 무작위로</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>퀴즈를 푸는 동안 열 1이나 열 2의 항목이 주어지고 해당하는 열 2나 열 1의 항목을 입력해야 합니다. 열과 항목은 임의 순서대로 진행하지만 단어장의 각 조합은 한 번만 물어 봅니다. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title
+>퀴즈 메뉴</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Enter</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>확인</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>사용자가 입력한 답이 정확한지 <action
+>확인</action
+>합니다 </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>알고 있음</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>플래시 카드 세션에서 정답으로 <action
+>계산</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>모르고 있음</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>플래시 카드 세션에서 오답으로 <action
+>계산</action
+>합니다. 오답으로 표시한 카드는 <menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>오답 반복하기</guimenuitem
+></menuchoice
+>를 선택하여 반복할 수 있습니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>힌트</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>질문과 답 세션에서 다음 정확한 문자를 <action
+>가져옵니다</action
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>오디오 재생</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><menuchoice
+><guimenu
+>단어장</guimenu
+><guimenuitem
+>소리 연결하기</guimenuitem
+></menuchoice
+> 메뉴로 항목과 연결한 소리를 <action
+>재생</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>다시 시작</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>처음부터 퀴즈 세션을 <action
+>다시 시작</action
+>합니다. 점수를 초기화합니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>오답 반복하기</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>틀리게 답한 모든 질문을 <action
+>반복</action
+>합니다. 모든 질문을 답변한 후 한 번만 사용할 수 있습니다. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>퀴즈</guimenu
+> <guimenuitem
+>다음으로 오답 내보내기...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>틀리게 답한 모든 질문을 새 단어장 문서로 <action
+>내보냅니다</action
+>. 모든 질문을 답변한 후 한 번만 사용할 수 있습니다. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings-help-menu">
+<title
+>설정과 도움말 메뉴</title
+> 
+<para
+>&kde; 기초 문서의 <ulink url="help:/fundamentals/menus.html#menus-settings"
+>설정 메뉴</ulink
+>와 <ulink url="help:/fundamentals/menus.html#menus-help"
+>도움말 메뉴</ulink
+>에서 설명한 공통 &kde; <guimenu
+>설정</guimenu
+>과 <guimenu
+>도움말</guimenu
+> 메뉴 이외에도 &kwordquiz;에는 다음 추가 메뉴 항목이 있습니다: </para>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>설정</guimenu
+> <guimenuitem
+>검색 표시</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>검색 표시줄 표시를 <action
+>전환</action
+>합니다. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+</chapter>
+
+<chapter id="main-window">
+<title
+>주 창</title>
+
+<para
+>주 창의 왼쪽에는 탐색 패널이 있습니다. 탐색 패널에서 프로그램의 주 구성 요소에 접근할 수 있습니다. </para>
+<para
+><link linkend="editor"
+>편집기</link
+>를 활성화하려면 <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> 키를 누르십시오. </para>
+<para
+><link linkend="flashcard"
+>플래시 카드</link
+> 세션을 시작하려면 <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> 키를 누르십시오. </para>
+<para
+><link linkend="multiple"
+>객관식</link
+> 세션을 시작하려면 <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> 키를 누르십시오. </para>
+<para
+><link linkend="question-and-answer"
+>질문과 답</link
+> 세션을 시작하려면 <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> 키를 누르십시오. </para>
+
+<screenshot>
+  <screeninfo
+>주 창</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>주 창</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>단어장 편집기</title>
+
+<para
+>단어장 문서 영역은 스프레드시트의 격자 모양과 비슷합니다. 격자의 셀은 열 두 개와 행 여러 개로 구성되어 있습니다. 각 열과 행에는 머릿글이 있습니다. 열 머릿글은 단어장 문서의 제목으로 사용합니다. <menuchoice
+><guimenu
+>단어장</guimenu
+><guimenuitem
+>열 설정...</guimenuitem
+></menuchoice
+>에서 변경할 수 있습니다. 행 머릿글은 행 번호를 순차적으로 나타냅니다. </para>
+<para
+>열 머릿글은 단어장을 정렬할 때 사용할 수 있습니다. 정렬할 열의 머릿글을 클릭하십시오. </para>
+<para
+>격자의 셀을 클릭하면 활성화됩니다. 왼쪽 마우스 단추를 누르고 드래그하여 복사나 기타 편집 작업을 위해 셀 여러 개를 선택할 수 있습니다. 전체 열을 선택하려면 열 머릿글을 클릭하십시오.  </para>
+
+<screenshot>
+  <screeninfo
+>단어장 편집기</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>단어장 편집기</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>두 열에 단어장 항목의 쌍을 입력할 수 있습니다. 활성화된 셀에 입력하는 대로 텍스트를 입력할 수 있습니다. 해당 셀은 편집 모드로 전환되며 텍스트 전체나 일부를 선택할 수 있습니다. 셀을 두 번 클릭하거나 F2 키를 눌러서 셀 내용을 직접 변경할 수 있습니다. </para>
+<para
+>한 항목을 입력하고 Enter 키를 누르면 다음 셀이 자동으로 활성화되어 여러 항목을 쉽게 입력할 수 있습니다. <menuchoice
+><guimenu
+>설정</guimenu
+><guimenuitem
+>&kwordquiz; 설정...</guimenuitem
+></menuchoice
+>에서 설정을 변경할 수 있습니다. 격자의 마지막 행에 도달하면 Enter 키를 눌렀을 때 새로운 행을 추가하여 계속 입력할 수 있습니다. 새 창을 만들면 기본적으로 행 20개가 생성되지만 실질적인 행 개수 제한은 없습니다. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>플래시 카드 세션</title>
+
+<para
+>탐색 패널에서 플래시 카드를 선택하면 활성화된 단어장 항목으로 플래시 카드 세션을 시작할 수 있습니다. <guimenu
+>모드</guimenu
+> 메뉴에서 선택한 모드를 사용합니다. 세션을 진행하는 동안 모드를 변경하면 세션을 다시 시작합니다. </para>
+
+<para
+>긴 문장을 입력했다면 창 크기를 조절해서 더 많은 공간을 확보할 수 있습니다. 또한 글꼴 크기도 창의 여러 부분에 내용을 채우는 데 영향을 줍니다.<menuchoice
+><guimenu
+>설정</guimenu
+><guimenuitem
+>&kwordquiz; 설정...</guimenuitem
+></menuchoice
+> 항목에서 플래시 카드 모양을 설정할 수 있습니다. </para>
+
+<screenshot>
+  <screeninfo
+>플래시 카드 세션</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>플래시 카드 세션</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>처음에는 카드의 앞면이 표시됩니다. <menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>확인</guimenuitem
+></menuchoice
+>을 선택하면 다른 면을 볼 수 있습니다. </para>
+<para
+>다음 카드로 이동하기 전에 현재 카드를 정답으로 표시하려면 <menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>알고 있음</guimenuitem
+></menuchoice
+>, 오답으로 표시하려면 <guimenu
+>퀴즈</guimenu
+><guimenuitem
+>모르고 있음</guimenuitem
+>을 선택하십시오. </para>
+<para
+><menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>오답 반복하기</guimenuitem
+></menuchoice
+>를 선택하여 오답으로 표시한 카드를 반복할 수 있습니다. </para>
+<para
+><menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>다시 시작</guimenuitem
+></menuchoice
+>을 선택하여 세션을 다시 시작할 수 있습니다. 무작위 모드를 사용하면 카드를 다시 섞습니다. </para>
+<para
+>화면 아래쪽의 점수 부분에서는 총 카드 개수, 본 카드 개수, 정답으로 표시한 카드 개수, 오답으로 표시한 카드 개수를 보여 줍니다. </para>
+
+<tip>
+<para
+><guimenu
+>퀴즈</guimenu
+> 메뉴의 모든 항목은 기본값으로 오른쪽에 표시되는 퀴즈 도구 모음에서도 사용할 수 있습니다.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>객관식 세션</title>
+
+<para
+>탐색 패널에서 객관식을 선택하면 활성화된 단어장 항목으로 객관식 퀴즈를 시작할 수 있습니다. <guimenu
+>모드</guimenu
+> 메뉴에서 선택한 모드를 사용합니다. 세션을 진행하는 동안 모드를 변경하면 세션을 다시 시작합니다. </para>
+<para
+>긴 문장을 입력했다면 창 크기를 조절해서 더 많은 공간을 확보할 수 있습니다. 또한 글꼴 크기도 창의 여러 부분에 내용을 채우는 데 영향을 줍니다. </para>
+<para
+>아래 예시에서는 이전 질문에 오답을 입력했을 때를 보여 줍니다. 사용자는 다음 질문에 정답을 입력할 예정입니다. </para>
+
+<screenshot>
+  <screeninfo
+>객관식 세션</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>객관식 세션</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>사용 가능한 선택을 왼쪽 위에 표시합니다. 이 중 정답이라고 생각하는 하나를 선택하면 됩니다. <menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>확인</guimenuitem
+></menuchoice
+>을 선택하면 현재 선택한 답이 정답인지 보여 줍니다. <menuchoice
+><guimenu
+>설정</guimenu
+><guimenuitem
+>&kwordquiz; 설정...</guimenuitem
+></menuchoice
+>에서 자동 모드를 활성화했다면 사용자의 선택을 즉시 확인합니다. </para>
+<para
+>현재 문제 하단에 이전 문제를 보여 주며 이전 문제에 선택한 답도 보여 줍니다. 오답을 선택했다면 정답을 표시합니다. </para>
+<para
+><menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>오답 반복하기</guimenuitem
+></menuchoice
+>를 선택하면 틀린 문제를 반복할 수 있습니다. </para>
+<para
+><menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>다시 시작</guimenuitem
+></menuchoice
+>을 선택하여 세션을 다시 시작할 수 있습니다. 무작위 모드를 사용하면 문제를 다시 섞습니다. </para>
+<para
+>화면 아래쪽의 점수 부분에서는 총 카드 개수, 본 카드 개수, 정답 개수, 오답 개수를 보여 줍니다. </para>
+
+<tip>
+<para
+><guimenu
+>퀴즈</guimenu
+> 메뉴의 모든 항목은 기본값으로 오른쪽에 표시되는 퀴즈 도구 모음에서도 사용할 수 있습니다.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>질문과 답 세션</title>
+<para
+>탐색 패널에서 질문과 답을 선택하면 활성화된 단어장 항목으로 질문과 답 퀴즈를 시작할 수 있습니다. <guimenu
+>모드</guimenu
+> 메뉴에서 선택한 모드를 사용합니다. 세션을 진행하는 동안 모드를 변경하면 세션을 다시 시작합니다. </para>
+<para
+>긴 문장을 입력했다면 창 크기를 조절해서 더 많은 공간을 확보할 수 있습니다. 또한 글꼴 크기도 창의 여러 부분에 내용을 채우는 데 영향을 줍니다. </para>
+<para
+>아래 예시에서는 이전 질문에 오답을 입력했을 때를 보여 줍니다(오답을 처리하는 방법을 보려면 <link linkend="multiple"
+>객관식</link
+> 장을 참조하십시오). 사용자는 다음 질문에 정답을 입력할 예정입니다. </para>
+
+<screenshot>
+  <screeninfo
+>질문과 답 세션</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>질문과 답 세션</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>질문을 왼쪽 위에 표시합니다. 입력란에 답안을 입력합니다. <menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>확인</guimenuitem
+></menuchoice
+>을 선택하거나 &Enter; 키를 누르면 현재 입력한 답이 정답인지 보여 줍니다. </para>
+<para
+>현재 문제 하단에 이전 문제를 보여 주며 이전 문제에 선택한 답도 보여 줍니다. 오답을 선택했다면 정답을 표시합니다. </para>
+<para
+><menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>힌트</guimenuitem
+></menuchoice
+>를 선택하면 정답의 다음 한 글자를 표시합니다. <menuchoice
+><guimenu
+>설정</guimenu
+><guimenuitem
+>&kwordquiz; 설정...</guimenuitem
+></menuchoice
+>에서 힌트를 본 문제를 오답으로 간주하도록 설정할 수 있습니다. </para>
+<para
+><menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>오답 반복하기</guimenuitem
+></menuchoice
+>를 선택하면 틀린 문제를 반복할 수 있습니다. </para>
+<para
+><menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>다시 시작</guimenuitem
+></menuchoice
+>을 선택하여 세션을 다시 시작할 수 있습니다. 무작위 모드를 사용하면 문제를 다시 섞습니다. </para>
+<para
+>화면 아래쪽의 점수 부분에서는 총 카드 개수, 본 카드 개수, 정답 개수, 오답 개수를 보여 줍니다. </para>
+
+<tip>
+<para
+><guimenu
+>퀴즈</guimenu
+> 메뉴의 모든 항목은 기본값으로 오른쪽에 표시되는 퀴즈 도구 모음에서도 사용할 수 있습니다.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>빈칸 채우기</title>
+
+<para
+>빈칸 채우기 모드는 &kwordquiz;의 강력한 연습 모드입니다. 질문과 답의 한 형태로 특정 질문을 자세히 입력해야 합니다. 이 기능을 사용하려면 <link linkend="dlg-config-editor"
+>설정 대화 상자</link
+>에서 활성화해야 합니다. </para>
+
+<para
+>다음 표를 간주하십시오. &kwordquiz;의 단어장이 될 수도 있습니다: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>영어</entry>
+<entry
+>독일어</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>중요한 것은 대괄호의 배치입니다. &kwordquiz; 퀴즈 진행을 결정합니다. </para>
+<para
+>1번에는 대괄호가 없습니다. 질문이 영어고 답변이 독일어라면 완전한 문장인 'Wir besitzen einen Computer'를 입력해야 정답이 됩니다. </para>
+<para
+>2번에서는 &kwordquiz;에서 질문을 표시하지만 'Wir ........ einen Computer'를 같이 표시합니다. 'besitzen'만 입력해도 정답으로 간주합니다. </para>
+<para
+>3번에서는 빈 칸에 단어 두 개가 있습니다. 'besitzen einen'을 입력해야 정답으로 간주합니다. </para>
+<para
+>4번에서는 독립된 빈 칸 두 개가 있습니다. 'besitzen; Computer'와 같이 두 개의 빈 칸을 쌍반점(;)으로 구분해서 입력해야 정답으로 간주합니다. </para>
+<para
+>빈 칸으로 표시한 부분은 답변에 나타날 때에만 의미가 있으며, 그렇지 않으면 무시됩니다. 또한 대괄호는 객관식 퀴즈에서 무시됩니다. 빈칸 채우기 단어장을 간단하게 생성할 수 있도록 빈 칸을 표시하거나 해제하는 메뉴 명령이 있습니다. 이와는 관계 없이 대괄호를 입력해도 됩니다. &kwordquiz;에서 문법을 확인합니다. 텍스트가 빨간색으로 나타나면 대괄호 짝이 맞지 않아서 퀴즈를 시작할 수 없습니다. </para>
+<para
+>빈칸 채우기 기능은 설정 대화 상자에서 켜거나 끌 수 있습니다. 해당 기능을 끄면 다른 글자를 괄호 위치에 대응하는 글꼴을 사용할 수 있습니다. 약간의 성능 향상을 기대할 수 있습니다. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>인쇄</title>
+<para
+>&kwordquiz;에서는 여러 가지 방식으로 단어장을 인쇄할 수 있습니다. <menuchoice
+><guimenu
+>파일</guimenu
+><guimenuitem
+>인쇄...</guimenuitem
+></menuchoice
+>를 선택하면 표준 &kde; 인쇄 대화 상자가 나타납니다. &kwordquiz;의 특수 기능을 사용하려면 <guibutton
+>옵션&gt;&gt;</guibutton
+> 단추를 클릭해서 <guilabel
+>단어장 옵션</guilabel
+> 탭을 열어야 합니다. 이 탭에서 단어장을 단어 목록(편집기에 표시되는 대로), 단어장 시험, 플래시 카드로 인쇄할 수 있습니다. </para>
+<screenshot>
+  <screeninfo
+>단어장 인쇄 옵션</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>단어장 인쇄 옵션</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>단어장 목록</title>
+<para
+>편집기에 표시된 대로 단어장을 인쇄합니다. 글꼴, 행 높이, 열 너비를 변경할 수 있습니다. 열 너비가 용지에 맞는지 확인하십시오.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>단어장 목록 인쇄</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>단어장 목록 인쇄</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>단어장 시험</title>
+<para
+>단어장의 오른쪽 열은 비워 두고, 점수 계산에 사용하는 세 번째 열을 추가하여 단어장을 인쇄합니다. 글꼴, 행 높이, 열 너비를 변경할 수 있습니다. 열 너비가 용지에 맞는지 확인하십시오.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>단어장 시험 인쇄</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>단어장 시험 인쇄</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>플래시 카드</title>
+<para
+>한 쪽에 3" x 5" 카드 두 개를 인쇄합니다. 카드는 항상 가로 방향으로 인쇄합니다.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>플래시 카드 인쇄</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>플래시 카드 인쇄</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+<!--FIXME not ported to kf5
+<chapter id="tutor">
+<title
+>The Tutor Mode</title>
+
+<para>
+  &kwordquiz; can be started in the Tutor mode. In this mode application pops up words in the chosen vocabulary randomly at certain time intervals. To start &kwordquiz; in the Tutor mode press <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> and enter <userinput
+><command
+>kwordquiz</command
+> <option
+>-g tutor <replaceable
+>vocabulary_file.kvtml</replaceable
+></option
+></userinput
+>. The part with <replaceable
+>vocabulary_file.kvtml</replaceable
+> can be omitted.
+</para>
+<screenshot>
+  <screeninfo
+>Welcome message of the Tutor mode</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Welcome message of the Tutor mode</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+  After pressing <guibutton
+>OK</guibutton
+> button, &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject
+> <imageobject
+> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> menu (it can be opened with &RMB; click on the icon).
+</para>
+
+<para>
+  There are four items in this menu:
+   <variablelist>
+     <varlistentry>
+       <term
+><guimenuitem
+>Start Exercise</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Start</action
+> the Tutor exercise.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Open...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> an existing vocabulary document.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Configure &kwordquiz; Tutor...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> the Tutor configuration dialog.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Tutor Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Tutor Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Tutor Settings</guilabel
+> page you can configure time intervals between the flashcards changes, flashcard appearance, and choose the option to <guilabel
+>Start exercise as soon as the user opens vocabulary file</guilabel
+>.
+	 </para>
+	 <para>
+	   In the current version, you can choose between <guilabel
+>Native</guilabel
+> and <guilabel
+>Minimalistic</guilabel
+> flashcard appearances.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Native flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Native flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Native appearance for the fancy vocabularies with images.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Minimalistic flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Minimalistic flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Minimalistic appearance for the simple vocabularies.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Shortcuts Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Shortcuts Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Shortcuts Settings</guilabel
+> page you can configure shortcuts for the Tutor actions. The defaults are <keycombo
+>&Ctrl;&Alt;<keycap
+>J</keycap
+></keycombo
+> for the closing and <keycombo
+>&Ctrl;&Alt;<keycap
+>H</keycap
+></keycombo
+> for the flipping of the flashcard.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Quit</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Quit</action
+> &kwordquiz;.
+	 </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+-->
+
+<chapter id="dialogs">
+<title
+>대화 상자</title>
+
+<sect1 id="dlg-config-general">
+<title
+>일반 설정</title>
+<screenshot>
+  <screeninfo
+>일반 설정</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>일반 설정</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>새로 단어장을 열었을 때 어떤 세션을 시작할지 선택할 수 있습니다. 퀴즈로 바로 진입하면 단어장 항목을 미리 엿보는 것을 방지합니다. </para>
+<para
+>모든 설정을 기본값으로 초기화하려면 <guibutton
+>기본값</guibutton
+> 단추를 클릭하십시오. 대화 상자를 닫지 않고 변경 사항을 적용하려면 <guibutton
+>적용</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하고 대화 상자를 닫으려면 <guibutton
+>확인</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하지 않고 대화 상자를 닫으려면 <guibutton
+>취소</guibutton
+> 단추를 클릭하십시오. </para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title
+>편집기 설정</title>
+<screenshot>
+  <screeninfo
+>편집기 설정</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>편집기 설정</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>편집기에서 &Enter; 키를 눌렀을 때의 동작을 설정할 수 있습니다. </para>
+<para
+><link linkend="fill-in-the-blank"
+>빈칸 채우기</link
+> 기능을 활성화시킬지 여부를 선택할 수 있습니다. 이 기능을 선택하지 않으면 속도가 약간 증가합니다. </para>
+<para
+>모든 설정을 기본값으로 초기화하려면 <guibutton
+>기본값</guibutton
+> 단추를 클릭하십시오. 대화 상자를 닫지 않고 변경 사항을 적용하려면 <guibutton
+>적용</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하고 대화 상자를 닫으려면 <guibutton
+>확인</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하지 않고 대화 상자를 닫으려면 <guibutton
+>취소</guibutton
+> 단추를 클릭하십시오. </para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title
+>퀴즈 설정</title>
+<screenshot>
+  <screeninfo
+>퀴즈 설정</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>퀴즈 설정</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>플래시카드 세션에서는 카드를 자동으로 뒤집을지 설정할 수 있으며, 카드가 자동으로 뒤집혔을 때 정답이나 오답으로 간주할지 선택할 수 있습니다. 자동으로 뒤집을 지연 시간을 초 단위로 입력할 수 있습니다. </para>
+<para
+>객관식 세션에서는 사용자가 정답을 선택한 즉시 정답 여부를 확인하거나 <menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>확인</guimenuitem
+></menuchoice
+>을 선택했을 때 확인할지 설정할 수 있습니다. </para>
+<para
+>질문과 답 세션에서 <menuchoice
+><guimenu
+>퀴즈</guimenu
+><guimenuitem
+>힌트</guimenuitem
+></menuchoice
+>를 사용한 항목을 오답으로 간주할지 설정합니다. </para>
+<para
+>모든 세션에서 점수 표시 방법을 문제 개수 대신 백분율로 표시하도록 설정할 수 있습니다. </para>
+<para
+>모든 설정을 기본값으로 초기화하려면 <guibutton
+>기본값</guibutton
+> 단추를 클릭하십시오. 대화 상자를 닫지 않고 변경 사항을 적용하려면 <guibutton
+>적용</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하고 대화 상자를 닫으려면 <guibutton
+>확인</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하지 않고 대화 상자를 닫으려면 <guibutton
+>취소</guibutton
+> 단추를 클릭하십시오. </para>
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title
+>플래시 카드 모양 설정</title>
+<screenshot>
+  <screeninfo
+>플래시 카드 모양 설정</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>플래시 카드 모양 설정</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>플래시카드 세션에서 텍스트, 카드, 프레임의 <guilabel
+>글꼴</guilabel
+>과 색상을 선택할 수 있습니다. 카드의 <guilabel
+>앞면</guilabel
+>과 <guilabel
+>뒷면</guilabel
+>을 바꾸려면 <guibutton
+>뒤집기</guibutton
+>를 클릭하십시오. </para>
+<para
+>모든 설정을 기본값으로 초기화하려면 <guibutton
+>기본값</guibutton
+> 단추를 클릭하십시오. 대화 상자를 닫지 않고 변경 사항을 적용하려면 <guibutton
+>적용</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하고 대화 상자를 닫으려면 <guibutton
+>확인</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하지 않고 대화 상자를 닫으려면 <guibutton
+>취소</guibutton
+> 단추를 클릭하십시오. </para>
+</sect1>
+
+<sect1 id="dlg-config-characters">
+<title
+>특수 문자 설정</title>
+<screenshot>
+  <screeninfo
+>특수 문자 설정</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>특수 문자 설정</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>단어장에 특수 문자를 입력할 때 9가지 동작 중에서 설정할 수 있습니다. 목록에서 동작을 선택하고 <guibutton
+>글자...</guibutton
+> 단추를 클릭하면 동작에 해당하는 특수 문자를 <link linkend="dlg-special-characters"
+>선택</link
+>할 수 있습니다. 현재 선택한 문자를 확대하여 미리 볼 수 있습니다. </para>
+<para
+>각 동작의 키보드 단축키는 <menuchoice
+><guimenu
+>설정</guimenu
+><guimenuitem
+>단축키 설정</guimenuitem
+></menuchoice
+>에서 변경할 수 있습니다. </para>
+
+<para
+>모든 설정을 기본값으로 초기화하려면 <guibutton
+>기본값</guibutton
+> 단추를 클릭하십시오. 대화 상자를 닫지 않고 변경 사항을 적용하려면 <guibutton
+>적용</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하고 대화 상자를 닫으려면 <guibutton
+>확인</guibutton
+> 단추를 클릭하십시오. 변경 사항을 저장하지 않고 대화 상자를 닫으려면 <guibutton
+>취소</guibutton
+> 단추를 클릭하십시오. </para>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>열 설정</title>
+<para
+>메뉴 표시줄의 <menuchoice
+><guimenu
+>단어장</guimenu
+><guimenuitem
+>열 설정...</guimenuitem
+></menuchoice
+> 항목으로도 대화 상자를 열 수 있습니다</para>
+<screenshot>
+  <screeninfo
+>열 설정</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>열 설정</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>이 대화 상자에서 단어장의 열 제목, 키보드 레이아웃, 열 너비를 정의할 수 있습니다. <guibutton
+>확인</guibutton
+> 단추를 클릭하면 변경 사항을 저장하고, <guibutton
+>취소</guibutton
+> 단추를 클릭하면 변경 사항을 무시합니다. </para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title
+>특수 문자</title>
+<para
+>&kwordquiz; 설정 대화 상자의 <guilabel
+>특수 문자</guilabel
+> 페이지의 <guibutton
+>문자...</guibutton
+> 단추를 클릭하면 이 창을 열 수 있습니다.</para>
+<screenshot>
+  <screeninfo
+>특수 문자</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>특수 문자</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>이 대화 상자에서 현재 특수 문자 <link linkend="dlg-config-characters"
+>동작</link
+>과 연결할 임의의 특수 문자를 선택할 수 있습니다. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>작성자 및 라이선스</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>프로그램 저작권자: 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>문서 저작권자: 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>한국어 추가 번역 및 교정: 박신조<email
+>kde@peremen.name</email
+></para
+><para
+>본 문서 내용의 일부는 정보통신산업진흥원에서 제작하였습니다. 아래는 해당 사항에 대한 고지입니다.</para
+><para
+>해당 번역문서는 2007년도 정부(舊정보통신부, 現과학기술정보통신부)의 재원을 지원받아 우리 원(舊한국소프트웨어진흥원, 現정보통신산업진흥원)에서 제작한 것임을 밝힙니다.(문서번호: 중앙기술지원-DEV-DT-20071113)</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

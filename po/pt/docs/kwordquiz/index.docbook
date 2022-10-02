@@ -1,0 +1,2081 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Portuguese "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>O Manual do &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2016-05-07</date>
+<releaseinfo
+>0.9.2 (Aplicações 16.04)</releaseinfo>
+
+<abstract>
+<para
+>O &kwordquiz; é um poderoso programa de aprendizagem de vocabulário do &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>cartão</keyword>
+<keyword
+>vocabulário</keyword>
+<keyword
+>língua</keyword>
+<keyword
+>educação</keyword>
+<keyword
+>escola</keyword>
+<keyword
+>colégio</keyword>
+<keyword
+>universidade</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introdução</title>
+<para
+>O &kwordquiz; é uma ferramenta que lhe dá uma forma poderosa de dominar vocabulários novos. Poderá corresponder a uma língua ou a algum tipo de terminologia. </para>
+<sect1 id="easy-to-use">
+<title
+>Fácil de usar</title>
+
+<para
+>Com o &kwordquiz; você constrói os seus próprios documentos de vocabulário de forma simples e intuitiva. A disposição básica é uma folha de cálculo de duas colunas onde você escreve os itens do vocabulário da forma que você conhece e noutra forma que deseja aprender. Você muda os títulos das colunas para reflectir o que você está a aprender. </para>
+
+<sect2 id="practice-modes">
+<title
+>Modos de prática</title>
+
+<para
+>Antes de você começar um questionário, você selecciona como deseja praticar. O &kwordquiz; oferece cinco modos diferentes para tornar a prática mais eficiente. Os diferentes modos possibilitam que você percorra o seu vocabulário de forma sequencial ou aleatória numa ou em ambas as direcções. </para>
+</sect2>
+
+<sect2 id="quiz-types">
+<title
+>Tipos de questionário</title>
+
+<para
+>Quando você tiver introduzido o seu vocabulário e tiver seleccionado um modo, está pronto para iniciar um questionário. O documento do vocabulário é escondido durante o questionário, para que você não faça batota. Talvez queira começar com uma sessão de cartões, para que possa depois passar a um questionário de escolha ou então fazer o questionário mais difícil que é o de perguntas e respostas. Você irá saber rapidamente se acertou ou errou as respostas e terá ainda a opção de repetir as respostas erradas, melhorando ainda mais a sua eficiência de aprendizagem. Se precisar de uma ajuda extra poderá usar a função de 'dica'. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Documentos de vocabulário</title>
+<para
+>O &kwordquiz; pode abrir vários tipos de dados de vocabulários. O formato por omissão é o .kvtml, um formato de ficheiros que é partilhado por vários programas do &kde;. O &kwordquiz; também deverá abrir os ficheiros .wql criados pelo &kwordquiz; para o &Windows;, os ficheiros .csv com o texto separado por vírgulas, os <ulink url="http://www.vokabeln.de/v1/download.htm"
+>ficheiros .voc</ulink
+> criados pela versão antiga do Vokabeltrainer, os <ulink url="http://xdxf.revdanica.com/down/"
+>ficheiros .xdxf</ulink
+> e os ficheiros .xml.gz criados pelas versões antigas do <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>O &kwordquiz; pode gravar os seus documentos de vocabulário em vários formatos diferentes. Os formatos suportados são o .kvtml usado por outros programas do &kde;. Outras opções disponíveis são os ficheiros .csv, separados por vírgulas. </para>
+<para
+>Pode ter vários ficheiros aberto ao mesmo tempo e copiar ou mover entradas facilmente entre eles. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referência de Comandos</title>
+
+<sect1 id="file_menu">
+<title
+>O Menu Ficheiro</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Novo</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>O <action
+>Novo</action
+> cria um novo documento de vocabulário </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Abrir...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Abre</action
+> um ou mais documentos de vocabulário existentes. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Ficheiro</guimenu
+> <guisubmenu
+>Abrir um Recente</guisubmenu
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Abre</action
+> um documento de vocabulário existente. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Obter Vocabulários Novos...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Transfere</action
+> vocabulários novos. Os vocabulários transferidos poderão ser encontrados na pasta <filename class="directory"
+>$XDG_DATA_HOME/kvtml</filename
+>. A <envar
+>$XDG_DATA_HOME</envar
+> normalmente é uma pasta escondida na sua pasta pessoal, chamada <filename class="directory"
+>.kde</filename
+> ou <filename class="directory"
+>.local</filename
+> </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Gravar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Grava</action
+> o documento de vocabulário activo no disco. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Gravar Como...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Grava</action
+> o documento de vocabulário activo com um nome diferente. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Imprimir...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Imprime</action
+> o documento do vocabulário activo. O &kwordquiz; fornece várias opções para <link linkend="printing"
+>imprimir</link
+> os seus vocabulários. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Antevisão da Impressão</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Mostra</action
+> uma antevisão do documento de vocabulário activo impresso pelo &kwordquiz;. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Fechar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Fecha</action
+> o documento de vocabulário activo. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Sair</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Sai</action
+> do &kwordquiz; </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title
+>O Menu Editar</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Desfazer</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Anula</action
+> o último comando. O nome deste item irá mudar de acordo com o que será anulado. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Refazer</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Anula</action
+> o último comando. O nome deste item irá mudar de acordo com o que será anulado. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Cortar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Corta</action
+> o texto das células seleccionadas e coloca-o na área de transferência. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Copia</action
+> o texto das células seleccionadas e coloca-o na área de transferência. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Colar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Cola</action
+> o conteúdo da área de transferência na selecção actual. Se só estiver uma célula seleccionada, o &kwordquiz; irá activar a colagem inteligente e irá calcular o espaço necessário para a colagem e irá adicionar as linhas necessárias. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycap
+>Del</keycap
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Limpar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Limpa</action
+> a selecção actual. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Inserir uma Linha</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Insere</action
+> uma nova linha na selecção actual. Se a selecção se extender por mais do que uma linha, será inserido um número igual de linhas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Remover a Linha</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Apaga</action
+> a linha seleccionada. Se a selecção se extender por mais do que uma linha, todas as linhas seleccionadas serão removidas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Marcar como Espaço</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>O <action
+>Marcar como Espaço</action
+> marca o texto seleccionado (ou a palavra onde se encontra o cursor) como um espaço em branco para um questionário de <link linkend="fill-in-the-blank"
+>'Preenchimento-dos-espaços-em-branco'</link
+>, i.e. fica entre parêntesis. Só está disponível se a opção de <link linkend="dlg-config-editor"
+>Preencher-Espaços-em-Branco</link
+> estiver activada. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Desmarcar Espaços</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>O <action
+>Desmarcar Espaços</action
+> limpa os espaços atribuídos, i.e. são removidos os parêntesis. Só está disponível se a opção de <link linkend="dlg-config-editor"
+>Preencher-Espaços-em-Branco</link
+> estiver activada. </para>
+    </listitem>
+  </varlistentry>
+
+
+</variablelist>
+</sect1>
+
+<sect1 id="vocabulary-menu">
+<title
+>O Menu Vocabulário</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vocabulário</guimenu
+> <guimenuitem
+>Configuração das Colunas...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Define</action
+> os títulos, as disposições do teclado e as larguras das duas colunas do vocabulário. Mostra uma <link linkend="dlg-languages"
+>janela</link
+> para tal. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulário</guimenu
+> <guimenuitem
+>Tipo de Letra...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Configura</action
+> o tipo de letra usado para apresentar o vocabulário. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulário</guimenu
+> <guimenuitem
+>Associar uma Imagem...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Indica</action
+> a imagem que deverá estar associada ao item actual. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulário</guimenu
+> <guimenuitem
+>Associar um Som...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Indica</action
+> o som que deverá estar associado ao item actual. </para>
+    </listitem>
+  </varlistentry>
+
+ <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulário</guimenu
+> <guimenuitem
+>Ajustar a Altura das Linhas</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ajusta</action
+> a altura das linhas para caber no conteúdo. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulário</guimenu
+> <guimenuitem
+>Baralhar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Baralha</action
+> os itens do vocabulário numa ordem aleatória. A ordem dos itens no documento do vocabulário em si não é alterada. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title
+>O Menu Modo</title>
+<para
+>O menu oferece cinco modos diferentes para o questionário.</para>
+<para
+>Lembre-se que os nomes dos menus irão mudar para reflectir os títulos das colunas no documento de vocabulário activo. O modo precisa de ser seleccionado antes de se começar um questionário. O modo seleccionado aplicar-se-á aos Cartões, à Escolha Múltipla e às Perguntas e Respostas. </para>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modo</guimenu
+> <guimenuitem
+>1 Coluna 1 -&gt; Coluna 2 por Ordem</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante o questionário serão apresentados os itens da Coluna 1 e pede-se para indicar os itens correspondentes da Coluna 2. Isto será feito pela ordem em que os itens aparecem no documento do vocabulário. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modo</guimenu
+> <guimenuitem
+>2 Coluna 2 -&gt; Coluna 1 por Ordem</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante o questionário serão apresentados os itens da Coluna 2 e pede-se para indicar os itens correspondentes da Coluna 1. Isto será feito pela ordem em que os itens aparecem no documento do vocabulário. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modo</guimenu
+> <guimenuitem
+>3 Coluna 1 -&gt; Coluna 2 Aleatoriamente</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante o questionário serão apresentados os itens da Coluna 1 e pede-se para indicar os itens correspondentes da Coluna 2. Isto será feito de forma aleatória, mas cada item só aparece uma vez. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modo</guimenu
+> <guimenuitem
+>4 Coluna 2 -&gt; Coluna 1 Aleatoriamente</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante o questionário serão apresentados os itens da Coluna 2 e pede-se para indicar os itens correspondentes da Coluna 1. Isto será feito de forma aleatória, mas cada item só aparece uma vez. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modo</guimenu
+> <guimenuitem
+>5 Coluna 1 &lt;-&gt; Coluna 2 Aleatoriamente</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante o questionário serão apresentados os itens da Coluna 1 ou da Coluna 2 e pede-se para indicar os itens correspondentes da outra coluna. Isto será feito de forma aleatória para o item e para a coluna, mas cada combinação possível só aparece uma vez. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title
+>O Menu Questionário</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Return</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Verificar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Verifica</action
+> se a sua resposta está correcta </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Eu sei</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Conta</action
+> como correcta durante uma sessão de cartões. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Não Sei</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Conta</action
+> como um erro numa sessão de cartões. Você poderá repetir mais tarde estes cartões se seleccionar <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Repetir Erros</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Dica</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Obtém</action
+> a próxima letra correcta numa sessão de Perguntas e Respostas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Tocar o Áudio</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Toca</action
+> o som que foi associado ao item com a opção <menuchoice
+><guimenu
+>Vocabulário</guimenu
+> <guimenuitem
+>Associar um Som</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Reiniciar</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Reinicia</action
+> a sessão do início. Irá limpar as pontuações. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Repetir Erros</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Repete</action
+> as perguntas que você tenha respondido incorrectamente. Torna-se disponível logo que você tenha respondido uma vez a todas as perguntas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Questionário</guimenu
+> <guimenuitem
+>Exportar os Erros Como...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Exporta</action
+> as perguntas que você tenha respondido incorrectamente como um novo documento de vocabulário. Torna-se disponível logo que você tenha respondido uma vez a todas as perguntas. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings-help-menu">
+<title
+>Os Menus de Configuração e Ajuda</title
+> 
+<para
+>À parte dos menus de <guimenu
+>Configuração</guimenu
+> e <guimenu
+>Ajuda</guimenu
+> comuns do &kde;, descritos nas secções dos menus de <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Configuração</ulink
+> e <ulink url="help:/fundamentals/ui.html#menus-help"
+>Ajuda</ulink
+> dos Fundamentos do &kde;, o &kwordquiz; tem este item de menu adicional: </para>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Configuração</guimenu
+> <guimenuitem
+>Mostrar a Pesquisa</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Comuta</action
+> a apresentação da barra de pesquisa. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+</chapter>
+
+<chapter id="main-window">
+<title
+>A Janela Principal</title>
+
+<para
+>A janela principal tem um painel de navegação do lado esquerdo, na qual as componentes principais do programa poderão ser activadas. </para>
+<para
+>O <link linkend="editor"
+>editor</link
+> poderá ser activado se carregar em <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Poderá iniciar uma sessão de <link linkend="flashcard"
+>cartões</link
+> ao carregar em <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Poderá iniciar uma sessão de <link linkend="multiple"
+>escolha múltipla</link
+> se carregar em <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Poderá iniciar uma sessão de <link linkend="question-and-answer"
+>perguntas e respostas</link
+> se carregar em <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+
+<screenshot>
+  <screeninfo
+>A Janela Principal</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>A Janela Principal</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>O Editor de Vocabulário</title>
+
+<para
+>A área do documento do vocabulário tem a aparência de uma grelha de uma folha de cálculo. A grelha consiste em células organizadas em duas colunas e num conjunto de linhas. Cada coluna e linha tem um cabeçalho. Os cabeçalhos das colunas são usados para indicar os títulos do documento do vocabulário. Estes podem ser configurados se seleccionar a opção <menuchoice
+><guimenu
+>Vocabulário</guimenu
+><guimenuitem
+>Configuração das Colunas...</guimenuitem
+></menuchoice
+>. Os cabeçalhos das linhas numeram-nas consecutivamente. </para>
+<para
+>Os cabeçalhos das colunas também poderão ser usados para ordenar o vocabulário. Basta carregar no cabeçalho da coluna com que deseja ordenar. </para>
+<para
+>Você pode carregar numa célula da grelha para a tornar activa. Pode também seleccionar várias células para copiar ou para editar se arrastar o cursor do rato por cima delas, mantendo o botão esquerdo do rato em baixo. Para seleccionar colunas ou linhas inteiras, carregue nos cabeçalhos. </para>
+
+<screenshot>
+  <screeninfo
+>O Editor de Vocabulários</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>O Editor de Vocabulários</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>No documento, você cria um vocabulário com pares de itens nas duas colunas. Você poderá introduzir texto na célula activa se começar a escrever. A célula irá estar agora no modo de edição e você poderá seleccionar todo ou parte do texto. Você também poderá editar uma célula se fizer duplo-click ou se carregar em F2 e fazer as alterações directamente na célula. </para>
+<para
+>Quando tiver acabado de escrever um item, carregue na tecla <keycap
+>Return</keycap
+> para passar a próxima célula a ficar activa. Aí, é fácil escrever rapidamente vários itens. Você poderá personalizar este comportamento se seleccionar a opção <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o &kwordquiz;...</guimenuitem
+></menuchoice
+>. Quando chegar à última linha da grelha, irá aparecer uma nova linha se você carregar em <keycap
+>Return</keycap
+>, de modo a que você continue simplesmente a escrever. Quando uma janela é criada, tem 20 linhas, mas não existe de facto nenhum limite para o número de linhas que você pode ter num documento. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Sessão de Cartões</title>
+
+<para
+>Seleccione, no painel de navegação, a opção Cartão para iniciar uma sessão de cartões nos itens do documento do vocabulário activo. O modo seleccionado no menu <guimenu
+>Modo</guimenu
+> será usado. Se você mudar de modo durante uma sessão, esta será reiniciada. </para>
+
+<para
+>Se você estiver a trabalhar com expressões compridas, a janela poderá ser redimensionada para arranjar mais espaço disponível. O tamanho da letra irá também influenciar quanto irá caber nas diferentes partes da janela. Se seleccionar <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o &kwordquiz;</guimenuitem
+></menuchoice
+>, você poderá indicar qual o tipo de letra para os cartões. </para>
+
+<screenshot>
+  <screeninfo
+>Sessão de Cartões</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessão de Cartões</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Inicialmente é mostrada a face frontal do cartão. Use o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Verificar</guimenuitem
+></menuchoice
+> para ver o outro lado. </para>
+<para
+>Para passar para o próximo cartão, tanto poderá seleccionar o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Eu Sei</guimenuitem
+></menuchoice
+> para contar o cartão como correcto ou o <guimenu
+>Questionário</guimenu
+><guimenuitem
+>Não Sei</guimenuitem
+> para contar como incorrecto. </para>
+<para
+>Seleccione o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Repetir Erros</guimenuitem
+></menuchoice
+> para repetir os cartões que você contou como incorrectos. </para>
+<para
+>Seleccione o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Reiniciar</guimenuitem
+></menuchoice
+> para iniciar a sessão outra vez do início. Se estiver a usar um modo aleatório, os cartões serão baralhados de novo. </para>
+<para
+>As secções de pontuação no fundo do ecrã contam o número de cartões, o número de cartões que você viu, o número de cartões correctos e o de incorrectos. </para>
+
+<tip>
+<para
+>Todos os itens do menu <guimenu
+>Questionário</guimenu
+> estão disponíveis na barra de Questionário que é mostrada à direita por omissão.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Sessão de Escolha Múltipla</title>
+
+<para
+>Seleccione a Escolha Múltipla para iniciar um questionário de escolha múltipla nos itens do documento de vocabulário activo. O modo seleccionado no menu <guimenu
+>Modo</guimenu
+> será usado. Se você mudar de modo durante uma sessão, esta será reiniciada. </para>
+<para
+>Se você estiver a trabalhar com expressões compridas, a janela poderá ser redimensionada para arranjar mais espaço. O tamanho da letra (seleccionado para o editor) irá também influenciar o que é que irá caber nas diferentes partes da janela. </para>
+<para
+>No exemplo em baixo, o utilizador indicou uma resposta errada à pergunta anterior. Ele está prestes a responder à próxima pergunta. </para>
+
+<screenshot>
+  <screeninfo
+>Sessão de Escolha Múltipla</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessão de Escolha Múltipla</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>As suas escolhas são mostradas em cima e à esquerda. Seleccione a que pensa que está correcta. Use o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Verificar</guimenuitem
+></menuchoice
+> para ver se a resposta está correcta. Se tiver activado o modo automático no <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o &kwordquiz;...</guimenuitem
+></menuchoice
+>, a sua selecção é validada imediatamente. </para>
+<para
+>A pergunta anterior é mostrada por baixo da actual. A resposta que você deu é também apresenta. Se você respondeu incorrectamente, é mostrada a resposta correcta. </para>
+<para
+>Seleccione o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Repetir Erros</guimenuitem
+></menuchoice
+> para repetir as perguntas que respondeu incorrectamente. </para>
+<para
+>Seleccione <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Reiniciar</guimenuitem
+></menuchoice
+> para iniciar a sessão do princípio de novo. Se você estiver a usar um modo aleatório, as perguntas serão baralhadas de novo. </para>
+<para
+>As secções de pontuação no fundo do ecrã mostram o número de perguntas, o número de perguntas que respondeu, o número de respostas correctas e de incorrectas. </para>
+
+<tip>
+<para
+>Todos os itens do menu <guimenu
+>Questionário</guimenu
+> estão disponíveis na barra de Questionário que é mostrada à direita por omissão.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Sessão de Perguntas e Respostas</title>
+<para
+>Seleccione as Perguntas &amp; Respostas para iniciar uma sessão de perguntas e respostas sobre os itens do vocabulário activo. O modo seleccionado no menu <guimenu
+>Modo</guimenu
+> será o usado. Se mudar de modo durante uma sessão, esta será reiniciada. </para>
+<para
+>Se você estiver a trabalhar com expressões compridas, a janela poderá ser redimensionada para arranjar mais espaço. O tamanho da letra (seleccionado para o editor) irá também influenciar o que é que irá caber nas diferentes partes da janela. </para>
+<para
+>No exemplo em baixo, o utilizador deu uma resposta correcta à pergunta anterior (para ver como é que são tratadas as respostas incorrectas, veja o capítulo <link linkend="multiple"
+>Escolha Múltipla</link
+>). Ele está prestes a responder à próxima pergunta. </para>
+
+<screenshot>
+  <screeninfo
+>Sessão de Perguntas e Respostas</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessão de Perguntas e Respostas</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>A sua pergunta é mostrada acima e à esquerda. Escreva a sua resposta no campo de edição. Use o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Verificar</guimenuitem
+></menuchoice
+> ou a tecla &Enter; para ver se a resposta está correcta. </para>
+<para
+>A pergunta anterior é mostrada por baixo da actual. A resposta que você deu é também apresenta. Se você respondeu incorrectamente, é mostrada a resposta correcta. </para>
+<para
+>Seleccione a opção <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Dica</guimenuitem
+></menuchoice
+> para obter a próxima letra correcta da resposta. Na opção <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o &kwordquiz;...</guimenuitem
+></menuchoice
+>, você poderá indicar que as respostas onde você usar a função de dica contarão sempre como incorrectas. </para>
+<para
+>Seleccione o <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Repetir Erros</guimenuitem
+></menuchoice
+> para repetir as perguntas que respondeu incorrectamente. </para>
+<para
+>Seleccione <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Reiniciar</guimenuitem
+></menuchoice
+> para iniciar a sessão do princípio de novo. Se você estiver a usar um modo aleatório, as perguntas serão baralhadas de novo. </para>
+<para
+>As secções de pontuação no fundo do ecrã mostram o número de perguntas, o número de perguntas que respondeu, o número de respostas correctas e de incorrectas. </para>
+
+<tip>
+<para
+>Todos os itens do menu <guimenu
+>Questionário</guimenu
+> estão disponíveis na barra de Questionário que é mostrada à direita por omissão.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Preencher-espaços-em-branco</title>
+
+<para
+>O 'Preencher-espaços-em-branco' é uma forma poderosa de praticar no &kwordquiz;. É um tipo especial de perguntas e respostas que precisa de ser descrito com maior detalhe. Para poder usar esta funcionalidade, devê-la-á activar na <link linkend="dlg-config-editor"
+>janela de configuração</link
+>. </para>
+
+<para
+>Considere a tabela seguinte. Poderia ser um vocabulário no &kwordquiz;: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Inglês</entry>
+<entry
+>Alemão</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>Nós possuímos um computador</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>Nós possuímos um computador</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>Nós possuímos um computador</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>Nós possuímos um computador</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>O factor importante a notar é o posicionamento dos parêntesis rectos. Eles indicam ao &kwordquiz; como é que o questionário deverá ser feito. </para>
+<para
+>Na 1. não existem parêntesis. Assumindo que o Português é a pergunta e o Alemão a resposta, você teria de dar a expressão completa 'Wir besitzen einen Computer' como resposta correcta. </para>
+<para
+>Na 2. o &kwordquiz; iria mostra a pergunta mas também 'Wir ........ einen Computer'. Para uma resposta correcta é suficiente escrever 'besitzen'. </para>
+<para
+>O 3. mostra que um espaço em branco pode consistir em mais do que uma palavra. A resposta correcta é 'besitzen einen'. </para>
+<para
+>Na 4. existem dois espaços em branco separados. Para indicar isso na resposta, você teria de escrever 'besitzen; Computer', i.e, separar os espaços em branco com ponto-e-vírgula para obter uma resposta correcta. </para>
+<para
+>Os espaços em branco marcados só são relevantes se aparecerem na resposta. Caso contrário, os parêntesis rectos são ignorados. Para além disso, os parêntesis não têm efeito nos questionários de escolha múltipla. Para simplificar a criação de vocabulários para 'Preencher-Espaços-em-Branco' existem comandos da barra de ferramentas e do menu para marcar e desmarcar os mesmos espaços em branco. Claro que você poderá simplesmente escrever os parêntesis rectos. O &kwordquiz; irá verificar a sintaxe. Se o texto aparecer a vermelho, há algo de errado com os parêntesis e, por isso, o questionário não poderá ter início. </para>
+<para
+>As funcionalidades de 'Preencher-Espaços-em-Branco' poderão ser activadas ou desactivadas na janela de Opções. Se as desactivar irá tornar possível o uso de tipos de letra que irão mapear os outros caracteres para as posições dos parêntesis. Irá também aumentar um pouco a performance. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Impressão</title>
+<para
+>O &kwordquiz; oferece a possibilidade de imprimir os documentos dos vocabulários de várias formas diferentes. Ao seleccionar o <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Imprimir...</guimenuitem
+></menuchoice
+>, é-lhe apresentada a janela normal de impressão do &kde;. Para obter o acesso às funcionalidades especiais do &kwordquiz;, você precisa de carregar no <guibutton
+>Opções&gt;&gt;</guibutton
+> para ver a página de <guilabel
+>Opções do Vocabulário</guilabel
+>. Nesta página, poderá optar por imprimir o documento como uma lista de vocabulário (&ie;, tal como é mostrado no editor), como um exame de vocabulário ou como cartões. </para>
+<screenshot>
+  <screeninfo
+>Opções de Impressão do Vocabulário</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Opções de Impressão do Vocabulário</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Lista de vocabulário</title>
+<para
+>O vocabulário será impresso tal como é mostrado no editor. Isto inclui o tipo de letra, as alturas de cada linha e as larguras das colunas. Certifique-se que as colunas são estreitas o suficiente para caber na página.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Imprimir a Lista do Vocabulário</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Imprimir a Lista do Vocabulário</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Exame de vocabulário</title>
+<para
+>O vocabulário será impresso tal como aparece no editor, excepto que a coluna direita será deixada em branco e é adicionada uma terceira coluna para a classificação. As configurações usadas incluem o tipo de letra, as alturas das linhas e as larguras das colunas. Certifique-se que as colunas são estreitas o suficiente para caber na página.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Imprimir o Exame do Vocabulário</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Imprimir o Exame do Vocabulário</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Cartões</title>
+<para
+>São impressos dois cartões de 12,7 x 7,62 cm por página. Os cartões serão sempre impressos em formato paisagem.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Imprimir Cartões</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Imprimir Cartões</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+<!--FIXME not ported to kf5
+<chapter id="tutor">
+<title
+>The Tutor Mode</title>
+
+<para>
+  &kwordquiz; can be started in the Tutor mode. In this mode application pops up words in the chosen vocabulary randomly at certain time intervals. To start &kwordquiz; in the Tutor mode press <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> and enter <userinput
+><command
+>kwordquiz</command
+> <option
+>-g tutor <replaceable
+>vocabulary_file.kvtml</replaceable
+></option
+></userinput
+>. The part with <replaceable
+>vocabulary_file.kvtml</replaceable
+> can be omitted.
+</para>
+<screenshot>
+  <screeninfo
+>Welcome message of the Tutor mode</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Welcome message of the Tutor mode</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+  After pressing <guibutton
+>OK</guibutton
+> button, &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject
+> <imageobject
+> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> menu (it can be opened with &RMB; click on the icon).
+</para>
+
+<para>
+  There are four items in this menu:
+   <variablelist>
+     <varlistentry>
+       <term
+><guimenuitem
+>Start Exercise</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Start</action
+> the Tutor exercise.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Open...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> an existing vocabulary document.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Configure &kwordquiz; Tutor...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> the Tutor configuration dialog.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Tutor Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Tutor Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Tutor Settings</guilabel
+> page you can configure time intervals between the flashcards changes, flashcard appearance, and choose the option to <guilabel
+>Start exercise as soon as the user opens vocabulary file</guilabel
+>.
+	 </para>
+	 <para>
+	   In the current version, you can choose between <guilabel
+>Native</guilabel
+> and <guilabel
+>Minimalistic</guilabel
+> flashcard appearances.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Native flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Native flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Native appearance for the fancy vocabularies with images.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Minimalistic flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Minimalistic flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Minimalistic appearance for the simple vocabularies.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Shortcuts Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Shortcuts Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Shortcuts Settings</guilabel
+> page you can configure shortcuts for the Tutor actions. The defaults are <keycombo
+>&Ctrl;&Alt;<keycap
+>J</keycap
+></keycombo
+> for the closing and <keycombo
+>&Ctrl;&Alt;<keycap
+>H</keycap
+></keycombo
+> for the flipping of the flashcard.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Quit</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Quit</action
+> &kwordquiz;.
+	 </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+-->
+
+<chapter id="dialogs">
+<title
+>Janelas</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Configuração Geral</title>
+<screenshot>
+  <screeninfo
+>Configuração Geral</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração Geral</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Poderá seleccionar o tipo de sessão onde deverá iniciar um vocabulário acabado de abrir. Se for directamente para um questionário, poderá evitar que veja determinados itens de forma antecipada. </para>
+<para
+>Seleccione as <guibutton
+>Predefinições</guibutton
+> para repor todas as configurações nos seus valores por omissão. Seleccione o <guibutton
+>Aplicar</guibutton
+> para efectivar as suas alterações sem fechar a janela. Seleccione o <guibutton
+>OK</guibutton
+> para confirmar as suas alterações e fechar a janela. Seleccione <guibutton
+>Cancelar</guibutton
+> para fechar a janela sem fazer qualquer alteração. </para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title
+>Configuração do Editor</title>
+<screenshot>
+  <screeninfo
+>Configuração do Editor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do Editor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Você poderá configurar o comportamento da tecla &Enter; ao trabalhar com o editor. </para>
+<para
+>Você pode também seleccionar se as funções para <link linkend="fill-in-the-blank"
+>Preencher-Espaços-em-Branco</link
+> deverão ser activadas. Se as desactivar, irá aumentar um pouco a performance. </para>
+<para
+>Seleccione as <guibutton
+>Predefinições</guibutton
+> para repor todas as configurações nos seus valores por omissão. Seleccione o <guibutton
+>Aplicar</guibutton
+> para efectivar as suas alterações sem fechar a janela. Seleccione o <guibutton
+>OK</guibutton
+> para confirmar as suas alterações e fechar a janela. Seleccione <guibutton
+>Cancelar</guibutton
+> para fechar a janela sem fazer qualquer alteração. </para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title
+>Configuração do Questionário</title>
+<screenshot>
+  <screeninfo
+>Configuração do Questionário</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do Questionário</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Para as sessões de cartões, você poderá seleccionar se os cartões deverão ser virados automaticamente e se deverão ser contactos como certos ou errados. Indique um tempo-limite em segundos para a apresentação automática. </para>
+<para
+>Para as sessões de escolha múltipla, você poderá seleccionar se a sua escolha deverá ser validada automaticamente ou se tem de escolher primeiro a opção <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Verificar</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Para as sessões de perguntas e respostas, você poderá seleccionar as as perguntas onde você usar a opção <menuchoice
+><guimenu
+>Questionário</guimenu
+><guimenuitem
+>Dica</guimenuitem
+></menuchoice
+> deverão ser contadas como incorrectas. </para>
+<para
+>Para todas as sessões, você poderá seleccionar se as pontuações deverão ser dadas como percentagens ou como números absolutos. </para>
+<para
+>Seleccione as <guibutton
+>Predefinições</guibutton
+> para repor todas as configurações nos seus valores por omissão. Seleccione o <guibutton
+>Aplicar</guibutton
+> para efectivar as suas alterações sem fechar a janela. Seleccione o <guibutton
+>OK</guibutton
+> para confirmar as suas alterações e fechar a janela. Seleccione <guibutton
+>Cancelar</guibutton
+> para fechar a janela sem fazer qualquer alteração. </para>
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title
+>Configuração da Aparência dos Cartões</title>
+<screenshot>
+  <screeninfo
+>Configuração da Aparência dos Cartões</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração da Aparência dos Cartões</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Para as sessões de cartões, poderá escolher o <guilabel
+>Tipo de Letra:</guilabel
+> e as cores do texto, dos cartões e das molduras. Carregue no botão <guibutton
+>Inverter</guibutton
+> para mudar entre a face <guilabel
+>Dianteira</guilabel
+> ou a <guilabel
+>Traseira</guilabel
+> dos cartões. </para>
+<para
+>Seleccione as <guibutton
+>Predefinições</guibutton
+> para repor todas as configurações nos seus valores por omissão. Seleccione o <guibutton
+>Aplicar</guibutton
+> para efectivar as suas alterações sem fechar a janela. Seleccione o <guibutton
+>OK</guibutton
+> para confirmar as suas alterações e fechar a janela. Seleccione <guibutton
+>Cancelar</guibutton
+> para fechar a janela sem fazer qualquer alteração. </para>
+</sect1>
+
+<sect1 id="dlg-config-characters">
+<title
+>Configuração dos Caracteres Especiais</title>
+<screenshot>
+  <screeninfo
+>Configuração dos Caracteres Especiais</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração dos Caracteres Especiais</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Estão disponíveis nove acções configuráveis para inserir caracteres especiais no vocabulário. Seleccione uma das acções da lista e carregue então em <guibutton
+>Carácter...</guibutton
+> para <link linkend="dlg-special-characters"
+>seleccionar</link
+> um carácter para essa acção. Uma antevisão maior do carácter actual é mostrada. </para>
+<para
+>Pode mudar o atalho de teclado associado com cada acção se seleccionar <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar os Atalhos...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Seleccione as <guibutton
+>Predefinições</guibutton
+> para repor todas as configurações nos seus valores por omissão. Seleccione o <guibutton
+>Aplicar</guibutton
+> para efectivar as suas alterações sem fechar a janela. Seleccione o <guibutton
+>OK</guibutton
+> para confirmar as suas alterações e fechar a janela. Seleccione <guibutton
+>Cancelar</guibutton
+> para fechar a janela sem fazer qualquer alteração. </para>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Configuração das Colunas</title>
+<para
+>Poderá abrir esta janela com a opção do menu <menuchoice
+><guimenu
+>Vocabulário</guimenu
+><guimenuitem
+>Configuração das Colunas...</guimenuitem
+></menuchoice
+>.</para>
+<screenshot>
+  <screeninfo
+>Configuração das Colunas</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração das Colunas</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Use esta janela para definir os títulos das colunas, as disposições do teclado e as larguras do vocabulário. Seleccione <guibutton
+>OK</guibutton
+> para confirmar as suas alterações ou em <guibutton
+>Cancelar</guibutton
+> para as ignorar. </para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title
+>Caracteres Especiais</title>
+<para
+>Carregue no botão <guibutton
+>Carácter...</guibutton
+>, na página de <guilabel
+>Caracteres Especiais</guilabel
+> do &kwordquiz;, para abrir esta janela.</para>
+<screenshot>
+  <screeninfo
+>Caracteres Especiais</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Caracteres Especiais</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Use esta janela para seleccionar os caracteres especiais que desejar associar com a <link linkend="dlg-config-characters"
+>acção actual</link
+> do carácter especial. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Créditos e Licença</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Programa com 'copyright' 2003-2008 de Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Documentação com 'copyright' 2003-2008 de Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Tradução de José Nuno Pires <email
+>zepires@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

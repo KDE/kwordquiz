@@ -1,0 +1,2091 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek van &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+&Marc.Heyvaert;&Tom.Albers; 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2021-01-30</date>
+<releaseinfo
+>Applications 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; is een toepassing door &kde; die u kan helpen een vreemde woordenschat aan te leren. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>kaarten</keyword>
+<keyword
+>woordenschat</keyword>
+<keyword
+>taal</keyword>
+<keyword
+>onderwijs</keyword>
+<keyword
+>school</keyword>
+<keyword
+>middelbare school</keyword>
+<keyword
+>universiteit</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+<para
+>&kwordquiz; is een toepassing die u kan helpen een nieuwe woordenschat onder de knie te krijgen. U kunt er woorden uit een vreemde taal mee aanleren of woorden van een gespecialiseerde terminologie. </para>
+<sect1 id="easy-to-use">
+<title
+>Gemakkelijk te gebruiken</title>
+
+<para
+>Met &kwordquiz; kunt u op een gemakkelijke en intuïtieve manier uw eigen woordenlijst opbouwen. Een woordenlijst heeft de vorm van een spreadsheet met twee kolommen. In de ene kolom komen de woorden zoals u ze kent, in de andere komen de vormen die u wilt aanleren. De titels van de kolommen kunt u veranderen zodat ze weergeven wat u aan het leren bent. </para>
+
+<sect2 id="practice-modes">
+<title
+>Wijze van oefenen</title>
+
+<para
+>Voor u een toets opstart kunt u kiezen op welke manier u wilt oefenen. Met &kwordquiz; hebt u de keuze tussen vijf verschillende modi om het leerproces efficiënt te laten verlopen. Tijdens een toets wordt de woordenlijst doorlopen in willekeurige of vaste volgorde, van de ene richting naar de andere of omgekeerd, of beide richtingen door elkaar. </para>
+</sect2>
+
+<sect2 id="quiz-types">
+<title
+>Soorten toetsen</title>
+
+<para
+>Wanneer u een woordenlijst hebt ingevoerd en de juiste modus hebt gekozen, bent u klaar om een toets te starten. Tijdens een toets is de woordenlijst niet zichtbaar zodat u niet kunt spieken. Misschien wilt u beginnen met een kaarten-sessie, later is een meerkeuzevragen-sessie misschien aangewezen, of een krachtige "Vraag en antwoord"-sessie? U kunt onmiddellijk zien welke van uw antwoorden goed of fout zijn en u kunt het programma zo instellen dat woorden die u fout had opnieuw aan bod komen, zodat u efficiënter leert. Indien u wat extra hulp nodig hebt, kunt u een tip vragen. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Woordenlijsten</title>
+<para
+>&kwordquiz; kan verschillende typen van woordenschatgegevens openen. Het standaard formaat is <filename class="extension"
+>.kvtml</filename
+> dat ook door andere &kde; programma's wordt gebruikt. &kwordquiz; zou ook het formaat <filename class="extension"
+>.wql</filename
+> van &kwordquiz; voor &Windows; aan moeten kunnen, <filename class="extension"
+>.cvs</filename
+> bestanden met komma-gescheiden tekst, <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class="extension"
+>.voc</filename
+> bestanden</ulink
+> aangemaakt door de oude versie van Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>.xdxf</filename
+> bestanden</ulink
+> en het <filename class="extension"
+>.xml.gz</filename
+> formaat dat door oude versies van het programma <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+> wordt gebruikt. </para>
+<para
+>Met &kwordquiz; kunt u woordenlijsten in verschillende formaten opslaan. Standaard gebeurt dat in het formaat <filename class="extension"
+>.kvtml</filename
+> dat ook door andere &kde; programma's wordt gebruikt. Een andere mogelijkheid is komma-gescheiden tekst <filename class="extension"
+>.cvs</filename
+>. </para>
+<para
+>U kunt verschillende bestanden tegelijkertijd openen en gemakkelijk de inhoud van een bestand naar een ander bestand kopiëren of verplaatsen. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Naslag menu's</title>
+
+<sect1 id="file_menu">
+<title
+>Het menu Bestand</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Nieuw</action
+> om een nieuwe woordenlijst aan te maken. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Openen...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Openen</action
+> van een of meer bestaande woordenlijsten. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guisubmenu
+>Recent geopend</guisubmenu
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Openen</action
+> van een woordenlijst die recent werd gebruikt. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Nieuwe woordenschatbestanden downloaden...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Download</action
+> nieuwe woordenlijsten. Aanwezige woordenlijsten kunnen worden gevonden in de map <filename class="directory"
+>$XDG_DATA_HOME/kvtml</filename
+>. <envar
+>$XDG_DATA_HOME</envar
+> is gewoonlijk een verborgen map in uw persoonlijke map genaamd <filename class="directory"
+>.local</filename
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Opslaan</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Opslaan</action
+> van de actieve woordenlijst op schijf. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Opslaan als...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Opslaan</action
+> van de actieve woordenlijst met een nieuwe naam. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afdrukken...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Afdrukken</action
+> van de actieve woordenlijst. Met &kwordquiz; kunt u op verschillende manieren een woordenlijst <link linkend="printing"
+>afdrukken</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afdrukvoorbeeld</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Toon</action
+> een afdrukvoorbeeld van de actieve woordenlijst zoals deze wordt afgedrukt door &kwordquiz;. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+> Bestand</guimenu
+> <guimenuitem
+>Sluiten</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Sluiten</action
+> van de actieve woordenlijst. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+><guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+> Afsluiten</action
+> van &kwordquiz;. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title
+>Het menu Bewerken</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Ongedaan maken</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ongedaan maken</action
+> van het laatste commando. Uit de tekst van deze menukeuze zal u steeds kunnen afleiden wat het laatst uitgevoerde commando was. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Opnieuw</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Opnieuw</action
+> doen van het laatste commando. Uit de tekst van deze menukeuze zult u steeds kunnen afleiden wat het uit te voeren commando is. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Knippen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Knippen</action
+> en op het klembord plaatsen van de huidige selectie. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Kopiëren</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Kopiëren</action
+> en op het klembord plaatsen van de huidige selectie. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Plakken</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Plakken</action
+> van de inhoud van het klembord op de huidige selectie. Indien er maar één cel werd geselecteerd zal &kwordquiz; uitrekenen hoeveel plaats er nodig is om de inhoud van het klembord in te voegen en eventueel het juiste aantal rijen toevoegen. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> &Del; </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Wissen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Leegmaken</action
+> van de huidige selectie. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Rij invoegen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Een nieuwe <action
+>Rij invoegen</action
+>voor de geselecteerde cel of rij. Indien de huidige selectie meer dan één rij bevat zullen evenveel rijen worden ingevoegd. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Rij verwijderen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Rij verwijderen</action
+> verwijdert de geselecteerde rij. Indien de huidige selectie meer dan één rij bevat zullen al deze rijen worden verwijderd. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Markeren als leeg</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Met <action
+> Markeren als leeg</action
+> kunt u de geselecteerde tekst (of het woord waar de cursor zich bevindt) aanduiden als leeg bij een <link linkend="fill-in-the-blank"
+>'Leeg-gedeelte-invullen'</link
+>-toets, &ie;, het is omsloten door haakjes. Dit werkt alleen wanneer de optie <link linkend="dlg-config-editor"
+>Leeg-gedeelte-invullen</link
+> is ingeschakeld. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Markering leeg-gedeelte verwijderen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Met <action
+>Markering leeg-gedeelte verwijderen</action
+> kunt u bij de geselecteerde tekst of het woord waar de cursor zich bevindt, de vierkante haakjes verwijderen. Dit werkt alleen wanneer de optie <link linkend="dlg-config-editor"
+>Leeg-gedeelte-invullen</link
+> is ingeschakeld. </para>
+    </listitem>
+  </varlistentry>
+
+
+</variablelist>
+</sect1>
+
+<sect1 id="vocabulary-menu">
+<title
+>Het menu Woordenschat</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Kolominstellingen...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Definieer</action
+> de titels, de toetsenbordindeling en de breedte van de twee kolommen van de woordenlijst. U krijgt hierna een <link linkend="dlg-languages"
+>dialoogvenster</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Lettertype...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Wijzigen</action
+> van het lettertype dat gebruikt wordt om de woordenlijst weer te geven. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Afbeelding koppelen...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Specificeer</action
+> de afbeelding die gekoppeld moet worden aan het huidige item. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Geluid koppelen...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Specificeer</action
+> het geluid dat gekoppeld moet worden aan het huidige item. </para>
+    </listitem>
+  </varlistentry>
+
+ <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Rijhoogte aanpassen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Aanpassen</action
+> van de hoogte van de rijen om de inhoud te laten passen. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Woordenschat</guimenu
+><guimenuitem
+>Willekeurige volgorde</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Schudden</action
+> van de woordenlijst in een willekeurige volgorde. De volgorde van de items in de actuele woordenlijst wordt niet gewijzigd. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title
+>Het menu Modus</title>
+<para
+>Met dit menu kunt u een toets op vijf manieren opzetten.</para>
+
+  <note
+><para
+>De namen die u zelf aan de kolommen hebt gegeven worden in dit menu overgenomen. U moet de modus van een toets instellen vooraleer u eraan begint. De gekozen modus telt voor elke soort toets : "Kaarten", "Meerkeuzevragen" of "Vraag en antwoord".</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modus</guimenu
+> <guimenuitem
+>1 Kolom 1 -&gt; Kolom 2 in volgorde</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de inhoud van kolom 1 te zien en moet u de overeenkomstige inhoud van kolom 2 invoeren . De volgorde van de woordenlijst wordt niet gewijzigd. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modus</guimenu
+> <guimenuitem
+>2 Kolom 2 -&gt; Kolom 1 in volgorde</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de inhoud van kolom 2 te zien en moet u de overeenkomstige inhoud van kolom 1 invoeren. De volgorde van de woordenlijst wordt niet gewijzigd. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modus</guimenu
+> <guimenuitem
+>3 Kolom 1 -&gt; Kolom 2 willekeurig</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de inhoud van Kolom 1 te zien en moet u de overeenkomstige inhoud van Kolom 2 invoeren. Dit gebeurt in een  willekeurige volgorde maar elke opgave komt maar één keer voor. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modus</guimenu
+> <guimenuitem
+>4 Kolom 2 -&gt; Kolom 1 willekeurig</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de inhoud van Kolom 2 te zien en moet u de overeenkomstige inhoud van Kolom 1 invoeren. Dit gebeurt in een  willekeurige volgorde maar elke opgave komt maar één keer voor. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modus</guimenu
+> <guimenuitem
+>5 Kolom 1 &lt;-&gt; Kolom 2 willekeurig</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de inhoud van Kolom 1 of Kolom 2 te zien en moet u de overeenkomstige inhoud van de andere kolom invoeren. Dit gebeurt in een  willekeurige volgorde, zowel voor de kolommen als voor de mogelijke woorden. Elke mogelijke combinatie wordt maar één keer gevraagd. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title
+>Het menu Toets</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Enter</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Controleren</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Controleren</action
+> of uw antwoord goed is. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Gekend</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Als <action
+>goed aanrekenen</action
+> tijdens een kaarten-sessie. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+> D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>ik weet het niet</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Deze kaart als <action
+>fout aanrekenen</action
+> tijdens een kaarten-sessie. Later kunt u deze kaart opnieuw laten opvragen door <menuchoice
+><guimenu
+>Toets</guimenu
+><guimenuitem
+>Fouten herhalen</guimenuitem
+></menuchoice
+> aan te klikken. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Tip</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Tonen</action
+> van de volgende letter van het antwoord bij een "Vraag &amp; antwoord"-sessie. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Geluid afspelen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Speel</action
+> geluid af dat is gekoppeld aan het item met <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Geluid koppelen</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Opnieuw</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Opnieuw starten</action
+> laat de sessie vanaf het begin starten. De score wordt terug op nul gezet. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Fouten herhalen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Herhalen</action
+> van alle woorden die u fout had. Deze optie kan pas geselecteerd worden wanneer de toets af is. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Toets</guimenu
+> <guimenuitem
+>Exporteer fouten als...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Exporteer</action
+> alle woorden die u fout had als een nieuwe woordenlijst. Deze optie kan pas geselecteerd worden wanneer de toets af is. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings-help-menu">
+<title
+>De menu's Instellingen en Help</title
+> 
+<para
+>Los van de gemeenschappelijke &kde;menu-items <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+> beschreven in de <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Instellingen</ulink
+> en <ulink url="help:/fundamentals/menus.html#menus-help"
+>Help Menu</ulink
+> van de &kde; Fundamentals &kwordquiz; is er dit extra menu-item: </para>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Zoeken tonen</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Omschakelen</action
+> tonen van de zoekbalk. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+</chapter>
+
+<chapter id="main-window">
+<title
+>Het hoofdvenster</title>
+
+<para
+>Het hoofdvenster heeft links een navigatiepaneel waarmee de hoofdcomponenten van het programma kunnen worden geactiveerd. </para>
+<para
+>De <link linkend="editor"
+>bewerker</link
+> kan worden geactiveerd door op <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> te drukken. </para>
+<para
+>Een <link linkend="flashcard"
+>kaarten</link
+>-sessie kan worden gestart door op <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> te drukken. </para>
+<para
+>Een <link linkend="multiple"
+>meerkeuzevraag</link
+>-sessie kan worden gestart door op <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> te drukken. </para>
+<para
+>Een <link linkend="question-and-answer"
+>vraag en antwoord</link
+>-sessie kan worden gestart door op <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+> te drukken. </para>
+
+<screenshot>
+  <screeninfo
+>Het hoofdvenster</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Het hoofdvenster</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>De editor</title>
+
+<para
+>Het gebied met het woordenschatdocument ziet eruit als een spreadsheet: er is een rooster met twee kolommen en een aantal rijen zichtbaar. Elke kolom heeft een titel en de rijen zijn genummerd. De titels van de kolommen kunnen gewijzigd worden via <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Kolominstellingen...</guimenuitem
+></menuchoice
+>. De rijen hebben oplopende nummering. </para>
+<para
+>De kolomkoppen kunnen ook worden gebruikt om de woordenlijst te sorteren. Klik eenvoudig op de kop van de kolom die u wilt sorteren. </para>
+<para
+>Door in een cel te klikken maakt u deze cel actief. U kunt meerdere cellen tegelijk selecteren door de muisaanwijzer over deze cellen te slepen terwijl u de linker muisknop ingedrukt houdt. Om hele rijen te selecteren moet u op de rijkoppen klikken. </para>
+
+<screenshot>
+  <screeninfo
+>De editor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De editor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>U bouwt een woordenlijst op door in de kolommen, twee aan twee, woorden of termen in te voeren. Om in een actieve cel een woord in te voeren moet u alleen maar beginnen typen. De cel bevindt zich dan in bewerken-modus en u kunt nu de volledige tekst of een gedeelte van de tekst selecteren. U kunt een bestaande cel bewerken door in de cel te dubbelklikken of door op <keycap
+>F2</keycap
+> te drukken. De wijzigingen worden onmiddellijk in de cel zelf getoond.  </para>
+<para
+>Wanneer u een woord hebt ingevoerd en u naar de volgende cel wilt overgaan volstaat het op <keycap
+>Enter</keycap
+> te drukken. De volgende cel wordt dan automatisch actief. U kunt dus gemakkelijk verschillende woorden na elkaar invoeren. U kunt deze instelling wijzigen via <menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>&kwordquiz; instellen</guimenuitem
+></menuchoice
+>. Wanneer u op de laatste rij van het rooster bent gekomen, wordt automatisch een rij toegevoegd wanneer u op <keycap
+>Enter</keycap
+> drukt. Een nieuwe woordenlijst telt standaard 20 rijen maar het aantal rijen in een woordenlijst is in feite ongelimiteerd. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>De kaarten-sessie</title>
+
+<para
+>Selecteer Kaarten uit het navigatiepaneel om een kaarten-sessie op te starten met de actieve woordenlijst. Het programma gebruikt de modus die in het menu <guimenu
+>Modus</guimenu
+> werd gekozen. Wanneer u tijdens de sessie van modus verandert, wordt de sessie opnieuw gestart. </para>
+
+<para
+>De grootte van het venster kan worden aangepast zodat meer ruimte vrijkomt voor lange zinnen. Ook de grootte van het gebruikte lettertype is bepalend voor de beschikbare ruimte. Door <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>&kwordquiz; instellen...</guimenuitem
+></menuchoice
+> te selecteren kunt u het uiterlijk van de kaarten instellen. </para>
+
+<screenshot>
+  <screeninfo
+>De kaarten-sessie</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De kaarten-sessie</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Aanvankelijk is de voorzijde van de kaart te zien. Met <menuchoice
+> <guimenu
+>Toets</guimenu
+><guimenuitem
+>Controleren</guimenuitem
+></menuchoice
+> draait u de kaart om. </para>
+<para
+>Om naar de volgende kaart over te gaan kiest u <menuchoice
+><guimenu
+>Toets</guimenu
+><guimenuitem
+>Gekend</guimenuitem
+></menuchoice
+> wanneer u de kaart als goed wil aanrekenen of <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Niet gekend</guimenuitem
+> wanneer u de kaart als fout wilt aanrekenen. </para>
+<para
+>Selecteer <menuchoice
+><guimenu
+>Toets</guimenu
+><guimenuitem
+>Herhaal fouten</guimenuitem
+></menuchoice
+> om de kaarten die u niet goed had opnieuw te krijgen. </para>
+<para
+>Selecteer <menuchoice
+><guimenu
+>Toets</guimenu
+><guimenuitem
+>Opnieuw</guimenuitem
+></menuchoice
+> om de toets te herbeginnen. </para>
+<para
+>Onderaan het venster ziet u de scoregegevens: het totale aantal kaarten, de kaarten die u reeds hebt gezien, het aantal goede en het aantal foute antwoorden. </para>
+
+<tip>
+<para
+>Alle opties van het menu <guimenu
+>Toets</guimenu
+> vindt u ook terug in de Toets-werkbalk die u standaard aan de rechterzijde van het venster terugvindt.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>De meerkeuzevragen-sessie</title>
+
+<para
+>Selecteer Meerkeuzevragen uit het navigatiepaneel om een meerkeuzevragen-sessie op te starten met de actieve woordenlijst. Het programma gebruikt de modus die in het menu <guimenu
+>Modus</guimenu
+> werd gekozen. Wanneer u tijdens de sessie van modus verandert, wordt de toets opnieuw gestart.  </para>
+<para
+>De grootte van het venster kan worden aangepast zodat meer ruimte vrijkomt voor de vragen en de antwoorden. Dit kan nodig zijn bij lange opgaven. Ook de grootte van het gebruikte lettertype is bepalend voor de beschikbare ruimte. Het gebruikte lettertype kunt u aanpassen door in het menu <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Lettertype</guimenuitem
+></menuchoice
+> te selecteren. </para>
+<para
+>In het voorbeeld hieronder gaf de gebruiker een goed antwoord op de vorige vraag. Hij staat nu op het punt de volgende vraag te beantwoorden. </para>
+
+<screenshot>
+  <screeninfo
+>De meerkeuzevragen-sessie</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De meerkeuzevragen-sessie</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>In het midden links ziet u de mogelijke antwoorden. Kies het antwoord dat volgens u correct is. Gebruik <menuchoice
+><guimenu
+>Toets</guimenu
+> <guimenuitem
+>Controleren</guimenuitem
+></menuchoice
+> om te zien of u het bij het rechte eind hebt. Indien u in <menuchoice
+> <guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>&kwordquiz; instellen...</guimenuitem
+></menuchoice
+> bij Toetsinstellingen geopteerd hebt voor "Automatisch controleren" dan wordt uw antwoord onmiddellijk gecontroleerd. </para>
+<para
+>Onder de huidige vraag vindt u de vorige vraag terug, samen met uw antwoord. Indien uw antwoord fout was krijgt u ook de goede oplossing te zien. </para>
+<para
+>Selecteer <menuchoice
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Herhaal fouten</guimenuitem
+></menuchoice
+> om de vragen die u niet goed had opnieuw te krijgen. </para>
+<para
+>Selecteer <menuchoice
+> <guimenu
+>Toets</guimenu
+><guimenuitem
+>Opnieuw</guimenuitem
+> </menuchoice
+> om de toets te herbeginnen. Wanneer u voor een modus willekeurig hebt gekozen wordt de volgorde van de vragen veranderd. </para>
+<para
+>Onderaan het venster ziet u de scoregegevens: het totale aantal vragen, de vragen die u reeds hebt gekregen, het aantal goede en het aantal foute antwoorden. </para>
+
+<tip>
+<para
+>Alle opties van het menu <guimenu
+>Toets</guimenu
+> vindt u ook terug in de Toets-werkbalk die u standaard aan de rechterzijde van het venster terugvindt.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>De "Vraag &amp; antwoord"-sessie</title>
+<para
+>Selecteer Vraag en antwoord om een "Vraag &amp; uit het navigatiepaneel om een vraag-en-antwoord-sessie op te starten met de actieve woordenlijst. Het programma gebruikt de modus die in het menu <guimenu
+>Modus</guimenu
+> werd gekozen. Wanneer u tijdens de sessie van modus verandert, wordt de sessie opnieuw gestart.  </para>
+<para
+>De grootte van het venster kan worden aangepast zodat meer ruimte vrijkomt voor de vragen en de antwoorden. Dit kan nodig zijn bij lange opgaven. Ook de grootte van het gebruikte lettertype is bepalend voor de beschikbare ruimte. Het gebruikte lettertype kunt u aanpassen door in het menu <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Lettertype</guimenuitem
+></menuchoice
+> te selecteren. </para>
+<para
+>In het voorbeeld hieronder gaf de gebruiker een goed antwoord op de vorige vraag. De gebruiker staat nu op het punt de volgende vraag te beantwoorden. </para>
+
+<screenshot>
+  <screeninfo
+>De "Vraag &amp; antwoord"-sessie</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De "Vraag &amp; antwoord"-sessie</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Links bovenaan ziet u de vraag. Voer uw antwoord in. Gebruik <menuchoice
+><guimenu
+>Toets</guimenu
+><guimenuitem
+>Controleren</guimenuitem
+></menuchoice
+> of druk op &Enter; om te zien of u het bij het rechte eind hebt.  </para>
+<para
+>Onder de huidige vraag vindt u de vorige vraag terug, samen met uw antwoord. Indien uw antwoord fout was krijgt u ook de goede oplossing te zien. </para>
+<para
+>Selecteer <menuchoice
+><guimenu
+>Toets</guimenu
+><guimenuitem
+>Tip</guimenuitem
+></menuchoice
+> om de volgende letter van het antwoord te krijgen. In het dialoogvenster <menuchoice
+> <guimenu
+>Instellingen</guimenu
+><guimenuitem
+>&kwordquiz; instellen...</guimenuitem
+></menuchoice
+> kunt u bepalen of het vragen van een hint als fout moet worden aangerekend. </para>
+<para
+>Selecteer <menuchoice
+> <guimenu
+>Toets</guimenu
+> <guimenuitem
+>Herhaal fouten</guimenuitem
+></menuchoice
+> om de vragen die u niet goed had opnieuw te krijgen. </para>
+<para
+>Selecteer <menuchoice
+> <guimenu
+>Toets</guimenu
+><guimenuitem
+>Opnieuw</guimenuitem
+> </menuchoice
+> om de toets te herbeginnen. Wanneer u voor een modus willekeurig hebt gekozen wordt de volgorde van de vragen veranderd. </para>
+<para
+>Onderaan het venster ziet u de scoregegevens: het totale aantal vragen, de vragen die u reeds hebt gekregen, het aantal goede en het aantal foute antwoorden. </para>
+
+<tip>
+<para
+>Alle opties van het menu <guimenu
+>Toets</guimenu
+> vindt u ook terug in de Toets-werkbalk die u standaard aan de rechterzijde van het venster terugvindt.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Leeg-gedeelte-invullen</title>
+
+<para
+>'Leeg-gedeelte-invullen' is een krachtige optie bij het gebruik van &kwordquiz;. Deze optie laat toe een "Vraag en antwoord"-sessie op een bijzondere manier te gebruiken en dit vraagt om een beetje uitleg. Om deze functie te kunnen gebruiken moet u het eerst aanzetten in de <link linkend="dlg-config-editor"
+>configuratiedialoog</link
+>. </para>
+
+<para
+>Het volgende voorbeeld zou een woordenlijst in &kwordquiz; kunnen zijn: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Engels</entry>
+<entry
+>Duits</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My tailor is rich</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My [tailor] is rich</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My tailor [is rich].</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My [tailor] is [rich].</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>De vierkante haakjes zijn belangrijk. Zij bepalen hoe &kwordquiz; de vragen aanbiedt. </para>
+<para
+>Bij 1. komen er geen haakjes voor. Indien de opgave bestaat uit de zin in het Nederlands en bijgevolg de Engelse vertaling als antwoord verwacht wordt, dan moet de hele zin worden ingevoerd voor een goed antwoord. </para>
+<para
+>Opgave 2 is identiek, maar nu krijgen we niet alleen de zin in het Nederlands te zien, maar ook het grootste gedeelte van het antwoord : "My ......is rich. Om correct te antwoorden volstaat het "tailor" in te voeren. </para>
+<para
+>Uit opgave 3. blijkt dat een blanco kan overeenkomen met meer dan één woord. Het goede antwoord is "is rich". </para>
+<para
+>Bij opgave 4. krijgen we twee in te vullen blanco's. Het goede antwoord is hier "tailor; rich", dus de twee correcte antwoorden in de goede volgorde en gescheiden door een puntkomma. </para>
+<para
+>Gemarkeerde leegte heeft enkel zin in de antwoorden. Indien ze voorkomen in de vraag worden ze gewoon genegeerd. Deze haakjes spelen evenmin een rol bij meerkeuzevragen- en kaarten-sessies. Om het aanmaken van woordenlijsten met 'Leeg-gedeelte-invullen' eenvoudiger te maken zijn hiervoor in het menu en de hoofdwerkbalk commando's voorzien om leegte te markeren of de markering weg te halen. Maar het is uiteraard mogelijk de vierkante haakjes gewoon in te typen. &kwordquiz; controleert of alles klopt. Wanneer de tekst in het rood verschijnt dan klopt er iets niet met de haakjes en de toets kan niet worden gestart. </para>
+<para
+>De optie "Leeg-gedeelte-invullen" kan aan en uit worden gezet in de configuratiedialoog. Wanneer deze optie niet actief is, worden vierkante haakjes in de tekst beschouwd als gewone lettertekens en zal de snelheid van het programma iets hoger liggen. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Afdrukken</title>
+<para
+>Met &kwordquiz; kan een woordenlijst op verschillende manieren worden afgedrukt. Met <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afdrukken...</guimenuitem
+></menuchoice
+> krijgt u het standaard &kde; afdrukkenvenster te zien. Om de bijkomende &kwordquiz; opties te kunnen instellen moet u de knop <guibutton
+>Opties &gt;&gt;</guibutton
+> aanklikken om het tabblad <guilabel
+>Woordenschatopties</guilabel
+> te zien. Op dit tabblad kunt u dan kiezen op welke manier u de woordenschat wilt afdrukken, als woordenlijst (&ie; zoals in de bewerker), als toets of als kaarten. </para>
+<screenshot>
+  <screeninfo
+>Afdrukken Opties</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Afdrukken Opties</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Woordenlijst</title>
+<para
+>De woordenlijst wordt afgedrukt zoals deze in de editor voorkomt, met dezelfde lettertypes en dezelfde rijhoogte en kolombreedte. U moet de kolommen zo instellen dat ze binnen de breedte van het blad vallen.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Woordenlijst afdrukken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Woordenlijst afdrukken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Toets</title>
+<para
+>De woordenlijst wordt afgedrukt zoals hij in de editor wordt afgebeeld, maar de rechterkolom is leeg en er werd een derde kolom toegevoegd om de score in bij te houden. U moet de kolommen zo instellen dat ze binnen de breedte van het blad vallen.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Toets afdrukken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Toets afdrukken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Kaarten</title>
+<para
+>De kaarten worden per twee afgedrukt. De pagina wordt automatisch op landschap ingesteld.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Kaarten afdrukken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Kaarten afdrukken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+<!--FIXME not ported to kf5
+<chapter id="tutor">
+<title
+>The Tutor Mode</title>
+
+<para>
+  &kwordquiz; can be started in the Tutor mode. In this mode application pops up words in the chosen vocabulary randomly at certain time intervals. To start &kwordquiz; in the Tutor mode press <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> and enter <userinput
+><command
+>kwordquiz</command
+> <option
+>-g tutor <replaceable
+>vocabulary_file.kvtml</replaceable
+></option
+></userinput
+>. The part with <replaceable
+>vocabulary_file.kvtml</replaceable
+> can be omitted.
+</para>
+<screenshot>
+  <screeninfo
+>Welcome message of the Tutor mode</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Welcome message of the Tutor mode</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+  After pressing <guibutton
+>OK</guibutton
+> button, &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject
+> <imageobject
+> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> menu (it can be opened with &RMB; click on the icon).
+</para>
+
+<para>
+  There are four items in this menu:
+   <variablelist>
+     <varlistentry>
+       <term
+><guimenuitem
+>Start Exercise</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Start</action
+> the Tutor exercise.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Open...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> an existing vocabulary document.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Configure &kwordquiz; Tutor...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> the Tutor configuration dialog.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Tutor Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Tutor Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Tutor Settings</guilabel
+> page you can configure time intervals between the flashcards changes, flashcard appearance, and choose the option to <guilabel
+>Start exercise as soon as the user opens vocabulary file</guilabel
+>.
+	 </para>
+	 <para>
+	   In the current version, you can choose between <guilabel
+>Native</guilabel
+> and <guilabel
+>Minimalistic</guilabel
+> flashcard appearances.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Native flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Native flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Native appearance for the fancy vocabularies with images.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Minimalistic flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Minimalistic flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Minimalistic appearance for the simple vocabularies.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Shortcuts Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Shortcuts Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Shortcuts Settings</guilabel
+> page you can configure shortcuts for the Tutor actions. The defaults are <keycombo
+>&Ctrl;&Alt;<keycap
+>J</keycap
+></keycombo
+> for the closing and <keycombo
+>&Ctrl;&Alt;<keycap
+>H</keycap
+></keycombo
+> for the flipping of the flashcard.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Quit</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Quit</action
+> &kwordquiz;.
+	 </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+-->
+
+<chapter id="dialogs">
+<title
+>Dialoogvensters</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Algemene instellingen</title>
+<screenshot>
+  <screeninfo
+>Algemene instellingen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Algemene instellingen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>U kunt selecteren wat met voor type sessie een nieuw geopende woordenlijst zou moeten starten. Direct naar een toets gaan voorkomt dat u van te voren items ziet. </para>
+<para
+>Selecteer <guibutton
+>Standaard</guibutton
+> om alle instellingen op de voorgedefinieerde standaard te zetten. Selecteer <guibutton
+>Toepassen</guibutton
+> om de wijzigingen door te voeren zonder dit dialoogvenster af te sluiten. Selecteer <guibutton
+>OK</guibutton
+> om de wijzigingen door te voeren en dit dialoogvenster af te sluiten. Selecteer <guibutton
+>Annuleren</guibutton
+> om het venster af te sluiten zonder enige wijziging door te voeren. </para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title
+>Editor-instellingen</title>
+<screenshot>
+  <screeninfo
+>Editor-instellingen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Editor-instellingen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>U kunt instellen wat er gebeurt wanneer u op &Enter;-toets drukt bij het werken in de editor. </para>
+<para
+>Hier kunt u ook selecteren of de <link linkend="fill-in-the-blank"
+>"Blanco's invullen"</link
+> optie moet worden aangezet. Wanneer deze optie is uitgeschakeld dan zal het programma iets sneller werken. </para>
+<para
+>Selecteer <guibutton
+>Standaard</guibutton
+> om alle instellingen op de voorgedefinieerde standaard te zetten. Selecteer <guibutton
+>Toepassen</guibutton
+> om de wijzigingen door te voeren zonder dit dialoogvenster af te sluiten. Selecteer <guibutton
+>OK</guibutton
+> om de wijzigingen door te voeren en dit dialoogvenster af te sluiten. Selecteer <guibutton
+>Annuleren</guibutton
+> om het venster af te sluiten zonder enige wijziging door te voeren. </para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title
+>Toetsinstellingen</title>
+<screenshot>
+  <screeninfo
+>Toetsinstellingen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Toetsinstellingen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Voor een kaarten-sessie kan worden ingesteld of de kaarten automatisch moeten omgedraaid worden en of ze daarbij als goed of fout moeten geteld worden. Ook de wachttijd tussen het omdraaien van de kaarten kan worden aangegeven. </para>
+<para
+>Voor een meerkeuzevragen-sessie kan worden ingesteld of bij het aanklikken van een antwoord onmiddellijk moet gecontroleerd worden of het goed of fout is. Standaard moet u daarvoor eerst op <guilabel
+>Controleren</guilabel
+> drukken of in het menu <menuchoice
+><guimenu
+>Toets</guimenu
+> <guimenuitem
+>Controleren</guimenuitem
+></menuchoice
+> selecteren. </para>
+<para
+>Voor een "Vraag &amp; antwoord"-sessie kan worden ingesteld of het gebruik van een hint (<menuchoice
+><guimenu
+>Toets</guimenu
+><guimenuitem
+>Tip</guimenuitem
+> </menuchoice
+>) als een fout antwoord moet worden geteld. </para>
+<para
+>Voor alle sessie kunt u kiezen of de score als een percentage moet worden weergegeven. </para>
+<para
+>Selecteer <guibutton
+>Standaard</guibutton
+> om alle instellingen op de voorgedefinieerde standaard te zetten. Selecteer <guibutton
+>Toepassen</guibutton
+> om de wijzigingen door te voeren zonder dit dialoogvenster af te sluiten. Selecteer <guibutton
+>OK</guibutton
+> om de wijzigingen door te voeren en dit dialoogvenster af te sluiten. Selecteer <guibutton
+>Annuleren</guibutton
+> om het venster af te sluiten zonder enige wijziging door te voeren. </para>
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title
+>Instellingen voor het uiterlijk van kaarten</title>
+<screenshot>
+  <screeninfo
+>Instellingen voor het uiterlijk van kaarten</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Instellingen voor het uiterlijk van kaarten</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Voor kaart-sessies kunt u het <guilabel
+>Lettertype:</guilabel
+> de tekst-, kaart- en framekleuren selecteren. Klik op de knop <guibutton
+>Kaart omdraaien</guibutton
+> om te schakelen tussen de <guilabel
+>Voorkant</guilabel
+> en de <guilabel
+>Achterkant</guilabel
+> van de kaarten. </para>
+<para
+>Selecteer <guibutton
+>Standaard</guibutton
+> om alle instellingen op de voorgedefinieerde standaard te zetten. Selecteer <guibutton
+>Toepassen</guibutton
+> om de wijzigingen door te voeren zonder dit dialoogvenster af te sluiten. Selecteer <guibutton
+>OK</guibutton
+> om de wijzigingen door te voeren en dit dialoogvenster af te sluiten. Selecteer <guibutton
+>Annuleren</guibutton
+> om het venster af te sluiten zonder enige wijziging door te voeren. </para>
+</sect1>
+
+<sect1 id="dlg-config-characters">
+<title
+>Instellingen voor speciale tekens</title>
+<screenshot>
+  <screeninfo
+>Instellingen voor speciale tekens</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Instellingen voor speciale tekens</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Er zijn negen sneltoetscombinaties die aan een speciaal teken of teken kunnen gekoppeld worden. Kies een sneltoetscombinatie uit de lijst en klik op <guibutton
+>Teken...</guibutton
+> om een teken te selecteren met behulp van dit <link linkend="dlg-special-characters"
+>dialoogvenster</link
+>. Een voorbeeld van het ingestelde teken ziet u onderaan het dialoogvenster. </para>
+<para
+>Ook de sneltoetsen zelf kunnen worden aangepast via <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Sneltoetsen instellen</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Selecteer <guibutton
+>Standaard</guibutton
+> om alle instellingen op de voorgedefinieerde standaard te zetten. Selecteer <guibutton
+>Toepassen</guibutton
+> om de wijzigingen door te voeren zonder dit dialoogvenster af te sluiten. Selecteer <guibutton
+>OK</guibutton
+> om de wijzigingen door te voeren en dit dialoogvenster af te sluiten. Selecteer <guibutton
+>Annuleren</guibutton
+> om het venster af te sluiten zonder enige wijziging door te voeren. </para>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Kolominstellingen</title>
+<para
+>U kunt deze dialoog openen vanuit de menubalk met <menuchoice
+><guimenu
+>Woordenschat</guimenu
+><guimenuitem
+>Kolominstellingen...</guimenuitem
+></menuchoice
+></para>
+<screenshot>
+  <screeninfo
+>Kolominstellingen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Kolominstellingen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Gebruik deze dialoog om de titels van de kolommen, de indeling van het toetsenbord en de breedte van de woordenlijst in te stellen. Selecteer <guibutton
+>OK</guibutton
+> om de wijzigingen op te nemen, <guibutton
+>Annuleren</guibutton
+> om elke wijziging ongedaan te maken. </para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title
+>Teken selecteren</title>
+<para
+>Klik op de knop <guibutton
+>Teken...</guibutton
+> op de pagina <guilabel
+>Speciale tekens</guilabel
+> in de instellingendialoog van &kwordquiz; om dit venster te openen.</para>
+<screenshot>
+  <screeninfo
+>Teken selecteren</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Teken selecteren</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Met dit dialoogvenster kunt u een teken kiezen dat aan een <link linkend="dlg-config-characters"
+>sneltoets</link
+> moet gekoppeld worden. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Dankbetuigingen en licentie</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Programma copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Documentatie-copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+&meld.fouten;&vertaling.marc;&vertaling.tom;&vertaling.freek; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

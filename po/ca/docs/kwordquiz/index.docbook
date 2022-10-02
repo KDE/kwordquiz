@@ -1,0 +1,2097 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>El manual del &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Daniel</firstname
+> <surname
+>Fortuny Anguera</surname
+> <affiliation
+><address
+><email
+>dfortuny@xtec.net</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+>&traductor.Antoni.Bella; 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>30 de gener de 2020</date>
+<releaseinfo
+>Aplicacions 20.12</releaseinfo>
+
+<abstract>
+<para
+>El &kwordquiz; és un programa d'aprenentatge de vocabulari per al &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>targetes ràpides</keyword>
+<keyword
+>vocabulari</keyword>
+<keyword
+>idioma</keyword>
+<keyword
+>educació</keyword>
+<keyword
+>escola</keyword>
+<keyword
+>facultat</keyword>
+<keyword
+>universitat</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+<para
+>El &kwordquiz; és una eina potent que permet dominar nous vocabularis. Pot ser un idioma o qualsevol altre tipus de terminologia. </para>
+<sect1 id="easy-to-use">
+<title
+>Fàcil utilització</title>
+
+<para
+>Amb el &kwordquiz; construïu el vostre document de vocabulari en una manera senzilla i intuïtiva. La disposició bàsica és una quadrícula de dues columnes, en la qual apareix el vocabulari sota una forma que es coneix i a sota una altra forma que es vol aprendre. Canvieu els títols de les columnes per a veure el que esteu practicant. </para>
+
+<sect2 id="practice-modes">
+<title
+>Mètodes d'utilització</title>
+
+<para
+>Abans de començar cal triar com voleu fer l'exercici. El &kwordquiz; ofereix cinc mètodes diferents per a fer l'aprenentatge més eficaç. Els diferents mètodes donen possibilitats per a explorar el vocabulari en un ordre seqüencial o aleatori, i en només un o en els dos sentits a la vegada. </para>
+</sect2>
+
+<sect2 id="quiz-types">
+<title
+>Tipus de qüestionari</title>
+
+<para
+>Una vegada enteneu el vocabulari i seleccioneu un mètode, estareu preparat per a començar un qüestionari. Possiblement voldreu començar amb una sessió de Targetes ràpides. Per a passar a continuació a un qüestionari de tria múltiple o a enfrontar directament el mètode de preguntes i respostes. Obtindreu una revisió immediata i directa sobre les respostes correctes o incorrectes, i tindreu la possibilitat de tornar a respondre les respostes errònies, millorant així la seva eficàcia d'aprenentatge. Si necessiteu una mica d'ajuda, podreu utilitzar la funció d'índex. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Documents de vocabulari</title>
+<para
+>El &kwordquiz; pot obrir diversos tipus de dades de vocabulari. El format predeterminat és <filename class="extension"
+>.kvtml</filename
+>, un format de fitxer utilitzat per diversos programes &kde;. El &kwordquiz; també pot obrir fitxers <filename class="extension"
+>.wql</filename
+> creats pel &kwordquiz; per a &Windows;, els fitxers <filename class="extension"
+>.csv</filename
+> amb el text separat per comes, els <ulink url="http://www.vokabeln.de/v1/download.htm"
+>fitxers <filename class="extension"
+>.voc</filename
+></ulink
+> creats per l'antiga versió del Vokabeltrainer, els <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+>fitxers <filename class="extension"
+>.xdxf</filename
+></ulink
+> i <filename class="extension"
+>.xml.gz</filename
+> creats per les antigues versions del <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>El &kwordquiz; pot registrar els vostres documents de vocabulari sota diferents formats. De manera predeterminada és el format <filename class="extension"
+>.kvtml</filename
+> utilitzat per altres programes &kde;. Una altra opció disponible és el text separat amb comes <filename class="extension"
+>.csv</filename
+>. </para>
+<para
+>Podeu tenir oberts simultàniament diversos fitxers i copiar o desplaçar amb facilitat entrades entre els fitxers. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referència d'ordres</title>
+
+<sect1 id="file_menu">
+<title
+>El menú Fitxer</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Nou</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Crea un document <action
+>nou</action
+> de vocabulari. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Obre...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Obre</action
+> un o més documents de vocabulari. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guisubmenu
+>Obre'n un de recent</guisubmenu
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Obre</action
+> un document de vocabulari recentment utilitzat. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Descarrega vocabularis nous...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Descarrega</action
+> vocabularis nous. Els vocabularis descarregats es poden trobar a la carpeta <filename class="directory"
+>$XDG_DATA_HOME/kvtml</filename
+>. <envar
+>$XDG_DATA_HOME</envar
+> sol ser una carpeta oculta en la vostra carpeta d'inici anomenada <filename class="directory"
+>.local</filename
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Desa</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Desa</action
+> el document de vocabulari actiu al disc. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Desa com a...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Desa</action
+> el document de vocabulari actiu amb un nom nou. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Imprimeix...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Imprimeix</action
+> el document de vocabulari actiu. El &kwordquiz; proporciona diverses opcions per a <link linkend="printing"
+>imprimir</link
+> els vostres documents de vocabulari. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Vista prèvia d'impressió...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Mostra</action
+> una vista prèvia del document de vocabulari actiu imprès pel &kwordquiz;. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Tanca</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Tanca</action
+> el document de vocabulari actiu. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Surt</action
+> del &kwordquiz;. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="edit-menu">
+<title
+>El menú Edita</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Desfés</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Desfà</action
+> l'última ordre. El nom d'aquest element canviarà per a precisar què desfarà. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Refés</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Refà</action
+> l'última ordre. El nom d'aquest element canviarà per a precisar què refarà. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Retalla</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Retalla</action
+> la selecció i ho manté al porta-retalls. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Copia</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Copia</action
+> la selecció i ho manté al porta-retalls. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Enganxa</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Enganxa</action
+> el contingut del porta-retalls al lloc seleccionat. Si se selecciona una única cel·la, el &kwordquiz; activarà l'enganxat intel·ligent, calcularà l'espai requerit per a l'enganxat i afegirà línies si és necessari. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Neteja</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Neteja</action
+> la selecció. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Insereix una fila</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Insereix</action
+> una fila nova en el lloc seleccionat. Si la selecció és de més d'una fila, s'inserirà un nombre igual de files. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Suprimeix la fila</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Suprimeix</action
+> la fila seleccionada. Si la selecció s'estén sobre més d'una fila, se suprimiran totes les files seleccionades. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Marca com a espai</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Marca els espais</action
+> del text seleccionat (o la paraula en la qual es col·loca el cursor), perquè l'empreu com a espai en un qüestionari <link linkend="fill-in-the-blank"
+>«Omplir els espais en blanc»</link
+>, &ead;, que és envoltat per claudàtors. Disponible només si activeu <link linkend="dlg-config-editor"
+>Omplir els espais en blanc</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Edita</guimenu
+> <guimenuitem
+>Desmarca els espais</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Desmarca els espais en blanc</action
+> assignats anteriorment, &ead;, que s'eliminaran els claudàtors. Disponible només si s'activa <link linkend="dlg-config-editor"
+>Omplir els espais en blanc</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+
+</variablelist>
+</sect1>
+
+<sect1 id="vocabulary-menu">
+<title
+>El menú Vocabulari</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vocabulari</guimenu
+> <guimenuitem
+>Configuració de les columnes...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Defineix</action
+> els títols, les disposicions de teclat i les amplades de les dues columnes en el vocabulari. Mostra un <link linkend="dlg-languages"
+>diàleg</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulari</guimenu
+> <guimenuitem
+>Tipus de lletra...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Canvia</action
+> el tipus de lletra utilitzat per a visualitzar el vocabulari. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulari</guimenu
+> <guimenuitem
+>Enllaça una imatge...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Especifica</action
+> la imatge que ha d'estar vinculada amb l'entrada actual. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulari</guimenu
+> <guimenuitem
+>Enllaça un so...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Especifica</action
+> el so que ha d'estar vinculat amb l'entrada actual. </para>
+    </listitem>
+  </varlistentry>
+
+ <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulari</guimenu
+> <guimenuitem
+>Ajusta l'alçada de les files</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Ajusta</action
+> l'alçada de les files per a omplir el contingut. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Vocabulari</guimenu
+> <guimenuitem
+>Barreja</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Barreja</action
+> el vocabulari introduït en un ordre aleatori. No es canviarà l'ordre de les entrades en el document de vocabulari. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="mode-menu">
+<title
+>El menú Mode</title>
+<para
+>El menú proporciona cinc modes diferents per al qüestionari.</para>
+
+  <note
+><para
+>El nom dels menús canviaran per a reflectir els títols de les columnes del document de vocabulari actiu. El mode ha de seleccionar-se abans d'iniciar el qüestionari. El mode seleccionat s'aplicarà a Targetes ràpides, Tria múltiple i Preguntes i respostes.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Mode</guimenu
+> <guimenuitem
+>1 Columna 1 -&gt; Columna 2 en ordre</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>En el transcurs del qüestionari se us donaran les paraules de la columna 1 i se us demanarà que indiqueu les correspondències de la columna 2. L'aparició serà segons l'ordre en el document de vocabulari. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Mode</guimenu
+> <guimenuitem
+>2 Columna 2 -&gt; Columna 1 en ordre</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>En el transcurs del qüestionari se us donaran les paraules de la columna 2 i se us demanarà que indiqueu les correspondències de la columna 1. L'aparició serà segons l'ordre en el document de vocabulari. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Mode</guimenu
+> <guimenuitem
+>3 Columna 1 -&gt; Columna 2 aleatòriament</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>En el transcurs del qüestionari se us donaran les paraules de la columna 1 i se us demanarà que indiqueu les correspondències de la columna 2. L'aparició serà en ordre aleatori sense repetir les preguntes. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Mode</guimenu
+> <guimenuitem
+>4 Columna 2 -&gt; Columna 1 aleatòriament</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>En el transcurs del qüestionari se us donaran les paraules de la columna 2 i se us demanarà que indiqueu les correspondències de la columna 1. L'aparició serà en ordre aleatori sense repetir les preguntes. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Mode</guimenu
+> <guimenuitem
+>5 Columna 1 &lt;-&gt; Columna 2 aleatòriament</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>En el transcurs del qüestionari se us donaran les paraules de les columnes 1 o 2 i se us demanarà que indiqueu les correspondències de l'altra columna. L'aparició serà en ordre aleatori sense repetir les combinacions. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="quiz-menu">
+<title
+>El menú Qüestionari</title>
+
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Retorn</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Qüestionari</guimenu
+> <guimenuitem
+>Comprova</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Comprova</action
+> si la seva resposta és correcta. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Qüestionari</guimenu
+> <guimenuitem
+>Ho sé</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Compta</action
+> la resposta com a correcta en la sessió de targetes ràpides sense haver-la respost. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Qüestionari</guimenu
+> <guimenuitem
+>No ho sé</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Compta</action
+> la resposta com una errada en la sessió de targetes ràpides sense haver-la respost. Podeu repetir aquestes preguntes més tard seleccionant <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Repeteix els errors</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Qüestionari</guimenu
+> <guimenuitem
+>Consell</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Apunta</action
+> la següent lletra correcta en la sessió de Preguntes i respostes. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Qüestionari</guimenu
+> <guimenuitem
+>Reprodueix l'àudio</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Reprodueix</action
+> el so que es va vincular amb l'entrada a <menuchoice
+><guimenu
+>Vocabulari</guimenu
+><guimenuitem
+>Enllaça un so</guimenuitem
+></menuchoice
+>. </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Qüestionari</guimenu
+> <guimenuitem
+>Reinicia</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Torna a començar</action
+> la sessió de qüestionari des del començament. Els marcadors quedaran a 0. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Qüestionari</guimenu
+><guimenuitem
+> Repeteix els errors</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Responeu de nou</action
+> les preguntes que vàreu respondre de manera errònia. Disponible quan s'han respost totes les preguntes. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Qüestionari</guimenu
+> <guimenuitem
+>Exporta els errors com a...</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Exporta</action
+> qualsevol pregunta que vàreu respondre de manera errònia com a un nou document de vocabulari. Disponible quan s'han respost totes les preguntes. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings-help-menu">
+<title
+>Els menús Arranjament i Ajuda</title
+> 
+<para
+>El &kwordquiz; té la configuració comuna al &kde; i els elements dels menús <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Respecte a aquests elements, llegiu les seccions sobre <ulink url="help:/fundamentals/menus.html#menus-settings"
+>El menú Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. Amb aquesta entrada de menú addicional: </para>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Mostra la barra de cerques</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+><action
+>Mostra/oculta</action
+> la visualització de la barra de cerques. </para>
+    </listitem>
+  </varlistentry>
+
+</variablelist>
+</sect1>
+
+</chapter>
+
+<chapter id="main-window">
+<title
+>La finestra principal</title>
+
+<para
+>La finestra principal té un plafó de navegació al costat esquerre des del qual es poden activar els components principals del programa. </para>
+<para
+>L'<link linkend="editor"
+>editor</link
+> es pot activar prement <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F6</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Es pot iniciar una sessió de <link linkend="flashcard"
+>targetes ràpides</link
+> prement <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F7</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Es pot iniciar una sessió de <link linkend="multiple"
+>tria múltiple</link
+> prement <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F8</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+<para
+>Es pot iniciar una sessió de <link linkend="question-and-answer"
+>preguntes i respostes</link
+> prement <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+><interface
+></interface
+></menuchoice
+>. </para>
+
+<screenshot>
+  <screeninfo
+>La finestra principal</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>La finestra principal</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>L'Editor de Vocabulari</title>
+
+<para
+>Els documents de vocabulari tenen l'aspecte d'una quadrícula similar a un full de càlcul. La quadrícula està constituïda per cel·les organitzades en dues columnes i una sèrie de files. Cada columna i cada línia tenen un encapçalament. Els encapçalaments de les columnes s'utilitzen per a especificar els títols del document de vocabulari. Podeu configurar-les seleccionant <menuchoice
+><guimenu
+>Vocabulari</guimenu
+><guimenuitem
+>Configuració de les columnes...</guimenuitem
+></menuchoice
+>. Els encapçalaments de línia numeren les línies consecutivament. </para>
+<para
+>Els encapçalaments de les columnes també es poden utilitzar per a ordenar el vocabulari. Simplement feu clic a l'encapçalament de la columna que voleu ordenar. </para>
+<para
+>Podeu fer clic a una cel·la de la quadrícula per a fer-la activa. Podeu seleccionar diverses cel·les per a copiar-les, o qualsevol altra opció d'edició, mantenint el botó esquerre del ratolí premut i lliscant alhora sobre les mateixes cel·les. Per a seleccionar una línia o una columna sencera feu clic a l'encapçalament. </para>
+
+<screenshot>
+  <screeninfo
+>L'editor de vocabulari</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>L'editor de vocabulari</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>En el document, confeccioneu una llista de vocabulari introduint parells de mots a les dues columnes. Podeu introduir el text en la cel·la activa simplement començant a escriure. La cel·la estarà llavors en el mode d'edició i podreu seleccionar la totalitat o part del text. Podeu editar una cel·la fent doble clic de ratolí o prement la tecla <keycap
+>F2</keycap
+>, i també fer els canvis directament a la cel·la. </para>
+<para
+>Quan acabeu d'escriure una entrada, premeu la tecla &Intro; i la cel·la següent es tornarà automàticament activa. Per tant, és fàcil introduir ràpidament diverses entrades. Podeu adaptar aquest comportament seleccionant <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura el &kwordquiz;...</guimenuitem
+></menuchoice
+>. Quan arribeu a la fila de baix de la quadrícula, s'afegirà una nova fila quan premeu &Intro;, llavors només haureu de seguir introduint dades. Quan creeu una finestra nova, de manera predeterminada contindrà 20 files, però no hi ha límit en les files que pot contenir un document. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Sessió de targetes ràpides</title>
+
+<para
+>Seleccioneu Targetes ràpides en el plafó de navegació per a començar una sessió de Targetes ràpides sobre les entrades del document de vocabulari actiu. S'utilitzarà el mode seleccionat en el menú <guimenu
+>Mode</guimenu
+>. Si canvieu el mode durant una sessió, la sessió s'iniciarà des del començament. </para>
+
+<para
+>Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida del tipus de lletra també influirà sobre com s'ajustarà el text en les diferents parts de la finestra. Seleccionant <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura el &kwordquiz;...</guimenuitem
+></menuchoice
+> podreu configurar l'aparença de les targetes ràpides. </para>
+
+<screenshot>
+  <screeninfo
+>Sessió de targetes ràpides</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessió de targetes ràpides</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>En iniciar es visualitzarà la cara davantera de la targeta. Utilitzeu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Comprova</guimenuitem
+></menuchoice
+> per a veure l'altre costat, o sigui, la resposta. </para>
+<para
+>Per a anar a la targeta següent, seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Ho sé</guimenuitem
+></menuchoice
+> per a comptar la targeta com a correcta o, <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>No ho sé</guimenuitem
+></menuchoice
+> per a comptar la targeta com a errònia. </para>
+<para
+>Seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Repeteix els errors</guimenuitem
+></menuchoice
+> per a esmenar les targetes que han estat comptabilitzades com a errònies. </para>
+<para
+>Seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Reinicia</guimenuitem
+></menuchoice
+> per a reiniciar la sessió des del començament. Si utilitzeu un mode aleatori, les targetes es tornaran a barrejar. </para>
+<para
+>La secció resultant a la part baixa de la pantalla mostra el nombre total de targetes, el nombre de targetes que veieu, el nombre de targetes comptades com a correctes i el nombre de targetes comptades com errònies. </para>
+
+<tip>
+<para
+>Tots els elements en el menú <guimenu
+>Qüestionari</guimenu
+> es troben disponibles a la barra d'eines de qüestionari que de manera predeterminada es troba al costat dret.</para>
+</tip>
+
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Sessió de tria múltiple</title>
+
+<para
+>Seleccioneu Tria múltiple en el plafó de navegació per a començar una sessió de Tria múltiple sobre les entrades del document de vocabulari actiu. S'utilitzarà el mode seleccionat en el menú <guimenu
+>Mode</guimenu
+>. Si canvieu el mode durant una sessió, la sessió s'iniciarà des del començament. </para>
+<para
+>Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida del tipus de lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les diferents parts de la finestra. </para>
+<para
+>En l'exemple següent l'usuari dona una resposta errònia a la pregunta. Ell o ella està responent a la següent qüestió. </para>
+
+<screenshot>
+  <screeninfo
+>Sessió de tria múltiple</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessió de tria múltiple</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Les eleccions possibles es mostren a dalt a l'esquerra. Seleccioneu aquella que penseu que sigui correcte. Utilitzeu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Comprova</guimenuitem
+></menuchoice
+> per a veure si la resposta és correcta. Si vàreu activar el mode automàtic en <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura el &kwordquiz;...</guimenuitem
+></menuchoice
+> la vostra selecció es comprovarà automàticament. </para>
+<para
+>La pregunta anterior es mostra a sota de la pregunta que es fa en aquell moment. També s'indicarà la resposta que heu donat. Si heu respost incorrectament, també es mostrarà la resposta correcta. </para>
+<para
+>Seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Repeteix els errors</guimenuitem
+></menuchoice
+> per a repetir les preguntes que heu respost incorrectament. </para>
+<para
+>Seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Reinicia</guimenuitem
+></menuchoice
+> per a reiniciar la sessió des del començament. Si utilitzeu un mode aleatori, les preguntes es tornaran a barrejar. </para>
+<para
+>A la part baixa de la pantalla es mostra una secció de marcador amb el nombre total de preguntes, el nombre de preguntes a les quals s'ha respost, el nombre de respostes correctes i el nombre de respostes errònies. </para>
+
+<tip>
+<para
+>Tots els elements en el menú <guimenu
+>Qüestionari</guimenu
+> es troben disponibles a la barra d'eines de qüestionari que de manera predeterminada es troba al costat dret.</para>
+</tip>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Sessió de preguntes i respostes</title>
+<para
+>Seleccioneu Preguntes i respostes en el plafó de navegació per a començar una sessió de Preguntes i respostes sobre les entrades en el vocabulari actiu. S'utilitzarà el mode seleccionat en el menú <guimenu
+>Mode</guimenu
+>. Si canvieu el mode durant una sessió, la sessió s'iniciarà des del començament. </para>
+<para
+>Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida del tipus de lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les diferents parts de la finestra. </para>
+<para
+>En l'exemple següent l'usuari dona una resposta correcta a la qüestió anterior (per a veure el comportament en una resposta errònia, vegeu el capítol <link linkend="multiple"
+>Tria múltiple</link
+>). Ell o ella està responent a la qüestió següent. </para>
+
+<screenshot>
+  <screeninfo
+>Sessió de Preguntes i respostes</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessió de Preguntes i respostes</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>La vostra pregunta apareix a dalt a l'esquerra. Escriviu la vostra resposta al camp d'edició. Utilitzeu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Comprova</guimenuitem
+></menuchoice
+> o &Intro; per a comprovar si la vostra resposta és correcta. </para>
+<para
+>La pregunta anterior es mostra a sota de la pregunta que es fa en aquell moment. També s'indicarà la resposta que heu donat. Si heu respost incorrectament, també es mostrarà la resposta correcta. </para>
+<para
+>Seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Consell</guimenuitem
+></menuchoice
+> per a obtenir la lletra correcta de la resposta. A <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura el &kwordquiz;...</guimenuitem
+></menuchoice
+> podreu optar per comptar qualsevol pregunta en què utilitzeu la funció de consell com a errònia. </para>
+<para
+>Seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Repeteix els errors</guimenuitem
+></menuchoice
+> per a repetir les preguntes que heu respost incorrectament. </para>
+<para
+>Seleccioneu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Reinicia</guimenuitem
+></menuchoice
+> per a reiniciar la sessió des del començament. Si utilitzeu un mode aleatori, les preguntes es tornaran a barrejar. </para>
+<para
+>A la part baixa de la pantalla es mostra una secció de marcador amb el nombre total de preguntes, el nombre de preguntes a les quals s'ha respost, el nombre de respostes correctes i el nombre de respostes errònies. </para>
+
+<tip>
+<para
+>Tots els elements en el menú <guimenu
+>Qüestionari</guimenu
+> es troben disponibles a la barra d'eines de qüestionari que de manera predeterminada es troba al costat dret.</para>
+</tip>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Omplir els espais en blanc</title>
+
+<para
+>Omplir els espais en blanc és un mode potent d'utilització del &kwordquiz;. És un tipus de qüestionari que cal descriure'l amb més detall. Per a utilitzar aquesta característica l'haureu d'activar en el <link linkend="dlg-config-editor"
+>diàleg de configuració</link
+>. </para>
+
+<para
+>Considereu la taula següent. Això podria ser una llista de vocabulari en el &kwordquiz;: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Anglès</entry>
+<entry
+>Alemany</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>Cal tenir en compte la col·locació dels claudàtors. Detallen com haureu de contestar el qüestionari. </para>
+<para
+>En el primer no hi ha claudàtors. Suposem que el text en Anglès sigui la pregunta i el text en Alemany la resposta. Per a una resposta correcta haureu de donar l'expressió sencera «Wir besitzen einen Computer». </para>
+<para
+>En el segon, el &kwordquiz; us mostra la pregunta i també «Wir........ einen Computer». Per a una resposta correcta és suficient escriure «besitzen». </para>
+<para
+>En el tercer mostra que un espai buit pot constar de més d'una paraula. La resposta correcta és «besitzen einen». </para>
+<para
+>En el quart hi ha dos buits. Per a indicar-ho en la resposta haureu d'escriure «besitzen; Computer», &ead;, separar els buits amb un punt i coma amb la finalitat d'obtenir una resposta correcta. </para>
+<para
+>Els buits marcats només són significatius si apareixen en la resposta. D'altra manera els claudàtors seran ignorats. A més, els claudàtors no tenen efecte en els qüestionaris de tria múltiple. Per a simplificar la creació de documents de vocabulari de tipus «Omplir els espais en blanc» hi ha ordres de menú per a marcar i desmarcar els espais en blanc. Naturalment també podeu escriure els claudàtors. El &kwordquiz; us comprova la sintaxi. Si el text apareix en vermell, ens indicarà que hi ha un error amb els claudàtors i que el qüestionari no pot començar. </para>
+<para
+>La funció «Habilita omplir els espais en blanc» pot activar-se o desactivar-se al diàleg de configuració. Desactiveu-la i fareu possible la utilització dels tipus de lletra que tenen altres caràcters en lloc dels claudàtors. Això també accelerarà lleugerament la velocitat d'execució. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Impressió</title>
+<para
+>El &kwordquiz; ofereix la possibilitat d'imprimir els documents de vocabulari sota diversos formats. Quan seleccioneu <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Imprimeix...</guimenuitem
+></menuchoice
+> se us presentarà el diàleg normal d'impressió del &kde;. Perquè accediu a les funcions especials del &kwordquiz; haureu de fer clic sobre el botó <guibutton
+>Opcions &gt;&gt;</guibutton
+> per a veure la pestanya <guilabel
+>Configuració del vocabulari</guilabel
+>. En el menú d'impressió podeu imprimir el document com una llista de vocabulari (&ead;, tal com s'indica en l'editor), com un exercici de vocabulari o com targetes ràpides. </para>
+<screenshot>
+  <screeninfo
+>Opcions d'impressió del vocabulari</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Opcions d'impressió del vocabulari</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Llista de vocabulari</title>
+<para
+>El vocabulari l'imprimireu tal com s'indica a l'editor; incloent-hi el tipus de lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Impressió de la llista de vocabulari</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Impressió de la llista de vocabulari</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Examen de vocabulari</title>
+<para
+>El vocabulari s'imprimirà tal com s'indica a l'editor; a part que es deixarà buida la columna de la dreta i s'afegirà una tercera columna per a valorar el resultat. Les opcions utilitzades incloses: el tipus de lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Impressió de l'examen de vocabulari</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Impressió de l'examen de vocabulari</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Targetes ràpides</title>
+<para
+>Dues per pàgina de 7,62×12,7 cm. Les targetes sempre s'imprimiran en horitzontal.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Impressió de targetes ràpides</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Impressió de targetes ràpides</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+<!--FIXME not ported to kf5
+<chapter id="tutor">
+<title
+>The Tutor Mode</title>
+
+<para>
+  &kwordquiz; can be started in the Tutor mode. In this mode application pops up words in the chosen vocabulary randomly at certain time intervals. To start &kwordquiz; in the Tutor mode press <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> and enter <userinput
+><command
+>kwordquiz</command
+> <option
+>-g tutor <replaceable
+>vocabulary_file.kvtml</replaceable
+></option
+></userinput
+>. The part with <replaceable
+>vocabulary_file.kvtml</replaceable
+> can be omitted.
+</para>
+<screenshot>
+  <screeninfo
+>Welcome message of the Tutor mode</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-tutor-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Welcome message of the Tutor mode</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para>
+  After pressing <guibutton
+>OK</guibutton
+> button, &kwordquiz; continues to work in background. You can control &kwordquiz; using tray icon <inlinemediaobject
+> <imageobject
+> <imagedata fileref="kwordquiz-icon.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> menu (it can be opened with &RMB; click on the icon).
+</para>
+
+<para>
+  There are four items in this menu:
+   <variablelist>
+     <varlistentry>
+       <term
+><guimenuitem
+>Start Exercise</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Start</action
+> the Tutor exercise.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Open...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> an existing vocabulary document.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Configure &kwordquiz; Tutor...</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Open</action
+> the Tutor configuration dialog.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Tutor Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-settings.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Tutor Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Tutor Settings</guilabel
+> page you can configure time intervals between the flashcards changes, flashcard appearance, and choose the option to <guilabel
+>Start exercise as soon as the user opens vocabulary file</guilabel
+>.
+	 </para>
+	 <para>
+	   In the current version, you can choose between <guilabel
+>Native</guilabel
+> and <guilabel
+>Minimalistic</guilabel
+> flashcard appearances.
+	 </para>
+	 <screenshot>
+	   <screeninfo
+>The Native flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-native.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Native flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Native appearance for the fancy vocabularies with images.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Minimalistic flashcard appearance</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-popup-minimalistic.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Minimalistic flashcard appearance</phrase>
+	     </textobject>
+	     <caption>
+	       <para>
+		 Use Minimalistic appearance for the simple vocabularies.
+	       </para>
+	     </caption>
+	   </mediaobject>
+	 </screenshot>
+	 <screenshot>
+	   <screeninfo
+>The Shortcuts Settings page</screeninfo>
+	   <mediaobject>
+	     <imageobject>
+	       <imagedata fileref="kwq-tutor-shortcuts.png" format="PNG"/>
+	     </imageobject>
+	     <textobject>
+	       <phrase
+>The Shortcuts Settings page</phrase>
+	     </textobject>
+	   </mediaobject>
+	 </screenshot>
+	 <para>
+	   Using the <guilabel
+>Shortcuts Settings</guilabel
+> page you can configure shortcuts for the Tutor actions. The defaults are <keycombo
+>&Ctrl;&Alt;<keycap
+>J</keycap
+></keycombo
+> for the closing and <keycombo
+>&Ctrl;&Alt;<keycap
+>H</keycap
+></keycombo
+> for the flipping of the flashcard.
+	 </para>
+       </listitem>
+     </varlistentry>
+     <varlistentry>
+       <term
+><guimenuitem
+>Quit</guimenuitem
+></term>
+       <listitem>
+	 <para>
+	   <action
+>Quit</action
+> &kwordquiz;.
+	 </para>
+       </listitem>
+     </varlistentry>
+   </variablelist>
+</para>
+</chapter>
+-->
+
+<chapter id="dialogs">
+<title
+>Diàlegs</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Configuració general</title>
+<screenshot>
+  <screeninfo
+>Configuració general</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-general.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuració general</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Podeu seleccionar amb quin tipus de sessió haurà de començar un vocabulari obert recentment. Anar directament a un qüestionari pot evitar que vegeu amb antelació cap de les entrades. </para>
+<para
+>Seleccioneu <guibutton
+>Per omissió</guibutton
+> per a tornar a la configuració predeterminada. Seleccioneu <guibutton
+>Aplica</guibutton
+> per a fer efectives les modificacions sense tancar el diàleg. Seleccioneu <guibutton
+>D'acord</guibutton
+> per a aplicar les modificacions i tancar el diàleg. Seleccioneu <guibutton
+>Cancel·la</guibutton
+> per a tancar el diàleg sense fer cap canvi. </para>
+</sect1>
+
+<sect1 id="dlg-config-editor">
+<title
+>Configuració de l'editor</title>
+<screenshot>
+  <screeninfo
+>Configuració de l'editor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuració de l'editor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Podeu configurar el comportament de la tecla &Intro; quan treballeu en l'editor. </para>
+<para
+>També podeu triar si activeu la funció <link linkend="fill-in-the-blank"
+>Omplir els espais en blanc</link
+>. Desactivant-la es modificarà lleugerament els resultats (serà més àgil). </para>
+<para
+>Seleccioneu <guibutton
+>Per omissió</guibutton
+> per a tornar a la configuració predeterminada. Seleccioneu <guibutton
+>Aplica</guibutton
+> per a fer efectives les modificacions sense tancar el diàleg. Seleccioneu <guibutton
+>D'acord</guibutton
+> per a aplicar les modificacions i tancar el diàleg. Seleccioneu <guibutton
+>Cancel·la</guibutton
+> per a tancar el diàleg sense fer cap canvi. </para>
+</sect1>
+
+<sect1 id="dlg-config-quiz">
+<title
+>Configuració del qüestionari</title>
+<screenshot>
+  <screeninfo
+>Configuració del qüestionari</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-quiz.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuració del qüestionari</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>En les sessions de targetes ràpides podeu escollir si les targetes es giren automàticament, i si es comptaran a continuació com a correctes o errònies. Cal especificar el temps en segons que la targeta espera per a girar-se. </para>
+<para
+>En les sessions de Tria múltiple podeu decidir si la vostra elecció ha de comprovar-se immediatament o si primer heu de seleccionar <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Comprova</guimenuitem
+></menuchoice
+>. </para>
+<para
+>En les sessions de preguntes i respostes podeu escollir si les preguntes en què useu <menuchoice
+><guimenu
+>Qüestionari</guimenu
+><guimenuitem
+>Consell</guimenuitem
+></menuchoice
+> han de comptabilitzar-se com a errades. </para>
+<para
+>Per a totes les sessions podeu escollir el recompte de resultats en forma de percentatges o números. </para>
+<para
+>Seleccioneu <guibutton
+>Per omissió</guibutton
+> per a tornar a la configuració predeterminada. Seleccioneu <guibutton
+>Aplica</guibutton
+> per a fer efectives les modificacions sense tancar el diàleg. Seleccioneu <guibutton
+>D'acord</guibutton
+> per a aplicar les modificacions i tancar el diàleg. Seleccioneu <guibutton
+>Cancel·la</guibutton
+> per a tancar el diàleg sense fer cap canvi. </para>
+</sect1>
+
+<sect1 id="dlg-config-appearance">
+<title
+>Configuració de l'aparença de les targetes ràpides</title>
+<screenshot>
+  <screeninfo
+>Configuració de l'aparença de les targetes ràpides</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-appearance.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuració de l'aparença de les targetes ràpides</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Per a les sessions de targetes ràpides podeu seleccionar el <guilabel
+>Tipus de lletra:</guilabel
+> i els colors del text, targetes i marcs. Feu clic al botó <guibutton
+>Gira la targeta</guibutton
+> per a canviar entre la <guilabel
+>Part davantera</guilabel
+> i la <guilabel
+>Part de darrere</guilabel
+> de les targetes. </para>
+<para
+>Seleccioneu <guibutton
+>Per omissió</guibutton
+> per a tornar a la configuració predeterminada. Seleccioneu <guibutton
+>Aplica</guibutton
+> per a fer efectives les modificacions sense tancar el diàleg. Seleccioneu <guibutton
+>D'acord</guibutton
+> per a aplicar les modificacions i tancar el diàleg. Seleccioneu <guibutton
+>Cancel·la</guibutton
+> per a tancar el diàleg sense fer cap canvi. </para>
+</sect1>
+
+<sect1 id="dlg-config-characters">
+<title
+>Configuració dels caràcters especials</title>
+<screenshot>
+  <screeninfo
+>Configuració dels caràcters especials</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-configure-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuració dels caràcters especials</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Hi ha 9 combinacions de tecla per a la inserció de caràcters especials en el vocabulari. Seleccioneu una de les accions a la llista i feu clic al botó <guibutton
+>Caràcter...</guibutton
+> per a <link linkend="dlg-special-characters"
+>seleccionar</link
+> un caràcter per a aquesta acció. Visualitzareu una imatge del caràcter a escollir. </para>
+<para
+>La modificació de les dreceres del teclat associades a accions podeu realitzar-les seleccionant <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura les dreceres de teclat...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Seleccioneu <guibutton
+>Per omissió</guibutton
+> per a tornar a la configuració predeterminada. Seleccioneu <guibutton
+>Aplica</guibutton
+> per a fer efectives les modificacions sense tancar el diàleg. Seleccioneu <guibutton
+>D'acord</guibutton
+> per a aplicar les modificacions i tancar el diàleg. Seleccioneu <guibutton
+>Cancel·la</guibutton
+> per a tancar el diàleg sense fer cap canvi. </para>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Configuració de les columnes</title>
+<para
+>Podeu obrir aquest diàleg des de la barra de menús amb <menuchoice
+><guimenu
+> Vocabulari</guimenu
+><guimenuitem
+>Configuració de les columnes...</guimenuitem
+></menuchoice
+>.</para>
+<screenshot>
+  <screeninfo
+>Configuració de les columnes</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuració de les columnes</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Utilitzeu aquest diàleg per a definir els títols de les columnes, disposicions de teclat i amplada del vocabulari. Seleccioneu <guibutton
+>D'acord</guibutton
+> per a aplicar els canvis o <guibutton
+>Cancel·la</guibutton
+> per a cancel·lar tots els canvis. </para>
+</sect1>
+
+<sect1 id="dlg-special-characters">
+<title
+>Caràcters especials</title>
+<para
+>Feu clic sobre el botó <guibutton
+>Caràcter...</guibutton
+> sobre la pàgina <guilabel
+>Caràcters especials</guilabel
+> en el diàleg de configuració del &kwordquiz; per a obrir aquesta pàgina.</para>
+<screenshot>
+  <screeninfo
+>Caràcters especials</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-characters.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Caràcters especials</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Utilitzeu aquest diàleg per a seleccionar el caràcter que voleu associar amb les <link linkend="dlg-config-characters"
+>dreceres d'inserció</link
+> de caràcters especials. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Crèdits i llicència</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Copyright del programa 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Copyright de la documentació 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Traductor de la documentació: Daniel Fortuny Anguera <email
+>dfortuny@xtec.net</email
+></para
+><para
+>Traductor/Revisor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

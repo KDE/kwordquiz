@@ -1,0 +1,2570 @@
+# kwordquiz Bahasa Melayu (Malay) (ms)
+#
+# Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwordquiz\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"PO-Revision-Date: 2008-07-09 21:10+0800\n"
+"Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
+"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sharuzzaman Ahmat Raslan"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sharuzzaman@myrealbox.com"
+
+#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
+#: cleardialogbase.ui:21
+#, fuzzy, kde-format
+#| msgid "&Select"
+msgid "Selection"
+msgstr "&Pilih"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:30
+#, fuzzy, kde-format
+msgid "Delete all information in selected entries"
+msgstr "Padam giliran dipilih"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:33
+#, kde-format
+msgid "When checked all information will be deleted from the selected entries"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
+#: cleardialogbase.ui:36
+#, fuzzy, kde-format
+#| msgid "&Undo Clear"
+msgid "Clear &All"
+msgstr "Nyahb&uat Bersih"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:59
+#, fuzzy, kde-format
+msgid "Delete the text from selected entries"
+msgstr "Edit baris dipilih"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:62
+#, fuzzy, kde-format
+msgid "When checked the text will be deleted from selected entries"
+msgstr "Edit baris dipilih"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
+#: cleardialogbase.ui:65
+#, kde-format
+msgid "&Text"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:72
+#, fuzzy, kde-format
+msgid "Delete the image link from selected entries"
+msgstr "Edit baris dipilih"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:75
+#, fuzzy, kde-format
+msgid "When checked the image link will be deleted from selected entries"
+msgstr "Edit baris dipilih"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
+#: cleardialogbase.ui:78
+#, kde-format
+msgid "&Image Links"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:85
+#, fuzzy, kde-format
+msgid "Delete the sound link from selected entries"
+msgstr "Edit baris dipilih"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:88
+#, fuzzy, kde-format
+msgid "When checked the sound link will be deleted from selected entries"
+msgstr "Edit baris dipilih"
+
+#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
+#: cleardialogbase.ui:91
+#, kde-format
+msgid "&Sound Links"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
+#: columndialogbase.ui:45 kwordquiz.cpp:466
+#, kde-format
+msgid "Column 1"
+msgstr "Lajur 1"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
+#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
+#, fuzzy, kde-format
+msgid "Title for the left column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
+#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
+#, fuzzy, kde-format
+msgid "Enter a title (identifier) for the left column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
+#: columndialogbase.ui:96
+#, kde-format
+msgid "&Title:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
+#: columndialogbase.ui:112
+#, fuzzy, kde-format
+msgid "&Keyboard layout:"
+msgstr "Tetapkan susunatur papan kekunci"
+
+#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
+#: columndialogbase.ui:128
+#, kde-format
+msgid "&Width:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:158
+#, fuzzy, kde-format
+msgid "Keyboard layout for the left column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
+#: columndialogbase.ui:161
+#, fuzzy, kde-format
+msgid "Select a keyboard layout for the left column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:168
+#, fuzzy, kde-format
+msgid "Width of the left column"
+msgstr "nombor lajur melimpah"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
+#: columndialogbase.ui:171
+#, fuzzy, kde-format
+msgid "Enter the width (in pixels) for the left column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
+#: columndialogbase.ui:214 kwordquiz.cpp:469
+#, kde-format
+msgid "Column 2"
+msgstr "Lajur 2"
+
+#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
+#: columndialogbase.ui:265
+#, kde-format
+msgid "T&itle:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
+#: columndialogbase.ui:281
+#, fuzzy, kde-format
+msgid "Keyboard &Layout:"
+msgstr "Tetapkan susunatur papan kekunci"
+
+#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
+#: columndialogbase.ui:297
+#, kde-format
+msgid "Wi&dth:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:317
+#, fuzzy, kde-format
+msgid "Title for the right column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
+#: columndialogbase.ui:320
+#, fuzzy, kde-format
+msgid "Enter a title (identifier) for the right column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:330
+#, fuzzy, kde-format
+msgid "Width of the right column"
+msgstr "nombor lajur melimpah"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
+#: columndialogbase.ui:333
+#, fuzzy, kde-format
+msgid "Enter the width (in pixels) for the right column"
+msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#: dlglanguage.cpp:21
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Column Settings"
+msgstr "Tetapan Lain-lain"
+
+#: dlgspecchar.cpp:17
+#, fuzzy, kde-format
+#| msgid "Select Character"
+msgctxt "@title:window select character dialog"
+msgid "Select Character"
+msgstr "Pilih Aksara"
+
+#: dlgspecchar.cpp:41
+#, fuzzy, kde-format
+#| msgid "&Select"
+msgctxt "@action:button"
+msgid "&Select"
+msgstr "&Pilih"
+
+#: dlgspecchar.cpp:42
+#, fuzzy, kde-format
+#| msgid "Select this character"
+msgctxt "@info:tooltip"
+msgid "Select this character"
+msgstr "Pilih aksara ini"
+
+#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:12
+#, fuzzy, kde-format
+msgid "Column widths"
+msgstr "lebar tidak sah: `%s'"
+
+#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
+#: documentsettings.kcfg:18
+#, fuzzy, kde-format
+msgid "Keyboard layouts"
+msgstr "Tetapkan susunatur papan kekunci"
+
+#: filterproxysearchline.cpp:23
+#, kde-format
+msgid "Search"
+msgstr ""
+
+#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
+#, fuzzy, kde-format
+msgid "Your answer was correct!"
+msgstr "Upload Anda berjaya!"
+
+#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
+#, fuzzy, kde-format
+msgid "Your answer was incorrect."
+msgstr "Upload Anda berjaya!"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: flashviewbase.ui:149
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a flashcard quiz.</html>"
+msgstr ""
+
+#: kwordquiz.cpp:100
+#, kde-format
+msgid "Creates a new blank vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:105
+#, kde-format
+msgid "Opens an existing vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:111
+#, fuzzy, kde-format
+msgid "Download New Vocabularies..."
+msgstr "Muatturun Tatabahasa Baru"
+
+#: kwordquiz.cpp:115
+#, fuzzy, kde-format
+msgid "Downloads new vocabularies"
+msgstr "Muatturun Tatabahasa Baru"
+
+#: kwordquiz.cpp:120
+#, kde-format
+msgid "Saves the active vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:125
+#, kde-format
+msgid "Saves the active vocabulary document with a different name"
+msgstr ""
+
+#: kwordquiz.cpp:130
+#, kde-format
+msgid "Closes the active vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:134
+#, kde-format
+msgid "Prints the active vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:139
+#, kde-format
+msgid "Shows a preview of the active vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:144
+#, fuzzy, kde-format
+msgid "Quits KWordQuiz"
+msgstr "Comment=Perbendaharaan Kata KWordQuiz"
+
+#: kwordquiz.cpp:156
+#, kde-format
+msgid "Cuts the text from the selected cells and places it on the clipboard"
+msgstr ""
+
+#: kwordquiz.cpp:161
+#, kde-format
+msgid "Copies the text from the selected cells and places it on the clipboard"
+msgstr ""
+
+#: kwordquiz.cpp:166
+#, kde-format
+msgid ""
+"Pastes previously cut or copied text from the clipboard into the selected "
+"cells"
+msgstr ""
+
+#: kwordquiz.cpp:172
+#, kde-format
+msgid "Clears the content of the selected cells"
+msgstr ""
+
+#: kwordquiz.cpp:178
+#, fuzzy, kde-format
+msgid "&Insert Row"
+msgstr "Masukkan cakera liut"
+
+#: kwordquiz.cpp:180
+#, kde-format
+msgid "Inserts a new row above the current row"
+msgstr ""
+
+#: kwordquiz.cpp:187
+#, fuzzy, kde-format
+msgid "&Delete Row"
+msgstr "Padam baris dipilih"
+
+#: kwordquiz.cpp:189
+#, fuzzy, kde-format
+msgid "Deletes the selected row(s)"
+msgstr "Edit baris dipilih"
+
+#: kwordquiz.cpp:196
+#, fuzzy, kde-format
+msgid "&Mark as Blank"
+msgstr "Nyahb&uat Tanda Kosong"
+
+#: kwordquiz.cpp:198
+#, kde-format
+msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+msgstr ""
+
+#: kwordquiz.cpp:205
+#, fuzzy, kde-format
+msgid "&Unmark Blanks"
+msgstr "Nyahb&uat Nyahtanda Kosong"
+
+#: kwordquiz.cpp:206
+#, kde-format
+msgid "Removes blanks from the current or selected word"
+msgstr ""
+
+#: kwordquiz.cpp:213
+#, fuzzy, kde-format
+msgid "&Column Settings..."
+msgstr "+BARIS,LAJUR"
+
+#: kwordquiz.cpp:215
+#, fuzzy, kde-format
+msgid "Defines the column settings for the active vocabulary"
+msgstr "fail tatabahasa default."
+
+#: kwordquiz.cpp:222
+#, kde-format
+msgid "&Font..."
+msgstr "&Font..."
+
+#: kwordquiz.cpp:223
+#, kde-format
+msgid "Defines the font used by the editor"
+msgstr ""
+
+#: kwordquiz.cpp:230
+#, kde-format
+msgid "Link &Image..."
+msgstr ""
+
+#: kwordquiz.cpp:231
+#, kde-format
+msgid "Links an image with the current entry"
+msgstr ""
+
+#: kwordquiz.cpp:238
+#, kde-format
+msgid "Link &Sound..."
+msgstr ""
+
+#: kwordquiz.cpp:239
+#, kde-format
+msgid "Links a sound with the current entry"
+msgstr ""
+
+#: kwordquiz.cpp:246
+#, fuzzy, kde-format
+msgid "&Adjust Row Heights"
+msgstr "Edit baris dipilih"
+
+#: kwordquiz.cpp:247
+#, kde-format
+msgid "Automatically adjusts the height of selected rows"
+msgstr ""
+
+#: kwordquiz.cpp:254
+#, kde-format
+msgid "Sh&uffle"
+msgstr ""
+
+#: kwordquiz.cpp:255
+#, kde-format
+msgid "Shuffles the entries of the active vocabulary"
+msgstr ""
+
+#: kwordquiz.cpp:261
+#, kde-format
+msgid "&Keyboard Layout"
+msgstr ""
+
+#: kwordquiz.cpp:262
+#, fuzzy, kde-format
+msgid "Shows available keyboard layouts"
+msgstr "Tetapkan susunatur papan kekunci"
+
+#: kwordquiz.cpp:273
+#, fuzzy, kde-format
+msgid "Change Mode"
+msgstr "%s: Tak dapat menukar mod ke %s"
+
+#: kwordquiz.cpp:274
+#, fuzzy, kde-format
+msgid "Mode"
+msgstr "Mod:"
+
+#: kwordquiz.cpp:275
+#, kde-format
+msgid "Changes the mode used in quiz sessions"
+msgstr ""
+
+#: kwordquiz.cpp:288
+#, fuzzy, kde-format
+msgid "Selects this mode"
+msgstr "fail ini dalam mod teks"
+
+#: kwordquiz.cpp:297
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox activate vocabulary editor"
+msgid "&Editor"
+msgstr "Editor formula"
+
+#: kwordquiz.cpp:299
+#, fuzzy, kde-format
+msgid "Activates the vocabulary editor"
+msgstr "Penyunting teks XEmacs."
+
+#: kwordquiz.cpp:306
+#, fuzzy, kde-format
+msgid "&Flashcard"
+msgstr "Belakang"
+
+#: kwordquiz.cpp:308
+#, kde-format
+msgid "Starts a flashcard session using the active vocabulary"
+msgstr ""
+
+#: kwordquiz.cpp:315
+#, fuzzy, kde-format
+msgid "&Multiple Choice"
+msgstr "Pilihan Tidak Sah"
+
+#: kwordquiz.cpp:317
+#, kde-format
+msgid "Starts a multiple choice session using the active vocabulary"
+msgstr ""
+
+#: kwordquiz.cpp:324
+#, fuzzy, kde-format
+msgid "&Question and Answer"
+msgstr "Dialog soalan:"
+
+#: kwordquiz.cpp:325
+#, kde-format
+msgid "Q&&A"
+msgstr ""
+
+#: kwordquiz.cpp:327
+#, kde-format
+msgid "Starts a question and answer session using the active vocabulary"
+msgstr ""
+
+#: kwordquiz.cpp:334
+#, fuzzy, kde-format
+msgid "&Check"
+msgstr "Memeriksa Kebergantungan"
+
+#: kwordquiz.cpp:336
+#, kde-format
+msgid "Checks your answer to this question"
+msgstr ""
+
+#: kwordquiz.cpp:341
+#, kde-format
+msgid "Choose Option &1"
+msgstr ""
+
+#: kwordquiz.cpp:345
+#, kde-format
+msgid "Choose Option &2"
+msgstr ""
+
+#: kwordquiz.cpp:349
+#, kde-format
+msgid "Choose Option &3"
+msgstr ""
+
+#: kwordquiz.cpp:354
+#, fuzzy, kde-format
+msgid "I &Know"
+msgstr "&Saya Tahu"
+
+#: kwordquiz.cpp:356
+#, kde-format
+msgid "Counts this card as correct and shows the next card"
+msgstr ""
+
+#: kwordquiz.cpp:362
+#, fuzzy, kde-format
+msgid "I &Do Not Know"
+msgstr "&Tidak Tahu"
+
+#: kwordquiz.cpp:364
+#, kde-format
+msgid "Counts this card as incorrect and shows the next card"
+msgstr ""
+
+#: kwordquiz.cpp:370
+#, fuzzy, kde-format
+msgid "&Hint"
+msgstr "Bayangan yang ada"
+
+#: kwordquiz.cpp:372
+#, kde-format
+msgid "Gets the next correct letter of the answer"
+msgstr ""
+
+#: kwordquiz.cpp:378
+#, kde-format
+msgid "Mark Last Correct"
+msgstr ""
+
+#: kwordquiz.cpp:380
+#, fuzzy, kde-format
+msgid "Marks last answer as correct"
+msgstr "Upload Anda berjaya!"
+
+#: kwordquiz.cpp:386
+#, fuzzy, kde-format
+msgid "&Restart"
+msgstr "ulanghidup"
+
+#: kwordquiz.cpp:388
+#, kde-format
+msgid "Restarts the quiz session from the beginning"
+msgstr ""
+
+#: kwordquiz.cpp:394
+#, kde-format
+msgid "&Play Audio"
+msgstr ""
+
+#: kwordquiz.cpp:396
+#, kde-format
+msgid "Play associated audio"
+msgstr ""
+
+#: kwordquiz.cpp:402
+#, fuzzy, kde-format
+msgid "Repeat &Errors"
+msgstr "Ralat Pempartisyenan"
+
+#: kwordquiz.cpp:404
+#, kde-format
+msgid "Repeats all incorrectly answered questions"
+msgstr ""
+
+#: kwordquiz.cpp:410
+#, kde-format
+msgid "Export Errors &As..."
+msgstr ""
+
+#: kwordquiz.cpp:411
+#, kde-format
+msgid "Exports all errors as a new vocabulary document"
+msgstr ""
+
+#: kwordquiz.cpp:417
+#, kde-format
+msgid "Show Se&arch"
+msgstr ""
+
+#: kwordquiz.cpp:419
+#, fuzzy, kde-format
+msgid "Toggle display of the search bar"
+msgstr "       alternatives --display <nama>\n"
+
+#: kwordquiz.cpp:424
+#, kde-format
+msgid "Configures sound and other notifications for certain events"
+msgstr ""
+
+#: kwordquiz.cpp:429
+#, kde-format
+msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+msgstr ""
+
+#: kwordquiz.cpp:435
+#, fuzzy, kde-format
+msgid "Special Character <numid>%1</numid>"
+msgstr "fail istimewa aksara"
+
+#: kwordquiz.cpp:447
+#, fuzzy, kde-format
+msgid "Toggles display of the toolbars"
+msgstr "       alternatives --display <nama>\n"
+
+#: kwordquiz.cpp:500
+#, kde-format
+msgid "Enter search terms here"
+msgstr ""
+
+#: kwordquiz.cpp:523
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox vocabulary editor"
+msgid "Editor"
+msgstr "Editor formula"
+
+#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
+#: kwordquiz.cpp:528 prefquizbase.ui:192
+#, fuzzy, kde-format
+msgid "Flashcard"
+msgstr "Belakang"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
+#: kwordquiz.cpp:532 prefquizbase.ui:149
+#, fuzzy, kde-format
+msgid "Multiple Choice"
+msgstr "Pilihan Tidak Sah"
+
+#: kwordquiz.cpp:536
+#, fuzzy, kde-format
+msgid "Question & Answer"
+msgstr "Dialog soalan:"
+
+#: kwordquiz.cpp:602 kwordquiz.cpp:768 kwordquiz.cpp:813
+#, fuzzy, kde-format
+msgid "Opening file..."
+msgstr "ralat membuka fail"
+
+#: kwordquiz.cpp:635
+#, kde-format
+msgctxt "%1 is an error message"
+msgid ""
+"%1\n"
+"If you are sure no other program is using the file you can choose to ignore "
+"the lock and open the file anyway.\n"
+"Do you want to open the file?"
+msgstr ""
+
+#: kwordquiz.cpp:648 kwordquiz.cpp:763 kwordquiz.cpp:808 kwordquiz.cpp:816
+#: kwordquiz.cpp:853 kwordquiz.cpp:866 kwordquiz.cpp:955 kwordquiz.cpp:962
+#: kwordquiz.cpp:968 kwordquiz.cpp:998 kwordquiz.cpp:1005 kwordquiz.cpp:1012
+#: kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033 kwordquiz.cpp:1040
+#: kwordquiz.cpp:1047 kwordquiz.cpp:1060 kwordquiz.cpp:1075 kwordquiz.cpp:1083
+#: kwordquiz.cpp:1091 kwordquiz.cpp:1100 kwordquiz.cpp:1108 kwordquiz.cpp:1122
+#: kwordquiz.cpp:1130 kwordquiz.cpp:1137 kwordquiz.cpp:1144 kwordquiz.cpp:1151
+#, fuzzy, kde-format
+msgctxt "@info:status ready"
+msgid "Ready"
+msgstr "Sedia."
+
+#: kwordquiz.cpp:717
+#, kde-format
+msgid ""
+"The current document has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+
+#: kwordquiz.cpp:758
+#, fuzzy, kde-format
+msgid "Opening a new document window..."
+msgstr "Logmasuk baru di dalam tetingkap bersarang"
+
+#: kwordquiz.cpp:770
+#, kde-format
+msgid "&Merge selected files with the current document"
+msgstr ""
+
+#: kwordquiz.cpp:775 kwqtutor.cpp:130
+#, fuzzy, kde-format
+msgid "Open Vocabulary Document"
+msgstr "Buka dokumen te&rbaru:"
+
+#: kwordquiz.cpp:840
+#, fuzzy, kde-format
+msgid "Saving file..."
+msgstr "/Fail/_Keluar tanpa simpan"
+
+#: kwordquiz.cpp:859
+#, fuzzy, kde-format
+msgid "Saving file with a new filename..."
+msgstr "Cipta pad baru dengan kandungan fail"
+
+#: kwordquiz.cpp:887
+#, kde-format
+msgid "HTML Document"
+msgstr ""
+
+#: kwordquiz.cpp:889
+#, kde-format
+msgid "Save Vocabulary Document As"
+msgstr ""
+
+#: kwordquiz.cpp:937
+#, fuzzy, kde-format
+msgid "Closing file..."
+msgstr "menutup fail input %s"
+
+#: kwordquiz.cpp:960
+#, kde-format
+msgid "Printing..."
+msgstr "Mencetak..."
+
+#: kwordquiz.cpp:966
+#, fuzzy, kde-format
+msgid "Showing Preview..."
+msgstr "/Fail/_Keluar tanpa simpan"
+
+#: kwordquiz.cpp:974
+#, fuzzy, kde-format
+msgctxt "@info:status quitting"
+msgid "Quitting..."
+msgstr "Hadmasa Tamat! Keluar..."
+
+#: kwordquiz.cpp:996
+#, fuzzy, kde-format
+msgid "Cutting selection..."
+msgstr "Pilihan Bahasa"
+
+#: kwordquiz.cpp:1003
+#, fuzzy, kde-format
+msgid "Copying selection to clipboard..."
+msgstr "Tambahan Awalan Pilihan ke Fail"
+
+#: kwordquiz.cpp:1010
+#, fuzzy, kde-format
+msgid "Inserting clipboard contents..."
+msgstr "Kosongkan Kandungan Pad"
+
+#: kwordquiz.cpp:1017
+#, fuzzy, kde-format
+msgid "Clearing the selected cells..."
+msgstr "Padam giliran dipilih"
+
+#: kwordquiz.cpp:1024
+#, fuzzy, kde-format
+msgid "Inserting rows..."
+msgstr "baris dahulu"
+
+#: kwordquiz.cpp:1031
+#, fuzzy, kde-format
+msgid "Deleting selected rows..."
+msgstr "Padam giliran dipilih"
+
+#: kwordquiz.cpp:1038
+#, kde-format
+msgid "Marking selected text as a blank..."
+msgstr ""
+
+#: kwordquiz.cpp:1045
+#, fuzzy, kde-format
+msgid "Removing blank markings..."
+msgstr "Nyahb&uat Tanda Kosong"
+
+#: kwordquiz.cpp:1052
+#, kde-format
+msgid "Setting the column titles of the vocabulary..."
+msgstr ""
+
+#: kwordquiz.cpp:1065
+#, fuzzy, kde-format
+msgid "Setting the font of the vocabulary..."
+msgstr "fail tatabahasa default."
+
+#: kwordquiz.cpp:1081
+#, kde-format
+msgid "Linking an image with the current entry..."
+msgstr ""
+
+#: kwordquiz.cpp:1089
+#, kde-format
+msgid "Linking a sound with the current entry..."
+msgstr ""
+
+#: kwordquiz.cpp:1097
+#, fuzzy, kde-format
+msgid "Adjusting row heights..."
+msgstr "baris dahulu"
+
+#: kwordquiz.cpp:1106
+#, kde-format
+msgid "Randomizing the vocabulary..."
+msgstr "Merawakkan tatabahasa..."
+
+#: kwordquiz.cpp:1114
+#, kde-format
+msgid "Updating mode..."
+msgstr "Mod mengemaskini..."
+
+#: kwordquiz.cpp:1128
+#, kde-format
+msgid "Starting editor session..."
+msgstr "Memulakan sesi penyunting..."
+
+#: kwordquiz.cpp:1135
+#, kde-format
+msgid "Starting flashcard session..."
+msgstr "Memulakan sesi kad imbas..."
+
+#: kwordquiz.cpp:1142
+#, kde-format
+msgid "Starting multiple choice session..."
+msgstr ""
+
+#: kwordquiz.cpp:1149
+#, kde-format
+msgid "Starting question & answer session..."
+msgstr ""
+
+#: kwordquiz.cpp:1301
+#, fuzzy, kde-format
+msgid "Insert %1"
+msgstr "Masukkan cakera liut"
+
+#: kwordquiz.cpp:1302
+#, kde-format
+msgid "Inserts the character %1"
+msgstr "Selit aksara %1"
+
+#: kwordquiz.cpp:1353
+#, kde-format
+msgid "This will restart your quiz. Do you wish to continue?"
+msgstr ""
+
+#: kwordquiz.cpp:1369
+#, kde-format
+msgid "&1 %1 -> %2 In Order"
+msgstr "&1 %1 -> %2 Dalam Susunan"
+
+#: kwordquiz.cpp:1370
+#, kde-format
+msgid "&2 %1 -> %2 In Order"
+msgstr "&2 %1 -> %2 Dalam Susunan"
+
+#: kwordquiz.cpp:1371
+#, kde-format
+msgid "&3 %1 -> %2 Randomly"
+msgstr ""
+
+#: kwordquiz.cpp:1372
+#, kde-format
+msgid "&4 %1 -> %2 Randomly"
+msgstr ""
+
+#: kwordquiz.cpp:1373
+#, fuzzy, kde-format
+#| msgid "&1 %1 -> %2 In Order"
+msgid "&5 %1 <-> %2 Randomly"
+msgstr "&1 %1 -> %2 Dalam Susunan"
+
+#: kwordquiz.cpp:1380 kwordquiz.cpp:1383
+#, kde-format
+msgid "%1 -> %2 In Order"
+msgstr "%1 -> %2 Ikut Susunan"
+
+#: kwordquiz.cpp:1386 kwordquiz.cpp:1389
+#, kde-format
+msgid "%1 -> %2 Randomly"
+msgstr ""
+
+#: kwordquiz.cpp:1392
+#, kde-format
+msgid "%1 &lt;-&gt; %2 Randomly"
+msgstr ""
+
+#. i18n: ectx: label, entry (FirstRun), group (General)
+#: kwordquiz.kcfg:10
+#, kde-format
+msgid "Is this the first time KWordQuiz is run?"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowSearch), group (General)
+#: kwordquiz.kcfg:14
+#, fuzzy, kde-format
+msgid "Toggle display of the search bar."
+msgstr "       alternatives --display <nama>\n"
+
+#. i18n: ectx: label, entry (StartSession), group (General)
+#: kwordquiz.kcfg:18
+#, kde-format
+msgid "Type of session to use when opening files"
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintStyle), group (General)
+#: kwordquiz.kcfg:28
+#, kde-format
+msgid "Type of printout to generate"
+msgstr ""
+
+#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
+#: kwordquiz.kcfg:39
+#, fuzzy, kde-format
+msgid "Titles for column 1"
+msgstr "nombor lajur melimpah"
+
+#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
+#: kwordquiz.kcfg:43
+#, fuzzy, kde-format
+msgid "Titles for column 2"
+msgstr "nombor lajur melimpah"
+
+#. i18n: ectx: label, entry (EditorFont), group (Editor)
+#: kwordquiz.kcfg:47
+#, fuzzy, kde-format
+msgid "Font used in the editor"
+msgstr "Peranti '%s' telah digunakan dalam multipath '%s'"
+
+#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
+#: kwordquiz.kcfg:51
+#, kde-format
+msgid "If Fill-in-the-blank should be enabled"
+msgstr ""
+
+#. i18n: ectx: label, entry (EnterMove), group (Editor)
+#: kwordquiz.kcfg:55
+#, kde-format
+msgid "Direction the Enter key moves in the editor"
+msgstr ""
+
+#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
+#: kwordquiz.kcfg:59
+#, fuzzy, kde-format
+msgid "Characters for the special character toolbar"
+msgstr "fail istimewa aksara tidak disokong"
+
+#. i18n: ectx: label, entry (ClearAll), group (Editor)
+#: kwordquiz.kcfg:63
+#, fuzzy, kde-format
+msgid "Clear all data in selected entries"
+msgstr "Padam giliran dipilih"
+
+#. i18n: ectx: label, entry (ClearText), group (Editor)
+#: kwordquiz.kcfg:67
+#, fuzzy, kde-format
+msgid "Clear the text in selected entries"
+msgstr "Padam giliran dipilih"
+
+#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
+#: kwordquiz.kcfg:71
+#, fuzzy, kde-format
+msgid "Clear the image link in selected entries"
+msgstr "Padam giliran dipilih"
+
+#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
+#: kwordquiz.kcfg:75
+#, fuzzy, kde-format
+msgid "Clear the sound link in selected entries"
+msgstr "Padam giliran dipilih"
+
+#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
+#: kwordquiz.kcfg:81
+#, kde-format
+msgid "Automatically check selected answer in multiple choice"
+msgstr ""
+
+#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
+#: kwordquiz.kcfg:85
+#, fuzzy, kde-format
+msgid "Automatically flip flashcard"
+msgstr "Belakang"
+
+#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
+#: kwordquiz.kcfg:89
+#, fuzzy, kde-format
+msgid "Time delay for flipping flashcard"
+msgstr "%s: tidak dapat menetapkan lengahan kegagalan: %s\n"
+
+#. i18n: ectx: label, entry (HintError), group (Quiz)
+#: kwordquiz.kcfg:93
+#, fuzzy, kde-format
+msgid "Treat use of hint as error"
+msgstr "-a  --text  Layan semua fail sebagai teks."
+
+#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
+#: kwordquiz.kcfg:97
+#, fuzzy, kde-format
+msgid "Count flashcard as correct or error"
+msgstr "Pilih terjemahan yang betul:"
+
+#. i18n: ectx: label, entry (Mode), group (Quiz)
+#: kwordquiz.kcfg:101
+#, fuzzy, kde-format
+msgid "Quiz mode"
+msgstr "Mod Penyelamatan"
+
+#. i18n: ectx: label, entry (Percent), group (Quiz)
+#: kwordquiz.kcfg:105
+#, kde-format
+msgid "Show score as percentage"
+msgstr ""
+
+#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
+#: kwordquiz.kcfg:111
+#, kde-format
+msgid "Font used for front of flashcard"
+msgstr ""
+
+#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
+#: kwordquiz.kcfg:115
+#, kde-format
+msgid "Color used for text on front of flashcard"
+msgstr ""
+
+#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
+#: kwordquiz.kcfg:119
+#, fuzzy, kde-format
+#| msgid "Select to print flashcards"
+msgid "Color used for front of flashcard"
+msgstr "Pilih untuk cetak kad imbas"
+
+#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:123
+#, kde-format
+msgid "Color used for frame on front of flashcard"
+msgstr ""
+
+#. i18n: ectx: label, entry (BackFont), group (FlashCard)
+#: kwordquiz.kcfg:127
+#, kde-format
+msgid "Font used for back of flashcard"
+msgstr ""
+
+#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
+#: kwordquiz.kcfg:131
+#, kde-format
+msgid "Color used for text on back of flashcard"
+msgstr ""
+
+#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
+#: kwordquiz.kcfg:135
+#, kde-format
+msgid "Color used for back of flashcard"
+msgstr ""
+
+#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
+#: kwordquiz.kcfg:139
+#, kde-format
+msgid "Color used for frame on back of flashcard"
+msgstr ""
+
+#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
+#: kwordquiz.kcfg:145
+#, fuzzy, kde-format
+msgid "The Providers path for KWordQuiz"
+msgstr "path tiada untuk slave %s dalam %s\n"
+
+#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
+#: kwordquiz.kcfg:149
+#, kde-format
+msgid "The command used to start a downloaded vocabulary"
+msgstr ""
+
+#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
+#: kwordquiz.kcfg:153
+#, kde-format
+msgid ""
+"The folder where downloaded vocabularies are saved by default (relative to "
+"$HOME)"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
+#: kwordquiz.kcfg:159
+#, kde-format
+msgid "Pop up flashcards at fixed or random intervals"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
+#: kwordquiz.kcfg:167
+#, kde-format
+msgid "The interval in minutes at which to pop up a flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorMin), group (Tutor)
+#: kwordquiz.kcfg:171
+#, kde-format
+msgid "The minimum interval in minutes at which to pop up a flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorMax), group (Tutor)
+#: kwordquiz.kcfg:175
+#, kde-format
+msgid "The maximum interval in minutes at which to pop up a flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
+#: kwordquiz.kcfg:179
+#, kde-format
+msgid "Geometry of the last flash card"
+msgstr ""
+
+#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
+#: kwordquiz.kcfg:183
+#, kde-format
+msgid "Show flash card in a native KWordQuiz style"
+msgstr ""
+
+#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
+#: kwordquiz.kcfg:191
+#, kde-format
+msgid ""
+"Last open vocabulary file to be opened automatically if none other is "
+"specified on the command line"
+msgstr ""
+
+#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
+#: kwordquiz.kcfg:195
+#, kde-format
+msgid "Start exercise as soon as the user opens vocabulary file"
+msgstr ""
+
+#: kwordquizprefs.cpp:24
+#, kde-format
+msgctxt "@title:group general settings"
+msgid "General"
+msgstr ""
+
+#: kwordquizprefs.cpp:24
+#, fuzzy, kde-format
+msgctxt "@title:group general settings"
+msgid "General Settings"
+msgstr "Tetapan Lain-lain"
+
+#: kwordquizprefs.cpp:27
+#, fuzzy, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor"
+msgstr "Editor formula"
+
+#: kwordquizprefs.cpp:27
+#, fuzzy, kde-format
+msgctxt "@title:group editor settings"
+msgid "Editor Settings"
+msgstr "Tetapan Lain-lain"
+
+#: kwordquizprefs.cpp:30
+#, fuzzy, kde-format
+#| msgid "KWordQuiz"
+msgctxt "@title:group quiz settings"
+msgid "Quiz"
+msgstr "KWordQuiz"
+
+#: kwordquizprefs.cpp:30
+#, fuzzy, kde-format
+msgctxt "@title:group quiz settings"
+msgid "Quiz Settings"
+msgstr "Tetapan Lain-lain"
+
+#: kwordquizprefs.cpp:33
+#, fuzzy, kde-format
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance"
+msgstr "Belakang"
+
+#: kwordquizprefs.cpp:33
+#, fuzzy, kde-format
+msgctxt "@title:group flash appearance settings"
+msgid "Flashcard Appearance Settings"
+msgstr "Tetapan Rangkaian Lain-lain"
+
+#: kwordquizprefs.cpp:36
+#, fuzzy, kde-format
+msgctxt "@title:group special character settings"
+msgid "Special Characters"
+msgstr "Aksara Khas"
+
+#. i18n: ectx: Menu (vocabulary)
+#: kwordquizui.rc:16
+#, fuzzy, kde-format
+#| msgid "Vocabulary &list"
+msgid "V&ocabulary"
+msgstr "&Senarai tatabahasa"
+
+#. i18n: ectx: Menu (mode)
+#: kwordquizui.rc:30
+#, fuzzy, kde-format
+msgid "&Mode"
+msgstr "Mod:"
+
+#. i18n: ectx: Menu (quiz)
+#: kwordquizui.rc:38
+#, fuzzy, kde-format
+#| msgid "KWordQuiz"
+msgid "&Quiz"
+msgstr "KWordQuiz"
+
+#. i18n: ectx: ToolBar (quizToolBar)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
+#: kwordquizui.rc:61 prefquizbase.ui:20
+#, fuzzy, kde-format
+#| msgid "KWordQuiz"
+msgid "Quiz"
+msgstr "KWordQuiz"
+
+#. i18n: ectx: ToolBar (characterToolBar)
+#: kwordquizui.rc:75
+#, fuzzy, kde-format
+msgid "Special Characters"
+msgstr "Aksara Khas"
+
+#: kwqcleardialog.cpp:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear Contents"
+msgstr ""
+
+#: kwqcommands.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Undo Clear"
+msgctxt "@item:inmenu undo clear"
+msgid "Clear"
+msgstr "Nyahb&uat Bersih"
+
+#: kwqcommands.cpp:96
+#, kde-format
+msgctxt "@item:inmenu undo cut"
+msgid "Cut"
+msgstr ""
+
+#: kwqcommands.cpp:109
+#, fuzzy, kde-format
+#| msgid "&Undo Paste"
+msgctxt "@item:inmenu undo paste"
+msgid "Paste"
+msgstr "Nyahb&uat Tampal"
+
+#: kwqcommands.cpp:205
+#, fuzzy, kde-format
+#| msgid "Sort"
+msgctxt "@item:inmenu undo sort"
+msgid "Sort"
+msgstr "Isih"
+
+#: kwqcommands.cpp:232
+#, fuzzy, kde-format
+#| msgid "&Undo Shuffle"
+msgctxt "@item:inmenu undo shuffle"
+msgid "Shuffle"
+msgstr "Nyahb&uat Selerak"
+
+#: kwqcommands.cpp:252
+#, fuzzy, kde-format
+msgctxt "@item:inmenu undo insert"
+msgid "Insert"
+msgstr "Masukkan cakera liut"
+
+#: kwqcommands.cpp:284
+#, fuzzy, kde-format
+msgctxt "@item:inmenu undo delete"
+msgid "Delete"
+msgstr "Padam baris dipilih"
+
+#: kwqcommands.cpp:333
+#, fuzzy, kde-format
+msgctxt "@item:inmenu undo unmark blank"
+msgid "Unmark Blank"
+msgstr "Nyahb&uat Nyahtanda Kosong"
+
+#: kwqcommands.cpp:355
+#, fuzzy, kde-format
+msgctxt "@item:inmenu undo column titles"
+msgid "Column Settings"
+msgstr "Tetapan Lain-lain"
+
+#: kwqcommands.cpp:400
+#, kde-format
+msgctxt "@item:inmenu undo link image"
+msgid "Link Image"
+msgstr ""
+
+#: kwqcommands.cpp:419
+#, kde-format
+msgctxt "@item:inmenu undo link sound"
+msgid "Link Sound"
+msgstr ""
+
+#: kwqcommands.h:93
+#, fuzzy, kde-format
+msgid "Font"
+msgstr "Font:"
+
+#: kwqcommands.h:111
+#, fuzzy, kde-format
+#| msgid "&Undo Entry"
+msgid "Entry"
+msgstr "Padam Mas&ukan"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
+#, fuzzy, kde-format
+#| msgid "Question"
+msgid "Questions"
+msgstr "Soalan"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
+#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
+#, fuzzy, kde-format
+msgid "The number of questions in the session"
+msgstr "Kira jumlah perkataan dalam fail"
+
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
+#: kwqscorewidgetbase.ui:259
+#, kde-format
+msgid "00"
+msgstr "00"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
+#, fuzzy, kde-format
+msgid "Correct answers"
+msgstr "betul dalam %"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
+#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
+#, kde-format
+msgid ""
+"The number of questions answered correctly. May be shown as a percentage."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picError)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
+#, fuzzy, kde-format
+msgid "Incorrect answers"
+msgstr "Katalaluan salah"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
+#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
+#, kde-format
+msgid ""
+"The number of questions answered incorrectly. May be shown as a percentage."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
+#, fuzzy, kde-format
+msgid "Answered questions"
+msgstr "Soalan"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
+#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
+#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
+#, kde-format
+msgid "The number of questions already answered. May be shown as a percentage."
+msgstr ""
+
+#: kwqtablemodel.cpp:211
+#, kde-format
+msgid "Untitled"
+msgstr ""
+
+#: kwqtableview.cpp:186
+#, kde-format
+msgid "Name:_____________________________ Date:__________"
+msgstr "Nama:_____________________________ Tarikh:__________"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
+#: kwqtableview.cpp:233 prefquizbase.ui:90
+#, fuzzy, kde-format
+msgid "Score"
+msgstr "Markah semasa anda"
+
+#: kwqtableview.cpp:652
+#, kde-format
+msgid "There is an error with the Fill-in-the-blank brackets"
+msgstr ""
+
+#: kwqtableview.cpp:719
+#, fuzzy, kde-format
+#| msgid "Select Character"
+msgctxt "@title:window"
+msgid "Select Image"
+msgstr "Pilih Aksara"
+
+#: kwqtableview.cpp:739
+#, fuzzy, kde-format
+#| msgid "&Select"
+msgctxt "@title:window"
+msgid "Select Sound"
+msgstr "&Pilih"
+
+#: kwqtableview.cpp:739
+#, kde-format
+msgid "All Files (*)"
+msgstr ""
+
+#: kwqtutor.cpp:25
+#, kde-format
+msgid ""
+"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
+"you to set a certain time interval at which flashcards will pop up.<br /"
+"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
+"working without stealing the focus from other programs you might be working "
+"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
+"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgstr ""
+
+#: kwqtutor.cpp:31
+#, kde-format
+msgid "Tutor"
+msgstr ""
+
+#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#, kde-format
+msgid "Start Exercise"
+msgstr ""
+
+#: kwqtutor.cpp:52
+#, kde-format
+msgid "Configure KWordQuiz Tutor..."
+msgstr ""
+
+#: kwqtutor.cpp:57
+#, fuzzy, kde-format
+msgid "Close Flash Card"
+msgstr "Belakang"
+
+#: kwqtutor.cpp:62
+#, fuzzy, kde-format
+msgid "Flip Flash Card"
+msgstr "Kad Video"
+
+#: kwqtutor.cpp:111
+#, kde-format
+msgid "Stop Exercise"
+msgstr ""
+
+#: kwqtutorprefs.cpp:22
+#, kde-format
+msgctxt "@title:group tutor settings"
+msgid "Tutor"
+msgstr ""
+
+#: kwqtutorprefs.cpp:22
+#, fuzzy, kde-format
+msgctxt "@title:group tutor settings"
+msgid "Tutor Settings"
+msgstr "Tetapan Lain-lain"
+
+#: kwqtutorprefs.cpp:25
+#, fuzzy, kde-format
+#| msgid "Sort"
+msgctxt "Shortcuts Config"
+msgid "Shortcuts"
+msgstr "Isih"
+
+#: kwqtutorprefs.cpp:25
+#, fuzzy, kde-format
+msgid "Shortcuts Settings"
+msgstr "Tetapan Lain-lain"
+
+#: main.cpp:32
+#, kde-format
+msgid "KWordQuiz"
+msgstr "KWordQuiz"
+
+#: main.cpp:34
+#, kde-format
+msgid "A powerful flashcard and vocabulary learning program"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "(c) 2003-2010, Peter Hedlund"
+msgstr ""
+
+#: main.cpp:40
+#, kde-format
+msgid "Peter Hedlund"
+msgstr ""
+
+#: main.cpp:41
+#, kde-format
+msgid "Anne-Marie Mahfouf"
+msgstr ""
+
+#: main.cpp:41
+#, fuzzy, kde-format
+msgid "KDE Edutainment Maintainer"
+msgstr "Penulis dan penyelenggara"
+
+#: main.cpp:42
+#, kde-format
+msgid "Martin Pfeiffer"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Leitner System and several code contributions"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"A number 1-5 corresponding to the \n"
+"entries in the Mode menu"
+msgstr ""
+
+#: main.cpp:56
+#, kde-format
+msgid ""
+"Type of session to start with: \n"
+"'flash' for flashcard, \n"
+"'mc' for multiple choice, \n"
+"'qa' for question and answer, \n"
+"'tutor' for tutor"
+msgstr ""
+
+#: main.cpp:57
+#, fuzzy, kde-format
+msgid "File to open"
+msgstr "Fail HTML untuk dibuka"
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
+#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
+#: qaviewbase.ui:518
+#, fuzzy, kde-format
+msgid "Correct Answer"
+msgstr "Comment=Jawapan betul"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
+#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
+#: qaviewbase.ui:294
+#, fuzzy, kde-format
+msgid "Previous Question"
+msgstr "Dialog soalan:"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
+#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
+#: qaviewbase.ui:395
+#, fuzzy, kde-format
+msgid "Your Answer"
+msgstr "Comment=Jawapan betul"
+
+#: multipleview.cpp:131 qaview.cpp:169
+#, kde-format
+msgid "Summary"
+msgstr "Ringkasan"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
+#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
+#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
+#: qaviewbase.ui:104
+#, fuzzy, kde-format
+msgid "The question"
+msgstr "Soalan"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:73 qaviewbase.ui:60
+#, fuzzy, kde-format
+msgid "Language or other identifier for the question"
+msgstr "Jawapan kosong kepada pertanyaan."
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
+#: multipleviewbase.ui:76 qaviewbase.ui:63
+#, fuzzy, kde-format
+msgid "Language 1"
+msgstr "Bahasa"
+
+#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
+#: multipleviewbase.ui:98 qaviewbase.ui:107
+#, fuzzy, kde-format
+msgid "This is your question"
+msgstr "Adakah ini sistem Linux pertama anda?"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
+#: multipleviewbase.ui:255 multipleviewbase.ui:286
+#, fuzzy, kde-format
+msgid "Your choices"
+msgstr "Mempartisyen Sistem Anda"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
+#, kde-format
+msgid "Three choices for the answer. One is correct."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt2)
+#: multipleviewbase.ui:192
+#, fuzzy, kde-format
+msgid "&2 Option"
+msgstr "[PILIHAN...]"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt1)
+#: multipleviewbase.ui:223
+#, fuzzy, kde-format
+msgid "&1 Option"
+msgstr "[PILIHAN...]"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:258 qaviewbase.ui:208
+#, kde-format
+msgid "Language or other identifier for the answer"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
+#: multipleviewbase.ui:261 qaviewbase.ui:211
+#, fuzzy, kde-format
+msgid "Language 2"
+msgstr "Bahasa"
+
+#. i18n: ectx: property (text), widget (QRadioButton, opt3)
+#: multipleviewbase.ui:292
+#, fuzzy, kde-format
+msgid "&3 Option"
+msgstr "[PILIHAN...]"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
+#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
+#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
+#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
+#, fuzzy, kde-format
+msgid "Previous question"
+msgstr "Dialog soalan:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
+#: qaviewbase.ui:313
+#, fuzzy, kde-format
+msgid "The previous question"
+msgstr "Dialog soalan:"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
+#: multipleviewbase.ui:375 qaviewbase.ui:316
+#, fuzzy, kde-format
+msgid "This was your question"
+msgstr "Upload Anda berjaya!"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
+#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
+#, fuzzy, kde-format
+msgid "Your previous answer"
+msgstr "Comment=Jawapan betul"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
+#: qaviewbase.ui:414
+#, fuzzy, kde-format
+msgid "Your answer to the previous question"
+msgstr "Dialog soalan:"
+
+#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
+#: multipleviewbase.ui:501 qaviewbase.ui:417
+#, fuzzy, kde-format
+msgid "This was your answer"
+msgstr "Upload Anda berjaya!"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
+#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
+#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
+#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
+#, fuzzy, kde-format
+msgid "Previous correct answer"
+msgstr "Comment=Jawapan betul"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
+#: qaviewbase.ui:537
+#, fuzzy, kde-format
+msgid "The correct answer to the previous question"
+msgstr "Jawapan kosong kepada pertanyaan."
+
+#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
+#: multipleviewbase.ui:580 qaviewbase.ui:540
+#, fuzzy, kde-format
+msgid "This was the correct answer"
+msgstr "Adakah tetapan ini betul?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: multipleviewbase.ui:649
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"three entries for a multiple choice quiz.</html>"
+msgstr ""
+
+#: prefcardappearance.cpp:66
+#, kde-format
+msgctxt "Back of the flashcard"
+msgid "Back"
+msgstr "Belakang"
+
+#: prefcardappearance.cpp:67
+#, kde-format
+msgid "Answer"
+msgstr "Jawapan"
+
+#: prefcardappearance.cpp:80
+#, kde-format
+msgid "Front"
+msgstr ""
+
+#: prefcardappearance.cpp:81
+#, kde-format
+msgid "Question"
+msgstr "Soalan"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
+#: prefcardappearancebase.ui:15
+#, fuzzy, kde-format
+msgid "Card Appearance"
+msgstr "Penampilan Bulan"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:92
+#, fuzzy, kde-format
+msgid "Flip card"
+msgstr "Kad Video"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:95
+#, kde-format
+msgid "Use to show the other side of the card"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, flipButton)
+#: prefcardappearancebase.ui:98
+#, fuzzy, kde-format
+msgid "&Flip Card"
+msgstr "Kad Video"
+
+#. i18n: ectx: property (text), widget (QLabel, fontLabel)
+#: prefcardappearancebase.ui:111
+#, fuzzy, kde-format
+msgid "F&ont:"
+msgstr "Font:"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
+#: prefcardappearancebase.ui:146
+#, kde-format
+msgid "Use to select the font for displaying text on the back of the card"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
+#, fuzzy, kde-format
+msgid "Select text color"
+msgstr "Sorotan warna sintaks"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
+#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
+#, kde-format
+msgid "Use to select the color for text shown on the card"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
+#, fuzzy, kde-format
+msgid "Select card frame color"
+msgstr "Pilih kad yang anda ingin konfigurasikan:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
+#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
+#, kde-format
+msgid "Use to select the color for drawing the frame of the card"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
+#, fuzzy, kde-format
+msgid "Select card color"
+msgstr "Sorotan warna sintaks"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
+#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
+#, fuzzy, kde-format
+msgid "Select color used to draw the card"
+msgstr "Pilih kad yang anda ingin konfigurasikan:"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
+#: prefcardappearancebase.ui:202
+#, kde-format
+msgid "Use to select the font for displaying text on the front of the card"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
+#: prefcardappearancebase.ui:249
+#, fuzzy, kde-format
+msgid "&Text color:"
+msgstr "Kedalaman _Warna:"
+
+#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
+#: prefcardappearancebase.ui:262
+#, fuzzy, kde-format
+msgid "&Card color:"
+msgstr "Kedalaman _Warna:"
+
+#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
+#: prefcardappearancebase.ui:275
+#, fuzzy, kde-format
+msgid "Fra&me color:"
+msgstr "Kedalaman _Warna:"
+
+#: prefcharacter.cpp:30
+#, fuzzy, kde-format
+msgid "Action"
+msgstr "Aksi"
+
+#: prefcharacter.cpp:31
+#, kde-format
+msgid "Shortcut"
+msgstr ""
+
+#: prefcharacter.cpp:32
+#, fuzzy, kde-format
+msgid "Character"
+msgstr "Pilih Aksara"
+
+#: prefcharacter.cpp:41
+#, fuzzy, kde-format
+msgid "Special Character %1"
+msgstr "fail istimewa aksara"
+
+#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
+#: prefcharacterbase.ui:35
+#, kde-format
+msgid ""
+"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+"associated with each action."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:48
+#, fuzzy, kde-format
+msgid "Select character to modify"
+msgstr "Gagal untuk mengubah tag"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:51
+#, fuzzy, kde-format
+msgid "Customizable special character actions"
+msgstr "fail istimewa aksara tidak disokong"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:61
+#, fuzzy, kde-format
+msgid "0"
+msgstr "00"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:66
+#, kde-format
+msgid "1"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
+#: prefcharacterbase.ui:71
+#, kde-format
+msgid "2"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:103
+#, fuzzy, kde-format
+msgid "Click to choose a new character"
+msgstr "Sila klik pada peta untuk memilih kawasan:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:106
+#, kde-format
+msgid "Choose a character for the selected action"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
+#: prefcharacterbase.ui:109
+#, fuzzy, kde-format
+msgid "C&haracter..."
+msgstr "Pilih Aksara"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:151
+#, fuzzy, kde-format
+msgid "Preview of current character"
+msgstr "$0: $DEVICE bukan peranti aksara?"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:154
+#, kde-format
+msgid "Preview of the character associated with the selected action"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreview)
+#: prefcharacterbase.ui:157
+#, kde-format
+msgid "A"
+msgstr "A"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
+#: prefeditorbase.ui:73
+#, fuzzy, kde-format
+msgid "How enter key moves"
+msgstr "<Enter> untuk keluar"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:32
+#, kde-format
+msgid "Select how the Enter key should behave in the editor"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
+#: prefeditorbase.ui:35
+#, fuzzy, kde-format
+msgid "Enter Ke&y Moves"
+msgstr "<Enter> untuk keluar"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:50
+#, kde-format
+msgid "Select if the next cell below should become active when pressing Enter."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, optDown)
+#: prefeditorbase.ui:53
+#, fuzzy, kde-format
+msgid "&Down"
+msgstr "_Turun"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:63
+#, kde-format
+msgid ""
+"Select if the next cell to the right should become active when pressing Enter"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, optRight)
+#: prefeditorbase.ui:66
+#, fuzzy, kde-format
+msgid "&Right"
+msgstr "kanan"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:76
+#, kde-format
+msgid "Select if the current cell should remain active when pressing Enter"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
+#: prefeditorbase.ui:79
+#, fuzzy, kde-format
+msgid "Does not &move"
+msgstr "%s tidak wujud"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:89
+#, fuzzy, kde-format
+msgid "Check to enable fill-in-the-blank"
+msgstr "masukkan cakera liut kosong ke dalam pemacu cakera liut"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:92
+#, kde-format
+msgid "Select to enable the functions for Fill-in-the-blank"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
+#: prefeditorbase.ui:95
+#, fuzzy, kde-format
+msgid "E&nable fill-in-the-blank"
+msgstr "masukkan cakera liut kosong ke dalam pemacu cakera liut"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:35
+#, fuzzy, kde-format
+msgid "How vocabulary documents are opened"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:38
+#, kde-format
+msgid "Select the kind of session to load an opened vocabulary document in"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
+#: prefgeneralbase.ui:41
+#, fuzzy, kde-format
+msgid "&Open Vocabulary Documents in"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:47
+#, fuzzy, kde-format
+msgid "Open vocabulary documents in the editor"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:50
+#, fuzzy, kde-format
+msgid "Select if the vocabulary documents should be opened in the editor"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
+#: prefgeneralbase.ui:53
+#, fuzzy, kde-format
+msgid "&Editor"
+msgstr "Editor formula"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:60
+#, fuzzy, kde-format
+msgid "Open vocabulary documents in a flashcard quiz"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:63
+#, fuzzy, kde-format
+msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
+#: prefgeneralbase.ui:66
+#, fuzzy, kde-format
+msgid "&Flashcard Quiz"
+msgstr "Belakang"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:73
+#, fuzzy, kde-format
+msgid "Open vocabulary documents in a multiple choice quiz"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:76
+#, kde-format
+msgid ""
+"Select if the vocabulary documents should be opened in a multiple choice quiz"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
+#: prefgeneralbase.ui:79
+#, fuzzy, kde-format
+msgid "&Multiple Choice Quiz"
+msgstr "Pilihan Tidak Sah"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:86
+#, fuzzy, kde-format
+msgid "Open vocabulary documents in a question and answer quiz"
+msgstr "Buka dokumen te&rbaru:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:89
+#, kde-format
+msgid ""
+"Select if the vocabulary documents should be opened in a question and answer "
+"quiz"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, optQA)
+#: prefgeneralbase.ui:92
+#, fuzzy, kde-format
+msgid "&Question and Answer Quiz"
+msgstr "Dialog soalan:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:44
+#, fuzzy, kde-format
+msgid "Specify behavior for a question and answer session"
+msgstr "Kira jumlah perkataan dalam fail"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
+#: prefquizbase.ui:47
+#, fuzzy, kde-format
+msgid "Question && Answer"
+msgstr "Dialog soalan:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:71
+#, fuzzy, kde-format
+msgid "Check to count hint as error"
+msgstr "-a  --text  Layan semua fail sebagai teks."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:74
+#, kde-format
+msgid ""
+"Select if questions where the hint function has been used should be counted "
+"as errors"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
+#: prefquizbase.ui:77
+#, fuzzy, kde-format
+msgid "&Treat hint as error"
+msgstr "-a  --text  Layan semua fail sebagai teks."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
+#: prefquizbase.ui:87
+#, kde-format
+msgid "Specify behavior of the score presentation in any session"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:114
+#, kde-format
+msgid "Check to show score as a percentage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:117
+#, kde-format
+msgid "Select if the score should be shown as a percentage"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
+#: prefquizbase.ui:120
+#, kde-format
+msgid "&Show score as a percentage"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
+#: prefquizbase.ui:146
+#, kde-format
+msgid "Specify behavior for a multiple choice session"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:173
+#, fuzzy, kde-format
+msgid "Check to correct automatically"
+msgstr "Tiada lagi peranti untuk diperiksa"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:176
+#, kde-format
+msgid "Select if a choice should be checked immediately"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
+#: prefquizbase.ui:179
+#, fuzzy, kde-format
+msgid "Check selection a&utomatically"
+msgstr "Pemilihan Pakej Satu Persatu"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
+#: prefquizbase.ui:189
+#, fuzzy, kde-format
+#| msgid "Starting flashcard session..."
+msgid "Specify behavior of a flashcard session"
+msgstr "Memulakan sesi kad imbas..."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:238
+#, kde-format
+msgid "Specify the amount of time between card flips"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
+#: prefquizbase.ui:241
+#, fuzzy, kde-format
+msgid "seconds and"
+msgstr "Segerakkan %s dan %s@%s:%s"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:248
+#, fuzzy, kde-format
+msgid "Delay to flip card"
+msgstr "%s: tidak dapat menetapkan lengahan kegagalan: %s\n"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
+#: prefquizbase.ui:251
+#, fuzzy, kde-format
+msgid "Delay in seconds to flip card"
+msgstr "%s: tidak dapat menetapkan lengahan kegagalan: %s\n"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
+#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
+#: prefquizbase.ui:285 prefquizbase.ui:298
+#, fuzzy, kde-format
+msgid "Select how to count card"
+msgstr "Pilih kad yang anda ingin konfigurasikan:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:288
+#, kde-format
+msgid ""
+"Select if the previous card should be counted as correct when moving to the "
+"next card"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
+#: prefquizbase.ui:291
+#, fuzzy, kde-format
+msgid "Count &as correct"
+msgstr "Pilih terjemahan yang betul:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
+#: prefquizbase.ui:301
+#, kde-format
+msgid ""
+"Select if the previous card should be counted as incorrect when moving to "
+"the next card"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, optError)
+#: prefquizbase.ui:304
+#, fuzzy, kde-format
+msgid "Count as &error"
+msgstr "Ralat Menyimpan Cekupanskrin"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:314
+#, fuzzy, kde-format
+msgid "Check to flip card automatically"
+msgstr "Tiada lagi peranti untuk diperiksa"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:317
+#, kde-format
+msgid ""
+"Select if you want a card to turn over automatically after the given amount "
+"of time"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
+#: prefquizbase.ui:320
+#, kde-format
+msgid "&Flip card automatically after"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
+#: preftutorbase.ui:17
+#, fuzzy, kde-format
+msgid "Tutor Timing"
+msgstr "Tetapan Lain-lain"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
+#: preftutorbase.ui:23
+#, kde-format
+msgid "&Every"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
+#: preftutorbase.ui:60
+#, fuzzy, kde-format
+msgid "&minutes"
+msgstr "Bayangan yang ada"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
+#: preftutorbase.ui:72
+#, kde-format
+msgid "&Randomly"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelBetween)
+#: preftutorbase.ui:100
+#, kde-format
+msgid "Between"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
+#: preftutorbase.ui:120
+#, fuzzy, kde-format
+msgid "m&inutes and"
+msgstr "Bayangan yang ada"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
+#: preftutorbase.ui:146
+#, fuzzy, kde-format
+msgid "mi&nutes"
+msgstr "Bayangan yang ada"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
+#: preftutorbase.ui:161
+#, fuzzy, kde-format
+msgid "Flashcard Appearance"
+msgstr "Belakang"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
+#: preftutorbase.ui:167
+#, kde-format
+msgid "&Native"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
+#: preftutorbase.ui:177
+#, kde-format
+msgid "Minim&alistic"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
+#: preftutorbase.ui:187
+#, kde-format
+msgid "Miscellaneous"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
+#: preftutorbase.ui:193
+#, kde-format
+msgid "S&tart exercise as soon as vocabulary file is opened"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
+#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
+#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
+#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
+#, fuzzy, kde-format
+msgid "Type your answer"
+msgstr "Sila pilih jenis logmasuk anda:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:145
+#, kde-format
+msgid "The answer showing blanks for a Fill-in-the-blank question"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
+#: qaviewbase.ui:148
+#, fuzzy, kde-format
+msgid "This is _____ answer"
+msgstr "Semua OK?"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
+#: qaviewbase.ui:176
+#, fuzzy, kde-format
+msgid "Type the answer to the question"
+msgstr "Jawapan kosong kepada pertanyaan."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: qaviewbase.ui:587
+#, kde-format
+msgid ""
+"<html>There are too few entries in your vocabulary.<br />You need at least "
+"one entry for a question and answer quiz.</html>"
+msgstr ""
+
+#: wqprintdialogpage.cpp:17
+#, fuzzy, kde-format
+#| msgid "Vocabulary Options"
+msgctxt "@title:window"
+msgid "Vocabulary Options"
+msgstr "Pilihan Tatabahasa"
+
+#: wqprintdialogpage.cpp:23
+#, kde-format
+msgid "Select Type of Printout"
+msgstr "Pilih Jenis Cetakan"
+
+#: wqprintdialogpage.cpp:28
+#, kde-format
+msgid "Vocabulary &list"
+msgstr "&Senarai tatabahasa"
+
+#: wqprintdialogpage.cpp:29
+#, kde-format
+msgid "Select to print the vocabulary as displayed in the editor"
+msgstr ""
+
+#: wqprintdialogpage.cpp:33
+#, kde-format
+msgid "Vocabulary e&xam"
+msgstr "&Ujian tatabahasa"
+
+#: wqprintdialogpage.cpp:34
+#, kde-format
+msgid "Select to print the vocabulary as a vocabulary exam"
+msgstr ""
+
+#: wqprintdialogpage.cpp:38
+#, kde-format
+msgid "&Flashcards"
+msgstr ""
+
+#: wqprintdialogpage.cpp:39
+#, kde-format
+msgid "Select to print flashcards"
+msgstr "Pilih untuk cetak kad imbas"
+
+#, fuzzy
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid ""
+#~ "Flashcard\n"
+#~ "Appearance"
+#~ msgstr "Belakang"
+
+#, fuzzy
+#~ msgctxt "@title:group special character settings"
+#~ msgid ""
+#~ "Special\n"
+#~ "Characters"
+#~ msgstr "Butang Khas"
+
+#, fuzzy
+#~ msgid ""
+#~ "Multiple\n"
+#~ "Choice"
+#~ msgstr "Pilihan Tidak Sah"
+
+#, fuzzy
+#~ msgid "The width for the first table column."
+#~ msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#, fuzzy
+#~ msgid "The width for the second table column."
+#~ msgstr "-l  --left-column  Keluarkan hanya lajur kiri baris yang sama."
+
+#, fuzzy
+#~ msgid "The flashcard"
+#~ msgstr "Belakang"
+
+#, fuzzy
+#~ msgid "This is the question"
+#~ msgstr "Semua OK?"
+
+#, fuzzy
+#~ msgid "Rows & Columns"
+#~ msgstr "lajur dahulu"
+
+#, fuzzy
+#~ msgid "Column Titles"
+#~ msgstr "+BARIS,LAJUR"
+
+#, fuzzy
+#~ msgid "&Column 1:"
+#~ msgstr "+BARIS,LAJUR"
+
+#, fuzzy
+#~ msgid "Number of rows"
+#~ msgstr "baris dahulu"
+
+#, fuzzy
+#~ msgid "&Number of rows:"
+#~ msgstr "baris dahulu"
+
+#, fuzzy
+#~ msgid "Height of selected row"
+#~ msgstr "Edit baris dipilih"
+
+#, fuzzy
+#~ msgid "&Row height:"
+#~ msgstr "Edit baris dipilih"
+
+#, fuzzy
+#~ msgid "&Go To"
+#~ msgstr "pergi ke keadaan %d\n"
+
+#, fuzzy
+#~ msgid "Go to"
+#~ msgstr "pergi ke keadaan %d\n"
+
+#, fuzzy
+#~ msgid "&Rows/Columns..."
+#~ msgstr "lajur dahulu"
+
+#, fuzzy
+#~ msgid "Changing the keyboard layout..."
+#~ msgstr "Tetapkan susunatur papan kekunci"
+
+#, fuzzy
+#~ msgid "Not implemented yet"
+#~ msgstr "Belum lagi dibaca"
+
+#, fuzzy
+#~ msgctxt "@item:inmenu undo column titles"
+#~ msgid "Column Titles"
+#~ msgstr "+BARIS,LAJUR"
+
+#, fuzzy
+#~ msgid "The number of cards in the session"
+#~ msgstr "Kira jumlah perkataan dalam fail"
+
+#, fuzzy
+#~ msgid "&Question && Answer"
+#~ msgstr "Dialog soalan:"
