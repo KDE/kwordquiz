@@ -1308,7 +1308,7 @@ msgstr "Retalla"
 #, kde-format
 msgctxt "@item:inmenu undo paste"
 msgid "Paste"
-msgstr "&Apega"
+msgstr "A&pega"
 
 #: kwqcommands.cpp:205
 #, kde-format
