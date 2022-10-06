@@ -154,7 +154,7 @@ msgstr "&Disposició del teclat:"
 #: columndialogbase.ui:128
 #, kde-format
 msgid "&Width:"
-msgstr "&Amplària:"
+msgstr "A&mplària:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
 #: columndialogbase.ui:158
@@ -448,7 +448,7 @@ msgstr "Enllaça un so amb l'entrada actual"
 #: kwordquiz.cpp:246
 #, kde-format
 msgid "&Adjust Row Heights"
-msgstr "Ajusta l'&alçària de les files"
+msgstr "Ajusta l'a&lçària de les files"
 
 #: kwordquiz.cpp:247
 #, kde-format
@@ -620,7 +620,7 @@ msgstr "Reinicia la sessió de qüestionari des de l'inici"
 #: kwordquiz.cpp:394
 #, kde-format
 msgid "&Play Audio"
-msgstr "&Reproduïx l'àudio"
+msgstr "Re&produïx l'àudio"
 
 #: kwordquiz.cpp:396
 #, kde-format
@@ -2123,7 +2123,7 @@ msgstr ""
 #: prefgeneralbase.ui:41
 #, kde-format
 msgid "&Open Vocabulary Documents in"
-msgstr "&Obri documents de vocabulari en"
+msgstr "O&bri documents de vocabulari en"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
 #: prefgeneralbase.ui:47
@@ -2444,7 +2444,7 @@ msgstr "Minim&alista"
 #: preftutorbase.ui:187
 #, kde-format
 msgid "Miscellaneous"
-msgstr "Miscelànea"
+msgstr "Miscel·lània"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
 #: preftutorbase.ui:193
