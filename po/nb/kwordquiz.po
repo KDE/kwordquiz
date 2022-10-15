@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-06 00:41+0000\n"
+"POT-Creation-Date: 2022-10-01 00:41+0000\n"
 "PO-Revision-Date: 2010-08-14 20:37+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -229,25 +229,25 @@ msgstr "Bredde for høyre kolonne"
 msgid "Enter the width (in pixels) for the right column"
 msgstr "Skriv inn bredden (i piksler) for høyre kolonne"
 
-#: dlglanguage.cpp:22
+#: dlglanguage.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Column Settings"
 msgstr ""
 
-#: dlgspecchar.cpp:18
+#: dlgspecchar.cpp:17
 #, kde-format
 msgctxt "@title:window select character dialog"
 msgid "Select Character"
 msgstr "Velg tegn"
 
-#: dlgspecchar.cpp:42
+#: dlgspecchar.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "&Select"
 msgstr "&Velg"
 
-#: dlgspecchar.cpp:43
+#: dlgspecchar.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select this character"
@@ -753,7 +753,7 @@ msgstr "Åpner et nytt dokumentvindu …"
 msgid "&Merge selected files with the current document"
 msgstr "S&lå de valgte filene sammen med gjeldende dokument"
 
-#: kwordquiz.cpp:775 kwqtutor.cpp:131
+#: kwordquiz.cpp:775 kwqtutor.cpp:130
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Åpne glosebok"
@@ -1435,40 +1435,40 @@ msgstr "Antall spørsmål allerede besvart. Kan bli vist som prosent."
 msgid "Untitled"
 msgstr "Uten tittel"
 
-#: kwqtableview.cpp:188
+#: kwqtableview.cpp:186
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Navn:_____________________________ Dato:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:235 prefquizbase.ui:90
+#: kwqtableview.cpp:233 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "Poengsum"
 
-#: kwqtableview.cpp:654
+#: kwqtableview.cpp:652
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "Det er en feil ved fyll-inn-tomrom parentesene"
 
-#: kwqtableview.cpp:721
+#: kwqtableview.cpp:719
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr ""
 
-#: kwqtableview.cpp:741
+#: kwqtableview.cpp:739
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr ""
 
-#: kwqtableview.cpp:741
+#: kwqtableview.cpp:739
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
 
-#: kwqtutor.cpp:26
+#: kwqtutor.cpp:25
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1486,55 +1486,55 @@ msgstr ""
 "panelikonet for KWordQuiz Lærer og velg Innstillinger, Der kan du sette opp "
 "tastatursnarveier.</qt>"
 
-#: kwqtutor.cpp:32
+#: kwqtutor.cpp:31
 #, kde-format
 msgid "Tutor"
 msgstr "Lærer"
 
-#: kwqtutor.cpp:43 kwqtutor.cpp:120
+#: kwqtutor.cpp:42 kwqtutor.cpp:119
 #, kde-format
 msgid "Start Exercise"
 msgstr "Start øvelse"
 
-#: kwqtutor.cpp:53
+#: kwqtutor.cpp:52
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr "Tilpass KWordQuiz Lærer …"
 
-#: kwqtutor.cpp:58
+#: kwqtutor.cpp:57
 #, kde-format
 msgid "Close Flash Card"
 msgstr "Lukk spørrekort"
 
-#: kwqtutor.cpp:63
+#: kwqtutor.cpp:62
 #, kde-format
 msgid "Flip Flash Card"
 msgstr "Snu spørrekortet"
 
-#: kwqtutor.cpp:112
+#: kwqtutor.cpp:111
 #, kde-format
 msgid "Stop Exercise"
 msgstr "Stopp øvelsen"
 
-#: kwqtutorprefs.cpp:23
+#: kwqtutorprefs.cpp:22
 #, kde-format
 msgctxt "@title:group tutor settings"
 msgid "Tutor"
 msgstr "Lærer"
 
-#: kwqtutorprefs.cpp:23
+#: kwqtutorprefs.cpp:22
 #, kde-format
 msgctxt "@title:group tutor settings"
 msgid "Tutor Settings"
 msgstr "Innstillinger for Lærer"
 
-#: kwqtutorprefs.cpp:26
+#: kwqtutorprefs.cpp:25
 #, kde-format
 msgctxt "Shortcuts Config"
 msgid "Shortcuts"
 msgstr "Snarveier"
 
-#: kwqtutorprefs.cpp:26
+#: kwqtutorprefs.cpp:25
 #, kde-format
 msgid "Shortcuts Settings"
 msgstr "Snarveisinnstillinger"
@@ -2461,43 +2461,43 @@ msgstr ""
 "<html>Der er for få oppføringer i glosesamlinga.<br />Du trenger minst én "
 "oppføring for  en spørrelek med spørsmål og svar</html>"
 
-#: wqprintdialogpage.cpp:19
+#: wqprintdialogpage.cpp:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Vocabulary Options"
 msgstr ""
 
-#: wqprintdialogpage.cpp:25
+#: wqprintdialogpage.cpp:23
 #, kde-format
 msgid "Select Type of Printout"
 msgstr "Velg type utskrift"
 
-#: wqprintdialogpage.cpp:30
+#: wqprintdialogpage.cpp:28
 #, kde-format
 msgid "Vocabulary &list"
 msgstr "&Liste over glosesamlinger"
 
-#: wqprintdialogpage.cpp:31
+#: wqprintdialogpage.cpp:29
 #, kde-format
 msgid "Select to print the vocabulary as displayed in the editor"
 msgstr "Velg dette for å skrive ut glosesamlinga slik den ser ut i redigereren"
 
-#: wqprintdialogpage.cpp:35
+#: wqprintdialogpage.cpp:33
 #, kde-format
 msgid "Vocabulary e&xam"
 msgstr "&Gloseprøve"
 
-#: wqprintdialogpage.cpp:36
+#: wqprintdialogpage.cpp:34
 #, kde-format
 msgid "Select to print the vocabulary as a vocabulary exam"
 msgstr "Velg dette for å skrive ut glosesamlinga som en gloseprøve"
 
-#: wqprintdialogpage.cpp:40
+#: wqprintdialogpage.cpp:38
 #, kde-format
 msgid "&Flashcards"
 msgstr "&Spørrekort"
 
-#: wqprintdialogpage.cpp:41
+#: wqprintdialogpage.cpp:39
 #, kde-format
 msgid "Select to print flashcards"
 msgstr "Velg dette for å skrive ut spørrekort"
