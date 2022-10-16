@@ -50,6 +50,7 @@
 #include "wqprintdialogpage.h"
 #include "prefs.h"
 #include "kwordquiz_version.h"
+#include <kwidgetsaddons_version.h>
 
 KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
 {
@@ -632,8 +633,16 @@ void KWordQuizApp::openDocumentFile(const QUrl &url, KEduVocDocument::FileHandli
     }
     else {
       if (result == KEduVocDocument::FileLocked) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        const KMessageBox::ButtonCode userAnswer = KMessageBox::questionTwoActions(this, i18nc("%1 is an error message", "%1\nIf you are sure no other program is using the file you can choose to ignore the lock and open the file anyway.\nDo you want to open the file?", KEduVocDocument::errorDescription(result)), i18n("Open File"), KStandardGuiItem::open(), KStandardGuiItem::cancel());
+#else
         const KMessageBox::ButtonCode userAnswer = KMessageBox::questionYesNo(this, i18nc("%1 is an error message", "%1\nIf you are sure no other program is using the file you can choose to ignore the lock and open the file anyway.\nDo you want to open the file?", KEduVocDocument::errorDescription(result)));
+#endif
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (userAnswer == KMessageBox::ButtonCode::PrimaryAction) {
+#else
         if (userAnswer == KMessageBox::Yes) {
+#endif
           return openDocumentFile(url, KEduVocDocument::FileIgnoreLock);
         }
       } else {
@@ -714,14 +723,22 @@ bool KWordQuizApp::queryClose()
   bool completed=true;
   if(m_doc->isModified())
   {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    int want_save = KMessageBox::warningTwoActionsCancel(this, i18n("The current document has been modified.\nDo you want to save it?"), QString(), KStandardGuiItem::save(), KStandardGuiItem::discard());
+#else
     int want_save = KMessageBox::warningYesNoCancel(this, i18n("The current document has been modified.\nDo you want to save it?"), QString(), KStandardGuiItem::save(), KStandardGuiItem::discard());
+#endif
     switch(want_save)
     {
       case KMessageBox::Cancel:
         completed = false;
         break;
 
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+      case KMessageBox::ButtonCode::PrimaryAction:
+#else
       case KMessageBox::Yes:
+#endif
         if (m_doc->url().fileName().isEmpty())
         {
           completed = saveDocAsFileName(m_doc);
@@ -733,7 +750,11 @@ bool KWordQuizApp::queryClose()
 
         break;
 
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+      case KMessageBox::ButtonCode::SecondaryAction:
+#else
       case KMessageBox::No:
+#endif
         completed = true;
         break;
 
