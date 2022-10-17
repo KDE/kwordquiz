@@ -682,7 +682,7 @@ msgstr "Mostra/oculta la visualització de les barres d'eines"
 #: kwordquiz.cpp:500
 #, kde-format
 msgid "Enter search terms here"
-msgstr "Introduïu ací els termes a buscar"
+msgstr "Introduïu ací els termes que s'han de buscar"
 
 #: kwordquiz.cpp:523
 #, kde-format
@@ -969,13 +969,13 @@ msgstr "Mostra/oculta la visualització de la barra de busques."
 #: kwordquiz.kcfg:18
 #, kde-format
 msgid "Type of session to use when opening files"
-msgstr "Tipus de sessió a emprar quan s'òbriguen fitxers"
+msgstr "Tipus de sessió que s'ha d'utilitzar quan s'òbriguen fitxers"
 
 #. i18n: ectx: label, entry (PrintStyle), group (General)
 #: kwordquiz.kcfg:28
 #, kde-format
 msgid "Type of printout to generate"
-msgstr "Tipus d'impressió a generar"
+msgstr "Tipus d'impressió que s'ha de generar"
 
 #. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
 #: kwordquiz.kcfg:39
@@ -1615,7 +1615,7 @@ msgstr ""
 #: main.cpp:57
 #, kde-format
 msgid "File to open"
-msgstr "Fitxer que s'obrirà"
+msgstr "Fitxer que s'ha d'obrir"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
 #: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
