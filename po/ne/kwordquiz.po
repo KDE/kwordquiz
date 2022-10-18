@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"POT-Creation-Date: 2022-10-18 00:41+0000\n"
 "PO-Revision-Date: 2008-01-03 14:44+0545\n"
 "Last-Translator: Shyam Krishna Bal <balshyam24@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -116,7 +116,7 @@ msgid "&Sound Links"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
+#: columndialogbase.ui:45 kwordquiz.cpp:467
 #, kde-format
 msgid "Column 1"
 msgstr "स्तम्भ १"
@@ -185,7 +185,7 @@ msgid "Enter the width (in pixels) for the left column"
 msgstr "चयन गरिएका स्तम्भका लागि (पिक्सेलमा) चौडाइ प्रविष्ट गर्नुहोस्"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
+#: columndialogbase.ui:214 kwordquiz.cpp:470
 #, kde-format
 msgid "Column 2"
 msgstr "स्तम्भ २"
@@ -303,69 +303,69 @@ msgstr ""
 "<html>तपाईँको शब्दसूचीमा अति थोरै प्रविष्टिहरू छन् ।<br />तपाईँलाई फ्ल्यासकार्ड क्विजका "
 "लागि कम्तिमा एउटा प्रविष्टिको आवश्यक हुन्छ ।</html>"
 
-#: kwordquiz.cpp:100
+#: kwordquiz.cpp:101
 #, kde-format
 msgid "Creates a new blank vocabulary document"
 msgstr "नयाँ खाली शब्द सूची कागजात सिर्जना गर्दछ"
 
-#: kwordquiz.cpp:105
+#: kwordquiz.cpp:106
 #, kde-format
 msgid "Opens an existing vocabulary document"
 msgstr "एउटा पुरानो शब्द सूची कागजात खोल्दछ"
 
-#: kwordquiz.cpp:111
+#: kwordquiz.cpp:112
 #, fuzzy, kde-format
 #| msgid "Downloads new vocabularies"
 msgid "Download New Vocabularies..."
 msgstr "नयाँ शब्द सूची डाउनलोड गर्दछ"
 
-#: kwordquiz.cpp:115
+#: kwordquiz.cpp:116
 #, kde-format
 msgid "Downloads new vocabularies"
 msgstr "नयाँ शब्द सूची डाउनलोड गर्दछ"
 
-#: kwordquiz.cpp:120
+#: kwordquiz.cpp:121
 #, kde-format
 msgid "Saves the active vocabulary document"
 msgstr "सक्रिय शब्द सूची कागजात बचत गर्दछ"
 
-#: kwordquiz.cpp:125
+#: kwordquiz.cpp:126
 #, kde-format
 msgid "Saves the active vocabulary document with a different name"
 msgstr "विभिन्न नामसँग सक्रिय शब्द सूची कागजात बचत गर्दछ"
 
-#: kwordquiz.cpp:130
+#: kwordquiz.cpp:131
 #, kde-format
 msgid "Closes the active vocabulary document"
 msgstr "सक्रिय शब्द सूची कागजात बन्द गर्दछ"
 
-#: kwordquiz.cpp:134
+#: kwordquiz.cpp:135
 #, kde-format
 msgid "Prints the active vocabulary document"
 msgstr "सक्रिय शब्द सूची कागजात मुद्रण गर्दछ"
 
-#: kwordquiz.cpp:139
+#: kwordquiz.cpp:140
 #, fuzzy, kde-format
 #| msgid "Saves the active vocabulary document"
 msgid "Shows a preview of the active vocabulary document"
 msgstr "सक्रिय शब्द सूची कागजात बचत गर्दछ"
 
-#: kwordquiz.cpp:144
+#: kwordquiz.cpp:145
 #, kde-format
 msgid "Quits KWordQuiz"
 msgstr "केडीई वर्ड क्विज अन्त्य गर्दछ"
 
-#: kwordquiz.cpp:156
+#: kwordquiz.cpp:157
 #, kde-format
 msgid "Cuts the text from the selected cells and places it on the clipboard"
 msgstr "चयन गरिएका कक्षबाट पाठ काट्दछ र क्लिपबोर्डमा यसलाई राख्दछ"
 
-#: kwordquiz.cpp:161
+#: kwordquiz.cpp:162
 #, kde-format
 msgid "Copies the text from the selected cells and places it on the clipboard"
 msgstr "चयन गरिएका कक्षबाट पाठ प्रतिलिपि गर्दछ र यसलाई क्लिपबोर्डमा राख्दछ"
 
-#: kwordquiz.cpp:166
+#: kwordquiz.cpp:167
 #, kde-format
 msgid ""
 "Pastes previously cut or copied text from the clipboard into the selected "
@@ -373,336 +373,336 @@ msgid ""
 msgstr ""
 "चयन गरिएका कक्षमा क्लिपबोर्डबाट पहिल्यै काटिएको वा प्रतिलिपि गरिएको पाठ टाँस्दछ"
 
-#: kwordquiz.cpp:172
+#: kwordquiz.cpp:173
 #, kde-format
 msgid "Clears the content of the selected cells"
 msgstr "चयन गरिएका कक्षको सामग्री खाली गर्दछ"
 
-#: kwordquiz.cpp:178
+#: kwordquiz.cpp:179
 #, kde-format
 msgid "&Insert Row"
 msgstr "पङ्क्ति घुसाउँनुहोस्"
 
-#: kwordquiz.cpp:180
+#: kwordquiz.cpp:181
 #, kde-format
 msgid "Inserts a new row above the current row"
 msgstr "हालको पङ्क्ति माथिको नयाँ पङ्क्ति घुसाउदछ"
 
-#: kwordquiz.cpp:187
+#: kwordquiz.cpp:188
 #, kde-format
 msgid "&Delete Row"
 msgstr "पङ्क्ति मेट्नुहोस्"
 
-#: kwordquiz.cpp:189
+#: kwordquiz.cpp:190
 #, kde-format
 msgid "Deletes the selected row(s)"
 msgstr "चयन गरिएका पङ्क्ति मेट्दछ"
 
-#: kwordquiz.cpp:196
+#: kwordquiz.cpp:197
 #, kde-format
 msgid "&Mark as Blank"
 msgstr "खाली ठाउँको रूपमा चिन्ह लगाउनुहोस्"
 
-#: kwordquiz.cpp:198
+#: kwordquiz.cpp:199
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
 msgstr "खाली ठाउँ भर्नका लागि खाली ठाउँको रूपमा हालको वा चयन गरिएको शब्द चिन्ह गर्दछ"
 
-#: kwordquiz.cpp:205
+#: kwordquiz.cpp:206
 #, kde-format
 msgid "&Unmark Blanks"
 msgstr "खाली ठाउँ चिन्हबाट हटाउनुहोस्"
 
-#: kwordquiz.cpp:206
+#: kwordquiz.cpp:207
 #, kde-format
 msgid "Removes blanks from the current or selected word"
 msgstr "हालको वा चयन गरिएको शब्दबाट खाली ठाउँ हटाउँदछ"
 
-#: kwordquiz.cpp:213
+#: kwordquiz.cpp:214
 #, fuzzy, kde-format
 #| msgid "&Column Titles..."
 msgid "&Column Settings..."
 msgstr "स्तम्भ शीर्षक..."
 
-#: kwordquiz.cpp:215
+#: kwordquiz.cpp:216
 #, fuzzy, kde-format
 #| msgid "Defines the column titles for the active vocabulary"
 msgid "Defines the column settings for the active vocabulary"
 msgstr "सक्रिय शब्द सूचीका लागि स्तम्भ शीर्षक परिभाषित गर्दछ"
 
-#: kwordquiz.cpp:222
+#: kwordquiz.cpp:223
 #, kde-format
 msgid "&Font..."
 msgstr "फन्ट..."
 
-#: kwordquiz.cpp:223
+#: kwordquiz.cpp:224
 #, kde-format
 msgid "Defines the font used by the editor"
 msgstr "सम्पादकद्वारा प्रयोग गरिएको फन्ट परिभाषित गर्दछ"
 
-#: kwordquiz.cpp:230
+#: kwordquiz.cpp:231
 #, kde-format
 msgid "Link &Image..."
 msgstr ""
 
-#: kwordquiz.cpp:231
+#: kwordquiz.cpp:232
 #, kde-format
 msgid "Links an image with the current entry"
 msgstr ""
 
-#: kwordquiz.cpp:238
+#: kwordquiz.cpp:239
 #, kde-format
 msgid "Link &Sound..."
 msgstr ""
 
-#: kwordquiz.cpp:239
+#: kwordquiz.cpp:240
 #, kde-format
 msgid "Links a sound with the current entry"
 msgstr ""
 
-#: kwordquiz.cpp:246
+#: kwordquiz.cpp:247
 #, kde-format
 msgid "&Adjust Row Heights"
 msgstr "पङ्क्ति उचाइहरू समायोजन गर्नुहोस्"
 
-#: kwordquiz.cpp:247
+#: kwordquiz.cpp:248
 #, kde-format
 msgid "Automatically adjusts the height of selected rows"
 msgstr "चयन गरिएका पङ्क्तिहरूको उचाइ स्वचालित रूपमा समायोजन गर्दछ"
 
-#: kwordquiz.cpp:254
+#: kwordquiz.cpp:255
 #, kde-format
 msgid "Sh&uffle"
 msgstr "शफल गर्नुहोस्"
 
-#: kwordquiz.cpp:255
+#: kwordquiz.cpp:256
 #, kde-format
 msgid "Shuffles the entries of the active vocabulary"
 msgstr "सक्रिय शब्द सूचीको प्रविष्टिहरू शफल गर्दछ"
 
-#: kwordquiz.cpp:261
+#: kwordquiz.cpp:262
 #, kde-format
 msgid "&Keyboard Layout"
 msgstr ""
 
-#: kwordquiz.cpp:262
+#: kwordquiz.cpp:263
 #, fuzzy, kde-format
 #| msgid "Changing the keyboard layout..."
 msgid "Shows available keyboard layouts"
 msgstr "कुञ्जीपाटी सजावट परिवर्तन गरिँदैछ..."
 
-#: kwordquiz.cpp:273
+#: kwordquiz.cpp:274
 #, kde-format
 msgid "Change Mode"
 msgstr "मोड परिवर्तन गर्नुहोस्"
 
-#: kwordquiz.cpp:274
+#: kwordquiz.cpp:275
 #, kde-format
 msgid "Mode"
 msgstr "मोड"
 
-#: kwordquiz.cpp:275
+#: kwordquiz.cpp:276
 #, kde-format
 msgid "Changes the mode used in quiz sessions"
 msgstr "प्रश्नमाला सत्रमा प्रयोग गरिएका मोड परिवर्तन गर्दछ"
 
-#: kwordquiz.cpp:288
+#: kwordquiz.cpp:289
 #, kde-format
 msgid "Selects this mode"
 msgstr "यो मोड चयन गर्दछ"
 
-#: kwordquiz.cpp:297
+#: kwordquiz.cpp:298
 #, fuzzy, kde-format
 #| msgid "&Editor"
 msgctxt "@item:inlistbox activate vocabulary editor"
 msgid "&Editor"
 msgstr "सम्पादक"
 
-#: kwordquiz.cpp:299
+#: kwordquiz.cpp:300
 #, kde-format
 msgid "Activates the vocabulary editor"
 msgstr "शब्द सूची सम्पादक सक्रिय गर्दछ"
 
-#: kwordquiz.cpp:306
+#: kwordquiz.cpp:307
 #, kde-format
 msgid "&Flashcard"
 msgstr "फ्ल्यासकार्ड"
 
-#: kwordquiz.cpp:308
+#: kwordquiz.cpp:309
 #, kde-format
 msgid "Starts a flashcard session using the active vocabulary"
 msgstr "सक्रिय शब्द सूची प्रयोग गरेर फ्ल्यासकार्ड सत्र सुरु गर्दछ"
 
-#: kwordquiz.cpp:315
+#: kwordquiz.cpp:316
 #, kde-format
 msgid "&Multiple Choice"
 msgstr "बहुविध छनौट"
 
-#: kwordquiz.cpp:317
+#: kwordquiz.cpp:318
 #, kde-format
 msgid "Starts a multiple choice session using the active vocabulary"
 msgstr "सक्रिय शब्द सूची प्रयोग गरेर बहुविध छनौट सत्र सुरु गर्दछ"
 
-#: kwordquiz.cpp:324
+#: kwordquiz.cpp:325
 #, fuzzy, kde-format
 #| msgid "&Question && Answer"
 msgid "&Question and Answer"
 msgstr "प्रश्न र उत्तर"
 
-#: kwordquiz.cpp:325
+#: kwordquiz.cpp:326
 #, kde-format
 msgid "Q&&A"
 msgstr "Q&&A"
 
-#: kwordquiz.cpp:327
+#: kwordquiz.cpp:328
 #, kde-format
 msgid "Starts a question and answer session using the active vocabulary"
 msgstr "सक्रिय शब्द सूची प्रयोग गरेर प्रश्न र उत्तर सत्र सुरु गर्दछ"
 
-#: kwordquiz.cpp:334
+#: kwordquiz.cpp:335
 #, kde-format
 msgid "&Check"
 msgstr "जाँच गर्नुहोस्"
 
-#: kwordquiz.cpp:336
+#: kwordquiz.cpp:337
 #, kde-format
 msgid "Checks your answer to this question"
 msgstr "यो प्रश्नमा तपाईँको उत्तर जाँच गर्दछ"
 
-#: kwordquiz.cpp:341
+#: kwordquiz.cpp:342
 #, kde-format
 msgid "Choose Option &1"
 msgstr ""
 
-#: kwordquiz.cpp:345
+#: kwordquiz.cpp:346
 #, kde-format
 msgid "Choose Option &2"
 msgstr ""
 
-#: kwordquiz.cpp:349
+#: kwordquiz.cpp:350
 #, kde-format
 msgid "Choose Option &3"
 msgstr ""
 
-#: kwordquiz.cpp:354
+#: kwordquiz.cpp:355
 #, kde-format
 msgid "I &Know"
 msgstr "मलाई थाह छ"
 
-#: kwordquiz.cpp:356
+#: kwordquiz.cpp:357
 #, kde-format
 msgid "Counts this card as correct and shows the next card"
 msgstr "सही रूपमा यो कार्ड गणना गर्दछ र पछिल्लो कार्ड देखाउँदछ"
 
-#: kwordquiz.cpp:362
+#: kwordquiz.cpp:363
 #, kde-format
 msgid "I &Do Not Know"
 msgstr "मलाई थाह छैन"
 
-#: kwordquiz.cpp:364
+#: kwordquiz.cpp:365
 #, kde-format
 msgid "Counts this card as incorrect and shows the next card"
 msgstr "गलत रूपमा यो कार्ड गणना गर्दछ र पछिल्लो कार्ड देखाउँदछ"
 
-#: kwordquiz.cpp:370
+#: kwordquiz.cpp:371
 #, kde-format
 msgid "&Hint"
 msgstr "सङ्केत"
 
-#: kwordquiz.cpp:372
+#: kwordquiz.cpp:373
 #, kde-format
 msgid "Gets the next correct letter of the answer"
 msgstr "जवाफको पछिल्लो सही अक्षर प्राप्त गर्दछ"
 
-#: kwordquiz.cpp:378
+#: kwordquiz.cpp:379
 #, kde-format
 msgid "Mark Last Correct"
 msgstr ""
 
-#: kwordquiz.cpp:380
+#: kwordquiz.cpp:381
 #, fuzzy, kde-format
 #| msgid "Your answer was correct!"
 msgid "Marks last answer as correct"
 msgstr "तपाईँको जवाफ सही थियो !"
 
-#: kwordquiz.cpp:386
+#: kwordquiz.cpp:387
 #, kde-format
 msgid "&Restart"
 msgstr "पुन: सुरुआत गर्नुहोस्"
 
-#: kwordquiz.cpp:388
+#: kwordquiz.cpp:389
 #, kde-format
 msgid "Restarts the quiz session from the beginning"
 msgstr "सुरुबाट प्रश्नमाला सत्र पुन: सुरुआत गर्दछ"
 
-#: kwordquiz.cpp:394
+#: kwordquiz.cpp:395
 #, kde-format
 msgid "&Play Audio"
 msgstr ""
 
-#: kwordquiz.cpp:396
+#: kwordquiz.cpp:397
 #, kde-format
 msgid "Play associated audio"
 msgstr ""
 
-#: kwordquiz.cpp:402
+#: kwordquiz.cpp:403
 #, kde-format
 msgid "Repeat &Errors"
 msgstr "त्रुटि दोर्याउनुहोस्"
 
-#: kwordquiz.cpp:404
+#: kwordquiz.cpp:405
 #, kde-format
 msgid "Repeats all incorrectly answered questions"
 msgstr "सबै गलत जवाफ दिएको प्रश्नहरू दोर्याउँदछ"
 
-#: kwordquiz.cpp:410
+#: kwordquiz.cpp:411
 #, kde-format
 msgid "Export Errors &As..."
 msgstr ""
 
-#: kwordquiz.cpp:411
+#: kwordquiz.cpp:412
 #, fuzzy, kde-format
 #| msgid "Creates a new blank vocabulary document"
 msgid "Exports all errors as a new vocabulary document"
 msgstr "नयाँ खाली शब्द सूची कागजात सिर्जना गर्दछ"
 
-#: kwordquiz.cpp:417
+#: kwordquiz.cpp:418
 #, kde-format
 msgid "Show Se&arch"
 msgstr "खोजी देखाउनुहोस्"
 
-#: kwordquiz.cpp:419
+#: kwordquiz.cpp:420
 #, kde-format
 msgid "Toggle display of the search bar"
 msgstr "खोजीपट्टीको प्रदर्शन टगल गर्नुहोस्"
 
-#: kwordquiz.cpp:424
+#: kwordquiz.cpp:425
 #, kde-format
 msgid "Configures sound and other notifications for certain events"
 msgstr "ध्वनि र निश्चित घटनाका लागि अन्य सूचना कन्फिगर गर्दछ"
 
-#: kwordquiz.cpp:429
+#: kwordquiz.cpp:430
 #, kde-format
 msgid "Specifies preferences for the vocabulary editor and quiz sessions"
 msgstr "शब्द सूची सम्पादक र प्रश्नमाला सत्रका लागि प्राथमिकता निर्दिष्ट गर्दछ"
 
-#: kwordquiz.cpp:435
+#: kwordquiz.cpp:436
 #, fuzzy, kde-format
 #| msgid "Special Character %1"
 msgid "Special Character <numid>%1</numid>"
 msgstr "विशेष क्यारेक्टर %1"
 
-#: kwordquiz.cpp:447
+#: kwordquiz.cpp:448
 #, kde-format
 msgid "Toggles display of the toolbars"
 msgstr "उपकरणपट्टीको प्रदर्शन टगल गर्दछ"
 
-#: kwordquiz.cpp:500
+#: kwordquiz.cpp:501
 #, kde-format
 msgid "Enter search terms here"
 msgstr "यहाँ खोजी सर्तहरू प्रविष्ट गर्नुहोस्"
 
-#: kwordquiz.cpp:523
+#: kwordquiz.cpp:524
 #, fuzzy, kde-format
 #| msgid "Editor"
 msgctxt "@item:inlistbox vocabulary editor"
@@ -710,29 +710,29 @@ msgid "Editor"
 msgstr "सम्पादक"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:192
+#: kwordquiz.cpp:529 prefquizbase.ui:192
 #, kde-format
 msgid "Flashcard"
 msgstr "फ्ल्यासकार्ड"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:149
+#: kwordquiz.cpp:533 prefquizbase.ui:149
 #, kde-format
 msgid "Multiple Choice"
 msgstr "बहुविध छनौट"
 
-#: kwordquiz.cpp:536
+#: kwordquiz.cpp:537
 #, fuzzy, kde-format
 #| msgid "Question && Answer"
 msgid "Question & Answer"
 msgstr "प्रश्न र जवाफ"
 
-#: kwordquiz.cpp:602 kwordquiz.cpp:768 kwordquiz.cpp:813
+#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
 msgid "Opening file..."
 msgstr "फाइल खुल्दैछ..."
 
-#: kwordquiz.cpp:635
+#: kwordquiz.cpp:637 kwordquiz.cpp:639
 #, kde-format
 msgctxt "%1 is an error message"
 msgid ""
@@ -742,20 +742,26 @@ msgid ""
 "Do you want to open the file?"
 msgstr ""
 
-#: kwordquiz.cpp:648 kwordquiz.cpp:763 kwordquiz.cpp:808 kwordquiz.cpp:816
-#: kwordquiz.cpp:853 kwordquiz.cpp:866 kwordquiz.cpp:955 kwordquiz.cpp:962
-#: kwordquiz.cpp:968 kwordquiz.cpp:998 kwordquiz.cpp:1005 kwordquiz.cpp:1012
-#: kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033 kwordquiz.cpp:1040
-#: kwordquiz.cpp:1047 kwordquiz.cpp:1060 kwordquiz.cpp:1075 kwordquiz.cpp:1083
-#: kwordquiz.cpp:1091 kwordquiz.cpp:1100 kwordquiz.cpp:1108 kwordquiz.cpp:1122
-#: kwordquiz.cpp:1130 kwordquiz.cpp:1137 kwordquiz.cpp:1144 kwordquiz.cpp:1151
+#: kwordquiz.cpp:637
+#, fuzzy, kde-format
+#| msgid "Opening file..."
+msgid "Open File"
+msgstr "फाइल खुल्दैछ..."
+
+#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
+#: kwordquiz.cpp:874 kwordquiz.cpp:887 kwordquiz.cpp:976 kwordquiz.cpp:983
+#: kwordquiz.cpp:989 kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033
+#: kwordquiz.cpp:1040 kwordquiz.cpp:1047 kwordquiz.cpp:1054 kwordquiz.cpp:1061
+#: kwordquiz.cpp:1068 kwordquiz.cpp:1081 kwordquiz.cpp:1096 kwordquiz.cpp:1104
+#: kwordquiz.cpp:1112 kwordquiz.cpp:1121 kwordquiz.cpp:1129 kwordquiz.cpp:1143
+#: kwordquiz.cpp:1151 kwordquiz.cpp:1158 kwordquiz.cpp:1165 kwordquiz.cpp:1172
 #, fuzzy, kde-format
 #| msgid "Ready"
 msgctxt "@info:status ready"
 msgid "Ready"
 msgstr "तयार"
 
-#: kwordquiz.cpp:717
+#: kwordquiz.cpp:727 kwordquiz.cpp:729
 #, kde-format
 msgid ""
 "The current document has been modified.\n"
@@ -764,211 +770,211 @@ msgstr ""
 "हालको फाइल परिमार्जन गरिएको छ ।\n"
 "यसलाई तपाईँ बचत गर्न चाहनुहुन्छ ?"
 
-#: kwordquiz.cpp:758
+#: kwordquiz.cpp:779
 #, kde-format
 msgid "Opening a new document window..."
 msgstr "नयाँ कागजात सञ्झ्याल खुल्दैछ..."
 
-#: kwordquiz.cpp:770
+#: kwordquiz.cpp:791
 #, kde-format
 msgid "&Merge selected files with the current document"
 msgstr "चयन गरिएका फाइलहरू हालको कागजातसँग गाँभ्नुहोस्"
 
-#: kwordquiz.cpp:775 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:130
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "शब्द सूची कागजात खोल्नुहोस्"
 
-#: kwordquiz.cpp:840
+#: kwordquiz.cpp:861
 #, kde-format
 msgid "Saving file..."
 msgstr "फाइल बचत गर्दैछ..."
 
-#: kwordquiz.cpp:859
+#: kwordquiz.cpp:880
 #, kde-format
 msgid "Saving file with a new filename..."
 msgstr "नयाँ फाइलनामसँग फाइल बचत गर्दैछ..."
 
-#: kwordquiz.cpp:887
+#: kwordquiz.cpp:908
 #, kde-format
 msgid "HTML Document"
 msgstr ""
 
-#: kwordquiz.cpp:889
+#: kwordquiz.cpp:910
 #, kde-format
 msgid "Save Vocabulary Document As"
 msgstr "यस रूपमा शब्द सूची कागजात बचत गर्नुहोस्"
 
-#: kwordquiz.cpp:937
+#: kwordquiz.cpp:958
 #, kde-format
 msgid "Closing file..."
 msgstr "फाइल बन्द गर्दैछ..."
 
-#: kwordquiz.cpp:960
+#: kwordquiz.cpp:981
 #, kde-format
 msgid "Printing..."
 msgstr "मुद्रण हुँदैछ..."
 
-#: kwordquiz.cpp:966
+#: kwordquiz.cpp:987
 #, fuzzy, kde-format
 #| msgid "Saving file..."
 msgid "Showing Preview..."
 msgstr "फाइल बचत गर्दैछ..."
 
-#: kwordquiz.cpp:974
+#: kwordquiz.cpp:995
 #, fuzzy, kde-format
 #| msgid "Exiting..."
 msgctxt "@info:status quitting"
 msgid "Quitting..."
 msgstr "बाहिर निस्कदैछ..."
 
-#: kwordquiz.cpp:996
+#: kwordquiz.cpp:1017
 #, kde-format
 msgid "Cutting selection..."
 msgstr "चयन काटिँदैछ..."
 
-#: kwordquiz.cpp:1003
+#: kwordquiz.cpp:1024
 #, kde-format
 msgid "Copying selection to clipboard..."
 msgstr "क्लिपबोर्डमा चयन प्रतिलिपि गरिँदैछ..."
 
-#: kwordquiz.cpp:1010
+#: kwordquiz.cpp:1031
 #, kde-format
 msgid "Inserting clipboard contents..."
 msgstr "क्लिपबोर्ड सामग्री घुसाइदैछ..."
 
-#: kwordquiz.cpp:1017
+#: kwordquiz.cpp:1038
 #, kde-format
 msgid "Clearing the selected cells..."
 msgstr "चयन गरिएका कक्ष खाली गरिँदैछ..."
 
-#: kwordquiz.cpp:1024
+#: kwordquiz.cpp:1045
 #, kde-format
 msgid "Inserting rows..."
 msgstr "पङ्क्ति घुसाइदैछ..."
 
-#: kwordquiz.cpp:1031
+#: kwordquiz.cpp:1052
 #, kde-format
 msgid "Deleting selected rows..."
 msgstr "चयन गरिएका पङ्क्ति मेटिँदैछ..."
 
-#: kwordquiz.cpp:1038
+#: kwordquiz.cpp:1059
 #, kde-format
 msgid "Marking selected text as a blank..."
 msgstr "खालीको रूपमा चयन गरिएका पाठ चिन्ह लगाइदैछ..."
 
-#: kwordquiz.cpp:1045
+#: kwordquiz.cpp:1066
 #, kde-format
 msgid "Removing blank markings..."
 msgstr "खाली चिन्ह हटाइदैछ..."
 
-#: kwordquiz.cpp:1052
+#: kwordquiz.cpp:1073
 #, kde-format
 msgid "Setting the column titles of the vocabulary..."
 msgstr "शब्द सूचीको स्तम्भ शीर्षक सेट गरिँदैछ..."
 
-#: kwordquiz.cpp:1065
+#: kwordquiz.cpp:1086
 #, kde-format
 msgid "Setting the font of the vocabulary..."
 msgstr "शब्द सूचीको फन्ट सेट गरिँदैछ..."
 
-#: kwordquiz.cpp:1081
+#: kwordquiz.cpp:1102
 #, kde-format
 msgid "Linking an image with the current entry..."
 msgstr ""
 
-#: kwordquiz.cpp:1089
+#: kwordquiz.cpp:1110
 #, kde-format
 msgid "Linking a sound with the current entry..."
 msgstr ""
 
-#: kwordquiz.cpp:1097
+#: kwordquiz.cpp:1118
 #, kde-format
 msgid "Adjusting row heights..."
 msgstr "पङ्क्ति उचाइहरू समायोजन गर्दैछ..."
 
-#: kwordquiz.cpp:1106
+#: kwordquiz.cpp:1127
 #, kde-format
 msgid "Randomizing the vocabulary..."
 msgstr "शब्द सूची अनियमित गरिँदैछ..."
 
-#: kwordquiz.cpp:1114
+#: kwordquiz.cpp:1135
 #, kde-format
 msgid "Updating mode..."
 msgstr "मोड अद्यावधिक गरिँदैछ..."
 
-#: kwordquiz.cpp:1128
+#: kwordquiz.cpp:1149
 #, kde-format
 msgid "Starting editor session..."
 msgstr "सम्पादक सत्र सुरु गरिँदैछ..."
 
-#: kwordquiz.cpp:1135
+#: kwordquiz.cpp:1156
 #, kde-format
 msgid "Starting flashcard session..."
 msgstr "फ्ल्यासकार्ड सत्र सुरु गरिँदैछ..."
 
-#: kwordquiz.cpp:1142
+#: kwordquiz.cpp:1163
 #, kde-format
 msgid "Starting multiple choice session..."
 msgstr "बहुविध छनौट सत्र सुरु गरिँदैछ..."
 
-#: kwordquiz.cpp:1149
+#: kwordquiz.cpp:1170
 #, kde-format
 msgid "Starting question & answer session..."
 msgstr "प्रश्न र उत्तर सत्र सुरु गरिँदैछ..."
 
-#: kwordquiz.cpp:1301
+#: kwordquiz.cpp:1322
 #, kde-format
 msgid "Insert %1"
 msgstr "%1 घुसाउनुहोस्"
 
-#: kwordquiz.cpp:1302
+#: kwordquiz.cpp:1323
 #, kde-format
 msgid "Inserts the character %1"
 msgstr "क्यारेक्टर %1 घुसाउदछ"
 
-#: kwordquiz.cpp:1353
+#: kwordquiz.cpp:1374
 #, kde-format
 msgid "This will restart your quiz. Do you wish to continue?"
 msgstr "यसले तपाईँको प्रश्नमाला पुन: सुरुआत गर्नेछ । तपाईँ जारी राख्न चाहनुहुन्छ ?"
 
-#: kwordquiz.cpp:1369
+#: kwordquiz.cpp:1390
 #, kde-format
 msgid "&1 %1 -> %2 In Order"
 msgstr "1 %1 -> %2 क्रममा"
 
-#: kwordquiz.cpp:1370
+#: kwordquiz.cpp:1391
 #, kde-format
 msgid "&2 %1 -> %2 In Order"
 msgstr "2 %1 -> %2 क्रममा"
 
-#: kwordquiz.cpp:1371
+#: kwordquiz.cpp:1392
 #, kde-format
 msgid "&3 %1 -> %2 Randomly"
 msgstr "3 %1 -> %2 अनियमित"
 
-#: kwordquiz.cpp:1372
+#: kwordquiz.cpp:1393
 #, kde-format
 msgid "&4 %1 -> %2 Randomly"
 msgstr "4 %1 -> %2 अनियमित"
 
-#: kwordquiz.cpp:1373
+#: kwordquiz.cpp:1394
 #, fuzzy, kde-format
 #| msgid "&3 %1 -> %2 Randomly"
 msgid "&5 %1 <-> %2 Randomly"
 msgstr "3 %1 -> %2 अनियमित"
 
-#: kwordquiz.cpp:1380 kwordquiz.cpp:1383
+#: kwordquiz.cpp:1401 kwordquiz.cpp:1404
 #, kde-format
 msgid "%1 -> %2 In Order"
 msgstr "%1 -> %2 क्रममा"
 
-#: kwordquiz.cpp:1386 kwordquiz.cpp:1389
+#: kwordquiz.cpp:1407 kwordquiz.cpp:1410
 #, kde-format
 msgid "%1 -> %2 Randomly"
 msgstr "%1 -> %2 अनियमित"
 
-#: kwordquiz.cpp:1392
+#: kwordquiz.cpp:1413
 #, kde-format
 msgid "%1 &lt;-&gt; %2 Randomly"
 msgstr "%1 &lt;-&gt; %2 अनियमित"

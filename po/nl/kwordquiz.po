@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"POT-Creation-Date: 2022-10-18 00:41+0000\n"
 "PO-Revision-Date: 2022-08-05 22:41+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -126,7 +126,7 @@ msgid "&Sound Links"
 msgstr "Geluidskoppelingen"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
+#: columndialogbase.ui:45 kwordquiz.cpp:467
 #, kde-format
 msgid "Column 1"
 msgstr "Kolom 1"
@@ -190,7 +190,7 @@ msgid "Enter the width (in pixels) for the left column"
 msgstr "Voer de breedte (in pixels) in van de linker kolom"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
+#: columndialogbase.ui:214 kwordquiz.cpp:470
 #, kde-format
 msgid "Column 2"
 msgstr "Kolom 2"
@@ -298,68 +298,68 @@ msgstr ""
 "<html>Er zijn niet genoeg items in uw woordenschat.<br />Er dient ten minste "
 "een item voor een flashkaartquiz te zijn.</html>"
 
-#: kwordquiz.cpp:100
+#: kwordquiz.cpp:101
 #, kde-format
 msgid "Creates a new blank vocabulary document"
 msgstr "Een nieuw document creëren"
 
-#: kwordquiz.cpp:105
+#: kwordquiz.cpp:106
 #, kde-format
 msgid "Opens an existing vocabulary document"
 msgstr "Een bestaand document openen"
 
-#: kwordquiz.cpp:111
+#: kwordquiz.cpp:112
 #, kde-format
 msgid "Download New Vocabularies..."
 msgstr "Nieuwe woordenschatten downloaden..."
 
-#: kwordquiz.cpp:115
+#: kwordquiz.cpp:116
 #, kde-format
 msgid "Downloads new vocabularies"
 msgstr "Haalt nieuwe woordenschatten van internet"
 
-#: kwordquiz.cpp:120
+#: kwordquiz.cpp:121
 #, kde-format
 msgid "Saves the active vocabulary document"
 msgstr "Dit document opslaan"
 
-#: kwordquiz.cpp:125
+#: kwordquiz.cpp:126
 #, kde-format
 msgid "Saves the active vocabulary document with a different name"
 msgstr "Dit document opslaan met een andere naam"
 
-#: kwordquiz.cpp:130
+#: kwordquiz.cpp:131
 #, kde-format
 msgid "Closes the active vocabulary document"
 msgstr "Dit document sluiten"
 
-#: kwordquiz.cpp:134
+#: kwordquiz.cpp:135
 #, kde-format
 msgid "Prints the active vocabulary document"
 msgstr "Dit document afdrukken"
 
-#: kwordquiz.cpp:139
+#: kwordquiz.cpp:140
 #, kde-format
 msgid "Shows a preview of the active vocabulary document"
 msgstr "Een voorbeeld van dit document tonen"
 
-#: kwordquiz.cpp:144
+#: kwordquiz.cpp:145
 #, kde-format
 msgid "Quits KWordQuiz"
 msgstr "KWordQuiz afsluiten"
 
-#: kwordquiz.cpp:156
+#: kwordquiz.cpp:157
 #, kde-format
 msgid "Cuts the text from the selected cells and places it on the clipboard"
 msgstr ""
 "De tekst van de geselecteerde cellen wegknippen en op het klembord plaatsen"
 
-#: kwordquiz.cpp:161
+#: kwordquiz.cpp:162
 #, kde-format
 msgid "Copies the text from the selected cells and places it on the clipboard"
 msgstr "De tekst van de geselecteerde cellen naar het klembord kopiëren"
 
-#: kwordquiz.cpp:166
+#: kwordquiz.cpp:167
 #, kde-format
 msgid ""
 "Pastes previously cut or copied text from the clipboard into the selected "
@@ -368,357 +368,357 @@ msgstr ""
 "De tekst die op het klembord werd geplaatst in de geselecteerde cellen "
 "plakken"
 
-#: kwordquiz.cpp:172
+#: kwordquiz.cpp:173
 #, kde-format
 msgid "Clears the content of the selected cells"
 msgstr "De geselecteerde cellen leegmaken"
 
-#: kwordquiz.cpp:178
+#: kwordquiz.cpp:179
 #, kde-format
 msgid "&Insert Row"
 msgstr "Rij &invoegen"
 
-#: kwordquiz.cpp:180
+#: kwordquiz.cpp:181
 #, kde-format
 msgid "Inserts a new row above the current row"
 msgstr "Boven deze rij een nieuwe rij invoegen. "
 
-#: kwordquiz.cpp:187
+#: kwordquiz.cpp:188
 #, kde-format
 msgid "&Delete Row"
 msgstr "Rij &verwijderen"
 
-#: kwordquiz.cpp:189
+#: kwordquiz.cpp:190
 #, kde-format
 msgid "Deletes the selected row(s)"
 msgstr "De geselecteerde rij(en) verwijderen"
 
-#: kwordquiz.cpp:196
+#: kwordquiz.cpp:197
 #, kde-format
 msgid "&Mark as Blank"
 msgstr "&Markeren"
 
-#: kwordquiz.cpp:198
+#: kwordquiz.cpp:199
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
 msgstr ""
 "Dit woord markeren als in te vullen woord bij een Leeg-gedeelte-invullen"
 
-#: kwordquiz.cpp:205
+#: kwordquiz.cpp:206
 #, kde-format
 msgid "&Unmark Blanks"
 msgstr "Markering &verwijderen"
 
-#: kwordquiz.cpp:206
+#: kwordquiz.cpp:207
 #, kde-format
 msgid "Removes blanks from the current or selected word"
 msgstr "Markering voor \"Blanco's invullen\"-toets verwijderen"
 
-#: kwordquiz.cpp:213
+#: kwordquiz.cpp:214
 #, kde-format
 msgid "&Column Settings..."
 msgstr "&Kolominstellingen"
 
-#: kwordquiz.cpp:215
+#: kwordquiz.cpp:216
 #, kde-format
 msgid "Defines the column settings for the active vocabulary"
 msgstr "Definieert de kolominstellingen voor de actieve woordenschat"
 
-#: kwordquiz.cpp:222
+#: kwordquiz.cpp:223
 #, kde-format
 msgid "&Font..."
 msgstr "&Lettertype..."
 
-#: kwordquiz.cpp:223
+#: kwordquiz.cpp:224
 #, kde-format
 msgid "Defines the font used by the editor"
 msgstr "Het lettertype van de editor bepalen"
 
-#: kwordquiz.cpp:230
+#: kwordquiz.cpp:231
 #, kde-format
 msgid "Link &Image..."
 msgstr "&Afbeelding koppelen..."
 
-#: kwordquiz.cpp:231
+#: kwordquiz.cpp:232
 #, kde-format
 msgid "Links an image with the current entry"
 msgstr "Koppelt een afbeelding aan het huidige item"
 
-#: kwordquiz.cpp:238
+#: kwordquiz.cpp:239
 #, kde-format
 msgid "Link &Sound..."
 msgstr "&Geluid koppelen..."
 
-#: kwordquiz.cpp:239
+#: kwordquiz.cpp:240
 #, kde-format
 msgid "Links a sound with the current entry"
 msgstr "Koppelt een geluid aan het huidige item"
 
-#: kwordquiz.cpp:246
+#: kwordquiz.cpp:247
 #, kde-format
 msgid "&Adjust Row Heights"
 msgstr "Hoogte van de rijen &aanpassen"
 
-#: kwordquiz.cpp:247
+#: kwordquiz.cpp:248
 #, kde-format
 msgid "Automatically adjusts the height of selected rows"
 msgstr "Automatisch de hoogte van de geselecteerde rijen aanpassen"
 
-#: kwordquiz.cpp:254
+#: kwordquiz.cpp:255
 #, kde-format
 msgid "Sh&uffle"
 msgstr "&Willekeurige volgorde"
 
-#: kwordquiz.cpp:255
+#: kwordquiz.cpp:256
 #, kde-format
 msgid "Shuffles the entries of the active vocabulary"
 msgstr "Rangschikken van de woorden in willekeurige volgorde"
 
-#: kwordquiz.cpp:261
+#: kwordquiz.cpp:262
 #, kde-format
 msgid "&Keyboard Layout"
 msgstr "&Toetsenbordindeling"
 
-#: kwordquiz.cpp:262
+#: kwordquiz.cpp:263
 #, kde-format
 msgid "Shows available keyboard layouts"
 msgstr "Toont beschikbare toetsenbordindelingen"
 
-#: kwordquiz.cpp:273
+#: kwordquiz.cpp:274
 #, kde-format
 msgid "Change Mode"
 msgstr "Modus veranderen"
 
-#: kwordquiz.cpp:274
+#: kwordquiz.cpp:275
 #, kde-format
 msgid "Mode"
 msgstr "Modus"
 
-#: kwordquiz.cpp:275
+#: kwordquiz.cpp:276
 #, kde-format
 msgid "Changes the mode used in quiz sessions"
 msgstr "De modus van de toets veranderen"
 
-#: kwordquiz.cpp:288
+#: kwordquiz.cpp:289
 #, kde-format
 msgid "Selects this mode"
 msgstr "Deze modus kiezen. "
 
-#: kwordquiz.cpp:297
+#: kwordquiz.cpp:298
 #, kde-format
 msgctxt "@item:inlistbox activate vocabulary editor"
 msgid "&Editor"
 msgstr "&Editor"
 
-#: kwordquiz.cpp:299
+#: kwordquiz.cpp:300
 #, kde-format
 msgid "Activates the vocabulary editor"
 msgstr "De editor activeren"
 
-#: kwordquiz.cpp:306
+#: kwordquiz.cpp:307
 #, kde-format
 msgid "&Flashcard"
 msgstr "&Kaarten"
 
-#: kwordquiz.cpp:308
+#: kwordquiz.cpp:309
 #, kde-format
 msgid "Starts a flashcard session using the active vocabulary"
 msgstr "Starten van een kaarten-sessie met de huidige lijst"
 
-#: kwordquiz.cpp:315
+#: kwordquiz.cpp:316
 #, kde-format
 msgid "&Multiple Choice"
 msgstr "&Meerkeuzevragen"
 
-#: kwordquiz.cpp:317
+#: kwordquiz.cpp:318
 #, kde-format
 msgid "Starts a multiple choice session using the active vocabulary"
 msgstr "Starten van een meerkeuzevragen-sessie met de huidige lijst"
 
-#: kwordquiz.cpp:324
+#: kwordquiz.cpp:325
 #, kde-format
 msgid "&Question and Answer"
 msgstr "&Vraag en antwoord"
 
-#: kwordquiz.cpp:325
+#: kwordquiz.cpp:326
 #, kde-format
 msgid "Q&&A"
 msgstr "V&&A"
 
-#: kwordquiz.cpp:327
+#: kwordquiz.cpp:328
 #, kde-format
 msgid "Starts a question and answer session using the active vocabulary"
 msgstr "Starten van een \"Vraag en antwoord\"-sessie met de huidige lijst"
 
-#: kwordquiz.cpp:334
+#: kwordquiz.cpp:335
 #, kde-format
 msgid "&Check"
 msgstr "&Controleren"
 
-#: kwordquiz.cpp:336
+#: kwordquiz.cpp:337
 #, kde-format
 msgid "Checks your answer to this question"
 msgstr "Uw antwoord op deze vraag controleren"
 
-#: kwordquiz.cpp:341
+#: kwordquiz.cpp:342
 #, kde-format
 msgid "Choose Option &1"
 msgstr "Optie &1 kiezen"
 
-#: kwordquiz.cpp:345
+#: kwordquiz.cpp:346
 #, kde-format
 msgid "Choose Option &2"
 msgstr "Optie &2 kiezen"
 
-#: kwordquiz.cpp:349
+#: kwordquiz.cpp:350
 #, kde-format
 msgid "Choose Option &3"
 msgstr "Optie &3 kiezen"
 
-#: kwordquiz.cpp:354
+#: kwordquiz.cpp:355
 #, kde-format
 msgid "I &Know"
 msgstr "&Gekend"
 
-#: kwordquiz.cpp:356
+#: kwordquiz.cpp:357
 #, kde-format
 msgid "Counts this card as correct and shows the next card"
 msgstr "Deze kaart als goed aanrekenen en naar de volgende kaart overgaan"
 
-#: kwordquiz.cpp:362
+#: kwordquiz.cpp:363
 #, kde-format
 msgid "I &Do Not Know"
 msgstr "&Niet gekend"
 
-#: kwordquiz.cpp:364
+#: kwordquiz.cpp:365
 #, kde-format
 msgid "Counts this card as incorrect and shows the next card"
 msgstr "Deze kaart als fout aanrekenen en naar de volgende kaart overgaan"
 
-#: kwordquiz.cpp:370
+#: kwordquiz.cpp:371
 #, kde-format
 msgid "&Hint"
 msgstr "&Tip"
 
-#: kwordquiz.cpp:372
+#: kwordquiz.cpp:373
 #, kde-format
 msgid "Gets the next correct letter of the answer"
 msgstr "De volgende letter van het antwoord tonen"
 
-#: kwordquiz.cpp:378
+#: kwordquiz.cpp:379
 #, kde-format
 msgid "Mark Last Correct"
 msgstr "Markeer laatste als juist"
 
-#: kwordquiz.cpp:380
+#: kwordquiz.cpp:381
 #, kde-format
 msgid "Marks last answer as correct"
 msgstr "Markeert laatste antwoord als juist"
 
-#: kwordquiz.cpp:386
+#: kwordquiz.cpp:387
 #, kde-format
 msgid "&Restart"
 msgstr "&Opnieuw"
 
-#: kwordquiz.cpp:388
+#: kwordquiz.cpp:389
 #, kde-format
 msgid "Restarts the quiz session from the beginning"
 msgstr "De toets opnieuw starten"
 
-#: kwordquiz.cpp:394
+#: kwordquiz.cpp:395
 #, kde-format
 msgid "&Play Audio"
 msgstr "Geluid afs&pelen"
 
-#: kwordquiz.cpp:396
+#: kwordquiz.cpp:397
 #, kde-format
 msgid "Play associated audio"
 msgstr "Aangekoppeld geluid afspelen"
 
-#: kwordquiz.cpp:402
+#: kwordquiz.cpp:403
 #, kde-format
 msgid "Repeat &Errors"
 msgstr "&Herhaal fouten"
 
-#: kwordquiz.cpp:404
+#: kwordquiz.cpp:405
 #, kde-format
 msgid "Repeats all incorrectly answered questions"
 msgstr "De toets herhalen met alle niet gekende kaarten"
 
-#: kwordquiz.cpp:410
+#: kwordquiz.cpp:411
 #, kde-format
 msgid "Export Errors &As..."
 msgstr "Fouten exporteren &als..."
 
-#: kwordquiz.cpp:411
+#: kwordquiz.cpp:412
 #, kde-format
 msgid "Exports all errors as a new vocabulary document"
 msgstr "Exporteert alle fouten als een nieuw woordenschatdocument"
 
-#: kwordquiz.cpp:417
+#: kwordquiz.cpp:418
 #, kde-format
 msgid "Show Se&arch"
 msgstr "Zo&eken tonen"
 
-#: kwordquiz.cpp:419
+#: kwordquiz.cpp:420
 #, kde-format
 msgid "Toggle display of the search bar"
 msgstr "Zoekbalk aan- of uitzetten"
 
-#: kwordquiz.cpp:424
+#: kwordquiz.cpp:425
 #, kde-format
 msgid "Configures sound and other notifications for certain events"
 msgstr "Geluid en ander notificaties voor de gebeurtenissen instellen"
 
-#: kwordquiz.cpp:429
+#: kwordquiz.cpp:430
 #, kde-format
 msgid "Specifies preferences for the vocabulary editor and quiz sessions"
 msgstr "Voorkeuren bepalen voor de editor en de toetsen"
 
-#: kwordquiz.cpp:435
+#: kwordquiz.cpp:436
 #, kde-format
 msgid "Special Character <numid>%1</numid>"
 msgstr "Speciaal teken <numid>%1</numid>"
 
-#: kwordquiz.cpp:447
+#: kwordquiz.cpp:448
 #, kde-format
 msgid "Toggles display of the toolbars"
 msgstr "Werkbalken aan en uit zetten"
 
-#: kwordquiz.cpp:500
+#: kwordquiz.cpp:501
 #, kde-format
 msgid "Enter search terms here"
 msgstr "Voer hier zoektermen in"
 
-#: kwordquiz.cpp:523
+#: kwordquiz.cpp:524
 #, kde-format
 msgctxt "@item:inlistbox vocabulary editor"
 msgid "Editor"
 msgstr "Editor"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:192
+#: kwordquiz.cpp:529 prefquizbase.ui:192
 #, kde-format
 msgid "Flashcard"
 msgstr "Kaarten"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:149
+#: kwordquiz.cpp:533 prefquizbase.ui:149
 #, kde-format
 msgid "Multiple Choice"
 msgstr "Meerkeuzevragen"
 
-#: kwordquiz.cpp:536
+#: kwordquiz.cpp:537
 #, kde-format
 msgid "Question & Answer"
 msgstr "Vraag & antwoord"
 
-#: kwordquiz.cpp:602 kwordquiz.cpp:768 kwordquiz.cpp:813
+#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
 msgid "Opening file..."
 msgstr "Het bestand wordt geopend..."
 
-#: kwordquiz.cpp:635
+#: kwordquiz.cpp:637 kwordquiz.cpp:639
 #, kde-format
 msgctxt "%1 is an error message"
 msgid ""
@@ -732,19 +732,25 @@ msgstr ""
 "er voor kiezen de vergrendeling te negeren en het bestand toch te openen.\n"
 "Wilt u het bestand openen?"
 
-#: kwordquiz.cpp:648 kwordquiz.cpp:763 kwordquiz.cpp:808 kwordquiz.cpp:816
-#: kwordquiz.cpp:853 kwordquiz.cpp:866 kwordquiz.cpp:955 kwordquiz.cpp:962
-#: kwordquiz.cpp:968 kwordquiz.cpp:998 kwordquiz.cpp:1005 kwordquiz.cpp:1012
-#: kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033 kwordquiz.cpp:1040
-#: kwordquiz.cpp:1047 kwordquiz.cpp:1060 kwordquiz.cpp:1075 kwordquiz.cpp:1083
-#: kwordquiz.cpp:1091 kwordquiz.cpp:1100 kwordquiz.cpp:1108 kwordquiz.cpp:1122
-#: kwordquiz.cpp:1130 kwordquiz.cpp:1137 kwordquiz.cpp:1144 kwordquiz.cpp:1151
+#: kwordquiz.cpp:637
+#, fuzzy, kde-format
+#| msgid "Opening file..."
+msgid "Open File"
+msgstr "Het bestand wordt geopend..."
+
+#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
+#: kwordquiz.cpp:874 kwordquiz.cpp:887 kwordquiz.cpp:976 kwordquiz.cpp:983
+#: kwordquiz.cpp:989 kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033
+#: kwordquiz.cpp:1040 kwordquiz.cpp:1047 kwordquiz.cpp:1054 kwordquiz.cpp:1061
+#: kwordquiz.cpp:1068 kwordquiz.cpp:1081 kwordquiz.cpp:1096 kwordquiz.cpp:1104
+#: kwordquiz.cpp:1112 kwordquiz.cpp:1121 kwordquiz.cpp:1129 kwordquiz.cpp:1143
+#: kwordquiz.cpp:1151 kwordquiz.cpp:1158 kwordquiz.cpp:1165 kwordquiz.cpp:1172
 #, kde-format
 msgctxt "@info:status ready"
 msgid "Ready"
 msgstr "Gereed"
 
-#: kwordquiz.cpp:717
+#: kwordquiz.cpp:727 kwordquiz.cpp:729
 #, kde-format
 msgid ""
 "The current document has been modified.\n"
@@ -753,208 +759,208 @@ msgstr ""
 "Het huidige bestand is gewijzigd.\n"
 "Wilt u het opslaan?"
 
-#: kwordquiz.cpp:758
+#: kwordquiz.cpp:779
 #, kde-format
 msgid "Opening a new document window..."
 msgstr "Een nieuw document openen..."
 
-#: kwordquiz.cpp:770
+#: kwordquiz.cpp:791
 #, kde-format
 msgid "&Merge selected files with the current document"
 msgstr "Geselecteerde bestanden sa&menvoegen met het huidige document"
 
-#: kwordquiz.cpp:775 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:130
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Een Woordenschatbestand openen"
 
-#: kwordquiz.cpp:840
+#: kwordquiz.cpp:861
 #, kde-format
 msgid "Saving file..."
 msgstr "Het bestand wordt opgeslagen..."
 
-#: kwordquiz.cpp:859
+#: kwordquiz.cpp:880
 #, kde-format
 msgid "Saving file with a new filename..."
 msgstr "Het bestand wordt opgeslagen met een nieuwe naam..."
 
-#: kwordquiz.cpp:887
+#: kwordquiz.cpp:908
 #, kde-format
 msgid "HTML Document"
 msgstr "HTML-document"
 
-#: kwordquiz.cpp:889
+#: kwordquiz.cpp:910
 #, kde-format
 msgid "Save Vocabulary Document As"
 msgstr "Bestand opslaan als"
 
-#: kwordquiz.cpp:937
+#: kwordquiz.cpp:958
 #, kde-format
 msgid "Closing file..."
 msgstr "het bestand wordt gesloten..."
 
-#: kwordquiz.cpp:960
+#: kwordquiz.cpp:981
 #, kde-format
 msgid "Printing..."
 msgstr "Het document wordt afgedrukt..."
 
-#: kwordquiz.cpp:966
+#: kwordquiz.cpp:987
 #, kde-format
 msgid "Showing Preview..."
 msgstr "Voorbeeld tonen..."
 
-#: kwordquiz.cpp:974
+#: kwordquiz.cpp:995
 #, kde-format
 msgctxt "@info:status quitting"
 msgid "Quitting..."
 msgstr "Bezig met afsluiten..."
 
-#: kwordquiz.cpp:996
+#: kwordquiz.cpp:1017
 #, kde-format
 msgid "Cutting selection..."
 msgstr "De selectie wordt geknipt..."
 
-#: kwordquiz.cpp:1003
+#: kwordquiz.cpp:1024
 #, kde-format
 msgid "Copying selection to clipboard..."
 msgstr "De selectie wordt naar het klembord gekopieerd..."
 
-#: kwordquiz.cpp:1010
+#: kwordquiz.cpp:1031
 #, kde-format
 msgid "Inserting clipboard contents..."
 msgstr "De inhoud van het klembord wordt ingevoegd..."
 
-#: kwordquiz.cpp:1017
+#: kwordquiz.cpp:1038
 #, kde-format
 msgid "Clearing the selected cells..."
 msgstr "De geselecteerde cellen worden gewist..."
 
-#: kwordquiz.cpp:1024
+#: kwordquiz.cpp:1045
 #, kde-format
 msgid "Inserting rows..."
 msgstr "Rijen worden ingevoegd..."
 
-#: kwordquiz.cpp:1031
+#: kwordquiz.cpp:1052
 #, kde-format
 msgid "Deleting selected rows..."
 msgstr "De geselecteerde rijen worden verwijderd..."
 
-#: kwordquiz.cpp:1038
+#: kwordquiz.cpp:1059
 #, kde-format
 msgid "Marking selected text as a blank..."
 msgstr "De geselecteerde tekst wordt gemarkeerd..."
 
-#: kwordquiz.cpp:1045
+#: kwordquiz.cpp:1066
 #, kde-format
 msgid "Removing blank markings..."
 msgstr "De markeringen worden verwijderd..."
 
-#: kwordquiz.cpp:1052
+#: kwordquiz.cpp:1073
 #, kde-format
 msgid "Setting the column titles of the vocabulary..."
 msgstr "De kolomnamen worden ingesteld..."
 
-#: kwordquiz.cpp:1065
+#: kwordquiz.cpp:1086
 #, kde-format
 msgid "Setting the font of the vocabulary..."
 msgstr "Het lettertype wordt ingesteld..."
 
-#: kwordquiz.cpp:1081
+#: kwordquiz.cpp:1102
 #, kde-format
 msgid "Linking an image with the current entry..."
 msgstr "Een afbeelding aan het huidige item koppelen..."
 
-#: kwordquiz.cpp:1089
+#: kwordquiz.cpp:1110
 #, kde-format
 msgid "Linking a sound with the current entry..."
 msgstr "Een geluid aan het huidige item koppelen..."
 
-#: kwordquiz.cpp:1097
+#: kwordquiz.cpp:1118
 #, kde-format
 msgid "Adjusting row heights..."
 msgstr "Hoogte van de rijen worden aangepast..."
 
-#: kwordquiz.cpp:1106
+#: kwordquiz.cpp:1127
 #, kde-format
 msgid "Randomizing the vocabulary..."
 msgstr "Sorteren in willekeurige volgorde..."
 
-#: kwordquiz.cpp:1114
+#: kwordquiz.cpp:1135
 #, kde-format
 msgid "Updating mode..."
 msgstr "Modus veranderen..."
 
-#: kwordquiz.cpp:1128
+#: kwordquiz.cpp:1149
 #, kde-format
 msgid "Starting editor session..."
 msgstr "De editor wordt opgestart..."
 
-#: kwordquiz.cpp:1135
+#: kwordquiz.cpp:1156
 #, kde-format
 msgid "Starting flashcard session..."
 msgstr "Opstarten van een kaarten-sessie..."
 
-#: kwordquiz.cpp:1142
+#: kwordquiz.cpp:1163
 #, kde-format
 msgid "Starting multiple choice session..."
 msgstr "Opstarten van een meerkeuzevraag-sessie..."
 
-#: kwordquiz.cpp:1149
+#: kwordquiz.cpp:1170
 #, kde-format
 msgid "Starting question & answer session..."
 msgstr "Opstarten van een \"Vraag & antwoord\"-sessie..."
 
-#: kwordquiz.cpp:1301
+#: kwordquiz.cpp:1322
 #, kde-format
 msgid "Insert %1"
 msgstr "%1 invoegen"
 
-#: kwordquiz.cpp:1302
+#: kwordquiz.cpp:1323
 #, kde-format
 msgid "Inserts the character %1"
 msgstr "Voegt het teken %1 in"
 
-#: kwordquiz.cpp:1353
+#: kwordquiz.cpp:1374
 #, kde-format
 msgid "This will restart your quiz. Do you wish to continue?"
 msgstr "Hiermee herstart u de toets. Wilt u doorgaan?"
 
-#: kwordquiz.cpp:1369
+#: kwordquiz.cpp:1390
 #, kde-format
 msgid "&1 %1 -> %2 In Order"
 msgstr "&1 %1 -> %2 in volgorde"
 
-#: kwordquiz.cpp:1370
+#: kwordquiz.cpp:1391
 #, kde-format
 msgid "&2 %1 -> %2 In Order"
 msgstr "&2 %1 -> %2 in volgorde"
 
-#: kwordquiz.cpp:1371
+#: kwordquiz.cpp:1392
 #, kde-format
 msgid "&3 %1 -> %2 Randomly"
 msgstr "&3 %1 -> %2 willekeurig"
 
-#: kwordquiz.cpp:1372
+#: kwordquiz.cpp:1393
 #, kde-format
 msgid "&4 %1 -> %2 Randomly"
 msgstr "&4 %1 -> %2 willekeurig"
 
-#: kwordquiz.cpp:1373
+#: kwordquiz.cpp:1394
 #, kde-format
 msgid "&5 %1 <-> %2 Randomly"
 msgstr "&5 %1 <-> %2 willekeurig"
 
-#: kwordquiz.cpp:1380 kwordquiz.cpp:1383
+#: kwordquiz.cpp:1401 kwordquiz.cpp:1404
 #, kde-format
 msgid "%1 -> %2 In Order"
 msgstr "%1 -> %2 in volgorde"
 
-#: kwordquiz.cpp:1386 kwordquiz.cpp:1389
+#: kwordquiz.cpp:1407 kwordquiz.cpp:1410
 #, kde-format
 msgid "%1 -> %2 Randomly"
 msgstr "%1 -> %2 willekeurig"
 
-#: kwordquiz.cpp:1392
+#: kwordquiz.cpp:1413
 #, kde-format
 msgid "%1 &lt;-&gt; %2 Randomly"
 msgstr "%1 &lt;-&gt; %2 willekeurig"

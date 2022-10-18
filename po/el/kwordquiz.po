@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"POT-Creation-Date: 2022-10-18 00:41+0000\n"
 "PO-Revision-Date: 2021-06-30 09:52+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -115,7 +115,7 @@ msgid "&Sound Links"
 msgstr "Συνδέ&σεις ήχου"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
+#: columndialogbase.ui:45 kwordquiz.cpp:467
 #, kde-format
 msgid "Column 1"
 msgstr "Στήλη 1"
@@ -179,7 +179,7 @@ msgid "Enter the width (in pixels) for the left column"
 msgstr "Εισάγετε το πλάτος (σε εικονοστοιχεία) για την αριστερή στήλη"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
+#: columndialogbase.ui:214 kwordquiz.cpp:470
 #, kde-format
 msgid "Column 2"
 msgstr "Στήλη 2"
@@ -287,69 +287,69 @@ msgstr ""
 "<html>Υπάρχουν πολύ λίγες καταχωρήσεις στο λεξιλόγιό σας.<br />Χρειάζεστε το "
 "λιγότερο μια καταχώρηση για κάθε κάρτα του κουίζ.</html>"
 
-#: kwordquiz.cpp:100
+#: kwordquiz.cpp:101
 #, kde-format
 msgid "Creates a new blank vocabulary document"
 msgstr "Δημιουργεί ένα κενό έγγραφο λεξιλογίου"
 
-#: kwordquiz.cpp:105
+#: kwordquiz.cpp:106
 #, kde-format
 msgid "Opens an existing vocabulary document"
 msgstr "Ανοίγει ένα ήδη υπάρχον έγγραφο λεξιλογίου"
 
-#: kwordquiz.cpp:111
+#: kwordquiz.cpp:112
 #, kde-format
 msgid "Download New Vocabularies..."
 msgstr "Λήψη νέων λεξιλογίων..."
 
-#: kwordquiz.cpp:115
+#: kwordquiz.cpp:116
 #, kde-format
 msgid "Downloads new vocabularies"
 msgstr "Κατεβάζει νέα λεξιλόγια"
 
-#: kwordquiz.cpp:120
+#: kwordquiz.cpp:121
 #, kde-format
 msgid "Saves the active vocabulary document"
 msgstr "Αποθηκεύει το έγγραφο του ενεργού λεξιλογίου"
 
-#: kwordquiz.cpp:125
+#: kwordquiz.cpp:126
 #, kde-format
 msgid "Saves the active vocabulary document with a different name"
 msgstr "Αποθηκεύει το έγγραφο του ενεργού λεξιλογίου με ένα διαφορετικό όνομα"
 
-#: kwordquiz.cpp:130
+#: kwordquiz.cpp:131
 #, kde-format
 msgid "Closes the active vocabulary document"
 msgstr "Κλείνει το έγγραφο του ενεργού λεξιλογίου"
 
-#: kwordquiz.cpp:134
+#: kwordquiz.cpp:135
 #, kde-format
 msgid "Prints the active vocabulary document"
 msgstr "Εκτυπώνει το έγγραφο του ενεργού λεξιλογίου"
 
-#: kwordquiz.cpp:139
+#: kwordquiz.cpp:140
 #, kde-format
 msgid "Shows a preview of the active vocabulary document"
 msgstr "Εμφανίζει μια προεπισκόπηση του ενεργού εγγράφου του λεξιλογίου"
 
-#: kwordquiz.cpp:144
+#: kwordquiz.cpp:145
 #, kde-format
 msgid "Quits KWordQuiz"
 msgstr "Έξοδος από το KWordQuiz"
 
-#: kwordquiz.cpp:156
+#: kwordquiz.cpp:157
 #, kde-format
 msgid "Cuts the text from the selected cells and places it on the clipboard"
 msgstr ""
 "Αποκόπτει το κείμενο από τα επιλεγμένα κελιά και το τοποθετεί στο πρόχειρο"
 
-#: kwordquiz.cpp:161
+#: kwordquiz.cpp:162
 #, kde-format
 msgid "Copies the text from the selected cells and places it on the clipboard"
 msgstr ""
 "Αντιγράφει το κείμενο από τα επιλεγμένα κελιά και το τοποθετεί στο πρόχειρο"
 
-#: kwordquiz.cpp:166
+#: kwordquiz.cpp:167
 #, kde-format
 msgid ""
 "Pastes previously cut or copied text from the clipboard into the selected "
@@ -358,359 +358,359 @@ msgstr ""
 "Εισάγει το προηγουμένως αποκομμένο ή αντιγραμμένο κείμενο από το πρόχειρο "
 "στα επιλεγμένα κελιά"
 
-#: kwordquiz.cpp:172
+#: kwordquiz.cpp:173
 #, kde-format
 msgid "Clears the content of the selected cells"
 msgstr "Καθαρίζει το περιεχόμενο των επιλεγμένων κελιών"
 
-#: kwordquiz.cpp:178
+#: kwordquiz.cpp:179
 #, kde-format
 msgid "&Insert Row"
 msgstr "Ε&ισαγωγή γραμμής"
 
-#: kwordquiz.cpp:180
+#: kwordquiz.cpp:181
 #, kde-format
 msgid "Inserts a new row above the current row"
 msgstr "Εισάγει μία νέα γραμμή πάνω από την τρέχουσα γραμμή"
 
-#: kwordquiz.cpp:187
+#: kwordquiz.cpp:188
 #, kde-format
 msgid "&Delete Row"
 msgstr "&Διαγραφή γραμμής"
 
-#: kwordquiz.cpp:189
+#: kwordquiz.cpp:190
 #, kde-format
 msgid "Deletes the selected row(s)"
 msgstr "Διαγράφει τις επιλεγμένες γραμμές"
 
-#: kwordquiz.cpp:196
+#: kwordquiz.cpp:197
 #, kde-format
 msgid "&Mark as Blank"
 msgstr "Ση&μείωση ως Κενό"
 
-#: kwordquiz.cpp:198
+#: kwordquiz.cpp:199
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
 msgstr "Σημειώνει την τρέχουσα ή επιλεγμένη λέξη ως κενή για Γέμισμα-Κενού"
 
-#: kwordquiz.cpp:205
+#: kwordquiz.cpp:206
 #, kde-format
 msgid "&Unmark Blanks"
 msgstr "Κα&θαρισμός σημείωσης κενών"
 
-#: kwordquiz.cpp:206
+#: kwordquiz.cpp:207
 #, kde-format
 msgid "Removes blanks from the current or selected word"
 msgstr "Αφαιρεί τα κενά από την τρέχουσα ή επιλεγμένη λέξη"
 
-#: kwordquiz.cpp:213
+#: kwordquiz.cpp:214
 #, kde-format
 msgid "&Column Settings..."
 msgstr "&Ρυθμίσεις στήλης..."
 
-#: kwordquiz.cpp:215
+#: kwordquiz.cpp:216
 #, kde-format
 msgid "Defines the column settings for the active vocabulary"
 msgstr "Καθορίζει τις ρυθμίσεις στήλης για το ενεργό λεξιλόγιο"
 
-#: kwordquiz.cpp:222
+#: kwordquiz.cpp:223
 #, kde-format
 msgid "&Font..."
 msgstr "Γ&ραμματοσειρά..."
 
-#: kwordquiz.cpp:223
+#: kwordquiz.cpp:224
 #, kde-format
 msgid "Defines the font used by the editor"
 msgstr "Καθορίζει τη γραμματοσειρά που χρησιμοποιείται στον επεξεργαστή"
 
-#: kwordquiz.cpp:230
+#: kwordquiz.cpp:231
 #, kde-format
 msgid "Link &Image..."
 msgstr "Σύνδεση ε&ικόνας..."
 
-#: kwordquiz.cpp:231
+#: kwordquiz.cpp:232
 #, kde-format
 msgid "Links an image with the current entry"
 msgstr "Συνδέει μια εικόνα στην τρέχουσα καταχώρηση"
 
-#: kwordquiz.cpp:238
+#: kwordquiz.cpp:239
 #, kde-format
 msgid "Link &Sound..."
 msgstr "Σύνδε&ση ήχου..."
 
-#: kwordquiz.cpp:239
+#: kwordquiz.cpp:240
 #, kde-format
 msgid "Links a sound with the current entry"
 msgstr "Συνδέει έναν ήχο στην τρέχουσα καταχώρηση"
 
-#: kwordquiz.cpp:246
+#: kwordquiz.cpp:247
 #, kde-format
 msgid "&Adjust Row Heights"
 msgstr "&Ρύθμιση ύψους γραμμών"
 
-#: kwordquiz.cpp:247
+#: kwordquiz.cpp:248
 #, kde-format
 msgid "Automatically adjusts the height of selected rows"
 msgstr "Αυτόματη ρύθμιση του ύψους των επιλεγμένων γραμμών"
 
-#: kwordquiz.cpp:254
+#: kwordquiz.cpp:255
 #, kde-format
 msgid "Sh&uffle"
 msgstr "Τυχαία &σειρά"
 
-#: kwordquiz.cpp:255
+#: kwordquiz.cpp:256
 #, kde-format
 msgid "Shuffles the entries of the active vocabulary"
 msgstr "Βάζει σε τυχαία σειρά τις καταχωρήσεις του ενεργού λεξιλογίου"
 
-#: kwordquiz.cpp:261
+#: kwordquiz.cpp:262
 #, kde-format
 msgid "&Keyboard Layout"
 msgstr "&Διάταξη πληκτρολογίου"
 
-#: kwordquiz.cpp:262
+#: kwordquiz.cpp:263
 #, kde-format
 msgid "Shows available keyboard layouts"
 msgstr "Εμφάνιση των διαθέσιμων διατάξεων πληκτρολογίου"
 
-#: kwordquiz.cpp:273
+#: kwordquiz.cpp:274
 #, kde-format
 msgid "Change Mode"
 msgstr "Αλλαγή λειτουργίας"
 
-#: kwordquiz.cpp:274
+#: kwordquiz.cpp:275
 #, kde-format
 msgid "Mode"
 msgstr "Λειτουργία"
 
-#: kwordquiz.cpp:275
+#: kwordquiz.cpp:276
 #, kde-format
 msgid "Changes the mode used in quiz sessions"
 msgstr "Τροποποίηση λειτουργίας που χρησιμοποιείται στις συνεδρίες κουίζ"
 
-#: kwordquiz.cpp:288
+#: kwordquiz.cpp:289
 #, kde-format
 msgid "Selects this mode"
 msgstr "Επιλέγει αυτή τη λειτουργία"
 
-#: kwordquiz.cpp:297
+#: kwordquiz.cpp:298
 #, kde-format
 msgctxt "@item:inlistbox activate vocabulary editor"
 msgid "&Editor"
 msgstr "&Επεξεργαστής"
 
-#: kwordquiz.cpp:299
+#: kwordquiz.cpp:300
 #, kde-format
 msgid "Activates the vocabulary editor"
 msgstr "Ενεργοποιεί τον επεξεργαστή λεξιλογίου"
 
-#: kwordquiz.cpp:306
+#: kwordquiz.cpp:307
 #, kde-format
 msgid "&Flashcard"
 msgstr "&Κάρτα"
 
-#: kwordquiz.cpp:308
+#: kwordquiz.cpp:309
 #, kde-format
 msgid "Starts a flashcard session using the active vocabulary"
 msgstr ""
 "Ξεκινά μια συνεδρία εμφάνισης καρτών χρησιμοποιώντας το ενεργό λεξιλόγιο"
 
-#: kwordquiz.cpp:315
+#: kwordquiz.cpp:316
 #, kde-format
 msgid "&Multiple Choice"
 msgstr "&Πολλαπλής επιλογής"
 
-#: kwordquiz.cpp:317
+#: kwordquiz.cpp:318
 #, kde-format
 msgid "Starts a multiple choice session using the active vocabulary"
 msgstr "Ξεκινά μια συνεδρία πολλαπλών επιλογών με χρήση του ενεργού λεξιλογίου"
 
-#: kwordquiz.cpp:324
+#: kwordquiz.cpp:325
 #, kde-format
 msgid "&Question and Answer"
 msgstr "Κουίζ &ερωταπαντήσεων"
 
-#: kwordquiz.cpp:325
+#: kwordquiz.cpp:326
 #, kde-format
 msgid "Q&&A"
 msgstr "Ε&&Α"
 
-#: kwordquiz.cpp:327
+#: kwordquiz.cpp:328
 #, kde-format
 msgid "Starts a question and answer session using the active vocabulary"
 msgstr "Ξεκινά μια συνεδρία ερωταπαντήσεων με χρήση του ενεργού λεξιλογίου"
 
-#: kwordquiz.cpp:334
+#: kwordquiz.cpp:335
 #, kde-format
 msgid "&Check"
 msgstr "&Έλεγχος"
 
-#: kwordquiz.cpp:336
+#: kwordquiz.cpp:337
 #, kde-format
 msgid "Checks your answer to this question"
 msgstr "Ελέγχει την απάντησή σας για αυτή την ερώτηση"
 
-#: kwordquiz.cpp:341
+#: kwordquiz.cpp:342
 #, kde-format
 msgid "Choose Option &1"
 msgstr "Επιλογή &1"
 
-#: kwordquiz.cpp:345
+#: kwordquiz.cpp:346
 #, kde-format
 msgid "Choose Option &2"
 msgstr "Επιλογή &2"
 
-#: kwordquiz.cpp:349
+#: kwordquiz.cpp:350
 #, kde-format
 msgid "Choose Option &3"
 msgstr "Επιλογή &3"
 
-#: kwordquiz.cpp:354
+#: kwordquiz.cpp:355
 #, kde-format
 msgid "I &Know"
 msgstr "&To Γνωρίζω"
 
-#: kwordquiz.cpp:356
+#: kwordquiz.cpp:357
 #, kde-format
 msgid "Counts this card as correct and shows the next card"
 msgstr "Μετρά αυτή την κάρτα ως σωστή και εμφανίζει την επόμενη κάρτα"
 
-#: kwordquiz.cpp:362
+#: kwordquiz.cpp:363
 #, kde-format
 msgid "I &Do Not Know"
 msgstr "&Δε γνωρίζω"
 
-#: kwordquiz.cpp:364
+#: kwordquiz.cpp:365
 #, kde-format
 msgid "Counts this card as incorrect and shows the next card"
 msgstr "Μετρά αυτή την κάρτα ως λανθασμένη και εμφανίζει την επόμενη κάρτα"
 
-#: kwordquiz.cpp:370
+#: kwordquiz.cpp:371
 #, kde-format
 msgid "&Hint"
 msgstr "&Υπόδειξη"
 
-#: kwordquiz.cpp:372
+#: kwordquiz.cpp:373
 #, kde-format
 msgid "Gets the next correct letter of the answer"
 msgstr "Παίρνει το επόμενο σωστό γράμμα της απάντησης"
 
-#: kwordquiz.cpp:378
+#: kwordquiz.cpp:379
 #, kde-format
 msgid "Mark Last Correct"
 msgstr "Σημείωση της τελευταίας σωστής απάντησης"
 
-#: kwordquiz.cpp:380
+#: kwordquiz.cpp:381
 #, kde-format
 msgid "Marks last answer as correct"
 msgstr "Η τελευταία απάντηση προσμετράται ως σωστή"
 
-#: kwordquiz.cpp:386
+#: kwordquiz.cpp:387
 #, kde-format
 msgid "&Restart"
 msgstr "&Επανεκκίνηση"
 
-#: kwordquiz.cpp:388
+#: kwordquiz.cpp:389
 #, kde-format
 msgid "Restarts the quiz session from the beginning"
 msgstr "Επανεκκινεί τη συνεδρία του κουίζ από την αρχή"
 
-#: kwordquiz.cpp:394
+#: kwordquiz.cpp:395
 #, kde-format
 msgid "&Play Audio"
 msgstr "&Αναπαραγωγή ήχου"
 
-#: kwordquiz.cpp:396
+#: kwordquiz.cpp:397
 #, kde-format
 msgid "Play associated audio"
 msgstr "Αναπαραγωγή συσχετισμένου ήχου"
 
-#: kwordquiz.cpp:402
+#: kwordquiz.cpp:403
 #, kde-format
 msgid "Repeat &Errors"
 msgstr "Επανάληψη των &Λαθών"
 
-#: kwordquiz.cpp:404
+#: kwordquiz.cpp:405
 #, kde-format
 msgid "Repeats all incorrectly answered questions"
 msgstr "Επαναλαμβάνει όλες τις λανθασμένα απαντημένες ερωτήσεις"
 
-#: kwordquiz.cpp:410
+#: kwordquiz.cpp:411
 #, kde-format
 msgid "Export Errors &As..."
 msgstr "Εξαγωγή σφαλμάτων &ως..."
 
-#: kwordquiz.cpp:411
+#: kwordquiz.cpp:412
 #, kde-format
 msgid "Exports all errors as a new vocabulary document"
 msgstr "Εξαγωγή όλων των σφαλμάτων ως ένα νέο έγγραφο λεξιλογίου"
 
-#: kwordquiz.cpp:417
+#: kwordquiz.cpp:418
 #, kde-format
 msgid "Show Se&arch"
 msgstr "Εμφάνιση &αναζήτησης"
 
-#: kwordquiz.cpp:419
+#: kwordquiz.cpp:420
 #, kde-format
 msgid "Toggle display of the search bar"
 msgstr "Εναλλαγή εμφάνισης της γραμμής αναζήτησης"
 
-#: kwordquiz.cpp:424
+#: kwordquiz.cpp:425
 #, kde-format
 msgid "Configures sound and other notifications for certain events"
 msgstr "Ρυθμίζει τους ήχους και άλλες ειδοποιήσεις για συγκεκριμένα γεγονότα"
 
-#: kwordquiz.cpp:429
+#: kwordquiz.cpp:430
 #, kde-format
 msgid "Specifies preferences for the vocabulary editor and quiz sessions"
 msgstr ""
 "Καθορίζει τις προτιμήσεις για τον επεξεργαστή του λεξιλογίου και τις "
 "συνεδρίες κουίζ"
 
-#: kwordquiz.cpp:435
+#: kwordquiz.cpp:436
 #, kde-format
 msgid "Special Character <numid>%1</numid>"
 msgstr "Ειδικός χαρακτήρας <numid>%1</numid>"
 
-#: kwordquiz.cpp:447
+#: kwordquiz.cpp:448
 #, kde-format
 msgid "Toggles display of the toolbars"
 msgstr "Αλλάζει των τρόπο προβολής της γραμμής εργαλείων"
 
-#: kwordquiz.cpp:500
+#: kwordquiz.cpp:501
 #, kde-format
 msgid "Enter search terms here"
 msgstr "Εισάγετε εδώ όρους αναζήτησης"
 
-#: kwordquiz.cpp:523
+#: kwordquiz.cpp:524
 #, kde-format
 msgctxt "@item:inlistbox vocabulary editor"
 msgid "Editor"
 msgstr "Επεξεργαστής"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:192
+#: kwordquiz.cpp:529 prefquizbase.ui:192
 #, kde-format
 msgid "Flashcard"
 msgstr "Κάρτα"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:149
+#: kwordquiz.cpp:533 prefquizbase.ui:149
 #, kde-format
 msgid "Multiple Choice"
 msgstr "Πολλαπλής επιλογής"
 
-#: kwordquiz.cpp:536
+#: kwordquiz.cpp:537
 #, kde-format
 msgid "Question & Answer"
 msgstr "Κουίζ ερωταπαντήσεων"
 
-#: kwordquiz.cpp:602 kwordquiz.cpp:768 kwordquiz.cpp:813
+#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
 msgid "Opening file..."
 msgstr "Άνοιγμα αρχείου..."
 
-#: kwordquiz.cpp:635
+#: kwordquiz.cpp:637 kwordquiz.cpp:639
 #, kde-format
 msgctxt "%1 is an error message"
 msgid ""
@@ -720,19 +720,25 @@ msgid ""
 "Do you want to open the file?"
 msgstr ""
 
-#: kwordquiz.cpp:648 kwordquiz.cpp:763 kwordquiz.cpp:808 kwordquiz.cpp:816
-#: kwordquiz.cpp:853 kwordquiz.cpp:866 kwordquiz.cpp:955 kwordquiz.cpp:962
-#: kwordquiz.cpp:968 kwordquiz.cpp:998 kwordquiz.cpp:1005 kwordquiz.cpp:1012
-#: kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033 kwordquiz.cpp:1040
-#: kwordquiz.cpp:1047 kwordquiz.cpp:1060 kwordquiz.cpp:1075 kwordquiz.cpp:1083
-#: kwordquiz.cpp:1091 kwordquiz.cpp:1100 kwordquiz.cpp:1108 kwordquiz.cpp:1122
-#: kwordquiz.cpp:1130 kwordquiz.cpp:1137 kwordquiz.cpp:1144 kwordquiz.cpp:1151
+#: kwordquiz.cpp:637
+#, fuzzy, kde-format
+#| msgid "Opening file..."
+msgid "Open File"
+msgstr "Άνοιγμα αρχείου..."
+
+#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
+#: kwordquiz.cpp:874 kwordquiz.cpp:887 kwordquiz.cpp:976 kwordquiz.cpp:983
+#: kwordquiz.cpp:989 kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033
+#: kwordquiz.cpp:1040 kwordquiz.cpp:1047 kwordquiz.cpp:1054 kwordquiz.cpp:1061
+#: kwordquiz.cpp:1068 kwordquiz.cpp:1081 kwordquiz.cpp:1096 kwordquiz.cpp:1104
+#: kwordquiz.cpp:1112 kwordquiz.cpp:1121 kwordquiz.cpp:1129 kwordquiz.cpp:1143
+#: kwordquiz.cpp:1151 kwordquiz.cpp:1158 kwordquiz.cpp:1165 kwordquiz.cpp:1172
 #, kde-format
 msgctxt "@info:status ready"
 msgid "Ready"
 msgstr "Έτοιμο"
 
-#: kwordquiz.cpp:717
+#: kwordquiz.cpp:727 kwordquiz.cpp:729
 #, kde-format
 msgid ""
 "The current document has been modified.\n"
@@ -741,209 +747,209 @@ msgstr ""
 "Το τρέχον έγγραφο έχει τροποποιηθεί.\n"
 "Επιθυμείτε την αποθήκευσή του;"
 
-#: kwordquiz.cpp:758
+#: kwordquiz.cpp:779
 #, kde-format
 msgid "Opening a new document window..."
 msgstr "Γίνεται άνοιγμα ενός νέου παραθύρου εγγράφου..."
 
-#: kwordquiz.cpp:770
+#: kwordquiz.cpp:791
 #, kde-format
 msgid "&Merge selected files with the current document"
 msgstr "&Συγχώνευση επιλεγμένων αρχείων με το τρέχον έγγραφο"
 
-#: kwordquiz.cpp:775 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:130
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Άνοιγμα εγγράφου λεξιλογίου"
 
-#: kwordquiz.cpp:840
+#: kwordquiz.cpp:861
 #, kde-format
 msgid "Saving file..."
 msgstr "Αποθήκευση αρχείου..."
 
-#: kwordquiz.cpp:859
+#: kwordquiz.cpp:880
 #, kde-format
 msgid "Saving file with a new filename..."
 msgstr "Αποθήκευση αρχείου με ένα νέο όνομα..."
 
-#: kwordquiz.cpp:887
+#: kwordquiz.cpp:908
 #, kde-format
 msgid "HTML Document"
 msgstr "Έγγραφο HTML"
 
-#: kwordquiz.cpp:889
+#: kwordquiz.cpp:910
 #, kde-format
 msgid "Save Vocabulary Document As"
 msgstr "Αποθήκευση του εγγράφου λεξιλογίου ως"
 
-#: kwordquiz.cpp:937
+#: kwordquiz.cpp:958
 #, kde-format
 msgid "Closing file..."
 msgstr "Κλείσιμο αρχείου..."
 
-#: kwordquiz.cpp:960
+#: kwordquiz.cpp:981
 #, kde-format
 msgid "Printing..."
 msgstr "Εκτύπωση..."
 
-#: kwordquiz.cpp:966
+#: kwordquiz.cpp:987
 #, kde-format
 msgid "Showing Preview..."
 msgstr "Εμφάνιση προεπισκόπησης..."
 
-#: kwordquiz.cpp:974
+#: kwordquiz.cpp:995
 #, kde-format
 msgctxt "@info:status quitting"
 msgid "Quitting..."
 msgstr "Έξοδος..."
 
-#: kwordquiz.cpp:996
+#: kwordquiz.cpp:1017
 #, kde-format
 msgid "Cutting selection..."
 msgstr "Αποκοπή επιλογής..."
 
-#: kwordquiz.cpp:1003
+#: kwordquiz.cpp:1024
 #, kde-format
 msgid "Copying selection to clipboard..."
 msgstr "Αντιγραφή της επιλογής στο πρόχειρο..."
 
-#: kwordquiz.cpp:1010
+#: kwordquiz.cpp:1031
 #, kde-format
 msgid "Inserting clipboard contents..."
 msgstr "Εισαγωγή των περιεχομένων του προχείρου..."
 
-#: kwordquiz.cpp:1017
+#: kwordquiz.cpp:1038
 #, kde-format
 msgid "Clearing the selected cells..."
 msgstr "Γίνεται καθαρισμός των επιλεγμένων κελιών..."
 
-#: kwordquiz.cpp:1024
+#: kwordquiz.cpp:1045
 #, kde-format
 msgid "Inserting rows..."
 msgstr "Γίνεται εισαγωγή γραμμών..."
 
-#: kwordquiz.cpp:1031
+#: kwordquiz.cpp:1052
 #, kde-format
 msgid "Deleting selected rows..."
 msgstr "Γίνεται διαγραφή γραμμών..."
 
-#: kwordquiz.cpp:1038
+#: kwordquiz.cpp:1059
 #, kde-format
 msgid "Marking selected text as a blank..."
 msgstr "Σημειώνεται το επιλεγμένο κείμενο ως κενό..."
 
-#: kwordquiz.cpp:1045
+#: kwordquiz.cpp:1066
 #, kde-format
 msgid "Removing blank markings..."
 msgstr "Γίνεται διαγραφή κενών σημαδιών..."
 
-#: kwordquiz.cpp:1052
+#: kwordquiz.cpp:1073
 #, kde-format
 msgid "Setting the column titles of the vocabulary..."
 msgstr "Ορίζονται οι τίτλοι των στηλών για το λεξιλόγιο..."
 
-#: kwordquiz.cpp:1065
+#: kwordquiz.cpp:1086
 #, kde-format
 msgid "Setting the font of the vocabulary..."
 msgstr "Ορίζεται η γραμματοσειρά του λεξιλογίου..."
 
-#: kwordquiz.cpp:1081
+#: kwordquiz.cpp:1102
 #, kde-format
 msgid "Linking an image with the current entry..."
 msgstr "Συνδέεται η εικόνα στην τρέχουσα καταχώρηση..."
 
-#: kwordquiz.cpp:1089
+#: kwordquiz.cpp:1110
 #, kde-format
 msgid "Linking a sound with the current entry..."
 msgstr "Συνδέεται ο ήχος στην τρέχουσα καταχώρηση..."
 
-#: kwordquiz.cpp:1097
+#: kwordquiz.cpp:1118
 #, kde-format
 msgid "Adjusting row heights..."
 msgstr "Ρύθμιση ύψους γραμμών..."
 
-#: kwordquiz.cpp:1106
+#: kwordquiz.cpp:1127
 #, kde-format
 msgid "Randomizing the vocabulary..."
 msgstr "Γίνεται  τυχαιοποίηση  του λεξιλογίου..."
 
-#: kwordquiz.cpp:1114
+#: kwordquiz.cpp:1135
 #, kde-format
 msgid "Updating mode..."
 msgstr "Λειτουργία ενημέρωσης..."
 
-#: kwordquiz.cpp:1128
+#: kwordquiz.cpp:1149
 #, kde-format
 msgid "Starting editor session..."
 msgstr "Αρχικοποιείται η συνεδρία επεξεργασίας..."
 
-#: kwordquiz.cpp:1135
+#: kwordquiz.cpp:1156
 #, kde-format
 msgid "Starting flashcard session..."
 msgstr "Αρχικοποιείται συνεδρία εμφάνισης καρτών..."
 
-#: kwordquiz.cpp:1142
+#: kwordquiz.cpp:1163
 #, kde-format
 msgid "Starting multiple choice session..."
 msgstr "Αρχικοποιείται συνεδρία πολλαπλών επιλογών..."
 
-#: kwordquiz.cpp:1149
+#: kwordquiz.cpp:1170
 #, kde-format
 msgid "Starting question & answer session..."
 msgstr "Αρχικοποιείται συνεδρία ερωταπαντήσεων..."
 
-#: kwordquiz.cpp:1301
+#: kwordquiz.cpp:1322
 #, kde-format
 msgid "Insert %1"
 msgstr "Εισαγωγή %1"
 
-#: kwordquiz.cpp:1302
+#: kwordquiz.cpp:1323
 #, kde-format
 msgid "Inserts the character %1"
 msgstr "Εισάγει το χαρακτήρα %1"
 
-#: kwordquiz.cpp:1353
+#: kwordquiz.cpp:1374
 #, kde-format
 msgid "This will restart your quiz. Do you wish to continue?"
 msgstr ""
 "Αυτή η ενέργεια θα επανεκκινήσει το κουίζ σας. Επιθυμείτε να συνεχίσετε;"
 
-#: kwordquiz.cpp:1369
+#: kwordquiz.cpp:1390
 #, kde-format
 msgid "&1 %1 -> %2 In Order"
 msgstr "&1 %1 -> %2 Σε σειρά"
 
-#: kwordquiz.cpp:1370
+#: kwordquiz.cpp:1391
 #, kde-format
 msgid "&2 %1 -> %2 In Order"
 msgstr "&2 %1 -> %2 Σε σειρά"
 
-#: kwordquiz.cpp:1371
+#: kwordquiz.cpp:1392
 #, kde-format
 msgid "&3 %1 -> %2 Randomly"
 msgstr "&3 %1 -> %2 Τυχαία"
 
-#: kwordquiz.cpp:1372
+#: kwordquiz.cpp:1393
 #, kde-format
 msgid "&4 %1 -> %2 Randomly"
 msgstr "&4 %1 -> %2 Τυχαία"
 
-#: kwordquiz.cpp:1373
+#: kwordquiz.cpp:1394
 #, kde-format
 msgid "&5 %1 <-> %2 Randomly"
 msgstr "&5 %1 <-> %2 Τυχαία"
 
-#: kwordquiz.cpp:1380 kwordquiz.cpp:1383
+#: kwordquiz.cpp:1401 kwordquiz.cpp:1404
 #, kde-format
 msgid "%1 -> %2 In Order"
 msgstr "%1 -> %2 Σε σειρά"
 
-#: kwordquiz.cpp:1386 kwordquiz.cpp:1389
+#: kwordquiz.cpp:1407 kwordquiz.cpp:1410
 #, kde-format
 msgid "%1 -> %2 Randomly"
 msgstr "%1 -> %2 Τυχαία"
 
-#: kwordquiz.cpp:1392
+#: kwordquiz.cpp:1413
 #, kde-format
 msgid "%1 &lt;-&gt; %2 Randomly"
 msgstr "%1 &lt;-&gt; %2 τυχαία"
