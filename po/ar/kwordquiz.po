@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-18 00:41+0000\n"
-"PO-Revision-Date: 2022-08-08 23:04+0400\n"
+"PO-Revision-Date: 2022-10-22 18:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -712,10 +712,9 @@ msgstr ""
 "هل تريد فتح الملف؟"
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "يفتح الملف..."
+msgstr "افتح ملفًّا"
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:874 kwordquiz.cpp:887 kwordquiz.cpp:976 kwordquiz.cpp:983
