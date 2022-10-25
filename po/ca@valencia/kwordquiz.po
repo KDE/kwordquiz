@@ -95,7 +95,7 @@ msgstr ""
 #: cleardialogbase.ui:78
 #, kde-format
 msgid "&Image Links"
-msgstr "Enllaços a &imatges"
+msgstr "Enllaços cap a &imatges"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
 #: cleardialogbase.ui:85
@@ -1966,7 +1966,7 @@ msgstr ""
 #: prefcharacterbase.ui:48
 #, kde-format
 msgid "Select character to modify"
-msgstr "Seleccioneu el caràcter a modificar"
+msgstr "Seleccioneu el caràcter que s'ha de modificar"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
 #: prefcharacterbase.ui:51
