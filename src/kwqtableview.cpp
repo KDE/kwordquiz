@@ -103,7 +103,11 @@ bool KWQTableView::doHtmlExport(const QUrl &url)
     out.setCodec("utf-8");
 #endif
     createPages(&printer, &td, false);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     out << td.toHtml("utf-8");
+#else
+    out << td.toHtml();
+#endif
     data.close();
     success = true;
   }
