@@ -5,7 +5,7 @@
 
 #include "blankanswer.h"
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 namespace BlankAnswer
 {
@@ -13,31 +13,26 @@ namespace BlankAnswer
 BlankResult blankAnswer(const QString &input)
 {
     BlankResult result;
+    QRegularExpression rx(QStringLiteral("\\[(.*?)\\]"));
 
-    QString r;
-    QString tTemp = input;
-    r = tTemp;
+    QRegularExpressionMatchIterator matchIt = rx.globalMatch(input);
 
-    QRegExp rx;
-    rx.setMinimal(true);
-    rx.setPattern(QStringLiteral("\\[.*\\]"));
-
-    r.replace(rx, QStringLiteral(".........."));
-
-    if (r != tTemp) {
-        result.blankedAnswer = r;
-        int offset = 0;
-        while (offset >= 0) {
-            offset = rx.indexIn(tTemp, offset);
-            if (offset >= 0) {
-                if (result.correctAnswer.length() > 0)
-                    result.correctAnswer = result.correctAnswer + "; " + tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
-                else
-                    result.correctAnswer = tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
-                offset++;
-            }
-        }
+    // When there is no blank return an empty result
+    if (!matchIt.hasNext()) {
+        return result;
     }
+
+    result.blankedAnswer = input;
+    result.blankedAnswer.replace(rx, QStringLiteral(".........."));
+
+    QStringList answerParts;
+
+    while (matchIt.hasNext()) {
+        QRegularExpressionMatch match = matchIt.next();
+        answerParts << match.captured(1);
+    }
+
+    result.correctAnswer = answerParts.join(QLatin1String("; "));
 
     return result;
 }
