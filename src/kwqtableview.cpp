@@ -116,7 +116,7 @@ void KWQTableView::createPages(QPrinter *printer, QTextDocument *textDoc, bool s
   int myDpi = printer->logicalDpiY();
 
   if (Prefs::printStyle() == Prefs::EnumPrintStyle::Flashcard) {
-    printer->setOrientation(QPrinter::Landscape);
+    printer->setPageOrientation(QPageLayout::Landscape);
 
     int cardWidth = qRound(5 * qreal(myDpi));
     int cardHeight = qRound(3 * qreal(myDpi));
