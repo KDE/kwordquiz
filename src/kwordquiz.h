@@ -130,7 +130,11 @@ class KWordQuizApp : public KXmlGuiWindow
     /** opens a file from the recent files menu */
     void slotFileOpenRecent(const QUrl &url);
     /** download vocabularies from the Internet */
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void slotFileGHNS(const KNS3::Entry::List &changedEntries);
+#else
+    void slotFileGHNS(const KNSCore::Entry::List &changedEntries);
+#endif
     /** save a document */
     void slotFileSave();
     /** save a document by a new filename*/

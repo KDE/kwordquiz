@@ -838,7 +838,11 @@ void KWordQuizApp::slotFileOpenRecent(const QUrl &url)
 }
 
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void KWordQuizApp::slotFileGHNS(const QList<KNS3::Entry> &entries)
+#else
+void KWordQuizApp::slotFileGHNS(const QList<KNSCore::Entry> &entries)
+#endif
 {
   QMimeDatabase db;
 
