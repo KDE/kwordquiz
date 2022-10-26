@@ -10,6 +10,7 @@
 #include <QMenu>
 #include <QPointer>
 #include <QTimer>
+#include <QRandomGenerator>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -66,7 +67,6 @@ KWQTutor::KWQTutor(const QUrl &fileToOpen, QWidget *parent) : KStatusNotifierIte
   m_timer = new QTimer;
   connect (m_timer, &QTimer::timeout, this, &KWQTutor::updateTimer);
 
-  m_randomSequence = new KRandomSequence();
   m_flashcard = new KWQTutorFlashCard();
 
   m_tutorDoc = new KEduVocDocument();
@@ -84,7 +84,6 @@ KWQTutor::KWQTutor(const QUrl &fileToOpen, QWidget *parent) : KStatusNotifierIte
 
 KWQTutor::~KWQTutor()
 {
-    delete m_randomSequence;
 }
 
 void KWQTutor::updateTimer()
@@ -93,14 +92,12 @@ void KWQTutor::updateTimer()
   if (Prefs::tutorTiming() == Prefs::EnumTutorTiming::FixedInterval)
     interval = Prefs::tutorEvery();
   else if (Prefs::tutorTiming() == Prefs::EnumTutorTiming::RandomInterval) {
-    do
-      interval = m_randomSequence->getLong(Prefs::tutorMax());
-    while (interval < Prefs::tutorMin());
+    interval = QRandomGenerator::global()->bounded(Prefs::tutorMin(), Prefs::tutorMax());
   }
   qDebug() << interval;
   m_timer->start(1000 * 60 * interval);
   if (!m_flashcard->isVisible())
-    showFlashcard(m_randomSequence->getLong(m_tutorDoc->lesson()->entryCount(KEduVocLesson::Recursive) - 1));
+    showFlashcard(QRandomGenerator::global()->bounded(m_tutorDoc->lesson()->entryCount(KEduVocLesson::Recursive) - 1));
 }
 
 void KWQTutor::startStopPressed()

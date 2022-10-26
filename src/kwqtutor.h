@@ -6,7 +6,6 @@
 #ifndef KWQTUTOR_H
 #define KWQTUTOR_H
 
-#include <KRandomSequence>
 #include <KActionCollection>
 #include <KStatusNotifierItem>
 
@@ -44,7 +43,6 @@ class KWQTutor : public KStatusNotifierItem
 
   private:
     /* random number generator*/
-    KRandomSequence* m_randomSequence;
     /* an entry of KEduVocDocument which is currently being displayed in flashcard */
     int m_currentEntry;
     int m_currentColumn;

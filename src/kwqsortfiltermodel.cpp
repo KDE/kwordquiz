@@ -6,7 +6,7 @@
 #include "kwqsortfiltermodel.h"
 #include "kwqtablemodel.h"
 
-#include <KRandomSequence>
+#include <KRandom>
 
 KWQSortFilterModel::KWQSortFilterModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -54,8 +54,7 @@ void KWQSortFilterModel::shuffle()
     for (int i = 0; i < rowCount(QModelIndex()); ++i)
         m_shuffleList.append(i);
 
-    KRandomSequence rs;
-    rs.randomize(m_shuffleList);
+    KRandom::shuffle(m_shuffleList, QRandomGenerator::global());
     m_shuffle = true;
     sort(0, Qt::AscendingOrder);
     invalidate();

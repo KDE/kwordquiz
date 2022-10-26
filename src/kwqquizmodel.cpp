@@ -10,6 +10,10 @@
 #include "kwqsortfiltermodel.h"
 #include "kwqtablemodel.h"
 
+#include <QRandomGenerator>
+
+#include <KRandom>
+
 KWQQuizModel::KWQQuizModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
     m_sourceModel = 0;
@@ -124,8 +128,7 @@ void KWQQuizModel::activateBaseList()
         m_list.append(l);
 
     if (m_quizMode > 2) {
-        KRandomSequence rs;
-        rs.randomize(m_list);
+        KRandom::shuffle(m_list, QRandomGenerator::global());
     };
 
     m_questionCount = m_list.count();
@@ -203,16 +206,15 @@ bool KWQQuizModel::checkAnswer(const QString & a)
 QStringList KWQQuizModel::multiOptions()
 {
   QStringList ls;
-  KRandomSequence rs;
   int a = -1;
   int b = -1;
 
   do
-    a = rs.getLong(m_questionCount);
+    a = QRandomGenerator::global()->bounded(m_questionCount);
   while(a == m_currentQuestion);
 
   do
-    b = rs.getLong(m_questionCount);
+    b = QRandomGenerator::global()->bounded(m_questionCount);
   while(b == m_currentQuestion || b == a);
 
   int row =  m_list.at(m_currentQuestion);
@@ -234,7 +236,7 @@ QStringList KWQQuizModel::multiOptions()
       }
   }
 
-  rs.randomize(ls);
+  KRandom::shuffle(ls, QRandomGenerator::global());
 
   return ls;
 }
