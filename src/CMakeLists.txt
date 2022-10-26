@@ -16,6 +16,7 @@ include_directories(
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KWORDQUIZ VERSION_HEADER kwordquiz_version.h)
 
 set(kwordquiz_SRCS
+    blankanswer.cpp
     dlglanguage.cpp
     dlglanguage.h
     dlgspecchar.cpp

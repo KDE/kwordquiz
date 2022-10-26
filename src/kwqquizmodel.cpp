@@ -5,9 +5,10 @@
 
 #include "kwqquizmodel.h"
 
+#include "blankanswer.h"
+#include "krandomsequence.h"
 #include "kwqsortfiltermodel.h"
 #include "kwqtablemodel.h"
-#include "krandomsequence.h"
 
 KWQQuizModel::KWQQuizModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -321,42 +322,22 @@ QString KWQQuizModel::question()
     return s;
 }
 
-
 QString KWQQuizModel::blankAnswer()
 {
-    QString r = QLatin1String("");
     m_correctBlank.clear();
     m_answerBlank.clear();
-    QString tTemp;
 
     if (m_quizType == Prefs::EnumStartSession::QA && Prefs::enableBlanks()) {
-        int row =  m_list.at(m_currentQuestion);
-        tTemp = data(index(qAbs(row), column(row), QModelIndex()), Qt::DisplayRole).toString();
-        r = tTemp;
-        QRegExp rx;
-        rx.setMinimal(true);
-        rx.setPattern(QStringLiteral("\\[.*\\]"));
+        int row = m_list.at(m_currentQuestion);
+        const QString input = data(index(qAbs(row), column(row), QModelIndex()), Qt::DisplayRole).toString();
 
-        r.replace(rx, QStringLiteral(".........."));
+        const BlankAnswer::BlankResult result = BlankAnswer::blankAnswer(input);
 
-        if (r != tTemp) {
-            m_answerBlank = r;
-            int offset = 0;
-            while (offset >= 0) {
-                offset = rx.indexIn(tTemp, offset);
-                if (offset >= 0) {
-                    if (m_correctBlank.length() > 0)
-                        m_correctBlank = m_correctBlank + "; " + tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
-                    else
-                        m_correctBlank = tTemp.mid(offset + 1, tTemp.indexOf(']', offset) - offset - 1);
-                offset++;
-                }
-            }
-        }
+        m_answerBlank = result.blankedAnswer;
+        m_correctBlank = result.correctAnswer;
     }
     return m_answerBlank;
 }
-
 
 QString KWQQuizModel::answer()
 {

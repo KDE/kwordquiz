@@ -28,6 +28,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
 include(ECMSetupVersion)
+include(ECMAddTests)
 
 
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Widgets PrintSupport)
@@ -56,6 +57,12 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 add_subdirectory(doc)
 add_subdirectory(src)
+
+if(BUILD_TESTING)
+    find_package(Qt${QT_MAJOR_VERSION}Test REQUIRED)
+
+    add_subdirectory(autotests)
+endif()
 
 ki18n_install(po)
 if (KF5DocTools_FOUND)
