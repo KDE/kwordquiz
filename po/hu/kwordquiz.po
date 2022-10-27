@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:41+0000\n"
+"POT-Creation-Date: 2022-10-27 00:42+0000\n"
 "PO-Revision-Date: 2012-06-23 13:31+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -753,7 +753,7 @@ msgstr "Új dokumentumablak megnyitása…"
 msgid "&Merge selected files with the current document"
 msgstr "A kijelölt fájlok össze&olvasztása a jelenlegi dokumentummal"
 
-#: kwordquiz.cpp:796 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Szótárdokumentum megnyitása"
@@ -1441,43 +1441,43 @@ msgstr "Az eddig megválaszolt kérdések száma. Százalékosan is megjeleníth
 msgid "Untitled"
 msgstr "Névtelen"
 
-#: kwqtableview.cpp:186
+#: kwqtableview.cpp:190
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Név:_____________________________ Dátum:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:233 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "Pontszám"
 
-#: kwqtableview.cpp:652
+#: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "Hiba történt az üres helyet jelző zárójelek kezelésénél"
 
-#: kwqtableview.cpp:719
+#: kwqtableview.cpp:723
 #, fuzzy, kde-format
 #| msgid "Select Image"
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "Kép kiválasztása"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, fuzzy, kde-format
 #| msgid "Select Sound"
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "Hang kiválasztása"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, fuzzy, kde-format
 #| msgid "*|All Files"
 msgid "All Files (*)"
 msgstr "*|Minden fájl"
 
-#: kwqtutor.cpp:25
+#: kwqtutor.cpp:26
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1495,32 +1495,32 @@ msgstr ""
 "gombbal kattintson a panelen lévő KWordQuiz Oktató ikonra és válassza a "
 "Beállítások menüt. Itt lehet hozzárendelni a gyorsbillentyűket.</qt>"
 
-#: kwqtutor.cpp:31
+#: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
 msgstr "Oktató"
 
-#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
 msgstr "Gyakorlás kezdése"
 
-#: kwqtutor.cpp:52
+#: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr "KWordQuiz oktató beállítása…"
 
-#: kwqtutor.cpp:57
+#: kwqtutor.cpp:58
 #, kde-format
 msgid "Close Flash Card"
 msgstr "Tanulókártya bezárása"
 
-#: kwqtutor.cpp:62
+#: kwqtutor.cpp:63
 #, kde-format
 msgid "Flip Flash Card"
 msgstr "Tanulókártya felfordítása"
 
-#: kwqtutor.cpp:111
+#: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
 msgstr "Gyakorlás vége"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:41+0000\n"
+"POT-Creation-Date: 2022-10-27 00:42+0000\n"
 "PO-Revision-Date: 2022-10-18 09:45+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -761,7 +761,7 @@ msgstr "S'està obrint una finestra nova de document..."
 msgid "&Merge selected files with the current document"
 msgstr "&Mescla els fitxers seleccionats amb el document actual"
 
-#: kwordquiz.cpp:796 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Obre un document de vocabulari"
@@ -1449,40 +1449,40 @@ msgstr "El nombre de preguntes respostes. Pot mostrar-se com a percentatge."
 msgid "Untitled"
 msgstr "Sense títol"
 
-#: kwqtableview.cpp:186
+#: kwqtableview.cpp:190
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Nom:_____________________________ Data:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:233 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "Puntuació"
 
-#: kwqtableview.cpp:652
+#: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "Hi ha un error amb els claudàtors d'omplir els espais en blanc"
 
-#: kwqtableview.cpp:719
+#: kwqtableview.cpp:723
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "Selecció d'imatge"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "Selecció d'un so"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
 
-#: kwqtutor.cpp:25
+#: kwqtutor.cpp:26
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1499,32 +1499,32 @@ msgstr ""
 "dret sobre la icona del tutor del KWordQuiz al plafó i escollir l'opció "
 "«preferències». Allí podeu assignar les dreceres de teclat.</qt>"
 
-#: kwqtutor.cpp:31
+#: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
 msgstr "Tutor"
 
-#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
 msgstr "Inicia l'exercici"
 
-#: kwqtutor.cpp:52
+#: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr "Configura el tutor del KWordQuiz..."
 
-#: kwqtutor.cpp:57
+#: kwqtutor.cpp:58
 #, kde-format
 msgid "Close Flash Card"
 msgstr "Tanca la targeta ràpida"
 
-#: kwqtutor.cpp:62
+#: kwqtutor.cpp:63
 #, kde-format
 msgid "Flip Flash Card"
 msgstr "Gira la targeta ràpida"
 
-#: kwqtutor.cpp:111
+#: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
 msgstr "Atura l'exercici"

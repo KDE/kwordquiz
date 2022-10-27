@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:41+0000\n"
+"POT-Creation-Date: 2022-10-27 00:42+0000\n"
 "PO-Revision-Date: 2013-10-18 19:25+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -749,7 +749,7 @@ msgstr "Otvaram novi prozor za dokument..."
 msgid "&Merge selected files with the current document"
 msgstr "&Spoji selektirane datoteke sa tekućim dokumentom"
 
-#: kwordquiz.cpp:796 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Otvori rječnički dokument"
@@ -1435,43 +1435,43 @@ msgstr "Broj već odgovorenih pitanja. Može biti prikazan kao procenat."
 msgid "Untitled"
 msgstr "Bez naslova"
 
-#: kwqtableview.cpp:186
+#: kwqtableview.cpp:190
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Ime:_____________________________ Datum:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:233 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "Rezultat"
 
-#: kwqtableview.cpp:652
+#: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "Postoji greška sa zagradama za popunjavanje praznina"
 
-#: kwqtableview.cpp:719
+#: kwqtableview.cpp:723
 #, fuzzy, kde-format
 #| msgid "Select Image"
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "Izaberite sliku"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, fuzzy, kde-format
 #| msgid "Select Sound"
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "Izaberite zvuk"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, fuzzy, kde-format
 #| msgid "*|All Files"
 msgid "All Files (*)"
 msgstr "*|Sve datoteke"
 
-#: kwqtutor.cpp:25
+#: kwqtutor.cpp:26
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1489,32 +1489,32 @@ msgstr ""
 "na KWordQuiz Tutor ikonu na panelu i odaberite postavke. Tamo možete "
 "dodijeliti kratice na tastaturi.</qt>"
 
-#: kwqtutor.cpp:31
+#: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
 msgstr "Tutor"
 
-#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
 msgstr "Počni vježbu"
 
-#: kwqtutor.cpp:52
+#: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr "Konfiguriši KWordQuiz Tutora..."
 
-#: kwqtutor.cpp:57
+#: kwqtutor.cpp:58
 #, kde-format
 msgid "Close Flash Card"
 msgstr "Zatvori brzu karticu"
 
-#: kwqtutor.cpp:62
+#: kwqtutor.cpp:63
 #, kde-format
 msgid "Flip Flash Card"
 msgstr "Okreni brzu karticu"
 
-#: kwqtutor.cpp:111
+#: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
 msgstr "Završi vježbu"

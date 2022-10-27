@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:41+0000\n"
+"POT-Creation-Date: 2022-10-27 00:42+0000\n"
 "PO-Revision-Date: 2022-08-07 10:58+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -747,7 +747,7 @@ msgstr "Opening a new document window..."
 msgid "&Merge selected files with the current document"
 msgstr "&Merge selected files with the current document"
 
-#: kwordquiz.cpp:796 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Open Vocabulary Document"
@@ -1434,40 +1434,40 @@ msgstr ""
 msgid "Untitled"
 msgstr "Untitled"
 
-#: kwqtableview.cpp:186
+#: kwqtableview.cpp:190
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Name:_____________________________ Date:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:233 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "Score"
 
-#: kwqtableview.cpp:652
+#: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "There is an error with the Fill-in-the-blank brackets"
 
-#: kwqtableview.cpp:719
+#: kwqtableview.cpp:723
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "Select Image"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "Select Sound"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgid "All Files (*)"
 msgstr "All Files (*)"
 
-#: kwqtutor.cpp:25
+#: kwqtutor.cpp:26
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1484,32 +1484,32 @@ msgstr ""
 "with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
 "and select Preferences. There you can assign keyboard shortcuts.</qt>"
 
-#: kwqtutor.cpp:31
+#: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
 msgstr "Tutor"
 
-#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
 msgstr "Start Exercise"
 
-#: kwqtutor.cpp:52
+#: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr "Configure KWordQuiz Tutor..."
 
-#: kwqtutor.cpp:57
+#: kwqtutor.cpp:58
 #, kde-format
 msgid "Close Flash Card"
 msgstr "Close Flash Card"
 
-#: kwqtutor.cpp:62
+#: kwqtutor.cpp:63
 #, kde-format
 msgid "Flip Flash Card"
 msgstr "Flip Flash Card"
 
-#: kwqtutor.cpp:111
+#: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
 msgstr "Stop Exercise"

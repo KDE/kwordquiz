@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:41+0000\n"
+"POT-Creation-Date: 2022-10-27 00:42+0000\n"
 "PO-Revision-Date: 2009-03-02 21:12+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -779,7 +779,7 @@ msgstr "新しい文書ウィンドウを開いています..."
 msgid "&Merge selected files with the current document"
 msgstr "選択したファイルを現在の文書とマージする(&M)"
 
-#: kwordquiz.cpp:796 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "語彙文書を開く"
@@ -1474,23 +1474,23 @@ msgstr "既に答えた問題の数。パーセンテージで表示されるこ
 msgid "Untitled"
 msgstr "タイトルなし"
 
-#: kwqtableview.cpp:186
+#: kwqtableview.cpp:190
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "名前:_____________________________ 日付:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:233 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "スコア"
 
-#: kwqtableview.cpp:652
+#: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "穴埋め問題の空欄の括弧にエラーがあります"
 
-#: kwqtableview.cpp:719
+#: kwqtableview.cpp:723
 #, fuzzy, kde-format
 #| msgctxt "@title:window select character dialog"
 #| msgid "Select Character"
@@ -1498,7 +1498,7 @@ msgctxt "@title:window"
 msgid "Select Image"
 msgstr "文字を選択"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, fuzzy, kde-format
 #| msgctxt "@action:button select"
 #| msgid "&Select"
@@ -1506,12 +1506,12 @@ msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "選択(&S)"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
 
-#: kwqtutor.cpp:25
+#: kwqtutor.cpp:26
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1522,34 +1522,34 @@ msgid ""
 "and select Preferences. There you can assign keyboard shortcuts.</qt>"
 msgstr ""
 
-#: kwqtutor.cpp:31
+#: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
 msgstr ""
 
-#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
 msgstr ""
 
-#: kwqtutor.cpp:52
+#: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr ""
 
-#: kwqtutor.cpp:57
+#: kwqtutor.cpp:58
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgid "Close Flash Card"
 msgstr "フラッシュカード"
 
-#: kwqtutor.cpp:62
+#: kwqtutor.cpp:63
 #, fuzzy, kde-format
 #| msgid "&Flip Card"
 msgid "Flip Flash Card"
 msgstr "カードをめくる(&F)"
 
-#: kwqtutor.cpp:111
+#: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
 msgstr ""

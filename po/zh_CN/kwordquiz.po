@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:41+0000\n"
+"POT-Creation-Date: 2022-10-27 00:42+0000\n"
 "PO-Revision-Date: 2022-10-22 05:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -739,7 +739,7 @@ msgstr "打开新的文档窗口..."
 msgid "&Merge selected files with the current document"
 msgstr "将当前文档与已选文件合并在一起(&M)"
 
-#: kwordquiz.cpp:796 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "打开词汇表文档"
@@ -1419,40 +1419,40 @@ msgstr "已经回答的问题数。可以显示为百分比。"
 msgid "Untitled"
 msgstr "无标题"
 
-#: kwqtableview.cpp:186
+#: kwqtableview.cpp:190
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "姓名：_____________________________ 日期：__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:233 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "得分"
 
-#: kwqtableview.cpp:652
+#: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "填空题中有错误"
 
-#: kwqtableview.cpp:719
+#: kwqtableview.cpp:723
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "选择图像"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "选择声音"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgid "All Files (*)"
 msgstr "所有文件 (*)"
 
-#: kwqtutor.cpp:25
+#: kwqtutor.cpp:26
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1467,32 +1467,32 @@ msgstr ""
 "中夺取焦点。<br /><br />您可以右键单击面板上的KWordQuiz教程图标，然后选择首选"
 "项并指定键盘快捷键。</qt>"
 
-#: kwqtutor.cpp:31
+#: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
 msgstr "教学"
 
-#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
 msgstr "开始练习"
 
-#: kwqtutor.cpp:52
+#: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr "配置 KWordQuiz 教学..."
 
-#: kwqtutor.cpp:57
+#: kwqtutor.cpp:58
 #, kde-format
 msgid "Close Flash Card"
 msgstr "关闭答题卡"
 
-#: kwqtutor.cpp:62
+#: kwqtutor.cpp:63
 #, kde-format
 msgid "Flip Flash Card"
 msgstr "翻开答题卡"
 
-#: kwqtutor.cpp:111
+#: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
 msgstr "停止练习"

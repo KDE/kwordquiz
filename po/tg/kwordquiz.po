@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:41+0000\n"
+"POT-Creation-Date: 2022-10-27 00:42+0000\n"
 "PO-Revision-Date: 2019-09-29 12:43+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -788,7 +788,7 @@ msgstr "Кушодани тирезаи ҳуҷҷати нав..."
 msgid "&Merge selected files with the current document"
 msgstr ""
 
-#: kwordquiz.cpp:796 kwqtutor.cpp:130
+#: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
 msgstr "Кушодани ҳуҷҷати луғат"
@@ -1501,42 +1501,42 @@ msgstr ""
 msgid "Untitled"
 msgstr ""
 
-#: kwqtableview.cpp:186
+#: kwqtableview.cpp:190
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Ном:_____________________________ Таърих:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:233 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:90
 #, kde-format
 msgid "Score"
 msgstr "Ҳисобот"
 
-#: kwqtableview.cpp:652
+#: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr "Дар пур намудани фосила хатогӣ дида мешавад"
 
-#: kwqtableview.cpp:719
+#: kwqtableview.cpp:723
 #, fuzzy, kde-format
 #| msgid "Select Character"
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "Интихоби аломат"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, fuzzy, kde-format
 #| msgid "&Select"
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "&Интихоб"
 
-#: kwqtableview.cpp:739
+#: kwqtableview.cpp:743
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
 
-#: kwqtutor.cpp:25
+#: kwqtutor.cpp:26
 #, kde-format
 msgid ""
 "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
@@ -1547,33 +1547,33 @@ msgid ""
 "and select Preferences. There you can assign keyboard shortcuts.</qt>"
 msgstr ""
 
-#: kwqtutor.cpp:31
+#: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
 msgstr ""
 
-#: kwqtutor.cpp:42 kwqtutor.cpp:119
+#: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
 msgstr ""
 
-#: kwqtutor.cpp:52
+#: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
 msgstr ""
 
-#: kwqtutor.cpp:57
+#: kwqtutor.cpp:58
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgid "Close Flash Card"
 msgstr "Варақаҳо"
 
-#: kwqtutor.cpp:62
+#: kwqtutor.cpp:63
 #, fuzzy, kde-format
 msgid "Flip Flash Card"
 msgstr "Варақаҳо"
 
-#: kwqtutor.cpp:111
+#: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
 msgstr ""
