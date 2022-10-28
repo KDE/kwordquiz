@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-27 00:42+0000\n"
+"POT-Creation-Date: 2022-10-28 00:41+0000\n"
 "PO-Revision-Date: 2022-09-06 14:13+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -725,12 +725,12 @@ msgid "Open File"
 msgstr "Открытие файла..."
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:874 kwordquiz.cpp:887 kwordquiz.cpp:976 kwordquiz.cpp:983
-#: kwordquiz.cpp:989 kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033
-#: kwordquiz.cpp:1040 kwordquiz.cpp:1047 kwordquiz.cpp:1054 kwordquiz.cpp:1061
-#: kwordquiz.cpp:1068 kwordquiz.cpp:1081 kwordquiz.cpp:1096 kwordquiz.cpp:1104
-#: kwordquiz.cpp:1112 kwordquiz.cpp:1121 kwordquiz.cpp:1129 kwordquiz.cpp:1143
-#: kwordquiz.cpp:1151 kwordquiz.cpp:1158 kwordquiz.cpp:1165 kwordquiz.cpp:1172
+#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
+#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
+#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
+#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
+#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
+#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
 #, kde-format
 msgctxt "@info:status ready"
 msgid "Ready"
@@ -760,193 +760,193 @@ msgstr "&Объединить выбранные файлы с текущим д
 msgid "Open Vocabulary Document"
 msgstr "Открыть словарь"
 
-#: kwordquiz.cpp:861
+#: kwordquiz.cpp:865
 #, kde-format
 msgid "Saving file..."
 msgstr "Сохранение файла..."
 
-#: kwordquiz.cpp:880
+#: kwordquiz.cpp:884
 #, kde-format
 msgid "Saving file with a new filename..."
 msgstr "Сохранение файла с новым именем..."
 
-#: kwordquiz.cpp:908
+#: kwordquiz.cpp:912
 #, kde-format
 msgid "HTML Document"
 msgstr "Документ HTML"
 
-#: kwordquiz.cpp:910
+#: kwordquiz.cpp:914
 #, kde-format
 msgid "Save Vocabulary Document As"
 msgstr "Сохранить словарь под другим именем"
 
-#: kwordquiz.cpp:958
+#: kwordquiz.cpp:962
 #, kde-format
 msgid "Closing file..."
 msgstr "Закрытие файла..."
 
-#: kwordquiz.cpp:981
+#: kwordquiz.cpp:985
 #, kde-format
 msgid "Printing..."
 msgstr "Печать..."
 
-#: kwordquiz.cpp:987
+#: kwordquiz.cpp:991
 #, kde-format
 msgid "Showing Preview..."
 msgstr "Предварительный просмотр..."
 
-#: kwordquiz.cpp:995
+#: kwordquiz.cpp:999
 #, kde-format
 msgctxt "@info:status quitting"
 msgid "Quitting..."
 msgstr "Выход..."
 
-#: kwordquiz.cpp:1017
+#: kwordquiz.cpp:1021
 #, kde-format
 msgid "Cutting selection..."
 msgstr "Вырезание выделенного фрагмента..."
 
-#: kwordquiz.cpp:1024
+#: kwordquiz.cpp:1028
 #, kde-format
 msgid "Copying selection to clipboard..."
 msgstr "Копирование в буфер обмена..."
 
-#: kwordquiz.cpp:1031
+#: kwordquiz.cpp:1035
 #, kde-format
 msgid "Inserting clipboard contents..."
 msgstr "Вставка из буфера обмена..."
 
-#: kwordquiz.cpp:1038
+#: kwordquiz.cpp:1042
 #, kde-format
 msgid "Clearing the selected cells..."
 msgstr "Очистка выделенных ячеек..."
 
-#: kwordquiz.cpp:1045
+#: kwordquiz.cpp:1049
 #, kde-format
 msgid "Inserting rows..."
 msgstr "Вставка рядов..."
 
-#: kwordquiz.cpp:1052
+#: kwordquiz.cpp:1056
 #, kde-format
 msgid "Deleting selected rows..."
 msgstr "Удаление выделенных рядов..."
 
-#: kwordquiz.cpp:1059
+#: kwordquiz.cpp:1063
 #, kde-format
 msgid "Marking selected text as a blank..."
 msgstr "Пометить выделенный текст как пропуск..."
 
-#: kwordquiz.cpp:1066
+#: kwordquiz.cpp:1070
 #, kde-format
 msgid "Removing blank markings..."
 msgstr "Снять отметку пропусков..."
 
-#: kwordquiz.cpp:1073
+#: kwordquiz.cpp:1077
 #, kde-format
 msgid "Setting the column titles of the vocabulary..."
 msgstr "Заголовки столбцов словаря..."
 
-#: kwordquiz.cpp:1086
+#: kwordquiz.cpp:1090
 #, kde-format
 msgid "Setting the font of the vocabulary..."
 msgstr "Шрифт словаря..."
 
-#: kwordquiz.cpp:1102
+#: kwordquiz.cpp:1106
 #, kde-format
 msgid "Linking an image with the current entry..."
 msgstr "Связать изображения с текущей записью..."
 
-#: kwordquiz.cpp:1110
+#: kwordquiz.cpp:1114
 #, kde-format
 msgid "Linking a sound with the current entry..."
 msgstr "Связать аудиозаписи с текущей записью..."
 
-#: kwordquiz.cpp:1118
+#: kwordquiz.cpp:1122
 #, kde-format
 msgid "Adjusting row heights..."
 msgstr "Регулировка высоты строки..."
 
-#: kwordquiz.cpp:1127
+#: kwordquiz.cpp:1131
 #, kde-format
 msgid "Randomizing the vocabulary..."
 msgstr "Случайный запрос..."
 
-#: kwordquiz.cpp:1135
+#: kwordquiz.cpp:1139
 #, kde-format
 msgid "Updating mode..."
 msgstr "Обновление порядка..."
 
-#: kwordquiz.cpp:1149
+#: kwordquiz.cpp:1153
 #, kde-format
 msgid "Starting editor session..."
 msgstr "Редактор..."
 
-#: kwordquiz.cpp:1156
+#: kwordquiz.cpp:1160
 #, kde-format
 msgid "Starting flashcard session..."
 msgstr "Начало сеанса работы с карточками..."
 
-#: kwordquiz.cpp:1163
+#: kwordquiz.cpp:1167
 #, kde-format
 msgid "Starting multiple choice session..."
 msgstr "Начало теста с вариантами ответов..."
 
-#: kwordquiz.cpp:1170
+#: kwordquiz.cpp:1174
 #, kde-format
 msgid "Starting question & answer session..."
 msgstr "Вопросы и ответы..."
 
-#: kwordquiz.cpp:1322
+#: kwordquiz.cpp:1326
 #, kde-format
 msgid "Insert %1"
 msgstr "Вставить %1"
 
-#: kwordquiz.cpp:1323
+#: kwordquiz.cpp:1327
 #, kde-format
 msgid "Inserts the character %1"
 msgstr "Вставить символ %1"
 
-#: kwordquiz.cpp:1374
+#: kwordquiz.cpp:1378
 #, kde-format
 msgid "This will restart your quiz. Do you wish to continue?"
 msgstr "Это приведёт к перезапуску теста. Продолжить?"
 
-#: kwordquiz.cpp:1390
+#: kwordquiz.cpp:1394
 #, kde-format
 msgid "&1 %1 -> %2 In Order"
 msgstr "&1 %1 ➤ %2: по порядку"
 
-#: kwordquiz.cpp:1391
+#: kwordquiz.cpp:1395
 #, kde-format
 msgid "&2 %1 -> %2 In Order"
 msgstr "&2 %1 ➤ %2: по порядку"
 
-#: kwordquiz.cpp:1392
+#: kwordquiz.cpp:1396
 #, kde-format
 msgid "&3 %1 -> %2 Randomly"
 msgstr "&3 %1 ➤ %2: вразброс"
 
-#: kwordquiz.cpp:1393
+#: kwordquiz.cpp:1397
 #, kde-format
 msgid "&4 %1 -> %2 Randomly"
 msgstr "&4 %1 ➤ %2: вразброс"
 
-#: kwordquiz.cpp:1394
+#: kwordquiz.cpp:1398
 #, kde-format
 msgid "&5 %1 <-> %2 Randomly"
 msgstr "&5 %1 ⇄ %2: вразброс"
 
-#: kwordquiz.cpp:1401 kwordquiz.cpp:1404
+#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
 #, kde-format
 msgid "%1 -> %2 In Order"
 msgstr "%1 ➤ %2: по порядку"
 
-#: kwordquiz.cpp:1407 kwordquiz.cpp:1410
+#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
 #, kde-format
 msgid "%1 -> %2 Randomly"
 msgstr "%1 ➤ %2: вразброс"
 
-#: kwordquiz.cpp:1413
+#: kwordquiz.cpp:1417
 #, kde-format
 msgid "%1 &lt;-&gt; %2 Randomly"
 msgstr "%1 &lt;-&gt; %2: вразброс"

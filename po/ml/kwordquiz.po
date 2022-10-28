@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz trunk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-27 00:42+0000\n"
+"POT-Creation-Date: 2022-10-28 00:41+0000\n"
 "PO-Revision-Date: 2019-12-12 21:38+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
@@ -714,12 +714,12 @@ msgid "Open File"
 msgstr "ഫയല്‍ തുറക്കുന്നു..."
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:874 kwordquiz.cpp:887 kwordquiz.cpp:976 kwordquiz.cpp:983
-#: kwordquiz.cpp:989 kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033
-#: kwordquiz.cpp:1040 kwordquiz.cpp:1047 kwordquiz.cpp:1054 kwordquiz.cpp:1061
-#: kwordquiz.cpp:1068 kwordquiz.cpp:1081 kwordquiz.cpp:1096 kwordquiz.cpp:1104
-#: kwordquiz.cpp:1112 kwordquiz.cpp:1121 kwordquiz.cpp:1129 kwordquiz.cpp:1143
-#: kwordquiz.cpp:1151 kwordquiz.cpp:1158 kwordquiz.cpp:1165 kwordquiz.cpp:1172
+#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
+#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
+#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
+#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
+#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
+#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
 #, kde-format
 msgctxt "@info:status ready"
 msgid "Ready"
@@ -749,193 +749,193 @@ msgstr "തെരഞ്ഞെടുത്ത ഫയലുകള്‍ ഇപ്�
 msgid "Open Vocabulary Document"
 msgstr "പദസഞ്ചയ രചന തുറക്കുക"
 
-#: kwordquiz.cpp:861
+#: kwordquiz.cpp:865
 #, kde-format
 msgid "Saving file..."
 msgstr "ഫയല്‍ സൂക്ഷിക്കുന്നു..."
 
-#: kwordquiz.cpp:880
+#: kwordquiz.cpp:884
 #, kde-format
 msgid "Saving file with a new filename..."
 msgstr "പുതിയ ഫയല്‍നാമത്തോടുകൂടി ഫയല്‍ സൂക്ഷിക്കുക..."
 
-#: kwordquiz.cpp:908
+#: kwordquiz.cpp:912
 #, kde-format
 msgid "HTML Document"
 msgstr ""
 
-#: kwordquiz.cpp:910
+#: kwordquiz.cpp:914
 #, kde-format
 msgid "Save Vocabulary Document As"
 msgstr "പദസഞ്ചയ രചന പേരു് മാറ്റി സൂക്ഷിക്കുക"
 
-#: kwordquiz.cpp:958
+#: kwordquiz.cpp:962
 #, kde-format
 msgid "Closing file..."
 msgstr "ഫയല്‍ അടയ്ക്കുന്നു..."
 
-#: kwordquiz.cpp:981
+#: kwordquiz.cpp:985
 #, kde-format
 msgid "Printing..."
 msgstr "പ്രിന്റ് ചെയ്യുന്നു..."
 
-#: kwordquiz.cpp:987
+#: kwordquiz.cpp:991
 #, fuzzy, kde-format
 msgid "Showing Preview..."
 msgstr "ഫയല്‍ സൂക്ഷിക്കുന്നു..."
 
-#: kwordquiz.cpp:995
+#: kwordquiz.cpp:999
 #, kde-format
 msgctxt "@info:status quitting"
 msgid "Quitting..."
 msgstr "നിര്‍ത്തുന്നു..."
 
-#: kwordquiz.cpp:1017
+#: kwordquiz.cpp:1021
 #, kde-format
 msgid "Cutting selection..."
 msgstr "തെരഞ്ഞെടുത്തതു് മുറിക്കുന്നു..."
 
-#: kwordquiz.cpp:1024
+#: kwordquiz.cpp:1028
 #, kde-format
 msgid "Copying selection to clipboard..."
 msgstr "തെരഞ്ഞെടുത്തതു് ഓര്‍മ്മച്ചെപ്പിലേക്കു് പകര്‍ത്തുന്നു..."
 
-#: kwordquiz.cpp:1031
+#: kwordquiz.cpp:1035
 #, kde-format
 msgid "Inserting clipboard contents..."
 msgstr "ഓര്‍മ്മച്ചെപ്പു് ഉള്ളടക്കങ്ങള്‍ ചേര്‍ക്കുന്നു..."
 
-#: kwordquiz.cpp:1038
+#: kwordquiz.cpp:1042
 #, kde-format
 msgid "Clearing the selected cells..."
 msgstr "തെരഞ്ഞെടുത്ത കളങ്ങള്‍ വൃത്തിയാക്കുന്നു..."
 
-#: kwordquiz.cpp:1045
+#: kwordquiz.cpp:1049
 #, kde-format
 msgid "Inserting rows..."
 msgstr "വരികള്‍ ചേര്‍ക്കുന്നു..."
 
-#: kwordquiz.cpp:1052
+#: kwordquiz.cpp:1056
 #, kde-format
 msgid "Deleting selected rows..."
 msgstr "തെരഞ്ഞെടുത്ത വരികള്‍ നീക്കം ചെയ്യുന്നു..."
 
-#: kwordquiz.cpp:1059
+#: kwordquiz.cpp:1063
 #, kde-format
 msgid "Marking selected text as a blank..."
 msgstr "തെരഞ്ഞെടുത്ത പദാവലി ഒഴിഞ്ഞതായി അടയാളപ്പെടുത്തുന്നു..."
 
-#: kwordquiz.cpp:1066
+#: kwordquiz.cpp:1070
 #, kde-format
 msgid "Removing blank markings..."
 msgstr "ഒഴിഞ്ഞ അടയാളങ്ങള്‍ നീക്കം ചെയ്യുന്നു..."
 
-#: kwordquiz.cpp:1073
+#: kwordquiz.cpp:1077
 #, kde-format
 msgid "Setting the column titles of the vocabulary..."
 msgstr "പദസഞ്ചയത്തിന്റെ നിര തലക്കെട്ടുകള്‍ സജ്ജീകരിക്കുന്നു..."
 
-#: kwordquiz.cpp:1086
+#: kwordquiz.cpp:1090
 #, kde-format
 msgid "Setting the font of the vocabulary..."
 msgstr "പദസഞ്ചയത്തിന്റെ അക്ഷരസഞ്ചയം സജ്ജീകരിക്കുന്നു..."
 
-#: kwordquiz.cpp:1102
+#: kwordquiz.cpp:1106
 #, kde-format
 msgid "Linking an image with the current entry..."
 msgstr ""
 
-#: kwordquiz.cpp:1110
+#: kwordquiz.cpp:1114
 #, kde-format
 msgid "Linking a sound with the current entry..."
 msgstr ""
 
-#: kwordquiz.cpp:1118
+#: kwordquiz.cpp:1122
 #, kde-format
 msgid "Adjusting row heights..."
 msgstr "വരി പൊക്കങ്ങള്‍ മാറ്റുന്നു..."
 
-#: kwordquiz.cpp:1127
+#: kwordquiz.cpp:1131
 #, kde-format
 msgid "Randomizing the vocabulary..."
 msgstr "പദസഞ്ചയം എങ്ങിനെയെങ്കിലുമാക്കുന്നു..."
 
-#: kwordquiz.cpp:1135
+#: kwordquiz.cpp:1139
 #, kde-format
 msgid "Updating mode..."
 msgstr "ദശ പുതുക്കുന്നു..."
 
-#: kwordquiz.cpp:1149
+#: kwordquiz.cpp:1153
 #, kde-format
 msgid "Starting editor session..."
 msgstr "ചിട്ടപ്പെടുത്തല്‍ സെഷന്‍ തുടങ്ങുന്നു..."
 
-#: kwordquiz.cpp:1156
+#: kwordquiz.cpp:1160
 #, kde-format
 msgid "Starting flashcard session..."
 msgstr "ഫ്ലാഷ്‌കാര്‍ഡ് സെഷന്‍ തുടങ്ങുന്നു..."
 
-#: kwordquiz.cpp:1163
+#: kwordquiz.cpp:1167
 #, kde-format
 msgid "Starting multiple choice session..."
 msgstr "അനവധി ചോയ്സ് സെഷന്‍ തുടങ്ങുന്നു..."
 
-#: kwordquiz.cpp:1170
+#: kwordquiz.cpp:1174
 #, kde-format
 msgid "Starting question & answer session..."
 msgstr "ചോദ്യോത്തര സെഷന്‍ തുടങ്ങുന്നു..."
 
-#: kwordquiz.cpp:1322
+#: kwordquiz.cpp:1326
 #, kde-format
 msgid "Insert %1"
 msgstr "%1 ചേര്‍ക്കുക"
 
-#: kwordquiz.cpp:1323
+#: kwordquiz.cpp:1327
 #, kde-format
 msgid "Inserts the character %1"
 msgstr "ക്യാരക്ടര്‍ %1 ചേര്‍ക്കുന്നു"
 
-#: kwordquiz.cpp:1374
+#: kwordquiz.cpp:1378
 #, kde-format
 msgid "This will restart your quiz. Do you wish to continue?"
 msgstr "ഇതു് നിങ്ങളുടെ ക്വിസ് പുനനാരംഭിക്കും. തുടരട്ടെ?"
 
-#: kwordquiz.cpp:1390
+#: kwordquiz.cpp:1394
 #, kde-format
 msgid "&1 %1 -> %2 In Order"
 msgstr "&1 %1 -> %2 ക്രമത്തില്‍"
 
-#: kwordquiz.cpp:1391
+#: kwordquiz.cpp:1395
 #, kde-format
 msgid "&2 %1 -> %2 In Order"
 msgstr "&2 %1 -> %2 ക്രമത്തില്‍"
 
-#: kwordquiz.cpp:1392
+#: kwordquiz.cpp:1396
 #, kde-format
 msgid "&3 %1 -> %2 Randomly"
 msgstr "&3 %1 -> %2 എങ്ങിനെയെങ്കിലും"
 
-#: kwordquiz.cpp:1393
+#: kwordquiz.cpp:1397
 #, kde-format
 msgid "&4 %1 -> %2 Randomly"
 msgstr "&4 %1 -> %2 എങ്ങിനെയെങ്കിലും"
 
-#: kwordquiz.cpp:1394
+#: kwordquiz.cpp:1398
 #, fuzzy, kde-format
 msgid "&5 %1 <-> %2 Randomly"
 msgstr "&3 %1 -> %2 എങ്ങിനെയെങ്കിലും"
 
-#: kwordquiz.cpp:1401 kwordquiz.cpp:1404
+#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
 #, kde-format
 msgid "%1 -> %2 In Order"
 msgstr "%1 -> %2 ക്രമത്തില്‍"
 
-#: kwordquiz.cpp:1407 kwordquiz.cpp:1410
+#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
 #, kde-format
 msgid "%1 -> %2 Randomly"
 msgstr "%1 -> %2 എങ്ങിനെയെങ്കിലും"
 
-#: kwordquiz.cpp:1413
+#: kwordquiz.cpp:1417
 #, kde-format
 msgid "%1 &lt;-&gt; %2 Randomly"
 msgstr "%1 &lt;-&gt; %2 എങ്ങിനെയെങ്കിലും"

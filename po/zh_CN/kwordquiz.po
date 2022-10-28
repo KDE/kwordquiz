@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-27 00:42+0000\n"
+"POT-Creation-Date: 2022-10-28 00:41+0000\n"
 "PO-Revision-Date: 2022-10-22 05:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -709,12 +709,12 @@ msgid "Open File"
 msgstr ""
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:874 kwordquiz.cpp:887 kwordquiz.cpp:976 kwordquiz.cpp:983
-#: kwordquiz.cpp:989 kwordquiz.cpp:1019 kwordquiz.cpp:1026 kwordquiz.cpp:1033
-#: kwordquiz.cpp:1040 kwordquiz.cpp:1047 kwordquiz.cpp:1054 kwordquiz.cpp:1061
-#: kwordquiz.cpp:1068 kwordquiz.cpp:1081 kwordquiz.cpp:1096 kwordquiz.cpp:1104
-#: kwordquiz.cpp:1112 kwordquiz.cpp:1121 kwordquiz.cpp:1129 kwordquiz.cpp:1143
-#: kwordquiz.cpp:1151 kwordquiz.cpp:1158 kwordquiz.cpp:1165 kwordquiz.cpp:1172
+#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
+#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
+#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
+#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
+#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
+#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
 #, kde-format
 msgctxt "@info:status ready"
 msgid "Ready"
@@ -744,193 +744,193 @@ msgstr "将当前文档与已选文件合并在一起(&M)"
 msgid "Open Vocabulary Document"
 msgstr "打开词汇表文档"
 
-#: kwordquiz.cpp:861
+#: kwordquiz.cpp:865
 #, kde-format
 msgid "Saving file..."
 msgstr "保存文件..."
 
-#: kwordquiz.cpp:880
+#: kwordquiz.cpp:884
 #, kde-format
 msgid "Saving file with a new filename..."
 msgstr "以新文件名保存文件..."
 
-#: kwordquiz.cpp:908
+#: kwordquiz.cpp:912
 #, kde-format
 msgid "HTML Document"
 msgstr "HTML 文档"
 
-#: kwordquiz.cpp:910
+#: kwordquiz.cpp:914
 #, kde-format
 msgid "Save Vocabulary Document As"
 msgstr "词汇表文档另存为"
 
-#: kwordquiz.cpp:958
+#: kwordquiz.cpp:962
 #, kde-format
 msgid "Closing file..."
 msgstr "关闭文件..."
 
-#: kwordquiz.cpp:981
+#: kwordquiz.cpp:985
 #, kde-format
 msgid "Printing..."
 msgstr "打印..."
 
-#: kwordquiz.cpp:987
+#: kwordquiz.cpp:991
 #, kde-format
 msgid "Showing Preview..."
 msgstr "显示预览..."
 
-#: kwordquiz.cpp:995
+#: kwordquiz.cpp:999
 #, kde-format
 msgctxt "@info:status quitting"
 msgid "Quitting..."
 msgstr "退出..."
 
-#: kwordquiz.cpp:1017
+#: kwordquiz.cpp:1021
 #, kde-format
 msgid "Cutting selection..."
 msgstr "剪切选中内容..."
 
-#: kwordquiz.cpp:1024
+#: kwordquiz.cpp:1028
 #, kde-format
 msgid "Copying selection to clipboard..."
 msgstr "将选中内容复制到剪贴板..."
 
-#: kwordquiz.cpp:1031
+#: kwordquiz.cpp:1035
 #, kde-format
 msgid "Inserting clipboard contents..."
 msgstr "插入剪贴板内容..."
 
-#: kwordquiz.cpp:1038
+#: kwordquiz.cpp:1042
 #, kde-format
 msgid "Clearing the selected cells..."
 msgstr "清除选中单元格..."
 
-#: kwordquiz.cpp:1045
+#: kwordquiz.cpp:1049
 #, kde-format
 msgid "Inserting rows..."
 msgstr "插入行..."
 
-#: kwordquiz.cpp:1052
+#: kwordquiz.cpp:1056
 #, kde-format
 msgid "Deleting selected rows..."
 msgstr "删除选中行..."
 
-#: kwordquiz.cpp:1059
+#: kwordquiz.cpp:1063
 #, kde-format
 msgid "Marking selected text as a blank..."
 msgstr "将选中文本标为空..."
 
-#: kwordquiz.cpp:1066
+#: kwordquiz.cpp:1070
 #, kde-format
 msgid "Removing blank markings..."
 msgstr "删除留空标记..."
 
-#: kwordquiz.cpp:1073
+#: kwordquiz.cpp:1077
 #, kde-format
 msgid "Setting the column titles of the vocabulary..."
 msgstr "设置词汇表的列标题..."
 
-#: kwordquiz.cpp:1086
+#: kwordquiz.cpp:1090
 #, kde-format
 msgid "Setting the font of the vocabulary..."
 msgstr "设置词汇表的字体..."
 
-#: kwordquiz.cpp:1102
+#: kwordquiz.cpp:1106
 #, kde-format
 msgid "Linking an image with the current entry..."
 msgstr "将当前条目与图像链接..."
 
-#: kwordquiz.cpp:1110
+#: kwordquiz.cpp:1114
 #, kde-format
 msgid "Linking a sound with the current entry..."
 msgstr "将当前条目与声音链接..."
 
-#: kwordquiz.cpp:1118
+#: kwordquiz.cpp:1122
 #, kde-format
 msgid "Adjusting row heights..."
 msgstr "调整行高..."
 
-#: kwordquiz.cpp:1127
+#: kwordquiz.cpp:1131
 #, kde-format
 msgid "Randomizing the vocabulary..."
 msgstr "打乱词汇表..."
 
-#: kwordquiz.cpp:1135
+#: kwordquiz.cpp:1139
 #, kde-format
 msgid "Updating mode..."
 msgstr "更新模式..."
 
-#: kwordquiz.cpp:1149
+#: kwordquiz.cpp:1153
 #, kde-format
 msgid "Starting editor session..."
 msgstr "启动编辑器会话..."
 
-#: kwordquiz.cpp:1156
+#: kwordquiz.cpp:1160
 #, kde-format
 msgid "Starting flashcard session..."
 msgstr "开始答题卡闯关..."
 
-#: kwordquiz.cpp:1163
+#: kwordquiz.cpp:1167
 #, kde-format
 msgid "Starting multiple choice session..."
 msgstr "开始选择题闯关..."
 
-#: kwordquiz.cpp:1170
+#: kwordquiz.cpp:1174
 #, kde-format
 msgid "Starting question & answer session..."
 msgstr "开始问答题闯关..."
 
-#: kwordquiz.cpp:1322
+#: kwordquiz.cpp:1326
 #, kde-format
 msgid "Insert %1"
 msgstr "插入 %1"
 
-#: kwordquiz.cpp:1323
+#: kwordquiz.cpp:1327
 #, kde-format
 msgid "Inserts the character %1"
 msgstr "插入字符 %1"
 
-#: kwordquiz.cpp:1374
+#: kwordquiz.cpp:1378
 #, kde-format
 msgid "This will restart your quiz. Do you wish to continue?"
 msgstr "这将重新开始闯关。您想要继续吗？"
 
-#: kwordquiz.cpp:1390
+#: kwordquiz.cpp:1394
 #, kde-format
 msgid "&1 %1 -> %2 In Order"
 msgstr "&1 %1 -> %2 按顺序"
 
-#: kwordquiz.cpp:1391
+#: kwordquiz.cpp:1395
 #, kde-format
 msgid "&2 %1 -> %2 In Order"
 msgstr "&2 %1 -> %2 按顺序"
 
-#: kwordquiz.cpp:1392
+#: kwordquiz.cpp:1396
 #, kde-format
 msgid "&3 %1 -> %2 Randomly"
 msgstr "&3 %1 -> %2 随机"
 
-#: kwordquiz.cpp:1393
+#: kwordquiz.cpp:1397
 #, kde-format
 msgid "&4 %1 -> %2 Randomly"
 msgstr "&4 %1 -> %2 随机"
 
-#: kwordquiz.cpp:1394
+#: kwordquiz.cpp:1398
 #, kde-format
 msgid "&5 %1 <-> %2 Randomly"
 msgstr "&5 %1 <-> %2 随机"
 
-#: kwordquiz.cpp:1401 kwordquiz.cpp:1404
+#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
 #, kde-format
 msgid "%1 -> %2 In Order"
 msgstr "%1 -> %2 按顺序"
 
-#: kwordquiz.cpp:1407 kwordquiz.cpp:1410
+#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
 #, kde-format
 msgid "%1 -> %2 Randomly"
 msgstr "%1 -> %2 随机"
 
-#: kwordquiz.cpp:1413
+#: kwordquiz.cpp:1417
 #, kde-format
 msgid "%1 &lt;-&gt; %2 Randomly"
 msgstr "%1 -> %2 随机"
