@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2022-10-18 11:37+0200\n"
+"PO-Revision-Date: 2022-10-28 10:44+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1627,7 +1627,7 @@ msgstr ""
 #: main.cpp:57
 #, kde-format
 msgid "File to open"
-msgstr "Het te openen bestand"
+msgstr "Te openen bestand"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
 #: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
