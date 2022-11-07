@@ -6,6 +6,7 @@
 #include "blankanswer.h"
 
 #include <QRegularExpression>
+#include <QStringList>
 
 namespace BlankAnswer
 {
@@ -33,6 +34,37 @@ BlankResult blankAnswer(const QString &input)
     }
 
     result.correctAnswer = answerParts.join(QLatin1String("; "));
+
+    return result;
+}
+
+QString yourAnswerResult(const QString &givenAnswer, const QString &blankedAnswer)
+{
+    QString result = givenAnswer;
+
+    if (!blankedAnswer.isEmpty()) {
+        result.clear();
+        QStringList ls;
+
+        if (givenAnswer.indexOf(';') > 0)
+            ls = givenAnswer.split(';');
+        else
+            ls.append(givenAnswer);
+
+        result = QString(blankedAnswer).replace(QLatin1String(".........."), QLatin1String("<u></u>"));
+
+        int offset = 0, counter = 0;
+        while (offset >= 0 && counter < ls.size()) {
+            offset = result.indexOf(QStringLiteral("<u>"), offset);
+            if (offset >= 0) {
+                result.insert(offset + 3, ls[counter]);
+                offset++;
+                counter++;
+            }
+        }
+        result.append("</qt>");
+        result.prepend("<qt>");
+    }
 
     return result;
 }

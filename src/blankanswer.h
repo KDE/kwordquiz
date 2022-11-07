@@ -17,6 +17,9 @@ struct BlankResult {
 };
 
 BlankResult blankAnswer(const QString &input);
+
+QString yourAnswerResult(const QString &givenAnswer, const QString &blankedAnswer);
+
 }; // namespace BlankAnswer
 
 #endif
