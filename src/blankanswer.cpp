@@ -59,7 +59,7 @@ QString yourAnswerResult(const QString &givenAnswer, const QString &blankedAnswe
         result = QString(blankedAnswer).replace(QLatin1String(".........."), QLatin1String("<u></u>"));
 
         int offset = 0, counter = 0;
-        while (offset >= 0) {
+        while (offset >= 0 && counter < ls.size()) {
             offset = result.indexOf(QStringLiteral("<u>"), offset);
             if (offset >= 0) {
                 result.insert(offset + 3, ls[counter]);

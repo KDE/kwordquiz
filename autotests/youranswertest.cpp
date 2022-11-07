@@ -37,6 +37,14 @@ void YourAnswerTest::testYourAnswer_data()
     QTest::addRow("two_blanks_filled") << "blanks;filled"
                                        << "Two .......... .........."
                                        << "<qt>Two <u>blanks</u> <u>filled</u></qt>";
+
+    QTest::addRow("two_blanks_one_filled") << "blanks"
+                                           << "Two .......... .........."
+                                           << "<qt>Two <u>blanks</u> <u></u></qt>";
+
+    QTest::addRow("two_blanks_empty") << ""
+                                      << "Two .......... .........."
+                                      << "<qt>Two <u></u> <u></u></qt>";
 }
 
 void YourAnswerTest::testYourAnswer()
