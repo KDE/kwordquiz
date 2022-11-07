@@ -258,36 +258,9 @@ QString KWQQuizModel::quizIcon(QuizIcon ico)
     return s;
 }
 
-
-QString KWQQuizModel::yourAnswer(const QString & s)
+QString KWQQuizModel::yourAnswer(const QString &givenAnswer) const
 {
-    QString result = s;
-
-    if (!m_answerBlank.isEmpty()) {
-        result.clear();
-        QStringList ls;
-
-        if (s.indexOf(';') > 0)
-            ls = s.split(';');
-        else
-            ls.append(s);
-
-        result = m_answerBlank.replace(QLatin1String(".........."), QLatin1String("<u></u>"));
-
-        int offset = 0, counter = 0;
-        while (offset >= 0) {
-            offset = result.indexOf(QStringLiteral("<u>"), offset);
-            if (offset >= 0) {
-                result.insert(offset + 3, ls[counter]);
-                offset++;
-                counter++;
-            }
-        }
-        result.append("</qt>");
-        result.prepend("<qt>");
-    }
-
-    return result;
+    return BlankAnswer::yourAnswerResult(givenAnswer, m_answerBlank);
 }
 
 

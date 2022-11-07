@@ -41,7 +41,7 @@ public:
     bool hasErrors();
     QStringList multiOptions();
     QString quizIcon(QuizIcon ico);
-    QString yourAnswer(const QString & );
+    QString yourAnswer(const QString &) const;
     QString hint();
 
     Prefs::EnumStartSession::type quizType() const {return m_quizType;}
