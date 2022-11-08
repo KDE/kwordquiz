@@ -1497,7 +1497,7 @@ msgstr ""
 "permetent-vos ajustar l'interval d'aparició.<br /><br />Les targetes ràpides "
 "es mostren d'una manera no intrusiva sense robar el focus als altres "
 "programes amb què esteu treballant.<br /><br />Assegureu-vos de fer clic "
-"dret sobre la icona del tutor de KWordQuiz al quadro i escollir l'opció "
+"dret damunt de la icona del tutor de KWordQuiz al quadro i escollir l'opció "
 "«preferències». Allí podeu assignar les dreceres de teclat.</qt>"
 
 #: kwqtutor.cpp:32
