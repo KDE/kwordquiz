@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2022-09-24 16:08+0200\n"
+"PO-Revision-Date: 2022-11-27 11:34+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -711,10 +711,9 @@ msgstr ""
 "Vill du öppna filen?"
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "Öppnar fil..."
+msgstr "Öppna fil"
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
