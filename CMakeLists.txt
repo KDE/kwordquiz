@@ -15,7 +15,7 @@ if(NOT MSVC)
 endif(NOT MSVC)
 
 include(FeatureSummary)
-set(KF5_MIN_VERSION "5.90.0")
+set(KF5_MIN_VERSION "5.92.0")
 set(REQUIRED_QT_VERSION "5.15.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 find_package(ECM ${KF5_MIN_VERSION} NO_MODULE REQUIRED)
@@ -29,6 +29,7 @@ include(ECMInstallIcons)
 include(ECMAddAppIcon)
 include(ECMSetupVersion)
 include(ECMAddTests)
+include(ECMDeprecationSettings)
 
 
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Widgets PrintSupport)
@@ -53,7 +54,7 @@ find_package(Phonon4Qt${QT_MAJOR_VERSION} 4.6.60 NO_MODULE REQUIRED)
 find_package(LibKEduVocDocument REQUIRED)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
-
+ecm_set_disabled_deprecation_versions(QT 5.15.2  KF 5.89.0)
 
 add_subdirectory(doc)
 add_subdirectory(src)
