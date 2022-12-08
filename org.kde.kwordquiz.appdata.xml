@@ -55,6 +55,7 @@
   <summary xml:lang="gl">Adestrador de vocabulario</summary>
   <summary xml:lang="id">Pelatihan Kartu Flash</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
+  <summary xml:lang="ka">ბარათებით სწავლის პროგრამა</summary>
   <summary xml:lang="ko">플래시 카드 트레이너</summary>
   <summary xml:lang="lt">Mokymasis iš kortelių</summary>
   <summary xml:lang="nds">Koorten-Lehrprogramm</summary>
@@ -126,6 +127,7 @@
       <caption xml:lang="gl">Proba de cartas en KWordQuiz</caption>
       <caption xml:lang="id">Kuis flashcard di KWordQuiz</caption>
       <caption xml:lang="it">Quiz di carte mnemoniche in KWordQuiz</caption>
+      <caption xml:lang="ka">KWordQuiz-ის გამოცნობანა ბარათებით</caption>
       <caption xml:lang="ko">KWordQuiz의 플래시카드 퀴즈</caption>
       <caption xml:lang="nl">Flashkaart-toets in KWordQuiz</caption>
       <caption xml:lang="nn">Spørjekort-kviss i KWordQuiz</caption>
