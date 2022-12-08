@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2022-08-28 06:34+0200\n"
+"PO-Revision-Date: 2022-12-07 15:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -262,12 +262,12 @@ msgstr "ძებნა"
 #: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
 #, kde-format
 msgid "Your answer was correct!"
-msgstr ""
+msgstr "თქვენი პასუხი სწორია!"
 
 #: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
 #, kde-format
 msgid "Your answer was incorrect."
-msgstr ""
+msgstr "თქვენი პასუხი არასწორია."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: flashviewbase.ui:149
@@ -352,7 +352,7 @@ msgstr ""
 #: kwordquiz.cpp:179
 #, kde-format
 msgid "&Insert Row"
-msgstr ""
+msgstr "&მწკრივის ჩასმა"
 
 #: kwordquiz.cpp:181
 #, kde-format
@@ -362,7 +362,7 @@ msgstr ""
 #: kwordquiz.cpp:188
 #, kde-format
 msgid "&Delete Row"
-msgstr ""
+msgstr "&მწკრივის წაშლა"
 
 #: kwordquiz.cpp:190
 #, kde-format
@@ -412,7 +412,7 @@ msgstr ""
 #: kwordquiz.cpp:231
 #, kde-format
 msgid "Link &Image..."
-msgstr ""
+msgstr "ბმული &სურათზე..."
 
 #: kwordquiz.cpp:232
 #, kde-format
@@ -422,7 +422,7 @@ msgstr ""
 #: kwordquiz.cpp:239
 #, kde-format
 msgid "Link &Sound..."
-msgstr ""
+msgstr "ბმული &ხმაზე..."
 
 #: kwordquiz.cpp:240
 #, kde-format
@@ -483,7 +483,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox activate vocabulary editor"
 msgid "&Editor"
-msgstr ""
+msgstr "&რედაქტორი"
 
 #: kwordquiz.cpp:300
 #, kde-format
@@ -528,7 +528,7 @@ msgstr ""
 #: kwordquiz.cpp:335
 #, kde-format
 msgid "&Check"
-msgstr ""
+msgstr "&შემოწმება"
 
 #: kwordquiz.cpp:337
 #, kde-format
@@ -553,7 +553,7 @@ msgstr ""
 #: kwordquiz.cpp:355
 #, kde-format
 msgid "I &Know"
-msgstr ""
+msgstr "&ვიცი"
 
 #: kwordquiz.cpp:357
 #, kde-format
@@ -563,7 +563,7 @@ msgstr ""
 #: kwordquiz.cpp:363
 #, kde-format
 msgid "I &Do Not Know"
-msgstr ""
+msgstr "&არ ვიცი"
 
 #: kwordquiz.cpp:365
 #, kde-format
@@ -573,7 +573,7 @@ msgstr ""
 #: kwordquiz.cpp:371
 #, kde-format
 msgid "&Hint"
-msgstr ""
+msgstr "&მინიშნება"
 
 #: kwordquiz.cpp:373
 #, kde-format
@@ -691,7 +691,7 @@ msgstr ""
 #: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
 msgid "Opening file..."
-msgstr ""
+msgstr "ფაილის გახსნა..."
 
 #: kwordquiz.cpp:637 kwordquiz.cpp:639
 #, kde-format
@@ -704,9 +704,10 @@ msgid ""
 msgstr ""
 
 #: kwordquiz.cpp:637
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Opening file..."
 msgid "Open File"
-msgstr ""
+msgstr "ფაილის გახსნა..."
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
@@ -745,12 +746,12 @@ msgstr ""
 #: kwordquiz.cpp:865
 #, kde-format
 msgid "Saving file..."
-msgstr ""
+msgstr "ფაილის შენახვა..."
 
 #: kwordquiz.cpp:884
 #, kde-format
 msgid "Saving file with a new filename..."
-msgstr ""
+msgstr "ფაილის ახალი სახელით შენახვა..."
 
 #: kwordquiz.cpp:912
 #, kde-format
@@ -765,7 +766,7 @@ msgstr ""
 #: kwordquiz.cpp:962
 #, kde-format
 msgid "Closing file..."
-msgstr ""
+msgstr "ფაილის დახურვა..."
 
 #: kwordquiz.cpp:985
 #, kde-format
@@ -881,7 +882,7 @@ msgstr ""
 #: kwordquiz.cpp:1326
 #, kde-format
 msgid "Insert %1"
-msgstr ""
+msgstr "%1-ის ჩასმა"
 
 #: kwordquiz.cpp:1327
 #, kde-format
@@ -1205,7 +1206,7 @@ msgstr "რედაქტორის პარამეტრი"
 #, kde-format
 msgctxt "@title:group quiz settings"
 msgid "Quiz"
-msgstr ""
+msgstr "ქვიზი"
 
 #: kwordquizprefs.cpp:30
 #, kde-format
@@ -1229,44 +1230,44 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group special character settings"
 msgid "Special Characters"
-msgstr ""
+msgstr "სპეციალური სიმბოლოები"
 
 #. i18n: ectx: Menu (vocabulary)
 #: kwordquizui.rc:16
 #, kde-format
 msgid "V&ocabulary"
-msgstr ""
+msgstr "&ლექსიკონი"
 
 #. i18n: ectx: Menu (mode)
 #: kwordquizui.rc:30
 #, kde-format
 msgid "&Mode"
-msgstr ""
+msgstr "&რეჟიმი"
 
 #. i18n: ectx: Menu (quiz)
 #: kwordquizui.rc:38
 #, kde-format
 msgid "&Quiz"
-msgstr ""
+msgstr "&ქვიზი"
 
 #. i18n: ectx: ToolBar (quizToolBar)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
 #: kwordquizui.rc:61 prefquizbase.ui:20
 #, kde-format
 msgid "Quiz"
-msgstr ""
+msgstr "ქვიზი"
 
 #. i18n: ectx: ToolBar (characterToolBar)
 #: kwordquizui.rc:75
 #, kde-format
 msgid "Special Characters"
-msgstr ""
+msgstr "სპეციალური სიმბოლოები"
 
 #: kwqcleardialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear Contents"
-msgstr ""
+msgstr "შემცველობის გასუფთავება"
 
 #: kwqcommands.cpp:74
 #, kde-format
@@ -1320,7 +1321,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu undo column titles"
 msgid "Column Settings"
-msgstr ""
+msgstr "სვეტის მორგება"
 
 #: kwqcommands.cpp:400
 #, kde-format
@@ -1366,7 +1367,7 @@ msgstr ""
 #: kwqscorewidgetbase.ui:259
 #, kde-format
 msgid "00"
-msgstr ""
+msgstr "00"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
@@ -1574,7 +1575,7 @@ msgstr ""
 #: main.cpp:57
 #, kde-format
 msgid "File to open"
-msgstr ""
+msgstr "გასახსნელი ფაილი"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
 #: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
@@ -1623,7 +1624,7 @@ msgstr ""
 #: multipleviewbase.ui:76 qaviewbase.ui:63
 #, kde-format
 msgid "Language 1"
-msgstr ""
+msgstr "ენა 1"
 
 #. i18n: ectx: property (text), widget (QLabel, lblQuestion)
 #: multipleviewbase.ui:98 qaviewbase.ui:107
@@ -1654,13 +1655,13 @@ msgstr ""
 #: multipleviewbase.ui:192
 #, kde-format
 msgid "&2 Option"
-msgstr ""
+msgstr "არჩევანი &2"
 
 #. i18n: ectx: property (text), widget (QRadioButton, opt1)
 #: multipleviewbase.ui:223
 #, kde-format
 msgid "&1 Option"
-msgstr ""
+msgstr "არჩევანი &1"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
 #: multipleviewbase.ui:258 qaviewbase.ui:208
@@ -1672,13 +1673,13 @@ msgstr ""
 #: multipleviewbase.ui:261 qaviewbase.ui:211
 #, kde-format
 msgid "Language 2"
-msgstr ""
+msgstr "ენა 2"
 
 #. i18n: ectx: property (text), widget (QRadioButton, opt3)
 #: multipleviewbase.ui:292
 #, kde-format
 msgid "&3 Option"
-msgstr ""
+msgstr "არჩევანი &3"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
@@ -1687,7 +1688,7 @@ msgstr ""
 #: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
 #, kde-format
 msgid "Previous question"
-msgstr ""
+msgstr "წინა კითხვა"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
@@ -1883,7 +1884,7 @@ msgstr ""
 #: prefcharacter.cpp:30
 #, kde-format
 msgid "Action"
-msgstr ""
+msgstr "პარამეტრები"
 
 #: prefcharacter.cpp:31
 #, kde-format
@@ -2085,7 +2086,7 @@ msgstr ""
 #: prefgeneralbase.ui:53
 #, kde-format
 msgid "&Editor"
-msgstr ""
+msgstr "&რედაქტორი"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
 #: prefgeneralbase.ui:60
