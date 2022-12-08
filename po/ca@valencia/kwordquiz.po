@@ -355,8 +355,8 @@ msgid ""
 "Pastes previously cut or copied text from the clipboard into the selected "
 "cells"
 msgstr ""
-"Apega el text tallat o copiat anteriorment des del porta-retalls a les "
-"cel·les seleccionades"
+"Apega el text tallat o copiat anteriorment des del porta-retalls a dins de "
+"les cel·les seleccionades"
 
 #: kwordquiz.cpp:173
 #, kde-format
@@ -1151,8 +1151,8 @@ msgid ""
 "The folder where downloaded vocabularies are saved by default (relative to "
 "$HOME)"
 msgstr ""
-"La carpeta on es guardaran per defecte els vocabularis descarregats "
-"(relativa a $HOME)"
+"La carpeta on es guardaran de manera predeterminada els vocabularis "
+"descarregats (relativa a $HOME)"
 
 #. i18n: ectx: label, entry (TutorTiming), group (Tutor)
 #: kwordquiz.kcfg:159
