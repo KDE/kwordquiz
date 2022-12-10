@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2022-12-07 15:35+0100\n"
+"PO-Revision-Date: 2022-12-09 08:07+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -452,7 +452,7 @@ msgstr ""
 #: kwordquiz.cpp:262
 #, kde-format
 msgid "&Keyboard Layout"
-msgstr ""
+msgstr "&კლავიატურის განლაგება"
 
 #: kwordquiz.cpp:263
 #, kde-format
@@ -462,7 +462,7 @@ msgstr ""
 #: kwordquiz.cpp:274
 #, kde-format
 msgid "Change Mode"
-msgstr ""
+msgstr "რეჟიმის შეცვლა"
 
 #: kwordquiz.cpp:275
 #, kde-format
@@ -477,7 +477,7 @@ msgstr ""
 #: kwordquiz.cpp:289
 #, kde-format
 msgid "Selects this mode"
-msgstr ""
+msgstr "რეჟიმის არჩევა"
 
 #: kwordquiz.cpp:298
 #, kde-format
@@ -518,7 +518,7 @@ msgstr ""
 #: kwordquiz.cpp:326
 #, kde-format
 msgid "Q&&A"
-msgstr ""
+msgstr "ხ.დ.კ"
 
 #: kwordquiz.cpp:328
 #, kde-format
@@ -704,10 +704,9 @@ msgid ""
 msgstr ""
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "ფაილის გახსნა..."
+msgstr "ფაილის გახსნა"
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
@@ -756,7 +755,7 @@ msgstr "ფაილის ახალი სახელით შენახ
 #: kwordquiz.cpp:912
 #, kde-format
 msgid "HTML Document"
-msgstr ""
+msgstr "HTML დოკუმენტი"
 
 #: kwordquiz.cpp:914
 #, kde-format
@@ -776,13 +775,13 @@ msgstr "დაბეჭდვა..."
 #: kwordquiz.cpp:991
 #, kde-format
 msgid "Showing Preview..."
-msgstr ""
+msgstr "მინიატურის ჩვენება..."
 
 #: kwordquiz.cpp:999
 #, kde-format
 msgctxt "@info:status quitting"
 msgid "Quitting..."
-msgstr ""
+msgstr "გასვლა..."
 
 #: kwordquiz.cpp:1021
 #, kde-format
