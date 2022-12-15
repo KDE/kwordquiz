@@ -706,7 +706,6 @@ msgstr ""
 
 #: kwordquiz.cpp:637
 #, fuzzy, kde-format
-#| msgid "Opening file..."
 msgid "Open File"
 msgstr "Отваряне на файл..."
 
