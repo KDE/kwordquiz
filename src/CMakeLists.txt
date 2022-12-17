@@ -116,7 +116,6 @@ target_link_libraries(kwordquiz
     KF5::NotifyConfig
     KF5::XmlGui
     KF5::GuiAddons
-    KF5::WindowSystem
     LibKEduVocDocumentImport__KEduVocDocument
     Phonon::phonon4qt${QT_MAJOR_VERSION}
 )

@@ -15,7 +15,6 @@ Dependencies:
     'frameworks/knotifyconfig': '@stable'
     'frameworks/knewstuff': '@stable'
     'frameworks/knotifications': '@stable'
-    'frameworks/kwindowsystem': '@stable'
     'frameworks/kxmlgui': '@stable'
     'education/libkeduvocdocument': '@same'
 

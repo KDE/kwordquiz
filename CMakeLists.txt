@@ -44,7 +44,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     NotifyConfig
     NewStuff
     Notifications
-    WindowSystem
     XmlGui
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )

@@ -33,7 +33,6 @@
 #include <KToggleAction>
 #include <KToolBar>
 #include <KUndoActions>
-#include <KWindowSystem>
 #include <KXMLGUIFactory>
 
 #include "keduvoclesson.h"
@@ -574,8 +573,9 @@ void KWordQuizApp::openUrl(const QUrl &url)
           KWordQuizApp *a =(KWordQuizApp *) w;
           if(a->document()->url().path() == url.path())
           {
-            if (w->isMinimized())
-              KWindowSystem::unminimizeWindow(w->winId());
+            if (w->isMinimized()) {
+              w->setWindowState(w->windowState() & ~Qt::WindowMinimized);
+            }
             w->activateWindow();
             w->raise();
             break;
