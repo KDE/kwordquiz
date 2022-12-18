@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:41+0000\n"
+"POT-Creation-Date: 2022-12-18 00:46+0000\n"
 "PO-Revision-Date: 2022-12-13 12:21\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -106,7 +106,7 @@ msgid "&Sound Links"
 msgstr "声音链接(&S)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:467
+#: columndialogbase.ui:45 kwordquiz.cpp:466
 #, kde-format
 msgid "Column 1"
 msgstr "第一列"
@@ -170,7 +170,7 @@ msgid "Enter the width (in pixels) for the left column"
 msgstr "输入左侧列的宽度(以像素计)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:470
+#: columndialogbase.ui:214 kwordquiz.cpp:469
 #, kde-format
 msgid "Column 2"
 msgstr "第二列"
@@ -277,413 +277,413 @@ msgid ""
 msgstr ""
 "<html>您的词汇表中的条目太少了。<br />在答题卡问案中您最少需要一个条目</html>"
 
-#: kwordquiz.cpp:101
+#: kwordquiz.cpp:100
 #, kde-format
 msgid "Creates a new blank vocabulary document"
 msgstr "创建新的空词汇表文档"
 
-#: kwordquiz.cpp:106
+#: kwordquiz.cpp:105
 #, kde-format
 msgid "Opens an existing vocabulary document"
 msgstr "打开已有的词汇表文档"
 
-#: kwordquiz.cpp:112
+#: kwordquiz.cpp:111
 #, kde-format
 msgid "Download New Vocabularies..."
 msgstr "下载新词汇表..."
 
-#: kwordquiz.cpp:116
+#: kwordquiz.cpp:115
 #, kde-format
 msgid "Downloads new vocabularies"
 msgstr "下载新词汇表"
 
-#: kwordquiz.cpp:121
+#: kwordquiz.cpp:120
 #, kde-format
 msgid "Saves the active vocabulary document"
 msgstr "保存当前词汇表文档"
 
-#: kwordquiz.cpp:126
+#: kwordquiz.cpp:125
 #, kde-format
 msgid "Saves the active vocabulary document with a different name"
 msgstr "将当前词汇表文档以不同的名称保存"
 
-#: kwordquiz.cpp:131
+#: kwordquiz.cpp:130
 #, kde-format
 msgid "Closes the active vocabulary document"
 msgstr "关闭当前词汇表文档"
 
-#: kwordquiz.cpp:135
+#: kwordquiz.cpp:134
 #, kde-format
 msgid "Prints the active vocabulary document"
 msgstr "打印当前词汇表"
 
-#: kwordquiz.cpp:140
+#: kwordquiz.cpp:139
 #, kde-format
 msgid "Shows a preview of the active vocabulary document"
 msgstr "显示当前词汇表文档的预览"
 
-#: kwordquiz.cpp:145
+#: kwordquiz.cpp:144
 #, kde-format
 msgid "Quits KWordQuiz"
 msgstr "退出 KWordQuiz"
 
-#: kwordquiz.cpp:157
+#: kwordquiz.cpp:156
 #, kde-format
 msgid "Cuts the text from the selected cells and places it on the clipboard"
 msgstr "从选中单元格剪切文本，并将其放入剪贴板"
 
-#: kwordquiz.cpp:162
+#: kwordquiz.cpp:161
 #, kde-format
 msgid "Copies the text from the selected cells and places it on the clipboard"
 msgstr "从选中单元格复制文本，并将其放入剪贴板"
 
-#: kwordquiz.cpp:167
+#: kwordquiz.cpp:166
 #, kde-format
 msgid ""
 "Pastes previously cut or copied text from the clipboard into the selected "
 "cells"
 msgstr "将先前剪切或粘贴的文本从剪贴板粘贴到选中单元格"
 
-#: kwordquiz.cpp:173
+#: kwordquiz.cpp:172
 #, kde-format
 msgid "Clears the content of the selected cells"
 msgstr "清除选中单元格的内容"
 
-#: kwordquiz.cpp:179
+#: kwordquiz.cpp:178
 #, kde-format
 msgid "&Insert Row"
 msgstr "插入行(&I)"
 
-#: kwordquiz.cpp:181
+#: kwordquiz.cpp:180
 #, kde-format
 msgid "Inserts a new row above the current row"
 msgstr "在当前行之上插入新行"
 
-#: kwordquiz.cpp:188
+#: kwordquiz.cpp:187
 #, kde-format
 msgid "&Delete Row"
 msgstr "删除行(&D)"
 
-#: kwordquiz.cpp:190
+#: kwordquiz.cpp:189
 #, kde-format
 msgid "Deletes the selected row(s)"
 msgstr "删除选中行"
 
-#: kwordquiz.cpp:197
+#: kwordquiz.cpp:196
 #, kde-format
 msgid "&Mark as Blank"
 msgstr "标为空(&M)"
 
-#: kwordquiz.cpp:199
+#: kwordquiz.cpp:198
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
 msgstr "将当前或选中单词标为填空题的空"
 
-#: kwordquiz.cpp:206
+#: kwordquiz.cpp:205
 #, kde-format
 msgid "&Unmark Blanks"
 msgstr "取消标为空(&U)"
 
-#: kwordquiz.cpp:207
+#: kwordquiz.cpp:206
 #, kde-format
 msgid "Removes blanks from the current or selected word"
 msgstr "删除当前或选中单词的空"
 
-#: kwordquiz.cpp:214
+#: kwordquiz.cpp:213
 #, kde-format
 msgid "&Column Settings..."
 msgstr "列设置(&C)..."
 
-#: kwordquiz.cpp:216
+#: kwordquiz.cpp:215
 #, kde-format
 msgid "Defines the column settings for the active vocabulary"
 msgstr "定义当前词汇表的列设置"
 
-#: kwordquiz.cpp:223
+#: kwordquiz.cpp:222
 #, kde-format
 msgid "&Font..."
 msgstr "字体(&F)..."
 
-#: kwordquiz.cpp:224
+#: kwordquiz.cpp:223
 #, kde-format
 msgid "Defines the font used by the editor"
 msgstr "定义编辑器所用的字体"
 
-#: kwordquiz.cpp:231
+#: kwordquiz.cpp:230
 #, kde-format
 msgid "Link &Image..."
 msgstr "链接图像(&I)..."
 
-#: kwordquiz.cpp:232
+#: kwordquiz.cpp:231
 #, kde-format
 msgid "Links an image with the current entry"
 msgstr "将图像与当前项链接"
 
-#: kwordquiz.cpp:239
+#: kwordquiz.cpp:238
 #, kde-format
 msgid "Link &Sound..."
 msgstr "链接声音(&S)..."
 
-#: kwordquiz.cpp:240
+#: kwordquiz.cpp:239
 #, kde-format
 msgid "Links a sound with the current entry"
 msgstr "将图像与当前项链接"
 
-#: kwordquiz.cpp:247
+#: kwordquiz.cpp:246
 #, kde-format
 msgid "&Adjust Row Heights"
 msgstr "调整行高(&A)"
 
-#: kwordquiz.cpp:248
+#: kwordquiz.cpp:247
 #, kde-format
 msgid "Automatically adjusts the height of selected rows"
 msgstr "自动调整选定行的高度"
 
-#: kwordquiz.cpp:255
+#: kwordquiz.cpp:254
 #, kde-format
 msgid "Sh&uffle"
 msgstr "打乱(&U)"
 
-#: kwordquiz.cpp:256
+#: kwordquiz.cpp:255
 #, kde-format
 msgid "Shuffles the entries of the active vocabulary"
 msgstr "打乱当前词汇表中各项的顺序"
 
-#: kwordquiz.cpp:262
+#: kwordquiz.cpp:261
 #, kde-format
 msgid "&Keyboard Layout"
 msgstr "键盘布局(&K)"
 
-#: kwordquiz.cpp:263
+#: kwordquiz.cpp:262
 #, kde-format
 msgid "Shows available keyboard layouts"
 msgstr "显示可用的键盘布局"
 
-#: kwordquiz.cpp:274
+#: kwordquiz.cpp:273
 #, kde-format
 msgid "Change Mode"
 msgstr "更改模式"
 
-#: kwordquiz.cpp:275
+#: kwordquiz.cpp:274
 #, kde-format
 msgid "Mode"
 msgstr "模式"
 
-#: kwordquiz.cpp:276
+#: kwordquiz.cpp:275
 #, kde-format
 msgid "Changes the mode used in quiz sessions"
 msgstr "更改闯关所用的模式"
 
-#: kwordquiz.cpp:289
+#: kwordquiz.cpp:288
 #, kde-format
 msgid "Selects this mode"
 msgstr "选择此模式"
 
-#: kwordquiz.cpp:298
+#: kwordquiz.cpp:297
 #, kde-format
 msgctxt "@item:inlistbox activate vocabulary editor"
 msgid "&Editor"
 msgstr "编辑器(&E)"
 
-#: kwordquiz.cpp:300
+#: kwordquiz.cpp:299
 #, kde-format
 msgid "Activates the vocabulary editor"
 msgstr "激活词汇表编辑器"
 
-#: kwordquiz.cpp:307
+#: kwordquiz.cpp:306
 #, kde-format
 msgid "&Flashcard"
 msgstr "答题卡(&F)"
 
-#: kwordquiz.cpp:309
+#: kwordquiz.cpp:308
 #, kde-format
 msgid "Starts a flashcard session using the active vocabulary"
 msgstr "使用当前词汇表开始答题卡闯关"
 
-#: kwordquiz.cpp:316
+#: kwordquiz.cpp:315
 #, kde-format
 msgid "&Multiple Choice"
 msgstr "选择题(&M)"
 
-#: kwordquiz.cpp:318
+#: kwordquiz.cpp:317
 #, kde-format
 msgid "Starts a multiple choice session using the active vocabulary"
 msgstr "使用当前词汇表开始选择题闯关"
 
-#: kwordquiz.cpp:325
+#: kwordquiz.cpp:324
 #, kde-format
 msgid "&Question and Answer"
 msgstr "问答(&Q)"
 
-#: kwordquiz.cpp:326
+#: kwordquiz.cpp:325
 #, kde-format
 msgid "Q&&A"
 msgstr "问答"
 
-#: kwordquiz.cpp:328
+#: kwordquiz.cpp:327
 #, kde-format
 msgid "Starts a question and answer session using the active vocabulary"
 msgstr "使用当前词汇表开始问答题闯关"
 
-#: kwordquiz.cpp:335
+#: kwordquiz.cpp:334
 #, kde-format
 msgid "&Check"
 msgstr "检查(&C)"
 
-#: kwordquiz.cpp:337
+#: kwordquiz.cpp:336
 #, kde-format
 msgid "Checks your answer to this question"
 msgstr "检查您对此问题的答案"
 
-#: kwordquiz.cpp:342
+#: kwordquiz.cpp:341
 #, kde-format
 msgid "Choose Option &1"
 msgstr "选择选项 &1"
 
-#: kwordquiz.cpp:346
+#: kwordquiz.cpp:345
 #, kde-format
 msgid "Choose Option &2"
 msgstr "选择选项 &2"
 
-#: kwordquiz.cpp:350
+#: kwordquiz.cpp:349
 #, kde-format
 msgid "Choose Option &3"
 msgstr "选择选项 &3"
 
-#: kwordquiz.cpp:355
+#: kwordquiz.cpp:354
 #, kde-format
 msgid "I &Know"
 msgstr "我知道(&K)"
 
-#: kwordquiz.cpp:357
+#: kwordquiz.cpp:356
 #, kde-format
 msgid "Counts this card as correct and shows the next card"
 msgstr "将此卡片计为正确并显示下张卡片"
 
-#: kwordquiz.cpp:363
+#: kwordquiz.cpp:362
 #, kde-format
 msgid "I &Do Not Know"
 msgstr "我不知道(&D)"
 
-#: kwordquiz.cpp:365
+#: kwordquiz.cpp:364
 #, kde-format
 msgid "Counts this card as incorrect and shows the next card"
 msgstr "将此卡片计为错误并显示下张卡片"
 
-#: kwordquiz.cpp:371
+#: kwordquiz.cpp:370
 #, kde-format
 msgid "&Hint"
 msgstr "提示(&H)"
 
-#: kwordquiz.cpp:373
+#: kwordquiz.cpp:372
 #, kde-format
 msgid "Gets the next correct letter of the answer"
 msgstr "获得答案的下个正确字母"
 
-#: kwordquiz.cpp:379
+#: kwordquiz.cpp:378
 #, kde-format
 msgid "Mark Last Correct"
 msgstr "标记上次回答为正确"
 
-#: kwordquiz.cpp:381
+#: kwordquiz.cpp:380
 #, kde-format
 msgid "Marks last answer as correct"
 msgstr "将最后的回答标为正确"
 
-#: kwordquiz.cpp:387
+#: kwordquiz.cpp:386
 #, kde-format
 msgid "&Restart"
 msgstr "重新开始(&R)"
 
-#: kwordquiz.cpp:389
+#: kwordquiz.cpp:388
 #, kde-format
 msgid "Restarts the quiz session from the beginning"
 msgstr "从头开始闯关"
 
-#: kwordquiz.cpp:395
+#: kwordquiz.cpp:394
 #, kde-format
 msgid "&Play Audio"
 msgstr "播放声音(&P)"
 
-#: kwordquiz.cpp:397
+#: kwordquiz.cpp:396
 #, kde-format
 msgid "Play associated audio"
 msgstr "播放相关的声音"
 
-#: kwordquiz.cpp:403
+#: kwordquiz.cpp:402
 #, kde-format
 msgid "Repeat &Errors"
 msgstr "重复错误(&E)"
 
-#: kwordquiz.cpp:405
+#: kwordquiz.cpp:404
 #, kde-format
 msgid "Repeats all incorrectly answered questions"
 msgstr "重答所有回答错误的问题"
 
-#: kwordquiz.cpp:411
+#: kwordquiz.cpp:410
 #, kde-format
 msgid "Export Errors &As..."
 msgstr "导出错误为(&A)..."
 
-#: kwordquiz.cpp:412
+#: kwordquiz.cpp:411
 #, kde-format
 msgid "Exports all errors as a new vocabulary document"
 msgstr "导出所有错误为新词汇表文档"
 
-#: kwordquiz.cpp:418
+#: kwordquiz.cpp:417
 #, kde-format
 msgid "Show Se&arch"
 msgstr "显示查找(&A)"
 
-#: kwordquiz.cpp:420
+#: kwordquiz.cpp:419
 #, kde-format
 msgid "Toggle display of the search bar"
 msgstr "切换查找栏显示"
 
-#: kwordquiz.cpp:425
+#: kwordquiz.cpp:424
 #, kde-format
 msgid "Configures sound and other notifications for certain events"
 msgstr "配置特定事件的声音和其他通知"
 
-#: kwordquiz.cpp:430
+#: kwordquiz.cpp:429
 #, kde-format
 msgid "Specifies preferences for the vocabulary editor and quiz sessions"
 msgstr "指定词汇表编辑器和闯关的首选项"
 
-#: kwordquiz.cpp:436
+#: kwordquiz.cpp:435
 #, kde-format
 msgid "Special Character <numid>%1</numid>"
 msgstr "特殊字符 <numid>%1</numid>"
 
-#: kwordquiz.cpp:448
+#: kwordquiz.cpp:447
 #, kde-format
 msgid "Toggles display of the toolbars"
 msgstr "切换工具栏显示"
 
-#: kwordquiz.cpp:501
+#: kwordquiz.cpp:500
 #, kde-format
 msgid "Enter search terms here"
 msgstr "在此输入查找字符"
 
-#: kwordquiz.cpp:524
+#: kwordquiz.cpp:523
 #, kde-format
 msgctxt "@item:inlistbox vocabulary editor"
 msgid "Editor"
 msgstr "编辑器"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:529 prefquizbase.ui:192
+#: kwordquiz.cpp:528 prefquizbase.ui:192
 #, kde-format
 msgid "Flashcard"
 msgstr "答题卡"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:533 prefquizbase.ui:149
+#: kwordquiz.cpp:532 prefquizbase.ui:149
 #, kde-format
 msgid "Multiple Choice"
 msgstr "选择题"
 
-#: kwordquiz.cpp:537
+#: kwordquiz.cpp:536
 #, kde-format
 msgid "Question & Answer"
 msgstr "问答"

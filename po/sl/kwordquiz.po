@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:41+0000\n"
+"POT-Creation-Date: 2022-12-18 00:46+0000\n"
 "PO-Revision-Date: 2022-10-19 08:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -114,7 +114,7 @@ msgid "&Sound Links"
 msgstr "Povezave &zvoka"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:467
+#: columndialogbase.ui:45 kwordquiz.cpp:466
 #, kde-format
 msgid "Column 1"
 msgstr "Stolpec 1"
@@ -178,7 +178,7 @@ msgid "Enter the width (in pixels) for the left column"
 msgstr "Vnesite širino (v slik. točkah) za levi stolpec"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:470
+#: columndialogbase.ui:214 kwordquiz.cpp:469
 #, kde-format
 msgid "Column 2"
 msgstr "Stolpec 2"
@@ -286,67 +286,67 @@ msgstr ""
 "<html>V vašem besedišču je premalo vnosov.<br />Za kviz s kartami "
 "potrebujete vsaj en vnos.</html>"
 
-#: kwordquiz.cpp:101
+#: kwordquiz.cpp:100
 #, kde-format
 msgid "Creates a new blank vocabulary document"
 msgstr "Ustvari nov, prazen dokument z besediščem"
 
-#: kwordquiz.cpp:106
+#: kwordquiz.cpp:105
 #, kde-format
 msgid "Opens an existing vocabulary document"
 msgstr "Odpre obstoječ dokument z besediščem"
 
-#: kwordquiz.cpp:112
+#: kwordquiz.cpp:111
 #, kde-format
 msgid "Download New Vocabularies..."
 msgstr "Prejmi nova besedišča ..."
 
-#: kwordquiz.cpp:116
+#: kwordquiz.cpp:115
 #, kde-format
 msgid "Downloads new vocabularies"
 msgstr "Prejme nova besedišča"
 
-#: kwordquiz.cpp:121
+#: kwordquiz.cpp:120
 #, kde-format
 msgid "Saves the active vocabulary document"
 msgstr "Shrani dejaven dokument z besediščem"
 
-#: kwordquiz.cpp:126
+#: kwordquiz.cpp:125
 #, kde-format
 msgid "Saves the active vocabulary document with a different name"
 msgstr "Shrani dejaven dokument z besediščem pod drugačnim imenom"
 
-#: kwordquiz.cpp:131
+#: kwordquiz.cpp:130
 #, kde-format
 msgid "Closes the active vocabulary document"
 msgstr "Zapre dejaven dokument z besediščem"
 
-#: kwordquiz.cpp:135
+#: kwordquiz.cpp:134
 #, kde-format
 msgid "Prints the active vocabulary document"
 msgstr "Natisne dejaven dokument z besediščem"
 
-#: kwordquiz.cpp:140
+#: kwordquiz.cpp:139
 #, kde-format
 msgid "Shows a preview of the active vocabulary document"
 msgstr "Prikaže predogled dejavnega dokumenta z besediščem"
 
-#: kwordquiz.cpp:145
+#: kwordquiz.cpp:144
 #, kde-format
 msgid "Quits KWordQuiz"
 msgstr "Konča KWordQuiz"
 
-#: kwordquiz.cpp:157
+#: kwordquiz.cpp:156
 #, kde-format
 msgid "Cuts the text from the selected cells and places it on the clipboard"
 msgstr "Izreže besedilo iz izbranih celic in ga postavi v odložišče"
 
-#: kwordquiz.cpp:162
+#: kwordquiz.cpp:161
 #, kde-format
 msgid "Copies the text from the selected cells and places it on the clipboard"
 msgstr "Kopira besedilo iz izbranih celic in ga postavi v odložišče"
 
-#: kwordquiz.cpp:167
+#: kwordquiz.cpp:166
 #, kde-format
 msgid ""
 "Pastes previously cut or copied text from the clipboard into the selected "
@@ -354,346 +354,346 @@ msgid ""
 msgstr ""
 "Prej izrezano ali kopirano besedilo prilepi iz odložišča v izbrane celice"
 
-#: kwordquiz.cpp:173
+#: kwordquiz.cpp:172
 #, kde-format
 msgid "Clears the content of the selected cells"
 msgstr "Počisti vsebino izbranih celic"
 
-#: kwordquiz.cpp:179
+#: kwordquiz.cpp:178
 #, kde-format
 msgid "&Insert Row"
 msgstr "&Vstavi vrstico"
 
-#: kwordquiz.cpp:181
+#: kwordquiz.cpp:180
 #, kde-format
 msgid "Inserts a new row above the current row"
 msgstr "Vstavi novo vrstico nad trenutno"
 
-#: kwordquiz.cpp:188
+#: kwordquiz.cpp:187
 #, kde-format
 msgid "&Delete Row"
 msgstr "I&zbriši vrstico"
 
-#: kwordquiz.cpp:190
+#: kwordquiz.cpp:189
 #, kde-format
 msgid "Deletes the selected row(s)"
 msgstr "Izbriše izbrane vrstice"
 
-#: kwordquiz.cpp:197
+#: kwordquiz.cpp:196
 #, kde-format
 msgid "&Mark as Blank"
 msgstr "&Označi kot prazno"
 
-#: kwordquiz.cpp:199
+#: kwordquiz.cpp:198
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
 msgstr "Označi trenutno ali izbrano besedo kot prazno za Izpolni-prazno"
 
-#: kwordquiz.cpp:206
+#: kwordquiz.cpp:205
 #, kde-format
 msgid "&Unmark Blanks"
 msgstr "O&dstrani oznako \"kot prazno\""
 
-#: kwordquiz.cpp:207
+#: kwordquiz.cpp:206
 #, kde-format
 msgid "Removes blanks from the current or selected word"
 msgstr "Odstrani oznako za prazno iz trenutne ali izbrane besede"
 
-#: kwordquiz.cpp:214
+#: kwordquiz.cpp:213
 #, kde-format
 msgid "&Column Settings..."
 msgstr "&Nastavitve stolpca ..."
 
-#: kwordquiz.cpp:216
+#: kwordquiz.cpp:215
 #, kde-format
 msgid "Defines the column settings for the active vocabulary"
 msgstr "Določa nastavitve stolpca za dejavno besedišče"
 
-#: kwordquiz.cpp:223
+#: kwordquiz.cpp:222
 #, kde-format
 msgid "&Font..."
 msgstr "&Pisava ..."
 
-#: kwordquiz.cpp:224
+#: kwordquiz.cpp:223
 #, kde-format
 msgid "Defines the font used by the editor"
 msgstr "Določi pisave, ki jih uporablja urejevalnik"
 
-#: kwordquiz.cpp:231
+#: kwordquiz.cpp:230
 #, kde-format
 msgid "Link &Image..."
 msgstr "Poveži &sliko ..."
 
-#: kwordquiz.cpp:232
+#: kwordquiz.cpp:231
 #, kde-format
 msgid "Links an image with the current entry"
 msgstr "Poveže sliko s trenutnim vnosom"
 
-#: kwordquiz.cpp:239
+#: kwordquiz.cpp:238
 #, kde-format
 msgid "Link &Sound..."
 msgstr "Poveži &zvok ..."
 
-#: kwordquiz.cpp:240
+#: kwordquiz.cpp:239
 #, kde-format
 msgid "Links a sound with the current entry"
 msgstr "Poveže zvok s trenutnim vnosom"
 
-#: kwordquiz.cpp:247
+#: kwordquiz.cpp:246
 #, kde-format
 msgid "&Adjust Row Heights"
 msgstr "&Prilagodi višino vrstic"
 
-#: kwordquiz.cpp:248
+#: kwordquiz.cpp:247
 #, kde-format
 msgid "Automatically adjusts the height of selected rows"
 msgstr "Samodejno prilagodi višine izbranih vrstic"
 
-#: kwordquiz.cpp:255
+#: kwordquiz.cpp:254
 #, kde-format
 msgid "Sh&uffle"
 msgstr "Pre&mešaj"
 
-#: kwordquiz.cpp:256
+#: kwordquiz.cpp:255
 #, kde-format
 msgid "Shuffles the entries of the active vocabulary"
 msgstr "Premeša vnose v dejavnem besedišču"
 
-#: kwordquiz.cpp:262
+#: kwordquiz.cpp:261
 #, kde-format
 msgid "&Keyboard Layout"
 msgstr "Razporeditev &tipk"
 
-#: kwordquiz.cpp:263
+#: kwordquiz.cpp:262
 #, kde-format
 msgid "Shows available keyboard layouts"
 msgstr "Prikaže razpoložljive razporeditve tipk"
 
-#: kwordquiz.cpp:274
+#: kwordquiz.cpp:273
 #, kde-format
 msgid "Change Mode"
 msgstr "Spremeni način"
 
-#: kwordquiz.cpp:275
+#: kwordquiz.cpp:274
 #, kde-format
 msgid "Mode"
 msgstr "Način"
 
-#: kwordquiz.cpp:276
+#: kwordquiz.cpp:275
 #, kde-format
 msgid "Changes the mode used in quiz sessions"
 msgstr "Spremeni način, ki je v uporabi v sejah kviza"
 
-#: kwordquiz.cpp:289
+#: kwordquiz.cpp:288
 #, kde-format
 msgid "Selects this mode"
 msgstr "Izbere ta način"
 
-#: kwordquiz.cpp:298
+#: kwordquiz.cpp:297
 #, kde-format
 msgctxt "@item:inlistbox activate vocabulary editor"
 msgid "&Editor"
 msgstr "&Urejevalnik"
 
-#: kwordquiz.cpp:300
+#: kwordquiz.cpp:299
 #, kde-format
 msgid "Activates the vocabulary editor"
 msgstr "Odpre urejevalnik besedišča"
 
-#: kwordquiz.cpp:307
+#: kwordquiz.cpp:306
 #, kde-format
 msgid "&Flashcard"
 msgstr "&Karte"
 
-#: kwordquiz.cpp:309
+#: kwordquiz.cpp:308
 #, kde-format
 msgid "Starts a flashcard session using the active vocabulary"
 msgstr "Začne sejo s kartami z uporabo dejavnega besedišča"
 
-#: kwordquiz.cpp:316
+#: kwordquiz.cpp:315
 #, kde-format
 msgid "&Multiple Choice"
 msgstr "&Več možnosti"
 
-#: kwordquiz.cpp:318
+#: kwordquiz.cpp:317
 #, kde-format
 msgid "Starts a multiple choice session using the active vocabulary"
 msgstr "Začne sejo z večimi možnostmi z uporabo dejavnega besedišča"
 
-#: kwordquiz.cpp:325
+#: kwordquiz.cpp:324
 #, kde-format
 msgid "&Question and Answer"
 msgstr "&Vprašanje in odgovor"
 
-#: kwordquiz.cpp:326
+#: kwordquiz.cpp:325
 #, kde-format
 msgid "Q&&A"
 msgstr "V in O"
 
-#: kwordquiz.cpp:328
+#: kwordquiz.cpp:327
 #, kde-format
 msgid "Starts a question and answer session using the active vocabulary"
 msgstr "Začne sejo z vprašanji in odgovori z uporabo dejavnega besedišča"
 
-#: kwordquiz.cpp:335
+#: kwordquiz.cpp:334
 #, kde-format
 msgid "&Check"
 msgstr "&Preveri"
 
-#: kwordquiz.cpp:337
+#: kwordquiz.cpp:336
 #, kde-format
 msgid "Checks your answer to this question"
 msgstr "Preveri vaš odgovor na to vprašanje"
 
-#: kwordquiz.cpp:342
+#: kwordquiz.cpp:341
 #, kde-format
 msgid "Choose Option &1"
 msgstr "Izberi možnost &1"
 
-#: kwordquiz.cpp:346
+#: kwordquiz.cpp:345
 #, kde-format
 msgid "Choose Option &2"
 msgstr "Izberi možnost &2"
 
-#: kwordquiz.cpp:350
+#: kwordquiz.cpp:349
 #, kde-format
 msgid "Choose Option &3"
 msgstr "Izberi možnost &3"
 
-#: kwordquiz.cpp:355
+#: kwordquiz.cpp:354
 #, kde-format
 msgid "I &Know"
 msgstr "&Vem"
 
-#: kwordquiz.cpp:357
+#: kwordquiz.cpp:356
 #, kde-format
 msgid "Counts this card as correct and shows the next card"
 msgstr "Šteje karto kot pravilno in prikaže naslednjo"
 
-#: kwordquiz.cpp:363
+#: kwordquiz.cpp:362
 #, kde-format
 msgid "I &Do Not Know"
 msgstr "&Ne vem"
 
-#: kwordquiz.cpp:365
+#: kwordquiz.cpp:364
 #, kde-format
 msgid "Counts this card as incorrect and shows the next card"
 msgstr "Šteje karto kot napačno in prikaže naslednjo"
 
-#: kwordquiz.cpp:371
+#: kwordquiz.cpp:370
 #, kde-format
 msgid "&Hint"
 msgstr "Na&mig"
 
-#: kwordquiz.cpp:373
+#: kwordquiz.cpp:372
 #, kde-format
 msgid "Gets the next correct letter of the answer"
 msgstr "Prikaže naslednjo pravilno črko odgovora"
 
-#: kwordquiz.cpp:379
+#: kwordquiz.cpp:378
 #, kde-format
 msgid "Mark Last Correct"
 msgstr "Označi zadnje kot pravilno"
 
-#: kwordquiz.cpp:381
+#: kwordquiz.cpp:380
 #, kde-format
 msgid "Marks last answer as correct"
 msgstr "Označi zadnji odgovor kot pravilen"
 
-#: kwordquiz.cpp:387
+#: kwordquiz.cpp:386
 #, kde-format
 msgid "&Restart"
 msgstr "Znova &zaženi"
 
-#: kwordquiz.cpp:389
+#: kwordquiz.cpp:388
 #, kde-format
 msgid "Restarts the quiz session from the beginning"
 msgstr "Znova zažene sejo kviza od začetka"
 
-#: kwordquiz.cpp:395
+#: kwordquiz.cpp:394
 #, kde-format
 msgid "&Play Audio"
 msgstr "&Predvajaj zvoke"
 
-#: kwordquiz.cpp:397
+#: kwordquiz.cpp:396
 #, kde-format
 msgid "Play associated audio"
 msgstr "Predvajaj povezane zvoke"
 
-#: kwordquiz.cpp:403
+#: kwordquiz.cpp:402
 #, kde-format
 msgid "Repeat &Errors"
 msgstr "P&onovi napačne"
 
-#: kwordquiz.cpp:405
+#: kwordquiz.cpp:404
 #, kde-format
 msgid "Repeats all incorrectly answered questions"
 msgstr "Ponovi vsa vprašanja z napačnimi odgovori"
 
-#: kwordquiz.cpp:411
+#: kwordquiz.cpp:410
 #, kde-format
 msgid "Export Errors &As..."
 msgstr "Izvozi napake &kot ..."
 
-#: kwordquiz.cpp:412
+#: kwordquiz.cpp:411
 #, kde-format
 msgid "Exports all errors as a new vocabulary document"
 msgstr "Izvozi vse napake kot nov dokument z besediščem"
 
-#: kwordquiz.cpp:418
+#: kwordquiz.cpp:417
 #, kde-format
 msgid "Show Se&arch"
 msgstr "Pokaži &iskanje"
 
-#: kwordquiz.cpp:420
+#: kwordquiz.cpp:419
 #, kde-format
 msgid "Toggle display of the search bar"
 msgstr "Preklopi prikaz iskalne vrstice"
 
-#: kwordquiz.cpp:425
+#: kwordquiz.cpp:424
 #, kde-format
 msgid "Configures sound and other notifications for certain events"
 msgstr "Nastavi zvoke in ostala obvestila za določene dogodke"
 
-#: kwordquiz.cpp:430
+#: kwordquiz.cpp:429
 #, kde-format
 msgid "Specifies preferences for the vocabulary editor and quiz sessions"
 msgstr "Nastavi možnosti urejevalnika besedišča in sej s kvizi"
 
-#: kwordquiz.cpp:436
+#: kwordquiz.cpp:435
 #, kde-format
 msgid "Special Character <numid>%1</numid>"
 msgstr "Posebni znak <numid>%1</numid>"
 
-#: kwordquiz.cpp:448
+#: kwordquiz.cpp:447
 #, kde-format
 msgid "Toggles display of the toolbars"
 msgstr "Preklopi prikaz orodnih vrstic"
 
-#: kwordquiz.cpp:501
+#: kwordquiz.cpp:500
 #, kde-format
 msgid "Enter search terms here"
 msgstr "Sem vnesite iskalne pojme"
 
-#: kwordquiz.cpp:524
+#: kwordquiz.cpp:523
 #, kde-format
 msgctxt "@item:inlistbox vocabulary editor"
 msgid "Editor"
 msgstr "Urejevalnik"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:529 prefquizbase.ui:192
+#: kwordquiz.cpp:528 prefquizbase.ui:192
 #, kde-format
 msgid "Flashcard"
 msgstr "Karte"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:533 prefquizbase.ui:149
+#: kwordquiz.cpp:532 prefquizbase.ui:149
 #, kde-format
 msgid "Multiple Choice"
 msgstr "Več možnosti"
 
-#: kwordquiz.cpp:537
+#: kwordquiz.cpp:536
 #, kde-format
 msgid "Question & Answer"
 msgstr "Vprašanje in odgovor"
