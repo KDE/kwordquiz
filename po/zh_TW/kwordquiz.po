@@ -6,19 +6,20 @@
 # Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>, 2009.
 # Franklin Weng <franklin@mail.everfocus.com.tw>, 2010, 2015.
 # pan93412 <pan93412@gmail.com>, 2018, 2019.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-18 00:46+0000\n"
-"PO-Revision-Date: 2019-01-28 23:12+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2022-12-30 19:08+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 18.12.1\n"
+"X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -140,8 +141,7 @@ msgstr "標題(&T)："
 
 #. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
 #: columndialogbase.ui:112
-#, fuzzy, kde-format
-#| msgid "&Keyboard Layout:"
+#, kde-format
 msgid "&Keyboard layout:"
 msgstr "鍵盤佈局(&K)："
 
@@ -224,8 +224,7 @@ msgid "Enter the width (in pixels) for the right column"
 msgstr "請輸入右方欄位寬度（以像素為單位）"
 
 #: dlglanguage.cpp:21
-#, fuzzy, kde-format
-#| msgid "Column Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Column Settings"
 msgstr "欄位設定"
@@ -709,12 +708,14 @@ msgid ""
 "the lock and open the file anyway.\n"
 "Do you want to open the file?"
 msgstr ""
+"%1\n"
+"如果您確定沒有其他應用程式正在使用該檔案，您可以選擇忽略鎖定並開啟檔案。\n"
+"您確定要要開啟檔案嗎？"
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "開啟檔案..."
+msgstr "開啟檔案"
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
@@ -1273,8 +1274,7 @@ msgid "Special Characters"
 msgstr "特殊字元"
 
 #: kwqcleardialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Clear Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Clear Contents"
 msgstr "清除內容"
@@ -1451,8 +1451,7 @@ msgid "Select Image"
 msgstr "選擇影像"
 
 #: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "選擇音效"
@@ -2440,8 +2439,7 @@ msgstr ""
 "<html>您的字彙中的項目太少。<br />在問答題中您至少需要一個項目。</html>"
 
 #: wqprintdialogpage.cpp:17
-#, fuzzy, kde-format
-#| msgid "Vocabulary Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Vocabulary Options"
 msgstr "字彙選項"
