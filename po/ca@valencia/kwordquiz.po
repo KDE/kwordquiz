@@ -50,7 +50,7 @@ msgstr "Elimina tota la informació de les entrades seleccionades"
 #, kde-format
 msgid "When checked all information will be deleted from the selected entries"
 msgstr ""
-"Quan està marcat se suprimirà tota la informació de les entrades "
+"Quan està marcada, se suprimirà tota la informació de les entrades "
 "seleccionades"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
@@ -69,7 +69,7 @@ msgstr "Elimina el text de les entrades seleccionades"
 #: cleardialogbase.ui:62
 #, kde-format
 msgid "When checked the text will be deleted from selected entries"
-msgstr "Quan està marcat se suprimirà el text de les entrades seleccionades"
+msgstr "Quan està marcada, se suprimirà el text de les entrades seleccionades"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
 #: cleardialogbase.ui:65
@@ -81,14 +81,14 @@ msgstr "&Text"
 #: cleardialogbase.ui:72
 #, kde-format
 msgid "Delete the image link from selected entries"
-msgstr "Elimina l'enllaç en la imatge de les entrades seleccionades"
+msgstr "Elimina l'enllaç cap a la imatge de les entrades seleccionades"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
 #: cleardialogbase.ui:75
 #, kde-format
 msgid "When checked the image link will be deleted from selected entries"
 msgstr ""
-"Quan està marcat se suprimirà l'enllaç en la imatge de les entrades "
+"Quan està marcada, se suprimirà l'enllaç cap a la imatge de les entrades "
 "seleccionades"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
@@ -101,14 +101,15 @@ msgstr "Enllaços cap a &imatges"
 #: cleardialogbase.ui:85
 #, kde-format
 msgid "Delete the sound link from selected entries"
-msgstr "Elimina l'enllaç al so de les entrades seleccionades"
+msgstr "Elimina l'enllaç cap al so de les entrades seleccionades"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
 #: cleardialogbase.ui:88
 #, kde-format
 msgid "When checked the sound link will be deleted from selected entries"
 msgstr ""
-"Quan està marcat se suprimirà l'enllaç al so de les entrades seleccionades"
+"Quan està marcada, se suprimirà l'enllaç cap al so de les entrades "
+"seleccionades"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
 #: cleardialogbase.ui:91
@@ -1034,13 +1035,13 @@ msgstr "Neteja el text de les entrades seleccionades"
 #: kwordquiz.kcfg:71
 #, kde-format
 msgid "Clear the image link in selected entries"
-msgstr "Neteja l'enllaç en la imatge de les entrades seleccionades"
+msgstr "Neteja l'enllaç cap a la imatge en les entrades seleccionades"
 
 #. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
 #: kwordquiz.kcfg:75
 #, kde-format
 msgid "Clear the sound link in selected entries"
-msgstr "Neteja l'enllaç al so de les entrades seleccionades"
+msgstr "Neteja l'enllaç cap al so en les entrades seleccionades"
 
 #. i18n: ectx: label, entry (AutoCheck), group (Quiz)
 #: kwordquiz.kcfg:81
@@ -1198,7 +1199,7 @@ msgid ""
 "specified on the command line"
 msgstr ""
 "El fitxer de vocabulari obert recentment que cal obrir automàticament si no "
-"se n'especifica cap altre a la línia d'ordres"
+"se n'especifica cap altre en la línia d'ordres"
 
 #. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
 #: kwordquiz.kcfg:195
