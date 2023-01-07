@@ -16,20 +16,21 @@
 # xavier <xavier.besnard@neuf.fr>, 2012, 2021, 2022.
 # Vincent Pinon <vpinon@kde.org>, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2022-10-19 07:02+0200\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-01-06 13:41+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -1176,25 +1177,25 @@ msgstr ""
 #: kwordquiz.kcfg:159
 #, kde-format
 msgid "Pop up flashcards at fixed or random intervals"
-msgstr "Pop up des cartes flash à intervalles fixes ou aléatoires"
+msgstr "Aperçu rapide des cartes à intervalles fixes ou aléatoires"
 
 #. i18n: ectx: label, entry (TutorEvery), group (Tutor)
 #: kwordquiz.kcfg:167
 #, kde-format
 msgid "The interval in minutes at which to pop up a flash card"
-msgstr "L'intervalle en minutes entre les pop up des cartes flash"
+msgstr "L'intervalle en minutes entre les aperçus rapides des cartes"
 
 #. i18n: ectx: label, entry (TutorMin), group (Tutor)
 #: kwordquiz.kcfg:171
 #, kde-format
 msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr "L'intervalle minimal entre les pop up des cartes flash"
+msgstr "L'intervalle minimal entre les aperçus rapides des cartes"
 
 #. i18n: ectx: label, entry (TutorMax), group (Tutor)
 #: kwordquiz.kcfg:175
 #, kde-format
 msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr "L'intervalle maximal entre les pop up des cartes flash"
+msgstr "L'intervalle maximal entre les aperçus rapides des cartes"
 
 #. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
 #: kwordquiz.kcfg:179
@@ -1637,7 +1638,7 @@ msgstr ""
 "« flash » pour des cartes,\n"
 "« mc » pour des choix multiples, \n"
 "« qr » pour des questions / réponses, \n"
-"« tuteur » pour tuteur"
+"« tutor » pour tuteur"
 
 #: main.cpp:57
 #, kde-format
