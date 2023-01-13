@@ -393,7 +393,7 @@ msgstr "&Marca com a espai"
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
 msgstr ""
-"Marca la paraula actual o seleccionada com a espai per a omplir els espais "
+"Marca la paraula actual o seleccionada com a espai per a emplenar els espais "
 "en blanc"
 
 #: kwordquiz.cpp:205
@@ -1005,7 +1005,7 @@ msgstr "Tipus de lletra utilitzada en l'editor"
 #: kwordquiz.kcfg:51
 #, kde-format
 msgid "If Fill-in-the-blank should be enabled"
-msgstr "Si s'ha d'habilitar omplir els espais en blanc"
+msgstr "Si s'ha d'habilitar emplenar els espais en blanc"
 
 #. i18n: ectx: label, entry (EnterMove), group (Editor)
 #: kwordquiz.kcfg:55
@@ -1465,7 +1465,7 @@ msgstr "Puntuació"
 #: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
-msgstr "Hi ha un error amb els claudàtors d'omplir els espais en blanc"
+msgstr "Hi ha un error amb els claudàtors d'emplenar els espais en blanc"
 
 #: kwqtableview.cpp:723
 #, kde-format
@@ -2098,19 +2098,19 @@ msgstr "No &mou"
 #: prefeditorbase.ui:89
 #, kde-format
 msgid "Check to enable fill-in-the-blank"
-msgstr "Marqueu per a habilitar l'ompliment dels espais en blanc"
+msgstr "Marqueu per a habilitar l'emplenament dels espais en blanc"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
 #: prefeditorbase.ui:92
 #, kde-format
 msgid "Select to enable the functions for Fill-in-the-blank"
-msgstr "Seleccioneu habilitar les funcions d'omplir els espais en blanc"
+msgstr "Seleccioneu habilitar les funcions d'emplenar els espais en blanc"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
 #: prefeditorbase.ui:95
 #, kde-format
 msgid "E&nable fill-in-the-blank"
-msgstr "&Habilita omplir els espais en blanc"
+msgstr "&Habilita emplenar els espais en blanc"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
 #: prefgeneralbase.ui:35
@@ -2472,8 +2472,8 @@ msgstr "Escriviu la vostra resposta"
 #, kde-format
 msgid "The answer showing blanks for a Fill-in-the-blank question"
 msgstr ""
-"La resposta mostra espais en blanc per a una pregunta d'omplir els espais en "
-"blanc"
+"La resposta mostra espais en blanc per a una pregunta d'emplenar els espais "
+"en blanc"
 
 #. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
 #: qaviewbase.ui:148
