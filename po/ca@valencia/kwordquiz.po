@@ -233,7 +233,7 @@ msgstr "Introduïu l'amplària (en píxels) per a la columna de la dreta"
 #, kde-format
 msgctxt "@title:window"
 msgid "Column Settings"
-msgstr "Configuració de les columnes"
+msgstr "Configureu les columnes"
 
 #: dlgspecchar.cpp:17
 #, kde-format
@@ -409,7 +409,7 @@ msgstr "Elimina els espais en blanc de la paraula actual o seleccionada"
 #: kwordquiz.cpp:214
 #, kde-format
 msgid "&Column Settings..."
-msgstr "Configuració de les &columnes..."
+msgstr "Configureu les &columnes..."
 
 #: kwordquiz.cpp:216
 #, kde-format
@@ -1229,7 +1229,7 @@ msgstr "Editor"
 #, kde-format
 msgctxt "@title:group editor settings"
 msgid "Editor Settings"
-msgstr "Configuració de l'editor"
+msgstr "Configureu l'editor"
 
 #: kwordquizprefs.cpp:30
 #, kde-format
@@ -1241,7 +1241,7 @@ msgstr "Qüestionari"
 #, kde-format
 msgctxt "@title:group quiz settings"
 msgid "Quiz Settings"
-msgstr "Configuració del qüestionari"
+msgstr "Configureu el qüestionari"
 
 #: kwordquizprefs.cpp:33
 #, kde-format
@@ -1253,7 +1253,7 @@ msgstr "Aparença de les targetes ràpides"
 #, kde-format
 msgctxt "@title:group flash appearance settings"
 msgid "Flashcard Appearance Settings"
-msgstr "Configuració de l'aparença de les targetes ràpides"
+msgstr "Configureu l'aparença de les targetes ràpides"
 
 #: kwordquizprefs.cpp:36
 #, kde-format
@@ -1350,7 +1350,7 @@ msgstr "Desmarca espais"
 #, kde-format
 msgctxt "@item:inmenu undo column titles"
 msgid "Column Settings"
-msgstr "Configuració de les columnes"
+msgstr "Configureu les columnes"
 
 #: kwqcommands.cpp:400
 #, kde-format
@@ -1471,7 +1471,7 @@ msgstr "Hi ha un error amb els claudàtors d'emplenar els espais en blanc"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image"
-msgstr "Selecció d'imatge"
+msgstr "Seleccioneu una imatge"
 
 #: kwqtableview.cpp:743
 #, kde-format
@@ -1541,7 +1541,7 @@ msgstr "Tutor"
 #, kde-format
 msgctxt "@title:group tutor settings"
 msgid "Tutor Settings"
-msgstr "Configuració del tutor"
+msgstr "Configureu el tutor"
 
 #: kwqtutorprefs.cpp:25
 #, kde-format
@@ -1552,7 +1552,7 @@ msgstr "Dreceres"
 #: kwqtutorprefs.cpp:25
 #, kde-format
 msgid "Shortcuts Settings"
-msgstr "Configuració de les dreceres"
+msgstr "Configureu les dreceres"
 
 #: main.cpp:32
 #, kde-format
