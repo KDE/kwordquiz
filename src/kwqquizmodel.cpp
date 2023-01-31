@@ -6,7 +6,6 @@
 #include "kwqquizmodel.h"
 
 #include "blankanswer.h"
-#include "krandomsequence.h"
 #include "kwqsortfiltermodel.h"
 #include "kwqtablemodel.h"
 

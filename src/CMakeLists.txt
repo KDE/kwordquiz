@@ -107,15 +107,15 @@ target_link_libraries(kwordquiz
     Qt::Core
     Qt::PrintSupport
     Qt::Widgets
-    KF5::Crash
-    KF5::ConfigCore
-    KF5::I18n
-    KF5::ItemViews
-    KF5::NewStuffWidgets
-    KF5::Notifications
-    KF5::NotifyConfig
-    KF5::XmlGui
-    KF5::GuiAddons
+    KF${KF_MAJOR_VERSION}::Crash
+    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::ItemViews
+    KF${KF_MAJOR_VERSION}::NewStuffWidgets
+    KF${KF_MAJOR_VERSION}::Notifications
+    KF${KF_MAJOR_VERSION}::NotifyConfig
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::GuiAddons
     LibKEduVocDocumentImport__KEduVocDocument
     Phonon::phonon4qt${QT_MAJOR_VERSION}
 )
