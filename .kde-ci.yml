@@ -16,7 +16,7 @@ Dependencies:
     'frameworks/knewstuff': '@latest-kf6'
     'frameworks/knotifications': '@latest-kf6'
     'frameworks/kxmlgui': '@latest-kf6'
-    'education/libkeduvocdocument': '@latest-kf6'
+    'education/libkeduvocdocument': '@same'
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
   'require':
