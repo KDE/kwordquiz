@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:46+0000\n"
+"POT-Creation-Date: 2023-02-01 00:53+0000\n"
 "PO-Revision-Date: 2021-01-18 19:24+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1602,54 +1602,54 @@ msgstr "குறுவழி"
 msgid "Shortcuts Settings"
 msgstr "வினாடி வினாவின் அமைப்புகள்"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "KWordQuiz"
 msgstr "Kவோர்டு வினாடிவினா"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Kவோர்டுவினாடிவினா ஒரு சக்திவாய்ந்த ஃபிளாஷ்அட்டை மற்றும் சொல்வள படிக்கும் நிரல்."
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr ""
 
-#: main.cpp:40
+#: main.cpp:42
 #, kde-format
 msgid "Peter Hedlund"
 msgstr ""
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr ""
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE "
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr ""
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr ""
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "A number 1-5 corresponding to the \n"
 "entries in the Mode menu"
 msgstr ""
 
-#: main.cpp:56
+#: main.cpp:58
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -1659,7 +1659,7 @@ msgid ""
 "'tutor' for tutor"
 msgstr ""
 
-#: main.cpp:57
+#: main.cpp:59
 #, kde-format
 msgid "File to open"
 msgstr "திறக்க வேண்டிய கோப்பு"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:46+0000\n"
+"POT-Creation-Date: 2023-02-01 00:53+0000\n"
 "PO-Revision-Date: 2022-12-31 15:20+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -1536,71 +1536,71 @@ msgstr "Shortcuts"
 msgid "Shortcuts Settings"
 msgstr "Shortcuts Settings"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "A powerful flashcard and vocabulary learning program"
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:40
+#: main.cpp:42
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE Edutainment Maintainer"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner System and several code contributions"
 
-#: main.cpp:55
-#, kde-format
-msgid ""
-"A number 1-5 corresponding to the \n"
-"entries in the Mode menu"
-msgstr ""
-"A number 1-5 corresponding to the \n"
-"entries in the Mode menu"
-
-#: main.cpp:56
-#, kde-format
-msgid ""
-"Type of session to start with: \n"
-"'flash' for flashcard, \n"
-"'mc' for multiple choice, \n"
-"'qa' for question and answer, \n"
-"'tutor' for tutor"
-msgstr ""
-"Type of session to start with: \n"
-"'flash' for flashcard, \n"
-"'mc' for multiple choice, \n"
-"'qa' for question and answer, \n"
-"'tutor' for tutor"
-
 #: main.cpp:57
+#, kde-format
+msgid ""
+"A number 1-5 corresponding to the \n"
+"entries in the Mode menu"
+msgstr ""
+"A number 1-5 corresponding to the \n"
+"entries in the Mode menu"
+
+#: main.cpp:58
+#, kde-format
+msgid ""
+"Type of session to start with: \n"
+"'flash' for flashcard, \n"
+"'mc' for multiple choice, \n"
+"'qa' for question and answer, \n"
+"'tutor' for tutor"
+msgstr ""
+"Type of session to start with: \n"
+"'flash' for flashcard, \n"
+"'mc' for multiple choice, \n"
+"'qa' for question and answer, \n"
+"'tutor' for tutor"
+
+#: main.cpp:59
 #, kde-format
 msgid "File to open"
 msgstr "File to open"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:46+0000\n"
+"POT-Creation-Date: 2023-02-01 00:53+0000\n"
 "PO-Revision-Date: 2008-07-09 21:10+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1532,54 +1532,54 @@ msgstr "Isih"
 msgid "Shortcuts Settings"
 msgstr "Tetapan Lain-lain"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr ""
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr ""
 
-#: main.cpp:40
+#: main.cpp:42
 #, kde-format
 msgid "Peter Hedlund"
 msgstr ""
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr ""
 
-#: main.cpp:41
+#: main.cpp:43
 #, fuzzy, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Penulis dan penyelenggara"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr ""
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr ""
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "A number 1-5 corresponding to the \n"
 "entries in the Mode menu"
 msgstr ""
 
-#: main.cpp:56
+#: main.cpp:58
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -1589,7 +1589,7 @@ msgid ""
 "'tutor' for tutor"
 msgstr ""
 
-#: main.cpp:57
+#: main.cpp:59
 #, fuzzy, kde-format
 msgid "File to open"
 msgstr "Fail HTML untuk dibuka"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:46+0000\n"
+"POT-Creation-Date: 2023-02-01 00:53+0000\n"
 "PO-Revision-Date: 2013-10-18 19:25+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1542,47 +1542,47 @@ msgstr "Prečice"
 msgid "Shortcuts Settings"
 msgstr "Postavke prečica"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Moćan program za učenje rječnika i pomoću brzih kartica"
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:40
+#: main.cpp:42
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Održavalac obrazovnog KDE softvera"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner sistem i nekoliko doprinosa kodu"
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "A number 1-5 corresponding to the \n"
@@ -1591,7 +1591,7 @@ msgstr ""
 "Broj 1-5 koji odgovara \n"
 "stavkama u meniju „Režim“"
 
-#: main.cpp:56
+#: main.cpp:58
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -1606,7 +1606,7 @@ msgstr ""
 "'qa' za pitanje i odgovor, \n"
 "'tutor' za tutora"
 
-#: main.cpp:57
+#: main.cpp:59
 #, kde-format
 msgid "File to open"
 msgstr "Datoteka za otvaranje"

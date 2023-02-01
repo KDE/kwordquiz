@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:46+0000\n"
+"POT-Creation-Date: 2023-02-01 00:53+0000\n"
 "PO-Revision-Date: 2023-01-06 13:41+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -1576,47 +1576,47 @@ msgstr "Raccourcis"
 msgid "Shortcuts Settings"
 msgstr "Paramètres des raccourcis"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Un programme d'apprentissage du vocabulaire par questionnaire"
 
-#: main.cpp:36
+#: main.cpp:38
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:40
+#: main.cpp:42
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Mainteneur du paquet KDE Éducation"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner System et plusieurs contributions au code"
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "A number 1-5 corresponding to the \n"
@@ -1625,7 +1625,7 @@ msgstr ""
 "Un nombre entre 1 et 5 correspondant à une\n"
 "entrée dans le menu « Mode »"
 
-#: main.cpp:56
+#: main.cpp:58
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -1640,7 +1640,7 @@ msgstr ""
 "« qr » pour des questions / réponses, \n"
 "« tutor » pour tuteur"
 
-#: main.cpp:57
+#: main.cpp:59
 #, kde-format
 msgid "File to open"
 msgstr "Fichier à ouvrir"

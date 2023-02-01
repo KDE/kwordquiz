@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:46+0000\n"
+"POT-Creation-Date: 2023-02-01 00:53+0000\n"
 "PO-Revision-Date: 2015-12-30 18:15+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -1562,47 +1562,47 @@ msgstr "Spartusis klavišas"
 msgid "Shortcuts Settings"
 msgstr "Stulpelių nuostatos"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Galinga mokymosi iš kortelių ir žodyno mokymosi programa"
 
-#: main.cpp:36
+#: main.cpp:38
 #, fuzzy, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2007, Peter Hedlund"
 
-#: main.cpp:40
+#: main.cpp:42
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE Edutainment puoselėtojas"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitnerio sistemos ir keleto kitų programinių tekstų autorius"
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "A number 1-5 corresponding to the \n"
@@ -1611,7 +1611,7 @@ msgstr ""
 "Skaičius nuo 1 iki 5, atitinkantis veiksenos\n"
 "menių esantį elementą"
 
-#: main.cpp:56
+#: main.cpp:58
 #, fuzzy, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -1625,7 +1625,7 @@ msgstr ""
 "pasirinkimas iš kelių atsakymų – „mc“,\n"
 "klausimas ir atsakymas – „qa“"
 
-#: main.cpp:57
+#: main.cpp:59
 #, kde-format
 msgid "File to open"
 msgstr "Atverti failą"

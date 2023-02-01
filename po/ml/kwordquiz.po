@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz trunk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:46+0000\n"
+"POT-Creation-Date: 2023-02-01 00:53+0000\n"
 "PO-Revision-Date: 2019-12-12 21:38+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
@@ -1523,47 +1523,47 @@ msgstr "കുറുക്കുവഴി"
 msgid "Shortcuts Settings"
 msgstr "ക്വിസ് സജ്ജീകരണങ്ങള്‍"
 
-#: main.cpp:32
+#: main.cpp:34
 #, kde-format
 msgid "KWordQuiz"
 msgstr "കെവേര്‍ഡ്ക്വിസ്"
 
-#: main.cpp:34
+#: main.cpp:36
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "ഒരു ശക്തിയേറിയ ഫ്ലാഷ്‌കാര്‍ഡ്, പദസഞ്ചയ പഠന പ്രോഗ്രാം"
 
-#: main.cpp:36
+#: main.cpp:38
 #, fuzzy, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2007, പീറ്റര്‍ ഹെഡ്ലണ്ട്"
 
-#: main.cpp:40
+#: main.cpp:42
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "പീറ്റര്‍ ഹെഡ്ലണ്ട്"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "ആന്‍-മറീ മഹ്ഫൂഫ്"
 
-#: main.cpp:41
+#: main.cpp:43
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "കെഡിഇ എഡ്യൂടെയ്ന്‍മെന്റ് പരിപാലകന്‍"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "മാര്‍ട്ടിന്‍ ഫൈഫര്‍"
 
-#: main.cpp:42
+#: main.cpp:44
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "ലീറ്റ്നര്‍ സിസ്റ്റവും അനവധി കോഡ് സംഭാവനകളും"
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "A number 1-5 corresponding to the \n"
@@ -1572,7 +1572,7 @@ msgstr ""
 "ദശ മെനുവിലെ എന്ട്രികളോടു \n"
 "പൊരുത്തപ്പെടുന്ന 1-5 അക്കം"
 
-#: main.cpp:56
+#: main.cpp:58
 #, fuzzy, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -1586,7 +1586,7 @@ msgstr ""
 "'mc' അനവധി ചോയ്സിനായി, \n"
 "'qa' ചോദ്യോത്തരത്തിനായി"
 
-#: main.cpp:57
+#: main.cpp:59
 #, kde-format
 msgid "File to open"
 msgstr "തുറക്കേണ്ട ഫയല്‍"
