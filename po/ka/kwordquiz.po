@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2023-01-25 07:28+0100\n"
+"PO-Revision-Date: 2023-02-13 18:00+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -559,7 +559,7 @@ msgstr "&ვიცი"
 #: kwordquiz.cpp:357
 #, kde-format
 msgid "Counts this card as correct and shows the next card"
-msgstr ""
+msgstr "ამ ბარათის სწორად ჩათვლა და შემდეგის ჩვენება"
 
 #: kwordquiz.cpp:363
 #, kde-format
@@ -569,7 +569,7 @@ msgstr "&არ ვიცი"
 #: kwordquiz.cpp:365
 #, kde-format
 msgid "Counts this card as incorrect and shows the next card"
-msgstr ""
+msgstr "ამ ბარათის არასწორად ჩათვლა და შემდეგის ჩვენება"
 
 #: kwordquiz.cpp:371
 #, kde-format
@@ -599,7 +599,7 @@ msgstr "&გადატვირთვა"
 #: kwordquiz.cpp:389
 #, kde-format
 msgid "Restarts the quiz session from the beginning"
-msgstr ""
+msgstr "ტესტის სესიის თავიდან გაშვება"
 
 #: kwordquiz.cpp:395
 #, kde-format
@@ -619,7 +619,7 @@ msgstr "&შეცდომების გამეორება"
 #: kwordquiz.cpp:405
 #, kde-format
 msgid "Repeats all incorrectly answered questions"
-msgstr ""
+msgstr "ყველა არასწორი პასუხის მქონე კითხვის გამეორება"
 
 #: kwordquiz.cpp:411
 #, kde-format
@@ -727,6 +727,8 @@ msgid ""
 "The current document has been modified.\n"
 "Do you want to save it?"
 msgstr ""
+"მიმდინარე დოკუმენტი შეცვლილია.\n"
+"გსურთ მისი გადარჩენა?"
 
 #: kwordquiz.cpp:779
 #, kde-format
@@ -736,7 +738,7 @@ msgstr "ახალი დოკუმენტის ფანჯრის გ
 #: kwordquiz.cpp:791
 #, kde-format
 msgid "&Merge selected files with the current document"
-msgstr ""
+msgstr "მონიშნული ფაილების მიმდინარე დოკუმენტთან შერწყმა"
 
 #: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
@@ -827,22 +829,22 @@ msgstr "ცარიელად დანიშვნების წაშლ�
 #: kwordquiz.cpp:1077
 #, kde-format
 msgid "Setting the column titles of the vocabulary..."
-msgstr ""
+msgstr "ლექსიკონის სვეტის სათაურების დაყენება..."
 
 #: kwordquiz.cpp:1090
 #, kde-format
 msgid "Setting the font of the vocabulary..."
-msgstr ""
+msgstr "ლექსიკონის ფონტი..."
 
 #: kwordquiz.cpp:1106
 #, kde-format
 msgid "Linking an image with the current entry..."
-msgstr ""
+msgstr "გამოსახულების მიმდინარე ჩანაწერზე მიბმა..."
 
 #: kwordquiz.cpp:1114
 #, kde-format
 msgid "Linking a sound with the current entry..."
-msgstr ""
+msgstr "ხმის მიმდინარე ჩანაწერზე მიბმა..."
 
 #: kwordquiz.cpp:1122
 #, kde-format
@@ -980,19 +982,19 @@ msgstr "რედაქტორში გამოყენებული ფ�
 #: kwordquiz.kcfg:51
 #, kde-format
 msgid "If Fill-in-the-blank should be enabled"
-msgstr ""
+msgstr "თუ გნებავთ სიცარიელის შევსების ჩართვა"
 
 #. i18n: ectx: label, entry (EnterMove), group (Editor)
 #: kwordquiz.kcfg:55
 #, kde-format
 msgid "Direction the Enter key moves in the editor"
-msgstr ""
+msgstr "რედაქტორში Enter ღილაკით გადაადგილების მიმართულება"
 
 #. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
 #: kwordquiz.kcfg:59
 #, kde-format
 msgid "Characters for the special character toolbar"
-msgstr ""
+msgstr "სიმბოლოები ხელსაწყოს ზოლისთვის"
 
 #. i18n: ectx: label, entry (ClearAll), group (Editor)
 #: kwordquiz.kcfg:63
@@ -1058,7 +1060,7 @@ msgstr "Quiz-დან გასვლა"
 #: kwordquiz.kcfg:105
 #, kde-format
 msgid "Show score as percentage"
-msgstr ""
+msgstr "პროცენტულობის ჩვენება"
 
 #. i18n: ectx: label, entry (FrontFont), group (FlashCard)
 #: kwordquiz.kcfg:111
@@ -1127,30 +1129,31 @@ msgid ""
 "The folder where downloaded vocabularies are saved by default (relative to "
 "$HOME)"
 msgstr ""
+"ნაგულისხმები საქაღალდე, სადაც გადმოწერილი ლექსიკონები ინახება ($HOME-დან)"
 
 #. i18n: ectx: label, entry (TutorTiming), group (Tutor)
 #: kwordquiz.kcfg:159
 #, kde-format
 msgid "Pop up flashcards at fixed or random intervals"
-msgstr ""
+msgstr "ბარათების ჩვენება მითითებულ ან შემთხვევით ინტერვალებში"
 
 #. i18n: ectx: label, entry (TutorEvery), group (Tutor)
 #: kwordquiz.kcfg:167
 #, kde-format
 msgid "The interval in minutes at which to pop up a flash card"
-msgstr ""
+msgstr "ინტერვალი წუთებში, როცა ბარათი გამოჩნდება"
 
 #. i18n: ectx: label, entry (TutorMin), group (Tutor)
 #: kwordquiz.kcfg:171
 #, kde-format
 msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr ""
+msgstr "მინიმალური ინტერვალი წუთებში, როცა ბარათი გამოჩნდება"
 
 #. i18n: ectx: label, entry (TutorMax), group (Tutor)
 #: kwordquiz.kcfg:175
 #, kde-format
 msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr ""
+msgstr "მაქსიმალური ინტერვალი წუთებში, როცა ბარათი გამოჩნდება"
 
 #. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
 #: kwordquiz.kcfg:179
@@ -1162,7 +1165,7 @@ msgstr "ბლო ბარათის გეომეტრია"
 #: kwordquiz.kcfg:183
 #, kde-format
 msgid "Show flash card in a native KWordQuiz style"
-msgstr ""
+msgstr "ბარათის KWordQuiz-ის საკუთარ სტილში ჩვენება"
 
 #. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
 #: kwordquiz.kcfg:191
@@ -1543,7 +1546,7 @@ msgstr "Anne-Marie Mahfouf"
 #: main.cpp:41
 #, kde-format
 msgid "KDE Edutainment Maintainer"
-msgstr ""
+msgstr "KDE-ის სასწავლო პროგრამების კოორდინატორი"
 
 #: main.cpp:42
 #, kde-format
@@ -1553,7 +1556,7 @@ msgstr "Martin Pfeiffer"
 #: main.cpp:42
 #, kde-format
 msgid "Leitner System and several code contributions"
-msgstr ""
+msgstr "ლაიტნერის სისტემა და კოდის რამდენიმე ჩასწორება"
 
 #: main.cpp:55
 #, kde-format
@@ -1618,7 +1621,7 @@ msgstr "კითხვა"
 #: multipleviewbase.ui:73 qaviewbase.ui:60
 #, kde-format
 msgid "Language or other identifier for the question"
-msgstr ""
+msgstr "ენა ან სხვა იდენტიფიკატორი კითხვისთვის"
 
 #. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
 #: multipleviewbase.ui:76 qaviewbase.ui:63
@@ -1795,7 +1798,7 @@ msgstr "ბარათის ამობრუნება"
 #: prefcardappearancebase.ui:95
 #, kde-format
 msgid "Use to show the other side of the card"
-msgstr ""
+msgstr "ბარათის მეორე მხრის ჩვენება"
 
 #. i18n: ectx: property (text), widget (QPushButton, flipButton)
 #: prefcardappearancebase.ui:98
@@ -1827,7 +1830,7 @@ msgstr "აირჩიეთ ტექსტის ფერი"
 #: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
 #, kde-format
 msgid "Use to select the color for text shown on the card"
-msgstr ""
+msgstr "ბარათზე არსებული ტექსტს ფერის არჩევა"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
@@ -1841,7 +1844,7 @@ msgstr "აირჩიეთ ბარათის ჩარჩოს ფერ
 #: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
 #, kde-format
 msgid "Use to select the color for drawing the frame of the card"
-msgstr ""
+msgstr "ბარათის ჩარჩოს ფერის არჩევა"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
@@ -1855,13 +1858,13 @@ msgstr "აირჩიეთ ბარათის ფერი"
 #: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
 #, kde-format
 msgid "Select color used to draw the card"
-msgstr ""
+msgstr "აირჩიეთ ბარათის ფონი"
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
 #: prefcardappearancebase.ui:202
 #, kde-format
 msgid "Use to select the font for displaying text on the front of the card"
-msgstr ""
+msgstr "ბარათის წინა მხარეს ნაჩვენები ტექსტის არჩევა"
 
 #. i18n: ectx: property (text), widget (QLabel, textColorLabel)
 #: prefcardappearancebase.ui:249
@@ -1949,7 +1952,7 @@ msgstr "დააწკაპუნეთ ახალი სიმბოლო�
 #: prefcharacterbase.ui:106
 #, kde-format
 msgid "Choose a character for the selected action"
-msgstr ""
+msgstr "აირჩიეთ ქმედების სიმბოლო"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
 #: prefcharacterbase.ui:109
@@ -2038,7 +2041,7 @@ msgstr "არ გადააადგილო"
 #: prefeditorbase.ui:89
 #, kde-format
 msgid "Check to enable fill-in-the-blank"
-msgstr ""
+msgstr "სიცარიელეების შევსების რეჟიმის ჩასართავად დააწკაპუნეთ"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
 #: prefeditorbase.ui:92
@@ -2050,13 +2053,13 @@ msgstr ""
 #: prefeditorbase.ui:95
 #, kde-format
 msgid "E&nable fill-in-the-blank"
-msgstr ""
+msgstr "\"სიცარიელეების შევსების\" &რეჟიმის ჩართვა"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
 #: prefgeneralbase.ui:35
 #, kde-format
 msgid "How vocabulary documents are opened"
-msgstr ""
+msgstr "როგორ იხსნება ლექსიკონის დოკუმენტები"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
 #: prefgeneralbase.ui:38
@@ -2068,13 +2071,13 @@ msgstr ""
 #: prefgeneralbase.ui:41
 #, kde-format
 msgid "&Open Vocabulary Documents in"
-msgstr ""
+msgstr "&ლექსიკონის გახსნა რედაქტორში"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
 #: prefgeneralbase.ui:47
 #, kde-format
 msgid "Open vocabulary documents in the editor"
-msgstr ""
+msgstr "ლექსიკონის დოკუმენტების რედაქტორში გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
 #: prefgeneralbase.ui:50
@@ -2104,7 +2107,7 @@ msgstr ""
 #: prefgeneralbase.ui:66
 #, kde-format
 msgid "&Flashcard Quiz"
-msgstr ""
+msgstr "&ტესტი ბარათებით"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
 #: prefgeneralbase.ui:73
@@ -2123,7 +2126,7 @@ msgstr ""
 #: prefgeneralbase.ui:79
 #, kde-format
 msgid "&Multiple Choice Quiz"
-msgstr ""
+msgstr "&ტესტი პასუხის ვარიანტებით"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
 #: prefgeneralbase.ui:86
@@ -2143,13 +2146,13 @@ msgstr ""
 #: prefgeneralbase.ui:92
 #, kde-format
 msgid "&Question and Answer Quiz"
-msgstr ""
+msgstr "&ტესტის კითხვა და პასუხი"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
 #: prefquizbase.ui:44
 #, kde-format
 msgid "Specify behavior for a question and answer session"
-msgstr ""
+msgstr "კითხვებისა და პასუხების სესიის ქცევის მითითება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpQA)
 #: prefquizbase.ui:47
@@ -2187,43 +2190,43 @@ msgstr ""
 #: prefquizbase.ui:114
 #, kde-format
 msgid "Check to show score as a percentage"
-msgstr ""
+msgstr "პროცენტულობის ჩვენება"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
 #: prefquizbase.ui:117
 #, kde-format
 msgid "Select if the score should be shown as a percentage"
-msgstr ""
+msgstr "შედეგის პროცენტული ფარდობის სახით ჩვენება"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
 #: prefquizbase.ui:120
 #, kde-format
 msgid "&Show score as a percentage"
-msgstr ""
+msgstr "&პროცენტულობის ჩვენება"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
 #: prefquizbase.ui:146
 #, kde-format
 msgid "Specify behavior for a multiple choice session"
-msgstr ""
+msgstr "პასუხის ვარიანტების მქონე სესის ქცევის მითითება"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
 #: prefquizbase.ui:173
 #, kde-format
 msgid "Check to correct automatically"
-msgstr ""
+msgstr "ავტომატური გასწორება"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
 #: prefquizbase.ui:176
 #, kde-format
 msgid "Select if a choice should be checked immediately"
-msgstr ""
+msgstr "პასუხი დაუყოვნებლივ შემოწმდება, თუ არა"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
 #: prefquizbase.ui:179
 #, kde-format
 msgid "Check selection a&utomatically"
-msgstr ""
+msgstr "არჩევანის &ავტომატური შემოწმება"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
 #: prefquizbase.ui:189
@@ -2308,13 +2311,13 @@ msgstr ""
 #: prefquizbase.ui:320
 #, kde-format
 msgid "&Flip card automatically after"
-msgstr ""
+msgstr "&ბარათის გადაბრუნების დრო"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
 #: preftutorbase.ui:17
 #, kde-format
 msgid "Tutor Timing"
-msgstr ""
+msgstr "ვარჯიშის სიხშირე"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
 #: preftutorbase.ui:23
@@ -2389,7 +2392,7 @@ msgstr ""
 #: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
 #, kde-format
 msgid "Type your answer"
-msgstr ""
+msgstr "ჩაწერეთ თქვენი პასუხი"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
 #: qaviewbase.ui:145
@@ -2401,7 +2404,7 @@ msgstr ""
 #: qaviewbase.ui:148
 #, kde-format
 msgid "This is _____ answer"
-msgstr ""
+msgstr "ეს _______ პასუხია"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
 #: qaviewbase.ui:176
