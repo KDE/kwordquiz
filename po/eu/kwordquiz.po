@@ -1,22 +1,27 @@
-# translation of kwordquiz.po to Basque
+# Translation for kwordquiz.po to Euskara/Basque (eu).
+# Copyrigth (C) 2005-2023 This file is copyright:
+# This file is distributed under the same license as the kwordquiz package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
+# Translators:
 # Marcos  <marcos@euskalgnu.org>, 2005.
 # Ion Gaztañaga <ion_g_m@hotmail.com>, 2005.
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-01 00:53+0000\n"
-"PO-Revision-Date: 2009-05-28 22:04+0200\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
-"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"PO-Revision-Date: 2023-02-18 23:57+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -31,92 +36,83 @@ msgstr "igaztanaga@gmail.com"
 
 #. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
 #: cleardialogbase.ui:21
-#, fuzzy, kde-format
-#| msgctxt "@action:button select"
-#| msgid "&Select"
+#, kde-format
 msgid "Selection"
-msgstr "&Hautatu"
+msgstr "Hautapena"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
 #: cleardialogbase.ui:30
-#, fuzzy, kde-format
-#| msgid "Clears the content of the selected cells"
+#, kde-format
 msgid "Delete all information in selected entries"
-msgstr "Hautatutako gelaxken edukina garbitzen du"
+msgstr "Ezabatu hautatutako sarreretako informazio guztia"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
 #: cleardialogbase.ui:33
 #, kde-format
 msgid "When checked all information will be deleted from the selected entries"
-msgstr ""
+msgstr "Markatutakoan hautatutako sarreretako informazio guztia ezabatuko da"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
 #: cleardialogbase.ui:36
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo clear"
-#| msgid "Clear"
+#, kde-format
 msgid "Clear &All"
-msgstr "Garbitu"
+msgstr "Garbitu den&a"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
 #: cleardialogbase.ui:59
-#, fuzzy, kde-format
-#| msgid "Deletes the selected row(s)"
+#, kde-format
 msgid "Delete the text from selected entries"
-msgstr "Hautatutako lerroak ezabatzen ditu"
+msgstr "Ezabatu hautatutako sarreretako testua"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
 #: cleardialogbase.ui:62
-#, fuzzy, kde-format
-#| msgid "Deletes the selected row(s)"
+#, kde-format
 msgid "When checked the text will be deleted from selected entries"
-msgstr "Hautatutako lerroak ezabatzen ditu"
+msgstr "Markatzen denean hautatutako sarreretako testua ezabatuko da"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
 #: cleardialogbase.ui:65
 #, kde-format
 msgid "&Text"
-msgstr ""
+msgstr "&Testua"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
 #: cleardialogbase.ui:72
-#, fuzzy, kde-format
-#| msgid "Deletes the selected row(s)"
+#, kde-format
 msgid "Delete the image link from selected entries"
-msgstr "Hautatutako lerroak ezabatzen ditu"
+msgstr "Ezabatu hautatutako sarreretako irudiaren esteka"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
 #: cleardialogbase.ui:75
-#, fuzzy, kde-format
-#| msgid "Deletes the selected row(s)"
+#, kde-format
 msgid "When checked the image link will be deleted from selected entries"
-msgstr "Hautatutako lerroak ezabatzen ditu"
+msgstr ""
+"Markatuta dagoenean, hautatutako sarreretako irudiaren esteka ezabatuko da"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
 #: cleardialogbase.ui:78
 #, kde-format
 msgid "&Image Links"
-msgstr ""
+msgstr "&Irudi-estekak"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
 #: cleardialogbase.ui:85
-#, fuzzy, kde-format
-#| msgid "Deletes the selected row(s)"
+#, kde-format
 msgid "Delete the sound link from selected entries"
-msgstr "Hautatutako lerroak ezabatzen ditu"
+msgstr "Ezabatu hautatutako sarreretako soinuaren esteka"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
 #: cleardialogbase.ui:88
-#, fuzzy, kde-format
-#| msgid "Deletes the selected row(s)"
+#, kde-format
 msgid "When checked the sound link will be deleted from selected entries"
-msgstr "Hautatutako lerroak ezabatzen ditu"
+msgstr ""
+"Markatuta dagoenean, hautatutako sarreretako soinuaren esteka ezabatuko da"
 
 #. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
 #: cleardialogbase.ui:91
 #, kde-format
 msgid "&Sound Links"
-msgstr ""
+msgstr "&Soinu-estekak"
 
 #. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
 #: columndialogbase.ui:45 kwordquiz.cpp:466
@@ -138,7 +134,7 @@ msgstr "Ezkerreko zutabearen izenburua"
 #: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
 #, kde-format
 msgid "Enter a title (identifier) for the left column"
-msgstr "Sartu izenburu (identifikatzaile) bat ezkerreko zutabearentzat"
+msgstr "Sartu ezkerreko zutaberako izenburu (identifikatzaile) bat"
 
 #. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
 #: columndialogbase.ui:96
@@ -148,10 +144,9 @@ msgstr "&Titulua:"
 
 #. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
 #: columndialogbase.ui:112
-#, fuzzy, kde-format
-#| msgid "&Keyboard Layout:"
+#, kde-format
 msgid "&Keyboard layout:"
-msgstr "Teklatuaren &diseinua:"
+msgstr "Te&klatuaren diseinua:"
 
 #. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
 #: columndialogbase.ui:128
@@ -232,11 +227,10 @@ msgid "Enter the width (in pixels) for the right column"
 msgstr "Sartu zabalera (pixeletan) eskuineko zutabearentzat"
 
 #: dlglanguage.cpp:21
-#, fuzzy, kde-format
-#| msgid "Column Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Column Settings"
-msgstr "Zutabearen ezarpenak"
+msgstr "Zutabeen ezarpenak"
 
 #: dlgspecchar.cpp:17
 #, kde-format
@@ -245,40 +239,33 @@ msgid "Select Character"
 msgstr "Hautatu karakterea"
 
 #: dlgspecchar.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action:button select"
-#| msgid "&Select"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Select"
 msgstr "&Hautatu"
 
 #: dlgspecchar.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip select this character"
-#| msgid "Select this character"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select this character"
 msgstr "Hautatu karaktere hau"
 
 #. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
 #: documentsettings.kcfg:12
-#, fuzzy, kde-format
-#| msgid "Column 1"
+#, kde-format
 msgid "Column widths"
-msgstr "1. zutabea"
+msgstr "Zutabeen zabalera"
 
 #. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
 #: documentsettings.kcfg:18
-#, fuzzy, kde-format
-#| msgid "&Keyboard Layout"
+#, kde-format
 msgid "Keyboard layouts"
-msgstr "Teklatuaren &diseinua"
+msgstr "Teklatuaren diseinuak"
 
 #: filterproxysearchline.cpp:23
-#, fuzzy, kde-format
-#| msgid "Show Se&arch"
+#, kde-format
 msgid "Search"
-msgstr "Erakutsi &bilaketa"
+msgstr "Bilatu"
 
 #: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
 #, kde-format
@@ -298,68 +285,67 @@ msgid ""
 "one entry for a flashcard quiz.</html>"
 msgstr ""
 "<html>Zure hiztegian sarrera gutxiegi daude.<br />Gutxienez sarrera bat "
-"behar duzu txartelen galdeketarako.</html>"
+"behar duzu oroimen-txartelen galdeketarako.</html>"
 
 #: kwordquiz.cpp:100
 #, kde-format
 msgid "Creates a new blank vocabulary document"
-msgstr "Hutsik dagoen hiztegi dokumentu berri bat sortzen du"
+msgstr "Hutsik dagoen hiztegi-dokumentu berri bat sortzen du"
 
 #: kwordquiz.cpp:105
 #, kde-format
 msgid "Opens an existing vocabulary document"
-msgstr "Existitzen den hiztegi dokumentu  bat irekitzen du"
+msgstr "Existitzen den hiztegi-dokumentu bat irekitzen du"
 
 #: kwordquiz.cpp:111
 #, kde-format
 msgid "Download New Vocabularies..."
-msgstr "Deskargatu hiztegi berriak..."
+msgstr "Zama-jaitsi hiztegi berriak..."
 
 #: kwordquiz.cpp:115
 #, kde-format
 msgid "Downloads new vocabularies"
-msgstr "Deskargatu hiztegi berriak"
+msgstr "Hiztegi berriak zama-jaisten ditu"
 
 #: kwordquiz.cpp:120
 #, kde-format
 msgid "Saves the active vocabulary document"
-msgstr "Hiztegi dokumentu aktiboa gordetzen du"
+msgstr "Hiztegi-dokumentu aktiboa gordetzen du"
 
 #: kwordquiz.cpp:125
 #, kde-format
 msgid "Saves the active vocabulary document with a different name"
-msgstr "Hiztegi dokumentu aktiboa beste izen batekin gordetzen du"
+msgstr "Hiztegi-dokumentu aktiboa beste izen batekin gordetzen du"
 
 #: kwordquiz.cpp:130
 #, kde-format
 msgid "Closes the active vocabulary document"
-msgstr "Hiztegi dokumentu aktiboa ixten du"
+msgstr "Hiztegi-dokumentu aktiboa ixten du"
 
 #: kwordquiz.cpp:134
 #, kde-format
 msgid "Prints the active vocabulary document"
-msgstr "Hiztegi dokumentu aktiboa inprimatzen du"
+msgstr "Hiztegi-dokumentu aktiboa inprimatzen du"
 
 #: kwordquiz.cpp:139
-#, fuzzy, kde-format
-#| msgid "Saves the active vocabulary document"
+#, kde-format
 msgid "Shows a preview of the active vocabulary document"
-msgstr "Hiztegi dokumentu aktiboa gordetzen du"
+msgstr "Hiztegi-dokumentu aktiboaren aurreikuspegi bat erakusten du"
 
 #: kwordquiz.cpp:144
 #, kde-format
 msgid "Quits KWordQuiz"
-msgstr "KWordWiz ixten du"
+msgstr "«KWordWiz» ixten du"
 
 #: kwordquiz.cpp:156
 #, kde-format
 msgid "Cuts the text from the selected cells and places it on the clipboard"
-msgstr "Hautatutako gelaxketatik testua moztu eta arbelean jartzen du"
+msgstr "Hautatutako gelaxketako testua moztu eta arbelean jartzen du"
 
 #: kwordquiz.cpp:161
 #, kde-format
 msgid "Copies the text from the selected cells and places it on the clipboard"
-msgstr "Hautatutako gelaxketatik testua kopiatu eta arbelean jartzen du"
+msgstr "Hautatutako gelaxketako testua kopiatu eta arbelean jartzen du"
 
 #: kwordquiz.cpp:166
 #, kde-format
@@ -373,27 +359,27 @@ msgstr ""
 #: kwordquiz.cpp:172
 #, kde-format
 msgid "Clears the content of the selected cells"
-msgstr "Hautatutako gelaxken edukina garbitzen du"
+msgstr "Hautatutako gelaxken edukia garbitzen du"
 
 #: kwordquiz.cpp:178
 #, kde-format
 msgid "&Insert Row"
-msgstr "&Txertatu lerroa"
+msgstr "&Txertatu errenkada"
 
 #: kwordquiz.cpp:180
 #, kde-format
 msgid "Inserts a new row above the current row"
-msgstr "Uneko lerroaren gainean lerro berri bat txertatzen du"
+msgstr "Uneko errenkadaren gainean errenkada berri bat txertatzen du"
 
 #: kwordquiz.cpp:187
 #, kde-format
 msgid "&Delete Row"
-msgstr "&Ezabatu lerroa"
+msgstr "&Ezabatu errenkada"
 
 #: kwordquiz.cpp:189
 #, kde-format
 msgid "Deletes the selected row(s)"
-msgstr "Hautatutako lerroak ezabatzen ditu"
+msgstr "Hautatutako lerroa(k) ezabatzen d(it)u"
 
 #: kwordquiz.cpp:196
 #, kde-format
@@ -440,22 +426,22 @@ msgstr "Editoreak erabiliko duen letra-tipoa definitzen du"
 #: kwordquiz.cpp:230
 #, kde-format
 msgid "Link &Image..."
-msgstr ""
+msgstr "Estekatu &irudia..."
 
 #: kwordquiz.cpp:231
 #, kde-format
 msgid "Links an image with the current entry"
-msgstr ""
+msgstr "Irudi bat uneko sarrerarekin estekatzen du"
 
 #: kwordquiz.cpp:238
 #, kde-format
 msgid "Link &Sound..."
-msgstr ""
+msgstr "Estekatu &soinua..."
 
 #: kwordquiz.cpp:239
 #, kde-format
 msgid "Links a sound with the current entry"
-msgstr ""
+msgstr "Soinu bat uneko sarrerarekin estekatzen du"
 
 #: kwordquiz.cpp:246
 #, kde-format
@@ -465,7 +451,7 @@ msgstr "&Doitu errenkaden altuera"
 #: kwordquiz.cpp:247
 #, kde-format
 msgid "Automatically adjusts the height of selected rows"
-msgstr "Doitu automatikoki hautatutako errenkaden altuera"
+msgstr "Hautatutako errenkaden altuera automatikoki doitzen du"
 
 #: kwordquiz.cpp:254
 #, kde-format
@@ -480,12 +466,12 @@ msgstr "Hiztegi aktiboko sarrerak nahasten ditu"
 #: kwordquiz.cpp:261
 #, kde-format
 msgid "&Keyboard Layout"
-msgstr "Teklatuaren &diseinua"
+msgstr "Te&klatuaren diseinua"
 
 #: kwordquiz.cpp:262
 #, kde-format
 msgid "Shows available keyboard layouts"
-msgstr "Teklatuen diseinu erabilgarriak erakusten ditu"
+msgstr "Teklatu-diseinu erabilgarriak erakusten ditu"
 
 #: kwordquiz.cpp:273
 #, kde-format
@@ -500,7 +486,7 @@ msgstr "Modua"
 #: kwordquiz.cpp:275
 #, kde-format
 msgid "Changes the mode used in quiz sessions"
-msgstr "Galdeketa saioan erabiliko den modua aldatzen du"
+msgstr "Galdeketa saioetan erabilitako modua aldatzen du"
 
 #: kwordquiz.cpp:288
 #, kde-format
@@ -516,17 +502,17 @@ msgstr "&Editorea"
 #: kwordquiz.cpp:299
 #, kde-format
 msgid "Activates the vocabulary editor"
-msgstr "Hiztegi editorea aktibatzen du"
+msgstr "Hiztegi-editorea aktibatzen du"
 
 #: kwordquiz.cpp:306
 #, kde-format
 msgid "&Flashcard"
-msgstr "&Txartela"
+msgstr "&Oroimen-txartela"
 
 #: kwordquiz.cpp:308
 #, kde-format
 msgid "Starts a flashcard session using the active vocabulary"
-msgstr "Hiztegi aktiboa erabiliz txartel-sesio bat hasten du "
+msgstr "Oroimen-txartel saio bat hasten du hiztegi aktiboa erabiliz"
 
 #: kwordquiz.cpp:315
 #, kde-format
@@ -536,7 +522,7 @@ msgstr "Aukera &anizkoitza"
 #: kwordquiz.cpp:317
 #, kde-format
 msgid "Starts a multiple choice session using the active vocabulary"
-msgstr "Aukera anizkoitzeko sesio bat abiatzen du hiztegi aktiboa erabiliz"
+msgstr "Aukera anizkoitzeko saio bat hasten du hiztegi aktiboa erabiliz"
 
 #: kwordquiz.cpp:324
 #, kde-format
@@ -551,17 +537,17 @@ msgstr "G eta E"
 #: kwordquiz.cpp:327
 #, kde-format
 msgid "Starts a question and answer session using the active vocabulary"
-msgstr "Hiztegi aktiboa erabiliz galdera eta erantzun sesio bat abiatzen du"
+msgstr "Galdera eta erantzun saio bat hasten du hiztegi aktiboa erabiliz"
 
 #: kwordquiz.cpp:334
 #, kde-format
 msgid "&Check"
-msgstr "&Egiaztatu"
+msgstr "E&giaztatu"
 
 #: kwordquiz.cpp:336
 #, kde-format
 msgid "Checks your answer to this question"
-msgstr "Galdera honi emandako zure erantzuna egiaztatzen du"
+msgstr "Galdera honi zuk emandako erantzuna egiaztatzen du"
 
 #: kwordquiz.cpp:341
 #, kde-format
@@ -581,24 +567,22 @@ msgstr "Hautatu &3 aukera"
 #: kwordquiz.cpp:354
 #, kde-format
 msgid "I &Know"
-msgstr "&Badakit"
+msgstr "Bada&kit"
 
 #: kwordquiz.cpp:356
 #, kde-format
 msgid "Counts this card as correct and shows the next card"
-msgstr ""
-"Txartel hau zuzen bezala kontsideratzen du eta hurrengo txartela erakusten du"
+msgstr "Txartel hau zuzen bezala hartu eta hurrengoa erakusten du"
 
 #: kwordquiz.cpp:362
 #, kde-format
 msgid "I &Do Not Know"
-msgstr "&Ez dakit"
+msgstr "E&z dakit"
 
 #: kwordquiz.cpp:364
 #, kde-format
 msgid "Counts this card as incorrect and shows the next card"
-msgstr ""
-"Txartel hau oker bezala kontsideratzen du eta hurrengo txartela erakusten du"
+msgstr "Txartel hau oker bezala hartu eta hurrengoa erakusten du"
 
 #: kwordquiz.cpp:370
 #, kde-format
@@ -613,33 +597,32 @@ msgstr "Erantzunaren hurrengo letra zuzena eskuratzen du"
 #: kwordquiz.cpp:378
 #, kde-format
 msgid "Mark Last Correct"
-msgstr ""
+msgstr "Azkena zuzena markatu"
 
 #: kwordquiz.cpp:380
-#, fuzzy, kde-format
-#| msgid "Your answer was correct!"
+#, kde-format
 msgid "Marks last answer as correct"
-msgstr "Zure erantzuna zuzena da!"
+msgstr "Azken erantzuna zuzen gisa markatzen du"
 
 #: kwordquiz.cpp:386
 #, kde-format
 msgid "&Restart"
-msgstr "&Berrabiatu"
+msgstr "Ber&rabiatu"
 
 #: kwordquiz.cpp:388
 #, kde-format
 msgid "Restarts the quiz session from the beginning"
-msgstr "Galdeketako saioa hasieratik berrabiatzen du"
+msgstr "Galdeketa-saioa hasieratik berrabiatzen du"
 
 #: kwordquiz.cpp:394
 #, kde-format
 msgid "&Play Audio"
-msgstr ""
+msgstr "Audioa &jo"
 
 #: kwordquiz.cpp:396
 #, kde-format
 msgid "Play associated audio"
-msgstr ""
+msgstr "Jo elkartutako audioa"
 
 #: kwordquiz.cpp:402
 #, kde-format
@@ -659,28 +642,29 @@ msgstr "Esportatu erroreak &honela..."
 #: kwordquiz.cpp:411
 #, kde-format
 msgid "Exports all errors as a new vocabulary document"
-msgstr "Errore guztiak hiztegiaren dokumentu berri batera esportatzen ditu"
+msgstr "Errore guztiak hiztegi-dokumentu berri gisa esportatzen ditu"
 
 #: kwordquiz.cpp:417
 #, kde-format
 msgid "Show Se&arch"
-msgstr "Erakutsi &bilaketa"
+msgstr "Erakutsi bil&aketa"
 
 #: kwordquiz.cpp:419
 #, kde-format
 msgid "Toggle display of the search bar"
-msgstr "Bilaketa-barra ezkutatu/erakusten du"
+msgstr "Txandakatu bilaketa-barra azaltzea"
 
 #: kwordquiz.cpp:424
 #, kde-format
 msgid "Configures sound and other notifications for certain events"
-msgstr "Soinua eta beste zenbait gertaeren jakinarazpenak konfiguratzen ditu"
+msgstr ""
+"Ekitaldi jakin batzuetarako soinu- eta beste jakinarazpen batzuk "
+"konfiguratzen ditu"
 
 #: kwordquiz.cpp:429
 #, kde-format
 msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-msgstr ""
-"Hiztegiaren editorearen eta galdeketako saioaren hobespenak zehazten ditu"
+msgstr "Hiztegi-editorearen eta galdeketa-saioen hobespenak zehazten ditu"
 
 #: kwordquiz.cpp:435
 #, kde-format
@@ -690,12 +674,12 @@ msgstr "<numid>%1</numid> karaktere berezia"
 #: kwordquiz.cpp:447
 #, kde-format
 msgid "Toggles display of the toolbars"
-msgstr "Tresna-barren ezkutatu/erakusten ditu"
+msgstr "Tresna-barren azaltzea txandakatzen du"
 
 #: kwordquiz.cpp:500
 #, kde-format
 msgid "Enter search terms here"
-msgstr "Sartu bilaketako terminoak hemen"
+msgstr "Sartu bilaketa-terminoak hemen"
 
 #: kwordquiz.cpp:523
 #, kde-format
@@ -707,7 +691,7 @@ msgstr "Editorea"
 #: kwordquiz.cpp:528 prefquizbase.ui:192
 #, kde-format
 msgid "Flashcard"
-msgstr "Txartela"
+msgstr "Oroimen-txartela"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
 #: kwordquiz.cpp:532 prefquizbase.ui:149
@@ -716,10 +700,9 @@ msgid "Multiple Choice"
 msgstr "Aukera anizkoitza"
 
 #: kwordquiz.cpp:536
-#, fuzzy, kde-format
-#| msgid "Question && Answer"
+#, kde-format
 msgid "Question & Answer"
-msgstr "Galdera-erantzuna"
+msgstr "Galdera eta erantzuna"
 
 #: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
@@ -735,12 +718,15 @@ msgid ""
 "the lock and open the file anyway.\n"
 "Do you want to open the file?"
 msgstr ""
+"%1\n"
+"Fitxategia erabiltzen duen beste programarik ez dagoela ziur bazaude, "
+"giltzatzea ezikusi eta fitxategia irekitzea erabaki dezakezu.\n"
+"Fitxategia ireki nahi duzu?"
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "Fitxategia irekitzen..."
+msgstr "Ireki fitxategia"
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
@@ -760,23 +746,23 @@ msgid ""
 "The current document has been modified.\n"
 "Do you want to save it?"
 msgstr ""
-"Uneko dokumentua aldatu da.\n"
+"Uneko dokumentua aldatu egin da.\n"
 "Gorde nahi al duzu?"
 
 #: kwordquiz.cpp:779
 #, kde-format
 msgid "Opening a new document window..."
-msgstr "Dokumentu lehio berri bat irekitzen..."
+msgstr "Dokumentu-leiho berri bat irekitzen..."
 
 #: kwordquiz.cpp:791
 #, kde-format
 msgid "&Merge selected files with the current document"
-msgstr "&Batu hautatutako fitxategiak uneko dokumentuarekin"
+msgstr "&Bateratu hautatutako fitxategiak uneko dokumentuarekin"
 
 #: kwordquiz.cpp:796 kwqtutor.cpp:127
 #, kde-format
 msgid "Open Vocabulary Document"
-msgstr "Ireki hiztegi dokumentua"
+msgstr "Ireki hiztegi-dokumentua"
 
 #: kwordquiz.cpp:865
 #, kde-format
@@ -791,12 +777,12 @@ msgstr "Fitxategia izen berri batekin gordetzen..."
 #: kwordquiz.cpp:912
 #, kde-format
 msgid "HTML Document"
-msgstr ""
+msgstr "HTML dokumentua"
 
 #: kwordquiz.cpp:914
 #, kde-format
 msgid "Save Vocabulary Document As"
-msgstr "Gorde hiztegi dokumentua honela"
+msgstr "Gorde hiztegi-dokumentua honela"
 
 #: kwordquiz.cpp:962
 #, kde-format
@@ -809,21 +795,20 @@ msgid "Printing..."
 msgstr "Inprimatzen..."
 
 #: kwordquiz.cpp:991
-#, fuzzy, kde-format
-#| msgid "Saving file..."
+#, kde-format
 msgid "Showing Preview..."
-msgstr "Fitxategia gordetzen..."
+msgstr "Aurreikuspegia erakusten..."
 
 #: kwordquiz.cpp:999
 #, kde-format
 msgctxt "@info:status quitting"
 msgid "Quitting..."
-msgstr "Irtetzen..."
+msgstr "Irteten..."
 
 #: kwordquiz.cpp:1021
 #, kde-format
 msgid "Cutting selection..."
-msgstr "Hautapena mozten..."
+msgstr "Hautapena ebakitzen..."
 
 #: kwordquiz.cpp:1028
 #, kde-format
@@ -833,7 +818,7 @@ msgstr "Hautapena arbelera kopiatzen..."
 #: kwordquiz.cpp:1035
 #, kde-format
 msgid "Inserting clipboard contents..."
-msgstr "Arbelaren edukinak txertatzen..."
+msgstr "Arbelaren edukia txertatzen..."
 
 #: kwordquiz.cpp:1042
 #, kde-format
@@ -843,22 +828,22 @@ msgstr "Hautatutako gelaxkak garbitzen..."
 #: kwordquiz.cpp:1049
 #, kde-format
 msgid "Inserting rows..."
-msgstr "Lerroak txertatzen..."
+msgstr "Errenkadak txertatzen..."
 
 #: kwordquiz.cpp:1056
 #, kde-format
 msgid "Deleting selected rows..."
-msgstr "Hautatutako lerroak ezabatzen..."
+msgstr "Hautatutako errenkadak ezabatzen..."
 
 #: kwordquiz.cpp:1063
 #, kde-format
 msgid "Marking selected text as a blank..."
-msgstr "Hautatutako testus hutsune bezala markatzen"
+msgstr "Hautatutako testua huts bezala markatzen..."
 
 #: kwordquiz.cpp:1070
 #, kde-format
 msgid "Removing blank markings..."
-msgstr "Hutsune markak kentzen..."
+msgstr "Huts-markak kentzen..."
 
 #: kwordquiz.cpp:1077
 #, kde-format
@@ -873,22 +858,22 @@ msgstr "Hiztegiaren letra-tipoa ezartzen..."
 #: kwordquiz.cpp:1106
 #, kde-format
 msgid "Linking an image with the current entry..."
-msgstr ""
+msgstr "Irudi bat uneko sarrerarekin estekatzen..."
 
 #: kwordquiz.cpp:1114
 #, kde-format
 msgid "Linking a sound with the current entry..."
-msgstr ""
+msgstr "Soinu bat uneko sarrerarekin estekatzen..."
 
 #: kwordquiz.cpp:1122
 #, kde-format
 msgid "Adjusting row heights..."
-msgstr "Errenkaden altuerak doitzen..."
+msgstr "Errenkaden altuera doitzen..."
 
 #: kwordquiz.cpp:1131
 #, kde-format
 msgid "Randomizing the vocabulary..."
-msgstr "Hiztegia ausazkoa bihurtzen..."
+msgstr "Hiztegia ausaz nahasten..."
 
 #: kwordquiz.cpp:1139
 #, kde-format
@@ -898,22 +883,22 @@ msgstr "Modua eguneratzen..."
 #: kwordquiz.cpp:1153
 #, kde-format
 msgid "Starting editor session..."
-msgstr "Editore-sesioa abiatzen..."
+msgstr "Editore-saioa hasten..."
 
 #: kwordquiz.cpp:1160
 #, kde-format
 msgid "Starting flashcard session..."
-msgstr "Txartel-sesioa abiatzen..."
+msgstr "Oroimen-txartel saioa hasten..."
 
 #: kwordquiz.cpp:1167
 #, kde-format
 msgid "Starting multiple choice session..."
-msgstr "Aukera anizkoitza sesioa abiatzen..."
+msgstr "Aukera anizkoitzeko saioa hasten..."
 
 #: kwordquiz.cpp:1174
 #, kde-format
 msgid "Starting question & answer session..."
-msgstr "Galdera-erantzun sesioa abiatzen..."
+msgstr "«Galdera eta erantzuna» saioa hasten..."
 
 #: kwordquiz.cpp:1326
 #, kde-format
@@ -928,17 +913,17 @@ msgstr "%1 karakterea txertatzen du"
 #: kwordquiz.cpp:1378
 #, kde-format
 msgid "This will restart your quiz. Do you wish to continue?"
-msgstr "Honek galdeketa berrabiaraziko du. Jarraitu nahi al duzu?"
+msgstr "Honek zure galdeketa berrabiaraziko du. Jarraitu nahi al duzu?"
 
 #: kwordquiz.cpp:1394
 #, kde-format
 msgid "&1 %1 -> %2 In Order"
-msgstr "&1 %1 -> %2 ordenean"
+msgstr "&1 %1 -> %2 ordenan"
 
 #: kwordquiz.cpp:1395
 #, kde-format
 msgid "&2 %1 -> %2 In Order"
-msgstr "&2 %1 -> %2 ordenean"
+msgstr "&2 %1 -> %2 ordenan"
 
 #: kwordquiz.cpp:1396
 #, kde-format
@@ -951,15 +936,14 @@ msgid "&4 %1 -> %2 Randomly"
 msgstr "&4 %1 -> %2 ausaz"
 
 #: kwordquiz.cpp:1398
-#, fuzzy, kde-format
-#| msgid "&3 %1 -> %2 Randomly"
+#, kde-format
 msgid "&5 %1 <-> %2 Randomly"
-msgstr "&3 %1 -> %2 ausaz"
+msgstr "&5 %1 <-> %2 ausaz"
 
 #: kwordquiz.cpp:1405 kwordquiz.cpp:1408
 #, kde-format
 msgid "%1 -> %2 In Order"
-msgstr "%1 -> %2 ordenean"
+msgstr "%1 -> %2 ordenan"
 
 #: kwordquiz.cpp:1411 kwordquiz.cpp:1414
 #, kde-format
@@ -975,119 +959,115 @@ msgstr "%1 &lt;-&gt; %2 ausaz"
 #: kwordquiz.kcfg:10
 #, kde-format
 msgid "Is this the first time KWordQuiz is run?"
-msgstr "Hau al da KWordQuiz abiatu deneko lehenengo aldia?"
+msgstr "Hau al da «KWordQuiz» exekutatzen den lehen aldia?"
 
 #. i18n: ectx: label, entry (ShowSearch), group (General)
 #: kwordquiz.kcfg:14
 #, kde-format
 msgid "Toggle display of the search bar."
-msgstr "Bilaketa-barra ezkutatu/erakusten du."
+msgstr "Txandakatu bilaketa-barra azaltzea."
 
 #. i18n: ectx: label, entry (StartSession), group (General)
 #: kwordquiz.kcfg:18
 #, kde-format
 msgid "Type of session to use when opening files"
-msgstr "Saio mota fitxategiak irekitzean erabiltzeko"
+msgstr "Fitxategiak irekitzean erabili beharreko saio-mota"
 
 #. i18n: ectx: label, entry (PrintStyle), group (General)
 #: kwordquiz.kcfg:28
 #, kde-format
 msgid "Type of printout to generate"
-msgstr "Inprimaketa mota sortzeko"
+msgstr "Sortu beharreko inprimaketa-mota"
 
 #. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
 #: kwordquiz.kcfg:39
 #, kde-format
 msgid "Titles for column 1"
-msgstr "1 zutabearen izenburua"
+msgstr "1 zutaberako izenburua"
 
 #. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
 #: kwordquiz.kcfg:43
 #, kde-format
 msgid "Titles for column 2"
-msgstr "2 zutabearen izenburua"
+msgstr "2 zutaberako izenburua"
 
 #. i18n: ectx: label, entry (EditorFont), group (Editor)
 #: kwordquiz.kcfg:47
 #, kde-format
 msgid "Font used in the editor"
-msgstr "Editorean erabiliko den letra-tipoa"
+msgstr "Editorean erabilitako letra-tipoa"
 
 #. i18n: ectx: label, entry (EnableBlanks), group (Editor)
 #: kwordquiz.kcfg:51
 #, kde-format
 msgid "If Fill-in-the-blank should be enabled"
-msgstr "\"Hutsuneak bete\" gaitu behar den ala ez"
+msgstr "«Hutsuneak bete» gaitu behar den ala ez"
 
 #. i18n: ectx: label, entry (EnterMove), group (Editor)
 #: kwordquiz.kcfg:55
 #, kde-format
 msgid "Direction the Enter key moves in the editor"
-msgstr "\"Enter\" teklak editorean mugitzen duen norabidea"
+msgstr "Editorean «Sartu» teklak mugitzen duen noranzkoa"
 
 #. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
 #: kwordquiz.kcfg:59
 #, kde-format
 msgid "Characters for the special character toolbar"
-msgstr "Karaktere berezien tresna-barraren karaktereak"
+msgstr "Karaktere berezien tresna-barrarako karaktereak"
 
 #. i18n: ectx: label, entry (ClearAll), group (Editor)
 #: kwordquiz.kcfg:63
-#, fuzzy, kde-format
-#| msgid "Clears the content of the selected cells"
+#, kde-format
 msgid "Clear all data in selected entries"
-msgstr "Hautatutako gelaxken edukina garbitzen du"
+msgstr "Hautatutako sarreretako datu guztiak garbitu"
 
 #. i18n: ectx: label, entry (ClearText), group (Editor)
 #: kwordquiz.kcfg:67
-#, fuzzy, kde-format
-#| msgid "Clears the content of the selected cells"
+#, kde-format
 msgid "Clear the text in selected entries"
-msgstr "Hautatutako gelaxken edukina garbitzen du"
+msgstr "Hautatutako sarreretako testua garbitu"
 
 #. i18n: ectx: label, entry (ClearImageLink), group (Editor)
 #: kwordquiz.kcfg:71
-#, fuzzy, kde-format
-#| msgid "Clears the content of the selected cells"
+#, kde-format
 msgid "Clear the image link in selected entries"
-msgstr "Hautatutako gelaxken edukina garbitzen du"
+msgstr "Hautatutako sarreretan irudi-esteka garbitu"
 
 #. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
 #: kwordquiz.kcfg:75
-#, fuzzy, kde-format
-#| msgid "Clears the content of the selected cells"
+#, kde-format
 msgid "Clear the sound link in selected entries"
-msgstr "Hautatutako gelaxken edukina garbitzen du"
+msgstr "Hautatutako sarreretan soinu-esteka garbitu"
 
 #. i18n: ectx: label, entry (AutoCheck), group (Quiz)
 #: kwordquiz.kcfg:81
 #, kde-format
 msgid "Automatically check selected answer in multiple choice"
-msgstr "Automatikoki egiaztatu hautatutako eranzunak aukera anizkoitzetan"
+msgstr "Aukera anizkoitzean hautatutako erantzuna automatikoki egiaztatu"
 
 #. i18n: ectx: label, entry (AutoFlip), group (Quiz)
 #: kwordquiz.kcfg:85
 #, kde-format
 msgid "Automatically flip flashcard"
-msgstr "Automatikoki irauli txartela"
+msgstr "Oroimen-txartela automatikoki irauli"
 
 #. i18n: ectx: label, entry (FlipDelay), group (Quiz)
 #: kwordquiz.kcfg:89
 #, kde-format
 msgid "Time delay for flipping flashcard"
-msgstr "Denbora-atzerapena txartela iraultzeko"
+msgstr "Oroimen-txartela irauli aurreko atzerapen-denbora"
 
 #. i18n: ectx: label, entry (HintError), group (Quiz)
 #: kwordquiz.kcfg:93
 #, kde-format
 msgid "Treat use of hint as error"
-msgstr "Kontsideratu argibidea errore bezala"
+msgstr "Argibide-erabilera errore gisa tratatu"
 
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
 #: kwordquiz.kcfg:97
 #, kde-format
 msgid "Count flashcard as correct or error"
-msgstr "Kontatu txartela zuzena edo errore bezala"
+msgstr "Zenbatu oroimen-txartela zuzen edo errore gisa"
 
 #. i18n: ectx: label, entry (Mode), group (Quiz)
 #: kwordquiz.kcfg:101
@@ -1099,67 +1079,67 @@ msgstr "Galdeketa modua"
 #: kwordquiz.kcfg:105
 #, kde-format
 msgid "Show score as percentage"
-msgstr "Erakutsi puntuazioa portzentai bezala"
+msgstr "Erakutsi puntuazioa ehuneko gisa"
 
 #. i18n: ectx: label, entry (FrontFont), group (FlashCard)
 #: kwordquiz.kcfg:111
 #, kde-format
 msgid "Font used for front of flashcard"
-msgstr "Txartelen aurpegian erabiliko den letra-tipoa"
+msgstr "Oroimen-txartelaren aurrealdean erabilitako letra-tipoa"
 
 #. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
 #: kwordquiz.kcfg:115
 #, kde-format
 msgid "Color used for text on front of flashcard"
-msgstr "Txartelen aurpegiko testuan erabiliko den kolorea"
+msgstr "Oroimen-txartelaren aurrealdeko testuarekin erabilitako kolorea"
 
 #. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
 #: kwordquiz.kcfg:119
 #, kde-format
 msgid "Color used for front of flashcard"
-msgstr "Txartelen aurpegian erabiliko den kolorea"
+msgstr "Oroimen-txartelaren aurrealdeko kolorea"
 
 #. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
 #: kwordquiz.kcfg:123
 #, kde-format
 msgid "Color used for frame on front of flashcard"
-msgstr "Txartelaren aurpegiko markoan erabiliko den kolorea"
+msgstr "Oroimen-txartelaren aurrealdeko markoan erabilitako kolorea"
 
 #. i18n: ectx: label, entry (BackFont), group (FlashCard)
 #: kwordquiz.kcfg:127
 #, kde-format
 msgid "Font used for back of flashcard"
-msgstr "Txartelaren atzeko aldean erabiliko den letra-tipoa"
+msgstr "Oroimen-txartelaren atzealdean erabilitako letra-tipoa"
 
 #. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
 #: kwordquiz.kcfg:131
 #, kde-format
 msgid "Color used for text on back of flashcard"
-msgstr "Txartelaren atzeko aldeko testuan erabiliko den kolorea"
+msgstr "Oroimen-txartelaren atzealdeko testuan erabilitako kolorea"
 
 #. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
 #: kwordquiz.kcfg:135
 #, kde-format
 msgid "Color used for back of flashcard"
-msgstr "Txartelaren atzeko aldean erabiliko den kolorea"
+msgstr "Oroimen-txartelaren atzealdeko kolorea"
 
 #. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
 #: kwordquiz.kcfg:139
 #, kde-format
 msgid "Color used for frame on back of flashcard"
-msgstr "Txartelaren atzeko aldeko markoan erabiliko den kolorea"
+msgstr "Oroimen-txartelaren atzealdeko markoan erabilitako kolorea"
 
 #. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
 #: kwordquiz.kcfg:145
 #, kde-format
 msgid "The Providers path for KWordQuiz"
-msgstr "KWordQuiz-en hornitzaileen bide-izena"
+msgstr "«KWordQuiz»erako hornitzaileen bide-izena"
 
 #. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
 #: kwordquiz.kcfg:149
 #, kde-format
 msgid "The command used to start a downloaded vocabulary"
-msgstr "Deskargatutako hiztegia abiatzeko agindua"
+msgstr "Zama-jaitsitako hiztegia hasteko komandoa"
 
 #. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
 #: kwordquiz.kcfg:153
@@ -1168,44 +1148,44 @@ msgid ""
 "The folder where downloaded vocabularies are saved by default (relative to "
 "$HOME)"
 msgstr ""
-"Deskargatutako hiztegiak lehenespenez gordeko diren karpeta ($HOME-ekiko "
+"Zama-jaitsitako hiztegiak gordetzeko karpeta lehenetsia («$HOME»ekiko "
 "erlatiboa)"
 
 #. i18n: ectx: label, entry (TutorTiming), group (Tutor)
 #: kwordquiz.kcfg:159
 #, kde-format
 msgid "Pop up flashcards at fixed or random intervals"
-msgstr ""
+msgstr "Gaineratu oroimen-txartela bitarte finkoan edo ausazkoan"
 
 #. i18n: ectx: label, entry (TutorEvery), group (Tutor)
 #: kwordquiz.kcfg:167
 #, kde-format
 msgid "The interval in minutes at which to pop up a flash card"
-msgstr ""
+msgstr "Oroimen-txartel bat gaineratzeko bitartea minututan"
 
 #. i18n: ectx: label, entry (TutorMin), group (Tutor)
 #: kwordquiz.kcfg:171
 #, kde-format
 msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr ""
+msgstr "Oroimen-txartel bat gaineratzeko gutxieneko bitartea minututan"
 
 #. i18n: ectx: label, entry (TutorMax), group (Tutor)
 #: kwordquiz.kcfg:175
 #, kde-format
 msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr ""
+msgstr "Oroimen-txartel bat gaineratzeko gehieneko bitartea minututan"
 
 #. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
 #: kwordquiz.kcfg:179
 #, kde-format
 msgid "Geometry of the last flash card"
-msgstr ""
+msgstr "Azken oroimen-txartelaren geometria"
 
 #. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
 #: kwordquiz.kcfg:183
 #, kde-format
 msgid "Show flash card in a native KWordQuiz style"
-msgstr ""
+msgstr "Erakutsi oroimen-txartela «KWordQuiz»eko jatorrizko estiloan"
 
 #. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
 #: kwordquiz.kcfg:191
@@ -1214,12 +1194,15 @@ msgid ""
 "Last open vocabulary file to be opened automatically if none other is "
 "specified on the command line"
 msgstr ""
+"Komando-lerroan besterik zehazten ez bada, automatikoki ireki beharreko "
+"irekitako azken hiztegi-fitxategia"
 
 #. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
 #: kwordquiz.kcfg:195
 #, kde-format
 msgid "Start exercise as soon as the user opens vocabulary file"
 msgstr ""
+"Hasi ariketa erabiltzaileak hiztegi-fitxategia irekitzen duen bezain laster"
 
 #: kwordquizprefs.cpp:24
 #, kde-format
@@ -1258,28 +1241,22 @@ msgid "Quiz Settings"
 msgstr "Galdeketaren ezarpenak"
 
 #: kwordquizprefs.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@title:group flash appearance settings"
-#| msgid ""
-#| "Flashcard\n"
-#| "Appearance"
+#, kde-format
 msgctxt "@title:group flash appearance settings"
 msgid "Flashcard Appearance"
-msgstr ""
-"Txartelaren\n"
-"itxura"
+msgstr "Oroimen-txartelaren itxura"
 
 #: kwordquizprefs.cpp:33
 #, kde-format
 msgctxt "@title:group flash appearance settings"
 msgid "Flashcard Appearance Settings"
-msgstr "Txartelaren itxuraren ezarpenak"
+msgstr "Oroimen-txartelaren itxuraren ezarpenak"
 
 #: kwordquizprefs.cpp:36
 #, kde-format
 msgctxt "@title:group special character settings"
 msgid "Special Characters"
-msgstr "Karaketere bereziak"
+msgstr "Karaktere bereziak"
 
 #. i18n: ectx: Menu (vocabulary)
 #: kwordquizui.rc:16
@@ -1310,13 +1287,13 @@ msgstr "Galdeketa"
 #: kwordquizui.rc:75
 #, kde-format
 msgid "Special Characters"
-msgstr "Karaketere bereziak"
+msgstr "Karaktere bereziak"
 
 #: kwqcleardialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Clear Contents"
-msgstr ""
+msgstr "Garbitu edukia"
 
 #: kwqcommands.cpp:74
 #, kde-format
@@ -1373,10 +1350,10 @@ msgid "Column Settings"
 msgstr "Zutabearen ezarpenak"
 
 #: kwqcommands.cpp:400
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inmenu undo link image"
 msgid "Link Image"
-msgstr ""
+msgstr "Estekatu irudi %1"
 
 #: kwqcommands.cpp:419
 #, kde-format
@@ -1491,7 +1468,7 @@ msgstr "Errore bat dago \"Hutsuneak bete\"-ko parentesiekin"
 #| msgid "Select Character"
 msgctxt "@title:window"
 msgid "Select Image"
-msgstr "Hautatu karakterea"
+msgstr "Hautatu irudia"
 
 #: kwqtableview.cpp:743
 #, fuzzy, kde-format
@@ -1502,9 +1479,9 @@ msgid "Select Sound"
 msgstr "&Hautatu"
 
 #: kwqtableview.cpp:743
-#, kde-format
+#, fuzzy, kde-format
 msgid "All Files (*)"
-msgstr ""
+msgstr "Fitxategi guztiak (*)"
 
 #: kwqtutor.cpp:26
 #, kde-format
@@ -1568,7 +1545,7 @@ msgstr "Editorearen ezarpenak"
 #| msgid "Shortcut"
 msgctxt "Shortcuts Config"
 msgid "Shortcuts"
-msgstr "Lasterbidea"
+msgstr "Lasterbideak"
 
 #: kwqtutorprefs.cpp:25
 #, fuzzy, kde-format
@@ -2240,7 +2217,7 @@ msgstr "Zehaztu galdera-erantzun sesio baten portamoldea"
 #: prefquizbase.ui:47
 #, kde-format
 msgid "Question && Answer"
-msgstr "Galdera-erantzuna"
+msgstr "Galdera eta erantzuna"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
 #: prefquizbase.ui:71
@@ -2411,9 +2388,9 @@ msgstr "Editorearen ezarpenak"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
 #: preftutorbase.ui:23
-#, kde-format
+#, fuzzy, kde-format
 msgid "&Every"
-msgstr ""
+msgstr "Hainbestero:"
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
 #: preftutorbase.ui:60
@@ -2431,9 +2408,9 @@ msgstr "&3 %1 -> %2 ausaz"
 
 #. i18n: ectx: property (text), widget (QLabel, labelBetween)
 #: preftutorbase.ui:100
-#, kde-format
+#, fuzzy, kde-format
 msgid "Between"
-msgstr ""
+msgstr "artean"
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
 #: preftutorbase.ui:120
@@ -2463,9 +2440,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
 #: preftutorbase.ui:167
-#, kde-format
+#, fuzzy, kde-format
 msgid "&Native"
-msgstr ""
+msgstr "Jatorrizkoa"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
 #: preftutorbase.ui:177
@@ -2475,9 +2452,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
 #: preftutorbase.ui:187
-#, kde-format
+#, fuzzy, kde-format
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Beste zenbait"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
 #: preftutorbase.ui:193
