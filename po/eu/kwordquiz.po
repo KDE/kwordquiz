@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-01 00:53+0000\n"
-"PO-Revision-Date: 2023-02-18 23:57+0100\n"
+"PO-Revision-Date: 2023-02-19 20:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -27,12 +27,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ion Gaztañaga"
+msgstr "Iñigo Salvador Azurmendi,Ion Gaztañaga"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "igaztanaga@gmail.com"
+msgstr "xalba@ni.eus,igaztanaga@gmail.com"
 
 #. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
 #: cleardialogbase.ui:21
@@ -290,7 +290,7 @@ msgstr ""
 #: kwordquiz.cpp:100
 #, kde-format
 msgid "Creates a new blank vocabulary document"
-msgstr "Hutsik dagoen hiztegi-dokumentu berri bat sortzen du"
+msgstr "Hiztegi-dokumentu huts berri bat sortzen du"
 
 #: kwordquiz.cpp:105
 #, kde-format
@@ -384,19 +384,18 @@ msgstr "Hautatutako lerroa(k) ezabatzen d(it)u"
 #: kwordquiz.cpp:196
 #, kde-format
 msgid "&Mark as Blank"
-msgstr "&Markatu hutsune bezala"
+msgstr "&Markatu hutsune gisa"
 
 #: kwordquiz.cpp:198
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
 msgstr ""
-"Uneko edo hautatutako hitza hutsune bezala markatzen du \"Hutsuneak bete\"-"
-"rako"
+"Uneko edo hautatutako hitza hutsune gisa markatzen du «Hutsuneak bete»tzeko"
 
 #: kwordquiz.cpp:205
 #, kde-format
 msgid "&Unmark Blanks"
-msgstr "&Desmarkatu  hutsune bezala"
+msgstr "&Kendu hutsune markak"
 
 #: kwordquiz.cpp:206
 #, kde-format
@@ -838,12 +837,12 @@ msgstr "Hautatutako errenkadak ezabatzen..."
 #: kwordquiz.cpp:1063
 #, kde-format
 msgid "Marking selected text as a blank..."
-msgstr "Hautatutako testua huts bezala markatzen..."
+msgstr "Hautatutako testua hutsune gisa markatzen..."
 
 #: kwordquiz.cpp:1070
 #, kde-format
 msgid "Removing blank markings..."
-msgstr "Huts-markak kentzen..."
+msgstr "Hutsune markak kentzen..."
 
 #: kwordquiz.cpp:1077
 #, kde-format
@@ -1001,7 +1000,7 @@ msgstr "Editorean erabilitako letra-tipoa"
 #: kwordquiz.kcfg:51
 #, kde-format
 msgid "If Fill-in-the-blank should be enabled"
-msgstr "«Hutsuneak bete» gaitu behar den ala ez"
+msgstr "«Hutsunea bete» gaitu behar den ala ez"
 
 #. i18n: ectx: label, entry (EnterMove), group (Editor)
 #: kwordquiz.kcfg:55
@@ -1341,25 +1340,25 @@ msgstr "Ezabatu"
 #, kde-format
 msgctxt "@item:inmenu undo unmark blank"
 msgid "Unmark Blank"
-msgstr "Kendu hutsuneen marka"
+msgstr "Kendu hutsune marka"
 
 #: kwqcommands.cpp:355
 #, kde-format
 msgctxt "@item:inmenu undo column titles"
 msgid "Column Settings"
-msgstr "Zutabearen ezarpenak"
+msgstr "Zutabe-ezarpenak"
 
 #: kwqcommands.cpp:400
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu undo link image"
 msgid "Link Image"
-msgstr "Estekatu irudi %1"
+msgstr "Estekatu irudia"
 
 #: kwqcommands.cpp:419
 #, kde-format
 msgctxt "@item:inmenu undo link sound"
 msgid "Link Sound"
-msgstr ""
+msgstr "Estekatu soinua"
 
 #: kwqcommands.h:93
 #, kde-format
@@ -1383,7 +1382,7 @@ msgstr "Galderak"
 #: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
 #, kde-format
 msgid "The number of questions in the session"
-msgstr "Sesioko galdera kopurua"
+msgstr "Saioko galdera kopurua"
 
 #. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
 #. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
@@ -1408,7 +1407,7 @@ msgstr "Erantzun zuzenak"
 #, kde-format
 msgid ""
 "The number of questions answered correctly. May be shown as a percentage."
-msgstr "Ongi erantzundako galdera kopurua. Portzentai bezala erakutsi daiteke."
+msgstr "Ongi erantzundako galdera kopurua. Ehuneko gisa erakuts daiteke."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, picError)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
@@ -1423,8 +1422,7 @@ msgstr "Erantzun okerrak"
 #, kde-format
 msgid ""
 "The number of questions answered incorrectly. May be shown as a percentage."
-msgstr ""
-"Gaizki erantzundako galdera kopurua. Portzentai bezala erakutsi daiteke."
+msgstr "Gaizki erantzundako galdera kopurua. Ehuneko gisa erakuts daiteke."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
 #. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
@@ -1438,8 +1436,7 @@ msgstr "Erantzundako galderak"
 #: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
 #, kde-format
 msgid "The number of questions already answered. May be shown as a percentage."
-msgstr ""
-"Dagoeneko erantzundako galdera kopurua. Portzentai bezala erakutsi daiteke."
+msgstr "Dagoeneko erantzundako galdera kopurua. Ehuneko gisa erakuts daiteke."
 
 #: kwqtablemodel.cpp:211
 #, kde-format
@@ -1460,26 +1457,22 @@ msgstr "Puntuazioa"
 #: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
-msgstr "Errore bat dago \"Hutsuneak bete\"-ko parentesiekin"
+msgstr "Errore bat dago «Hutsunea bete»ko parentesiekin"
 
 #: kwqtableview.cpp:723
-#, fuzzy, kde-format
-#| msgctxt "@title:window select character dialog"
-#| msgid "Select Character"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "Hautatu irudia"
 
 #: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgctxt "@action:button select"
-#| msgid "&Select"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
-msgstr "&Hautatu"
+msgstr "Hautatu soinua"
 
 #: kwqtableview.cpp:743
-#, fuzzy, kde-format
+#, kde-format
 msgid "All Files (*)"
 msgstr "Fitxategi guztiak (*)"
 
@@ -1493,65 +1486,66 @@ msgid ""
 "with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
 "and select Preferences. There you can assign keyboard shortcuts.</qt>"
 msgstr ""
+"<qt>«KWordQuiz» Tutoreak oroimen-txartelak zure pantailan azaltzeko duen "
+"eragatik, haiek azaleratzeko denbora bitartea ezartzeko aukera ematen dizu."
+"<br /><br />Oroimen-txartelak era ez-oztopatzailean gaineratzen dira, fokua "
+"lapurtu gabe, beste programa batzuekin lanean ari zarenean jarraitzeko "
+"arazorik sortu gabe.<br /><br />Paneleko «KWordQuiz» Tutorearen ikonoan "
+"eskuin-klik egin eta Hobespenak hautatu. Bertan teklatuko lasterbideak eslei "
+"ditzakezu.</qt>"
 
 #: kwqtutor.cpp:32
 #, kde-format
 msgid "Tutor"
-msgstr ""
+msgstr "Tutorea"
 
 #: kwqtutor.cpp:43 kwqtutor.cpp:116
 #, kde-format
 msgid "Start Exercise"
-msgstr ""
+msgstr "Hasi ariketa"
 
 #: kwqtutor.cpp:53
 #, kde-format
 msgid "Configure KWordQuiz Tutor..."
-msgstr ""
+msgstr "Konfiguratu «KWordQuiz Tutorea»..."
 
 #: kwqtutor.cpp:58
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Close Flash Card"
-msgstr "Txartela"
+msgstr "Itxi oroimen-txartela"
 
 #: kwqtutor.cpp:63
-#, fuzzy, kde-format
-#| msgid "&Flip Card"
+#, kde-format
 msgid "Flip Flash Card"
-msgstr "&Irauli txartela"
+msgstr "Irauli oroimen-txartela"
 
 #: kwqtutor.cpp:108
 #, kde-format
 msgid "Stop Exercise"
-msgstr ""
+msgstr "Gelditu ariketa"
 
 #: kwqtutorprefs.cpp:22
 #, kde-format
 msgctxt "@title:group tutor settings"
 msgid "Tutor"
-msgstr ""
+msgstr "Tutorea"
 
 #: kwqtutorprefs.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title:group editor settings"
-#| msgid "Editor Settings"
+#, kde-format
 msgctxt "@title:group tutor settings"
 msgid "Tutor Settings"
-msgstr "Editorearen ezarpenak"
+msgstr "Tutorearen ezarpenak"
 
 #: kwqtutorprefs.cpp:25
-#, fuzzy, kde-format
-#| msgid "Shortcut"
+#, kde-format
 msgctxt "Shortcuts Config"
 msgid "Shortcuts"
 msgstr "Lasterbideak"
 
 #: kwqtutorprefs.cpp:25
-#, fuzzy, kde-format
-#| msgid "Column Settings"
+#, kde-format
 msgid "Shortcuts Settings"
-msgstr "Zutabearen ezarpenak"
+msgstr "Lasterbideen ezarpenak"
 
 #: main.cpp:34
 #, kde-format
@@ -1564,10 +1558,9 @@ msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Txartel eta hiztegi bidezko ikasteko programa aparta"
 
 #: main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2003-2007, Peter Hedlund"
+#, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
-msgstr "(c) 2003-2007, Peter Hedlund"
+msgstr "(c) 2003-2010, Peter Hedlund"
 
 #: main.cpp:42
 #, kde-format
@@ -1604,12 +1597,7 @@ msgstr ""
 "1-5 arteko zenbaki bat"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
@@ -1617,15 +1605,16 @@ msgid ""
 "'qa' for question and answer, \n"
 "'tutor' for tutor"
 msgstr ""
-"Hasteko sesio mota:\n"
-"'txartela' txartelentzat,\n"
-"'an' aukera anizkoitzentzat, \n"
-"'ga' galdera eta erantzunentzat"
+"Zein saio-motarekin hasi:\n"
+"'flash' oroimen-txarteletarako,\n"
+"'mc' aukera anizkoitzetarako, \n"
+"'qa' galdera eta erantzunetarako, \n"
+"'tutor' tutorerako"
 
 #: main.cpp:59
 #, kde-format
 msgid "File to open"
-msgstr "Irekitzeko fitxategia"
+msgstr "Ireki beharreko fitxategia"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
 #: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
@@ -1668,13 +1657,13 @@ msgstr "Galdera"
 #: multipleviewbase.ui:73 qaviewbase.ui:60
 #, kde-format
 msgid "Language or other identifier for the question"
-msgstr "Galderaren hizkuntza edo beste identifikatzaile bat"
+msgstr "Hizkuntza edo galderaren beste identifikatzaile bat"
 
 #. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
 #: multipleviewbase.ui:76 qaviewbase.ui:63
 #, kde-format
 msgid "Language 1"
-msgstr "1 hizkuntza"
+msgstr "1. hizkuntza"
 
 #. i18n: ectx: property (text), widget (QLabel, lblQuestion)
 #: multipleviewbase.ui:98 qaviewbase.ui:107
@@ -1699,7 +1688,7 @@ msgstr "Zure aukerak"
 #: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
 #, kde-format
 msgid "Three choices for the answer. One is correct."
-msgstr "Hiru aukera erantzunarentzat. Bakarra da zuzena."
+msgstr "Erantzuteko hiru aukera. Bakarra da zuzena."
 
 #. i18n: ectx: property (text), widget (QRadioButton, opt2)
 #: multipleviewbase.ui:192
@@ -1717,7 +1706,7 @@ msgstr "&1. aukera"
 #: multipleviewbase.ui:258 qaviewbase.ui:208
 #, kde-format
 msgid "Language or other identifier for the answer"
-msgstr "Erantzunaren hizkuntza edo beste identifikatzaile bat"
+msgstr "Hizkuntza edo galderaren beste identifikatzaile bat"
 
 #. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
 #: multipleviewbase.ui:261 qaviewbase.ui:211
@@ -1752,7 +1741,7 @@ msgstr "Aurreko galdera"
 #: multipleviewbase.ui:375 qaviewbase.ui:316
 #, kde-format
 msgid "This was your question"
-msgstr "Hau zen zure galdera"
+msgstr "Hau izan da zure galdera"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
@@ -1769,13 +1758,13 @@ msgstr "Zure aurreko erantzuna"
 #: qaviewbase.ui:414
 #, kde-format
 msgid "Your answer to the previous question"
-msgstr "Aurreko galderari emandako zure erantzuna"
+msgstr "Aurreko galderari zuk emandako erantzuna"
 
 #. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
 #: multipleviewbase.ui:501 qaviewbase.ui:417
 #, kde-format
 msgid "This was your answer"
-msgstr "Hau zen zure erantzuna"
+msgstr "Hau izan da zure erantzuna"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
@@ -1792,13 +1781,13 @@ msgstr "Aurreko erantzun zuzena"
 #: qaviewbase.ui:537
 #, kde-format
 msgid "The correct answer to the previous question"
-msgstr "Aurreko galderaren erantzun zuzena"
+msgstr "Aurreko galderari zuk emandako erantzuna"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCorrect)
 #: multipleviewbase.ui:580 qaviewbase.ui:540
 #, kde-format
 msgid "This was the correct answer"
-msgstr "Hau zen erantzun zuzena"
+msgstr "Hau izan da erantzun zuzena"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: multipleviewbase.ui:649
@@ -1807,8 +1796,8 @@ msgid ""
 "<html>There are too few entries in your vocabulary.<br />You need at least "
 "three entries for a multiple choice quiz.</html>"
 msgstr ""
-"<html>Sarrera gutxiegi dago zure hiztegian.<br />Gutxienez hiru sarrera "
-"behar dituzu aukera anitzeko galdeketan.</html>"
+"<html>Zure hiztegian sarrera gutxiegi daude.<br />Gutxienez hiru sarrera "
+"behar dituzu aukera anitzeko galdeketarako.</html>"
 
 #: prefcardappearance.cpp:66
 #, kde-format
@@ -1824,7 +1813,7 @@ msgstr "Erantzuna"
 #: prefcardappearance.cpp:80
 #, kde-format
 msgid "Front"
-msgstr "Aurpegia"
+msgstr "Aurreko aldea"
 
 #: prefcardappearance.cpp:81
 #, kde-format
@@ -1847,7 +1836,7 @@ msgstr "Irauli txartela"
 #: prefcardappearancebase.ui:95
 #, kde-format
 msgid "Use to show the other side of the card"
-msgstr "Erabili txartelaren beste aldea ikusteko"
+msgstr "Erabili txartelaren beste aldea erakusteko"
 
 #. i18n: ectx: property (text), widget (QPushButton, flipButton)
 #: prefcardappearancebase.ui:98
@@ -1865,7 +1854,8 @@ msgstr "&Letra-tipoa:"
 #: prefcardappearancebase.ui:146
 #, kde-format
 msgid "Use to select the font for displaying text on the back of the card"
-msgstr "Erabili txartelaren atzeko aldeko testuaren letra-tipoa hautatzeko"
+msgstr ""
+"Erabili txartelaren atzeko aldeko testua azaltzeko letra-tipoa hautatzeko"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
@@ -1879,7 +1869,7 @@ msgstr "Hautatu testuaren kolorea"
 #: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
 #, kde-format
 msgid "Use to select the color for text shown on the card"
-msgstr "Erabili txartelean erakutsiko den testuaren kolorea hautatzeko"
+msgstr "Erabili txartelean erakutsitako testuaren kolorea hautatzeko"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
@@ -1907,13 +1897,14 @@ msgstr "Hautatu txartelaren kolorea"
 #: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
 #, kde-format
 msgid "Select color used to draw the card"
-msgstr "Erabili txartela marrazteko kolorea hautatzeko"
+msgstr "Hautatu txartela marrazteko erabili beharreko kolorea"
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
 #: prefcardappearancebase.ui:202
 #, kde-format
 msgid "Use to select the font for displaying text on the front of the card"
-msgstr "Erabili txartelaren aurpegiaren letra-tipoa hautatzeko"
+msgstr ""
+"Erabili txartelaren aurrealdeko testua azaltzeko letra-tipoa hautatzeko"
 
 #. i18n: ectx: property (text), widget (QLabel, textColorLabel)
 #: prefcardappearancebase.ui:249
@@ -1960,20 +1951,20 @@ msgid ""
 "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
 "associated with each action."
 msgstr ""
-"Oharra: Hautatu \"Ezarpenak\"->\"Konfiguratu lasterbideak...\" ekintza "
+"Oharra: Hautatu «Ezarpenak -> Konfiguratu lasterbideak...» ekintza "
 "bakoitzarekin lotutako lasterbideak aldatzeko."
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
 #: prefcharacterbase.ui:48
 #, kde-format
 msgid "Select character to modify"
-msgstr "Hautatu aldatzeko karakterea"
+msgstr "Hautatu aldatu beharreko karakterea"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
 #: prefcharacterbase.ui:51
 #, kde-format
 msgid "Customizable special character actions"
-msgstr "Karaktere berezi pertsonalizagarrien ekintzak"
+msgstr "Karaktere-berezien neurrira ipinitako ekintzak"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
 #: prefcharacterbase.ui:61
@@ -1997,13 +1988,13 @@ msgstr "2"
 #: prefcharacterbase.ui:103
 #, kde-format
 msgid "Click to choose a new character"
-msgstr "Klikatu karaktere berri bat hautatzeko"
+msgstr "Egin klik karaktere berri bat hautatzeko"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
 #: prefcharacterbase.ui:106
 #, kde-format
 msgid "Choose a character for the selected action"
-msgstr "Aukeratu karaktere bat hautatutako ekintzarentzat"
+msgstr "Aukeratu hautatutako ekintzarako karaktere bat"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
 #: prefcharacterbase.ui:109
@@ -2015,13 +2006,13 @@ msgstr "&Karakterea..."
 #: prefcharacterbase.ui:151
 #, kde-format
 msgid "Preview of current character"
-msgstr "Uneko karakterearen aurrebista"
+msgstr "Uneko karakterearen aurreikuspegia"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
 #: prefcharacterbase.ui:154
 #, kde-format
 msgid "Preview of the character associated with the selected action"
-msgstr "Hautatutako ekintzarekin lotutako karakterearen aurrebista"
+msgstr "Hautatutako ekintzarekin lotutako karakterearen aurreikuspegia"
 
 #. i18n: ectx: property (text), widget (QLabel, lblPreview)
 #: prefcharacterbase.ui:157
@@ -2037,26 +2028,25 @@ msgstr "A"
 #: prefeditorbase.ui:73
 #, kde-format
 msgid "How enter key moves"
-msgstr "\"Enter\" tekla nola mugitzen den"
+msgstr "«Sartu» tekla nola mugitzen den"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
 #: prefeditorbase.ui:32
 #, kde-format
 msgid "Select how the Enter key should behave in the editor"
-msgstr "Hautatu \"Enter\" teklak editorean izango duen portamoldea"
+msgstr "Hautatu «Sartu» teklak editorean izan behar duen jokabidea"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
 #: prefeditorbase.ui:35
 #, kde-format
 msgid "Enter Ke&y Moves"
-msgstr "\"Enter\" teklaren mugimendua"
+msgstr "«Sartu» &teklaren mugimenduak"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
 #: prefeditorbase.ui:50
 #, kde-format
 msgid "Select if the next cell below should become active when pressing Enter."
-msgstr ""
-"Hautatu \"Enter\" sakatzean beheko hurrengo gelaxka aktibatzea nahi baduzu."
+msgstr "Hautatu, «Sartu» sakatzean beheko hurrengo gelaxka aktibatzeko."
 
 #. i18n: ectx: property (text), widget (QRadioButton, optDown)
 #: prefeditorbase.ui:53
@@ -2069,9 +2059,7 @@ msgstr "&Behera"
 #, kde-format
 msgid ""
 "Select if the next cell to the right should become active when pressing Enter"
-msgstr ""
-"Hautatu \"Enter\" sakatzean eskuineko hurrengo gelaxka aktibatzea nahi "
-"baduzu."
+msgstr "Hautatu, «Sartu» sakatzean eskuineko hurrengo gelaxka aktibatzeko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optRight)
 #: prefeditorbase.ui:66
@@ -2083,8 +2071,7 @@ msgstr "&Eskuinera"
 #: prefeditorbase.ui:76
 #, kde-format
 msgid "Select if the current cell should remain active when pressing Enter"
-msgstr ""
-"Hautatu \"Enter\" sakatzean unkoe gelaxka aktibo mantentzea nahi baduzu."
+msgstr "Hautatu, «Sartu» sakatzean uneko gelaxka aktibatuta jarraitzeko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
 #: prefeditorbase.ui:79
@@ -2096,49 +2083,50 @@ msgstr "Ez da &mugitzen"
 #: prefeditorbase.ui:89
 #, kde-format
 msgid "Check to enable fill-in-the-blank"
-msgstr "Hautatu \"bete hutsuneak\" gaitzeko"
+msgstr "Hautatu «Hutsunea bete» gaitzeko"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
 #: prefeditorbase.ui:92
 #, kde-format
 msgid "Select to enable the functions for Fill-in-the-blank"
-msgstr "Hautatu \"bete hutsuneak\" funtzioak gaitzeko"
+msgstr "Hautatu «Hutsunea bete» funtzioak gaitzeko"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
 #: prefeditorbase.ui:95
 #, kde-format
 msgid "E&nable fill-in-the-blank"
-msgstr "G&aitu \"bete hutsuneak\""
+msgstr "&Gaitu «Hutsunea bete»"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
 #: prefgeneralbase.ui:35
 #, kde-format
 msgid "How vocabulary documents are opened"
-msgstr "Hiztegiaren dokumentua nola irekiko den"
+msgstr "Hiztegi-dokumentuak nola irekitzen diren"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
 #: prefgeneralbase.ui:38
 #, kde-format
 msgid "Select the kind of session to load an opened vocabulary document in"
-msgstr "Hautatu saio mota irekitako hiztegiaren dokumentua hor kargatzeko"
+msgstr ""
+"Hautatu irekitako hiztegi-dokumentu bat zein saio-motan zamatu behar den"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
 #: prefgeneralbase.ui:41
 #, kde-format
 msgid "&Open Vocabulary Documents in"
-msgstr "&Ireki hiztegiaren dokumentua hemen"
+msgstr "&Ireki hiztegi-dokumentua hemen"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
 #: prefgeneralbase.ui:47
 #, kde-format
 msgid "Open vocabulary documents in the editor"
-msgstr "Ireki hiztegiaren dokumentua editorean"
+msgstr "Ireki hiztegi-dokumentuak editorean"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
 #: prefgeneralbase.ui:50
 #, kde-format
 msgid "Select if the vocabulary documents should be opened in the editor"
-msgstr "Hautatu hiztegiaren dokumentuak editorean ireki behar diren"
+msgstr "Hautatu, hiztegi-dokumentuak editorean irekitzeko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optEditor)
 #: prefgeneralbase.ui:53
@@ -2150,46 +2138,45 @@ msgstr "&Editorea"
 #: prefgeneralbase.ui:60
 #, kde-format
 msgid "Open vocabulary documents in a flashcard quiz"
-msgstr "Ireki hiztegiaren dokumentuak galdeketako txartel batean"
+msgstr "Ireki hiztegi-dokumentuak oroimen-txartel galdeketa batean"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
 #: prefgeneralbase.ui:63
 #, kde-format
 msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
 msgstr ""
-"Hautatu hiztegiaren dokumentua galdeketako txartel batean ireki behar den"
+"Hautatu, hiztegi-dokumentuak oroimen-txartel galdeketa batean irekitzeko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
 #: prefgeneralbase.ui:66
 #, kde-format
 msgid "&Flashcard Quiz"
-msgstr "&Galdeketako txartela"
+msgstr "&Oroimen-txartel galdeketa"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
 #: prefgeneralbase.ui:73
 #, kde-format
 msgid "Open vocabulary documents in a multiple choice quiz"
-msgstr "Ireki hiztegiaren dokumentuak aukera anitzeko galdeketan"
+msgstr "Ireki hiztegi-dokumentuak aukera anitzeko galdeketa batean"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
 #: prefgeneralbase.ui:76
 #, kde-format
 msgid ""
 "Select if the vocabulary documents should be opened in a multiple choice quiz"
-msgstr ""
-"Hautatu hiztegiaren dokumentuak aukera anitzeko galdeketan ireki behar den"
+msgstr "Hautatu, hiztegi-dokumentuak aukera anitzeko galdeketetan irekitzeko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
 #: prefgeneralbase.ui:79
 #, kde-format
 msgid "&Multiple Choice Quiz"
-msgstr "&Aukera anitzeko galdeketa"
+msgstr "Aukera a&nitzeko galdeketa"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
 #: prefgeneralbase.ui:86
 #, kde-format
 msgid "Open vocabulary documents in a question and answer quiz"
-msgstr "Ireki hiztegiaren dokumentuak galdera eta erantzunen galdeketa"
+msgstr "Ireki hiztegi-dokumentuak galdera eta erantzuneko galdeketa batean"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
 #: prefgeneralbase.ui:89
@@ -2198,20 +2185,20 @@ msgid ""
 "Select if the vocabulary documents should be opened in a question and answer "
 "quiz"
 msgstr ""
-"Hautatu hiztegiaren dokumentuak galdera eta erantzunen galdeketan ireki "
-"behar den"
+"Hautatu, hiztegi-dokumentuak galdera eta erantzuneko galdeketa batean "
+"irekitzeko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optQA)
 #: prefgeneralbase.ui:92
 #, kde-format
 msgid "&Question and Answer Quiz"
-msgstr "&Galdera eta erantzunen galdeketa"
+msgstr "&Galdera eta erantzuneko galdeketa"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
 #: prefquizbase.ui:44
 #, kde-format
 msgid "Specify behavior for a question and answer session"
-msgstr "Zehaztu galdera-erantzun sesio baten portamoldea"
+msgstr "Zehaztu galdera eta erantzun saio baten jokabidea"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpQA)
 #: prefquizbase.ui:47
@@ -2223,7 +2210,7 @@ msgstr "Galdera eta erantzuna"
 #: prefquizbase.ui:71
 #, kde-format
 msgid "Check to count hint as error"
-msgstr "Hautatu argibidea errore bezala kontsideratzeko"
+msgstr "Markatu argibidea errore gisa zenbatzeko"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
 #: prefquizbase.ui:74
@@ -2231,44 +2218,43 @@ msgstr "Hautatu argibidea errore bezala kontsideratzeko"
 msgid ""
 "Select if questions where the hint function has been used should be counted "
 "as errors"
-msgstr ""
-"Hautatu argibide-funtzioa erabilitako galderak errore bezala kontatzeko"
+msgstr "Hautatu, argibide funtzioa erabilitako galderak errore gisa zenbatzeko"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
 #: prefquizbase.ui:77
 #, kde-format
 msgid "&Treat hint as error"
-msgstr "&Kontsideratu argibidea errore bezala"
+msgstr "&Tratatu argibidea errore gisa"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
 #: prefquizbase.ui:87
 #, kde-format
 msgid "Specify behavior of the score presentation in any session"
-msgstr "Zehaztu edozein sesioko puntuazioaren portamoldea"
+msgstr "Zehaztu puntuazio-aurkezpenaren jokabidea saio guztietarako"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
 #: prefquizbase.ui:114
 #, kde-format
 msgid "Check to show score as a percentage"
-msgstr "Hautatu puntuazaio portzentai bezala erakusteko"
+msgstr "Markatu puntuazioa ehuneko gisa erakusteko"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
 #: prefquizbase.ui:117
 #, kde-format
 msgid "Select if the score should be shown as a percentage"
-msgstr "Hautatu puntuazio portzentai bezala erakustea nahi baduzu"
+msgstr "Hautatu, puntuazioa ehuneko gisa erakusteko"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
 #: prefquizbase.ui:120
 #, kde-format
 msgid "&Show score as a percentage"
-msgstr "&Erakutsi puntuazioa portzentai bezala"
+msgstr "Erakut&si puntuazioa ehuneko gisa"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
 #: prefquizbase.ui:146
 #, kde-format
 msgid "Specify behavior for a multiple choice session"
-msgstr "Zehaztu sesio aukera anizkoitza sesio baten portamoldea"
+msgstr "Zehaztu aukera anizkoitzeko saio baterako jokabidea"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
 #: prefquizbase.ui:173
@@ -2280,50 +2266,50 @@ msgstr "Hautatu automatikoki zuzentzeko"
 #: prefquizbase.ui:176
 #, kde-format
 msgid "Select if a choice should be checked immediately"
-msgstr "Hautatu aukera bat automatikoki berehala egiaztatzeko"
+msgstr "Hautatu, aukera bat berehala markatzeko"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
 #: prefquizbase.ui:179
 #, kde-format
 msgid "Check selection a&utomatically"
-msgstr "Egiaztatu hautapena a&utomatikoki"
+msgstr "Markatu hautapena a&utomatikoki"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
 #: prefquizbase.ui:189
 #, kde-format
 msgid "Specify behavior of a flashcard session"
-msgstr "Zehaztu txartel-sesio baten portamoldea"
+msgstr "Zehaztu oroimen-txartel saio baten jokabidea"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
 #: prefquizbase.ui:238
 #, kde-format
 msgid "Specify the amount of time between card flips"
-msgstr "Zehaztu txartelen iraulketen arteko denbora tartea"
+msgstr "Zehaztu txartel iraulketa arteko denbora tartea"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSeconds)
 #: prefquizbase.ui:241
 #, kde-format
 msgid "seconds and"
-msgstr "segundu eta"
+msgstr "segundo eta"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
 #: prefquizbase.ui:248
 #, kde-format
 msgid "Delay to flip card"
-msgstr "Txartel-iraulketaren atzerapena"
+msgstr "Txartela iraultzeko atzerapena"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
 #: prefquizbase.ui:251
 #, kde-format
 msgid "Delay in seconds to flip card"
-msgstr "Txartel-iraulketaren atzerapena segundutan"
+msgstr "Txartela iraultzeko atzerapena segundotan"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
 #: prefquizbase.ui:285 prefquizbase.ui:298
 #, kde-format
 msgid "Select how to count card"
-msgstr "Hautatu txartela nola kontatu"
+msgstr "Hautatu txartela nola zenbatu"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
 #: prefquizbase.ui:288
@@ -2332,14 +2318,13 @@ msgid ""
 "Select if the previous card should be counted as correct when moving to the "
 "next card"
 msgstr ""
-"Hautatu hurrengo txartelera mugitzean aurreko txartela zuzentzat jo behar "
-"den."
+"Hautatu, hurrengo txartelera mugitzean aurreko txartela zuzentzat jotzeko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
 #: prefquizbase.ui:291
 #, kde-format
 msgid "Count &as correct"
-msgstr "Kontatu zuzena &bezala"
+msgstr "Zenbatu zuzen &gisa"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
 #: prefquizbase.ui:301
@@ -2348,19 +2333,19 @@ msgid ""
 "Select if the previous card should be counted as incorrect when moving to "
 "the next card"
 msgstr ""
-"Hautatu hurrengo txartelera mugitzean aurreko txartela okertzat jo behar den."
+"Hautatu, hurrengo txartelera mugitzean aurreko txartela okertzat jotzeko."
 
 #. i18n: ectx: property (text), widget (QRadioButton, optError)
 #: prefquizbase.ui:304
 #, kde-format
 msgid "Count as &error"
-msgstr "Kontatu &errore bezala"
+msgstr "Zenbatu &errore gisa"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
 #: prefquizbase.ui:314
 #, kde-format
 msgid "Check to flip card automatically"
-msgstr "Hautatu txartela automatikoki iraultzea nahi baduzu"
+msgstr "Markatu, txartela automatikoki iraultzeko"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
 #: prefquizbase.ui:317
@@ -2368,99 +2353,85 @@ msgstr "Hautatu txartela automatikoki iraultzea nahi baduzu"
 msgid ""
 "Select if you want a card to turn over automatically after the given amount "
 "of time"
-msgstr ""
-"Hautatu txartela emandako denbora baten ondoren txartela automatikoki "
-"iraultzea nahi baduzu"
+msgstr "Hautatu, epemuga gainditu ondoren txartel bat automatikoki biratzeko."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
 #: prefquizbase.ui:320
 #, kde-format
 msgid "&Flip card automatically after"
-msgstr "&Irauli txartela automatikoki honen ondoren"
+msgstr "&Irauli txartela automatikoki ... igarotakoan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
 #: preftutorbase.ui:17
-#, fuzzy, kde-format
-#| msgctxt "@title:group editor settings"
-#| msgid "Editor Settings"
+#, kde-format
 msgid "Tutor Timing"
-msgstr "Editorearen ezarpenak"
+msgstr "Tutorearen erritmoa"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
 #: preftutorbase.ui:23
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Every"
-msgstr "Hainbestero:"
+msgstr "&Hainbestero"
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
 #: preftutorbase.ui:60
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgid "&minutes"
-msgstr "&Argibidea"
+msgstr "&minutu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
 #: preftutorbase.ui:72
-#, fuzzy, kde-format
-#| msgid "&3 %1 -> %2 Randomly"
+#, kde-format
 msgid "&Randomly"
-msgstr "&3 %1 -> %2 ausaz"
+msgstr "Ausa&z"
 
 #. i18n: ectx: property (text), widget (QLabel, labelBetween)
 #: preftutorbase.ui:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "Between"
-msgstr "artean"
+msgstr "Bitartea"
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
 #: preftutorbase.ui:120
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgid "m&inutes and"
-msgstr "&Argibidea"
+msgstr "m&inutu eta"
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
 #: preftutorbase.ui:146
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgid "mi&nutes"
-msgstr "&Argibidea"
+msgstr "mi&nutu"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
 #: preftutorbase.ui:161
-#, fuzzy, kde-format
-#| msgctxt "@title:group flash appearance settings"
-#| msgid ""
-#| "Flashcard\n"
-#| "Appearance"
+#, kde-format
 msgid "Flashcard Appearance"
-msgstr ""
-"Txartelaren\n"
-"itxura"
+msgstr "Oroimen-txartelen itxura"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
 #: preftutorbase.ui:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Native"
-msgstr "Jatorrizkoa"
+msgstr "&Jatorrizkoa"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
 #: preftutorbase.ui:177
 #, kde-format
 msgid "Minim&alistic"
-msgstr ""
+msgstr "&Minimalista"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
 #: preftutorbase.ui:187
-#, fuzzy, kde-format
+#, kde-format
 msgid "Miscellaneous"
-msgstr "Beste zenbait"
+msgstr "Bestelakoa"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
 #: preftutorbase.ui:193
 #, kde-format
 msgid "S&tart exercise as soon as vocabulary file is opened"
-msgstr ""
+msgstr "&Hasi ariketa hiztegi-fitxategia ireki bezain laster"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
@@ -2469,13 +2440,13 @@ msgstr ""
 #: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
 #, kde-format
 msgid "Type your answer"
-msgstr "Sartu zure erantzuna"
+msgstr "Tekleatu zure erantzuna"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
 #: qaviewbase.ui:145
 #, kde-format
 msgid "The answer showing blanks for a Fill-in-the-blank question"
-msgstr "Erantzunak hutsuneak ditu bete hutsuneak galdera batentzat"
+msgstr "Hutsuneak erakusten dituen erantzuna, «Hutsunea bete» galdera baterako"
 
 #. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
 #: qaviewbase.ui:148
@@ -2500,8 +2471,7 @@ msgstr ""
 "behar duzu galdera eta erantzunen galdeketan.</html>"
 
 #: wqprintdialogpage.cpp:17
-#, fuzzy, kde-format
-#| msgid "Vocabulary Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Vocabulary Options"
 msgstr "Hiztegiaren aukerak"
