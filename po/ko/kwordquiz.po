@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # bluekyu <bluekyu.dev@gmail.com>, 2010.
-# Shinjo Park <kde@peremen.name>, 2011, 2015, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2011, 2015, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2022-08-09 13:30+0200\n"
+"PO-Revision-Date: 2023-03-01 01:46+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -692,7 +692,7 @@ msgstr "객관식"
 #: kwordquiz.cpp:537
 #, kde-format
 msgid "Question & Answer"
-msgstr "질문 && 답"
+msgstr "질문과 답"
 
 #: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
@@ -714,10 +714,9 @@ msgstr ""
 "파일을 여시겠습니까?"
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "파일 여는 중..."
+msgstr "파일 열기"
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
