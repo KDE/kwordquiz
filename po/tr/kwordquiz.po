@@ -12,13 +12,13 @@
 # Muhammet Kara <muhammetk@gmail.com>, 2009.
 # obsoleteman <tulliana@gmail.com>, 2007-2008,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2015.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:41+0000\n"
-"PO-Revision-Date: 2022-12-11 20:20+0300\n"
+"PO-Revision-Date: 2023-03-09 14:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -477,7 +477,7 @@ msgstr "Kullanılabilir klavye düzenlerini gösterir"
 #: kwordquiz.cpp:274
 #, kde-format
 msgid "Change Mode"
-msgstr "Mod Değiştir"
+msgstr "Kip Değiştir"
 
 #: kwordquiz.cpp:275
 #, kde-format
@@ -628,12 +628,12 @@ msgstr "Birleşmiş sesi çal"
 #: kwordquiz.cpp:403
 #, kde-format
 msgid "Repeat &Errors"
-msgstr "Hataları T&ekrarla"
+msgstr "Hataları Yin&ele"
 
 #: kwordquiz.cpp:405
 #, kde-format
 msgid "Repeats all incorrectly answered questions"
-msgstr "Yanlış yanıtlanan tüm soruları tekrarlar"
+msgstr "Yanlış yanıtlanan tüm soruları yineler"
 
 #: kwordquiz.cpp:411
 #, kde-format
@@ -679,7 +679,7 @@ msgstr "Araç çubuklarının görünmesini açar/kapatır"
 #: kwordquiz.cpp:501
 #, kde-format
 msgid "Enter search terms here"
-msgstr "Arama terimleri buraya girin"
+msgstr "Arama terimlerini buraya gir"
 
 #: kwordquiz.cpp:524
 #, kde-format
@@ -878,7 +878,7 @@ msgstr "Söz dağarcığı karıştırılıyor..."
 #: kwordquiz.cpp:1139
 #, kde-format
 msgid "Updating mode..."
-msgstr "Mod güncelleniyor..."
+msgstr "Kip güncelleniyor..."
 
 #: kwordquiz.cpp:1153
 #, kde-format
@@ -965,7 +965,7 @@ msgstr "KWordQuiz ilk kez mi çalışıyor?"
 #: kwordquiz.kcfg:14
 #, kde-format
 msgid "Toggle display of the search bar."
-msgstr "Arama çubuğunu göster/gizle."
+msgstr "Arama çubuğunu gösterin/gizleyin."
 
 #. i18n: ectx: label, entry (StartSession), group (General)
 #: kwordquiz.kcfg:18
@@ -1267,7 +1267,7 @@ msgstr "S&özlük"
 #: kwordquizui.rc:30
 #, kde-format
 msgid "&Mode"
-msgstr "&Mod"
+msgstr "&Kip"
 
 #. i18n: ectx: Menu (quiz)
 #: kwordquizui.rc:38
@@ -2112,7 +2112,7 @@ msgstr "Açılan bir söz dağarcığının yükleneceği oturum türünü seçi
 #: prefgeneralbase.ui:41
 #, kde-format
 msgid "&Open Vocabulary Documents in"
-msgstr "S&özlük Belgelerini İçinde Aç"
+msgstr "Söz D&ağarcığı Belgelerini İçinde Aç"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
 #: prefgeneralbase.ui:47
@@ -2419,7 +2419,7 @@ msgstr "Küçük"
 #: preftutorbase.ui:187
 #, kde-format
 msgid "Miscellaneous"
-msgstr "Diğer"
+msgstr "Çeşitli"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
 #: preftutorbase.ui:193
@@ -2483,7 +2483,7 @@ msgstr "Söz Dağarcığı &Listesi"
 #: wqprintdialogpage.cpp:29
 #, kde-format
 msgid "Select to print the vocabulary as displayed in the editor"
-msgstr "Sözlüğü düzenleyicide görüldüğü gibi basmak için seç"
+msgstr "Söz dağarcığını düzenleyicide görüldüğü gibi basmak için seç"
 
 #: wqprintdialogpage.cpp:33
 #, kde-format
