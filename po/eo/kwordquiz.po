@@ -1,12 +1,14 @@
 # Translation of kwordquiz into esperanto.
+# Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-01 00:53+0000\n"
-"PO-Revision-Date: 2009-11-14 06:06-0500\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-03-22 19:14+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +29,9 @@ msgstr "axel@esperanto-jeunes.org"
 
 #. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
 #: cleardialogbase.ui:21
-#, fuzzy, kde-format
+#, kde-format
 msgid "Selection"
-msgstr "Ago"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
 #: cleardialogbase.ui:30
@@ -187,9 +189,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
 #: columndialogbase.ui:297
-#, fuzzy, kde-format
+#, kde-format
 msgid "Wi&dth:"
-msgstr "&Larĝo:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
 #: columndialogbase.ui:317
@@ -216,10 +218,10 @@ msgid "Enter the width (in pixels) for the right column"
 msgstr ""
 
 #: dlglanguage.cpp:21
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Column Settings"
-msgstr "Klavosigno"
+msgstr ""
 
 #: dlgspecchar.cpp:17
 #, kde-format
@@ -228,16 +230,16 @@ msgid "Select Character"
 msgstr ""
 
 #: dlgspecchar.cpp:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "&Select"
-msgstr "Ago"
+msgstr ""
 
 #: dlgspecchar.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select this character"
-msgstr "Tekstosigno"
+msgstr ""
 
 #. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
 #: documentsettings.kcfg:12
@@ -252,10 +254,9 @@ msgid "Keyboard layouts"
 msgstr ""
 
 #: filterproxysearchline.cpp:23
-#, fuzzy, kde-format
-#| msgid "Show Se&arch"
+#, kde-format
 msgid "Search"
-msgstr "Montri serĉobreton"
+msgstr ""
 
 #: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
 #, kde-format
@@ -286,9 +287,9 @@ msgid "Opens an existing vocabulary document"
 msgstr ""
 
 #: kwordquiz.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgid "Download New Vocabularies..."
-msgstr "Elŝuti novajn vortoprovizojn"
+msgstr ""
 
 #: kwordquiz.cpp:115
 #, kde-format
@@ -524,9 +525,9 @@ msgid "Starts a question and answer session using the active vocabulary"
 msgstr ""
 
 #: kwordquiz.cpp:334
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Check"
-msgstr "&Kontrolu Taskon"
+msgstr ""
 
 #: kwordquiz.cpp:336
 #, kde-format
@@ -682,9 +683,9 @@ msgid "Multiple Choice"
 msgstr "Plurelekto"
 
 #: kwordquiz.cpp:536
-#, fuzzy, kde-format
+#, kde-format
 msgid "Question & Answer"
-msgstr "Demando"
+msgstr ""
 
 #: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
@@ -702,10 +703,9 @@ msgid ""
 msgstr ""
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "Malfermante dosieron..."
+msgstr ""
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
@@ -772,9 +772,9 @@ msgid "Printing..."
 msgstr "Presante..."
 
 #: kwordquiz.cpp:991
-#, fuzzy, kde-format
+#, kde-format
 msgid "Showing Preview..."
-msgstr "Konservante dosieron..."
+msgstr ""
 
 #: kwordquiz.cpp:999
 #, kde-format
@@ -940,9 +940,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ShowSearch), group (General)
 #: kwordquiz.kcfg:14
-#, fuzzy, kde-format
+#, kde-format
 msgid "Toggle display of the search bar."
-msgstr "Komuti la montradon de serĉobreton"
+msgstr ""
 
 #. i18n: ectx: label, entry (StartSession), group (General)
 #: kwordquiz.kcfg:18
@@ -1232,9 +1232,9 @@ msgstr ""
 
 #. i18n: ectx: Menu (vocabulary)
 #: kwordquizui.rc:16
-#, fuzzy, kde-format
+#, kde-format
 msgid "V&ocabulary"
-msgstr "Vortoprovizaj opcioj"
+msgstr ""
 
 #. i18n: ectx: Menu (mode)
 #: kwordquizui.rc:30
@@ -1257,15 +1257,15 @@ msgstr ""
 
 #. i18n: ectx: ToolBar (characterToolBar)
 #: kwordquizui.rc:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "Special Characters"
-msgstr "Tekstosigno"
+msgstr ""
 
 #: kwqcleardialog.cpp:18
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Clear Contents"
-msgstr "Komenton"
+msgstr ""
 
 #: kwqcommands.cpp:74
 #, kde-format
@@ -1346,9 +1346,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
 #. i18n: ectx: property (toolTip), widget (QLabel, picCount)
 #: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "Questions"
-msgstr "Demando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
 #. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
@@ -1370,9 +1370,9 @@ msgstr "00"
 #. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
 #: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Correct answers"
-msgstr "Ĝusta respondo"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
@@ -1385,9 +1385,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QLabel, picError)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
 #: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
-#, fuzzy, kde-format
+#, kde-format
 msgid "Incorrect answers"
-msgstr "Ĝusta respondo"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, picError)
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
@@ -1433,23 +1433,21 @@ msgid "There is an error with the Fill-in-the-blank brackets"
 msgstr ""
 
 #: kwqtableview.cpp:723
-#, fuzzy, kde-format
-#| msgid "Select Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Image"
 msgstr "Elekti bildon"
 
 #: kwqtableview.cpp:743
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
-msgstr "Ago"
+msgstr ""
 
 #: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "*|All Files"
+#, kde-format
 msgid "All Files (*)"
-msgstr "*|Ĉiuj dosieroj"
+msgstr "Ĉiuj dosieroj (*)"
 
 #: kwqtutor.cpp:26
 #, kde-format
@@ -1505,15 +1503,15 @@ msgid "Tutor Settings"
 msgstr ""
 
 #: kwqtutorprefs.cpp:25
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Shortcuts Config"
 msgid "Shortcuts"
-msgstr "Klavosigno"
+msgstr ""
 
 #: kwqtutorprefs.cpp:25
-#, fuzzy, kde-format
+#, kde-format
 msgid "Shortcuts Settings"
-msgstr "Klavosigno"
+msgstr ""
 
 #: main.cpp:34
 #, kde-format
@@ -1526,9 +1524,9 @@ msgid "A powerful flashcard and vocabulary learning program"
 msgstr ""
 
 #: main.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
-msgstr "Peter Hedlund"
+msgstr ""
 
 #: main.cpp:42
 #, kde-format
@@ -1610,9 +1608,9 @@ msgstr "Resumo"
 #: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
 #: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
 #: qaviewbase.ui:104
-#, fuzzy, kde-format
+#, kde-format
 msgid "The question"
-msgstr "Demando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
 #: multipleviewbase.ui:73 qaviewbase.ui:60
@@ -1639,9 +1637,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
 #: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
 #: multipleviewbase.ui:255 multipleviewbase.ui:286
-#, fuzzy, kde-format
+#, kde-format
 msgid "Your choices"
-msgstr "Axel Rousseau"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
@@ -1709,9 +1707,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
 #: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
 #: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
-#, fuzzy, kde-format
+#, kde-format
 msgid "Your previous answer"
-msgstr "Via respondo"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
@@ -1732,9 +1730,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
 #: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
 #: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
-#, fuzzy, kde-format
+#, kde-format
 msgid "Previous correct answer"
-msgstr "Ĝusta respondo"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
@@ -1818,9 +1816,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
 #: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select text color"
-msgstr "&Teksta koloro:"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
 #. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
@@ -1871,15 +1869,15 @@ msgstr "&Teksta koloro:"
 
 #. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
 #: prefcardappearancebase.ui:262
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Card color:"
-msgstr "&Teksta koloro:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
 #: prefcardappearancebase.ui:275
-#, fuzzy, kde-format
+#, kde-format
 msgid "Fra&me color:"
-msgstr "&Teksta koloro:"
+msgstr ""
 
 #: prefcharacter.cpp:30
 #, kde-format
@@ -1953,9 +1951,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
 #: prefcharacterbase.ui:109
-#, fuzzy, kde-format
+#, kde-format
 msgid "C&haracter..."
-msgstr "Tekstosigno"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
 #: prefcharacterbase.ui:151
@@ -2121,9 +2119,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
 #: prefgeneralbase.ui:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Multiple Choice Quiz"
-msgstr "Plurelekto"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
 #: prefgeneralbase.ui:86
@@ -2141,9 +2139,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, optQA)
 #: prefgeneralbase.ui:92
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Question and Answer Quiz"
-msgstr "Demando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
 #: prefquizbase.ui:44
@@ -2153,9 +2151,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpQA)
 #: prefquizbase.ui:47
-#, fuzzy, kde-format
+#, kde-format
 msgid "Question && Answer"
-msgstr "Demando"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
 #: prefquizbase.ui:71
@@ -2251,9 +2249,9 @@ msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
 #: prefquizbase.ui:251
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delay in seconds to flip card"
-msgstr "Kopianta elekton al tondujo..."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
@@ -2324,9 +2322,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
 #: preftutorbase.ui:60
-#, fuzzy, kde-format
+#, kde-format
 msgid "&minutes"
-msgstr "&Helpindiko"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
 #: preftutorbase.ui:72
@@ -2336,21 +2334,21 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelBetween)
 #: preftutorbase.ui:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "Between"
-msgstr "inter"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
 #: preftutorbase.ui:120
-#, fuzzy, kde-format
+#, kde-format
 msgid "m&inutes and"
-msgstr "&Helpindiko"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
 #: preftutorbase.ui:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "mi&nutes"
-msgstr "&Helpindiko"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
 #: preftutorbase.ui:161
@@ -2360,9 +2358,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
 #: preftutorbase.ui:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Native"
-msgstr "Nomo:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
 #: preftutorbase.ui:177
@@ -2387,9 +2385,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
 #. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
 #: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
-#, fuzzy, kde-format
+#, kde-format
 msgid "Type your answer"
-msgstr "Via respondo"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
 #: qaviewbase.ui:145
@@ -2418,8 +2416,7 @@ msgid ""
 msgstr ""
 
 #: wqprintdialogpage.cpp:17
-#, fuzzy, kde-format
-#| msgid "Vocabulary Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Vocabulary Options"
 msgstr "Vortoprovizaj opcioj"
