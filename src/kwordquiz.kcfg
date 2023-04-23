@@ -93,6 +93,10 @@
       <label>Treat use of hint as error</label>
       <default>false</default>
     </entry>
+    <entry name="CaseSensitiveAnswers" type="Bool">
+      <label>Compare answers in a case sensitive way</label>
+      <default>true</default>
+    </entry>
     <entry name="KeepDiscard" type="Int">
       <label>Count flashcard as correct or error</label>
       <default>1</default>

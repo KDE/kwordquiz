@@ -170,7 +170,13 @@ bool KWQQuizModel::checkAnswer(const QString & a)
         }
         else
         {
-          result = (ans == tTemp);
+          if (Prefs::caseSensitiveAnswers()) {
+            result = (ans == tTemp);
+          }
+          else
+          {
+            result = ans.compare(tTemp, Qt::CaseInsensitive) == 0;
+          }
         }
       }
       else
