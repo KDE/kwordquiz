@@ -4,13 +4,13 @@
 # Xosé Calvo <xosecalvo@gmail.com>, 2009, 2012.
 # Marce Villarino <mvillarino@kde-espana.org>, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-01 00:53+0000\n"
-"PO-Revision-Date: 2019-11-17 09:25+0100\n"
+"PO-Revision-Date: 2023-04-28 20:26+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.03.70\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -140,10 +140,9 @@ msgstr "&Título:"
 
 #. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
 #: columndialogbase.ui:112
-#, fuzzy, kde-format
-#| msgid "&Keyboard Layout:"
+#, kde-format
 msgid "&Keyboard layout:"
-msgstr "&Disposición do teclado:"
+msgstr "Disposición do &teclado:"
 
 #. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
 #: columndialogbase.ui:128
@@ -224,8 +223,7 @@ msgid "Enter the width (in pixels) for the right column"
 msgstr "Insire a anchura (en píxeles) da columna da dereita"
 
 #: dlglanguage.cpp:21
-#, fuzzy, kde-format
-#| msgid "Column Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Column Settings"
 msgstr "Configuración das columnas"
@@ -338,12 +336,12 @@ msgstr "Sae de KWordQuiz"
 #: kwordquiz.cpp:156
 #, kde-format
 msgid "Cuts the text from the selected cells and places it on the clipboard"
-msgstr "Corta o texto das celas escollidas e ponno no portapapeis"
+msgstr "Corta o texto das celas escollidas e pono no portapapeis"
 
 #: kwordquiz.cpp:161
 #, kde-format
 msgid "Copies the text from the selected cells and places it on the clipboard"
-msgstr "Copia o texto das celas escollidas e ponno no portapapeis"
+msgstr "Copia o texto das celas escollidas e pono no portapapeis"
 
 #: kwordquiz.cpp:166
 #, kde-format
@@ -351,7 +349,7 @@ msgid ""
 "Pastes previously cut or copied text from the clipboard into the selected "
 "cells"
 msgstr ""
-"Pega o texto previamente cortado ou pegado no portapapeis e ponno nas celas "
+"Pega o texto previamente cortado ou pegado no portapapeis e pono nas celas "
 "escollidas"
 
 #: kwordquiz.cpp:172
@@ -387,8 +385,7 @@ msgstr "&Marcar como oco"
 #: kwordquiz.cpp:198
 #, kde-format
 msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-msgstr ""
-"Marca a palabra actual ou escollida como un espazo para preencher-os-espazos"
+msgstr "Marca a palabra actual ou escollida como un espazo para encher espazos"
 
 #: kwordquiz.cpp:205
 #, kde-format
@@ -699,7 +696,7 @@ msgstr "Escolla múltipla"
 #: kwordquiz.cpp:536
 #, kde-format
 msgid "Question & Answer"
-msgstr "Pregunta e respost"
+msgstr "Pregunta e resposta"
 
 #: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
 #, kde-format
@@ -715,12 +712,15 @@ msgid ""
 "the lock and open the file anyway.\n"
 "Do you want to open the file?"
 msgstr ""
+"%1\n"
+"Se ten certeza de que ningún outro programa está usando o ficheiro pode "
+"escoller ignorar o bloqueo e abrir o ficheiro de todas formas.\n"
+"Quere abrir o ficheiro?"
 
 #: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
+#, kde-format
 msgid "Open File"
-msgstr "Estase a abrir o ficheiro…"
+msgstr "Abrir o ficheiro"
 
 #: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
 #: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
@@ -995,7 +995,7 @@ msgstr "Fonte usada no editor"
 #: kwordquiz.kcfg:51
 #, kde-format
 msgid "If Fill-in-the-blank should be enabled"
-msgstr "Debe estar activado preencher-os-espazos"
+msgstr "Debe estar activado encher espazos"
 
 #. i18n: ectx: label, entry (EnterMove), group (Editor)
 #: kwordquiz.kcfg:55
@@ -1283,11 +1283,10 @@ msgid "Special Characters"
 msgstr "Caracteres especiais"
 
 #: kwqcleardialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Clear Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Clear Contents"
-msgstr "Limpar o contido"
+msgstr "Borrar o contido"
 
 #: kwqcommands.cpp:74
 #, kde-format
@@ -1456,7 +1455,7 @@ msgstr "Puntuación"
 #: kwqtableview.cpp:656
 #, kde-format
 msgid "There is an error with the Fill-in-the-blank brackets"
-msgstr "Hai un erro nas parénteses de preencher-os-espazos"
+msgstr "Hai un erro nas parénteses de encher espazos"
 
 #: kwqtableview.cpp:723
 #, kde-format
@@ -1465,8 +1464,7 @@ msgid "Select Image"
 msgstr "Escoller unha imaxe"
 
 #: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound"
 msgstr "Seleccionar un son"
@@ -2082,7 +2080,7 @@ msgstr "Non se &move"
 #: prefeditorbase.ui:89
 #, kde-format
 msgid "Check to enable fill-in-the-blank"
-msgstr "Marcar para activar preencher-os-espazos"
+msgstr "Marcar para activar encher espazos"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
 #: prefeditorbase.ui:92
@@ -2094,7 +2092,7 @@ msgstr "Escolle activar as funcións de recheo"
 #: prefeditorbase.ui:95
 #, kde-format
 msgid "E&nable fill-in-the-blank"
-msgstr "&Activar preencher-os-espazos"
+msgstr "&Activar encher espazos"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
 #: prefgeneralbase.ui:35
@@ -2289,7 +2287,7 @@ msgstr "Especificar o comportamento dunha sesión de fichas"
 #: prefquizbase.ui:238
 #, kde-format
 msgid "Specify the amount of time between card flips"
-msgstr "Especificar o espazo de tempo entre volteos de fichas"
+msgstr "Especificar o espazo de tempo entre voltas de fichas"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSeconds)
 #: prefquizbase.ui:241
@@ -2454,8 +2452,7 @@ msgstr "Escribe a resposta"
 #: qaviewbase.ui:145
 #, kde-format
 msgid "The answer showing blanks for a Fill-in-the-blank question"
-msgstr ""
-"A resposta que mostra espazos para unha pregunta de preencher-os-espazos"
+msgstr "A resposta que mostra espazos para unha pregunta de encher espazos"
 
 #. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
 #: qaviewbase.ui:148
@@ -2480,8 +2477,7 @@ msgstr ""
 "menos unha entrada para unha proba de fichas.</html>"
 
 #: wqprintdialogpage.cpp:17
-#, fuzzy, kde-format
-#| msgid "Vocabulary Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Vocabulary Options"
 msgstr "Opcións do vocabulario"
