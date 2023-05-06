@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:53+0000\n"
+"POT-Creation-Date: 2023-05-06 00:43+0000\n"
 "PO-Revision-Date: 2022-10-19 15:35-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -690,13 +690,13 @@ msgid "Editor"
 msgstr "Editor"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:192
+#: kwordquiz.cpp:528 prefquizbase.ui:188
 #, kde-format
 msgid "Flashcard"
 msgstr "Cartão"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:149
+#: kwordquiz.cpp:532 prefquizbase.ui:148
 #, kde-format
 msgid "Multiple Choice"
 msgstr "Múltipla escolha"
@@ -1065,86 +1065,93 @@ msgstr "Atraso de tempo para a virada de cartões"
 msgid "Treat use of hint as error"
 msgstr "Considerar o uso da dica como erro"
 
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
+#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
+#: kwordquiz.kcfg:97 prefquizbase.ui:79
+#, kde-format
+msgid "Compare answers in a case sensitive way"
+msgstr ""
+
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:97
+#: kwordquiz.kcfg:101
 #, kde-format
 msgid "Count flashcard as correct or error"
 msgstr "Considerar este cartão como correto ou erro"
 
 #. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:101
+#: kwordquiz.kcfg:105
 #, kde-format
 msgid "Quiz mode"
 msgstr "Modo questionário"
 
 #. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:105
+#: kwordquiz.kcfg:109
 #, kde-format
 msgid "Show score as percentage"
 msgstr "Mostrar pontuação como porcentagem"
 
 #. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:111
+#: kwordquiz.kcfg:115
 #, kde-format
 msgid "Font used for front of flashcard"
 msgstr "Fonte usada para os cartões"
 
 #. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:115
+#: kwordquiz.kcfg:119
 #, kde-format
 msgid "Color used for text on front of flashcard"
 msgstr "Cor usada para o texto na frente dos cartões"
 
 #. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:119
+#: kwordquiz.kcfg:123
 #, kde-format
 msgid "Color used for front of flashcard"
 msgstr "Cor usada na frente dos cartões"
 
 #. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:123
+#: kwordquiz.kcfg:127
 #, kde-format
 msgid "Color used for frame on front of flashcard"
 msgstr "Cor usada no quadro na frente dos cartões"
 
 #. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:127
+#: kwordquiz.kcfg:131
 #, kde-format
 msgid "Font used for back of flashcard"
 msgstr "Fonte usada na parte de trás dos cartões"
 
 #. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:131
+#: kwordquiz.kcfg:135
 #, kde-format
 msgid "Color used for text on back of flashcard"
 msgstr "Cor usada para o texto da parte de trás dos cartões"
 
 #. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:135
+#: kwordquiz.kcfg:139
 #, kde-format
 msgid "Color used for back of flashcard"
 msgstr "Cor usada na parte de trás dos cartões"
 
 #. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:139
+#: kwordquiz.kcfg:143
 #, kde-format
 msgid "Color used for frame on back of flashcard"
 msgstr "Cor usada para o quadro na parte de trás dos cartões"
 
 #. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:145
+#: kwordquiz.kcfg:149
 #, kde-format
 msgid "The Providers path for KWordQuiz"
 msgstr "O caminho dos Fornecedores do KWordQuiz"
 
 #. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:149
+#: kwordquiz.kcfg:153
 #, kde-format
 msgid "The command used to start a downloaded vocabulary"
 msgstr "O comando usado para iniciar um vocabulário baixado"
 
 #. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:153
+#: kwordquiz.kcfg:157
 #, kde-format
 msgid ""
 "The folder where downloaded vocabularies are saved by default (relative to "
@@ -1154,43 +1161,43 @@ msgstr ""
 "$HOME)"
 
 #. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:159
+#: kwordquiz.kcfg:163
 #, kde-format
 msgid "Pop up flashcards at fixed or random intervals"
 msgstr "Mostrar os cartões com intervalos fixos ou aleatórios"
 
 #. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:167
+#: kwordquiz.kcfg:171
 #, kde-format
 msgid "The interval in minutes at which to pop up a flash card"
 msgstr "O intervalo, em minutos, para mostrar um cartão"
 
 #. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:171
+#: kwordquiz.kcfg:175
 #, kde-format
 msgid "The minimum interval in minutes at which to pop up a flash card"
 msgstr "O intervalo mínimo, em minutos, para mostrar um cartão"
 
 #. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:175
+#: kwordquiz.kcfg:179
 #, kde-format
 msgid "The maximum interval in minutes at which to pop up a flash card"
 msgstr "O intervalo máximo, em minutos, para mostrar um cartão"
 
 #. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:179
+#: kwordquiz.kcfg:183
 #, kde-format
 msgid "Geometry of the last flash card"
 msgstr "Geometria do último cartão"
 
 #. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:183
+#: kwordquiz.kcfg:187
 #, kde-format
 msgid "Show flash card in a native KWordQuiz style"
 msgstr "Mostrar o cartão com um estilo nativo do KWordQuiz"
 
 #. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:191
+#: kwordquiz.kcfg:195
 #, kde-format
 msgid ""
 "Last open vocabulary file to be opened automatically if none other is "
@@ -1200,7 +1207,7 @@ msgstr ""
 "for especificado na linha de comando"
 
 #. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:195
+#: kwordquiz.kcfg:199
 #, kde-format
 msgid "Start exercise as soon as the user opens vocabulary file"
 msgstr "Iniciar o exercício assim que o usuário abrir o arquivo de vocabulário"
@@ -1279,7 +1286,7 @@ msgstr "&Questionário"
 
 #. i18n: ectx: ToolBar (quizToolBar)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:20
+#: kwordquizui.rc:61 prefquizbase.ui:21
 #, kde-format
 msgid "Quiz"
 msgstr "Questionário"
@@ -1456,7 +1463,7 @@ msgid "Name:_____________________________ Date:__________"
 msgstr "Nome:_____________________________ Data:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:92
 #, kde-format
 msgid "Score"
 msgstr "Pontuação"
@@ -2208,25 +2215,25 @@ msgid "&Question and Answer Quiz"
 msgstr "Questionário de &perguntas e respostas"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:44
+#: prefquizbase.ui:42
 #, kde-format
 msgid "Specify behavior for a question and answer session"
 msgstr "Defina o comportamento para sessões de pergunta e resposta"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:47
+#: prefquizbase.ui:45
 #, kde-format
 msgid "Question && Answer"
 msgstr "Pergunta e resposta"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:71
+#: prefquizbase.ui:66
 #, kde-format
 msgid "Check to count hint as error"
 msgstr "Marque isto para considerar a dica como erro"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:74
+#: prefquizbase.ui:69
 #, kde-format
 msgid ""
 "Select if questions where the hint function has been used should be counted "
@@ -2236,99 +2243,99 @@ msgstr ""
 "como erros"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:77
+#: prefquizbase.ui:72
 #, kde-format
 msgid "&Treat hint as error"
 msgstr "&Considerar a dica como erro"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:87
+#: prefquizbase.ui:89
 #, kde-format
 msgid "Specify behavior of the score presentation in any session"
 msgstr ""
 "Indique o comportamento da apresentação da pontuação em todas as sessões"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:114
+#: prefquizbase.ui:113
 #, kde-format
 msgid "Check to show score as a percentage"
 msgstr "Selecione para mostrar pontuação como porcentagem"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:117
+#: prefquizbase.ui:116
 #, kde-format
 msgid "Select if the score should be shown as a percentage"
 msgstr "Selecione se a pontuação deve ser mostrada como porcentagem"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:120
+#: prefquizbase.ui:119
 #, kde-format
 msgid "&Show score as a percentage"
 msgstr "Mo&strar a pontuação como porcentagem"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:146
+#: prefquizbase.ui:145
 #, kde-format
 msgid "Specify behavior for a multiple choice session"
 msgstr "Defina o comportamento para sessões de múltipla escolha"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:173
+#: prefquizbase.ui:169
 #, kde-format
 msgid "Check to correct automatically"
 msgstr "Escolha para corrigir automaticamente"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:176
+#: prefquizbase.ui:172
 #, kde-format
 msgid "Select if a choice should be checked immediately"
 msgstr "Selecione se a opção deve ser escolhida imediatamente"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:179
+#: prefquizbase.ui:175
 #, kde-format
 msgid "Check selection a&utomatically"
 msgstr "Escolher opção a&utomaticamente"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:189
+#: prefquizbase.ui:185
 #, kde-format
 msgid "Specify behavior of a flashcard session"
 msgstr "Especifique o comportamento da sessão de cartões"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:238
+#: prefquizbase.ui:231
 #, kde-format
 msgid "Specify the amount of time between card flips"
 msgstr "Indique o intervalo de tempo entre viradas de cartão"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:241
+#: prefquizbase.ui:234
 #, kde-format
 msgid "seconds and"
 msgstr "segundos e"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:248
+#: prefquizbase.ui:241
 #, kde-format
 msgid "Delay to flip card"
 msgstr "Atraso para virar o cartão"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:251
+#: prefquizbase.ui:244
 #, kde-format
 msgid "Delay in seconds to flip card"
 msgstr "Atraso, em segundos, para virar o cartão"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:285 prefquizbase.ui:298
+#: prefquizbase.ui:275 prefquizbase.ui:288
 #, kde-format
 msgid "Select how to count card"
 msgstr "Selecione como contar os cartões"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:288
+#: prefquizbase.ui:278
 #, kde-format
 msgid ""
 "Select if the previous card should be counted as correct when moving to the "
@@ -2338,13 +2345,13 @@ msgstr ""
 "o próximo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:291
+#: prefquizbase.ui:281
 #, kde-format
 msgid "Count &as correct"
 msgstr "Consider&ar como correto"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:301
+#: prefquizbase.ui:291
 #, kde-format
 msgid ""
 "Select if the previous card should be counted as incorrect when moving to "
@@ -2354,19 +2361,19 @@ msgstr ""
 "para o próximo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:304
+#: prefquizbase.ui:294
 #, kde-format
 msgid "Count as &error"
 msgstr "Considerar como &erro"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:314
+#: prefquizbase.ui:304
 #, kde-format
 msgid "Check to flip card automatically"
 msgstr "Escolha para virar o cartão automaticamente"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:317
+#: prefquizbase.ui:307
 #, kde-format
 msgid ""
 "Select if you want a card to turn over automatically after the given amount "
@@ -2376,7 +2383,7 @@ msgstr ""
 "indicado"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:320
+#: prefquizbase.ui:310
 #, kde-format
 msgid "&Flip card automatically after"
 msgstr "&Virar o cartão automaticamente após"

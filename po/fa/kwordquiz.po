@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:53+0000\n"
+"POT-Creation-Date: 2023-05-06 00:43+0000\n"
 "PO-Revision-Date: 2012-01-12 17:19+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -702,13 +702,13 @@ msgid "Editor"
 msgstr "ویرایشگر"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:192
+#: kwordquiz.cpp:528 prefquizbase.ui:188
 #, kde-format
 msgid "Flashcard"
 msgstr "فلش کارت"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:149
+#: kwordquiz.cpp:532 prefquizbase.ui:148
 #, kde-format
 msgid "Multiple Choice"
 msgstr "انتخاب چندگانه"
@@ -1081,86 +1081,93 @@ msgstr "تأخیر زمانی برای قرینه کردن فلش کارت"
 msgid "Treat use of hint as error"
 msgstr "رفتار استفاده از راهنمایی به عنوان خطا"
 
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
+#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
+#: kwordquiz.kcfg:97 prefquizbase.ui:79
+#, kde-format
+msgid "Compare answers in a case sensitive way"
+msgstr ""
+
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:97
+#: kwordquiz.kcfg:101
 #, kde-format
 msgid "Count flashcard as correct or error"
 msgstr "شمارش فلش کارت به منزله درست یا خطا"
 
 #. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:101
+#: kwordquiz.kcfg:105
 #, kde-format
 msgid "Quiz mode"
 msgstr "حالت امتحان"
 
 #. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:105
+#: kwordquiz.kcfg:109
 #, kde-format
 msgid "Show score as percentage"
 msgstr "نمایش امتیاز به عنوان درصد"
 
 #. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:111
+#: kwordquiz.kcfg:115
 #, kde-format
 msgid "Font used for front of flashcard"
 msgstr "قلم استفاده‌‌شده برای جلوی فلش کارت"
 
 #. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:115
+#: kwordquiz.kcfg:119
 #, kde-format
 msgid "Color used for text on front of flashcard"
 msgstr "رنگ استفاده‌‌شده برای متن جلوی فلش کارت"
 
 #. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:119
+#: kwordquiz.kcfg:123
 #, kde-format
 msgid "Color used for front of flashcard"
 msgstr "رنگ استفاده‌‌شده برای جلوی فلش کارت"
 
 #. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:123
+#: kwordquiz.kcfg:127
 #, kde-format
 msgid "Color used for frame on front of flashcard"
 msgstr "رنگ استفاده‌‌شده برای قابک جلوی فلش کارت"
 
 #. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:127
+#: kwordquiz.kcfg:131
 #, kde-format
 msgid "Font used for back of flashcard"
 msgstr "قلم استفاده‌‌شده برای پشت فلش کارت"
 
 #. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:131
+#: kwordquiz.kcfg:135
 #, kde-format
 msgid "Color used for text on back of flashcard"
 msgstr "رنگ استفاده‌‌شده برای متن پشت فلش کارت"
 
 #. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:135
+#: kwordquiz.kcfg:139
 #, kde-format
 msgid "Color used for back of flashcard"
 msgstr "رنگ استفاده‌‌شده برای پشت فلش کارت"
 
 #. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:139
+#: kwordquiz.kcfg:143
 #, kde-format
 msgid "Color used for frame on back of flashcard"
 msgstr "رنگ استفاده‌‌شده برای قابک پشت فلش کارت"
 
 #. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:145
+#: kwordquiz.kcfg:149
 #, kde-format
 msgid "The Providers path for KWordQuiz"
 msgstr "  مسیرفراهم‌‌کنندگان برای KWordQuiz"
 
 #. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:149
+#: kwordquiz.kcfg:153
 #, kde-format
 msgid "The command used to start a downloaded vocabulary"
 msgstr "فرمان استفاده‌شده برای آغاز واژگان بارگیری‌شده"
 
 #. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:153
+#: kwordquiz.kcfg:157
 #, kde-format
 msgid ""
 "The folder where downloaded vocabularies are saved by default (relative to "
@@ -1169,43 +1176,43 @@ msgstr ""
 "پوشه‌ای که در آن واژگان بارگیری‌‌‌شده به طور پیش‌فرض ذخیره می‌شوند )مربوط به $HOME("
 
 #. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:159
+#: kwordquiz.kcfg:163
 #, kde-format
 msgid "Pop up flashcards at fixed or random intervals"
 msgstr ""
 
 #. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:167
+#: kwordquiz.kcfg:171
 #, kde-format
 msgid "The interval in minutes at which to pop up a flash card"
 msgstr ""
 
 #. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:171
+#: kwordquiz.kcfg:175
 #, kde-format
 msgid "The minimum interval in minutes at which to pop up a flash card"
 msgstr ""
 
 #. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:175
+#: kwordquiz.kcfg:179
 #, kde-format
 msgid "The maximum interval in minutes at which to pop up a flash card"
 msgstr ""
 
 #. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:179
+#: kwordquiz.kcfg:183
 #, kde-format
 msgid "Geometry of the last flash card"
 msgstr ""
 
 #. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:183
+#: kwordquiz.kcfg:187
 #, kde-format
 msgid "Show flash card in a native KWordQuiz style"
 msgstr ""
 
 #. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:191
+#: kwordquiz.kcfg:195
 #, kde-format
 msgid ""
 "Last open vocabulary file to be opened automatically if none other is "
@@ -1213,7 +1220,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:195
+#: kwordquiz.kcfg:199
 #, kde-format
 msgid "Start exercise as soon as the user opens vocabulary file"
 msgstr ""
@@ -1298,7 +1305,7 @@ msgstr "&امتحان‌"
 
 #. i18n: ectx: ToolBar (quizToolBar)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:20
+#: kwordquizui.rc:61 prefquizbase.ui:21
 #, kde-format
 msgid "Quiz"
 msgstr "امتحان"
@@ -1478,7 +1485,7 @@ msgid "Name:_____________________________ Date:__________"
 msgstr "نام:_____________________________ تاریخ:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:92
 #, kde-format
 msgid "Score"
 msgstr "امتیاز"
@@ -2219,25 +2226,25 @@ msgid "&Question and Answer Quiz"
 msgstr "پرسش و پاسخ"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:44
+#: prefquizbase.ui:42
 #, kde-format
 msgid "Specify behavior for a question and answer session"
 msgstr "مشخص کردن رفتار برای نشست پرسش و پاسخ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:47
+#: prefquizbase.ui:45
 #, kde-format
 msgid "Question && Answer"
 msgstr "پرسش و پاسخ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:71
+#: prefquizbase.ui:66
 #, kde-format
 msgid "Check to count hint as error"
 msgstr "علامت زدن برای شمارش راهنمایی به عنوان خطا"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:74
+#: prefquizbase.ui:69
 #, kde-format
 msgid ""
 "Select if questions where the hint function has been used should be counted "
@@ -2247,98 +2254,98 @@ msgstr ""
 "به عنوان خطا شمارش شوند"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:77
+#: prefquizbase.ui:72
 #, kde-format
 msgid "&Treat hint as error"
 msgstr "&رفتار راهنمایی به عنوان خطا‌"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:87
+#: prefquizbase.ui:89
 #, kde-format
 msgid "Specify behavior of the score presentation in any session"
 msgstr "مشخص کردن رفتار ارائه امتیاز در هر نشست"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:114
+#: prefquizbase.ui:113
 #, kde-format
 msgid "Check to show score as a percentage"
 msgstr "علامت زدن برای نمایش امتیاز به عنوان درصد"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:117
+#: prefquizbase.ui:116
 #, kde-format
 msgid "Select if the score should be shown as a percentage"
 msgstr "برگزیدن در صورتی که امتیاز باید به عنوان درصد نمایش داده شود"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:120
+#: prefquizbase.ui:119
 #, kde-format
 msgid "&Show score as a percentage"
 msgstr "&نمایش امتیاز به عنوان درصد‌"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:146
+#: prefquizbase.ui:145
 #, kde-format
 msgid "Specify behavior for a multiple choice session"
 msgstr "مشخص کردن رفتار برای یک نشست انتخاب چندگانه"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:173
+#: prefquizbase.ui:169
 #, kde-format
 msgid "Check to correct automatically"
 msgstr "علامت زدن برای تصحیح خودکار"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:176
+#: prefquizbase.ui:172
 #, kde-format
 msgid "Select if a choice should be checked immediately"
 msgstr "اگر یک انتخاب باید فوراً علامت زده شود، برگزینید"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:179
+#: prefquizbase.ui:175
 #, kde-format
 msgid "Check selection a&utomatically"
 msgstr "علامت زدن گزینش &به طور خودکار‌"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:189
+#: prefquizbase.ui:185
 #, kde-format
 msgid "Specify behavior of a flashcard session"
 msgstr "مشخص کردن رفتار یک نشست فلش کارت"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:238
+#: prefquizbase.ui:231
 #, kde-format
 msgid "Specify the amount of time between card flips"
 msgstr "مشخص کردن مقدار زمان بین قرینه کردنهای کارت"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:241
+#: prefquizbase.ui:234
 #, kde-format
 msgid "seconds and"
 msgstr "ثانیه و"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:248
+#: prefquizbase.ui:241
 #, kde-format
 msgid "Delay to flip card"
 msgstr "تأخیر در قرینه کردن کارت"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:251
+#: prefquizbase.ui:244
 #, kde-format
 msgid "Delay in seconds to flip card"
 msgstr "تأخیر برحسب ثانیه در قرینه کردن کارت"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:285 prefquizbase.ui:298
+#: prefquizbase.ui:275 prefquizbase.ui:288
 #, kde-format
 msgid "Select how to count card"
 msgstr "برگزیدن چگونگی شمارش کارت"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:288
+#: prefquizbase.ui:278
 #, kde-format
 msgid ""
 "Select if the previous card should be counted as correct when moving to the "
@@ -2348,13 +2355,13 @@ msgstr ""
 "به حساب بیاید"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:291
+#: prefquizbase.ui:281
 #, kde-format
 msgid "Count &as correct"
 msgstr "شمارش &به عنوان درست‌"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:301
+#: prefquizbase.ui:291
 #, kde-format
 msgid ""
 "Select if the previous card should be counted as incorrect when moving to "
@@ -2364,19 +2371,19 @@ msgstr ""
 "به حساب بیاید"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:304
+#: prefquizbase.ui:294
 #, kde-format
 msgid "Count as &error"
 msgstr "شمارش به عنوان &خطا‌"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:314
+#: prefquizbase.ui:304
 #, kde-format
 msgid "Check to flip card automatically"
 msgstr "علامت زدن برای قرینه کردن خودکار کارت"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:317
+#: prefquizbase.ui:307
 #, kde-format
 msgid ""
 "Select if you want a card to turn over automatically after the given amount "
@@ -2386,7 +2393,7 @@ msgstr ""
 "برگردانده شود"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:320
+#: prefquizbase.ui:310
 #, kde-format
 msgid "&Flip card automatically after"
 msgstr "&قرینه کردن خودکار کارت پس از‌"

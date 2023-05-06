@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:53+0000\n"
+"POT-Creation-Date: 2023-05-06 00:43+0000\n"
 "PO-Revision-Date: 2023-03-01 01:46+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -678,13 +678,13 @@ msgid "Editor"
 msgstr "편집기"
 
 #. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:192
+#: kwordquiz.cpp:528 prefquizbase.ui:188
 #, kde-format
 msgid "Flashcard"
 msgstr "플래시 카드"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:149
+#: kwordquiz.cpp:532 prefquizbase.ui:148
 #, kde-format
 msgid "Multiple Choice"
 msgstr "객관식"
@@ -1055,86 +1055,93 @@ msgstr "플래시 카드를 뒤집는데 걸리는 시간"
 msgid "Treat use of hint as error"
 msgstr "힌트의 사용을 오답으로 처리"
 
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
+#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
+#: kwordquiz.kcfg:97 prefquizbase.ui:79
+#, kde-format
+msgid "Compare answers in a case sensitive way"
+msgstr ""
+
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:97
+#: kwordquiz.kcfg:101
 #, kde-format
 msgid "Count flashcard as correct or error"
 msgstr "플래시 카드를 정답 또는 오답으로 계산"
 
 #. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:101
+#: kwordquiz.kcfg:105
 #, kde-format
 msgid "Quiz mode"
 msgstr "퀴즈 모드"
 
 #. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:105
+#: kwordquiz.kcfg:109
 #, kde-format
 msgid "Show score as percentage"
 msgstr "백분율로 점수 표시하기"
 
 #. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:111
+#: kwordquiz.kcfg:115
 #, kde-format
 msgid "Font used for front of flashcard"
 msgstr "플래시 카드의 앞쪽에 사용할 글꼴"
 
 #. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:115
+#: kwordquiz.kcfg:119
 #, kde-format
 msgid "Color used for text on front of flashcard"
 msgstr "플래시 카드의 앞쪽에 사용할 텍스트의 색상"
 
 #. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:119
+#: kwordquiz.kcfg:123
 #, kde-format
 msgid "Color used for front of flashcard"
 msgstr "플래시 카드의 앞쪽에 사용할 색상"
 
 #. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:123
+#: kwordquiz.kcfg:127
 #, kde-format
 msgid "Color used for frame on front of flashcard"
 msgstr "플래시 카드 앞쪽의 프레임에 사용되는 색상"
 
 #. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:127
+#: kwordquiz.kcfg:131
 #, kde-format
 msgid "Font used for back of flashcard"
 msgstr "플래시 카드의 뒤쪽에 사용할 글꼴"
 
 #. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:131
+#: kwordquiz.kcfg:135
 #, kde-format
 msgid "Color used for text on back of flashcard"
 msgstr "플래시 카드의 뒤쪽에 사용할 텍스트의 색상"
 
 #. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:135
+#: kwordquiz.kcfg:139
 #, kde-format
 msgid "Color used for back of flashcard"
 msgstr "플래시 카드의 뒤쪽에 사용할 색상"
 
 #. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:139
+#: kwordquiz.kcfg:143
 #, kde-format
 msgid "Color used for frame on back of flashcard"
 msgstr "플래시 카드 뒤쪽의 프레임에 사용되는 색상"
 
 #. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:145
+#: kwordquiz.kcfg:149
 #, kde-format
 msgid "The Providers path for KWordQuiz"
 msgstr "KWordQuiz의 공급자 경로"
 
 #. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:149
+#: kwordquiz.kcfg:153
 #, kde-format
 msgid "The command used to start a downloaded vocabulary"
 msgstr "다운로드한 단어장을 시작하는 명령"
 
 #. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:153
+#: kwordquiz.kcfg:157
 #, kde-format
 msgid ""
 "The folder where downloaded vocabularies are saved by default (relative to "
@@ -1142,43 +1149,43 @@ msgid ""
 msgstr "다운로드한 단어장을 기본으로 저장할 폴더(홈 폴더($HOME)에 상대적)"
 
 #. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:159
+#: kwordquiz.kcfg:163
 #, kde-format
 msgid "Pop up flashcards at fixed or random intervals"
 msgstr "일정한 간격 또는 임의의 간격으로 플래시 카드를 나타냄"
 
 #. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:167
+#: kwordquiz.kcfg:171
 #, kde-format
 msgid "The interval in minutes at which to pop up a flash card"
 msgstr "플래시 카드를 나타낼 분 단위의 시간 간격"
 
 #. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:171
+#: kwordquiz.kcfg:175
 #, kde-format
 msgid "The minimum interval in minutes at which to pop up a flash card"
 msgstr "플래시 카드를 나타낼 분 단위의 최소 시간 간격"
 
 #. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:175
+#: kwordquiz.kcfg:179
 #, kde-format
 msgid "The maximum interval in minutes at which to pop up a flash card"
 msgstr "플래시 카드를 나타낼 분 단위의 최대 시간 간격"
 
 #. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:179
+#: kwordquiz.kcfg:183
 #, kde-format
 msgid "Geometry of the last flash card"
 msgstr "마지막 플래시 카드 크기"
 
 #. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:183
+#: kwordquiz.kcfg:187
 #, kde-format
 msgid "Show flash card in a native KWordQuiz style"
 msgstr "기본 KWordQuiz 스타일에서 플래시 카드를 보여줌"
 
 #. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:191
+#: kwordquiz.kcfg:195
 #, kde-format
 msgid ""
 "Last open vocabulary file to be opened automatically if none other is "
@@ -1186,7 +1193,7 @@ msgid ""
 msgstr "명령행에 아무 파일도 지정하지 않으면 마지막으로 사용한 단어장을 엽니다"
 
 #. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:195
+#: kwordquiz.kcfg:199
 #, kde-format
 msgid "Start exercise as soon as the user opens vocabulary file"
 msgstr "사용자가 단어장 파일을 열자마자 연습을 시작"
@@ -1265,7 +1272,7 @@ msgstr "퀴즈(&Q)"
 
 #. i18n: ectx: ToolBar (quizToolBar)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:20
+#: kwordquizui.rc:61 prefquizbase.ui:21
 #, kde-format
 msgid "Quiz"
 msgstr "퀴즈"
@@ -1438,7 +1445,7 @@ msgid "Name:_____________________________ Date:__________"
 msgstr "이름:_____________________________ 날짜:__________"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:90
+#: kwqtableview.cpp:237 prefquizbase.ui:92
 #, kde-format
 msgid "Score"
 msgstr "점수"
@@ -2176,25 +2183,25 @@ msgid "&Question and Answer Quiz"
 msgstr "질문과 답 퀴즈(&Q)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:44
+#: prefquizbase.ui:42
 #, kde-format
 msgid "Specify behavior for a question and answer session"
 msgstr "질문과 답 세션의 행동을 지정합니다"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:47
+#: prefquizbase.ui:45
 #, kde-format
 msgid "Question && Answer"
 msgstr "질문 && 답"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:71
+#: prefquizbase.ui:66
 #, kde-format
 msgid "Check to count hint as error"
 msgstr "힌트를 오답으로 계산하려면 선택하십시오"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:74
+#: prefquizbase.ui:69
 #, kde-format
 msgid ""
 "Select if questions where the hint function has been used should be counted "
@@ -2202,98 +2209,98 @@ msgid ""
 msgstr "힌트를 본 질문을 오답으로 계산하려면 선택하십시오"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:77
+#: prefquizbase.ui:72
 #, kde-format
 msgid "&Treat hint as error"
 msgstr "힌트를 오답으로 처리하기(&T)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:87
+#: prefquizbase.ui:89
 #, kde-format
 msgid "Specify behavior of the score presentation in any session"
 msgstr "모든 세션의 점수 표시 방법을 지정합니다"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:114
+#: prefquizbase.ui:113
 #, kde-format
 msgid "Check to show score as a percentage"
 msgstr "백분율로 점수를 표시하려면 선택하십시오"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:117
+#: prefquizbase.ui:116
 #, kde-format
 msgid "Select if the score should be shown as a percentage"
 msgstr "점수를 백분율로 보려면 선택하십시오"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:120
+#: prefquizbase.ui:119
 #, kde-format
 msgid "&Show score as a percentage"
 msgstr "백분율로 점수 표시하기(&S)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:146
+#: prefquizbase.ui:145
 #, kde-format
 msgid "Specify behavior for a multiple choice session"
 msgstr "객관식 세션의 행동을 지정합니다"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:173
+#: prefquizbase.ui:169
 #, kde-format
 msgid "Check to correct automatically"
 msgstr "자동으로 정답을 확인하려면 선택하십시오"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:176
+#: prefquizbase.ui:172
 #, kde-format
 msgid "Select if a choice should be checked immediately"
 msgstr "선택을 즉시 확인하려면 선택하십시오"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:179
+#: prefquizbase.ui:175
 #, kde-format
 msgid "Check selection a&utomatically"
 msgstr "자동으로 선택 확인하기(&U)"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:189
+#: prefquizbase.ui:185
 #, kde-format
 msgid "Specify behavior of a flashcard session"
 msgstr "플래시 카드 세션의 행동을 지정합니다"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:238
+#: prefquizbase.ui:231
 #, kde-format
 msgid "Specify the amount of time between card flips"
 msgstr "카드를 뒤집을 시간을 지정합니다"
 
 #. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:241
+#: prefquizbase.ui:234
 #, kde-format
 msgid "seconds and"
 msgstr "초 및"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:248
+#: prefquizbase.ui:241
 #, kde-format
 msgid "Delay to flip card"
 msgstr "카드 뒤집기 지연 시간"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:251
+#: prefquizbase.ui:244
 #, kde-format
 msgid "Delay in seconds to flip card"
 msgstr "카드를 뒤집기까지 초 단위의 지연 시간"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:285 prefquizbase.ui:298
+#: prefquizbase.ui:275 prefquizbase.ui:288
 #, kde-format
 msgid "Select how to count card"
 msgstr "카드를 계산할 방식 선택"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:288
+#: prefquizbase.ui:278
 #, kde-format
 msgid ""
 "Select if the previous card should be counted as correct when moving to the "
@@ -2301,13 +2308,13 @@ msgid ""
 msgstr "다음 카드로 이동할 때 이전의 카드를 정답으로 계산하려면 선택하십시오"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:291
+#: prefquizbase.ui:281
 #, kde-format
 msgid "Count &as correct"
 msgstr "정답으로 계산(&A)"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:301
+#: prefquizbase.ui:291
 #, kde-format
 msgid ""
 "Select if the previous card should be counted as incorrect when moving to "
@@ -2315,19 +2322,19 @@ msgid ""
 msgstr "다음 카드로 이동할 때 이전의 카드를 오답으로 계산하려면 선택하십시오"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:304
+#: prefquizbase.ui:294
 #, kde-format
 msgid "Count as &error"
 msgstr "오답으로 계산(&E)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:314
+#: prefquizbase.ui:304
 #, kde-format
 msgid "Check to flip card automatically"
 msgstr "자동으로 카드를 뒤집으려면 선택하십시오"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:317
+#: prefquizbase.ui:307
 #, kde-format
 msgid ""
 "Select if you want a card to turn over automatically after the given amount "
@@ -2336,7 +2343,7 @@ msgstr "이 옵션을 선택하면 주어진 시간이 지나면 자동으로 �
 
 # after 뒤에 초를 표시하는 콤보박스 있음.
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:320
+#: prefquizbase.ui:310
 #, kde-format
 msgid "&Flip card automatically after"
 msgstr "일정 시간 후에 자동으로 카드 뒤집기(&F)"
