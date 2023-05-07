@@ -1,18 +1,18 @@
 # Translation of kwordquiz.po to Catalan
-# Copyright (C) 2004-2022 This_file_is_part_of_KDE
+# Copyright (C) 2004-2023 This_file_is_part_of_KDE
 #
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005.
 # David Gil <al016950@yahoo.es>, 2005.
 # Sebastià Pla i Sanz <sps@sastia.com>, 2005.
 # Orestes Mas Casals <orestes@tsc.upc.edu>, 2006, 2007, 2008, 2009, 2010, 2012.
-# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2009, 2010, 2014, 2015, 2018, 2019, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2009, 2010, 2014, 2015, 2018, 2019, 2021, 2022, 2023.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2017, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-06 00:43+0000\n"
-"PO-Revision-Date: 2022-10-18 09:45+0200\n"
+"PO-Revision-Date: 2023-05-06 11:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1070,7 +1070,7 @@ msgstr "Tracta l'ús de consells com a un error"
 #: kwordquiz.kcfg:97 prefquizbase.ui:79
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Compara les respostes distingint entre majúscules i minúscules"
 
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
 #: kwordquiz.kcfg:101

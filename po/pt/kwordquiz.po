@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-06 00:43+0000\n"
-"PO-Revision-Date: 2022-08-05 22:51+0100\n"
+"PO-Revision-Date: 2023-05-06 11:49+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -1068,7 +1068,7 @@ msgstr "Tratar utilização de dica como erro"
 #: kwordquiz.kcfg:97 prefquizbase.ui:79
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Comparar as respostas com distinção entre maiúsculas e minúsculas"
 
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
 #: kwordquiz.kcfg:101
@@ -2535,6 +2535,3 @@ msgstr "&Cartões"
 #, kde-format
 msgid "Select to print flashcards"
 msgstr "Seleccione para imprimir cartões"
-
-#~ msgid "kwordquiz"
-#~ msgstr "kwordquiz"
