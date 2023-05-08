@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-06 00:43+0000\n"
-"PO-Revision-Date: 2023-04-28 20:26+0200\n"
+"PO-Revision-Date: 2023-05-07 09:35+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -1062,7 +1062,7 @@ msgstr "Tratar o emprego de axudas como erros"
 #: kwordquiz.kcfg:97 prefquizbase.ui:79
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Comparar as respostas distinguindo as maiúsculas"
 
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
 #: kwordquiz.kcfg:101
