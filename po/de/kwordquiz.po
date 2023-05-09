@@ -3,7 +3,7 @@
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2008.
 # Thorsten Mürell <thorsten@muerell.de>, 2004-2007.
 # Martin Ereth <martin.ereth@arcor.de>, 2008.
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012.
+# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2023.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 # Peter Rüthemann <peter.ruethemann@gmail.com>, 2010.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
@@ -12,15 +12,15 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-06 00:43+0000\n"
-"PO-Revision-Date: 2022-11-10 20:48+0100\n"
-"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
+"PO-Revision-Date: 2023-05-08 23:42+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1073,7 +1073,7 @@ msgstr "Tipp als Fehler behandeln"
 #: kwordquiz.kcfg:97 prefquizbase.ui:79
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Antworten mit Beachtung der Groß-/Kleinschreibung vergleichen"
 
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
 #: kwordquiz.kcfg:101
