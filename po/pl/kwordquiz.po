@@ -6,20 +6,20 @@
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2010, 2013.
 # Maciej Wikło <maciej.wiklo@wp.pl>, 2008, 2009.
 # Jan Stożek <jasio@stozek.waw.pl>, 2010.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2014, 2015, 2018, 2019, 2021, 2022.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2014, 2015, 2018, 2019, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-06 00:43+0000\n"
-"PO-Revision-Date: 2022-10-18 17:59+0200\n"
+"PO-Revision-Date: 2023-05-13 08:52+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -1065,7 +1065,7 @@ msgstr "Traktuj podpowiedź jako błąd"
 #: kwordquiz.kcfg:97 prefquizbase.ui:79
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Porównaj odpowiedzi zwracając uwagę na wielkość liter"
 
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
 #: kwordquiz.kcfg:101

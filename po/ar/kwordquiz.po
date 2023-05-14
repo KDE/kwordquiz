@@ -926,7 +926,7 @@ msgstr "&4 %1 -> %2 عشوائياً"
 #: kwordquiz.cpp:1398
 #, kde-format
 msgid "&5 %1 <-> %2 Randomly"
-msgstr "&٥ %1 -> %2 عشوائي"
+msgstr "&5 %1 -> %2 عشوائي"
 
 #: kwordquiz.cpp:1405 kwordquiz.cpp:1408
 #, kde-format
