@@ -5,15 +5,15 @@
 # Diniz Bortolotto <diniz.bortolotto@gmail.com>, 2007.
 # Henrique Marks <henriquemarks@gmail.com>, 2008.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2014, 2015.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2018, 2019, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2018, 2019, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-06 00:43+0000\n"
-"PO-Revision-Date: 2022-10-19 15:35-0300\n"
+"PO-Revision-Date: 2023-05-31 14:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1070,7 +1070,7 @@ msgstr "Considerar o uso da dica como erro"
 #: kwordquiz.kcfg:97 prefquizbase.ui:79
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Compare as respostas diferenciando maiúsculas de minúsculas"
 
 #. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
 #: kwordquiz.kcfg:101
