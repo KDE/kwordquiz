@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-06 00:43+0000\n"
-"PO-Revision-Date: 2023-05-06 10:51+0300\n"
+"PO-Revision-Date: 2023-06-04 01:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1007,7 +1007,7 @@ msgstr "Boşluk doldurma etkinleştirilmeli ise"
 #: kwordquiz.kcfg:55
 #, kde-format
 msgid "Direction the Enter key moves in the editor"
-msgstr "Enter tuşunun düzenleyicideki hareket yönü"
+msgstr "Giriş düğmesinin düzenleyicideki hareket yönü"
 
 #. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
 #: kwordquiz.kcfg:59
@@ -2031,26 +2031,26 @@ msgstr "A"
 #: prefeditorbase.ui:73
 #, kde-format
 msgid "How enter key moves"
-msgstr "Enter tuşunun nasıl hareket edeceği"
+msgstr "Giriş düğmesinin nasıl hareket edeceği"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
 #: prefeditorbase.ui:32
 #, kde-format
 msgid "Select how the Enter key should behave in the editor"
-msgstr "Bu düzenleyicide 'Enter' tuşunun nasıl davranması gerektiğini seçin"
+msgstr "Bu düzenleyicide 'Giriş' düğmesinin nasıl davranması gerektiğini seçin"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
 #: prefeditorbase.ui:35
 #, kde-format
 msgid "Enter Ke&y Moves"
-msgstr "Tuş Hare&ketlerini Girin"
+msgstr "Düğme Hare&ketlerini Gir"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
 #: prefeditorbase.ui:50
 #, kde-format
 msgid "Select if the next cell below should become active when pressing Enter."
 msgstr ""
-"Enter tuşuna basıldığında aşağı sıradaki hücre aktif olsun istiyorsanız "
+"Giriş düğmesine basıldığında aşağı sıradaki hücre etkinleşsin istiyorsanız "
 "seçin."
 
 #. i18n: ectx: property (text), widget (QRadioButton, optDown)
@@ -2065,7 +2065,8 @@ msgstr "&Aşağı"
 msgid ""
 "Select if the next cell to the right should become active when pressing Enter"
 msgstr ""
-"Enter tuşuna basıldığında sol sıradaki hücre aktif olsun istiyorsanız seçin"
+"Giriş düğmesine basıldığında sol sıradaki hücre etkinleşsin istiyorsanız "
+"seçin"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optRight)
 #: prefeditorbase.ui:66
@@ -2077,7 +2078,7 @@ msgstr "&Sağ"
 #: prefeditorbase.ui:76
 #, kde-format
 msgid "Select if the current cell should remain active when pressing Enter"
-msgstr "Enter tuşuna başıldığında seçili hücre aktif kalacaksa seçin"
+msgstr "Giriş düğmesine başıldığında seçili hücre etkin kalacaksa seçin"
 
 #. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
 #: prefeditorbase.ui:79
