@@ -10,6 +10,9 @@
       <label>Is this the first time KWordQuiz is run?</label>
       <default>true</default>
     </entry>
+    <entry name="Documents" type="PathList">
+      <label>List of documents</label>
+    </entry>
     <entry name="ShowSearch" type="Bool">
       <label>Toggle display of the search bar.</label>
       <default>true</default>

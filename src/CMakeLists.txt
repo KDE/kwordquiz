@@ -78,6 +78,12 @@ set(kwordquiz_SRCS
     qaview.h
     wqprintdialogpage.cpp
     wqprintdialogpage.h
+
+    resources.qrc
+    kwqeditormodel.h
+    kwqeditormodel.cpp
+    kwqdocumentmodel.h
+    kwqdocumentmodel.cpp
    )
 
 
@@ -105,8 +111,10 @@ add_executable(kwordquiz ${kwordquiz_SRCS})
 
 target_link_libraries(kwordquiz
     Qt::Core
+    Qt::Quick
     Qt::PrintSupport
     Qt::Widgets
+    Qt::Svg
     KF${KF_MAJOR_VERSION}::Crash
     KF${KF_MAJOR_VERSION}::ConfigCore
     KF${KF_MAJOR_VERSION}::I18n

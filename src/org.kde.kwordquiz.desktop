@@ -1,8 +1,8 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Exec=kwordquiz %u -qwindowtitle %c -qwindowicon kwordquiz
-Icon=kwordquiz
+Exec=kwordquiz %u -qwindowtitle %c
+Icon=org.kde.kwordquiz
 X-DocPath=kwordquiz/index.html
 MimeType=application/x-kvtml;
 Comment=A flashcard and vocabulary learning program
