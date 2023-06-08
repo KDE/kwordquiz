@@ -7,15 +7,18 @@
 #include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 #include <KAboutData>
 #include <KActionCollection>
 #include <KCrash>
 #include <KLocalizedString>
 
-#include "kwqtutor.h"
-#include "kwordquiz.h"
+#include "kwqeditormodel.h"
+#include "kwqdocumentmodel.h"
 #include "kwordquiz_version.h"
+
 
 int main(int argc, char *argv[])
 {
@@ -29,6 +32,7 @@ int main(int argc, char *argv[])
     QApplication::setApplicationName(QStringLiteral("kwordquiz"));
     QApplication::setApplicationVersion(KWORDQUIZ_VERSION_STRING);
     QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
+    QIcon::setFallbackThemeName("breeze");
 
     KAboutData aboutData(QStringLiteral("kwordquiz"),
                          i18n("KWordQuiz"),
@@ -42,6 +46,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Peter Hedlund"), QString(), QStringLiteral("peter.hedlund@kdemail.net"));
     aboutData.addCredit(i18n("Anne-Marie Mahfouf"), i18n("KDE Edutainment Maintainer"), QStringLiteral("annma@kde.org"));
     aboutData.addCredit(i18n("Martin Pfeiffer"), i18n("Leitner System and several code contributions"), QStringLiteral("hubipete@gmx.net"));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kwordquiz")));
 
     KAboutData::setApplicationData(aboutData);
 
@@ -70,34 +75,45 @@ int main(int argc, char *argv[])
         return tutorapp.exec();
     }
 
-    if (app.isSessionRestored()) {
-        kRestoreMainWindows<KWordQuizApp>();
-    } else {
-        KWordQuizApp *kwordquiz = new KWordQuizApp();
-        kwordquiz->show();
+    qmlRegisterType<KWQEditorModel>("org.kde.kwordquiz", 1, 0, "EditorModel");
+    qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
 
-        if (args.count()) {
-            kwordquiz->openDocumentFile(QUrl::fromLocalFile(args.at(args.count() - 1)));
-
-            QString mode = parser.value(QStringLiteral("mode"));
-
-            if (!mode.isEmpty()) {
-                QAction *a = kwordquiz->actionCollection()->action(QStringLiteral("mode_%1").arg(QString(mode)));
-                kwordquiz->slotModeActionGroupTriggered(a);
-            }
-
-            QString go_to = parser.value(QStringLiteral("goto"));
-            if (!go_to.isEmpty()) {
-                if (go_to == QLatin1String("flash"))
-                    kwordquiz->slotQuizFlash();
-                if (go_to == QLatin1String("mc"))
-                    kwordquiz->slotQuizMultiple();
-                if (go_to == QLatin1String("qa"))
-                    kwordquiz->slotQuizQA();
-            }
-        } else {
-            kwordquiz->openDocumentFile();
-        }
+    QQmlApplicationEngine engine;
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
+    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+    if (engine.rootObjects().isEmpty()) {
+        return -1;
     }
+
+    //if (app.isSessionRestored()) {
+    //    kRestoreMainWindows<KWordQuizApp>();
+    //} else {
+    //    KWordQuizApp *kwordquiz = new KWordQuizApp();
+    //    kwordquiz->show();
+
+    //    if (args.count()) {
+    //        kwordquiz->openDocumentFile(QUrl::fromLocalFile(args.at(args.count() - 1)));
+
+    //        QString mode = parser.value(QStringLiteral("mode"));
+
+    //        if (!mode.isEmpty()) {
+    //            QAction *a = kwordquiz->actionCollection()->action(QStringLiteral("mode_%1").arg(QString(mode)));
+    //            kwordquiz->slotModeActionGroupTriggered(a);
+    //        }
+
+    //        QString go_to = parser.value(QStringLiteral("goto"));
+    //        if (!go_to.isEmpty()) {
+    //            if (go_to == QLatin1String("flash"))
+    //                kwordquiz->slotQuizFlash();
+    //            if (go_to == QLatin1String("mc"))
+    //                kwordquiz->slotQuizMultiple();
+    //            if (go_to == QLatin1String("qa"))
+    //                kwordquiz->slotQuizQA();
+    //        }
+    //    } else {
+    //        kwordquiz->openDocumentFile();
+    //    }
+    //}
     return app.exec();
 }
