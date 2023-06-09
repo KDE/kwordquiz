@@ -54,6 +54,11 @@ Kirigami.ScrollablePage {
                             id: documentButton
 
                             text: documentDelegate.title
+                            onClicked: applicationWindow().pageStack.pushDialogLayer("qrc:/qml/FlashCardPage.qml", {
+                                width: Kirigami.Units.gridUnit * 20,
+                                height: Kirigami.Units.gridUnit * 20,
+                            })
+
                             Layout.fillWidth: true
                         }
 
@@ -61,6 +66,13 @@ Kirigami.ScrollablePage {
                             above: documentButton
                         }
                     }
+                }
+
+                MobileForm.FormButtonDelegate {
+                    text: i18nc("@action:button", "Create Deck")
+                    onClicked: applicationWindow().pageStack.push("qrc:/qml/DeckEditorPage.qml", {
+                        documentModel: documentModel,
+                    })
                 }
             }
         }

@@ -19,6 +19,9 @@ class KWQEditorModel : public QAbstractListModel
     Q_PROPERTY(QString license READ license WRITE setLicense NOTIFY licenseChanged)
     Q_PROPERTY(bool enabled READ enabled NOTIFY enabledChanged)
 
+    Q_PROPERTY(QString identifierLeft READ identifierLeft WRITE setIdentifierLeft NOTIFY identifierLeftChanged)
+    Q_PROPERTY(QString identifierRight READ identifierRight WRITE setIdentifierRight NOTIFY identifierRightChanged)
+
 public:
     enum ExtraRoles {
         QuestionRole = Qt::DisplayRole + 1,
@@ -49,6 +52,12 @@ public:
     QString license() const;
     void setLicense(const QString &license);
 
+    QString identifierLeft() const;
+    void setIdentifierLeft(const QString &identifierLeft);
+
+    QString identifierRight() const;
+    void setIdentifierRight(const QString &identifierRight);
+
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -65,8 +74,9 @@ Q_SIGNALS:
     void authorChanged();
     void authorContactChanged();
     void licenseChanged();
+    void identifierLeftChanged();
+    void identifierRightChanged();
 
 private:
-    KEduVocLesson *currentLesson(int row) const;
     KEduVocDocument *m_document = nullptr;
 };
