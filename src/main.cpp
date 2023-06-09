@@ -16,6 +16,7 @@
 #include <KLocalizedString>
 
 #include "kwqeditormodel.h"
+#include "kwqquizmodel.h"
 #include "kwqdocumentmodel.h"
 #include "kwordquiz_version.h"
 
@@ -76,6 +77,7 @@ int main(int argc, char *argv[])
     }
 
     qmlRegisterType<KWQEditorModel>("org.kde.kwordquiz", 1, 0, "EditorModel");
+    qmlRegisterType<KWQQuizModel>("org.kde.kwordquiz", 1, 0, "QuizModel");
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
 
     QQmlApplicationEngine engine;

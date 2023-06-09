@@ -36,6 +36,34 @@ void KWQEditorModel::createNew()
     setDocument(doc);
 }
 
+QString KWQEditorModel::identifierLeft() const
+{
+    return m_document ? m_document->identifier(0).name() : QString();
+}
+
+void KWQEditorModel::setIdentifierLeft(const QString &identifierLeft)
+{
+    if (m_document->identifier(0).name() == identifierLeft) {
+        return;
+    }
+    m_document->identifier(0).setName(identifierLeft);
+    identifierLeftChanged();
+}
+
+QString KWQEditorModel::identifierRight() const
+{
+    return m_document ? m_document->identifier(1).name() : QString();
+}
+
+void KWQEditorModel::setIdentifierRight(const QString &identifierRight)
+{
+    if (m_document->identifier(1).name() == identifierRight) {
+        return;
+    }
+    m_document->identifier(1).setName(identifierRight);
+    identifierRightChanged();
+}
+
 void KWQEditorModel::add(const QString &question, const QString &answer)
 {
     Q_ASSERT(m_document);
@@ -64,16 +92,6 @@ void KWQEditorModel::edit(const int row, const QString &question, const QString 
     expression->setTranslation(1, answer);
 
     Q_EMIT dataChanged(index(row, 0), index(row, 0));
-}
-static QString extractSuffixFromQtPattern(const QString &qtPattern)
-{
-  static const QRegularExpression regexp(".*\\((.*)\\)");
-  const QRegularExpressionMatch match = regexp.match(qtPattern);
-  if (!match.hasMatch()) {
-    qWarning() << "extractSuffixesFromQtPattern regexp match failed" << qtPattern;
-    return { QStringLiteral(".report_bug_please") };
-  }
-  return match.captured(1);
 }
 
 bool KWQEditorModel::save()
@@ -120,6 +138,8 @@ void KWQEditorModel::setDocument(KEduVocDocument *document)
     Q_EMIT authorContact();
     Q_EMIT authorContactChanged();
     Q_EMIT licenseChanged();
+    Q_EMIT identifierLeftChanged();
+    Q_EMIT identifierRightChanged();
 }
 
 QString KWQEditorModel::title() const

@@ -42,20 +42,58 @@ Kirigami.ScrollablePage {
 
     ListView {
         header: QQC2.Pane {
+            width: parent.width
+
             Kirigami.Theme.colorSet: Kirigami.Theme.Window
             Kirigami.Theme.inherit: false
 
-            width: parent.width
-            contentItem: RowLayout {
-                QQC2.Label {
-                    text: i18nc("@label", "Name:")
+            contentItem: ColumnLayout {
+                RowLayout {
+                    Layout.fillWidth: true
+
+                    QQC2.Label {
+                        text: i18nc("@label", "Name:")
+                    }
+
+                    QQC2.TextField {
+                        Layout.fillWidth: true
+                        text: editorModel.title
+                        onTextChanged: editorModel.title = text;
+                        enabled: editorModel.enabled
+                    }
                 }
 
-                QQC2.TextField {
+                Kirigami.Separator {
                     Layout.fillWidth: true
-                    text: editorModel.title
-                    onTextChanged: editorModel.title = text;
-                    enabled: editorModel.enabled
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+
+                    QQC2.TextField {
+                        text: editorModel.identifierLeft
+                        background: null
+                        onEditingFinished: editorModel.identifierLeft = text
+                        enabled: editorModel.enabled
+
+                        Layout.fillWidth: true
+                        font.bold: true
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillHeight: true
+                        Layout.preferredWidth: 1
+                    }
+
+                    QQC2.TextField {
+                        text: editorModel.identifierRight
+                        background: null
+                        onEditingFinished: editorModel.identifierRight = text
+                        enabled: editorModel.enabled
+
+                        Layout.fillWidth: true
+                        font.bold: true
+                    }
                 }
             }
         }
@@ -79,7 +117,7 @@ Kirigami.ScrollablePage {
                 QQC2.TextField {
                     id: newQuestionField
                     background: null
-                    placeholderText: i18n("question")
+                    placeholderText: editorModel.identifierLeft
                     enabled: editorModel.enabled
                     onEditingFinished: footer.insertRow();
                     onAccepted: newAnswerField.forceActiveFocus();
@@ -95,7 +133,7 @@ Kirigami.ScrollablePage {
                 QQC2.TextField {
                     id: newAnswerField
                     background: null
-                    placeholderText: i18n("answer")
+                    placeholderText: editorModel.identifierRight
                     onEditingFinished: footer.insertRow()
                     onAccepted: newQuestionField.forceActiveFocus();
                     enabled: editorModel.enabled
