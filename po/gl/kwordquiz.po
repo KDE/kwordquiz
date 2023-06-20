@@ -506,7 +506,7 @@ msgstr "&Carta"
 #: kwordquiz.cpp:308
 #, kde-format
 msgid "Starts a flashcard session using the active vocabulary"
-msgstr "Inicia unha sesión de fichas empregando o vocabulario activo"
+msgstr "Inicia unha sesión de fichas usando o vocabulario activo"
 
 #: kwordquiz.cpp:315
 #, kde-format
@@ -516,8 +516,7 @@ msgstr "&Escolla múltipla"
 #: kwordquiz.cpp:317
 #, kde-format
 msgid "Starts a multiple choice session using the active vocabulary"
-msgstr ""
-"Inicia unha sesión de escollas múltiplas empregando o vocabulario activo"
+msgstr "Inicia unha sesión de escollas múltiplas usando o vocabulario activo"
 
 #: kwordquiz.cpp:324
 #, kde-format
@@ -532,7 +531,7 @@ msgstr "P&&R"
 #: kwordquiz.cpp:327
 #, kde-format
 msgid "Starts a question and answer session using the active vocabulary"
-msgstr "Inicia unha sesión pregunta-resposta empregando o vocabulario activo"
+msgstr "Inicia unha sesión pregunta-resposta usando o vocabulario activo"
 
 #: kwordquiz.cpp:334
 #, kde-format
@@ -791,7 +790,7 @@ msgstr "Está a imprimir…"
 #: kwordquiz.cpp:991
 #, kde-format
 msgid "Showing Preview..."
-msgstr "Estase a mostrar a vista previa…"
+msgstr "Estase a amosar a vista previa…"
 
 #: kwordquiz.cpp:999
 #, kde-format
@@ -1080,7 +1079,7 @@ msgstr "Modo de preguntas"
 #: kwordquiz.kcfg:109
 #, kde-format
 msgid "Show score as percentage"
-msgstr "Mostrar a puntuación como porcentaxe"
+msgstr "Amosar a puntuación como porcentaxe"
 
 #. i18n: ectx: label, entry (FrontFont), group (FlashCard)
 #: kwordquiz.kcfg:115
@@ -1156,25 +1155,25 @@ msgstr ""
 #: kwordquiz.kcfg:163
 #, kde-format
 msgid "Pop up flashcards at fixed or random intervals"
-msgstr "Mostrar as fichas a intervalos fixos ou ao chou"
+msgstr "Amosar as fichas a intervalos fixos ou ao chou"
 
 #. i18n: ectx: label, entry (TutorEvery), group (Tutor)
 #: kwordquiz.kcfg:171
 #, kde-format
 msgid "The interval in minutes at which to pop up a flash card"
-msgstr "O intervalo en minutos tras o que mostrar unha ficha"
+msgstr "O intervalo en minutos tras o que amosar unha ficha"
 
 #. i18n: ectx: label, entry (TutorMin), group (Tutor)
 #: kwordquiz.kcfg:175
 #, kde-format
 msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr "O intervalo mínimo en minutos para mostrar unha ficha"
+msgstr "O intervalo mínimo en minutos para amosar unha ficha"
 
 #. i18n: ectx: label, entry (TutorMax), group (Tutor)
 #: kwordquiz.kcfg:179
 #, kde-format
 msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr "O intervalo máximo en minutos para mostrar unha ficha"
+msgstr "O intervalo máximo en minutos para amosar unha ficha"
 
 #. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
 #: kwordquiz.kcfg:183
@@ -1186,7 +1185,7 @@ msgstr "Xeometría da última ficha"
 #: kwordquiz.kcfg:187
 #, kde-format
 msgid "Show flash card in a native KWordQuiz style"
-msgstr "Mostrar as fichas no estilo nativo de KWordQuiz"
+msgstr "Amosar as fichas no estilo nativo de KWordQuiz"
 
 #. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
 #: kwordquiz.kcfg:195
@@ -1409,7 +1408,7 @@ msgstr "Respostas correctas"
 msgid ""
 "The number of questions answered correctly. May be shown as a percentage."
 msgstr ""
-"O número de preguntas respondidas correctamente. Pódese mostrar como "
+"O número de preguntas respondidas correctamente. Pódese amosar como "
 "porcentaxe."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, picError)
@@ -1426,7 +1425,7 @@ msgstr "Respostas incorrectas"
 msgid ""
 "The number of questions answered incorrectly. May be shown as a percentage."
 msgstr ""
-"O número de preguntas respondidas incorrectamente. Pódese mostrar como "
+"O número de preguntas respondidas incorrectamente. Pódese amosar como "
 "porcentaxe."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
@@ -1441,7 +1440,7 @@ msgstr "Preguntas respondidas"
 #: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
 #, kde-format
 msgid "The number of questions already answered. May be shown as a percentage."
-msgstr "O número de preguntas xa respondidas. Pódese mostrar como porcentaxe."
+msgstr "O número de preguntas xa respondidas. Pódese amosar como porcentaxe."
 
 #: kwqtablemodel.cpp:211
 #, kde-format
@@ -1840,7 +1839,7 @@ msgstr "Voltear a ficha"
 #: prefcardappearancebase.ui:95
 #, kde-format
 msgid "Use to show the other side of the card"
-msgstr "Empregar para mostrar o outro lado da ficha"
+msgstr "Usar para amosar o outro lado da ficha"
 
 #. i18n: ectx: property (text), widget (QPushButton, flipButton)
 #: prefcardappearancebase.ui:98
@@ -1872,7 +1871,7 @@ msgstr "Escoller a cor do texto"
 #: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
 #, kde-format
 msgid "Use to select the color for text shown on the card"
-msgstr "Empregar para escoller a cor do texto mostrado na ficha"
+msgstr "Usar para escoller a cor do texto amosado na ficha"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
@@ -1886,7 +1885,7 @@ msgstr "Escolle a cor do marco da ficha"
 #: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
 #, kde-format
 msgid "Use to select the color for drawing the frame of the card"
-msgstr "Empregar para escoller a cor para debuxar o marco da ficha"
+msgstr "Usar para escoller a cor para debuxar o marco da ficha"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
@@ -1906,7 +1905,7 @@ msgstr "Escolle a cor empregada para debuxar a ficha"
 #: prefcardappearancebase.ui:202
 #, kde-format
 msgid "Use to select the font for displaying text on the front of the card"
-msgstr "Usar para seleccionar a fonte para mostrar do texto na fronte da ficha"
+msgstr "Usar para seleccionar a fonte para amosar do texto na fronte da ficha"
 
 #. i18n: ectx: property (text), widget (QLabel, textColorLabel)
 #: prefcardappearancebase.ui:249
@@ -2246,19 +2245,19 @@ msgstr ""
 #: prefquizbase.ui:113
 #, kde-format
 msgid "Check to show score as a percentage"
-msgstr "Marcar para mostrar a puntuación como porcentaxe"
+msgstr "Marcar para amosar a puntuación como porcentaxe"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
 #: prefquizbase.ui:116
 #, kde-format
 msgid "Select if the score should be shown as a percentage"
-msgstr "Escolle se queres mostrar a puntuación como porcentaxe"
+msgstr "Escolle se queres amosar a puntuación como porcentaxe"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
 #: prefquizbase.ui:119
 #, kde-format
 msgid "&Show score as a percentage"
-msgstr "&Mostrar a puntuación como porcentaxe"
+msgstr "&Amosar a puntuación como porcentaxe"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
 #: prefquizbase.ui:145
