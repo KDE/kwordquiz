@@ -21,12 +21,15 @@ Kirigami.ScrollablePage {
         text: i18nc("@label", "Get started with your first deck")
         helpfulAction: QQC2.Action {
             text: i18nc("@action:button", "Create Deck")
-            onTriggered: applicationWindow().pageStack.push("qrc:/qml/DeckEditorPage.qml", {
+            onTriggered: applicationWindow().pageStack.layers.push("qrc:/qml/DeckEditorPage.qml", {
                 documentModel: documentModel,
             })
         }
         visible: documentRepeater.count === 0
     }
+
+    leftPadding: 0
+    rightPadding: 0
 
     ColumnLayout {
         visible: documentRepeater.count > 0
@@ -35,6 +38,8 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
 
             contentItem: ColumnLayout {
+                spacing: 0
+
                 MobileForm.FormCardHeader {
                     title: i18n("Decks")
                 }
@@ -48,15 +53,19 @@ Kirigami.ScrollablePage {
                     delegate: ColumnLayout {
                         id: documentDelegate
 
+                        required property int index
                         required property string title
+                        required property var document
+
+                        spacing: 0
 
                         MobileForm.FormButtonDelegate {
                             id: documentButton
 
                             text: documentDelegate.title
-                            onClicked: applicationWindow().pageStack.pushDialogLayer("qrc:/qml/FlashCardPage.qml", {
-                                width: Kirigami.Units.gridUnit * 20,
-                                height: Kirigami.Units.gridUnit * 20,
+                            onClicked: applicationWindow().pageStack.layers.push("qrc:/qml/FlashCardPage.qml", {
+                                document: documentDelegate.document,
+                                documentModel: documentModel,
                             })
 
                             Layout.fillWidth: true
@@ -64,13 +73,15 @@ Kirigami.ScrollablePage {
 
                         MobileForm.FormDelegateSeparator {
                             above: documentButton
+                            below: index === 0 ? null : (index + 1 === documentRepeater.count ? createButton : documentDelegate.itemAt(index - 1).children[0])
                         }
                     }
                 }
 
                 MobileForm.FormButtonDelegate {
+                    id: createButton
                     text: i18nc("@action:button", "Create Deck")
-                    onClicked: applicationWindow().pageStack.push("qrc:/qml/DeckEditorPage.qml", {
+                    onClicked: applicationWindow().pageStack.layers.push("qrc:/qml/DeckEditorPage.qml", {
                         documentModel: documentModel,
                     })
                 }

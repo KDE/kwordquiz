@@ -9,7 +9,7 @@
 #include <keduvocdocument.h>
 
 /// @author Carl Schwan <carl@carlschwan.eu>
-class KWQEditorModel : public QAbstractListModel
+class KWQCardModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(KEduVocDocument *document READ document WRITE setDocument NOTIFY documentChanged)
@@ -22,6 +22,9 @@ class KWQEditorModel : public QAbstractListModel
     Q_PROPERTY(QString identifierLeft READ identifierLeft WRITE setIdentifierLeft NOTIFY identifierLeftChanged)
     Q_PROPERTY(QString identifierRight READ identifierRight WRITE setIdentifierRight NOTIFY identifierRightChanged)
 
+    Q_PROPERTY(QString langQuestion READ langQuestion WRITE setLangQuestion NOTIFY langQuestionChanged)
+    Q_PROPERTY(QString langAnswer READ langAnswer WRITE setLangAnswer NOTIFY langAnswerChanged)
+
 public:
     enum ExtraRoles {
         QuestionRole = Qt::DisplayRole + 1,
@@ -33,7 +36,7 @@ public:
         AnswerSoundRole,
     };
 
-    explicit KWQEditorModel(QObject *parent = nullptr);
+    explicit KWQCardModel(QObject *parent = nullptr);
 
     bool enabled() const;
 
@@ -58,6 +61,12 @@ public:
     QString identifierRight() const;
     void setIdentifierRight(const QString &identifierRight);
 
+    QString langQuestion() const;
+    void setLangQuestion(const QString &langQuestion);
+
+    QString langAnswer() const;
+    void setLangAnswer(const QString &langAnswer);
+
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -76,6 +85,11 @@ Q_SIGNALS:
     void licenseChanged();
     void identifierLeftChanged();
     void identifierRightChanged();
+    void langQuestionChanged();
+    void langAnswerChanged();
+
+    /// Triggered when the document was edited.
+    void reloaded();
 
 private:
     KEduVocDocument *m_document = nullptr;

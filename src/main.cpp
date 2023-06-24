@@ -15,11 +15,11 @@
 #include <KCrash>
 #include <KLocalizedString>
 
-#include "kwqeditormodel.h"
-#include "kwqquizmodel.h"
+#include "kwqcardmodel.h"
+//#include "kwqquizmodel.h"
 #include "kwqdocumentmodel.h"
 #include "kwordquiz_version.h"
-
+#include "kwqrandomsortmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -76,9 +76,10 @@ int main(int argc, char *argv[])
         return tutorapp.exec();
     }
 
-    qmlRegisterType<KWQEditorModel>("org.kde.kwordquiz", 1, 0, "EditorModel");
-    qmlRegisterType<KWQQuizModel>("org.kde.kwordquiz", 1, 0, "QuizModel");
+    qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
+    //qmlRegisterType<KWQQuizModel>("org.kde.kwordquiz", 1, 0, "QuizModel");
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
+    qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

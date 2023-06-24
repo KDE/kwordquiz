@@ -1,33 +1,33 @@
-/*
-    SPDX-FileCopyrightText: 2008-2010 Peter Hedlund <peter.hedlund@kdemail.net>
-    SPDX-License-Identifier: GPL-2.0-or-later
-*/
+// SPDX-FileCopyrightText: 2006-2010 Peter Hedlund <peter.hedlund@kdemail.net>
+// SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: GPL-2.0-or-later
 
-#ifndef KWQQUIZMODEL_H
-#define KWQQUIZMODEL_H
+#pragma once
 
-#include <QSortFilterProxyModel>
+#include <QAbstractListModel>
+#include <qsortfilterproxymodel.h>
 
 #include "prefs.h"
+
+class KWQCardModel;
+class KWQSortFilterModel;
 
 /**
   @author Peter Hedlund <peter.hedlund@kdemail.net>
 */
-
-class KWQSortFilterModel;
-
-class KWQQuizModel : public QSortFilterProxyModel
+class KWQQuizModel : public QAbstractListModel
 {
     Q_OBJECT
+
 public:
-    enum QuizIcon {IconLeftCol, IconRightCol, IconQuestion, IconCorrect, IconError};
+    enum QuizIcon {
+        IconLeftCol, IconRightCol, IconQuestion, IconCorrect, IconError,
+    };
 
-    explicit KWQQuizModel(QObject *parent);
+    explicit KWQQuizModel(QObject *parent = nullptr);
 
-    void setFilterModel(KWQSortFilterModel * sourceModel);
-    KWQSortFilterModel * sourceModel() const;
-
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
+    void setFilterModel(KWQCardModel *sourceModel);
+    KWQCardModel *sourceModel() const;
 
     bool init();
 

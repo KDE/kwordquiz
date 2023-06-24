@@ -16,91 +16,15 @@ include_directories(
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KWORDQUIZ VERSION_HEADER kwordquiz_version.h)
 
 set(kwordquiz_SRCS
-    blankanswer.cpp
-    dlglanguage.cpp
-    dlglanguage.h
-    dlgspecchar.cpp
-    dlgspecchar.h
-    filterproxysearchline.cpp
-    filterproxysearchline.h
-    flashview.cpp
-    flashview.h
-    kwordquiz.cpp
-    kwordquiz.h
-    kwordquizprefs.cpp
-    kwordquizprefs.h
-    kwqcardscene.cpp
-    kwqcardscene.h
-    kwqcardview.cpp
-    kwqcardview.h
-    kwqcleardialog.cpp
-    kwqcleardialog.h
-    kwqcommands.cpp
-    kwqcommands.h
-    kwqpixmapitem.cpp
-    kwqpixmapitem.h
-    kwqquizmodel.cpp
-    kwqquizmodel.h
-    kwqquizview.cpp
-    kwqquizview.h
-    kwqscorewidget.cpp
-    kwqscorewidget.h
-    kwqsortfiltermodel.cpp
-    kwqsortfiltermodel.h
-    kwqtabledelegate.cpp
-    kwqtabledelegate.h
-    kwqtablemodel.cpp
-    kwqtablemodel.h
-    kwqtableview.cpp
-    kwqtableview.h
-    kwqtutor.cpp
-    kwqtutorflashcard.cpp
-    kwqtutorflashcard.h
-    kwqtutor.h
-    kwqtutorprefs.cpp
-    kwqtutorprefs.h
     main.cpp
-    multipleview.cpp
-    multipleview.h
-    prefcardappearance.cpp
-    prefcardappearance.h
-    prefcharacter.cpp
-    prefcharacter.h
-    prefeditor.cpp
-    prefeditor.h
-    prefgeneral.cpp
-    prefgeneral.h
-    prefquiz.cpp
-    prefquiz.h
-    preftutor.cpp
-    preftutor.h
-    qaview.cpp
-    qaview.h
-    wqprintdialogpage.cpp
-    wqprintdialogpage.h
-
-    resources.qrc
-    kwqeditormodel.h
-    kwqeditormodel.cpp
+    kwqcardmodel.h
+    kwqcardmodel.cpp
     kwqdocumentmodel.h
     kwqdocumentmodel.cpp
-   )
-
-
-ki18n_wrap_ui(kwordquiz_SRCS
-   columndialogbase.ui
-   flashviewbase.ui
-   multipleviewbase.ui
-   qaviewbase.ui
-   prefeditorbase.ui
-   prefquizbase.ui
-   kwqscorewidgetbase.ui
-   prefcharacterbase.ui
-   prefcardappearancebase.ui
-   prefgeneralbase.ui
-   preftutorbase.ui
-   cleardialogbase.ui
-   )
+    kwqrandomsortmodel.h
+    kwqrandomsortmodel.cpp
+    resources.qrc
+)
 
 kconfig_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
 
