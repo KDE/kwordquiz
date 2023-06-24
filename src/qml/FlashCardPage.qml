@@ -11,61 +11,153 @@ import org.kde.kwordquiz 1.0
 Kirigami.Page {
     id: root
 
-    property bool showAnswer: false
+    property alias document: cardModel.document
+    property var documentModel
 
-    title: i18n("Cards %1/%2 Errors %3", 4, 7, 2)
+    property bool finished: false
+    property bool showAnswer: false
+    property int errors: 0
+
+    title: i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
 
     actions.contextualActions: [
         Kirigami.Action {
             text: i18nc("@action:button", "Check")
             onTriggered: root.showAnswer = true;
-            visible: !root.showAnswer
+            visible: !root.showAnswer && !root.finished
         },
         Kirigami.Action {
             icon.name: "know"
             text: i18nc("@action:button", "Correct")
             visible: root.showAnswer
-            onTriggered: root.showAnswer = false;
+            onTriggered: {
+                root.showAnswer = false;
+                if (listView.currentIndex + 1 === listView.count) {
+                    root.finished = true;
+                } else {
+                    listView.incrementCurrentIndex();
+                }
+            }
         },
         Kirigami.Action {
             text: i18nc("@action:button", "Not Correct")
             icon.name: "dontknow"
             visible: root.showAnswer
-            onTriggered: root.showAnswer = false;
+            onTriggered: {
+                root.showAnswer = false;
+                root.errors++;
+                if (listView.currentIndex + 1 === listView.count) {
+                    root.finished = true;
+                } else {
+                    listView.incrementCurrentIndex();
+                }
+            }
         },
         Kirigami.Action {
             text: i18nc("@action:button", "Edit")
             icon.name: "document-edit"
+            onTriggered: applicationWindow().pageStack.layers.push('qrc:/qml/DeckEditorPage.qml', {
+                documentModel: root.documentModel,
+                mode: DeckEditorPage.EditMode,
+                editorModel: cardModel,
+            })
         }
     ]
 
-    ColumnLayout {
-        anchors.centerIn: parent
-        width: parent.width - Kirigami.Units.gridUnit * 4
+    function reset() {
+        randomSortModel.shuffle();
+        root.showAnswer = false;
+        root.errors = 0;
+        root.finished = false;
+        listView.currentIndex = 0;
+    }
 
-        QQC2.Label {
-            text: "the overcoat"
-            wrapMode: Text.Wrap
-            horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 30
+    ListView {
+        id: listView
 
-            Layout.fillWidth: true
+        anchors.fill: parent
+
+        highlightMoveVelocity: width * 2
+
+        model: RandomSortModel {
+            id: randomSortModel
+
+            cardModel: CardModel {
+                id: cardModel
+
+                onReloaded: root.reset()
+            }
         }
 
-        Kirigami.Separator {
-            visible: root.showAnswer
+        snapMode: ListView.SnapOneItem
+        orientation: ListView.Horizontal
+        interactive: false
 
-            Layout.fillWidth: true
+        delegate: Rectangle {
+            id: wordDelegate
+
+            required property string question
+            required property string answer
+
+            width: ListView.view.width
+            height: ListView.view.height
+
+            color: Kirigami.Theme.backgroundColor
+
+            visible: !root.finished
+
+            ColumnLayout {
+                anchors.centerIn: parent
+                width: parent.width - Kirigami.Units.gridUnit * 4
+
+                QQC2.Label {
+                    text: wordDelegate.question
+                    wrapMode: Text.Wrap
+                    horizontalAlignment: Text.AlignHCenter
+                    font.pixelSize: 30
+
+                    Layout.fillWidth: true
+                }
+
+                Kirigami.Separator {
+                    visible: root.showAnswer
+
+                    Layout.fillWidth: true
+                }
+
+                QQC2.Label {
+                    text: wordDelegate.answer
+                    wrapMode: Text.Wrap
+                    horizontalAlignment: Text.AlignHCenter
+                    font.pixelSize: 30
+                    visible: root.showAnswer
+
+                    Layout.fillWidth: true
+                }
+            }
         }
 
-        QQC2.Label {
-            text: "el abrigo"
-            wrapMode: Text.Wrap
-            horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 30
-            visible: root.showAnswer
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            width: parent.width - Kirigami.Units.gridUnit * 4
+            visible: root.finished
+            text: i18nc("@label", "Finished")
 
-            Layout.fillWidth: true
+            explanation: root.errors === 0 ? i18n("You got a perfect score") : i18np("You made one mistake", "You made %1 mistakes", root.errors)
+
+            RowLayout {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.topMargin: Kirigami.Units.gridUnit
+
+                QQC2.Button {
+                    text: i18n("Repeat errors")
+                }
+
+                QQC2.Button {
+                    text: i18n("Try again")
+                    onClicked: root.reset();
+                }
+            }
         }
     }
 }

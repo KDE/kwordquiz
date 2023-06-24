@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "kwqeditormodel.h"
+#include "kwqcardmodel.h"
 #include <keduvocdocument.h>
 #include <keduvoclesson.h>
 #include "keduvocexpression.h"
@@ -15,14 +15,15 @@
 #include <QFileDialog>
 #include <QPointer>
 #include <QDir>
+#include <QDebug>
 #include <QRegularExpression>
 
-KWQEditorModel::KWQEditorModel(QObject *parent)
+KWQCardModel::KWQCardModel(QObject *parent)
     : QAbstractListModel(parent)
 {
 }
 
-void KWQEditorModel::createNew()
+void KWQCardModel::createNew()
 {
     auto doc = new KEduVocDocument(this);
     doc->setGenerator(QStringLiteral("kwordquiz %1").arg(KWORDQUIZ_VERSION_STRING));
@@ -36,12 +37,12 @@ void KWQEditorModel::createNew()
     setDocument(doc);
 }
 
-QString KWQEditorModel::identifierLeft() const
+QString KWQCardModel::identifierLeft() const
 {
     return m_document ? m_document->identifier(0).name() : QString();
 }
 
-void KWQEditorModel::setIdentifierLeft(const QString &identifierLeft)
+void KWQCardModel::setIdentifierLeft(const QString &identifierLeft)
 {
     if (m_document->identifier(0).name() == identifierLeft) {
         return;
@@ -50,12 +51,12 @@ void KWQEditorModel::setIdentifierLeft(const QString &identifierLeft)
     identifierLeftChanged();
 }
 
-QString KWQEditorModel::identifierRight() const
+QString KWQCardModel::identifierRight() const
 {
     return m_document ? m_document->identifier(1).name() : QString();
 }
 
-void KWQEditorModel::setIdentifierRight(const QString &identifierRight)
+void KWQCardModel::setIdentifierRight(const QString &identifierRight)
 {
     if (m_document->identifier(1).name() == identifierRight) {
         return;
@@ -64,7 +65,7 @@ void KWQEditorModel::setIdentifierRight(const QString &identifierRight)
     identifierRightChanged();
 }
 
-void KWQEditorModel::add(const QString &question, const QString &answer)
+void KWQCardModel::add(const QString &question, const QString &answer)
 {
     Q_ASSERT(m_document);
 
@@ -73,7 +74,7 @@ void KWQEditorModel::add(const QString &question, const QString &answer)
     endInsertRows();
 }
 
-void KWQEditorModel::edit(const int row, const QString &question, const QString &answer)
+void KWQCardModel::edit(const int row, const QString &question, const QString &answer)
 {
     Q_ASSERT(m_document);
 
@@ -94,7 +95,7 @@ void KWQEditorModel::edit(const int row, const QString &question, const QString 
     Q_EMIT dataChanged(index(row, 0), index(row, 0));
 }
 
-bool KWQEditorModel::save()
+bool KWQCardModel::save()
 {
     Q_ASSERT(m_document);
 
@@ -118,12 +119,12 @@ bool KWQEditorModel::save()
     return result == KEduVocDocument::NoError;
 }
 
-KEduVocDocument *KWQEditorModel::document() const
+KEduVocDocument *KWQCardModel::document() const
 {
     return m_document;
 }
 
-void KWQEditorModel::setDocument(KEduVocDocument *document)
+void KWQCardModel::setDocument(KEduVocDocument *document)
 {
     if (document == m_document) {
         return;
@@ -142,12 +143,12 @@ void KWQEditorModel::setDocument(KEduVocDocument *document)
     Q_EMIT identifierRightChanged();
 }
 
-QString KWQEditorModel::title() const
+QString KWQCardModel::title() const
 {
     return m_document ? m_document->title() : QString{};
 }
 
-void KWQEditorModel::setTitle(const QString &title)
+void KWQCardModel::setTitle(const QString &title)
 {
     Q_ASSERT(m_document);
 
@@ -159,12 +160,12 @@ void KWQEditorModel::setTitle(const QString &title)
     Q_EMIT titleChanged();
 }
 
-QString KWQEditorModel::author() const
+QString KWQCardModel::author() const
 {
     return m_document ? m_document->author() : QString{};
 }
 
-void KWQEditorModel::setAuthor(const QString &author)
+void KWQCardModel::setAuthor(const QString &author)
 {
     Q_ASSERT(m_document);
 
@@ -175,12 +176,12 @@ void KWQEditorModel::setAuthor(const QString &author)
     Q_EMIT authorChanged();
 }
 
-QString KWQEditorModel::authorContact() const
+QString KWQCardModel::authorContact() const
 {
     return m_document ? m_document->authorContact() : QString{};
 }
 
-void KWQEditorModel::setAuthorContact(const QString &authorContact)
+void KWQCardModel::setAuthorContact(const QString &authorContact)
 {
     Q_ASSERT(m_document);
 
@@ -191,12 +192,12 @@ void KWQEditorModel::setAuthorContact(const QString &authorContact)
     Q_EMIT authorContactChanged();
 }
 
-QString KWQEditorModel::license() const
+QString KWQCardModel::license() const
 {
     return m_document ? m_document->license() : QString{};
 }
 
-void KWQEditorModel::setLicense(const QString &license)
+void KWQCardModel::setLicense(const QString &license)
 {
     Q_ASSERT(m_document);
 
@@ -207,12 +208,48 @@ void KWQEditorModel::setLicense(const QString &license)
     Q_EMIT licenseChanged();
 }
 
-bool KWQEditorModel::enabled() const
+QString KWQCardModel::langQuestion() const
+{
+    return m_document ? m_document->identifier(0).locale() : QString{};
+}
+
+void KWQCardModel::setLangQuestion(const QString &langQuestion)
+{
+    Q_ASSERT(m_document);
+
+    if (langQuestion == m_document->identifier(0).locale()) {
+        return;
+    }
+    auto identifier = m_document->identifier(0);
+    identifier.setLocale(langQuestion);
+    m_document->setIdentifier(0, identifier);
+    Q_EMIT langQuestionChanged();
+}
+
+QString KWQCardModel::langAnswer() const
+{
+    return m_document ? m_document->identifier(1).locale() : QString{};
+}
+
+void KWQCardModel::setLangAnswer(const QString &langAnswer)
+{
+    Q_ASSERT(m_document);
+
+    if (langAnswer == m_document->identifier(1).locale()) {
+        return;
+    }
+    auto identifier = m_document->identifier(1);
+    identifier.setLocale(langAnswer);
+    m_document->setIdentifier(1, identifier);
+    Q_EMIT langAnswerChanged();
+}
+
+bool KWQCardModel::enabled() const
 {
     return m_document;
 }
 
-int KWQEditorModel::rowCount(const QModelIndex &parent) const
+int KWQCardModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid() || !m_document) {
         return 0;
@@ -221,7 +258,7 @@ int KWQEditorModel::rowCount(const QModelIndex &parent) const
     return m_document->lesson()->entryCount(KEduVocLesson::Recursive);
 }
 
-QVariant KWQEditorModel::data(const QModelIndex &index, int role) const
+QVariant KWQCardModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
@@ -250,7 +287,7 @@ QVariant KWQEditorModel::data(const QModelIndex &index, int role) const
     }
 }
 
-QHash<int, QByteArray> KWQEditorModel::roleNames() const
+QHash<int, QByteArray> KWQCardModel::roleNames() const
 {
     return {
         { QuestionRole, "question" },

@@ -11,8 +11,9 @@ import org.kde.kwordquiz 1.0
 Kirigami.ScrollablePage {
     id: root
 
-    required property DocumentModel documentModel
+    property DocumentModel documentModel
     property int mode: DeckEditorPage.CreateMode
+    property CardModel editorModel: CardModel {}
 
     enum Mode {
         EditMode,
@@ -20,7 +21,7 @@ Kirigami.ScrollablePage {
     }
 
     Component.onCompleted: if (mode === DeckEditorPage.CreateMode) {
-        editorModel.createNew();
+        root.editorModel.createNew();
     }
 
     title: if (mode === DeckEditorPage.CreateMode) {
@@ -30,13 +31,16 @@ Kirigami.ScrollablePage {
     }
 
     actions.main: Kirigami.Action {
-        text: i18nc("@action:button", "Create")
+        text: mode === DeckEditorPage.CreateMode ? i18nc("@action:button", "Create") : i18nc("@action:button", "Save")
         icon.name: "document-save"
-        visible: mode === DeckEditorPage.CreateMode
         onTriggered: {
-            editorModel.save();
-            root.documentModel.add(editorModel.document);
-            applicationWindow().pageStack.pop();
+            root.editorModel.save();
+            if (mode === DeckEditorPage.CreateMode) {
+                root.documentModel.add(root.editorModel.document);
+            } else {
+                root.editorModel.reloaded();
+            }
+            applicationWindow().pageStack.layers.pop();
         }
     }
 
@@ -57,9 +61,9 @@ Kirigami.ScrollablePage {
 
                     QQC2.TextField {
                         Layout.fillWidth: true
-                        text: editorModel.title
-                        onTextChanged: editorModel.title = text;
-                        enabled: editorModel.enabled
+                        text: root.editorModel.title
+                        onTextChanged: root.editorModel.title = text;
+                        enabled: root.editorModel.enabled
                     }
                 }
 
@@ -71,10 +75,10 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
 
                     QQC2.TextField {
-                        text: editorModel.identifierLeft
+                        text: root.editorModel.identifierLeft
                         background: null
-                        onEditingFinished: editorModel.identifierLeft = text
-                        enabled: editorModel.enabled
+                        onEditingFinished: root.editorModel.identifierLeft = text
+                        enabled: root.editorModel.enabled
 
                         Layout.fillWidth: true
                         font.bold: true
@@ -86,10 +90,10 @@ Kirigami.ScrollablePage {
                     }
 
                     QQC2.TextField {
-                        text: editorModel.identifierRight
+                        text: root.editorModel.identifierRight
                         background: null
-                        onEditingFinished: editorModel.identifierRight = text
-                        enabled: editorModel.enabled
+                        onEditingFinished: root.editorModel.identifierRight = text
+                        enabled: root.editorModel.enabled
 
                         Layout.fillWidth: true
                         font.bold: true
@@ -106,7 +110,7 @@ Kirigami.ScrollablePage {
                     return;
                 }
 
-                editorModel.add(newQuestionField.text, newAnswerField.text);
+                root.editorModel.add(newQuestionField.text, newAnswerField.text);
                 newQuestionField.text = '';
                 newAnswerField.text = '';
             }
@@ -117,8 +121,8 @@ Kirigami.ScrollablePage {
                 QQC2.TextField {
                     id: newQuestionField
                     background: null
-                    placeholderText: editorModel.identifierLeft
-                    enabled: editorModel.enabled
+                    placeholderText: root.editorModel.identifierLeft
+                    enabled: root.editorModel.enabled
                     onEditingFinished: footer.insertRow();
                     onAccepted: newAnswerField.forceActiveFocus();
 
@@ -133,20 +137,17 @@ Kirigami.ScrollablePage {
                 QQC2.TextField {
                     id: newAnswerField
                     background: null
-                    placeholderText: editorModel.identifierRight
+                    placeholderText: root.editorModel.identifierRight
                     onEditingFinished: footer.insertRow()
                     onAccepted: newQuestionField.forceActiveFocus();
-                    enabled: editorModel.enabled
+                    enabled: root.editorModel.enabled
 
                     Layout.fillWidth: true
                 }
             }
         }
 
-        model: EditorModel {
-            id: editorModel
-        }
-
+        model: root.editorModel
         delegate: ColumnLayout {
             id: editorDelegate
 
@@ -167,7 +168,7 @@ Kirigami.ScrollablePage {
 
                         text: editorDelegate.question
                         background: null
-                        onEditingFinished: editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
+                        onEditingFinished: root.editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
 
                         Layout.fillWidth: true
                     }
@@ -182,7 +183,7 @@ Kirigami.ScrollablePage {
 
                         text: editorDelegate.answer
                         background: null
-                        onEditingFinished: editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
+                        onEditingFinished: root.editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
 
                         Layout.fillWidth: true
                     }

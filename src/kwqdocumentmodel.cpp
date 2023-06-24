@@ -21,7 +21,7 @@ void KWQDocumentModel::load()
     const auto urls = Prefs::documents();
     for (const auto &url : urls) {
         auto doc = std::make_unique<KEduVocDocument>(nullptr);
-        doc->open(QUrl(url));
+        doc->open(QUrl(url), KEduVocDocument::FileIgnoreLock);
         m_documents.push_back(std::move(doc));
     }
 }

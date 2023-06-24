@@ -7,7 +7,7 @@
 
 #include "blankanswer.h"
 #include "kwqsortfiltermodel.h"
-#include "kwqtablemodel.h"
+#include "kwqcardmodel.h"
 
 #include <QRandomGenerator>
 
@@ -167,32 +167,21 @@ bool KWQQuizModel::checkAnswer(const QString & a)
                     break;
                 }
             }
-        }
-        else
-        {
-          if (Prefs::caseSensitiveAnswers()) {
+        } else if (Prefs::caseSensitiveAnswers()) {
             result = (ans == tTemp);
-          }
-          else
-          {
+        } else {
             result = ans.compare(tTemp, Qt::CaseInsensitive) == 0;
-          }
         }
-      }
-      else
-      {
-        if (m_quizType == Prefs::EnumStartSession::MultipleChoice) {
-            if (Prefs::enableBlanks()) {
-                tTemp.remove('[');
-                tTemp.remove(']');
-            }
+      } else {
+          if (m_quizType == Prefs::EnumStartSession::MultipleChoice) {
+              if (Prefs::enableBlanks()) {
+                  tTemp.remove('[');
+                  tTemp.remove(']');
+              }
+              result = (ans == tTemp);
+          } else {
             result = (ans == tTemp);
-        }
-        else
-        {
-          result = (ans == tTemp);
-        }
-
+          }
       }
       ///@todo currently the Leitner stuff crashes KWQ
       //QString tmpLeitner( m_doc->entry(li.oneOp())->leitnerBox() );
@@ -341,63 +330,6 @@ QString KWQQuizModel::answer()
     }
     return s;
 }
-
-
-QUrl KWQQuizModel::soundQuestion()
-{
-    int row =  m_list.at(m_currentQuestion);
-    int col = column(row);
-    col == 0 ? col = 1 : col = 0;
- 
-    QUrl soundUrl = QUrl::fromLocalFile(data(index(qAbs(row), col, QModelIndex()), KWQTableModel::SoundRole).toString());
-    return soundUrl;
-}
- 
-
-QUrl KWQQuizModel::soundAnswer()
-{
-    int row =  m_list.at(m_currentQuestion);
-    QUrl soundUrl = QUrl::fromLocalFile(data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::SoundRole).toString());
-    return soundUrl;
-}
-
-
-QPixmap KWQQuizModel::imageQuestion()
-{
-    int row =  m_list.at(m_currentQuestion);
-    int col = column(row);
-    col == 0 ? col = 1 : col = 0;
-
-    QUrl imageUrl = QUrl::fromLocalFile(data(index(qAbs(row), col, QModelIndex()), KWQTableModel::ImageRole).toString());
-    return QPixmap(imageUrl.toLocalFile());
-}
-
-
-QPixmap KWQQuizModel::imageAnswer()
-{
-    int row =  m_list.at(m_currentQuestion);
-    QUrl imageUrl = QUrl::fromLocalFile(data(index(qAbs(row), column(row), QModelIndex()), KWQTableModel::ImageRole).toString());
-    return QPixmap(imageUrl.toLocalFile());
-}
-
-
-QString KWQQuizModel::langQuestion()
-{
-    if (column(m_list.at(m_currentQuestion)) == 1)
-        return headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
-    else
-        return headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
-}
-
-
-QString KWQQuizModel::langAnswer()
-{
-    if (column(m_list.at(m_currentQuestion)) == 0)
-        return headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
-    else
-        return headerData(1, Qt::Horizontal, Qt::DisplayRole).toString();
-}
-
 
 QString KWQQuizModel::kbAnswer()
 {
