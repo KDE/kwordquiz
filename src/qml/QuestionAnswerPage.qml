@@ -14,6 +14,8 @@ BasePage {
 
     actions.contextualActions: [
         Kirigami.Action {
+            id: checkAction
+
             text: i18nc("@action:button", "Check")
             onTriggered: {
                 listView.currentItem.check();
@@ -22,6 +24,8 @@ BasePage {
             visible: !root.showAnswer && !root.finished
         },
         Kirigami.Action {
+            id: nextAction
+
             icon.name: "go-next"
             text: i18nc("@action:button", "Next")
             visible: root.showAnswer
@@ -64,6 +68,8 @@ BasePage {
 
         onIsCurrentItemChanged: if (!isCurrentItem) {
             answerField.text = '';
+        } else {
+            answerField.forceActiveFocus();
         }
 
         function check() {
@@ -104,6 +110,11 @@ BasePage {
                 id: answerField
 
                 Layout.alignment: Qt.AlignHCenter
+                onAccepted: if (root.showAnswer) {
+                    nextAction.trigger();
+                } else {
+                    checkAction.trigger();
+                }
             }
 
             Kirigami.Heading {
