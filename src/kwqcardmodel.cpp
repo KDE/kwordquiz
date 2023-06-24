@@ -72,6 +72,8 @@ void KWQCardModel::add(const QString &question, const QString &answer)
     beginInsertRows({}, rowCount(), rowCount());
     m_document->lesson()->appendEntry(new KEduVocExpression({ question, answer }));
     endInsertRows();
+
+    Q_EMIT multipleChoiceAvailableChanged();
 }
 
 void KWQCardModel::edit(const int row, const QString &question, const QString &answer)
@@ -83,6 +85,8 @@ void KWQCardModel::edit(const int row, const QString &question, const QString &a
         const auto entry = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
         entry->lesson()->removeEntry(entry);
         endRemoveRows();
+
+        Q_EMIT multipleChoiceAvailableChanged();
         delete entry;
 
         return;
@@ -242,6 +246,11 @@ void KWQCardModel::setLangAnswer(const QString &langAnswer)
     identifier.setLocale(langAnswer);
     m_document->setIdentifier(1, identifier);
     Q_EMIT langAnswerChanged();
+}
+
+bool KWQCardModel::multipleChoiceAvailable() const
+{
+    return rowCount() > 4;
 }
 
 bool KWQCardModel::enabled() const

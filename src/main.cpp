@@ -19,6 +19,7 @@
 //#include "kwqquizmodel.h"
 #include "kwqdocumentmodel.h"
 #include "kwordquiz_version.h"
+#include "prefs.h"
 #include "kwqrandomsortmodel.h"
 
 int main(int argc, char *argv[])
@@ -76,9 +77,11 @@ int main(int argc, char *argv[])
         return tutorapp.exec();
     }
 
+    auto prefs = Prefs::self();
+    qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "Prefs", prefs);
     qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
-    //qmlRegisterType<KWQQuizModel>("org.kde.kwordquiz", 1, 0, "QuizModel");
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
+    qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
 
     QQmlApplicationEngine engine;

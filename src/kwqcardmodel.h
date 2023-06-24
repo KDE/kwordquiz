@@ -24,6 +24,7 @@ class KWQCardModel : public QAbstractListModel
 
     Q_PROPERTY(QString langQuestion READ langQuestion WRITE setLangQuestion NOTIFY langQuestionChanged)
     Q_PROPERTY(QString langAnswer READ langAnswer WRITE setLangAnswer NOTIFY langAnswerChanged)
+    Q_PROPERTY(bool multipleChoiceAvailable READ multipleChoiceAvailable NOTIFY multipleChoiceAvailableChanged)
 
 public:
     enum ExtraRoles {
@@ -35,6 +36,7 @@ public:
         AnswerImageRole,
         AnswerSoundRole,
     };
+    Q_ENUMS(ExtraRoles);
 
     explicit KWQCardModel(QObject *parent = nullptr);
 
@@ -67,6 +69,8 @@ public:
     QString langAnswer() const;
     void setLangAnswer(const QString &langAnswer);
 
+    bool multipleChoiceAvailable() const;
+
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -87,6 +91,7 @@ Q_SIGNALS:
     void identifierRightChanged();
     void langQuestionChanged();
     void langAnswerChanged();
+    void multipleChoiceAvailableChanged();
 
     /// Triggered when the document was edited.
     void reloaded();
