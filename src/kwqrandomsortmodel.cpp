@@ -44,8 +44,18 @@ bool KWQRandomSortModel::lessThan(const QModelIndex &left, const QModelIndex &ri
     }
 }
 
+bool KWQRandomSortModel::filterAcceptsRow(const int sourceRow, const QModelIndex &sourceParent) const
+{
+    if (!m_showErrorsOnly) {
+        return true;
+    }
+
+    return m_errors.contains(sourceRow);
+}
+
 void KWQRandomSortModel::restoreNativeOrder()
 {
+    m_errors.clear();
     m_restoreNativeOrder = true;
     sort(-1, Qt::AscendingOrder);
     invalidate();
@@ -54,6 +64,7 @@ void KWQRandomSortModel::restoreNativeOrder()
 
 void KWQRandomSortModel::shuffle()
 {
+    m_errors.clear();
     m_shuffleList.clear();
     for (int i = 0; i < rowCount({}); ++i)
         m_shuffleList.append(i);
@@ -63,4 +74,29 @@ void KWQRandomSortModel::shuffle()
     sort(0, Qt::AscendingOrder);
     invalidate();
     m_shuffle = false;
+}
+
+void KWQRandomSortModel::markAsError(const int row)
+{
+    m_errors << sourceModel()->index(row, 0).row();
+}
+
+void KWQRandomSortModel::unMarkAsError(const int row)
+{
+    m_errors.removeAll(sourceModel()->index(row, 0).row());
+}
+
+bool KWQRandomSortModel::showErrorsOnly() const
+{
+    return m_showErrorsOnly;
+}
+
+void KWQRandomSortModel::setShowErrorsOnly(const bool showErrorsOnly)
+{
+    if (m_showErrorsOnly == showErrorsOnly) {
+        return;
+    }
+    m_showErrorsOnly = showErrorsOnly;
+    Q_EMIT showErrorsOnlyChanged();
+    invalidateFilter();
 }

@@ -32,6 +32,7 @@ Kirigami.Page {
             visible: root.showAnswer
             onTriggered: {
                 root.showAnswer = false;
+                randomSortModel.unMarkAsError(listView.currentIndex);
                 if (listView.currentIndex + 1 === listView.count) {
                     root.finished = true;
                 } else {
@@ -46,6 +47,7 @@ Kirigami.Page {
             onTriggered: {
                 root.showAnswer = false;
                 root.errors++;
+                randomSortModel.markAsError(listView.currentIndex);
                 if (listView.currentIndex + 1 === listView.count) {
                     root.finished = true;
                 } else {
@@ -65,6 +67,7 @@ Kirigami.Page {
     ]
 
     function reset() {
+        randomSortModel.showErrorsOnly = false;
         randomSortModel.shuffle();
         root.showAnswer = false;
         root.errors = 0;
@@ -151,6 +154,13 @@ Kirigami.Page {
 
                 QQC2.Button {
                     text: i18n("Repeat errors")
+                    visible: root.errors > 0
+                    onClicked: {
+                        randomSortModel.showErrorsOnly = true;
+                        listView.currentIndex = 0;
+                        root.errors = 0;
+                        root.finished = 0;
+                    }
                 }
 
                 QQC2.Button {
