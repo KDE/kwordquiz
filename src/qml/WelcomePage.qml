@@ -7,6 +7,7 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kwordquiz 1.0
+import QtQml 2.15
 
 Kirigami.ScrollablePage {
     id: root
@@ -41,6 +42,70 @@ Kirigami.ScrollablePage {
                 spacing: 0
 
                 MobileForm.FormCardHeader {
+                    title: i18n("Mode")
+                }
+
+                QQC2.ButtonGroup {
+                    id: modeGroup
+
+                    checkedButton: switch (Prefs.startSession) {
+                    case Prefs.MultipleChoice:
+                        return multipleChoiceRadio;
+                    case Prefs.QA:
+                        return qaRadio;
+                    case Prefs.Flashcard:
+                    default:
+                        return flashcardRadio;
+                    }
+
+                    onCheckedButtonChanged: {
+                        switch (checkedButton) {
+                        case qaRadio:
+                            Prefs.startSession = Prefs.QA;
+                            break;
+                        case multipleChoiceRadio:
+                            Prefs.startSession = Prefs.MultipleChoice;
+                            break;
+                        case flashcardRadio:
+                            Prefs.startSession = Prefs.Flashcard;
+                            break;
+                        }
+
+                        Prefs.save();
+                    }
+                }
+
+                MobileForm.FormRadioDelegate {
+                    id: flashcardRadio
+
+                    text: i18nc("@option:check Mode selector", "Flashcard")
+                    QQC2.ButtonGroup.group: modeGroup
+                }
+
+                MobileForm.FormRadioDelegate {
+                    id: multipleChoiceRadio
+
+                    text: i18nc("@option:check Mode selector", "Multiple Choice")
+                    QQC2.ButtonGroup.group: modeGroup
+                }
+
+                MobileForm.FormRadioDelegate {
+                    id: qaRadio
+
+                    text: i18nc("@option:check Mode selector", "Question-Answer")
+                    QQC2.ButtonGroup.group: modeGroup
+                }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
                     title: i18n("Decks")
                 }
                 Repeater {
@@ -63,10 +128,19 @@ Kirigami.ScrollablePage {
                             id: documentButton
 
                             text: documentDelegate.title
-                            onClicked: applicationWindow().pageStack.layers.push("qrc:/qml/FlashCardPage.qml", {
-                                document: documentDelegate.document,
-                                documentModel: documentModel,
-                            })
+                            onClicked: if (Prefs.startSession === Prefs.Flashcard){
+                                applicationWindow().pageStack.layers.push("qrc:/qml/FlashCardPage.qml", {
+                                    document: documentDelegate.document,
+                                    documentModel: documentModel,
+                                });
+                            } else if (Prefs.startSession === Prefs.QA) {
+                                applicationWindow().pageStack.layers.push("qrc:/qml/QuestionAnswerPage.qml", {
+                                    document: documentDelegate.document,
+                                    documentModel: documentModel,
+                                });
+                            } else  {
+                                applicationWindow().showPassiveNotification(i18n("Unknow mode"));
+                            }
 
                             Layout.fillWidth: true
                         }

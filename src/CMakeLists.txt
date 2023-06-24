@@ -26,7 +26,7 @@ set(kwordquiz_SRCS
     resources.qrc
 )
 
-kconfig_add_kcfg_files(kwordquiz_SRCS prefs.kcfgc documentsettings.kcfgc)
+kconfig_add_kcfg_files(kwordquiz_SRCS GENERATE_MOC prefs.kcfgc documentsettings.kcfgc)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/*-apps-kwordquiz.png")
 ecm_add_app_icon(kwordquiz_SRCS ICONS ${ICONS_SRCS})

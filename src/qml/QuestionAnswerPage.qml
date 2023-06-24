@@ -10,36 +10,23 @@ import org.kde.kwordquiz 1.0
 BasePage {
     id: root
 
-    property bool showAnswer: false
+    property bool wasCorrect: true
 
     actions.contextualActions: [
         Kirigami.Action {
             text: i18nc("@action:button", "Check")
-            onTriggered: root.showAnswer = true;
+            onTriggered: {
+                listView.currentItem.check();
+                root.showAnswer = true;
+            }
             visible: !root.showAnswer && !root.finished
         },
         Kirigami.Action {
-            icon.name: "know"
-            text: i18nc("@action:button", "Correct")
+            icon.name: "go-next"
+            text: i18nc("@action:button", "Next")
             visible: root.showAnswer
             onTriggered: {
                 root.showAnswer = false;
-                randomSortModel.unMarkAsError(listView.currentIndex);
-                if (listView.currentIndex + 1 === listView.count) {
-                    root.finished = true;
-                } else {
-                    listView.incrementCurrentIndex();
-                }
-            }
-        },
-        Kirigami.Action {
-            text: i18nc("@action:button", "Not Correct")
-            icon.name: "dontknow"
-            visible: root.showAnswer
-            onTriggered: {
-                root.showAnswer = false;
-                root.errors++;
-                randomSortModel.markAsError(listView.currentIndex);
                 if (listView.currentIndex + 1 === listView.count) {
                     root.finished = true;
                 } else {
@@ -61,8 +48,8 @@ BasePage {
     function reset() {
         root.randomSortModel.showErrorsOnly = false;
         root.randomSortModel.shuffle();
-        root.showAnswer = false;
         root.errors = 0;
+        root.showAnswer = false;
         root.finished = false;
         listView.currentIndex = 0;
     }
@@ -72,6 +59,23 @@ BasePage {
 
         required property string question
         required property string answer
+
+        readonly property bool isCurrentItem: ListView.isCurrentItem
+
+        onIsCurrentItemChanged: if (!isCurrentItem) {
+            answerField.text = '';
+        }
+
+        function check() {
+            if (answerField.text.trim() === answer.trim()) {
+                root.wasCorrect = true;
+                randomSortModel.unMarkAsError(listView.currentIndex);
+            } else {
+                root.wasCorrect = false;
+                randomSortModel.markAsError(listView.currentIndex);
+                root.errors++;
+            }
+        }
 
         width: ListView.view.width
         height: ListView.view.height
@@ -88,23 +92,26 @@ BasePage {
                 text: wordDelegate.question
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 30
 
                 Layout.fillWidth: true
             }
 
             Kirigami.Separator {
-                visible: root.showAnswer
-
                 Layout.fillWidth: true
             }
 
+            QQC2.TextField {
+                id: answerField
+
+                Layout.alignment: Qt.AlignHCenter
+            }
+
             Kirigami.Heading {
-                text: wordDelegate.answer
-                wrapMode: Text.Wrap
-                horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 30
+                level: 3
                 visible: root.showAnswer
+                text: root.wasCorrect ? i18n("This is correct") : i18n("Wrong, the correct answer was \"%1\".", wordDelegate.answer)
+
+                horizontalAlignment: Text.AlignHCenter
 
                 Layout.fillWidth: true
             }

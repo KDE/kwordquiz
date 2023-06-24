@@ -27,15 +27,6 @@
       </choices>
       <default>Editor</default>
     </entry>
-    <entry name="PrintStyle" type="Enum">
-      <label>Type of printout to generate</label>
-      <choices>
-        <choice name="List"/>
-        <choice name="Exam"/>
-        <choice name="Flashcard"/>
-      </choices>
-      <default>List</default>
-    </entry>
   </group>
   <group name="Editor">
     <entry name="ColumnTitles1" type="StringList">

@@ -1,5 +1,9 @@
 # Code generation options for kconfig_compiler
 File=kwordquiz.kcfg
 ClassName=Prefs
-Singleton=true
 Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
+Singleton=true
+GlobalEnums=true
