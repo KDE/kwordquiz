@@ -85,7 +85,7 @@ BasePage {
             width: parent.width - Kirigami.Units.gridUnit * 4
 
             Kirigami.Heading {
-                text: wordDelegate.question
+                text: wordDelegate.question.replace(/\[(.*?)\]/, '$1')
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 30
@@ -100,7 +100,7 @@ BasePage {
             }
 
             Kirigami.Heading {
-                text: wordDelegate.answer
+                text: wordDelegate.answer.replace(/\[(.*?)\]/, '$1')
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 30

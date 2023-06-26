@@ -7,7 +7,6 @@
 
 #include <QRegularExpression>
 #include <QStringList>
-#include <QDebug>
 
 QString BlankAnswer::input() const
 {
@@ -22,8 +21,6 @@ void BlankAnswer::setInput(const QString &input)
     m_input = input;
 
     m_blankResult = blankAnswer(m_input);
-
-    qDebug() << m_input << m_blankResult.correctAnswer << m_blankResult.blankedAnswer;
 
     Q_EMIT inputChanged();
 }
@@ -46,7 +43,7 @@ QString BlankAnswer::correctAnswer() const
 BlankAnswer::BlankResult BlankAnswer::blankAnswer(const QString &input)
 {
     BlankResult result;
-    QRegularExpression rx(QStringLiteral("\\[(.*?)\\]"));
+    static QRegularExpression rx(QStringLiteral("\\[(.*?)\\]"));
 
     QRegularExpressionMatchIterator matchIt = rx.globalMatch(input);
 
