@@ -113,7 +113,7 @@ BasePage {
             }
 
             Kirigami.Heading {
-                text: wordDelegate.question
+                text: wordDelegate.question.replace(/\[(.*?)\]/, '$1')
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
 

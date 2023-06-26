@@ -16,7 +16,6 @@
 #include <QFileDialog>
 #include <QPointer>
 #include <QDir>
-#include <QDebug>
 #include <QRegularExpression>
 
 KWQCardModel::KWQCardModel(QObject *parent)
@@ -313,7 +312,6 @@ QVariant KWQCardModel::data(const QModelIndex &index, int role) const
     case QuestionRole:
         return entry->translation(0)->text();
     case QuestionImageRole:
-        qDebug() << entry->translation(0)->imageUrl().toLocalFile();
         return entry->translation(0)->imageUrl().toLocalFile();
     case QuestionSoundRole:
         return entry->translation(0)->soundUrl().toLocalFile();
