@@ -78,6 +78,13 @@ public:
     Q_INVOKABLE void createNew();
     Q_INVOKABLE void add(const QString &question, const QString &answer);
     Q_INVOKABLE void edit(const int row, const QString &question, const QString &answer);
+
+    Q_INVOKABLE void addQuestionImage(const int row, const QUrl &url);
+    Q_INVOKABLE void addAnswerImage(const int row, const QUrl &url);
+
+    Q_INVOKABLE void removeQuestionImage(const int row);
+    Q_INVOKABLE void removeAnswerImage(const int row);
+
     Q_INVOKABLE bool save();
 
 Q_SIGNALS:

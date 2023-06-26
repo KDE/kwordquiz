@@ -29,18 +29,6 @@
     </entry>
   </group>
   <group name="Editor">
-    <entry name="ColumnTitles1" type="StringList">
-      <label>Titles for column 1</label>
-      <default></default>
-    </entry>
-    <entry name="ColumnTitles2" type="StringList">
-      <label>Titles for column 2</label>
-      <default></default>
-    </entry>
-    <entry name="EditorFont" type="Font">
-      <label>Font used in the editor</label>
-      <default code="true">QFontDatabase::systemFont(QFontDatabase::GeneralFont)</default>
-    </entry>
     <entry name="EnableBlanks" type="Bool">
       <label>If Fill-in-the-blank should be enabled</label>
       <default>false</default>
@@ -95,9 +83,17 @@
       <label>Count flashcard as correct or error</label>
       <default>1</default>
     </entry>
-    <entry name="Mode" type="Int">
-      <label>Quiz mode</label>
-      <default>1</default>
+    <entry name="QuestionInLeftColumn" type="Bool">
+      <label>The left column is considered as a question</label>
+      <default>true</default>
+    </entry>
+    <entry name="QuestionInRightColumn" type="Bool">
+      <label>The right column is considered as a question</label>
+      <default>false</default>
+    </entry>
+    <entry name="Randomize" type="Bool">
+      <label>The right column is considered as a question</label>
+      <default>true</default>
     </entry>
     <entry name="Percent" type="Bool">
       <label>Show score as percentage</label>

@@ -20,7 +20,11 @@ Kirigami.Page {
     property int errors: 0
     property bool showAnswer: false
 
-    title: i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
+    title: if (Prefs.percent) {
+        i18n("Cards %1% Errors %2", Math.round((listView.currentIndex + (finished ? 1 : 0)) / listView.count * 100), root.errors)
+    } else {
+        i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
+    }
 
     ListView {
         id: listView

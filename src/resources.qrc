@@ -1,10 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
+        <file>qml/OptionsAction.qml</file>
+
+        <!-- Pages -->
+        <file>qml/BasePage.qml</file>
         <file>qml/WelcomePage.qml</file>
         <file>qml/DeckEditorPage.qml</file>
-
-        <file>qml/BasePage.qml</file>
         <file>qml/FlashCardPage.qml</file>
         <file>qml/QuestionAnswerPage.qml</file>
     </qresource>
