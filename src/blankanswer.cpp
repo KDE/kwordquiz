@@ -7,11 +7,43 @@
 
 #include <QRegularExpression>
 #include <QStringList>
+#include <QDebug>
 
-namespace BlankAnswer
+QString BlankAnswer::input() const
 {
+    return m_input;
+}
 
-BlankResult blankAnswer(const QString &input)
+void BlankAnswer::setInput(const QString &input)
+{
+    if (input == m_input) {
+        return;
+    }
+    m_input = input;
+
+    m_blankResult = blankAnswer(m_input);
+
+    qDebug() << m_input << m_blankResult.correctAnswer << m_blankResult.blankedAnswer;
+
+    Q_EMIT inputChanged();
+}
+
+bool BlankAnswer::hasBlank() const
+{
+    return m_blankResult.correctAnswer.length() > 0;
+}
+
+QString BlankAnswer::blankedAnswer() const
+{
+    return m_blankResult.blankedAnswer;
+}
+
+QString BlankAnswer::correctAnswer() const
+{
+    return m_blankResult.correctAnswer;
+}
+
+BlankAnswer::BlankResult BlankAnswer::blankAnswer(const QString &input)
 {
     BlankResult result;
     QRegularExpression rx(QStringLiteral("\\[(.*?)\\]"));
@@ -38,7 +70,7 @@ BlankResult blankAnswer(const QString &input)
     return result;
 }
 
-QString yourAnswerResult(const QString &givenAnswer, const QString &blankedAnswer)
+QString BlankAnswer::yourAnswerResult(const QString &givenAnswer, const QString &blankedAnswer)
 {
     QString result = givenAnswer;
 
@@ -68,5 +100,3 @@ QString yourAnswerResult(const QString &givenAnswer, const QString &blankedAnswe
 
     return result;
 }
-
-}; // namespace BlankAnswer

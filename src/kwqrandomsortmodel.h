@@ -26,7 +26,10 @@ public:
     bool showErrorsOnly() const;
     void setShowErrorsOnly(const bool showErrorsOnly);
 
+    QVariant data(const QModelIndex &index, int role) const override;
+
 public Q_SLOTS:
+    void reset();
     void restoreNativeOrder();
     void shuffle();
     void markAsError(const int row);
@@ -42,9 +45,16 @@ protected:
 private:
     KWQCardModel * m_sourceModel;
 
+    enum Mode {
+        QuestionInLeftColumn = 1,
+        QuestionInRightColumn = 2,
+    };
+    void setRandomModes();
+
     bool m_showErrorsOnly = false;
     bool m_restoreNativeOrder = false;
     bool m_shuffle = false;
     QList<int> m_shuffleList;
     QList<int> m_errors;
+    QList<Mode> m_modes;
 };

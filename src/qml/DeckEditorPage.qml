@@ -4,6 +4,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
+import Qt.labs.platform 1.1
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kwordquiz 1.0
@@ -41,6 +42,49 @@ Kirigami.ScrollablePage {
                 root.editorModel.reloaded();
             }
             applicationWindow().pageStack.layers.pop();
+        }
+    }
+
+    component ImageSelectorButton: QQC2.ToolButton {
+        id: imageButton
+
+        required property string image
+
+        signal imageRemoved()
+        signal imageAdded(url image)
+
+        icon.name: image ? "delete" : "insert-image"
+        display: QQC2.ToolButton.IconOnly
+        text: image ? i18nc("@action:button", "Remove image") : i18nc("@action:button", "Add image")
+
+        QQC2.ToolTip.text: text
+        QQC2.ToolTip.visible: hovered
+        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+        onClicked: {
+            if (image) {
+                imageButton.imageRemoved();
+                return;
+            }
+
+            var dialog = imageFileDialog.createObject(QQC2.ApplicationWindow.Overlay)
+
+            dialog.accepted.connect(() => {
+                if (!dialog.file) {
+                    return;
+                }
+                imageButton.imageAdded(dialog.file);
+            });
+            dialog.open();
+        }
+    }
+
+    Component {
+        id: imageFileDialog
+
+        FileDialog {
+            title: i18n("Please choose an image")
+            folder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
         }
     }
 
@@ -151,10 +195,14 @@ Kirigami.ScrollablePage {
         delegate: ColumnLayout {
             id: editorDelegate
 
-            required property string question
-            required property string answer
-
             required property int index
+
+            required property string question
+            required property string questionImage
+            required property string questionSound
+            required property string answer
+            required property string answerImage
+            required property string answerSound
 
             width: ListView.view.width
             spacing: 0
@@ -173,6 +221,12 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                     }
 
+                    ImageSelectorButton {
+                        image: editorDelegate.questionImage
+                        onImageRemoved: root.editorModel.removeQuestionImage(editorDelegate.index);
+                        onImageAdded: root.editorModel.addQuestionImage(editorDelegate.index, image);
+                    }
+
                     Kirigami.Separator {
                         Layout.fillHeight: true
                         Layout.preferredWidth: 1
@@ -186,6 +240,12 @@ Kirigami.ScrollablePage {
                         onEditingFinished: root.editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
 
                         Layout.fillWidth: true
+                    }
+
+                    ImageSelectorButton {
+                        image: editorDelegate.answerImage
+                        onImageRemoved: root.editorModel.removeAnswerImage(editorDelegate.index);
+                        onImageAdded: root.editorModel.addAnswerImage(editorDelegate.index, image);
                     }
                 }
             }

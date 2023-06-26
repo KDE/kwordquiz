@@ -8,6 +8,7 @@
 #include <keduvocdocument.h>
 #include <keduvoclesson.h>
 #include "keduvocexpression.h"
+#include "blankanswer.h"
 #include "kwordquiz_version.h"
 
 #include <KLocalizedString>
@@ -258,6 +259,38 @@ bool KWQCardModel::enabled() const
     return m_document;
 }
 
+void KWQCardModel::addQuestionImage(const int row, const QUrl &url)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(0)->setImageUrl(url);
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {QuestionImageRole});
+}
+
+void KWQCardModel::addAnswerImage(const int row, const QUrl &url)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(1)->setImageUrl(url);
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {AnswerImageRole});
+}
+
+void KWQCardModel::removeQuestionImage(const int row)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(0)->setImageUrl({});
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {QuestionImageRole});
+}
+
+void KWQCardModel::removeAnswerImage(const int row)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(1)->setImageUrl({});
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {AnswerImageRole});
+}
+
 int KWQCardModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid() || !m_document) {
@@ -280,6 +313,7 @@ QVariant KWQCardModel::data(const QModelIndex &index, int role) const
     case QuestionRole:
         return entry->translation(0)->text();
     case QuestionImageRole:
+        qDebug() << entry->translation(0)->imageUrl().toLocalFile();
         return entry->translation(0)->imageUrl().toLocalFile();
     case QuestionSoundRole:
         return entry->translation(0)->soundUrl().toLocalFile();

@@ -16,7 +16,7 @@
 #include <KLocalizedString>
 
 #include "kwqcardmodel.h"
-//#include "kwqquizmodel.h"
+#include "blankanswer.h"
 #include "kwqdocumentmodel.h"
 #include "kwordquiz_version.h"
 #include "prefs.h"
@@ -80,6 +80,7 @@ int main(int argc, char *argv[])
     auto prefs = Prefs::self();
     qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "Prefs", prefs);
     qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
+    qmlRegisterType<BlankAnswer>("org.kde.kwordquiz", 1, 0, "BlankAnswer");
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");

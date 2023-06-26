@@ -38,6 +38,9 @@ BasePage {
                 }
             }
         },
+        OptionsAction {
+            cardModel: root.cardModel
+        },
         Kirigami.Action {
             text: i18nc("@action:button", "Edit")
             icon.name: "document-edit"
@@ -62,7 +65,11 @@ BasePage {
         id: wordDelegate
 
         required property string question
+        required property string questionImage
+        required property string questionSound
         required property string answer
+        required property string answerImage
+        required property string answerSound
 
         readonly property bool isCurrentItem: ListView.isCurrentItem
 
@@ -73,7 +80,9 @@ BasePage {
         }
 
         function check() {
-            if (answerField.text.trim() === answer.trim()) {
+            const correctAnswer = blankAnswer.hasBlank ? blankAnswer.correctAnswer : answer;
+
+            if (answerField.text.trim() === correctAnswer.trim()) {
                 root.wasCorrect = true;
                 randomSortModel.unMarkAsError(listView.currentIndex);
             } else {
@@ -94,6 +103,15 @@ BasePage {
             anchors.centerIn: parent
             width: parent.width - Kirigami.Units.gridUnit * 4
 
+            Image {
+                Layout.fillWidth: true
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 8
+
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+                source: 'file:' + wordDelegate.questionImage
+            }
+
             Kirigami.Heading {
                 text: wordDelegate.question
                 wrapMode: Text.Wrap
@@ -103,6 +121,20 @@ BasePage {
             }
 
             Kirigami.Separator {
+                Layout.fillWidth: true
+            }
+
+            BlankAnswer {
+                id: blankAnswer
+                input: wordDelegate.answer
+            }
+
+            Kirigami.Heading {
+                visible: blankAnswer.hasBlank
+                text: blankAnswer.blankedAnswer
+                wrapMode: Text.Wrap
+                horizontalAlignment: Text.AlignHCenter
+
                 Layout.fillWidth: true
             }
 

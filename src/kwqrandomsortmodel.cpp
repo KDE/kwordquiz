@@ -3,8 +3,10 @@
 
 #include "kwqrandomsortmodel.h"
 #include "kwqcardmodel.h"
+#include "prefs.h"
 
 #include <KRandom>
+#include <QRandomGenerator>
 
 KWQRandomSortModel::KWQRandomSortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
@@ -15,6 +17,43 @@ KWQRandomSortModel::KWQRandomSortModel(QObject *parent)
     setFilterKeyColumn(-1);
     m_restoreNativeOrder = false;
     m_shuffle = false;
+
+    auto reset = [this] {
+        this->reset();
+        Prefs::self()->save();
+    };
+
+    connect(Prefs::self(), &Prefs::RandomizeChanged, this, reset);
+    connect(Prefs::self(), &Prefs::QuestionInLeftColumnChanged, this, reset);
+    connect(Prefs::self(), &Prefs::QuestionInRightColumnChanged, this, reset);
+}
+
+QVariant KWQRandomSortModel::data(const QModelIndex &index, int role) const
+{
+    auto mode = index.row() >= m_modes.count() ? QuestionInLeftColumn : m_modes[index.row()];
+    if (mode == QuestionInRightColumn) {
+        switch (role) {
+        case KWQCardModel::AnswerRole:
+            role = KWQCardModel::QuestionRole;
+            break;
+        case KWQCardModel::AnswerSoundRole:
+            role = KWQCardModel::QuestionSoundRole;
+            break;
+        case KWQCardModel::AnswerImageRole:
+            role = KWQCardModel::QuestionImageRole;
+            break;
+        case KWQCardModel::QuestionRole:
+            role = KWQCardModel::AnswerRole;
+            break;
+        case KWQCardModel::QuestionSoundRole:
+            role = KWQCardModel::AnswerSoundRole;
+            break;
+        case KWQCardModel::QuestionImageRole:
+            role = KWQCardModel::AnswerImageRole;
+            break;
+        }
+    }
+    return QSortFilterProxyModel::data(index, role);
 }
 
 void KWQRandomSortModel::setCardModel(KWQCardModel *sourceModel)
@@ -22,9 +61,17 @@ void KWQRandomSortModel::setCardModel(KWQCardModel *sourceModel)
     if (m_sourceModel == sourceModel) {
         return;
     }
+    if (m_sourceModel) {
+        disconnect(m_sourceModel, &KWQCardModel::modelReset, this, &KWQRandomSortModel::reset);
+    }
     m_sourceModel = sourceModel;
     QSortFilterProxyModel::setSourceModel(sourceModel);
     Q_EMIT cardModelChanged();
+
+    if (m_sourceModel) {
+        connect(m_sourceModel, &KWQCardModel::modelReset, this, &KWQRandomSortModel::reset);
+    }
+    reset();
 }
 
 KWQCardModel *KWQRandomSortModel::cardModel() const
@@ -53,19 +100,56 @@ bool KWQRandomSortModel::filterAcceptsRow(const int sourceRow, const QModelIndex
     return m_errors.contains(sourceRow);
 }
 
+void KWQRandomSortModel::setRandomModes()
+{
+    m_modes.clear();
+    if (Prefs::questionInLeftColumn() && !Prefs::questionInRightColumn()) {
+        for (int i = 0; i < rowCount({}); ++i) {
+            m_modes.append(QuestionInLeftColumn);
+        }
+    } else if (!Prefs::questionInLeftColumn() && Prefs::questionInRightColumn()) {
+        for (int i = 0; i < rowCount({}); ++i) {
+            m_modes.append(QuestionInRightColumn);
+        }
+    } else {
+        auto generator = QRandomGenerator::global();
+        for (int i = 0; i < rowCount({}); ++i) {
+            if (generator->bounded(2) == 1) {
+                m_modes.append(QuestionInLeftColumn);
+            } else {
+                m_modes.append(QuestionInRightColumn);
+            }
+        }
+    }
+
+    qDebug() << m_modes;
+}
+
+void KWQRandomSortModel::reset()
+{
+    if (Prefs::randomize()) {
+        shuffle();
+    } else {
+        restoreNativeOrder();
+    }
+}
+
 void KWQRandomSortModel::restoreNativeOrder()
 {
     m_errors.clear();
     m_restoreNativeOrder = true;
+    setRandomModes();
     sort(-1, Qt::AscendingOrder);
     invalidate();
     m_restoreNativeOrder = false;
+    m_modes.clear();
 }
 
 void KWQRandomSortModel::shuffle()
 {
     m_errors.clear();
     m_shuffleList.clear();
+    setRandomModes();
     for (int i = 0; i < rowCount({}); ++i)
         m_shuffleList.append(i);
 
