@@ -150,11 +150,21 @@ Kirigami.ScrollablePage {
     }
 
     ListView {
+        id: listView
+
         header: QQC2.Pane {
             width: parent.width
 
             Kirigami.Theme.colorSet: Kirigami.Theme.Window
             Kirigami.Theme.inherit: false
+
+            function focusQuestionField() {
+                identifierLeftField.forceActiveFocus();
+            }
+
+            function focusAnswerField() {
+                identifierRightField.forceActiveFocus();
+            }
 
             contentItem: ColumnLayout {
                 GridLayout {
@@ -205,6 +215,7 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
 
                     QQC2.TextField {
+                        id: identifierLeftField
                         text: root.editorModel.identifierLeft
                         background: null
                         onEditingFinished: root.editorModel.identifierLeft = text
@@ -212,6 +223,12 @@ Kirigami.ScrollablePage {
 
                         Layout.fillWidth: true
                         font.bold: true
+                        Keys.onDownPressed: {
+                            const item = listView.itemAtIndex(0);
+                            if (item) {
+                                item.focusQuestionField();
+                            }
+                        }
                     }
 
                     Kirigami.Separator {
@@ -220,6 +237,7 @@ Kirigami.ScrollablePage {
                     }
 
                     QQC2.TextField {
+                        id: identifierRightField
                         text: root.editorModel.identifierRight
                         background: null
                         onEditingFinished: root.editorModel.identifierRight = text
@@ -227,6 +245,12 @@ Kirigami.ScrollablePage {
 
                         Layout.fillWidth: true
                         font.bold: true
+                        Keys.onDownPressed: {
+                            const item = listView.itemAtIndex(0);
+                            if (item) {
+                                item.focusAnswerField();
+                            }
+                        }
                     }
                 }
             }
@@ -245,6 +269,14 @@ Kirigami.ScrollablePage {
                 newAnswerField.text = '';
             }
 
+            function focusQuestionField() {
+                newQuestionField.forceActiveFocus();
+            }
+
+            function focusAnswerField() {
+                newAnswerField.forceActiveFocus();
+            }
+
             width: parent.width
 
             contentItem: RowLayout {
@@ -257,6 +289,12 @@ Kirigami.ScrollablePage {
                     onAccepted: newAnswerField.forceActiveFocus();
 
                     Layout.fillWidth: true
+                    Keys.onUpPressed: {
+                        const item = listView.itemAtIndex(listView.count - 1);
+                        if (item) {
+                            item.focusQuestionField();
+                        }
+                    }
                 }
 
                 Kirigami.Separator {
@@ -273,6 +311,12 @@ Kirigami.ScrollablePage {
                     enabled: root.editorModel.enabled
 
                     Layout.fillWidth: true
+                    Keys.onUpPressed: {
+                        const item = listView.itemAtIndex(listView.count - 1);
+                        if (item) {
+                            item.focusAnswerField();
+                        }
+                    }
                 }
             }
         }
@@ -300,6 +344,14 @@ Kirigami.ScrollablePage {
             required property string answerImage
             required property string answerSound
 
+            function focusQuestionField() {
+                questionField.forceActiveFocus();
+            }
+
+            function focusAnswerField() {
+                answerField.forceActiveFocus();
+            }
+
             width: ListView.view.width
             spacing: 0
 
@@ -315,6 +367,22 @@ Kirigami.ScrollablePage {
                         onEditingFinished: root.editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
 
                         Layout.fillWidth: true
+                        Keys.onUpPressed: {
+                            const item = listView.itemAtIndex(editorDelegate.index - 1);
+                            if (item) {
+                                item.focusQuestionField();
+                            } else {
+                                listView.headerItem.focusQuestionField();
+                            }
+                        }
+                        Keys.onDownPressed: {
+                            const item = listView.itemAtIndex(editorDelegate.index + 1);
+                            if (item) {
+                                item.focusQuestionField();
+                            } else {
+                                listView.footerItem.focusQuestionField();
+                            }
+                        }
                     }
 
                     ImageSelectorButton {
@@ -336,6 +404,22 @@ Kirigami.ScrollablePage {
                         onEditingFinished: root.editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
 
                         Layout.fillWidth: true
+                        Keys.onUpPressed: {
+                            const item = listView.itemAtIndex(editorDelegate.index - 1);
+                            if (item) {
+                                item.focusAnswerField();
+                            } else {
+                                root.listView.headerItem.focusAnswerField();
+                            }
+                        }
+                        Keys.onDownPressed: {
+                            const item = listView.itemAtIndex(editorDelegate.index + 1);
+                            if (item) {
+                                item.focusAnswerField();
+                            } else {
+                                listView.footerItem.focusAnswerField();
+                            }
+                        }
                     }
 
                     ImageSelectorButton {
