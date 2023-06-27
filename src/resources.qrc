@@ -1,7 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
+
+        <!-- Actions -->
         <file>qml/OptionsAction.qml</file>
+        <file>qml/EditAction.qml</file>
 
         <!-- Pages -->
         <file>qml/BasePage.qml</file>
@@ -9,5 +12,6 @@
         <file>qml/DeckEditorPage.qml</file>
         <file>qml/FlashCardPage.qml</file>
         <file>qml/QuestionAnswerPage.qml</file>
+        <file>qml/MultipleChoicePage.qml</file>
     </qresource>
 </RCC>

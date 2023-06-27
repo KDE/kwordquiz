@@ -10,8 +10,6 @@ import org.kde.kwordquiz 1.0
 BasePage {
     id: root
 
-    property bool showAnswer: false
-
     actions.contextualActions: [
         Kirigami.Action {
             text: i18nc("@action:button", "Check")
@@ -47,25 +45,14 @@ BasePage {
                 }
             }
         },
-        Kirigami.Action {
-            text: i18nc("@action:button", "Edit")
-            icon.name: "document-edit"
-            onTriggered: applicationWindow().pageStack.layers.push('qrc:/qml/DeckEditorPage.qml', {
-                documentModel: root.documentModel,
-                mode: DeckEditorPage.EditMode,
-                editorModel: cardModel,
-            })
+        OptionsAction {
+            cardModel: root.cardModel
+        },
+        EditAction {
+            cardModel: root.cardModel
+            documentModel: root.documentModel
         }
     ]
-
-    function reset() {
-        root.randomSortModel.showErrorsOnly = false;
-        root.randomSortModel.shuffle();
-        root.showAnswer = false;
-        root.errors = 0;
-        root.finished = false;
-        listView.currentIndex = 0;
-    }
 
     listView.delegate: Rectangle {
         id: wordDelegate

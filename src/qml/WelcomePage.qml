@@ -139,7 +139,10 @@ Kirigami.ScrollablePage {
                                     documentModel: documentModel,
                                 });
                             } else  {
-                                applicationWindow().showPassiveNotification(i18n("Unknow mode"));
+                                applicationWindow().pageStack.layers.push("qrc:/qml/MultipleChoicePage.qml", {
+                                    document: documentDelegate.document,
+                                    documentModel: documentModel,
+                                });
                             }
 
                             Layout.fillWidth: true

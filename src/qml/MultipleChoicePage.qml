@@ -5,6 +5,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kwordquiz 1.0
 
 BasePage {
@@ -17,11 +18,11 @@ BasePage {
             id: checkAction
 
             text: i18nc("@action:button", "Check")
+            enabled: listView.currentItem.hasSelection
             onTriggered: {
                 listView.currentItem.check();
                 root.showAnswer = true;
             }
-            enabled: listView.currentItem.hasSelection
             visible: !root.showAnswer && !root.finished
         },
         Kirigami.Action {
@@ -55,85 +56,56 @@ BasePage {
         required property string questionImage
         required property string questionSound
         required property string answer
-        required property string answerImage
-        required property string answerSound
+        required property var multipleChoice
 
         readonly property bool isCurrentItem: ListView.isCurrentItem
-        readonly property bool hasSelection: answerField.text.length > 0
-
-        onIsCurrentItemChanged: if (!isCurrentItem) {
-            answerField.text = '';
-        } else {
-            answerField.forceActiveFocus();
-        }
-
-        function check() {
-            const correctAnswer = blankAnswer.hasBlank ? blankAnswer.correctAnswer : answer;
-
-            if (answerField.text.trim() === correctAnswer.trim()) {
-                root.wasCorrect = true;
-                randomSortModel.unMarkAsError(listView.currentIndex);
-            } else {
-                root.wasCorrect = false;
-                randomSortModel.markAsError(listView.currentIndex);
-                root.errors++;
-            }
-        }
+        readonly property bool hasSelection: multipleChoiceGroup.checkedButton !== null
 
         width: ListView.view.width
         height: ListView.view.height
 
         color: Kirigami.Theme.backgroundColor
 
-        visible: !root.finished
+        visible: listView.count >= 4 && !root.finished
+
+        onIsCurrentItemChanged: if (!isCurrentItem) {
+            multipleChoiceGroup.checkState = Qt.Unchecked;
+        }
+
+        function check() {
+            if (!multipleChoiceGroup.checkedButton || multipleChoiceGroup.checkedButton.text !== wordDelegate.answer) {
+                root.wasCorrect = false;
+                randomSortModel.markAsError(listView.currentIndex);
+                root.errors++;
+            } else {
+                root.wasCorrect = true;
+                randomSortModel.unMarkAsError(listView.currentIndex);
+            }
+        }
 
         ColumnLayout {
             anchors.centerIn: parent
             width: parent.width - Kirigami.Units.gridUnit * 4
 
-            Image {
-                Layout.fillWidth: true
-                Layout.maximumHeight: Kirigami.Units.gridUnit * 8
-
-                fillMode: Image.PreserveAspectFit
-                smooth: true
-                source: 'file:' + wordDelegate.questionImage
-            }
-
             Kirigami.Heading {
-                text: wordDelegate.question.replace(/\[(.*?)\]/, '$1')
-                wrapMode: Text.Wrap
-                horizontalAlignment: Text.AlignHCenter
-
-                Layout.fillWidth: true
+                text: wordDelegate.question
             }
 
-            Kirigami.Separator {
-                Layout.fillWidth: true
+            QQC2.ButtonGroup {
+                id: multipleChoiceGroup
             }
 
-            BlankAnswer {
-                id: blankAnswer
-                input: wordDelegate.answer
-            }
+            Repeater {
+                model: wordDelegate.multipleChoice
 
-            Kirigami.Heading {
-                visible: blankAnswer.hasBlank
-                text: blankAnswer.blankedAnswer
-                wrapMode: Text.Wrap
-                horizontalAlignment: Text.AlignHCenter
-
-                Layout.fillWidth: true
-            }
-
-            QQC2.TextField {
-                id: answerField
-
-                Layout.alignment: Qt.AlignHCenter
-                onAccepted: if (root.showAnswer) {
-                    nextAction.trigger();
-                } else {
-                    checkAction.trigger();
+                MobileForm.FormRadioDelegate {
+                    text: modelData
+                    leftPadding: Kirigami.Units.smallSpacing
+                    rightPadding: Kirigami.Units.smallSpacing
+                    topPadding: Kirigami.Units.smallSpacing
+                    bottomPadding: Kirigami.Units.smallSpacing
+                    Layout.fillWidth: true
+                    QQC2.ButtonGroup.group: multipleChoiceGroup
                 }
             }
 
@@ -147,5 +119,14 @@ BasePage {
                 Layout.fillWidth: true
             }
         }
+    }
+
+    readonly property var _placeHolder: Kirigami.PlaceholderMessage {
+        parent: root
+        anchors.centerIn: parent
+        width: parent.width - Kirigami.Units.gridUnit * 4
+        visible: listView.count < 4
+        text: i18n("Not enough words in your deck")
+        explanation: i18n("You need at least 3 words but more is better")
     }
 }
