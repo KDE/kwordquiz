@@ -45,7 +45,7 @@ target_link_libraries(kwordquiz
     KF${KF_MAJOR_VERSION}::ConfigCore
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::ItemViews
-    KF${KF_MAJOR_VERSION}::NewStuffWidgets
+    KF${KF_MAJOR_VERSION}::NewStuffCore
     KF${KF_MAJOR_VERSION}::Notifications
     KF${KF_MAJOR_VERSION}::NotifyConfig
     KF${KF_MAJOR_VERSION}::XmlGui

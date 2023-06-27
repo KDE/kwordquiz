@@ -7,6 +7,7 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kwordquiz 1.0
+import org.kde.newstuff 1.91 as NewStuff
 import QtQml 2.15
 
 Kirigami.ScrollablePage {
@@ -157,10 +158,28 @@ Kirigami.ScrollablePage {
 
                 MobileForm.FormButtonDelegate {
                     id: createButton
+                    icon.name: "document-new"
                     text: i18nc("@action:button", "Create Deck")
                     onClicked: applicationWindow().pageStack.layers.push("qrc:/qml/DeckEditorPage.qml", {
                         documentModel: documentModel,
                     })
+                }
+
+                MobileForm.FormDelegateSeparator { above: downloadButton; below: createButton }
+
+                MobileForm.FormButtonDelegate {
+                    id: downloadButton
+                    text: i18nc("@action:button", "Download community made decks")
+                    action: NewStuff.Action {
+                        id: newStuffButton
+                        configFile: "kwordquiz.knsrc"
+                        viewMode: NewStuff.Page.ViewMode.Preview
+                        onEntryEvent: function(entry, event) {
+                            if (event === NewStuff.Entry.StatusChangedEvent) {
+                                documentModel.entryChanged(entry);
+                            }
+                        }
+                    }
                 }
             }
         }
