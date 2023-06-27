@@ -10,6 +10,7 @@
 #include <QPrinter>
 #include <QTextDocument>
 #include <QTextTable>
+#include <array>
 
 #include "kwordquiz_version.h"
 
