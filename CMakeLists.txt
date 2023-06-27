@@ -46,14 +46,11 @@ find_package(KF${KF_MAJOR_VERSION} ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     Crash
     Config
-    ConfigWidgets
     DocTools
-    GuiAddons
-    ItemViews
     NotifyConfig
     NewStuff
+    NewStuffQuick
     Notifications
-    XmlGui
     Kirigami2
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )

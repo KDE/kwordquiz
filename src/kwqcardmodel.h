@@ -5,7 +5,6 @@
 #pragma once
 
 #include <QAbstractListModel>
-#include <KImageCache>
 #include <keduvocdocument.h>
 
 /// @author Carl Schwan <carl@carlschwan.eu>

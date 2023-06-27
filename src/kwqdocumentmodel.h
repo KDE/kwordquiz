@@ -4,7 +4,6 @@
 #pragma once
 
 #include <QAbstractListModel>
-#include <KImageCache>
 #include <keduvocdocument.h>
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <KNSCore/EntryWrapper>

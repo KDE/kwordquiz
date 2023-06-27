@@ -11,7 +11,6 @@
 #include <QQmlContext>
 
 #include <KAboutData>
-#include <KActionCollection>
 #include <KCrash>
 #include <KLocalizedString>
 
