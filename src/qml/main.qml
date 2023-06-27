@@ -8,8 +8,8 @@ import org.kde.kirigami 2.20 as Kirigami
 Kirigami.ApplicationWindow {
     id: root
 
-    width: Kirigami.Units.gridUnit * 27
-    height: Kirigami.Units.gridUnit * 23
+    width: Kirigami.Units.gridUnit * 30
+    height: Kirigami.Units.gridUnit * 26
 
     pageStack {
         defaultColumnWidth: Kirigami.Units.gridUnit * 30
