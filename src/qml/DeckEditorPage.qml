@@ -18,6 +18,8 @@ Kirigami.ScrollablePage {
     property CardModel editorModel: CardModel {}
     property string filterText: ''
 
+    readonly property bool editPage: true
+
     enum Mode {
         EditMode,
         CreateMode
@@ -43,6 +45,50 @@ Kirigami.ScrollablePage {
                     root.filterText = text;
                     filterProxy.invalidate();
                 }
+            }
+        },
+        Kirigami.Action {
+            text: i18nc("@action:button", "Print Preview")
+            icon.name: "document-print-preview"
+
+            Kirigami.Action {
+                text: i18n("Flashcard")
+                icon.name: "org.kde.kwordquiz"
+                onTriggered: exporter.printPreview(Exporter.Flashcard)
+            }
+
+            Kirigami.Action {
+                text: i18n("List")
+                icon.name: "view-list-text"
+                onTriggered: exporter.printPreview(Exporter.List)
+            }
+
+            Kirigami.Action {
+                text: i18n("Exam")
+                icon.name: "table"
+                onTriggered: exporter.printPreview(Exporter.Exam)
+            }
+        },
+        Kirigami.Action {
+            text: i18nc("@action:button", "Print")
+            icon.name: "document-print"
+
+            Kirigami.Action {
+                text: i18n("Flashcard")
+                onTriggered: exporter.print(Exporter.Flashcard)
+                icon.name: "org.kde.kwordquiz"
+            }
+
+            Kirigami.Action {
+                text: i18n("List")
+                icon.name: "view-list-text"
+                onTriggered: exporter.print(Exporter.List)
+            }
+
+            Kirigami.Action {
+                text: i18n("Exam")
+                icon.name: "table"
+                onTriggered: exporter.print(Exporter.Exam)
             }
         },
         Kirigami.Action {
@@ -304,5 +350,10 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
             }
         }
+    }
+
+    Exporter {
+        id: exporter
+        cardModel: root.editorModel
     }
 }

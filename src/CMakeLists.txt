@@ -23,6 +23,8 @@ set(kwordquiz_SRCS
     kwqdocumentmodel.cpp
     kwqrandomsortmodel.h
     kwqrandomsortmodel.cpp
+    exporter.h
+    exporter.cpp
     blankanswer.h
     blankanswer.cpp
     resources.qrc
