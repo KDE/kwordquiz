@@ -86,6 +86,12 @@ public:
     Q_INVOKABLE void removeQuestionImage(const int row);
     Q_INVOKABLE void removeAnswerImage(const int row);
 
+    Q_INVOKABLE void addQuestionSound(const int row, const QUrl &url);
+    Q_INVOKABLE void addAnswerSound(const int row, const QUrl &url);
+
+    Q_INVOKABLE void removeQuestionSound(const int row);
+    Q_INVOKABLE void removeAnswerSound(const int row);
+
     Q_INVOKABLE bool save();
 
 Q_SIGNALS:

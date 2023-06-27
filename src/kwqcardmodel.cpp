@@ -296,6 +296,38 @@ void KWQCardModel::removeAnswerImage(const int row)
     Q_EMIT dataChanged(index(row, 0), index(row, 0), {AnswerImageRole});
 }
 
+void KWQCardModel::addQuestionSound(const int row, const QUrl &url)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(0)->setSoundUrl(url);
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {QuestionImageRole});
+}
+
+void KWQCardModel::addAnswerSound(const int row, const QUrl &url)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(1)->setSoundUrl(url);
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {AnswerSoundRole});
+}
+
+void KWQCardModel::removeQuestionSound(const int row)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(0)->setSoundUrl({});
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {QuestionSoundRole});
+}
+
+void KWQCardModel::removeAnswerSound(const int row)
+{
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
+    expression->translation(1)->setSoundUrl({});
+
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {AnswerSoundRole});
+}
+
 int KWQCardModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid() || !m_document) {

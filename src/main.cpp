@@ -14,6 +14,7 @@
 #include <KCrash>
 #include <KLocalizedString>
 
+#include "audioprober.h"
 #include "blankanswer.h"
 #include "exporter.h"
 #include "kwordquiz_version.h"
@@ -82,6 +83,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "Prefs", prefs);
     qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
     qmlRegisterType<Exporter>("org.kde.kwordquiz", 1, 0, "Exporter");
+    qmlRegisterType<AudioProber>("org.kde.kwordquiz", 1, 0, "AudioProber");
     qmlRegisterType<BlankAnswer>("org.kde.kwordquiz", 1, 0, "BlankAnswer");
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
