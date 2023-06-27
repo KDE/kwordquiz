@@ -52,7 +52,6 @@ find_package(KF${KF_MAJOR_VERSION} ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     DocTools
     NotifyConfig
     NewStuff
-    NewStuffQuick
     Notifications
     Kirigami2
 )
