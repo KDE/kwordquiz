@@ -12,6 +12,7 @@ BasePage {
 
     actions.contextualActions: [
         Kirigami.Action {
+            id: checkAction
             text: i18nc("@action:button", "Check")
             onTriggered: root.showAnswer = true;
             visible: !root.showAnswer && !root.finished
@@ -28,6 +29,10 @@ BasePage {
                 } else {
                     listView.incrementCurrentIndex();
                 }
+
+                if (Prefs.autoFlip) {
+                    timer.restart();
+                }
             }
         },
         Kirigami.Action {
@@ -43,6 +48,10 @@ BasePage {
                 } else {
                     listView.incrementCurrentIndex();
                 }
+
+                if (Prefs.autoFlip) {
+                    timer.restart();
+                }
             }
         },
         OptionsAction {
@@ -53,6 +62,13 @@ BasePage {
             documentModel: root.documentModel
         }
     ]
+
+    Timer {
+        id: timer
+        interval: Prefs.flipDelay * 1000
+        onTriggered: checkAction.trigger()
+        running: Prefs.autoFlip
+    }
 
     listView.delegate: Rectangle {
         id: wordDelegate
