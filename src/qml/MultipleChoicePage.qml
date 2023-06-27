@@ -18,7 +18,7 @@ BasePage {
             id: checkAction
 
             text: i18nc("@action:button", "Check")
-            enabled: listView.currentItem.hasSelection
+            enabled: listView.currentItem && listView.currentItem.hasSelection
             onTriggered: {
                 listView.currentItem.check();
                 root.showAnswer = true;

@@ -21,7 +21,7 @@ BasePage {
                 listView.currentItem.check();
                 root.showAnswer = true;
             }
-            enabled: listView.currentItem.hasSelection
+            enabled: listView.currentItem && listView.currentItem.hasSelection
             visible: !root.showAnswer && !root.finished
         },
         Kirigami.Action {
