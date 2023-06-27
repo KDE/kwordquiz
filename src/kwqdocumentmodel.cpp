@@ -82,3 +82,39 @@ void KWQDocumentModel::add(KEduVocDocument *document)
 
     save();
 }
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+void KWQDocumentModel::entryChanged(KNSCore::EntryWrapper *wrapper)
+{
+    const auto entry = wrapper->entry();
+#else
+void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry)
+{
+#endif
+    if (entry.status() == KNS3::Entry::Deleted) {
+        const auto uninstalledFiles = entry.uninstalledFiles();
+        for (const auto &url : uninstalledFiles) {
+            auto it = std::find_if(cbegin(m_documents), cend(m_documents), [url](const auto &document) {
+                return document->url() == QUrl(url);
+            });
+
+            if (it == cend(m_documents)) {
+                continue;
+            }
+
+            beginRemoveRows({}, cend(m_documents) - it, cend(m_documents) - it);
+            m_documents.erase(it);
+            endInsertRows();
+        }
+    } else if (entry.status() == KNS3::Entry::Installed) {
+        qDebug() << entry.installedFiles();
+        const auto installedFiles = entry.installedFiles();
+        beginInsertRows({}, rowCount(), rowCount() + entry.installedFiles().count() - 1);
+        for (const auto &url : installedFiles) {
+            auto doc = std::make_unique<KEduVocDocument>(nullptr);
+            doc->open(QUrl(QStringLiteral("file:") + url), KEduVocDocument::FileIgnoreLock);
+            m_documents.push_back(std::move(doc));
+        }
+        endInsertRows();
+    }
+}

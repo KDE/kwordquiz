@@ -6,6 +6,11 @@
 #include <QAbstractListModel>
 #include <KImageCache>
 #include <keduvocdocument.h>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#include <KNSCore/EntryWrapper>
+#else
+#include <KNSCore/Entry>
+#endif
 
 /// @author Carl Schwan <carl@carlschwan.eu>
 class KWQDocumentModel : public QAbstractListModel
@@ -30,6 +35,12 @@ public:
     void save() const;
 
     Q_INVOKABLE void add(KEduVocDocument *document);
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    Q_INVOKABLE void entryChanged(KNSCore::EntryWrapper *wrapper);
+#else
+    Q_INVOKABLE void entryChanged(const KNSCore::Entry &wrapper);
+#endif
 
 private:
     std::vector<std::unique_ptr<KEduVocDocument>> m_documents;
