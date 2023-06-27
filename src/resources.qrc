@@ -13,5 +13,6 @@
         <file>qml/FlashCardPage.qml</file>
         <file>qml/QuestionAnswerPage.qml</file>
         <file>qml/MultipleChoicePage.qml</file>
+        <file>qml/SettingsPage.qml</file>
     </qresource>
 </RCC>

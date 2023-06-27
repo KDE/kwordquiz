@@ -42,9 +42,10 @@ int main(int argc, char *argv[])
                          KAboutLicense::GPL_V2,
                          i18n("(c) 2003-2010, Peter Hedlund"),
                          QString(),
-                         QStringLiteral("https://kde.org/applications/education/kwordquiz"),
+                         QStringLiteral("https://apps.kde.org/kwordquiz"),
                          QStringLiteral("submit@bugs.kde.org"));
-    aboutData.addAuthor(i18n("Peter Hedlund"), QString(), QStringLiteral("peter.hedlund@kdemail.net"));
+    aboutData.addAuthor(i18n("Peter Hedlund"), i18nc("@info:credit", "Original author"), QStringLiteral("peter.hedlund@kdemail.net"));
+    aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "Port to QML"), QStringLiteral("carl@carlschwan.eu"));
     aboutData.addCredit(i18n("Anne-Marie Mahfouf"), i18n("KDE Edutainment Maintainer"), QStringLiteral("annma@kde.org"));
     aboutData.addCredit(i18n("Martin Pfeiffer"), i18n("Leitner System and several code contributions"), QStringLiteral("hubipete@gmx.net"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kwordquiz")));
@@ -83,6 +84,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
+    qmlRegisterSingletonType("org.kde.kwordquiz", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+        return engine->toScriptValue(KAboutData::applicationData());
+    });
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

@@ -26,5 +26,16 @@ Kirigami.ApplicationWindow {
             }
         }
     }
+
+    globalDrawer: Kirigami.GlobalDrawer {
+        isMenu: true
+        actions: Kirigami.Action {
+            text: i18nc("@action:inmenu", "Settings")
+            onTriggered: root.pageStack.pushDialogLayer('qrc:/qml/SettingsPage.qml', {}, {
+                title: i18n("Configure"),
+                width: Kirigami.Units.gridUnit * 15,
+            });
+        }
+    }
 }
 
