@@ -25,6 +25,8 @@ set(kwordquiz_SRCS
     kwqrandomsortmodel.cpp
     exporter.h
     exporter.cpp
+    audioprober.h
+    audioprober.cpp
     blankanswer.h
     blankanswer.cpp
     resources.qrc
@@ -42,6 +44,7 @@ target_link_libraries(kwordquiz
     Qt::Quick
     Qt::PrintSupport
     Qt::Svg
+    Qt::Multimedia
     KF${KF_MAJOR_VERSION}::Crash
     KF${KF_MAJOR_VERSION}::ConfigCore
     KF${KF_MAJOR_VERSION}::ConfigGui

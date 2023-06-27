@@ -106,35 +106,43 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    component ImageSelectorButton: QQC2.ToolButton {
-        id: imageButton
+    component FileSelectorButton: QQC2.ToolButton {
+        id: fileButton
 
-        required property string image
+        required property string file
+        required property bool isImage
+        readonly property bool isSound: !isImage
 
-        signal imageRemoved()
-        signal imageAdded(url image)
+        signal fileRemoved()
+        signal fileAdded(url file)
 
-        icon.name: image ? "delete" : "insert-image"
+        icon.name: file ? "delete" : (isImage ? "insert-image" : "folder-music")
+        text: if (isImage) {
+            file ? i18nc("@action:button", "Remove image") : i18nc("@action:button", "Link image")
+        } else {
+            file ? i18nc("@action:button", "Remove sound") : i18nc("@action:button", "Link sound")
+        }
         display: QQC2.ToolButton.IconOnly
-        text: image ? i18nc("@action:button", "Remove image") : i18nc("@action:button", "Add image")
 
         QQC2.ToolTip.text: text
         QQC2.ToolTip.visible: hovered
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
         onClicked: {
-            if (image) {
-                imageButton.imageRemoved();
+            if (file) {
+                fileButton.fileRemoved();
                 return;
             }
 
-            var dialog = imageFileDialog.createObject(QQC2.ApplicationWindow.Overlay)
+            var dialog = isImage
+                ? imageFileDialog.createObject(QQC2.ApplicationWindow.Overlay)
+                : soundFileDialog.createObject(QQC2.ApplicationWindow.Overlay)
 
             dialog.accepted.connect(() => {
                 if (!dialog.file) {
                     return;
                 }
-                imageButton.imageAdded(dialog.file);
+                fileButton.fileAdded(dialog.file);
             });
             dialog.open();
         }
@@ -146,6 +154,15 @@ Kirigami.ScrollablePage {
         FileDialog {
             title: i18n("Please choose an image")
             folder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
+        }
+    }
+
+    Component {
+        id: soundFileDialog
+
+        FileDialog {
+            title: i18n("Please choose a sound")
+            folder: StandardPaths.writableLocation(StandardPaths.MusicLocation)
         }
     }
 
@@ -385,10 +402,18 @@ Kirigami.ScrollablePage {
                         }
                     }
 
-                    ImageSelectorButton {
-                        image: editorDelegate.questionImage
-                        onImageRemoved: root.editorModel.removeQuestionImage(editorDelegate.index);
-                        onImageAdded: root.editorModel.addQuestionImage(editorDelegate.index, image);
+                    FileSelectorButton {
+                        isImage: true
+                        file: editorDelegate.questionImage
+                        onFileRemoved: root.editorModel.removeQuestionImage(editorDelegate.index);
+                        onFileAdded: root.editorModel.addQuestionImage(editorDelegate.index, file);
+                    }
+
+                    FileSelectorButton {
+                        isImage: false
+                        file: editorDelegate.questionSound
+                        onFileRemoved: root.editorModel.removeQuestionSound(editorDelegate.index);
+                        onFileAdded: root.editorModel.addQuestionSound(editorDelegate.index, file);
                     }
 
                     Kirigami.Separator {
@@ -422,10 +447,18 @@ Kirigami.ScrollablePage {
                         }
                     }
 
-                    ImageSelectorButton {
-                        image: editorDelegate.answerImage
-                        onImageRemoved: root.editorModel.removeAnswerImage(editorDelegate.index);
-                        onImageAdded: root.editorModel.addAnswerImage(editorDelegate.index, image);
+                    FileSelectorButton {
+                        isImage: true
+                        file: editorDelegate.answerImage
+                        onFileRemoved: root.editorModel.removeAnswerImage(editorDelegate.index);
+                        onFileAdded: root.editorModel.addAnswerImage(editorDelegate.index, file);
+                    }
+
+                    FileSelectorButton {
+                        isImage: false
+                        file: editorDelegate.answerSound
+                        onFileRemoved: root.editorModel.removeAnswerSound(editorDelegate.index);
+                        onFileAdded: root.editorModel.addAnswerSound(editorDelegate.index, file);
                     }
                 }
             }

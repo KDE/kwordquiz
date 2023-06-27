@@ -74,7 +74,11 @@ BasePage {
         id: wordDelegate
 
         required property string question
+        required property string questionSound
+        required property string questionImage
         required property string answer
+        required property string answerSound
+        required property string answerImage
 
         width: ListView.view.width
         height: ListView.view.height
@@ -87,6 +91,27 @@ BasePage {
             anchors.centerIn: parent
             width: parent.width - Kirigami.Units.gridUnit * 4
 
+            Image {
+                Layout.fillWidth: true
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 8
+
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+                source: 'file:' + wordDelegate.questionImage
+            }
+
+            Loader {
+                active: wordDelegate.questionSound
+
+                Layout.fillWidth: true
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                Layout.alignment: Qt.AlignHCenter
+
+                sourceComponent: SoundPlayer {
+                    source: 'file:' + wordDelegate.questionSound
+                }
+            }
+
             Kirigami.Heading {
                 text: wordDelegate.question.replace(/\[(.*?)\]/, '$1')
                 wrapMode: Text.Wrap
@@ -96,10 +121,33 @@ BasePage {
                 Layout.fillWidth: true
             }
 
+
             Kirigami.Separator {
                 visible: root.showAnswer
 
                 Layout.fillWidth: true
+            }
+
+            Image {
+                Layout.fillWidth: true
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 8
+
+                fillMode: Image.PreserveAspectFit
+                visible: root.showAnswer
+                smooth: true
+                source: 'file:' + wordDelegate.answerImage
+            }
+
+            Loader {
+                active: wordDelegate.questionSound && root.showAnswer
+
+                Layout.fillWidth: true
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                Layout.alignment: Qt.AlignHCenter
+
+                sourceComponent: SoundPlayer {
+                    source: 'file:' + wordDelegate.answerSound
+                }
             }
 
             Kirigami.Heading {

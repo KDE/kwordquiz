@@ -130,6 +130,18 @@ BasePage {
                 source: 'file:' + wordDelegate.questionImage
             }
 
+            Loader {
+                active: wordDelegate.questionSound
+
+                Layout.fillWidth: true
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                Layout.alignment: Qt.AlignHCenter
+
+                sourceComponent: SoundPlayer {
+                    source: 'file:' + wordDelegate.questionSound
+                }
+            }
+
             Kirigami.Heading {
                 text: wordDelegate.question.replace(/\[(.*?)\]/, '$1')
                 wrapMode: Text.Wrap

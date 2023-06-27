@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
+        <file>qml/SoundPlayer.qml</file>
+        <file>qml/Visualization.qml</file>
 
         <!-- Actions -->
         <file>qml/OptionsAction.qml</file>
