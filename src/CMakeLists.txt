@@ -39,31 +39,24 @@ target_link_libraries(kwordquiz
     Qt::Core
     Qt::Quick
     Qt::PrintSupport
-    Qt::Widgets
     Qt::Svg
     KF${KF_MAJOR_VERSION}::Crash
     KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::ConfigGui
     KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::ItemViews
     KF${KF_MAJOR_VERSION}::NewStuffCore
     KF${KF_MAJOR_VERSION}::Notifications
     KF${KF_MAJOR_VERSION}::NotifyConfig
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::GuiAddons
     LibKEduVocDocumentImport__KEduVocDocument
     Phonon::phonon4qt${QT_MAJOR_VERSION}
 )
 
-install(TARGETS kwordquiz  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
-
+install(TARGETS kwordquiz ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.kwordquiz.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
-install( FILES kwordquiz.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
-install( FILES kwordquiz.knsrc  DESTINATION  ${KDE_INSTALL_KNSRCDIR} )
-install( FILES kwordquiz.notifyrc  DESTINATION  ${KDE_INSTALL_KNOTIFYRCDIR} )
-install(FILES
-  kwordquizui.rc
-  DESTINATION  ${KDE_INSTALL_KXMLGUIDIR}/kwordquiz)
+install(PROGRAMS org.kde.kwordquiz.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES kwordquiz.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+install(FILES kwordquiz.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR})
+install(FILES kwordquiz.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 

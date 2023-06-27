@@ -8,14 +8,10 @@ Dependencies:
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kcrash': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
-    'frameworks/kconfigwidgets': '@latest-kf6'
     'frameworks/kdoctools': '@latest-kf6'
-    'frameworks/kguiaddons': '@latest-kf6'
-    'frameworks/kitemviews': '@latest-kf6'
     'frameworks/knotifyconfig': '@latest-kf6'
     'frameworks/knewstuff': '@latest-kf6'
     'frameworks/knotifications': '@latest-kf6'
-    'frameworks/kxmlgui': '@latest-kf6'
     'education/libkeduvocdocument': '@same'
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
@@ -24,14 +20,10 @@ Dependencies:
     'frameworks/ki18n': '@stable'
     'frameworks/kcrash': '@stable'
     'frameworks/kconfig': '@stable'
-    'frameworks/kconfigwidgets': '@stable'
     'frameworks/kdoctools': '@stable'
-    'frameworks/kguiaddons': '@stable'
-    'frameworks/kitemviews': '@stable'
     'frameworks/knotifyconfig': '@stable'
     'frameworks/knewstuff': '@stable'
     'frameworks/knotifications': '@stable'
-    'frameworks/kxmlgui': '@stable'
     'education/libkeduvocdocument': '@same'
 
 Options:
