@@ -5,8 +5,7 @@
 #pragma once
 
 #include <QSortFilterProxyModel>
-
-class KWQCardModel;
+#include "kwqcardmodel.h"
 
 /// Randomize the order of the items contained inside the KWQCardModel
 ///
@@ -18,6 +17,10 @@ class KWQRandomSortModel : public QSortFilterProxyModel
     Q_PROPERTY(bool showErrorsOnly READ showErrorsOnly WRITE setShowErrorsOnly NOTIFY showErrorsOnlyChanged)
 
 public:
+    enum ExtraRoles {
+        MultipleChoiceRole = KWQCardModel::ExtraRoles + 1,
+    };
+
     explicit KWQRandomSortModel(QObject *parent = nullptr);
 
     KWQCardModel *cardModel() const;
@@ -27,6 +30,7 @@ public:
     void setShowErrorsOnly(const bool showErrorsOnly);
 
     QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
 public Q_SLOTS:
     void reset();

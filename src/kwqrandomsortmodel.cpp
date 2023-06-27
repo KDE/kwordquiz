@@ -28,9 +28,34 @@ KWQRandomSortModel::KWQRandomSortModel(QObject *parent)
     connect(Prefs::self(), &Prefs::QuestionInRightColumnChanged, this, reset);
 }
 
-QVariant KWQRandomSortModel::data(const QModelIndex &index, int role) const
+QVariant KWQRandomSortModel::data(const QModelIndex &idx, int role) const
 {
-    auto mode = index.row() >= m_modes.count() ? QuestionInLeftColumn : m_modes[index.row()];
+    auto mode = idx.row() >= m_modes.count() ? QuestionInLeftColumn : m_modes[idx.row()];
+
+    if (role == MultipleChoiceRole) {
+        const auto rowRole = mode == QuestionInRightColumn
+            ? KWQCardModel::QuestionRole
+            : KWQCardModel::AnswerRole;
+
+        QList<int> possibleIndex;
+        for (int i = 0; i < rowCount(); i++) {
+            possibleIndex << i;
+        }
+        possibleIndex.removeAll(idx.row());
+
+        KRandom::shuffle(possibleIndex, QRandomGenerator::global());
+
+        QStringList possibleAnswer;
+        possibleAnswer << QSortFilterProxyModel::data(index(possibleIndex[0], 0), rowRole).toString();
+        possibleAnswer << QSortFilterProxyModel::data(index(possibleIndex[1], 0), rowRole).toString();
+        possibleAnswer << QSortFilterProxyModel::data(index(possibleIndex[3], 0), rowRole).toString();
+        possibleAnswer << QSortFilterProxyModel::data(index(idx.row(), 0), rowRole).toString();
+
+        KRandom::shuffle(possibleAnswer, QRandomGenerator::global());
+
+        return QVariant::fromValue(possibleAnswer);
+    }
+
     if (mode == QuestionInRightColumn) {
         switch (role) {
         case KWQCardModel::AnswerRole:
@@ -53,7 +78,15 @@ QVariant KWQRandomSortModel::data(const QModelIndex &index, int role) const
             break;
         }
     }
-    return QSortFilterProxyModel::data(index, role);
+
+    return QSortFilterProxyModel::data(idx, role);
+}
+
+QHash<int, QByteArray> KWQRandomSortModel::roleNames() const
+{
+    auto roles = QSortFilterProxyModel::roleNames();
+    roles[MultipleChoiceRole] = "multipleChoice";
+    return roles;
 }
 
 void KWQRandomSortModel::setCardModel(KWQCardModel *sourceModel)
@@ -121,8 +154,6 @@ void KWQRandomSortModel::setRandomModes()
             }
         }
     }
-
-    qDebug() << m_modes;
 }
 
 void KWQRandomSortModel::reset()

@@ -35,6 +35,8 @@ public:
         AnswerRole,
         AnswerImageRole,
         AnswerSoundRole,
+
+        ExtraRoles,
     };
     Q_ENUMS(ExtraRoles);
 

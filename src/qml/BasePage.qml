@@ -26,6 +26,15 @@ Kirigami.Page {
         i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
     }
 
+    function reset() {
+        root.randomSortModel.showErrorsOnly = false;
+        root.randomSortModel.reset();
+        root.errors = 0;
+        root.showAnswer = false;
+        root.finished = false;
+        listView.currentIndex = 0;
+    }
+
     ListView {
         id: listView
 
