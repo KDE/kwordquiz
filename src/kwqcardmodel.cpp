@@ -74,13 +74,19 @@ void KWQCardModel::add(const QString &question, const QString &answer)
     endInsertRows();
 
     Q_EMIT multipleChoiceAvailableChanged();
+
+    auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(rowCount() - 1);
+    expression->setTranslation(0, question);
+    expression->setTranslation(1, answer);
+
+    Q_EMIT dataChanged(index(rowCount() - 1, 0), index(rowCount() - 1, 0));
 }
 
 void KWQCardModel::edit(const int row, const QString &question, const QString &answer)
 {
     Q_ASSERT(m_document);
 
-    if (question.length() == 0 && answer.length() == 0) {
+    if (question.length() == 0 && answer.length() == 0 && row != 0 && row != rowCount() - 1) {
         beginRemoveRows({}, row, row);
         const auto entry = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
         entry->lesson()->removeEntry(entry);
