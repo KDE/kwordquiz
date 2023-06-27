@@ -68,9 +68,15 @@ BasePage {
         }
 
         function check() {
-            const correctAnswer = blankAnswer.hasBlank ? blankAnswer.correctAnswer : answer;
+            let correctAnswer = blankAnswer.hasBlank ? blankAnswer.correctAnswer.trim() : answer.trim();
+            let givenAnswer = answerField.text.trim();
 
-            if (answerField.text.trim() === correctAnswer.trim()) {
+            if (!Prefs.caseSensitiveAnswers) {
+                correctAnswer = correctAnswer.toLowerCase();
+                givenAnswer = givenAnswer.toLowerCase();
+            }
+
+            if (correctAnswer === givenAnswer) {
                 root.wasCorrect = true;
                 randomSortModel.unMarkAsError(listView.currentIndex);
             } else {
