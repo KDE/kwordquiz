@@ -11,9 +11,24 @@ Kirigami.ApplicationWindow {
     width: Kirigami.Units.gridUnit * 30
     height: Kirigami.Units.gridUnit * 26
 
+    property real previousWidth: width
+    property real previousHeight: height
+
     pageStack {
         defaultColumnWidth: Kirigami.Units.gridUnit * 30
         initialPage: WelcomePage {}
+
+        layers {
+            onCurrentItemChanged: if (pageStack.layers.currentItem && pageStack.layers.currentItem.editPage) {
+                root.previousWidth = root.width;
+                root.previousHeight = root.height;
+                root.width = Kirigami.Units.gridUnit * 40;
+                root.height = Kirigami.Units.gridUnit * 35;
+            } else {
+                root.width = root.previousWidth;
+                root.height = root.previousHeight;
+            }
+        }
 
         globalToolBar {
             canContainHandles: true

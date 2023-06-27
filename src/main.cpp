@@ -14,12 +14,13 @@
 #include <KCrash>
 #include <KLocalizedString>
 
-#include "kwqcardmodel.h"
 #include "blankanswer.h"
-#include "kwqdocumentmodel.h"
+#include "exporter.h"
 #include "kwordquiz_version.h"
-#include "prefs.h"
+#include "kwqcardmodel.h"
+#include "kwqdocumentmodel.h"
 #include "kwqrandomsortmodel.h"
+#include "prefs.h"
 
 int main(int argc, char *argv[])
 {
@@ -80,6 +81,7 @@ int main(int argc, char *argv[])
     auto prefs = Prefs::self();
     qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "Prefs", prefs);
     qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
+    qmlRegisterType<Exporter>("org.kde.kwordquiz", 1, 0, "Exporter");
     qmlRegisterType<BlankAnswer>("org.kde.kwordquiz", 1, 0, "BlankAnswer");
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
