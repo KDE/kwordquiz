@@ -11,8 +11,17 @@ BasePage {
     id: root
 
     property bool wasCorrect: true
+    property bool hintGiven: false
 
     actions.contextualActions: [
+        Kirigami.Action {
+            id: hintAction
+            text: i18nc("@action:button", "Hint")
+            onTriggered: {
+                root.hintGiven = true;
+                listView.currentItem.giveHint();
+            }
+        },
         Kirigami.Action {
             id: checkAction
 
@@ -76,13 +85,28 @@ BasePage {
                 givenAnswer = givenAnswer.toLowerCase();
             }
 
-            if (correctAnswer === givenAnswer) {
+            if (correctAnswer === givenAnswer && (!root.hintGiven || !Prefs.hintError)) {
                 root.wasCorrect = true;
                 randomSortModel.unMarkAsError(listView.currentIndex);
             } else {
-                root.wasCorrect = false;
+                root.wasCorrect = correctAnswer === givenAnswer;
                 randomSortModel.markAsError(listView.currentIndex);
                 root.errors++;
+            }
+            root.hintGiven = false;
+        }
+
+        function giveHint() {
+            const currentAnswer = answerField.text;
+            const correctAnswer = blankAnswer.hasBlank ? blankAnswer.correctAnswer.trim() : answer.trim();
+
+            for (let i = 0; i < correctAnswer.length; i++) {
+                if (i < currentAnswer.length && currentAnswer[i] === correctAnswer[i]) {
+                    continue;
+                }
+
+                answerField.text = correctAnswer.substring(0, i + 1);
+                break;
             }
         }
 

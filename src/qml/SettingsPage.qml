@@ -107,7 +107,7 @@ Kirigami.ScrollablePage {
 
                 MobileForm.FormCheckDelegate {
                     id: hintErrorCheckbox
-                    text: i18n("Treat use of hint as error")
+                    text: i18n("Count using hint as an error")
                     checked: Prefs.hintError
                     onCheckedChanged: {
                         Prefs.hintError = checked
