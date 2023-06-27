@@ -96,8 +96,10 @@ Kirigami.ScrollablePage {
             Kirigami.Theme.inherit: false
 
             contentItem: ColumnLayout {
-                RowLayout {
+                GridLayout {
                     Layout.fillWidth: true
+
+                    columns: 2
 
                     QQC2.Label {
                         text: i18nc("@label", "Name:")
@@ -108,6 +110,29 @@ Kirigami.ScrollablePage {
                         text: root.editorModel.title
                         onTextChanged: root.editorModel.title = text;
                         enabled: root.editorModel.enabled
+                    }
+
+                    QQC2.Label {
+                        text: i18nc("@label", "Author:")
+                    }
+
+                    QQC2.TextField {
+                        Layout.fillWidth: true
+                        text: root.editorModel.author
+                        onTextChanged: root.editorModel.author = text;
+                        enabled: root.editorModel.enabled
+                    }
+
+                    QQC2.Label {
+                        text: i18nc("@label", "License:")
+                    }
+
+                    QQC2.TextField {
+                        Layout.fillWidth: true
+                        text: root.editorModel.license
+                        onTextChanged: root.editorModel.license = text;
+                        enabled: root.editorModel.enabled
+                        placeholderText: i18nc("Example license of licenses", "e.g. CC-BY-SA-4.0 or CC-BY-4.0")
                     }
                 }
 
