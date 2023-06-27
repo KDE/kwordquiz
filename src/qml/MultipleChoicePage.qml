@@ -23,7 +23,7 @@ BasePage {
                 listView.currentItem.check();
                 root.showAnswer = true;
             }
-            visible: !root.showAnswer && !root.finished
+            visible: !root.showAnswer && !root.finished && !Prefs.autoCheck
         },
         Kirigami.Action {
             id: nextAction
@@ -70,6 +70,11 @@ BasePage {
 
         onIsCurrentItemChanged: if (!isCurrentItem) {
             multipleChoiceGroup.checkState = Qt.Unchecked;
+        }
+
+        onHasSelectionChanged: if (Prefs.autoCheck && hasSelection) {
+            check();
+            root.showAnswer = true;
         }
 
         function check() {
