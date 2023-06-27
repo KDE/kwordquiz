@@ -8,6 +8,7 @@ import Qt.labs.platform 1.1
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kwordquiz 1.0
+import org.kde.kitemmodels 1.0
 
 Kirigami.ScrollablePage {
     id: root
@@ -15,6 +16,7 @@ Kirigami.ScrollablePage {
     property DocumentModel documentModel
     property int mode: DeckEditorPage.CreateMode
     property CardModel editorModel: CardModel {}
+    property string filterText: ''
 
     enum Mode {
         EditMode,
@@ -31,19 +33,32 @@ Kirigami.ScrollablePage {
         i18nc("@title:window", "Edit deck")
     }
 
-    actions.main: Kirigami.Action {
-        text: mode === DeckEditorPage.CreateMode ? i18nc("@action:button", "Create") : i18nc("@action:button", "Save")
-        icon.name: "document-save"
-        onTriggered: {
-            root.editorModel.save();
-            if (mode === DeckEditorPage.CreateMode) {
-                root.documentModel.add(root.editorModel.document);
-            } else {
-                root.editorModel.reloaded();
+    actions.contextualActions: [
+        Kirigami.Action {
+            text: i18n("Filter")
+            displayComponent: Kirigami.SearchField {
+                focus: false
+                placeholderText: i18n("Filter...")
+                onTextChanged: {
+                    root.filterText = text;
+                    filterProxy.invalidate();
+                }
             }
-            applicationWindow().pageStack.layers.pop();
+        },
+        Kirigami.Action {
+            text: mode === DeckEditorPage.CreateMode ? i18nc("@action:button", "Create") : i18nc("@action:button", "Save")
+            icon.name: "document-save"
+            onTriggered: {
+                root.editorModel.save();
+                if (mode === DeckEditorPage.CreateMode) {
+                    root.documentModel.add(root.editorModel.document);
+                } else {
+                    root.editorModel.reloaded();
+                }
+                applicationWindow().pageStack.layers.pop();
+            }
         }
-    }
+    ]
 
     component ImageSelectorButton: QQC2.ToolButton {
         id: imageButton
@@ -216,7 +231,17 @@ Kirigami.ScrollablePage {
             }
         }
 
-        model: root.editorModel
+        model: KSortFilterProxyModel {
+            id: filterProxy
+            sourceModel: root.editorModel
+            filterRowCallback: function(sourceRow, sourceParent) {
+                let question = sourceModel.data(sourceModel.index(sourceRow, 0, sourceParent), CardModel.QuestionRole);
+                let answer = sourceModel.data(sourceModel.index(sourceRow, 0, sourceParent), CardModel.AnswerRole);
+
+                return question.includes(filterText) || answer.includes(filterText);
+            }
+        }
+
         delegate: ColumnLayout {
             id: editorDelegate
 
