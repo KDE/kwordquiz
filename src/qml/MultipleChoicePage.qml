@@ -13,42 +13,6 @@ BasePage {
 
     property bool wasCorrect: true
 
-    actions.contextualActions: [
-        Kirigami.Action {
-            id: checkAction
-
-            text: i18nc("@action:button", "Check")
-            enabled: listView.currentItem && listView.currentItem.hasSelection
-            onTriggered: {
-                listView.currentItem.check();
-                root.showAnswer = true;
-            }
-            visible: !root.showAnswer && !root.finished && !Prefs.autoCheck
-        },
-        Kirigami.Action {
-            id: nextAction
-
-            icon.name: "go-next"
-            text: i18nc("@action:button", "Next")
-            visible: root.showAnswer
-            onTriggered: {
-                root.showAnswer = false;
-                if (listView.currentIndex + 1 === listView.count) {
-                    root.finished = true;
-                } else {
-                    listView.incrementCurrentIndex();
-                }
-            }
-        },
-        OptionsAction {
-            cardModel: root.cardModel
-        },
-        EditAction {
-            cardModel: root.cardModel
-            documentModel: root.documentModel
-        }
-    ]
-
     listView.delegate: Rectangle {
         id: wordDelegate
 
@@ -114,6 +78,17 @@ BasePage {
                 }
             }
 
+            QQC2.Button {
+                icon.name: "checkbox"
+                text: i18nc("@action:button", "Check")
+                enabled: listView.currentItem && listView.currentItem.hasSelection
+                onClicked: {
+                    listView.currentItem.check();
+                    root.showAnswer = true;
+                }
+                visible: !root.showAnswer && !root.finished && !Prefs.autoCheck
+            }
+
             Kirigami.Heading {
                 level: 3
                 visible: root.showAnswer
@@ -122,6 +97,21 @@ BasePage {
                 horizontalAlignment: Text.AlignHCenter
 
                 Layout.fillWidth: true
+            }
+
+            QQC2.Button {
+                icon.name: "go-next"
+                text: i18nc("@action:button", "Next")
+                visible: root.showAnswer
+                onClicked: {
+                    root.showAnswer = false;
+                    if (listView.currentIndex + 1 === listView.count) {
+                        root.finished = true;
+                    } else {
+                        listView.incrementCurrentIndex();
+                    }
+                }
+                Layout.alignment: Qt.AlignHCenter
             }
         }
     }

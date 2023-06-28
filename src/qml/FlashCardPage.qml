@@ -10,58 +10,12 @@ import org.kde.kwordquiz 1.0
 BasePage {
     id: root
 
-    actions.contextualActions: [
-        Kirigami.Action {
-            id: checkAction
-            text: i18nc("@action:button", "Check")
-            onTriggered: root.showAnswer = true;
-            visible: !root.showAnswer && !root.finished
-        },
-        Kirigami.Action {
-            icon.name: "know"
-            text: i18nc("@action:button", "Correct")
-            visible: root.showAnswer
-            onTriggered: {
-                root.showAnswer = false;
-                randomSortModel.unMarkAsError(listView.currentIndex);
-                if (listView.currentIndex + 1 === listView.count) {
-                    root.finished = true;
-                } else {
-                    listView.incrementCurrentIndex();
-                }
+    QQC2.Action {
+        id: checkAction
 
-                if (Prefs.autoFlip) {
-                    timer.restart();
-                }
-            }
-        },
-        Kirigami.Action {
-            text: i18nc("@action:button", "Not Correct")
-            icon.name: "dontknow"
-            visible: root.showAnswer
-            onTriggered: {
-                root.showAnswer = false;
-                root.errors++;
-                randomSortModel.markAsError(listView.currentIndex);
-                if (listView.currentIndex + 1 === listView.count) {
-                    root.finished = true;
-                } else {
-                    listView.incrementCurrentIndex();
-                }
-
-                if (Prefs.autoFlip) {
-                    timer.restart();
-                }
-            }
-        },
-        OptionsAction {
-            cardModel: root.cardModel
-        },
-        EditAction {
-            cardModel: root.cardModel
-            documentModel: root.documentModel
-        }
-    ]
+        text: i18nc("@action:button", "Check")
+        onTriggered: root.showAnswer = true;
+    }
 
     Timer {
         id: timer
@@ -121,6 +75,12 @@ BasePage {
                 Layout.fillWidth: true
             }
 
+            QQC2.Button {
+                action: checkAction
+                visible: !root.showAnswer && !root.finished
+
+                Layout.alignment: Qt.AlignHCenter
+            }
 
             Kirigami.Separator {
                 visible: root.showAnswer
@@ -139,7 +99,7 @@ BasePage {
             }
 
             Loader {
-                active: wordDelegate.questionSound && root.showAnswer
+                active: wordDelegate.answerSound && root.showAnswer
 
                 Layout.fillWidth: true
                 Layout.maximumWidth: Kirigami.Units.gridUnit * 10
@@ -158,6 +118,49 @@ BasePage {
                 visible: root.showAnswer
 
                 Layout.fillWidth: true
+            }
+
+            RowLayout {
+                Layout.alignment: Qt.AlignHCenter
+
+                QQC2.Button {
+                    icon.name: "know"
+                    text: i18nc("@action:button", "Correct")
+                    visible: root.showAnswer
+                    onClicked: {
+                        root.showAnswer = false;
+                        randomSortModel.unMarkAsError(listView.currentIndex);
+                        if (listView.currentIndex + 1 === listView.count) {
+                            root.finished = true;
+                        } else {
+                            listView.incrementCurrentIndex();
+                        }
+
+                        if (Prefs.autoFlip) {
+                            timer.restart();
+                        }
+                    }
+                }
+
+                QQC2.Button {
+                    text: i18nc("@action:button", "Not Correct")
+                    icon.name: "dontknow"
+                    visible: root.showAnswer
+                    onClicked: {
+                        root.showAnswer = false;
+                        root.errors++;
+                        randomSortModel.markAsError(listView.currentIndex);
+                        if (listView.currentIndex + 1 === listView.count) {
+                            root.finished = true;
+                        } else {
+                            listView.incrementCurrentIndex();
+                        }
+
+                        if (Prefs.autoFlip) {
+                            timer.restart();
+                        }
+                    }
+                }
             }
         }
     }

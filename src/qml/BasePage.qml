@@ -26,6 +26,16 @@ Kirigami.Page {
         i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
     }
 
+    actions.contextualActions: [
+        OptionsAction {
+            cardModel: root.cardModel
+        },
+        EditAction {
+            cardModel: root.cardModel
+            documentModel: root.documentModel
+        }
+    ]
+
     function reset() {
         root.randomSortModel.showErrorsOnly = false;
         root.randomSortModel.reset();

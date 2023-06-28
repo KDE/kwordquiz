@@ -14,40 +14,6 @@ BasePage {
     property bool hintGiven: false
 
     actions.contextualActions: [
-        Kirigami.Action {
-            id: hintAction
-            text: i18nc("@action:button", "Hint")
-            onTriggered: {
-                root.hintGiven = true;
-                listView.currentItem.giveHint();
-            }
-        },
-        Kirigami.Action {
-            id: checkAction
-
-            text: i18nc("@action:button", "Check")
-            onTriggered: {
-                listView.currentItem.check();
-                root.showAnswer = true;
-            }
-            enabled: listView.currentItem && listView.currentItem.hasSelection
-            visible: !root.showAnswer && !root.finished
-        },
-        Kirigami.Action {
-            id: nextAction
-
-            icon.name: "go-next"
-            text: i18nc("@action:button", "Next")
-            visible: root.showAnswer
-            onTriggered: {
-                root.showAnswer = false;
-                if (listView.currentIndex + 1 === listView.count) {
-                    root.finished = true;
-                } else {
-                    listView.incrementCurrentIndex();
-                }
-            }
-        },
         OptionsAction {
             cardModel: root.cardModel
         },
@@ -179,6 +145,29 @@ BasePage {
                 }
             }
 
+            RowLayout {
+                Layout.alignment: Qt.AlignHCenter
+                visible: !root.showAnswer && !root.finished
+
+                QQC2.Button {
+                    text: i18nc("@action:button", "Hint")
+                    onClicked: {
+                        root.hintGiven = true;
+                        listView.currentItem.giveHint();
+                    }
+                }
+
+                QQC2.Button {
+                    text: i18nc("@action:button", "Check")
+                    onClicked: {
+                        listView.currentItem.check();
+                        root.showAnswer = true;
+                    }
+                    enabled: listView.currentItem && listView.currentItem.hasSelection
+                }
+            }
+
+
             Kirigami.Heading {
                 level: 3
                 visible: root.showAnswer
@@ -187,6 +176,22 @@ BasePage {
                 horizontalAlignment: Text.AlignHCenter
 
                 Layout.fillWidth: true
+            }
+
+            QQC2.Button {
+                icon.name: "go-next"
+                text: i18nc("@action:button", "Next")
+                visible: root.showAnswer
+                onClicked: {
+                    root.showAnswer = false;
+                    if (listView.currentIndex + 1 === listView.count) {
+                        root.finished = true;
+                    } else {
+                        listView.incrementCurrentIndex();
+                    }
+                }
+
+                Layout.alignment: Qt.AlignHCenter
             }
         }
     }

@@ -35,8 +35,8 @@ QQC2.AbstractButton {
     contentItem: RowLayout {
         Kirigami.Icon {
             source: audio.playbackState === Audio.PlayingState ? "media-playback-pause" : "media-playback-start"
-            Layout.preferredWidth: Kirigami.Units.iconSizes.mediumLarge
-            Layout.preferredHeight: Kirigami.Units.iconSizes.mediumLarge
+            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
         }
 
         Visualization {
