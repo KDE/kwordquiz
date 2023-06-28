@@ -87,11 +87,12 @@ void KWQDocumentModel::add(KEduVocDocument *document)
 void KWQDocumentModel::entryChanged(KNSCore::EntryWrapper *wrapper)
 {
     const auto entry = wrapper->entry();
+    if (entry.status() == KNS3::Entry::Deleted) {
 #else
 void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry)
 {
+    if (entry.status() == KNSCore::Entry::Deleted) {
 #endif
-    if (entry.status() == KNS3::Entry::Deleted) {
         const auto uninstalledFiles = entry.uninstalledFiles();
         for (const auto &url : uninstalledFiles) {
             auto it = std::find_if(cbegin(m_documents), cend(m_documents), [url](const auto &document) {
@@ -106,7 +107,11 @@ void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry)
             m_documents.erase(it);
             endInsertRows();
         }
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     } else if (entry.status() == KNS3::Entry::Installed) {
+#else
+    } else if (entry.status() == KNSCore::Entry::Installed) {
+#endif
         qDebug() << entry.installedFiles();
         const auto installedFiles = entry.installedFiles();
         beginInsertRows({}, rowCount(), rowCount() + entry.installedFiles().count() - 1);
