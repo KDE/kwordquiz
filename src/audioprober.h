@@ -7,15 +7,18 @@
 
 #pragma once
 
-#include <QAudioProbe>
-#include <QAudioRecorder>
-#include <QDebug>
 #include <QMediaPlayer>
 #include <QObject>
 #include <QTimer>
 #include <QVariant>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#include <QAudioProbe>
+
 class AudioProber : public QAudioProbe
+#else
+class AudioProber : public QObject
+#endif
 {
     Q_OBJECT
     Q_PROPERTY(QVariantList volumesList READ volumesList NOTIFY volumesListChanged)
