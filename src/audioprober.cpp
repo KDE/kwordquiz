@@ -7,15 +7,19 @@
 
 #include "audioprober.h"
 #include <qmediaobject.h>
-#include <qobject.h>
 
 AudioProber::AudioProber(QObject *parent)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     : QAudioProbe{parent}
+#else
+    : QObject{parent}
+#endif
 {
 }
 
 void AudioProber::setSource(QObject *source)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     auto player = qvariant_cast<QMediaPlayer *>(source->property("mediaObject"));
 
     m_playerSource = player;
@@ -30,6 +34,7 @@ void AudioProber::setSource(QObject *source)
     volumeBarTimer = new QTimer(this);
     connect(volumeBarTimer, &QTimer::timeout, this, &AudioProber::processVolumeBar);
     volumeBarTimer->setInterval(150);
+#endif
 }
 
 void AudioProber::handlePlayerState(QMediaPlayer::State state)
@@ -45,6 +50,7 @@ void AudioProber::handlePlayerState(QMediaPlayer::State state)
 
 void AudioProber::processVolumeBar()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (isActive()) {
         // m_audioLen might be 0
         const int val = m_audioLen == 0 ? 0 : m_audioSum / m_audioLen;
@@ -67,10 +73,12 @@ void AudioProber::processVolumeBar()
         m_audioSum = 0;
         m_audioLen = 0;
     }
+#endif
 }
 
 void AudioProber::process(QAudioBuffer buffer)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     int sum = 0;
     for (int i = 0; i < buffer.sampleCount(); i++) {
         sum += abs(static_cast<short *>(buffer.data())[i]);
@@ -80,6 +88,7 @@ void AudioProber::process(QAudioBuffer buffer)
 
     m_audioSum += sum;
     m_audioLen++;
+#endif
 }
 
 QVariantList AudioProber::volumesList() const
