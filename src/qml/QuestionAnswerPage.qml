@@ -13,16 +13,6 @@ BasePage {
     property bool wasCorrect: true
     property bool hintGiven: false
 
-    actions.contextualActions: [
-        OptionsAction {
-            cardModel: root.cardModel
-        },
-        EditAction {
-            cardModel: root.cardModel
-            documentModel: root.documentModel
-        }
-    ]
-
     listView.delegate: Rectangle {
         id: wordDelegate
 
