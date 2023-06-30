@@ -8,7 +8,6 @@ add_subdirectory( examples )
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${PHONON_INCLUDES}
 )
 
 ########### next target ###############
@@ -53,7 +52,6 @@ target_link_libraries(kwordquiz
     KF${KF_MAJOR_VERSION}::Notifications
     KF${KF_MAJOR_VERSION}::NotifyConfig
     LibKEduVocDocumentImport__KEduVocDocument
-    Phonon::phonon4qt${QT_MAJOR_VERSION}
 )
 
 install(TARGETS kwordquiz ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
