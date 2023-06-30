@@ -44,8 +44,22 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Widgets PrintSupport Quick Qml Svg Multimedia Xml)
-find_package(KF${KF_MAJOR_VERSION} ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS
+    Core
+    Widgets
+    PrintSupport
+    Quick
+    Qml
+    Svg
+    Multimedia
+    Xml
+)
+set_package_properties(Qt${QT_MAJOR_VERSION} PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Base application components"
+)
+
+find_package(KF${QT_MAJOR_VERSION} ${KF5_MIN_VERSION} COMPONENTS
     I18n
     Crash
     Config
@@ -55,9 +69,18 @@ find_package(KF${KF_MAJOR_VERSION} ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Notifications
     Kirigami2
 )
-include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
+set_package_properties(KF${QT_MAJOR_VERSION} PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Base application components"
+)
 
-find_package(Phonon4Qt${QT_MAJOR_VERSION} 4.6.60 NO_MODULE REQUIRED)
+find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.9.0)
+set_package_properties(KF${QT_MAJOR_VERSION}KirigamiAddons PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Kirigami addons application UI framework"
+)
+
+include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 
 find_package(LibKEduVocDocument REQUIRED)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
