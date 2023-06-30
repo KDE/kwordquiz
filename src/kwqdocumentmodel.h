@@ -33,7 +33,9 @@ public:
     void load();
     void save() const;
 
+    Q_INVOKABLE void add(const QUrl &url);
     Q_INVOKABLE void add(KEduVocDocument *document);
+    Q_INVOKABLE void remove(const int row);
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_INVOKABLE void entryChanged(KNSCore::EntryWrapper *wrapper);

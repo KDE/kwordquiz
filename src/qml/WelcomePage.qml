@@ -4,6 +4,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
+import Qt.labs.platform 1.1
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kwordquiz 1.0
@@ -15,29 +16,62 @@ Kirigami.ScrollablePage {
 
     title: i18nc("@title:window", "Welcome")
 
-    property var _placeholder: Kirigami.PlaceholderMessage {
-        parent: root
-        anchors.centerIn: parent
-        icon.name: "org.kde.kwordquiz"
-        width: parent.width - Kirigami.Units.gridUnit * 4
-        text: i18nc("@label", "Get started with your first deck")
-        helpfulAction: QQC2.Action {
-            text: i18nc("@action:button", "Create Deck")
-            onTriggered: applicationWindow().pageStack.layers.push("qrc:/qml/DeckEditorPage.qml", {
-                documentModel: documentModel,
-            })
-        }
-        visible: documentRepeater.count === 0
-    }
-
     leftPadding: 0
     rightPadding: 0
 
+    FileDialog {
+        id: fileDialog
+
+        title: i18n("Please choose an KWordQuiz document")
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("KEduDocument (*.kvtml)")]
+
+        onAccepted: {
+            documentModel.add(file);
+            documentRepeater.itemAt(documentRepeater.count - 1).open();
+        }
+    }
+
     ColumnLayout {
-        visible: documentRepeater.count > 0
+        Kirigami.Icon {
+            source: "org.kde.kwordquiz"
+            Layout.alignment: Qt.AlignHCenter
+            implicitWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+            implicitHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+        }
+
+        Kirigami.Heading {
+            text: i18n("Welcome to KWordQuiz")
+
+            Layout.alignment: Qt.AlignHCenter
+            Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        MobileForm.FormGridContainer {
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            infoCards: [
+                MobileForm.FormGridContainer.InfoCard {
+                    title: i18n("Open existing document")
+                    action: Kirigami.Action {
+                        onTriggered: fileDialog.open();
+                    }
+                },
+                MobileForm.FormGridContainer.InfoCard {
+                    title: i18n("Create Deck")
+                    action: Kirigami.Action {
+                        onTriggered: applicationWindow().pageStack.layers.push("qrc:/qml/DeckEditorPage.qml", {
+                            documentModel: documentModel,
+                        })
+                    }
+                }
+            ]
+        }
 
         MobileForm.FormCard {
             Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
 
             contentItem: ColumnLayout {
                 spacing: 0
@@ -103,6 +137,8 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
 
+            visible: documentRepeater.count > 0
+
             contentItem: ColumnLayout {
                 spacing: 0
 
@@ -125,10 +161,69 @@ Kirigami.ScrollablePage {
 
                         spacing: 0
 
-                        MobileForm.FormButtonDelegate {
+                        function open() {
+                            documentButton.clicked();
+                        }
+
+                        MobileForm.AbstractFormDelegate {
                             id: documentButton
 
                             text: documentDelegate.title
+
+                            contentItem: RowLayout {
+                                spacing: 0
+
+                                QQC2.Label {
+                                    Layout.fillWidth: true
+                                    text: documentDelegate.title
+                                    elide: Text.ElideRight
+                                    wrapMode: Text.Wrap
+                                    maximumLineCount: 2
+                                    color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                                    Accessible.ignored: true
+                                }
+
+                                QQC2.ToolButton {
+                                    text: i18nc("@action:button", "Remove")
+                                    icon.name: "delete"
+                                    display: QQC2.ToolButton.IconOnly
+
+                                    onClicked: documentModel.remove(documentDelegate.index)
+
+                                    Layout.rightMargin: Kirigami.Units.smallSpacing
+
+                                    QQC2.ToolTip.visible: hovered
+                                    QQC2.ToolTip.text: text
+                                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                                }
+
+                                QQC2.ToolButton {
+                                    text: i18nc("@action:button", "Edit")
+                                    icon.name: "document-edit"
+                                    display: QQC2.ToolButton.IconOnly
+
+                                    onClicked: {
+                                        const editor = applicationWindow().pageStack.layers.push('qrc:/qml/DeckEditorPage.qml', {
+                                            documentModel: documentModel,
+                                            mode: DeckEditorPage.EditMode,
+                                        });
+                                        editor.editorModel.document = documentDelegate.document;
+                                    }
+
+                                    Layout.rightMargin: Kirigami.Units.smallSpacing
+
+                                    QQC2.ToolTip.visible: hovered
+                                    QQC2.ToolTip.text: text
+                                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                                }
+
+                                MobileForm.FormArrow {
+                                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                                    direction: MobileForm.FormArrow.Right
+                                }
+                            }
+
                             onClicked: if (Prefs.startSession === Prefs.Flashcard){
                                 applicationWindow().pageStack.layers.push("qrc:/qml/FlashCardPage.qml", {
                                     document: documentDelegate.document,

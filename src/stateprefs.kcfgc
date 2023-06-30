@@ -1,0 +1,12 @@
+# Code generation options for kconfig_compiler
+# SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+File=kwordquizstate.kcfg
+ClassName=StatePrefs
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
+Singleton=true
+GlobalEnums=true

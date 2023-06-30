@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "kwqdocumentmodel.h"
-#include "prefs.h"
+#include "stateprefs.h"
 #include <keduvocdocument.h>
 
 KWQDocumentModel::KWQDocumentModel(QObject *parent)
@@ -18,7 +18,7 @@ KWQDocumentModel::~KWQDocumentModel()
 
 void KWQDocumentModel::load()
 {
-    const auto urls = Prefs::documents();
+    const auto urls = StatePrefs::documents();
     for (const auto &url : urls) {
         auto doc = std::make_unique<KEduVocDocument>(nullptr);
         doc->open(QUrl(url), KEduVocDocument::FileIgnoreLock);
@@ -32,8 +32,8 @@ void KWQDocumentModel::save() const
     for (const auto &document : std::as_const(m_documents)) {
         urls << document->url().url();
     }
-    Prefs::setDocuments(urls);
-    Prefs::self()->save();
+    StatePrefs::setDocuments(urls);
+    StatePrefs::self()->save();
 }
 
 int KWQDocumentModel::rowCount(const QModelIndex &parent) const
@@ -81,6 +81,25 @@ void KWQDocumentModel::add(KEduVocDocument *document)
     endInsertRows();
 
     save();
+}
+
+void KWQDocumentModel::add(const QUrl &url)
+{
+    auto doc = std::make_unique<KEduVocDocument>(nullptr);
+    doc->open(url, KEduVocDocument::FileIgnoreLock);
+
+    beginInsertRows({}, rowCount(), rowCount());
+    m_documents.push_back(std::move(doc));
+    endInsertRows();
+
+    save();
+}
+
+void KWQDocumentModel::remove(const int row)
+{
+    beginInsertRows({}, row, row);
+    m_documents.erase(std::begin(m_documents) + row);
+    endInsertRows();
 }
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)

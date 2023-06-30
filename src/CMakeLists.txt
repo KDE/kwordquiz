@@ -1,7 +1,7 @@
 
-add_subdirectory( pics ) # private icons
-add_subdirectory( icons ) # global icons
-add_subdirectory( examples )
+add_subdirectory(pics) # private icons
+add_subdirectory(icons) # global icons
+add_subdirectory(examples)
 
 # include_directories( ${LIBKDEEDU_INCLUDE_DIR} )
 
@@ -12,7 +12,10 @@ include_directories(
 
 ########### next target ###############
 
-ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KWORDQUIZ VERSION_HEADER kwordquiz_version.h)
+ecm_setup_version(${RELEASE_SERVICE_VERSION}
+    VARIABLE_PREFIX KWORDQUIZ
+    VERSION_HEADER kwordquiz_version.h
+)
 
 set(kwordquiz_SRCS
     main.cpp
@@ -31,7 +34,7 @@ set(kwordquiz_SRCS
     resources.qrc
 )
 
-kconfig_add_kcfg_files(kwordquiz_SRCS GENERATE_MOC prefs.kcfgc documentsettings.kcfgc)
+kconfig_add_kcfg_files(kwordquiz_SRCS GENERATE_MOC prefs.kcfgc documentsettings.kcfgc stateprefs.kcfgc)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/*-apps-kwordquiz.png")
 ecm_add_app_icon(kwordquiz_SRCS ICONS ${ICONS_SRCS})

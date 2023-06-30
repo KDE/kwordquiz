@@ -22,6 +22,7 @@
 #include "kwqdocumentmodel.h"
 #include "kwqrandomsortmodel.h"
 #include "prefs.h"
+#include "stateprefs.h"
 
 int main(int argc, char *argv[])
 {
@@ -80,7 +81,9 @@ int main(int argc, char *argv[])
     }
 
     auto prefs = Prefs::self();
+    auto statePrefs = StatePrefs::self();
     qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "Prefs", prefs);
+    qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "StatePrefs", statePrefs);
     qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
     qmlRegisterType<Exporter>("org.kde.kwordquiz", 1, 0, "Exporter");
     qmlRegisterType<AudioProber>("org.kde.kwordquiz", 1, 0, "AudioProber");
