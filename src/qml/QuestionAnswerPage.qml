@@ -168,6 +168,28 @@ BasePage {
                 Layout.fillWidth: true
             }
 
+            Image {
+                Layout.fillWidth: true
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 8
+
+                fillMode: Image.PreserveAspectFit
+                visible: root.showAnswer
+                smooth: true
+                source: 'file:' + wordDelegate.answerImage
+            }
+
+            Loader {
+                active: wordDelegate.answerSound && root.showAnswer
+
+                Layout.fillWidth: true
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                Layout.alignment: Qt.AlignHCenter
+
+                sourceComponent: SoundPlayer {
+                    source: 'file:' + wordDelegate.answerSound
+                }
+            }
+
             QQC2.Button {
                 icon.name: "go-next"
                 text: i18nc("@action:button", "Next")
