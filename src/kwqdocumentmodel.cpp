@@ -110,9 +110,9 @@ int KWQDocumentModel::add(const QUrl &url)
 
 void KWQDocumentModel::remove(const int row)
 {
-    beginInsertRows({}, row, row);
+    beginRemoveRows({}, row, row);
     m_documents.erase(std::begin(m_documents) + row);
-    endInsertRows();
+    endRemoveRows();
 }
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
