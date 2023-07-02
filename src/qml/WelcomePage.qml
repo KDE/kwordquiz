@@ -14,6 +14,23 @@ import QtQml 2.15
 Kirigami.ScrollablePage {
     id: root
 
+    function openFile(file, mode) {
+        const row = documentModel.add(file);
+        switch (mode) {
+        case Prefs.MultipleChoice:
+            multipleChoiceRadio.checked = true;
+            break;
+        case Prefs.QA:
+            qaRadio.checked = true;
+            break;
+        case Prefs.Flashcard:
+        default:
+            flashcardRadio.checked = true;
+            break;
+        }
+        documentRepeater.itemAt(row).open();
+    }
+
     title: i18nc("@title:window", "Welcome")
 
     leftPadding: 0

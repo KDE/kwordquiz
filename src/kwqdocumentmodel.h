@@ -33,7 +33,7 @@ public:
     void load();
     void save() const;
 
-    Q_INVOKABLE void add(const QUrl &url);
+    Q_INVOKABLE int add(const QUrl &url);
     Q_INVOKABLE void add(KEduVocDocument *document);
     Q_INVOKABLE void remove(const int row);
 

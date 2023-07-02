@@ -31,6 +31,8 @@ set(kwordquiz_SRCS
     audioprober.cpp
     blankanswer.h
     blankanswer.cpp
+    fileopener.h
+    fileopener.cpp
     resources.qrc
 )
 
@@ -44,6 +46,7 @@ add_executable(kwordquiz ${kwordquiz_SRCS})
 target_link_libraries(kwordquiz
     Qt::Core
     Qt::Quick
+    Qt::QuickControls2
     Qt::PrintSupport
     Qt::Svg
     Qt::Multimedia
@@ -54,6 +57,7 @@ target_link_libraries(kwordquiz
     KF${KF_MAJOR_VERSION}::NewStuffCore
     KF${KF_MAJOR_VERSION}::Notifications
     KF${KF_MAJOR_VERSION}::NotifyConfig
+    KF${KF_MAJOR_VERSION}::DBusAddons
     LibKEduVocDocumentImport__KEduVocDocument
 )
 
