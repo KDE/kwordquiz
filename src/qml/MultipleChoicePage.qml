@@ -146,6 +146,6 @@ BasePage {
         width: parent.width - Kirigami.Units.gridUnit * 4
         visible: listView.count < 4
         text: i18n("Not enough words in your deck")
-        explanation: i18n("You need at least 3 words but more is better")
+        explanation: i18n("You need at least 3 words to enable the multiple choice mode")
     }
 }

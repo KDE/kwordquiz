@@ -33,6 +33,10 @@ QVariant KWQRandomSortModel::data(const QModelIndex &idx, int role) const
     auto mode = idx.row() >= m_modes.count() ? QuestionInLeftColumn : m_modes[idx.row()];
 
     if (role == MultipleChoiceRole) {
+        if (rowCount() < 4) {
+            return QStringList();
+        }
+
         const auto rowRole = mode == QuestionInRightColumn
             ? KWQCardModel::QuestionRole
             : KWQCardModel::AnswerRole;
