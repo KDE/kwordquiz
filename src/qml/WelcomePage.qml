@@ -28,6 +28,7 @@ Kirigami.ScrollablePage {
             flashcardRadio.checked = true;
             break;
         }
+        applicationWindow().pageStack.layers.clear();
         documentRepeater.itemAt(row).open();
     }
 
