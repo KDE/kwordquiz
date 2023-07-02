@@ -49,6 +49,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS
     Widgets
     PrintSupport
     Quick
+    QuickControls2
     Qml
     Svg
     Multimedia
@@ -68,6 +69,7 @@ find_package(KF${QT_MAJOR_VERSION} ${KF5_MIN_VERSION} COMPONENTS
     NewStuff
     Notifications
     Kirigami2
+    DBusAddons
 )
 set_package_properties(KF${QT_MAJOR_VERSION} PROPERTIES
     TYPE REQUIRED

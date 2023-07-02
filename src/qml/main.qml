@@ -4,6 +4,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kwordquiz 1.0
 
 Kirigami.ApplicationWindow {
     id: root
@@ -13,6 +14,12 @@ Kirigami.ApplicationWindow {
 
     property real previousWidth: width
     property real previousHeight: height
+
+    FileOpener {
+        objectName: "FileOpener"
+
+        onFileOpened: pageStack.items[0].openFile(file, mode);
+    }
 
     pageStack {
         defaultColumnWidth: Kirigami.Units.gridUnit * 30

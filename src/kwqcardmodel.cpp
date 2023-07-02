@@ -2,8 +2,6 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#pragma once
-
 #include "kwqcardmodel.h"
 #include <keduvocdocument.h>
 #include <keduvoclesson.h>

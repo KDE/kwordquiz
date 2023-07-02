@@ -7,8 +7,11 @@
 #include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
+#include <QDir>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickStyle>
+#include <QQuickWindow>
 
 #include <KAboutData>
 #include <KCrash>
@@ -17,6 +20,7 @@
 #include "audioprober.h"
 #include "blankanswer.h"
 #include "exporter.h"
+#include "fileopener.h"
 #include "kwordquiz_version.h"
 #include "kwqcardmodel.h"
 #include "kwqdocumentmodel.h"
@@ -24,12 +28,55 @@
 #include "prefs.h"
 #include "stateprefs.h"
 
+#ifndef Q_OS_ANDROID
+#include <KDBusService>
+#endif
+
+void parseArgs(QCommandLineParser &parser, QQuickWindow *view, const QString &workingDirectory)
+{
+    const QStringList args = parser.positionalArguments();
+    if (args.count() == 0) {
+        return;
+    }
+
+    auto fileOpener = view->findChild<FileOpener *>(QStringLiteral("FileOpener"));
+
+    QString goTo = parser.value(QStringLiteral("goto"));
+    Prefs::EnumStartSession mode = Prefs::Flashcard;
+
+    if (!goTo.isEmpty()) {
+        if (goTo == QStringLiteral("flash")) {
+            mode = Prefs::Flashcard;
+        } else if (goTo == QStringLiteral("mc")) {
+            mode = Prefs::MultipleChoice;
+        } else if (goTo == QStringLiteral("qa")) {
+            mode = Prefs::QA;
+        } else {
+            qWarning() << i18n("Invalid goto given: %1. Allowed: flash, mc and qa", goTo);
+        }
+    }
+
+    auto file = QUrl::fromUserInput(args.at(args.count() - 1), workingDirectory);
+    fileOpener->openFile(file, mode);
+}
+
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 #endif
+
+#ifdef Q_OS_ANDROID
+    QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+    QIcon::setThemeName("tokodon");
+#else
     QApplication app(argc, argv);
+    // Default to org.kde.desktop style unless the user forces another style
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
+#endif
 
     KCrash::initialize();
     KLocalizedString::setApplicationDomain("kwordquiz");
@@ -55,6 +102,10 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(aboutData);
 
+#ifndef Q_OS_ANDROID
+    KDBusService service(KDBusService::Unique);
+#endif
+
     KCrash::initialize();
 
 #ifdef Q_OS_WIN
@@ -64,27 +115,32 @@ int main(int argc, char *argv[])
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
 
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("m") << QStringLiteral("mode"), i18n("A number 1-5 corresponding to the \nentries in the Mode menu"), QStringLiteral("number")));
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("g") << QStringLiteral("goto"), i18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer, \n'tutor' for tutor"), QStringLiteral("session")));
+    parser.addOption(
+        QCommandLineOption(QStringList() << QStringLiteral("g") << QStringLiteral("goto"),
+                           i18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer"),
+                           QStringLiteral("session")));
     parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+[File]"), i18n("File to open")));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    QStringList args = parser.positionalArguments();
+    QQmlApplicationEngine engine;
 
-    if (parser.isSet(QStringLiteral("g")) && parser.value(QStringLiteral("g")) == QLatin1String("tutor")) {
-        QApplication tutorapp(argc, argv);
-        tutorapp.setQuitOnLastWindowClosed(false);
-        //KWQTutor* m_tutor = new KWQTutor(args.count() ?
-        //                                 QUrl::fromLocalFile(args.at(args.count() - 1)) : QUrl()); //last arg - file to open
-        return tutorapp.exec();
-    }
+    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine, &parser](const QStringList &arguments, const QString &workingDirectory) {
+        parser.parse(arguments);
+        const auto rootObjects = engine.rootObjects();
+
+        for (auto obj : rootObjects) {
+            auto view = qobject_cast<QQuickWindow *>(obj);
+            parseArgs(parser, view, workingDirectory);
+        }
+    });
 
     auto prefs = Prefs::self();
     auto statePrefs = StatePrefs::self();
     qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "Prefs", prefs);
     qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "StatePrefs", statePrefs);
     qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
+    qmlRegisterType<FileOpener>("org.kde.kwordquiz", 1, 0, "FileOpener");
     qmlRegisterType<Exporter>("org.kde.kwordquiz", 1, 0, "Exporter");
     qmlRegisterType<AudioProber>("org.kde.kwordquiz", 1, 0, "AudioProber");
     qmlRegisterType<BlankAnswer>("org.kde.kwordquiz", 1, 0, "BlankAnswer");
@@ -95,42 +151,19 @@ int main(int argc, char *argv[])
         return engine->toScriptValue(KAboutData::applicationData());
     });
 
-    QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
-    if (engine.rootObjects().isEmpty()) {
+
+    const auto rootObjects = engine.rootObjects();
+    if (rootObjects.isEmpty()) {
         return -1;
     }
 
-    //if (app.isSessionRestored()) {
-    //    kRestoreMainWindows<KWordQuizApp>();
-    //} else {
-    //    KWordQuizApp *kwordquiz = new KWordQuizApp();
-    //    kwordquiz->show();
+    for (auto obj : rootObjects) {
+        auto view = qobject_cast<QQuickWindow *>(obj);
+        parseArgs(parser, view, QDir::currentPath());
+    }
 
-    //    if (args.count()) {
-    //        kwordquiz->openDocumentFile(QUrl::fromLocalFile(args.at(args.count() - 1)));
-
-    //        QString mode = parser.value(QStringLiteral("mode"));
-
-    //        if (!mode.isEmpty()) {
-    //            QAction *a = kwordquiz->actionCollection()->action(QStringLiteral("mode_%1").arg(QString(mode)));
-    //            kwordquiz->slotModeActionGroupTriggered(a);
-    //        }
-
-    //        QString go_to = parser.value(QStringLiteral("goto"));
-    //        if (!go_to.isEmpty()) {
-    //            if (go_to == QLatin1String("flash"))
-    //                kwordquiz->slotQuizFlash();
-    //            if (go_to == QLatin1String("mc"))
-    //                kwordquiz->slotQuizMultiple();
-    //            if (go_to == QLatin1String("qa"))
-    //                kwordquiz->slotQuizQA();
-    //        }
-    //    } else {
-    //        kwordquiz->openDocumentFile();
-    //    }
-    //}
     return app.exec();
 }

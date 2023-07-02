@@ -76,23 +76,36 @@ QHash<int, QByteArray> KWQDocumentModel::roleNames() const
 void KWQDocumentModel::add(KEduVocDocument *document)
 {
     document->setParent(nullptr);
-    beginInsertRows({}, rowCount(), rowCount());
+    const int row = rowCount();
+    beginInsertRows({}, row, row);
     m_documents.push_back(std::unique_ptr<KEduVocDocument>(document));
     endInsertRows();
 
     save();
 }
 
-void KWQDocumentModel::add(const QUrl &url)
+int KWQDocumentModel::add(const QUrl &url)
 {
+    int row = 0;
+    for (const auto &doc : std::as_const(m_documents)) {
+        if (doc->url() == url) {
+            qDebug() << row;
+            return row;
+        }
+        row++;
+    }
+
     auto doc = std::make_unique<KEduVocDocument>(nullptr);
     doc->open(url, KEduVocDocument::FileIgnoreLock);
 
-    beginInsertRows({}, rowCount(), rowCount());
+    row = rowCount();
+    beginInsertRows({}, row, row);
     m_documents.push_back(std::move(doc));
     endInsertRows();
 
     save();
+
+    return row;
 }
 
 void KWQDocumentModel::remove(const int row)
