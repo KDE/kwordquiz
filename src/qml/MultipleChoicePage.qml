@@ -20,6 +20,8 @@ BasePage {
         required property string questionImage
         required property string questionSound
         required property string answer
+        required property string answerImage
+        required property string answerSound
         required property var multipleChoice
 
         readonly property bool isCurrentItem: ListView.isCurrentItem
@@ -97,6 +99,28 @@ BasePage {
                 horizontalAlignment: Text.AlignHCenter
 
                 Layout.fillWidth: true
+            }
+
+            Image {
+                Layout.fillWidth: true
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 8
+
+                fillMode: Image.PreserveAspectFit
+                visible: root.showAnswer
+                smooth: true
+                source: 'file:' + wordDelegate.answerImage
+            }
+
+            Loader {
+                active: wordDelegate.answerSound && root.showAnswer
+
+                Layout.fillWidth: true
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                Layout.alignment: Qt.AlignHCenter
+
+                sourceComponent: SoundPlayer {
+                    source: 'file:' + wordDelegate.answerSound
+                }
             }
 
             QQC2.Button {
