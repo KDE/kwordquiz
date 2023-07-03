@@ -83,6 +83,19 @@ Kirigami.ScrollablePage {
                             documentModel: documentModel,
                         })
                     }
+                },
+                MobileForm.FormGridContainer.InfoCard {
+                    title: i18n("Download Deck")
+                    action: NewStuff.Action {
+                        id: newStuffButton
+                        configFile: "kwordquiz.knsrc"
+                        viewMode: NewStuff.Page.ViewMode.Preview
+                        onEntryEvent: function(entry, event) {
+                            if (event === NewStuff.Entry.StatusChangedEvent) {
+                                documentModel.entryChanged(entry);
+                            }
+                        }
+                    }
                 }
             ]
         }
@@ -176,6 +189,7 @@ Kirigami.ScrollablePage {
                         required property int index
                         required property string title
                         required property var document
+                        readonly property alias documentButton: documentButton
 
                         spacing: 0
 
@@ -263,34 +277,13 @@ Kirigami.ScrollablePage {
                         }
 
                         MobileForm.FormDelegateSeparator {
-                            above: documentButton
-                            below: index === 0 ? null : (index + 1 === documentRepeater.count ? createButton : documentDelegate.itemAt(index - 1).children[0])
-                        }
-                    }
-                }
-
-                MobileForm.FormButtonDelegate {
-                    id: createButton
-                    icon.name: "document-new"
-                    text: i18nc("@action:button", "Create Deck")
-                    onClicked: applicationWindow().pageStack.layers.push("qrc:/qml/DeckEditorPage.qml", {
-                        documentModel: documentModel,
-                    })
-                }
-
-                MobileForm.FormDelegateSeparator { above: downloadButton; below: createButton }
-
-                MobileForm.FormButtonDelegate {
-                    id: downloadButton
-                    text: i18nc("@action:button", "Download community made decks")
-                    action: NewStuff.Action {
-                        id: newStuffButton
-                        configFile: "kwordquiz.knsrc"
-                        viewMode: NewStuff.Page.ViewMode.Preview
-                        onEntryEvent: function(entry, event) {
-                            if (event === NewStuff.Entry.StatusChangedEvent) {
-                                documentModel.entryChanged(entry);
+                            below: documentButton
+                            above: if (index === documentRepeater.count - 1) {
+                                null
+                            } else {
+                                documentRepeater.itemAt(index + 1).children[0]
                             }
+                            visible: index !== documentRepeater.count - 1
                         }
                     }
                 }

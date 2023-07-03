@@ -19,6 +19,16 @@ KWQDocumentModel::~KWQDocumentModel()
 void KWQDocumentModel::load()
 {
     const auto urls = StatePrefs::documents();
+    if (urls.empty()) {
+        add(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kwordquiz/examples/example.kvtml"))));
+        add(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kwordquiz/examples/french_verbs.kvtml"))));
+        add(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kwordquiz/examples/fill_in_the_blank.kvtml"))));
+        add(QUrl::fromLocalFile(
+            QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kwordquiz/examples/us_states_and_capitals.kvtml"))));
+
+        return;
+    }
+
     for (const auto &url : urls) {
         auto doc = std::make_unique<KEduVocDocument>(nullptr);
         doc->open(QUrl(url), KEduVocDocument::FileIgnoreLock);
