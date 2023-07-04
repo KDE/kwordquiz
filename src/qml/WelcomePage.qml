@@ -42,7 +42,7 @@ Kirigami.ScrollablePage {
 
         title: i18n("Please choose an KWordQuiz document")
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-        nameFilters: [i18n("KEduDocument (*.kvtml)")]
+        nameFilters: [i18n("KEduDocument (*.kvtml)"), i18n("Wql documents (*.wql)"), i18n("CSV documents (*.csv)"), i18n("XDXF documents (*.xdxf)")]
 
         onAccepted: {
             documentModel.add(file);
