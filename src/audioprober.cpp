@@ -6,7 +6,9 @@
  */
 
 #include "audioprober.h"
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <qmediaobject.h>
+#endif
 
 AudioProber::AudioProber(QObject *parent)
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -37,6 +39,7 @@ void AudioProber::setSource(QObject *source)
 #endif
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void AudioProber::handlePlayerState(QMediaPlayer::State state)
 {
     if (state == QMediaPlayer::PlayingState) {
@@ -47,6 +50,7 @@ void AudioProber::handlePlayerState(QMediaPlayer::State state)
         volumeBarTimer->stop();
     }
 }
+#endif
 
 void AudioProber::processVolumeBar()
 {
@@ -76,9 +80,9 @@ void AudioProber::processVolumeBar()
 #endif
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void AudioProber::process(QAudioBuffer buffer)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     int sum = 0;
     for (int i = 0; i < buffer.sampleCount(); i++) {
         sum += abs(static_cast<short *>(buffer.data())[i]);
@@ -88,8 +92,8 @@ void AudioProber::process(QAudioBuffer buffer)
 
     m_audioSum += sum;
     m_audioLen++;
-#endif
 }
+#endif
 
 QVariantList AudioProber::volumesList() const
 {

@@ -246,6 +246,7 @@ Kirigami.ScrollablePage {
                                 item.focusQuestionField();
                             }
                         }
+                        onAccepted: identifierRightField.forceActiveFocus()
                     }
 
                     Kirigami.Separator {
@@ -266,6 +267,13 @@ Kirigami.ScrollablePage {
                             const item = listView.itemAtIndex(0);
                             if (item) {
                                 item.focusAnswerField();
+                            }
+                        }
+
+                        onAccepted: {
+                            const item = listView.itemAtIndex(0);
+                            if (item) {
+                                item.focusQuestionField();
                             }
                         }
                     }
@@ -400,6 +408,7 @@ Kirigami.ScrollablePage {
                                 listView.footerItem.focusQuestionField();
                             }
                         }
+                        onAccepted: answerField.forceActiveFocus()
                     }
 
                     FileSelectorButton {
@@ -445,6 +454,15 @@ Kirigami.ScrollablePage {
                                 listView.footerItem.focusAnswerField();
                             }
                         }
+                        onAccepted: {
+                            const item = listView.itemAtIndex(editorDelegate.index + 1);
+                            if (item) {
+                                item.focusQuestionField();
+                            } else {
+                                root.listView.headerItem.focusQuestionField();
+                            }
+                        }
+
                     }
 
                     FileSelectorButton {
