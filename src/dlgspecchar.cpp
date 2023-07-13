@@ -64,3 +64,5 @@ void DlgSpecChar::slotUser1( )
   Q_EMIT insertChar(chr());
   closeDialog();
 }
+
+#include "moc_dlgspecchar.cpp"

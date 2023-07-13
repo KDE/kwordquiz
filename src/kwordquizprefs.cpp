@@ -59,3 +59,5 @@ void KWordQuizPrefs::updateWidgetsDefault()
   m_prefCharacter->updateWidgets();
   m_config->useDefaults(bUseDefaults);
 }
+
+#include "moc_kwordquizprefs.cpp"

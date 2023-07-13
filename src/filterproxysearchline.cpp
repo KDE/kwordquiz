@@ -43,3 +43,5 @@ void FilterProxySearchLine::updateFilter()
 
     m_filterProxyModel->setFilterFixedString(text());
 }
+
+#include "moc_filterproxysearchline.cpp"

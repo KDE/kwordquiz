@@ -78,3 +78,5 @@ void KWQQuizView::audioPlayFile(const QUrl &soundUrl, bool overwrite)
     m_player->setCurrentSource(url);
     m_player->play();
 }
+
+#include "moc_kwqquizview.cpp"

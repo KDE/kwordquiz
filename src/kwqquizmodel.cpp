@@ -455,3 +455,5 @@ void KWQQuizModel::activateErrorList()
 }
 
 inline bool KWQQuizModel::isOdd(int value) const { return value & 0x1; }
+
+#include "moc_kwqquizmodel.cpp"

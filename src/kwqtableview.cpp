@@ -782,3 +782,5 @@ bool KWQTableView::selectionHasMoreThanText()
 
   return result;
 }
+
+#include "moc_kwqtableview.cpp"

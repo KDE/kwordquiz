@@ -50,3 +50,5 @@ void KWQTutorPrefs::slotEnableApplyButton()
 {
   buttonBox()->button(QDialogButtonBox::Apply)->setEnabled(true);
 }
+
+#include "moc_kwqtutorprefs.cpp"

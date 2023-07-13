@@ -145,3 +145,5 @@ void KWQTableDelegate::paint(QPainter * painter, const QStyleOptionViewItem & op
 
   painter->restore();
 }
+
+#include "moc_kwqtabledelegate.cpp"

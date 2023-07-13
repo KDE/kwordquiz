@@ -1578,3 +1578,5 @@ void KWordQuizApp::slotLayoutActionGroupTriggered(QAction *act)
     int column = m_tableView->currentIndex().column();
     m_tableModel->setHeaderData(column, Qt::Horizontal, act->data().toString(), KWQTableModel::KeyboardLayoutRole);
 }
+
+#include "moc_kwordquiz.cpp"

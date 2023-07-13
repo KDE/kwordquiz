@@ -9,3 +9,5 @@ PrefGeneral::PrefGeneral(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
 }
+
+#include "moc_prefgeneral.cpp"

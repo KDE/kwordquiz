@@ -63,3 +63,5 @@ void KWQTutorFlashCard::setText(const QString & text)
   if (m_card != 0)
     m_card->setText(text);
 }
+
+#include "moc_kwqtutorflashcard.cpp"

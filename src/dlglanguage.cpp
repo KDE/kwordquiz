@@ -98,3 +98,5 @@ ColumnDataList DlgLanguage::columnData()
 
     return result;
 }
+
+#include "moc_dlglanguage.cpp"

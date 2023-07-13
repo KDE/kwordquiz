@@ -17,3 +17,5 @@ PrefQuiz::PrefQuiz(QWidget *parent) : QWidget(parent)
   kcfg_FlipDelay -> setEnabled(kcfg_AutoFlip->isChecked());
   kcfg_KeepDiscard->setEnabled(kcfg_AutoFlip->isChecked());
 }
+
+#include "moc_prefquiz.cpp"

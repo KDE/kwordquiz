@@ -275,3 +275,5 @@ void QAView::slotMarkLastCorrect( )
   score->swapCount();
   m_actionCollection->action(QStringLiteral("qa_mark_last_correct"))->setEnabled(false);
 }
+
+#include "moc_qaview.cpp"

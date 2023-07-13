@@ -52,3 +52,5 @@ void WQPrintDialogPage::setPrintStyle(int style)
 {
   bg->button(style)->setChecked(true);
 }
+
+#include "moc_wqprintdialogpage.cpp"

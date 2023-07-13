@@ -296,3 +296,5 @@ KEduVocLesson * KWQTableModel::currentLesson(int row)
   }
   return m_doc->lesson();
 }
+
+#include "moc_kwqtablemodel.cpp"

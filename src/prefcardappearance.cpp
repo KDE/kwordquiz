@@ -90,3 +90,5 @@ void PrefCardAppearance::slotCurrentChanged(int index)
     cardColorLabel->setBuddy(kcfg_FrontCardColor);
   }
 }
+
+#include "moc_prefcardappearance.cpp"

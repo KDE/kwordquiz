@@ -65,3 +65,5 @@ void KWQClearDialog::accept()
   Prefs::setClearSoundLink(clearSoundCheckBox->isChecked());
   QDialog::accept();
 }
+
+#include "moc_kwqcleardialog.cpp"

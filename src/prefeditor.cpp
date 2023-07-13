@@ -9,3 +9,5 @@ PrefEditor::PrefEditor(QWidget *parent) : QWidget(parent)
 {
   setupUi(this);
 }
+
+#include "moc_prefeditor.cpp"

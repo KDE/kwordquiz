@@ -151,3 +151,5 @@ void FlashView::slotApplySettings( )
 
   score ->setAsPercent(Prefs::percent());
 }
+
+#include "moc_flashview.cpp"

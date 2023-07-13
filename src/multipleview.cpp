@@ -183,3 +183,5 @@ void MultipleView::slotApplySettings()
 {
   score->setAsPercent(Prefs::percent());
 }
+
+#include "moc_multipleview.cpp"

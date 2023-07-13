@@ -178,3 +178,5 @@ void KWQTutor::quit()
 {
   Prefs::self()->save();
 }
+
+#include "moc_kwqtutor.cpp"

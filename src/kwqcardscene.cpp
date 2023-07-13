@@ -142,3 +142,5 @@ void KWQCardScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
         Q_EMIT cardClicked();
     QGraphicsScene::mouseReleaseEvent(mouseEvent);
 }
+
+#include "moc_kwqcardscene.cpp"

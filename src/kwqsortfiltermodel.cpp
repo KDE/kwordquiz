@@ -60,3 +60,5 @@ void KWQSortFilterModel::shuffle()
     invalidate();
     m_shuffle = false;
 }
+
+#include "moc_kwqsortfiltermodel.cpp"
