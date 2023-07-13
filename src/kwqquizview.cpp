@@ -10,8 +10,8 @@
 
 KWQQuizView::KWQQuizView(QWidget* parent, KActionCollection* actionCollection) :  QWidget(parent), m_actionCollection(actionCollection)
 {
-  m_player = 0;
-  m_quiz = 0;
+  m_player = nullptr;
+  m_quiz = nullptr;
 }
 
 void KWQQuizView::setQuiz(KWQQuizModel* quiz)

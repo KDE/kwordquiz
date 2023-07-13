@@ -39,7 +39,7 @@ KWQTableView::KWQTableView(QUndoStack *undoStack, QWidget *parent)
     : QTableView(parent)
     , m_undoStack(undoStack)
 {
-  m_model = 0;
+  m_model = nullptr;
 
   setSelectionMode(QAbstractItemView::ContiguousSelection);
   setSelectionBehavior(QAbstractItemView::SelectItems);

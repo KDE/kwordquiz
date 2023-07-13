@@ -51,10 +51,10 @@
 #include "kwordquiz_version.h"
 #include <kwidgetsaddons_version.h>
 
-KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(0)
+KWordQuizApp::KWordQuizApp(QWidget*):KXmlGuiWindow(nullptr)
 {
-  m_quiz = 0;
-  m_prefDialog = 0;
+  m_quiz = nullptr;
+  m_prefDialog = nullptr;
 
   initStatusBar();
   initActions();
@@ -788,7 +788,7 @@ void KWordQuizApp::slotFileOpen()
 {
   slotStatusMsg(i18n("Opening file..."));
 
-  QCheckBox * cb = new QCheckBox(i18n("&Merge selected files with the current document"), 0);
+  QCheckBox * cb = new QCheckBox(i18n("&Merge selected files with the current document"), nullptr);
   cb -> setChecked(false);
   cb -> setEnabled(false);
 
@@ -1180,15 +1180,15 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
 {
   Q_UNUSED(before);
   delete(m_quiz);
-  m_quiz = 0;
-  disconnect(quizCheck, 0, 0, 0);
-  disconnect(flashKnow, 0, 0, 0);
-  disconnect(flashDontKnow, 0, 0, 0);
-  disconnect(quizRestart, 0, 0, 0);
-  disconnect(actionCollection()->action(QStringLiteral("quiz_audio_play")), 0, 0, 0);
-  disconnect(quizRepeatErrors, 0, 0, 0);
-  disconnect(qaHint, 0, 0, 0);
-  disconnect(qaMarkLastCorrect, 0, 0, 0);
+  m_quiz = nullptr;
+  disconnect(quizCheck, nullptr, nullptr, nullptr);
+  disconnect(flashKnow, nullptr, nullptr, nullptr);
+  disconnect(flashDontKnow, nullptr, nullptr, nullptr);
+  disconnect(quizRestart, nullptr, nullptr, nullptr);
+  disconnect(actionCollection()->action(QStringLiteral("quiz_audio_play")), nullptr, nullptr, nullptr);
+  disconnect(quizRepeatErrors, nullptr, nullptr, nullptr);
+  disconnect(qaHint, nullptr, nullptr, nullptr);
+  disconnect(qaMarkLastCorrect, nullptr, nullptr, nullptr);
 
   if (current == m_editorPage) {
     m_tableView->setFocus();
@@ -1222,7 +1222,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     else
     {
       delete(m_quiz);
-      m_quiz = 0;
+      m_quiz = nullptr;
       m_flashView->stackedWidget->setCurrentIndex(1);
     }
   }
@@ -1251,7 +1251,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     else
     {
       delete(m_quiz);
-      m_quiz = 0;
+      m_quiz = nullptr;
       m_multipleView->stackedWidget->setCurrentIndex(1);
     }
   }
@@ -1283,7 +1283,7 @@ void KWordQuizApp::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetI
     else
     {
       delete(m_quiz);
-      m_quiz = 0;
+      m_quiz = nullptr;
       m_qaView->stackedWidget->setCurrentIndex(1);
     }
   }
@@ -1374,7 +1374,7 @@ void KWordQuizApp::slotStatusMsg(const QString &text)
 
 void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
 {
-  if (m_quiz != 0)
+  if (m_quiz != nullptr)
     if (KMessageBox::warningContinueCancel(this, i18n("This will restart your quiz. Do you wish to continue?"), QString(), KStandardGuiItem::cont(), KStandardGuiItem::cancel(), QStringLiteral("askModeQuiz"))
       != KMessageBox::Continue)
       {
@@ -1418,7 +1418,7 @@ void KWordQuizApp::slotModeActionGroupTriggered(QAction *act)
     break;
   }
 
-  if (m_quiz !=0)
+  if (m_quiz !=nullptr)
     slotCurrentPageChanged(m_pageWidget->currentPage(), m_pageWidget->currentPage());
 }
 
@@ -1437,7 +1437,7 @@ void KWordQuizApp::slotInsertChar( int i )
 void KWordQuizApp::updateActions()
 {
   bool fEdit = (m_pageWidget->currentPage() == m_editorPage);
-  bool fQuiz = !fEdit && (m_quiz != 0);
+  bool fQuiz = !fEdit && (m_quiz != nullptr);
 
   fileSave->setEnabled(fEdit);
   fileSaveAs->setEnabled(fEdit);

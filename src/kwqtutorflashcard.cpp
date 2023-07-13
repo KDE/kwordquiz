@@ -10,8 +10,8 @@
 
 KWQTutorFlashCard::KWQTutorFlashCard(QWidget* parent) : QWidget(parent)
 {
-  m_label = 0;
-  m_card = 0;
+  m_label = nullptr;
+  m_card = nullptr;
 
   m_cardLayout = new QVBoxLayout(this);
   m_cardLayout->setContentsMargins(0, 0, 0, 0);
@@ -23,16 +23,16 @@ KWQTutorFlashCard::KWQTutorFlashCard(QWidget* parent) : QWidget(parent)
 
 void KWQTutorFlashCard::init()
 {
-  if (m_label != 0) {
+  if (m_label != nullptr) {
     m_cardLayout->removeWidget(m_label);
     delete m_label;
-    m_label = 0;
+    m_label = nullptr;
   }
 
-  if (m_card != 0) {
+  if (m_card != nullptr) {
     m_cardLayout->removeWidget(m_card);
     delete m_card;
-    m_card = 0;
+    m_card = nullptr;
   }
 
   if (Prefs::tutorCardAppearance() == Prefs::EnumTutorCardAppearance::Minimalistic) {
@@ -58,9 +58,9 @@ void KWQTutorFlashCard::closeEvent (QCloseEvent* event)
 void KWQTutorFlashCard::setText(const QString & text)
 {
   m_text = text;
-  if (m_label != 0)
+  if (m_label != nullptr)
     m_label->setText(text);
-  if (m_card != 0)
+  if (m_card != nullptr)
     m_card->setText(text);
 }
 

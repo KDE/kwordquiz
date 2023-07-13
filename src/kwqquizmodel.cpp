@@ -15,7 +15,7 @@
 
 KWQQuizModel::KWQQuizModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
-    m_sourceModel = 0;
+    m_sourceModel = nullptr;
     m_currentQuestion = 0;
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
@@ -83,7 +83,7 @@ bool KWQQuizModel::hasErrors()
 
 bool KWQQuizModel::init()
 {
-    if (m_sourceModel == 0)
+    if (m_sourceModel == nullptr)
         return false;
 
     invalidate();

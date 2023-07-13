@@ -21,7 +21,7 @@ PrefCharacter::PrefCharacter(QWidget *parent, KActionCollection * ac) : QWidget(
   fillWidgets();
   updateWidgets();
 
-  m_dlgSpecChar = 0;
+  m_dlgSpecChar = nullptr;
 }
 
 void PrefCharacter::fillWidgets()
@@ -97,7 +97,7 @@ void PrefCharacter::slotDlgSpecCharClosed()
     disconnect(m_dlgSpecChar, &DlgSpecChar::insertChar, this, &PrefCharacter::slotSpecChar);
     disconnect(m_dlgSpecChar, &QDialog::finished, this, &PrefCharacter::slotDlgSpecCharClosed);
     m_dlgSpecChar->deleteLater();
-    m_dlgSpecChar = 0;
+    m_dlgSpecChar = nullptr;
   }
 }
 
@@ -106,7 +106,7 @@ void PrefCharacter::slotSelectSpecChar()
   QString s = CharacterTree->currentItem()->text(2);
   QChar c = s[0];
 
-  if (m_dlgSpecChar == 0)
+  if (m_dlgSpecChar == nullptr)
   {
     m_dlgSpecChar = new DlgSpecChar(this, Prefs::editorFont(), c);
     connect(m_dlgSpecChar, &DlgSpecChar::insertChar, this, &PrefCharacter::slotSpecChar);

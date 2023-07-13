@@ -69,7 +69,7 @@ void FlashView::keepDiscardCard(bool keep)
     m_actionCollection->action(QStringLiteral("quiz_repeat_errors"))->setEnabled(m_quiz->hasErrors());
     m_actionCollection->action(QStringLiteral("quiz_export_errors"))->setEnabled(m_quiz->hasErrors());
     m_actionCollection->action(QStringLiteral("quiz_audio_play"))->setEnabled(false);
-    disconnect(flashcard, SIGNAL(cardClicked()), 0, 0);
+    disconnect(flashcard, SIGNAL(cardClicked()), nullptr, nullptr);
   }
 }
 

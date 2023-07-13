@@ -21,7 +21,7 @@ KWQCardView::KWQCardView(QWidget *parent) : QGraphicsView(parent)
 
 void KWQCardView::resizeEvent(QResizeEvent* event)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         fitInView(scene()->sceneRect().adjusted(0, 0, 30, 30), Qt::KeepAspectRatio);
 
     QGraphicsView::resizeEvent(event);
@@ -29,43 +29,43 @@ void KWQCardView::resizeEvent(QResizeEvent* event)
 
 void KWQCardView::setIdentifier(const QString &identifier)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         m_scene->setIdentifier(identifier);
 }
 
 void KWQCardView::setText(const QString &text)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         m_scene->setText(text);
 }
 
 void KWQCardView::setTextColor(const QColor &textColor)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         m_scene->setTextColor(textColor);
 }
 
 void KWQCardView::setTextFont(const QFont &font)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         m_scene->setTextFont(font);
 }
 
 void KWQCardView::setCardColor(const QColor &cardColor)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         m_scene->setCardColor(cardColor);
 }
 
 void KWQCardView::setFrameColor(const QColor &frameColor)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         m_scene->setFrameColor(frameColor);
 }
 
 void KWQCardView::setImage(const QPixmap &image)
 {
-    if (scene() != 0)
+    if (scene() != nullptr)
         m_scene->setImage(image);
 }
 

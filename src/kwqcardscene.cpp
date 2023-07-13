@@ -138,7 +138,7 @@ void KWQCardScene::repositionText()
 void KWQCardScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
     QGraphicsItem *item = itemAt(mouseEvent->scenePos(), QTransform());
-    if (item != 0)
+    if (item != nullptr)
         Q_EMIT cardClicked();
     QGraphicsScene::mouseReleaseEvent(mouseEvent);
 }

@@ -23,7 +23,7 @@
 
 KWQTutor::KWQTutor(const QUrl &fileToOpen, QWidget *parent) : KStatusNotifierItem(parent)
 {
-  KMessageBox::information(0, i18n("<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
+  KMessageBox::information(nullptr, i18n("<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
                            "you to set a certain time interval at which flashcards will pop up.<br /><br />"
                            "The flashcards pop up in a non-intrusive way allowing you to carry on working "
                            "without stealing the focus from other programs you might be working with.<br /><br />"
@@ -142,7 +142,7 @@ void KWQTutor::showPrefMenu()
     return;
 
   //KConfigDialog didn't find an instance of this dialog, so lets create it :
-  KWQTutorPrefs* dialog = new KWQTutorPrefs(0, QStringLiteral("settings"),  Prefs::self(), m_globalCollection);
+  KWQTutorPrefs* dialog = new KWQTutorPrefs(nullptr, QStringLiteral("settings"),  Prefs::self(), m_globalCollection);
   connect(dialog, &KConfigDialog::settingsChanged, this, &KWQTutor::slotApplyPreferences);
   dialog->show();
 }
