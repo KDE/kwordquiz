@@ -10,11 +10,12 @@
 #include "kwordquiz_version.h"
 
 #include <KLocalizedString>
-#include <QStandardPaths>
+#include <QDebug>
+#include <QDir>
 #include <QFileDialog>
 #include <QPointer>
-#include <QDir>
 #include <QRegularExpression>
+#include <QStandardPaths>
 
 KWQCardModel::KWQCardModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -27,10 +28,8 @@ void KWQCardModel::createNew()
     doc->setGenerator(QStringLiteral("kwordquiz %1").arg(KWORDQUIZ_VERSION_STRING));
     doc->appendIdentifier();
     doc->identifier(0).setName(i18n("Question"));
-    // doc->identifier(0).setLocale("en");
     doc->appendIdentifier();
     doc->identifier(1).setName(i18n("Answer"));
-    // doc->identifier(1).setLocale("en");
 
     setDocument(doc);
 }
@@ -116,6 +115,7 @@ bool KWQCardModel::save()
         // Create parent in case it doesn't exist
         QDir newDir(dir);
         if (!newDir.mkpath(dir)) {
+            qCritical() << "Unable to create directory" << dir;
             return false;
         }
     } else {
@@ -299,7 +299,7 @@ void KWQCardModel::addQuestionSound(const int row, const QUrl &url)
     auto expression = m_document->lesson()->entries(KEduVocLesson::Recursive).value(row);
     expression->translation(0)->setSoundUrl(url);
 
-    Q_EMIT dataChanged(index(row, 0), index(row, 0), {QuestionImageRole});
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {QuestionSoundRole});
 }
 
 void KWQCardModel::addAnswerSound(const int row, const QUrl &url)
