@@ -40,7 +40,7 @@ Kirigami.ScrollablePage {
     FileDialog {
         id: fileDialog
 
-        title: i18n("Please choose an KWordQuiz document")
+        title: i18n("Please choose a KWordQuiz document")
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("KEduDocument (*.kvtml)"), i18n("Wql documents (*.wql)"), i18n("CSV documents (*.csv)"), i18n("XDXF documents (*.xdxf)")]
 

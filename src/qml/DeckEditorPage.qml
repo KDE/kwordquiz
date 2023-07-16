@@ -215,12 +215,23 @@ Kirigami.ScrollablePage {
                         text: i18nc("@label", "License:")
                     }
 
-                    QQC2.TextField {
+                    QQC2.ComboBox {
                         Layout.fillWidth: true
-                        text: root.editorModel.license
-                        onTextChanged: root.editorModel.license = text;
+                        editText: root.editorModel.license
+                        onCurrentIndexChanged: if (root.editorModel.document) {
+                            root.editorModel.license = currentIndex;
+                        }
+                        currentIndex: 0
+                        Component.onCompleted: if (root.editorModel.license.length === 0) {
+                            editText = currentValue;
+                        }
                         enabled: root.editorModel.enabled
-                        placeholderText: i18nc("Example license of licenses", "e.g. CC-BY-SA-4.0 or CC-BY-4.0")
+                        editable: true
+                        model: [
+                            'CC-BY-SA-4.0',
+                            'CC-BY-4.0',
+                            'CC0-1.0',
+                        ]
                     }
                 }
 

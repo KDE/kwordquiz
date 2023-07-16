@@ -13,6 +13,8 @@ BasePage {
 
     property bool wasCorrect: true
 
+    readonly property int multipleChoiceLimit: 4
+
     listView.delegate: Rectangle {
         id: wordDelegate
 
@@ -32,7 +34,7 @@ BasePage {
 
         color: Kirigami.Theme.backgroundColor
 
-        visible: listView.count >= 4 && !root.finished
+        visible: listView.count >= root.multipleChoiceLimit && !root.finished
 
         onIsCurrentItemChanged: if (!isCurrentItem) {
             multipleChoiceGroup.checkState = Qt.Unchecked;
