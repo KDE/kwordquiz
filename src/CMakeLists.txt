@@ -33,6 +33,8 @@ set(kwordquiz_SRCS
     blankanswer.cpp
     fileopener.h
     fileopener.cpp
+    languagelistmodel.h
+    languagelistmodel.cpp
     resources.qrc
 )
 
