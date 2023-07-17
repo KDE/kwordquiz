@@ -16,5 +16,6 @@
         <file>qml/QuestionAnswerPage.qml</file>
         <file>qml/MultipleChoicePage.qml</file>
         <file>qml/SettingsPage.qml</file>
+        <file>qml/LanguageSelectorPage.qml</file>
     </qresource>
 </RCC>

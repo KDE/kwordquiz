@@ -148,6 +148,34 @@ Kirigami.ScrollablePage {
         }
     }
 
+    component LanguageSelectorButton: QQC2.ToolButton {
+        id: button
+
+        property string language
+
+        QQC2.ToolTip.text: i18nc("@action:button", "Set language")
+        QQC2.ToolTip.visible: hovered
+        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+        font.family: language.length > 0 ? "emoji" : Kirigami.Theme.defaultFont.family
+
+        text: language.length > 0 ? LanguageListModel.flagFromName(language) : i18nc("@action:button", "Set language")
+        display: language.length > 0 ? QQC2.ToolButton.TextOnly : QQC2.ToolButton.IconOnly
+        icon.name: language.length > 0 ? "" : "language-chooser"
+
+        onClicked: {
+            var page  = applicationWindow().pageStack.pushDialogLayer(languageSelectorPage, {
+                width: Kirigami.Units.gridUnits * 10,
+                height: Kirigami.Units.gridUnits * 12,
+                language: button.language,
+            });
+
+            page.languageChanged.connect(() => {
+                button.language = page.language;
+            });
+        }
+    }
+
     Component {
         id: imageFileDialog
 
@@ -164,6 +192,12 @@ Kirigami.ScrollablePage {
             title: i18n("Please choose a sound")
             folder: StandardPaths.writableLocation(StandardPaths.MusicLocation)
         }
+    }
+
+    Component {
+        id: languageSelectorPage
+
+        LanguageSelectorPage {}
     }
 
     ListView {
@@ -260,6 +294,14 @@ Kirigami.ScrollablePage {
                         onAccepted: identifierRightField.forceActiveFocus()
                     }
 
+                    LanguageSelectorButton {
+                        id: identifierLeftLanguage
+                        onLanguageChanged: {
+                            editorModel.langQuestion = language;
+                            root.editorModel.identifierLeft = LanguageListModel.languageName(language);
+                        }
+                    }
+
                     Kirigami.Separator {
                         Layout.fillHeight: true
                         Layout.preferredWidth: 1
@@ -286,6 +328,14 @@ Kirigami.ScrollablePage {
                             if (item) {
                                 item.focusQuestionField();
                             }
+                        }
+                    }
+
+                    LanguageSelectorButton {
+                        id: identifierRightLanguage
+                        onLanguageChanged: {
+                            editorModel.langAnswer = language;
+                            root.editorModel.identifierRight = LanguageListModel.languageName(language);
                         }
                     }
                 }

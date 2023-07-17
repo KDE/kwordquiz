@@ -25,6 +25,7 @@
 #include "kwqcardmodel.h"
 #include "kwqdocumentmodel.h"
 #include "kwqrandomsortmodel.h"
+#include "languagelistmodel.h"
 #include "prefs.h"
 #include "stateprefs.h"
 
@@ -149,6 +150,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
     qmlRegisterSingletonType("org.kde.kwordquiz", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
+    });
+    qmlRegisterSingletonType<LanguageListModel>("org.kde.kwordquiz", 1, 0, "LanguageListModel", [](QQmlEngine *engine, QJSEngine *) {
+        return new LanguageListModel;
     });
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
