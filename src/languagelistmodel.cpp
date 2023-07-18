@@ -120,7 +120,7 @@ QString LanguageListModel::flagFromName(const QString &language) const
 
     QString emoji;
     for (const auto &c : flagCode) {
-        emoji.append(surrogatePairCodePoint);
+        emoji.append(QChar(surrogatePairCodePoint));
         emoji.append(QChar(basePoint + c.toUpper().unicode()));
     }
 
