@@ -10,6 +10,12 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
+configure_file(qml/BasePage.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/BasePage.qml)
+configure_file(qml/DeckEditorPage.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/DeckEditorPage.qml)
+configure_file(qml/SoundPlayer.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/SoundPlayer.qml)
+
+configure_file(resources.qrc ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc)
+
 ########### next target ###############
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION}
@@ -35,7 +41,7 @@ set(kwordquiz_SRCS
     fileopener.cpp
     languagelistmodel.h
     languagelistmodel.cpp
-    resources.qrc
+    ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc
 )
 
 kconfig_add_kcfg_files(kwordquiz_SRCS GENERATE_MOC prefs.kcfgc documentsettings.kcfgc stateprefs.kcfgc)

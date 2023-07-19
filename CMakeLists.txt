@@ -89,6 +89,18 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.89.0)
 
+if(QT_MAJOR_VERSION STREQUAL "6")
+    set(KIRIGAMIPAGE_CONTEXTUALACTIONS "actions")
+    set(QTMULTIMEDIA_MODULE_VERSION "")
+    set(QTMULTIMEDIA_AUDIO "MediaPlayer")
+    set(QTMULTIMEDIA_AUDIO_AUTOLOAD "")
+else()
+    set(KIRIGAMIPAGE_CONTEXTUALACTIONS "actions.contextualActions")
+    set(QTMULTIMEDIA_MODULE_VERSION "5.15")
+    set(QTMULTIMEDIA_AUDIO "Audio")
+    set(QTMULTIMEDIA_AUDIO_AUTOLOAD "autoLoad: false")
+endif()
+
 add_subdirectory(doc)
 add_subdirectory(src)
 

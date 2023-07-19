@@ -26,7 +26,7 @@ Kirigami.Page {
         i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
     }
 
-    actions.contextualActions: [
+    actions: [
         OptionsAction {
             cardModel: root.cardModel
         },

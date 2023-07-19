@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtMultimedia 5.15
+import QtMultimedia @QTMULTIMEDIA_MODULE_VERSION@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
@@ -26,10 +26,10 @@ QQC2.AbstractButton {
     leftPadding: Kirigami.Units.largeSpacing
     rightPadding: Kirigami.Units.largeSpacing
 
-    Audio {
+    @QTMULTIMEDIA_AUDIO@ {
         id: audio
         source: root.progressInfo.localPath
-        autoLoad: false
+        @QTMULTIMEDIA_AUDIO_AUTOLOAD@
     }
 
     contentItem: RowLayout {

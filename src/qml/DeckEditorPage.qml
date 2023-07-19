@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
         i18nc("@title:window", "Edit deck")
     }
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             text: i18n("Filter")
             displayComponent: Kirigami.SearchField {
