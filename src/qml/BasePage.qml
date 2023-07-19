@@ -79,7 +79,7 @@ Kirigami.Page {
                 Layout.topMargin: Kirigami.Units.gridUnit
 
                 QQC2.Button {
-                    text: i18n("Repeat errors")
+                    text: i18n("Repeat Errors")
                     visible: root.errors > 0
                     onClicked: {
                         root.randomSortModel.showErrorsOnly = true;
@@ -90,7 +90,7 @@ Kirigami.Page {
                 }
 
                 QQC2.Button {
-                    text: i18n("Try again")
+                    text: i18n("Try Again")
                     onClicked: root.reset();
                 }
             }

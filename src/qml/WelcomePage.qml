@@ -71,7 +71,7 @@ Kirigami.ScrollablePage {
 
             infoCards: [
                 MobileForm.FormGridContainer.InfoCard {
-                    title: i18n("Open existing document")
+                    title: i18n("Open Existing Document")
                     action: Kirigami.Action {
                         onTriggered: fileDialog.open();
                     }
@@ -151,7 +151,7 @@ Kirigami.ScrollablePage {
                 MobileForm.FormRadioDelegate {
                     id: multipleChoiceRadio
 
-                    text: i18nc("@option:check Mode selector", "Multiple Choice")
+                    text: i18nc("@option:check Mode selector", "Multiple choice")
                     QQC2.ButtonGroup.group: modeGroup
                 }
 

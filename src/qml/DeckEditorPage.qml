@@ -30,9 +30,9 @@ Kirigami.ScrollablePage {
     }
 
     title: if (mode === DeckEditorPage.CreateMode) {
-        i18nc("@title:window", "Create deck")
+        i18nc("@title:window", "Create Deck")
     } else {
-        i18nc("@title:window", "Edit deck")
+        i18nc("@title:window", "Edit Deck")
     }
 
     actions: [
@@ -118,9 +118,9 @@ Kirigami.ScrollablePage {
 
         icon.name: file ? "delete" : (isImage ? "insert-image" : "folder-music")
         text: if (isImage) {
-            file ? i18nc("@action:button", "Remove image") : i18nc("@action:button", "Link image")
+            file ? i18nc("@action:button", "Remove Image") : i18nc("@action:button", "Link Image")
         } else {
-            file ? i18nc("@action:button", "Remove sound") : i18nc("@action:button", "Link sound")
+            file ? i18nc("@action:button", "Remove Sound") : i18nc("@action:button", "Link Sound")
         }
         display: QQC2.ToolButton.IconOnly
 
@@ -159,7 +159,7 @@ Kirigami.ScrollablePage {
 
         font.family: language.length > 0 ? "emoji" : Kirigami.Theme.defaultFont.family
 
-        text: language.length > 0 ? LanguageListModel.flagFromName(language) : i18nc("@action:button", "Set language")
+        text: language.length > 0 ? LanguageListModel.flagFromName(language) : i18nc("@action:button", "Set Language")
         display: language.length > 0 ? QQC2.ToolButton.TextOnly : QQC2.ToolButton.IconOnly
         icon.name: language.length > 0 ? "" : "language-chooser"
 
@@ -180,7 +180,7 @@ Kirigami.ScrollablePage {
         id: imageFileDialog
 
         FileDialog {
-            title: i18n("Please choose an image")
+            title: i18n("Please Choose an Image")
             folder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
         }
     }
@@ -189,7 +189,7 @@ Kirigami.ScrollablePage {
         id: soundFileDialog
 
         FileDialog {
-            title: i18n("Please choose a sound")
+            title: i18n("Please Choose a Sound")
             folder: StandardPaths.writableLocation(StandardPaths.MusicLocation)
         }
     }
