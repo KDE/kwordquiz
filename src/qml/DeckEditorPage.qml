@@ -476,7 +476,7 @@ Kirigami.ScrollablePage {
                         isImage: true
                         file: editorDelegate.questionImage
                         onFileRemoved: root.editorModel.removeQuestionImage(editorDelegate.index);
-                        onFileAdded: root.editorModel.addQuestionImage(editorDelegate.index, file);
+                        onFileAdded: file => root.editorModel.addQuestionImage(editorDelegate.index, file);
                     }
 
                     FileSelectorButton {
