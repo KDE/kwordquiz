@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:43+0000\n"
+"POT-Creation-Date: 2023-07-19 00:45+0000\n"
 "PO-Revision-Date: 2023-05-16 11:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -29,1573 +29,102 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "jfriedl@suse.cz, pavelfric@seznam.cz"
 
-#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
-#: cleardialogbase.ui:21
-#, kde-format
-msgid "Selection"
-msgstr "Výběr"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:30
-#, kde-format
-msgid "Delete all information in selected entries"
-msgstr "Smazat všechny informace ve vybraných záznamech"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:33
-#, kde-format
-msgid "When checked all information will be deleted from the selected entries"
-msgstr "Je-li zaškrtnuto, budou všechny informace z vybraných záznamů smazány"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:36
-#, kde-format
-msgid "Clear &All"
-msgstr "Vyč&istit vše"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:59
-#, kde-format
-msgid "Delete the text from selected entries"
-msgstr "Smazat text z vybraných záznamů"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:62
-#, kde-format
-msgid "When checked the text will be deleted from selected entries"
-msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán text"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:65
-#, kde-format
-msgid "&Text"
-msgstr "&Text"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:72
-#, kde-format
-msgid "Delete the image link from selected entries"
-msgstr "Smazat odkaz na obrázek z vybraných záznamů"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:75
-#, kde-format
-msgid "When checked the image link will be deleted from selected entries"
-msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán odkaz na obrázek"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:78
-#, kde-format
-msgid "&Image Links"
-msgstr "&Odkazy na obrázek"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:85
-#, kde-format
-msgid "Delete the sound link from selected entries"
-msgstr "Smazat odkaz na zvuk z vybraných záznamů"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:88
-#, kde-format
-msgid "When checked the sound link will be deleted from selected entries"
-msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán odkaz na zvuk"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:91
-#, kde-format
-msgid "&Sound Links"
-msgstr "&Odkazy na zvuk"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
-#, kde-format
-msgid "Column 1"
-msgstr "Sloupec 1"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
-#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
-#, kde-format
-msgid "Title for the left column"
-msgstr "Záhlaví levého sloupce"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
-#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
-#, kde-format
-msgid "Enter a title (identifier) for the left column"
-msgstr "Vložte záhlaví (identifikátor) levého sloupce"
-
-#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
-#: columndialogbase.ui:96
-#, kde-format
-msgid "&Title:"
-msgstr "&Název:"
-
-#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
-#: columndialogbase.ui:112
-#, kde-format
-msgid "&Keyboard layout:"
-msgstr "&Rozvržení klávesnice:"
-
-#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
-#: columndialogbase.ui:128
-#, kde-format
-msgid "&Width:"
-msgstr "Šíř&ka:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:158
-#, kde-format
-msgid "Keyboard layout for the left column"
-msgstr "Rozložení klávesnice pro levý sloupec"
-
-#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:161
-#, kde-format
-msgid "Select a keyboard layout for the left column"
-msgstr "Vyberte rozložení klávesnice pro levý sloupec"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:168
-#, kde-format
-msgid "Width of the left column"
-msgstr "Šířka levého sloupce"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:171
-#, kde-format
-msgid "Enter the width (in pixels) for the left column"
-msgstr "Zadejte šířku (v pixelech) levého sloupce"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
-#, kde-format
-msgid "Column 2"
-msgstr "Sloupec 2"
-
-#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
-#: columndialogbase.ui:265
-#, kde-format
-msgid "T&itle:"
-msgstr "&Název:"
-
-#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
-#: columndialogbase.ui:281
-#, kde-format
-msgid "Keyboard &Layout:"
-msgstr "Rozvržení k&lávesnice:"
-
-#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
-#: columndialogbase.ui:297
-#, kde-format
-msgid "Wi&dth:"
-msgstr "Šíř&ka:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:317
-#, kde-format
-msgid "Title for the right column"
-msgstr "Záhlaví pravého sloupce"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:320
-#, kde-format
-msgid "Enter a title (identifier) for the right column"
-msgstr "Vložte záhlaví (identifikátor) pravého sloupce"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:330
-#, kde-format
-msgid "Width of the right column"
-msgstr "Šířka pravého sloupce"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:333
-#, kde-format
-msgid "Enter the width (in pixels) for the right column"
-msgstr "Zadejte šířku (v pixelech) pravého sloupce"
-
-#: dlglanguage.cpp:21
-#, kde-format
-msgctxt "@title:window"
-msgid "Column Settings"
-msgstr "Nastavení sloupce"
-
-#: dlgspecchar.cpp:17
-#, kde-format
-msgctxt "@title:window select character dialog"
-msgid "Select Character"
-msgstr "Zvolte znak"
-
-#: dlgspecchar.cpp:41
-#, kde-format
-msgctxt "@action:button"
-msgid "&Select"
-msgstr "Vy&brat"
-
-#: dlgspecchar.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Select this character"
-msgstr "Zvolit tento znak"
-
-#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:12
-#, kde-format
-msgid "Column widths"
-msgstr "Šířky sloupců"
-
-#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:18
-#, kde-format
-msgid "Keyboard layouts"
-msgstr "Rozvržení klávesnice"
-
-#: filterproxysearchline.cpp:23
-#, kde-format
-msgid "Search"
-msgstr "Hledat"
-
-#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
-#, kde-format
-msgid "Your answer was correct!"
-msgstr "Vaše odpověď byla správná!"
-
-#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
-#, kde-format
-msgid "Your answer was incorrect."
-msgstr "Vaše odpověď byla nesprávná."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: flashviewbase.ui:149
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a flashcard quiz.</html>"
-msgstr ""
-"<html>Ve vašem slovníčku je příliš málo položek.<br />Pro kvíz s kartičkami "
-"potřebujete alespoň jeden záznam.</html>"
-
-#: kwordquiz.cpp:100
-#, kde-format
-msgid "Creates a new blank vocabulary document"
-msgstr "Vytvoří nový prázdný slovníček"
-
-#: kwordquiz.cpp:105
-#, kde-format
-msgid "Opens an existing vocabulary document"
-msgstr "Otevře existující slovníček"
-
-#: kwordquiz.cpp:111
-#, kde-format
-msgid "Download New Vocabularies..."
-msgstr "Stáhnout nové slovníčky..."
-
-#: kwordquiz.cpp:115
-#, kde-format
-msgid "Downloads new vocabularies"
-msgstr "Stáhne nové slovníčky"
-
-#: kwordquiz.cpp:120
-#, kde-format
-msgid "Saves the active vocabulary document"
-msgstr "Uloží aktivní slovníček"
-
-#: kwordquiz.cpp:125
-#, kde-format
-msgid "Saves the active vocabulary document with a different name"
-msgstr "Uloží aktivní slovníček pod jiným jménem"
-
-#: kwordquiz.cpp:130
-#, kde-format
-msgid "Closes the active vocabulary document"
-msgstr "Zavře aktivní slovníček"
-
-#: kwordquiz.cpp:134
-#, kde-format
-msgid "Prints the active vocabulary document"
-msgstr "Vytiskne aktivní slovníček"
-
-#: kwordquiz.cpp:139
-#, kde-format
-msgid "Shows a preview of the active vocabulary document"
-msgstr "Zobrazí náhled na aktivní slovníček"
-
-#: kwordquiz.cpp:144
-#, kde-format
-msgid "Quits KWordQuiz"
-msgstr "Ukončí KWordQuiz"
-
-#: kwordquiz.cpp:156
-#, kde-format
-msgid "Cuts the text from the selected cells and places it on the clipboard"
-msgstr "Vyjme text z vybraných buněk a vloží jej do schránky"
-
-#: kwordquiz.cpp:161
-#, kde-format
-msgid "Copies the text from the selected cells and places it on the clipboard"
-msgstr "Zkopíruje text z vybraných buněk a vloží jej do schránky"
-
-#: kwordquiz.cpp:166
-#, kde-format
-msgid ""
-"Pastes previously cut or copied text from the clipboard into the selected "
-"cells"
-msgstr ""
-"Vloží dříve vyjmutý nebo zkopírovaný text ze schránky do vybraných buněk"
-
-#: kwordquiz.cpp:172
-#, kde-format
-msgid "Clears the content of the selected cells"
-msgstr "Smaže obsah vybraných buněk"
-
-#: kwordquiz.cpp:178
-#, kde-format
-msgid "&Insert Row"
-msgstr "Vlož&it řádek"
-
-#: kwordquiz.cpp:180
-#, kde-format
-msgid "Inserts a new row above the current row"
-msgstr "Vloží nový řádek nad stávající"
-
-#: kwordquiz.cpp:187
-#, kde-format
-msgid "&Delete Row"
-msgstr "&Smazat řádek"
-
-#: kwordquiz.cpp:189
-#, kde-format
-msgid "Deletes the selected row(s)"
-msgstr "Smaže vybraný řádek či řádky"
-
-#: kwordquiz.cpp:196
-#, kde-format
-msgid "&Mark as Blank"
-msgstr "Označit jako &chybějící"
-
-#: kwordquiz.cpp:198
-#, kde-format
-msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-msgstr "Označí vybrané slovo jako chybějící pro funkci doplňování chybějícího"
-
-#: kwordquiz.cpp:205
-#, kde-format
-msgid "&Unmark Blanks"
-msgstr "Zrušit c&hybějící"
-
-#: kwordquiz.cpp:206
-#, kde-format
-msgid "Removes blanks from the current or selected word"
-msgstr "Odstraní příznak chybějícího z vybraného slova"
-
-#: kwordquiz.cpp:213
-#, kde-format
-msgid "&Column Settings..."
-msgstr "Nastavení sloup&ce..."
-
-#: kwordquiz.cpp:215
-#, kde-format
-msgid "Defines the column settings for the active vocabulary"
-msgstr "Stanoví nastavení sloupců pro aktivní slovníček"
-
-#: kwordquiz.cpp:222
-#, kde-format
-msgid "&Font..."
-msgstr "&Písmo..."
-
-#: kwordquiz.cpp:223
-#, kde-format
-msgid "Defines the font used by the editor"
-msgstr "Stanoví písmo používané v editoru"
-
-#: kwordquiz.cpp:230
-#, kde-format
-msgid "Link &Image..."
-msgstr "Spojit &obrázek..."
-
-#: kwordquiz.cpp:231
-#, kde-format
-msgid "Links an image with the current entry"
-msgstr "Spojí obrázek se současným záznamem"
-
-#: kwordquiz.cpp:238
-#, kde-format
-msgid "Link &Sound..."
-msgstr "Spojit &zvuk..."
-
-#: kwordquiz.cpp:239
-#, kde-format
-msgid "Links a sound with the current entry"
-msgstr "Spojí zvuk se současným záznamem"
-
-#: kwordquiz.cpp:246
-#, kde-format
-msgid "&Adjust Row Heights"
-msgstr "&Upravit výšku řádků"
-
-#: kwordquiz.cpp:247
-#, kde-format
-msgid "Automatically adjusts the height of selected rows"
-msgstr "Automaticky upravit výšku vybraných řádků"
-
-#: kwordquiz.cpp:254
-#, kde-format
-msgid "Sh&uffle"
-msgstr "Za&míchat"
-
-#: kwordquiz.cpp:255
-#, kde-format
-msgid "Shuffles the entries of the active vocabulary"
-msgstr "Zamíchá položky aktivního slovníčku"
-
-#: kwordquiz.cpp:261
-#, kde-format
-msgid "&Keyboard Layout"
-msgstr "Rozvržení &klávesnice"
-
-#: kwordquiz.cpp:262
-#, kde-format
-msgid "Shows available keyboard layouts"
-msgstr "Zobrazí dostupná rozložení klávesnice"
-
-#: kwordquiz.cpp:273
-#, kde-format
-msgid "Change Mode"
-msgstr "Změnit režim"
-
-#: kwordquiz.cpp:274
-#, kde-format
-msgid "Mode"
-msgstr "Režim"
-
-#: kwordquiz.cpp:275
-#, kde-format
-msgid "Changes the mode used in quiz sessions"
-msgstr "Změní režim používaný v sezeních kvízu"
-
-#: kwordquiz.cpp:288
-#, kde-format
-msgid "Selects this mode"
-msgstr "Vybírá tento režim"
-
-#: kwordquiz.cpp:297
-#, kde-format
-msgctxt "@item:inlistbox activate vocabulary editor"
-msgid "&Editor"
-msgstr "&Editor"
-
-#: kwordquiz.cpp:299
-#, kde-format
-msgid "Activates the vocabulary editor"
-msgstr "Aktivuje editor slovníčku"
-
-#: kwordquiz.cpp:306
-#, kde-format
-msgid "&Flashcard"
-msgstr "&Kartička"
-
-#: kwordquiz.cpp:308
-#, kde-format
-msgid "Starts a flashcard session using the active vocabulary"
-msgstr "Zahájí karetní sezení s použitím aktivního slovníčku"
-
-#: kwordquiz.cpp:315
-#, kde-format
-msgid "&Multiple Choice"
-msgstr "&S nabídkou možností"
-
-#: kwordquiz.cpp:317
-#, kde-format
-msgid "Starts a multiple choice session using the active vocabulary"
-msgstr "Zahájí sezení typu s nabídkou možností s použitím aktivního slovníčku"
-
-#: kwordquiz.cpp:324
-#, kde-format
-msgid "&Question and Answer"
-msgstr "&Otázka a odpověď"
-
-#: kwordquiz.cpp:325
-#, kde-format
-msgid "Q&&A"
-msgstr "O&&O"
-
-#: kwordquiz.cpp:327
-#, kde-format
-msgid "Starts a question and answer session using the active vocabulary"
-msgstr "Zahájí sezení typu otázka a odpověď s použitím aktivního slovníčku"
-
-#: kwordquiz.cpp:334
-#, kde-format
-msgid "&Check"
-msgstr "&Zkontrolovat"
-
-#: kwordquiz.cpp:336
-#, kde-format
-msgid "Checks your answer to this question"
-msgstr "Zkontroluje vaši odpověď na tuto otázku"
-
-#: kwordquiz.cpp:341
-#, kde-format
-msgid "Choose Option &1"
-msgstr "Vybrat možnost &1"
-
-#: kwordquiz.cpp:345
-#, kde-format
-msgid "Choose Option &2"
-msgstr "Vybrat možnost &2"
-
-#: kwordquiz.cpp:349
-#, kde-format
-msgid "Choose Option &3"
-msgstr "Vybrat možnost &3"
-
-#: kwordquiz.cpp:354
-#, kde-format
-msgid "I &Know"
-msgstr "&Vím"
-
-#: kwordquiz.cpp:356
-#, kde-format
-msgid "Counts this card as correct and shows the next card"
-msgstr "Započítá kartu jako správně zodpovězenou a zobrazí následující"
-
-#: kwordquiz.cpp:362
-#, kde-format
-msgid "I &Do Not Know"
-msgstr "&Nevím"
-
-#: kwordquiz.cpp:364
-#, kde-format
-msgid "Counts this card as incorrect and shows the next card"
-msgstr "Započítá kartu jako nesprávně zodpovězenou a zobrazí následující"
-
-#: kwordquiz.cpp:370
-#, kde-format
-msgid "&Hint"
-msgstr "&Rada"
-
-#: kwordquiz.cpp:372
-#, kde-format
-msgid "Gets the next correct letter of the answer"
-msgstr "Napoví zobrazením následujícího správného písmena z odpovědi"
-
-#: kwordquiz.cpp:378
-#, kde-format
-msgid "Mark Last Correct"
-msgstr "Označit poslední jako správné"
-
-#: kwordquiz.cpp:380
-#, kde-format
-msgid "Marks last answer as correct"
-msgstr "Označí poslední odpověď jako správnou"
-
-#: kwordquiz.cpp:386
-#, kde-format
-msgid "&Restart"
-msgstr "&Znovu"
-
-#: kwordquiz.cpp:388
-#, kde-format
-msgid "Restarts the quiz session from the beginning"
-msgstr "Spustí kvíz znovu od začátku"
-
-#: kwordquiz.cpp:394
-#, kde-format
-msgid "&Play Audio"
-msgstr "&Přehrát zvuk"
-
-#: kwordquiz.cpp:396
-#, kde-format
-msgid "Play associated audio"
-msgstr "Přehrát připojený zvuk"
-
-#: kwordquiz.cpp:402
-#, kde-format
-msgid "Repeat &Errors"
-msgstr "Zopakovat &chyby"
-
-#: kwordquiz.cpp:404
-#, kde-format
-msgid "Repeats all incorrectly answered questions"
-msgstr "Zopakuje všechny špatně zodpovězené otázky"
-
-#: kwordquiz.cpp:410
-#, kde-format
-msgid "Export Errors &As..."
-msgstr "Exportovat chyby &jako..."
-
-#: kwordquiz.cpp:411
-#, kde-format
-msgid "Exports all errors as a new vocabulary document"
-msgstr "Exportuje všechny chyby jako nový slovníček"
-
-#: kwordquiz.cpp:417
-#, kde-format
-msgid "Show Se&arch"
-msgstr "Zobrazit hle&dání"
-
-#: kwordquiz.cpp:419
-#, kde-format
-msgid "Toggle display of the search bar"
-msgstr "Přepnout zobrazení vyhledávacího panelu"
-
-#: kwordquiz.cpp:424
-#, kde-format
-msgid "Configures sound and other notifications for certain events"
-msgstr "Nastavení zvukových a následujících upozornění určitých událostí"
-
-#: kwordquiz.cpp:429
-#, kde-format
-msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-msgstr "Předvolby editoru slovníčku a sezení kvízu"
-
-#: kwordquiz.cpp:435
-#, kde-format
-msgid "Special Character <numid>%1</numid>"
-msgstr "Zvláštní znak <numid>%1</numid>"
-
-#: kwordquiz.cpp:447
-#, kde-format
-msgid "Toggles display of the toolbars"
-msgstr "Přepíná zobrazení panelů nástrojů"
-
-#: kwordquiz.cpp:500
-#, kde-format
-msgid "Enter search terms here"
-msgstr "Zde zadejte hledaná slova"
-
-#: kwordquiz.cpp:523
-#, kde-format
-msgctxt "@item:inlistbox vocabulary editor"
-msgid "Editor"
-msgstr "Editor"
-
-#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:188
-#, kde-format
-msgid "Flashcard"
-msgstr "Kartička"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:148
-#, kde-format
-msgid "Multiple Choice"
-msgstr "S nabídkou možností"
-
-#: kwordquiz.cpp:536
-#, kde-format
-msgid "Question & Answer"
-msgstr "Otázka a odpověď"
-
-#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
-#, kde-format
-msgid "Opening file..."
-msgstr "Otevírá se soubor..."
-
-#: kwordquiz.cpp:637 kwordquiz.cpp:639
-#, kde-format
-msgctxt "%1 is an error message"
-msgid ""
-"%1\n"
-"If you are sure no other program is using the file you can choose to ignore "
-"the lock and open the file anyway.\n"
-"Do you want to open the file?"
-msgstr ""
-
-#: kwordquiz.cpp:637
-#, kde-format
-msgid "Open File"
-msgstr "Otevřít soubor"
-
-#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
-#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
-#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
-#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
-#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
-#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
-#, kde-format
-msgctxt "@info:status ready"
-msgid "Ready"
-msgstr "Připraveno"
-
-#: kwordquiz.cpp:727 kwordquiz.cpp:729
-#, kde-format
-msgid ""
-"The current document has been modified.\n"
-"Do you want to save it?"
-msgstr ""
-"Současný dokument byl upraven.\n"
-"Přejete si jej uložit?"
-
-#: kwordquiz.cpp:779
-#, kde-format
-msgid "Opening a new document window..."
-msgstr "Otevírá se nové okno dokumentu..."
-
-#: kwordquiz.cpp:791
-#, kde-format
-msgid "&Merge selected files with the current document"
-msgstr "&Sloučit vybrané soubory s nynějším dokumentem"
-
-#: kwordquiz.cpp:796 kwqtutor.cpp:127
-#, kde-format
-msgid "Open Vocabulary Document"
-msgstr "Otevřít slovníček"
-
-#: kwordquiz.cpp:865
-#, kde-format
-msgid "Saving file..."
-msgstr "Ukládá se soubor..."
-
-#: kwordquiz.cpp:884
-#, kde-format
-msgid "Saving file with a new filename..."
-msgstr "Ukládám soubor pod novým názvem..."
-
-#: kwordquiz.cpp:912
-#, kde-format
-msgid "HTML Document"
-msgstr "HTML dokument"
-
-#: kwordquiz.cpp:914
-#, kde-format
-msgid "Save Vocabulary Document As"
-msgstr "Uložit slovníček jako"
-
-#: kwordquiz.cpp:962
-#, kde-format
-msgid "Closing file..."
-msgstr "Zavírá se soubor..."
-
-#: kwordquiz.cpp:985
-#, kde-format
-msgid "Printing..."
-msgstr "Probíhá tisk..."
-
-#: kwordquiz.cpp:991
-#, kde-format
-msgid "Showing Preview..."
-msgstr "Zobrazuje se náhled..."
-
-#: kwordquiz.cpp:999
-#, kde-format
-msgctxt "@info:status quitting"
-msgid "Quitting..."
-msgstr "Ukončuje se..."
-
-#: kwordquiz.cpp:1021
-#, kde-format
-msgid "Cutting selection..."
-msgstr "Vyjímá se výběr..."
-
-#: kwordquiz.cpp:1028
-#, kde-format
-msgid "Copying selection to clipboard..."
-msgstr "Kopíruje se výběr do schránky..."
-
-#: kwordquiz.cpp:1035
-#, kde-format
-msgid "Inserting clipboard contents..."
-msgstr "Vkládá se obsah schránky..."
-
-#: kwordquiz.cpp:1042
-#, kde-format
-msgid "Clearing the selected cells..."
-msgstr "Mažou se vybrané buňky..."
-
-#: kwordquiz.cpp:1049
-#, kde-format
-msgid "Inserting rows..."
-msgstr "Vkládají se řádky..."
-
-#: kwordquiz.cpp:1056
-#, kde-format
-msgid "Deleting selected rows..."
-msgstr "Mažou se vybrané řádky..."
-
-#: kwordquiz.cpp:1063
-#, kde-format
-msgid "Marking selected text as a blank..."
-msgstr "Označuje se vybraný text jako chybějící..."
-
-#: kwordquiz.cpp:1070
-#, kde-format
-msgid "Removing blank markings..."
-msgstr "Odstraňuje se označení chybějícího..."
-
-#: kwordquiz.cpp:1077
-#, kde-format
-msgid "Setting the column titles of the vocabulary..."
-msgstr "Nastavují se záhlaví sloupců slovníčku..."
-
-#: kwordquiz.cpp:1090
-#, kde-format
-msgid "Setting the font of the vocabulary..."
-msgstr "Nastavuje se písmo slovníčku..."
-
-#: kwordquiz.cpp:1106
-#, kde-format
-msgid "Linking an image with the current entry..."
-msgstr "Spojuje se obrázek se současným záznamem..."
-
-#: kwordquiz.cpp:1114
-#, kde-format
-msgid "Linking a sound with the current entry..."
-msgstr "Spojuje se zvuk se současným záznamem..."
-
-#: kwordquiz.cpp:1122
-#, kde-format
-msgid "Adjusting row heights..."
-msgstr "Úprava výšky řádků..."
-
-#: kwordquiz.cpp:1131
-#, kde-format
-msgid "Randomizing the vocabulary..."
-msgstr "Náhodně se vybírá slovníček..."
-
-#: kwordquiz.cpp:1139
-#, kde-format
-msgid "Updating mode..."
-msgstr "Aktualizuje se režim..."
-
-#: kwordquiz.cpp:1153
-#, kde-format
-msgid "Starting editor session..."
-msgstr "Zahajuje se sezení editoru..."
-
-#: kwordquiz.cpp:1160
-#, kde-format
-msgid "Starting flashcard session..."
-msgstr "Zahajuje se sezení s kartičkami..."
-
-#: kwordquiz.cpp:1167
-#, kde-format
-msgid "Starting multiple choice session..."
-msgstr "Zahajuje se sezení s nabídkou možností..."
-
-#: kwordquiz.cpp:1174
-#, kde-format
-msgid "Starting question & answer session..."
-msgstr "Zahajuje se sezení otázek a odpovědí..."
-
-#: kwordquiz.cpp:1326
-#, kde-format
-msgid "Insert %1"
-msgstr "Vložit %1"
-
-#: kwordquiz.cpp:1327
-#, kde-format
-msgid "Inserts the character %1"
-msgstr "Vkládá znak %1"
-
-#: kwordquiz.cpp:1378
-#, kde-format
-msgid "This will restart your quiz. Do you wish to continue?"
-msgstr "Tímto se restartuje váš kvíz. Přejete si pokračovat?"
-
-#: kwordquiz.cpp:1394
-#, kde-format
-msgid "&1 %1 -> %2 In Order"
-msgstr "&1 %1 -> %2 popořadě"
-
-#: kwordquiz.cpp:1395
-#, kde-format
-msgid "&2 %1 -> %2 In Order"
-msgstr "&2 %1 -> %2 popořadě"
-
-#: kwordquiz.cpp:1396
-#, kde-format
-msgid "&3 %1 -> %2 Randomly"
-msgstr "&3 %1 -> %2 náhodně"
-
-#: kwordquiz.cpp:1397
-#, kde-format
-msgid "&4 %1 -> %2 Randomly"
-msgstr "&4 %1 -> %2 náhodně"
-
-#: kwordquiz.cpp:1398
-#, kde-format
-msgid "&5 %1 <-> %2 Randomly"
-msgstr "&5 %1 <-> %2 Náhodně"
-
-#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
-#, kde-format
-msgid "%1 -> %2 In Order"
-msgstr "%1 -> %2 popořadě"
-
-#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
-#, kde-format
-msgid "%1 -> %2 Randomly"
-msgstr "%1 -> %2 náhodně"
-
-#: kwordquiz.cpp:1417
-#, kde-format
-msgid "%1 &lt;-&gt; %2 Randomly"
-msgstr "%1 &lt;-&gt; %2 náhodně"
-
-#. i18n: ectx: label, entry (FirstRun), group (General)
-#: kwordquiz.kcfg:10
-#, kde-format
-msgid "Is this the first time KWordQuiz is run?"
-msgstr "Spouštíte KWordQuiz poprvé?"
-
-#. i18n: ectx: label, entry (ShowSearch), group (General)
-#: kwordquiz.kcfg:14
-#, kde-format
-msgid "Toggle display of the search bar."
-msgstr "Přepnout zobrazení panelu hledání."
-
-#. i18n: ectx: label, entry (StartSession), group (General)
-#: kwordquiz.kcfg:18
-#, kde-format
-msgid "Type of session to use when opening files"
-msgstr "Druh sezení, který se použije při otevírání souboru"
-
-#. i18n: ectx: label, entry (PrintStyle), group (General)
-#: kwordquiz.kcfg:28
-#, kde-format
-msgid "Type of printout to generate"
-msgstr "Druh výtisku, který bude vytvořen"
-
-#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
-#: kwordquiz.kcfg:39
-#, kde-format
-msgid "Titles for column 1"
-msgstr "Záhlaví pro sloupec 1"
-
-#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
-#: kwordquiz.kcfg:43
-#, kde-format
-msgid "Titles for column 2"
-msgstr "Záhlaví pro sloupec 2"
-
-#. i18n: ectx: label, entry (EditorFont), group (Editor)
-#: kwordquiz.kcfg:47
-#, kde-format
-msgid "Font used in the editor"
-msgstr "Písmo používané v editoru"
-
-#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
-#: kwordquiz.kcfg:51
-#, kde-format
-msgid "If Fill-in-the-blank should be enabled"
-msgstr "Zda má být funkce doplňování chybějícího povolena"
-
-#. i18n: ectx: label, entry (EnterMove), group (Editor)
-#: kwordquiz.kcfg:55
-#, kde-format
-msgid "Direction the Enter key moves in the editor"
-msgstr "Směr, kterým se v editoru pohybuje pomocí klávesy Enter"
-
-#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
-#: kwordquiz.kcfg:59
-#, kde-format
-msgid "Characters for the special character toolbar"
-msgstr "Znaky pro panel zvláštních znaků"
-
-#. i18n: ectx: label, entry (ClearAll), group (Editor)
-#: kwordquiz.kcfg:63
-#, kde-format
-msgid "Clear all data in selected entries"
-msgstr "Smazat všechna data ve vybraných záznamech"
-
-#. i18n: ectx: label, entry (ClearText), group (Editor)
-#: kwordquiz.kcfg:67
-#, kde-format
-msgid "Clear the text in selected entries"
-msgstr "Smazat text ve vybraných záznamech"
-
-#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
-#: kwordquiz.kcfg:71
-#, kde-format
-msgid "Clear the image link in selected entries"
-msgstr "Smazat odkaz na obrázek ve vybraných záznamech"
-
-#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
-#: kwordquiz.kcfg:75
-#, kde-format
-msgid "Clear the sound link in selected entries"
-msgstr "Smazat odkaz na zvuk ve vybraných záznamech"
-
-#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
-#: kwordquiz.kcfg:81
-#, kde-format
-msgid "Automatically check selected answer in multiple choice"
-msgstr "Automaticky kontrolovat vybranou odpověď v sezení s nabídkou možností"
-
-#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
-#: kwordquiz.kcfg:85
-#, kde-format
-msgid "Automatically flip flashcard"
-msgstr "Automaticky obracet kartičky"
-
-#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
-#: kwordquiz.kcfg:89
-#, kde-format
-msgid "Time delay for flipping flashcard"
-msgstr "Časové prodlení pro obracení kartiček"
-
-#. i18n: ectx: label, entry (HintError), group (Quiz)
-#: kwordquiz.kcfg:93
-#, kde-format
-msgid "Treat use of hint as error"
-msgstr "Považovat použití rady za chybu"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
-#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
-#: kwordquiz.kcfg:97 prefquizbase.ui:79
-#, kde-format
-msgid "Compare answers in a case sensitive way"
-msgstr "Rozlišovat malá/velká písmena při porovnání odpovědí"
-
-#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:101
-#, kde-format
-msgid "Count flashcard as correct or error"
-msgstr "Počítat kartičku za chybnou nebo správnou"
-
-#. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:105
-#, kde-format
-msgid "Quiz mode"
-msgstr "Režim kvízu"
-
-#. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:109
-#, kde-format
-msgid "Show score as percentage"
-msgstr "Ukazovat skóre jako procenta"
-
-#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:115
-#, kde-format
-msgid "Font used for front of flashcard"
-msgstr "Písmo líce kartičky"
-
-#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:119
-#, kde-format
-msgid "Color used for text on front of flashcard"
-msgstr "Barva textu na líci kartičky"
-
-#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:123
-#, kde-format
-msgid "Color used for front of flashcard"
-msgstr "Barva líce kartičky"
-
-#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:127
-#, kde-format
-msgid "Color used for frame on front of flashcard"
-msgstr "Barva rámečku líce kartičky"
-
-#. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:131
-#, kde-format
-msgid "Font used for back of flashcard"
-msgstr "Písmo rubu kartičky"
-
-#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:135
-#, kde-format
-msgid "Color used for text on back of flashcard"
-msgstr "Barva textu na rubu kartičky"
-
-#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:139
-#, kde-format
-msgid "Color used for back of flashcard"
-msgstr "Barva rubu kartičky"
-
-#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:143
-#, kde-format
-msgid "Color used for frame on back of flashcard"
-msgstr "Barva rámečku na rubu kartičky"
-
-#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:149
-#, kde-format
-msgid "The Providers path for KWordQuiz"
-msgstr "Poskytovatelova cesta k KWordQuiz"
-
-#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:153
-#, kde-format
-msgid "The command used to start a downloaded vocabulary"
-msgstr "Příkaz používaný ke spuštění staženého slovníčku"
-
-#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:157
-#, kde-format
-msgid ""
-"The folder where downloaded vocabularies are saved by default (relative to "
-"$HOME)"
-msgstr ""
-"Složka, do které se automaticky ukládají stažené slovníčky (relativně vůči "
-"$HOME)"
-
-#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:163
-#, kde-format
-msgid "Pop up flashcards at fixed or random intervals"
-msgstr "Nechat kartičky objevit se v pevných nebo náhodných časových sledech"
-
-#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:171
-#, kde-format
-msgid "The interval in minutes at which to pop up a flash card"
-msgstr "Časový sled v minutách, v jakém se kartičky budou objevovat"
-
-#. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:175
-#, kde-format
-msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr "Nejkratší časový sled v minutách, v jakém se kartičky budou objevovat"
-
-#. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:179
-#, kde-format
-msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr "Nejdelší časový sled v minutách, v jakém se kartičky budou objevovat"
-
-#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:183
-#, kde-format
-msgid "Geometry of the last flash card"
-msgstr "Uspořádání poslední kartičky"
-
-#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:187
-#, kde-format
-msgid "Show flash card in a native KWordQuiz style"
-msgstr "Ukázat kartičku v původním stylu programu KWordQuiz"
-
-#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:195
-#, kde-format
-msgid ""
-"Last open vocabulary file to be opened automatically if none other is "
-"specified on the command line"
-msgstr ""
-"Otevřít naposledy otevřený soubor se slovníčkem, pokud v příkazovém řádku "
-"není zadán jiný"
-
-#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:199
-#, kde-format
-msgid "Start exercise as soon as the user opens vocabulary file"
-msgstr "Začít cvičení jakmile uživatel otevře soubor se slovníčkem"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General"
-msgstr "Obecné"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General Settings"
-msgstr "Obecná nastavení"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor"
-msgstr "Editor"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor Settings"
-msgstr "Nastavení editoru"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz"
-msgstr "Kvíz"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz Settings"
-msgstr "Nastavení kvízu"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance"
-msgstr "Vzhled kartiček"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance Settings"
-msgstr "Nastavení vzhledu kartiček"
-
-#: kwordquizprefs.cpp:36
-#, kde-format
-msgctxt "@title:group special character settings"
-msgid "Special Characters"
-msgstr "Zvláštní znaky"
-
-#. i18n: ectx: Menu (vocabulary)
-#: kwordquizui.rc:16
-#, kde-format
-msgid "V&ocabulary"
-msgstr "Sl&ovníček"
-
-#. i18n: ectx: Menu (mode)
-#: kwordquizui.rc:30
-#, kde-format
-msgid "&Mode"
-msgstr "&Režim"
-
-#. i18n: ectx: Menu (quiz)
-#: kwordquizui.rc:38
-#, kde-format
-msgid "&Quiz"
-msgstr "&Kvíz"
-
-#. i18n: ectx: ToolBar (quizToolBar)
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:21
-#, kde-format
-msgid "Quiz"
-msgstr "Kvíz"
-
-#. i18n: ectx: ToolBar (characterToolBar)
-#: kwordquizui.rc:75
-#, kde-format
-msgid "Special Characters"
-msgstr "Zvláštní znaky"
-
-#: kwqcleardialog.cpp:18
-#, kde-format
-msgctxt "@title:window"
-msgid "Clear Contents"
-msgstr "Smazat obsah"
-
-#: kwqcommands.cpp:74
-#, kde-format
-msgctxt "@item:inmenu undo clear"
-msgid "Clear"
-msgstr "Smazat"
-
-#: kwqcommands.cpp:96
-#, kde-format
-msgctxt "@item:inmenu undo cut"
-msgid "Cut"
-msgstr "Vyjmout"
-
-#: kwqcommands.cpp:109
-#, kde-format
-msgctxt "@item:inmenu undo paste"
-msgid "Paste"
-msgstr "Vložit"
-
-#: kwqcommands.cpp:205
-#, kde-format
-msgctxt "@item:inmenu undo sort"
-msgid "Sort"
-msgstr "Seřadit"
-
-#: kwqcommands.cpp:232
-#, kde-format
-msgctxt "@item:inmenu undo shuffle"
-msgid "Shuffle"
-msgstr "Zamíchat"
-
-#: kwqcommands.cpp:252
-#, kde-format
-msgctxt "@item:inmenu undo insert"
-msgid "Insert"
-msgstr "Vložit"
-
-#: kwqcommands.cpp:284
-#, kde-format
-msgctxt "@item:inmenu undo delete"
-msgid "Delete"
-msgstr "Smazat"
-
-#: kwqcommands.cpp:333
-#, kde-format
-msgctxt "@item:inmenu undo unmark blank"
-msgid "Unmark Blank"
-msgstr "Zrušit chybějící"
-
-#: kwqcommands.cpp:355
-#, kde-format
-msgctxt "@item:inmenu undo column titles"
-msgid "Column Settings"
-msgstr "Nastavení sloupce"
-
-#: kwqcommands.cpp:400
-#, kde-format
-msgctxt "@item:inmenu undo link image"
-msgid "Link Image"
-msgstr "Spojit obrázek"
-
-#: kwqcommands.cpp:419
-#, kde-format
-msgctxt "@item:inmenu undo link sound"
-msgid "Link Sound"
-msgstr "Spojit zvuk"
-
-#: kwqcommands.h:93
-#, kde-format
-msgid "Font"
-msgstr "Písmo"
-
-#: kwqcommands.h:111
-#, kde-format
-msgid "Entry"
-msgstr "Záznam"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
-#, kde-format
-msgid "Questions"
-msgstr "Otázky"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
-#, kde-format
-msgid "The number of questions in the session"
-msgstr "Počet otázek v sezení"
-
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
-#: kwqscorewidgetbase.ui:259
-#, kde-format
-msgid "00"
-msgstr "00"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
-#, kde-format
-msgid "Correct answers"
-msgstr "Správné odpovědi"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
-#, kde-format
-msgid ""
-"The number of questions answered correctly. May be shown as a percentage."
-msgstr "Počet správně zodpovězených otázek. Lze zobrazit jako procento."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picError)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
-#, kde-format
-msgid "Incorrect answers"
-msgstr "Nesprávné odpovědi"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
-#, kde-format
-msgid ""
-"The number of questions answered incorrectly. May be shown as a percentage."
-msgstr "Počet nesprávně zodpovězených otázek. Lze zobrazit jako procento."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
-#, kde-format
-msgid "Answered questions"
-msgstr "Zodpovězené otázky"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
-#, kde-format
-msgid "The number of questions already answered. May be shown as a percentage."
-msgstr "Počet již zodpovězených otázek. Lze zobrazit jako procento."
-
-#: kwqtablemodel.cpp:211
-#, kde-format
-msgid "Untitled"
-msgstr "Bez názvu"
-
-#: kwqtableview.cpp:190
+#: exporter.cpp:122
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Jméno:_____________________________ Datum:__________"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:92
+#: exporter.cpp:170
 #, kde-format
 msgid "Score"
 msgstr "Skóre"
 
-#: kwqtableview.cpp:656
+#: kwqcardmodel.cpp:30
 #, kde-format
-msgid "There is an error with the Fill-in-the-blank brackets"
-msgstr "V závorkách pro doplňování chybějícího je chyba"
+msgid "Question"
+msgstr "Otázka"
 
-#: kwqtableview.cpp:723
+#: kwqcardmodel.cpp:32
 #, kde-format
-msgctxt "@title:window"
-msgid "Select Image"
-msgstr "Vybrat obrázek"
+msgid "Answer"
+msgstr "Odpověď"
 
-#: kwqtableview.cpp:743
+#: main.cpp:56
 #, kde-format
-msgctxt "@title:window"
-msgid "Select Sound"
-msgstr "Vyberte zvuk"
-
-#: kwqtableview.cpp:743
-#, kde-format
-msgid "All Files (*)"
-msgstr "Všechny soubory (*)"
-
-#: kwqtutor.cpp:26
-#, kde-format
-msgid ""
-"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
-"you to set a certain time interval at which flashcards will pop up.<br /"
-"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
-"working without stealing the focus from other programs you might be working "
-"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
-"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
-"<qt>Domácí učitel programu KWordQuiz na vaší obrazovce zobrazuje pomocné "
-"kartičky způsobem, který vám umožní nastavit určitý časový sled, ve kterém "
-"se kartičky budou objevovat.<br /><br />Pomocné kartičky se objevují "
-"způsobem, který neruší, čímž vám umožňují pokračovat v práci, aniž byste "
-"přicházel o soustředění se na další programy, se kterými byste snad mohl "
-"pracovat.<br /><br />Klikněte pravým tlačítkem myši na ikonu domácího "
-"učitele KWordQuiz v panelu a vyberte Nastavení. Zde můžete si vybrat "
-"přiřazení klávesových zkratek.</qt>"
 
-#: kwqtutor.cpp:32
-#, kde-format
-msgid "Tutor"
-msgstr "Výuka"
-
-#: kwqtutor.cpp:43 kwqtutor.cpp:116
-#, kde-format
-msgid "Start Exercise"
-msgstr "Začít cvičení"
-
-#: kwqtutor.cpp:53
-#, kde-format
-msgid "Configure KWordQuiz Tutor..."
-msgstr "Nastavit výuku programu KWordQuiz..."
-
-#: kwqtutor.cpp:58
-#, kde-format
-msgid "Close Flash Card"
-msgstr "Zavřít kartičku"
-
-#: kwqtutor.cpp:63
-#, kde-format
-msgid "Flip Flash Card"
-msgstr "Obrátit kartičku"
-
-#: kwqtutor.cpp:108
-#, kde-format
-msgid "Stop Exercise"
-msgstr "Zastavit cvičení"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor"
-msgstr "Výuka"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor Settings"
-msgstr "Nastavení výuky"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgctxt "Shortcuts Config"
-msgid "Shortcuts"
-msgstr "Klávesové zkratky"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgid "Shortcuts Settings"
-msgstr "Nastavení zkratek"
-
-#: main.cpp:34
+#: main.cpp:90
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:36
+#: main.cpp:92
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Výkonný vyučovací program pro učení se slovíček nejen metodou kartiček"
 
-#: main.cpp:38
+#: main.cpp:94
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:42
+#: main.cpp:98
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:43
+#: main.cpp:98
+#, kde-format
+msgctxt "@info:credit"
+msgid "Original author"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Port to QML"
+msgstr ""
+
+#: main.cpp:100
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:43
+#: main.cpp:100
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Správce výukových her pro prostředí KDE"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitnerova metoda a několik příspěvků kódem"
 
-#: main.cpp:57
-#, kde-format
-msgid ""
-"A number 1-5 corresponding to the \n"
-"entries in the Mode menu"
-msgstr ""
-"Číslo 1-5 odpovídající\n"
-"položkám v nabídce Režim"
-
-#: main.cpp:58
-#, kde-format
+#: main.cpp:121
+#, fuzzy, kde-format
+#| msgid ""
+#| "Type of session to start with: \n"
+#| "'flash' for flashcard, \n"
+#| "'mc' for multiple choice, \n"
+#| "'qa' for question and answer, \n"
+#| "'tutor' for tutor"
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
-"'qa' for question and answer, \n"
-"'tutor' for tutor"
+"'qa' for question and answer"
 msgstr ""
 "Typ sezení, kterým se má začít: \n"
 "'flash' pro kartičky, \n"
@@ -1603,905 +132,1665 @@ msgstr ""
 "'qa' pro otázku a odpověď, \n"
 "'tutor' pro domácího učitele"
 
-#: main.cpp:59
+#: main.cpp:123
 #, kde-format
 msgid "File to open"
 msgstr "Soubor k otevření"
 
-#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
-#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
-#: qaviewbase.ui:518
+#: qml/BasePage.qml:24
 #, kde-format
-msgid "Correct Answer"
-msgstr "Správná odpověď"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
-#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
-#: qaviewbase.ui:294
-#, kde-format
-msgid "Previous Question"
-msgstr "Předchozí otázka"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
-#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
-#: qaviewbase.ui:395
-#, kde-format
-msgid "Your Answer"
-msgstr "Vaše odpověď"
-
-#: multipleview.cpp:131 qaview.cpp:169
-#, kde-format
-msgid "Summary"
-msgstr "Shrnutí"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
-#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
-#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
-#: qaviewbase.ui:104
-#, kde-format
-msgid "The question"
-msgstr "Otázka"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:73 qaviewbase.ui:60
-#, kde-format
-msgid "Language or other identifier for the question"
-msgstr "Jazyk nebo jiný identifikátor otázky"
-
-#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:76 qaviewbase.ui:63
-#, kde-format
-msgid "Language 1"
-msgstr "Jazyk 1"
-
-#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
-#: multipleviewbase.ui:98 qaviewbase.ui:107
-#, kde-format
-msgid "This is your question"
-msgstr "Toto je vaše otázka"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
-#: multipleviewbase.ui:255 multipleviewbase.ui:286
-#, kde-format
-msgid "Your choices"
-msgstr "Vaše možnosti"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
-#, kde-format
-msgid "Three choices for the answer. One is correct."
-msgstr "Tři možné odpovědi. Jen jedna je ale správná."
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt2)
-#: multipleviewbase.ui:192
-#, kde-format
-msgid "&2 Option"
-msgstr "&2 možnost"
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt1)
-#: multipleviewbase.ui:223
-#, kde-format
-msgid "&1 Option"
-msgstr "&1 možnost"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:258 qaviewbase.ui:208
-#, kde-format
-msgid "Language or other identifier for the answer"
-msgstr "Jazyk nebo jiný identifikátor otázky"
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:261 qaviewbase.ui:211
-#, kde-format
-msgid "Language 2"
-msgstr "Jazyk 2"
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:292
-#, kde-format
-msgid "&3 Option"
-msgstr "&3 možnost"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
-#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
-#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
-#, kde-format
-msgid "Previous question"
-msgstr "Předchozí otázka"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
-#: qaviewbase.ui:313
-#, kde-format
-msgid "The previous question"
-msgstr "Předchozí otázka"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:375 qaviewbase.ui:316
-#, kde-format
-msgid "This was your question"
-msgstr "Toto byla vaše otázka"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
-#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
-#, kde-format
-msgid "Your previous answer"
-msgstr "Vaše předchozí odpověď"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
-#: qaviewbase.ui:414
-#, kde-format
-msgid "Your answer to the previous question"
-msgstr "Vaše odpověď na předchozí otázku"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:501 qaviewbase.ui:417
-#, kde-format
-msgid "This was your answer"
-msgstr "Toto byla vaše odpověď"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
-#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
-#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
-#, kde-format
-msgid "Previous correct answer"
-msgstr "Předchozí správná odpověď"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
-#: qaviewbase.ui:537
-#, kde-format
-msgid "The correct answer to the previous question"
-msgstr "Správná odpověď na předchozí otázku"
-
-#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:580 qaviewbase.ui:540
-#, kde-format
-msgid "This was the correct answer"
-msgstr "Toto byla správná odpověď"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: multipleviewbase.ui:649
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"three entries for a multiple choice quiz.</html>"
+msgid "Cards %1% Errors %2"
 msgstr ""
-"<html>Ve vašem slovníčku je příliš málo položek.<br />Pro kvíz s nabídkou "
-"možností potřebujete alespoň tři záznamy.</html>"
 
-#: prefcardappearance.cpp:66
+#: qml/BasePage.qml:26
 #, kde-format
-msgctxt "Back of the flashcard"
-msgid "Back"
-msgstr "Rub"
-
-#: prefcardappearance.cpp:67
-#, kde-format
-msgid "Answer"
-msgstr "Odpověď"
-
-#: prefcardappearance.cpp:80
-#, kde-format
-msgid "Front"
-msgstr "Přední strana"
-
-#: prefcardappearance.cpp:81
-#, kde-format
-msgid "Question"
-msgstr "Otázka"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
-#: prefcardappearancebase.ui:15
-#, kde-format
-msgid "Card Appearance"
-msgstr "Vzhled kartičky"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:92
-#, kde-format
-msgid "Flip card"
-msgstr "Obrátit kartičku"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:95
-#, kde-format
-msgid "Use to show the other side of the card"
-msgstr "Slouží k ukázání druhé strany kartičky"
-
-#. i18n: ectx: property (text), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:98
-#, kde-format
-msgid "&Flip Card"
-msgstr "&Obrátit kartičku"
-
-#. i18n: ectx: property (text), widget (QLabel, fontLabel)
-#: prefcardappearancebase.ui:111
-#, kde-format
-msgid "F&ont:"
-msgstr "Písm&o:"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
-#: prefcardappearancebase.ui:146
-#, kde-format
-msgid "Use to select the font for displaying text on the back of the card"
-msgstr "Slouží k volbě písma na rubu kartičky"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
-#, kde-format
-msgid "Select text color"
-msgstr "Zvolte barvu textu"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
-#, kde-format
-msgid "Use to select the color for text shown on the card"
-msgstr "Slouží k volbě barvy textu na kartičce"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
-#, kde-format
-msgid "Select card frame color"
-msgstr "Zvolte barvu rámečku kartičky"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
-#, kde-format
-msgid "Use to select the color for drawing the frame of the card"
-msgstr "Slouží k volbě barvy rámečku kartičky"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
-#, kde-format
-msgid "Select card color"
-msgstr "Zvolte barvu kartičky"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
-#, kde-format
-msgid "Select color used to draw the card"
-msgstr "Zvolte barvu kartičky"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
-#: prefcardappearancebase.ui:202
-#, kde-format
-msgid "Use to select the font for displaying text on the front of the card"
-msgstr "Slouží k volbě písma na lící kartičky"
-
-#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
-#: prefcardappearancebase.ui:249
-#, kde-format
-msgid "&Text color:"
-msgstr "Barva &textu:"
-
-#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
-#: prefcardappearancebase.ui:262
-#, kde-format
-msgid "&Card color:"
-msgstr "&Barva kartičky:"
-
-#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
-#: prefcardappearancebase.ui:275
-#, kde-format
-msgid "Fra&me color:"
-msgstr "Barva rá&mečku:"
-
-#: prefcharacter.cpp:30
-#, kde-format
-msgid "Action"
-msgstr "Činnost"
-
-#: prefcharacter.cpp:31
-#, kde-format
-msgid "Shortcut"
-msgstr "Zkratka"
-
-#: prefcharacter.cpp:32
-#, kde-format
-msgid "Character"
-msgstr "Znak"
-
-#: prefcharacter.cpp:41
-#, kde-format
-msgid "Special Character %1"
-msgstr "Zvláštní znak %1"
-
-#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
-#: prefcharacterbase.ui:35
-#, kde-format
-msgid ""
-"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-"associated with each action."
+msgid "Cards %1/%2 Errors %3"
 msgstr ""
-"Poznámka: Volbou Nastavení -> Přizpůsobit klávesové zkratky... můžete změnit "
-"zkratky spojené s jednotlivými činnostmi."
 
-#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:48
+#: qml/BasePage.qml:73
 #, kde-format
-msgid "Select character to modify"
-msgstr "Zvolte znak, který si přejete změnit"
-
-#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:51
-#, kde-format
-msgid "Customizable special character actions"
-msgstr "Nastavitelné zvláštní činnosti znaků"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:61
-#, kde-format
-msgid "0"
-msgstr "0"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:66
-#, kde-format
-msgid "1"
-msgstr "1"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:71
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:103
-#, kde-format
-msgid "Click to choose a new character"
-msgstr "Klikněte pro výběr nového znaku"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:106
-#, kde-format
-msgid "Choose a character for the selected action"
-msgstr "Zvolte znak pro vybranou činnost"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:109
-#, kde-format
-msgid "C&haracter..."
-msgstr "&Znak..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:151
-#, kde-format
-msgid "Preview of current character"
-msgstr "Náhled aktuálního znaku"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:154
-#, kde-format
-msgid "Preview of the character associated with the selected action"
-msgstr "Náhled znaku spojeného s vybranou činností"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:157
-#, kde-format
-msgid "A"
-msgstr "A"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
-#: prefeditorbase.ui:73
-#, kde-format
-msgid "How enter key moves"
-msgstr "Směr pohybu klávesou Enter"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:32
-#, kde-format
-msgid "Select how the Enter key should behave in the editor"
-msgstr "Zvolte, jak se má v editoru chovat klávesa Enter"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:35
-#, kde-format
-msgid "Enter Ke&y Moves"
-msgstr "Pohyb klávesou &Enter"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:50
-#, kde-format
-msgid "Select if the next cell below should become active when pressing Enter."
-msgstr "Zvolte, pokud se má při stisku Enter aktivovat textová buňka níže."
-
-#. i18n: ectx: property (text), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:53
-#, kde-format
-msgid "&Down"
-msgstr "&Dolů"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:63
-#, kde-format
-msgid ""
-"Select if the next cell to the right should become active when pressing Enter"
-msgstr "Zvolte, pokud se má při stisku Enter aktivovat textová buňka vpravo"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:66
-#, kde-format
-msgid "&Right"
-msgstr "Vp&ravo"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:76
-#, kde-format
-msgid "Select if the current cell should remain active when pressing Enter"
+msgctxt "@label"
+msgid "Finished"
 msgstr ""
-"Zvolte, pokud se má při stisku Enter zachovat aktivní stávající textová buňka"
 
-#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:79
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "Does not &move"
-msgstr "Nepo&hybuje se"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:89
-#, kde-format
-msgid "Check to enable fill-in-the-blank"
-msgstr "Zaškrtněte pro povolení funkce doplňování chybějícího"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:92
-#, kde-format
-msgid "Select to enable the functions for Fill-in-the-blank"
-msgstr "Zvolte pro povolení funkce doplňování chybějícího"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:95
-#, kde-format
-msgid "E&nable fill-in-the-blank"
-msgstr "Povolit &doplňování chybějícího"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:35
-#, kde-format
-msgid "How vocabulary documents are opened"
-msgstr "Způsob otevírání slovníčků"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:38
-#, kde-format
-msgid "Select the kind of session to load an opened vocabulary document in"
-msgstr "Zvolte druh sezení pro načítání otevřeného slovníku"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:41
-#, kde-format
-msgid "&Open Vocabulary Documents in"
-msgstr "&Otevřít slovníčky"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:47
-#, kde-format
-msgid "Open vocabulary documents in the editor"
-msgstr "Otevřít slovníčky v editoru"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:50
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in the editor"
-msgstr "Zvolte, pokud si přejete slovníčky otevřít v editoru"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:53
-#, kde-format
-msgid "&Editor"
-msgstr "&Editor"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:60
-#, kde-format
-msgid "Open vocabulary documents in a flashcard quiz"
-msgstr "Otevřít slovníčky v kvízu s kartičkami"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:63
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
-msgstr "Zvolte, pokud si přejete slovníčky v kvízu s kartičkami"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:66
-#, kde-format
-msgid "&Flashcard Quiz"
-msgstr "&Kvíz s kartičkami"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:73
-#, kde-format
-msgid "Open vocabulary documents in a multiple choice quiz"
-msgstr "Otevřít slovníčky v kvízu s nabídkou možností"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:76
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a multiple choice quiz"
-msgstr "Zvolte, pokud si přejete slovníčky otevřít v kvízu s nabídkou možností"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:79
-#, kde-format
-msgid "&Multiple Choice Quiz"
-msgstr "&Kvíz s nabídkou možností"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:86
-#, kde-format
-msgid "Open vocabulary documents in a question and answer quiz"
-msgstr "Otevřít slovníčky v kvízu s otázkami a odpověďmi"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:89
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a question and answer "
-"quiz"
+msgid "You got a perfect score"
 msgstr ""
-"Zvolte, pokud si přejete slovníčky otevřít v kvízu s otázkami a odpověďmi"
 
-#. i18n: ectx: property (text), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:92
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "&Question and Answer Quiz"
-msgstr "&Kvíz s otázkami a odpověďmi"
+msgid "You made one mistake"
+msgid_plural "You made %1 mistakes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:42
-#, kde-format
-msgid "Specify behavior for a question and answer session"
-msgstr "Určete chování pro sezení typu otázka a odpověď"
+#: qml/BasePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Repeat &Errors"
+msgid "Repeat errors"
+msgstr "Zopakovat &chyby"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:45
+#: qml/BasePage.qml:93
 #, kde-format
-msgid "Question && Answer"
-msgstr "Otázka a odpověď"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:66
-#, kde-format
-msgid "Check to count hint as error"
-msgstr "Zaškrtněte, pokud má být rada považována za chybu"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:69
-#, kde-format
-msgid ""
-"Select if questions where the hint function has been used should be counted "
-"as errors"
+msgid "Try again"
 msgstr ""
-"Zvolte, pokud se mají otázky, u kterých byla použita rada, považovat za "
-"chybně zodpovězené"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:72
-#, kde-format
-msgid "&Treat hint as error"
-msgstr "&Radu považovat za chybu"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:89
-#, kde-format
-msgid "Specify behavior of the score presentation in any session"
-msgstr "Nastavte zobrazování skóre v libovolném sezení"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:113
-#, kde-format
-msgid "Check to show score as a percentage"
-msgstr "Zaškrtněte pro zobrazování skóre v procentech"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:116
-#, kde-format
-msgid "Select if the score should be shown as a percentage"
-msgstr "Zvolte, pokud se má skóre zobrazovat jako procenta"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:119
-#, kde-format
-msgid "&Show score as a percentage"
-msgstr "Zobrazovat skóre jako &procenta"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:145
-#, kde-format
-msgid "Specify behavior for a multiple choice session"
-msgstr "Určete chování sezení typu s nabídkou možností"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:169
-#, kde-format
-msgid "Check to correct automatically"
-msgstr "Zaškrtněte pro automatické opravy"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:172
-#, kde-format
-msgid "Select if a choice should be checked immediately"
-msgstr "Zvolte, pokud má být výběr okamžitě zkontrolován"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:175
-#, kde-format
-msgid "Check selection a&utomatically"
-msgstr "Zkontrolovat výběr a&utomaticky"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:185
-#, kde-format
-msgid "Specify behavior of a flashcard session"
-msgstr "Určete chování sezení typu Kartička"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:231
-#, kde-format
-msgid "Specify the amount of time between card flips"
-msgstr "Nastavte množství času mezi obrácením karty"
-
-#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:234
-#, kde-format
-msgid "seconds and"
-msgstr "sekundách a"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:241
-#, kde-format
-msgid "Delay to flip card"
-msgstr "Prodlení v obrácení karty"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:244
-#, kde-format
-msgid "Delay in seconds to flip card"
-msgstr "Prodlení v obrácení karty v sekundách"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:275 prefquizbase.ui:288
-#, kde-format
-msgid "Select how to count card"
-msgstr "Zvolte, jak kartu započítat"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:278
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as correct when moving to the "
-"next card"
-msgstr ""
-"Zvolte, pokud má být předchozí karta považována za správně zodpovězenou, při "
-"přesunu na následující kartu"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:281
-#, kde-format
-msgid "Count &as correct"
-msgstr "Počítat za &správné"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:291
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as incorrect when moving to "
-"the next card"
-msgstr ""
-"Zvolte, pokud má být předchozí karta považována za nesprávně zodpovězenou, "
-"při přesunu na následující kartu"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:294
-#, kde-format
-msgid "Count as &error"
-msgstr "Počítat za &chybné"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:304
-#, kde-format
-msgid "Check to flip card automatically"
-msgstr "Zaškrtněte pro automatické obracení karet"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:307
-#, kde-format
-msgid ""
-"Select if you want a card to turn over automatically after the given amount "
-"of time"
-msgstr ""
-"Zvolte, pokud si přejete, aby po uplynutí určitého času byly karty "
-"automaticky obraceny"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:310
-#, kde-format
-msgid "&Flip card automatically after"
-msgstr "&Obrátit karty automaticky po"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
-#: preftutorbase.ui:17
-#, kde-format
-msgid "Tutor Timing"
-msgstr "Načasování výuky"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
-#: preftutorbase.ui:23
-#, kde-format
-msgid "&Every"
-msgstr "&Každých"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
-#: preftutorbase.ui:60
-#, kde-format
-msgid "&minutes"
-msgstr "&minut"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
-#: preftutorbase.ui:72
-#, kde-format
-msgid "&Randomly"
-msgstr "&Náhodně"
-
-#. i18n: ectx: property (text), widget (QLabel, labelBetween)
-#: preftutorbase.ui:100
-#, kde-format
-msgid "Between"
-msgstr "Mezi"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
-#: preftutorbase.ui:120
-#, kde-format
-msgid "m&inutes and"
-msgstr "m&inutami a"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
-#: preftutorbase.ui:146
-#, kde-format
-msgid "mi&nutes"
-msgstr "mi&nut"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
-#: preftutorbase.ui:161
-#, kde-format
-msgid "Flashcard Appearance"
-msgstr "Vzhled kartiček"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
-#: preftutorbase.ui:167
-#, kde-format
-msgid "&Native"
-msgstr "&Původní"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
-#: preftutorbase.ui:177
-#, kde-format
-msgid "Minim&alistic"
-msgstr "Minim&alistický"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
-#: preftutorbase.ui:187
-#, kde-format
-msgid "Miscellaneous"
-msgstr "Různé"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
-#: preftutorbase.ui:193
-#, kde-format
-msgid "S&tart exercise as soon as vocabulary file is opened"
-msgstr "Začít cvičení jakmile je soubor se slovníčkem otevřen"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
-#, kde-format
-msgid "Type your answer"
-msgstr "Napište odpověď"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:145
-#, kde-format
-msgid "The answer showing blanks for a Fill-in-the-blank question"
-msgstr "Odpověď obsahující prázdná místo pro funkci doplňování chybějícího"
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:148
-#, kde-format
-msgid "This is _____ answer"
-msgstr "toto je _____ odpověď"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
-#: qaviewbase.ui:176
-#, kde-format
-msgid "Type the answer to the question"
-msgstr "Napište odpověď na otázku"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: qaviewbase.ui:587
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a question and answer quiz.</html>"
-msgstr ""
-"<html>Ve vašem slovníčku je příliš málo položek.<br />Potřebujete alespoň "
-"jeden záznam pro kvíz s otázkami a odpověďmi.</html>"
-
-#: wqprintdialogpage.cpp:17
+#: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
-msgid "Vocabulary Options"
-msgstr "Volby slovníku"
-
-#: wqprintdialogpage.cpp:23
-#, kde-format
-msgid "Select Type of Printout"
-msgstr "Zvolte typ výtisku"
-
-#: wqprintdialogpage.cpp:28
-#, kde-format
-msgid "Vocabulary &list"
-msgstr "Seznam s&lovíček"
-
-#: wqprintdialogpage.cpp:29
-#, kde-format
-msgid "Select to print the vocabulary as displayed in the editor"
+msgid "Create deck"
 msgstr ""
-"Zvolte, pokud si přejete slovníček vytisknout tak, jak je zobrazen v editoru"
 
-#: wqprintdialogpage.cpp:33
+#: qml/DeckEditorPage.qml:35
 #, kde-format
-msgid "Vocabulary e&xam"
-msgstr "Z&kouška slovíček"
+msgctxt "@title:window"
+msgid "Edit deck"
+msgstr ""
 
-#: wqprintdialogpage.cpp:34
+#: qml/DeckEditorPage.qml:40
 #, kde-format
-msgid "Select to print the vocabulary as a vocabulary exam"
-msgstr "Zvolte, pokud si přejete slovníček vytisknout pro zkoušení slovíček"
+msgid "Filter"
+msgstr ""
 
-#: wqprintdialogpage.cpp:38
+#: qml/DeckEditorPage.qml:43
 #, kde-format
-msgid "&Flashcards"
-msgstr "&Kartičky"
+msgid "Filter..."
+msgstr ""
 
-#: wqprintdialogpage.cpp:39
+#: qml/DeckEditorPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Showing Preview..."
+msgctxt "@action:button"
+msgid "Print Preview"
+msgstr "Zobrazuje se náhled..."
+
+#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
-msgid "Select to print flashcards"
-msgstr "Zvolte, pokud si přejete tisknout karty"
+msgid "Flashcard"
+msgstr "Kartička"
+
+#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#, kde-format
+msgid "List"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#, kde-format
+msgid "Exam"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Printing..."
+msgctxt "@action:button"
+msgid "Print"
+msgstr "Probíhá tisk..."
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link image"
+#| msgid "Link Image"
+msgctxt "@action:button"
+msgid "Link image"
+msgstr "Spojit obrázek"
+
+#: qml/DeckEditorPage.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link sound"
+#| msgid "Link Sound"
+msgctxt "@action:button"
+msgid "Link sound"
+msgstr "Spojit zvuk"
+
+#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "Language 1"
+msgctxt "@action:button"
+msgid "Set language"
+msgstr "Jazyk 1"
+
+#: qml/DeckEditorPage.qml:183
+#, kde-format
+msgid "Please choose an image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:192
+#, kde-format
+msgid "Please choose a sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:238
+#, kde-format
+msgctxt "@label"
+msgid "Author:"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:249
+#, kde-format
+msgctxt "@label"
+msgid "License:"
+msgstr ""
+
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox vocabulary editor"
+#| msgid "Editor"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Editor"
+
+#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
+#: qml/QuestionAnswerPage.qml:151
+#, fuzzy, kde-format
+#| msgid "&Check"
+msgctxt "@action:button"
+msgid "Check"
+msgstr "&Zkontrolovat"
+
+#: qml/FlashCardPage.qml:128
+#, fuzzy, kde-format
+#| msgid "Correct Answer"
+msgctxt "@action:button"
+msgid "Correct"
+msgstr "Správná odpověď"
+
+#: qml/FlashCardPage.qml:146
+#, fuzzy, kde-format
+#| msgid "Mark Last Correct"
+msgctxt "@action:button"
+msgid "Not Correct"
+msgstr "Označit poslední jako správné"
+
+#: qml/LanguageSelectorPage.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select Image"
+msgid "Select a language"
+msgstr "Vybrat obrázek"
+
+#: qml/main.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@action:inmenu"
+msgid "Settings"
+msgstr "Nastavení kvízu"
+
+#: qml/main.qml:42
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "This was the correct answer"
+msgid "This is correct"
+msgstr "Toto byla správná odpověď"
+
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Incorrect answers"
+msgid "Wrong, the correct answer was \"%1\"."
+msgstr "Nesprávné odpovědi"
+
+#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
+#, kde-format
+msgctxt "@action:button"
+msgid "Next"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:150
+#, kde-format
+msgid "Not enough words in your deck"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:151
+#, kde-format
+msgid "You need at least 3 words to enable the multiple choice mode"
+msgstr ""
+
+#: qml/OptionsAction.qml:12
+#, fuzzy, kde-format
+#| msgid "&2 Option"
+msgctxt "@action:button"
+msgid "Options"
+msgstr "&2 možnost"
+
+#: qml/OptionsAction.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo shuffle"
+#| msgid "Shuffle"
+msgctxt "@action:inmenu"
+msgid "Shuffle"
+msgstr "Zamíchat"
+
+#: qml/QuestionAnswerPage.qml:143
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgctxt "@action:button"
+msgid "Hint"
+msgstr "&Rada"
+
+#: qml/SettingsPage.qml:13
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Nastavení kvízu"
+
+#: qml/SettingsPage.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:group general settings"
+#| msgid "General"
+msgid "General"
+msgstr "Obecné"
+
+#: qml/SettingsPage.qml:30
+#, kde-format
+msgid "Show score as percentage"
+msgstr "Ukazovat skóre jako procenta"
+
+#: qml/SettingsPage.qml:47
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgid "Flash Card"
+msgstr "Kartička"
+
+#: qml/SettingsPage.qml:52
+#, kde-format
+msgid "Automatically flip flashcard"
+msgstr "Automaticky obracet kartičky"
+
+#: qml/SettingsPage.qml:64
+#, fuzzy, kde-format
+#| msgid "Time delay for flipping flashcard"
+msgid "Time delay for flipping the flashcard"
+msgstr "Časové prodlení pro obracení kartiček"
+
+#: qml/SettingsPage.qml:84
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgid "Multiple choice"
+msgstr "S nabídkou možností"
+
+#: qml/SettingsPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Automatically check selected answer in multiple choice"
+msgid "Automatically check selected answer"
+msgstr "Automaticky kontrolovat vybranou odpověď v sezení s nabídkou možností"
+
+#: qml/SettingsPage.qml:105
+#, fuzzy, kde-format
+#| msgid "&Question and Answer"
+msgid "Question and Answer"
+msgstr "&Otázka a odpověď"
+
+#: qml/SettingsPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Check to count hint as error"
+msgid "Count using hint as an error"
+msgstr "Zaškrtněte, pokud má být rada považována za chybu"
+
+#: qml/SettingsPage.qml:122
+#, kde-format
+msgid "Compare answers in a case sensitive way"
+msgstr "Rozlišovat malá/velká písmena při porovnání odpovědí"
+
+#: qml/SettingsPage.qml:152
+#, fuzzy, kde-format
+#| msgid "Quits KWordQuiz"
+msgid "About KWordQuiz"
+msgstr "Ukončí KWordQuiz"
+
+#: qml/SettingsPage.qml:161
+#, kde-format
+msgid "About KDE"
+msgstr ""
+
+#: qml/WelcomePage.qml:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr ""
+
+#: qml/WelcomePage.qml:43
+#, kde-format
+msgid "Please choose a KWordQuiz document"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "KEduDocument (*.kvtml)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "Wql documents (*.wql)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "CSV documents (*.csv)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "XDXF documents (*.xdxf)"
+msgstr ""
+
+#: qml/WelcomePage.qml:62
+#, fuzzy, kde-format
+#| msgid "Quits KWordQuiz"
+msgid "Welcome to KWordQuiz"
+msgstr "Ukončí KWordQuiz"
+
+#: qml/WelcomePage.qml:74
+#, fuzzy, kde-format
+#| msgid "Opens an existing vocabulary document"
+msgid "Open existing document"
+msgstr "Otevře existující slovníček"
+
+#: qml/WelcomePage.qml:80
+#, kde-format
+msgid "Create Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:88
+#, kde-format
+msgid "Download Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:111
+#, kde-format
+msgid "Mode"
+msgstr "Režim"
+
+#: qml/WelcomePage.qml:147
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgctxt "@option:check Mode selector"
+msgid "Flashcard"
+msgstr "Kartička"
+
+#: qml/WelcomePage.qml:154
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgctxt "@option:check Mode selector"
+msgid "Multiple Choice"
+msgstr "S nabídkou možností"
+
+#: qml/WelcomePage.qml:161
+#, fuzzy, kde-format
+#| msgid "Question & Answer"
+msgctxt "@option:check Mode selector"
+msgid "Question-Answer"
+msgstr "Otázka a odpověď"
+
+#: qml/WelcomePage.qml:177
+#, kde-format
+msgid "Decks"
+msgstr ""
+
+#: qml/WelcomePage.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr ""
+
+#~ msgid "Selection"
+#~ msgstr "Výběr"
+
+#~ msgid "Delete all information in selected entries"
+#~ msgstr "Smazat všechny informace ve vybraných záznamech"
+
+#~ msgid ""
+#~ "When checked all information will be deleted from the selected entries"
+#~ msgstr ""
+#~ "Je-li zaškrtnuto, budou všechny informace z vybraných záznamů smazány"
+
+#~ msgid "Clear &All"
+#~ msgstr "Vyč&istit vše"
+
+#~ msgid "Delete the text from selected entries"
+#~ msgstr "Smazat text z vybraných záznamů"
+
+#~ msgid "When checked the text will be deleted from selected entries"
+#~ msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán text"
+
+#~ msgid "&Text"
+#~ msgstr "&Text"
+
+#~ msgid "Delete the image link from selected entries"
+#~ msgstr "Smazat odkaz na obrázek z vybraných záznamů"
+
+#~ msgid "When checked the image link will be deleted from selected entries"
+#~ msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán odkaz na obrázek"
+
+#~ msgid "&Image Links"
+#~ msgstr "&Odkazy na obrázek"
+
+#~ msgid "Delete the sound link from selected entries"
+#~ msgstr "Smazat odkaz na zvuk z vybraných záznamů"
+
+#~ msgid "When checked the sound link will be deleted from selected entries"
+#~ msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán odkaz na zvuk"
+
+#~ msgid "&Sound Links"
+#~ msgstr "&Odkazy na zvuk"
+
+#~ msgid "Column 1"
+#~ msgstr "Sloupec 1"
+
+#~ msgid "Title for the left column"
+#~ msgstr "Záhlaví levého sloupce"
+
+#~ msgid "Enter a title (identifier) for the left column"
+#~ msgstr "Vložte záhlaví (identifikátor) levého sloupce"
+
+#~ msgid "&Title:"
+#~ msgstr "&Název:"
+
+#~ msgid "&Keyboard layout:"
+#~ msgstr "&Rozvržení klávesnice:"
+
+#~ msgid "&Width:"
+#~ msgstr "Šíř&ka:"
+
+#~ msgid "Keyboard layout for the left column"
+#~ msgstr "Rozložení klávesnice pro levý sloupec"
+
+#~ msgid "Select a keyboard layout for the left column"
+#~ msgstr "Vyberte rozložení klávesnice pro levý sloupec"
+
+#~ msgid "Width of the left column"
+#~ msgstr "Šířka levého sloupce"
+
+#~ msgid "Enter the width (in pixels) for the left column"
+#~ msgstr "Zadejte šířku (v pixelech) levého sloupce"
+
+#~ msgid "Column 2"
+#~ msgstr "Sloupec 2"
+
+#~ msgid "T&itle:"
+#~ msgstr "&Název:"
+
+#~ msgid "Keyboard &Layout:"
+#~ msgstr "Rozvržení k&lávesnice:"
+
+#~ msgid "Wi&dth:"
+#~ msgstr "Šíř&ka:"
+
+#~ msgid "Title for the right column"
+#~ msgstr "Záhlaví pravého sloupce"
+
+#~ msgid "Enter a title (identifier) for the right column"
+#~ msgstr "Vložte záhlaví (identifikátor) pravého sloupce"
+
+#~ msgid "Width of the right column"
+#~ msgstr "Šířka pravého sloupce"
+
+#~ msgid "Enter the width (in pixels) for the right column"
+#~ msgstr "Zadejte šířku (v pixelech) pravého sloupce"
+
+#~ msgctxt "@title:window"
+#~ msgid "Column Settings"
+#~ msgstr "Nastavení sloupce"
+
+#~ msgctxt "@title:window select character dialog"
+#~ msgid "Select Character"
+#~ msgstr "Zvolte znak"
+
+#~ msgctxt "@action:button"
+#~ msgid "&Select"
+#~ msgstr "Vy&brat"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select this character"
+#~ msgstr "Zvolit tento znak"
+
+#~ msgid "Column widths"
+#~ msgstr "Šířky sloupců"
+
+#~ msgid "Keyboard layouts"
+#~ msgstr "Rozvržení klávesnice"
+
+#~ msgid "Search"
+#~ msgstr "Hledat"
+
+#~ msgid "Your answer was correct!"
+#~ msgstr "Vaše odpověď byla správná!"
+
+#~ msgid "Your answer was incorrect."
+#~ msgstr "Vaše odpověď byla nesprávná."
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a flashcard quiz.</html>"
+#~ msgstr ""
+#~ "<html>Ve vašem slovníčku je příliš málo položek.<br />Pro kvíz s "
+#~ "kartičkami potřebujete alespoň jeden záznam.</html>"
+
+#~ msgid "Creates a new blank vocabulary document"
+#~ msgstr "Vytvoří nový prázdný slovníček"
+
+#~ msgid "Download New Vocabularies..."
+#~ msgstr "Stáhnout nové slovníčky..."
+
+#~ msgid "Downloads new vocabularies"
+#~ msgstr "Stáhne nové slovníčky"
+
+#~ msgid "Saves the active vocabulary document"
+#~ msgstr "Uloží aktivní slovníček"
+
+#~ msgid "Saves the active vocabulary document with a different name"
+#~ msgstr "Uloží aktivní slovníček pod jiným jménem"
+
+#~ msgid "Closes the active vocabulary document"
+#~ msgstr "Zavře aktivní slovníček"
+
+#~ msgid "Prints the active vocabulary document"
+#~ msgstr "Vytiskne aktivní slovníček"
+
+#~ msgid "Shows a preview of the active vocabulary document"
+#~ msgstr "Zobrazí náhled na aktivní slovníček"
+
+#~ msgid "Cuts the text from the selected cells and places it on the clipboard"
+#~ msgstr "Vyjme text z vybraných buněk a vloží jej do schránky"
+
+#~ msgid ""
+#~ "Copies the text from the selected cells and places it on the clipboard"
+#~ msgstr "Zkopíruje text z vybraných buněk a vloží jej do schránky"
+
+#~ msgid ""
+#~ "Pastes previously cut or copied text from the clipboard into the selected "
+#~ "cells"
+#~ msgstr ""
+#~ "Vloží dříve vyjmutý nebo zkopírovaný text ze schránky do vybraných buněk"
+
+#~ msgid "Clears the content of the selected cells"
+#~ msgstr "Smaže obsah vybraných buněk"
+
+#~ msgid "&Insert Row"
+#~ msgstr "Vlož&it řádek"
+
+#~ msgid "Inserts a new row above the current row"
+#~ msgstr "Vloží nový řádek nad stávající"
+
+#~ msgid "&Delete Row"
+#~ msgstr "&Smazat řádek"
+
+#~ msgid "Deletes the selected row(s)"
+#~ msgstr "Smaže vybraný řádek či řádky"
+
+#~ msgid "&Mark as Blank"
+#~ msgstr "Označit jako &chybějící"
+
+#~ msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+#~ msgstr ""
+#~ "Označí vybrané slovo jako chybějící pro funkci doplňování chybějícího"
+
+#~ msgid "&Unmark Blanks"
+#~ msgstr "Zrušit c&hybějící"
+
+#~ msgid "Removes blanks from the current or selected word"
+#~ msgstr "Odstraní příznak chybějícího z vybraného slova"
+
+#~ msgid "&Column Settings..."
+#~ msgstr "Nastavení sloup&ce..."
+
+#~ msgid "Defines the column settings for the active vocabulary"
+#~ msgstr "Stanoví nastavení sloupců pro aktivní slovníček"
+
+#~ msgid "&Font..."
+#~ msgstr "&Písmo..."
+
+#~ msgid "Defines the font used by the editor"
+#~ msgstr "Stanoví písmo používané v editoru"
+
+#~ msgid "Link &Image..."
+#~ msgstr "Spojit &obrázek..."
+
+#~ msgid "Links an image with the current entry"
+#~ msgstr "Spojí obrázek se současným záznamem"
+
+#~ msgid "Link &Sound..."
+#~ msgstr "Spojit &zvuk..."
+
+#~ msgid "Links a sound with the current entry"
+#~ msgstr "Spojí zvuk se současným záznamem"
+
+#~ msgid "&Adjust Row Heights"
+#~ msgstr "&Upravit výšku řádků"
+
+#~ msgid "Automatically adjusts the height of selected rows"
+#~ msgstr "Automaticky upravit výšku vybraných řádků"
+
+#~ msgid "Sh&uffle"
+#~ msgstr "Za&míchat"
+
+#~ msgid "Shuffles the entries of the active vocabulary"
+#~ msgstr "Zamíchá položky aktivního slovníčku"
+
+#~ msgid "&Keyboard Layout"
+#~ msgstr "Rozvržení &klávesnice"
+
+#~ msgid "Shows available keyboard layouts"
+#~ msgstr "Zobrazí dostupná rozložení klávesnice"
+
+#~ msgid "Change Mode"
+#~ msgstr "Změnit režim"
+
+#~ msgid "Changes the mode used in quiz sessions"
+#~ msgstr "Změní režim používaný v sezeních kvízu"
+
+#~ msgid "Selects this mode"
+#~ msgstr "Vybírá tento režim"
+
+#~ msgctxt "@item:inlistbox activate vocabulary editor"
+#~ msgid "&Editor"
+#~ msgstr "&Editor"
+
+#~ msgid "Activates the vocabulary editor"
+#~ msgstr "Aktivuje editor slovníčku"
+
+#~ msgid "&Flashcard"
+#~ msgstr "&Kartička"
+
+#~ msgid "Starts a flashcard session using the active vocabulary"
+#~ msgstr "Zahájí karetní sezení s použitím aktivního slovníčku"
+
+#~ msgid "&Multiple Choice"
+#~ msgstr "&S nabídkou možností"
+
+#~ msgid "Starts a multiple choice session using the active vocabulary"
+#~ msgstr ""
+#~ "Zahájí sezení typu s nabídkou možností s použitím aktivního slovníčku"
+
+#~ msgid "Q&&A"
+#~ msgstr "O&&O"
+
+#~ msgid "Starts a question and answer session using the active vocabulary"
+#~ msgstr "Zahájí sezení typu otázka a odpověď s použitím aktivního slovníčku"
+
+#~ msgid "Checks your answer to this question"
+#~ msgstr "Zkontroluje vaši odpověď na tuto otázku"
+
+#~ msgid "Choose Option &1"
+#~ msgstr "Vybrat možnost &1"
+
+#~ msgid "Choose Option &2"
+#~ msgstr "Vybrat možnost &2"
+
+#~ msgid "Choose Option &3"
+#~ msgstr "Vybrat možnost &3"
+
+#~ msgid "I &Know"
+#~ msgstr "&Vím"
+
+#~ msgid "Counts this card as correct and shows the next card"
+#~ msgstr "Započítá kartu jako správně zodpovězenou a zobrazí následující"
+
+#~ msgid "I &Do Not Know"
+#~ msgstr "&Nevím"
+
+#~ msgid "Counts this card as incorrect and shows the next card"
+#~ msgstr "Započítá kartu jako nesprávně zodpovězenou a zobrazí následující"
+
+#~ msgid "Gets the next correct letter of the answer"
+#~ msgstr "Napoví zobrazením následujícího správného písmena z odpovědi"
+
+#~ msgid "Marks last answer as correct"
+#~ msgstr "Označí poslední odpověď jako správnou"
+
+#~ msgid "&Restart"
+#~ msgstr "&Znovu"
+
+#~ msgid "Restarts the quiz session from the beginning"
+#~ msgstr "Spustí kvíz znovu od začátku"
+
+#~ msgid "&Play Audio"
+#~ msgstr "&Přehrát zvuk"
+
+#~ msgid "Play associated audio"
+#~ msgstr "Přehrát připojený zvuk"
+
+#~ msgid "Repeats all incorrectly answered questions"
+#~ msgstr "Zopakuje všechny špatně zodpovězené otázky"
+
+#~ msgid "Export Errors &As..."
+#~ msgstr "Exportovat chyby &jako..."
+
+#~ msgid "Exports all errors as a new vocabulary document"
+#~ msgstr "Exportuje všechny chyby jako nový slovníček"
+
+#~ msgid "Show Se&arch"
+#~ msgstr "Zobrazit hle&dání"
+
+#~ msgid "Toggle display of the search bar"
+#~ msgstr "Přepnout zobrazení vyhledávacího panelu"
+
+#~ msgid "Configures sound and other notifications for certain events"
+#~ msgstr "Nastavení zvukových a následujících upozornění určitých událostí"
+
+#~ msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+#~ msgstr "Předvolby editoru slovníčku a sezení kvízu"
+
+#~ msgid "Special Character <numid>%1</numid>"
+#~ msgstr "Zvláštní znak <numid>%1</numid>"
+
+#~ msgid "Toggles display of the toolbars"
+#~ msgstr "Přepíná zobrazení panelů nástrojů"
+
+#~ msgid "Enter search terms here"
+#~ msgstr "Zde zadejte hledaná slova"
+
+#~ msgid "Opening file..."
+#~ msgstr "Otevírá se soubor..."
+
+#~ msgid "Open File"
+#~ msgstr "Otevřít soubor"
+
+#~ msgctxt "@info:status ready"
+#~ msgid "Ready"
+#~ msgstr "Připraveno"
+
+#~ msgid ""
+#~ "The current document has been modified.\n"
+#~ "Do you want to save it?"
+#~ msgstr ""
+#~ "Současný dokument byl upraven.\n"
+#~ "Přejete si jej uložit?"
+
+#~ msgid "Opening a new document window..."
+#~ msgstr "Otevírá se nové okno dokumentu..."
+
+#~ msgid "&Merge selected files with the current document"
+#~ msgstr "&Sloučit vybrané soubory s nynějším dokumentem"
+
+#~ msgid "Open Vocabulary Document"
+#~ msgstr "Otevřít slovníček"
+
+#~ msgid "Saving file..."
+#~ msgstr "Ukládá se soubor..."
+
+#~ msgid "Saving file with a new filename..."
+#~ msgstr "Ukládám soubor pod novým názvem..."
+
+#~ msgid "HTML Document"
+#~ msgstr "HTML dokument"
+
+#~ msgid "Save Vocabulary Document As"
+#~ msgstr "Uložit slovníček jako"
+
+#~ msgid "Closing file..."
+#~ msgstr "Zavírá se soubor..."
+
+#~ msgctxt "@info:status quitting"
+#~ msgid "Quitting..."
+#~ msgstr "Ukončuje se..."
+
+#~ msgid "Cutting selection..."
+#~ msgstr "Vyjímá se výběr..."
+
+#~ msgid "Copying selection to clipboard..."
+#~ msgstr "Kopíruje se výběr do schránky..."
+
+#~ msgid "Inserting clipboard contents..."
+#~ msgstr "Vkládá se obsah schránky..."
+
+#~ msgid "Clearing the selected cells..."
+#~ msgstr "Mažou se vybrané buňky..."
+
+#~ msgid "Inserting rows..."
+#~ msgstr "Vkládají se řádky..."
+
+#~ msgid "Deleting selected rows..."
+#~ msgstr "Mažou se vybrané řádky..."
+
+#~ msgid "Marking selected text as a blank..."
+#~ msgstr "Označuje se vybraný text jako chybějící..."
+
+#~ msgid "Removing blank markings..."
+#~ msgstr "Odstraňuje se označení chybějícího..."
+
+#~ msgid "Setting the column titles of the vocabulary..."
+#~ msgstr "Nastavují se záhlaví sloupců slovníčku..."
+
+#~ msgid "Setting the font of the vocabulary..."
+#~ msgstr "Nastavuje se písmo slovníčku..."
+
+#~ msgid "Linking an image with the current entry..."
+#~ msgstr "Spojuje se obrázek se současným záznamem..."
+
+#~ msgid "Linking a sound with the current entry..."
+#~ msgstr "Spojuje se zvuk se současným záznamem..."
+
+#~ msgid "Adjusting row heights..."
+#~ msgstr "Úprava výšky řádků..."
+
+#~ msgid "Randomizing the vocabulary..."
+#~ msgstr "Náhodně se vybírá slovníček..."
+
+#~ msgid "Updating mode..."
+#~ msgstr "Aktualizuje se režim..."
+
+#~ msgid "Starting editor session..."
+#~ msgstr "Zahajuje se sezení editoru..."
+
+#~ msgid "Starting flashcard session..."
+#~ msgstr "Zahajuje se sezení s kartičkami..."
+
+#~ msgid "Starting multiple choice session..."
+#~ msgstr "Zahajuje se sezení s nabídkou možností..."
+
+#~ msgid "Starting question & answer session..."
+#~ msgstr "Zahajuje se sezení otázek a odpovědí..."
+
+#~ msgid "Insert %1"
+#~ msgstr "Vložit %1"
+
+#~ msgid "Inserts the character %1"
+#~ msgstr "Vkládá znak %1"
+
+#~ msgid "This will restart your quiz. Do you wish to continue?"
+#~ msgstr "Tímto se restartuje váš kvíz. Přejete si pokračovat?"
+
+#~ msgid "&1 %1 -> %2 In Order"
+#~ msgstr "&1 %1 -> %2 popořadě"
+
+#~ msgid "&2 %1 -> %2 In Order"
+#~ msgstr "&2 %1 -> %2 popořadě"
+
+#~ msgid "&3 %1 -> %2 Randomly"
+#~ msgstr "&3 %1 -> %2 náhodně"
+
+#~ msgid "&4 %1 -> %2 Randomly"
+#~ msgstr "&4 %1 -> %2 náhodně"
+
+#~ msgid "&5 %1 <-> %2 Randomly"
+#~ msgstr "&5 %1 <-> %2 Náhodně"
+
+#~ msgid "%1 -> %2 In Order"
+#~ msgstr "%1 -> %2 popořadě"
+
+#~ msgid "%1 -> %2 Randomly"
+#~ msgstr "%1 -> %2 náhodně"
+
+#~ msgid "%1 &lt;-&gt; %2 Randomly"
+#~ msgstr "%1 &lt;-&gt; %2 náhodně"
+
+#~ msgid "Is this the first time KWordQuiz is run?"
+#~ msgstr "Spouštíte KWordQuiz poprvé?"
+
+#~ msgid "Toggle display of the search bar."
+#~ msgstr "Přepnout zobrazení panelu hledání."
+
+#~ msgid "Type of session to use when opening files"
+#~ msgstr "Druh sezení, který se použije při otevírání souboru"
+
+#~ msgid "Type of printout to generate"
+#~ msgstr "Druh výtisku, který bude vytvořen"
+
+#~ msgid "Titles for column 1"
+#~ msgstr "Záhlaví pro sloupec 1"
+
+#~ msgid "Titles for column 2"
+#~ msgstr "Záhlaví pro sloupec 2"
+
+#~ msgid "Font used in the editor"
+#~ msgstr "Písmo používané v editoru"
+
+#~ msgid "If Fill-in-the-blank should be enabled"
+#~ msgstr "Zda má být funkce doplňování chybějícího povolena"
+
+#~ msgid "Direction the Enter key moves in the editor"
+#~ msgstr "Směr, kterým se v editoru pohybuje pomocí klávesy Enter"
+
+#~ msgid "Characters for the special character toolbar"
+#~ msgstr "Znaky pro panel zvláštních znaků"
+
+#~ msgid "Clear all data in selected entries"
+#~ msgstr "Smazat všechna data ve vybraných záznamech"
+
+#~ msgid "Clear the text in selected entries"
+#~ msgstr "Smazat text ve vybraných záznamech"
+
+#~ msgid "Clear the image link in selected entries"
+#~ msgstr "Smazat odkaz na obrázek ve vybraných záznamech"
+
+#~ msgid "Clear the sound link in selected entries"
+#~ msgstr "Smazat odkaz na zvuk ve vybraných záznamech"
+
+#~ msgid "Treat use of hint as error"
+#~ msgstr "Považovat použití rady za chybu"
+
+#~ msgid "Count flashcard as correct or error"
+#~ msgstr "Počítat kartičku za chybnou nebo správnou"
+
+#~ msgid "Quiz mode"
+#~ msgstr "Režim kvízu"
+
+#~ msgid "Font used for front of flashcard"
+#~ msgstr "Písmo líce kartičky"
+
+#~ msgid "Color used for text on front of flashcard"
+#~ msgstr "Barva textu na líci kartičky"
+
+#~ msgid "Color used for front of flashcard"
+#~ msgstr "Barva líce kartičky"
+
+#~ msgid "Color used for frame on front of flashcard"
+#~ msgstr "Barva rámečku líce kartičky"
+
+#~ msgid "Font used for back of flashcard"
+#~ msgstr "Písmo rubu kartičky"
+
+#~ msgid "Color used for text on back of flashcard"
+#~ msgstr "Barva textu na rubu kartičky"
+
+#~ msgid "Color used for back of flashcard"
+#~ msgstr "Barva rubu kartičky"
+
+#~ msgid "Color used for frame on back of flashcard"
+#~ msgstr "Barva rámečku na rubu kartičky"
+
+#~ msgid "The Providers path for KWordQuiz"
+#~ msgstr "Poskytovatelova cesta k KWordQuiz"
+
+#~ msgid "The command used to start a downloaded vocabulary"
+#~ msgstr "Příkaz používaný ke spuštění staženého slovníčku"
+
+#~ msgid ""
+#~ "The folder where downloaded vocabularies are saved by default (relative "
+#~ "to $HOME)"
+#~ msgstr ""
+#~ "Složka, do které se automaticky ukládají stažené slovníčky (relativně "
+#~ "vůči $HOME)"
+
+#~ msgid "Pop up flashcards at fixed or random intervals"
+#~ msgstr ""
+#~ "Nechat kartičky objevit se v pevných nebo náhodných časových sledech"
+
+#~ msgid "The interval in minutes at which to pop up a flash card"
+#~ msgstr "Časový sled v minutách, v jakém se kartičky budou objevovat"
+
+#~ msgid "The minimum interval in minutes at which to pop up a flash card"
+#~ msgstr ""
+#~ "Nejkratší časový sled v minutách, v jakém se kartičky budou objevovat"
+
+#~ msgid "The maximum interval in minutes at which to pop up a flash card"
+#~ msgstr ""
+#~ "Nejdelší časový sled v minutách, v jakém se kartičky budou objevovat"
+
+#~ msgid "Geometry of the last flash card"
+#~ msgstr "Uspořádání poslední kartičky"
+
+#~ msgid "Show flash card in a native KWordQuiz style"
+#~ msgstr "Ukázat kartičku v původním stylu programu KWordQuiz"
+
+#~ msgid ""
+#~ "Last open vocabulary file to be opened automatically if none other is "
+#~ "specified on the command line"
+#~ msgstr ""
+#~ "Otevřít naposledy otevřený soubor se slovníčkem, pokud v příkazovém řádku "
+#~ "není zadán jiný"
+
+#~ msgid "Start exercise as soon as the user opens vocabulary file"
+#~ msgstr "Začít cvičení jakmile uživatel otevře soubor se slovníčkem"
+
+#~ msgctxt "@title:group general settings"
+#~ msgid "General Settings"
+#~ msgstr "Obecná nastavení"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor"
+#~ msgstr "Editor"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor Settings"
+#~ msgstr "Nastavení editoru"
+
+#~ msgctxt "@title:group quiz settings"
+#~ msgid "Quiz"
+#~ msgstr "Kvíz"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Vzhled kartiček"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance Settings"
+#~ msgstr "Nastavení vzhledu kartiček"
+
+#~ msgctxt "@title:group special character settings"
+#~ msgid "Special Characters"
+#~ msgstr "Zvláštní znaky"
+
+#~ msgid "V&ocabulary"
+#~ msgstr "Sl&ovníček"
+
+#~ msgid "&Mode"
+#~ msgstr "&Režim"
+
+#~ msgid "&Quiz"
+#~ msgstr "&Kvíz"
+
+#~ msgid "Quiz"
+#~ msgstr "Kvíz"
+
+#~ msgid "Special Characters"
+#~ msgstr "Zvláštní znaky"
+
+#~ msgctxt "@title:window"
+#~ msgid "Clear Contents"
+#~ msgstr "Smazat obsah"
+
+#~ msgctxt "@item:inmenu undo clear"
+#~ msgid "Clear"
+#~ msgstr "Smazat"
+
+#~ msgctxt "@item:inmenu undo cut"
+#~ msgid "Cut"
+#~ msgstr "Vyjmout"
+
+#~ msgctxt "@item:inmenu undo paste"
+#~ msgid "Paste"
+#~ msgstr "Vložit"
+
+#~ msgctxt "@item:inmenu undo sort"
+#~ msgid "Sort"
+#~ msgstr "Seřadit"
+
+#~ msgctxt "@item:inmenu undo insert"
+#~ msgid "Insert"
+#~ msgstr "Vložit"
+
+#~ msgctxt "@item:inmenu undo delete"
+#~ msgid "Delete"
+#~ msgstr "Smazat"
+
+#~ msgctxt "@item:inmenu undo unmark blank"
+#~ msgid "Unmark Blank"
+#~ msgstr "Zrušit chybějící"
+
+#~ msgctxt "@item:inmenu undo column titles"
+#~ msgid "Column Settings"
+#~ msgstr "Nastavení sloupce"
+
+#~ msgid "Font"
+#~ msgstr "Písmo"
+
+#~ msgid "Entry"
+#~ msgstr "Záznam"
+
+#~ msgid "Questions"
+#~ msgstr "Otázky"
+
+#~ msgid "The number of questions in the session"
+#~ msgstr "Počet otázek v sezení"
+
+#~ msgid "00"
+#~ msgstr "00"
+
+#~ msgid "Correct answers"
+#~ msgstr "Správné odpovědi"
+
+#~ msgid ""
+#~ "The number of questions answered correctly. May be shown as a percentage."
+#~ msgstr "Počet správně zodpovězených otázek. Lze zobrazit jako procento."
+
+#~ msgid ""
+#~ "The number of questions answered incorrectly. May be shown as a "
+#~ "percentage."
+#~ msgstr "Počet nesprávně zodpovězených otázek. Lze zobrazit jako procento."
+
+#~ msgid "Answered questions"
+#~ msgstr "Zodpovězené otázky"
+
+#~ msgid ""
+#~ "The number of questions already answered. May be shown as a percentage."
+#~ msgstr "Počet již zodpovězených otázek. Lze zobrazit jako procento."
+
+#~ msgid "Untitled"
+#~ msgstr "Bez názvu"
+
+#~ msgid "There is an error with the Fill-in-the-blank brackets"
+#~ msgstr "V závorkách pro doplňování chybějícího je chyba"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Sound"
+#~ msgstr "Vyberte zvuk"
+
+#~ msgid "All Files (*)"
+#~ msgstr "Všechny soubory (*)"
+
+#~ msgid ""
+#~ "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that "
+#~ "allows you to set a certain time interval at which flashcards will pop up."
+#~ "<br /><br />The flashcards pop up in a non-intrusive way allowing you to "
+#~ "carry on working without stealing the focus from other programs you might "
+#~ "be working with.<br /><br />Be sure to right-click KWordQuiz Tutor icon "
+#~ "on the panel and select Preferences. There you can assign keyboard "
+#~ "shortcuts.</qt>"
+#~ msgstr ""
+#~ "<qt>Domácí učitel programu KWordQuiz na vaší obrazovce zobrazuje pomocné "
+#~ "kartičky způsobem, který vám umožní nastavit určitý časový sled, ve "
+#~ "kterém se kartičky budou objevovat.<br /><br />Pomocné kartičky se "
+#~ "objevují způsobem, který neruší, čímž vám umožňují pokračovat v práci, "
+#~ "aniž byste přicházel o soustředění se na další programy, se kterými byste "
+#~ "snad mohl pracovat.<br /><br />Klikněte pravým tlačítkem myši na ikonu "
+#~ "domácího učitele KWordQuiz v panelu a vyberte Nastavení. Zde můžete si "
+#~ "vybrat přiřazení klávesových zkratek.</qt>"
+
+#~ msgid "Tutor"
+#~ msgstr "Výuka"
+
+#~ msgid "Start Exercise"
+#~ msgstr "Začít cvičení"
+
+#~ msgid "Configure KWordQuiz Tutor..."
+#~ msgstr "Nastavit výuku programu KWordQuiz..."
+
+#~ msgid "Close Flash Card"
+#~ msgstr "Zavřít kartičku"
+
+#~ msgid "Flip Flash Card"
+#~ msgstr "Obrátit kartičku"
+
+#~ msgid "Stop Exercise"
+#~ msgstr "Zastavit cvičení"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor"
+#~ msgstr "Výuka"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor Settings"
+#~ msgstr "Nastavení výuky"
+
+#~ msgctxt "Shortcuts Config"
+#~ msgid "Shortcuts"
+#~ msgstr "Klávesové zkratky"
+
+#~ msgid "Shortcuts Settings"
+#~ msgstr "Nastavení zkratek"
+
+#~ msgid ""
+#~ "A number 1-5 corresponding to the \n"
+#~ "entries in the Mode menu"
+#~ msgstr ""
+#~ "Číslo 1-5 odpovídající\n"
+#~ "položkám v nabídce Režim"
+
+#~ msgid "Previous Question"
+#~ msgstr "Předchozí otázka"
+
+#~ msgid "Your Answer"
+#~ msgstr "Vaše odpověď"
+
+#~ msgid "Summary"
+#~ msgstr "Shrnutí"
+
+#~ msgid "The question"
+#~ msgstr "Otázka"
+
+#~ msgid "Language or other identifier for the question"
+#~ msgstr "Jazyk nebo jiný identifikátor otázky"
+
+#~ msgid "This is your question"
+#~ msgstr "Toto je vaše otázka"
+
+#~ msgid "Your choices"
+#~ msgstr "Vaše možnosti"
+
+#~ msgid "Three choices for the answer. One is correct."
+#~ msgstr "Tři možné odpovědi. Jen jedna je ale správná."
+
+#~ msgid "&1 Option"
+#~ msgstr "&1 možnost"
+
+#~ msgid "Language or other identifier for the answer"
+#~ msgstr "Jazyk nebo jiný identifikátor otázky"
+
+#~ msgid "Language 2"
+#~ msgstr "Jazyk 2"
+
+#~ msgid "&3 Option"
+#~ msgstr "&3 možnost"
+
+#~ msgid "Previous question"
+#~ msgstr "Předchozí otázka"
+
+#~ msgid "The previous question"
+#~ msgstr "Předchozí otázka"
+
+#~ msgid "This was your question"
+#~ msgstr "Toto byla vaše otázka"
+
+#~ msgid "Your previous answer"
+#~ msgstr "Vaše předchozí odpověď"
+
+#~ msgid "Your answer to the previous question"
+#~ msgstr "Vaše odpověď na předchozí otázku"
+
+#~ msgid "This was your answer"
+#~ msgstr "Toto byla vaše odpověď"
+
+#~ msgid "Previous correct answer"
+#~ msgstr "Předchozí správná odpověď"
+
+#~ msgid "The correct answer to the previous question"
+#~ msgstr "Správná odpověď na předchozí otázku"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least three entries for a multiple choice quiz.</html>"
+#~ msgstr ""
+#~ "<html>Ve vašem slovníčku je příliš málo položek.<br />Pro kvíz s nabídkou "
+#~ "možností potřebujete alespoň tři záznamy.</html>"
+
+#~ msgctxt "Back of the flashcard"
+#~ msgid "Back"
+#~ msgstr "Rub"
+
+#~ msgid "Front"
+#~ msgstr "Přední strana"
+
+#~ msgid "Card Appearance"
+#~ msgstr "Vzhled kartičky"
+
+#~ msgid "Flip card"
+#~ msgstr "Obrátit kartičku"
+
+#~ msgid "Use to show the other side of the card"
+#~ msgstr "Slouží k ukázání druhé strany kartičky"
+
+#~ msgid "&Flip Card"
+#~ msgstr "&Obrátit kartičku"
+
+#~ msgid "F&ont:"
+#~ msgstr "Písm&o:"
+
+#~ msgid "Use to select the font for displaying text on the back of the card"
+#~ msgstr "Slouží k volbě písma na rubu kartičky"
+
+#~ msgid "Select text color"
+#~ msgstr "Zvolte barvu textu"
+
+#~ msgid "Use to select the color for text shown on the card"
+#~ msgstr "Slouží k volbě barvy textu na kartičce"
+
+#~ msgid "Select card frame color"
+#~ msgstr "Zvolte barvu rámečku kartičky"
+
+#~ msgid "Use to select the color for drawing the frame of the card"
+#~ msgstr "Slouží k volbě barvy rámečku kartičky"
+
+#~ msgid "Select card color"
+#~ msgstr "Zvolte barvu kartičky"
+
+#~ msgid "Select color used to draw the card"
+#~ msgstr "Zvolte barvu kartičky"
+
+#~ msgid "Use to select the font for displaying text on the front of the card"
+#~ msgstr "Slouží k volbě písma na lící kartičky"
+
+#~ msgid "&Text color:"
+#~ msgstr "Barva &textu:"
+
+#~ msgid "&Card color:"
+#~ msgstr "&Barva kartičky:"
+
+#~ msgid "Fra&me color:"
+#~ msgstr "Barva rá&mečku:"
+
+#~ msgid "Action"
+#~ msgstr "Činnost"
+
+#~ msgid "Shortcut"
+#~ msgstr "Zkratka"
+
+#~ msgid "Character"
+#~ msgstr "Znak"
+
+#~ msgid "Special Character %1"
+#~ msgstr "Zvláštní znak %1"
+
+#~ msgid ""
+#~ "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+#~ "associated with each action."
+#~ msgstr ""
+#~ "Poznámka: Volbou Nastavení -> Přizpůsobit klávesové zkratky... můžete "
+#~ "změnit zkratky spojené s jednotlivými činnostmi."
+
+#~ msgid "Select character to modify"
+#~ msgstr "Zvolte znak, který si přejete změnit"
+
+#~ msgid "Customizable special character actions"
+#~ msgstr "Nastavitelné zvláštní činnosti znaků"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "Click to choose a new character"
+#~ msgstr "Klikněte pro výběr nového znaku"
+
+#~ msgid "Choose a character for the selected action"
+#~ msgstr "Zvolte znak pro vybranou činnost"
+
+#~ msgid "C&haracter..."
+#~ msgstr "&Znak..."
+
+#~ msgid "Preview of current character"
+#~ msgstr "Náhled aktuálního znaku"
+
+#~ msgid "Preview of the character associated with the selected action"
+#~ msgstr "Náhled znaku spojeného s vybranou činností"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "How enter key moves"
+#~ msgstr "Směr pohybu klávesou Enter"
+
+#~ msgid "Select how the Enter key should behave in the editor"
+#~ msgstr "Zvolte, jak se má v editoru chovat klávesa Enter"
+
+#~ msgid "Enter Ke&y Moves"
+#~ msgstr "Pohyb klávesou &Enter"
+
+#~ msgid ""
+#~ "Select if the next cell below should become active when pressing Enter."
+#~ msgstr "Zvolte, pokud se má při stisku Enter aktivovat textová buňka níže."
+
+#~ msgid "&Down"
+#~ msgstr "&Dolů"
+
+#~ msgid ""
+#~ "Select if the next cell to the right should become active when pressing "
+#~ "Enter"
+#~ msgstr "Zvolte, pokud se má při stisku Enter aktivovat textová buňka vpravo"
+
+#~ msgid "&Right"
+#~ msgstr "Vp&ravo"
+
+#~ msgid "Select if the current cell should remain active when pressing Enter"
+#~ msgstr ""
+#~ "Zvolte, pokud se má při stisku Enter zachovat aktivní stávající textová "
+#~ "buňka"
+
+#~ msgid "Does not &move"
+#~ msgstr "Nepo&hybuje se"
+
+#~ msgid "Check to enable fill-in-the-blank"
+#~ msgstr "Zaškrtněte pro povolení funkce doplňování chybějícího"
+
+#~ msgid "Select to enable the functions for Fill-in-the-blank"
+#~ msgstr "Zvolte pro povolení funkce doplňování chybějícího"
+
+#~ msgid "E&nable fill-in-the-blank"
+#~ msgstr "Povolit &doplňování chybějícího"
+
+#~ msgid "How vocabulary documents are opened"
+#~ msgstr "Způsob otevírání slovníčků"
+
+#~ msgid "Select the kind of session to load an opened vocabulary document in"
+#~ msgstr "Zvolte druh sezení pro načítání otevřeného slovníku"
+
+#~ msgid "&Open Vocabulary Documents in"
+#~ msgstr "&Otevřít slovníčky"
+
+#~ msgid "Open vocabulary documents in the editor"
+#~ msgstr "Otevřít slovníčky v editoru"
+
+#~ msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgstr "Zvolte, pokud si přejete slovníčky otevřít v editoru"
+
+#~ msgid "&Editor"
+#~ msgstr "&Editor"
+
+#~ msgid "Open vocabulary documents in a flashcard quiz"
+#~ msgstr "Otevřít slovníčky v kvízu s kartičkami"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
+#~ msgstr "Zvolte, pokud si přejete slovníčky v kvízu s kartičkami"
+
+#~ msgid "&Flashcard Quiz"
+#~ msgstr "&Kvíz s kartičkami"
+
+#~ msgid "Open vocabulary documents in a multiple choice quiz"
+#~ msgstr "Otevřít slovníčky v kvízu s nabídkou možností"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a multiple choice "
+#~ "quiz"
+#~ msgstr ""
+#~ "Zvolte, pokud si přejete slovníčky otevřít v kvízu s nabídkou možností"
+
+#~ msgid "&Multiple Choice Quiz"
+#~ msgstr "&Kvíz s nabídkou možností"
+
+#~ msgid "Open vocabulary documents in a question and answer quiz"
+#~ msgstr "Otevřít slovníčky v kvízu s otázkami a odpověďmi"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a question and "
+#~ "answer quiz"
+#~ msgstr ""
+#~ "Zvolte, pokud si přejete slovníčky otevřít v kvízu s otázkami a odpověďmi"
+
+#~ msgid "&Question and Answer Quiz"
+#~ msgstr "&Kvíz s otázkami a odpověďmi"
+
+#~ msgid "Specify behavior for a question and answer session"
+#~ msgstr "Určete chování pro sezení typu otázka a odpověď"
+
+#~ msgid "Question && Answer"
+#~ msgstr "Otázka a odpověď"
+
+#~ msgid ""
+#~ "Select if questions where the hint function has been used should be "
+#~ "counted as errors"
+#~ msgstr ""
+#~ "Zvolte, pokud se mají otázky, u kterých byla použita rada, považovat za "
+#~ "chybně zodpovězené"
+
+#~ msgid "&Treat hint as error"
+#~ msgstr "&Radu považovat za chybu"
+
+#~ msgid "Specify behavior of the score presentation in any session"
+#~ msgstr "Nastavte zobrazování skóre v libovolném sezení"
+
+#~ msgid "Check to show score as a percentage"
+#~ msgstr "Zaškrtněte pro zobrazování skóre v procentech"
+
+#~ msgid "Select if the score should be shown as a percentage"
+#~ msgstr "Zvolte, pokud se má skóre zobrazovat jako procenta"
+
+#~ msgid "&Show score as a percentage"
+#~ msgstr "Zobrazovat skóre jako &procenta"
+
+#~ msgid "Specify behavior for a multiple choice session"
+#~ msgstr "Určete chování sezení typu s nabídkou možností"
+
+#~ msgid "Check to correct automatically"
+#~ msgstr "Zaškrtněte pro automatické opravy"
+
+#~ msgid "Select if a choice should be checked immediately"
+#~ msgstr "Zvolte, pokud má být výběr okamžitě zkontrolován"
+
+#~ msgid "Check selection a&utomatically"
+#~ msgstr "Zkontrolovat výběr a&utomaticky"
+
+#~ msgid "Specify behavior of a flashcard session"
+#~ msgstr "Určete chování sezení typu Kartička"
+
+#~ msgid "Specify the amount of time between card flips"
+#~ msgstr "Nastavte množství času mezi obrácením karty"
+
+#~ msgid "seconds and"
+#~ msgstr "sekundách a"
+
+#~ msgid "Delay to flip card"
+#~ msgstr "Prodlení v obrácení karty"
+
+#~ msgid "Delay in seconds to flip card"
+#~ msgstr "Prodlení v obrácení karty v sekundách"
+
+#~ msgid "Select how to count card"
+#~ msgstr "Zvolte, jak kartu započítat"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as correct when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Zvolte, pokud má být předchozí karta považována za správně zodpovězenou, "
+#~ "při přesunu na následující kartu"
+
+#~ msgid "Count &as correct"
+#~ msgstr "Počítat za &správné"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as incorrect when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Zvolte, pokud má být předchozí karta považována za nesprávně "
+#~ "zodpovězenou, při přesunu na následující kartu"
+
+#~ msgid "Count as &error"
+#~ msgstr "Počítat za &chybné"
+
+#~ msgid "Check to flip card automatically"
+#~ msgstr "Zaškrtněte pro automatické obracení karet"
+
+#~ msgid ""
+#~ "Select if you want a card to turn over automatically after the given "
+#~ "amount of time"
+#~ msgstr ""
+#~ "Zvolte, pokud si přejete, aby po uplynutí určitého času byly karty "
+#~ "automaticky obraceny"
+
+#~ msgid "&Flip card automatically after"
+#~ msgstr "&Obrátit karty automaticky po"
+
+#~ msgid "Tutor Timing"
+#~ msgstr "Načasování výuky"
+
+#~ msgid "&Every"
+#~ msgstr "&Každých"
+
+#~ msgid "&minutes"
+#~ msgstr "&minut"
+
+#~ msgid "&Randomly"
+#~ msgstr "&Náhodně"
+
+#~ msgid "Between"
+#~ msgstr "Mezi"
+
+#~ msgid "m&inutes and"
+#~ msgstr "m&inutami a"
+
+#~ msgid "mi&nutes"
+#~ msgstr "mi&nut"
+
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Vzhled kartiček"
+
+#~ msgid "&Native"
+#~ msgstr "&Původní"
+
+#~ msgid "Minim&alistic"
+#~ msgstr "Minim&alistický"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Různé"
+
+#~ msgid "S&tart exercise as soon as vocabulary file is opened"
+#~ msgstr "Začít cvičení jakmile je soubor se slovníčkem otevřen"
+
+#~ msgid "Type your answer"
+#~ msgstr "Napište odpověď"
+
+#~ msgid "The answer showing blanks for a Fill-in-the-blank question"
+#~ msgstr "Odpověď obsahující prázdná místo pro funkci doplňování chybějícího"
+
+#~ msgid "This is _____ answer"
+#~ msgstr "toto je _____ odpověď"
+
+#~ msgid "Type the answer to the question"
+#~ msgstr "Napište odpověď na otázku"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a question and answer quiz.</html>"
+#~ msgstr ""
+#~ "<html>Ve vašem slovníčku je příliš málo položek.<br />Potřebujete alespoň "
+#~ "jeden záznam pro kvíz s otázkami a odpověďmi.</html>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Vocabulary Options"
+#~ msgstr "Volby slovníku"
+
+#~ msgid "Select Type of Printout"
+#~ msgstr "Zvolte typ výtisku"
+
+#~ msgid "Vocabulary &list"
+#~ msgstr "Seznam s&lovíček"
+
+#~ msgid "Select to print the vocabulary as displayed in the editor"
+#~ msgstr ""
+#~ "Zvolte, pokud si přejete slovníček vytisknout tak, jak je zobrazen v "
+#~ "editoru"
+
+#~ msgid "Vocabulary e&xam"
+#~ msgstr "Z&kouška slovíček"
+
+#~ msgid "Select to print the vocabulary as a vocabulary exam"
+#~ msgstr "Zvolte, pokud si přejete slovníček vytisknout pro zkoušení slovíček"
+
+#~ msgid "&Flashcards"
+#~ msgstr "&Kartičky"
+
+#~ msgid "Select to print flashcards"
+#~ msgstr "Zvolte, pokud si přejete tisknout karty"

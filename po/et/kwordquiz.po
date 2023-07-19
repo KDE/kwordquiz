@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:43+0000\n"
+"POT-Creation-Date: 2023-07-19 00:45+0000\n"
 "PO-Revision-Date: 2019-11-11 20:18+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -28,1575 +28,102 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "qiilaq69@gmail.com"
 
-#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
-#: cleardialogbase.ui:21
-#, kde-format
-msgid "Selection"
-msgstr "Valik"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:30
-#, kde-format
-msgid "Delete all information in selected entries"
-msgstr "Kogu teabe kustutamine valitud kirjetest"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:33
-#, kde-format
-msgid "When checked all information will be deleted from the selected entries"
-msgstr "Märkimise korral kustutatakse valitud kirjetest kogu teave"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:36
-#, kde-format
-msgid "Clear &All"
-msgstr "Puhasta &kõik"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:59
-#, kde-format
-msgid "Delete the text from selected entries"
-msgstr "Teksti kustutamine valitud kirjetest"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:62
-#, kde-format
-msgid "When checked the text will be deleted from selected entries"
-msgstr "Märkimise korral kustutatakse valitud kirjetest tekst"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:65
-#, kde-format
-msgid "&Text"
-msgstr "&Tekst"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:72
-#, kde-format
-msgid "Delete the image link from selected entries"
-msgstr "Pildilingi kustutamine valitud kirjetest"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:75
-#, kde-format
-msgid "When checked the image link will be deleted from selected entries"
-msgstr "Märkimise korral kustutatakse valitud kirjetest pildilink"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:78
-#, kde-format
-msgid "&Image Links"
-msgstr "P&ildilingid"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:85
-#, kde-format
-msgid "Delete the sound link from selected entries"
-msgstr "Helilingi kustutamine valitud kirjetest"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:88
-#, kde-format
-msgid "When checked the sound link will be deleted from selected entries"
-msgstr "Märkimise korral kustutatakse valitud kirjetest helilink"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:91
-#, kde-format
-msgid "&Sound Links"
-msgstr "&Helilingid"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
-#, kde-format
-msgid "Column 1"
-msgstr "Veerg 1"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
-#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
-#, kde-format
-msgid "Title for the left column"
-msgstr "Vasaku veeru tiitel"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
-#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
-#, kde-format
-msgid "Enter a title (identifier) for the left column"
-msgstr "Sisesta vasaku veeru tiitel (identifikaator)"
-
-#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
-#: columndialogbase.ui:96
-#, kde-format
-msgid "&Title:"
-msgstr "&Pealkiri:"
-
-#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
-#: columndialogbase.ui:112
-#, fuzzy, kde-format
-#| msgid "&Keyboard Layout:"
-msgid "&Keyboard layout:"
-msgstr "&Klaviatuuripaigutus:"
-
-#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
-#: columndialogbase.ui:128
-#, kde-format
-msgid "&Width:"
-msgstr "&Laius:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:158
-#, kde-format
-msgid "Keyboard layout for the left column"
-msgstr "Vasaku veeru klaviatuuripaigutus"
-
-#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:161
-#, kde-format
-msgid "Select a keyboard layout for the left column"
-msgstr "Vasaku veeru klaviatuuripaigutus"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:168
-#, kde-format
-msgid "Width of the left column"
-msgstr "Vasaku veeru laius"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:171
-#, kde-format
-msgid "Enter the width (in pixels) for the left column"
-msgstr "Sisesta vasaku veeru laius (pikslites)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
-#, kde-format
-msgid "Column 2"
-msgstr "Veerg 2"
-
-#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
-#: columndialogbase.ui:265
-#, kde-format
-msgid "T&itle:"
-msgstr "P&ealkiri:"
-
-#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
-#: columndialogbase.ui:281
-#, kde-format
-msgid "Keyboard &Layout:"
-msgstr "K&laviatuuripaigutus:"
-
-#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
-#: columndialogbase.ui:297
-#, kde-format
-msgid "Wi&dth:"
-msgstr "Lai&us:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:317
-#, kde-format
-msgid "Title for the right column"
-msgstr "Parema veeru tiitel"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:320
-#, kde-format
-msgid "Enter a title (identifier) for the right column"
-msgstr "Sisesta parema veeru tiitel (identifikaator)"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:330
-#, kde-format
-msgid "Width of the right column"
-msgstr "Parema veeru laius"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:333
-#, kde-format
-msgid "Enter the width (in pixels) for the right column"
-msgstr "Sisesta parema veeru laius (pikslites)"
-
-#: dlglanguage.cpp:21
-#, fuzzy, kde-format
-#| msgid "Column Settings"
-msgctxt "@title:window"
-msgid "Column Settings"
-msgstr "Veeru seadistused"
-
-#: dlgspecchar.cpp:17
-#, kde-format
-msgctxt "@title:window select character dialog"
-msgid "Select Character"
-msgstr "Sümboli valik"
-
-#: dlgspecchar.cpp:41
-#, kde-format
-msgctxt "@action:button"
-msgid "&Select"
-msgstr "&Vali"
-
-#: dlgspecchar.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Select this character"
-msgstr "Vali see sümbol"
-
-#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:12
-#, kde-format
-msgid "Column widths"
-msgstr "Veergude laius"
-
-#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:18
-#, kde-format
-msgid "Keyboard layouts"
-msgstr "Klaviatuuripaigutused"
-
-#: filterproxysearchline.cpp:23
-#, kde-format
-msgid "Search"
-msgstr "Otsing"
-
-#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
-#, kde-format
-msgid "Your answer was correct!"
-msgstr "Sinu vastus on õige!"
-
-#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
-#, kde-format
-msgid "Your answer was incorrect."
-msgstr "Sinu vastus ei ole õige."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: flashviewbase.ui:149
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a flashcard quiz.</html>"
-msgstr ""
-"<html>Sinu sõnavaras on liiga vähe kirjeid.<br />Sähvikuviktoriiniks on vaja "
-"vähemalt üht kirjet.</html>"
-
-#: kwordquiz.cpp:100
-#, kde-format
-msgid "Creates a new blank vocabulary document"
-msgstr "Loob uue tühja sõnavaradokumendi"
-
-#: kwordquiz.cpp:105
-#, kde-format
-msgid "Opens an existing vocabulary document"
-msgstr "Avab olemasoleva sõnavaradokumendi"
-
-#: kwordquiz.cpp:111
-#, kde-format
-msgid "Download New Vocabularies..."
-msgstr "Laadi alla uut sõnavara..."
-
-#: kwordquiz.cpp:115
-#, kde-format
-msgid "Downloads new vocabularies"
-msgstr "Tõmbab internetist uut sõnavara"
-
-#: kwordquiz.cpp:120
-#, kde-format
-msgid "Saves the active vocabulary document"
-msgstr "Salvestab aktiivse sõnavaradokumendi"
-
-#: kwordquiz.cpp:125
-#, kde-format
-msgid "Saves the active vocabulary document with a different name"
-msgstr "Salvestab aktiivse sõnavaradokumendi uue nimega"
-
-#: kwordquiz.cpp:130
-#, kde-format
-msgid "Closes the active vocabulary document"
-msgstr "Sulgeb aktiivse sõnavaradokumendi"
-
-#: kwordquiz.cpp:134
-#, kde-format
-msgid "Prints the active vocabulary document"
-msgstr "Trükib aktiivse sõnavaradokumendi"
-
-#: kwordquiz.cpp:139
-#, kde-format
-msgid "Shows a preview of the active vocabulary document"
-msgstr "Aktiivse sõnavaradokumendi eelvaatluse näitamine"
-
-#: kwordquiz.cpp:144
-#, kde-format
-msgid "Quits KWordQuiz"
-msgstr "Sulgeb KWordQuizi"
-
-#: kwordquiz.cpp:156
-#, kde-format
-msgid "Cuts the text from the selected cells and places it on the clipboard"
-msgstr "Lõikab teksti valitud lahtritest ja asetab lõikepuhvrisse"
-
-#: kwordquiz.cpp:161
-#, kde-format
-msgid "Copies the text from the selected cells and places it on the clipboard"
-msgstr "Kopeerib teksti valitud lahtritest ja asetab lõikepuhvrisse"
-
-#: kwordquiz.cpp:166
-#, kde-format
-msgid ""
-"Pastes previously cut or copied text from the clipboard into the selected "
-"cells"
-msgstr "Asetab varem lõigatud või kopeeritud teksti valitud lahtri(te)sse"
-
-#: kwordquiz.cpp:172
-#, kde-format
-msgid "Clears the content of the selected cells"
-msgstr "Puhastab valitud lahtrite sisu"
-
-#: kwordquiz.cpp:178
-#, kde-format
-msgid "&Insert Row"
-msgstr "L&isa rida"
-
-#: kwordquiz.cpp:180
-#, kde-format
-msgid "Inserts a new row above the current row"
-msgstr "Lisab rea aktiivse rea kohale"
-
-#: kwordquiz.cpp:187
-#, kde-format
-msgid "&Delete Row"
-msgstr "Kustuta ri&da"
-
-#: kwordquiz.cpp:189
-#, kde-format
-msgid "Deletes the selected row(s)"
-msgstr "Kustutab valitud rea(d)"
-
-#: kwordquiz.cpp:196
-#, kde-format
-msgid "&Mark as Blank"
-msgstr "&Märgi tühikutega sõnaks"
-
-#: kwordquiz.cpp:198
-#, kde-format
-msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-msgstr "Märgib aktiivse või valitud sõna täidetavate tühikutega sõnaks"
-
-#: kwordquiz.cpp:205
-#, kde-format
-msgid "&Unmark Blanks"
-msgstr "&Eemalda tühikud"
-
-#: kwordquiz.cpp:206
-#, kde-format
-msgid "Removes blanks from the current or selected word"
-msgstr "Eemaldab aktiivselt või valitud sõnalt tühikud"
-
-#: kwordquiz.cpp:213
-#, kde-format
-msgid "&Column Settings..."
-msgstr "&Veeru seadistused..."
-
-#: kwordquiz.cpp:215
-#, kde-format
-msgid "Defines the column settings for the active vocabulary"
-msgstr "Määrab aktiivse sõnavara veeru seadistused"
-
-#: kwordquiz.cpp:222
-#, kde-format
-msgid "&Font..."
-msgstr "&Font..."
-
-#: kwordquiz.cpp:223
-#, kde-format
-msgid "Defines the font used by the editor"
-msgstr "Määrab redaktoris kasutatava fondi"
-
-#: kwordquiz.cpp:230
-#, kde-format
-msgid "Link &Image..."
-msgstr "L&ingi pilt..."
-
-#: kwordquiz.cpp:231
-#, kde-format
-msgid "Links an image with the current entry"
-msgstr "Pildi linkimine aktiivse kirjega"
-
-#: kwordquiz.cpp:238
-#, kde-format
-msgid "Link &Sound..."
-msgstr "Lin&gi heli..."
-
-#: kwordquiz.cpp:239
-#, kde-format
-msgid "Links a sound with the current entry"
-msgstr "Heli linkimine aktiivse kirjega"
-
-#: kwordquiz.cpp:246
-#, kde-format
-msgid "&Adjust Row Heights"
-msgstr "&Kohenda ridade kõrgust"
-
-#: kwordquiz.cpp:247
-#, kde-format
-msgid "Automatically adjusts the height of selected rows"
-msgstr "Kohendab automaatselt valitud ridade kõrgust"
-
-#: kwordquiz.cpp:254
-#, kde-format
-msgid "Sh&uffle"
-msgstr "S&ega"
-
-#: kwordquiz.cpp:255
-#, kde-format
-msgid "Shuffles the entries of the active vocabulary"
-msgstr "Segab aktiivse sõnavaradokumendi kirjed"
-
-#: kwordquiz.cpp:261
-#, kde-format
-msgid "&Keyboard Layout"
-msgstr "&Klaviatuuripaigutus"
-
-#: kwordquiz.cpp:262
-#, kde-format
-msgid "Shows available keyboard layouts"
-msgstr "Saadaolevate klaviatuuripaigutuste näitamine"
-
-#: kwordquiz.cpp:273
-#, kde-format
-msgid "Change Mode"
-msgstr "Muuda režiimi"
-
-#: kwordquiz.cpp:274
-#, kde-format
-msgid "Mode"
-msgstr "Režiim"
-
-#: kwordquiz.cpp:275
-#, kde-format
-msgid "Changes the mode used in quiz sessions"
-msgstr "Muudab viktoriiniseansi režiimi"
-
-#: kwordquiz.cpp:288
-#, kde-format
-msgid "Selects this mode"
-msgstr "Valib selle režiimi"
-
-#: kwordquiz.cpp:297
-#, kde-format
-msgctxt "@item:inlistbox activate vocabulary editor"
-msgid "&Editor"
-msgstr "R&edaktor"
-
-#: kwordquiz.cpp:299
-#, kde-format
-msgid "Activates the vocabulary editor"
-msgstr "Aktiveerib sõnavara redaktori"
-
-#: kwordquiz.cpp:306
-#, kde-format
-msgid "&Flashcard"
-msgstr "Sä&hvik"
-
-#: kwordquiz.cpp:308
-#, kde-format
-msgid "Starts a flashcard session using the active vocabulary"
-msgstr "Käivitab sähvikuseansi aktiivse sõnavaradokumendiga"
-
-#: kwordquiz.cpp:315
-#, kde-format
-msgid "&Multiple Choice"
-msgstr "&Mitu valikut"
-
-#: kwordquiz.cpp:317
-#, kde-format
-msgid "Starts a multiple choice session using the active vocabulary"
-msgstr "Käivitab mitme valikuga seansi aktiivse sõnavaradokumendiga"
-
-#: kwordquiz.cpp:324
-#, kde-format
-msgid "&Question and Answer"
-msgstr "&Küsimused ja vastused"
-
-#: kwordquiz.cpp:325
-#, kde-format
-msgid "Q&&A"
-msgstr "K/V"
-
-#: kwordquiz.cpp:327
-#, kde-format
-msgid "Starts a question and answer session using the active vocabulary"
-msgstr "Käivitab küsimuse-vastuse seansi aktiivse sõnavaradokumendiga"
-
-#: kwordquiz.cpp:334
-#, kde-format
-msgid "&Check"
-msgstr "K&ontrolli"
-
-#: kwordquiz.cpp:336
-#, kde-format
-msgid "Checks your answer to this question"
-msgstr "Kontrollib küsimusele antud vastust"
-
-#: kwordquiz.cpp:341
-#, kde-format
-msgid "Choose Option &1"
-msgstr "Vali valik &1"
-
-#: kwordquiz.cpp:345
-#, kde-format
-msgid "Choose Option &2"
-msgstr "Vali valik &2"
-
-#: kwordquiz.cpp:349
-#, kde-format
-msgid "Choose Option &3"
-msgstr "Vali valik &3"
-
-#: kwordquiz.cpp:354
-#, kde-format
-msgid "I &Know"
-msgstr "M&a tean"
-
-#: kwordquiz.cpp:356
-#, kde-format
-msgid "Counts this card as correct and shows the next card"
-msgstr "Märgib sähviku õigesti vastatuks ja näitab uut sähvikut"
-
-#: kwordquiz.cpp:362
-#, kde-format
-msgid "I &Do Not Know"
-msgstr "Ma &ei tea"
-
-#: kwordquiz.cpp:364
-#, kde-format
-msgid "Counts this card as incorrect and shows the next card"
-msgstr "Märgib sähviku valesti vastatuks ja näitab uut sähvikut"
-
-#: kwordquiz.cpp:370
-#, kde-format
-msgid "&Hint"
-msgstr "&Vihje"
-
-#: kwordquiz.cpp:372
-#, kde-format
-msgid "Gets the next correct letter of the answer"
-msgstr "Avab vastuses ühe õige tähe"
-
-#: kwordquiz.cpp:378
-#, kde-format
-msgid "Mark Last Correct"
-msgstr "Märgi viimane õigeks"
-
-#: kwordquiz.cpp:380
-#, kde-format
-msgid "Marks last answer as correct"
-msgstr "Viimase vastuse märkimine õigeks"
-
-#: kwordquiz.cpp:386
-#, kde-format
-msgid "&Restart"
-msgstr "Alusta &uuesti"
-
-#: kwordquiz.cpp:388
-#, kde-format
-msgid "Restarts the quiz session from the beginning"
-msgstr "Käivitab viktoriiniseansi uuesti algusest"
-
-#: kwordquiz.cpp:394
-#, kde-format
-msgid "&Play Audio"
-msgstr "Esita &heli"
-
-#: kwordquiz.cpp:396
-#, kde-format
-msgid "Play associated audio"
-msgstr "Seostatud heli esitamine"
-
-#: kwordquiz.cpp:402
-#, kde-format
-msgid "Repeat &Errors"
-msgstr "Kor&da vigaseid"
-
-#: kwordquiz.cpp:404
-#, kde-format
-msgid "Repeats all incorrectly answered questions"
-msgstr "Kordab kõiki vigaselt vastatud küsimusi"
-
-#: kwordquiz.cpp:410
-#, kde-format
-msgid "Export Errors &As..."
-msgstr "Ekspordi ve&ad kui..."
-
-#: kwordquiz.cpp:411
-#, kde-format
-msgid "Exports all errors as a new vocabulary document"
-msgstr "Ekspordib kõik vead uue sõnavaradokumendina"
-
-#: kwordquiz.cpp:417
-#, kde-format
-msgid "Show Se&arch"
-msgstr "&Otsingu näitamine"
-
-#: kwordquiz.cpp:419
-#, kde-format
-msgid "Toggle display of the search bar"
-msgstr "Lülitab otsinguriba näitamist"
-
-#: kwordquiz.cpp:424
-#, kde-format
-msgid "Configures sound and other notifications for certain events"
-msgstr "Seadistab teatud sündmuste helisid ja muid märguandeid"
-
-#: kwordquiz.cpp:429
-#, kde-format
-msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-msgstr "Määrab sõnavara redaktori ja viktoriiniseansside seadistused"
-
-#: kwordquiz.cpp:435
-#, kde-format
-msgid "Special Character <numid>%1</numid>"
-msgstr "Erimärk <numid>%1</numid>"
-
-#: kwordquiz.cpp:447
-#, kde-format
-msgid "Toggles display of the toolbars"
-msgstr "Lülitab tööriistaribade näitamist"
-
-#: kwordquiz.cpp:500
-#, kde-format
-msgid "Enter search terms here"
-msgstr "Kirjuta siia otsingusõna"
-
-#: kwordquiz.cpp:523
-#, kde-format
-msgctxt "@item:inlistbox vocabulary editor"
-msgid "Editor"
-msgstr "Redaktor"
-
-#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:188
-#, kde-format
-msgid "Flashcard"
-msgstr "Sähvik"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:148
-#, kde-format
-msgid "Multiple Choice"
-msgstr "Mitmene valik"
-
-#: kwordquiz.cpp:536
-#, kde-format
-msgid "Question & Answer"
-msgstr "Küsimus ja vastus"
-
-#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
-#, kde-format
-msgid "Opening file..."
-msgstr "Faili avamine..."
-
-#: kwordquiz.cpp:637 kwordquiz.cpp:639
-#, kde-format
-msgctxt "%1 is an error message"
-msgid ""
-"%1\n"
-"If you are sure no other program is using the file you can choose to ignore "
-"the lock and open the file anyway.\n"
-"Do you want to open the file?"
-msgstr ""
-
-#: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
-msgid "Open File"
-msgstr "Faili avamine..."
-
-#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
-#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
-#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
-#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
-#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
-#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
-#, kde-format
-msgctxt "@info:status ready"
-msgid "Ready"
-msgstr "Valmis"
-
-#: kwordquiz.cpp:727 kwordquiz.cpp:729
-#, kde-format
-msgid ""
-"The current document has been modified.\n"
-"Do you want to save it?"
-msgstr ""
-"Aktiivset dokumenti on muudetud.\n"
-"Kas soovid selle salvestada?"
-
-#: kwordquiz.cpp:779
-#, kde-format
-msgid "Opening a new document window..."
-msgstr "Uue akna avamine..."
-
-#: kwordquiz.cpp:791
-#, kde-format
-msgid "&Merge selected files with the current document"
-msgstr "Ü&henda valitud failid aktiivse dokumendiga"
-
-#: kwordquiz.cpp:796 kwqtutor.cpp:127
-#, kde-format
-msgid "Open Vocabulary Document"
-msgstr "Sõnavaradokumendi avamine"
-
-#: kwordquiz.cpp:865
-#, kde-format
-msgid "Saving file..."
-msgstr "Faili salvestamine..."
-
-#: kwordquiz.cpp:884
-#, kde-format
-msgid "Saving file with a new filename..."
-msgstr "Faili salvestamine uue nimega..."
-
-#: kwordquiz.cpp:912
-#, kde-format
-msgid "HTML Document"
-msgstr "HTML-dokument"
-
-#: kwordquiz.cpp:914
-#, kde-format
-msgid "Save Vocabulary Document As"
-msgstr "Sõnavaradokumendi salvestamine kui..."
-
-#: kwordquiz.cpp:962
-#, kde-format
-msgid "Closing file..."
-msgstr "Faili sulgemine..."
-
-#: kwordquiz.cpp:985
-#, kde-format
-msgid "Printing..."
-msgstr "Trükkimine..."
-
-#: kwordquiz.cpp:991
-#, kde-format
-msgid "Showing Preview..."
-msgstr "Eelvaatluse näitamine..."
-
-#: kwordquiz.cpp:999
-#, kde-format
-msgctxt "@info:status quitting"
-msgid "Quitting..."
-msgstr "Väljumine..."
-
-#: kwordquiz.cpp:1021
-#, kde-format
-msgid "Cutting selection..."
-msgstr "Valitud teksti lõikamine..."
-
-#: kwordquiz.cpp:1028
-#, kde-format
-msgid "Copying selection to clipboard..."
-msgstr "Valitud teksti kopeerimine lõikepuhvrisse..."
-
-#: kwordquiz.cpp:1035
-#, kde-format
-msgid "Inserting clipboard contents..."
-msgstr "Lõikepuhvri sisu sisestamine..."
-
-#: kwordquiz.cpp:1042
-#, kde-format
-msgid "Clearing the selected cells..."
-msgstr "Valitud lahtrite puhastamine..."
-
-#: kwordquiz.cpp:1049
-#, kde-format
-msgid "Inserting rows..."
-msgstr "Ridade lisamine..."
-
-#: kwordquiz.cpp:1056
-#, kde-format
-msgid "Deleting selected rows..."
-msgstr "Valitud ridade kustutamine..."
-
-#: kwordquiz.cpp:1063
-#, kde-format
-msgid "Marking selected text as a blank..."
-msgstr "Valitud teksti märkimine tühikutega sõna(de)ks..."
-
-#: kwordquiz.cpp:1070
-#, kde-format
-msgid "Removing blank markings..."
-msgstr "Tühikukriipsude eemaldamine..."
-
-#: kwordquiz.cpp:1077
-#, kde-format
-msgid "Setting the column titles of the vocabulary..."
-msgstr "Sõnavara veerutiitlite määramine..."
-
-#: kwordquiz.cpp:1090
-#, kde-format
-msgid "Setting the font of the vocabulary..."
-msgstr "Sõnavara fondi määramine..."
-
-#: kwordquiz.cpp:1106
-#, kde-format
-msgid "Linking an image with the current entry..."
-msgstr "Pildi linkimine aktiivse kirjega..."
-
-#: kwordquiz.cpp:1114
-#, kde-format
-msgid "Linking a sound with the current entry..."
-msgstr "Heli linkimine aktiivse kirjega..."
-
-#: kwordquiz.cpp:1122
-#, kde-format
-msgid "Adjusting row heights..."
-msgstr "Ridade kõrguse kohandamine..."
-
-#: kwordquiz.cpp:1131
-#, kde-format
-msgid "Randomizing the vocabulary..."
-msgstr "Sõnavara seadmine suvalisse järjekorda..."
-
-#: kwordquiz.cpp:1139
-#, kde-format
-msgid "Updating mode..."
-msgstr "Režiimi uuendamine..."
-
-#: kwordquiz.cpp:1153
-#, kde-format
-msgid "Starting editor session..."
-msgstr "Redaktoriseansi käivitamine..."
-
-#: kwordquiz.cpp:1160
-#, kde-format
-msgid "Starting flashcard session..."
-msgstr "Sähvikuseansi käivitamine..."
-
-#: kwordquiz.cpp:1167
-#, kde-format
-msgid "Starting multiple choice session..."
-msgstr "Mitme valikuga seansi käivitamine..."
-
-#: kwordquiz.cpp:1174
-#, kde-format
-msgid "Starting question & answer session..."
-msgstr "Küsimuse-vastuse seansi käivitamine..."
-
-#: kwordquiz.cpp:1326
-#, kde-format
-msgid "Insert %1"
-msgstr "Lisa %1"
-
-#: kwordquiz.cpp:1327
-#, kde-format
-msgid "Inserts the character %1"
-msgstr "Lisab märgi %1"
-
-#: kwordquiz.cpp:1378
-#, kde-format
-msgid "This will restart your quiz. Do you wish to continue?"
-msgstr "See käivitab viktoriini uuesti. Kas soovid jätkata?"
-
-#: kwordquiz.cpp:1394
-#, kde-format
-msgid "&1 %1 -> %2 In Order"
-msgstr "&1 %1 -> %2 järjekorras"
-
-#: kwordquiz.cpp:1395
-#, kde-format
-msgid "&2 %1 -> %2 In Order"
-msgstr "&2 %1 -> %2 järjekorras"
-
-#: kwordquiz.cpp:1396
-#, kde-format
-msgid "&3 %1 -> %2 Randomly"
-msgstr "&3 %1 -> %2 suvaliselt"
-
-#: kwordquiz.cpp:1397
-#, kde-format
-msgid "&4 %1 -> %2 Randomly"
-msgstr "&4 %1 -> %2 suvaliselt"
-
-#: kwordquiz.cpp:1398
-#, kde-format
-msgid "&5 %1 <-> %2 Randomly"
-msgstr "&5 %1 <-> %2 suvaliselt"
-
-#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
-#, kde-format
-msgid "%1 -> %2 In Order"
-msgstr "%1 -> %2 järjekorras"
-
-#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
-#, kde-format
-msgid "%1 -> %2 Randomly"
-msgstr "%1 -> %2 suvaliselt"
-
-#: kwordquiz.cpp:1417
-#, kde-format
-msgid "%1 &lt;-&gt; %2 Randomly"
-msgstr "%1 &lt;-&gt; %2 suvaliselt"
-
-#. i18n: ectx: label, entry (FirstRun), group (General)
-#: kwordquiz.kcfg:10
-#, kde-format
-msgid "Is this the first time KWordQuiz is run?"
-msgstr "Kas see on sul esimene kord KWordQuizi käivitada?"
-
-#. i18n: ectx: label, entry (ShowSearch), group (General)
-#: kwordquiz.kcfg:14
-#, kde-format
-msgid "Toggle display of the search bar."
-msgstr "Lülitab otsinguriba näitamist"
-
-#. i18n: ectx: label, entry (StartSession), group (General)
-#: kwordquiz.kcfg:18
-#, kde-format
-msgid "Type of session to use when opening files"
-msgstr "Failide avamisel kasutatav seansi tüüp"
-
-#. i18n: ectx: label, entry (PrintStyle), group (General)
-#: kwordquiz.kcfg:28
-#, kde-format
-msgid "Type of printout to generate"
-msgstr "Genereeritava väljatrüki tüüp"
-
-#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
-#: kwordquiz.kcfg:39
-#, kde-format
-msgid "Titles for column 1"
-msgstr "Veeru 1 tiitel"
-
-#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
-#: kwordquiz.kcfg:43
-#, kde-format
-msgid "Titles for column 2"
-msgstr "Veeru 2 tiitel"
-
-#. i18n: ectx: label, entry (EditorFont), group (Editor)
-#: kwordquiz.kcfg:47
-#, kde-format
-msgid "Font used in the editor"
-msgstr "Redaktoris kasutatav font"
-
-#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
-#: kwordquiz.kcfg:51
-#, kde-format
-msgid "If Fill-in-the-blank should be enabled"
-msgstr "Kas lubada täidetavad tühikud"
-
-#. i18n: ectx: label, entry (EnterMove), group (Editor)
-#: kwordquiz.kcfg:55
-#, kde-format
-msgid "Direction the Enter key moves in the editor"
-msgstr "Millises suunas liigutab klahv Enter redaktoris"
-
-#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
-#: kwordquiz.kcfg:59
-#, kde-format
-msgid "Characters for the special character toolbar"
-msgstr "Erimärkide riba märgid"
-
-#. i18n: ectx: label, entry (ClearAll), group (Editor)
-#: kwordquiz.kcfg:63
-#, kde-format
-msgid "Clear all data in selected entries"
-msgstr "Kõigi andmete kustutamine valitud kirjetest"
-
-#. i18n: ectx: label, entry (ClearText), group (Editor)
-#: kwordquiz.kcfg:67
-#, kde-format
-msgid "Clear the text in selected entries"
-msgstr "Teksti kustutamine valitud kirjetest"
-
-#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
-#: kwordquiz.kcfg:71
-#, kde-format
-msgid "Clear the image link in selected entries"
-msgstr "Pildilingi kustutamine valitud kirjetest"
-
-#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
-#: kwordquiz.kcfg:75
-#, kde-format
-msgid "Clear the sound link in selected entries"
-msgstr "Helilingi kustutamine valitud kirjetest"
-
-#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
-#: kwordquiz.kcfg:81
-#, kde-format
-msgid "Automatically check selected answer in multiple choice"
-msgstr "Valitud vastuse automaatne kontroll mitme valiku korral"
-
-#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
-#: kwordquiz.kcfg:85
-#, kde-format
-msgid "Automatically flip flashcard"
-msgstr "Sähviku automaatne keeramine"
-
-#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
-#: kwordquiz.kcfg:89
-#, kde-format
-msgid "Time delay for flipping flashcard"
-msgstr "Sähvikute keeramise ajaline viivitus"
-
-#. i18n: ectx: label, entry (HintError), group (Quiz)
-#: kwordquiz.kcfg:93
-#, kde-format
-msgid "Treat use of hint as error"
-msgstr "Vihje kasutamist käsitletakse veana"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
-#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
-#: kwordquiz.kcfg:97 prefquizbase.ui:79
-#, kde-format
-msgid "Compare answers in a case sensitive way"
-msgstr ""
-
-#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:101
-#, kde-format
-msgid "Count flashcard as correct or error"
-msgstr "Sähviku käsitlemine õigesti vastatu või veana"
-
-#. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:105
-#, kde-format
-msgid "Quiz mode"
-msgstr "Viktoriinirežiim"
-
-#. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:109
-#, kde-format
-msgid "Show score as percentage"
-msgstr "Hinnet näidatakse protsendina"
-
-#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:115
-#, kde-format
-msgid "Font used for front of flashcard"
-msgstr "Sähvikute esiküljel kasutatav font"
-
-#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:119
-#, kde-format
-msgid "Color used for text on front of flashcard"
-msgstr "Sähvikute esikülje teksti värv"
-
-#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:123
-#, kde-format
-msgid "Color used for front of flashcard"
-msgstr "Sähvikute esikülje värv"
-
-#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:127
-#, kde-format
-msgid "Color used for frame on front of flashcard"
-msgstr "Sähvikute esikülje raami värv"
-
-#. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:131
-#, kde-format
-msgid "Font used for back of flashcard"
-msgstr "Sähvikute tagaküljel kasutatav font"
-
-#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:135
-#, kde-format
-msgid "Color used for text on back of flashcard"
-msgstr "Sähvikute tagakülje teksti värv"
-
-#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:139
-#, kde-format
-msgid "Color used for back of flashcard"
-msgstr "Sähvikute tagakülje värv"
-
-#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:143
-#, kde-format
-msgid "Color used for frame on back of flashcard"
-msgstr "Sähvikute tagakülje raami värv"
-
-#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:149
-#, kde-format
-msgid "The Providers path for KWordQuiz"
-msgstr "KWordQuizi abimaterjalide asukoht"
-
-#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:153
-#, kde-format
-msgid "The command used to start a downloaded vocabulary"
-msgstr "Käsk allalaaditud sõnavara käivitamiseks"
-
-#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:157
-#, kde-format
-msgid ""
-"The folder where downloaded vocabularies are saved by default (relative to "
-"$HOME)"
-msgstr ""
-"Kataloog, kuhu allalaaditud sõnavara vaikimisi salvestatakse (muutuja $HOME "
-"suhtes)"
-
-#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:163
-#, kde-format
-msgid "Pop up flashcards at fixed or random intervals"
-msgstr "Sähvikute näitamine fikseeritud või juhusliku intervalliga"
-
-#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:171
-#, kde-format
-msgid "The interval in minutes at which to pop up a flash card"
-msgstr "Intervall minutites, mille järel sähvikuid näidata"
-
-#. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:175
-#, kde-format
-msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr "Minimaalne intervall minutites, mille järel sähvikuid näidata"
-
-#. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:179
-#, kde-format
-msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr "Maksimaalne intervall minutites, mille järel sähvikuid näidata"
-
-#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:183
-#, kde-format
-msgid "Geometry of the last flash card"
-msgstr "Viimase sähviku geomeetria"
-
-#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:187
-#, kde-format
-msgid "Show flash card in a native KWordQuiz style"
-msgstr "Sähvikute näitamine KWordQuizi omastiilis"
-
-#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:195
-#, kde-format
-msgid ""
-"Last open vocabulary file to be opened automatically if none other is "
-"specified on the command line"
-msgstr ""
-"Viimati avatud sõnaraamatu automaatne avamine, kui käsureal ei ole määratud "
-"teisiti"
-
-#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:199
-#, kde-format
-msgid "Start exercise as soon as the user opens vocabulary file"
-msgstr "Harjutamise alustamine kohe, kui kasutaja avab sõnaraamatufaili"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General"
-msgstr "Üldine"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General Settings"
-msgstr "Üldised seadistused"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor"
-msgstr "Redaktor"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor Settings"
-msgstr "Redaktori seadistused"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz"
-msgstr "Viktoriin"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz Settings"
-msgstr "Viktoriiniseadistused"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance"
-msgstr "Sähviku välimus"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance Settings"
-msgstr "Sähviku välimuse seadistused"
-
-#: kwordquizprefs.cpp:36
-#, kde-format
-msgctxt "@title:group special character settings"
-msgid "Special Characters"
-msgstr "Erimärgid"
-
-#. i18n: ectx: Menu (vocabulary)
-#: kwordquizui.rc:16
-#, kde-format
-msgid "V&ocabulary"
-msgstr "Sõ&navara"
-
-#. i18n: ectx: Menu (mode)
-#: kwordquizui.rc:30
-#, kde-format
-msgid "&Mode"
-msgstr "Režii&m"
-
-#. i18n: ectx: Menu (quiz)
-#: kwordquizui.rc:38
-#, kde-format
-msgid "&Quiz"
-msgstr "&Viktoriin"
-
-#. i18n: ectx: ToolBar (quizToolBar)
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:21
-#, kde-format
-msgid "Quiz"
-msgstr "Viktoriin"
-
-#. i18n: ectx: ToolBar (characterToolBar)
-#: kwordquizui.rc:75
-#, kde-format
-msgid "Special Characters"
-msgstr "Erimärgid"
-
-#: kwqcleardialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Clear Contents"
-msgctxt "@title:window"
-msgid "Clear Contents"
-msgstr "Sisu kustutamine"
-
-#: kwqcommands.cpp:74
-#, kde-format
-msgctxt "@item:inmenu undo clear"
-msgid "Clear"
-msgstr "Puhastamine"
-
-#: kwqcommands.cpp:96
-#, kde-format
-msgctxt "@item:inmenu undo cut"
-msgid "Cut"
-msgstr "Lõikamine"
-
-#: kwqcommands.cpp:109
-#, kde-format
-msgctxt "@item:inmenu undo paste"
-msgid "Paste"
-msgstr "Asetamine"
-
-#: kwqcommands.cpp:205
-#, kde-format
-msgctxt "@item:inmenu undo sort"
-msgid "Sort"
-msgstr "Sorteerimine"
-
-#: kwqcommands.cpp:232
-#, kde-format
-msgctxt "@item:inmenu undo shuffle"
-msgid "Shuffle"
-msgstr "Segamine"
-
-#: kwqcommands.cpp:252
-#, kde-format
-msgctxt "@item:inmenu undo insert"
-msgid "Insert"
-msgstr "Lisamine"
-
-#: kwqcommands.cpp:284
-#, kde-format
-msgctxt "@item:inmenu undo delete"
-msgid "Delete"
-msgstr "Kustutamine"
-
-#: kwqcommands.cpp:333
-#, kde-format
-msgctxt "@item:inmenu undo unmark blank"
-msgid "Unmark Blank"
-msgstr "Tühikute eemaldamine"
-
-#: kwqcommands.cpp:355
-#, kde-format
-msgctxt "@item:inmenu undo column titles"
-msgid "Column Settings"
-msgstr "Veeru seadistused"
-
-#: kwqcommands.cpp:400
-#, kde-format
-msgctxt "@item:inmenu undo link image"
-msgid "Link Image"
-msgstr "Pildi linkimine"
-
-#: kwqcommands.cpp:419
-#, kde-format
-msgctxt "@item:inmenu undo link sound"
-msgid "Link Sound"
-msgstr "Heli linkimine"
-
-#: kwqcommands.h:93
-#, kde-format
-msgid "Font"
-msgstr "Font"
-
-#: kwqcommands.h:111
-#, kde-format
-msgid "Entry"
-msgstr "Kirje"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
-#, kde-format
-msgid "Questions"
-msgstr "Küsimused"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
-#, kde-format
-msgid "The number of questions in the session"
-msgstr "Küsimuste arv seansis"
-
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
-#: kwqscorewidgetbase.ui:259
-#, kde-format
-msgid "00"
-msgstr "00"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
-#, kde-format
-msgid "Correct answers"
-msgstr "Õiged vastused"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
-#, kde-format
-msgid ""
-"The number of questions answered correctly. May be shown as a percentage."
-msgstr "Õigesti vastatud küsimuste arv. Võib olla protsendina."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picError)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
-#, kde-format
-msgid "Incorrect answers"
-msgstr "Valed vastused"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
-#, kde-format
-msgid ""
-"The number of questions answered incorrectly. May be shown as a percentage."
-msgstr "Valesti vastatud küsimuste arv. Võib olla protsendina."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
-#, kde-format
-msgid "Answered questions"
-msgstr "Vastatud küsimused"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
-#, kde-format
-msgid "The number of questions already answered. May be shown as a percentage."
-msgstr "Juba vastatud küsimuste arv. Võib olla protsendina."
-
-#: kwqtablemodel.cpp:211
-#, kde-format
-msgid "Untitled"
-msgstr "Nimetu"
-
-#: kwqtableview.cpp:190
+#: exporter.cpp:122
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Nimi:_____________________________ Kuupäev:__________"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:92
+#: exporter.cpp:170
 #, kde-format
 msgid "Score"
 msgstr "Hindamine"
 
-#: kwqtableview.cpp:656
+#: kwqcardmodel.cpp:30
 #, kde-format
-msgid "There is an error with the Fill-in-the-blank brackets"
-msgstr "Viga täidetavate tühikutega sõnas"
+msgid "Question"
+msgstr "Küsimus"
 
-#: kwqtableview.cpp:723
+#: kwqcardmodel.cpp:32
 #, kde-format
-msgctxt "@title:window"
-msgid "Select Image"
-msgstr "Pildi valimine"
+msgid "Answer"
+msgstr "Vastus"
 
-#: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "Select Sound"
-msgctxt "@title:window"
-msgid "Select Sound"
-msgstr "Heli valimine"
-
-#: kwqtableview.cpp:743
+#: main.cpp:56
 #, kde-format
-msgid "All Files (*)"
-msgstr "Kõik failid (*)"
-
-#: kwqtutor.cpp:26
-#, kde-format
-msgid ""
-"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
-"you to set a certain time interval at which flashcards will pop up.<br /"
-"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
-"working without stealing the focus from other programs you might be working "
-"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
-"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
-"<qt>KWordQuizi õpetaja näitab ekraanil sähvikuid, kusjuures sa saad määrata "
-"teatava ajavahemiku, mille jooksul sähvikud on nähtaval.<br /><br />Sähvikud "
-"ilmuvad mittesegaval viisil ning võimaldavad sul tööd jätkata, haaramata "
-"fookust teistelt rakendustelt, mis sul võivad parajasti ees olla.<br /><br /"
-">Tee kindlasti paremklõps KWordQuizi õpetaja ikoonil paneelil ja vali "
-"Eelistused. See lubab kindlaks määrata kiirklahvid.</qt>"
 
-#: kwqtutor.cpp:32
-#, kde-format
-msgid "Tutor"
-msgstr "Õpetaja"
-
-#: kwqtutor.cpp:43 kwqtutor.cpp:116
-#, kde-format
-msgid "Start Exercise"
-msgstr "Alusta harjutamist"
-
-#: kwqtutor.cpp:53
-#, kde-format
-msgid "Configure KWordQuiz Tutor..."
-msgstr "Seadista KWordQuizi õpetajat..."
-
-#: kwqtutor.cpp:58
-#, kde-format
-msgid "Close Flash Card"
-msgstr "Sulge sähvik"
-
-#: kwqtutor.cpp:63
-#, kde-format
-msgid "Flip Flash Card"
-msgstr "Pööra sähvikut"
-
-#: kwqtutor.cpp:108
-#, kde-format
-msgid "Stop Exercise"
-msgstr "Peata harjutamine"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor"
-msgstr "Õpetaja"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor Settings"
-msgstr "Õpetaja seadistused"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgctxt "Shortcuts Config"
-msgid "Shortcuts"
-msgstr "Kiirklahvid"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgid "Shortcuts Settings"
-msgstr "Kiirklahvide seadistused"
-
-#: main.cpp:34
+#: main.cpp:90
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:36
+#: main.cpp:92
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Avarate võimalustega sõnavara õppimine programm"
 
-#: main.cpp:38
+#: main.cpp:94
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010: Peter Hedlund"
 
-#: main.cpp:42
+#: main.cpp:98
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:43
+#: main.cpp:98
+#, kde-format
+msgctxt "@info:credit"
+msgid "Original author"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Port to QML"
+msgstr ""
+
+#: main.cpp:100
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:43
+#: main.cpp:100
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE \"Mäng ja kooli\" hooldaja"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitneri süsteem ja mitu panust koodi"
 
-#: main.cpp:57
-#, kde-format
-msgid ""
-"A number 1-5 corresponding to the \n"
-"entries in the Mode menu"
-msgstr ""
-"Arv vahemikus 1-5 \n"
-"vastavalt režiimimenüü kirjetele"
-
-#: main.cpp:58
-#, kde-format
+#: main.cpp:121
+#, fuzzy, kde-format
+#| msgid ""
+#| "Type of session to start with: \n"
+#| "'flash' for flashcard, \n"
+#| "'mc' for multiple choice, \n"
+#| "'qa' for question and answer, \n"
+#| "'tutor' for tutor"
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
-"'qa' for question and answer, \n"
-"'tutor' for tutor"
+"'qa' for question and answer"
 msgstr ""
 "Käivitatava seansi tüüp: \n"
 "'flash' käivitab sähvikuseansi, \n"
@@ -1604,911 +131,1670 @@ msgstr ""
 "'qa' küsimuste ja vastustega seansi, \n"
 "'tutor' õpetaja"
 
-#: main.cpp:59
+#: main.cpp:123
 #, kde-format
 msgid "File to open"
 msgstr "Avatav fail"
 
-#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
-#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
-#: qaviewbase.ui:518
+#: qml/BasePage.qml:24
 #, kde-format
-msgid "Correct Answer"
-msgstr "Õige vastus"
+msgid "Cards %1% Errors %2"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
-#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
-#: qaviewbase.ui:294
+#: qml/BasePage.qml:26
 #, kde-format
-msgid "Previous Question"
-msgstr "Eelmine küsimus"
+msgid "Cards %1/%2 Errors %3"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
-#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
-#: qaviewbase.ui:395
+#: qml/BasePage.qml:73
 #, kde-format
-msgid "Your Answer"
-msgstr "Sinu vastus"
+msgctxt "@label"
+msgid "Finished"
+msgstr ""
 
-#: multipleview.cpp:131 qaview.cpp:169
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "Summary"
-msgstr "Kokkuvõte"
+msgid "You got a perfect score"
+msgstr ""
 
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
-#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
-#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
-#: qaviewbase.ui:104
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "The question"
-msgstr "Küsimus"
+msgid "You made one mistake"
+msgid_plural "You made %1 mistakes"
+msgstr[0] ""
+msgstr[1] ""
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:73 qaviewbase.ui:60
-#, kde-format
-msgid "Language or other identifier for the question"
-msgstr "Keel või muu küsimuse identifikaator"
+#: qml/BasePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Repeat &Errors"
+msgid "Repeat errors"
+msgstr "Kor&da vigaseid"
 
-#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:76 qaviewbase.ui:63
+#: qml/BasePage.qml:93
 #, kde-format
-msgid "Language 1"
+msgid "Try again"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:33
+#, kde-format
+msgctxt "@title:window"
+msgid "Create deck"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit deck"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:40
+#, kde-format
+msgid "Filter"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:43
+#, kde-format
+msgid "Filter..."
+msgstr ""
+
+#: qml/DeckEditorPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Showing Preview..."
+msgctxt "@action:button"
+msgid "Print Preview"
+msgstr "Eelvaatluse näitamine..."
+
+#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#, kde-format
+msgid "Flashcard"
+msgstr "Sähvik"
+
+#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#, kde-format
+msgid "List"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#, kde-format
+msgid "Exam"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Printing..."
+msgctxt "@action:button"
+msgid "Print"
+msgstr "Trükkimine..."
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link image"
+#| msgid "Link Image"
+msgctxt "@action:button"
+msgid "Link image"
+msgstr "Pildi linkimine"
+
+#: qml/DeckEditorPage.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link sound"
+#| msgid "Link Sound"
+msgctxt "@action:button"
+msgid "Link sound"
+msgstr "Heli linkimine"
+
+#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "Language 1"
+msgctxt "@action:button"
+msgid "Set language"
 msgstr "Keel 1"
 
-#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
-#: multipleviewbase.ui:98 qaviewbase.ui:107
+#: qml/DeckEditorPage.qml:183
 #, kde-format
-msgid "This is your question"
-msgstr "See on sinu küsimus"
+msgid "Please choose an image"
+msgstr ""
 
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
-#: multipleviewbase.ui:255 multipleviewbase.ui:286
+#: qml/DeckEditorPage.qml:192
 #, kde-format
-msgid "Your choices"
-msgstr "Sinu valikud"
+msgid "Please choose a sound"
+msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
+#: qml/DeckEditorPage.qml:227
 #, kde-format
-msgid "Three choices for the answer. One is correct."
-msgstr "Kolm vastusevõimalust. Üks on õige."
+msgctxt "@label"
+msgid "Name:"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QRadioButton, opt2)
-#: multipleviewbase.ui:192
+#: qml/DeckEditorPage.qml:238
 #, kde-format
-msgid "&2 Option"
-msgstr "Valik &2"
+msgctxt "@label"
+msgid "Author:"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QRadioButton, opt1)
-#: multipleviewbase.ui:223
+#: qml/DeckEditorPage.qml:249
 #, kde-format
-msgid "&1 Option"
-msgstr "Valik &1"
+msgctxt "@label"
+msgid "License:"
+msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:258 qaviewbase.ui:208
-#, kde-format
-msgid "Language or other identifier for the answer"
-msgstr "Keel või muu vastuse identifikaator"
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox vocabulary editor"
+#| msgid "Editor"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Redaktor"
 
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:261 qaviewbase.ui:211
-#, kde-format
-msgid "Language 2"
-msgstr "Keel 2"
+#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
+#: qml/QuestionAnswerPage.qml:151
+#, fuzzy, kde-format
+#| msgid "&Check"
+msgctxt "@action:button"
+msgid "Check"
+msgstr "K&ontrolli"
 
-#. i18n: ectx: property (text), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:292
-#, kde-format
-msgid "&3 Option"
-msgstr "Valik &3"
+#: qml/FlashCardPage.qml:128
+#, fuzzy, kde-format
+#| msgid "Correct Answer"
+msgctxt "@action:button"
+msgid "Correct"
+msgstr "Õige vastus"
 
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
-#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
-#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
-#, kde-format
-msgid "Previous question"
-msgstr "Eelmine küsimus"
+#: qml/FlashCardPage.qml:146
+#, fuzzy, kde-format
+#| msgid "Mark Last Correct"
+msgctxt "@action:button"
+msgid "Not Correct"
+msgstr "Märgi viimane õigeks"
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
-#: qaviewbase.ui:313
-#, kde-format
-msgid "The previous question"
-msgstr "Eelmine küsimus"
+#: qml/LanguageSelectorPage.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select Image"
+msgid "Select a language"
+msgstr "Pildi valimine"
 
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:375 qaviewbase.ui:316
-#, kde-format
-msgid "This was your question"
-msgstr "See oli sinu küsimus"
+#: qml/main.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@action:inmenu"
+msgid "Settings"
+msgstr "Viktoriiniseadistused"
 
-#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
-#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
+#: qml/main.qml:42
 #, kde-format
-msgid "Your previous answer"
-msgstr "Sinu eelmine vastus"
+msgid "Configure"
+msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
-#: qaviewbase.ui:414
-#, kde-format
-msgid "Your answer to the previous question"
-msgstr "Sinu vastus eelmisele küsimusele"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:501 qaviewbase.ui:417
-#, kde-format
-msgid "This was your answer"
-msgstr "See oli sinu vastus"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
-#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
-#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
-#, kde-format
-msgid "Previous correct answer"
-msgstr "Eelmine õige vastus"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
-#: qaviewbase.ui:537
-#, kde-format
-msgid "The correct answer to the previous question"
-msgstr "Eelmise küsimuse õige vastus"
-
-#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:580 qaviewbase.ui:540
-#, kde-format
-msgid "This was the correct answer"
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "This was the correct answer"
+msgid "This is correct"
 msgstr "See oli õige vastus"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: multipleviewbase.ui:649
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Incorrect answers"
+msgid "Wrong, the correct answer was \"%1\"."
+msgstr "Valed vastused"
+
+#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"three entries for a multiple choice quiz.</html>"
+msgctxt "@action:button"
+msgid "Next"
 msgstr ""
-"<html>Sinu sõnavaras on liiga vähe kirjeid.<br />Mitme valikuga viktoriini "
-"jaoks on vaja vähemalt kolme kirjet.</html>"
 
-#: prefcardappearance.cpp:66
+#: qml/MultipleChoicePage.qml:150
 #, kde-format
-msgctxt "Back of the flashcard"
-msgid "Back"
-msgstr "Tagakülg"
-
-#: prefcardappearance.cpp:67
-#, kde-format
-msgid "Answer"
-msgstr "Vastus"
-
-#: prefcardappearance.cpp:80
-#, kde-format
-msgid "Front"
-msgstr "Esikülg"
-
-#: prefcardappearance.cpp:81
-#, kde-format
-msgid "Question"
-msgstr "Küsimus"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
-#: prefcardappearancebase.ui:15
-#, kde-format
-msgid "Card Appearance"
-msgstr "Kaardi välimus"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:92
-#, kde-format
-msgid "Flip card"
-msgstr "Pööra kaarti"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:95
-#, kde-format
-msgid "Use to show the other side of the card"
-msgstr "Kasuta seda kaardi teise külje vaatamiseks"
-
-#. i18n: ectx: property (text), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:98
-#, kde-format
-msgid "&Flip Card"
-msgstr "&Pööra kaarti"
-
-#. i18n: ectx: property (text), widget (QLabel, fontLabel)
-#: prefcardappearancebase.ui:111
-#, kde-format
-msgid "F&ont:"
-msgstr "&Font:"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
-#: prefcardappearancebase.ui:146
-#, kde-format
-msgid "Use to select the font for displaying text on the back of the card"
-msgstr "Kasuta seda kaardi tagakülje teksti fondi valimiseks"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
-#, kde-format
-msgid "Select text color"
-msgstr "Vali teksti värv"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
-#, kde-format
-msgid "Use to select the color for text shown on the card"
-msgstr "Kasuta seda kaardil näidatava teksti värvi valimiseks"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
-#, kde-format
-msgid "Select card frame color"
-msgstr "Vali kaardi raami värv"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
-#, kde-format
-msgid "Use to select the color for drawing the frame of the card"
-msgstr "Kasuta seda kaardi ümber näidatava raami värvi valimiseks"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
-#, kde-format
-msgid "Select card color"
-msgstr "Vali kaardi värv"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
-#, kde-format
-msgid "Select color used to draw the card"
-msgstr "Vali kaardi värv"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
-#: prefcardappearancebase.ui:202
-#, kde-format
-msgid "Use to select the font for displaying text on the front of the card"
-msgstr "Kasuta seda kaardi esikülje teksti fondi valimiseks"
-
-#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
-#: prefcardappearancebase.ui:249
-#, kde-format
-msgid "&Text color:"
-msgstr "&Teksti värv:"
-
-#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
-#: prefcardappearancebase.ui:262
-#, kde-format
-msgid "&Card color:"
-msgstr "&Kaardi värv:"
-
-#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
-#: prefcardappearancebase.ui:275
-#, kde-format
-msgid "Fra&me color:"
-msgstr "Raa&mi värv:"
-
-#: prefcharacter.cpp:30
-#, kde-format
-msgid "Action"
-msgstr "Toiming"
-
-#: prefcharacter.cpp:31
-#, kde-format
-msgid "Shortcut"
-msgstr "Kiirklahv"
-
-#: prefcharacter.cpp:32
-#, kde-format
-msgid "Character"
-msgstr "Märk"
-
-#: prefcharacter.cpp:41
-#, kde-format
-msgid "Special Character %1"
-msgstr "Erimärk %1"
-
-#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
-#: prefcharacterbase.ui:35
-#, kde-format
-msgid ""
-"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-"associated with each action."
+msgid "Not enough words in your deck"
 msgstr ""
-"Märkus: vali iga toiminguga seotud kiirklahvi muutmiseks Seadistused -> "
-"Kiirklahvide seadistamine..."
 
-#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:48
+#: qml/MultipleChoicePage.qml:151
 #, kde-format
-msgid "Select character to modify"
-msgstr "Vali muudetav sümbol"
-
-#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:51
-#, kde-format
-msgid "Customizable special character actions"
-msgstr "Kohandatavad erimärgitoimingud"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:61
-#, kde-format
-msgid "0"
-msgstr "0"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:66
-#, kde-format
-msgid "1"
-msgstr "1"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:71
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:103
-#, kde-format
-msgid "Click to choose a new character"
-msgstr "Klõpsa uue sümboli valimiseks"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:106
-#, kde-format
-msgid "Choose a character for the selected action"
-msgstr "Vali märk valitud toimingule"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:109
-#, kde-format
-msgid "C&haracter..."
-msgstr "Mär&k..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:151
-#, kde-format
-msgid "Preview of current character"
-msgstr "Praeguse märgi eelvaatlus"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:154
-#, kde-format
-msgid "Preview of the character associated with the selected action"
-msgstr "Valitud toiminguga seotud märgi eelvaatlus"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:157
-#, kde-format
-msgid "A"
-msgstr "A"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
-#: prefeditorbase.ui:73
-#, kde-format
-msgid "How enter key moves"
-msgstr "Kuidas klahv Enter liigutab"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:32
-#, kde-format
-msgid "Select how the Enter key should behave in the editor"
-msgstr "Vali, mis mõju on klahvil Enter redaktoris"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:35
-#, kde-format
-msgid "Enter Ke&y Moves"
-msgstr "Klahv Enter lii&gutab"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:50
-#, kde-format
-msgid "Select if the next cell below should become active when pressing Enter."
+msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
-"Vali, kui klahvi Enter vajutamisel peab aktiivseks muutuma järgmine allpool "
-"asuv lahter."
 
-#. i18n: ectx: property (text), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:53
-#, kde-format
-msgid "&Down"
-msgstr "&Alla"
+#: qml/OptionsAction.qml:12
+#, fuzzy, kde-format
+#| msgid "&2 Option"
+msgctxt "@action:button"
+msgid "Options"
+msgstr "Valik &2"
 
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:63
-#, kde-format
-msgid ""
-"Select if the next cell to the right should become active when pressing Enter"
-msgstr ""
-"Vali, kui klahvi Enter vajutamisel peab aktiivseks muutuma järgmine paremal "
-"asuv lahter."
+#: qml/OptionsAction.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo shuffle"
+#| msgid "Shuffle"
+msgctxt "@action:inmenu"
+msgid "Shuffle"
+msgstr "Segamine"
 
-#. i18n: ectx: property (text), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:66
-#, kde-format
-msgid "&Right"
-msgstr "&Paremale"
+#: qml/QuestionAnswerPage.qml:143
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgctxt "@action:button"
+msgid "Hint"
+msgstr "&Vihje"
 
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:76
-#, kde-format
-msgid "Select if the current cell should remain active when pressing Enter"
-msgstr ""
-"Vali, kui klahvi Enter vajutamisel peab aktiivseks jääma senine lahter."
+#: qml/SettingsPage.qml:13
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Viktoriiniseadistused"
 
-#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:79
-#, kde-format
-msgid "Does not &move"
-msgstr "&Ei liiguta"
+#: qml/SettingsPage.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:group general settings"
+#| msgid "General"
+msgid "General"
+msgstr "Üldine"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:89
+#: qml/SettingsPage.qml:30
 #, kde-format
-msgid "Check to enable fill-in-the-blank"
-msgstr "Märgi täidetavate tühikute lubamiseks"
+msgid "Show score as percentage"
+msgstr "Hinnet näidatakse protsendina"
 
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:92
-#, kde-format
-msgid "Select to enable the functions for Fill-in-the-blank"
-msgstr "Vali täidetavate tühikute kasutamise lubamiseks"
+#: qml/SettingsPage.qml:47
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgid "Flash Card"
+msgstr "Sähvik"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:95
+#: qml/SettingsPage.qml:52
 #, kde-format
-msgid "E&nable fill-in-the-blank"
-msgstr "&Täidetavate tühikute lubamine"
+msgid "Automatically flip flashcard"
+msgstr "Sähviku automaatne keeramine"
 
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:35
-#, kde-format
-msgid "How vocabulary documents are opened"
-msgstr "Kuidas avada sõnavaradokumente"
+#: qml/SettingsPage.qml:64
+#, fuzzy, kde-format
+#| msgid "Time delay for flipping flashcard"
+msgid "Time delay for flipping the flashcard"
+msgstr "Sähvikute keeramise ajaline viivitus"
 
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:38
-#, kde-format
-msgid "Select the kind of session to load an opened vocabulary document in"
-msgstr "Seansi tüübi valik, milles laadida avatud sõnavaradokument"
+#: qml/SettingsPage.qml:84
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgid "Multiple choice"
+msgstr "Mitmene valik"
 
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:41
-#, kde-format
-msgid "&Open Vocabulary Documents in"
-msgstr "&Ava sõnavaradokument"
+#: qml/SettingsPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Automatically check selected answer in multiple choice"
+msgid "Automatically check selected answer"
+msgstr "Valitud vastuse automaatne kontroll mitme valiku korral"
 
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:47
-#, kde-format
-msgid "Open vocabulary documents in the editor"
-msgstr "Sõnavaradokumentide avamine redaktoris"
+#: qml/SettingsPage.qml:105
+#, fuzzy, kde-format
+#| msgid "&Question and Answer"
+msgid "Question and Answer"
+msgstr "&Küsimused ja vastused"
 
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:50
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in the editor"
-msgstr "Valimisel avatakse sõnavaradokumendid redaktoris"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:53
-#, kde-format
-msgid "&Editor"
-msgstr "R&edaktor"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:60
-#, kde-format
-msgid "Open vocabulary documents in a flashcard quiz"
-msgstr "Sõnavaradokumentide avamine sähvikuviktoriinis"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:63
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
-msgstr "Valimisel avatakse sõnavaradokumendid sähvikuviktoriinis"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:66
-#, kde-format
-msgid "&Flashcard Quiz"
-msgstr "Sä&hvikuviktoriin"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:73
-#, kde-format
-msgid "Open vocabulary documents in a multiple choice quiz"
-msgstr "Sõnavaradokumentide avamine mitme valikuda viktoriinis"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:76
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a multiple choice quiz"
-msgstr "Valimisel avatakse sõnavaradokumendid mitme valikuga viktoriinis"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:79
-#, kde-format
-msgid "&Multiple Choice Quiz"
-msgstr "&Mitmese valikuga viktoriin"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:86
-#, kde-format
-msgid "Open vocabulary documents in a question and answer quiz"
-msgstr "Sõnavaradokumentide avamine küsimuse-vastuse viktoriinis"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:89
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a question and answer "
-"quiz"
-msgstr ""
-"Valimisel avatakse sõnavaradokumendid küsimuste ja vastuste viktoriinis"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:92
-#, kde-format
-msgid "&Question and Answer Quiz"
-msgstr "&Küsimuste ja vastuste viktoriin"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:42
-#, kde-format
-msgid "Specify behavior for a question and answer session"
-msgstr "Küsimuse-vastuse seansi omadused"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:45
-#, kde-format
-msgid "Question && Answer"
-msgstr "Küsimus ja vastus"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:66
-#, kde-format
-msgid "Check to count hint as error"
+#: qml/SettingsPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Check to count hint as error"
+msgid "Count using hint as an error"
 msgstr "Märgi vihje käsitlemiseks veana"
 
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:69
+#: qml/SettingsPage.qml:122
 #, kde-format
-msgid ""
-"Select if questions where the hint function has been used should be counted "
-"as errors"
+msgid "Compare answers in a case sensitive way"
 msgstr ""
-"Vali, kui küsimusi, mille puhul kasutatakse vihjet, tuleks käsitleda veana"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:72
-#, kde-format
-msgid "&Treat hint as error"
-msgstr "V&ihjet käsitletakse veana"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:89
-#, kde-format
-msgid "Specify behavior of the score presentation in any session"
-msgstr "Kõigi seansside hindamise omadused"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:113
-#, kde-format
-msgid "Check to show score as a percentage"
-msgstr "Märgi hinde näitamiseks protsendina"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:116
-#, kde-format
-msgid "Select if the score should be shown as a percentage"
-msgstr "Vali, kui hinnet peaks näitama protsendina"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:119
-#, kde-format
-msgid "&Show score as a percentage"
-msgstr "Hinnet &näidatakse protsendina"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:145
-#, kde-format
-msgid "Specify behavior for a multiple choice session"
-msgstr "Mitmese valikuga seansi omadused"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:169
-#, kde-format
-msgid "Check to correct automatically"
-msgstr "Märgi automaatseks kontrollimiseks"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:172
-#, kde-format
-msgid "Select if a choice should be checked immediately"
-msgstr "Vali, kui valikut peaks otsekohe kontrollitama"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:175
-#, kde-format
-msgid "Check selection a&utomatically"
-msgstr "Valik &kontrollitakse automaatselt"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:185
-#, kde-format
-msgid "Specify behavior of a flashcard session"
-msgstr "Sähvikuseansi eriomadused"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:231
-#, kde-format
-msgid "Specify the amount of time between card flips"
-msgstr "Määra aeg sähviku keeramise vahel"
-
-#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:234
-#, kde-format
-msgid "seconds and"
-msgstr "sekundi järel ja"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:241
-#, kde-format
-msgid "Delay to flip card"
-msgstr "Kaardi keeramise viivitus"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:244
-#, kde-format
-msgid "Delay in seconds to flip card"
-msgstr "Kaardi keeramise viivitus sekundites"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:275 prefquizbase.ui:288
-#, kde-format
-msgid "Select how to count card"
-msgstr "Vali, kuidas sähvikut hinnata"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:278
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as correct when moving to the "
-"next card"
-msgstr ""
-"Vali, kui järgmisele sähvikule liikudes tuleks eelmine õigesti vastatuks "
-"lugeda"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:281
-#, kde-format
-msgid "Count &as correct"
-msgstr "Loetakse õi&gesti vastatuks"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:291
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as incorrect when moving to "
-"the next card"
-msgstr ""
-"Vali, kui järgmisele sähvikule liikudes tuleks eelmine valesti vastatuks "
-"lugeda"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:294
-#, kde-format
-msgid "Count as &error"
-msgstr "Loetakse &valesti vastatuks"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:304
-#, kde-format
-msgid "Check to flip card automatically"
-msgstr "Märgi sähvik automaatseks ümberkeeramiseks"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:307
-#, kde-format
-msgid ""
-"Select if you want a card to turn over automatically after the given amount "
-"of time"
-msgstr ""
-"Vali, kui soovid sähvikul automaatselt pärast määratud aja möödumist teise "
-"külje keerata"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:310
-#, kde-format
-msgid "&Flip card automatically after"
-msgstr "Sä&hvik keeratakse automaatselt ümber"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
-#: preftutorbase.ui:17
-#, kde-format
-msgid "Tutor Timing"
-msgstr "Õpetaja ajastamine"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
-#: preftutorbase.ui:23
-#, kde-format
-msgid "&Every"
-msgstr "I&ga"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
-#: preftutorbase.ui:60
-#, kde-format
-msgid "&minutes"
-msgstr "&minuti järel"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
-#: preftutorbase.ui:72
-#, kde-format
-msgid "&Randomly"
-msgstr "&Juhuslikult"
-
-#. i18n: ectx: property (text), widget (QLabel, labelBetween)
-#: preftutorbase.ui:100
-#, kde-format
-msgid "Between"
-msgstr "Vahemikus"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
-#: preftutorbase.ui:120
-#, kde-format
-msgid "m&inutes and"
-msgstr "m&inutit kuni"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
-#: preftutorbase.ui:146
-#, kde-format
-msgid "mi&nutes"
-msgstr "mi&nutit"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
-#: preftutorbase.ui:161
-#, kde-format
-msgid "Flashcard Appearance"
-msgstr "Sähviku välimus"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
-#: preftutorbase.ui:167
-#, kde-format
-msgid "&Native"
-msgstr "O&mastiil"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
-#: preftutorbase.ui:177
-#, kde-format
-msgid "Minim&alistic"
-msgstr "Minim&alistlik"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
-#: preftutorbase.ui:187
-#, kde-format
-msgid "Miscellaneous"
-msgstr "Muu"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
-#: preftutorbase.ui:193
-#, kde-format
-msgid "S&tart exercise as soon as vocabulary file is opened"
-msgstr "Harju&tamise alustamine kohe sõnaraamatufaili avamisel"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
-#, kde-format
-msgid "Type your answer"
-msgstr "Kirjuta oma vastus"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:145
-#, kde-format
-msgid "The answer showing blanks for a Fill-in-the-blank question"
-msgstr "Vastus, mis näitab täidetavate tühikutega küsimuse tühikuid"
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:148
-#, kde-format
-msgid "This is _____ answer"
-msgstr "See on _____ vastus"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
-#: qaviewbase.ui:176
-#, kde-format
-msgid "Type the answer to the question"
-msgstr "Kirjuta küsimuse vastus"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: qaviewbase.ui:587
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a question and answer quiz.</html>"
-msgstr ""
-"<html>Sinu sõnavaras on liiga vähe kirjeid.<br />Küsimuste ja vastustega "
-"viktoriini jaoks on vaja vähemalt üht kirjet.</html>"
-
-#: wqprintdialogpage.cpp:17
+#: qml/SettingsPage.qml:152
 #, fuzzy, kde-format
-#| msgid "Vocabulary Options"
+#| msgid "Quits KWordQuiz"
+msgid "About KWordQuiz"
+msgstr "Sulgeb KWordQuizi"
+
+#: qml/SettingsPage.qml:161
+#, kde-format
+msgid "About KDE"
+msgstr ""
+
+#: qml/WelcomePage.qml:35
+#, kde-format
 msgctxt "@title:window"
-msgid "Vocabulary Options"
-msgstr "Sõnavara valikud"
+msgid "Welcome"
+msgstr ""
 
-#: wqprintdialogpage.cpp:23
+#: qml/WelcomePage.qml:43
 #, kde-format
-msgid "Select Type of Printout"
-msgstr "Väljatrüki tüübi valimine"
+msgid "Please choose a KWordQuiz document"
+msgstr ""
 
-#: wqprintdialogpage.cpp:28
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Vocabulary &list"
-msgstr "Sõnavara&loend"
+msgid "KEduDocument (*.kvtml)"
+msgstr ""
 
-#: wqprintdialogpage.cpp:29
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Select to print the vocabulary as displayed in the editor"
-msgstr "Vali sõnavara trükkimiseks nii nagu redaktoris"
+msgid "Wql documents (*.wql)"
+msgstr ""
 
-#: wqprintdialogpage.cpp:33
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Vocabulary e&xam"
-msgstr "Sõnavarae&ksam"
+msgid "CSV documents (*.csv)"
+msgstr ""
 
-#: wqprintdialogpage.cpp:34
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Select to print the vocabulary as a vocabulary exam"
-msgstr "Vali sõnavara trükkimiseks sõnavaraeksamina"
+msgid "XDXF documents (*.xdxf)"
+msgstr ""
 
-#: wqprintdialogpage.cpp:38
-#, kde-format
-msgid "&Flashcards"
-msgstr "Sä&hvikud"
+#: qml/WelcomePage.qml:62
+#, fuzzy, kde-format
+#| msgid "Quits KWordQuiz"
+msgid "Welcome to KWordQuiz"
+msgstr "Sulgeb KWordQuizi"
 
-#: wqprintdialogpage.cpp:39
+#: qml/WelcomePage.qml:74
+#, fuzzy, kde-format
+#| msgid "Opens an existing vocabulary document"
+msgid "Open existing document"
+msgstr "Avab olemasoleva sõnavaradokumendi"
+
+#: qml/WelcomePage.qml:80
 #, kde-format
-msgid "Select to print flashcards"
-msgstr "Vali sähvikute trükkimiseks"
+msgid "Create Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:88
+#, kde-format
+msgid "Download Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:111
+#, kde-format
+msgid "Mode"
+msgstr "Režiim"
+
+#: qml/WelcomePage.qml:147
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgctxt "@option:check Mode selector"
+msgid "Flashcard"
+msgstr "Sähvik"
+
+#: qml/WelcomePage.qml:154
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgctxt "@option:check Mode selector"
+msgid "Multiple Choice"
+msgstr "Mitmene valik"
+
+#: qml/WelcomePage.qml:161
+#, fuzzy, kde-format
+#| msgid "Question & Answer"
+msgctxt "@option:check Mode selector"
+msgid "Question-Answer"
+msgstr "Küsimus ja vastus"
+
+#: qml/WelcomePage.qml:177
+#, kde-format
+msgid "Decks"
+msgstr ""
+
+#: qml/WelcomePage.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr ""
+
+#~ msgid "Selection"
+#~ msgstr "Valik"
+
+#~ msgid "Delete all information in selected entries"
+#~ msgstr "Kogu teabe kustutamine valitud kirjetest"
+
+#~ msgid ""
+#~ "When checked all information will be deleted from the selected entries"
+#~ msgstr "Märkimise korral kustutatakse valitud kirjetest kogu teave"
+
+#~ msgid "Clear &All"
+#~ msgstr "Puhasta &kõik"
+
+#~ msgid "Delete the text from selected entries"
+#~ msgstr "Teksti kustutamine valitud kirjetest"
+
+#~ msgid "When checked the text will be deleted from selected entries"
+#~ msgstr "Märkimise korral kustutatakse valitud kirjetest tekst"
+
+#~ msgid "&Text"
+#~ msgstr "&Tekst"
+
+#~ msgid "Delete the image link from selected entries"
+#~ msgstr "Pildilingi kustutamine valitud kirjetest"
+
+#~ msgid "When checked the image link will be deleted from selected entries"
+#~ msgstr "Märkimise korral kustutatakse valitud kirjetest pildilink"
+
+#~ msgid "&Image Links"
+#~ msgstr "P&ildilingid"
+
+#~ msgid "Delete the sound link from selected entries"
+#~ msgstr "Helilingi kustutamine valitud kirjetest"
+
+#~ msgid "When checked the sound link will be deleted from selected entries"
+#~ msgstr "Märkimise korral kustutatakse valitud kirjetest helilink"
+
+#~ msgid "&Sound Links"
+#~ msgstr "&Helilingid"
+
+#~ msgid "Column 1"
+#~ msgstr "Veerg 1"
+
+#~ msgid "Title for the left column"
+#~ msgstr "Vasaku veeru tiitel"
+
+#~ msgid "Enter a title (identifier) for the left column"
+#~ msgstr "Sisesta vasaku veeru tiitel (identifikaator)"
+
+#~ msgid "&Title:"
+#~ msgstr "&Pealkiri:"
+
+#, fuzzy
+#~| msgid "&Keyboard Layout:"
+#~ msgid "&Keyboard layout:"
+#~ msgstr "&Klaviatuuripaigutus:"
+
+#~ msgid "&Width:"
+#~ msgstr "&Laius:"
+
+#~ msgid "Keyboard layout for the left column"
+#~ msgstr "Vasaku veeru klaviatuuripaigutus"
+
+#~ msgid "Select a keyboard layout for the left column"
+#~ msgstr "Vasaku veeru klaviatuuripaigutus"
+
+#~ msgid "Width of the left column"
+#~ msgstr "Vasaku veeru laius"
+
+#~ msgid "Enter the width (in pixels) for the left column"
+#~ msgstr "Sisesta vasaku veeru laius (pikslites)"
+
+#~ msgid "Column 2"
+#~ msgstr "Veerg 2"
+
+#~ msgid "T&itle:"
+#~ msgstr "P&ealkiri:"
+
+#~ msgid "Keyboard &Layout:"
+#~ msgstr "K&laviatuuripaigutus:"
+
+#~ msgid "Wi&dth:"
+#~ msgstr "Lai&us:"
+
+#~ msgid "Title for the right column"
+#~ msgstr "Parema veeru tiitel"
+
+#~ msgid "Enter a title (identifier) for the right column"
+#~ msgstr "Sisesta parema veeru tiitel (identifikaator)"
+
+#~ msgid "Width of the right column"
+#~ msgstr "Parema veeru laius"
+
+#~ msgid "Enter the width (in pixels) for the right column"
+#~ msgstr "Sisesta parema veeru laius (pikslites)"
+
+#, fuzzy
+#~| msgid "Column Settings"
+#~ msgctxt "@title:window"
+#~ msgid "Column Settings"
+#~ msgstr "Veeru seadistused"
+
+#~ msgctxt "@title:window select character dialog"
+#~ msgid "Select Character"
+#~ msgstr "Sümboli valik"
+
+#~ msgctxt "@action:button"
+#~ msgid "&Select"
+#~ msgstr "&Vali"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select this character"
+#~ msgstr "Vali see sümbol"
+
+#~ msgid "Column widths"
+#~ msgstr "Veergude laius"
+
+#~ msgid "Keyboard layouts"
+#~ msgstr "Klaviatuuripaigutused"
+
+#~ msgid "Search"
+#~ msgstr "Otsing"
+
+#~ msgid "Your answer was correct!"
+#~ msgstr "Sinu vastus on õige!"
+
+#~ msgid "Your answer was incorrect."
+#~ msgstr "Sinu vastus ei ole õige."
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a flashcard quiz.</html>"
+#~ msgstr ""
+#~ "<html>Sinu sõnavaras on liiga vähe kirjeid.<br />Sähvikuviktoriiniks on "
+#~ "vaja vähemalt üht kirjet.</html>"
+
+#~ msgid "Creates a new blank vocabulary document"
+#~ msgstr "Loob uue tühja sõnavaradokumendi"
+
+#~ msgid "Download New Vocabularies..."
+#~ msgstr "Laadi alla uut sõnavara..."
+
+#~ msgid "Downloads new vocabularies"
+#~ msgstr "Tõmbab internetist uut sõnavara"
+
+#~ msgid "Saves the active vocabulary document"
+#~ msgstr "Salvestab aktiivse sõnavaradokumendi"
+
+#~ msgid "Saves the active vocabulary document with a different name"
+#~ msgstr "Salvestab aktiivse sõnavaradokumendi uue nimega"
+
+#~ msgid "Closes the active vocabulary document"
+#~ msgstr "Sulgeb aktiivse sõnavaradokumendi"
+
+#~ msgid "Prints the active vocabulary document"
+#~ msgstr "Trükib aktiivse sõnavaradokumendi"
+
+#~ msgid "Shows a preview of the active vocabulary document"
+#~ msgstr "Aktiivse sõnavaradokumendi eelvaatluse näitamine"
+
+#~ msgid "Cuts the text from the selected cells and places it on the clipboard"
+#~ msgstr "Lõikab teksti valitud lahtritest ja asetab lõikepuhvrisse"
+
+#~ msgid ""
+#~ "Copies the text from the selected cells and places it on the clipboard"
+#~ msgstr "Kopeerib teksti valitud lahtritest ja asetab lõikepuhvrisse"
+
+#~ msgid ""
+#~ "Pastes previously cut or copied text from the clipboard into the selected "
+#~ "cells"
+#~ msgstr "Asetab varem lõigatud või kopeeritud teksti valitud lahtri(te)sse"
+
+#~ msgid "Clears the content of the selected cells"
+#~ msgstr "Puhastab valitud lahtrite sisu"
+
+#~ msgid "&Insert Row"
+#~ msgstr "L&isa rida"
+
+#~ msgid "Inserts a new row above the current row"
+#~ msgstr "Lisab rea aktiivse rea kohale"
+
+#~ msgid "&Delete Row"
+#~ msgstr "Kustuta ri&da"
+
+#~ msgid "Deletes the selected row(s)"
+#~ msgstr "Kustutab valitud rea(d)"
+
+#~ msgid "&Mark as Blank"
+#~ msgstr "&Märgi tühikutega sõnaks"
+
+#~ msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+#~ msgstr "Märgib aktiivse või valitud sõna täidetavate tühikutega sõnaks"
+
+#~ msgid "&Unmark Blanks"
+#~ msgstr "&Eemalda tühikud"
+
+#~ msgid "Removes blanks from the current or selected word"
+#~ msgstr "Eemaldab aktiivselt või valitud sõnalt tühikud"
+
+#~ msgid "&Column Settings..."
+#~ msgstr "&Veeru seadistused..."
+
+#~ msgid "Defines the column settings for the active vocabulary"
+#~ msgstr "Määrab aktiivse sõnavara veeru seadistused"
+
+#~ msgid "&Font..."
+#~ msgstr "&Font..."
+
+#~ msgid "Defines the font used by the editor"
+#~ msgstr "Määrab redaktoris kasutatava fondi"
+
+#~ msgid "Link &Image..."
+#~ msgstr "L&ingi pilt..."
+
+#~ msgid "Links an image with the current entry"
+#~ msgstr "Pildi linkimine aktiivse kirjega"
+
+#~ msgid "Link &Sound..."
+#~ msgstr "Lin&gi heli..."
+
+#~ msgid "Links a sound with the current entry"
+#~ msgstr "Heli linkimine aktiivse kirjega"
+
+#~ msgid "&Adjust Row Heights"
+#~ msgstr "&Kohenda ridade kõrgust"
+
+#~ msgid "Automatically adjusts the height of selected rows"
+#~ msgstr "Kohendab automaatselt valitud ridade kõrgust"
+
+#~ msgid "Sh&uffle"
+#~ msgstr "S&ega"
+
+#~ msgid "Shuffles the entries of the active vocabulary"
+#~ msgstr "Segab aktiivse sõnavaradokumendi kirjed"
+
+#~ msgid "&Keyboard Layout"
+#~ msgstr "&Klaviatuuripaigutus"
+
+#~ msgid "Shows available keyboard layouts"
+#~ msgstr "Saadaolevate klaviatuuripaigutuste näitamine"
+
+#~ msgid "Change Mode"
+#~ msgstr "Muuda režiimi"
+
+#~ msgid "Changes the mode used in quiz sessions"
+#~ msgstr "Muudab viktoriiniseansi režiimi"
+
+#~ msgid "Selects this mode"
+#~ msgstr "Valib selle režiimi"
+
+#~ msgctxt "@item:inlistbox activate vocabulary editor"
+#~ msgid "&Editor"
+#~ msgstr "R&edaktor"
+
+#~ msgid "Activates the vocabulary editor"
+#~ msgstr "Aktiveerib sõnavara redaktori"
+
+#~ msgid "&Flashcard"
+#~ msgstr "Sä&hvik"
+
+#~ msgid "Starts a flashcard session using the active vocabulary"
+#~ msgstr "Käivitab sähvikuseansi aktiivse sõnavaradokumendiga"
+
+#~ msgid "&Multiple Choice"
+#~ msgstr "&Mitu valikut"
+
+#~ msgid "Starts a multiple choice session using the active vocabulary"
+#~ msgstr "Käivitab mitme valikuga seansi aktiivse sõnavaradokumendiga"
+
+#~ msgid "Q&&A"
+#~ msgstr "K/V"
+
+#~ msgid "Starts a question and answer session using the active vocabulary"
+#~ msgstr "Käivitab küsimuse-vastuse seansi aktiivse sõnavaradokumendiga"
+
+#~ msgid "Checks your answer to this question"
+#~ msgstr "Kontrollib küsimusele antud vastust"
+
+#~ msgid "Choose Option &1"
+#~ msgstr "Vali valik &1"
+
+#~ msgid "Choose Option &2"
+#~ msgstr "Vali valik &2"
+
+#~ msgid "Choose Option &3"
+#~ msgstr "Vali valik &3"
+
+#~ msgid "I &Know"
+#~ msgstr "M&a tean"
+
+#~ msgid "Counts this card as correct and shows the next card"
+#~ msgstr "Märgib sähviku õigesti vastatuks ja näitab uut sähvikut"
+
+#~ msgid "I &Do Not Know"
+#~ msgstr "Ma &ei tea"
+
+#~ msgid "Counts this card as incorrect and shows the next card"
+#~ msgstr "Märgib sähviku valesti vastatuks ja näitab uut sähvikut"
+
+#~ msgid "Gets the next correct letter of the answer"
+#~ msgstr "Avab vastuses ühe õige tähe"
+
+#~ msgid "Marks last answer as correct"
+#~ msgstr "Viimase vastuse märkimine õigeks"
+
+#~ msgid "&Restart"
+#~ msgstr "Alusta &uuesti"
+
+#~ msgid "Restarts the quiz session from the beginning"
+#~ msgstr "Käivitab viktoriiniseansi uuesti algusest"
+
+#~ msgid "&Play Audio"
+#~ msgstr "Esita &heli"
+
+#~ msgid "Play associated audio"
+#~ msgstr "Seostatud heli esitamine"
+
+#~ msgid "Repeats all incorrectly answered questions"
+#~ msgstr "Kordab kõiki vigaselt vastatud küsimusi"
+
+#~ msgid "Export Errors &As..."
+#~ msgstr "Ekspordi ve&ad kui..."
+
+#~ msgid "Exports all errors as a new vocabulary document"
+#~ msgstr "Ekspordib kõik vead uue sõnavaradokumendina"
+
+#~ msgid "Show Se&arch"
+#~ msgstr "&Otsingu näitamine"
+
+#~ msgid "Toggle display of the search bar"
+#~ msgstr "Lülitab otsinguriba näitamist"
+
+#~ msgid "Configures sound and other notifications for certain events"
+#~ msgstr "Seadistab teatud sündmuste helisid ja muid märguandeid"
+
+#~ msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+#~ msgstr "Määrab sõnavara redaktori ja viktoriiniseansside seadistused"
+
+#~ msgid "Special Character <numid>%1</numid>"
+#~ msgstr "Erimärk <numid>%1</numid>"
+
+#~ msgid "Toggles display of the toolbars"
+#~ msgstr "Lülitab tööriistaribade näitamist"
+
+#~ msgid "Enter search terms here"
+#~ msgstr "Kirjuta siia otsingusõna"
+
+#~ msgid "Opening file..."
+#~ msgstr "Faili avamine..."
+
+#, fuzzy
+#~| msgid "Opening file..."
+#~ msgid "Open File"
+#~ msgstr "Faili avamine..."
+
+#~ msgctxt "@info:status ready"
+#~ msgid "Ready"
+#~ msgstr "Valmis"
+
+#~ msgid ""
+#~ "The current document has been modified.\n"
+#~ "Do you want to save it?"
+#~ msgstr ""
+#~ "Aktiivset dokumenti on muudetud.\n"
+#~ "Kas soovid selle salvestada?"
+
+#~ msgid "Opening a new document window..."
+#~ msgstr "Uue akna avamine..."
+
+#~ msgid "&Merge selected files with the current document"
+#~ msgstr "Ü&henda valitud failid aktiivse dokumendiga"
+
+#~ msgid "Open Vocabulary Document"
+#~ msgstr "Sõnavaradokumendi avamine"
+
+#~ msgid "Saving file..."
+#~ msgstr "Faili salvestamine..."
+
+#~ msgid "Saving file with a new filename..."
+#~ msgstr "Faili salvestamine uue nimega..."
+
+#~ msgid "HTML Document"
+#~ msgstr "HTML-dokument"
+
+#~ msgid "Save Vocabulary Document As"
+#~ msgstr "Sõnavaradokumendi salvestamine kui..."
+
+#~ msgid "Closing file..."
+#~ msgstr "Faili sulgemine..."
+
+#~ msgctxt "@info:status quitting"
+#~ msgid "Quitting..."
+#~ msgstr "Väljumine..."
+
+#~ msgid "Cutting selection..."
+#~ msgstr "Valitud teksti lõikamine..."
+
+#~ msgid "Copying selection to clipboard..."
+#~ msgstr "Valitud teksti kopeerimine lõikepuhvrisse..."
+
+#~ msgid "Inserting clipboard contents..."
+#~ msgstr "Lõikepuhvri sisu sisestamine..."
+
+#~ msgid "Clearing the selected cells..."
+#~ msgstr "Valitud lahtrite puhastamine..."
+
+#~ msgid "Inserting rows..."
+#~ msgstr "Ridade lisamine..."
+
+#~ msgid "Deleting selected rows..."
+#~ msgstr "Valitud ridade kustutamine..."
+
+#~ msgid "Marking selected text as a blank..."
+#~ msgstr "Valitud teksti märkimine tühikutega sõna(de)ks..."
+
+#~ msgid "Removing blank markings..."
+#~ msgstr "Tühikukriipsude eemaldamine..."
+
+#~ msgid "Setting the column titles of the vocabulary..."
+#~ msgstr "Sõnavara veerutiitlite määramine..."
+
+#~ msgid "Setting the font of the vocabulary..."
+#~ msgstr "Sõnavara fondi määramine..."
+
+#~ msgid "Linking an image with the current entry..."
+#~ msgstr "Pildi linkimine aktiivse kirjega..."
+
+#~ msgid "Linking a sound with the current entry..."
+#~ msgstr "Heli linkimine aktiivse kirjega..."
+
+#~ msgid "Adjusting row heights..."
+#~ msgstr "Ridade kõrguse kohandamine..."
+
+#~ msgid "Randomizing the vocabulary..."
+#~ msgstr "Sõnavara seadmine suvalisse järjekorda..."
+
+#~ msgid "Updating mode..."
+#~ msgstr "Režiimi uuendamine..."
+
+#~ msgid "Starting editor session..."
+#~ msgstr "Redaktoriseansi käivitamine..."
+
+#~ msgid "Starting flashcard session..."
+#~ msgstr "Sähvikuseansi käivitamine..."
+
+#~ msgid "Starting multiple choice session..."
+#~ msgstr "Mitme valikuga seansi käivitamine..."
+
+#~ msgid "Starting question & answer session..."
+#~ msgstr "Küsimuse-vastuse seansi käivitamine..."
+
+#~ msgid "Insert %1"
+#~ msgstr "Lisa %1"
+
+#~ msgid "Inserts the character %1"
+#~ msgstr "Lisab märgi %1"
+
+#~ msgid "This will restart your quiz. Do you wish to continue?"
+#~ msgstr "See käivitab viktoriini uuesti. Kas soovid jätkata?"
+
+#~ msgid "&1 %1 -> %2 In Order"
+#~ msgstr "&1 %1 -> %2 järjekorras"
+
+#~ msgid "&2 %1 -> %2 In Order"
+#~ msgstr "&2 %1 -> %2 järjekorras"
+
+#~ msgid "&3 %1 -> %2 Randomly"
+#~ msgstr "&3 %1 -> %2 suvaliselt"
+
+#~ msgid "&4 %1 -> %2 Randomly"
+#~ msgstr "&4 %1 -> %2 suvaliselt"
+
+#~ msgid "&5 %1 <-> %2 Randomly"
+#~ msgstr "&5 %1 <-> %2 suvaliselt"
+
+#~ msgid "%1 -> %2 In Order"
+#~ msgstr "%1 -> %2 järjekorras"
+
+#~ msgid "%1 -> %2 Randomly"
+#~ msgstr "%1 -> %2 suvaliselt"
+
+#~ msgid "%1 &lt;-&gt; %2 Randomly"
+#~ msgstr "%1 &lt;-&gt; %2 suvaliselt"
+
+#~ msgid "Is this the first time KWordQuiz is run?"
+#~ msgstr "Kas see on sul esimene kord KWordQuizi käivitada?"
+
+#~ msgid "Toggle display of the search bar."
+#~ msgstr "Lülitab otsinguriba näitamist"
+
+#~ msgid "Type of session to use when opening files"
+#~ msgstr "Failide avamisel kasutatav seansi tüüp"
+
+#~ msgid "Type of printout to generate"
+#~ msgstr "Genereeritava väljatrüki tüüp"
+
+#~ msgid "Titles for column 1"
+#~ msgstr "Veeru 1 tiitel"
+
+#~ msgid "Titles for column 2"
+#~ msgstr "Veeru 2 tiitel"
+
+#~ msgid "Font used in the editor"
+#~ msgstr "Redaktoris kasutatav font"
+
+#~ msgid "If Fill-in-the-blank should be enabled"
+#~ msgstr "Kas lubada täidetavad tühikud"
+
+#~ msgid "Direction the Enter key moves in the editor"
+#~ msgstr "Millises suunas liigutab klahv Enter redaktoris"
+
+#~ msgid "Characters for the special character toolbar"
+#~ msgstr "Erimärkide riba märgid"
+
+#~ msgid "Clear all data in selected entries"
+#~ msgstr "Kõigi andmete kustutamine valitud kirjetest"
+
+#~ msgid "Clear the text in selected entries"
+#~ msgstr "Teksti kustutamine valitud kirjetest"
+
+#~ msgid "Clear the image link in selected entries"
+#~ msgstr "Pildilingi kustutamine valitud kirjetest"
+
+#~ msgid "Clear the sound link in selected entries"
+#~ msgstr "Helilingi kustutamine valitud kirjetest"
+
+#~ msgid "Treat use of hint as error"
+#~ msgstr "Vihje kasutamist käsitletakse veana"
+
+#~ msgid "Count flashcard as correct or error"
+#~ msgstr "Sähviku käsitlemine õigesti vastatu või veana"
+
+#~ msgid "Quiz mode"
+#~ msgstr "Viktoriinirežiim"
+
+#~ msgid "Font used for front of flashcard"
+#~ msgstr "Sähvikute esiküljel kasutatav font"
+
+#~ msgid "Color used for text on front of flashcard"
+#~ msgstr "Sähvikute esikülje teksti värv"
+
+#~ msgid "Color used for front of flashcard"
+#~ msgstr "Sähvikute esikülje värv"
+
+#~ msgid "Color used for frame on front of flashcard"
+#~ msgstr "Sähvikute esikülje raami värv"
+
+#~ msgid "Font used for back of flashcard"
+#~ msgstr "Sähvikute tagaküljel kasutatav font"
+
+#~ msgid "Color used for text on back of flashcard"
+#~ msgstr "Sähvikute tagakülje teksti värv"
+
+#~ msgid "Color used for back of flashcard"
+#~ msgstr "Sähvikute tagakülje värv"
+
+#~ msgid "Color used for frame on back of flashcard"
+#~ msgstr "Sähvikute tagakülje raami värv"
+
+#~ msgid "The Providers path for KWordQuiz"
+#~ msgstr "KWordQuizi abimaterjalide asukoht"
+
+#~ msgid "The command used to start a downloaded vocabulary"
+#~ msgstr "Käsk allalaaditud sõnavara käivitamiseks"
+
+#~ msgid ""
+#~ "The folder where downloaded vocabularies are saved by default (relative "
+#~ "to $HOME)"
+#~ msgstr ""
+#~ "Kataloog, kuhu allalaaditud sõnavara vaikimisi salvestatakse (muutuja "
+#~ "$HOME suhtes)"
+
+#~ msgid "Pop up flashcards at fixed or random intervals"
+#~ msgstr "Sähvikute näitamine fikseeritud või juhusliku intervalliga"
+
+#~ msgid "The interval in minutes at which to pop up a flash card"
+#~ msgstr "Intervall minutites, mille järel sähvikuid näidata"
+
+#~ msgid "The minimum interval in minutes at which to pop up a flash card"
+#~ msgstr "Minimaalne intervall minutites, mille järel sähvikuid näidata"
+
+#~ msgid "The maximum interval in minutes at which to pop up a flash card"
+#~ msgstr "Maksimaalne intervall minutites, mille järel sähvikuid näidata"
+
+#~ msgid "Geometry of the last flash card"
+#~ msgstr "Viimase sähviku geomeetria"
+
+#~ msgid "Show flash card in a native KWordQuiz style"
+#~ msgstr "Sähvikute näitamine KWordQuizi omastiilis"
+
+#~ msgid ""
+#~ "Last open vocabulary file to be opened automatically if none other is "
+#~ "specified on the command line"
+#~ msgstr ""
+#~ "Viimati avatud sõnaraamatu automaatne avamine, kui käsureal ei ole "
+#~ "määratud teisiti"
+
+#~ msgid "Start exercise as soon as the user opens vocabulary file"
+#~ msgstr "Harjutamise alustamine kohe, kui kasutaja avab sõnaraamatufaili"
+
+#~ msgctxt "@title:group general settings"
+#~ msgid "General Settings"
+#~ msgstr "Üldised seadistused"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor"
+#~ msgstr "Redaktor"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor Settings"
+#~ msgstr "Redaktori seadistused"
+
+#~ msgctxt "@title:group quiz settings"
+#~ msgid "Quiz"
+#~ msgstr "Viktoriin"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Sähviku välimus"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance Settings"
+#~ msgstr "Sähviku välimuse seadistused"
+
+#~ msgctxt "@title:group special character settings"
+#~ msgid "Special Characters"
+#~ msgstr "Erimärgid"
+
+#~ msgid "V&ocabulary"
+#~ msgstr "Sõ&navara"
+
+#~ msgid "&Mode"
+#~ msgstr "Režii&m"
+
+#~ msgid "&Quiz"
+#~ msgstr "&Viktoriin"
+
+#~ msgid "Quiz"
+#~ msgstr "Viktoriin"
+
+#~ msgid "Special Characters"
+#~ msgstr "Erimärgid"
+
+#, fuzzy
+#~| msgid "Clear Contents"
+#~ msgctxt "@title:window"
+#~ msgid "Clear Contents"
+#~ msgstr "Sisu kustutamine"
+
+#~ msgctxt "@item:inmenu undo clear"
+#~ msgid "Clear"
+#~ msgstr "Puhastamine"
+
+#~ msgctxt "@item:inmenu undo cut"
+#~ msgid "Cut"
+#~ msgstr "Lõikamine"
+
+#~ msgctxt "@item:inmenu undo paste"
+#~ msgid "Paste"
+#~ msgstr "Asetamine"
+
+#~ msgctxt "@item:inmenu undo sort"
+#~ msgid "Sort"
+#~ msgstr "Sorteerimine"
+
+#~ msgctxt "@item:inmenu undo insert"
+#~ msgid "Insert"
+#~ msgstr "Lisamine"
+
+#~ msgctxt "@item:inmenu undo delete"
+#~ msgid "Delete"
+#~ msgstr "Kustutamine"
+
+#~ msgctxt "@item:inmenu undo unmark blank"
+#~ msgid "Unmark Blank"
+#~ msgstr "Tühikute eemaldamine"
+
+#~ msgctxt "@item:inmenu undo column titles"
+#~ msgid "Column Settings"
+#~ msgstr "Veeru seadistused"
+
+#~ msgid "Font"
+#~ msgstr "Font"
+
+#~ msgid "Entry"
+#~ msgstr "Kirje"
+
+#~ msgid "Questions"
+#~ msgstr "Küsimused"
+
+#~ msgid "The number of questions in the session"
+#~ msgstr "Küsimuste arv seansis"
+
+#~ msgid "00"
+#~ msgstr "00"
+
+#~ msgid "Correct answers"
+#~ msgstr "Õiged vastused"
+
+#~ msgid ""
+#~ "The number of questions answered correctly. May be shown as a percentage."
+#~ msgstr "Õigesti vastatud küsimuste arv. Võib olla protsendina."
+
+#~ msgid ""
+#~ "The number of questions answered incorrectly. May be shown as a "
+#~ "percentage."
+#~ msgstr "Valesti vastatud küsimuste arv. Võib olla protsendina."
+
+#~ msgid "Answered questions"
+#~ msgstr "Vastatud küsimused"
+
+#~ msgid ""
+#~ "The number of questions already answered. May be shown as a percentage."
+#~ msgstr "Juba vastatud küsimuste arv. Võib olla protsendina."
+
+#~ msgid "Untitled"
+#~ msgstr "Nimetu"
+
+#~ msgid "There is an error with the Fill-in-the-blank brackets"
+#~ msgstr "Viga täidetavate tühikutega sõnas"
+
+#, fuzzy
+#~| msgid "Select Sound"
+#~ msgctxt "@title:window"
+#~ msgid "Select Sound"
+#~ msgstr "Heli valimine"
+
+#~ msgid "All Files (*)"
+#~ msgstr "Kõik failid (*)"
+
+#~ msgid ""
+#~ "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that "
+#~ "allows you to set a certain time interval at which flashcards will pop up."
+#~ "<br /><br />The flashcards pop up in a non-intrusive way allowing you to "
+#~ "carry on working without stealing the focus from other programs you might "
+#~ "be working with.<br /><br />Be sure to right-click KWordQuiz Tutor icon "
+#~ "on the panel and select Preferences. There you can assign keyboard "
+#~ "shortcuts.</qt>"
+#~ msgstr ""
+#~ "<qt>KWordQuizi õpetaja näitab ekraanil sähvikuid, kusjuures sa saad "
+#~ "määrata teatava ajavahemiku, mille jooksul sähvikud on nähtaval.<br /"
+#~ "><br />Sähvikud ilmuvad mittesegaval viisil ning võimaldavad sul tööd "
+#~ "jätkata, haaramata fookust teistelt rakendustelt, mis sul võivad "
+#~ "parajasti ees olla.<br /><br />Tee kindlasti paremklõps KWordQuizi "
+#~ "õpetaja ikoonil paneelil ja vali Eelistused. See lubab kindlaks määrata "
+#~ "kiirklahvid.</qt>"
+
+#~ msgid "Tutor"
+#~ msgstr "Õpetaja"
+
+#~ msgid "Start Exercise"
+#~ msgstr "Alusta harjutamist"
+
+#~ msgid "Configure KWordQuiz Tutor..."
+#~ msgstr "Seadista KWordQuizi õpetajat..."
+
+#~ msgid "Close Flash Card"
+#~ msgstr "Sulge sähvik"
+
+#~ msgid "Flip Flash Card"
+#~ msgstr "Pööra sähvikut"
+
+#~ msgid "Stop Exercise"
+#~ msgstr "Peata harjutamine"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor"
+#~ msgstr "Õpetaja"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor Settings"
+#~ msgstr "Õpetaja seadistused"
+
+#~ msgctxt "Shortcuts Config"
+#~ msgid "Shortcuts"
+#~ msgstr "Kiirklahvid"
+
+#~ msgid "Shortcuts Settings"
+#~ msgstr "Kiirklahvide seadistused"
+
+#~ msgid ""
+#~ "A number 1-5 corresponding to the \n"
+#~ "entries in the Mode menu"
+#~ msgstr ""
+#~ "Arv vahemikus 1-5 \n"
+#~ "vastavalt režiimimenüü kirjetele"
+
+#~ msgid "Previous Question"
+#~ msgstr "Eelmine küsimus"
+
+#~ msgid "Your Answer"
+#~ msgstr "Sinu vastus"
+
+#~ msgid "Summary"
+#~ msgstr "Kokkuvõte"
+
+#~ msgid "The question"
+#~ msgstr "Küsimus"
+
+#~ msgid "Language or other identifier for the question"
+#~ msgstr "Keel või muu küsimuse identifikaator"
+
+#~ msgid "This is your question"
+#~ msgstr "See on sinu küsimus"
+
+#~ msgid "Your choices"
+#~ msgstr "Sinu valikud"
+
+#~ msgid "Three choices for the answer. One is correct."
+#~ msgstr "Kolm vastusevõimalust. Üks on õige."
+
+#~ msgid "&1 Option"
+#~ msgstr "Valik &1"
+
+#~ msgid "Language or other identifier for the answer"
+#~ msgstr "Keel või muu vastuse identifikaator"
+
+#~ msgid "Language 2"
+#~ msgstr "Keel 2"
+
+#~ msgid "&3 Option"
+#~ msgstr "Valik &3"
+
+#~ msgid "Previous question"
+#~ msgstr "Eelmine küsimus"
+
+#~ msgid "The previous question"
+#~ msgstr "Eelmine küsimus"
+
+#~ msgid "This was your question"
+#~ msgstr "See oli sinu küsimus"
+
+#~ msgid "Your previous answer"
+#~ msgstr "Sinu eelmine vastus"
+
+#~ msgid "Your answer to the previous question"
+#~ msgstr "Sinu vastus eelmisele küsimusele"
+
+#~ msgid "This was your answer"
+#~ msgstr "See oli sinu vastus"
+
+#~ msgid "Previous correct answer"
+#~ msgstr "Eelmine õige vastus"
+
+#~ msgid "The correct answer to the previous question"
+#~ msgstr "Eelmise küsimuse õige vastus"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least three entries for a multiple choice quiz.</html>"
+#~ msgstr ""
+#~ "<html>Sinu sõnavaras on liiga vähe kirjeid.<br />Mitme valikuga "
+#~ "viktoriini jaoks on vaja vähemalt kolme kirjet.</html>"
+
+#~ msgctxt "Back of the flashcard"
+#~ msgid "Back"
+#~ msgstr "Tagakülg"
+
+#~ msgid "Front"
+#~ msgstr "Esikülg"
+
+#~ msgid "Card Appearance"
+#~ msgstr "Kaardi välimus"
+
+#~ msgid "Flip card"
+#~ msgstr "Pööra kaarti"
+
+#~ msgid "Use to show the other side of the card"
+#~ msgstr "Kasuta seda kaardi teise külje vaatamiseks"
+
+#~ msgid "&Flip Card"
+#~ msgstr "&Pööra kaarti"
+
+#~ msgid "F&ont:"
+#~ msgstr "&Font:"
+
+#~ msgid "Use to select the font for displaying text on the back of the card"
+#~ msgstr "Kasuta seda kaardi tagakülje teksti fondi valimiseks"
+
+#~ msgid "Select text color"
+#~ msgstr "Vali teksti värv"
+
+#~ msgid "Use to select the color for text shown on the card"
+#~ msgstr "Kasuta seda kaardil näidatava teksti värvi valimiseks"
+
+#~ msgid "Select card frame color"
+#~ msgstr "Vali kaardi raami värv"
+
+#~ msgid "Use to select the color for drawing the frame of the card"
+#~ msgstr "Kasuta seda kaardi ümber näidatava raami värvi valimiseks"
+
+#~ msgid "Select card color"
+#~ msgstr "Vali kaardi värv"
+
+#~ msgid "Select color used to draw the card"
+#~ msgstr "Vali kaardi värv"
+
+#~ msgid "Use to select the font for displaying text on the front of the card"
+#~ msgstr "Kasuta seda kaardi esikülje teksti fondi valimiseks"
+
+#~ msgid "&Text color:"
+#~ msgstr "&Teksti värv:"
+
+#~ msgid "&Card color:"
+#~ msgstr "&Kaardi värv:"
+
+#~ msgid "Fra&me color:"
+#~ msgstr "Raa&mi värv:"
+
+#~ msgid "Action"
+#~ msgstr "Toiming"
+
+#~ msgid "Shortcut"
+#~ msgstr "Kiirklahv"
+
+#~ msgid "Character"
+#~ msgstr "Märk"
+
+#~ msgid "Special Character %1"
+#~ msgstr "Erimärk %1"
+
+#~ msgid ""
+#~ "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+#~ "associated with each action."
+#~ msgstr ""
+#~ "Märkus: vali iga toiminguga seotud kiirklahvi muutmiseks Seadistused -> "
+#~ "Kiirklahvide seadistamine..."
+
+#~ msgid "Select character to modify"
+#~ msgstr "Vali muudetav sümbol"
+
+#~ msgid "Customizable special character actions"
+#~ msgstr "Kohandatavad erimärgitoimingud"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "Click to choose a new character"
+#~ msgstr "Klõpsa uue sümboli valimiseks"
+
+#~ msgid "Choose a character for the selected action"
+#~ msgstr "Vali märk valitud toimingule"
+
+#~ msgid "C&haracter..."
+#~ msgstr "Mär&k..."
+
+#~ msgid "Preview of current character"
+#~ msgstr "Praeguse märgi eelvaatlus"
+
+#~ msgid "Preview of the character associated with the selected action"
+#~ msgstr "Valitud toiminguga seotud märgi eelvaatlus"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "How enter key moves"
+#~ msgstr "Kuidas klahv Enter liigutab"
+
+#~ msgid "Select how the Enter key should behave in the editor"
+#~ msgstr "Vali, mis mõju on klahvil Enter redaktoris"
+
+#~ msgid "Enter Ke&y Moves"
+#~ msgstr "Klahv Enter lii&gutab"
+
+#~ msgid ""
+#~ "Select if the next cell below should become active when pressing Enter."
+#~ msgstr ""
+#~ "Vali, kui klahvi Enter vajutamisel peab aktiivseks muutuma järgmine "
+#~ "allpool asuv lahter."
+
+#~ msgid "&Down"
+#~ msgstr "&Alla"
+
+#~ msgid ""
+#~ "Select if the next cell to the right should become active when pressing "
+#~ "Enter"
+#~ msgstr ""
+#~ "Vali, kui klahvi Enter vajutamisel peab aktiivseks muutuma järgmine "
+#~ "paremal asuv lahter."
+
+#~ msgid "&Right"
+#~ msgstr "&Paremale"
+
+#~ msgid "Select if the current cell should remain active when pressing Enter"
+#~ msgstr ""
+#~ "Vali, kui klahvi Enter vajutamisel peab aktiivseks jääma senine lahter."
+
+#~ msgid "Does not &move"
+#~ msgstr "&Ei liiguta"
+
+#~ msgid "Check to enable fill-in-the-blank"
+#~ msgstr "Märgi täidetavate tühikute lubamiseks"
+
+#~ msgid "Select to enable the functions for Fill-in-the-blank"
+#~ msgstr "Vali täidetavate tühikute kasutamise lubamiseks"
+
+#~ msgid "E&nable fill-in-the-blank"
+#~ msgstr "&Täidetavate tühikute lubamine"
+
+#~ msgid "How vocabulary documents are opened"
+#~ msgstr "Kuidas avada sõnavaradokumente"
+
+#~ msgid "Select the kind of session to load an opened vocabulary document in"
+#~ msgstr "Seansi tüübi valik, milles laadida avatud sõnavaradokument"
+
+#~ msgid "&Open Vocabulary Documents in"
+#~ msgstr "&Ava sõnavaradokument"
+
+#~ msgid "Open vocabulary documents in the editor"
+#~ msgstr "Sõnavaradokumentide avamine redaktoris"
+
+#~ msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgstr "Valimisel avatakse sõnavaradokumendid redaktoris"
+
+#~ msgid "&Editor"
+#~ msgstr "R&edaktor"
+
+#~ msgid "Open vocabulary documents in a flashcard quiz"
+#~ msgstr "Sõnavaradokumentide avamine sähvikuviktoriinis"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
+#~ msgstr "Valimisel avatakse sõnavaradokumendid sähvikuviktoriinis"
+
+#~ msgid "&Flashcard Quiz"
+#~ msgstr "Sä&hvikuviktoriin"
+
+#~ msgid "Open vocabulary documents in a multiple choice quiz"
+#~ msgstr "Sõnavaradokumentide avamine mitme valikuda viktoriinis"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a multiple choice "
+#~ "quiz"
+#~ msgstr "Valimisel avatakse sõnavaradokumendid mitme valikuga viktoriinis"
+
+#~ msgid "&Multiple Choice Quiz"
+#~ msgstr "&Mitmese valikuga viktoriin"
+
+#~ msgid "Open vocabulary documents in a question and answer quiz"
+#~ msgstr "Sõnavaradokumentide avamine küsimuse-vastuse viktoriinis"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a question and "
+#~ "answer quiz"
+#~ msgstr ""
+#~ "Valimisel avatakse sõnavaradokumendid küsimuste ja vastuste viktoriinis"
+
+#~ msgid "&Question and Answer Quiz"
+#~ msgstr "&Küsimuste ja vastuste viktoriin"
+
+#~ msgid "Specify behavior for a question and answer session"
+#~ msgstr "Küsimuse-vastuse seansi omadused"
+
+#~ msgid "Question && Answer"
+#~ msgstr "Küsimus ja vastus"
+
+#~ msgid ""
+#~ "Select if questions where the hint function has been used should be "
+#~ "counted as errors"
+#~ msgstr ""
+#~ "Vali, kui küsimusi, mille puhul kasutatakse vihjet, tuleks käsitleda veana"
+
+#~ msgid "&Treat hint as error"
+#~ msgstr "V&ihjet käsitletakse veana"
+
+#~ msgid "Specify behavior of the score presentation in any session"
+#~ msgstr "Kõigi seansside hindamise omadused"
+
+#~ msgid "Check to show score as a percentage"
+#~ msgstr "Märgi hinde näitamiseks protsendina"
+
+#~ msgid "Select if the score should be shown as a percentage"
+#~ msgstr "Vali, kui hinnet peaks näitama protsendina"
+
+#~ msgid "&Show score as a percentage"
+#~ msgstr "Hinnet &näidatakse protsendina"
+
+#~ msgid "Specify behavior for a multiple choice session"
+#~ msgstr "Mitmese valikuga seansi omadused"
+
+#~ msgid "Check to correct automatically"
+#~ msgstr "Märgi automaatseks kontrollimiseks"
+
+#~ msgid "Select if a choice should be checked immediately"
+#~ msgstr "Vali, kui valikut peaks otsekohe kontrollitama"
+
+#~ msgid "Check selection a&utomatically"
+#~ msgstr "Valik &kontrollitakse automaatselt"
+
+#~ msgid "Specify behavior of a flashcard session"
+#~ msgstr "Sähvikuseansi eriomadused"
+
+#~ msgid "Specify the amount of time between card flips"
+#~ msgstr "Määra aeg sähviku keeramise vahel"
+
+#~ msgid "seconds and"
+#~ msgstr "sekundi järel ja"
+
+#~ msgid "Delay to flip card"
+#~ msgstr "Kaardi keeramise viivitus"
+
+#~ msgid "Delay in seconds to flip card"
+#~ msgstr "Kaardi keeramise viivitus sekundites"
+
+#~ msgid "Select how to count card"
+#~ msgstr "Vali, kuidas sähvikut hinnata"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as correct when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Vali, kui järgmisele sähvikule liikudes tuleks eelmine õigesti vastatuks "
+#~ "lugeda"
+
+#~ msgid "Count &as correct"
+#~ msgstr "Loetakse õi&gesti vastatuks"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as incorrect when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Vali, kui järgmisele sähvikule liikudes tuleks eelmine valesti vastatuks "
+#~ "lugeda"
+
+#~ msgid "Count as &error"
+#~ msgstr "Loetakse &valesti vastatuks"
+
+#~ msgid "Check to flip card automatically"
+#~ msgstr "Märgi sähvik automaatseks ümberkeeramiseks"
+
+#~ msgid ""
+#~ "Select if you want a card to turn over automatically after the given "
+#~ "amount of time"
+#~ msgstr ""
+#~ "Vali, kui soovid sähvikul automaatselt pärast määratud aja möödumist "
+#~ "teise külje keerata"
+
+#~ msgid "&Flip card automatically after"
+#~ msgstr "Sä&hvik keeratakse automaatselt ümber"
+
+#~ msgid "Tutor Timing"
+#~ msgstr "Õpetaja ajastamine"
+
+#~ msgid "&Every"
+#~ msgstr "I&ga"
+
+#~ msgid "&minutes"
+#~ msgstr "&minuti järel"
+
+#~ msgid "&Randomly"
+#~ msgstr "&Juhuslikult"
+
+#~ msgid "Between"
+#~ msgstr "Vahemikus"
+
+#~ msgid "m&inutes and"
+#~ msgstr "m&inutit kuni"
+
+#~ msgid "mi&nutes"
+#~ msgstr "mi&nutit"
+
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Sähviku välimus"
+
+#~ msgid "&Native"
+#~ msgstr "O&mastiil"
+
+#~ msgid "Minim&alistic"
+#~ msgstr "Minim&alistlik"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Muu"
+
+#~ msgid "S&tart exercise as soon as vocabulary file is opened"
+#~ msgstr "Harju&tamise alustamine kohe sõnaraamatufaili avamisel"
+
+#~ msgid "Type your answer"
+#~ msgstr "Kirjuta oma vastus"
+
+#~ msgid "The answer showing blanks for a Fill-in-the-blank question"
+#~ msgstr "Vastus, mis näitab täidetavate tühikutega küsimuse tühikuid"
+
+#~ msgid "This is _____ answer"
+#~ msgstr "See on _____ vastus"
+
+#~ msgid "Type the answer to the question"
+#~ msgstr "Kirjuta küsimuse vastus"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a question and answer quiz.</html>"
+#~ msgstr ""
+#~ "<html>Sinu sõnavaras on liiga vähe kirjeid.<br />Küsimuste ja vastustega "
+#~ "viktoriini jaoks on vaja vähemalt üht kirjet.</html>"
+
+#, fuzzy
+#~| msgid "Vocabulary Options"
+#~ msgctxt "@title:window"
+#~ msgid "Vocabulary Options"
+#~ msgstr "Sõnavara valikud"
+
+#~ msgid "Select Type of Printout"
+#~ msgstr "Väljatrüki tüübi valimine"
+
+#~ msgid "Vocabulary &list"
+#~ msgstr "Sõnavara&loend"
+
+#~ msgid "Select to print the vocabulary as displayed in the editor"
+#~ msgstr "Vali sõnavara trükkimiseks nii nagu redaktoris"
+
+#~ msgid "Vocabulary e&xam"
+#~ msgstr "Sõnavarae&ksam"
+
+#~ msgid "Select to print the vocabulary as a vocabulary exam"
+#~ msgstr "Vali sõnavara trükkimiseks sõnavaraeksamina"
+
+#~ msgid "&Flashcards"
+#~ msgstr "Sä&hvikud"
+
+#~ msgid "Select to print flashcards"
+#~ msgstr "Vali sähvikute trükkimiseks"
 
 #~ msgid "kwordquiz"
 #~ msgstr "kwordquiz"

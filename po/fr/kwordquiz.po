@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:43+0000\n"
+"POT-Creation-Date: 2023-07-19 00:45+0000\n"
 "PO-Revision-Date: 2023-05-09 13:17+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -47,1599 +47,102 @@ msgstr ""
 "kde@macolu.org, sdepiets@gmail.com, nicolas.ternisien@gmail.com, durand."
 "d@9online.fr"
 
-#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
-#: cleardialogbase.ui:21
-#, kde-format
-msgid "Selection"
-msgstr "Sélection"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:30
-#, kde-format
-msgid "Delete all information in selected entries"
-msgstr "Supprimer toutes les informations dans les entrées sélectionnées"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:33
-#, kde-format
-msgid "When checked all information will be deleted from the selected entries"
-msgstr ""
-"Quand cela sera coché, toutes les informations seront supprimées des entrées "
-"sélectionnées"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:36
-#, kde-format
-msgid "Clear &All"
-msgstr "Effacer &tout"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:59
-#, kde-format
-msgid "Delete the text from selected entries"
-msgstr "Supprimer le texte des entrées sélectionnées"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:62
-#, kde-format
-msgid "When checked the text will be deleted from selected entries"
-msgstr ""
-"Quand cela sera coché, le texte sera supprimé des entrées sélectionnées"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:65
-#, kde-format
-msgid "&Text"
-msgstr "&Texte"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:72
-#, kde-format
-msgid "Delete the image link from selected entries"
-msgstr "Supprimer le lien de l'image dans les entrées sélectionnées"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:75
-#, kde-format
-msgid "When checked the image link will be deleted from selected entries"
-msgstr ""
-"Quand cela sera coché, le lien à l'image sera supprimé des entrées "
-"sélectionnées"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:78
-#, kde-format
-msgid "&Image Links"
-msgstr "Liens à l'&image"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:85
-#, kde-format
-msgid "Delete the sound link from selected entries"
-msgstr "Supprimer le lien du son dans les entrées sélectionnées"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:88
-#, kde-format
-msgid "When checked the sound link will be deleted from selected entries"
-msgstr ""
-"Quand cela sera coché, le lien au son sera supprimé des entrées sélectionnées"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:91
-#, kde-format
-msgid "&Sound Links"
-msgstr "Liens au &son"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
-#, kde-format
-msgid "Column 1"
-msgstr "Colonne 1"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
-#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
-#, kde-format
-msgid "Title for the left column"
-msgstr "Titre de la colonne de gauche"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
-#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
-#, kde-format
-msgid "Enter a title (identifier) for the left column"
-msgstr "Saisissez un titre (identifiant) pour la colonne de gauche"
-
-#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
-#: columndialogbase.ui:96
-#, kde-format
-msgid "&Title:"
-msgstr "&Titre : "
-
-#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
-#: columndialogbase.ui:112
-#, kde-format
-msgid "&Keyboard layout:"
-msgstr "&Disposition du clavier :"
-
-#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
-#: columndialogbase.ui:128
-#, kde-format
-msgid "&Width:"
-msgstr "&Largeur"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:158
-#, kde-format
-msgid "Keyboard layout for the left column"
-msgstr "Clavier pour la colonne de gauche"
-
-#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:161
-#, kde-format
-msgid "Select a keyboard layout for the left column"
-msgstr "Sélectionner un clavier pour la colonne de gauche"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:168
-#, kde-format
-msgid "Width of the left column"
-msgstr "Largeur de la colonne de gauche"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:171
-#, kde-format
-msgid "Enter the width (in pixels) for the left column"
-msgstr "Saisir la largeur (en pixels) de la colonne de gauche"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
-#, kde-format
-msgid "Column 2"
-msgstr "Colonne 2"
-
-#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
-#: columndialogbase.ui:265
-#, kde-format
-msgid "T&itle:"
-msgstr "T&itre : "
-
-#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
-#: columndialogbase.ui:281
-#, kde-format
-msgid "Keyboard &Layout:"
-msgstr "&Disposition du clavier : "
-
-#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
-#: columndialogbase.ui:297
-#, kde-format
-msgid "Wi&dth:"
-msgstr "Lar&geur : "
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:317
-#, kde-format
-msgid "Title for the right column"
-msgstr "Titre de la colonne de droite"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:320
-#, kde-format
-msgid "Enter a title (identifier) for the right column"
-msgstr "Saisissez un titre (identifiant) pour la colonne de droite"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:330
-#, kde-format
-msgid "Width of the right column"
-msgstr "Largeur de la colonne de droite"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:333
-#, kde-format
-msgid "Enter the width (in pixels) for the right column"
-msgstr "Saisir la largeur (en pixels) de la colonne de droite"
-
-#: dlglanguage.cpp:21
-#, kde-format
-msgctxt "@title:window"
-msgid "Column Settings"
-msgstr "Configuration de la colonne"
-
-#: dlgspecchar.cpp:17
-#, kde-format
-msgctxt "@title:window select character dialog"
-msgid "Select Character"
-msgstr "Sélectionnez le caractère"
-
-#: dlgspecchar.cpp:41
-#, kde-format
-msgctxt "@action:button"
-msgid "&Select"
-msgstr "&Sélectionner"
-
-#: dlgspecchar.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Select this character"
-msgstr "Sélectionner ce caractère"
-
-#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:12
-#, kde-format
-msgid "Column widths"
-msgstr "Largeurs des colonnes"
-
-#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:18
-#, kde-format
-msgid "Keyboard layouts"
-msgstr "Dispositions de clavier"
-
-#: filterproxysearchline.cpp:23
-#, kde-format
-msgid "Search"
-msgstr "Rechercher"
-
-#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
-#, kde-format
-msgid "Your answer was correct!"
-msgstr "Votre réponse était juste !"
-
-#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
-#, kde-format
-msgid "Your answer was incorrect."
-msgstr "Votre réponse était fausse."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: flashviewbase.ui:149
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a flashcard quiz.</html>"
-msgstr ""
-"<html>Il y a trop peu d'entrées dans votre vocabulaire<br />vous devez avoir "
-"au moins une entrée dans un questionnaire de carte</html>"
-
-#: kwordquiz.cpp:100
-#, kde-format
-msgid "Creates a new blank vocabulary document"
-msgstr "Crée un nouveau document de vocabulaire vide"
-
-#: kwordquiz.cpp:105
-#, kde-format
-msgid "Opens an existing vocabulary document"
-msgstr "Ouvre un document de vocabulaire existant"
-
-#: kwordquiz.cpp:111
-#, kde-format
-msgid "Download New Vocabularies..."
-msgstr "Télécharger de nouveaux vocabulaires..."
-
-#: kwordquiz.cpp:115
-#, kde-format
-msgid "Downloads new vocabularies"
-msgstr "Télécharge de nouveaux vocabulaires"
-
-#: kwordquiz.cpp:120
-#, kde-format
-msgid "Saves the active vocabulary document"
-msgstr "Enregistre le document de vocabulaire actif"
-
-#: kwordquiz.cpp:125
-#, kde-format
-msgid "Saves the active vocabulary document with a different name"
-msgstr "Enregistre le document de vocabulaire actif sous un nom différent"
-
-#: kwordquiz.cpp:130
-#, kde-format
-msgid "Closes the active vocabulary document"
-msgstr "Ferme le document de vocabulaire actif"
-
-#: kwordquiz.cpp:134
-#, kde-format
-msgid "Prints the active vocabulary document"
-msgstr "Imprime le document de vocabulaire actif"
-
-#: kwordquiz.cpp:139
-#, kde-format
-msgid "Shows a preview of the active vocabulary document"
-msgstr "Afficher un aperçu du document de vocabulaire actif"
-
-#: kwordquiz.cpp:144
-#, kde-format
-msgid "Quits KWordQuiz"
-msgstr "Ferme KWordQuiz"
-
-#: kwordquiz.cpp:156
-#, kde-format
-msgid "Cuts the text from the selected cells and places it on the clipboard"
-msgstr ""
-"Coupe le texte des cellules sélectionnées et le place dans le presse-papiers"
-
-#: kwordquiz.cpp:161
-#, kde-format
-msgid "Copies the text from the selected cells and places it on the clipboard"
-msgstr ""
-"Copie le texte des cellules sélectionnées et le place dans le presse-papiers"
-
-#: kwordquiz.cpp:166
-#, kde-format
-msgid ""
-"Pastes previously cut or copied text from the clipboard into the selected "
-"cells"
-msgstr ""
-"Coller un texte précédemment copié ou coupé d'un texte depuis le presse-"
-"papiers dans les cellules sélectionnées"
-
-#: kwordquiz.cpp:172
-#, kde-format
-msgid "Clears the content of the selected cells"
-msgstr "Efface le contenu des cellules sélectionnées"
-
-#: kwordquiz.cpp:178
-#, kde-format
-msgid "&Insert Row"
-msgstr "&Insérer une ligne"
-
-#: kwordquiz.cpp:180
-#, kde-format
-msgid "Inserts a new row above the current row"
-msgstr "Insère une nouvelle ligne au-dessus de la ligne courante"
-
-#: kwordquiz.cpp:187
-#, kde-format
-msgid "&Delete Row"
-msgstr "&Supprimer la ligne"
-
-#: kwordquiz.cpp:189
-#, kde-format
-msgid "Deletes the selected row(s)"
-msgstr "Supprime la / les ligne(s) sélectionnée(s)"
-
-#: kwordquiz.cpp:196
-#, kde-format
-msgid "&Mark as Blank"
-msgstr "&Marquer comme blanc"
-
-#: kwordquiz.cpp:198
-#, kde-format
-msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-msgstr ""
-"Marquer le mot courant ou sélectionné comme un blanc pour un remplir-le-blanc"
-
-#: kwordquiz.cpp:205
-#, kde-format
-msgid "&Unmark Blanks"
-msgstr "&Démarquer les blancs"
-
-#: kwordquiz.cpp:206
-#, kde-format
-msgid "Removes blanks from the current or selected word"
-msgstr "Supprimer les blancs depuis le mot courant ou sélectionné"
-
-#: kwordquiz.cpp:213
-#, kde-format
-msgid "&Column Settings..."
-msgstr "Configuration des &colonnes..."
-
-#: kwordquiz.cpp:215
-#, kde-format
-msgid "Defines the column settings for the active vocabulary"
-msgstr "Définir la configuration de la colonne pour le vocabulaire actif"
-
-#: kwordquiz.cpp:222
-#, kde-format
-msgid "&Font..."
-msgstr "&Police..."
-
-#: kwordquiz.cpp:223
-#, kde-format
-msgid "Defines the font used by the editor"
-msgstr "Définit la police utilisée par l'éditeur"
-
-#: kwordquiz.cpp:230
-#, kde-format
-msgid "Link &Image..."
-msgstr "Lier à une &image"
-
-#: kwordquiz.cpp:231
-#, kde-format
-msgid "Links an image with the current entry"
-msgstr "Lie une image avec l'entrée courante"
-
-#: kwordquiz.cpp:238
-#, kde-format
-msgid "Link &Sound..."
-msgstr "Lier à un &son"
-
-#: kwordquiz.cpp:239
-#, kde-format
-msgid "Links a sound with the current entry"
-msgstr "Lie un son avec l'entrée courante"
-
-#: kwordquiz.cpp:246
-#, kde-format
-msgid "&Adjust Row Heights"
-msgstr "Ajuste&r la hauteur des lignes"
-
-#: kwordquiz.cpp:247
-#, kde-format
-msgid "Automatically adjusts the height of selected rows"
-msgstr "Ajuste automatiquement la hauteur des lignes sélectionnées"
-
-#: kwordquiz.cpp:254
-#, kde-format
-msgid "Sh&uffle"
-msgstr "M&élanger"
-
-#: kwordquiz.cpp:255
-#, kde-format
-msgid "Shuffles the entries of the active vocabulary"
-msgstr "Mélange les entrées du vocabulaire actif"
-
-#: kwordquiz.cpp:261
-#, kde-format
-msgid "&Keyboard Layout"
-msgstr "&Disposition du clavier"
-
-#: kwordquiz.cpp:262
-#, kde-format
-msgid "Shows available keyboard layouts"
-msgstr "Affiche la disposition du clavier..."
-
-#: kwordquiz.cpp:273
-#, kde-format
-msgid "Change Mode"
-msgstr "Changer le mode"
-
-#: kwordquiz.cpp:274
-#, kde-format
-msgid "Mode"
-msgstr "Mode"
-
-#: kwordquiz.cpp:275
-#, kde-format
-msgid "Changes the mode used in quiz sessions"
-msgstr "Change le mode utilisé dans les sessions de questionnaire"
-
-#: kwordquiz.cpp:288
-#, kde-format
-msgid "Selects this mode"
-msgstr "Sélectionne ce mode"
-
-#: kwordquiz.cpp:297
-#, kde-format
-msgctxt "@item:inlistbox activate vocabulary editor"
-msgid "&Editor"
-msgstr "Édit&eur"
-
-#: kwordquiz.cpp:299
-#, kde-format
-msgid "Activates the vocabulary editor"
-msgstr "Active l'éditeur de vocabulaire"
-
-#: kwordquiz.cpp:306
-#, kde-format
-msgid "&Flashcard"
-msgstr "Car&tes"
-
-#: kwordquiz.cpp:308
-#, kde-format
-msgid "Starts a flashcard session using the active vocabulary"
-msgstr "Démarrer une session à cartes en utilisant le vocabulaire actif"
-
-#: kwordquiz.cpp:315
-#, kde-format
-msgid "&Multiple Choice"
-msgstr "Choix &multiple"
-
-#: kwordquiz.cpp:317
-#, kde-format
-msgid "Starts a multiple choice session using the active vocabulary"
-msgstr ""
-"Démarrer une session de questions à choix multiples en utilisant le "
-"vocabulaire actif"
-
-#: kwordquiz.cpp:324
-#, kde-format
-msgid "&Question and Answer"
-msgstr "&Question et réponse"
-
-#: kwordquiz.cpp:325
-#, kde-format
-msgid "Q&&A"
-msgstr "Q&&R"
-
-#: kwordquiz.cpp:327
-#, kde-format
-msgid "Starts a question and answer session using the active vocabulary"
-msgstr ""
-"Démarrer une session questions et réponses en utilisant le vocabulaire actif"
-
-#: kwordquiz.cpp:334
-#, kde-format
-msgid "&Check"
-msgstr "&Vérifier"
-
-#: kwordquiz.cpp:336
-#, kde-format
-msgid "Checks your answer to this question"
-msgstr "Vérifie votre réponse à la question"
-
-#: kwordquiz.cpp:341
-#, kde-format
-msgid "Choose Option &1"
-msgstr "Choisir Option &1"
-
-#: kwordquiz.cpp:345
-#, kde-format
-msgid "Choose Option &2"
-msgstr "Choisir Option &2"
-
-#: kwordquiz.cpp:349
-#, kde-format
-msgid "Choose Option &3"
-msgstr "Choisir Option 3"
-
-#: kwordquiz.cpp:354
-#, kde-format
-msgid "I &Know"
-msgstr "&Je sais"
-
-#: kwordquiz.cpp:356
-#, kde-format
-msgid "Counts this card as correct and shows the next card"
-msgstr "Compte cette carte comme juste et affiche la suivante"
-
-#: kwordquiz.cpp:362
-#, kde-format
-msgid "I &Do Not Know"
-msgstr "Je &ne sais pas"
-
-#: kwordquiz.cpp:364
-#, kde-format
-msgid "Counts this card as incorrect and shows the next card"
-msgstr "Compte cette carte comme fausse et affiche la suivante"
-
-#: kwordquiz.cpp:370
-#, kde-format
-msgid "&Hint"
-msgstr "&Indice"
-
-#: kwordquiz.cpp:372
-#, kde-format
-msgid "Gets the next correct letter of the answer"
-msgstr "Affiche la prochaine lettre correcte de la réponse"
-
-#: kwordquiz.cpp:378
-#, kde-format
-msgid "Mark Last Correct"
-msgstr "dernière marque correcte"
-
-#: kwordquiz.cpp:380
-#, kde-format
-msgid "Marks last answer as correct"
-msgstr "Marque la dernière réponse comme juste"
-
-#: kwordquiz.cpp:386
-#, kde-format
-msgid "&Restart"
-msgstr "&Redémarrer"
-
-#: kwordquiz.cpp:388
-#, kde-format
-msgid "Restarts the quiz session from the beginning"
-msgstr "Recommence le questionnaire"
-
-#: kwordquiz.cpp:394
-#, kde-format
-msgid "&Play Audio"
-msgstr "&Jouer le son"
-
-#: kwordquiz.cpp:396
-#, kde-format
-msgid "Play associated audio"
-msgstr "Jouer le son associé"
-
-#: kwordquiz.cpp:402
-#, kde-format
-msgid "Repeat &Errors"
-msgstr "Répéter les &erreurs"
-
-#: kwordquiz.cpp:404
-#, kde-format
-msgid "Repeats all incorrectly answered questions"
-msgstr "Répète toutes les questions mal traitées"
-
-#: kwordquiz.cpp:410
-#, kde-format
-msgid "Export Errors &As..."
-msgstr "Exporter les erreurs &comme..."
-
-#: kwordquiz.cpp:411
-#, kde-format
-msgid "Exports all errors as a new vocabulary document"
-msgstr "Exporter toutes les erreurs comme un nouveau document de vocabulaire"
-
-#: kwordquiz.cpp:417
-#, kde-format
-msgid "Show Se&arch"
-msgstr "Afficher la barre de &recherche"
-
-#: kwordquiz.cpp:419
-#, kde-format
-msgid "Toggle display of the search bar"
-msgstr "Affiche/cache la barre de recherche"
-
-#: kwordquiz.cpp:424
-#, kde-format
-msgid "Configures sound and other notifications for certain events"
-msgstr "Configure les sons et autres notifications pour certains évènements"
-
-#: kwordquiz.cpp:429
-#, kde-format
-msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-msgstr ""
-"Spécifie les préférences pour l'éditeur de vocabulaire et les sessions "
-"questionnaire"
-
-#: kwordquiz.cpp:435
-#, kde-format
-msgid "Special Character <numid>%1</numid>"
-msgstr "Caractère spécial <numid>%1</numid>"
-
-#: kwordquiz.cpp:447
-#, kde-format
-msgid "Toggles display of the toolbars"
-msgstr "Affiche / cache les barres d'outils"
-
-#: kwordquiz.cpp:500
-#, kde-format
-msgid "Enter search terms here"
-msgstr "Saisissez le terme recherché ici"
-
-#: kwordquiz.cpp:523
-#, kde-format
-msgctxt "@item:inlistbox vocabulary editor"
-msgid "Editor"
-msgstr "Éditeur "
-
-#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:188
-#, kde-format
-msgid "Flashcard"
-msgstr "Cartes"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:148
-#, kde-format
-msgid "Multiple Choice"
-msgstr "Choix multiple"
-
-#: kwordquiz.cpp:536
-#, kde-format
-msgid "Question & Answer"
-msgstr "Question et réponse"
-
-#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
-#, kde-format
-msgid "Opening file..."
-msgstr "Ouverture d'un fichier..."
-
-#: kwordquiz.cpp:637 kwordquiz.cpp:639
-#, kde-format
-msgctxt "%1 is an error message"
-msgid ""
-"%1\n"
-"If you are sure no other program is using the file you can choose to ignore "
-"the lock and open the file anyway.\n"
-"Do you want to open the file?"
-msgstr ""
-"%1\n"
-"Si vous êtes sûr qu'aucun programme n'utilise ce fichiers, vous pouvez "
-"choisir d'ignorer le verrouillage et ouvrir le fichier malgré tout.\n"
-"Voulez-vous vraiment ouvrir le fichier ?"
-
-#: kwordquiz.cpp:637
-#, kde-format
-msgid "Open File"
-msgstr "Ouvrir un fichier"
-
-#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
-#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
-#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
-#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
-#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
-#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
-#, kde-format
-msgctxt "@info:status ready"
-msgid "Ready"
-msgstr "Prêt "
-
-#: kwordquiz.cpp:727 kwordquiz.cpp:729
-#, kde-format
-msgid ""
-"The current document has been modified.\n"
-"Do you want to save it?"
-msgstr ""
-"Le fichier courant a été modifié.\n"
-"Voulez-vous l'enregistrer ? "
-
-#: kwordquiz.cpp:779
-#, kde-format
-msgid "Opening a new document window..."
-msgstr "Ouverture d'une nouvelle fenêtre..."
-
-#: kwordquiz.cpp:791
-#, kde-format
-msgid "&Merge selected files with the current document"
-msgstr "&fusionne les fichiers sélectionnés avec le document courant"
-
-#: kwordquiz.cpp:796 kwqtutor.cpp:127
-#, kde-format
-msgid "Open Vocabulary Document"
-msgstr "Ouvrir un document de vocabulaire"
-
-#: kwordquiz.cpp:865
-#, kde-format
-msgid "Saving file..."
-msgstr "Enregistrement du fichier..."
-
-#: kwordquiz.cpp:884
-#, kde-format
-msgid "Saving file with a new filename..."
-msgstr "Enregistrement du fichier sous un nouveau nom..."
-
-#: kwordquiz.cpp:912
-#, kde-format
-msgid "HTML Document"
-msgstr "Document HTML"
-
-#: kwordquiz.cpp:914
-#, kde-format
-msgid "Save Vocabulary Document As"
-msgstr "Enregistrer le document de vocabulaire sous"
-
-#: kwordquiz.cpp:962
-#, kde-format
-msgid "Closing file..."
-msgstr "Fermeture du fichier..."
-
-#: kwordquiz.cpp:985
-#, kde-format
-msgid "Printing..."
-msgstr "Impression..."
-
-#: kwordquiz.cpp:991
-#, kde-format
-msgid "Showing Preview..."
-msgstr "Affichant un aperçu..."
-
-#: kwordquiz.cpp:999
-#, kde-format
-msgctxt "@info:status quitting"
-msgid "Quitting..."
-msgstr "Fermeture... "
-
-#: kwordquiz.cpp:1021
-#, kde-format
-msgid "Cutting selection..."
-msgstr "Coupe de la sélection..."
-
-#: kwordquiz.cpp:1028
-#, kde-format
-msgid "Copying selection to clipboard..."
-msgstr "Copie de la sélection vers le presse-papiers..."
-
-#: kwordquiz.cpp:1035
-#, kde-format
-msgid "Inserting clipboard contents..."
-msgstr "Insertion du contenu du presse-papiers..."
-
-#: kwordquiz.cpp:1042
-#, kde-format
-msgid "Clearing the selected cells..."
-msgstr "Effacement des cellules sélectionnées..."
-
-#: kwordquiz.cpp:1049
-#, kde-format
-msgid "Inserting rows..."
-msgstr "Insertion de lignes..."
-
-#: kwordquiz.cpp:1056
-#, kde-format
-msgid "Deleting selected rows..."
-msgstr "Suppression des lignes sélectionnées..."
-
-#: kwordquiz.cpp:1063
-#, kde-format
-msgid "Marking selected text as a blank..."
-msgstr "Marquer le texte sélectionné comme un blanc..."
-
-#: kwordquiz.cpp:1070
-#, kde-format
-msgid "Removing blank markings..."
-msgstr "Supprimer les marques des blancs..."
-
-#: kwordquiz.cpp:1077
-#, kde-format
-msgid "Setting the column titles of the vocabulary..."
-msgstr "Réglage du titre des colonnes du vocabulaire..."
-
-#: kwordquiz.cpp:1090
-#, kde-format
-msgid "Setting the font of the vocabulary..."
-msgstr "Réglage de la police du vocabulaire..."
-
-#: kwordquiz.cpp:1106
-#, kde-format
-msgid "Linking an image with the current entry..."
-msgstr "Liant une image avec l'entrée courante"
-
-#: kwordquiz.cpp:1114
-#, kde-format
-msgid "Linking a sound with the current entry..."
-msgstr "Lier un son avec l'entrée courante"
-
-#: kwordquiz.cpp:1122
-#, kde-format
-msgid "Adjusting row heights..."
-msgstr "Hauteurs de lignes..."
-
-#: kwordquiz.cpp:1131
-#, kde-format
-msgid "Randomizing the vocabulary..."
-msgstr "Mélange du vocabulaire..."
-
-#: kwordquiz.cpp:1139
-#, kde-format
-msgid "Updating mode..."
-msgstr "Mise à jour du mode..."
-
-#: kwordquiz.cpp:1153
-#, kde-format
-msgid "Starting editor session..."
-msgstr "Démarrage d'une session d'éditeur..."
-
-#: kwordquiz.cpp:1160
-#, kde-format
-msgid "Starting flashcard session..."
-msgstr "Démarrage d'une session à cartes..."
-
-#: kwordquiz.cpp:1167
-#, kde-format
-msgid "Starting multiple choice session..."
-msgstr "Démarrage d'une session de questions à choix multiples..."
-
-#: kwordquiz.cpp:1174
-#, kde-format
-msgid "Starting question & answer session..."
-msgstr "Démarrer une session de questions et réponses..."
-
-#: kwordquiz.cpp:1326
-#, kde-format
-msgid "Insert %1"
-msgstr "Insérer %1"
-
-#: kwordquiz.cpp:1327
-#, kde-format
-msgid "Inserts the character %1"
-msgstr "Insère le caractère %1"
-
-#: kwordquiz.cpp:1378
-#, kde-format
-msgid "This will restart your quiz. Do you wish to continue?"
-msgstr "Le questionnaire va être redémarré. Voulez-vous continuer ?"
-
-#: kwordquiz.cpp:1394
-#, kde-format
-msgid "&1 %1 -> %2 In Order"
-msgstr "&1 %1 -> %2 dans l'ordre"
-
-#: kwordquiz.cpp:1395
-#, kde-format
-msgid "&2 %1 -> %2 In Order"
-msgstr "&2 %1 -> %2 dans l'ordre"
-
-#: kwordquiz.cpp:1396
-#, kde-format
-msgid "&3 %1 -> %2 Randomly"
-msgstr "&3 %1 -> %2 ordre aléatoire"
-
-#: kwordquiz.cpp:1397
-#, kde-format
-msgid "&4 %1 -> %2 Randomly"
-msgstr "&4 %1 -> %2 ordre aléatoire"
-
-#: kwordquiz.cpp:1398
-#, kde-format
-msgid "&5 %1 <-> %2 Randomly"
-msgstr "&5 %1 <=> %2 ordre aléatoire"
-
-#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
-#, kde-format
-msgid "%1 -> %2 In Order"
-msgstr "%1 -> %2 dans l'ordre"
-
-#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
-#, kde-format
-msgid "%1 -> %2 Randomly"
-msgstr "%1 -> %2 ordre aléatoire"
-
-#: kwordquiz.cpp:1417
-#, kde-format
-msgid "%1 &lt;-&gt; %2 Randomly"
-msgstr "%1 -&lt;-&gt; %2 ordre aléatoire"
-
-#. i18n: ectx: label, entry (FirstRun), group (General)
-#: kwordquiz.kcfg:10
-#, kde-format
-msgid "Is this the first time KWordQuiz is run?"
-msgstr "Est-ce la première fois que vous lancez KWordQuiz ?"
-
-#. i18n: ectx: label, entry (ShowSearch), group (General)
-#: kwordquiz.kcfg:14
-#, kde-format
-msgid "Toggle display of the search bar."
-msgstr "Affiche / cache la barre de recherche"
-
-#. i18n: ectx: label, entry (StartSession), group (General)
-#: kwordquiz.kcfg:18
-#, kde-format
-msgid "Type of session to use when opening files"
-msgstr "Type de session à utiliser en ouvrant les fichiers"
-
-#. i18n: ectx: label, entry (PrintStyle), group (General)
-#: kwordquiz.kcfg:28
-#, kde-format
-msgid "Type of printout to generate"
-msgstr "Type d'impression à générer"
-
-#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
-#: kwordquiz.kcfg:39
-#, kde-format
-msgid "Titles for column 1"
-msgstr "Titres de la colonne 1"
-
-#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
-#: kwordquiz.kcfg:43
-#, kde-format
-msgid "Titles for column 2"
-msgstr "Titres de la colonne 2"
-
-#. i18n: ectx: label, entry (EditorFont), group (Editor)
-#: kwordquiz.kcfg:47
-#, kde-format
-msgid "Font used in the editor"
-msgstr "Police utilisée dans l'éditeur"
-
-#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
-#: kwordquiz.kcfg:51
-#, kde-format
-msgid "If Fill-in-the-blank should be enabled"
-msgstr "Si l'option remplir-le-blanc doit être activée"
-
-#. i18n: ectx: label, entry (EnterMove), group (Editor)
-#: kwordquiz.kcfg:55
-#, kde-format
-msgid "Direction the Enter key moves in the editor"
-msgstr "La direction vers laquelle la touche Entrée se déplace dans l'éditeur"
-
-#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
-#: kwordquiz.kcfg:59
-#, kde-format
-msgid "Characters for the special character toolbar"
-msgstr "Caractères pour la barre d'outils des caractères spéciaux"
-
-#. i18n: ectx: label, entry (ClearAll), group (Editor)
-#: kwordquiz.kcfg:63
-#, kde-format
-msgid "Clear all data in selected entries"
-msgstr "Effacer toutes les données dans les entrées sélectionnées"
-
-#. i18n: ectx: label, entry (ClearText), group (Editor)
-#: kwordquiz.kcfg:67
-#, kde-format
-msgid "Clear the text in selected entries"
-msgstr "Effacer le texte dans les entrées sélectionnées"
-
-#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
-#: kwordquiz.kcfg:71
-#, kde-format
-msgid "Clear the image link in selected entries"
-msgstr "Effacer le lien de l'image dans les entrées sélectionnées"
-
-#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
-#: kwordquiz.kcfg:75
-#, kde-format
-msgid "Clear the sound link in selected entries"
-msgstr "Effacer le lien du son dans les entrées sélectionnées"
-
-#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
-#: kwordquiz.kcfg:81
-#, kde-format
-msgid "Automatically check selected answer in multiple choice"
-msgstr ""
-"Vérifier automatiquement les réponses sélectionnées dans les choix multiples"
-
-#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
-#: kwordquiz.kcfg:85
-#, kde-format
-msgid "Automatically flip flashcard"
-msgstr "Retourner automatiquement la carte"
-
-#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
-#: kwordquiz.kcfg:89
-#, kde-format
-msgid "Time delay for flipping flashcard"
-msgstr "Délai pour le retournement de la carte"
-
-#. i18n: ectx: label, entry (HintError), group (Quiz)
-#: kwordquiz.kcfg:93
-#, kde-format
-msgid "Treat use of hint as error"
-msgstr "Considérer les indices comme une erreur"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
-#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
-#: kwordquiz.kcfg:97 prefquizbase.ui:79
-#, kde-format
-msgid "Compare answers in a case sensitive way"
-msgstr "Comparer les réponses en prenant en compte la casse"
-
-#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:101
-#, kde-format
-msgid "Count flashcard as correct or error"
-msgstr "Compte la carte comme une erreur ou comme correcte"
-
-#. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:105
-#, kde-format
-msgid "Quiz mode"
-msgstr "Mode questionnaire"
-
-#. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:109
-#, kde-format
-msgid "Show score as percentage"
-msgstr "Afficher le score en pourcentage"
-
-#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:115
-#, kde-format
-msgid "Font used for front of flashcard"
-msgstr "Police utilisée pour la face de la carte"
-
-#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:119
-#, kde-format
-msgid "Color used for text on front of flashcard"
-msgstr "Couleur utilisée pour le texte sur la face de la carte"
-
-#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:123
-#, kde-format
-msgid "Color used for front of flashcard"
-msgstr "Couleur utilisée pour la face de la carte"
-
-#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:127
-#, kde-format
-msgid "Color used for frame on front of flashcard"
-msgstr "Couleur utilisée pour le cadre sur la face de la carte"
-
-#. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:131
-#, kde-format
-msgid "Font used for back of flashcard"
-msgstr "Police utilisée pour le dos de la carte"
-
-#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:135
-#, kde-format
-msgid "Color used for text on back of flashcard"
-msgstr "Couleur utilisée pour le texte sur le dos de la carte"
-
-#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:139
-#, kde-format
-msgid "Color used for back of flashcard"
-msgstr "Couleur utilisée pour le dos de la carte"
-
-#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:143
-#, kde-format
-msgid "Color used for frame on back of flashcard"
-msgstr "Couleur utilisée pour le cadre du dos de la carte"
-
-#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:149
-#, kde-format
-msgid "The Providers path for KWordQuiz"
-msgstr "L'emplacement des fournisseurs pour KWordQuiz"
-
-#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:153
-#, kde-format
-msgid "The command used to start a downloaded vocabulary"
-msgstr "La commande utilisée pour démarrer un vocabulaire téléchargé"
-
-#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:157
-#, kde-format
-msgid ""
-"The folder where downloaded vocabularies are saved by default (relative to "
-"$HOME)"
-msgstr ""
-"Le dossier où les vocabulaires téléchargés sont enregistrés par défaut "
-"(relativement à la variable d'environnement « $HOME »)"
-
-#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:163
-#, kde-format
-msgid "Pop up flashcards at fixed or random intervals"
-msgstr "Aperçu rapide des cartes à intervalles fixes ou aléatoires"
-
-#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:171
-#, kde-format
-msgid "The interval in minutes at which to pop up a flash card"
-msgstr "L'intervalle en minutes entre les aperçus rapides des cartes"
-
-#. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:175
-#, kde-format
-msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr "L'intervalle minimal entre les aperçus rapides des cartes"
-
-#. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:179
-#, kde-format
-msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr "L'intervalle maximal entre les aperçus rapides des cartes"
-
-#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:183
-#, kde-format
-msgid "Geometry of the last flash card"
-msgstr "Géométrie de la dernière carte flash"
-
-#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:187
-#, kde-format
-msgid "Show flash card in a native KWordQuiz style"
-msgstr "Afficher la carte flash dans le style originel de KWordQuiz"
-
-#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:195
-#, kde-format
-msgid ""
-"Last open vocabulary file to be opened automatically if none other is "
-"specified on the command line"
-msgstr ""
-"Dernier fichier de vocabulaire ouvert à ouvrir automatiquement si aucun "
-"autre n'est spécifié dans la ligne de commande"
-
-#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:199
-#, kde-format
-msgid "Start exercise as soon as the user opens vocabulary file"
-msgstr ""
-"Démarrer l'exercice dès que l'utilisateur ouvre le fichier de vocabulaire"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General"
-msgstr "Général"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General Settings"
-msgstr "Configuration générale"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor"
-msgstr "Éditeur"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor Settings"
-msgstr "Configuration de l'éditeur"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz"
-msgstr "Questionnaire"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz Settings"
-msgstr "Configuration du questionnaire"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance"
-msgstr "Apparence des cartes"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance Settings"
-msgstr "Configuration de l'apparence des cartes"
-
-#: kwordquizprefs.cpp:36
-#, kde-format
-msgctxt "@title:group special character settings"
-msgid "Special Characters"
-msgstr "Caractères spéciaux"
-
-#. i18n: ectx: Menu (vocabulary)
-#: kwordquizui.rc:16
-#, kde-format
-msgid "V&ocabulary"
-msgstr "V&ocabulaire"
-
-#. i18n: ectx: Menu (mode)
-#: kwordquizui.rc:30
-#, kde-format
-msgid "&Mode"
-msgstr "&Mode"
-
-#. i18n: ectx: Menu (quiz)
-#: kwordquizui.rc:38
-#, kde-format
-msgid "&Quiz"
-msgstr "&Questionnaire"
-
-#. i18n: ectx: ToolBar (quizToolBar)
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:21
-#, kde-format
-msgid "Quiz"
-msgstr "Questionnaire"
-
-#. i18n: ectx: ToolBar (characterToolBar)
-#: kwordquizui.rc:75
-#, kde-format
-msgid "Special Characters"
-msgstr "Caractères spéciaux"
-
-#: kwqcleardialog.cpp:18
-#, kde-format
-msgctxt "@title:window"
-msgid "Clear Contents"
-msgstr "Effacer les contenus"
-
-#: kwqcommands.cpp:74
-#, kde-format
-msgctxt "@item:inmenu undo clear"
-msgid "Clear"
-msgstr "Effacer"
-
-#: kwqcommands.cpp:96
-#, kde-format
-msgctxt "@item:inmenu undo cut"
-msgid "Cut"
-msgstr "Couper"
-
-#: kwqcommands.cpp:109
-#, kde-format
-msgctxt "@item:inmenu undo paste"
-msgid "Paste"
-msgstr "Coller"
-
-#: kwqcommands.cpp:205
-#, kde-format
-msgctxt "@item:inmenu undo sort"
-msgid "Sort"
-msgstr "Trier"
-
-#: kwqcommands.cpp:232
-#, kde-format
-msgctxt "@item:inmenu undo shuffle"
-msgid "Shuffle"
-msgstr "Mélanger"
-
-#: kwqcommands.cpp:252
-#, kde-format
-msgctxt "@item:inmenu undo insert"
-msgid "Insert"
-msgstr "Insérer"
-
-#: kwqcommands.cpp:284
-#, kde-format
-msgctxt "@item:inmenu undo delete"
-msgid "Delete"
-msgstr "Supprimer"
-
-#: kwqcommands.cpp:333
-#, kde-format
-msgctxt "@item:inmenu undo unmark blank"
-msgid "Unmark Blank"
-msgstr "Démarquer les blancs"
-
-#: kwqcommands.cpp:355
-#, kde-format
-msgctxt "@item:inmenu undo column titles"
-msgid "Column Settings"
-msgstr "Configuration de la colonne"
-
-#: kwqcommands.cpp:400
-#, kde-format
-msgctxt "@item:inmenu undo link image"
-msgid "Link Image"
-msgstr "Lier à une image"
-
-#: kwqcommands.cpp:419
-#, kde-format
-msgctxt "@item:inmenu undo link sound"
-msgid "Link Sound"
-msgstr "Lier à un son"
-
-#: kwqcommands.h:93
-#, kde-format
-msgid "Font"
-msgstr "Police"
-
-#: kwqcommands.h:111
-#, kde-format
-msgid "Entry"
-msgstr "Entrée"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
-#, kde-format
-msgid "Questions"
-msgstr "Questions"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
-#, kde-format
-msgid "The number of questions in the session"
-msgstr "Le nombre de questions dans la session"
-
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
-#: kwqscorewidgetbase.ui:259
-#, kde-format
-msgid "00"
-msgstr "00"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
-#, kde-format
-msgid "Correct answers"
-msgstr "Réponses correctes"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
-#, kde-format
-msgid ""
-"The number of questions answered correctly. May be shown as a percentage."
-msgstr ""
-"Le nombre de questions correctement traitées. Peut être affiché sous forme "
-"de pourcentage."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picError)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
-#, kde-format
-msgid "Incorrect answers"
-msgstr "Réponses incorrectes"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
-#, kde-format
-msgid ""
-"The number of questions answered incorrectly. May be shown as a percentage."
-msgstr ""
-"Le nombre de questions incorrectement traitées. Peut être affiché sous forme "
-"de pourcentage."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
-#, kde-format
-msgid "Answered questions"
-msgstr "Questions traitées"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
-#, kde-format
-msgid "The number of questions already answered. May be shown as a percentage."
-msgstr ""
-"Le nombre de questions déjà traitées. Peut être affiché sous forme de "
-"pourcentage."
-
-#: kwqtablemodel.cpp:211
-#, kde-format
-msgid "Untitled"
-msgstr "Non titré"
-
-#: kwqtableview.cpp:190
+#: exporter.cpp:122
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Nom : ____________________________ Date : __________"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:92
+#: exporter.cpp:170
 #, kde-format
 msgid "Score"
 msgstr "Résultat"
 
-#: kwqtableview.cpp:656
+#: kwqcardmodel.cpp:30
 #, kde-format
-msgid "There is an error with the Fill-in-the-blank brackets"
-msgstr "Il y a une erreur avec les crochets du remplir-le-blanc"
+msgid "Question"
+msgstr "Question"
 
-#: kwqtableview.cpp:723
+#: kwqcardmodel.cpp:32
 #, kde-format
-msgctxt "@title:window"
-msgid "Select Image"
-msgstr "Sélectionner une image"
+msgid "Answer"
+msgstr "Réponse"
 
-#: kwqtableview.cpp:743
+#: main.cpp:56
 #, kde-format
-msgctxt "@title:window"
-msgid "Select Sound"
-msgstr "Sélectionner un son"
-
-#: kwqtableview.cpp:743
-#, kde-format
-msgid "All Files (*)"
-msgstr "Tous les fichiers (*)"
-
-#: kwqtutor.cpp:26
-#, kde-format
-msgid ""
-"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
-"you to set a certain time interval at which flashcards will pop up.<br /"
-"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
-"working without stealing the focus from other programs you might be working "
-"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
-"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
-"<qt>KWordQuiz affiche des cartes flash sur votre écran de telle façon que "
-"vous pouvez déterminer un certain intervalle de temps entre chacune de leur "
-"apparition.<br /><br /> Les cartes flash surgissent d'une manière non "
-"gênante ce qui vous permet de travailler sur d'autres programmes sans "
-"détourner votre attention.<br /><br /> Assurez-vous de faire un clic-droit "
-"sur l'icône du Tuteur de KWordQuiz sur la barre d'affichage et sélectionner "
-"préférences. Là vous pourrez assigner des raccourcis claviers.</qt>"
 
-#: kwqtutor.cpp:32
-#, kde-format
-msgid "Tutor"
-msgstr "Tuteur"
-
-#: kwqtutor.cpp:43 kwqtutor.cpp:116
-#, kde-format
-msgid "Start Exercise"
-msgstr "Démarrer un exercice"
-
-#: kwqtutor.cpp:53
-#, kde-format
-msgid "Configure KWordQuiz Tutor..."
-msgstr "Configurer le Tuteur de KWordQuiz"
-
-#: kwqtutor.cpp:58
-#, kde-format
-msgid "Close Flash Card"
-msgstr "Fermer les cartes flash"
-
-#: kwqtutor.cpp:63
-#, kde-format
-msgid "Flip Flash Card"
-msgstr "Tourner les cartes flash"
-
-#: kwqtutor.cpp:108
-#, kde-format
-msgid "Stop Exercise"
-msgstr "Arrêter l'exercice"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor"
-msgstr "Tuteur"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor Settings"
-msgstr "Paramètres du tuteur"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgctxt "Shortcuts Config"
-msgid "Shortcuts"
-msgstr "Raccourcis"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgid "Shortcuts Settings"
-msgstr "Paramètres des raccourcis"
-
-#: main.cpp:34
+#: main.cpp:90
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:36
+#: main.cpp:92
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Un programme d'apprentissage du vocabulaire par questionnaire"
 
-#: main.cpp:38
+#: main.cpp:94
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:42
+#: main.cpp:98
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:43
+#: main.cpp:98
+#, kde-format
+msgctxt "@info:credit"
+msgid "Original author"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Port to QML"
+msgstr ""
+
+#: main.cpp:100
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:43
+#: main.cpp:100
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Mainteneur du paquet KDE Éducation"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner System et plusieurs contributions au code"
 
-#: main.cpp:57
-#, kde-format
-msgid ""
-"A number 1-5 corresponding to the \n"
-"entries in the Mode menu"
-msgstr ""
-"Un nombre entre 1 et 5 correspondant à une\n"
-"entrée dans le menu « Mode »"
-
-#: main.cpp:58
-#, kde-format
+#: main.cpp:121
+#, fuzzy, kde-format
+#| msgid ""
+#| "Type of session to start with: \n"
+#| "'flash' for flashcard, \n"
+#| "'mc' for multiple choice, \n"
+#| "'qa' for question and answer, \n"
+#| "'tutor' for tutor"
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
-"'qa' for question and answer, \n"
-"'tutor' for tutor"
+"'qa' for question and answer"
 msgstr ""
 "Type de session à démarrer :\n"
 "« flash » pour des cartes,\n"
@@ -1647,925 +150,1724 @@ msgstr ""
 "« qr » pour des questions / réponses, \n"
 "« tutor » pour tuteur"
 
-#: main.cpp:59
+#: main.cpp:123
 #, kde-format
 msgid "File to open"
 msgstr "Fichier à ouvrir"
 
-#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
-#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
-#: qaviewbase.ui:518
+#: qml/BasePage.qml:24
 #, kde-format
-msgid "Correct Answer"
-msgstr "Réponse correcte"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
-#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
-#: qaviewbase.ui:294
-#, kde-format
-msgid "Previous Question"
-msgstr "Question précédente"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
-#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
-#: qaviewbase.ui:395
-#, kde-format
-msgid "Your Answer"
-msgstr "Votre réponse"
-
-#: multipleview.cpp:131 qaview.cpp:169
-#, kde-format
-msgid "Summary"
-msgstr "Résumé"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
-#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
-#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
-#: qaviewbase.ui:104
-#, kde-format
-msgid "The question"
-msgstr "La question"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:73 qaviewbase.ui:60
-#, kde-format
-msgid "Language or other identifier for the question"
-msgstr "Langue ou autre identifiant de la question"
-
-#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:76 qaviewbase.ui:63
-#, kde-format
-msgid "Language 1"
-msgstr "Langue 1"
-
-#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
-#: multipleviewbase.ui:98 qaviewbase.ui:107
-#, kde-format
-msgid "This is your question"
-msgstr "Votre question"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
-#: multipleviewbase.ui:255 multipleviewbase.ui:286
-#, kde-format
-msgid "Your choices"
-msgstr "Vos choix"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
-#, kde-format
-msgid "Three choices for the answer. One is correct."
-msgstr "Il y a trois réponses possibles, une seule est correcte."
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt2)
-#: multipleviewbase.ui:192
-#, kde-format
-msgid "&2 Option"
-msgstr "&2 Option"
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt1)
-#: multipleviewbase.ui:223
-#, kde-format
-msgid "&1 Option"
-msgstr "&1 Option"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:258 qaviewbase.ui:208
-#, kde-format
-msgid "Language or other identifier for the answer"
-msgstr "Langue ou autre identifiant de la réponse"
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:261 qaviewbase.ui:211
-#, kde-format
-msgid "Language 2"
-msgstr "Langue 2"
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:292
-#, kde-format
-msgid "&3 Option"
-msgstr "&3 Option"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
-#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
-#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
-#, kde-format
-msgid "Previous question"
-msgstr "Question précédente"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
-#: qaviewbase.ui:313
-#, kde-format
-msgid "The previous question"
-msgstr "La question précédente"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:375 qaviewbase.ui:316
-#, kde-format
-msgid "This was your question"
-msgstr "C'était votre question"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
-#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
-#, kde-format
-msgid "Your previous answer"
-msgstr "Votre réponse précédente"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
-#: qaviewbase.ui:414
-#, kde-format
-msgid "Your answer to the previous question"
-msgstr "Votre réponse à la question précédente"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:501 qaviewbase.ui:417
-#, kde-format
-msgid "This was your answer"
-msgstr "C'était votre réponse"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
-#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
-#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
-#, kde-format
-msgid "Previous correct answer"
-msgstr "Réponse correcte précédente"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
-#: qaviewbase.ui:537
-#, kde-format
-msgid "The correct answer to the previous question"
-msgstr "La bonne réponse à la question précédente"
-
-#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:580 qaviewbase.ui:540
-#, kde-format
-msgid "This was the correct answer"
-msgstr "Il s'agissait de la bonne réponse"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: multipleviewbase.ui:649
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"three entries for a multiple choice quiz.</html>"
+msgid "Cards %1% Errors %2"
 msgstr ""
-"<html>Il y a trop peu d'entrées dans votre vocabulaire<br />Vous devez avoir "
-"au moins trois entrées pour un questionnaire à choix multiples</html>"
 
-#: prefcardappearance.cpp:66
+#: qml/BasePage.qml:26
 #, kde-format
-msgctxt "Back of the flashcard"
-msgid "Back"
-msgstr "Dos"
-
-#: prefcardappearance.cpp:67
-#, kde-format
-msgid "Answer"
-msgstr "Réponse"
-
-#: prefcardappearance.cpp:80
-#, kde-format
-msgid "Front"
-msgstr "Face"
-
-#: prefcardappearance.cpp:81
-#, kde-format
-msgid "Question"
-msgstr "Question"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
-#: prefcardappearancebase.ui:15
-#, kde-format
-msgid "Card Appearance"
-msgstr "Apparence de la carte"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:92
-#, kde-format
-msgid "Flip card"
-msgstr "Retourner la carte"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:95
-#, kde-format
-msgid "Use to show the other side of the card"
-msgstr "Utilisez-le pour afficher l'autre côté de la carte"
-
-#. i18n: ectx: property (text), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:98
-#, kde-format
-msgid "&Flip Card"
-msgstr "&Retourner la carte"
-
-#. i18n: ectx: property (text), widget (QLabel, fontLabel)
-#: prefcardappearancebase.ui:111
-#, kde-format
-msgid "F&ont:"
-msgstr "P&olice :"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
-#: prefcardappearancebase.ui:146
-#, kde-format
-msgid "Use to select the font for displaying text on the back of the card"
+msgid "Cards %1/%2 Errors %3"
 msgstr ""
-"Utilisez le pour choisir la police affichant le texte sur le dos de la carte"
 
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
+#: qml/BasePage.qml:73
 #, kde-format
-msgid "Select text color"
-msgstr "Sélectionnez la couleur du texte"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
-#, kde-format
-msgid "Use to select the color for text shown on the card"
-msgstr "Utilisez le pour sélectionner la couleur du texte affiché sur la carte"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
-#, kde-format
-msgid "Select card frame color"
-msgstr "Sélectionnez la couleur du cadre de la carte"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
-#, kde-format
-msgid "Use to select the color for drawing the frame of the card"
+msgctxt "@label"
+msgid "Finished"
 msgstr ""
-"Utilisez le pour sélectionner la couleur dessinant le cadre de la carte"
 
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "Select card color"
-msgstr "Sélectionnez la couleur de la carte"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
-#, kde-format
-msgid "Select color used to draw the card"
-msgstr "Sélectionnez la couleur utilisée pour dessiner la carte"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
-#: prefcardappearancebase.ui:202
-#, kde-format
-msgid "Use to select the font for displaying text on the front of the card"
+msgid "You got a perfect score"
 msgstr ""
-"Utilisez le pour choisir la police affichant le texte sur la face de la carte"
 
-#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
-#: prefcardappearancebase.ui:249
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "&Text color:"
-msgstr "Couleur du &texte :"
+msgid "You made one mistake"
+msgid_plural "You made %1 mistakes"
+msgstr[0] ""
+msgstr[1] ""
 
-#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
-#: prefcardappearancebase.ui:262
-#, kde-format
-msgid "&Card color:"
-msgstr "&Couleur de la carte :"
+#: qml/BasePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Repeat &Errors"
+msgid "Repeat errors"
+msgstr "Répéter les &erreurs"
 
-#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
-#: prefcardappearancebase.ui:275
+#: qml/BasePage.qml:93
 #, kde-format
-msgid "Fra&me color:"
-msgstr "Couleur du c&adre :"
-
-#: prefcharacter.cpp:30
-#, kde-format
-msgid "Action"
-msgstr "Action"
-
-#: prefcharacter.cpp:31
-#, kde-format
-msgid "Shortcut"
-msgstr "Raccourci"
-
-#: prefcharacter.cpp:32
-#, kde-format
-msgid "Character"
-msgstr "Caractère"
-
-#: prefcharacter.cpp:41
-#, kde-format
-msgid "Special Character %1"
-msgstr "Caractère spécial %1"
-
-#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
-#: prefcharacterbase.ui:35
-#, kde-format
-msgid ""
-"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-"associated with each action."
+msgid "Try again"
 msgstr ""
-"Remarque : utilisez « Configuration / Configurer les raccourcis clavier... » "
-"pour modifier le raccourci associé à chaque action."
 
-#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:48
-#, kde-format
-msgid "Select character to modify"
-msgstr "Sélectionnez le caractère à modifier"
-
-#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:51
-#, kde-format
-msgid "Customizable special character actions"
-msgstr "Actions des caractères spéciaux personnalisables"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:61
-#, kde-format
-msgid "0"
-msgstr "0"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:66
-#, kde-format
-msgid "1"
-msgstr "1"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:71
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:103
-#, kde-format
-msgid "Click to choose a new character"
-msgstr "Cliquez pour choisir un nouveau caractère"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:106
-#, kde-format
-msgid "Choose a character for the selected action"
-msgstr "Choisissez un caractère pour l'action sélectionnée"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:109
-#, kde-format
-msgid "C&haracter..."
-msgstr "Caract&ère..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:151
-#, kde-format
-msgid "Preview of current character"
-msgstr "Aperçu du caractère courant"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:154
-#, kde-format
-msgid "Preview of the character associated with the selected action"
-msgstr "Aperçu du caractère associé à l'action sélectionnée"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:157
-#, kde-format
-msgid "A"
-msgstr "A"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
-#: prefeditorbase.ui:73
-#, kde-format
-msgid "How enter key moves"
-msgstr "Comment saisir les mouvements de touches"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:32
-#, kde-format
-msgid "Select how the Enter key should behave in the editor"
-msgstr "Sélectionnez comment la touche Entrée doit agir dans l'éditeur"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:35
-#, kde-format
-msgid "Enter Ke&y Moves"
-msgstr "Saisissez les mouvements de tou&ches"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:50
-#, kde-format
-msgid "Select if the next cell below should become active when pressing Enter."
-msgstr ""
-"Sélectionnez si la prochaine cellule dessous doit devenir active quand vous "
-"appuyez sur la touche Entrée."
-
-#. i18n: ectx: property (text), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:53
-#, kde-format
-msgid "&Down"
-msgstr "&Bas"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:63
-#, kde-format
-msgid ""
-"Select if the next cell to the right should become active when pressing Enter"
-msgstr ""
-"Sélectionnez si la prochaine cellule de droite doit devenir active quand "
-"vous appuyez sur la touche Entrée."
-
-#. i18n: ectx: property (text), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:66
-#, kde-format
-msgid "&Right"
-msgstr "D&roite"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:76
-#, kde-format
-msgid "Select if the current cell should remain active when pressing Enter"
-msgstr ""
-"Sélectionnez si la cellule actuelle devrait rester activer quand vous "
-"cliquez Entrée"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:79
-#, kde-format
-msgid "Does not &move"
-msgstr "Ne pas &bouger"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:89
-#, kde-format
-msgid "Check to enable fill-in-the-blank"
-msgstr "Cochez pour activer le remplir-le-blanc"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:92
-#, kde-format
-msgid "Select to enable the functions for Fill-in-the-blank"
-msgstr "Sélectionner pour activer les fonctions pour le remplir-le-blanc"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:95
-#, kde-format
-msgid "E&nable fill-in-the-blank"
-msgstr "Activ&er le remplir-le-blanc"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:35
-#, kde-format
-msgid "How vocabulary documents are opened"
-msgstr "Manière d'ouvrir les documents de vocabulaire"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:38
-#, kde-format
-msgid "Select the kind of session to load an opened vocabulary document in"
-msgstr ""
-"Sélectionner le type de session pour y ouvrir un document de vocabulaire"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:41
-#, kde-format
-msgid "&Open Vocabulary Documents in"
-msgstr "&Ouvrir un document de vocabulaire"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:47
-#, kde-format
-msgid "Open vocabulary documents in the editor"
-msgstr "Ouvrir un document de vocabulaire dans l'éditeur"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:50
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in the editor"
-msgstr ""
-"Sélectionner si le document de vocabulaire peut être affiché dans l'éditeur"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:53
-#, kde-format
-msgid "&Editor"
-msgstr "Édit&eur"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:60
-#, kde-format
-msgid "Open vocabulary documents in a flashcard quiz"
-msgstr "Ouvrir un document de vocabulaire dans une carte de questionnaire"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:63
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
-msgstr ""
-"Sélectionner si le document de vocabulaire peut être affiché dans une carte "
-"de questionnaire"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:66
-#, kde-format
-msgid "&Flashcard Quiz"
-msgstr "Questionnaire à &cartes"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:73
-#, kde-format
-msgid "Open vocabulary documents in a multiple choice quiz"
-msgstr ""
-"Ouvrir un document de vocabulaire dans un questionnaire à choix multiples"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:76
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a multiple choice quiz"
-msgstr ""
-"Sélectionner si le vocabulaire peut être affiché dans un questionnaire à "
-"choix multiples"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:79
-#, kde-format
-msgid "&Multiple Choice Quiz"
-msgstr " Questionnaire à choix &Multiples"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:86
-#, kde-format
-msgid "Open vocabulary documents in a question and answer quiz"
-msgstr "Ouvrir le vocabulaire dans un questionnaire question et réponse"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:89
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a question and answer "
-"quiz"
-msgstr ""
-"Sélectionner si le vocabulaire peut être affiché dans un questionnaire "
-"question et réponse"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:92
-#, kde-format
-msgid "&Question and Answer Quiz"
-msgstr "Questionnaire question et réponse"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:42
-#, kde-format
-msgid "Specify behavior for a question and answer session"
-msgstr "Spécifiez le comportement pour une session de questions et réponses"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:45
-#, kde-format
-msgid "Question && Answer"
-msgstr "&Question et réponse"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:66
-#, kde-format
-msgid "Check to count hint as error"
-msgstr "Cochez pour compter l'indice comme erreur"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:69
-#, kde-format
-msgid ""
-"Select if questions where the hint function has been used should be counted "
-"as errors"
-msgstr ""
-"Sélectionnez si les questions où la fonction indice a été utilisée doivent "
-"être comptées comme des erreurs"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:72
-#, kde-format
-msgid "&Treat hint as error"
-msgstr "&Considérer les indices comme une erreur"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:89
-#, kde-format
-msgid "Specify behavior of the score presentation in any session"
-msgstr ""
-"Spécifiez le comportement de la présentation du score dans chaque session"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:113
-#, kde-format
-msgid "Check to show score as a percentage"
-msgstr "Cochez cette case pour afficher le score sous forme de pourcentage"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:116
-#, kde-format
-msgid "Select if the score should be shown as a percentage"
-msgstr "Sélectionnez si le score doit être affiché comme un pourcentage"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:119
-#, kde-format
-msgid "&Show score as a percentage"
-msgstr "Afficher le &score sous forme de pourcentage"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:145
-#, kde-format
-msgid "Specify behavior for a multiple choice session"
-msgstr "Spécifiez le comportement d'une session de questions à choix multiples"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:169
-#, kde-format
-msgid "Check to correct automatically"
-msgstr "Cochez pour corriger automatiquement"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:172
-#, kde-format
-msgid "Select if a choice should be checked immediately"
-msgstr "Sélectionnez si un choix doit être vérifié immédiatement"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:175
-#, kde-format
-msgid "Check selection a&utomatically"
-msgstr "Vérifier a&utomatiquement la sélection"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:185
-#, kde-format
-msgid "Specify behavior of a flashcard session"
-msgstr "Spécifier le comportement d'une session à cartes"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:231
-#, kde-format
-msgid "Specify the amount of time between card flips"
-msgstr "Spécifiez la quantité de temps entre les retournements de carte"
-
-#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:234
-#, kde-format
-msgid "seconds and"
-msgstr "secondes et"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:241
-#, kde-format
-msgid "Delay to flip card"
-msgstr "Délai pour retourner la carte"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:244
-#, kde-format
-msgid "Delay in seconds to flip card"
-msgstr "Délai en seconde pour retourner la carte"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:275 prefquizbase.ui:288
-#, kde-format
-msgid "Select how to count card"
-msgstr "Sélectionner comment compter les cartes"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:278
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as correct when moving to the "
-"next card"
-msgstr ""
-"Sélectionnez si la carte précédente doit être comptée comme correcte quand "
-"vous vous déplacez à la carte suivante"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:281
-#, kde-format
-msgid "Count &as correct"
-msgstr "Compter comme co&rrect"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:291
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as incorrect when moving to "
-"the next card"
-msgstr ""
-"Sélectionnez si la carte précédente doit être comptée comme incorrecte quand "
-"vous vous déplacez à la carte suivante"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:294
-#, kde-format
-msgid "Count as &error"
-msgstr "Compter comme &erreur"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:304
-#, kde-format
-msgid "Check to flip card automatically"
-msgstr "Cocher pour retourner la carte automatiquement"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:307
-#, kde-format
-msgid ""
-"Select if you want a card to turn over automatically after the given amount "
-"of time"
-msgstr ""
-"Sélectionnez si vous voulez que la carte soit tournée automatiquement après "
-"la durée donnée"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:310
-#, kde-format
-msgid "&Flip card automatically after"
-msgstr "&Retourner la carte automatiquement après"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
-#: preftutorbase.ui:17
-#, kde-format
-msgid "Tutor Timing"
-msgstr "Rythme du Tuteur"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
-#: preftutorbase.ui:23
-#, kde-format
-msgid "&Every"
-msgstr "&Chaque"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
-#: preftutorbase.ui:60
-#, kde-format
-msgid "&minutes"
-msgstr "&minutes"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
-#: preftutorbase.ui:72
-#, kde-format
-msgid "&Randomly"
-msgstr "&Aléatoirement"
-
-#. i18n: ectx: property (text), widget (QLabel, labelBetween)
-#: preftutorbase.ui:100
-#, kde-format
-msgid "Between"
-msgstr "Entre"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
-#: preftutorbase.ui:120
-#, kde-format
-msgid "m&inutes and"
-msgstr "m&inutes et"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
-#: preftutorbase.ui:146
-#, kde-format
-msgid "mi&nutes"
-msgstr "mi&nutes"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
-#: preftutorbase.ui:161
-#, kde-format
-msgid "Flashcard Appearance"
-msgstr "Apparence des cartes"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
-#: preftutorbase.ui:167
-#, kde-format
-msgid "&Native"
-msgstr "Originel"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
-#: preftutorbase.ui:177
-#, kde-format
-msgid "Minim&alistic"
-msgstr "Minim&aliste"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
-#: preftutorbase.ui:187
-#, kde-format
-msgid "Miscellaneous"
-msgstr "Divers"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
-#: preftutorbase.ui:193
-#, kde-format
-msgid "S&tart exercise as soon as vocabulary file is opened"
-msgstr "&Démarrer l'exercice dès qu'un fichier de vocabulaire est ouvert"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
-#, kde-format
-msgid "Type your answer"
-msgstr "Saisissez votre réponse"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:145
-#, kde-format
-msgid "The answer showing blanks for a Fill-in-the-blank question"
-msgstr "La réponse affichant les blancs pour une question Remplir-le-blanc"
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:148
-#, kde-format
-msgid "This is _____ answer"
-msgstr "C'est la réponse _____"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
-#: qaviewbase.ui:176
-#, kde-format
-msgid "Type the answer to the question"
-msgstr "Saisissez la réponse à la question"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: qaviewbase.ui:587
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a question and answer quiz.</html>"
-msgstr ""
-"<html>Il y a trop peu d'entrées dans votre vocabulaire<br />Vous devez avoir "
-"au moins une entrée pour un questionnaire Question et réponse</html>"
-
-#: wqprintdialogpage.cpp:17
+#: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
-msgid "Vocabulary Options"
-msgstr "Options de vocabulaire"
-
-#: wqprintdialogpage.cpp:23
-#, kde-format
-msgid "Select Type of Printout"
-msgstr "Sélectionner le type d'impression"
-
-#: wqprintdialogpage.cpp:28
-#, kde-format
-msgid "Vocabulary &list"
-msgstr "&Liste de vocabulaire"
-
-#: wqprintdialogpage.cpp:29
-#, kde-format
-msgid "Select to print the vocabulary as displayed in the editor"
-msgstr "Sélectionner pour imprimer le vocabulaire comme affiché dans l'éditeur"
-
-#: wqprintdialogpage.cpp:33
-#, kde-format
-msgid "Vocabulary e&xam"
-msgstr "E&xamen de vocabulaire"
-
-#: wqprintdialogpage.cpp:34
-#, kde-format
-msgid "Select to print the vocabulary as a vocabulary exam"
+msgid "Create deck"
 msgstr ""
-"Sélectionner pour imprimer le vocabulaire comme un examen de vocabulaire"
 
-#: wqprintdialogpage.cpp:38
+#: qml/DeckEditorPage.qml:35
 #, kde-format
-msgid "&Flashcards"
-msgstr "Car&tes"
+msgctxt "@title:window"
+msgid "Edit deck"
+msgstr ""
 
-#: wqprintdialogpage.cpp:39
+#: qml/DeckEditorPage.qml:40
 #, kde-format
-msgid "Select to print flashcards"
-msgstr "Sélectionner pour imprimer les cartes"
+msgid "Filter"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:43
+#, kde-format
+msgid "Filter..."
+msgstr ""
+
+#: qml/DeckEditorPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Showing Preview..."
+msgctxt "@action:button"
+msgid "Print Preview"
+msgstr "Affichant un aperçu..."
+
+#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#, kde-format
+msgid "Flashcard"
+msgstr "Cartes"
+
+#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#, kde-format
+msgid "List"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#, kde-format
+msgid "Exam"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Printing..."
+msgctxt "@action:button"
+msgid "Print"
+msgstr "Impression..."
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link image"
+#| msgid "Link Image"
+msgctxt "@action:button"
+msgid "Link image"
+msgstr "Lier à une image"
+
+#: qml/DeckEditorPage.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link sound"
+#| msgid "Link Sound"
+msgctxt "@action:button"
+msgid "Link sound"
+msgstr "Lier à un son"
+
+#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "Language 1"
+msgctxt "@action:button"
+msgid "Set language"
+msgstr "Langue 1"
+
+#: qml/DeckEditorPage.qml:183
+#, kde-format
+msgid "Please choose an image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:192
+#, kde-format
+msgid "Please choose a sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:238
+#, kde-format
+msgctxt "@label"
+msgid "Author:"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:249
+#, kde-format
+msgctxt "@label"
+msgid "License:"
+msgstr ""
+
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox vocabulary editor"
+#| msgid "Editor"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Éditeur "
+
+#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
+#: qml/QuestionAnswerPage.qml:151
+#, fuzzy, kde-format
+#| msgid "&Check"
+msgctxt "@action:button"
+msgid "Check"
+msgstr "&Vérifier"
+
+#: qml/FlashCardPage.qml:128
+#, fuzzy, kde-format
+#| msgid "Correct Answer"
+msgctxt "@action:button"
+msgid "Correct"
+msgstr "Réponse correcte"
+
+#: qml/FlashCardPage.qml:146
+#, fuzzy, kde-format
+#| msgid "Mark Last Correct"
+msgctxt "@action:button"
+msgid "Not Correct"
+msgstr "dernière marque correcte"
+
+#: qml/LanguageSelectorPage.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select Image"
+msgid "Select a language"
+msgstr "Sélectionner une image"
+
+#: qml/main.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@action:inmenu"
+msgid "Settings"
+msgstr "Configuration du questionnaire"
+
+#: qml/main.qml:42
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "This was the correct answer"
+msgid "This is correct"
+msgstr "Il s'agissait de la bonne réponse"
+
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Incorrect answers"
+msgid "Wrong, the correct answer was \"%1\"."
+msgstr "Réponses incorrectes"
+
+#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
+#, kde-format
+msgctxt "@action:button"
+msgid "Next"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:150
+#, kde-format
+msgid "Not enough words in your deck"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:151
+#, kde-format
+msgid "You need at least 3 words to enable the multiple choice mode"
+msgstr ""
+
+#: qml/OptionsAction.qml:12
+#, fuzzy, kde-format
+#| msgid "&2 Option"
+msgctxt "@action:button"
+msgid "Options"
+msgstr "&2 Option"
+
+#: qml/OptionsAction.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo shuffle"
+#| msgid "Shuffle"
+msgctxt "@action:inmenu"
+msgid "Shuffle"
+msgstr "Mélanger"
+
+#: qml/QuestionAnswerPage.qml:143
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgctxt "@action:button"
+msgid "Hint"
+msgstr "&Indice"
+
+#: qml/SettingsPage.qml:13
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Configuration du questionnaire"
+
+#: qml/SettingsPage.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:group general settings"
+#| msgid "General"
+msgid "General"
+msgstr "Général"
+
+#: qml/SettingsPage.qml:30
+#, kde-format
+msgid "Show score as percentage"
+msgstr "Afficher le score en pourcentage"
+
+#: qml/SettingsPage.qml:47
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgid "Flash Card"
+msgstr "Cartes"
+
+#: qml/SettingsPage.qml:52
+#, kde-format
+msgid "Automatically flip flashcard"
+msgstr "Retourner automatiquement la carte"
+
+#: qml/SettingsPage.qml:64
+#, fuzzy, kde-format
+#| msgid "Time delay for flipping flashcard"
+msgid "Time delay for flipping the flashcard"
+msgstr "Délai pour le retournement de la carte"
+
+#: qml/SettingsPage.qml:84
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgid "Multiple choice"
+msgstr "Choix multiple"
+
+#: qml/SettingsPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Automatically check selected answer in multiple choice"
+msgid "Automatically check selected answer"
+msgstr ""
+"Vérifier automatiquement les réponses sélectionnées dans les choix multiples"
+
+#: qml/SettingsPage.qml:105
+#, fuzzy, kde-format
+#| msgid "&Question and Answer"
+msgid "Question and Answer"
+msgstr "&Question et réponse"
+
+#: qml/SettingsPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Check to count hint as error"
+msgid "Count using hint as an error"
+msgstr "Cochez pour compter l'indice comme erreur"
+
+#: qml/SettingsPage.qml:122
+#, kde-format
+msgid "Compare answers in a case sensitive way"
+msgstr "Comparer les réponses en prenant en compte la casse"
+
+#: qml/SettingsPage.qml:152
+#, fuzzy, kde-format
+#| msgid "Quits KWordQuiz"
+msgid "About KWordQuiz"
+msgstr "Ferme KWordQuiz"
+
+#: qml/SettingsPage.qml:161
+#, kde-format
+msgid "About KDE"
+msgstr ""
+
+#: qml/WelcomePage.qml:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr ""
+
+#: qml/WelcomePage.qml:43
+#, kde-format
+msgid "Please choose a KWordQuiz document"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "KEduDocument (*.kvtml)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "Wql documents (*.wql)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "CSV documents (*.csv)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "XDXF documents (*.xdxf)"
+msgstr ""
+
+#: qml/WelcomePage.qml:62
+#, fuzzy, kde-format
+#| msgid "Quits KWordQuiz"
+msgid "Welcome to KWordQuiz"
+msgstr "Ferme KWordQuiz"
+
+#: qml/WelcomePage.qml:74
+#, fuzzy, kde-format
+#| msgid "Opens an existing vocabulary document"
+msgid "Open existing document"
+msgstr "Ouvre un document de vocabulaire existant"
+
+#: qml/WelcomePage.qml:80
+#, kde-format
+msgid "Create Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:88
+#, kde-format
+msgid "Download Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:111
+#, kde-format
+msgid "Mode"
+msgstr "Mode"
+
+#: qml/WelcomePage.qml:147
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgctxt "@option:check Mode selector"
+msgid "Flashcard"
+msgstr "Cartes"
+
+#: qml/WelcomePage.qml:154
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgctxt "@option:check Mode selector"
+msgid "Multiple Choice"
+msgstr "Choix multiple"
+
+#: qml/WelcomePage.qml:161
+#, fuzzy, kde-format
+#| msgid "Question & Answer"
+msgctxt "@option:check Mode selector"
+msgid "Question-Answer"
+msgstr "Question et réponse"
+
+#: qml/WelcomePage.qml:177
+#, kde-format
+msgid "Decks"
+msgstr ""
+
+#: qml/WelcomePage.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr ""
+
+#~ msgid "Selection"
+#~ msgstr "Sélection"
+
+#~ msgid "Delete all information in selected entries"
+#~ msgstr "Supprimer toutes les informations dans les entrées sélectionnées"
+
+#~ msgid ""
+#~ "When checked all information will be deleted from the selected entries"
+#~ msgstr ""
+#~ "Quand cela sera coché, toutes les informations seront supprimées des "
+#~ "entrées sélectionnées"
+
+#~ msgid "Clear &All"
+#~ msgstr "Effacer &tout"
+
+#~ msgid "Delete the text from selected entries"
+#~ msgstr "Supprimer le texte des entrées sélectionnées"
+
+#~ msgid "When checked the text will be deleted from selected entries"
+#~ msgstr ""
+#~ "Quand cela sera coché, le texte sera supprimé des entrées sélectionnées"
+
+#~ msgid "&Text"
+#~ msgstr "&Texte"
+
+#~ msgid "Delete the image link from selected entries"
+#~ msgstr "Supprimer le lien de l'image dans les entrées sélectionnées"
+
+#~ msgid "When checked the image link will be deleted from selected entries"
+#~ msgstr ""
+#~ "Quand cela sera coché, le lien à l'image sera supprimé des entrées "
+#~ "sélectionnées"
+
+#~ msgid "&Image Links"
+#~ msgstr "Liens à l'&image"
+
+#~ msgid "Delete the sound link from selected entries"
+#~ msgstr "Supprimer le lien du son dans les entrées sélectionnées"
+
+#~ msgid "When checked the sound link will be deleted from selected entries"
+#~ msgstr ""
+#~ "Quand cela sera coché, le lien au son sera supprimé des entrées "
+#~ "sélectionnées"
+
+#~ msgid "&Sound Links"
+#~ msgstr "Liens au &son"
+
+#~ msgid "Column 1"
+#~ msgstr "Colonne 1"
+
+#~ msgid "Title for the left column"
+#~ msgstr "Titre de la colonne de gauche"
+
+#~ msgid "Enter a title (identifier) for the left column"
+#~ msgstr "Saisissez un titre (identifiant) pour la colonne de gauche"
+
+#~ msgid "&Title:"
+#~ msgstr "&Titre : "
+
+#~ msgid "&Keyboard layout:"
+#~ msgstr "&Disposition du clavier :"
+
+#~ msgid "&Width:"
+#~ msgstr "&Largeur"
+
+#~ msgid "Keyboard layout for the left column"
+#~ msgstr "Clavier pour la colonne de gauche"
+
+#~ msgid "Select a keyboard layout for the left column"
+#~ msgstr "Sélectionner un clavier pour la colonne de gauche"
+
+#~ msgid "Width of the left column"
+#~ msgstr "Largeur de la colonne de gauche"
+
+#~ msgid "Enter the width (in pixels) for the left column"
+#~ msgstr "Saisir la largeur (en pixels) de la colonne de gauche"
+
+#~ msgid "Column 2"
+#~ msgstr "Colonne 2"
+
+#~ msgid "T&itle:"
+#~ msgstr "T&itre : "
+
+#~ msgid "Keyboard &Layout:"
+#~ msgstr "&Disposition du clavier : "
+
+#~ msgid "Wi&dth:"
+#~ msgstr "Lar&geur : "
+
+#~ msgid "Title for the right column"
+#~ msgstr "Titre de la colonne de droite"
+
+#~ msgid "Enter a title (identifier) for the right column"
+#~ msgstr "Saisissez un titre (identifiant) pour la colonne de droite"
+
+#~ msgid "Width of the right column"
+#~ msgstr "Largeur de la colonne de droite"
+
+#~ msgid "Enter the width (in pixels) for the right column"
+#~ msgstr "Saisir la largeur (en pixels) de la colonne de droite"
+
+#~ msgctxt "@title:window"
+#~ msgid "Column Settings"
+#~ msgstr "Configuration de la colonne"
+
+#~ msgctxt "@title:window select character dialog"
+#~ msgid "Select Character"
+#~ msgstr "Sélectionnez le caractère"
+
+#~ msgctxt "@action:button"
+#~ msgid "&Select"
+#~ msgstr "&Sélectionner"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select this character"
+#~ msgstr "Sélectionner ce caractère"
+
+#~ msgid "Column widths"
+#~ msgstr "Largeurs des colonnes"
+
+#~ msgid "Keyboard layouts"
+#~ msgstr "Dispositions de clavier"
+
+#~ msgid "Search"
+#~ msgstr "Rechercher"
+
+#~ msgid "Your answer was correct!"
+#~ msgstr "Votre réponse était juste !"
+
+#~ msgid "Your answer was incorrect."
+#~ msgstr "Votre réponse était fausse."
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a flashcard quiz.</html>"
+#~ msgstr ""
+#~ "<html>Il y a trop peu d'entrées dans votre vocabulaire<br />vous devez "
+#~ "avoir au moins une entrée dans un questionnaire de carte</html>"
+
+#~ msgid "Creates a new blank vocabulary document"
+#~ msgstr "Crée un nouveau document de vocabulaire vide"
+
+#~ msgid "Download New Vocabularies..."
+#~ msgstr "Télécharger de nouveaux vocabulaires..."
+
+#~ msgid "Downloads new vocabularies"
+#~ msgstr "Télécharge de nouveaux vocabulaires"
+
+#~ msgid "Saves the active vocabulary document"
+#~ msgstr "Enregistre le document de vocabulaire actif"
+
+#~ msgid "Saves the active vocabulary document with a different name"
+#~ msgstr "Enregistre le document de vocabulaire actif sous un nom différent"
+
+#~ msgid "Closes the active vocabulary document"
+#~ msgstr "Ferme le document de vocabulaire actif"
+
+#~ msgid "Prints the active vocabulary document"
+#~ msgstr "Imprime le document de vocabulaire actif"
+
+#~ msgid "Shows a preview of the active vocabulary document"
+#~ msgstr "Afficher un aperçu du document de vocabulaire actif"
+
+#~ msgid "Cuts the text from the selected cells and places it on the clipboard"
+#~ msgstr ""
+#~ "Coupe le texte des cellules sélectionnées et le place dans le presse-"
+#~ "papiers"
+
+#~ msgid ""
+#~ "Copies the text from the selected cells and places it on the clipboard"
+#~ msgstr ""
+#~ "Copie le texte des cellules sélectionnées et le place dans le presse-"
+#~ "papiers"
+
+#~ msgid ""
+#~ "Pastes previously cut or copied text from the clipboard into the selected "
+#~ "cells"
+#~ msgstr ""
+#~ "Coller un texte précédemment copié ou coupé d'un texte depuis le presse-"
+#~ "papiers dans les cellules sélectionnées"
+
+#~ msgid "Clears the content of the selected cells"
+#~ msgstr "Efface le contenu des cellules sélectionnées"
+
+#~ msgid "&Insert Row"
+#~ msgstr "&Insérer une ligne"
+
+#~ msgid "Inserts a new row above the current row"
+#~ msgstr "Insère une nouvelle ligne au-dessus de la ligne courante"
+
+#~ msgid "&Delete Row"
+#~ msgstr "&Supprimer la ligne"
+
+#~ msgid "Deletes the selected row(s)"
+#~ msgstr "Supprime la / les ligne(s) sélectionnée(s)"
+
+#~ msgid "&Mark as Blank"
+#~ msgstr "&Marquer comme blanc"
+
+#~ msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+#~ msgstr ""
+#~ "Marquer le mot courant ou sélectionné comme un blanc pour un remplir-le-"
+#~ "blanc"
+
+#~ msgid "&Unmark Blanks"
+#~ msgstr "&Démarquer les blancs"
+
+#~ msgid "Removes blanks from the current or selected word"
+#~ msgstr "Supprimer les blancs depuis le mot courant ou sélectionné"
+
+#~ msgid "&Column Settings..."
+#~ msgstr "Configuration des &colonnes..."
+
+#~ msgid "Defines the column settings for the active vocabulary"
+#~ msgstr "Définir la configuration de la colonne pour le vocabulaire actif"
+
+#~ msgid "&Font..."
+#~ msgstr "&Police..."
+
+#~ msgid "Defines the font used by the editor"
+#~ msgstr "Définit la police utilisée par l'éditeur"
+
+#~ msgid "Link &Image..."
+#~ msgstr "Lier à une &image"
+
+#~ msgid "Links an image with the current entry"
+#~ msgstr "Lie une image avec l'entrée courante"
+
+#~ msgid "Link &Sound..."
+#~ msgstr "Lier à un &son"
+
+#~ msgid "Links a sound with the current entry"
+#~ msgstr "Lie un son avec l'entrée courante"
+
+#~ msgid "&Adjust Row Heights"
+#~ msgstr "Ajuste&r la hauteur des lignes"
+
+#~ msgid "Automatically adjusts the height of selected rows"
+#~ msgstr "Ajuste automatiquement la hauteur des lignes sélectionnées"
+
+#~ msgid "Sh&uffle"
+#~ msgstr "M&élanger"
+
+#~ msgid "Shuffles the entries of the active vocabulary"
+#~ msgstr "Mélange les entrées du vocabulaire actif"
+
+#~ msgid "&Keyboard Layout"
+#~ msgstr "&Disposition du clavier"
+
+#~ msgid "Shows available keyboard layouts"
+#~ msgstr "Affiche la disposition du clavier..."
+
+#~ msgid "Change Mode"
+#~ msgstr "Changer le mode"
+
+#~ msgid "Changes the mode used in quiz sessions"
+#~ msgstr "Change le mode utilisé dans les sessions de questionnaire"
+
+#~ msgid "Selects this mode"
+#~ msgstr "Sélectionne ce mode"
+
+#~ msgctxt "@item:inlistbox activate vocabulary editor"
+#~ msgid "&Editor"
+#~ msgstr "Édit&eur"
+
+#~ msgid "Activates the vocabulary editor"
+#~ msgstr "Active l'éditeur de vocabulaire"
+
+#~ msgid "&Flashcard"
+#~ msgstr "Car&tes"
+
+#~ msgid "Starts a flashcard session using the active vocabulary"
+#~ msgstr "Démarrer une session à cartes en utilisant le vocabulaire actif"
+
+#~ msgid "&Multiple Choice"
+#~ msgstr "Choix &multiple"
+
+#~ msgid "Starts a multiple choice session using the active vocabulary"
+#~ msgstr ""
+#~ "Démarrer une session de questions à choix multiples en utilisant le "
+#~ "vocabulaire actif"
+
+#~ msgid "Q&&A"
+#~ msgstr "Q&&R"
+
+#~ msgid "Starts a question and answer session using the active vocabulary"
+#~ msgstr ""
+#~ "Démarrer une session questions et réponses en utilisant le vocabulaire "
+#~ "actif"
+
+#~ msgid "Checks your answer to this question"
+#~ msgstr "Vérifie votre réponse à la question"
+
+#~ msgid "Choose Option &1"
+#~ msgstr "Choisir Option &1"
+
+#~ msgid "Choose Option &2"
+#~ msgstr "Choisir Option &2"
+
+#~ msgid "Choose Option &3"
+#~ msgstr "Choisir Option 3"
+
+#~ msgid "I &Know"
+#~ msgstr "&Je sais"
+
+#~ msgid "Counts this card as correct and shows the next card"
+#~ msgstr "Compte cette carte comme juste et affiche la suivante"
+
+#~ msgid "I &Do Not Know"
+#~ msgstr "Je &ne sais pas"
+
+#~ msgid "Counts this card as incorrect and shows the next card"
+#~ msgstr "Compte cette carte comme fausse et affiche la suivante"
+
+#~ msgid "Gets the next correct letter of the answer"
+#~ msgstr "Affiche la prochaine lettre correcte de la réponse"
+
+#~ msgid "Marks last answer as correct"
+#~ msgstr "Marque la dernière réponse comme juste"
+
+#~ msgid "&Restart"
+#~ msgstr "&Redémarrer"
+
+#~ msgid "Restarts the quiz session from the beginning"
+#~ msgstr "Recommence le questionnaire"
+
+#~ msgid "&Play Audio"
+#~ msgstr "&Jouer le son"
+
+#~ msgid "Play associated audio"
+#~ msgstr "Jouer le son associé"
+
+#~ msgid "Repeats all incorrectly answered questions"
+#~ msgstr "Répète toutes les questions mal traitées"
+
+#~ msgid "Export Errors &As..."
+#~ msgstr "Exporter les erreurs &comme..."
+
+#~ msgid "Exports all errors as a new vocabulary document"
+#~ msgstr ""
+#~ "Exporter toutes les erreurs comme un nouveau document de vocabulaire"
+
+#~ msgid "Show Se&arch"
+#~ msgstr "Afficher la barre de &recherche"
+
+#~ msgid "Toggle display of the search bar"
+#~ msgstr "Affiche/cache la barre de recherche"
+
+#~ msgid "Configures sound and other notifications for certain events"
+#~ msgstr "Configure les sons et autres notifications pour certains évènements"
+
+#~ msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+#~ msgstr ""
+#~ "Spécifie les préférences pour l'éditeur de vocabulaire et les sessions "
+#~ "questionnaire"
+
+#~ msgid "Special Character <numid>%1</numid>"
+#~ msgstr "Caractère spécial <numid>%1</numid>"
+
+#~ msgid "Toggles display of the toolbars"
+#~ msgstr "Affiche / cache les barres d'outils"
+
+#~ msgid "Enter search terms here"
+#~ msgstr "Saisissez le terme recherché ici"
+
+#~ msgid "Opening file..."
+#~ msgstr "Ouverture d'un fichier..."
+
+#~ msgctxt "%1 is an error message"
+#~ msgid ""
+#~ "%1\n"
+#~ "If you are sure no other program is using the file you can choose to "
+#~ "ignore the lock and open the file anyway.\n"
+#~ "Do you want to open the file?"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Si vous êtes sûr qu'aucun programme n'utilise ce fichiers, vous pouvez "
+#~ "choisir d'ignorer le verrouillage et ouvrir le fichier malgré tout.\n"
+#~ "Voulez-vous vraiment ouvrir le fichier ?"
+
+#~ msgid "Open File"
+#~ msgstr "Ouvrir un fichier"
+
+#~ msgctxt "@info:status ready"
+#~ msgid "Ready"
+#~ msgstr "Prêt "
+
+#~ msgid ""
+#~ "The current document has been modified.\n"
+#~ "Do you want to save it?"
+#~ msgstr ""
+#~ "Le fichier courant a été modifié.\n"
+#~ "Voulez-vous l'enregistrer ? "
+
+#~ msgid "Opening a new document window..."
+#~ msgstr "Ouverture d'une nouvelle fenêtre..."
+
+#~ msgid "&Merge selected files with the current document"
+#~ msgstr "&fusionne les fichiers sélectionnés avec le document courant"
+
+#~ msgid "Open Vocabulary Document"
+#~ msgstr "Ouvrir un document de vocabulaire"
+
+#~ msgid "Saving file..."
+#~ msgstr "Enregistrement du fichier..."
+
+#~ msgid "Saving file with a new filename..."
+#~ msgstr "Enregistrement du fichier sous un nouveau nom..."
+
+#~ msgid "HTML Document"
+#~ msgstr "Document HTML"
+
+#~ msgid "Save Vocabulary Document As"
+#~ msgstr "Enregistrer le document de vocabulaire sous"
+
+#~ msgid "Closing file..."
+#~ msgstr "Fermeture du fichier..."
+
+#~ msgctxt "@info:status quitting"
+#~ msgid "Quitting..."
+#~ msgstr "Fermeture... "
+
+#~ msgid "Cutting selection..."
+#~ msgstr "Coupe de la sélection..."
+
+#~ msgid "Copying selection to clipboard..."
+#~ msgstr "Copie de la sélection vers le presse-papiers..."
+
+#~ msgid "Inserting clipboard contents..."
+#~ msgstr "Insertion du contenu du presse-papiers..."
+
+#~ msgid "Clearing the selected cells..."
+#~ msgstr "Effacement des cellules sélectionnées..."
+
+#~ msgid "Inserting rows..."
+#~ msgstr "Insertion de lignes..."
+
+#~ msgid "Deleting selected rows..."
+#~ msgstr "Suppression des lignes sélectionnées..."
+
+#~ msgid "Marking selected text as a blank..."
+#~ msgstr "Marquer le texte sélectionné comme un blanc..."
+
+#~ msgid "Removing blank markings..."
+#~ msgstr "Supprimer les marques des blancs..."
+
+#~ msgid "Setting the column titles of the vocabulary..."
+#~ msgstr "Réglage du titre des colonnes du vocabulaire..."
+
+#~ msgid "Setting the font of the vocabulary..."
+#~ msgstr "Réglage de la police du vocabulaire..."
+
+#~ msgid "Linking an image with the current entry..."
+#~ msgstr "Liant une image avec l'entrée courante"
+
+#~ msgid "Linking a sound with the current entry..."
+#~ msgstr "Lier un son avec l'entrée courante"
+
+#~ msgid "Adjusting row heights..."
+#~ msgstr "Hauteurs de lignes..."
+
+#~ msgid "Randomizing the vocabulary..."
+#~ msgstr "Mélange du vocabulaire..."
+
+#~ msgid "Updating mode..."
+#~ msgstr "Mise à jour du mode..."
+
+#~ msgid "Starting editor session..."
+#~ msgstr "Démarrage d'une session d'éditeur..."
+
+#~ msgid "Starting flashcard session..."
+#~ msgstr "Démarrage d'une session à cartes..."
+
+#~ msgid "Starting multiple choice session..."
+#~ msgstr "Démarrage d'une session de questions à choix multiples..."
+
+#~ msgid "Starting question & answer session..."
+#~ msgstr "Démarrer une session de questions et réponses..."
+
+#~ msgid "Insert %1"
+#~ msgstr "Insérer %1"
+
+#~ msgid "Inserts the character %1"
+#~ msgstr "Insère le caractère %1"
+
+#~ msgid "This will restart your quiz. Do you wish to continue?"
+#~ msgstr "Le questionnaire va être redémarré. Voulez-vous continuer ?"
+
+#~ msgid "&1 %1 -> %2 In Order"
+#~ msgstr "&1 %1 -> %2 dans l'ordre"
+
+#~ msgid "&2 %1 -> %2 In Order"
+#~ msgstr "&2 %1 -> %2 dans l'ordre"
+
+#~ msgid "&3 %1 -> %2 Randomly"
+#~ msgstr "&3 %1 -> %2 ordre aléatoire"
+
+#~ msgid "&4 %1 -> %2 Randomly"
+#~ msgstr "&4 %1 -> %2 ordre aléatoire"
+
+#~ msgid "&5 %1 <-> %2 Randomly"
+#~ msgstr "&5 %1 <=> %2 ordre aléatoire"
+
+#~ msgid "%1 -> %2 In Order"
+#~ msgstr "%1 -> %2 dans l'ordre"
+
+#~ msgid "%1 -> %2 Randomly"
+#~ msgstr "%1 -> %2 ordre aléatoire"
+
+#~ msgid "%1 &lt;-&gt; %2 Randomly"
+#~ msgstr "%1 -&lt;-&gt; %2 ordre aléatoire"
+
+#~ msgid "Is this the first time KWordQuiz is run?"
+#~ msgstr "Est-ce la première fois que vous lancez KWordQuiz ?"
+
+#~ msgid "Toggle display of the search bar."
+#~ msgstr "Affiche / cache la barre de recherche"
+
+#~ msgid "Type of session to use when opening files"
+#~ msgstr "Type de session à utiliser en ouvrant les fichiers"
+
+#~ msgid "Type of printout to generate"
+#~ msgstr "Type d'impression à générer"
+
+#~ msgid "Titles for column 1"
+#~ msgstr "Titres de la colonne 1"
+
+#~ msgid "Titles for column 2"
+#~ msgstr "Titres de la colonne 2"
+
+#~ msgid "Font used in the editor"
+#~ msgstr "Police utilisée dans l'éditeur"
+
+#~ msgid "If Fill-in-the-blank should be enabled"
+#~ msgstr "Si l'option remplir-le-blanc doit être activée"
+
+#~ msgid "Direction the Enter key moves in the editor"
+#~ msgstr ""
+#~ "La direction vers laquelle la touche Entrée se déplace dans l'éditeur"
+
+#~ msgid "Characters for the special character toolbar"
+#~ msgstr "Caractères pour la barre d'outils des caractères spéciaux"
+
+#~ msgid "Clear all data in selected entries"
+#~ msgstr "Effacer toutes les données dans les entrées sélectionnées"
+
+#~ msgid "Clear the text in selected entries"
+#~ msgstr "Effacer le texte dans les entrées sélectionnées"
+
+#~ msgid "Clear the image link in selected entries"
+#~ msgstr "Effacer le lien de l'image dans les entrées sélectionnées"
+
+#~ msgid "Clear the sound link in selected entries"
+#~ msgstr "Effacer le lien du son dans les entrées sélectionnées"
+
+#~ msgid "Treat use of hint as error"
+#~ msgstr "Considérer les indices comme une erreur"
+
+#~ msgid "Count flashcard as correct or error"
+#~ msgstr "Compte la carte comme une erreur ou comme correcte"
+
+#~ msgid "Quiz mode"
+#~ msgstr "Mode questionnaire"
+
+#~ msgid "Font used for front of flashcard"
+#~ msgstr "Police utilisée pour la face de la carte"
+
+#~ msgid "Color used for text on front of flashcard"
+#~ msgstr "Couleur utilisée pour le texte sur la face de la carte"
+
+#~ msgid "Color used for front of flashcard"
+#~ msgstr "Couleur utilisée pour la face de la carte"
+
+#~ msgid "Color used for frame on front of flashcard"
+#~ msgstr "Couleur utilisée pour le cadre sur la face de la carte"
+
+#~ msgid "Font used for back of flashcard"
+#~ msgstr "Police utilisée pour le dos de la carte"
+
+#~ msgid "Color used for text on back of flashcard"
+#~ msgstr "Couleur utilisée pour le texte sur le dos de la carte"
+
+#~ msgid "Color used for back of flashcard"
+#~ msgstr "Couleur utilisée pour le dos de la carte"
+
+#~ msgid "Color used for frame on back of flashcard"
+#~ msgstr "Couleur utilisée pour le cadre du dos de la carte"
+
+#~ msgid "The Providers path for KWordQuiz"
+#~ msgstr "L'emplacement des fournisseurs pour KWordQuiz"
+
+#~ msgid "The command used to start a downloaded vocabulary"
+#~ msgstr "La commande utilisée pour démarrer un vocabulaire téléchargé"
+
+#~ msgid ""
+#~ "The folder where downloaded vocabularies are saved by default (relative "
+#~ "to $HOME)"
+#~ msgstr ""
+#~ "Le dossier où les vocabulaires téléchargés sont enregistrés par défaut "
+#~ "(relativement à la variable d'environnement « $HOME »)"
+
+#~ msgid "Pop up flashcards at fixed or random intervals"
+#~ msgstr "Aperçu rapide des cartes à intervalles fixes ou aléatoires"
+
+#~ msgid "The interval in minutes at which to pop up a flash card"
+#~ msgstr "L'intervalle en minutes entre les aperçus rapides des cartes"
+
+#~ msgid "The minimum interval in minutes at which to pop up a flash card"
+#~ msgstr "L'intervalle minimal entre les aperçus rapides des cartes"
+
+#~ msgid "The maximum interval in minutes at which to pop up a flash card"
+#~ msgstr "L'intervalle maximal entre les aperçus rapides des cartes"
+
+#~ msgid "Geometry of the last flash card"
+#~ msgstr "Géométrie de la dernière carte flash"
+
+#~ msgid "Show flash card in a native KWordQuiz style"
+#~ msgstr "Afficher la carte flash dans le style originel de KWordQuiz"
+
+#~ msgid ""
+#~ "Last open vocabulary file to be opened automatically if none other is "
+#~ "specified on the command line"
+#~ msgstr ""
+#~ "Dernier fichier de vocabulaire ouvert à ouvrir automatiquement si aucun "
+#~ "autre n'est spécifié dans la ligne de commande"
+
+#~ msgid "Start exercise as soon as the user opens vocabulary file"
+#~ msgstr ""
+#~ "Démarrer l'exercice dès que l'utilisateur ouvre le fichier de vocabulaire"
+
+#~ msgctxt "@title:group general settings"
+#~ msgid "General Settings"
+#~ msgstr "Configuration générale"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor"
+#~ msgstr "Éditeur"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor Settings"
+#~ msgstr "Configuration de l'éditeur"
+
+#~ msgctxt "@title:group quiz settings"
+#~ msgid "Quiz"
+#~ msgstr "Questionnaire"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Apparence des cartes"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance Settings"
+#~ msgstr "Configuration de l'apparence des cartes"
+
+#~ msgctxt "@title:group special character settings"
+#~ msgid "Special Characters"
+#~ msgstr "Caractères spéciaux"
+
+#~ msgid "V&ocabulary"
+#~ msgstr "V&ocabulaire"
+
+#~ msgid "&Mode"
+#~ msgstr "&Mode"
+
+#~ msgid "&Quiz"
+#~ msgstr "&Questionnaire"
+
+#~ msgid "Quiz"
+#~ msgstr "Questionnaire"
+
+#~ msgid "Special Characters"
+#~ msgstr "Caractères spéciaux"
+
+#~ msgctxt "@title:window"
+#~ msgid "Clear Contents"
+#~ msgstr "Effacer les contenus"
+
+#~ msgctxt "@item:inmenu undo clear"
+#~ msgid "Clear"
+#~ msgstr "Effacer"
+
+#~ msgctxt "@item:inmenu undo cut"
+#~ msgid "Cut"
+#~ msgstr "Couper"
+
+#~ msgctxt "@item:inmenu undo paste"
+#~ msgid "Paste"
+#~ msgstr "Coller"
+
+#~ msgctxt "@item:inmenu undo sort"
+#~ msgid "Sort"
+#~ msgstr "Trier"
+
+#~ msgctxt "@item:inmenu undo insert"
+#~ msgid "Insert"
+#~ msgstr "Insérer"
+
+#~ msgctxt "@item:inmenu undo delete"
+#~ msgid "Delete"
+#~ msgstr "Supprimer"
+
+#~ msgctxt "@item:inmenu undo unmark blank"
+#~ msgid "Unmark Blank"
+#~ msgstr "Démarquer les blancs"
+
+#~ msgctxt "@item:inmenu undo column titles"
+#~ msgid "Column Settings"
+#~ msgstr "Configuration de la colonne"
+
+#~ msgid "Font"
+#~ msgstr "Police"
+
+#~ msgid "Entry"
+#~ msgstr "Entrée"
+
+#~ msgid "Questions"
+#~ msgstr "Questions"
+
+#~ msgid "The number of questions in the session"
+#~ msgstr "Le nombre de questions dans la session"
+
+#~ msgid "00"
+#~ msgstr "00"
+
+#~ msgid "Correct answers"
+#~ msgstr "Réponses correctes"
+
+#~ msgid ""
+#~ "The number of questions answered correctly. May be shown as a percentage."
+#~ msgstr ""
+#~ "Le nombre de questions correctement traitées. Peut être affiché sous "
+#~ "forme de pourcentage."
+
+#~ msgid ""
+#~ "The number of questions answered incorrectly. May be shown as a "
+#~ "percentage."
+#~ msgstr ""
+#~ "Le nombre de questions incorrectement traitées. Peut être affiché sous "
+#~ "forme de pourcentage."
+
+#~ msgid "Answered questions"
+#~ msgstr "Questions traitées"
+
+#~ msgid ""
+#~ "The number of questions already answered. May be shown as a percentage."
+#~ msgstr ""
+#~ "Le nombre de questions déjà traitées. Peut être affiché sous forme de "
+#~ "pourcentage."
+
+#~ msgid "Untitled"
+#~ msgstr "Non titré"
+
+#~ msgid "There is an error with the Fill-in-the-blank brackets"
+#~ msgstr "Il y a une erreur avec les crochets du remplir-le-blanc"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Sound"
+#~ msgstr "Sélectionner un son"
+
+#~ msgid "All Files (*)"
+#~ msgstr "Tous les fichiers (*)"
+
+#~ msgid ""
+#~ "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that "
+#~ "allows you to set a certain time interval at which flashcards will pop up."
+#~ "<br /><br />The flashcards pop up in a non-intrusive way allowing you to "
+#~ "carry on working without stealing the focus from other programs you might "
+#~ "be working with.<br /><br />Be sure to right-click KWordQuiz Tutor icon "
+#~ "on the panel and select Preferences. There you can assign keyboard "
+#~ "shortcuts.</qt>"
+#~ msgstr ""
+#~ "<qt>KWordQuiz affiche des cartes flash sur votre écran de telle façon que "
+#~ "vous pouvez déterminer un certain intervalle de temps entre chacune de "
+#~ "leur apparition.<br /><br /> Les cartes flash surgissent d'une manière "
+#~ "non gênante ce qui vous permet de travailler sur d'autres programmes sans "
+#~ "détourner votre attention.<br /><br /> Assurez-vous de faire un clic-"
+#~ "droit sur l'icône du Tuteur de KWordQuiz sur la barre d'affichage et "
+#~ "sélectionner préférences. Là vous pourrez assigner des raccourcis "
+#~ "claviers.</qt>"
+
+#~ msgid "Tutor"
+#~ msgstr "Tuteur"
+
+#~ msgid "Start Exercise"
+#~ msgstr "Démarrer un exercice"
+
+#~ msgid "Configure KWordQuiz Tutor..."
+#~ msgstr "Configurer le Tuteur de KWordQuiz"
+
+#~ msgid "Close Flash Card"
+#~ msgstr "Fermer les cartes flash"
+
+#~ msgid "Flip Flash Card"
+#~ msgstr "Tourner les cartes flash"
+
+#~ msgid "Stop Exercise"
+#~ msgstr "Arrêter l'exercice"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor"
+#~ msgstr "Tuteur"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor Settings"
+#~ msgstr "Paramètres du tuteur"
+
+#~ msgctxt "Shortcuts Config"
+#~ msgid "Shortcuts"
+#~ msgstr "Raccourcis"
+
+#~ msgid "Shortcuts Settings"
+#~ msgstr "Paramètres des raccourcis"
+
+#~ msgid ""
+#~ "A number 1-5 corresponding to the \n"
+#~ "entries in the Mode menu"
+#~ msgstr ""
+#~ "Un nombre entre 1 et 5 correspondant à une\n"
+#~ "entrée dans le menu « Mode »"
+
+#~ msgid "Previous Question"
+#~ msgstr "Question précédente"
+
+#~ msgid "Your Answer"
+#~ msgstr "Votre réponse"
+
+#~ msgid "Summary"
+#~ msgstr "Résumé"
+
+#~ msgid "The question"
+#~ msgstr "La question"
+
+#~ msgid "Language or other identifier for the question"
+#~ msgstr "Langue ou autre identifiant de la question"
+
+#~ msgid "This is your question"
+#~ msgstr "Votre question"
+
+#~ msgid "Your choices"
+#~ msgstr "Vos choix"
+
+#~ msgid "Three choices for the answer. One is correct."
+#~ msgstr "Il y a trois réponses possibles, une seule est correcte."
+
+#~ msgid "&1 Option"
+#~ msgstr "&1 Option"
+
+#~ msgid "Language or other identifier for the answer"
+#~ msgstr "Langue ou autre identifiant de la réponse"
+
+#~ msgid "Language 2"
+#~ msgstr "Langue 2"
+
+#~ msgid "&3 Option"
+#~ msgstr "&3 Option"
+
+#~ msgid "Previous question"
+#~ msgstr "Question précédente"
+
+#~ msgid "The previous question"
+#~ msgstr "La question précédente"
+
+#~ msgid "This was your question"
+#~ msgstr "C'était votre question"
+
+#~ msgid "Your previous answer"
+#~ msgstr "Votre réponse précédente"
+
+#~ msgid "Your answer to the previous question"
+#~ msgstr "Votre réponse à la question précédente"
+
+#~ msgid "This was your answer"
+#~ msgstr "C'était votre réponse"
+
+#~ msgid "Previous correct answer"
+#~ msgstr "Réponse correcte précédente"
+
+#~ msgid "The correct answer to the previous question"
+#~ msgstr "La bonne réponse à la question précédente"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least three entries for a multiple choice quiz.</html>"
+#~ msgstr ""
+#~ "<html>Il y a trop peu d'entrées dans votre vocabulaire<br />Vous devez "
+#~ "avoir au moins trois entrées pour un questionnaire à choix multiples</"
+#~ "html>"
+
+#~ msgctxt "Back of the flashcard"
+#~ msgid "Back"
+#~ msgstr "Dos"
+
+#~ msgid "Front"
+#~ msgstr "Face"
+
+#~ msgid "Card Appearance"
+#~ msgstr "Apparence de la carte"
+
+#~ msgid "Flip card"
+#~ msgstr "Retourner la carte"
+
+#~ msgid "Use to show the other side of the card"
+#~ msgstr "Utilisez-le pour afficher l'autre côté de la carte"
+
+#~ msgid "&Flip Card"
+#~ msgstr "&Retourner la carte"
+
+#~ msgid "F&ont:"
+#~ msgstr "P&olice :"
+
+#~ msgid "Use to select the font for displaying text on the back of the card"
+#~ msgstr ""
+#~ "Utilisez le pour choisir la police affichant le texte sur le dos de la "
+#~ "carte"
+
+#~ msgid "Select text color"
+#~ msgstr "Sélectionnez la couleur du texte"
+
+#~ msgid "Use to select the color for text shown on the card"
+#~ msgstr ""
+#~ "Utilisez le pour sélectionner la couleur du texte affiché sur la carte"
+
+#~ msgid "Select card frame color"
+#~ msgstr "Sélectionnez la couleur du cadre de la carte"
+
+#~ msgid "Use to select the color for drawing the frame of the card"
+#~ msgstr ""
+#~ "Utilisez le pour sélectionner la couleur dessinant le cadre de la carte"
+
+#~ msgid "Select card color"
+#~ msgstr "Sélectionnez la couleur de la carte"
+
+#~ msgid "Select color used to draw the card"
+#~ msgstr "Sélectionnez la couleur utilisée pour dessiner la carte"
+
+#~ msgid "Use to select the font for displaying text on the front of the card"
+#~ msgstr ""
+#~ "Utilisez le pour choisir la police affichant le texte sur la face de la "
+#~ "carte"
+
+#~ msgid "&Text color:"
+#~ msgstr "Couleur du &texte :"
+
+#~ msgid "&Card color:"
+#~ msgstr "&Couleur de la carte :"
+
+#~ msgid "Fra&me color:"
+#~ msgstr "Couleur du c&adre :"
+
+#~ msgid "Action"
+#~ msgstr "Action"
+
+#~ msgid "Shortcut"
+#~ msgstr "Raccourci"
+
+#~ msgid "Character"
+#~ msgstr "Caractère"
+
+#~ msgid "Special Character %1"
+#~ msgstr "Caractère spécial %1"
+
+#~ msgid ""
+#~ "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+#~ "associated with each action."
+#~ msgstr ""
+#~ "Remarque : utilisez « Configuration / Configurer les raccourcis "
+#~ "clavier... » pour modifier le raccourci associé à chaque action."
+
+#~ msgid "Select character to modify"
+#~ msgstr "Sélectionnez le caractère à modifier"
+
+#~ msgid "Customizable special character actions"
+#~ msgstr "Actions des caractères spéciaux personnalisables"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "Click to choose a new character"
+#~ msgstr "Cliquez pour choisir un nouveau caractère"
+
+#~ msgid "Choose a character for the selected action"
+#~ msgstr "Choisissez un caractère pour l'action sélectionnée"
+
+#~ msgid "C&haracter..."
+#~ msgstr "Caract&ère..."
+
+#~ msgid "Preview of current character"
+#~ msgstr "Aperçu du caractère courant"
+
+#~ msgid "Preview of the character associated with the selected action"
+#~ msgstr "Aperçu du caractère associé à l'action sélectionnée"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "How enter key moves"
+#~ msgstr "Comment saisir les mouvements de touches"
+
+#~ msgid "Select how the Enter key should behave in the editor"
+#~ msgstr "Sélectionnez comment la touche Entrée doit agir dans l'éditeur"
+
+#~ msgid "Enter Ke&y Moves"
+#~ msgstr "Saisissez les mouvements de tou&ches"
+
+#~ msgid ""
+#~ "Select if the next cell below should become active when pressing Enter."
+#~ msgstr ""
+#~ "Sélectionnez si la prochaine cellule dessous doit devenir active quand "
+#~ "vous appuyez sur la touche Entrée."
+
+#~ msgid "&Down"
+#~ msgstr "&Bas"
+
+#~ msgid ""
+#~ "Select if the next cell to the right should become active when pressing "
+#~ "Enter"
+#~ msgstr ""
+#~ "Sélectionnez si la prochaine cellule de droite doit devenir active quand "
+#~ "vous appuyez sur la touche Entrée."
+
+#~ msgid "&Right"
+#~ msgstr "D&roite"
+
+#~ msgid "Select if the current cell should remain active when pressing Enter"
+#~ msgstr ""
+#~ "Sélectionnez si la cellule actuelle devrait rester activer quand vous "
+#~ "cliquez Entrée"
+
+#~ msgid "Does not &move"
+#~ msgstr "Ne pas &bouger"
+
+#~ msgid "Check to enable fill-in-the-blank"
+#~ msgstr "Cochez pour activer le remplir-le-blanc"
+
+#~ msgid "Select to enable the functions for Fill-in-the-blank"
+#~ msgstr "Sélectionner pour activer les fonctions pour le remplir-le-blanc"
+
+#~ msgid "E&nable fill-in-the-blank"
+#~ msgstr "Activ&er le remplir-le-blanc"
+
+#~ msgid "How vocabulary documents are opened"
+#~ msgstr "Manière d'ouvrir les documents de vocabulaire"
+
+#~ msgid "Select the kind of session to load an opened vocabulary document in"
+#~ msgstr ""
+#~ "Sélectionner le type de session pour y ouvrir un document de vocabulaire"
+
+#~ msgid "&Open Vocabulary Documents in"
+#~ msgstr "&Ouvrir un document de vocabulaire"
+
+#~ msgid "Open vocabulary documents in the editor"
+#~ msgstr "Ouvrir un document de vocabulaire dans l'éditeur"
+
+#~ msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgstr ""
+#~ "Sélectionner si le document de vocabulaire peut être affiché dans "
+#~ "l'éditeur"
+
+#~ msgid "&Editor"
+#~ msgstr "Édit&eur"
+
+#~ msgid "Open vocabulary documents in a flashcard quiz"
+#~ msgstr "Ouvrir un document de vocabulaire dans une carte de questionnaire"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
+#~ msgstr ""
+#~ "Sélectionner si le document de vocabulaire peut être affiché dans une "
+#~ "carte de questionnaire"
+
+#~ msgid "&Flashcard Quiz"
+#~ msgstr "Questionnaire à &cartes"
+
+#~ msgid "Open vocabulary documents in a multiple choice quiz"
+#~ msgstr ""
+#~ "Ouvrir un document de vocabulaire dans un questionnaire à choix multiples"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a multiple choice "
+#~ "quiz"
+#~ msgstr ""
+#~ "Sélectionner si le vocabulaire peut être affiché dans un questionnaire à "
+#~ "choix multiples"
+
+#~ msgid "&Multiple Choice Quiz"
+#~ msgstr " Questionnaire à choix &Multiples"
+
+#~ msgid "Open vocabulary documents in a question and answer quiz"
+#~ msgstr "Ouvrir le vocabulaire dans un questionnaire question et réponse"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a question and "
+#~ "answer quiz"
+#~ msgstr ""
+#~ "Sélectionner si le vocabulaire peut être affiché dans un questionnaire "
+#~ "question et réponse"
+
+#~ msgid "&Question and Answer Quiz"
+#~ msgstr "Questionnaire question et réponse"
+
+#~ msgid "Specify behavior for a question and answer session"
+#~ msgstr "Spécifiez le comportement pour une session de questions et réponses"
+
+#~ msgid "Question && Answer"
+#~ msgstr "&Question et réponse"
+
+#~ msgid ""
+#~ "Select if questions where the hint function has been used should be "
+#~ "counted as errors"
+#~ msgstr ""
+#~ "Sélectionnez si les questions où la fonction indice a été utilisée "
+#~ "doivent être comptées comme des erreurs"
+
+#~ msgid "&Treat hint as error"
+#~ msgstr "&Considérer les indices comme une erreur"
+
+#~ msgid "Specify behavior of the score presentation in any session"
+#~ msgstr ""
+#~ "Spécifiez le comportement de la présentation du score dans chaque session"
+
+#~ msgid "Check to show score as a percentage"
+#~ msgstr "Cochez cette case pour afficher le score sous forme de pourcentage"
+
+#~ msgid "Select if the score should be shown as a percentage"
+#~ msgstr "Sélectionnez si le score doit être affiché comme un pourcentage"
+
+#~ msgid "&Show score as a percentage"
+#~ msgstr "Afficher le &score sous forme de pourcentage"
+
+#~ msgid "Specify behavior for a multiple choice session"
+#~ msgstr ""
+#~ "Spécifiez le comportement d'une session de questions à choix multiples"
+
+#~ msgid "Check to correct automatically"
+#~ msgstr "Cochez pour corriger automatiquement"
+
+#~ msgid "Select if a choice should be checked immediately"
+#~ msgstr "Sélectionnez si un choix doit être vérifié immédiatement"
+
+#~ msgid "Check selection a&utomatically"
+#~ msgstr "Vérifier a&utomatiquement la sélection"
+
+#~ msgid "Specify behavior of a flashcard session"
+#~ msgstr "Spécifier le comportement d'une session à cartes"
+
+#~ msgid "Specify the amount of time between card flips"
+#~ msgstr "Spécifiez la quantité de temps entre les retournements de carte"
+
+#~ msgid "seconds and"
+#~ msgstr "secondes et"
+
+#~ msgid "Delay to flip card"
+#~ msgstr "Délai pour retourner la carte"
+
+#~ msgid "Delay in seconds to flip card"
+#~ msgstr "Délai en seconde pour retourner la carte"
+
+#~ msgid "Select how to count card"
+#~ msgstr "Sélectionner comment compter les cartes"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as correct when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Sélectionnez si la carte précédente doit être comptée comme correcte "
+#~ "quand vous vous déplacez à la carte suivante"
+
+#~ msgid "Count &as correct"
+#~ msgstr "Compter comme co&rrect"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as incorrect when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Sélectionnez si la carte précédente doit être comptée comme incorrecte "
+#~ "quand vous vous déplacez à la carte suivante"
+
+#~ msgid "Count as &error"
+#~ msgstr "Compter comme &erreur"
+
+#~ msgid "Check to flip card automatically"
+#~ msgstr "Cocher pour retourner la carte automatiquement"
+
+#~ msgid ""
+#~ "Select if you want a card to turn over automatically after the given "
+#~ "amount of time"
+#~ msgstr ""
+#~ "Sélectionnez si vous voulez que la carte soit tournée automatiquement "
+#~ "après la durée donnée"
+
+#~ msgid "&Flip card automatically after"
+#~ msgstr "&Retourner la carte automatiquement après"
+
+#~ msgid "Tutor Timing"
+#~ msgstr "Rythme du Tuteur"
+
+#~ msgid "&Every"
+#~ msgstr "&Chaque"
+
+#~ msgid "&minutes"
+#~ msgstr "&minutes"
+
+#~ msgid "&Randomly"
+#~ msgstr "&Aléatoirement"
+
+#~ msgid "Between"
+#~ msgstr "Entre"
+
+#~ msgid "m&inutes and"
+#~ msgstr "m&inutes et"
+
+#~ msgid "mi&nutes"
+#~ msgstr "mi&nutes"
+
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Apparence des cartes"
+
+#~ msgid "&Native"
+#~ msgstr "Originel"
+
+#~ msgid "Minim&alistic"
+#~ msgstr "Minim&aliste"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Divers"
+
+#~ msgid "S&tart exercise as soon as vocabulary file is opened"
+#~ msgstr "&Démarrer l'exercice dès qu'un fichier de vocabulaire est ouvert"
+
+#~ msgid "Type your answer"
+#~ msgstr "Saisissez votre réponse"
+
+#~ msgid "The answer showing blanks for a Fill-in-the-blank question"
+#~ msgstr "La réponse affichant les blancs pour une question Remplir-le-blanc"
+
+#~ msgid "This is _____ answer"
+#~ msgstr "C'est la réponse _____"
+
+#~ msgid "Type the answer to the question"
+#~ msgstr "Saisissez la réponse à la question"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a question and answer quiz.</html>"
+#~ msgstr ""
+#~ "<html>Il y a trop peu d'entrées dans votre vocabulaire<br />Vous devez "
+#~ "avoir au moins une entrée pour un questionnaire Question et réponse</html>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Vocabulary Options"
+#~ msgstr "Options de vocabulaire"
+
+#~ msgid "Select Type of Printout"
+#~ msgstr "Sélectionner le type d'impression"
+
+#~ msgid "Vocabulary &list"
+#~ msgstr "&Liste de vocabulaire"
+
+#~ msgid "Select to print the vocabulary as displayed in the editor"
+#~ msgstr ""
+#~ "Sélectionner pour imprimer le vocabulaire comme affiché dans l'éditeur"
+
+#~ msgid "Vocabulary e&xam"
+#~ msgstr "E&xamen de vocabulaire"
+
+#~ msgid "Select to print the vocabulary as a vocabulary exam"
+#~ msgstr ""
+#~ "Sélectionner pour imprimer le vocabulaire comme un examen de vocabulaire"
+
+#~ msgid "&Flashcards"
+#~ msgstr "Car&tes"
+
+#~ msgid "Select to print flashcards"
+#~ msgstr "Sélectionner pour imprimer les cartes"
 
 #~ msgid "kwordquiz"
 #~ msgstr "kwordquiz"
