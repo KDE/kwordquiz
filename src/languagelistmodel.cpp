@@ -139,3 +139,5 @@ QHash<int, QByteArray> LanguageListModel::roleNames() const
         {FlagRole, QByteArrayLiteral("flag")},
     };
 }
+
+#include "moc_languagelistmodel.cpp"

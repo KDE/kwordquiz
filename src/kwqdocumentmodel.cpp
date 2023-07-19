@@ -165,3 +165,5 @@ void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry)
         endInsertRows();
     }
 }
+
+#include "moc_kwqdocumentmodel.cpp"

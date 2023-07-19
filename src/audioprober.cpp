@@ -115,3 +115,5 @@ int AudioProber::animationIndex()
 {
     return m_animationIndex;
 }
+
+#include "moc_audioprober.cpp"

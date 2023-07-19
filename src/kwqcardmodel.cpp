@@ -376,3 +376,5 @@ QHash<int, QByteArray> KWQCardModel::roleNames() const
         { AnswerSoundRole, "answerSound" },
     };
 }
+
+#include "moc_kwqcardmodel.cpp"

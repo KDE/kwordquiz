@@ -97,3 +97,5 @@ QString BlankAnswer::yourAnswerResult(const QString &givenAnswer, const QString 
 
     return result;
 }
+
+#include "moc_blankanswer.cpp"

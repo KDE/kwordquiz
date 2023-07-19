@@ -188,3 +188,5 @@ void Exporter::createPages(QPrinter *printer, QTextDocument *textDoc, bool sendT
         textDoc->print(printer);
     }
 }
+
+#include "moc_exporter.cpp"

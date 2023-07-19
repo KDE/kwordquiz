@@ -7,3 +7,5 @@ void FileOpener::openFile(const QUrl &file, const Prefs::EnumStartSession mode)
 {
     Q_EMIT fileOpened(file, mode);
 }
+
+#include "moc_fileopener.cpp"

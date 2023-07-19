@@ -219,3 +219,5 @@ void KWQRandomSortModel::setShowErrorsOnly(const bool showErrorsOnly)
     Q_EMIT showErrorsOnlyChanged();
     invalidateFilter();
 }
+
+#include "moc_kwqrandomsortmodel.cpp"
