@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:45+0000\n"
+"POT-Creation-Date: 2023-07-20 00:44+0000\n"
 "PO-Revision-Date: 2008-07-09 21:10+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -153,25 +153,25 @@ msgstr[1] ""
 
 #: qml/BasePage.qml:82
 #, fuzzy, kde-format
-msgid "Repeat errors"
+msgid "Repeat Errors"
 msgstr "Ralat Pempartisyenan"
 
 #: qml/BasePage.qml:93
 #, kde-format
-msgid "Try again"
+msgid "Try Again"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
-msgid "Create deck"
+msgid "Create Deck"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:35
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Edit deck"
-msgstr ""
+msgid "Edit Deck"
+msgstr "Editor formula"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
@@ -226,41 +226,48 @@ msgstr ""
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
-msgid "Remove image"
+msgid "Remove Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
-msgid "Link image"
+msgid "Link Image"
 msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, fuzzy, kde-format
+#| msgid "&Select"
+msgctxt "@action:button"
+msgid "Remove Sound"
+msgstr "&Pilih"
 
 #: qml/DeckEditorPage.qml:123
 #, kde-format
 msgctxt "@action:button"
-msgid "Remove sound"
+msgid "Link Sound"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:123
-#, kde-format
-msgctxt "@action:button"
-msgid "Link sound"
-msgstr ""
-
-#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:156
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "Bahasa"
 
+#: qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Set Language"
+msgstr "Bahasa"
+
 #: qml/DeckEditorPage.qml:183
 #, kde-format
-msgid "Please choose an image"
+msgid "Please Choose an Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:192
 #, kde-format
-msgid "Please choose a sound"
+msgid "Please Choose a Sound"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:227
@@ -471,9 +478,9 @@ msgid "Welcome to KWordQuiz"
 msgstr "Comment=Perbendaharaan Kata KWordQuiz"
 
 #: qml/WelcomePage.qml:74
-#, kde-format
-msgid "Open existing document"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Open Existing Document"
+msgstr "Buka dokumen te&rbaru:"
 
 #: qml/WelcomePage.qml:80
 #, kde-format
@@ -499,7 +506,7 @@ msgstr "Belakang"
 #: qml/WelcomePage.qml:154
 #, fuzzy, kde-format
 msgctxt "@option:check Mode selector"
-msgid "Multiple Choice"
+msgid "Multiple choice"
 msgstr "Pilihan Tidak Sah"
 
 #: qml/WelcomePage.qml:161
@@ -518,6 +525,11 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Remove"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "@option:check Mode selector"
+#~ msgid "Multiple Choice"
+#~ msgstr "Pilihan Tidak Sah"
 
 #, fuzzy
 #~| msgid "&Select"
@@ -766,10 +778,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Opening a new document window..."
 #~ msgstr "Logmasuk baru di dalam tetingkap bersarang"
-
-#, fuzzy
-#~ msgid "Open Vocabulary Document"
-#~ msgstr "Buka dokumen te&rbaru:"
 
 #, fuzzy
 #~ msgid "Saving file..."
@@ -1034,12 +1042,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Answered questions"
 #~ msgstr "Soalan"
-
-#, fuzzy
-#~| msgid "&Select"
-#~ msgctxt "@title:window"
-#~ msgid "Select Sound"
-#~ msgstr "&Pilih"
 
 #, fuzzy
 #~ msgid "Close Flash Card"

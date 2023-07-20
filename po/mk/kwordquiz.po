@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:45+0000\n"
+"POT-Creation-Date: 2023-07-20 00:44+0000\n"
 "PO-Revision-Date: 2006-10-15 23:35+0200\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -169,25 +169,26 @@ msgstr[2] ""
 #: qml/BasePage.qml:82
 #, fuzzy, kde-format
 #| msgid "Repeat &Errors"
-msgid "Repeat errors"
+msgid "Repeat Errors"
 msgstr "Повтори &Грешки"
 
 #: qml/BasePage.qml:93
 #, kde-format
-msgid "Try again"
+msgid "Try Again"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
-msgid "Create deck"
+msgid "Create Deck"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Editor"
 msgctxt "@title:window"
-msgid "Edit deck"
-msgstr ""
+msgid "Edit Deck"
+msgstr "Уредувач"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
@@ -243,42 +244,50 @@ msgstr ""
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
-msgid "Remove image"
+msgid "Remove Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
-msgid "Link image"
+msgid "Link Image"
 msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, fuzzy, kde-format
+#| msgid "&Select"
+msgctxt "@action:button"
+msgid "Remove Sound"
+msgstr "&Избери"
 
 #: qml/DeckEditorPage.qml:123
 #, kde-format
 msgctxt "@action:button"
-msgid "Remove sound"
+msgid "Link Sound"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:123
-#, kde-format
-msgctxt "@action:button"
-msgid "Link sound"
-msgstr ""
-
-#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:156
 #, fuzzy, kde-format
 #| msgid "&2 Language 2"
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "&2 Јазик 2"
 
+#: qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "&2 Language 2"
+msgctxt "@action:button"
+msgid "Set Language"
+msgstr "&2 Јазик 2"
+
 #: qml/DeckEditorPage.qml:183
 #, kde-format
-msgid "Please choose an image"
+msgid "Please Choose an Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:192
 #, kde-format
-msgid "Please choose a sound"
+msgid "Please Choose a Sound"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:227
@@ -508,7 +517,7 @@ msgstr "Напушти KWordQuiz"
 #: qml/WelcomePage.qml:74
 #, fuzzy, kde-format
 #| msgid "Opens an existing vocabulary document"
-msgid "Open existing document"
+msgid "Open Existing Document"
 msgstr "Отвора постоечки речник"
 
 #: qml/WelcomePage.qml:80
@@ -537,7 +546,7 @@ msgstr "Флеш-картичка"
 #: qml/WelcomePage.qml:154
 #, fuzzy, kde-format
 msgctxt "@option:check Mode selector"
-msgid "Multiple Choice"
+msgid "Multiple choice"
 msgstr "Повеќекратен избор"
 
 #: qml/WelcomePage.qml:161
@@ -556,6 +565,11 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Remove"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "@option:check Mode selector"
+#~ msgid "Multiple Choice"
+#~ msgstr "Повеќекратен избор"
 
 #, fuzzy
 #~| msgid "&Select"
@@ -1268,12 +1282,6 @@ msgstr ""
 
 #~ msgid "There is an error with the Fill-in-the-blank brackets"
 #~ msgstr "Има грешка со  заградите пополни-ги празнините"
-
-#, fuzzy
-#~| msgid "&Select"
-#~ msgctxt "@title:window"
-#~ msgid "Select Sound"
-#~ msgstr "&Избери"
 
 #, fuzzy
 #~| msgid "Flashcard"

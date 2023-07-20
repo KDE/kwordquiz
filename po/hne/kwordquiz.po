@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:45+0000\n"
+"POT-Creation-Date: 2023-07-20 00:44+0000\n"
 "PO-Revision-Date: 2009-02-24 22:17+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -158,25 +158,27 @@ msgstr[1] ""
 #: qml/BasePage.qml:82
 #, fuzzy, kde-format
 #| msgid "Repeat &Errors"
-msgid "Repeat errors"
+msgid "Repeat Errors"
 msgstr "गलती दुहराव (&E)"
 
 #: qml/BasePage.qml:93
 #, kde-format
-msgid "Try again"
+msgid "Try Again"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
-msgid "Create deck"
+msgid "Create Deck"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox vocabulary editor"
+#| msgid "Editor"
 msgctxt "@title:window"
-msgid "Edit deck"
-msgstr ""
+msgid "Edit Deck"
+msgstr "संपादक"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
@@ -232,42 +234,51 @@ msgstr ""
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
-msgid "Remove image"
+msgid "Remove Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
-msgid "Link image"
+msgid "Link Image"
 msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@action:button select"
+#| msgid "&Select"
+msgctxt "@action:button"
+msgid "Remove Sound"
+msgstr "चुनव (&S)"
 
 #: qml/DeckEditorPage.qml:123
 #, kde-format
 msgctxt "@action:button"
-msgid "Remove sound"
+msgid "Link Sound"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:123
-#, kde-format
-msgctxt "@action:button"
-msgid "Link sound"
-msgstr ""
-
-#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:156
 #, fuzzy, kde-format
 #| msgid "Language 1"
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "भाखा 1"
 
+#: qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "Language 1"
+msgctxt "@action:button"
+msgid "Set Language"
+msgstr "भाखा 1"
+
 #: qml/DeckEditorPage.qml:183
 #, kde-format
-msgid "Please choose an image"
+msgid "Please Choose an Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:192
 #, kde-format
-msgid "Please choose a sound"
+msgid "Please Choose a Sound"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:227
@@ -505,7 +516,7 @@ msgstr "के-वर्ड-क्विज से बाहिर होथे 
 #: qml/WelcomePage.qml:74
 #, fuzzy, kde-format
 #| msgid "Opens an existing vocabulary document"
-msgid "Open existing document"
+msgid "Open Existing Document"
 msgstr "अभी हाल के सब्दकोस कागद ल खोलथे "
 
 #: qml/WelcomePage.qml:80
@@ -534,7 +545,7 @@ msgstr "फ्लैसकार्ड"
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgctxt "@option:check Mode selector"
-msgid "Multiple Choice"
+msgid "Multiple choice"
 msgstr "मल्टीपल चाइस"
 
 #: qml/WelcomePage.qml:161
@@ -554,6 +565,12 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Remove"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Multiple Choice"
+#~ msgctxt "@option:check Mode selector"
+#~ msgid "Multiple Choice"
+#~ msgstr "मल्टीपल चाइस"
 
 #, fuzzy
 #~| msgctxt "@action:button select"
@@ -1205,13 +1222,6 @@ msgstr ""
 
 #~ msgid "There is an error with the Fill-in-the-blank brackets"
 #~ msgstr "खाली जगह भरो कोस्ठकों मं गलती हे"
-
-#, fuzzy
-#~| msgctxt "@action:button select"
-#~| msgid "&Select"
-#~ msgctxt "@title:window"
-#~ msgid "Select Sound"
-#~ msgstr "चुनव (&S)"
 
 #, fuzzy
 #~| msgid "Flashcard"

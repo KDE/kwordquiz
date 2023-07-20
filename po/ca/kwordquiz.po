@@ -11,15 +11,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:45+0000\n"
-"PO-Revision-Date: 2023-05-06 11:49+0200\n"
+"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"PO-Revision-Date: 2023-07-19 21:26+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -56,7 +56,7 @@ msgstr "Resposta"
 #: main.cpp:56
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "S'ha indicat un «goto» no vàlid: %1. Es permet: «flash», «mc» i «qa»"
 
 #: main.cpp:90
 #, kde-format
@@ -82,19 +82,19 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "Autor original"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "Adaptació al QML"
 
 #: main.cpp:100
 #, kde-format
@@ -117,13 +117,7 @@ msgid "Leitner System and several code contributions"
 msgstr "Sistema Leitner i diverses contribucions al codi"
 
 #: main.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
@@ -133,8 +127,7 @@ msgstr ""
 "Tipus de sessió en engegar: \n"
 "«flash» per a una targeta ràpida, \n"
 "«mc» per a tria múltiple, \n"
-"«qa» per a preguntes i respostes, \n"
-"«tutor» per al mode tutor"
+"«qa» per a preguntes i respostes"
 
 #: main.cpp:123
 #, kde-format
@@ -144,70 +137,73 @@ msgstr "Fitxer a obrir"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Targetes %1% Errors %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Targetes %1/%2 Errors %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "Finalitzada"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Heu obtingut una puntuació perfecta"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Heu comès un error"
+msgstr[1] "Heu comès %1 errors"
 
 #: qml/BasePage.qml:82
 #, fuzzy, kde-format
-#| msgid "Repeat &Errors"
-msgid "Repeat errors"
-msgstr "Repeteix els &errors"
+#| msgid "Repeat errors"
+msgid "Repeat Errors"
+msgstr "Repeteix els errors"
 
 #: qml/BasePage.qml:93
-#, kde-format
-msgid "Try again"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Try again"
+msgid "Try Again"
+msgstr "Torneu-ho a provar"
 
 #: qml/DeckEditorPage.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Deck"
 msgctxt "@title:window"
-msgid "Create deck"
-msgstr ""
+msgid "Create Deck"
+msgstr "Crea un conjunt"
 
 #: qml/DeckEditorPage.qml:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit deck"
 msgctxt "@title:window"
-msgid "Edit deck"
-msgstr ""
+msgid "Edit Deck"
+msgstr "Edita el conjunt"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "Filtre"
 
 #: qml/DeckEditorPage.qml:43
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "Filtre..."
 
 #: qml/DeckEditorPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "S'està mostrant la previsualització..."
+msgstr "Vista prèvia d'impressió"
 
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
@@ -217,207 +213,200 @@ msgstr "Targeta ràpida"
 #: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Llista"
 
 #: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "Examen"
 
 #: qml/DeckEditorPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "S'està imprimint..."
+msgstr "Imprimeix"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
-
-#: qml/DeckEditorPage.qml:121
-#, kde-format
-msgctxt "@action:button"
-msgid "Remove image"
-msgstr ""
+msgstr "Desa"
 
 #: qml/DeckEditorPage.qml:121
 #, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#| msgctxt "@action:button"
+#| msgid "Remove image"
 msgctxt "@action:button"
-msgid "Link image"
+msgid "Remove Image"
+msgstr "Elimina la imatge"
+
+#: qml/DeckEditorPage.qml:121
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Link image"
+msgctxt "@action:button"
+msgid "Link Image"
 msgstr "Enllaça una imatge"
 
 #: qml/DeckEditorPage.qml:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Remove sound"
 msgctxt "@action:button"
-msgid "Remove sound"
-msgstr ""
+msgid "Remove Sound"
+msgstr "Elimina el so"
 
 #: qml/DeckEditorPage.qml:123
 #, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#| msgctxt "@action:button"
+#| msgid "Link sound"
 msgctxt "@action:button"
-msgid "Link sound"
+msgid "Link Sound"
 msgstr "Enllaça un so"
 
-#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#: qml/DeckEditorPage.qml:156
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "Idioma 1"
+msgstr "Estableix l'idioma"
+
+#: qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Set language"
+msgctxt "@action:button"
+msgid "Set Language"
+msgstr "Estableix l'idioma"
 
 #: qml/DeckEditorPage.qml:183
-#, kde-format
-msgid "Please choose an image"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Please choose an image"
+msgid "Please Choose an Image"
+msgstr "Escolliu una imatge"
 
 #: qml/DeckEditorPage.qml:192
-#, kde-format
-msgid "Please choose a sound"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Please choose a sound"
+msgid "Please Choose a Sound"
+msgstr "Escolliu un so"
 
 #: qml/DeckEditorPage.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Nom:"
 
 #: qml/DeckEditorPage.qml:238
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "Autor:"
 
 #: qml/DeckEditorPage.qml:249
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "Llicència:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Editor"
+msgstr "Edita"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "&Comprova"
+msgstr "Comprova"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "Resposta correcta"
+msgstr "Correcta"
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "Marca la darrera com a correcta"
+msgstr "No correcta"
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "Selecció d'imatge"
+msgstr "Seleccioneu un idioma"
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "Configuració del qüestionari"
+msgstr "Configuració"
 
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Configura"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
+#, kde-format
 msgid "This is correct"
-msgstr "Aquesta era la resposta correcta"
+msgstr "Aquesta és correcta"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "Respostes incorrectes"
+msgstr "Incorrecta. La resposta correcta era «%1»."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "Següent"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "No hi ha prou paraules en el conjunt"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr ""
+msgstr "Calen com a mínim 3 paraules per activar el mode de tria múltiple"
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "Opció &2"
+msgstr "Opcions"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Barreja"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Consell"
+msgstr "Consell"
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Configuració del qüestionari"
+msgstr "Configuració"
 
 #: qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "General"
 
@@ -427,8 +416,7 @@ msgid "Show score as percentage"
 msgstr "Mostra la puntuació com a percentatge"
 
 #: qml/SettingsPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
 msgstr "Targeta ràpida"
 
@@ -438,34 +426,29 @@ msgid "Automatically flip flashcard"
 msgstr "Gira automàticament les targetes ràpides"
 
 #: qml/SettingsPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
-msgstr "Temps abans de girar la targeta ràpida"
+msgstr "Retard de temps abans de girar la targeta ràpida"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
 msgstr "Tria múltiple"
 
 #: qml/SettingsPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "Comprova automàticament la resposta de tria múltiple seleccionada"
+msgstr "Comprova automàticament la resposta seleccionada"
 
 #: qml/SettingsPage.qml:105
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "&Preguntes i respostes"
+msgstr "Pregunta i Resposta"
 
 #: qml/SettingsPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "Marqueu per a comptar el consell com a error"
+msgstr "Compta l'ús d'un consell com a error"
 
 #: qml/SettingsPage.qml:122
 #, kde-format
@@ -473,68 +456,66 @@ msgid "Compare answers in a case sensitive way"
 msgstr "Compara les respostes distingint entre majúscules i minúscules"
 
 #: qml/SettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "Surt del KWordQuiz"
+msgstr "Quant al KWordQuiz"
 
 #: qml/SettingsPage.qml:161
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Quant al KDE"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Us donem la benvinguda"
 
 #: qml/WelcomePage.qml:43
 #, kde-format
 msgid "Please choose a KWordQuiz document"
-msgstr ""
+msgstr "Trieu un document del KWordQuiz"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
-msgstr ""
+msgstr "KEduDocument (*.kvtml)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Wql documents (*.wql)"
-msgstr ""
+msgstr "Documents Wql (*.wql)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "CSV documents (*.csv)"
-msgstr ""
+msgstr "Documents CSV (*.csv)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
-msgstr ""
+msgstr "Documents XDXF (*.xdxf)"
 
 #: qml/WelcomePage.qml:62
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "Surt del KWordQuiz"
+msgstr "Us donem la benvinguda al KWordQuiz"
 
 #: qml/WelcomePage.qml:74
 #, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
-msgid "Open existing document"
-msgstr "Obre un document de vocabulari existent"
+#| msgid "Open existing document"
+msgid "Open Existing Document"
+msgstr "Obre un document existent"
 
 #: qml/WelcomePage.qml:80
 #, kde-format
 msgid "Create Deck"
-msgstr ""
+msgstr "Crea un conjunt"
 
 #: qml/WelcomePage.qml:88
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "Baixa un conjunt"
 
 #: qml/WelcomePage.qml:111
 #, kde-format
@@ -542,36 +523,43 @@ msgid "Mode"
 msgstr "Mode"
 
 #: qml/WelcomePage.qml:147
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Targeta ràpida"
 
 #: qml/WelcomePage.qml:154
 #, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#| msgid "Multiple choice"
 msgctxt "@option:check Mode selector"
-msgid "Multiple Choice"
+msgid "Multiple choice"
 msgstr "Tria múltiple"
 
 #: qml/WelcomePage.qml:161
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "Preguntes i respostes"
+msgstr "Pregunta-resposta"
 
 #: qml/WelcomePage.qml:177
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "Conjunts"
 
 #: qml/WelcomePage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "Elimina"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create deck"
+#~ msgstr "Crea un conjunt"
+
+#~| msgid "Multiple Choice"
+#~ msgctxt "@option:check Mode selector"
+#~ msgid "Multiple Choice"
+#~ msgstr "Tria múltiple"
 
 #~ msgid "Selection"
 #~ msgstr "Selecció"

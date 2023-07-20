@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:45+0000\n"
+"POT-Creation-Date: 2023-07-20 00:44+0000\n"
 "PO-Revision-Date: 2023-02-19 20:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -173,25 +173,27 @@ msgstr[1] ""
 #: qml/BasePage.qml:82
 #, fuzzy, kde-format
 #| msgid "Repeat &Errors"
-msgid "Repeat errors"
+msgid "Repeat Errors"
 msgstr "Errepikatu &erroreak"
 
 #: qml/BasePage.qml:93
 #, kde-format
-msgid "Try again"
+msgid "Try Again"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
-msgid "Create deck"
+msgid "Create Deck"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox vocabulary editor"
+#| msgid "Editor"
 msgctxt "@title:window"
-msgid "Edit deck"
-msgstr ""
+msgid "Edit Deck"
+msgstr "Editorea"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
@@ -247,7 +249,7 @@ msgstr ""
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
-msgid "Remove image"
+msgid "Remove Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:121
@@ -255,38 +257,47 @@ msgstr ""
 #| msgctxt "@item:inmenu undo link image"
 #| msgid "Link Image"
 msgctxt "@action:button"
-msgid "Link image"
+msgid "Link Image"
 msgstr "Estekatu irudia"
 
 #: qml/DeckEditorPage.qml:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select Sound"
 msgctxt "@action:button"
-msgid "Remove sound"
-msgstr ""
+msgid "Remove Sound"
+msgstr "Hautatu soinua"
 
 #: qml/DeckEditorPage.qml:123
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu undo link sound"
 #| msgid "Link Sound"
 msgctxt "@action:button"
-msgid "Link sound"
+msgid "Link Sound"
 msgstr "Estekatu soinua"
 
-#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:156
 #, fuzzy, kde-format
 #| msgid "Language 1"
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "1. hizkuntza"
 
+#: qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "Language 1"
+msgctxt "@action:button"
+msgid "Set Language"
+msgstr "1. hizkuntza"
+
 #: qml/DeckEditorPage.qml:183
 #, kde-format
-msgid "Please choose an image"
+msgid "Please Choose an Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:192
 #, kde-format
-msgid "Please choose a sound"
+msgid "Please Choose a Sound"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:227
@@ -524,7 +535,7 @@ msgstr "«KWordWiz» ixten du"
 #: qml/WelcomePage.qml:74
 #, fuzzy, kde-format
 #| msgid "Opens an existing vocabulary document"
-msgid "Open existing document"
+msgid "Open Existing Document"
 msgstr "Existitzen den hiztegi-dokumentu bat irekitzen du"
 
 #: qml/WelcomePage.qml:80
@@ -553,7 +564,7 @@ msgstr "Oroimen-txartela"
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgctxt "@option:check Mode selector"
-msgid "Multiple Choice"
+msgid "Multiple choice"
 msgstr "Aukera anizkoitza"
 
 #: qml/WelcomePage.qml:161
@@ -573,6 +584,12 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Remove"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Multiple Choice"
+#~ msgctxt "@option:check Mode selector"
+#~ msgid "Multiple Choice"
+#~ msgstr "Aukera anizkoitza"
 
 #~ msgid "Selection"
 #~ msgstr "Hautapena"
@@ -1310,10 +1327,6 @@ msgstr ""
 
 #~ msgid "There is an error with the Fill-in-the-blank brackets"
 #~ msgstr "Errore bat dago «Hutsunea bete»ko parentesiekin"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Sound"
-#~ msgstr "Hautatu soinua"
 
 #~ msgid "All Files (*)"
 #~ msgstr "Fitxategi guztiak (*)"

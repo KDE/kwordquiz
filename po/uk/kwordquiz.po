@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:45+0000\n"
-"PO-Revision-Date: 2023-05-06 08:46+0300\n"
+"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"PO-Revision-Date: 2023-07-19 08:07+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -54,7 +54,7 @@ msgstr "Відповідь"
 #: main.cpp:56
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "Задано некоректний перехід: %1. Можливі варіанти: flash, mc і qa"
 
 #: main.cpp:90
 #, kde-format
@@ -82,19 +82,19 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "Автор початкової версії"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "Портування на QML"
 
 #: main.cpp:100
 #, kde-format
@@ -117,13 +117,7 @@ msgid "Leitner System and several code contributions"
 msgstr "Система Ляйтнера і декілька внесків у код"
 
 #: main.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
@@ -133,8 +127,7 @@ msgstr ""
 "Тип початкового сеансу: \n"
 "«flash» — картки, \n"
 "«mc» — вибір з варіантів, \n"
-"«qa» — запитання-відповідь\n"
-"«tutor» — репетитор."
+"«qa» — запитання-відповідь"
 
 #: main.cpp:123
 #, kde-format
@@ -144,72 +137,75 @@ msgstr "Файл, який слід відкрити"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Картки %1%, помилки %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Картки %1 з %2, помилки %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "Завершено"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Ваш результат ідеальний"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Ви помилилися %1 раз"
+msgstr[1] "Ви помилилися %1 рази"
+msgstr[2] "Ви помилилися %1 разів"
+msgstr[3] "Ви помилилися лише раз"
 
 #: qml/BasePage.qml:82
 #, fuzzy, kde-format
-#| msgid "Repeat &Errors"
-msgid "Repeat errors"
-msgstr "Повторити &помилкові"
+#| msgid "Repeat errors"
+msgid "Repeat Errors"
+msgstr "Повторити помилкові"
 
 #: qml/BasePage.qml:93
-#, kde-format
-msgid "Try again"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Try again"
+msgid "Try Again"
+msgstr "Спробувати ще раз"
 
 #: qml/DeckEditorPage.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Deck"
 msgctxt "@title:window"
-msgid "Create deck"
-msgstr ""
+msgid "Create Deck"
+msgstr "Створити колоду"
 
 #: qml/DeckEditorPage.qml:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Edit deck"
 msgctxt "@title:window"
-msgid "Edit deck"
-msgstr ""
+msgid "Edit Deck"
+msgstr "Редагувати колоду"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "Фільтр"
 
 #: qml/DeckEditorPage.qml:43
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "Фільтрувати…"
 
 #: qml/DeckEditorPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "Показ попереднього перегляду..."
+msgstr "Перегляд друку"
 
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
@@ -219,207 +215,201 @@ msgstr "Картка"
 #: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Список"
 
 #: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "Іспит"
 
 #: qml/DeckEditorPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "Друк..."
+msgstr "Надрукувати"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Створити"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
-
-#: qml/DeckEditorPage.qml:121
-#, kde-format
-msgctxt "@action:button"
-msgid "Remove image"
-msgstr ""
+msgstr "Зберегти"
 
 #: qml/DeckEditorPage.qml:121
 #, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#| msgctxt "@action:button"
+#| msgid "Remove image"
 msgctxt "@action:button"
-msgid "Link image"
+msgid "Remove Image"
+msgstr "Вилучити зображення"
+
+#: qml/DeckEditorPage.qml:121
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Link image"
+msgctxt "@action:button"
+msgid "Link Image"
 msgstr "Пов’язати зображення"
 
 #: qml/DeckEditorPage.qml:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Remove sound"
 msgctxt "@action:button"
-msgid "Remove sound"
-msgstr ""
+msgid "Remove Sound"
+msgstr "Вилучити звук"
 
 #: qml/DeckEditorPage.qml:123
 #, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#| msgctxt "@action:button"
+#| msgid "Link sound"
 msgctxt "@action:button"
-msgid "Link sound"
+msgid "Link Sound"
 msgstr "Пов’язати звук"
 
-#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#: qml/DeckEditorPage.qml:156
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "Мова 1"
+msgstr "Встановити мову"
+
+#: qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Set language"
+msgctxt "@action:button"
+msgid "Set Language"
+msgstr "Встановити мову"
 
 #: qml/DeckEditorPage.qml:183
-#, kde-format
-msgid "Please choose an image"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Please choose an image"
+msgid "Please Choose an Image"
+msgstr "Будь ласка, виберіть зображення"
 
 #: qml/DeckEditorPage.qml:192
-#, kde-format
-msgid "Please choose a sound"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Please choose a sound"
+msgid "Please Choose a Sound"
+msgstr "Будь ласка, виберіть звуковий файл"
 
 #: qml/DeckEditorPage.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Назва:"
 
 #: qml/DeckEditorPage.qml:238
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "Автор:"
 
 #: qml/DeckEditorPage.qml:249
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "Ліцензування:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Редактор"
+msgstr "Змінити"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "П&еревірити"
+msgstr "Перевірити"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "Правильна відповідь"
+msgstr "Правильно"
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "Позначити останню як правильну"
+msgstr "Неправильно"
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "Виберіть зображення"
+msgstr "Виберіть мову"
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "Параметри тесту"
+msgstr "Параметри"
 
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Налаштувати"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
+#, kde-format
 msgid "This is correct"
-msgstr "Ось така була правильна відповідь"
+msgstr "Це правильна відповідь"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "Неправильних відповідей"
+msgstr "Помилка, правильна відповідь: «%1»."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "Далі"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "Недостатньо слів у вашій колоді"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
+"Для вмикання режиму із декількома відповідями потрібно принаймні 3 слова"
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "Параметр &2"
+msgstr "Параметри"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Перемішати"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Підказка"
+msgstr "Підказка"
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Параметри тесту"
+msgstr "Параметри"
 
 #: qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Загальні"
 
@@ -429,8 +419,7 @@ msgid "Show score as percentage"
 msgstr "Показувати рахунок як відсотки"
 
 #: qml/SettingsPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
 msgstr "Картка"
 
@@ -440,34 +429,29 @@ msgid "Automatically flip flashcard"
 msgstr "Автоматично перевертати картку"
 
 #: qml/SettingsPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "Затримка перед перевертанням картки"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
 msgstr "Вибір з варіантів"
 
 #: qml/SettingsPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "Автоматично позначати вибрану відповідь у питаннях з варіантами"
+msgstr "Автоматично перевіряти вибрану відповідь"
 
 #: qml/SettingsPage.qml:105
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "&Запитання-відповідь"
+msgstr "Питання і відповідь"
 
 #: qml/SettingsPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "Позначте, щоб вважати підказку помилкою"
+msgstr "Рахувати, вважаючи підказку помилкою"
 
 #: qml/SettingsPage.qml:122
 #, kde-format
@@ -475,68 +459,66 @@ msgid "Compare answers in a case sensitive way"
 msgstr "Порівнювати відповіді без врахування регістру"
 
 #: qml/SettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "Вихід з KWordQuiz"
+msgstr "Про KWordQuiz"
 
 #: qml/SettingsPage.qml:161
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Про KDE"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Вітаємо"
 
 #: qml/WelcomePage.qml:43
 #, kde-format
 msgid "Please choose a KWordQuiz document"
-msgstr ""
+msgstr "Будь ласка, виберіть документ KWordQuiz"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
-msgstr ""
+msgstr "KEduDocument (*.kvtml)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Wql documents (*.wql)"
-msgstr ""
+msgstr "документи Wql (*.wql)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "CSV documents (*.csv)"
-msgstr ""
+msgstr "документи CSV (*.csv)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
-msgstr ""
+msgstr "документи XDXF (*.xdxf)"
 
 #: qml/WelcomePage.qml:62
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "Вихід з KWordQuiz"
+msgstr "Вітаємо у KWordQuiz"
 
 #: qml/WelcomePage.qml:74
 #, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
-msgid "Open existing document"
-msgstr "Відкриває існуючий документ списку слів"
+#| msgid "Open existing document"
+msgid "Open Existing Document"
+msgstr "Відкрити наявний документ"
 
 #: qml/WelcomePage.qml:80
 #, kde-format
 msgid "Create Deck"
-msgstr ""
+msgstr "Створити колоду"
 
 #: qml/WelcomePage.qml:88
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "Отримати колоду"
 
 #: qml/WelcomePage.qml:111
 #, kde-format
@@ -544,22 +526,20 @@ msgid "Mode"
 msgstr "Режим"
 
 #: qml/WelcomePage.qml:147
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Картка"
 
 #: qml/WelcomePage.qml:154
 #, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#| msgid "Multiple choice"
 msgctxt "@option:check Mode selector"
-msgid "Multiple Choice"
+msgid "Multiple choice"
 msgstr "Вибір з варіантів"
 
 #: qml/WelcomePage.qml:161
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "Питання і відповідь"
@@ -567,13 +547,22 @@ msgstr "Питання і відповідь"
 #: qml/WelcomePage.qml:177
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "Колоди"
 
 #: qml/WelcomePage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "Вилучити"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create deck"
+#~ msgstr "Створити колоду"
+
+#~| msgid "Multiple Choice"
+#~ msgctxt "@option:check Mode selector"
+#~ msgid "Multiple Choice"
+#~ msgstr "Вибір з варіантів"
 
 #~ msgid "Selection"
 #~ msgstr "Позначене"
