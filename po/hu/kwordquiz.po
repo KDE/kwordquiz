@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:43+0000\n"
+"POT-Creation-Date: 2023-07-21 02:51+0000\n"
 "PO-Revision-Date: 2012-06-23 13:31+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -25,1593 +25,102 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tszanto@interware.hu,urbalazs@gmail.com"
 
-#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
-#: cleardialogbase.ui:21
-#, kde-format
-msgid "Selection"
-msgstr "Kijelölés"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:30
-#, kde-format
-msgid "Delete all information in selected entries"
-msgstr "Minden információ törlése a kijelölt bejegyzésekből"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:33
-#, kde-format
-msgid "When checked all information will be deleted from the selected entries"
-msgstr ""
-"Ha ki van pipálva, minden információ törlődni fog a kiválasztott "
-"bejegyzésekből"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:36
-#, kde-format
-msgid "Clear &All"
-msgstr "Ö&sszes törlése"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:59
-#, kde-format
-msgid "Delete the text from selected entries"
-msgstr "Szöveg törlése a kijelölt bejegyzésekből"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:62
-#, kde-format
-msgid "When checked the text will be deleted from selected entries"
-msgstr "Ha ki van pipálva, a szöveg törlődni fog a kiválasztott bejegyzésekből"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:65
-#, kde-format
-msgid "&Text"
-msgstr "&Szöveg"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:72
-#, kde-format
-msgid "Delete the image link from selected entries"
-msgstr "Képhivatkozás törlése a kijelölt bejegyzésekből"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:75
-#, kde-format
-msgid "When checked the image link will be deleted from selected entries"
-msgstr ""
-"Ha ki van pipálva, a kép hivatkozása törlődni fog a kijelölt bejegyzésekből"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:78
-#, kde-format
-msgid "&Image Links"
-msgstr "&Képhivatkozások"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:85
-#, kde-format
-msgid "Delete the sound link from selected entries"
-msgstr "Hanghivatkozás törlése a kijelölt bejegyzésekből"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:88
-#, kde-format
-msgid "When checked the sound link will be deleted from selected entries"
-msgstr ""
-"Ha ki van pipálva, a hang hivatkozás törlődni fog a kijelölt bejegyzésekből"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:91
-#, kde-format
-msgid "&Sound Links"
-msgstr "&Hanghivatkozások"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
-#, kde-format
-msgid "Column 1"
-msgstr "1. oszlop"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
-#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
-#, kde-format
-msgid "Title for the left column"
-msgstr "A baloldali oszlop címe"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
-#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
-#, kde-format
-msgid "Enter a title (identifier) for the left column"
-msgstr "Adja meg a baloldali oszlop címét (azonosítóját)"
-
-#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
-#: columndialogbase.ui:96
-#, kde-format
-msgid "&Title:"
-msgstr "&Cím:"
-
-#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
-#: columndialogbase.ui:112
-#, fuzzy, kde-format
-#| msgid "&Keyboard Layout:"
-msgid "&Keyboard layout:"
-msgstr "&Billentyűzetkiosztás"
-
-#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
-#: columndialogbase.ui:128
-#, kde-format
-msgid "&Width:"
-msgstr "&Szélesség:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:158
-#, kde-format
-msgid "Keyboard layout for the left column"
-msgstr "A baloldali oszlop billentyűzetkiosztása"
-
-#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:161
-#, kde-format
-msgid "Select a keyboard layout for the left column"
-msgstr "Billentyűzetkiosztás választása a baloldali oszlophoz"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:168
-#, kde-format
-msgid "Width of the left column"
-msgstr "A baloldali oszlop szélessége"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:171
-#, kde-format
-msgid "Enter the width (in pixels) for the left column"
-msgstr "Adja meg a baloldali oszlop szélességét (képpontban)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
-#, kde-format
-msgid "Column 2"
-msgstr "2. oszlop"
-
-#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
-#: columndialogbase.ui:265
-#, kde-format
-msgid "T&itle:"
-msgstr "Cí&m:"
-
-#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
-#: columndialogbase.ui:281
-#, kde-format
-msgid "Keyboard &Layout:"
-msgstr "Billentyűzet&kiosztás:"
-
-#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
-#: columndialogbase.ui:297
-#, kde-format
-msgid "Wi&dth:"
-msgstr "Széles&ség:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:317
-#, kde-format
-msgid "Title for the right column"
-msgstr "A jobboldali oszlop felirata"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:320
-#, kde-format
-msgid "Enter a title (identifier) for the right column"
-msgstr "Adja meg a jobboldali oszlop címét (azonosítóját)"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:330
-#, kde-format
-msgid "Width of the right column"
-msgstr "A jobboldali oszlop szélessége"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:333
-#, kde-format
-msgid "Enter the width (in pixels) for the right column"
-msgstr "Adja meg a jobboldali oszlop szélességét (képpontban)"
-
-#: dlglanguage.cpp:21
-#, fuzzy, kde-format
-#| msgid "Column Settings"
-msgctxt "@title:window"
-msgid "Column Settings"
-msgstr "Oszlopbeállítások"
-
-#: dlgspecchar.cpp:17
-#, kde-format
-msgctxt "@title:window select character dialog"
-msgid "Select Character"
-msgstr "Karakter kiválasztása"
-
-#: dlgspecchar.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action:button select"
-#| msgid "&Select"
-msgctxt "@action:button"
-msgid "&Select"
-msgstr "&Kiválasztás"
-
-#: dlgspecchar.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip select this character"
-#| msgid "Select this character"
-msgctxt "@info:tooltip"
-msgid "Select this character"
-msgstr "A karakter kiválasztása"
-
-#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:12
-#, kde-format
-msgid "Column widths"
-msgstr "Oszlopszélességek"
-
-#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:18
-#, kde-format
-msgid "Keyboard layouts"
-msgstr "Billentyűzetkiosztások"
-
-#: filterproxysearchline.cpp:23
-#, fuzzy, kde-format
-#| msgid "S&earch:"
-msgid "Search"
-msgstr "K&eresés:"
-
-#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
-#, kde-format
-msgid "Your answer was correct!"
-msgstr "A válasz helyes."
-
-#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
-#, kde-format
-msgid "Your answer was incorrect."
-msgstr "A válasz hibás."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: flashviewbase.ui:149
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a flashcard quiz.</html>"
-msgstr ""
-"<html>Túl kevés bejegyzés van a szótárban.<br />Legalább egy bejegyzésre van "
-"szükség tanulókártya kvízhez.</html>"
-
-#: kwordquiz.cpp:100
-#, kde-format
-msgid "Creates a new blank vocabulary document"
-msgstr "Létrehoz egy új, üres szótárfájlt"
-
-#: kwordquiz.cpp:105
-#, kde-format
-msgid "Opens an existing vocabulary document"
-msgstr "Megnyit egy már létező szótárfájlt"
-
-#: kwordquiz.cpp:111
-#, kde-format
-msgid "Download New Vocabularies..."
-msgstr "Új szótárak letöltése…"
-
-#: kwordquiz.cpp:115
-#, kde-format
-msgid "Downloads new vocabularies"
-msgstr "Új szótárak letöltése"
-
-#: kwordquiz.cpp:120
-#, kde-format
-msgid "Saves the active vocabulary document"
-msgstr "Elmenti az aktív szótárfájlt"
-
-#: kwordquiz.cpp:125
-#, kde-format
-msgid "Saves the active vocabulary document with a different name"
-msgstr "Elmenti más néven az aktív szótárfájlt"
-
-#: kwordquiz.cpp:130
-#, kde-format
-msgid "Closes the active vocabulary document"
-msgstr "Bezárja az aktív szótárfájlt"
-
-#: kwordquiz.cpp:134
-#, kde-format
-msgid "Prints the active vocabulary document"
-msgstr "Kinyomtatja az aktív szótárfájlt"
-
-#: kwordquiz.cpp:139
-#, kde-format
-msgid "Shows a preview of the active vocabulary document"
-msgstr "Előnézetet jelenít meg az aktív szótárdokumentumról"
-
-#: kwordquiz.cpp:144
-#, kde-format
-msgid "Quits KWordQuiz"
-msgstr "Kilépés a KWordQuizből"
-
-#: kwordquiz.cpp:156
-#, kde-format
-msgid "Cuts the text from the selected cells and places it on the clipboard"
-msgstr "A kijelölt cellák szövegét kivágja és elhelyezi azt a vágólapon"
-
-#: kwordquiz.cpp:161
-#, kde-format
-msgid "Copies the text from the selected cells and places it on the clipboard"
-msgstr "A kijelölt cellák szövegét másolja és elhelyezi azt a vágólapon"
-
-#: kwordquiz.cpp:166
-#, kde-format
-msgid ""
-"Pastes previously cut or copied text from the clipboard into the selected "
-"cells"
-msgstr ""
-"Beilleszti a korábban kivágott vagy másolt szöveget a vágólapról a kijelölt "
-"cellákba"
-
-#: kwordquiz.cpp:172
-#, kde-format
-msgid "Clears the content of the selected cells"
-msgstr "Törli a kijelölt cellák tartalmát"
-
-#: kwordquiz.cpp:178
-#, kde-format
-msgid "&Insert Row"
-msgstr "Sor b&eszúrása"
-
-#: kwordquiz.cpp:180
-#, kde-format
-msgid "Inserts a new row above the current row"
-msgstr "Beszúr egy új sort a jelenlegi sor fölé"
-
-#: kwordquiz.cpp:187
-#, kde-format
-msgid "&Delete Row"
-msgstr "Sor &törlése"
-
-#: kwordquiz.cpp:189
-#, kde-format
-msgid "Deletes the selected row(s)"
-msgstr "Törli a kijelölt sorokat"
-
-#: kwordquiz.cpp:196
-#, kde-format
-msgid "&Mark as Blank"
-msgstr "Megj&elölés üresnek"
-
-#: kwordquiz.cpp:198
-#, kde-format
-msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-msgstr ""
-"Megjelöli a jelenlegi vagy a kijelölt szót üresnek a kitöltendő résznek"
-
-#: kwordquiz.cpp:205
-#, kde-format
-msgid "&Unmark Blanks"
-msgstr "Az üresnek jelölés megs&züntetése"
-
-#: kwordquiz.cpp:206
-#, kde-format
-msgid "Removes blanks from the current or selected word"
-msgstr "Eltávolítja az üres megjelölést az aktuális vagy kijelölt szóból"
-
-#: kwordquiz.cpp:213
-#, kde-format
-msgid "&Column Settings..."
-msgstr "&Oszlopbeállítások…"
-
-#: kwordquiz.cpp:215
-#, kde-format
-msgid "Defines the column settings for the active vocabulary"
-msgstr "Meghatározza az aktív szótár oszlopbeállításait"
-
-#: kwordquiz.cpp:222
-#, kde-format
-msgid "&Font..."
-msgstr "Betűtí&pus…"
-
-#: kwordquiz.cpp:223
-#, kde-format
-msgid "Defines the font used by the editor"
-msgstr "Meghatározza a szerkesztőben használt betűtípust"
-
-#: kwordquiz.cpp:230
-#, kde-format
-msgid "Link &Image..."
-msgstr "Kép &csatolása…"
-
-#: kwordquiz.cpp:231
-#, kde-format
-msgid "Links an image with the current entry"
-msgstr "Képet csatol a jelenlegi bejegyzéshez"
-
-#: kwordquiz.cpp:238
-#, kde-format
-msgid "Link &Sound..."
-msgstr "Hang &csatolása…"
-
-#: kwordquiz.cpp:239
-#, kde-format
-msgid "Links a sound with the current entry"
-msgstr "Hangot csatol a jelenlegi bejegyzéshez"
-
-#: kwordquiz.cpp:246
-#, kde-format
-msgid "&Adjust Row Heights"
-msgstr "Sormagasságok &igazítása"
-
-#: kwordquiz.cpp:247
-#, kde-format
-msgid "Automatically adjusts the height of selected rows"
-msgstr "Automatikusan igazítja a kijelölt sorok magasságát"
-
-#: kwordquiz.cpp:254
-#, kde-format
-msgid "Sh&uffle"
-msgstr "&Keverés"
-
-#: kwordquiz.cpp:255
-#, kde-format
-msgid "Shuffles the entries of the active vocabulary"
-msgstr "Összekeveri az aktív szótár bejegyzéseit"
-
-#: kwordquiz.cpp:261
-#, kde-format
-msgid "&Keyboard Layout"
-msgstr "&Billentyűzetkiosztás"
-
-#: kwordquiz.cpp:262
-#, kde-format
-msgid "Shows available keyboard layouts"
-msgstr "Megjeleníti az elérhető billentyűzetkiosztásokat"
-
-#: kwordquiz.cpp:273
-#, kde-format
-msgid "Change Mode"
-msgstr "Módváltás"
-
-#: kwordquiz.cpp:274
-#, kde-format
-msgid "Mode"
-msgstr "Mód"
-
-#: kwordquiz.cpp:275
-#, kde-format
-msgid "Changes the mode used in quiz sessions"
-msgstr "Megváltoztatja a kvízfolyamatokban használt módot"
-
-#: kwordquiz.cpp:288
-#, kde-format
-msgid "Selects this mode"
-msgstr "Kiválasztja ezt a módot"
-
-#: kwordquiz.cpp:297
-#, kde-format
-msgctxt "@item:inlistbox activate vocabulary editor"
-msgid "&Editor"
-msgstr "&Szerkesztő"
-
-#: kwordquiz.cpp:299
-#, kde-format
-msgid "Activates the vocabulary editor"
-msgstr "Aktiválja a szótárszerkesztőt"
-
-#: kwordquiz.cpp:306
-#, kde-format
-msgid "&Flashcard"
-msgstr "Tan&ulókártya"
-
-#: kwordquiz.cpp:308
-#, kde-format
-msgid "Starts a flashcard session using the active vocabulary"
-msgstr "Az aktív szótárral elkezd egy tanulókártyás folyamatot"
-
-#: kwordquiz.cpp:315
-#, kde-format
-msgid "&Multiple Choice"
-msgstr "F&eleletválasztós"
-
-#: kwordquiz.cpp:317
-#, kde-format
-msgid "Starts a multiple choice session using the active vocabulary"
-msgstr "Az aktív szótárral elkezd egy feleletválasztós folyamatot"
-
-#: kwordquiz.cpp:324
-#, kde-format
-msgid "&Question and Answer"
-msgstr "&Kérdés és válasz"
-
-#: kwordquiz.cpp:325
-#, kde-format
-msgid "Q&&A"
-msgstr "K&&V"
-
-#: kwordquiz.cpp:327
-#, kde-format
-msgid "Starts a question and answer session using the active vocabulary"
-msgstr "Az aktív szótárral elkezd egy kérdés-válasz folyamatot"
-
-#: kwordquiz.cpp:334
-#, kde-format
-msgid "&Check"
-msgstr "&Ellenőrzés"
-
-#: kwordquiz.cpp:336
-#, kde-format
-msgid "Checks your answer to this question"
-msgstr "Ellenőrzi a kérdésre adott választ"
-
-#: kwordquiz.cpp:341
-#, kde-format
-msgid "Choose Option &1"
-msgstr "&1. lehetőség választása"
-
-#: kwordquiz.cpp:345
-#, kde-format
-msgid "Choose Option &2"
-msgstr "&2. lehetőség választása"
-
-#: kwordquiz.cpp:349
-#, kde-format
-msgid "Choose Option &3"
-msgstr "&3. lehetőség választása"
-
-#: kwordquiz.cpp:354
-#, kde-format
-msgid "I &Know"
-msgstr "&Tudom"
-
-#: kwordquiz.cpp:356
-#, kde-format
-msgid "Counts this card as correct and shows the next card"
-msgstr "A kártyát helyesként számolja és megjeleníti a következő kártyát"
-
-#: kwordquiz.cpp:362
-#, kde-format
-msgid "I &Do Not Know"
-msgstr "Nem tu&dom"
-
-#: kwordquiz.cpp:364
-#, kde-format
-msgid "Counts this card as incorrect and shows the next card"
-msgstr "A kártyát hibásként számolja és megjeleníti a következő kártyát"
-
-#: kwordquiz.cpp:370
-#, kde-format
-msgid "&Hint"
-msgstr "&Tipp"
-
-#: kwordquiz.cpp:372
-#, kde-format
-msgid "Gets the next correct letter of the answer"
-msgstr "Megadja a válasz következő helyes betűjét"
-
-#: kwordquiz.cpp:378
-#, kde-format
-msgid "Mark Last Correct"
-msgstr "Az utolsót helyesnek jelölése"
-
-#: kwordquiz.cpp:380
-#, kde-format
-msgid "Marks last answer as correct"
-msgstr "Az utolsó választ helyesnek jelöli"
-
-#: kwordquiz.cpp:386
-#, kde-format
-msgid "&Restart"
-msgstr "Új&raindítás"
-
-#: kwordquiz.cpp:388
-#, kde-format
-msgid "Restarts the quiz session from the beginning"
-msgstr "Újrakezdi a kvízfolyamatot az elejétől"
-
-#: kwordquiz.cpp:394
-#, kde-format
-msgid "&Play Audio"
-msgstr "&Hang lejátszása"
-
-#: kwordquiz.cpp:396
-#, kde-format
-msgid "Play associated audio"
-msgstr "Kapcsolódó hang lejátszása"
-
-#: kwordquiz.cpp:402
-#, kde-format
-msgid "Repeat &Errors"
-msgstr "A &hibák ismétlése"
-
-#: kwordquiz.cpp:404
-#, kde-format
-msgid "Repeats all incorrectly answered questions"
-msgstr "Megismétli a hibásan megválaszolt kérdéseket"
-
-#: kwordquiz.cpp:410
-#, kde-format
-msgid "Export Errors &As..."
-msgstr "Hibák exportálása &másként…"
-
-#: kwordquiz.cpp:411
-#, kde-format
-msgid "Exports all errors as a new vocabulary document"
-msgstr "Minden hibát új szótárként exportál"
-
-#: kwordquiz.cpp:417
-#, kde-format
-msgid "Show Se&arch"
-msgstr "&Keresés megjelenítése"
-
-#: kwordquiz.cpp:419
-#, kde-format
-msgid "Toggle display of the search bar"
-msgstr "A keresősáv megjelenítésének ki-be kapcsolása"
-
-#: kwordquiz.cpp:424
-#, kde-format
-msgid "Configures sound and other notifications for certain events"
-msgstr "Beállítja az egyes események hangját és egyéb értesítéseit"
-
-#: kwordquiz.cpp:429
-#, kde-format
-msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-msgstr "Megadja a szótárszerkesztő és a kvízfolyamatok beállításait"
-
-#: kwordquiz.cpp:435
-#, kde-format
-msgid "Special Character <numid>%1</numid>"
-msgstr "Speciális karakter <numid>%1</numid>"
-
-#: kwordquiz.cpp:447
-#, kde-format
-msgid "Toggles display of the toolbars"
-msgstr "Az eszköztárak megjelenítésének ki-be kapcsolása"
-
-#: kwordquiz.cpp:500
-#, kde-format
-msgid "Enter search terms here"
-msgstr "Írja be a keresési kifejezéseket ide"
-
-#: kwordquiz.cpp:523
-#, kde-format
-msgctxt "@item:inlistbox vocabulary editor"
-msgid "Editor"
-msgstr "Szerkesztő"
-
-#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:188
-#, kde-format
-msgid "Flashcard"
-msgstr "Tanulókártya"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:148
-#, kde-format
-msgid "Multiple Choice"
-msgstr "Feleletválasztás"
-
-#: kwordquiz.cpp:536
-#, kde-format
-msgid "Question & Answer"
-msgstr "Kérdés és válasz"
-
-#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
-#, kde-format
-msgid "Opening file..."
-msgstr "Fájl megnyitása…"
-
-#: kwordquiz.cpp:637 kwordquiz.cpp:639
-#, kde-format
-msgctxt "%1 is an error message"
-msgid ""
-"%1\n"
-"If you are sure no other program is using the file you can choose to ignore "
-"the lock and open the file anyway.\n"
-"Do you want to open the file?"
-msgstr ""
-
-#: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
-msgid "Open File"
-msgstr "Fájl megnyitása…"
-
-#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
-#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
-#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
-#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
-#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
-#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
-#, kde-format
-msgctxt "@info:status ready"
-msgid "Ready"
-msgstr "Kész"
-
-#: kwordquiz.cpp:727 kwordquiz.cpp:729
-#, kde-format
-msgid ""
-"The current document has been modified.\n"
-"Do you want to save it?"
-msgstr ""
-"Az aktuális fájl megváltozott.\n"
-"Szeretné menteni?"
-
-#: kwordquiz.cpp:779
-#, kde-format
-msgid "Opening a new document window..."
-msgstr "Új dokumentumablak megnyitása…"
-
-#: kwordquiz.cpp:791
-#, kde-format
-msgid "&Merge selected files with the current document"
-msgstr "A kijelölt fájlok össze&olvasztása a jelenlegi dokumentummal"
-
-#: kwordquiz.cpp:796 kwqtutor.cpp:127
-#, kde-format
-msgid "Open Vocabulary Document"
-msgstr "Szótárdokumentum megnyitása"
-
-#: kwordquiz.cpp:865
-#, kde-format
-msgid "Saving file..."
-msgstr "Fájl mentése…"
-
-#: kwordquiz.cpp:884
-#, kde-format
-msgid "Saving file with a new filename..."
-msgstr "Fájl mentése egy új fájl névvel…"
-
-#: kwordquiz.cpp:912
-#, fuzzy, kde-format
-#| msgid "*.html|HTML Document"
-msgid "HTML Document"
-msgstr "*.html|HTML dokumentum"
-
-#: kwordquiz.cpp:914
-#, kde-format
-msgid "Save Vocabulary Document As"
-msgstr "Szótárdokumentum mentése másként"
-
-#: kwordquiz.cpp:962
-#, kde-format
-msgid "Closing file..."
-msgstr "Fájl bezárása…"
-
-#: kwordquiz.cpp:985
-#, kde-format
-msgid "Printing..."
-msgstr "Nyomtatás…"
-
-#: kwordquiz.cpp:991
-#, kde-format
-msgid "Showing Preview..."
-msgstr "Előnézet megjelenítése…"
-
-#: kwordquiz.cpp:999
-#, kde-format
-msgctxt "@info:status quitting"
-msgid "Quitting..."
-msgstr "Kilépés…"
-
-#: kwordquiz.cpp:1021
-#, kde-format
-msgid "Cutting selection..."
-msgstr "Kijelölés kivágása…"
-
-#: kwordquiz.cpp:1028
-#, kde-format
-msgid "Copying selection to clipboard..."
-msgstr "Kijelölés másolása a vágólapra…"
-
-#: kwordquiz.cpp:1035
-#, kde-format
-msgid "Inserting clipboard contents..."
-msgstr "Vágólaptartalom beszúrása…"
-
-#: kwordquiz.cpp:1042
-#, kde-format
-msgid "Clearing the selected cells..."
-msgstr "A kijelölt cellák törlése…"
-
-#: kwordquiz.cpp:1049
-#, kde-format
-msgid "Inserting rows..."
-msgstr "Sorok beszúrása…"
-
-#: kwordquiz.cpp:1056
-#, kde-format
-msgid "Deleting selected rows..."
-msgstr "A kijelölt sorok törlése…"
-
-#: kwordquiz.cpp:1063
-#, kde-format
-msgid "Marking selected text as a blank..."
-msgstr "A kijelölt szöveg megjelölése üresnek…"
-
-#: kwordquiz.cpp:1070
-#, kde-format
-msgid "Removing blank markings..."
-msgstr "Az üres jelzések törlése…"
-
-#: kwordquiz.cpp:1077
-#, kde-format
-msgid "Setting the column titles of the vocabulary..."
-msgstr "A szótár oszlopfeliratainak beállítása…"
-
-#: kwordquiz.cpp:1090
-#, kde-format
-msgid "Setting the font of the vocabulary..."
-msgstr "A szótár betűtípusának beállítása…"
-
-#: kwordquiz.cpp:1106
-#, kde-format
-msgid "Linking an image with the current entry..."
-msgstr "Kép összekapcsolása a jelenlegi bejegyzéssel…"
-
-#: kwordquiz.cpp:1114
-#, kde-format
-msgid "Linking a sound with the current entry..."
-msgstr "Hang összekapcsolása a jelenlegi bejegyzéssel…"
-
-#: kwordquiz.cpp:1122
-#, kde-format
-msgid "Adjusting row heights..."
-msgstr "Sormagasságok igazítása…"
-
-#: kwordquiz.cpp:1131
-#, kde-format
-msgid "Randomizing the vocabulary..."
-msgstr "A szótár véletlenszerű keverése…"
-
-#: kwordquiz.cpp:1139
-#, kde-format
-msgid "Updating mode..."
-msgstr "Mód frissítése…"
-
-#: kwordquiz.cpp:1153
-#, kde-format
-msgid "Starting editor session..."
-msgstr "Szerkesztőfolyamat elindítása…"
-
-#: kwordquiz.cpp:1160
-#, kde-format
-msgid "Starting flashcard session..."
-msgstr "Tanulókártya-folyamat indítása…"
-
-#: kwordquiz.cpp:1167
-#, kde-format
-msgid "Starting multiple choice session..."
-msgstr "Feleletválasztós kvízfolyamat indítása…"
-
-#: kwordquiz.cpp:1174
-#, kde-format
-msgid "Starting question & answer session..."
-msgstr "Kérdés-válasz folyamat indítása…"
-
-#: kwordquiz.cpp:1326
-#, kde-format
-msgid "Insert %1"
-msgstr "%1 beszúrása"
-
-#: kwordquiz.cpp:1327
-#, kde-format
-msgid "Inserts the character %1"
-msgstr "Beszúrja ezt a karaktert: %1"
-
-#: kwordquiz.cpp:1378
-#, kde-format
-msgid "This will restart your quiz. Do you wish to continue?"
-msgstr "A kvíz újra fog indulni. Szeretné folytatni?"
-
-#: kwordquiz.cpp:1394
-#, kde-format
-msgid "&1 %1 -> %2 In Order"
-msgstr "&1. %1 -> %2 (sorrendben)"
-
-#: kwordquiz.cpp:1395
-#, kde-format
-msgid "&2 %1 -> %2 In Order"
-msgstr "&2. %1 -> %2 (sorrendben)"
-
-#: kwordquiz.cpp:1396
-#, kde-format
-msgid "&3 %1 -> %2 Randomly"
-msgstr "&3. %1 -> %2 (véletlenszerűen)"
-
-#: kwordquiz.cpp:1397
-#, kde-format
-msgid "&4 %1 -> %2 Randomly"
-msgstr "&4. %1 -> %2 (véletlenszerűen)"
-
-#: kwordquiz.cpp:1398
-#, fuzzy, kde-format
-#| msgid "&3 %1 -> %2 Randomly"
-msgid "&5 %1 <-> %2 Randomly"
-msgstr "&3. %1 -> %2 (véletlenszerűen)"
-
-#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
-#, kde-format
-msgid "%1 -> %2 In Order"
-msgstr "%1 -> %2 (sorrendben)"
-
-#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
-#, kde-format
-msgid "%1 -> %2 Randomly"
-msgstr "%1 -> %2 (véletlenszerűen)"
-
-#: kwordquiz.cpp:1417
-#, kde-format
-msgid "%1 &lt;-&gt; %2 Randomly"
-msgstr "%1 &lt;-&gt; %2 (véletlenszerűen)"
-
-#. i18n: ectx: label, entry (FirstRun), group (General)
-#: kwordquiz.kcfg:10
-#, kde-format
-msgid "Is this the first time KWordQuiz is run?"
-msgstr "Most indította el először a KWordQuiz programot?"
-
-#. i18n: ectx: label, entry (ShowSearch), group (General)
-#: kwordquiz.kcfg:14
-#, kde-format
-msgid "Toggle display of the search bar."
-msgstr "A keresősáv megjelenítésének ki-be kapcsolása."
-
-#. i18n: ectx: label, entry (StartSession), group (General)
-#: kwordquiz.kcfg:18
-#, kde-format
-msgid "Type of session to use when opening files"
-msgstr "A fájlok megnyitásakor használt folyamat típusa"
-
-#. i18n: ectx: label, entry (PrintStyle), group (General)
-#: kwordquiz.kcfg:28
-#, kde-format
-msgid "Type of printout to generate"
-msgstr "Kiírás típusának generálása"
-
-#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
-#: kwordquiz.kcfg:39
-#, kde-format
-msgid "Titles for column 1"
-msgstr "Az 1. oszlop feliratai"
-
-#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
-#: kwordquiz.kcfg:43
-#, kde-format
-msgid "Titles for column 2"
-msgstr "A 2. oszlop feliratai"
-
-#. i18n: ectx: label, entry (EditorFont), group (Editor)
-#: kwordquiz.kcfg:47
-#, kde-format
-msgid "Font used in the editor"
-msgstr "A szerkesztőben használt betűtípus"
-
-#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
-#: kwordquiz.kcfg:51
-#, kde-format
-msgid "If Fill-in-the-blank should be enabled"
-msgstr "Ha az üres helyek kitöltését engedélyezni kell"
-
-#. i18n: ectx: label, entry (EnterMove), group (Editor)
-#: kwordquiz.kcfg:55
-#, kde-format
-msgid "Direction the Enter key moves in the editor"
-msgstr "Az Enter billentyű mozgásának iránya a szerkesztőben"
-
-#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
-#: kwordquiz.kcfg:59
-#, kde-format
-msgid "Characters for the special character toolbar"
-msgstr "Karakterek a speciális karakter eszköztárról"
-
-#. i18n: ectx: label, entry (ClearAll), group (Editor)
-#: kwordquiz.kcfg:63
-#, kde-format
-msgid "Clear all data in selected entries"
-msgstr "Minden adat törlése a kijelölt bejegyzésekből"
-
-#. i18n: ectx: label, entry (ClearText), group (Editor)
-#: kwordquiz.kcfg:67
-#, kde-format
-msgid "Clear the text in selected entries"
-msgstr "Szöveg törlése a kijelölt bejegyzésekben"
-
-#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
-#: kwordquiz.kcfg:71
-#, kde-format
-msgid "Clear the image link in selected entries"
-msgstr "Képhivatkozás törlése a kijelölt bejegyzésekben"
-
-#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
-#: kwordquiz.kcfg:75
-#, kde-format
-msgid "Clear the sound link in selected entries"
-msgstr "Hanghivatkozás törlése a kijelölt bejegyzésekben"
-
-#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
-#: kwordquiz.kcfg:81
-#, kde-format
-msgid "Automatically check selected answer in multiple choice"
-msgstr "Feleletválasztós kérdésnél a kijelölt válasz automatikus ellenőrzése"
-
-#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
-#: kwordquiz.kcfg:85
-#, kde-format
-msgid "Automatically flip flashcard"
-msgstr "Tanulókártya automatikus megfordítása"
-
-#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
-#: kwordquiz.kcfg:89
-#, kde-format
-msgid "Time delay for flipping flashcard"
-msgstr "Késleltetési idő a tanulókártyák felfordításánál"
-
-#. i18n: ectx: label, entry (HintError), group (Quiz)
-#: kwordquiz.kcfg:93
-#, kde-format
-msgid "Treat use of hint as error"
-msgstr "Kezelje a tippet hibaként"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
-#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
-#: kwordquiz.kcfg:97 prefquizbase.ui:79
-#, kde-format
-msgid "Compare answers in a case sensitive way"
-msgstr ""
-
-#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:101
-#, kde-format
-msgid "Count flashcard as correct or error"
-msgstr "Tanulókártya számolása helyesként vagy hibásként"
-
-#. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:105
-#, kde-format
-msgid "Quiz mode"
-msgstr "Kvíz mód"
-
-#. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:109
-#, kde-format
-msgid "Show score as percentage"
-msgstr "Pontszám megjelenítése százalékosan"
-
-#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:115
-#, kde-format
-msgid "Font used for front of flashcard"
-msgstr "A tanulókártya előlapján használt betűtípus"
-
-#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:119
-#, kde-format
-msgid "Color used for text on front of flashcard"
-msgstr "A tanulókártya előlapján használt szöveg színe"
-
-#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:123
-#, kde-format
-msgid "Color used for front of flashcard"
-msgstr "A tanulókártya előlapján használt szín"
-
-#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:127
-#, kde-format
-msgid "Color used for frame on front of flashcard"
-msgstr "A tanulókártya előlapján használt keret színe"
-
-#. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:131
-#, kde-format
-msgid "Font used for back of flashcard"
-msgstr "A tanulókártya hátlapján használt betűtípus"
-
-#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:135
-#, kde-format
-msgid "Color used for text on back of flashcard"
-msgstr "A tanulókártya hátlapján használt szöveg színe"
-
-#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:139
-#, kde-format
-msgid "Color used for back of flashcard"
-msgstr "A tanulókártya hátlapján használt szín"
-
-#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:143
-#, kde-format
-msgid "Color used for frame on back of flashcard"
-msgstr "A tanulókártya hátlapján használt keret színe"
-
-#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:149
-#, kde-format
-msgid "The Providers path for KWordQuiz"
-msgstr "A Providers elérési útja a KWordQuiz programhoz"
-
-#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:153
-#, kde-format
-msgid "The command used to start a downloaded vocabulary"
-msgstr "A letöltött szótár indításához használt parancs"
-
-#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:157
-#, kde-format
-msgid ""
-"The folder where downloaded vocabularies are saved by default (relative to "
-"$HOME)"
-msgstr ""
-"A könyvtár, amelybe alapértelmezés szerint a letöltött szótárak kerülnek "
-"mentésre (relatív a $HOME könyvtárhoz)"
-
-#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:163
-#, kde-format
-msgid "Pop up flashcards at fixed or random intervals"
-msgstr "Tanulókártyák felugrása fix vagy véletlenszerű időközönként"
-
-#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:171
-#, kde-format
-msgid "The interval in minutes at which to pop up a flash card"
-msgstr "Az időköz másodpercben, amelyben a tanulókártya felugrik"
-
-#. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:175
-#, kde-format
-msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr "A minimális időköz másodpercben, amelyben a tanulókártya felugrik"
-
-#. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:179
-#, kde-format
-msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr "A maximális időköz másodpercben, amelyben a tanulókártya felugrik"
-
-#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:183
-#, kde-format
-msgid "Geometry of the last flash card"
-msgstr "Az utolsó tanulókártya körvonala"
-
-#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:187
-#, kde-format
-msgid "Show flash card in a native KWordQuiz style"
-msgstr "Tanulókártya megjelenítése natív KWordQuiz stílusban"
-
-#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:195
-#, kde-format
-msgid ""
-"Last open vocabulary file to be opened automatically if none other is "
-"specified on the command line"
-msgstr ""
-"Tartsa nyitva az automatikusan megnyitott szótárfájlt, ha nincs más "
-"meghatározva a parancssorban"
-
-#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:199
-#, kde-format
-msgid "Start exercise as soon as the user opens vocabulary file"
-msgstr "Gyakorlás kezdése, amint a felhasználó megnyitja a szótárfájlt"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General"
-msgstr "Általános"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General Settings"
-msgstr "Általános beállítások"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor"
-msgstr "Szerkesztő"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor Settings"
-msgstr "Szerkesztő beállításai"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz"
-msgstr "Kvíz"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz Settings"
-msgstr "Kvíz beállítások"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance"
-msgstr "Tanulókártya megjelenés"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance Settings"
-msgstr "A tanulókártyák megjelenési beállításai"
-
-#: kwordquizprefs.cpp:36
-#, kde-format
-msgctxt "@title:group special character settings"
-msgid "Special Characters"
-msgstr "Speciális karakterek"
-
-#. i18n: ectx: Menu (vocabulary)
-#: kwordquizui.rc:16
-#, kde-format
-msgid "V&ocabulary"
-msgstr "Szó&tár"
-
-#. i18n: ectx: Menu (mode)
-#: kwordquizui.rc:30
-#, kde-format
-msgid "&Mode"
-msgstr "&Mód"
-
-#. i18n: ectx: Menu (quiz)
-#: kwordquizui.rc:38
-#, kde-format
-msgid "&Quiz"
-msgstr "&Kvíz"
-
-#. i18n: ectx: ToolBar (quizToolBar)
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:21
-#, kde-format
-msgid "Quiz"
-msgstr "Kvíz"
-
-#. i18n: ectx: ToolBar (characterToolBar)
-#: kwordquizui.rc:75
-#, kde-format
-msgid "Special Characters"
-msgstr "Speciális karakterek"
-
-#: kwqcleardialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Clear Contents"
-msgctxt "@title:window"
-msgid "Clear Contents"
-msgstr "Tartalom törlése"
-
-#: kwqcommands.cpp:74
-#, kde-format
-msgctxt "@item:inmenu undo clear"
-msgid "Clear"
-msgstr "Törlés"
-
-#: kwqcommands.cpp:96
-#, kde-format
-msgctxt "@item:inmenu undo cut"
-msgid "Cut"
-msgstr "Kivágás"
-
-#: kwqcommands.cpp:109
-#, kde-format
-msgctxt "@item:inmenu undo paste"
-msgid "Paste"
-msgstr "Beillesztés"
-
-#: kwqcommands.cpp:205
-#, kde-format
-msgctxt "@item:inmenu undo sort"
-msgid "Sort"
-msgstr "Rendezés"
-
-#: kwqcommands.cpp:232
-#, kde-format
-msgctxt "@item:inmenu undo shuffle"
-msgid "Shuffle"
-msgstr "Keverés"
-
-#: kwqcommands.cpp:252
-#, kde-format
-msgctxt "@item:inmenu undo insert"
-msgid "Insert"
-msgstr "Beszúrás"
-
-#: kwqcommands.cpp:284
-#, kde-format
-msgctxt "@item:inmenu undo delete"
-msgid "Delete"
-msgstr "Törlés"
-
-#: kwqcommands.cpp:333
-#, kde-format
-msgctxt "@item:inmenu undo unmark blank"
-msgid "Unmark Blank"
-msgstr "Az üresnek jelölés megszüntetése"
-
-#: kwqcommands.cpp:355
-#, kde-format
-msgctxt "@item:inmenu undo column titles"
-msgid "Column Settings"
-msgstr "Oszlopbeállítások"
-
-#: kwqcommands.cpp:400
-#, kde-format
-msgctxt "@item:inmenu undo link image"
-msgid "Link Image"
-msgstr "Kép csatolása"
-
-#: kwqcommands.cpp:419
-#, kde-format
-msgctxt "@item:inmenu undo link sound"
-msgid "Link Sound"
-msgstr "Hang csatolása"
-
-#: kwqcommands.h:93
-#, kde-format
-msgid "Font"
-msgstr "Betűtípus"
-
-#: kwqcommands.h:111
-#, kde-format
-msgid "Entry"
-msgstr "Bejegyzés"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
-#, kde-format
-msgid "Questions"
-msgstr "Kérdések"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
-#, kde-format
-msgid "The number of questions in the session"
-msgstr "A kérdések száma a folyamatban"
-
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
-#: kwqscorewidgetbase.ui:259
-#, kde-format
-msgid "00"
-msgstr "00"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
-#, kde-format
-msgid "Correct answers"
-msgstr "Helyes válaszok"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
-#, kde-format
-msgid ""
-"The number of questions answered correctly. May be shown as a percentage."
-msgstr ""
-"A helyesen megválaszolt kérdések száma. Százalékosan is megjeleníthető."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picError)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
-#, kde-format
-msgid "Incorrect answers"
-msgstr "Hibás válaszok"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
-#, kde-format
-msgid ""
-"The number of questions answered incorrectly. May be shown as a percentage."
-msgstr "A hibásan megválaszolt kérdések száma. Százalékosan is megjeleníthető."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
-#, kde-format
-msgid "Answered questions"
-msgstr "Megválaszolt kérdések"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
-#, kde-format
-msgid "The number of questions already answered. May be shown as a percentage."
-msgstr "Az eddig megválaszolt kérdések száma. Százalékosan is megjeleníthető."
-
-#: kwqtablemodel.cpp:211
-#, kde-format
-msgid "Untitled"
-msgstr "Névtelen"
-
-#: kwqtableview.cpp:190
+#: exporter.cpp:122
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Név:_____________________________ Dátum:__________"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:92
+#: exporter.cpp:170
 #, kde-format
 msgid "Score"
 msgstr "Pontszám"
 
-#: kwqtableview.cpp:656
+#: kwqcardmodel.cpp:30
 #, kde-format
-msgid "There is an error with the Fill-in-the-blank brackets"
-msgstr "Hiba történt az üres helyet jelző zárójelek kezelésénél"
+msgid "Question"
+msgstr "Kérdés"
 
-#: kwqtableview.cpp:723
-#, fuzzy, kde-format
-#| msgid "Select Image"
-msgctxt "@title:window"
-msgid "Select Image"
-msgstr "Kép kiválasztása"
-
-#: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "Select Sound"
-msgctxt "@title:window"
-msgid "Select Sound"
-msgstr "Hang kiválasztása"
-
-#: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "*|All Files"
-msgid "All Files (*)"
-msgstr "*|Minden fájl"
-
-#: kwqtutor.cpp:26
+#: kwqcardmodel.cpp:32
 #, kde-format
-msgid ""
-"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
-"you to set a certain time interval at which flashcards will pop up.<br /"
-"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
-"working without stealing the focus from other programs you might be working "
-"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
-"and select Preferences. There you can assign keyboard shortcuts.</qt>"
+msgid "Answer"
+msgstr "Válasz"
+
+#: main.cpp:56
+#, kde-format
+msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
-"<qt>A KWordQuiz Oktató tanulókártyákat jelenít meg a kijelzőn oly módon, "
-"hogy lehetővé teszi bizonyos idő megadását, amely alatt a tanulókártyák "
-"felugranak. <br /><br />A tanulókártyák nem tolakodó módon ugranak fel, "
-"lehetővé téve, hogy folytassa a munkát anélkül, hogy más programról elvonja "
-"a figyelmét, amellyel dolgozik.<br /><br />Ügyeljen arra, hogy a jobb "
-"gombbal kattintson a panelen lévő KWordQuiz Oktató ikonra és válassza a "
-"Beállítások menüt. Itt lehet hozzárendelni a gyorsbillentyűket.</qt>"
 
-#: kwqtutor.cpp:32
-#, kde-format
-msgid "Tutor"
-msgstr "Oktató"
-
-#: kwqtutor.cpp:43 kwqtutor.cpp:116
-#, kde-format
-msgid "Start Exercise"
-msgstr "Gyakorlás kezdése"
-
-#: kwqtutor.cpp:53
-#, kde-format
-msgid "Configure KWordQuiz Tutor..."
-msgstr "KWordQuiz oktató beállítása…"
-
-#: kwqtutor.cpp:58
-#, kde-format
-msgid "Close Flash Card"
-msgstr "Tanulókártya bezárása"
-
-#: kwqtutor.cpp:63
-#, kde-format
-msgid "Flip Flash Card"
-msgstr "Tanulókártya felfordítása"
-
-#: kwqtutor.cpp:108
-#, kde-format
-msgid "Stop Exercise"
-msgstr "Gyakorlás vége"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor"
-msgstr "Oktató"
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor Settings"
-msgstr "Oktató beállításai"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgctxt "Shortcuts Config"
-msgid "Shortcuts"
-msgstr "Gyorsbillentyűk"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgid "Shortcuts Settings"
-msgstr "Gyorsbillentyűk beállításai"
-
-#: main.cpp:34
+#: main.cpp:90
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:36
+#: main.cpp:92
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Hatékony tanulókártya és szótártanuló program"
 
-#: main.cpp:38
+#: main.cpp:94
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(C) Peter Hedlund, 2003-2010."
 
-#: main.cpp:42
+#: main.cpp:98
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:43
+#: main.cpp:98
+#, kde-format
+msgctxt "@info:credit"
+msgid "Original author"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Port to QML"
+msgstr ""
+
+#: main.cpp:100
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:43
+#: main.cpp:100
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE Edu karbantartó"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner-rendszer és számos kód hozzájárulások"
 
-#: main.cpp:57
-#, kde-format
-msgid ""
-"A number 1-5 corresponding to the \n"
-"entries in the Mode menu"
-msgstr ""
-"A Mód menü bejegyzéseihez\n"
-"tartozó számjegy (1-től 5-ig)"
-
-#: main.cpp:58
-#, kde-format
+#: main.cpp:121
+#, fuzzy, kde-format
+#| msgid ""
+#| "Type of session to start with: \n"
+#| "'flash' for flashcard, \n"
+#| "'mc' for multiple choice, \n"
+#| "'qa' for question and answer, \n"
+#| "'tutor' for tutor"
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
-"'qa' for question and answer, \n"
-"'tutor' for tutor"
+"'qa' for question and answer"
 msgstr ""
 "A kezdési munkafolyamat típusa: \n"
 "'flash' - tanulókártya, \n"
@@ -1619,923 +128,1715 @@ msgstr ""
 "'qa' - kérdés-válasz, \n"
 "'tutor' - oktató"
 
-#: main.cpp:59
+#: main.cpp:123
 #, kde-format
 msgid "File to open"
 msgstr "A megnyitandó fájl"
 
-#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
-#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
-#: qaviewbase.ui:518
+#: qml/BasePage.qml:24
 #, kde-format
-msgid "Correct Answer"
-msgstr "Helyes válasz"
+msgid "Cards %1% Errors %2"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
-#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
-#: qaviewbase.ui:294
+#: qml/BasePage.qml:26
 #, kde-format
-msgid "Previous Question"
-msgstr "Előző kérdés"
+msgid "Cards %1/%2 Errors %3"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
-#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
-#: qaviewbase.ui:395
+#: qml/BasePage.qml:73
 #, kde-format
-msgid "Your Answer"
-msgstr "Adott válasz"
+msgctxt "@label"
+msgid "Finished"
+msgstr ""
 
-#: multipleview.cpp:131 qaview.cpp:169
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "Summary"
-msgstr "Összegzés"
+msgid "You got a perfect score"
+msgstr ""
 
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
-#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
-#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
-#: qaviewbase.ui:104
+#: qml/BasePage.qml:75
 #, kde-format
-msgid "The question"
-msgstr "A kérdés"
+msgid "You made one mistake"
+msgid_plural "You made %1 mistakes"
+msgstr[0] ""
+msgstr[1] ""
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:73 qaviewbase.ui:60
-#, kde-format
-msgid "Language or other identifier for the question"
-msgstr "A kérdés nyelve vagy más jellemzője"
+#: qml/BasePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Repeat &Errors"
+msgid "Repeat errors"
+msgstr "A &hibák ismétlése"
 
-#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:76 qaviewbase.ui:63
+#: qml/BasePage.qml:93
 #, kde-format
-msgid "Language 1"
+msgid "Try again"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:33
+#, kde-format
+msgctxt "@title:window"
+msgid "Create deck"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit deck"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:40
+#, kde-format
+msgid "Filter"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:43
+#, kde-format
+msgid "Filter..."
+msgstr ""
+
+#: qml/DeckEditorPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Showing Preview..."
+msgctxt "@action:button"
+msgid "Print Preview"
+msgstr "Előnézet megjelenítése…"
+
+#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#, kde-format
+msgid "Flashcard"
+msgstr "Tanulókártya"
+
+#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#, kde-format
+msgid "List"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#, kde-format
+msgid "Exam"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Printing..."
+msgctxt "@action:button"
+msgid "Print"
+msgstr "Nyomtatás…"
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link image"
+#| msgid "Link Image"
+msgctxt "@action:button"
+msgid "Link image"
+msgstr "Kép csatolása"
+
+#: qml/DeckEditorPage.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo link sound"
+#| msgid "Link Sound"
+msgctxt "@action:button"
+msgid "Link sound"
+msgstr "Hang csatolása"
+
+#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "Language 1"
+msgctxt "@action:button"
+msgid "Set language"
 msgstr "1. nyelv"
 
-#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
-#: multipleviewbase.ui:98 qaviewbase.ui:107
+#: qml/DeckEditorPage.qml:183
 #, kde-format
-msgid "This is your question"
-msgstr "Ez az ön kérdése"
+msgid "Please choose an image"
+msgstr ""
 
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
-#: multipleviewbase.ui:255 multipleviewbase.ui:286
+#: qml/DeckEditorPage.qml:192
 #, kde-format
-msgid "Your choices"
-msgstr "A választásai"
+msgid "Please choose a sound"
+msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
+#: qml/DeckEditorPage.qml:227
 #, kde-format
-msgid "Three choices for the answer. One is correct."
-msgstr "Három választás a válaszhoz. Egy a helyes."
+msgctxt "@label"
+msgid "Name:"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QRadioButton, opt2)
-#: multipleviewbase.ui:192
+#: qml/DeckEditorPage.qml:238
 #, kde-format
-msgid "&2 Option"
-msgstr "&2. lehetőség"
+msgctxt "@label"
+msgid "Author:"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QRadioButton, opt1)
-#: multipleviewbase.ui:223
+#: qml/DeckEditorPage.qml:249
 #, kde-format
-msgid "&1 Option"
-msgstr "&1. lehetőség"
+msgctxt "@label"
+msgid "License:"
+msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:258 qaviewbase.ui:208
-#, kde-format
-msgid "Language or other identifier for the answer"
-msgstr "A válasz nyelve vagy más jellemzője"
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox vocabulary editor"
+#| msgid "Editor"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Szerkesztő"
 
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:261 qaviewbase.ui:211
-#, kde-format
-msgid "Language 2"
-msgstr "2. nyelv"
+#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
+#: qml/QuestionAnswerPage.qml:151
+#, fuzzy, kde-format
+#| msgid "&Check"
+msgctxt "@action:button"
+msgid "Check"
+msgstr "&Ellenőrzés"
 
-#. i18n: ectx: property (text), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:292
-#, kde-format
-msgid "&3 Option"
-msgstr "&3. lehetőség"
+#: qml/FlashCardPage.qml:128
+#, fuzzy, kde-format
+#| msgid "Correct Answer"
+msgctxt "@action:button"
+msgid "Correct"
+msgstr "Helyes válasz"
 
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
-#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
-#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
-#, kde-format
-msgid "Previous question"
-msgstr "Előző kérdés"
+#: qml/FlashCardPage.qml:146
+#, fuzzy, kde-format
+#| msgid "Mark Last Correct"
+msgctxt "@action:button"
+msgid "Not Correct"
+msgstr "Az utolsót helyesnek jelölése"
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
-#: qaviewbase.ui:313
-#, kde-format
-msgid "The previous question"
-msgstr "Az előző kérdés"
+#: qml/LanguageSelectorPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Select Image"
+msgid "Select a language"
+msgstr "Kép kiválasztása"
 
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:375 qaviewbase.ui:316
-#, kde-format
-msgid "This was your question"
-msgstr "Ez volt az ön kérdése"
+#: qml/main.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@action:inmenu"
+msgid "Settings"
+msgstr "Kvíz beállítások"
 
-#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
-#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
+#: qml/main.qml:42
 #, kde-format
-msgid "Your previous answer"
-msgstr "Az előző válasza"
+msgid "Configure"
+msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
-#: qaviewbase.ui:414
-#, kde-format
-msgid "Your answer to the previous question"
-msgstr "Az ön válasza az előző kérdésre"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:501 qaviewbase.ui:417
-#, kde-format
-msgid "This was your answer"
-msgstr "Ezt volt az ön válasza"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
-#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
-#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
-#, kde-format
-msgid "Previous correct answer"
-msgstr "Az előző helyes válasz"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
-#: qaviewbase.ui:537
-#, kde-format
-msgid "The correct answer to the previous question"
-msgstr "Az előző kérdés helyes válasza"
-
-#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:580 qaviewbase.ui:540
-#, kde-format
-msgid "This was the correct answer"
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "This was the correct answer"
+msgid "This is correct"
 msgstr "Ez volt a helyes válasz"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: multipleviewbase.ui:649
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Incorrect answers"
+msgid "Wrong, the correct answer was \"%1\"."
+msgstr "Hibás válaszok"
+
+#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"three entries for a multiple choice quiz.</html>"
+msgctxt "@action:button"
+msgid "Next"
 msgstr ""
-"<html>Túl kevés bejegyzés van a szótárban.<br />Legalább három bejegyzésre "
-"van szükség a feleletválasztós kvízhez.</html>"
 
-#: prefcardappearance.cpp:66
+#: qml/MultipleChoicePage.qml:150
 #, kde-format
-msgctxt "Back of the flashcard"
-msgid "Back"
-msgstr "Hátlap"
-
-#: prefcardappearance.cpp:67
-#, kde-format
-msgid "Answer"
-msgstr "Válasz"
-
-#: prefcardappearance.cpp:80
-#, kde-format
-msgid "Front"
-msgstr "Előlap"
-
-#: prefcardappearance.cpp:81
-#, kde-format
-msgid "Question"
-msgstr "Kérdés"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
-#: prefcardappearancebase.ui:15
-#, kde-format
-msgid "Card Appearance"
-msgstr "A kártyák megjelenése"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:92
-#, kde-format
-msgid "Flip card"
-msgstr "Kártya megfordítása"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:95
-#, kde-format
-msgid "Use to show the other side of the card"
-msgstr "Használja a kártya másik oldalának megjelenítéséhez"
-
-#. i18n: ectx: property (text), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:98
-#, kde-format
-msgid "&Flip Card"
-msgstr "Kártya meg&fordítása"
-
-#. i18n: ectx: property (text), widget (QLabel, fontLabel)
-#: prefcardappearancebase.ui:111
-#, kde-format
-msgid "F&ont:"
-msgstr "Be&tűtípus:"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
-#: prefcardappearancebase.ui:146
-#, kde-format
-msgid "Use to select the font for displaying text on the back of the card"
+msgid "Not enough words in your deck"
 msgstr ""
-"Használja a kártya hátlapján megjelenítendő szöveg betűtípusának "
-"választásához"
 
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
+#: qml/MultipleChoicePage.qml:151
 #, kde-format
-msgid "Select text color"
-msgstr "Szövegszín kiválasztása"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
-#, kde-format
-msgid "Use to select the color for text shown on the card"
-msgstr "Használja a kártyán megjelenő szövegek színének kiválasztásához"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
-#, kde-format
-msgid "Select card frame color"
-msgstr "Kártyakeret színének kiválasztása"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
-#, kde-format
-msgid "Use to select the color for drawing the frame of the card"
-msgstr "Használja a kártyakeret rajzolási színének kiválasztásához"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
-#, kde-format
-msgid "Select card color"
-msgstr "Kártyaszín kiválasztása"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
-#, kde-format
-msgid "Select color used to draw the card"
-msgstr "Válassza ki a kártya kirajzolási színét"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
-#: prefcardappearancebase.ui:202
-#, kde-format
-msgid "Use to select the font for displaying text on the front of the card"
+msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
-"Használja a kártya előlapján megjelenő szöveg betűtípusának kiválasztásához"
 
-#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
-#: prefcardappearancebase.ui:249
-#, kde-format
-msgid "&Text color:"
-msgstr "Szöve&gszín:"
+#: qml/OptionsAction.qml:12
+#, fuzzy, kde-format
+#| msgid "&2 Option"
+msgctxt "@action:button"
+msgid "Options"
+msgstr "&2. lehetőség"
 
-#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
-#: prefcardappearancebase.ui:262
-#, kde-format
-msgid "&Card color:"
-msgstr "&Kártyaszín:"
+#: qml/OptionsAction.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo shuffle"
+#| msgid "Shuffle"
+msgctxt "@action:inmenu"
+msgid "Shuffle"
+msgstr "Keverés"
 
-#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
-#: prefcardappearancebase.ui:275
-#, kde-format
-msgid "Fra&me color:"
-msgstr "Ke&retszín:"
+#: qml/QuestionAnswerPage.qml:143
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgctxt "@action:button"
+msgid "Hint"
+msgstr "&Tipp"
 
-#: prefcharacter.cpp:30
-#, kde-format
-msgid "Action"
-msgstr "Művelet"
+#: qml/SettingsPage.qml:13
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Kvíz beállítások"
 
-#: prefcharacter.cpp:31
-#, kde-format
-msgid "Shortcut"
-msgstr "Gyorsbillentyű"
+#: qml/SettingsPage.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:group general settings"
+#| msgid "General"
+msgid "General"
+msgstr "Általános"
 
-#: prefcharacter.cpp:32
+#: qml/SettingsPage.qml:30
 #, kde-format
-msgid "Character"
-msgstr "Karakter"
+msgid "Show score as percentage"
+msgstr "Pontszám megjelenítése százalékosan"
 
-#: prefcharacter.cpp:41
-#, kde-format
-msgid "Special Character %1"
-msgstr "Speciális karakter: %1"
+#: qml/SettingsPage.qml:47
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgid "Flash Card"
+msgstr "Tanulókártya"
 
-#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
-#: prefcharacterbase.ui:35
+#: qml/SettingsPage.qml:52
 #, kde-format
-msgid ""
-"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-"associated with each action."
-msgstr ""
-"Megjegyzés: válassza a Beállítások -> A gyorsbillentyűk beállítása… "
-"menüpontot az egyes műveletekhez rendelt gyorsbillentyűk megadásához."
+msgid "Automatically flip flashcard"
+msgstr "Tanulókártya automatikus megfordítása"
 
-#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:48
-#, kde-format
-msgid "Select character to modify"
-msgstr "Válassza ki a módosítandó karaktert"
+#: qml/SettingsPage.qml:64
+#, fuzzy, kde-format
+#| msgid "Time delay for flipping flashcard"
+msgid "Time delay for flipping the flashcard"
+msgstr "Késleltetési idő a tanulókártyák felfordításánál"
 
-#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:51
-#, kde-format
-msgid "Customizable special character actions"
-msgstr "Testre szabható egyéni karakterműveletek"
+#: qml/SettingsPage.qml:84
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgid "Multiple choice"
+msgstr "Feleletválasztás"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:61
-#, kde-format
-msgid "0"
-msgstr "0"
+#: qml/SettingsPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Automatically check selected answer in multiple choice"
+msgid "Automatically check selected answer"
+msgstr "Feleletválasztós kérdésnél a kijelölt válasz automatikus ellenőrzése"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:66
-#, kde-format
-msgid "1"
-msgstr "1"
+#: qml/SettingsPage.qml:105
+#, fuzzy, kde-format
+#| msgid "&Question and Answer"
+msgid "Question and Answer"
+msgstr "&Kérdés és válasz"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:71
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:103
-#, kde-format
-msgid "Click to choose a new character"
-msgstr "Kattintson ide új karakter választásához"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:106
-#, kde-format
-msgid "Choose a character for the selected action"
-msgstr "Válasszon egy karaktert a kijelölt művelethez"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:109
-#, kde-format
-msgid "C&haracter..."
-msgstr "K&arakter…"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:151
-#, kde-format
-msgid "Preview of current character"
-msgstr "A jelenlegi karakter előnézete"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:154
-#, kde-format
-msgid "Preview of the character associated with the selected action"
-msgstr "A kijelölt művelethez rendelt karakter előnézete"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:157
-#, kde-format
-msgid "A"
-msgstr "A"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
-#: prefeditorbase.ui:73
-#, kde-format
-msgid "How enter key moves"
-msgstr "Hogyan mozogjon az Enter billentyű"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:32
-#, kde-format
-msgid "Select how the Enter key should behave in the editor"
-msgstr "Válassza ki az Enter billentyű kezelési módját a szerkesztőben"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:35
-#, kde-format
-msgid "Enter Ke&y Moves"
-msgstr "Az Enter billentyű &mozgásai"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:50
-#, kde-format
-msgid "Select if the next cell below should become active when pressing Enter."
-msgstr ""
-"Válassza ki, ha az alatta lévő következő cella legyen aktív az Enter "
-"lenyomásakor."
-
-#. i18n: ectx: property (text), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:53
-#, kde-format
-msgid "&Down"
-msgstr "&Le"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:63
-#, kde-format
-msgid ""
-"Select if the next cell to the right should become active when pressing Enter"
-msgstr ""
-"Válassza ki, ha a jobbra lévő következő cella legyen aktív az Enter "
-"lenyomásakor"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:66
-#, kde-format
-msgid "&Right"
-msgstr "&Jobbra"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:76
-#, kde-format
-msgid "Select if the current cell should remain active when pressing Enter"
-msgstr "Válassza ki, ha a jelenlegi cella maradjon aktív az Enter lenyomásakor"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:79
-#, kde-format
-msgid "Does not &move"
-msgstr "Ne mo&zduljon"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:89
-#, kde-format
-msgid "Check to enable fill-in-the-blank"
-msgstr "Jelölje be, ha engedélyezni szeretné az üres helyek kitöltését"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:92
-#, kde-format
-msgid "Select to enable the functions for Fill-in-the-blank"
-msgstr ""
-"Jelölje be, ha engedélyezni szeretné az üres helyek kitöltését végző "
-"funkciókat"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:95
-#, kde-format
-msgid "E&nable fill-in-the-blank"
-msgstr "Az ü&res helyek kitöltésének engedélyezése"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:35
-#, kde-format
-msgid "How vocabulary documents are opened"
-msgstr "Hogyan nyíljanak meg a szótárak"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:38
-#, kde-format
-msgid "Select the kind of session to load an opened vocabulary document in"
-msgstr ""
-"Válassza ki a folyamat fajtáját, amelyet a megnyitott szótárdokumentumból "
-"tölt be"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:41
-#, kde-format
-msgid "&Open Vocabulary Documents in"
-msgstr "Szótárdokumentumok &megnyitása"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:47
-#, kde-format
-msgid "Open vocabulary documents in the editor"
-msgstr "Szótárdokumentumok megnyitása a szerkesztőben"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:50
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in the editor"
-msgstr "Válassza ki, hogy a szótárdokumentumok a szerkesztőben nyíljanak meg"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:53
-#, kde-format
-msgid "&Editor"
-msgstr "&Szerkesztő"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:60
-#, kde-format
-msgid "Open vocabulary documents in a flashcard quiz"
-msgstr "Szótárdokumentumok megnyitása a tanulókártya kvízben"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:63
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
-msgstr ""
-"Válassza ki, hogy a szótárdokumentumok a tanulókártya kvízben nyíljanak meg"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:66
-#, kde-format
-msgid "&Flashcard Quiz"
-msgstr "&Tanulókártya kvíz"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:73
-#, kde-format
-msgid "Open vocabulary documents in a multiple choice quiz"
-msgstr "Szótárdokumentumok megnyitása feleletválasztós kvízben"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:76
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a multiple choice quiz"
-msgstr ""
-"Válassza ki, hogy a szótárdokumentumok a feleletválasztós kvízben nyíljanak "
-"meg"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:79
-#, kde-format
-msgid "&Multiple Choice Quiz"
-msgstr "&Feleletválasztós kvíz"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:86
-#, kde-format
-msgid "Open vocabulary documents in a question and answer quiz"
-msgstr "Szótárdokumentumok megnyitása kérdés-válasz kvízben"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:89
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a question and answer "
-"quiz"
-msgstr ""
-"Válassza ki, hogy a szótárdokumentumok a kérdés-válasz kvízben nyíljanak meg"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:92
-#, kde-format
-msgid "&Question and Answer Quiz"
-msgstr "&Kérdés és válasz kvíz"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:42
-#, kde-format
-msgid "Specify behavior for a question and answer session"
-msgstr "Határozza meg a kérdés-válasz folyamat működését"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:45
-#, kde-format
-msgid "Question && Answer"
-msgstr "Kérdés és válasz"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:66
-#, kde-format
-msgid "Check to count hint as error"
+#: qml/SettingsPage.qml:110
+#, fuzzy, kde-format
+#| msgid "Check to count hint as error"
+msgid "Count using hint as an error"
 msgstr "Jelölje be a tipp hibaként történő számolásához"
 
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:69
+#: qml/SettingsPage.qml:122
 #, kde-format
-msgid ""
-"Select if questions where the hint function has been used should be counted "
-"as errors"
+msgid "Compare answers in a case sensitive way"
 msgstr ""
-"Jelölje be, ha azt szeretné, hogy a program csak akkor fogadjon el helyesnek "
-"egy választ, ha a felhasználó nem kért tippet a megoldáshoz"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:72
-#, kde-format
-msgid "&Treat hint as error"
-msgstr "&Kezelje a tippet hibaként"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:89
-#, kde-format
-msgid "Specify behavior of the score presentation in any session"
-msgstr "Határozza meg a pontszámok bemutatásának működését bármely folyamatban"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:113
-#, kde-format
-msgid "Check to show score as a percentage"
-msgstr "Jelölje be a pontszámok százalékosan való megjelenítéséhez"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:116
-#, kde-format
-msgid "Select if the score should be shown as a percentage"
-msgstr "Válassza ki, hogy a pontszámok százalékosan legyenek megjelenítve"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:119
-#, kde-format
-msgid "&Show score as a percentage"
-msgstr "&Pontszám megjelenítése százalékosan"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:145
-#, kde-format
-msgid "Specify behavior for a multiple choice session"
-msgstr "Határozza meg a feleletválasztós folyamatok működését"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:169
-#, kde-format
-msgid "Check to correct automatically"
-msgstr "Jelölje be az automatikus javításhoz"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:172
-#, kde-format
-msgid "Select if a choice should be checked immediately"
-msgstr "Válassza ki, hogy azonnal ellenőrizze le a választást"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:175
-#, kde-format
-msgid "Check selection a&utomatically"
-msgstr "Kijelölés &automatikus ellenőrzése"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:185
-#, kde-format
-msgid "Specify behavior of a flashcard session"
-msgstr "Határozza meg a tanulókártya folyamat működését"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:231
-#, kde-format
-msgid "Specify the amount of time between card flips"
-msgstr "Határozza meg a kártyák felfedési időközét"
-
-#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:234
-#, kde-format
-msgid "seconds and"
-msgstr "másodperc és"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:241
-#, kde-format
-msgid "Delay to flip card"
-msgstr "Késleltetés a kártyák megfordításakor"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:244
-#, kde-format
-msgid "Delay in seconds to flip card"
-msgstr "Késleltetés másodpercben a kártyák megfordításakor"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:275 prefquizbase.ui:288
-#, kde-format
-msgid "Select how to count card"
-msgstr "Válassza ki, hogyan számolja a kártyát"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:278
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as correct when moving to the "
-"next card"
-msgstr ""
-"Válassza ki, hogy az előző kártya helyesként legyen számolva, amikor a "
-"következő kártyára lép"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:281
-#, kde-format
-msgid "Count &as correct"
-msgstr "&Helyesnek számítás"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:291
-#, kde-format
-msgid ""
-"Select if the previous card should be counted as incorrect when moving to "
-"the next card"
-msgstr ""
-"Válassza ki, hogy az előző kártya hibásként legyen számolva, amikor a "
-"következő kártyára lép"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:294
-#, kde-format
-msgid "Count as &error"
-msgstr "H&elytelennek számítás"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:304
-#, kde-format
-msgid "Check to flip card automatically"
-msgstr "Jelölje be a kártya automatikus felfordításához"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:307
-#, kde-format
-msgid ""
-"Select if you want a card to turn over automatically after the given amount "
-"of time"
-msgstr ""
-"Válassza ki, ha a megadott idő letelte után automatikusan szeretné felfedni "
-"a kártyát"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:310
-#, kde-format
-msgid "&Flip card automatically after"
-msgstr "A kártya au&tomatikus felfedése"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
-#: preftutorbase.ui:17
-#, kde-format
-msgid "Tutor Timing"
-msgstr "Oktató visszaszámláló"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
-#: preftutorbase.ui:23
-#, kde-format
-msgid "&Every"
-msgstr "&Minden"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
-#: preftutorbase.ui:60
-#, kde-format
-msgid "&minutes"
-msgstr "&perc"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
-#: preftutorbase.ui:72
-#, kde-format
-msgid "&Randomly"
-msgstr "&Véletlenszerűen"
-
-#. i18n: ectx: property (text), widget (QLabel, labelBetween)
-#: preftutorbase.ui:100
-#, kde-format
-msgid "Between"
-msgstr "Között"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
-#: preftutorbase.ui:120
-#, kde-format
-msgid "m&inutes and"
-msgstr "p&ercek és"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
-#: preftutorbase.ui:146
-#, kde-format
-msgid "mi&nutes"
-msgstr "pe&rcek"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
-#: preftutorbase.ui:161
-#, kde-format
-msgid "Flashcard Appearance"
-msgstr "Tanulókártya megjelenés"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
-#: preftutorbase.ui:167
-#, kde-format
-msgid "&Native"
-msgstr "&Natív"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
-#: preftutorbase.ui:177
-#, kde-format
-msgid "Minim&alistic"
-msgstr "Minim&alista"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
-#: preftutorbase.ui:187
-#, kde-format
-msgid "Miscellaneous"
-msgstr "Egyebek"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
-#: preftutorbase.ui:193
-#, kde-format
-msgid "S&tart exercise as soon as vocabulary file is opened"
-msgstr "&Gyakorlás elkezdése, amint a szótárfájlt megnyitották"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
-#, kde-format
-msgid "Type your answer"
-msgstr "Írja be a válaszát"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:145
-#, kde-format
-msgid "The answer showing blanks for a Fill-in-the-blank question"
-msgstr "A válasz jelenlen meg üresként az üres helyek kitöltése kérdésnél"
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:148
-#, kde-format
-msgid "This is _____ answer"
-msgstr "Ez _____ válasz"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
-#: qaviewbase.ui:176
-#, kde-format
-msgid "Type the answer to the question"
-msgstr "Írja be a kérdésre adott választ"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: qaviewbase.ui:587
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a question and answer quiz.</html>"
-msgstr ""
-"<html>Túl kevés bejegyzés van a szótárban.<br />Legalább egy bejegyzésre "
-"szükség van a kérdés-válasz kvízhez.</html>"
-
-#: wqprintdialogpage.cpp:17
+#: qml/SettingsPage.qml:152
 #, fuzzy, kde-format
-#| msgid "Vocabulary Options"
-msgctxt "@title:window"
-msgid "Vocabulary Options"
-msgstr "Szótár beállításai"
+#| msgid "Quits KWordQuiz"
+msgid "About KWordQuiz"
+msgstr "Kilépés a KWordQuizből"
 
-#: wqprintdialogpage.cpp:23
+#: qml/SettingsPage.qml:161
 #, kde-format
-msgid "Select Type of Printout"
-msgstr "Válassza ki a nyomtatás típusát"
-
-#: wqprintdialogpage.cpp:28
-#, kde-format
-msgid "Vocabulary &list"
-msgstr "A szótárak &listája"
-
-#: wqprintdialogpage.cpp:29
-#, kde-format
-msgid "Select to print the vocabulary as displayed in the editor"
+msgid "About KDE"
 msgstr ""
-"Válassza ezt, ha úgy szeretné a szótárat kinyomtatni, ahogy a szerkesztőben "
-"megjelenik"
 
-#: wqprintdialogpage.cpp:33
+#: qml/WelcomePage.qml:35
 #, kde-format
-msgid "Vocabulary e&xam"
-msgstr "Szókincs &vizsga"
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr ""
 
-#: wqprintdialogpage.cpp:34
+#: qml/WelcomePage.qml:43
 #, kde-format
-msgid "Select to print the vocabulary as a vocabulary exam"
-msgstr "Válassza ezt a szótár szókincs vizsgaként való nyomtatásához"
+msgid "Please choose a KWordQuiz document"
+msgstr ""
 
-#: wqprintdialogpage.cpp:38
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "&Flashcards"
-msgstr "Tan&ulókártyák"
+msgid "KEduDocument (*.kvtml)"
+msgstr ""
 
-#: wqprintdialogpage.cpp:39
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Select to print flashcards"
-msgstr "Válassza ezt a tanulókártyák nyomtatásához"
+msgid "Wql documents (*.wql)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "CSV documents (*.csv)"
+msgstr ""
+
+#: qml/WelcomePage.qml:45
+#, kde-format
+msgid "XDXF documents (*.xdxf)"
+msgstr ""
+
+#: qml/WelcomePage.qml:62
+#, fuzzy, kde-format
+#| msgid "Quits KWordQuiz"
+msgid "Welcome to KWordQuiz"
+msgstr "Kilépés a KWordQuizből"
+
+#: qml/WelcomePage.qml:74
+#, fuzzy, kde-format
+#| msgid "Opens an existing vocabulary document"
+msgid "Open existing document"
+msgstr "Megnyit egy már létező szótárfájlt"
+
+#: qml/WelcomePage.qml:80
+#, kde-format
+msgid "Create Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:88
+#, kde-format
+msgid "Download Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:111
+#, kde-format
+msgid "Mode"
+msgstr "Mód"
+
+#: qml/WelcomePage.qml:147
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgctxt "@option:check Mode selector"
+msgid "Flashcard"
+msgstr "Tanulókártya"
+
+#: qml/WelcomePage.qml:154
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgctxt "@option:check Mode selector"
+msgid "Multiple Choice"
+msgstr "Feleletválasztás"
+
+#: qml/WelcomePage.qml:161
+#, fuzzy, kde-format
+#| msgid "Question & Answer"
+msgctxt "@option:check Mode selector"
+msgid "Question-Answer"
+msgstr "Kérdés és válasz"
+
+#: qml/WelcomePage.qml:177
+#, kde-format
+msgid "Decks"
+msgstr ""
+
+#: qml/WelcomePage.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr ""
+
+#~ msgid "Selection"
+#~ msgstr "Kijelölés"
+
+#~ msgid "Delete all information in selected entries"
+#~ msgstr "Minden információ törlése a kijelölt bejegyzésekből"
+
+#~ msgid ""
+#~ "When checked all information will be deleted from the selected entries"
+#~ msgstr ""
+#~ "Ha ki van pipálva, minden információ törlődni fog a kiválasztott "
+#~ "bejegyzésekből"
+
+#~ msgid "Clear &All"
+#~ msgstr "Ö&sszes törlése"
+
+#~ msgid "Delete the text from selected entries"
+#~ msgstr "Szöveg törlése a kijelölt bejegyzésekből"
+
+#~ msgid "When checked the text will be deleted from selected entries"
+#~ msgstr ""
+#~ "Ha ki van pipálva, a szöveg törlődni fog a kiválasztott bejegyzésekből"
+
+#~ msgid "&Text"
+#~ msgstr "&Szöveg"
+
+#~ msgid "Delete the image link from selected entries"
+#~ msgstr "Képhivatkozás törlése a kijelölt bejegyzésekből"
+
+#~ msgid "When checked the image link will be deleted from selected entries"
+#~ msgstr ""
+#~ "Ha ki van pipálva, a kép hivatkozása törlődni fog a kijelölt "
+#~ "bejegyzésekből"
+
+#~ msgid "&Image Links"
+#~ msgstr "&Képhivatkozások"
+
+#~ msgid "Delete the sound link from selected entries"
+#~ msgstr "Hanghivatkozás törlése a kijelölt bejegyzésekből"
+
+#~ msgid "When checked the sound link will be deleted from selected entries"
+#~ msgstr ""
+#~ "Ha ki van pipálva, a hang hivatkozás törlődni fog a kijelölt "
+#~ "bejegyzésekből"
+
+#~ msgid "&Sound Links"
+#~ msgstr "&Hanghivatkozások"
+
+#~ msgid "Column 1"
+#~ msgstr "1. oszlop"
+
+#~ msgid "Title for the left column"
+#~ msgstr "A baloldali oszlop címe"
+
+#~ msgid "Enter a title (identifier) for the left column"
+#~ msgstr "Adja meg a baloldali oszlop címét (azonosítóját)"
+
+#~ msgid "&Title:"
+#~ msgstr "&Cím:"
+
+#, fuzzy
+#~| msgid "&Keyboard Layout:"
+#~ msgid "&Keyboard layout:"
+#~ msgstr "&Billentyűzetkiosztás"
+
+#~ msgid "&Width:"
+#~ msgstr "&Szélesség:"
+
+#~ msgid "Keyboard layout for the left column"
+#~ msgstr "A baloldali oszlop billentyűzetkiosztása"
+
+#~ msgid "Select a keyboard layout for the left column"
+#~ msgstr "Billentyűzetkiosztás választása a baloldali oszlophoz"
+
+#~ msgid "Width of the left column"
+#~ msgstr "A baloldali oszlop szélessége"
+
+#~ msgid "Enter the width (in pixels) for the left column"
+#~ msgstr "Adja meg a baloldali oszlop szélességét (képpontban)"
+
+#~ msgid "Column 2"
+#~ msgstr "2. oszlop"
+
+#~ msgid "T&itle:"
+#~ msgstr "Cí&m:"
+
+#~ msgid "Keyboard &Layout:"
+#~ msgstr "Billentyűzet&kiosztás:"
+
+#~ msgid "Wi&dth:"
+#~ msgstr "Széles&ség:"
+
+#~ msgid "Title for the right column"
+#~ msgstr "A jobboldali oszlop felirata"
+
+#~ msgid "Enter a title (identifier) for the right column"
+#~ msgstr "Adja meg a jobboldali oszlop címét (azonosítóját)"
+
+#~ msgid "Width of the right column"
+#~ msgstr "A jobboldali oszlop szélessége"
+
+#~ msgid "Enter the width (in pixels) for the right column"
+#~ msgstr "Adja meg a jobboldali oszlop szélességét (képpontban)"
+
+#, fuzzy
+#~| msgid "Column Settings"
+#~ msgctxt "@title:window"
+#~ msgid "Column Settings"
+#~ msgstr "Oszlopbeállítások"
+
+#~ msgctxt "@title:window select character dialog"
+#~ msgid "Select Character"
+#~ msgstr "Karakter kiválasztása"
+
+#, fuzzy
+#~| msgctxt "@action:button select"
+#~| msgid "&Select"
+#~ msgctxt "@action:button"
+#~ msgid "&Select"
+#~ msgstr "&Kiválasztás"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip select this character"
+#~| msgid "Select this character"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select this character"
+#~ msgstr "A karakter kiválasztása"
+
+#~ msgid "Column widths"
+#~ msgstr "Oszlopszélességek"
+
+#~ msgid "Keyboard layouts"
+#~ msgstr "Billentyűzetkiosztások"
+
+#, fuzzy
+#~| msgid "S&earch:"
+#~ msgid "Search"
+#~ msgstr "K&eresés:"
+
+#~ msgid "Your answer was correct!"
+#~ msgstr "A válasz helyes."
+
+#~ msgid "Your answer was incorrect."
+#~ msgstr "A válasz hibás."
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a flashcard quiz.</html>"
+#~ msgstr ""
+#~ "<html>Túl kevés bejegyzés van a szótárban.<br />Legalább egy bejegyzésre "
+#~ "van szükség tanulókártya kvízhez.</html>"
+
+#~ msgid "Creates a new blank vocabulary document"
+#~ msgstr "Létrehoz egy új, üres szótárfájlt"
+
+#~ msgid "Download New Vocabularies..."
+#~ msgstr "Új szótárak letöltése…"
+
+#~ msgid "Downloads new vocabularies"
+#~ msgstr "Új szótárak letöltése"
+
+#~ msgid "Saves the active vocabulary document"
+#~ msgstr "Elmenti az aktív szótárfájlt"
+
+#~ msgid "Saves the active vocabulary document with a different name"
+#~ msgstr "Elmenti más néven az aktív szótárfájlt"
+
+#~ msgid "Closes the active vocabulary document"
+#~ msgstr "Bezárja az aktív szótárfájlt"
+
+#~ msgid "Prints the active vocabulary document"
+#~ msgstr "Kinyomtatja az aktív szótárfájlt"
+
+#~ msgid "Shows a preview of the active vocabulary document"
+#~ msgstr "Előnézetet jelenít meg az aktív szótárdokumentumról"
+
+#~ msgid "Cuts the text from the selected cells and places it on the clipboard"
+#~ msgstr "A kijelölt cellák szövegét kivágja és elhelyezi azt a vágólapon"
+
+#~ msgid ""
+#~ "Copies the text from the selected cells and places it on the clipboard"
+#~ msgstr "A kijelölt cellák szövegét másolja és elhelyezi azt a vágólapon"
+
+#~ msgid ""
+#~ "Pastes previously cut or copied text from the clipboard into the selected "
+#~ "cells"
+#~ msgstr ""
+#~ "Beilleszti a korábban kivágott vagy másolt szöveget a vágólapról a "
+#~ "kijelölt cellákba"
+
+#~ msgid "Clears the content of the selected cells"
+#~ msgstr "Törli a kijelölt cellák tartalmát"
+
+#~ msgid "&Insert Row"
+#~ msgstr "Sor b&eszúrása"
+
+#~ msgid "Inserts a new row above the current row"
+#~ msgstr "Beszúr egy új sort a jelenlegi sor fölé"
+
+#~ msgid "&Delete Row"
+#~ msgstr "Sor &törlése"
+
+#~ msgid "Deletes the selected row(s)"
+#~ msgstr "Törli a kijelölt sorokat"
+
+#~ msgid "&Mark as Blank"
+#~ msgstr "Megj&elölés üresnek"
+
+#~ msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
+#~ msgstr ""
+#~ "Megjelöli a jelenlegi vagy a kijelölt szót üresnek a kitöltendő résznek"
+
+#~ msgid "&Unmark Blanks"
+#~ msgstr "Az üresnek jelölés megs&züntetése"
+
+#~ msgid "Removes blanks from the current or selected word"
+#~ msgstr "Eltávolítja az üres megjelölést az aktuális vagy kijelölt szóból"
+
+#~ msgid "&Column Settings..."
+#~ msgstr "&Oszlopbeállítások…"
+
+#~ msgid "Defines the column settings for the active vocabulary"
+#~ msgstr "Meghatározza az aktív szótár oszlopbeállításait"
+
+#~ msgid "&Font..."
+#~ msgstr "Betűtí&pus…"
+
+#~ msgid "Defines the font used by the editor"
+#~ msgstr "Meghatározza a szerkesztőben használt betűtípust"
+
+#~ msgid "Link &Image..."
+#~ msgstr "Kép &csatolása…"
+
+#~ msgid "Links an image with the current entry"
+#~ msgstr "Képet csatol a jelenlegi bejegyzéshez"
+
+#~ msgid "Link &Sound..."
+#~ msgstr "Hang &csatolása…"
+
+#~ msgid "Links a sound with the current entry"
+#~ msgstr "Hangot csatol a jelenlegi bejegyzéshez"
+
+#~ msgid "&Adjust Row Heights"
+#~ msgstr "Sormagasságok &igazítása"
+
+#~ msgid "Automatically adjusts the height of selected rows"
+#~ msgstr "Automatikusan igazítja a kijelölt sorok magasságát"
+
+#~ msgid "Sh&uffle"
+#~ msgstr "&Keverés"
+
+#~ msgid "Shuffles the entries of the active vocabulary"
+#~ msgstr "Összekeveri az aktív szótár bejegyzéseit"
+
+#~ msgid "&Keyboard Layout"
+#~ msgstr "&Billentyűzetkiosztás"
+
+#~ msgid "Shows available keyboard layouts"
+#~ msgstr "Megjeleníti az elérhető billentyűzetkiosztásokat"
+
+#~ msgid "Change Mode"
+#~ msgstr "Módváltás"
+
+#~ msgid "Changes the mode used in quiz sessions"
+#~ msgstr "Megváltoztatja a kvízfolyamatokban használt módot"
+
+#~ msgid "Selects this mode"
+#~ msgstr "Kiválasztja ezt a módot"
+
+#~ msgctxt "@item:inlistbox activate vocabulary editor"
+#~ msgid "&Editor"
+#~ msgstr "&Szerkesztő"
+
+#~ msgid "Activates the vocabulary editor"
+#~ msgstr "Aktiválja a szótárszerkesztőt"
+
+#~ msgid "&Flashcard"
+#~ msgstr "Tan&ulókártya"
+
+#~ msgid "Starts a flashcard session using the active vocabulary"
+#~ msgstr "Az aktív szótárral elkezd egy tanulókártyás folyamatot"
+
+#~ msgid "&Multiple Choice"
+#~ msgstr "F&eleletválasztós"
+
+#~ msgid "Starts a multiple choice session using the active vocabulary"
+#~ msgstr "Az aktív szótárral elkezd egy feleletválasztós folyamatot"
+
+#~ msgid "Q&&A"
+#~ msgstr "K&&V"
+
+#~ msgid "Starts a question and answer session using the active vocabulary"
+#~ msgstr "Az aktív szótárral elkezd egy kérdés-válasz folyamatot"
+
+#~ msgid "Checks your answer to this question"
+#~ msgstr "Ellenőrzi a kérdésre adott választ"
+
+#~ msgid "Choose Option &1"
+#~ msgstr "&1. lehetőség választása"
+
+#~ msgid "Choose Option &2"
+#~ msgstr "&2. lehetőség választása"
+
+#~ msgid "Choose Option &3"
+#~ msgstr "&3. lehetőség választása"
+
+#~ msgid "I &Know"
+#~ msgstr "&Tudom"
+
+#~ msgid "Counts this card as correct and shows the next card"
+#~ msgstr "A kártyát helyesként számolja és megjeleníti a következő kártyát"
+
+#~ msgid "I &Do Not Know"
+#~ msgstr "Nem tu&dom"
+
+#~ msgid "Counts this card as incorrect and shows the next card"
+#~ msgstr "A kártyát hibásként számolja és megjeleníti a következő kártyát"
+
+#~ msgid "Gets the next correct letter of the answer"
+#~ msgstr "Megadja a válasz következő helyes betűjét"
+
+#~ msgid "Marks last answer as correct"
+#~ msgstr "Az utolsó választ helyesnek jelöli"
+
+#~ msgid "&Restart"
+#~ msgstr "Új&raindítás"
+
+#~ msgid "Restarts the quiz session from the beginning"
+#~ msgstr "Újrakezdi a kvízfolyamatot az elejétől"
+
+#~ msgid "&Play Audio"
+#~ msgstr "&Hang lejátszása"
+
+#~ msgid "Play associated audio"
+#~ msgstr "Kapcsolódó hang lejátszása"
+
+#~ msgid "Repeats all incorrectly answered questions"
+#~ msgstr "Megismétli a hibásan megválaszolt kérdéseket"
+
+#~ msgid "Export Errors &As..."
+#~ msgstr "Hibák exportálása &másként…"
+
+#~ msgid "Exports all errors as a new vocabulary document"
+#~ msgstr "Minden hibát új szótárként exportál"
+
+#~ msgid "Show Se&arch"
+#~ msgstr "&Keresés megjelenítése"
+
+#~ msgid "Toggle display of the search bar"
+#~ msgstr "A keresősáv megjelenítésének ki-be kapcsolása"
+
+#~ msgid "Configures sound and other notifications for certain events"
+#~ msgstr "Beállítja az egyes események hangját és egyéb értesítéseit"
+
+#~ msgid "Specifies preferences for the vocabulary editor and quiz sessions"
+#~ msgstr "Megadja a szótárszerkesztő és a kvízfolyamatok beállításait"
+
+#~ msgid "Special Character <numid>%1</numid>"
+#~ msgstr "Speciális karakter <numid>%1</numid>"
+
+#~ msgid "Toggles display of the toolbars"
+#~ msgstr "Az eszköztárak megjelenítésének ki-be kapcsolása"
+
+#~ msgid "Enter search terms here"
+#~ msgstr "Írja be a keresési kifejezéseket ide"
+
+#~ msgid "Opening file..."
+#~ msgstr "Fájl megnyitása…"
+
+#, fuzzy
+#~| msgid "Opening file..."
+#~ msgid "Open File"
+#~ msgstr "Fájl megnyitása…"
+
+#~ msgctxt "@info:status ready"
+#~ msgid "Ready"
+#~ msgstr "Kész"
+
+#~ msgid ""
+#~ "The current document has been modified.\n"
+#~ "Do you want to save it?"
+#~ msgstr ""
+#~ "Az aktuális fájl megváltozott.\n"
+#~ "Szeretné menteni?"
+
+#~ msgid "Opening a new document window..."
+#~ msgstr "Új dokumentumablak megnyitása…"
+
+#~ msgid "&Merge selected files with the current document"
+#~ msgstr "A kijelölt fájlok össze&olvasztása a jelenlegi dokumentummal"
+
+#~ msgid "Open Vocabulary Document"
+#~ msgstr "Szótárdokumentum megnyitása"
+
+#~ msgid "Saving file..."
+#~ msgstr "Fájl mentése…"
+
+#~ msgid "Saving file with a new filename..."
+#~ msgstr "Fájl mentése egy új fájl névvel…"
+
+#, fuzzy
+#~| msgid "*.html|HTML Document"
+#~ msgid "HTML Document"
+#~ msgstr "*.html|HTML dokumentum"
+
+#~ msgid "Save Vocabulary Document As"
+#~ msgstr "Szótárdokumentum mentése másként"
+
+#~ msgid "Closing file..."
+#~ msgstr "Fájl bezárása…"
+
+#~ msgctxt "@info:status quitting"
+#~ msgid "Quitting..."
+#~ msgstr "Kilépés…"
+
+#~ msgid "Cutting selection..."
+#~ msgstr "Kijelölés kivágása…"
+
+#~ msgid "Copying selection to clipboard..."
+#~ msgstr "Kijelölés másolása a vágólapra…"
+
+#~ msgid "Inserting clipboard contents..."
+#~ msgstr "Vágólaptartalom beszúrása…"
+
+#~ msgid "Clearing the selected cells..."
+#~ msgstr "A kijelölt cellák törlése…"
+
+#~ msgid "Inserting rows..."
+#~ msgstr "Sorok beszúrása…"
+
+#~ msgid "Deleting selected rows..."
+#~ msgstr "A kijelölt sorok törlése…"
+
+#~ msgid "Marking selected text as a blank..."
+#~ msgstr "A kijelölt szöveg megjelölése üresnek…"
+
+#~ msgid "Removing blank markings..."
+#~ msgstr "Az üres jelzések törlése…"
+
+#~ msgid "Setting the column titles of the vocabulary..."
+#~ msgstr "A szótár oszlopfeliratainak beállítása…"
+
+#~ msgid "Setting the font of the vocabulary..."
+#~ msgstr "A szótár betűtípusának beállítása…"
+
+#~ msgid "Linking an image with the current entry..."
+#~ msgstr "Kép összekapcsolása a jelenlegi bejegyzéssel…"
+
+#~ msgid "Linking a sound with the current entry..."
+#~ msgstr "Hang összekapcsolása a jelenlegi bejegyzéssel…"
+
+#~ msgid "Adjusting row heights..."
+#~ msgstr "Sormagasságok igazítása…"
+
+#~ msgid "Randomizing the vocabulary..."
+#~ msgstr "A szótár véletlenszerű keverése…"
+
+#~ msgid "Updating mode..."
+#~ msgstr "Mód frissítése…"
+
+#~ msgid "Starting editor session..."
+#~ msgstr "Szerkesztőfolyamat elindítása…"
+
+#~ msgid "Starting flashcard session..."
+#~ msgstr "Tanulókártya-folyamat indítása…"
+
+#~ msgid "Starting multiple choice session..."
+#~ msgstr "Feleletválasztós kvízfolyamat indítása…"
+
+#~ msgid "Starting question & answer session..."
+#~ msgstr "Kérdés-válasz folyamat indítása…"
+
+#~ msgid "Insert %1"
+#~ msgstr "%1 beszúrása"
+
+#~ msgid "Inserts the character %1"
+#~ msgstr "Beszúrja ezt a karaktert: %1"
+
+#~ msgid "This will restart your quiz. Do you wish to continue?"
+#~ msgstr "A kvíz újra fog indulni. Szeretné folytatni?"
+
+#~ msgid "&1 %1 -> %2 In Order"
+#~ msgstr "&1. %1 -> %2 (sorrendben)"
+
+#~ msgid "&2 %1 -> %2 In Order"
+#~ msgstr "&2. %1 -> %2 (sorrendben)"
+
+#~ msgid "&3 %1 -> %2 Randomly"
+#~ msgstr "&3. %1 -> %2 (véletlenszerűen)"
+
+#~ msgid "&4 %1 -> %2 Randomly"
+#~ msgstr "&4. %1 -> %2 (véletlenszerűen)"
+
+#, fuzzy
+#~| msgid "&3 %1 -> %2 Randomly"
+#~ msgid "&5 %1 <-> %2 Randomly"
+#~ msgstr "&3. %1 -> %2 (véletlenszerűen)"
+
+#~ msgid "%1 -> %2 In Order"
+#~ msgstr "%1 -> %2 (sorrendben)"
+
+#~ msgid "%1 -> %2 Randomly"
+#~ msgstr "%1 -> %2 (véletlenszerűen)"
+
+#~ msgid "%1 &lt;-&gt; %2 Randomly"
+#~ msgstr "%1 &lt;-&gt; %2 (véletlenszerűen)"
+
+#~ msgid "Is this the first time KWordQuiz is run?"
+#~ msgstr "Most indította el először a KWordQuiz programot?"
+
+#~ msgid "Toggle display of the search bar."
+#~ msgstr "A keresősáv megjelenítésének ki-be kapcsolása."
+
+#~ msgid "Type of session to use when opening files"
+#~ msgstr "A fájlok megnyitásakor használt folyamat típusa"
+
+#~ msgid "Type of printout to generate"
+#~ msgstr "Kiírás típusának generálása"
+
+#~ msgid "Titles for column 1"
+#~ msgstr "Az 1. oszlop feliratai"
+
+#~ msgid "Titles for column 2"
+#~ msgstr "A 2. oszlop feliratai"
+
+#~ msgid "Font used in the editor"
+#~ msgstr "A szerkesztőben használt betűtípus"
+
+#~ msgid "If Fill-in-the-blank should be enabled"
+#~ msgstr "Ha az üres helyek kitöltését engedélyezni kell"
+
+#~ msgid "Direction the Enter key moves in the editor"
+#~ msgstr "Az Enter billentyű mozgásának iránya a szerkesztőben"
+
+#~ msgid "Characters for the special character toolbar"
+#~ msgstr "Karakterek a speciális karakter eszköztárról"
+
+#~ msgid "Clear all data in selected entries"
+#~ msgstr "Minden adat törlése a kijelölt bejegyzésekből"
+
+#~ msgid "Clear the text in selected entries"
+#~ msgstr "Szöveg törlése a kijelölt bejegyzésekben"
+
+#~ msgid "Clear the image link in selected entries"
+#~ msgstr "Képhivatkozás törlése a kijelölt bejegyzésekben"
+
+#~ msgid "Clear the sound link in selected entries"
+#~ msgstr "Hanghivatkozás törlése a kijelölt bejegyzésekben"
+
+#~ msgid "Treat use of hint as error"
+#~ msgstr "Kezelje a tippet hibaként"
+
+#~ msgid "Count flashcard as correct or error"
+#~ msgstr "Tanulókártya számolása helyesként vagy hibásként"
+
+#~ msgid "Quiz mode"
+#~ msgstr "Kvíz mód"
+
+#~ msgid "Font used for front of flashcard"
+#~ msgstr "A tanulókártya előlapján használt betűtípus"
+
+#~ msgid "Color used for text on front of flashcard"
+#~ msgstr "A tanulókártya előlapján használt szöveg színe"
+
+#~ msgid "Color used for front of flashcard"
+#~ msgstr "A tanulókártya előlapján használt szín"
+
+#~ msgid "Color used for frame on front of flashcard"
+#~ msgstr "A tanulókártya előlapján használt keret színe"
+
+#~ msgid "Font used for back of flashcard"
+#~ msgstr "A tanulókártya hátlapján használt betűtípus"
+
+#~ msgid "Color used for text on back of flashcard"
+#~ msgstr "A tanulókártya hátlapján használt szöveg színe"
+
+#~ msgid "Color used for back of flashcard"
+#~ msgstr "A tanulókártya hátlapján használt szín"
+
+#~ msgid "Color used for frame on back of flashcard"
+#~ msgstr "A tanulókártya hátlapján használt keret színe"
+
+#~ msgid "The Providers path for KWordQuiz"
+#~ msgstr "A Providers elérési útja a KWordQuiz programhoz"
+
+#~ msgid "The command used to start a downloaded vocabulary"
+#~ msgstr "A letöltött szótár indításához használt parancs"
+
+#~ msgid ""
+#~ "The folder where downloaded vocabularies are saved by default (relative "
+#~ "to $HOME)"
+#~ msgstr ""
+#~ "A könyvtár, amelybe alapértelmezés szerint a letöltött szótárak kerülnek "
+#~ "mentésre (relatív a $HOME könyvtárhoz)"
+
+#~ msgid "Pop up flashcards at fixed or random intervals"
+#~ msgstr "Tanulókártyák felugrása fix vagy véletlenszerű időközönként"
+
+#~ msgid "The interval in minutes at which to pop up a flash card"
+#~ msgstr "Az időköz másodpercben, amelyben a tanulókártya felugrik"
+
+#~ msgid "The minimum interval in minutes at which to pop up a flash card"
+#~ msgstr "A minimális időköz másodpercben, amelyben a tanulókártya felugrik"
+
+#~ msgid "The maximum interval in minutes at which to pop up a flash card"
+#~ msgstr "A maximális időköz másodpercben, amelyben a tanulókártya felugrik"
+
+#~ msgid "Geometry of the last flash card"
+#~ msgstr "Az utolsó tanulókártya körvonala"
+
+#~ msgid "Show flash card in a native KWordQuiz style"
+#~ msgstr "Tanulókártya megjelenítése natív KWordQuiz stílusban"
+
+#~ msgid ""
+#~ "Last open vocabulary file to be opened automatically if none other is "
+#~ "specified on the command line"
+#~ msgstr ""
+#~ "Tartsa nyitva az automatikusan megnyitott szótárfájlt, ha nincs más "
+#~ "meghatározva a parancssorban"
+
+#~ msgid "Start exercise as soon as the user opens vocabulary file"
+#~ msgstr "Gyakorlás kezdése, amint a felhasználó megnyitja a szótárfájlt"
+
+#~ msgctxt "@title:group general settings"
+#~ msgid "General Settings"
+#~ msgstr "Általános beállítások"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor"
+#~ msgstr "Szerkesztő"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor Settings"
+#~ msgstr "Szerkesztő beállításai"
+
+#~ msgctxt "@title:group quiz settings"
+#~ msgid "Quiz"
+#~ msgstr "Kvíz"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Tanulókártya megjelenés"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance Settings"
+#~ msgstr "A tanulókártyák megjelenési beállításai"
+
+#~ msgctxt "@title:group special character settings"
+#~ msgid "Special Characters"
+#~ msgstr "Speciális karakterek"
+
+#~ msgid "V&ocabulary"
+#~ msgstr "Szó&tár"
+
+#~ msgid "&Mode"
+#~ msgstr "&Mód"
+
+#~ msgid "&Quiz"
+#~ msgstr "&Kvíz"
+
+#~ msgid "Quiz"
+#~ msgstr "Kvíz"
+
+#~ msgid "Special Characters"
+#~ msgstr "Speciális karakterek"
+
+#, fuzzy
+#~| msgid "Clear Contents"
+#~ msgctxt "@title:window"
+#~ msgid "Clear Contents"
+#~ msgstr "Tartalom törlése"
+
+#~ msgctxt "@item:inmenu undo clear"
+#~ msgid "Clear"
+#~ msgstr "Törlés"
+
+#~ msgctxt "@item:inmenu undo cut"
+#~ msgid "Cut"
+#~ msgstr "Kivágás"
+
+#~ msgctxt "@item:inmenu undo paste"
+#~ msgid "Paste"
+#~ msgstr "Beillesztés"
+
+#~ msgctxt "@item:inmenu undo sort"
+#~ msgid "Sort"
+#~ msgstr "Rendezés"
+
+#~ msgctxt "@item:inmenu undo insert"
+#~ msgid "Insert"
+#~ msgstr "Beszúrás"
+
+#~ msgctxt "@item:inmenu undo delete"
+#~ msgid "Delete"
+#~ msgstr "Törlés"
+
+#~ msgctxt "@item:inmenu undo unmark blank"
+#~ msgid "Unmark Blank"
+#~ msgstr "Az üresnek jelölés megszüntetése"
+
+#~ msgctxt "@item:inmenu undo column titles"
+#~ msgid "Column Settings"
+#~ msgstr "Oszlopbeállítások"
+
+#~ msgid "Font"
+#~ msgstr "Betűtípus"
+
+#~ msgid "Entry"
+#~ msgstr "Bejegyzés"
+
+#~ msgid "Questions"
+#~ msgstr "Kérdések"
+
+#~ msgid "The number of questions in the session"
+#~ msgstr "A kérdések száma a folyamatban"
+
+#~ msgid "00"
+#~ msgstr "00"
+
+#~ msgid "Correct answers"
+#~ msgstr "Helyes válaszok"
+
+#~ msgid ""
+#~ "The number of questions answered correctly. May be shown as a percentage."
+#~ msgstr ""
+#~ "A helyesen megválaszolt kérdések száma. Százalékosan is megjeleníthető."
+
+#~ msgid ""
+#~ "The number of questions answered incorrectly. May be shown as a "
+#~ "percentage."
+#~ msgstr ""
+#~ "A hibásan megválaszolt kérdések száma. Százalékosan is megjeleníthető."
+
+#~ msgid "Answered questions"
+#~ msgstr "Megválaszolt kérdések"
+
+#~ msgid ""
+#~ "The number of questions already answered. May be shown as a percentage."
+#~ msgstr ""
+#~ "Az eddig megválaszolt kérdések száma. Százalékosan is megjeleníthető."
+
+#~ msgid "Untitled"
+#~ msgstr "Névtelen"
+
+#~ msgid "There is an error with the Fill-in-the-blank brackets"
+#~ msgstr "Hiba történt az üres helyet jelző zárójelek kezelésénél"
+
+#, fuzzy
+#~| msgid "Select Sound"
+#~ msgctxt "@title:window"
+#~ msgid "Select Sound"
+#~ msgstr "Hang kiválasztása"
+
+#, fuzzy
+#~| msgid "*|All Files"
+#~ msgid "All Files (*)"
+#~ msgstr "*|Minden fájl"
+
+#~ msgid ""
+#~ "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that "
+#~ "allows you to set a certain time interval at which flashcards will pop up."
+#~ "<br /><br />The flashcards pop up in a non-intrusive way allowing you to "
+#~ "carry on working without stealing the focus from other programs you might "
+#~ "be working with.<br /><br />Be sure to right-click KWordQuiz Tutor icon "
+#~ "on the panel and select Preferences. There you can assign keyboard "
+#~ "shortcuts.</qt>"
+#~ msgstr ""
+#~ "<qt>A KWordQuiz Oktató tanulókártyákat jelenít meg a kijelzőn oly módon, "
+#~ "hogy lehetővé teszi bizonyos idő megadását, amely alatt a tanulókártyák "
+#~ "felugranak. <br /><br />A tanulókártyák nem tolakodó módon ugranak fel, "
+#~ "lehetővé téve, hogy folytassa a munkát anélkül, hogy más programról "
+#~ "elvonja a figyelmét, amellyel dolgozik.<br /><br />Ügyeljen arra, hogy a "
+#~ "jobb gombbal kattintson a panelen lévő KWordQuiz Oktató ikonra és "
+#~ "válassza a Beállítások menüt. Itt lehet hozzárendelni a gyorsbillentyűket."
+#~ "</qt>"
+
+#~ msgid "Tutor"
+#~ msgstr "Oktató"
+
+#~ msgid "Start Exercise"
+#~ msgstr "Gyakorlás kezdése"
+
+#~ msgid "Configure KWordQuiz Tutor..."
+#~ msgstr "KWordQuiz oktató beállítása…"
+
+#~ msgid "Close Flash Card"
+#~ msgstr "Tanulókártya bezárása"
+
+#~ msgid "Flip Flash Card"
+#~ msgstr "Tanulókártya felfordítása"
+
+#~ msgid "Stop Exercise"
+#~ msgstr "Gyakorlás vége"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor"
+#~ msgstr "Oktató"
+
+#~ msgctxt "@title:group tutor settings"
+#~ msgid "Tutor Settings"
+#~ msgstr "Oktató beállításai"
+
+#~ msgctxt "Shortcuts Config"
+#~ msgid "Shortcuts"
+#~ msgstr "Gyorsbillentyűk"
+
+#~ msgid "Shortcuts Settings"
+#~ msgstr "Gyorsbillentyűk beállításai"
+
+#~ msgid ""
+#~ "A number 1-5 corresponding to the \n"
+#~ "entries in the Mode menu"
+#~ msgstr ""
+#~ "A Mód menü bejegyzéseihez\n"
+#~ "tartozó számjegy (1-től 5-ig)"
+
+#~ msgid "Previous Question"
+#~ msgstr "Előző kérdés"
+
+#~ msgid "Your Answer"
+#~ msgstr "Adott válasz"
+
+#~ msgid "Summary"
+#~ msgstr "Összegzés"
+
+#~ msgid "The question"
+#~ msgstr "A kérdés"
+
+#~ msgid "Language or other identifier for the question"
+#~ msgstr "A kérdés nyelve vagy más jellemzője"
+
+#~ msgid "This is your question"
+#~ msgstr "Ez az ön kérdése"
+
+#~ msgid "Your choices"
+#~ msgstr "A választásai"
+
+#~ msgid "Three choices for the answer. One is correct."
+#~ msgstr "Három választás a válaszhoz. Egy a helyes."
+
+#~ msgid "&1 Option"
+#~ msgstr "&1. lehetőség"
+
+#~ msgid "Language or other identifier for the answer"
+#~ msgstr "A válasz nyelve vagy más jellemzője"
+
+#~ msgid "Language 2"
+#~ msgstr "2. nyelv"
+
+#~ msgid "&3 Option"
+#~ msgstr "&3. lehetőség"
+
+#~ msgid "Previous question"
+#~ msgstr "Előző kérdés"
+
+#~ msgid "The previous question"
+#~ msgstr "Az előző kérdés"
+
+#~ msgid "This was your question"
+#~ msgstr "Ez volt az ön kérdése"
+
+#~ msgid "Your previous answer"
+#~ msgstr "Az előző válasza"
+
+#~ msgid "Your answer to the previous question"
+#~ msgstr "Az ön válasza az előző kérdésre"
+
+#~ msgid "This was your answer"
+#~ msgstr "Ezt volt az ön válasza"
+
+#~ msgid "Previous correct answer"
+#~ msgstr "Az előző helyes válasz"
+
+#~ msgid "The correct answer to the previous question"
+#~ msgstr "Az előző kérdés helyes válasza"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least three entries for a multiple choice quiz.</html>"
+#~ msgstr ""
+#~ "<html>Túl kevés bejegyzés van a szótárban.<br />Legalább három "
+#~ "bejegyzésre van szükség a feleletválasztós kvízhez.</html>"
+
+#~ msgctxt "Back of the flashcard"
+#~ msgid "Back"
+#~ msgstr "Hátlap"
+
+#~ msgid "Front"
+#~ msgstr "Előlap"
+
+#~ msgid "Card Appearance"
+#~ msgstr "A kártyák megjelenése"
+
+#~ msgid "Flip card"
+#~ msgstr "Kártya megfordítása"
+
+#~ msgid "Use to show the other side of the card"
+#~ msgstr "Használja a kártya másik oldalának megjelenítéséhez"
+
+#~ msgid "&Flip Card"
+#~ msgstr "Kártya meg&fordítása"
+
+#~ msgid "F&ont:"
+#~ msgstr "Be&tűtípus:"
+
+#~ msgid "Use to select the font for displaying text on the back of the card"
+#~ msgstr ""
+#~ "Használja a kártya hátlapján megjelenítendő szöveg betűtípusának "
+#~ "választásához"
+
+#~ msgid "Select text color"
+#~ msgstr "Szövegszín kiválasztása"
+
+#~ msgid "Use to select the color for text shown on the card"
+#~ msgstr "Használja a kártyán megjelenő szövegek színének kiválasztásához"
+
+#~ msgid "Select card frame color"
+#~ msgstr "Kártyakeret színének kiválasztása"
+
+#~ msgid "Use to select the color for drawing the frame of the card"
+#~ msgstr "Használja a kártyakeret rajzolási színének kiválasztásához"
+
+#~ msgid "Select card color"
+#~ msgstr "Kártyaszín kiválasztása"
+
+#~ msgid "Select color used to draw the card"
+#~ msgstr "Válassza ki a kártya kirajzolási színét"
+
+#~ msgid "Use to select the font for displaying text on the front of the card"
+#~ msgstr ""
+#~ "Használja a kártya előlapján megjelenő szöveg betűtípusának "
+#~ "kiválasztásához"
+
+#~ msgid "&Text color:"
+#~ msgstr "Szöve&gszín:"
+
+#~ msgid "&Card color:"
+#~ msgstr "&Kártyaszín:"
+
+#~ msgid "Fra&me color:"
+#~ msgstr "Ke&retszín:"
+
+#~ msgid "Action"
+#~ msgstr "Művelet"
+
+#~ msgid "Shortcut"
+#~ msgstr "Gyorsbillentyű"
+
+#~ msgid "Character"
+#~ msgstr "Karakter"
+
+#~ msgid "Special Character %1"
+#~ msgstr "Speciális karakter: %1"
+
+#~ msgid ""
+#~ "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
+#~ "associated with each action."
+#~ msgstr ""
+#~ "Megjegyzés: válassza a Beállítások -> A gyorsbillentyűk beállítása… "
+#~ "menüpontot az egyes műveletekhez rendelt gyorsbillentyűk megadásához."
+
+#~ msgid "Select character to modify"
+#~ msgstr "Válassza ki a módosítandó karaktert"
+
+#~ msgid "Customizable special character actions"
+#~ msgstr "Testre szabható egyéni karakterműveletek"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "Click to choose a new character"
+#~ msgstr "Kattintson ide új karakter választásához"
+
+#~ msgid "Choose a character for the selected action"
+#~ msgstr "Válasszon egy karaktert a kijelölt művelethez"
+
+#~ msgid "C&haracter..."
+#~ msgstr "K&arakter…"
+
+#~ msgid "Preview of current character"
+#~ msgstr "A jelenlegi karakter előnézete"
+
+#~ msgid "Preview of the character associated with the selected action"
+#~ msgstr "A kijelölt művelethez rendelt karakter előnézete"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "How enter key moves"
+#~ msgstr "Hogyan mozogjon az Enter billentyű"
+
+#~ msgid "Select how the Enter key should behave in the editor"
+#~ msgstr "Válassza ki az Enter billentyű kezelési módját a szerkesztőben"
+
+#~ msgid "Enter Ke&y Moves"
+#~ msgstr "Az Enter billentyű &mozgásai"
+
+#~ msgid ""
+#~ "Select if the next cell below should become active when pressing Enter."
+#~ msgstr ""
+#~ "Válassza ki, ha az alatta lévő következő cella legyen aktív az Enter "
+#~ "lenyomásakor."
+
+#~ msgid "&Down"
+#~ msgstr "&Le"
+
+#~ msgid ""
+#~ "Select if the next cell to the right should become active when pressing "
+#~ "Enter"
+#~ msgstr ""
+#~ "Válassza ki, ha a jobbra lévő következő cella legyen aktív az Enter "
+#~ "lenyomásakor"
+
+#~ msgid "&Right"
+#~ msgstr "&Jobbra"
+
+#~ msgid "Select if the current cell should remain active when pressing Enter"
+#~ msgstr ""
+#~ "Válassza ki, ha a jelenlegi cella maradjon aktív az Enter lenyomásakor"
+
+#~ msgid "Does not &move"
+#~ msgstr "Ne mo&zduljon"
+
+#~ msgid "Check to enable fill-in-the-blank"
+#~ msgstr "Jelölje be, ha engedélyezni szeretné az üres helyek kitöltését"
+
+#~ msgid "Select to enable the functions for Fill-in-the-blank"
+#~ msgstr ""
+#~ "Jelölje be, ha engedélyezni szeretné az üres helyek kitöltését végző "
+#~ "funkciókat"
+
+#~ msgid "E&nable fill-in-the-blank"
+#~ msgstr "Az ü&res helyek kitöltésének engedélyezése"
+
+#~ msgid "How vocabulary documents are opened"
+#~ msgstr "Hogyan nyíljanak meg a szótárak"
+
+#~ msgid "Select the kind of session to load an opened vocabulary document in"
+#~ msgstr ""
+#~ "Válassza ki a folyamat fajtáját, amelyet a megnyitott szótárdokumentumból "
+#~ "tölt be"
+
+#~ msgid "&Open Vocabulary Documents in"
+#~ msgstr "Szótárdokumentumok &megnyitása"
+
+#~ msgid "Open vocabulary documents in the editor"
+#~ msgstr "Szótárdokumentumok megnyitása a szerkesztőben"
+
+#~ msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgstr ""
+#~ "Válassza ki, hogy a szótárdokumentumok a szerkesztőben nyíljanak meg"
+
+#~ msgid "&Editor"
+#~ msgstr "&Szerkesztő"
+
+#~ msgid "Open vocabulary documents in a flashcard quiz"
+#~ msgstr "Szótárdokumentumok megnyitása a tanulókártya kvízben"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
+#~ msgstr ""
+#~ "Válassza ki, hogy a szótárdokumentumok a tanulókártya kvízben nyíljanak "
+#~ "meg"
+
+#~ msgid "&Flashcard Quiz"
+#~ msgstr "&Tanulókártya kvíz"
+
+#~ msgid "Open vocabulary documents in a multiple choice quiz"
+#~ msgstr "Szótárdokumentumok megnyitása feleletválasztós kvízben"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a multiple choice "
+#~ "quiz"
+#~ msgstr ""
+#~ "Válassza ki, hogy a szótárdokumentumok a feleletválasztós kvízben "
+#~ "nyíljanak meg"
+
+#~ msgid "&Multiple Choice Quiz"
+#~ msgstr "&Feleletválasztós kvíz"
+
+#~ msgid "Open vocabulary documents in a question and answer quiz"
+#~ msgstr "Szótárdokumentumok megnyitása kérdés-válasz kvízben"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a question and "
+#~ "answer quiz"
+#~ msgstr ""
+#~ "Válassza ki, hogy a szótárdokumentumok a kérdés-válasz kvízben nyíljanak "
+#~ "meg"
+
+#~ msgid "&Question and Answer Quiz"
+#~ msgstr "&Kérdés és válasz kvíz"
+
+#~ msgid "Specify behavior for a question and answer session"
+#~ msgstr "Határozza meg a kérdés-válasz folyamat működését"
+
+#~ msgid "Question && Answer"
+#~ msgstr "Kérdés és válasz"
+
+#~ msgid ""
+#~ "Select if questions where the hint function has been used should be "
+#~ "counted as errors"
+#~ msgstr ""
+#~ "Jelölje be, ha azt szeretné, hogy a program csak akkor fogadjon el "
+#~ "helyesnek egy választ, ha a felhasználó nem kért tippet a megoldáshoz"
+
+#~ msgid "&Treat hint as error"
+#~ msgstr "&Kezelje a tippet hibaként"
+
+#~ msgid "Specify behavior of the score presentation in any session"
+#~ msgstr ""
+#~ "Határozza meg a pontszámok bemutatásának működését bármely folyamatban"
+
+#~ msgid "Check to show score as a percentage"
+#~ msgstr "Jelölje be a pontszámok százalékosan való megjelenítéséhez"
+
+#~ msgid "Select if the score should be shown as a percentage"
+#~ msgstr "Válassza ki, hogy a pontszámok százalékosan legyenek megjelenítve"
+
+#~ msgid "&Show score as a percentage"
+#~ msgstr "&Pontszám megjelenítése százalékosan"
+
+#~ msgid "Specify behavior for a multiple choice session"
+#~ msgstr "Határozza meg a feleletválasztós folyamatok működését"
+
+#~ msgid "Check to correct automatically"
+#~ msgstr "Jelölje be az automatikus javításhoz"
+
+#~ msgid "Select if a choice should be checked immediately"
+#~ msgstr "Válassza ki, hogy azonnal ellenőrizze le a választást"
+
+#~ msgid "Check selection a&utomatically"
+#~ msgstr "Kijelölés &automatikus ellenőrzése"
+
+#~ msgid "Specify behavior of a flashcard session"
+#~ msgstr "Határozza meg a tanulókártya folyamat működését"
+
+#~ msgid "Specify the amount of time between card flips"
+#~ msgstr "Határozza meg a kártyák felfedési időközét"
+
+#~ msgid "seconds and"
+#~ msgstr "másodperc és"
+
+#~ msgid "Delay to flip card"
+#~ msgstr "Késleltetés a kártyák megfordításakor"
+
+#~ msgid "Delay in seconds to flip card"
+#~ msgstr "Késleltetés másodpercben a kártyák megfordításakor"
+
+#~ msgid "Select how to count card"
+#~ msgstr "Válassza ki, hogyan számolja a kártyát"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as correct when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Válassza ki, hogy az előző kártya helyesként legyen számolva, amikor a "
+#~ "következő kártyára lép"
+
+#~ msgid "Count &as correct"
+#~ msgstr "&Helyesnek számítás"
+
+#~ msgid ""
+#~ "Select if the previous card should be counted as incorrect when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Válassza ki, hogy az előző kártya hibásként legyen számolva, amikor a "
+#~ "következő kártyára lép"
+
+#~ msgid "Count as &error"
+#~ msgstr "H&elytelennek számítás"
+
+#~ msgid "Check to flip card automatically"
+#~ msgstr "Jelölje be a kártya automatikus felfordításához"
+
+#~ msgid ""
+#~ "Select if you want a card to turn over automatically after the given "
+#~ "amount of time"
+#~ msgstr ""
+#~ "Válassza ki, ha a megadott idő letelte után automatikusan szeretné "
+#~ "felfedni a kártyát"
+
+#~ msgid "&Flip card automatically after"
+#~ msgstr "A kártya au&tomatikus felfedése"
+
+#~ msgid "Tutor Timing"
+#~ msgstr "Oktató visszaszámláló"
+
+#~ msgid "&Every"
+#~ msgstr "&Minden"
+
+#~ msgid "&minutes"
+#~ msgstr "&perc"
+
+#~ msgid "&Randomly"
+#~ msgstr "&Véletlenszerűen"
+
+#~ msgid "Between"
+#~ msgstr "Között"
+
+#~ msgid "m&inutes and"
+#~ msgstr "p&ercek és"
+
+#~ msgid "mi&nutes"
+#~ msgstr "pe&rcek"
+
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Tanulókártya megjelenés"
+
+#~ msgid "&Native"
+#~ msgstr "&Natív"
+
+#~ msgid "Minim&alistic"
+#~ msgstr "Minim&alista"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Egyebek"
+
+#~ msgid "S&tart exercise as soon as vocabulary file is opened"
+#~ msgstr "&Gyakorlás elkezdése, amint a szótárfájlt megnyitották"
+
+#~ msgid "Type your answer"
+#~ msgstr "Írja be a válaszát"
+
+#~ msgid "The answer showing blanks for a Fill-in-the-blank question"
+#~ msgstr "A válasz jelenlen meg üresként az üres helyek kitöltése kérdésnél"
+
+#~ msgid "This is _____ answer"
+#~ msgstr "Ez _____ válasz"
+
+#~ msgid "Type the answer to the question"
+#~ msgstr "Írja be a kérdésre adott választ"
+
+#~ msgid ""
+#~ "<html>There are too few entries in your vocabulary.<br />You need at "
+#~ "least one entry for a question and answer quiz.</html>"
+#~ msgstr ""
+#~ "<html>Túl kevés bejegyzés van a szótárban.<br />Legalább egy bejegyzésre "
+#~ "szükség van a kérdés-válasz kvízhez.</html>"
+
+#, fuzzy
+#~| msgid "Vocabulary Options"
+#~ msgctxt "@title:window"
+#~ msgid "Vocabulary Options"
+#~ msgstr "Szótár beállításai"
+
+#~ msgid "Select Type of Printout"
+#~ msgstr "Válassza ki a nyomtatás típusát"
+
+#~ msgid "Vocabulary &list"
+#~ msgstr "A szótárak &listája"
+
+#~ msgid "Select to print the vocabulary as displayed in the editor"
+#~ msgstr ""
+#~ "Válassza ezt, ha úgy szeretné a szótárat kinyomtatni, ahogy a "
+#~ "szerkesztőben megjelenik"
+
+#~ msgid "Vocabulary e&xam"
+#~ msgstr "Szókincs &vizsga"
+
+#~ msgid "Select to print the vocabulary as a vocabulary exam"
+#~ msgstr "Válassza ezt a szótár szókincs vizsgaként való nyomtatásához"
+
+#~ msgid "&Flashcards"
+#~ msgstr "Tan&ulókártyák"
+
+#~ msgid "Select to print flashcards"
+#~ msgstr "Válassza ezt a tanulókártyák nyomtatásához"
 
 #~ msgid "&5 %1 &lt;-&gt; %2 Randomly"
 #~ msgstr "&5. %1 &lt;-&gt; %2 (véletlenszerűen)"

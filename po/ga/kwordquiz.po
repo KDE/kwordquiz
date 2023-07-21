@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu/kwordquiz.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:43+0000\n"
+"POT-Creation-Date: 2023-07-21 02:51+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -27,2523 +27,1446 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "seoc@iolfree.ie,kscanne@gmail.com"
 
-#. i18n: ectx: property (title), widget (QGroupBox, clearButtonGroup)
-#: cleardialogbase.ui:21
-#, kde-format
-msgid "Selection"
-msgstr "Roghnúchán"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:30
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "Delete all information in selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:33
-#, kde-format
-msgid "When checked all information will be deleted from the selected entries"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearAllCheckBox)
-#: cleardialogbase.ui:36
-#, kde-format
-msgid "Clear &All"
-msgstr "Gl&an Uile"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:59
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "Delete the text from selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:62
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "When checked the text will be deleted from selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearTextCheckBox)
-#: cleardialogbase.ui:65
-#, kde-format
-msgid "&Text"
-msgstr "&Téacs"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:72
-#, kde-format
-msgid "Delete the image link from selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:75
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "When checked the image link will be deleted from selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearImageCheckBox)
-#: cleardialogbase.ui:78
-#, kde-format
-msgid "&Image Links"
-msgstr "Na&isc Íomhá"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:85
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "Delete the sound link from selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:88
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "When checked the sound link will be deleted from selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: property (text), widget (QCheckBox, clearSoundCheckBox)
-#: cleardialogbase.ui:91
-#, kde-format
-msgid "&Sound Links"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, column1GroupBox)
-#: columndialogbase.ui:45 kwordquiz.cpp:466
-#, kde-format
-msgid "Column 1"
-msgstr "Colún 1"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, column1Picture)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (toolTip), widget (QLabel, column2Picture)
-#: columndialogbase.ui:72 columndialogbase.ui:148 columndialogbase.ui:241
-#, kde-format
-msgid "Title for the left column"
-msgstr "Teideal ar an gcolún ar chlé"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, column1Picture)
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column1TitleLineEdit)
-#. i18n: ectx: property (whatsThis), widget (QLabel, column2Picture)
-#: columndialogbase.ui:75 columndialogbase.ui:151 columndialogbase.ui:244
-#, kde-format
-msgid "Enter a title (identifier) for the left column"
-msgstr "Iontráil teideal (aitheantóir) ar an gcolún ar chlé"
-
-#. i18n: ectx: property (text), widget (QLabel, column1TitleLabel)
-#: columndialogbase.ui:96
-#, kde-format
-msgid "&Title:"
-msgstr "&Teideal:"
-
-#. i18n: ectx: property (text), widget (QLabel, column1LayoutLabel)
-#: columndialogbase.ui:112
-#, fuzzy, kde-format
-#| msgid "Keyboard layouts"
-msgid "&Keyboard layout:"
-msgstr "Leaganacha amach méarchláir"
-
-#. i18n: ectx: property (text), widget (QLabel, column1WidthLabel)
-#: columndialogbase.ui:128
-#, kde-format
-msgid "&Width:"
-msgstr "&Leithead:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:158
-#, kde-format
-msgid "Keyboard layout for the left column"
-msgstr "Leagan amach an mhéarchláir sa cholún ar chlé"
-
-#. i18n: ectx: property (whatsThis), widget (QComboBox, column1LayoutComboBox)
-#: columndialogbase.ui:161
-#, kde-format
-msgid "Select a keyboard layout for the left column"
-msgstr "Roghnaigh leagan amach an mhéarchláir sa cholún ar chlé"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:168
-#, kde-format
-msgid "Width of the left column"
-msgstr "Leithead an cholúin ar chlé"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column1WidthSpinBox)
-#: columndialogbase.ui:171
-#, kde-format
-msgid "Enter the width (in pixels) for the left column"
-msgstr "Iontráil leithead (picteilíní) an cholúin ar chlé"
-
-#. i18n: ectx: property (title), widget (QGroupBox, column2GroupBox)
-#: columndialogbase.ui:214 kwordquiz.cpp:469
-#, kde-format
-msgid "Column 2"
-msgstr "Colún 2"
-
-#. i18n: ectx: property (text), widget (QLabel, column2TitleLabel)
-#: columndialogbase.ui:265
-#, kde-format
-msgid "T&itle:"
-msgstr "Te&ideal:"
-
-#. i18n: ectx: property (text), widget (QLabel, column2LayoutLabel)
-#: columndialogbase.ui:281
-#, fuzzy, kde-format
-#| msgid "Keyboard layouts"
-msgid "Keyboard &Layout:"
-msgstr "Leaganacha amach méarchláir"
-
-#. i18n: ectx: property (text), widget (QLabel, column2WidthLabel)
-#: columndialogbase.ui:297
-#, fuzzy, kde-format
-#| msgid "&Width:"
-msgid "Wi&dth:"
-msgstr "&Leithead:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:317
-#, kde-format
-msgid "Title for the right column"
-msgstr "Teideal ar an gcolún ar dheis"
-
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, column2TitleLineEdit)
-#: columndialogbase.ui:320
-#, kde-format
-msgid "Enter a title (identifier) for the right column"
-msgstr "Iontráil teideal (aitheantóir) ar an gcolún ar dheis"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:330
-#, kde-format
-msgid "Width of the right column"
-msgstr "Leithead an cholúin ar dheis"
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, column2WidthSpinBox)
-#: columndialogbase.ui:333
-#, kde-format
-msgid "Enter the width (in pixels) for the right column"
-msgstr "Iontráil leithead (picteilíní) an cholúin ar dheis"
-
-#: dlglanguage.cpp:21
-#, fuzzy, kde-format
-#| msgid "Column Settings"
-msgctxt "@title:window"
-msgid "Column Settings"
-msgstr "Socruithe Colúin"
-
-#: dlgspecchar.cpp:17
-#, kde-format
-msgctxt "@title:window select character dialog"
-msgid "Select Character"
-msgstr "Roghnaigh Carachtar"
-
-#: dlgspecchar.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action:button select"
-#| msgid "&Select"
-msgctxt "@action:button"
-msgid "&Select"
-msgstr "&Roghnaigh"
-
-#: dlgspecchar.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip select this character"
-#| msgid "Select this character"
-msgctxt "@info:tooltip"
-msgid "Select this character"
-msgstr "Roghnaigh an carachtar seo"
-
-#. i18n: ectx: label, entry (SizeHintColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:12
-#, kde-format
-msgid "Column widths"
-msgstr "Leithead na gcolún"
-
-#. i18n: ectx: label, entry (KeyboardLayoutColumn$(Section)), group (Document $(fileurl))
-#: documentsettings.kcfg:18
-#, kde-format
-msgid "Keyboard layouts"
-msgstr "Leaganacha amach méarchláir"
-
-#: filterproxysearchline.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox search"
-#| msgid "S&earch:"
-msgid "Search"
-msgstr "C&uardaigh:"
-
-#: flashview.cpp:50 multipleview.cpp:96 qaview.cpp:131
-#, kde-format
-msgid "Your answer was correct!"
-msgstr "Bhí do fhreagra ceart!"
-
-#: flashview.cpp:55 multipleview.cpp:105 qaview.cpp:142
-#, kde-format
-msgid "Your answer was incorrect."
-msgstr "Bhí do fhreagra mícheart."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: flashviewbase.ui:149
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a flashcard quiz.</html>"
-msgstr ""
-
-#: kwordquiz.cpp:100
-#, kde-format
-msgid "Creates a new blank vocabulary document"
-msgstr "Cruthaigh cáipéis nua fholamh stóir fhocal"
-
-#: kwordquiz.cpp:105
-#, kde-format
-msgid "Opens an existing vocabulary document"
-msgstr "Oscail cáipéis stóir fhocal atá ann"
-
-#: kwordquiz.cpp:111
-#, kde-format
-msgid "Download New Vocabularies..."
-msgstr "Íosluchtaigh Stóir Fhocal Nua..."
-
-#: kwordquiz.cpp:115
-#, kde-format
-msgid "Downloads new vocabularies"
-msgstr "Íosluchtaigh stóir fhocal nua"
-
-#: kwordquiz.cpp:120
-#, kde-format
-msgid "Saves the active vocabulary document"
-msgstr "Sábháil an cháipéis reatha stóir fhocal"
-
-#: kwordquiz.cpp:125
-#, kde-format
-msgid "Saves the active vocabulary document with a different name"
-msgstr ""
-
-#: kwordquiz.cpp:130
-#, kde-format
-msgid "Closes the active vocabulary document"
-msgstr "Dún an cháipéis reatha stóir fhocal"
-
-#: kwordquiz.cpp:134
-#, kde-format
-msgid "Prints the active vocabulary document"
-msgstr "Priontáil an cháipéis reatha stóir fhocal"
-
-#: kwordquiz.cpp:139
-#, kde-format
-msgid "Shows a preview of the active vocabulary document"
-msgstr "Taispeáin réamhamharc ar an gcáipéis reatha stóir fhocal"
-
-#: kwordquiz.cpp:144
-#, kde-format
-msgid "Quits KWordQuiz"
-msgstr "Scoir KWordQuiz"
-
-#: kwordquiz.cpp:156
-#, kde-format
-msgid "Cuts the text from the selected cells and places it on the clipboard"
-msgstr ""
-
-#: kwordquiz.cpp:161
-#, kde-format
-msgid "Copies the text from the selected cells and places it on the clipboard"
-msgstr ""
-
-#: kwordquiz.cpp:166
-#, kde-format
-msgid ""
-"Pastes previously cut or copied text from the clipboard into the selected "
-"cells"
-msgstr ""
-
-#: kwordquiz.cpp:172
-#, kde-format
-msgid "Clears the content of the selected cells"
-msgstr ""
-
-#: kwordquiz.cpp:178
-#, kde-format
-msgid "&Insert Row"
-msgstr "&Ionsáigh Ró"
-
-#: kwordquiz.cpp:180
-#, kde-format
-msgid "Inserts a new row above the current row"
-msgstr ""
-
-#: kwordquiz.cpp:187
-#, kde-format
-msgid "&Delete Row"
-msgstr "&Scrios Ró"
-
-#: kwordquiz.cpp:189
-#, kde-format
-msgid "Deletes the selected row(s)"
-msgstr "Scrios an ró (na rónna) roghnaithe"
-
-#: kwordquiz.cpp:196
-#, kde-format
-msgid "&Mark as Blank"
-msgstr ""
-
-#: kwordquiz.cpp:198
-#, kde-format
-msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-msgstr ""
-
-#: kwordquiz.cpp:205
-#, kde-format
-msgid "&Unmark Blanks"
-msgstr ""
-
-#: kwordquiz.cpp:206
-#, kde-format
-msgid "Removes blanks from the current or selected word"
-msgstr ""
-
-#: kwordquiz.cpp:213
-#, kde-format
-msgid "&Column Settings..."
-msgstr ""
-
-#: kwordquiz.cpp:215
-#, kde-format
-msgid "Defines the column settings for the active vocabulary"
-msgstr ""
-
-#: kwordquiz.cpp:222
-#, kde-format
-msgid "&Font..."
-msgstr "C&ló..."
-
-#: kwordquiz.cpp:223
-#, kde-format
-msgid "Defines the font used by the editor"
-msgstr ""
-
-#: kwordquiz.cpp:230
-#, kde-format
-msgid "Link &Image..."
-msgstr ""
-
-#: kwordquiz.cpp:231
-#, kde-format
-msgid "Links an image with the current entry"
-msgstr ""
-
-#: kwordquiz.cpp:238
-#, kde-format
-msgid "Link &Sound..."
-msgstr ""
-
-#: kwordquiz.cpp:239
-#, kde-format
-msgid "Links a sound with the current entry"
-msgstr ""
-
-#: kwordquiz.cpp:246
-#, kde-format
-msgid "&Adjust Row Heights"
-msgstr ""
-
-#: kwordquiz.cpp:247
-#, kde-format
-msgid "Automatically adjusts the height of selected rows"
-msgstr ""
-
-#: kwordquiz.cpp:254
-#, kde-format
-msgid "Sh&uffle"
-msgstr "Su&aitheadh"
-
-#: kwordquiz.cpp:255
-#, kde-format
-msgid "Shuffles the entries of the active vocabulary"
-msgstr ""
-
-#: kwordquiz.cpp:261
-#, kde-format
-msgid "&Keyboard Layout"
-msgstr ""
-
-#: kwordquiz.cpp:262
-#, kde-format
-msgid "Shows available keyboard layouts"
-msgstr ""
-
-#: kwordquiz.cpp:273
-#, kde-format
-msgid "Change Mode"
-msgstr "Athraigh an Mód"
-
-#: kwordquiz.cpp:274
-#, kde-format
-msgid "Mode"
-msgstr "Mód"
-
-#: kwordquiz.cpp:275
-#, kde-format
-msgid "Changes the mode used in quiz sessions"
-msgstr ""
-
-#: kwordquiz.cpp:288
-#, kde-format
-msgid "Selects this mode"
-msgstr "Roghnaigh an mód seo"
-
-#: kwordquiz.cpp:297
-#, kde-format
-msgctxt "@item:inlistbox activate vocabulary editor"
-msgid "&Editor"
-msgstr "&Eagarthóir"
-
-#: kwordquiz.cpp:299
-#, kde-format
-msgid "Activates the vocabulary editor"
-msgstr ""
-
-#: kwordquiz.cpp:306
-#, kde-format
-msgid "&Flashcard"
-msgstr "&Spléach-chárta"
-
-#: kwordquiz.cpp:308
-#, kde-format
-msgid "Starts a flashcard session using the active vocabulary"
-msgstr ""
-
-#: kwordquiz.cpp:315
-#, kde-format
-msgid "&Multiple Choice"
-msgstr "&Ceist Ilroghnach"
-
-#: kwordquiz.cpp:317
-#, kde-format
-msgid "Starts a multiple choice session using the active vocabulary"
-msgstr ""
-
-#: kwordquiz.cpp:324
-#, kde-format
-msgid "&Question and Answer"
-msgstr "&Ceisteanna agus Freagraí"
-
-#: kwordquiz.cpp:325
-#, kde-format
-msgid "Q&&A"
-msgstr "C7F"
-
-#: kwordquiz.cpp:327
-#, kde-format
-msgid "Starts a question and answer session using the active vocabulary"
-msgstr ""
-
-#: kwordquiz.cpp:334
-#, kde-format
-msgid "&Check"
-msgstr "&Seiceáil"
-
-#: kwordquiz.cpp:336
-#, kde-format
-msgid "Checks your answer to this question"
-msgstr ""
-
-#: kwordquiz.cpp:341
-#, kde-format
-msgid "Choose Option &1"
-msgstr ""
-
-#: kwordquiz.cpp:345
-#, kde-format
-msgid "Choose Option &2"
-msgstr ""
-
-#: kwordquiz.cpp:349
-#, kde-format
-msgid "Choose Option &3"
-msgstr ""
-
-#: kwordquiz.cpp:354
-#, kde-format
-msgid "I &Know"
-msgstr "Tá &Fhios Agam"
-
-#: kwordquiz.cpp:356
-#, kde-format
-msgid "Counts this card as correct and shows the next card"
-msgstr ""
-
-#: kwordquiz.cpp:362
-#, kde-format
-msgid "I &Do Not Know"
-msgstr "&Níl Fhios Agam"
-
-#: kwordquiz.cpp:364
-#, kde-format
-msgid "Counts this card as incorrect and shows the next card"
-msgstr ""
-
-#: kwordquiz.cpp:370
-#, kde-format
-msgid "&Hint"
-msgstr "&Leid"
-
-#: kwordquiz.cpp:372
-#, kde-format
-msgid "Gets the next correct letter of the answer"
-msgstr ""
-
-#: kwordquiz.cpp:378
-#, kde-format
-msgid "Mark Last Correct"
-msgstr ""
-
-#: kwordquiz.cpp:380
-#, kde-format
-msgid "Marks last answer as correct"
-msgstr ""
-
-#: kwordquiz.cpp:386
-#, kde-format
-msgid "&Restart"
-msgstr "&Atosaigh"
-
-#: kwordquiz.cpp:388
-#, kde-format
-msgid "Restarts the quiz session from the beginning"
-msgstr ""
-
-#: kwordquiz.cpp:394
-#, kde-format
-msgid "&Play Audio"
-msgstr ""
-
-#: kwordquiz.cpp:396
-#, kde-format
-msgid "Play associated audio"
-msgstr ""
-
-#: kwordquiz.cpp:402
-#, kde-format
-msgid "Repeat &Errors"
-msgstr ""
-
-#: kwordquiz.cpp:404
-#, kde-format
-msgid "Repeats all incorrectly answered questions"
-msgstr ""
-
-#: kwordquiz.cpp:410
-#, kde-format
-msgid "Export Errors &As..."
-msgstr "Easpórtáil Earráidí &Mar..."
-
-#: kwordquiz.cpp:411
-#, kde-format
-msgid "Exports all errors as a new vocabulary document"
-msgstr "Easpórtáil gach earráid mar cháipéis nua stóir fhocal"
-
-#: kwordquiz.cpp:417
-#, kde-format
-msgid "Show Se&arch"
-msgstr ""
-
-#: kwordquiz.cpp:419
-#, kde-format
-msgid "Toggle display of the search bar"
-msgstr ""
-
-#: kwordquiz.cpp:424
-#, kde-format
-msgid "Configures sound and other notifications for certain events"
-msgstr ""
-
-#: kwordquiz.cpp:429
-#, kde-format
-msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-msgstr ""
-
-#: kwordquiz.cpp:435
-#, kde-format
-msgid "Special Character <numid>%1</numid>"
-msgstr "Carachtar Speisialta <numid>%1</numid>"
-
-#: kwordquiz.cpp:447
-#, kde-format
-msgid "Toggles display of the toolbars"
-msgstr ""
-
-#: kwordquiz.cpp:500
-#, kde-format
-msgid "Enter search terms here"
-msgstr "Iontráil téarmaí cuardaigh anseo"
-
-#: kwordquiz.cpp:523
-#, kde-format
-msgctxt "@item:inlistbox vocabulary editor"
-msgid "Editor"
-msgstr "Eagarthóir"
-
-#. i18n: ectx: property (title), widget (QGroupBox, KeepDiscard)
-#: kwordquiz.cpp:528 prefquizbase.ui:188
-#, kde-format
-msgid "Flashcard"
-msgstr "Spléach-chárta"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpMultiple)
-#: kwordquiz.cpp:532 prefquizbase.ui:148
-#, kde-format
-msgid "Multiple Choice"
-msgstr "Ceist Ilroghnach"
-
-#: kwordquiz.cpp:536
-#, kde-format
-msgid "Question & Answer"
-msgstr "Ceist agus Freagra"
-
-#: kwordquiz.cpp:603 kwordquiz.cpp:789 kwordquiz.cpp:834
-#, kde-format
-msgid "Opening file..."
-msgstr "Comhad á oscailt..."
-
-#: kwordquiz.cpp:637 kwordquiz.cpp:639
-#, kde-format
-msgctxt "%1 is an error message"
-msgid ""
-"%1\n"
-"If you are sure no other program is using the file you can choose to ignore "
-"the lock and open the file anyway.\n"
-"Do you want to open the file?"
-msgstr ""
-
-#: kwordquiz.cpp:637
-#, fuzzy, kde-format
-#| msgid "Opening file..."
-msgid "Open File"
-msgstr "Comhad á oscailt..."
-
-#: kwordquiz.cpp:657 kwordquiz.cpp:784 kwordquiz.cpp:829 kwordquiz.cpp:837
-#: kwordquiz.cpp:878 kwordquiz.cpp:891 kwordquiz.cpp:980 kwordquiz.cpp:987
-#: kwordquiz.cpp:993 kwordquiz.cpp:1023 kwordquiz.cpp:1030 kwordquiz.cpp:1037
-#: kwordquiz.cpp:1044 kwordquiz.cpp:1051 kwordquiz.cpp:1058 kwordquiz.cpp:1065
-#: kwordquiz.cpp:1072 kwordquiz.cpp:1085 kwordquiz.cpp:1100 kwordquiz.cpp:1108
-#: kwordquiz.cpp:1116 kwordquiz.cpp:1125 kwordquiz.cpp:1133 kwordquiz.cpp:1147
-#: kwordquiz.cpp:1155 kwordquiz.cpp:1162 kwordquiz.cpp:1169 kwordquiz.cpp:1176
-#, kde-format
-msgctxt "@info:status ready"
-msgid "Ready"
-msgstr "Réidh"
-
-#: kwordquiz.cpp:727 kwordquiz.cpp:729
-#, kde-format
-msgid ""
-"The current document has been modified.\n"
-"Do you want to save it?"
-msgstr ""
-"Mionathraíodh an cháipéis reatha.\n"
-"An bhfuil fonn ort í a shábháil?"
-
-#: kwordquiz.cpp:779
-#, kde-format
-msgid "Opening a new document window..."
-msgstr "Fuinneog nua cháipéise á hoscailt..."
-
-#: kwordquiz.cpp:791
-#, kde-format
-msgid "&Merge selected files with the current document"
-msgstr "Cu&maisc na comhaid roghnaithe leis an gcáipéis reatha"
-
-#: kwordquiz.cpp:796 kwqtutor.cpp:127
-#, kde-format
-msgid "Open Vocabulary Document"
-msgstr "Oscail Cáipéis Stóir Fhocal"
-
-#: kwordquiz.cpp:865
-#, kde-format
-msgid "Saving file..."
-msgstr "Comhad á shábháil..."
-
-#: kwordquiz.cpp:884
-#, kde-format
-msgid "Saving file with a new filename..."
-msgstr "Comhad á shábháil le hainm comhaid nua..."
-
-#: kwordquiz.cpp:912
-#, kde-format
-msgid "HTML Document"
-msgstr ""
-
-#: kwordquiz.cpp:914
-#, kde-format
-msgid "Save Vocabulary Document As"
-msgstr "Sábháil Cáipéis Stóir Fhocal Mar"
-
-#: kwordquiz.cpp:962
-#, kde-format
-msgid "Closing file..."
-msgstr "Comhad á dhúnadh..."
-
-#: kwordquiz.cpp:985
-#, kde-format
-msgid "Printing..."
-msgstr "Á Phriontáil..."
-
-#: kwordquiz.cpp:991
-#, kde-format
-msgid "Showing Preview..."
-msgstr "Réamhamharc á Thaispeáint..."
-
-#: kwordquiz.cpp:999
-#, kde-format
-msgctxt "@info:status quitting"
-msgid "Quitting..."
-msgstr "Ag scor..."
-
-#: kwordquiz.cpp:1021
-#, kde-format
-msgid "Cutting selection..."
-msgstr "Roghnúchán á ghearradh..."
-
-#: kwordquiz.cpp:1028
-#, kde-format
-msgid "Copying selection to clipboard..."
-msgstr "Roghnúchán á chóipeáil go dtí an ghearrthaisce..."
-
-#: kwordquiz.cpp:1035
-#, kde-format
-msgid "Inserting clipboard contents..."
-msgstr "Inneachar na gearrthaisce á ionsá..."
-
-#: kwordquiz.cpp:1042
-#, kde-format
-msgid "Clearing the selected cells..."
-msgstr ""
-
-#: kwordquiz.cpp:1049
-#, kde-format
-msgid "Inserting rows..."
-msgstr "Rónna á n-ionsá..."
-
-#: kwordquiz.cpp:1056
-#, kde-format
-msgid "Deleting selected rows..."
-msgstr "Rónna roghnaithe á scriosadh..."
-
-#: kwordquiz.cpp:1063
-#, kde-format
-msgid "Marking selected text as a blank..."
-msgstr ""
-
-#: kwordquiz.cpp:1070
-#, kde-format
-msgid "Removing blank markings..."
-msgstr ""
-
-#: kwordquiz.cpp:1077
-#, kde-format
-msgid "Setting the column titles of the vocabulary..."
-msgstr ""
-
-#: kwordquiz.cpp:1090
-#, kde-format
-msgid "Setting the font of the vocabulary..."
-msgstr ""
-
-#: kwordquiz.cpp:1106
-#, kde-format
-msgid "Linking an image with the current entry..."
-msgstr ""
-
-#: kwordquiz.cpp:1114
-#, kde-format
-msgid "Linking a sound with the current entry..."
-msgstr ""
-
-#: kwordquiz.cpp:1122
-#, kde-format
-msgid "Adjusting row heights..."
-msgstr ""
-
-#: kwordquiz.cpp:1131
-#, kde-format
-msgid "Randomizing the vocabulary..."
-msgstr ""
-
-#: kwordquiz.cpp:1139
-#, kde-format
-msgid "Updating mode..."
-msgstr "Mód á nuashonrú..."
-
-#: kwordquiz.cpp:1153
-#, kde-format
-msgid "Starting editor session..."
-msgstr "Seisiún eagarthóireachta á thosú..."
-
-#: kwordquiz.cpp:1160
-#, kde-format
-msgid "Starting flashcard session..."
-msgstr "Seisiún spléach-chártaí á thosú..."
-
-#: kwordquiz.cpp:1167
-#, kde-format
-msgid "Starting multiple choice session..."
-msgstr ""
-
-#: kwordquiz.cpp:1174
-#, kde-format
-msgid "Starting question & answer session..."
-msgstr ""
-
-#: kwordquiz.cpp:1326
-#, kde-format
-msgid "Insert %1"
-msgstr "Ionsáigh %1"
-
-#: kwordquiz.cpp:1327
-#, kde-format
-msgid "Inserts the character %1"
-msgstr "Ionsáigh carachtar %1"
-
-#: kwordquiz.cpp:1378
-#, kde-format
-msgid "This will restart your quiz. Do you wish to continue?"
-msgstr "Atosóidh sé seo do quiz. An bhfuil fonn ort dul ar aghaidh?"
-
-#: kwordquiz.cpp:1394
-#, kde-format
-msgid "&1 %1 -> %2 In Order"
-msgstr "&1 %1 -> %2 In Ord"
-
-#: kwordquiz.cpp:1395
-#, kde-format
-msgid "&2 %1 -> %2 In Order"
-msgstr "&2 %1 -> %2 In Ord"
-
-#: kwordquiz.cpp:1396
-#, kde-format
-msgid "&3 %1 -> %2 Randomly"
-msgstr "&3 %1 -> %2 Go Randamach"
-
-#: kwordquiz.cpp:1397
-#, kde-format
-msgid "&4 %1 -> %2 Randomly"
-msgstr "&4 %1 -> %2 Go Randamach"
-
-#: kwordquiz.cpp:1398
-#, fuzzy, kde-format
-#| msgid "&3 %1 -> %2 Randomly"
-msgid "&5 %1 <-> %2 Randomly"
-msgstr "&3 %1 -> %2 Go Randamach"
-
-#: kwordquiz.cpp:1405 kwordquiz.cpp:1408
-#, kde-format
-msgid "%1 -> %2 In Order"
-msgstr "%1 -> %2 In Ord"
-
-#: kwordquiz.cpp:1411 kwordquiz.cpp:1414
-#, kde-format
-msgid "%1 -> %2 Randomly"
-msgstr "%1 -> %2 Go Randamach"
-
-#: kwordquiz.cpp:1417
-#, kde-format
-msgid "%1 &lt;-&gt; %2 Randomly"
-msgstr "%1 &lt;-&gt; %2 Go Randamach"
-
-#. i18n: ectx: label, entry (FirstRun), group (General)
-#: kwordquiz.kcfg:10
-#, kde-format
-msgid "Is this the first time KWordQuiz is run?"
-msgstr ""
-
-#. i18n: ectx: label, entry (ShowSearch), group (General)
-#: kwordquiz.kcfg:14
-#, kde-format
-msgid "Toggle display of the search bar."
-msgstr ""
-
-#. i18n: ectx: label, entry (StartSession), group (General)
-#: kwordquiz.kcfg:18
-#, kde-format
-msgid "Type of session to use when opening files"
-msgstr ""
-
-#. i18n: ectx: label, entry (PrintStyle), group (General)
-#: kwordquiz.kcfg:28
-#, kde-format
-msgid "Type of printout to generate"
-msgstr ""
-
-#. i18n: ectx: label, entry (ColumnTitles1), group (Editor)
-#: kwordquiz.kcfg:39
-#, kde-format
-msgid "Titles for column 1"
-msgstr "Teidil ar cholún 1"
-
-#. i18n: ectx: label, entry (ColumnTitles2), group (Editor)
-#: kwordquiz.kcfg:43
-#, kde-format
-msgid "Titles for column 2"
-msgstr "Teidil ar cholún 2"
-
-#. i18n: ectx: label, entry (EditorFont), group (Editor)
-#: kwordquiz.kcfg:47
-#, kde-format
-msgid "Font used in the editor"
-msgstr ""
-
-#. i18n: ectx: label, entry (EnableBlanks), group (Editor)
-#: kwordquiz.kcfg:51
-#, kde-format
-msgid "If Fill-in-the-blank should be enabled"
-msgstr ""
-
-#. i18n: ectx: label, entry (EnterMove), group (Editor)
-#: kwordquiz.kcfg:55
-#, kde-format
-msgid "Direction the Enter key moves in the editor"
-msgstr ""
-
-#. i18n: ectx: label, entry (SpecialCharacters), group (Editor)
-#: kwordquiz.kcfg:59
-#, kde-format
-msgid "Characters for the special character toolbar"
-msgstr ""
-
-#. i18n: ectx: label, entry (ClearAll), group (Editor)
-#: kwordquiz.kcfg:63
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "Clear all data in selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: label, entry (ClearText), group (Editor)
-#: kwordquiz.kcfg:67
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "Clear the text in selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: label, entry (ClearImageLink), group (Editor)
-#: kwordquiz.kcfg:71
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "Clear the image link in selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: label, entry (ClearSoundLink), group (Editor)
-#: kwordquiz.kcfg:75
-#, fuzzy, kde-format
-#| msgid "Delete the image link from selected entries"
-msgid "Clear the sound link in selected entries"
-msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
-
-#. i18n: ectx: label, entry (AutoCheck), group (Quiz)
-#: kwordquiz.kcfg:81
-#, kde-format
-msgid "Automatically check selected answer in multiple choice"
-msgstr ""
-
-#. i18n: ectx: label, entry (AutoFlip), group (Quiz)
-#: kwordquiz.kcfg:85
-#, kde-format
-msgid "Automatically flip flashcard"
-msgstr ""
-
-#. i18n: ectx: label, entry (FlipDelay), group (Quiz)
-#: kwordquiz.kcfg:89
-#, fuzzy, kde-format
-#| msgid "Select to print flashcards"
-msgid "Time delay for flipping flashcard"
-msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
-
-#. i18n: ectx: label, entry (HintError), group (Quiz)
-#: kwordquiz.kcfg:93
-#, kde-format
-msgid "Treat use of hint as error"
-msgstr "Déileálfar le leideanna mar earráidí"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaseSensitiveAnswers)
-#. i18n: ectx: label, entry (CaseSensitiveAnswers), group (Quiz)
-#: kwordquiz.kcfg:97 prefquizbase.ui:79
-#, kde-format
-msgid "Compare answers in a case sensitive way"
-msgstr ""
-
-#. i18n: ectx: label, entry (KeepDiscard), group (Quiz)
-#: kwordquiz.kcfg:101
-#, kde-format
-msgid "Count flashcard as correct or error"
-msgstr ""
-
-#. i18n: ectx: label, entry (Mode), group (Quiz)
-#: kwordquiz.kcfg:105
-#, fuzzy, kde-format
-#| msgid "Quiz"
-msgid "Quiz mode"
-msgstr "Quiz"
-
-#. i18n: ectx: label, entry (Percent), group (Quiz)
-#: kwordquiz.kcfg:109
-#, kde-format
-msgid "Show score as percentage"
-msgstr "Taispeáin an scór mar chéatadán"
-
-#. i18n: ectx: label, entry (FrontFont), group (FlashCard)
-#: kwordquiz.kcfg:115
-#, fuzzy, kde-format
-#| msgid "Font for back of card"
-msgid "Font used for front of flashcard"
-msgstr "Cló ar chúl an chárta"
-
-#. i18n: ectx: label, entry (FrontTextColor), group (FlashCard)
-#: kwordquiz.kcfg:119
-#, kde-format
-msgid "Color used for text on front of flashcard"
-msgstr ""
-
-#. i18n: ectx: label, entry (FrontCardColor), group (FlashCard)
-#: kwordquiz.kcfg:123
-#, fuzzy, kde-format
-#| msgid "Select to print flashcards"
-msgid "Color used for front of flashcard"
-msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
-
-#. i18n: ectx: label, entry (FrontFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:127
-#, kde-format
-msgid "Color used for frame on front of flashcard"
-msgstr ""
-
-#. i18n: ectx: label, entry (BackFont), group (FlashCard)
-#: kwordquiz.kcfg:131
-#, fuzzy, kde-format
-#| msgid "Font for back of card"
-msgid "Font used for back of flashcard"
-msgstr "Cló ar chúl an chárta"
-
-#. i18n: ectx: label, entry (BackTextColor), group (FlashCard)
-#: kwordquiz.kcfg:135
-#, kde-format
-msgid "Color used for text on back of flashcard"
-msgstr ""
-
-#. i18n: ectx: label, entry (BackCardColor), group (FlashCard)
-#: kwordquiz.kcfg:139
-#, fuzzy, kde-format
-#| msgid "Font for back of card"
-msgid "Color used for back of flashcard"
-msgstr "Cló ar chúl an chárta"
-
-#. i18n: ectx: label, entry (BackFrameColor), group (FlashCard)
-#: kwordquiz.kcfg:143
-#, kde-format
-msgid "Color used for frame on back of flashcard"
-msgstr ""
-
-#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
-#: kwordquiz.kcfg:149
-#, kde-format
-msgid "The Providers path for KWordQuiz"
-msgstr ""
-
-#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
-#: kwordquiz.kcfg:153
-#, kde-format
-msgid "The command used to start a downloaded vocabulary"
-msgstr "An t-ordú a úsáidtear chun stór focal íosluchtaithe a thosú"
-
-#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
-#: kwordquiz.kcfg:157
-#, kde-format
-msgid ""
-"The folder where downloaded vocabularies are saved by default (relative to "
-"$HOME)"
-msgstr ""
-"Fillteán ina sábhálfar stóir fhocal íosluchtaithe de réir réamhshocraithe (i "
-"gcoibhneas le $HOME)"
-
-#. i18n: ectx: label, entry (TutorTiming), group (Tutor)
-#: kwordquiz.kcfg:163
-#, kde-format
-msgid "Pop up flashcards at fixed or random intervals"
-msgstr ""
-
-#. i18n: ectx: label, entry (TutorEvery), group (Tutor)
-#: kwordquiz.kcfg:171
-#, kde-format
-msgid "The interval in minutes at which to pop up a flash card"
-msgstr ""
-
-#. i18n: ectx: label, entry (TutorMin), group (Tutor)
-#: kwordquiz.kcfg:175
-#, kde-format
-msgid "The minimum interval in minutes at which to pop up a flash card"
-msgstr ""
-
-#. i18n: ectx: label, entry (TutorMax), group (Tutor)
-#: kwordquiz.kcfg:179
-#, kde-format
-msgid "The maximum interval in minutes at which to pop up a flash card"
-msgstr ""
-
-#. i18n: ectx: label, entry (TutorFlashCardGeometry), group (Tutor)
-#: kwordquiz.kcfg:183
-#, kde-format
-msgid "Geometry of the last flash card"
-msgstr ""
-
-#. i18n: ectx: label, entry (TutorCardAppearance), group (Tutor)
-#: kwordquiz.kcfg:187
-#, kde-format
-msgid "Show flash card in a native KWordQuiz style"
-msgstr ""
-
-#. i18n: ectx: label, entry (LastVocabFile), group (Tutor)
-#: kwordquiz.kcfg:195
-#, kde-format
-msgid ""
-"Last open vocabulary file to be opened automatically if none other is "
-"specified on the command line"
-msgstr ""
-
-#. i18n: ectx: label, entry (StartExerciseAsSoonAsFileIsLoaded), group (Tutor)
-#: kwordquiz.kcfg:199
-#, kde-format
-msgid "Start exercise as soon as the user opens vocabulary file"
-msgstr ""
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General"
-msgstr "Ginearálta"
-
-#: kwordquizprefs.cpp:24
-#, kde-format
-msgctxt "@title:group general settings"
-msgid "General Settings"
-msgstr "Socruithe Ginearálta"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor"
-msgstr "Eagarthóir"
-
-#: kwordquizprefs.cpp:27
-#, kde-format
-msgctxt "@title:group editor settings"
-msgid "Editor Settings"
-msgstr "Socruithe an Eagarthóra"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz"
-msgstr "Quiz"
-
-#: kwordquizprefs.cpp:30
-#, kde-format
-msgctxt "@title:group quiz settings"
-msgid "Quiz Settings"
-msgstr "Socruithe Quiz"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance"
-msgstr "Leagan amach na spléach-chártaí"
-
-#: kwordquizprefs.cpp:33
-#, kde-format
-msgctxt "@title:group flash appearance settings"
-msgid "Flashcard Appearance Settings"
-msgstr ""
-"Socruithe Leagan Amach na\n"
-"Spléach-chártaí"
-
-#: kwordquizprefs.cpp:36
-#, kde-format
-msgctxt "@title:group special character settings"
-msgid "Special Characters"
-msgstr "Carachtair Speisialta"
-
-#. i18n: ectx: Menu (vocabulary)
-#: kwordquizui.rc:16
-#, kde-format
-msgid "V&ocabulary"
-msgstr "Stór F&ocal"
-
-#. i18n: ectx: Menu (mode)
-#: kwordquizui.rc:30
-#, kde-format
-msgid "&Mode"
-msgstr "&Mód"
-
-#. i18n: ectx: Menu (quiz)
-#: kwordquizui.rc:38
-#, kde-format
-msgid "&Quiz"
-msgstr "&Quiz"
-
-#. i18n: ectx: ToolBar (quizToolBar)
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefQuizBase)
-#: kwordquizui.rc:61 prefquizbase.ui:21
-#, kde-format
-msgid "Quiz"
-msgstr "Quiz"
-
-#. i18n: ectx: ToolBar (characterToolBar)
-#: kwordquizui.rc:75
-#, kde-format
-msgid "Special Characters"
-msgstr "Carachtair Speisialta"
-
-#: kwqcleardialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Clear Contents"
-msgctxt "@title:window"
-msgid "Clear Contents"
-msgstr "Glan an tInneachar"
-
-#: kwqcommands.cpp:74
-#, kde-format
-msgctxt "@item:inmenu undo clear"
-msgid "Clear"
-msgstr "Glan"
-
-#: kwqcommands.cpp:96
-#, kde-format
-msgctxt "@item:inmenu undo cut"
-msgid "Cut"
-msgstr "Gearr"
-
-#: kwqcommands.cpp:109
-#, kde-format
-msgctxt "@item:inmenu undo paste"
-msgid "Paste"
-msgstr "Greamaigh"
-
-#: kwqcommands.cpp:205
-#, kde-format
-msgctxt "@item:inmenu undo sort"
-msgid "Sort"
-msgstr "Sórtáil"
-
-#: kwqcommands.cpp:232
-#, kde-format
-msgctxt "@item:inmenu undo shuffle"
-msgid "Shuffle"
-msgstr "Suaith"
-
-#: kwqcommands.cpp:252
-#, kde-format
-msgctxt "@item:inmenu undo insert"
-msgid "Insert"
-msgstr "Ionsáigh"
-
-#: kwqcommands.cpp:284
-#, kde-format
-msgctxt "@item:inmenu undo delete"
-msgid "Delete"
-msgstr "Scrios"
-
-#: kwqcommands.cpp:333
-#, kde-format
-msgctxt "@item:inmenu undo unmark blank"
-msgid "Unmark Blank"
-msgstr ""
-
-#: kwqcommands.cpp:355
-#, kde-format
-msgctxt "@item:inmenu undo column titles"
-msgid "Column Settings"
-msgstr "Socruithe Colúin"
-
-#: kwqcommands.cpp:400
-#, kde-format
-msgctxt "@item:inmenu undo link image"
-msgid "Link Image"
-msgstr ""
-
-#: kwqcommands.cpp:419
-#, kde-format
-msgctxt "@item:inmenu undo link sound"
-msgid "Link Sound"
-msgstr ""
-
-#: kwqcommands.h:93
-#, kde-format
-msgid "Font"
-msgstr "Cló"
-
-#: kwqcommands.h:111
-#, kde-format
-msgid "Entry"
-msgstr "Iontráil"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:57 kwqscorewidgetbase.ui:167
-#, kde-format
-msgid "Questions"
-msgstr "Ceisteanna"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCount)
-#: kwqscorewidgetbase.ui:60 kwqscorewidgetbase.ui:170
-#, kde-format
-msgid "The number of questions in the session"
-msgstr "Líon na gceisteanna sa seisiún"
-
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCount)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreCorrect)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (text), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:63 kwqscorewidgetbase.ui:120 kwqscorewidgetbase.ui:202
-#: kwqscorewidgetbase.ui:259
-#, kde-format
-msgid "00"
-msgstr "00"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:85 kwqscorewidgetbase.ui:114
-#, kde-format
-msgid "Correct answers"
-msgstr "Freagraí cearta"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picCorrect)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreCorrect)
-#: kwqscorewidgetbase.ui:88 kwqscorewidgetbase.ui:117
-#, fuzzy, kde-format
-#| msgid "Select if the score should be shown as a percentage"
-msgid ""
-"The number of questions answered correctly. May be shown as a percentage."
-msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picError)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:142 kwqscorewidgetbase.ui:253
-#, kde-format
-msgid "Incorrect answers"
-msgstr "Freagraí mícheara"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, picError)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreError)
-#: kwqscorewidgetbase.ui:145 kwqscorewidgetbase.ui:256
-#, fuzzy, kde-format
-#| msgid "Select if the score should be shown as a percentage"
-msgid ""
-"The number of questions answered incorrectly. May be shown as a percentage."
-msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:196 kwqscorewidgetbase.ui:224
-#, fuzzy, kde-format
-#| msgid "The question"
-msgid "Answered questions"
-msgstr "An cheist"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblScoreAnswered)
-#. i18n: ectx: property (whatsThis), widget (QLabel, picAnswered)
-#: kwqscorewidgetbase.ui:199 kwqscorewidgetbase.ui:227
-#, fuzzy, kde-format
-#| msgid "Select if the score should be shown as a percentage"
-msgid "The number of questions already answered. May be shown as a percentage."
-msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
-
-#: kwqtablemodel.cpp:211
-#, kde-format
-msgid "Untitled"
-msgstr "Gan Teideal"
-
-#: kwqtableview.cpp:190
+#: exporter.cpp:122
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Ainm:_____________________________ Dáta:__________"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grpScore)
-#: kwqtableview.cpp:237 prefquizbase.ui:92
+#: exporter.cpp:170
 #, kde-format
 msgid "Score"
 msgstr "Scór"
 
-#: kwqtableview.cpp:656
+#: kwqcardmodel.cpp:30
 #, kde-format
-msgid "There is an error with the Fill-in-the-blank brackets"
+msgid "Question"
+msgstr "Ceist"
+
+#: kwqcardmodel.cpp:32
+#, kde-format
+msgid "Answer"
+msgstr "Freagra"
+
+#: main.cpp:56
+#, kde-format
+msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: kwqtableview.cpp:723
-#, fuzzy, kde-format
-#| msgid "Select Image"
-msgctxt "@title:window"
-msgid "Select Image"
-msgstr "Roghnaigh Íomhá"
-
-#: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "Select Sound"
-msgctxt "@title:window"
-msgid "Select Sound"
-msgstr "Roghnaigh Fuaim"
-
-#: kwqtableview.cpp:743
-#, fuzzy, kde-format
-#| msgid "*|All Files"
-msgid "All Files (*)"
-msgstr "*|Gach Comhad"
-
-#: kwqtutor.cpp:26
-#, kde-format
-msgid ""
-"<qt>KWordQuiz Tutor displays flashcards on your screen in a way that allows "
-"you to set a certain time interval at which flashcards will pop up.<br /"
-"><br />The flashcards pop up in a non-intrusive way allowing you to carry on "
-"working without stealing the focus from other programs you might be working "
-"with.<br /><br />Be sure to right-click KWordQuiz Tutor icon on the panel "
-"and select Preferences. There you can assign keyboard shortcuts.</qt>"
-msgstr ""
-
-#: kwqtutor.cpp:32
-#, kde-format
-msgid "Tutor"
-msgstr ""
-
-#: kwqtutor.cpp:43 kwqtutor.cpp:116
-#, kde-format
-msgid "Start Exercise"
-msgstr ""
-
-#: kwqtutor.cpp:53
-#, kde-format
-msgid "Configure KWordQuiz Tutor..."
-msgstr ""
-
-#: kwqtutor.cpp:58
-#, kde-format
-msgid "Close Flash Card"
-msgstr "Dún an Spléach-Chárta"
-
-#: kwqtutor.cpp:63
-#, kde-format
-msgid "Flip Flash Card"
-msgstr "Smeach an Spléach-Chárta"
-
-#: kwqtutor.cpp:108
-#, kde-format
-msgid "Stop Exercise"
-msgstr ""
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor"
-msgstr ""
-
-#: kwqtutorprefs.cpp:22
-#, kde-format
-msgctxt "@title:group tutor settings"
-msgid "Tutor Settings"
-msgstr ""
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgctxt "Shortcuts Config"
-msgid "Shortcuts"
-msgstr "Aicearraí"
-
-#: kwqtutorprefs.cpp:25
-#, kde-format
-msgid "Shortcuts Settings"
-msgstr "Socruithe Aicearraí"
-
-#: main.cpp:34
+#: main.cpp:90
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:36
+#: main.cpp:92
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr ""
 
-#: main.cpp:38
+#: main.cpp:94
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "© 2003-2010, Peter Hedlund"
 
-#: main.cpp:42
+#: main.cpp:98
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:43
+#: main.cpp:98
+#, kde-format
+msgctxt "@info:credit"
+msgid "Original author"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr ""
+
+#: main.cpp:99
+#, kde-format
+msgctxt "@info:credit"
+msgid "Port to QML"
+msgstr ""
+
+#: main.cpp:100
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:43
+#: main.cpp:100
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Cothaitheoir Oideachluichí KDE"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:44
+#: main.cpp:101
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr ""
 
-#: main.cpp:57
-#, kde-format
-msgid ""
-"A number 1-5 corresponding to the \n"
-"entries in the Mode menu"
-msgstr ""
-
-#: main.cpp:58
+#: main.cpp:121
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
-"'qa' for question and answer, \n"
-"'tutor' for tutor"
+"'qa' for question and answer"
 msgstr ""
 
-#: main.cpp:59
+#: main.cpp:123
 #, kde-format
 msgid "File to open"
 msgstr "Comhad le hoscailt"
 
-#. i18n: ectx: property (text), widget (QLabel, lblCorrectHeader)
-#: multipleview.cpp:103 multipleviewbase.ui:558 qaview.cpp:140
-#: qaviewbase.ui:518
+#: qml/BasePage.qml:24
 #, kde-format
-msgid "Correct Answer"
+msgid "Cards %1% Errors %2"
+msgstr ""
+
+#: qml/BasePage.qml:26
+#, kde-format
+msgid "Cards %1/%2 Errors %3"
+msgstr ""
+
+#: qml/BasePage.qml:73
+#, kde-format
+msgctxt "@label"
+msgid "Finished"
+msgstr ""
+
+#: qml/BasePage.qml:75
+#, kde-format
+msgid "You got a perfect score"
+msgstr ""
+
+#: qml/BasePage.qml:75
+#, kde-format
+msgid "You made one mistake"
+msgid_plural "You made %1 mistakes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: qml/BasePage.qml:82
+#, kde-format
+msgid "Repeat errors"
+msgstr ""
+
+#: qml/BasePage.qml:93
+#, kde-format
+msgid "Try again"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:33
+#, kde-format
+msgctxt "@title:window"
+msgid "Create deck"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit deck"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:40
+#, kde-format
+msgid "Filter"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:43
+#, kde-format
+msgid "Filter..."
+msgstr ""
+
+#: qml/DeckEditorPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Showing Preview..."
+msgctxt "@action:button"
+msgid "Print Preview"
+msgstr "Réamhamharc á Thaispeáint..."
+
+#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#, kde-format
+msgid "Flashcard"
+msgstr "Spléach-chárta"
+
+#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#, kde-format
+msgid "List"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#, kde-format
+msgid "Exam"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Printing..."
+msgctxt "@action:button"
+msgid "Print"
+msgstr "Á Phriontáil..."
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:95
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:121
+#, kde-format
+msgctxt "@action:button"
+msgid "Link image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Link sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
+#, fuzzy, kde-format
+#| msgid "&2 Language 2"
+msgctxt "@action:button"
+msgid "Set language"
+msgstr "&2 Teanga 2"
+
+#: qml/DeckEditorPage.qml:183
+#, kde-format
+msgid "Please choose an image"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:192
+#, kde-format
+msgid "Please choose a sound"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Name:"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:238
+#, kde-format
+msgctxt "@label"
+msgid "Author:"
+msgstr ""
+
+#: qml/DeckEditorPage.qml:249
+#, kde-format
+msgctxt "@label"
+msgid "License:"
+msgstr ""
+
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox vocabulary editor"
+#| msgid "Editor"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Eagarthóir"
+
+#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
+#: qml/QuestionAnswerPage.qml:151
+#, fuzzy, kde-format
+#| msgid "&Check"
+msgctxt "@action:button"
+msgid "Check"
+msgstr "&Seiceáil"
+
+#: qml/FlashCardPage.qml:128
+#, fuzzy, kde-format
+#| msgid "Correct Answer"
+msgctxt "@action:button"
+msgid "Correct"
 msgstr "An Freagra Ceart"
 
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestionHeader)
-#: multipleview.cpp:108 multipleviewbase.ui:353 qaview.cpp:148
-#: qaviewbase.ui:294
-#, kde-format
-msgid "Previous Question"
-msgstr "An Cheist Roimhe Seo"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswerHeader)
-#: multipleview.cpp:112 multipleviewbase.ui:479 qaview.cpp:153
-#: qaviewbase.ui:395
-#, kde-format
-msgid "Your Answer"
-msgstr "Do Fhreagra"
-
-#: multipleview.cpp:131 qaview.cpp:169
-#, kde-format
-msgid "Summary"
-msgstr "Achoimre"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestionLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picQuestion)
-#: multipleviewbase.ui:70 multipleviewbase.ui:92 multipleviewbase.ui:95
-#: multipleviewbase.ui:129 qaviewbase.ui:57 qaviewbase.ui:85 qaviewbase.ui:101
-#: qaviewbase.ui:104
-#, kde-format
-msgid "The question"
-msgstr "An cheist"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:73 qaviewbase.ui:60
-#, fuzzy, kde-format
-#| msgid "Language or other identifier for the answer"
-msgid "Language or other identifier for the question"
-msgstr "Teanga nó aitheantóir eile ar an bhfreagra"
-
-#. i18n: ectx: property (text), widget (QLabel, lblQuestionLanguage)
-#: multipleviewbase.ui:76 qaviewbase.ui:63
-#, kde-format
-msgid "Language 1"
-msgstr "Teanga 1"
-
-#. i18n: ectx: property (text), widget (QLabel, lblQuestion)
-#: multipleviewbase.ui:98 qaviewbase.ui:107
-#, kde-format
-msgid "This is your question"
-msgstr "Is do cheist í seo"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt2)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt1)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:161 multipleviewbase.ui:186 multipleviewbase.ui:217
-#: multipleviewbase.ui:255 multipleviewbase.ui:286
-#, kde-format
-msgid "Your choices"
-msgstr "Do chuid roghanna"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt2)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt1)
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:189 multipleviewbase.ui:220 multipleviewbase.ui:289
-#, kde-format
-msgid "Three choices for the answer. One is correct."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt2)
-#: multipleviewbase.ui:192
-#, kde-format
-msgid "&2 Option"
-msgstr "Rogha &2"
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt1)
-#: multipleviewbase.ui:223
-#, kde-format
-msgid "&1 Option"
-msgstr "Rogha &1"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:258 qaviewbase.ui:208
-#, kde-format
-msgid "Language or other identifier for the answer"
-msgstr "Teanga nó aitheantóir eile ar an bhfreagra"
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerLanguage)
-#: multipleviewbase.ui:261 qaviewbase.ui:211
-#, kde-format
-msgid "Language 2"
-msgstr "Teanga 2"
-
-#. i18n: ectx: property (text), widget (QRadioButton, opt3)
-#: multipleviewbase.ui:292
-#, kde-format
-msgid "&3 Option"
-msgstr "Rogha &3"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreviousQuestion)
-#. i18n: ectx: property (toolTip), widget (QLabel, picPrevious)
-#: multipleviewbase.ui:347 multipleviewbase.ui:369 multipleviewbase.ui:409
-#: qaviewbase.ui:288 qaviewbase.ui:310 qaviewbase.ui:347
-#, kde-format
-msgid "Previous question"
-msgstr "An cheist roimhe seo"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestionHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:350 multipleviewbase.ui:372 qaviewbase.ui:291
-#: qaviewbase.ui:313
-#, kde-format
-msgid "The previous question"
-msgstr "An cheist roimhe seo"
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreviousQuestion)
-#: multipleviewbase.ui:375 qaviewbase.ui:316
-#, kde-format
-msgid "This was your question"
-msgstr "Ba í seo do cheist"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, picYourAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:441 multipleviewbase.ui:473 multipleviewbase.ui:495
-#: qaviewbase.ui:389 qaviewbase.ui:411 qaviewbase.ui:448
-#, kde-format
-msgid "Your previous answer"
-msgstr "Do fhreagra roimhe seo"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswerHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:476 multipleviewbase.ui:498 qaviewbase.ui:392
-#: qaviewbase.ui:414
-#, kde-format
-msgid "Your answer to the previous question"
-msgstr "Do fhreagra ar an gceist roimhe seo"
-
-#. i18n: ectx: property (text), widget (QLabel, lblYourAnswer)
-#: multipleviewbase.ui:501 qaviewbase.ui:417
-#, kde-format
-msgid "This was your answer"
-msgstr "Ba é seo do fhreagra"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblCorrect)
-#. i18n: ectx: property (toolTip), widget (QLabel, picCorrectAnswer)
-#: multipleviewbase.ui:552 multipleviewbase.ui:574 multipleviewbase.ui:611
-#: qaviewbase.ui:480 qaviewbase.ui:512 qaviewbase.ui:534
-#, kde-format
-msgid "Previous correct answer"
-msgstr "An freagra ceart roimhe seo"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrectHeader)
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:555 multipleviewbase.ui:577 qaviewbase.ui:515
-#: qaviewbase.ui:537
-#, kde-format
-msgid "The correct answer to the previous question"
-msgstr "An freagra ceart ar an gceist roimhe seo"
-
-#. i18n: ectx: property (text), widget (QLabel, lblCorrect)
-#: multipleviewbase.ui:580 qaviewbase.ui:540
-#, kde-format
-msgid "This was the correct answer"
-msgstr "Ba é seo an freagra ceart"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: multipleviewbase.ui:649
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"three entries for a multiple choice quiz.</html>"
-msgstr ""
-
-#: prefcardappearance.cpp:66
-#, kde-format
-msgctxt "Back of the flashcard"
-msgid "Back"
-msgstr "Cúl"
-
-#: prefcardappearance.cpp:67
-#, kde-format
-msgid "Answer"
-msgstr "Freagra"
-
-#: prefcardappearance.cpp:80
-#, kde-format
-msgid "Front"
-msgstr "Éadan"
-
-#: prefcardappearance.cpp:81
-#, kde-format
-msgid "Question"
-msgstr "Ceist"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, PrefCardAppearanceBase)
-#: prefcardappearancebase.ui:15
-#, kde-format
-msgid "Card Appearance"
-msgstr "Leagan Amach an Chárta"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:92
-#, kde-format
-msgid "Flip card"
-msgstr "Smeach an cárta"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:95
-#, kde-format
-msgid "Use to show the other side of the card"
-msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
-
-#. i18n: ectx: property (text), widget (QPushButton, flipButton)
-#: prefcardappearancebase.ui:98
-#, kde-format
-msgid "&Flip Card"
-msgstr "Smeach an &Cárta"
-
-#. i18n: ectx: property (text), widget (QLabel, fontLabel)
-#: prefcardappearancebase.ui:111
-#, kde-format
-msgid "F&ont:"
-msgstr "&Cló:"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_BackFont)
-#: prefcardappearancebase.ui:146
-#, fuzzy, kde-format
-#| msgid "Use to show the other side of the card"
-msgid "Use to select the font for displaying text on the back of the card"
-msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:153 prefcardappearancebase.ui:209
-#, kde-format
-msgid "Select text color"
-msgstr "Roghnaigh dath an téacs"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackTextColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontTextColor)
-#: prefcardappearancebase.ui:156 prefcardappearancebase.ui:212
-#, fuzzy, kde-format
-#| msgid "Use to show the other side of the card"
-msgid "Use to select the color for text shown on the card"
-msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:163 prefcardappearancebase.ui:219
-#, kde-format
-msgid "Select card frame color"
-msgstr "Roghnaigh dath an fhráma ar an gcárta"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackFrameColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontFrameColor)
-#: prefcardappearancebase.ui:166 prefcardappearancebase.ui:222
-#, fuzzy, kde-format
-#| msgid "Use to show the other side of the card"
-msgid "Use to select the color for drawing the frame of the card"
-msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
-
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:173 prefcardappearancebase.ui:229
-#, kde-format
-msgid "Select card color"
-msgstr "Roghnaigh dath an chárta"
-
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_BackCardColor)
-#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_FrontCardColor)
-#: prefcardappearancebase.ui:176 prefcardappearancebase.ui:232
-#, fuzzy, kde-format
-#| msgid "Select direction for the sort"
-msgid "Select color used to draw the card"
-msgstr "Roghnaigh ord sórtála"
-
-#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_FrontFont)
-#: prefcardappearancebase.ui:202
-#, fuzzy, kde-format
-#| msgid "Use to show the other side of the card"
-msgid "Use to select the font for displaying text on the front of the card"
-msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
-
-#. i18n: ectx: property (text), widget (QLabel, textColorLabel)
-#: prefcardappearancebase.ui:249
-#, kde-format
-msgid "&Text color:"
-msgstr "Da&th téacs:"
-
-#. i18n: ectx: property (text), widget (QLabel, cardColorLabel)
-#: prefcardappearancebase.ui:262
-#, kde-format
-msgid "&Card color:"
-msgstr "&Dath an Chárta:"
-
-#. i18n: ectx: property (text), widget (QLabel, frameColorLabel)
-#: prefcardappearancebase.ui:275
-#, kde-format
-msgid "Fra&me color:"
-msgstr "Dath an fhrá&ma:"
-
-#: prefcharacter.cpp:30
-#, kde-format
-msgid "Action"
-msgstr "Gníomh"
-
-#: prefcharacter.cpp:31
-#, kde-format
-msgid "Shortcut"
-msgstr "Aicearra"
-
-#: prefcharacter.cpp:32
-#, kde-format
-msgid "Character"
-msgstr "Carachtar"
-
-#: prefcharacter.cpp:41
-#, kde-format
-msgid "Special Character %1"
-msgstr "Carachtar Speisialta %1"
-
-#. i18n: ectx: property (text), widget (QLabel, lblShortCutInfo)
-#: prefcharacterbase.ui:35
-#, kde-format
-msgid ""
-"Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-"associated with each action."
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:48
-#, kde-format
-msgid "Select character to modify"
-msgstr "Roghnaigh carachtar le mionathrú"
-
-#. i18n: ectx: property (whatsThis), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:51
-#, kde-format
-msgid "Customizable special character actions"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:61
-#, kde-format
-msgid "0"
-msgstr "0"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:66
-#, kde-format
-msgid "1"
-msgstr "1"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, CharacterTree)
-#: prefcharacterbase.ui:71
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:103
-#, kde-format
-msgid "Click to choose a new character"
-msgstr "Cliceáil chun carachtar nua a roghnú"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:106
-#, kde-format
-msgid "Choose a character for the selected action"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, btnCharacter)
-#: prefcharacterbase.ui:109
-#, kde-format
-msgid "C&haracter..."
-msgstr "&Carachtar..."
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:151
-#, kde-format
-msgid "Preview of current character"
-msgstr "Réamhamharc ar an gcarachtar reatha"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:154
-#, kde-format
-msgid "Preview of the character associated with the selected action"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, lblPreview)
-#: prefcharacterbase.ui:157
-#, kde-format
-msgid "A"
-msgstr "A"
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_EnterMove)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optDown)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optRight)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:29 prefeditorbase.ui:47 prefeditorbase.ui:60
-#: prefeditorbase.ui:73
-#, kde-format
-msgid "How enter key moves"
-msgstr "An treo a mbogann an eochair \"Enter\""
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:32
-#, fuzzy, kde-format
-#| msgid "Select if the vocabulary documents should be opened in the editor"
-msgid "Select how the Enter key should behave in the editor"
-msgstr ""
-"Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san eagarthóir"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_EnterMove)
-#: prefeditorbase.ui:35
-#, kde-format
-msgid "Enter Ke&y Moves"
-msgstr "Bogann an Eochair \"Enter\""
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:50
-#, fuzzy, kde-format
-#| msgid "Select if the score should be shown as a percentage"
-msgid "Select if the next cell below should become active when pressing Enter."
-msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optDown)
-#: prefeditorbase.ui:53
-#, kde-format
-msgid "&Down"
-msgstr "&Síos"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:63
-#, kde-format
-msgid ""
-"Select if the next cell to the right should become active when pressing Enter"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, optRight)
-#: prefeditorbase.ui:66
-#, kde-format
-msgid "&Right"
-msgstr "Ar &Dheis"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:76
-#, fuzzy, kde-format
-#| msgid "Select if the score should be shown as a percentage"
-msgid "Select if the current cell should remain active when pressing Enter"
-msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optNoMove)
-#: prefeditorbase.ui:79
-#, kde-format
-msgid "Does not &move"
-msgstr "Ná &bog"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:89
-#, kde-format
-msgid "Check to enable fill-in-the-blank"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:92
-#, kde-format
-msgid "Select to enable the functions for Fill-in-the-blank"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableBlanks)
-#: prefeditorbase.ui:95
-#, kde-format
-msgid "E&nable fill-in-the-blank"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:35
-#, kde-format
-msgid "How vocabulary documents are opened"
-msgstr "Conas a oscláitear cáipéisí stóir fhocal"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:38
-#, kde-format
-msgid "Select the kind of session to load an opened vocabulary document in"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_StartSession)
-#: prefgeneralbase.ui:41
-#, kde-format
-msgid "&Open Vocabulary Documents in"
-msgstr "&Oscail Cáipéisí Stóir Fhocal i"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:47
-#, kde-format
-msgid "Open vocabulary documents in the editor"
-msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:50
-#, kde-format
-msgid "Select if the vocabulary documents should be opened in the editor"
-msgstr ""
-"Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san eagarthóir"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optEditor)
-#: prefgeneralbase.ui:53
-#, kde-format
-msgid "&Editor"
-msgstr "&Eagarthóir"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:60
-#, fuzzy, kde-format
-#| msgid "Open vocabulary documents in the editor"
-msgid "Open vocabulary documents in a flashcard quiz"
-msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "Select if the vocabulary documents should be opened in a multiple choice "
-#| "quiz"
-msgid "Select if the vocabulary documents should be opened in a flashcard quiz"
-msgstr ""
-"Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt i quiz "
-"ilroghnach"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optFlashcard)
-#: prefgeneralbase.ui:66
-#, kde-format
-msgid "&Flashcard Quiz"
-msgstr "&Quiz Spléach-chártaí"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:73
-#, fuzzy, kde-format
-#| msgid "Open vocabulary documents in the editor"
-msgid "Open vocabulary documents in a multiple choice quiz"
-msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:76
-#, kde-format
-msgid ""
-"Select if the vocabulary documents should be opened in a multiple choice quiz"
-msgstr ""
-"Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt i quiz "
-"ilroghnach"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optMultipleChoice)
-#: prefgeneralbase.ui:79
-#, kde-format
-msgid "&Multiple Choice Quiz"
-msgstr "Ceisteanna &Ilroghnacha"
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:86
-#, fuzzy, kde-format
-#| msgid "Open vocabulary documents in the editor"
-msgid "Open vocabulary documents in a question and answer quiz"
-msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Select if the vocabulary documents should be opened in a multiple choice "
-#| "quiz"
-msgid ""
-"Select if the vocabulary documents should be opened in a question and answer "
-"quiz"
-msgstr ""
-"Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt i quiz "
-"ilroghnach"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optQA)
-#: prefgeneralbase.ui:92
-#, kde-format
-msgid "&Question and Answer Quiz"
-msgstr "&Ceisteanna agus Freagraí"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:42
-#, fuzzy, kde-format
-#| msgid "The number of questions in the session"
-msgid "Specify behavior for a question and answer session"
-msgstr "Líon na gceisteanna sa seisiún"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grpQA)
-#: prefquizbase.ui:45
-#, kde-format
-msgid "Question && Answer"
-msgstr "Ceist agus Freagra"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:66
-#, fuzzy, kde-format
-#| msgid "&Treat hint as error"
-msgid "Check to count hint as error"
-msgstr "&Déileálfar le leideanna mar earráidí"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:69
-#, kde-format
-msgid ""
-"Select if questions where the hint function has been used should be counted "
-"as errors"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_HintError)
-#: prefquizbase.ui:72
-#, kde-format
-msgid "&Treat hint as error"
-msgstr "&Déileálfar le leideanna mar earráidí"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpScore)
-#: prefquizbase.ui:89
-#, kde-format
-msgid "Specify behavior of the score presentation in any session"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:113
-#, kde-format
-msgid "Check to show score as a percentage"
-msgstr "Ticeáil é seo chun an scór a thaispeáint mar chéatadán"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:116
-#, kde-format
-msgid "Select if the score should be shown as a percentage"
-msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Percent)
-#: prefquizbase.ui:119
-#, kde-format
-msgid "&Show score as a percentage"
-msgstr "Tai&speáin an scór mar chéatadán"
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, grpMultiple)
-#: prefquizbase.ui:145
-#, kde-format
-msgid "Specify behavior for a multiple choice session"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:169
-#, kde-format
-msgid "Check to correct automatically"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:172
-#, fuzzy, kde-format
-#| msgid "Select if the score should be shown as a percentage"
-msgid "Select if a choice should be checked immediately"
-msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoCheck)
-#: prefquizbase.ui:175
-#, kde-format
-msgid "Check selection a&utomatically"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QGroupBox, KeepDiscard)
-#: prefquizbase.ui:185
-#, fuzzy, kde-format
-#| msgid "Starting flashcard session..."
-msgid "Specify behavior of a flashcard session"
-msgstr "Seisiún spléach-chártaí á thosú..."
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:231
-#, kde-format
-msgid "Specify the amount of time between card flips"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, lblSeconds)
-#: prefquizbase.ui:234
-#, kde-format
-msgid "seconds and"
-msgstr "soicindí agus"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:241
-#, kde-format
-msgid "Delay to flip card"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_FlipDelay)
-#: prefquizbase.ui:244
-#, fuzzy, kde-format
-#| msgid "Copying selection to clipboard..."
-msgid "Delay in seconds to flip card"
-msgstr "Roghnúchán á chóipeáil go dtí an ghearrthaisce..."
-
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optCorrect)
-#. i18n: ectx: property (toolTip), widget (QRadioButton, optError)
-#: prefquizbase.ui:275 prefquizbase.ui:288
-#, fuzzy, kde-format
-#| msgid "Select to print flashcards"
-msgid "Select how to count card"
-msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
-
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:278
-#, fuzzy, kde-format
-#| msgid "Select if the vocabulary documents should be opened in the editor"
-msgid ""
-"Select if the previous card should be counted as correct when moving to the "
-"next card"
-msgstr ""
-"Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san eagarthóir"
-
-#. i18n: ectx: property (text), widget (QRadioButton, optCorrect)
-#: prefquizbase.ui:281
+#: qml/FlashCardPage.qml:146
 #, fuzzy, kde-format
 #| msgid "Your answer was correct!"
-msgid "Count &as correct"
+msgctxt "@action:button"
+msgid "Not Correct"
 msgstr "Bhí do fhreagra ceart!"
 
-#. i18n: ectx: property (whatsThis), widget (QRadioButton, optError)
-#: prefquizbase.ui:291
+#: qml/LanguageSelectorPage.qml:15
 #, fuzzy, kde-format
-#| msgid "Select if the vocabulary documents should be opened in the editor"
-msgid ""
-"Select if the previous card should be counted as incorrect when moving to "
-"the next card"
-msgstr ""
-"Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san eagarthóir"
+#| msgid "Select Image"
+msgid "Select a language"
+msgstr "Roghnaigh Íomhá"
 
-#. i18n: ectx: property (text), widget (QRadioButton, optError)
-#: prefquizbase.ui:294
+#: qml/main.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@action:inmenu"
+msgid "Settings"
+msgstr "Socruithe Quiz"
+
+#: qml/main.qml:42
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "This was the correct answer"
+msgid "This is correct"
+msgstr "Ba é seo an freagra ceart"
+
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Incorrect answers"
+msgid "Wrong, the correct answer was \"%1\"."
+msgstr "Freagraí mícheara"
+
+#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
+#, kde-format
+msgctxt "@action:button"
+msgid "Next"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:150
+#, kde-format
+msgid "Not enough words in your deck"
+msgstr ""
+
+#: qml/MultipleChoicePage.qml:151
+#, kde-format
+msgid "You need at least 3 words to enable the multiple choice mode"
+msgstr ""
+
+#: qml/OptionsAction.qml:12
+#, fuzzy, kde-format
+#| msgid "&2 Option"
+msgctxt "@action:button"
+msgid "Options"
+msgstr "Rogha &2"
+
+#: qml/OptionsAction.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu undo shuffle"
+#| msgid "Shuffle"
+msgctxt "@action:inmenu"
+msgid "Shuffle"
+msgstr "Suaith"
+
+#: qml/QuestionAnswerPage.qml:143
+#, fuzzy, kde-format
+#| msgid "&Hint"
+msgctxt "@action:button"
+msgid "Hint"
+msgstr "&Leid"
+
+#: qml/SettingsPage.qml:13
+#, fuzzy, kde-format
+#| msgctxt "@title:group quiz settings"
+#| msgid "Quiz Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Socruithe Quiz"
+
+#: qml/SettingsPage.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:group general settings"
+#| msgid "General"
+msgid "General"
+msgstr "Ginearálta"
+
+#: qml/SettingsPage.qml:30
+#, kde-format
+msgid "Show score as percentage"
+msgstr "Taispeáin an scór mar chéatadán"
+
+#: qml/SettingsPage.qml:47
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgid "Flash Card"
+msgstr "Spléach-chárta"
+
+#: qml/SettingsPage.qml:52
+#, kde-format
+msgid "Automatically flip flashcard"
+msgstr ""
+
+#: qml/SettingsPage.qml:64
+#, fuzzy, kde-format
+#| msgid "Select to print flashcards"
+msgid "Time delay for flipping the flashcard"
+msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
+
+#: qml/SettingsPage.qml:84
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgid "Multiple choice"
+msgstr "Ceist Ilroghnach"
+
+#: qml/SettingsPage.qml:88
+#, kde-format
+msgid "Automatically check selected answer"
+msgstr ""
+
+#: qml/SettingsPage.qml:105
+#, fuzzy, kde-format
+#| msgid "&Question and Answer"
+msgid "Question and Answer"
+msgstr "&Ceisteanna agus Freagraí"
+
+#: qml/SettingsPage.qml:110
 #, fuzzy, kde-format
 #| msgid "&Treat hint as error"
-msgid "Count as &error"
+msgid "Count using hint as an error"
 msgstr "&Déileálfar le leideanna mar earráidí"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:304
+#: qml/SettingsPage.qml:122
 #, kde-format
-msgid "Check to flip card automatically"
+msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:307
-#, kde-format
-msgid ""
-"Select if you want a card to turn over automatically after the given amount "
-"of time"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoFlip)
-#: prefquizbase.ui:310
-#, kde-format
-msgid "&Flip card automatically after"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorTiming)
-#: preftutorbase.ui:17
-#, kde-format
-msgid "Tutor Timing"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonEvery)
-#: preftutorbase.ui:23
-#, kde-format
-msgid "&Every"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesPeriodic)
-#: preftutorbase.ui:60
-#, kde-format
-msgid "&minutes"
-msgstr "&nóiméad"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonRandomly)
-#: preftutorbase.ui:72
-#, kde-format
-msgid "&Randomly"
-msgstr "Go &Randamach"
-
-#. i18n: ectx: property (text), widget (QLabel, labelBetween)
-#: preftutorbase.ui:100
-#, kde-format
-msgid "Between"
-msgstr "Idir"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMax)
-#: preftutorbase.ui:120
-#, kde-format
-msgid "m&inutes and"
-msgstr "nó&iméad agus"
-
-#. i18n: ectx: property (text), widget (QLabel, labelMinutesMin)
-#: preftutorbase.ui:146
-#, kde-format
-msgid "mi&nutes"
-msgstr "&nóiméad"
-
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_TutorCardAppearance)
-#: preftutorbase.ui:161
-#, kde-format
-msgid "Flashcard Appearance"
-msgstr "Leagan amach na spléach-chártaí"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceNative)
-#: preftutorbase.ui:167
-#, kde-format
-msgid "&Native"
-msgstr "&Dúchasach"
-
-#. i18n: ectx: property (text), widget (QRadioButton, radioButtonAppearanceMinimalistic)
-#: preftutorbase.ui:177
-#, kde-format
-msgid "Minim&alistic"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBoxMisc)
-#: preftutorbase.ui:187
-#, kde-format
-msgid "Miscellaneous"
-msgstr "Rudaí éagsúla"
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_StartExerciseAsSoonAsFileIsLoaded)
-#: preftutorbase.ui:193
-#, kde-format
-msgid "S&tart exercise as soon as vocabulary file is opened"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerBlank)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, txtAnswer)
-#. i18n: ectx: property (toolTip), widget (QLabel, lblAnswerLanguage)
-#. i18n: ectx: property (toolTip), widget (QLabel, picAnswer)
-#: qaviewbase.ui:142 qaviewbase.ui:173 qaviewbase.ui:205 qaviewbase.ui:233
-#, kde-format
-msgid "Type your answer"
-msgstr "Clóscríobh do fhreagra"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:145
-#, kde-format
-msgid "The answer showing blanks for a Fill-in-the-blank question"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, lblAnswerBlank)
-#: qaviewbase.ui:148
+#: qml/SettingsPage.qml:152
 #, fuzzy, kde-format
-#| msgid "This was your answer"
-msgid "This is _____ answer"
-msgstr "Ba é seo do fhreagra"
+#| msgid "Quits KWordQuiz"
+msgid "About KWordQuiz"
+msgstr "Scoir KWordQuiz"
 
-#. i18n: ectx: property (whatsThis), widget (QLineEdit, txtAnswer)
-#: qaviewbase.ui:176
+#: qml/SettingsPage.qml:161
 #, kde-format
-msgid "Type the answer to the question"
-msgstr "Clóscríobh freagra ar an gceist"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: qaviewbase.ui:587
-#, kde-format
-msgid ""
-"<html>There are too few entries in your vocabulary.<br />You need at least "
-"one entry for a question and answer quiz.</html>"
+msgid "About KDE"
 msgstr ""
 
-#: wqprintdialogpage.cpp:17
-#, fuzzy, kde-format
-#| msgid "Vocabulary Options"
+#: qml/WelcomePage.qml:35
+#, kde-format
 msgctxt "@title:window"
-msgid "Vocabulary Options"
-msgstr "Roghanna Stóir Fhocal"
-
-#: wqprintdialogpage.cpp:23
-#, kde-format
-msgid "Select Type of Printout"
+msgid "Welcome"
 msgstr ""
 
-#: wqprintdialogpage.cpp:28
+#: qml/WelcomePage.qml:43
 #, kde-format
-msgid "Vocabulary &list"
+msgid "Please choose a KWordQuiz document"
 msgstr ""
 
-#: wqprintdialogpage.cpp:29
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Select to print the vocabulary as displayed in the editor"
+msgid "KEduDocument (*.kvtml)"
 msgstr ""
 
-#: wqprintdialogpage.cpp:33
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Vocabulary e&xam"
+msgid "Wql documents (*.wql)"
 msgstr ""
 
-#: wqprintdialogpage.cpp:34
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "Select to print the vocabulary as a vocabulary exam"
+msgid "CSV documents (*.csv)"
 msgstr ""
 
-#: wqprintdialogpage.cpp:38
+#: qml/WelcomePage.qml:45
 #, kde-format
-msgid "&Flashcards"
-msgstr "&Spléach-chártaí"
+msgid "XDXF documents (*.xdxf)"
+msgstr ""
 
-#: wqprintdialogpage.cpp:39
+#: qml/WelcomePage.qml:62
+#, fuzzy, kde-format
+#| msgid "Quits KWordQuiz"
+msgid "Welcome to KWordQuiz"
+msgstr "Scoir KWordQuiz"
+
+#: qml/WelcomePage.qml:74
+#, fuzzy, kde-format
+#| msgid "Opens an existing vocabulary document"
+msgid "Open existing document"
+msgstr "Oscail cáipéis stóir fhocal atá ann"
+
+#: qml/WelcomePage.qml:80
 #, kde-format
-msgid "Select to print flashcards"
-msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
+msgid "Create Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:88
+#, kde-format
+msgid "Download Deck"
+msgstr ""
+
+#: qml/WelcomePage.qml:111
+#, kde-format
+msgid "Mode"
+msgstr "Mód"
+
+#: qml/WelcomePage.qml:147
+#, fuzzy, kde-format
+#| msgid "Flashcard"
+msgctxt "@option:check Mode selector"
+msgid "Flashcard"
+msgstr "Spléach-chárta"
+
+#: qml/WelcomePage.qml:154
+#, fuzzy, kde-format
+#| msgid "Multiple Choice"
+msgctxt "@option:check Mode selector"
+msgid "Multiple Choice"
+msgstr "Ceist Ilroghnach"
+
+#: qml/WelcomePage.qml:161
+#, fuzzy, kde-format
+#| msgid "Question & Answer"
+msgctxt "@option:check Mode selector"
+msgid "Question-Answer"
+msgstr "Ceist agus Freagra"
+
+#: qml/WelcomePage.qml:177
+#, kde-format
+msgid "Decks"
+msgstr ""
+
+#: qml/WelcomePage.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr ""
+
+#~ msgid "Selection"
+#~ msgstr "Roghnúchán"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "Delete all information in selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#~ msgid "Clear &All"
+#~ msgstr "Gl&an Uile"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "Delete the text from selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "When checked the text will be deleted from selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#~ msgid "&Text"
+#~ msgstr "&Téacs"
+
+#~ msgid "Delete the image link from selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "When checked the image link will be deleted from selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#~ msgid "&Image Links"
+#~ msgstr "Na&isc Íomhá"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "Delete the sound link from selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "When checked the sound link will be deleted from selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#~ msgid "Column 1"
+#~ msgstr "Colún 1"
+
+#~ msgid "Title for the left column"
+#~ msgstr "Teideal ar an gcolún ar chlé"
+
+#~ msgid "Enter a title (identifier) for the left column"
+#~ msgstr "Iontráil teideal (aitheantóir) ar an gcolún ar chlé"
+
+#~ msgid "&Title:"
+#~ msgstr "&Teideal:"
+
+#, fuzzy
+#~| msgid "Keyboard layouts"
+#~ msgid "&Keyboard layout:"
+#~ msgstr "Leaganacha amach méarchláir"
+
+#~ msgid "&Width:"
+#~ msgstr "&Leithead:"
+
+#~ msgid "Keyboard layout for the left column"
+#~ msgstr "Leagan amach an mhéarchláir sa cholún ar chlé"
+
+#~ msgid "Select a keyboard layout for the left column"
+#~ msgstr "Roghnaigh leagan amach an mhéarchláir sa cholún ar chlé"
+
+#~ msgid "Width of the left column"
+#~ msgstr "Leithead an cholúin ar chlé"
+
+#~ msgid "Enter the width (in pixels) for the left column"
+#~ msgstr "Iontráil leithead (picteilíní) an cholúin ar chlé"
+
+#~ msgid "Column 2"
+#~ msgstr "Colún 2"
+
+#~ msgid "T&itle:"
+#~ msgstr "Te&ideal:"
+
+#, fuzzy
+#~| msgid "Keyboard layouts"
+#~ msgid "Keyboard &Layout:"
+#~ msgstr "Leaganacha amach méarchláir"
+
+#, fuzzy
+#~| msgid "&Width:"
+#~ msgid "Wi&dth:"
+#~ msgstr "&Leithead:"
+
+#~ msgid "Title for the right column"
+#~ msgstr "Teideal ar an gcolún ar dheis"
+
+#~ msgid "Enter a title (identifier) for the right column"
+#~ msgstr "Iontráil teideal (aitheantóir) ar an gcolún ar dheis"
+
+#~ msgid "Width of the right column"
+#~ msgstr "Leithead an cholúin ar dheis"
+
+#~ msgid "Enter the width (in pixels) for the right column"
+#~ msgstr "Iontráil leithead (picteilíní) an cholúin ar dheis"
+
+#, fuzzy
+#~| msgid "Column Settings"
+#~ msgctxt "@title:window"
+#~ msgid "Column Settings"
+#~ msgstr "Socruithe Colúin"
+
+#~ msgctxt "@title:window select character dialog"
+#~ msgid "Select Character"
+#~ msgstr "Roghnaigh Carachtar"
+
+#, fuzzy
+#~| msgctxt "@action:button select"
+#~| msgid "&Select"
+#~ msgctxt "@action:button"
+#~ msgid "&Select"
+#~ msgstr "&Roghnaigh"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip select this character"
+#~| msgid "Select this character"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select this character"
+#~ msgstr "Roghnaigh an carachtar seo"
+
+#~ msgid "Column widths"
+#~ msgstr "Leithead na gcolún"
+
+#~ msgid "Keyboard layouts"
+#~ msgstr "Leaganacha amach méarchláir"
+
+#, fuzzy
+#~| msgctxt "@label:textbox search"
+#~| msgid "S&earch:"
+#~ msgid "Search"
+#~ msgstr "C&uardaigh:"
+
+#~ msgid "Your answer was correct!"
+#~ msgstr "Bhí do fhreagra ceart!"
+
+#~ msgid "Your answer was incorrect."
+#~ msgstr "Bhí do fhreagra mícheart."
+
+#~ msgid "Creates a new blank vocabulary document"
+#~ msgstr "Cruthaigh cáipéis nua fholamh stóir fhocal"
+
+#~ msgid "Download New Vocabularies..."
+#~ msgstr "Íosluchtaigh Stóir Fhocal Nua..."
+
+#~ msgid "Downloads new vocabularies"
+#~ msgstr "Íosluchtaigh stóir fhocal nua"
+
+#~ msgid "Saves the active vocabulary document"
+#~ msgstr "Sábháil an cháipéis reatha stóir fhocal"
+
+#~ msgid "Closes the active vocabulary document"
+#~ msgstr "Dún an cháipéis reatha stóir fhocal"
+
+#~ msgid "Prints the active vocabulary document"
+#~ msgstr "Priontáil an cháipéis reatha stóir fhocal"
+
+#~ msgid "Shows a preview of the active vocabulary document"
+#~ msgstr "Taispeáin réamhamharc ar an gcáipéis reatha stóir fhocal"
+
+#~ msgid "&Insert Row"
+#~ msgstr "&Ionsáigh Ró"
+
+#~ msgid "&Delete Row"
+#~ msgstr "&Scrios Ró"
+
+#~ msgid "Deletes the selected row(s)"
+#~ msgstr "Scrios an ró (na rónna) roghnaithe"
+
+#~ msgid "&Font..."
+#~ msgstr "C&ló..."
+
+#~ msgid "Sh&uffle"
+#~ msgstr "Su&aitheadh"
+
+#~ msgid "Change Mode"
+#~ msgstr "Athraigh an Mód"
+
+#~ msgid "Selects this mode"
+#~ msgstr "Roghnaigh an mód seo"
+
+#~ msgctxt "@item:inlistbox activate vocabulary editor"
+#~ msgid "&Editor"
+#~ msgstr "&Eagarthóir"
+
+#~ msgid "&Flashcard"
+#~ msgstr "&Spléach-chárta"
+
+#~ msgid "&Multiple Choice"
+#~ msgstr "&Ceist Ilroghnach"
+
+#~ msgid "Q&&A"
+#~ msgstr "C7F"
+
+#~ msgid "I &Know"
+#~ msgstr "Tá &Fhios Agam"
+
+#~ msgid "I &Do Not Know"
+#~ msgstr "&Níl Fhios Agam"
+
+#~ msgid "&Restart"
+#~ msgstr "&Atosaigh"
+
+#~ msgid "Export Errors &As..."
+#~ msgstr "Easpórtáil Earráidí &Mar..."
+
+#~ msgid "Exports all errors as a new vocabulary document"
+#~ msgstr "Easpórtáil gach earráid mar cháipéis nua stóir fhocal"
+
+#~ msgid "Special Character <numid>%1</numid>"
+#~ msgstr "Carachtar Speisialta <numid>%1</numid>"
+
+#~ msgid "Enter search terms here"
+#~ msgstr "Iontráil téarmaí cuardaigh anseo"
+
+#~ msgid "Opening file..."
+#~ msgstr "Comhad á oscailt..."
+
+#, fuzzy
+#~| msgid "Opening file..."
+#~ msgid "Open File"
+#~ msgstr "Comhad á oscailt..."
+
+#~ msgctxt "@info:status ready"
+#~ msgid "Ready"
+#~ msgstr "Réidh"
+
+#~ msgid ""
+#~ "The current document has been modified.\n"
+#~ "Do you want to save it?"
+#~ msgstr ""
+#~ "Mionathraíodh an cháipéis reatha.\n"
+#~ "An bhfuil fonn ort í a shábháil?"
+
+#~ msgid "Opening a new document window..."
+#~ msgstr "Fuinneog nua cháipéise á hoscailt..."
+
+#~ msgid "&Merge selected files with the current document"
+#~ msgstr "Cu&maisc na comhaid roghnaithe leis an gcáipéis reatha"
+
+#~ msgid "Open Vocabulary Document"
+#~ msgstr "Oscail Cáipéis Stóir Fhocal"
+
+#~ msgid "Saving file..."
+#~ msgstr "Comhad á shábháil..."
+
+#~ msgid "Saving file with a new filename..."
+#~ msgstr "Comhad á shábháil le hainm comhaid nua..."
+
+#~ msgid "Save Vocabulary Document As"
+#~ msgstr "Sábháil Cáipéis Stóir Fhocal Mar"
+
+#~ msgid "Closing file..."
+#~ msgstr "Comhad á dhúnadh..."
+
+#~ msgctxt "@info:status quitting"
+#~ msgid "Quitting..."
+#~ msgstr "Ag scor..."
+
+#~ msgid "Cutting selection..."
+#~ msgstr "Roghnúchán á ghearradh..."
+
+#~ msgid "Copying selection to clipboard..."
+#~ msgstr "Roghnúchán á chóipeáil go dtí an ghearrthaisce..."
+
+#~ msgid "Inserting clipboard contents..."
+#~ msgstr "Inneachar na gearrthaisce á ionsá..."
+
+#~ msgid "Inserting rows..."
+#~ msgstr "Rónna á n-ionsá..."
+
+#~ msgid "Deleting selected rows..."
+#~ msgstr "Rónna roghnaithe á scriosadh..."
+
+#~ msgid "Updating mode..."
+#~ msgstr "Mód á nuashonrú..."
+
+#~ msgid "Starting editor session..."
+#~ msgstr "Seisiún eagarthóireachta á thosú..."
+
+#~ msgid "Starting flashcard session..."
+#~ msgstr "Seisiún spléach-chártaí á thosú..."
+
+#~ msgid "Insert %1"
+#~ msgstr "Ionsáigh %1"
+
+#~ msgid "Inserts the character %1"
+#~ msgstr "Ionsáigh carachtar %1"
+
+#~ msgid "This will restart your quiz. Do you wish to continue?"
+#~ msgstr "Atosóidh sé seo do quiz. An bhfuil fonn ort dul ar aghaidh?"
+
+#~ msgid "&1 %1 -> %2 In Order"
+#~ msgstr "&1 %1 -> %2 In Ord"
+
+#~ msgid "&2 %1 -> %2 In Order"
+#~ msgstr "&2 %1 -> %2 In Ord"
+
+#~ msgid "&3 %1 -> %2 Randomly"
+#~ msgstr "&3 %1 -> %2 Go Randamach"
+
+#~ msgid "&4 %1 -> %2 Randomly"
+#~ msgstr "&4 %1 -> %2 Go Randamach"
+
+#, fuzzy
+#~| msgid "&3 %1 -> %2 Randomly"
+#~ msgid "&5 %1 <-> %2 Randomly"
+#~ msgstr "&3 %1 -> %2 Go Randamach"
+
+#~ msgid "%1 -> %2 In Order"
+#~ msgstr "%1 -> %2 In Ord"
+
+#~ msgid "%1 -> %2 Randomly"
+#~ msgstr "%1 -> %2 Go Randamach"
+
+#~ msgid "%1 &lt;-&gt; %2 Randomly"
+#~ msgstr "%1 &lt;-&gt; %2 Go Randamach"
+
+#~ msgid "Titles for column 1"
+#~ msgstr "Teidil ar cholún 1"
+
+#~ msgid "Titles for column 2"
+#~ msgstr "Teidil ar cholún 2"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "Clear all data in selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "Clear the text in selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "Clear the image link in selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#, fuzzy
+#~| msgid "Delete the image link from selected entries"
+#~ msgid "Clear the sound link in selected entries"
+#~ msgstr "Scrios an nasc íomhá ó na hiontrálacha roghnaithe"
+
+#~ msgid "Treat use of hint as error"
+#~ msgstr "Déileálfar le leideanna mar earráidí"
+
+#, fuzzy
+#~| msgid "Quiz"
+#~ msgid "Quiz mode"
+#~ msgstr "Quiz"
+
+#, fuzzy
+#~| msgid "Font for back of card"
+#~ msgid "Font used for front of flashcard"
+#~ msgstr "Cló ar chúl an chárta"
+
+#, fuzzy
+#~| msgid "Select to print flashcards"
+#~ msgid "Color used for front of flashcard"
+#~ msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
+
+#, fuzzy
+#~| msgid "Font for back of card"
+#~ msgid "Font used for back of flashcard"
+#~ msgstr "Cló ar chúl an chárta"
+
+#, fuzzy
+#~| msgid "Font for back of card"
+#~ msgid "Color used for back of flashcard"
+#~ msgstr "Cló ar chúl an chárta"
+
+#~ msgid "The command used to start a downloaded vocabulary"
+#~ msgstr "An t-ordú a úsáidtear chun stór focal íosluchtaithe a thosú"
+
+#~ msgid ""
+#~ "The folder where downloaded vocabularies are saved by default (relative "
+#~ "to $HOME)"
+#~ msgstr ""
+#~ "Fillteán ina sábhálfar stóir fhocal íosluchtaithe de réir réamhshocraithe "
+#~ "(i gcoibhneas le $HOME)"
+
+#~ msgctxt "@title:group general settings"
+#~ msgid "General Settings"
+#~ msgstr "Socruithe Ginearálta"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor"
+#~ msgstr "Eagarthóir"
+
+#~ msgctxt "@title:group editor settings"
+#~ msgid "Editor Settings"
+#~ msgstr "Socruithe an Eagarthóra"
+
+#~ msgctxt "@title:group quiz settings"
+#~ msgid "Quiz"
+#~ msgstr "Quiz"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Leagan amach na spléach-chártaí"
+
+#~ msgctxt "@title:group flash appearance settings"
+#~ msgid "Flashcard Appearance Settings"
+#~ msgstr ""
+#~ "Socruithe Leagan Amach na\n"
+#~ "Spléach-chártaí"
+
+#~ msgctxt "@title:group special character settings"
+#~ msgid "Special Characters"
+#~ msgstr "Carachtair Speisialta"
+
+#~ msgid "V&ocabulary"
+#~ msgstr "Stór F&ocal"
+
+#~ msgid "&Mode"
+#~ msgstr "&Mód"
+
+#~ msgid "&Quiz"
+#~ msgstr "&Quiz"
+
+#~ msgid "Quiz"
+#~ msgstr "Quiz"
+
+#~ msgid "Special Characters"
+#~ msgstr "Carachtair Speisialta"
+
+#, fuzzy
+#~| msgid "Clear Contents"
+#~ msgctxt "@title:window"
+#~ msgid "Clear Contents"
+#~ msgstr "Glan an tInneachar"
+
+#~ msgctxt "@item:inmenu undo clear"
+#~ msgid "Clear"
+#~ msgstr "Glan"
+
+#~ msgctxt "@item:inmenu undo cut"
+#~ msgid "Cut"
+#~ msgstr "Gearr"
+
+#~ msgctxt "@item:inmenu undo paste"
+#~ msgid "Paste"
+#~ msgstr "Greamaigh"
+
+#~ msgctxt "@item:inmenu undo sort"
+#~ msgid "Sort"
+#~ msgstr "Sórtáil"
+
+#~ msgctxt "@item:inmenu undo insert"
+#~ msgid "Insert"
+#~ msgstr "Ionsáigh"
+
+#~ msgctxt "@item:inmenu undo delete"
+#~ msgid "Delete"
+#~ msgstr "Scrios"
+
+#~ msgctxt "@item:inmenu undo column titles"
+#~ msgid "Column Settings"
+#~ msgstr "Socruithe Colúin"
+
+#~ msgid "Font"
+#~ msgstr "Cló"
+
+#~ msgid "Entry"
+#~ msgstr "Iontráil"
+
+#~ msgid "Questions"
+#~ msgstr "Ceisteanna"
+
+#~ msgid "The number of questions in the session"
+#~ msgstr "Líon na gceisteanna sa seisiún"
+
+#~ msgid "00"
+#~ msgstr "00"
+
+#~ msgid "Correct answers"
+#~ msgstr "Freagraí cearta"
+
+#, fuzzy
+#~| msgid "Select if the score should be shown as a percentage"
+#~ msgid ""
+#~ "The number of questions answered correctly. May be shown as a percentage."
+#~ msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
+
+#, fuzzy
+#~| msgid "Select if the score should be shown as a percentage"
+#~ msgid ""
+#~ "The number of questions answered incorrectly. May be shown as a "
+#~ "percentage."
+#~ msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
+
+#, fuzzy
+#~| msgid "The question"
+#~ msgid "Answered questions"
+#~ msgstr "An cheist"
+
+#, fuzzy
+#~| msgid "Select if the score should be shown as a percentage"
+#~ msgid ""
+#~ "The number of questions already answered. May be shown as a percentage."
+#~ msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
+
+#~ msgid "Untitled"
+#~ msgstr "Gan Teideal"
+
+#, fuzzy
+#~| msgid "Select Sound"
+#~ msgctxt "@title:window"
+#~ msgid "Select Sound"
+#~ msgstr "Roghnaigh Fuaim"
+
+#, fuzzy
+#~| msgid "*|All Files"
+#~ msgid "All Files (*)"
+#~ msgstr "*|Gach Comhad"
+
+#~ msgid "Close Flash Card"
+#~ msgstr "Dún an Spléach-Chárta"
+
+#~ msgid "Flip Flash Card"
+#~ msgstr "Smeach an Spléach-Chárta"
+
+#~ msgctxt "Shortcuts Config"
+#~ msgid "Shortcuts"
+#~ msgstr "Aicearraí"
+
+#~ msgid "Shortcuts Settings"
+#~ msgstr "Socruithe Aicearraí"
+
+#~ msgid "Previous Question"
+#~ msgstr "An Cheist Roimhe Seo"
+
+#~ msgid "Your Answer"
+#~ msgstr "Do Fhreagra"
+
+#~ msgid "Summary"
+#~ msgstr "Achoimre"
+
+#~ msgid "The question"
+#~ msgstr "An cheist"
+
+#, fuzzy
+#~| msgid "Language or other identifier for the answer"
+#~ msgid "Language or other identifier for the question"
+#~ msgstr "Teanga nó aitheantóir eile ar an bhfreagra"
+
+#~ msgid "Language 1"
+#~ msgstr "Teanga 1"
+
+#~ msgid "This is your question"
+#~ msgstr "Is do cheist í seo"
+
+#~ msgid "Your choices"
+#~ msgstr "Do chuid roghanna"
+
+#~ msgid "&1 Option"
+#~ msgstr "Rogha &1"
+
+#~ msgid "Language or other identifier for the answer"
+#~ msgstr "Teanga nó aitheantóir eile ar an bhfreagra"
+
+#~ msgid "Language 2"
+#~ msgstr "Teanga 2"
+
+#~ msgid "&3 Option"
+#~ msgstr "Rogha &3"
+
+#~ msgid "Previous question"
+#~ msgstr "An cheist roimhe seo"
+
+#~ msgid "The previous question"
+#~ msgstr "An cheist roimhe seo"
+
+#~ msgid "This was your question"
+#~ msgstr "Ba í seo do cheist"
+
+#~ msgid "Your previous answer"
+#~ msgstr "Do fhreagra roimhe seo"
+
+#~ msgid "Your answer to the previous question"
+#~ msgstr "Do fhreagra ar an gceist roimhe seo"
+
+#~ msgid "This was your answer"
+#~ msgstr "Ba é seo do fhreagra"
+
+#~ msgid "Previous correct answer"
+#~ msgstr "An freagra ceart roimhe seo"
+
+#~ msgid "The correct answer to the previous question"
+#~ msgstr "An freagra ceart ar an gceist roimhe seo"
+
+#~ msgctxt "Back of the flashcard"
+#~ msgid "Back"
+#~ msgstr "Cúl"
+
+#~ msgid "Front"
+#~ msgstr "Éadan"
+
+#~ msgid "Card Appearance"
+#~ msgstr "Leagan Amach an Chárta"
+
+#~ msgid "Flip card"
+#~ msgstr "Smeach an cárta"
+
+#~ msgid "Use to show the other side of the card"
+#~ msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
+
+#~ msgid "&Flip Card"
+#~ msgstr "Smeach an &Cárta"
+
+#~ msgid "F&ont:"
+#~ msgstr "&Cló:"
+
+#, fuzzy
+#~| msgid "Use to show the other side of the card"
+#~ msgid "Use to select the font for displaying text on the back of the card"
+#~ msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
+
+#~ msgid "Select text color"
+#~ msgstr "Roghnaigh dath an téacs"
+
+#, fuzzy
+#~| msgid "Use to show the other side of the card"
+#~ msgid "Use to select the color for text shown on the card"
+#~ msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
+
+#~ msgid "Select card frame color"
+#~ msgstr "Roghnaigh dath an fhráma ar an gcárta"
+
+#, fuzzy
+#~| msgid "Use to show the other side of the card"
+#~ msgid "Use to select the color for drawing the frame of the card"
+#~ msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
+
+#~ msgid "Select card color"
+#~ msgstr "Roghnaigh dath an chárta"
+
+#, fuzzy
+#~| msgid "Select direction for the sort"
+#~ msgid "Select color used to draw the card"
+#~ msgstr "Roghnaigh ord sórtála"
+
+#, fuzzy
+#~| msgid "Use to show the other side of the card"
+#~ msgid "Use to select the font for displaying text on the front of the card"
+#~ msgstr "Úsáid é seo chun taobh eile an chárta a thaispeáint"
+
+#~ msgid "&Text color:"
+#~ msgstr "Da&th téacs:"
+
+#~ msgid "&Card color:"
+#~ msgstr "&Dath an Chárta:"
+
+#~ msgid "Fra&me color:"
+#~ msgstr "Dath an fhrá&ma:"
+
+#~ msgid "Action"
+#~ msgstr "Gníomh"
+
+#~ msgid "Shortcut"
+#~ msgstr "Aicearra"
+
+#~ msgid "Character"
+#~ msgstr "Carachtar"
+
+#~ msgid "Special Character %1"
+#~ msgstr "Carachtar Speisialta %1"
+
+#~ msgid "Select character to modify"
+#~ msgstr "Roghnaigh carachtar le mionathrú"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "Click to choose a new character"
+#~ msgstr "Cliceáil chun carachtar nua a roghnú"
+
+#~ msgid "C&haracter..."
+#~ msgstr "&Carachtar..."
+
+#~ msgid "Preview of current character"
+#~ msgstr "Réamhamharc ar an gcarachtar reatha"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "How enter key moves"
+#~ msgstr "An treo a mbogann an eochair \"Enter\""
+
+#, fuzzy
+#~| msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgid "Select how the Enter key should behave in the editor"
+#~ msgstr ""
+#~ "Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san "
+#~ "eagarthóir"
+
+#~ msgid "Enter Ke&y Moves"
+#~ msgstr "Bogann an Eochair \"Enter\""
+
+#, fuzzy
+#~| msgid "Select if the score should be shown as a percentage"
+#~ msgid ""
+#~ "Select if the next cell below should become active when pressing Enter."
+#~ msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
+
+#~ msgid "&Down"
+#~ msgstr "&Síos"
+
+#~ msgid "&Right"
+#~ msgstr "Ar &Dheis"
+
+#, fuzzy
+#~| msgid "Select if the score should be shown as a percentage"
+#~ msgid "Select if the current cell should remain active when pressing Enter"
+#~ msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
+
+#~ msgid "Does not &move"
+#~ msgstr "Ná &bog"
+
+#~ msgid "How vocabulary documents are opened"
+#~ msgstr "Conas a oscláitear cáipéisí stóir fhocal"
+
+#~ msgid "&Open Vocabulary Documents in"
+#~ msgstr "&Oscail Cáipéisí Stóir Fhocal i"
+
+#~ msgid "Open vocabulary documents in the editor"
+#~ msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
+
+#~ msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgstr ""
+#~ "Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san "
+#~ "eagarthóir"
+
+#~ msgid "&Editor"
+#~ msgstr "&Eagarthóir"
+
+#, fuzzy
+#~| msgid "Open vocabulary documents in the editor"
+#~ msgid "Open vocabulary documents in a flashcard quiz"
+#~ msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
+
+#, fuzzy
+#~| msgid ""
+#~| "Select if the vocabulary documents should be opened in a multiple choice "
+#~| "quiz"
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
+#~ msgstr ""
+#~ "Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt i quiz "
+#~ "ilroghnach"
+
+#~ msgid "&Flashcard Quiz"
+#~ msgstr "&Quiz Spléach-chártaí"
+
+#, fuzzy
+#~| msgid "Open vocabulary documents in the editor"
+#~ msgid "Open vocabulary documents in a multiple choice quiz"
+#~ msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
+
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a multiple choice "
+#~ "quiz"
+#~ msgstr ""
+#~ "Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt i quiz "
+#~ "ilroghnach"
+
+#~ msgid "&Multiple Choice Quiz"
+#~ msgstr "Ceisteanna &Ilroghnacha"
+
+#, fuzzy
+#~| msgid "Open vocabulary documents in the editor"
+#~ msgid "Open vocabulary documents in a question and answer quiz"
+#~ msgstr "Oscail cáipéisí stóir fhocal san eagarthóir"
+
+#, fuzzy
+#~| msgid ""
+#~| "Select if the vocabulary documents should be opened in a multiple choice "
+#~| "quiz"
+#~ msgid ""
+#~ "Select if the vocabulary documents should be opened in a question and "
+#~ "answer quiz"
+#~ msgstr ""
+#~ "Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt i quiz "
+#~ "ilroghnach"
+
+#~ msgid "&Question and Answer Quiz"
+#~ msgstr "&Ceisteanna agus Freagraí"
+
+#, fuzzy
+#~| msgid "The number of questions in the session"
+#~ msgid "Specify behavior for a question and answer session"
+#~ msgstr "Líon na gceisteanna sa seisiún"
+
+#~ msgid "Question && Answer"
+#~ msgstr "Ceist agus Freagra"
+
+#~ msgid "&Treat hint as error"
+#~ msgstr "&Déileálfar le leideanna mar earráidí"
+
+#~ msgid "Check to show score as a percentage"
+#~ msgstr "Ticeáil é seo chun an scór a thaispeáint mar chéatadán"
+
+#~ msgid "Select if the score should be shown as a percentage"
+#~ msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
+
+#~ msgid "&Show score as a percentage"
+#~ msgstr "Tai&speáin an scór mar chéatadán"
+
+#, fuzzy
+#~| msgid "Select if the score should be shown as a percentage"
+#~ msgid "Select if a choice should be checked immediately"
+#~ msgstr "Roghnaigh é seo más mian leat an scór a thaispeáint mar chéatadán"
+
+#, fuzzy
+#~| msgid "Starting flashcard session..."
+#~ msgid "Specify behavior of a flashcard session"
+#~ msgstr "Seisiún spléach-chártaí á thosú..."
+
+#~ msgid "seconds and"
+#~ msgstr "soicindí agus"
+
+#, fuzzy
+#~| msgid "Copying selection to clipboard..."
+#~ msgid "Delay in seconds to flip card"
+#~ msgstr "Roghnúchán á chóipeáil go dtí an ghearrthaisce..."
+
+#, fuzzy
+#~| msgid "Select to print flashcards"
+#~ msgid "Select how to count card"
+#~ msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
+
+#, fuzzy
+#~| msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgid ""
+#~ "Select if the previous card should be counted as correct when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san "
+#~ "eagarthóir"
+
+#, fuzzy
+#~| msgid "Select if the vocabulary documents should be opened in the editor"
+#~ msgid ""
+#~ "Select if the previous card should be counted as incorrect when moving to "
+#~ "the next card"
+#~ msgstr ""
+#~ "Roghnaigh é seo más mian leat cáipéisí stóir fhocal a oscailt san "
+#~ "eagarthóir"
+
+#, fuzzy
+#~| msgid "&Treat hint as error"
+#~ msgid "Count as &error"
+#~ msgstr "&Déileálfar le leideanna mar earráidí"
+
+#~ msgid "&minutes"
+#~ msgstr "&nóiméad"
+
+#~ msgid "&Randomly"
+#~ msgstr "Go &Randamach"
+
+#~ msgid "Between"
+#~ msgstr "Idir"
+
+#~ msgid "m&inutes and"
+#~ msgstr "nó&iméad agus"
+
+#~ msgid "mi&nutes"
+#~ msgstr "&nóiméad"
+
+#~ msgid "Flashcard Appearance"
+#~ msgstr "Leagan amach na spléach-chártaí"
+
+#~ msgid "&Native"
+#~ msgstr "&Dúchasach"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Rudaí éagsúla"
+
+#~ msgid "Type your answer"
+#~ msgstr "Clóscríobh do fhreagra"
+
+#, fuzzy
+#~| msgid "This was your answer"
+#~ msgid "This is _____ answer"
+#~ msgstr "Ba é seo do fhreagra"
+
+#~ msgid "Type the answer to the question"
+#~ msgstr "Clóscríobh freagra ar an gceist"
+
+#, fuzzy
+#~| msgid "Vocabulary Options"
+#~ msgctxt "@title:window"
+#~ msgid "Vocabulary Options"
+#~ msgstr "Roghanna Stóir Fhocal"
+
+#~ msgid "&Flashcards"
+#~ msgstr "&Spléach-chártaí"
+
+#~ msgid "Select to print flashcards"
+#~ msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
 
 #~ msgid "&5 %1 &lt;-&gt; %2 Randomly"
 #~ msgstr "&5 %1 &lt;-&gt; %2 Go Randamach"
@@ -2725,9 +1648,6 @@ msgstr "Roghnaigh é seo chun na spléach-chártaí a phriontáil"
 
 #~ msgid "Select to sort based on the right column"
 #~ msgstr "Sórtáil bunaithe ar an gcolún ar dheis"
-
-#~ msgid "&2 Language 2"
-#~ msgstr "&2 Teanga 2"
 
 #~ msgid "&1 Language 1"
 #~ msgstr "&1 Teanga 1"
