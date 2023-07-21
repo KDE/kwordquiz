@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-20 00:44+0000\n"
-"PO-Revision-Date: 2023-07-19 10:41+0200\n"
+"PO-Revision-Date: 2023-07-20 10:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -169,28 +169,23 @@ msgstr[0] "U maakte één vergissing"
 msgstr[1] "U maakte %1 vergissingen"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat errors"
+#, kde-format
 msgid "Repeat Errors"
 msgstr "Herhaal fouten"
 
 #: qml/BasePage.qml:93
-#, fuzzy, kde-format
-#| msgid "Try again"
+#, kde-format
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
 #: qml/DeckEditorPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Create Deck"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "Deck aanmaken"
 
 #: qml/DeckEditorPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit deck"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Deck bewerken"
@@ -245,33 +240,25 @@ msgid "Save"
 msgstr "Opslaan"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr "Image verwijderen"
+msgstr "Afbeelding verwijderen"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Link image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Afbeelding koppelen"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Geluid verwijderen"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Link sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Geluid koppelen"
@@ -283,22 +270,18 @@ msgid "Set language"
 msgstr "Taal instellen"
 
 #: qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Set language"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "Taal instellen"
 
 #: qml/DeckEditorPage.qml:183
-#, fuzzy, kde-format
-#| msgid "Please choose an image"
+#, kde-format
 msgid "Please Choose an Image"
 msgstr "Kies een afbeelding"
 
 #: qml/DeckEditorPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Please choose a sound"
+#, kde-format
 msgid "Please Choose a Sound"
 msgstr "Kies een geluid"
 
@@ -508,8 +491,7 @@ msgid "Welcome to KWordQuiz"
 msgstr "Welkom bij KWordQuiz"
 
 #: qml/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Open existing document"
+#, kde-format
 msgid "Open Existing Document"
 msgstr "Bestaand document openen"
 
@@ -535,8 +517,7 @@ msgid "Flashcard"
 msgstr "Kaarten"
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Meerkeuzevragen"

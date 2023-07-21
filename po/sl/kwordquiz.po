@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-20 00:44+0000\n"
-"PO-Revision-Date: 2023-07-19 07:21+0200\n"
+"PO-Revision-Date: 2023-07-20 06:23+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
 "%100<=4 ? 2 : 3);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -168,28 +168,23 @@ msgstr[2] "Naredili ste %1 napake"
 msgstr[3] "Naredili ste %1 napak"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat errors"
+#, kde-format
 msgid "Repeat Errors"
 msgstr "Ponovite napake"
 
 #: qml/BasePage.qml:93
-#, fuzzy, kde-format
-#| msgid "Try again"
+#, kde-format
 msgid "Try Again"
 msgstr "Poskusite ponovno"
 
 #: qml/DeckEditorPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Create Deck"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "Ustvari kupček kart"
 
 #: qml/DeckEditorPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit deck"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Uredi kupček kart"
@@ -244,33 +239,25 @@ msgid "Save"
 msgstr "Shrani"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "Odstrani sliko"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Link image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Poveži sliko"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Odstrani zvok"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Link sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Poveži zvok"
@@ -282,22 +269,18 @@ msgid "Set language"
 msgstr "Nastavi Jezik"
 
 #: qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Set language"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "Nastavi Jezik"
+msgstr "Nastavi jezik"
 
 #: qml/DeckEditorPage.qml:183
-#, fuzzy, kde-format
-#| msgid "Please choose an image"
+#, kde-format
 msgid "Please Choose an Image"
 msgstr "Prosim izberite sliko"
 
 #: qml/DeckEditorPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Please choose a sound"
+#, kde-format
 msgid "Please Choose a Sound"
 msgstr "Prosim izberite zvok"
 
@@ -507,8 +490,7 @@ msgid "Welcome to KWordQuiz"
 msgstr "Dobrodošli v KWordQuiz"
 
 #: qml/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Open existing document"
+#, kde-format
 msgid "Open Existing Document"
 msgstr "Odpri obstoječi dokument"
 
@@ -534,8 +516,7 @@ msgid "Flashcard"
 msgstr "Flash kartica"
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Večkratna izbira"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-20 00:44+0000\n"
-"PO-Revision-Date: 2023-02-12 06:23+0100\n"
+"PO-Revision-Date: 2023-07-20 07:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,7 +51,7 @@ msgstr "პასუხი"
 #: main.cpp:56
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "მითითებული გადასვლა არასწორია: %1. შესაძლებელია: flash, mc და qa"
 
 #: main.cpp:90
 #, kde-format
@@ -61,7 +61,7 @@ msgstr "KWordQuiz"
 #: main.cpp:92
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
-msgstr ""
+msgstr "ბარათებით ლექსიკონის სასწავლო პროგრამა"
 
 #: main.cpp:94
 #, kde-format
@@ -77,19 +77,19 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "საწყისი ავტორი"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "QML-ზე გადაყვანა"
 
 #: main.cpp:100
 #, kde-format
@@ -119,6 +119,10 @@ msgid ""
 "'mc' for multiple choice, \n"
 "'qa' for question and answer"
 msgstr ""
+"აკრიფეთ დასაწყები სესიის სახელი:\n"
+"'flash' ბარათებისთვის,\n"
+"'mc' ერთზე მეტი არჩევანისთვის,\n"
+"'qa' კითხვაპასუხისთვის"
 
 #: main.cpp:123
 #, kde-format
@@ -128,72 +132,68 @@ msgstr "გასახსნელი ფაილი"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "ბარათი %1% შეცდომა %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "ბარათი %1/%2 შეცდომა %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "დასრულებულია"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "უმაღლესი ქულა"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დაუშვით ერთი შეცდომა"
+msgstr[1] "დაუშვით %1 შეცდომა"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "&შეცდომების გამეორება"
+msgstr "შეცდომების გამეორება"
 
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "კიდევ სცადეთ"
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
-msgstr ""
+msgstr "მაგიდის შექმნა"
 
 #: qml/DeckEditorPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "რედაქტორი"
+msgstr "მაგიდის ჩასწორება"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "ფილტრი"
 
 #: qml/DeckEditorPage.qml:43
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "გაფილტვრა..."
 
 #: qml/DeckEditorPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "მინიატურის ჩვენება..."
+msgstr "დასაბეჭდის გადახედვა"
 
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
@@ -203,216 +203,188 @@ msgstr "ბარათი"
 #: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "სია"
 
 #: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "გამოცდა"
 
 #: qml/DeckEditorPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "დაბეჭდვა..."
+msgstr "დაბეჭდვა"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "შექმნა"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "შენახვა"
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "სურათის წაშლა"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "ბმული სურათზე"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr "ხმის არჩევა"
+msgstr "ხმის მოცილება"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "ბმული ხმაზე"
 
 #: qml/DeckEditorPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "ენა 1"
+msgstr "ენის არჩევა"
 
 #: qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "ენა 1"
+msgstr "ენის დაყენება"
 
 #: qml/DeckEditorPage.qml:183
 #, kde-format
 msgid "Please Choose an Image"
-msgstr ""
+msgstr "აირჩიეთ გამოსახულება"
 
 #: qml/DeckEditorPage.qml:192
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr ""
+msgstr "აირჩიეთ ხმა"
 
 #: qml/DeckEditorPage.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "სახელი:"
 
 #: qml/DeckEditorPage.qml:238
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "ავტორი:"
 
 #: qml/DeckEditorPage.qml:249
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "ლიცენზია:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "რედაქტორი"
+msgstr "ჩასწორება"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "&შემოწმება"
+msgstr "შემოწმება"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "სწორი პასუხი"
+msgstr "სწორია"
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "ბოლო პასუხი სწორია"
+msgstr "არასწორია"
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "სურათის ამორჩევა"
+msgstr "ენის არჩევა"
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "Quiz -ის მორგება"
+msgstr "მორგება"
 
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "1"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
+#, kde-format
 msgid "This is correct"
-msgstr "ეს იყო სწორი პასუხი"
+msgstr "ეს სწორია"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "არასწორი პასუხები"
+msgstr "არასწორია. სწორი პასუხი იყო \"%1\"."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "შემდეგი"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "თქვენს მაგიდაზე საკმარისი სიტყვა არაა"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr ""
+msgstr "მრავალი არჩევანის რეჟიმისთვის აუცილებელია 3 სიტყვაზე მეტის ქონა"
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "არჩევანი &2"
+msgstr "მორგება"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "შემთხვევით"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&მინიშნება"
+msgstr "მინიშნება"
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Quiz -ის მორგება"
+msgstr "მორგება"
 
 #: qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "ზოგადი"
 
@@ -422,8 +394,7 @@ msgid "Show score as percentage"
 msgstr "პროცენტულობის ჩვენება"
 
 #: qml/SettingsPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
 msgstr "ბარათი"
 
@@ -433,103 +404,95 @@ msgid "Automatically flip flashcard"
 msgstr "ბარათების ავტომატური ამობრუნება"
 
 #: qml/SettingsPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
-msgstr "დროის დაყოვნება ბარათების აოსაბრუნებად"
+msgstr "დაყოვნება ბარათების ამოსაბრუნებლად"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
-msgstr "დიდი არჩევანი"
+msgstr "მრავალი არჩევანი"
 
 #: qml/SettingsPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Automatically adjusts the height of selected rows"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "მონიშნული მწკრივების სიმაღლის ავტომატური სწორება"
+msgstr "მონიშნული პასუხის სიმაღლის ავტომატური სწორება"
 
 #: qml/SettingsPage.qml:105
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "&კითხვა და პასუხი"
+msgstr "კითხვა და პასუხი"
 
 #: qml/SettingsPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "ჩართეთ მინიშნების გამოყენების შეცდომად აღქმისთვის"
+msgstr "მინიშნების გამოყენების შეცდომად აღქმა"
 
 #: qml/SettingsPage.qml:122
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "პასუხების შედარებისას რეგისტრის გათვალისწინება"
 
 #: qml/SettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "KWordQuiz-დან გასვლა"
+msgstr "KWordQuiz-ის შესახებ"
 
 #: qml/SettingsPage.qml:161
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "KDE-ის შესახებ"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "კეთილი იყოს თქვენი მობრძანება"
 
 #: qml/WelcomePage.qml:43
 #, kde-format
 msgid "Please choose a KWordQuiz document"
-msgstr ""
+msgstr "აირჩიეთ KWordQuiz -ის დოკუმენტი"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
-msgstr ""
+msgstr "KEduDocument (*.kvtml)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Wql documents (*.wql)"
-msgstr ""
+msgstr "Wql დოკუმენტი (*.wql)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "CSV documents (*.csv)"
-msgstr ""
+msgstr "CSV დოკუმენტი (*.csv)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
-msgstr ""
+msgstr "XDXF დოკუმენტი (*.xdxf)"
 
 #: qml/WelcomePage.qml:62
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "KWordQuiz-დან გასვლა"
+msgstr "კეთილი იყოს თქვენი მობრძანება KWordQuiz-ში"
 
 #: qml/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "არსებული ლექსიკონის დოკუმენტის გახსნა"
+msgstr "არსებული დოკუმენტის გახსნა"
 
 #: qml/WelcomePage.qml:80
 #, kde-format
 msgid "Create Deck"
-msgstr ""
+msgstr "მაგიდის შექმნა"
 
 #: qml/WelcomePage.qml:88
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "მაგიდის გადმოწერა"
 
 #: qml/WelcomePage.qml:111
 #, kde-format
@@ -537,22 +500,19 @@ msgid "Mode"
 msgstr "რეჟიმი"
 
 #: qml/WelcomePage.qml:147
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "ბარათი"
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
-msgstr "დიდი არჩევანი"
+msgstr "მრავალი არჩევანი"
 
 #: qml/WelcomePage.qml:161
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "კითხვა და პასუხი"
@@ -560,13 +520,13 @@ msgstr "კითხვა და პასუხი"
 #: qml/WelcomePage.qml:177
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "მაგიდები"
 
 #: qml/WelcomePage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "წაშლა"
 
 #, fuzzy
 #~| msgid "Multiple Choice"
