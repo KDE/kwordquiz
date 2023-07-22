@@ -1,13 +1,14 @@
 # Translation of kwordquiz into esperanto.
 # Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-20 00:44+0000\n"
-"PO-Revision-Date: 2023-03-22 19:14+0100\n"
+"PO-Revision-Date: 2023-07-2120:51+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -20,12 +21,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Axel Rousseau"
+msgstr "Axel Rousseau,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org"
+msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #: exporter.cpp:122
 #, kde-format
@@ -50,22 +51,22 @@ msgstr "Respondo"
 #: main.cpp:56
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "Nevalida goto donita: %1. Permesitaj: flash, mc kaj qa"
 
 #: main.cpp:90
 #, kde-format
 msgid "KWordQuiz"
-msgstr ""
+msgstr "KWordQuiz"
 
 #: main.cpp:92
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
-msgstr ""
+msgstr "Potenca fulmkart- kaj vortproviz-lernada programo"
 
 #: main.cpp:94
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
-msgstr ""
+msgstr "(c) 2003-2010, Peter Hedlund"
 
 #: main.cpp:98
 #, kde-format
@@ -76,19 +77,19 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "Origina aŭtoro"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "Portado al QML"
 
 #: main.cpp:100
 #, kde-format
@@ -98,7 +99,7 @@ msgstr "Anne-Marie Mahfouf"
 #: main.cpp:100
 #, kde-format
 msgid "KDE Edutainment Maintainer"
-msgstr ""
+msgstr "Prizorganto de KDE Edutainment"
 
 #: main.cpp:101
 #, kde-format
@@ -108,7 +109,7 @@ msgstr "Martin Pfeiffer"
 #: main.cpp:101
 #, kde-format
 msgid "Leitner System and several code contributions"
-msgstr ""
+msgstr "Leitner-Sistemp kaj pluraj kodkontribuoj"
 
 #: main.cpp:121
 #, kde-format
@@ -118,6 +119,10 @@ msgid ""
 "'mc' for multiple choice, \n"
 "'qa' for question and answer"
 msgstr ""
+"Tipo de seanco kun kiu komenci: \n"
+"'flash' por fulmkarto, \n"
+"'mc' for multobla elekto, \n"
+"'qa' for demando kaj respondo"
 
 #: main.cpp:123
 #, kde-format
@@ -127,164 +132,159 @@ msgstr "Malfermenda dosiero"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Kartoj %1% Eraroj %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Kartoj %1/%2 Eraroj %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "Finita"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Vi atingis perfektan poentaron"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi faris unu eraron"
+msgstr[1] "Vi faris %1 erarojn"
 
 #: qml/BasePage.qml:82
 #, kde-format
 msgid "Repeat Errors"
-msgstr ""
+msgstr "Ripeti Erarojn"
 
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "Reprovi"
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
-msgstr ""
+msgstr "Krei Kartaron"
 
 #: qml/DeckEditorPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "Editor"
+msgstr "Redakti Kartaron"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "Filtri"
 
 #: qml/DeckEditorPage.qml:43
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "Filtri..."
 
 #: qml/DeckEditorPage.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr ""
+msgstr "Presa Antaŭrigardo"
 
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
 msgid "Flashcard"
-msgstr ""
+msgstr "Fulmkarto"
 
 #: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Listo"
 
 #: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "Ekzameno"
 
 #: qml/DeckEditorPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "Presante..."
+msgstr "Presi"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Krei"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Konservi"
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "Forigi Bildon"
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
-msgstr ""
+msgstr "Ligi Bildon"
 
 #: qml/DeckEditorPage.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr ""
+msgstr "Forigi Sonon"
 
 #: qml/DeckEditorPage.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
-msgstr ""
+msgstr "Ligi Sonon"
 
 #: qml/DeckEditorPage.qml:156
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr ""
+msgstr "Meti lingvon"
 
 #: qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "Elekti bildon"
+msgstr "Meti Lingvon"
 
 #: qml/DeckEditorPage.qml:183
 #, kde-format
 msgid "Please Choose an Image"
-msgstr ""
+msgstr "Bonvolu elekti bildon"
 
 #: qml/DeckEditorPage.qml:192
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr ""
+msgstr "Bonvolu elekti sonon"
 
 #: qml/DeckEditorPage.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Nomo:"
 
 #: qml/DeckEditorPage.qml:238
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "Aŭtoro:"
 
 #: qml/DeckEditorPage.qml:249
 #, kde-format
@@ -293,107 +293,100 @@ msgid "License:"
 msgstr ""
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Editor"
+msgstr "Redakti"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr ""
+msgstr "Kontroli"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "Ĝusta respondo"
+msgstr "Korekta"
 
 #: qml/FlashCardPage.qml:146
 #, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr ""
+msgstr "Nekorekta"
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "Elekti bildon"
+msgstr "Elekti lingvon"
 
 #: qml/main.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "Agordoj"
 
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Agordi"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
 #, kde-format
 msgid "This is correct"
-msgstr ""
+msgstr "Tio estas ĝusta"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
 #, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr ""
+msgstr "Malĝusta, la ĝusta respondo estis \"%1\"."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "Sekva"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "Nesufiĉaj vortoj en via kartaro"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr ""
+msgstr "Vi bezonas almenaŭ 3 vortojn por ebligi la plurelektan reĝimon"
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "Action"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "Ago"
+msgstr "Opcioj"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
-msgstr ""
+msgstr "Miksi"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Helpindiko"
+msgstr "Helpindiko"
 
 #: qml/SettingsPage.qml:13
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Agordoj"
 
 #: qml/SettingsPage.qml:25
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Ĝenerala"
 
 #: qml/SettingsPage.qml:30
 #, kde-format
@@ -403,7 +396,7 @@ msgstr ""
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgid "Flash Card"
-msgstr ""
+msgstr "Fulmkarto"
 
 #: qml/SettingsPage.qml:52
 #, kde-format
@@ -416,8 +409,7 @@ msgid "Time delay for flipping the flashcard"
 msgstr ""
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
 msgstr "Plurelekto"
 
@@ -514,152 +506,24 @@ msgid "Flashcard"
 msgstr ""
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Plurelekto"
 
 #: qml/WelcomePage.qml:161
-#, fuzzy, kde-format
-#| msgid "Question"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "Demando"
+msgstr "Demando-Respondo"
 
 #: qml/WelcomePage.qml:177
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "Kartaroj"
 
 #: qml/WelcomePage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
-
-#, fuzzy
-#~| msgid "Multiple Choice"
-#~ msgctxt "@option:check Mode selector"
-#~ msgid "Multiple Choice"
-#~ msgstr "Plurelekto"
-
-#~ msgid "Clear &All"
-#~ msgstr "Forigi ĉ&ion"
-
-#~ msgid "&Text"
-#~ msgstr "&Teksto"
-
-#~ msgid "&Title:"
-#~ msgstr "&Titolo:"
-
-#~ msgid "&Width:"
-#~ msgstr "&Larĝo:"
-
-#~ msgid "T&itle:"
-#~ msgstr "T&itolo:"
-
-#~ msgid "&Delete Row"
-#~ msgstr "&Forigi vicon"
-
-#~ msgctxt "@item:inlistbox activate vocabulary editor"
-#~ msgid "&Editor"
-#~ msgstr "&Editor"
-
-#~ msgid "&Restart"
-#~ msgstr "&Relanĉo"
-
-#~ msgid "Show Se&arch"
-#~ msgstr "Montri serĉobreton"
-
-#~ msgid "Toggle display of the search bar"
-#~ msgstr "Komuti la montradon de serĉobreton"
-
-#~ msgid "Enter search terms here"
-#~ msgstr "Enmetu la serĉaĵon ĉi tie"
-
-#~ msgid "Opening file..."
-#~ msgstr "Malfermante dosieron..."
-
-#~ msgid "Saving file..."
-#~ msgstr "Konservante dosieron..."
-
-#~ msgid "Saving file with a new filename..."
-#~ msgstr "Konservante dosieron kun nova dosiernomo..."
-
-#~ msgid "Closing file..."
-#~ msgstr "Malfermante dosieron..."
-
-#~ msgid "Cutting selection..."
-#~ msgstr "Eltondanta elekton..."
-
-#~ msgid "Copying selection to clipboard..."
-#~ msgstr "Kopianta elekton al tondujo..."
-
-#~ msgid "Inserting clipboard contents..."
-#~ msgstr "Enmetanta tondujan enhavon..."
-
-#~ msgctxt "@title:group editor settings"
-#~ msgid "Editor"
-#~ msgstr "Editor"
-
-#~ msgid "&Mode"
-#~ msgstr "&Reĝimo"
-
-#~ msgid "Font"
-#~ msgstr "Tiparo"
-
-#~ msgid "00"
-#~ msgstr "00"
-
-#~ msgid "Untitled"
-#~ msgstr "Sentitola"
-
-#~ msgid "All Files (*)"
-#~ msgstr "Ĉiuj dosieroj (*)"
-
-#~ msgid "Your Answer"
-#~ msgstr "Via respondo"
-
-#~ msgid "Summary"
-#~ msgstr "Resumo"
-
-#~ msgid "Front"
-#~ msgstr "Malfone"
-
-#~ msgid "&Text color:"
-#~ msgstr "&Teksta koloro:"
-
-#~ msgid "Shortcut"
-#~ msgstr "Klavosigno"
-
-#~ msgid "Character"
-#~ msgstr "Tekstosigno"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "1"
-#~ msgstr "1"
-
-#~ msgid "2"
-#~ msgstr "2"
-
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgid "&Down"
-#~ msgstr "&Malsupren"
-
-#~ msgid "&Right"
-#~ msgstr "Dekst&re"
-
-#~ msgid "&Editor"
-#~ msgstr "&Editor"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Diversaj"
-
-#~ msgctxt "@title:window"
-#~ msgid "Vocabulary Options"
-#~ msgstr "Vortoprovizaj opcioj"
+msgstr "Forigi"
