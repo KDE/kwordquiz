@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 02:51+0000\n"
-"PO-Revision-Date: 2023-07-18 11:14\n"
+"PO-Revision-Date: 2023-07-23 12:30\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -111,24 +111,13 @@ msgid "Leitner System and several code contributions"
 msgstr "Leitner 学习系统并贡献了一些代码"
 
 #: main.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
 "'qa' for question and answer"
 msgstr ""
-"开启的学习关卡类型：\n"
-"“flash” 代表答题卡类\n"
-"“mc”代表多项选择类\n"
-"“qa”代表问答类\n"
-"“tutor”代表教学类"
 
 #: main.cpp:123
 #, kde-format
@@ -163,10 +152,9 @@ msgid_plural "You made %1 mistakes"
 msgstr[0] ""
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat errors"
-msgstr "重复错误(&E)"
+msgstr ""
 
 #: qml/BasePage.qml:93
 #, kde-format
@@ -196,11 +184,10 @@ msgid "Filter..."
 msgstr ""
 
 #: qml/DeckEditorPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "显示预览..."
+msgstr ""
 
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
@@ -218,11 +205,10 @@ msgid "Exam"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "打印..."
+msgstr ""
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
@@ -243,12 +229,10 @@ msgid "Remove image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link image"
-msgstr "链接图像"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:123
 #, kde-format
@@ -257,19 +241,16 @@ msgid "Remove sound"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link sound"
-msgstr "链接声音"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:156 qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "第一种语言"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:183
 #, kde-format
@@ -300,49 +281,40 @@ msgid "License:"
 msgstr ""
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "编辑器"
+msgstr ""
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "检查(&C)"
+msgstr ""
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "正确答案"
+msgstr ""
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "标记上次回答为正确"
+msgstr ""
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "选择图像"
+msgstr ""
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "题目设置"
+msgstr ""
 
 #: qml/main.qml:42
 #, kde-format
@@ -350,16 +322,14 @@ msgid "Configure"
 msgstr ""
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
+#, kde-format
 msgid "This is correct"
-msgstr "这是正确答案"
+msgstr ""
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "错误答案数"
+msgstr ""
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
@@ -378,41 +348,33 @@ msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "第二选项(&2)"
+msgstr ""
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
-msgstr "打乱"
+msgstr ""
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "提示(&H)"
+msgstr ""
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "题目设置"
+msgstr ""
 
 #: qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
-msgstr "常规"
+msgstr ""
 
 #: qml/SettingsPage.qml:30
 #, kde-format
@@ -420,10 +382,9 @@ msgid "Show score as percentage"
 msgstr "将分数显示为百分比"
 
 #: qml/SettingsPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
-msgstr "答题卡"
+msgstr ""
 
 #: qml/SettingsPage.qml:52
 #, kde-format
@@ -431,34 +392,29 @@ msgid "Automatically flip flashcard"
 msgstr "自动翻过答题卡"
 
 #: qml/SettingsPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
-msgstr "翻过答题卡的延迟时间"
+msgstr ""
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
-msgstr "选择题"
+msgstr ""
 
 #: qml/SettingsPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "选择题中自动检查所选答案"
+msgstr ""
 
 #: qml/SettingsPage.qml:105
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "问答(&Q)"
+msgstr ""
 
 #: qml/SettingsPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "选中可将提示计为错误"
+msgstr ""
 
 #: qml/SettingsPage.qml:122
 #, kde-format
@@ -466,10 +422,9 @@ msgid "Compare answers in a case sensitive way"
 msgstr ""
 
 #: qml/SettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "退出 KWordQuiz"
+msgstr ""
 
 #: qml/SettingsPage.qml:161
 #, kde-format
@@ -508,16 +463,14 @@ msgid "XDXF documents (*.xdxf)"
 msgstr ""
 
 #: qml/WelcomePage.qml:62
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "退出 KWordQuiz"
+msgstr ""
 
 #: qml/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open existing document"
-msgstr "打开已有的词汇表文档"
+msgstr ""
 
 #: qml/WelcomePage.qml:80
 #, kde-format
@@ -535,25 +488,22 @@ msgid "Mode"
 msgstr "模式"
 
 #: qml/WelcomePage.qml:147
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
-msgstr "答题卡"
+msgstr ""
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple Choice"
-msgstr "选择题"
+msgstr ""
 
 #: qml/WelcomePage.qml:161
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "问答"
+msgstr ""
 
 #: qml/WelcomePage.qml:177
 #, kde-format
@@ -565,1204 +515,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Remove"
 msgstr ""
-
-#~ msgid "Selection"
-#~ msgstr "选择"
-
-#~ msgid "Delete all information in selected entries"
-#~ msgstr "在所选条目中删除所有信息"
-
-#~ msgid ""
-#~ "When checked all information will be deleted from the selected entries"
-#~ msgstr "如果选中此项，将删除所选条目里的所有信息"
-
-#~ msgid "Clear &All"
-#~ msgstr "全部清除(&A)"
-
-#~ msgid "Delete the text from selected entries"
-#~ msgstr "删除选中项中的文本"
-
-#~ msgid "When checked the text will be deleted from selected entries"
-#~ msgstr "如果选中此项，将删除所选条目里的文字"
-
-#~ msgid "&Text"
-#~ msgstr "文本(&T)"
-
-#~ msgid "Delete the image link from selected entries"
-#~ msgstr "从所选条目中删除图像链接"
-
-#~ msgid "When checked the image link will be deleted from selected entries"
-#~ msgstr "如果选中此项，将从所选条目中删除图像链接"
-
-#~ msgid "&Image Links"
-#~ msgstr "图像链接(&I)"
-
-#~ msgid "Delete the sound link from selected entries"
-#~ msgstr "从所选条目中删除声音链接"
-
-#~ msgid "When checked the sound link will be deleted from selected entries"
-#~ msgstr "如果选中此项，将从所选条目中删除声音链接"
-
-#~ msgid "&Sound Links"
-#~ msgstr "声音链接(&S)"
-
-#~ msgid "Column 1"
-#~ msgstr "第一列"
-
-#~ msgid "Title for the left column"
-#~ msgstr "左侧列的标题"
-
-#~ msgid "Enter a title (identifier) for the left column"
-#~ msgstr "输入左侧列的标题(标识符)"
-
-#~ msgid "&Title:"
-#~ msgstr "标题(&T)："
-
-#~ msgid "&Keyboard layout:"
-#~ msgstr "键盘布局(&K)："
-
-#~ msgid "&Width:"
-#~ msgstr "宽度(&W)："
-
-#~ msgid "Keyboard layout for the left column"
-#~ msgstr "左侧列的键盘布局"
-
-#~ msgid "Select a keyboard layout for the left column"
-#~ msgstr "选择左侧列的键盘布局"
-
-#~ msgid "Width of the left column"
-#~ msgstr "左侧列的宽度"
-
-#~ msgid "Enter the width (in pixels) for the left column"
-#~ msgstr "输入左侧列的宽度(以像素计)"
-
-#~ msgid "Column 2"
-#~ msgstr "第二列"
-
-#~ msgid "T&itle:"
-#~ msgstr "标题(&I)："
-
-#~ msgid "Keyboard &Layout:"
-#~ msgstr "键盘布局(&L)："
-
-#~ msgid "Wi&dth:"
-#~ msgstr "宽度(&D)："
-
-#~ msgid "Title for the right column"
-#~ msgstr "右侧列的标题"
-
-#~ msgid "Enter a title (identifier) for the right column"
-#~ msgstr "输入右侧列的标题(标识符)"
-
-#~ msgid "Width of the right column"
-#~ msgstr "右侧列的宽度"
-
-#~ msgid "Enter the width (in pixels) for the right column"
-#~ msgstr "输入右侧列的宽度(以像素计)"
-
-#~ msgctxt "@title:window"
-#~ msgid "Column Settings"
-#~ msgstr "列设置"
-
-#~ msgctxt "@title:window select character dialog"
-#~ msgid "Select Character"
-#~ msgstr "选择字符"
-
-#~ msgctxt "@action:button"
-#~ msgid "&Select"
-#~ msgstr "选择(&S)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select this character"
-#~ msgstr "选择此字符"
-
-#~ msgid "Column widths"
-#~ msgstr "列宽"
-
-#~ msgid "Keyboard layouts"
-#~ msgstr "键盘布局"
-
-#~ msgid "Search"
-#~ msgstr "搜索"
-
-#~ msgid "Your answer was correct!"
-#~ msgstr "您答对了！"
-
-#~ msgid "Your answer was incorrect."
-#~ msgstr "您答错了。"
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least one entry for a flashcard quiz.</html>"
-#~ msgstr ""
-#~ "<html>您的词汇表中的条目太少了。<br />在答题卡问案中您最少需要一个条目</"
-#~ "html>"
-
-#~ msgid "Creates a new blank vocabulary document"
-#~ msgstr "创建新的空词汇表文档"
-
-#~ msgid "Download New Vocabularies..."
-#~ msgstr "下载新词汇表..."
-
-#~ msgid "Downloads new vocabularies"
-#~ msgstr "下载新词汇表"
-
-#~ msgid "Saves the active vocabulary document"
-#~ msgstr "保存当前词汇表文档"
-
-#~ msgid "Saves the active vocabulary document with a different name"
-#~ msgstr "将当前词汇表文档以不同的名称保存"
-
-#~ msgid "Closes the active vocabulary document"
-#~ msgstr "关闭当前词汇表文档"
-
-#~ msgid "Prints the active vocabulary document"
-#~ msgstr "打印当前词汇表"
-
-#~ msgid "Shows a preview of the active vocabulary document"
-#~ msgstr "显示当前词汇表文档的预览"
-
-#~ msgid "Cuts the text from the selected cells and places it on the clipboard"
-#~ msgstr "从选中单元格剪切文本，并将其放入剪贴板"
-
-#~ msgid ""
-#~ "Copies the text from the selected cells and places it on the clipboard"
-#~ msgstr "从选中单元格复制文本，并将其放入剪贴板"
-
-#~ msgid ""
-#~ "Pastes previously cut or copied text from the clipboard into the selected "
-#~ "cells"
-#~ msgstr "将先前剪切或粘贴的文本从剪贴板粘贴到选中单元格"
-
-#~ msgid "Clears the content of the selected cells"
-#~ msgstr "清除选中单元格的内容"
-
-#~ msgid "&Insert Row"
-#~ msgstr "插入行(&I)"
-
-#~ msgid "Inserts a new row above the current row"
-#~ msgstr "在当前行之上插入新行"
-
-#~ msgid "&Delete Row"
-#~ msgstr "删除行(&D)"
-
-#~ msgid "Deletes the selected row(s)"
-#~ msgstr "删除选中行"
-
-#~ msgid "&Mark as Blank"
-#~ msgstr "标为空(&M)"
-
-#~ msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-#~ msgstr "将当前或选中单词标为填空题的空"
-
-#~ msgid "&Unmark Blanks"
-#~ msgstr "取消标为空(&U)"
-
-#~ msgid "Removes blanks from the current or selected word"
-#~ msgstr "删除当前或选中单词的空"
-
-#~ msgid "&Column Settings..."
-#~ msgstr "列设置(&C)..."
-
-#~ msgid "Defines the column settings for the active vocabulary"
-#~ msgstr "定义当前词汇表的列设置"
-
-#~ msgid "&Font..."
-#~ msgstr "字体(&F)..."
-
-#~ msgid "Defines the font used by the editor"
-#~ msgstr "定义编辑器所用的字体"
-
-#~ msgid "Link &Image..."
-#~ msgstr "链接图像(&I)..."
-
-#~ msgid "Links an image with the current entry"
-#~ msgstr "将图像与当前项链接"
-
-#~ msgid "Link &Sound..."
-#~ msgstr "链接声音(&S)..."
-
-#~ msgid "Links a sound with the current entry"
-#~ msgstr "将图像与当前项链接"
-
-#~ msgid "&Adjust Row Heights"
-#~ msgstr "调整行高(&A)"
-
-#~ msgid "Automatically adjusts the height of selected rows"
-#~ msgstr "自动调整选定行的高度"
-
-#~ msgid "Sh&uffle"
-#~ msgstr "打乱(&U)"
-
-#~ msgid "Shuffles the entries of the active vocabulary"
-#~ msgstr "打乱当前词汇表中各项的顺序"
-
-#~ msgid "&Keyboard Layout"
-#~ msgstr "键盘布局(&K)"
-
-#~ msgid "Shows available keyboard layouts"
-#~ msgstr "显示可用的键盘布局"
-
-#~ msgid "Change Mode"
-#~ msgstr "更改模式"
-
-#~ msgid "Changes the mode used in quiz sessions"
-#~ msgstr "更改闯关所用的模式"
-
-#~ msgid "Selects this mode"
-#~ msgstr "选择此模式"
-
-#~ msgctxt "@item:inlistbox activate vocabulary editor"
-#~ msgid "&Editor"
-#~ msgstr "编辑器(&E)"
-
-#~ msgid "Activates the vocabulary editor"
-#~ msgstr "激活词汇表编辑器"
-
-#~ msgid "&Flashcard"
-#~ msgstr "答题卡(&F)"
-
-#~ msgid "Starts a flashcard session using the active vocabulary"
-#~ msgstr "使用当前词汇表开始答题卡闯关"
-
-#~ msgid "&Multiple Choice"
-#~ msgstr "选择题(&M)"
-
-#~ msgid "Starts a multiple choice session using the active vocabulary"
-#~ msgstr "使用当前词汇表开始选择题闯关"
-
-#~ msgid "Q&&A"
-#~ msgstr "问答"
-
-#~ msgid "Starts a question and answer session using the active vocabulary"
-#~ msgstr "使用当前词汇表开始问答题闯关"
-
-#~ msgid "Checks your answer to this question"
-#~ msgstr "检查您对此问题的答案"
-
-#~ msgid "Choose Option &1"
-#~ msgstr "选择选项 &1"
-
-#~ msgid "Choose Option &2"
-#~ msgstr "选择选项 &2"
-
-#~ msgid "Choose Option &3"
-#~ msgstr "选择选项 &3"
-
-#~ msgid "I &Know"
-#~ msgstr "我知道(&K)"
-
-#~ msgid "Counts this card as correct and shows the next card"
-#~ msgstr "将此卡片计为正确并显示下张卡片"
-
-#~ msgid "I &Do Not Know"
-#~ msgstr "我不知道(&D)"
-
-#~ msgid "Counts this card as incorrect and shows the next card"
-#~ msgstr "将此卡片计为错误并显示下张卡片"
-
-#~ msgid "Gets the next correct letter of the answer"
-#~ msgstr "获得答案的下个正确字母"
-
-#~ msgid "Marks last answer as correct"
-#~ msgstr "将最后的回答标为正确"
-
-#~ msgid "&Restart"
-#~ msgstr "重新开始(&R)"
-
-#~ msgid "Restarts the quiz session from the beginning"
-#~ msgstr "从头开始闯关"
-
-#~ msgid "&Play Audio"
-#~ msgstr "播放声音(&P)"
-
-#~ msgid "Play associated audio"
-#~ msgstr "播放相关的声音"
-
-#~ msgid "Repeats all incorrectly answered questions"
-#~ msgstr "重答所有回答错误的问题"
-
-#~ msgid "Export Errors &As..."
-#~ msgstr "导出错误为(&A)..."
-
-#~ msgid "Exports all errors as a new vocabulary document"
-#~ msgstr "导出所有错误为新词汇表文档"
-
-#~ msgid "Show Se&arch"
-#~ msgstr "显示查找(&A)"
-
-#~ msgid "Toggle display of the search bar"
-#~ msgstr "切换查找栏显示"
-
-#~ msgid "Configures sound and other notifications for certain events"
-#~ msgstr "配置特定事件的声音和其他通知"
-
-#~ msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-#~ msgstr "指定词汇表编辑器和闯关的首选项"
-
-#~ msgid "Special Character <numid>%1</numid>"
-#~ msgstr "特殊字符 <numid>%1</numid>"
-
-#~ msgid "Toggles display of the toolbars"
-#~ msgstr "切换工具栏显示"
-
-#~ msgid "Enter search terms here"
-#~ msgstr "在此输入查找字符"
-
-#~ msgid "Opening file..."
-#~ msgstr "打开文件..."
-
-#~ msgctxt "%1 is an error message"
-#~ msgid ""
-#~ "%1\n"
-#~ "If you are sure no other program is using the file you can choose to "
-#~ "ignore the lock and open the file anyway.\n"
-#~ "Do you want to open the file?"
-#~ msgstr ""
-#~ "%1\n"
-#~ "如果你确定没有其他程序正在使用文件，你可以选择忽略锁定并打开文件。\n"
-#~ "您想要打开文件吗？"
-
-#~ msgctxt "@info:status ready"
-#~ msgid "Ready"
-#~ msgstr "就绪"
-
-#~ msgid ""
-#~ "The current document has been modified.\n"
-#~ "Do you want to save it?"
-#~ msgstr ""
-#~ "当前文件已被修改。\n"
-#~ "您想要保存吗？"
-
-#~ msgid "Opening a new document window..."
-#~ msgstr "打开新的文档窗口..."
-
-#~ msgid "&Merge selected files with the current document"
-#~ msgstr "将当前文档与已选文件合并在一起(&M)"
-
-#~ msgid "Open Vocabulary Document"
-#~ msgstr "打开词汇表文档"
-
-#~ msgid "Saving file..."
-#~ msgstr "保存文件..."
-
-#~ msgid "Saving file with a new filename..."
-#~ msgstr "以新文件名保存文件..."
-
-#~ msgid "HTML Document"
-#~ msgstr "HTML 文档"
-
-#~ msgid "Save Vocabulary Document As"
-#~ msgstr "词汇表文档另存为"
-
-#~ msgid "Closing file..."
-#~ msgstr "关闭文件..."
-
-#~ msgctxt "@info:status quitting"
-#~ msgid "Quitting..."
-#~ msgstr "退出..."
-
-#~ msgid "Cutting selection..."
-#~ msgstr "剪切选中内容..."
-
-#~ msgid "Copying selection to clipboard..."
-#~ msgstr "将选中内容复制到剪贴板..."
-
-#~ msgid "Inserting clipboard contents..."
-#~ msgstr "插入剪贴板内容..."
-
-#~ msgid "Clearing the selected cells..."
-#~ msgstr "清除选中单元格..."
-
-#~ msgid "Inserting rows..."
-#~ msgstr "插入行..."
-
-#~ msgid "Deleting selected rows..."
-#~ msgstr "删除选中行..."
-
-#~ msgid "Marking selected text as a blank..."
-#~ msgstr "将选中文本标为空..."
-
-#~ msgid "Removing blank markings..."
-#~ msgstr "删除留空标记..."
-
-#~ msgid "Setting the column titles of the vocabulary..."
-#~ msgstr "设置词汇表的列标题..."
-
-#~ msgid "Setting the font of the vocabulary..."
-#~ msgstr "设置词汇表的字体..."
-
-#~ msgid "Linking an image with the current entry..."
-#~ msgstr "将当前条目与图像链接..."
-
-#~ msgid "Linking a sound with the current entry..."
-#~ msgstr "将当前条目与声音链接..."
-
-#~ msgid "Adjusting row heights..."
-#~ msgstr "调整行高..."
-
-#~ msgid "Randomizing the vocabulary..."
-#~ msgstr "打乱词汇表..."
-
-#~ msgid "Updating mode..."
-#~ msgstr "更新模式..."
-
-#~ msgid "Starting editor session..."
-#~ msgstr "启动编辑器会话..."
-
-#~ msgid "Starting flashcard session..."
-#~ msgstr "开始答题卡闯关..."
-
-#~ msgid "Starting multiple choice session..."
-#~ msgstr "开始选择题闯关..."
-
-#~ msgid "Starting question & answer session..."
-#~ msgstr "开始问答题闯关..."
-
-#~ msgid "Insert %1"
-#~ msgstr "插入 %1"
-
-#~ msgid "Inserts the character %1"
-#~ msgstr "插入字符 %1"
-
-#~ msgid "This will restart your quiz. Do you wish to continue?"
-#~ msgstr "这将重新开始闯关。您想要继续吗？"
-
-#~ msgid "&1 %1 -> %2 In Order"
-#~ msgstr "&1 %1 -> %2 按顺序"
-
-#~ msgid "&2 %1 -> %2 In Order"
-#~ msgstr "&2 %1 -> %2 按顺序"
-
-#~ msgid "&3 %1 -> %2 Randomly"
-#~ msgstr "&3 %1 -> %2 随机"
-
-#~ msgid "&4 %1 -> %2 Randomly"
-#~ msgstr "&4 %1 -> %2 随机"
-
-#~ msgid "&5 %1 <-> %2 Randomly"
-#~ msgstr "&5 %1 <-> %2 随机"
-
-#~ msgid "%1 -> %2 In Order"
-#~ msgstr "%1 -> %2 按顺序"
-
-#~ msgid "%1 -> %2 Randomly"
-#~ msgstr "%1 -> %2 随机"
-
-#~ msgid "%1 &lt;-&gt; %2 Randomly"
-#~ msgstr "%1 -> %2 随机"
-
-#~ msgid "Is this the first time KWordQuiz is run?"
-#~ msgstr "这是否是 KWordQuiz 第一次运行？"
-
-#~ msgid "Toggle display of the search bar."
-#~ msgstr "切换工具栏显示"
-
-#~ msgid "Type of session to use when opening files"
-#~ msgstr "打开文件时使用的课程类型"
-
-#~ msgid "Type of printout to generate"
-#~ msgstr "要生成的输出类型"
-
-#~ msgid "Titles for column 1"
-#~ msgstr "第一列的标题"
-
-#~ msgid "Titles for column 2"
-#~ msgstr "第二列的标题"
-
-#~ msgid "Font used in the editor"
-#~ msgstr "编辑器所用字体"
-
-#~ msgid "If Fill-in-the-blank should be enabled"
-#~ msgstr "是否启用填空"
-
-#~ msgid "Direction the Enter key moves in the editor"
-#~ msgstr "Enter 键在编辑器移动的方向"
-
-#~ msgid "Characters for the special character toolbar"
-#~ msgstr "特殊字符工具栏的字符"
-
-#~ msgid "Clear all data in selected entries"
-#~ msgstr "清除所选条目中的所有数据"
-
-#~ msgid "Clear the text in selected entries"
-#~ msgstr "清除选中条目的文字"
-
-#~ msgid "Clear the image link in selected entries"
-#~ msgstr "清除选中条目的图像链接"
-
-#~ msgid "Clear the sound link in selected entries"
-#~ msgstr "清除选中条目的声音链接"
-
-#~ msgid "Treat use of hint as error"
-#~ msgstr "将使用提示视为错误"
-
-#~ msgid "Count flashcard as correct or error"
-#~ msgstr "将答题卡计为正确或错误"
-
-#~ msgid "Quiz mode"
-#~ msgstr "答题模式"
-
-#~ msgid "Font used for front of flashcard"
-#~ msgstr "答题卡正面所用字体"
-
-#~ msgid "Color used for text on front of flashcard"
-#~ msgstr "答题卡正面文字所用颜色"
-
-#~ msgid "Color used for front of flashcard"
-#~ msgstr "答题卡正面所用颜色"
-
-#~ msgid "Color used for frame on front of flashcard"
-#~ msgstr "答题卡正面边框所用颜色"
-
-#~ msgid "Font used for back of flashcard"
-#~ msgstr "答题卡背面所用字体"
-
-#~ msgid "Color used for text on back of flashcard"
-#~ msgstr "答题卡背面文字所用颜色"
-
-#~ msgid "Color used for back of flashcard"
-#~ msgstr "答题卡背面所用颜色"
-
-#~ msgid "Color used for frame on back of flashcard"
-#~ msgstr "答题卡背面边框所用颜色"
-
-#~ msgid "The Providers path for KWordQuiz"
-#~ msgstr "KWordQuiz 的提供者路径"
-
-#~ msgid "The command used to start a downloaded vocabulary"
-#~ msgstr "启动下载的词汇表所用的命令"
-
-#~ msgid ""
-#~ "The folder where downloaded vocabularies are saved by default (relative "
-#~ "to $HOME)"
-#~ msgstr "下载的词汇表默认所保存的文件夹(相对于 $HOME)"
-
-#~ msgid "Pop up flashcards at fixed or random intervals"
-#~ msgstr "按固定或随机时间间隔弹出答题卡"
-
-#~ msgid "The interval in minutes at which to pop up a flash card"
-#~ msgstr "弹出答题卡的间隔时间(分钟)"
-
-#~ msgid "The minimum interval in minutes at which to pop up a flash card"
-#~ msgstr "弹出答题卡的最短间隔时间(分钟)"
-
-#~ msgid "The maximum interval in minutes at which to pop up a flash card"
-#~ msgstr "弹出答题卡的最长间隔时间(分钟)"
-
-#~ msgid "Geometry of the last flash card"
-#~ msgstr "最后一张答题卡的位置"
-
-#~ msgid "Show flash card in a native KWordQuiz style"
-#~ msgstr "以原生 KWordQuiz 风格显示答题卡"
-
-#~ msgid ""
-#~ "Last open vocabulary file to be opened automatically if none other is "
-#~ "specified on the command line"
-#~ msgstr ""
-#~ "如果没有在命令行里指定要打开的词汇文件，则自动打开之前最后使用的词汇表"
-
-#~ msgid "Start exercise as soon as the user opens vocabulary file"
-#~ msgstr "用户打开词汇表文件后立即开始练习"
-
-#~ msgctxt "@title:group general settings"
-#~ msgid "General Settings"
-#~ msgstr "常规设置"
-
-#~ msgctxt "@title:group editor settings"
-#~ msgid "Editor"
-#~ msgstr "编辑器"
-
-#~ msgctxt "@title:group editor settings"
-#~ msgid "Editor Settings"
-#~ msgstr "编辑器设置"
-
-#~ msgctxt "@title:group quiz settings"
-#~ msgid "Quiz"
-#~ msgstr "题目"
-
-#~ msgctxt "@title:group flash appearance settings"
-#~ msgid "Flashcard Appearance"
-#~ msgstr "答题卡外观"
-
-#~ msgctxt "@title:group flash appearance settings"
-#~ msgid "Flashcard Appearance Settings"
-#~ msgstr "答题卡外观设置"
-
-#~ msgctxt "@title:group special character settings"
-#~ msgid "Special Characters"
-#~ msgstr "特殊字符"
-
-#~ msgid "V&ocabulary"
-#~ msgstr "词汇表(&O)"
-
-#~ msgid "&Mode"
-#~ msgstr "模式(&M)"
-
-#~ msgid "&Quiz"
-#~ msgstr "答题(&Q)"
-
-#~ msgid "Quiz"
-#~ msgstr "题目"
-
-#~ msgid "Special Characters"
-#~ msgstr "特殊字符"
-
-#~ msgctxt "@title:window"
-#~ msgid "Clear Contents"
-#~ msgstr "清除内容"
-
-#~ msgctxt "@item:inmenu undo clear"
-#~ msgid "Clear"
-#~ msgstr "清除"
-
-#~ msgctxt "@item:inmenu undo cut"
-#~ msgid "Cut"
-#~ msgstr "剪切"
-
-#~ msgctxt "@item:inmenu undo paste"
-#~ msgid "Paste"
-#~ msgstr "粘贴"
-
-#~ msgctxt "@item:inmenu undo sort"
-#~ msgid "Sort"
-#~ msgstr "排序"
-
-#~ msgctxt "@item:inmenu undo insert"
-#~ msgid "Insert"
-#~ msgstr "插入"
-
-#~ msgctxt "@item:inmenu undo delete"
-#~ msgid "Delete"
-#~ msgstr "删除"
-
-#~ msgctxt "@item:inmenu undo unmark blank"
-#~ msgid "Unmark Blank"
-#~ msgstr "取消标为空"
-
-#~ msgctxt "@item:inmenu undo column titles"
-#~ msgid "Column Settings"
-#~ msgstr "列设置"
-
-#~ msgid "Font"
-#~ msgstr "字体"
-
-#~ msgid "Entry"
-#~ msgstr "条目"
-
-#~ msgid "Questions"
-#~ msgstr "问题"
-
-#~ msgid "The number of questions in the session"
-#~ msgstr "每关的问题数"
-
-#~ msgid "00"
-#~ msgstr "00"
-
-#~ msgid "Correct answers"
-#~ msgstr "正确答案数"
-
-#~ msgid ""
-#~ "The number of questions answered correctly. May be shown as a percentage."
-#~ msgstr "已正确回答的问题数。可以显示为百分比。"
-
-#~ msgid ""
-#~ "The number of questions answered incorrectly. May be shown as a "
-#~ "percentage."
-#~ msgstr "已错误回答的问题数。可以显示为百分比。"
-
-#~ msgid "Answered questions"
-#~ msgstr "答过的问题数"
-
-#~ msgid ""
-#~ "The number of questions already answered. May be shown as a percentage."
-#~ msgstr "已经回答的问题数。可以显示为百分比。"
-
-#~ msgid "Untitled"
-#~ msgstr "无标题"
-
-#~ msgid "There is an error with the Fill-in-the-blank brackets"
-#~ msgstr "填空题中有错误"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Sound"
-#~ msgstr "选择声音"
-
-#~ msgid "All Files (*)"
-#~ msgstr "所有文件 (*)"
-
-#~ msgid ""
-#~ "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that "
-#~ "allows you to set a certain time interval at which flashcards will pop up."
-#~ "<br /><br />The flashcards pop up in a non-intrusive way allowing you to "
-#~ "carry on working without stealing the focus from other programs you might "
-#~ "be working with.<br /><br />Be sure to right-click KWordQuiz Tutor icon "
-#~ "on the panel and select Preferences. There you can assign keyboard "
-#~ "shortcuts.</qt>"
-#~ msgstr ""
-#~ "<qt>KWordQuiz教程会在您屏幕上显示答题卡。您可以设置弹出的时间间隔。<br /"
-#~ "><br />答题卡以非侵入方式弹出，允许您继续工作而不会从您可能正在使用的其他"
-#~ "程序中夺取焦点。<br /><br />您可以右键单击面板上的KWordQuiz教程图标，然后"
-#~ "选择首选项并指定键盘快捷键。</qt>"
-
-#~ msgid "Tutor"
-#~ msgstr "教学"
-
-#~ msgid "Start Exercise"
-#~ msgstr "开始练习"
-
-#~ msgid "Configure KWordQuiz Tutor..."
-#~ msgstr "配置 KWordQuiz 教学..."
-
-#~ msgid "Close Flash Card"
-#~ msgstr "关闭答题卡"
-
-#~ msgid "Flip Flash Card"
-#~ msgstr "翻开答题卡"
-
-#~ msgid "Stop Exercise"
-#~ msgstr "停止练习"
-
-#~ msgctxt "@title:group tutor settings"
-#~ msgid "Tutor"
-#~ msgstr "教学"
-
-#~ msgctxt "@title:group tutor settings"
-#~ msgid "Tutor Settings"
-#~ msgstr "教学设置"
-
-#~ msgctxt "Shortcuts Config"
-#~ msgid "Shortcuts"
-#~ msgstr "快捷键"
-
-#~ msgid "Shortcuts Settings"
-#~ msgstr "快捷键设置"
-
-#~ msgid ""
-#~ "A number 1-5 corresponding to the \n"
-#~ "entries in the Mode menu"
-#~ msgstr "数字 1-5 对应着模式菜单中的条目"
-
-#~ msgid "Previous Question"
-#~ msgstr "上个问题"
-
-#~ msgid "Your Answer"
-#~ msgstr "您的答案"
-
-#~ msgid "Summary"
-#~ msgstr "摘要"
-
-#~ msgid "The question"
-#~ msgstr "问题"
-
-#~ msgid "Language or other identifier for the question"
-#~ msgstr "问题的语言其他标识符"
-
-#~ msgid "This is your question"
-#~ msgstr "这是您的问题"
-
-#~ msgid "Your choices"
-#~ msgstr "您的选择"
-
-#~ msgid "Three choices for the answer. One is correct."
-#~ msgstr "答案可从三个选项中加以选择，其中只有一个是正确的。"
-
-#~ msgid "&1 Option"
-#~ msgstr "第一选项(&1)"
-
-#~ msgid "Language or other identifier for the answer"
-#~ msgstr "答案的语言或其他标识符"
-
-#~ msgid "Language 2"
-#~ msgstr "第二种语言"
-
-#~ msgid "&3 Option"
-#~ msgstr "第三选项(&3)"
-
-#~ msgid "Previous question"
-#~ msgstr "上个问题"
-
-#~ msgid "The previous question"
-#~ msgstr "上一个问题"
-
-#~ msgid "This was your question"
-#~ msgstr "这是您的问题"
-
-#~ msgid "Your previous answer"
-#~ msgstr "您的上一个答案"
-
-#~ msgid "Your answer to the previous question"
-#~ msgstr "您对上个问题的答案"
-
-#~ msgid "This was your answer"
-#~ msgstr "这是您的答案"
-
-#~ msgid "Previous correct answer"
-#~ msgstr "上个正确答案"
-
-#~ msgid "The correct answer to the previous question"
-#~ msgstr "上个问题的正确答案"
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least three entries for a multiple choice quiz.</html>"
-#~ msgstr ""
-#~ "<html>您的词汇表中的条目太少了。<br />在多项选择问答中，您的词汇表中至少需"
-#~ "要三个条目。</html>"
-
-#~ msgctxt "Back of the flashcard"
-#~ msgid "Back"
-#~ msgstr "背面"
-
-#~ msgid "Front"
-#~ msgstr "前面"
-
-#~ msgid "Card Appearance"
-#~ msgstr "卡片外观"
-
-#~ msgid "Flip card"
-#~ msgstr "翻开卡片"
-
-#~ msgid "Use to show the other side of the card"
-#~ msgstr "用于显示卡片的另外一面"
-
-#~ msgid "&Flip Card"
-#~ msgstr "翻开卡片(&F)"
-
-#~ msgid "F&ont:"
-#~ msgstr "字体(&O)："
-
-#~ msgid "Use to select the font for displaying text on the back of the card"
-#~ msgstr "用于选择显示卡片背面文字的字体"
-
-#~ msgid "Select text color"
-#~ msgstr "选择文本颜色"
-
-#~ msgid "Use to select the color for text shown on the card"
-#~ msgstr "用于选择卡片上显示文字的颜色"
-
-#~ msgid "Select card frame color"
-#~ msgstr "选择卡片边框颜色"
-
-#~ msgid "Use to select the color for drawing the frame of the card"
-#~ msgstr "用于选择绘制卡片边框的颜色"
-
-#~ msgid "Select card color"
-#~ msgstr "选择卡片颜色"
-
-#~ msgid "Select color used to draw the card"
-#~ msgstr "选择用于绘制卡片的颜色"
-
-#~ msgid "Use to select the font for displaying text on the front of the card"
-#~ msgstr "用于选择卡片正面显示文本的字体"
-
-#~ msgid "&Text color:"
-#~ msgstr "文本颜色(&T)："
-
-#~ msgid "&Card color:"
-#~ msgstr "卡片颜色(&C)："
-
-#~ msgid "Fra&me color:"
-#~ msgstr "边框颜色(&M)："
-
-#~ msgid "Action"
-#~ msgstr "操作"
-
-#~ msgid "Shortcut"
-#~ msgstr "快捷键"
-
-#~ msgid "Character"
-#~ msgstr "字符"
-
-#~ msgid "Special Character %1"
-#~ msgstr "特殊字符 %1"
-
-#~ msgid ""
-#~ "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-#~ "associated with each action."
-#~ msgstr "注意：选择 设置->配置快捷键...可更改与每个操作关联的快捷键。"
-
-#~ msgid "Select character to modify"
-#~ msgstr "选择要修改的字符"
-
-#~ msgid "Customizable special character actions"
-#~ msgstr "自定义特殊字符操作"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "1"
-#~ msgstr "1"
-
-#~ msgid "2"
-#~ msgstr "2"
-
-#~ msgid "Click to choose a new character"
-#~ msgstr "单击可选择新字符"
-
-#~ msgid "Choose a character for the selected action"
-#~ msgstr "为所选操作选择一个字符"
-
-#~ msgid "C&haracter..."
-#~ msgstr "字符(&H)..."
-
-#~ msgid "Preview of current character"
-#~ msgstr "当前字符预览"
-
-#~ msgid "Preview of the character associated with the selected action"
-#~ msgstr "预览与所选操作关联的字符"
-
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgid "How enter key moves"
-#~ msgstr "如何移动 Enter 键"
-
-#~ msgid "Select how the Enter key should behave in the editor"
-#~ msgstr "选择编辑器中如何移动 Enter 键"
-
-#~ msgid "Enter Ke&y Moves"
-#~ msgstr "Enter 键移动(&Y)"
-
-#~ msgid ""
-#~ "Select if the next cell below should become active when pressing Enter."
-#~ msgstr "如果想要在按下 Enter 键时移动到下方的单元格，请选择此项。"
-
-#~ msgid "&Down"
-#~ msgstr "下(&D)"
-
-#~ msgid ""
-#~ "Select if the next cell to the right should become active when pressing "
-#~ "Enter"
-#~ msgstr "如果想要在按下 Enter 键时移动到右方的单元格，请选择此项。"
-
-#~ msgid "&Right"
-#~ msgstr "右(&R)"
-
-#~ msgid "Select if the current cell should remain active when pressing Enter"
-#~ msgstr "如果想要在按下 Enter 键时不移动当前单元格，请选择此项。"
-
-#~ msgid "Does not &move"
-#~ msgstr "不移动(&M)"
-
-#~ msgid "Check to enable fill-in-the-blank"
-#~ msgstr "选中可启用填空"
-
-#~ msgid "Select to enable the functions for Fill-in-the-blank"
-#~ msgstr "如果想要启用填空功能，请选择此项"
-
-#~ msgid "E&nable fill-in-the-blank"
-#~ msgstr "允许填空(&N)"
-
-#~ msgid "How vocabulary documents are opened"
-#~ msgstr "词汇表文档打开方式"
-
-#~ msgid "Select the kind of session to load an opened vocabulary document in"
-#~ msgstr "选择以哪种课程类型加载打开的词汇表文档"
-
-#~ msgid "&Open Vocabulary Documents in"
-#~ msgstr "词汇表文档打开方式(&O)"
-
-#~ msgid "Open vocabulary documents in the editor"
-#~ msgstr "在编辑器中打开词汇表文档"
-
-#~ msgid "Select if the vocabulary documents should be opened in the editor"
-#~ msgstr "选择是否在编辑器中打开词汇表"
-
-#~ msgid "&Editor"
-#~ msgstr "编辑器(&E)"
-
-#~ msgid "Open vocabulary documents in a flashcard quiz"
-#~ msgstr "在答题卡中打开词汇表文档"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
-#~ msgstr "选择是否在答题卡中打开词汇表文档"
-
-#~ msgid "&Flashcard Quiz"
-#~ msgstr "答题卡问答(&F)"
-
-#~ msgid "Open vocabulary documents in a multiple choice quiz"
-#~ msgstr "在选择题中打开词汇表文档"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a multiple choice "
-#~ "quiz"
-#~ msgstr "选择是否在多选卡中打开词汇表文档"
-
-#~ msgid "&Multiple Choice Quiz"
-#~ msgstr "选择题(&M)"
-
-#~ msgid "Open vocabulary documents in a question and answer quiz"
-#~ msgstr "在问答题中打开词汇表文档"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a question and "
-#~ "answer quiz"
-#~ msgstr "选择是否在问答题中打开词汇表文档"
-
-#~ msgid "&Question and Answer Quiz"
-#~ msgstr "问答题(&Q)"
-
-#~ msgid "Specify behavior for a question and answer session"
-#~ msgstr "指定问答题闯关的行为"
-
-#~ msgid "Question && Answer"
-#~ msgstr "问答题"
-
-#~ msgid ""
-#~ "Select if questions where the hint function has been used should be "
-#~ "counted as errors"
-#~ msgstr "如果想要使用过提示功能的问题计为错误，请选择此项"
-
-#~ msgid "&Treat hint as error"
-#~ msgstr "将提示视为错误(&T)"
-
-#~ msgid "Specify behavior of the score presentation in any session"
-#~ msgstr "指定各种题型闯关的记分牌行为"
-
-#~ msgid "Check to show score as a percentage"
-#~ msgstr "选中可将得分显示为百分比"
-
-#~ msgid "Select if the score should be shown as a percentage"
-#~ msgstr "如果要将得分显示为百分比，请选择此项"
-
-#~ msgid "&Show score as a percentage"
-#~ msgstr "将得分显示为百分比(&S)"
-
-#~ msgid "Specify behavior for a multiple choice session"
-#~ msgstr "指定选择题闯关的行为"
-
-#~ msgid "Check to correct automatically"
-#~ msgstr "选中可自动判分"
-
-#~ msgid "Select if a choice should be checked immediately"
-#~ msgstr "如果想要立即检查选项，请选择此项"
-
-#~ msgid "Check selection a&utomatically"
-#~ msgstr "自动检查选项(&U)"
-
-#~ msgid "Specify behavior of a flashcard session"
-#~ msgstr "指定答题卡闯关的行为"
-
-#~ msgid "Specify the amount of time between card flips"
-#~ msgstr "指定翻到下一道题的时间"
-
-#~ msgid "seconds and"
-#~ msgstr "秒"
-
-#~ msgid "Delay to flip card"
-#~ msgstr "翻卡延迟"
-
-#~ msgid "Delay in seconds to flip card"
-#~ msgstr "翻卡延迟秒数"
-
-#~ msgid "Select how to count card"
-#~ msgstr "选择如何计分"
-
-#~ msgid ""
-#~ "Select if the previous card should be counted as correct when moving to "
-#~ "the next card"
-#~ msgstr "如果想要在自动翻到下一道题时将上一道题计为正确，请选择此项。"
-
-#~ msgid "Count &as correct"
-#~ msgstr "计为正确(&A)"
-
-#~ msgid ""
-#~ "Select if the previous card should be counted as incorrect when moving to "
-#~ "the next card"
-#~ msgstr "如果想要在自动翻到下一道题时将上一道题计为错误，请选择此项。"
-
-#~ msgid "Count as &error"
-#~ msgstr "计为错误(&E)"
-
-#~ msgid "Check to flip card automatically"
-#~ msgstr "选中可自动翻过答题卡"
-
-#~ msgid ""
-#~ "Select if you want a card to turn over automatically after the given "
-#~ "amount of time"
-#~ msgstr "如果您想要在给定时间后自动翻过答题卡，请选择此项。"
-
-#~ msgid "&Flip card automatically after"
-#~ msgstr "每道题的答题时限为(&F)"
-
-#~ msgid "Tutor Timing"
-#~ msgstr "教学计时"
-
-#~ msgid "&Every"
-#~ msgstr "每(&E)"
-
-#~ msgid "&minutes"
-#~ msgstr "分钟(&M)"
-
-#~ msgid "&Randomly"
-#~ msgstr "随机(&R)"
-
-#~ msgid "Between"
-#~ msgstr "介于"
-
-#~ msgid "m&inutes and"
-#~ msgstr "分钟和(&I)"
-
-#~ msgid "mi&nutes"
-#~ msgstr " 分钟(&N)"
-
-#~ msgid "Flashcard Appearance"
-#~ msgstr "答题卡外观"
-
-#~ msgid "&Native"
-#~ msgstr "原生(&N)"
-
-#~ msgid "Minim&alistic"
-#~ msgstr "最小化(&A)"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "杂项"
-
-#~ msgid "S&tart exercise as soon as vocabulary file is opened"
-#~ msgstr "打开词汇表文件后立即开始练习(&T)"
-
-#~ msgid "Type your answer"
-#~ msgstr "输入您的答案"
-
-#~ msgid "The answer showing blanks for a Fill-in-the-blank question"
-#~ msgstr "填空题的答案"
-
-#~ msgid "This is _____ answer"
-#~ msgstr "这是 _____ 答案"
-
-#~ msgid "Type the answer to the question"
-#~ msgstr "输入问题的答案"
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least one entry for a question and answer quiz.</html>"
-#~ msgstr ""
-#~ "<html>您的词汇表中的条目太少了。<br />在问答题中，您至少在词汇表中需要一个"
-#~ "条目。</html>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Vocabulary Options"
-#~ msgstr "词汇表选项"
-
-#~ msgid "Select Type of Printout"
-#~ msgstr "选择输出类型"
-
-#~ msgid "Vocabulary &list"
-#~ msgstr "词汇表列表(&L)"
-
-#~ msgid "Select to print the vocabulary as displayed in the editor"
-#~ msgstr "将编辑器中显示的词汇表打印输出"
-
-#~ msgid "Vocabulary e&xam"
-#~ msgstr "词汇表测验(&X)"
-
-#~ msgid "Select to print the vocabulary as a vocabulary exam"
-#~ msgstr "将词汇表打印为词汇表测验"
-
-#~ msgid "&Flashcards"
-#~ msgstr "答题卡(&F)"
-
-#~ msgid "Select to print flashcards"
-#~ msgstr "打印答题卡"
