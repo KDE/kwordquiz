@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-20 00:44+0000\n"
-"PO-Revision-Date: 2023-05-06 11:49+0200\n"
+"PO-Revision-Date: 2023-07-20 11:13+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -56,7 +56,7 @@ msgstr "Resposta"
 #: main.cpp:56
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "S'ha indicat un «goto» no vàlid: %1. Es permet: «flash», «mc» i «qa»"
 
 #: main.cpp:90
 #, kde-format
@@ -82,19 +82,19 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "Autor original"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "Adaptació a QML"
 
 #: main.cpp:100
 #, kde-format
@@ -117,13 +117,7 @@ msgid "Leitner System and several code contributions"
 msgstr "Sistema Leitner i diverses contribucions al codi"
 
 #: main.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
@@ -133,8 +127,7 @@ msgstr ""
 "Tipus de sessió en iniciar: \n"
 "«flash» per a una targeta ràpida, \n"
 "«mc» per a tria múltiple, \n"
-"«qa» per a preguntes i respostes, \n"
-"«tutor» per al mode tutor"
+"«qa» per a preguntes i respostes"
 
 #: main.cpp:123
 #, kde-format
@@ -144,72 +137,68 @@ msgstr "Fitxer que s'ha d'obrir"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Targetes %1% Errors %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Targetes %1/%2 Errors %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "Finalitzada"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Heu obtingut una puntuació perfecta"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Heu comés un error"
+msgstr[1] "Heu comés %1 errors"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "Repetix els &errors"
+msgstr "Repetix els errors"
 
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "Torna-ho a intentar"
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
-msgstr ""
+msgstr "Crea un conjunt"
 
 #: qml/DeckEditorPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "Editor"
+msgstr "Edita el conjunt"
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "Filtre"
 
 #: qml/DeckEditorPage.qml:43
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "Filtre..."
 
 #: qml/DeckEditorPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "S'està mostrant la previsualització..."
+msgstr "Vista prèvia d'impressió"
 
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
@@ -219,216 +208,188 @@ msgstr "Targeta ràpida"
 #: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Llista"
 
 #: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "Examen"
 
 #: qml/DeckEditorPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "S'està imprimint..."
+msgstr "Imprimix"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Guarda"
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "Elimina la imatge"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Enllaça una imatge"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr "Seleccioneu un so"
+msgstr "Elimina el so"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Enllaça un so"
 
 #: qml/DeckEditorPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "Idioma 1"
+msgstr "Establix l'idioma"
 
 #: qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "Idioma 1"
+msgstr "Establix l'idioma"
 
 #: qml/DeckEditorPage.qml:183
 #, kde-format
 msgid "Please Choose an Image"
-msgstr ""
+msgstr "Escolliu una imatge"
 
 #: qml/DeckEditorPage.qml:192
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr ""
+msgstr "Escolliu un so"
 
 #: qml/DeckEditorPage.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Nom:"
 
 #: qml/DeckEditorPage.qml:238
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "Autoria:"
 
 #: qml/DeckEditorPage.qml:249
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "Llicència:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Editor"
+msgstr "Edita"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "&Comprova"
+msgstr "Comprova"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "Resposta correcta"
+msgstr "Correcta"
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "Marca l'última com a correcta"
+msgstr "No correcta"
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "Seleccioneu una imatge"
+msgstr "Seleccioneu un idioma"
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "Configureu el qüestionari"
+msgstr "Configuració"
 
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Configura"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
+#, kde-format
 msgid "This is correct"
-msgstr "Esta era la resposta correcta"
+msgstr "Esta és correcta"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "Respostes incorrectes"
+msgstr "Incorrecta. La resposta correcta era «%1»."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "Següent"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "No hi ha prou paraules en el conjunt"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr ""
+msgstr "Calen com a mínim 3 paraules per a activar el mode de tria múltiple"
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "Opció &2"
+msgstr "Opcions"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Barreja"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Consell"
+msgstr "Consell"
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Configureu el qüestionari"
+msgstr "Configuració"
 
 #: qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "General"
 
@@ -438,8 +399,7 @@ msgid "Show score as percentage"
 msgstr "Mostra la puntuació com a percentatge"
 
 #: qml/SettingsPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
 msgstr "Targeta ràpida"
 
@@ -449,34 +409,29 @@ msgid "Automatically flip flashcard"
 msgstr "Gira automàticament les targetes ràpides"
 
 #: qml/SettingsPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
-msgstr "Temps abans de girar la targeta ràpida"
+msgstr "Retard de temps abans de girar la targeta ràpida"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
 msgstr "Tria múltiple"
 
 #: qml/SettingsPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "Comprova automàticament la resposta de tria múltiple seleccionada"
+msgstr "Comprova automàticament la resposta seleccionada"
 
 #: qml/SettingsPage.qml:105
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "&Preguntes i respostes"
+msgstr "Pregunta i Resposta"
 
 #: qml/SettingsPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "Marqueu per a comptar el consell com a error"
+msgstr "Compta l'ús d'un consell com a error"
 
 #: qml/SettingsPage.qml:122
 #, kde-format
@@ -484,68 +439,65 @@ msgid "Compare answers in a case sensitive way"
 msgstr "Compara les respostes distingint entre majúscules i minúscules"
 
 #: qml/SettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "Ix de KWordQuiz"
+msgstr "Quant a KWordQuiz"
 
 #: qml/SettingsPage.qml:161
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Quant a KDE"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Us donem la benvinguda"
 
 #: qml/WelcomePage.qml:43
 #, kde-format
 msgid "Please choose a KWordQuiz document"
-msgstr ""
+msgstr "Seleccioneu un document de KWordQuiz"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
-msgstr ""
+msgstr "KEduDocument (*.kvtml)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Wql documents (*.wql)"
-msgstr ""
+msgstr "Documents Wql (*.wql)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "CSV documents (*.csv)"
-msgstr ""
+msgstr "Documents CSV (*.csv)"
 
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
-msgstr ""
+msgstr "Documents XDXF (*.xdxf)"
 
 #: qml/WelcomePage.qml:62
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "Ix de KWordQuiz"
+msgstr "Us donem la benvinguda a KWordQuiz"
 
 #: qml/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "Obri un document de vocabulari existent"
+msgstr "Obri un document existent"
 
 #: qml/WelcomePage.qml:80
 #, kde-format
 msgid "Create Deck"
-msgstr ""
+msgstr "Crea un conjunt"
 
 #: qml/WelcomePage.qml:88
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "Baixa un conjunt"
 
 #: qml/WelcomePage.qml:111
 #, kde-format
@@ -553,1303 +505,30 @@ msgid "Mode"
 msgstr "Mode"
 
 #: qml/WelcomePage.qml:147
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Targeta ràpida"
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Tria múltiple"
 
 #: qml/WelcomePage.qml:161
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "Preguntes i respostes"
+msgstr "Pregunta-resposta"
 
 #: qml/WelcomePage.qml:177
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "Conjunts"
 
 #: qml/WelcomePage.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
-
-#, fuzzy
-#~| msgid "Multiple Choice"
-#~ msgctxt "@option:check Mode selector"
-#~ msgid "Multiple Choice"
-#~ msgstr "Tria múltiple"
-
-#~ msgid "Selection"
-#~ msgstr "Selecció"
-
-#~ msgid "Delete all information in selected entries"
-#~ msgstr "Elimina tota la informació de les entrades seleccionades"
-
-#~ msgid ""
-#~ "When checked all information will be deleted from the selected entries"
-#~ msgstr ""
-#~ "Quan està marcada, se suprimirà tota la informació de les entrades "
-#~ "seleccionades"
-
-#~ msgid "Clear &All"
-#~ msgstr "Neteja-ho &tot"
-
-#~ msgid "Delete the text from selected entries"
-#~ msgstr "Elimina el text de les entrades seleccionades"
-
-#~ msgid "When checked the text will be deleted from selected entries"
-#~ msgstr ""
-#~ "Quan està marcada, se suprimirà el text de les entrades seleccionades"
-
-#~ msgid "&Text"
-#~ msgstr "&Text"
-
-#~ msgid "Delete the image link from selected entries"
-#~ msgstr "Elimina l'enllaç cap a la imatge de les entrades seleccionades"
-
-#~ msgid "When checked the image link will be deleted from selected entries"
-#~ msgstr ""
-#~ "Quan està marcada, se suprimirà l'enllaç cap a la imatge de les entrades "
-#~ "seleccionades"
-
-#~ msgid "&Image Links"
-#~ msgstr "Enllaços cap a &imatges"
-
-#~ msgid "Delete the sound link from selected entries"
-#~ msgstr "Elimina l'enllaç cap al so de les entrades seleccionades"
-
-#~ msgid "When checked the sound link will be deleted from selected entries"
-#~ msgstr ""
-#~ "Quan està marcada, se suprimirà l'enllaç cap al so de les entrades "
-#~ "seleccionades"
-
-#~ msgid "&Sound Links"
-#~ msgstr "Enllaços als &sons"
-
-#~ msgid "Column 1"
-#~ msgstr "Columna 1"
-
-#~ msgid "Title for the left column"
-#~ msgstr "Títol per a la columna de l'esquerra"
-
-#~ msgid "Enter a title (identifier) for the left column"
-#~ msgstr "Introduïu un títol (identificador) per a la columna esquerra"
-
-#~ msgid "&Title:"
-#~ msgstr "&Títol:"
-
-#~ msgid "&Keyboard layout:"
-#~ msgstr "&Disposició del teclat:"
-
-#~ msgid "&Width:"
-#~ msgstr "A&mplària:"
-
-#~ msgid "Keyboard layout for the left column"
-#~ msgstr "Disposició del teclat per a la columna de l'esquerra"
-
-#~ msgid "Select a keyboard layout for the left column"
-#~ msgstr "Escolliu una disposició del teclat per a la columna de l'esquerra"
-
-#~ msgid "Width of the left column"
-#~ msgstr "Amplària de la columna de l'esquerra"
-
-#~ msgid "Enter the width (in pixels) for the left column"
-#~ msgstr "Introduïu l'amplària (en píxels) per a la columna de l'esquerra"
-
-#~ msgid "Column 2"
-#~ msgstr "Columna 2"
-
-#~ msgid "T&itle:"
-#~ msgstr "Tít&ol:"
-
-#~ msgid "Keyboard &Layout:"
-#~ msgstr "&Disposició del teclat:"
-
-#~ msgid "Wi&dth:"
-#~ msgstr "A&mplària:"
-
-#~ msgid "Title for the right column"
-#~ msgstr "Títol per a la columna de la dreta"
-
-#~ msgid "Enter a title (identifier) for the right column"
-#~ msgstr "Introduïu un títol (identificador) per a la columna dreta"
-
-#~ msgid "Width of the right column"
-#~ msgstr "Amplària de la columna de la dreta"
-
-#~ msgid "Enter the width (in pixels) for the right column"
-#~ msgstr "Introduïu l'amplària (en píxels) per a la columna de la dreta"
-
-#~ msgctxt "@title:window"
-#~ msgid "Column Settings"
-#~ msgstr "Configureu les columnes"
-
-#~ msgctxt "@title:window select character dialog"
-#~ msgid "Select Character"
-#~ msgstr "Seleccioneu un caràcter"
-
-#~ msgctxt "@action:button"
-#~ msgid "&Select"
-#~ msgstr "&Selecciona"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select this character"
-#~ msgstr "Selecciona este caràcter"
-
-#~ msgid "Column widths"
-#~ msgstr "Amplàries de les columnes"
-
-#~ msgid "Keyboard layouts"
-#~ msgstr "Disposicions de teclat"
-
-#~ msgid "Search"
-#~ msgstr "Busca"
-
-#~ msgid "Your answer was correct!"
-#~ msgstr "La vostra resposta era correcta!"
-
-#~ msgid "Your answer was incorrect."
-#~ msgstr "La vostra resposta era incorrecta."
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least one entry for a flashcard quiz.</html>"
-#~ msgstr ""
-#~ "<html>Hi ha massa poques entrades al vostre vocabulari.<br />Necessiteu "
-#~ "com a mínim una entrada per a un qüestionari de targetes ràpides.</html>"
-
-#~ msgid "Creates a new blank vocabulary document"
-#~ msgstr "Crea un document nou en blanc de vocabulari"
-
-#~ msgid "Download New Vocabularies..."
-#~ msgstr "Descarrega vocabularis nous..."
-
-#~ msgid "Downloads new vocabularies"
-#~ msgstr "Descarrega vocabularis nous"
-
-#~ msgid "Saves the active vocabulary document"
-#~ msgstr "Guarda el document de vocabulari actiu"
-
-#~ msgid "Saves the active vocabulary document with a different name"
-#~ msgstr "Guarda el document de vocabulari actiu amb un nom diferent"
-
-#~ msgid "Closes the active vocabulary document"
-#~ msgstr "Tanca el document de vocabulari actiu"
-
-#~ msgid "Prints the active vocabulary document"
-#~ msgstr "Imprimix el document de vocabulari actiu"
-
-#~ msgid "Shows a preview of the active vocabulary document"
-#~ msgstr "Mostra una previsualització del document de vocabulari actiu"
-
-#~ msgid "Cuts the text from the selected cells and places it on the clipboard"
-#~ msgstr ""
-#~ "Talla el text de les cel·les seleccionades i el posa al porta-retalls"
-
-#~ msgid ""
-#~ "Copies the text from the selected cells and places it on the clipboard"
-#~ msgstr ""
-#~ "Copia el text de les cel·les seleccionades i el posa al porta-retalls"
-
-#~ msgid ""
-#~ "Pastes previously cut or copied text from the clipboard into the selected "
-#~ "cells"
-#~ msgstr ""
-#~ "Apega el text tallat o copiat anteriorment des del porta-retalls a dins "
-#~ "de les cel·les seleccionades"
-
-#~ msgid "Clears the content of the selected cells"
-#~ msgstr "Neteja el contingut de les cel·les seleccionades"
-
-#~ msgid "&Insert Row"
-#~ msgstr "&Inserix una fila"
-
-#~ msgid "Inserts a new row above the current row"
-#~ msgstr "Inserix una fila nova sobre la fila actual"
-
-#~ msgid "&Delete Row"
-#~ msgstr "Sup&rimix la fila"
-
-#~ msgid "Deletes the selected row(s)"
-#~ msgstr "Elimina la fila o files seleccionades"
-
-#~ msgid "&Mark as Blank"
-#~ msgstr "&Marca com a espai"
-
-#~ msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-#~ msgstr ""
-#~ "Marca la paraula actual o seleccionada com a espai per a emplenar els "
-#~ "espais en blanc"
-
-#~ msgid "&Unmark Blanks"
-#~ msgstr "&Desmarca els espais"
-
-#~ msgid "Removes blanks from the current or selected word"
-#~ msgstr "Elimina els espais en blanc de la paraula actual o seleccionada"
-
-#~ msgid "&Column Settings..."
-#~ msgstr "Configureu les &columnes..."
-
-#~ msgid "Defines the column settings for the active vocabulary"
-#~ msgstr "Definix la configuració de les columnes per al vocabulari actiu"
-
-#~ msgid "&Font..."
-#~ msgstr "&Tipus de lletra..."
-
-#~ msgid "Defines the font used by the editor"
-#~ msgstr "Establix el tipus de lletra utilitzada per l'editor"
-
-#~ msgid "Link &Image..."
-#~ msgstr "Enllaça una &imatge..."
-
-#~ msgid "Links an image with the current entry"
-#~ msgstr "Enllaça una imatge amb l'entrada actual"
-
-#~ msgid "Link &Sound..."
-#~ msgstr "Enllaça un &so..."
-
-#~ msgid "Links a sound with the current entry"
-#~ msgstr "Enllaça un so amb l'entrada actual"
-
-#~ msgid "&Adjust Row Heights"
-#~ msgstr "Ajusta l'a&lçària de les files"
-
-#~ msgid "Automatically adjusts the height of selected rows"
-#~ msgstr "Ajusta automàticament l'alçària de les files seleccionades"
-
-#~ msgid "Sh&uffle"
-#~ msgstr "Ba&rreja"
-
-#~ msgid "Shuffles the entries of the active vocabulary"
-#~ msgstr "Barreja les entrades del vocabulari actiu"
-
-#~ msgid "&Keyboard Layout"
-#~ msgstr "&Disposició del teclat"
-
-#~ msgid "Shows available keyboard layouts"
-#~ msgstr "Mostra les disposicions del teclat disponibles"
-
-#~ msgid "Change Mode"
-#~ msgstr "Canvia el mode"
-
-#~ msgid "Changes the mode used in quiz sessions"
-#~ msgstr "Canvia el mode utilitzat a les sessions de qüestionari"
-
-#~ msgid "Selects this mode"
-#~ msgstr "Selecciona este mode"
-
-#~ msgctxt "@item:inlistbox activate vocabulary editor"
-#~ msgid "&Editor"
-#~ msgstr "&Editor"
-
-#~ msgid "Activates the vocabulary editor"
-#~ msgstr "Activa l'editor de vocabulari"
-
-#~ msgid "&Flashcard"
-#~ msgstr "Targeta &ràpida"
-
-#~ msgid "Starts a flashcard session using the active vocabulary"
-#~ msgstr ""
-#~ "Inicia una sessió de targetes ràpides utilitzant el vocabulari actiu"
-
-#~ msgid "&Multiple Choice"
-#~ msgstr "Tria &múltiple"
-
-#~ msgid "Starts a multiple choice session using the active vocabulary"
-#~ msgstr "Inicia una sessió de tria múltiple utilitzant el vocabulari actiu"
-
-#~ msgid "Q&&A"
-#~ msgstr "&PiR"
-
-#~ msgid "Starts a question and answer session using the active vocabulary"
-#~ msgstr ""
-#~ "Inicia una sessió de preguntes i respostes utilitzant el vocabulari actiu"
-
-#~ msgid "Checks your answer to this question"
-#~ msgstr "Comprova la vostra resposta a esta pregunta"
-
-#~ msgid "Choose Option &1"
-#~ msgstr "Escolliu l'opció &1"
-
-#~ msgid "Choose Option &2"
-#~ msgstr "Escolliu l'opció &2"
-
-#~ msgid "Choose Option &3"
-#~ msgstr "Escolliu l'opció &3"
-
-#~ msgid "I &Know"
-#~ msgstr "Ho &sé"
-
-#~ msgid "Counts this card as correct and shows the next card"
-#~ msgstr "Compta la targeta com a correcta i mostra la següent targeta"
-
-#~ msgid "I &Do Not Know"
-#~ msgstr "&No ho sé"
-
-#~ msgid "Counts this card as incorrect and shows the next card"
-#~ msgstr "Compta la targeta com a incorrecta i mostra la següent targeta"
-
-#~ msgid "Gets the next correct letter of the answer"
-#~ msgstr "Obtín el següent caràcter correcte de la resposta"
-
-#~ msgid "Marks last answer as correct"
-#~ msgstr "Marca l'última resposta com a correcta"
-
-#~ msgid "&Restart"
-#~ msgstr "&Reinicia"
-
-#~ msgid "Restarts the quiz session from the beginning"
-#~ msgstr "Reinicia la sessió de qüestionari des de l'inici"
-
-#~ msgid "&Play Audio"
-#~ msgstr "Re&produïx l'àudio"
-
-#~ msgid "Play associated audio"
-#~ msgstr "Reproduïx l'àudio associat"
-
-#~ msgid "Repeats all incorrectly answered questions"
-#~ msgstr "Repetix totes les preguntes respostes incorrectament"
-
-#~ msgid "Export Errors &As..."
-#~ msgstr "E&xporta els errors com a..."
-
-#~ msgid "Exports all errors as a new vocabulary document"
-#~ msgstr "Exporta els errors com un document de vocabulari nou"
-
-#~ msgid "Show Se&arch"
-#~ msgstr "Mostra la barra de c&erques"
-
-#~ msgid "Toggle display of the search bar"
-#~ msgstr "Mostra/oculta la visualització de la barra de busques"
-
-#~ msgid "Configures sound and other notifications for certain events"
-#~ msgstr "Configura sons i altres notificacions per a certs esdeveniments"
-
-#~ msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-#~ msgstr ""
-#~ "Especifica les preferències per l'editor de vocabulari i les sessions de "
-#~ "qüestionari"
-
-#~ msgid "Special Character <numid>%1</numid>"
-#~ msgstr "Caràcter especial <numid>%1</numid>"
-
-#~ msgid "Toggles display of the toolbars"
-#~ msgstr "Mostra/oculta la visualització de les barres d'eines"
-
-#~ msgid "Enter search terms here"
-#~ msgstr "Introduïu ací els termes que s'han de buscar"
-
-#~ msgid "Opening file..."
-#~ msgstr "S'està obrint el fitxer..."
-
-#~ msgctxt "%1 is an error message"
-#~ msgid ""
-#~ "%1\n"
-#~ "If you are sure no other program is using the file you can choose to "
-#~ "ignore the lock and open the file anyway.\n"
-#~ "Do you want to open the file?"
-#~ msgstr ""
-#~ "%1\n"
-#~ "Si segur que cap altre programa està utilitzant el fitxer, podeu ignorar "
-#~ "el bloqueig i obrir el fitxer igualment.\n"
-#~ "Voleu obrir el fitxer?"
-
-#~ msgid "Open File"
-#~ msgstr "Obri un fitxer"
-
-#~ msgctxt "@info:status ready"
-#~ msgid "Ready"
-#~ msgstr "Llest"
-
-#~ msgid ""
-#~ "The current document has been modified.\n"
-#~ "Do you want to save it?"
-#~ msgstr ""
-#~ "El document actual s'ha modificat.\n"
-#~ "Voleu guardar-lo?"
-
-#~ msgid "Opening a new document window..."
-#~ msgstr "S'està obrint una finestra nova de document..."
-
-#~ msgid "&Merge selected files with the current document"
-#~ msgstr "&Mescla els fitxers seleccionats amb el document actual"
-
-#~ msgid "Open Vocabulary Document"
-#~ msgstr "Obri un document de vocabulari"
-
-#~ msgid "Saving file..."
-#~ msgstr "S'està guardant el fitxer..."
-
-#~ msgid "Saving file with a new filename..."
-#~ msgstr "S'està guardant el fitxer amb un nom nou..."
-
-#~ msgid "HTML Document"
-#~ msgstr "Document HTML"
-
-#~ msgid "Save Vocabulary Document As"
-#~ msgstr "Guarda el document de vocabulari com a"
-
-#~ msgid "Closing file..."
-#~ msgstr "S'està tancant el fitxer..."
-
-#~ msgctxt "@info:status quitting"
-#~ msgid "Quitting..."
-#~ msgstr "S'està eixint..."
-
-#~ msgid "Cutting selection..."
-#~ msgstr "S'està tallant la selecció..."
-
-#~ msgid "Copying selection to clipboard..."
-#~ msgstr "S'està copiant la selecció al porta-retalls..."
-
-#~ msgid "Inserting clipboard contents..."
-#~ msgstr "S'està inserint el contingut del porta-retalls..."
-
-#~ msgid "Clearing the selected cells..."
-#~ msgstr "S'estan netejant les cel·les seleccionades..."
-
-#~ msgid "Inserting rows..."
-#~ msgstr "S'estan inserint files..."
-
-#~ msgid "Deleting selected rows..."
-#~ msgstr "S'estan suprimint les files seleccionades..."
-
-#~ msgid "Marking selected text as a blank..."
-#~ msgstr "S'està marcant el text seleccionat com a espai..."
-
-#~ msgid "Removing blank markings..."
-#~ msgstr "S'estan eliminant les marques d'espais en blanc..."
-
-#~ msgid "Setting the column titles of the vocabulary..."
-#~ msgstr "S'estan establint els títols de les columnes de vocabulari..."
-
-#~ msgid "Setting the font of the vocabulary..."
-#~ msgstr "S'està establint el tipus de lletra del vocabulari..."
-
-#~ msgid "Linking an image with the current entry..."
-#~ msgstr "S'està enllaçant una imatge amb l'entrada actual..."
-
-#~ msgid "Linking a sound with the current entry..."
-#~ msgstr "S'està enllaçant un so amb l'entrada actual..."
-
-#~ msgid "Adjusting row heights..."
-#~ msgstr "S'estan ajustant les alçades de les files..."
-
-#~ msgid "Randomizing the vocabulary..."
-#~ msgstr "S'està mesclant el vocabulari aleatòriament..."
-
-#~ msgid "Updating mode..."
-#~ msgstr "S'està actualitzant el mode..."
-
-#~ msgid "Starting editor session..."
-#~ msgstr "S'està iniciant una sessió de l'editor..."
-
-#~ msgid "Starting flashcard session..."
-#~ msgstr "S'està iniciant una sessió de targetes ràpides..."
-
-#~ msgid "Starting multiple choice session..."
-#~ msgstr "S'està iniciant una sessió de tria múltiple..."
-
-#~ msgid "Starting question & answer session..."
-#~ msgstr "S'està iniciant una sessió de preguntes i respostes..."
-
-#~ msgid "Insert %1"
-#~ msgstr "Inserix %1"
-
-#~ msgid "Inserts the character %1"
-#~ msgstr "Inserix el caràcter %1"
-
-#~ msgid "This will restart your quiz. Do you wish to continue?"
-#~ msgstr "Reiniciarà el vostre qüestionari. Voleu continuar?"
-
-#~ msgid "&1 %1 -> %2 In Order"
-#~ msgstr "&1 %1 -> %2 en ordre"
-
-#~ msgid "&2 %1 -> %2 In Order"
-#~ msgstr "&2 %1 -> %2 en ordre"
-
-#~ msgid "&3 %1 -> %2 Randomly"
-#~ msgstr "&3 %1 -> %2 aleatòriament"
-
-#~ msgid "&4 %1 -> %2 Randomly"
-#~ msgstr "&4 %1 -> %2 aleatòriament"
-
-#~ msgid "&5 %1 <-> %2 Randomly"
-#~ msgstr "&5 %1 <-> %2 aleatòriament"
-
-#~ msgid "%1 -> %2 In Order"
-#~ msgstr "%1 -> %2 en ordre"
-
-#~ msgid "%1 -> %2 Randomly"
-#~ msgstr "%1 -> %2 aleatòriament"
-
-#~ msgid "%1 &lt;-&gt; %2 Randomly"
-#~ msgstr "%1 &lt;-&gt; %2 aleatòriament"
-
-#~ msgid "Is this the first time KWordQuiz is run?"
-#~ msgstr "Esta és la primera vegada que s'executa KWordQuiz?"
-
-#~ msgid "Toggle display of the search bar."
-#~ msgstr "Mostra/oculta la visualització de la barra de busques."
-
-#~ msgid "Type of session to use when opening files"
-#~ msgstr "Tipus de sessió que s'ha d'utilitzar quan s'òbriguen fitxers"
-
-#~ msgid "Type of printout to generate"
-#~ msgstr "Tipus d'impressió que s'ha de generar"
-
-#~ msgid "Titles for column 1"
-#~ msgstr "Títols per a la columna 1"
-
-#~ msgid "Titles for column 2"
-#~ msgstr "Títols per a la columna 2"
-
-#~ msgid "Font used in the editor"
-#~ msgstr "Tipus de lletra utilitzada en l'editor"
-
-#~ msgid "If Fill-in-the-blank should be enabled"
-#~ msgstr "Si s'ha d'habilitar emplenar els espais en blanc"
-
-#~ msgid "Direction the Enter key moves in the editor"
-#~ msgstr "Direcció en què la tecla de retorn mou en l'editor"
-
-#~ msgid "Characters for the special character toolbar"
-#~ msgstr "Caràcters per a la barra d'eines de caràcters especials"
-
-#~ msgid "Clear all data in selected entries"
-#~ msgstr "Neteja totes les dades de les entrades seleccionades"
-
-#~ msgid "Clear the text in selected entries"
-#~ msgstr "Neteja el text de les entrades seleccionades"
-
-#~ msgid "Clear the image link in selected entries"
-#~ msgstr "Neteja l'enllaç cap a la imatge en les entrades seleccionades"
-
-#~ msgid "Clear the sound link in selected entries"
-#~ msgstr "Neteja l'enllaç cap al so en les entrades seleccionades"
-
-#~ msgid "Treat use of hint as error"
-#~ msgstr "Tracta l'ús de consells com a un error"
-
-#~ msgid "Count flashcard as correct or error"
-#~ msgstr "Compta la targeta ràpida com a correcta o com a error"
-
-#~ msgid "Quiz mode"
-#~ msgstr "Mode de qüestionari"
-
-#~ msgid "Font used for front of flashcard"
-#~ msgstr "Tipus de lletra per a la part davantera de la targeta ràpida"
-
-#~ msgid "Color used for text on front of flashcard"
-#~ msgstr "Color del text de la part davantera de la targeta ràpida"
-
-#~ msgid "Color used for front of flashcard"
-#~ msgstr "Color de la part davantera de la targeta ràpida"
-
-#~ msgid "Color used for frame on front of flashcard"
-#~ msgstr "Color del marc de la part davantera de la targeta ràpida"
-
-#~ msgid "Font used for back of flashcard"
-#~ msgstr "Tipus de lletra per a la part de darrere de la targeta ràpida"
-
-#~ msgid "Color used for text on back of flashcard"
-#~ msgstr "Color del text de la part de darrere de la targeta ràpida"
-
-#~ msgid "Color used for back of flashcard"
-#~ msgstr "Color de la part de darrere de la targeta ràpida"
-
-#~ msgid "Color used for frame on back of flashcard"
-#~ msgstr "Color del marc de la part de darrere de la targeta ràpida"
-
-#~ msgid "The Providers path for KWordQuiz"
-#~ msgstr "El camí del proveïdor de KWordQuiz"
-
-#~ msgid "The command used to start a downloaded vocabulary"
-#~ msgstr "L'ordre utilitzada per a iniciar un vocabulari descarregat"
-
-#~ msgid ""
-#~ "The folder where downloaded vocabularies are saved by default (relative "
-#~ "to $HOME)"
-#~ msgstr ""
-#~ "La carpeta on es guardaran de manera predeterminada els vocabularis "
-#~ "descarregats (relativa a $HOME)"
-
-#~ msgid "Pop up flashcards at fixed or random intervals"
-#~ msgstr "Fes emergir les targetes ràpides a intervals fixos o aleatoris"
-
-#~ msgid "The interval in minutes at which to pop up a flash card"
-#~ msgstr "L'interval en minuts en què es fan emergir les targetes ràpides"
-
-#~ msgid "The minimum interval in minutes at which to pop up a flash card"
-#~ msgstr "L'interval mínim en minuts en què es fa emergir una targeta ràpida"
-
-#~ msgid "The maximum interval in minutes at which to pop up a flash card"
-#~ msgstr "L'interval màxim en minuts en què es fa emergir una targeta ràpida"
-
-#~ msgid "Geometry of the last flash card"
-#~ msgstr "Geometria de l'última targeta ràpida"
-
-#~ msgid "Show flash card in a native KWordQuiz style"
-#~ msgstr "Mostra la targeta ràpida en un estil nadiu de KWordQuiz"
-
-#~ msgid ""
-#~ "Last open vocabulary file to be opened automatically if none other is "
-#~ "specified on the command line"
-#~ msgstr ""
-#~ "El fitxer de vocabulari obert recentment que cal obrir automàticament si "
-#~ "no se n'especifica cap altre en la línia d'ordres"
-
-#~ msgid "Start exercise as soon as the user opens vocabulary file"
-#~ msgstr ""
-#~ "Inicia l'exercici tan bon punt l'usuari òbriga un fitxer de vocabulari"
-
-#~ msgctxt "@title:group general settings"
-#~ msgid "General Settings"
-#~ msgstr "Configuració general"
-
-#~ msgctxt "@title:group editor settings"
-#~ msgid "Editor"
-#~ msgstr "Editor"
-
-#~ msgctxt "@title:group editor settings"
-#~ msgid "Editor Settings"
-#~ msgstr "Configureu l'editor"
-
-#~ msgctxt "@title:group quiz settings"
-#~ msgid "Quiz"
-#~ msgstr "Qüestionari"
-
-#~ msgctxt "@title:group flash appearance settings"
-#~ msgid "Flashcard Appearance"
-#~ msgstr "Aparença de les targetes ràpides"
-
-#~ msgctxt "@title:group flash appearance settings"
-#~ msgid "Flashcard Appearance Settings"
-#~ msgstr "Configureu l'aparença de les targetes ràpides"
-
-#~ msgctxt "@title:group special character settings"
-#~ msgid "Special Characters"
-#~ msgstr "Caràcters especials"
-
-#~ msgid "V&ocabulary"
-#~ msgstr "V&ocabulari"
-
-#~ msgid "&Mode"
-#~ msgstr "&Mode"
-
-#~ msgid "&Quiz"
-#~ msgstr "&Qüestionari"
-
-#~ msgid "Quiz"
-#~ msgstr "Qüestionari"
-
-#~ msgid "Special Characters"
-#~ msgstr "Caràcters especials"
-
-#~ msgctxt "@title:window"
-#~ msgid "Clear Contents"
-#~ msgstr "Neteja dels continguts"
-
-#~ msgctxt "@item:inmenu undo clear"
-#~ msgid "Clear"
-#~ msgstr "Neteja"
-
-#~ msgctxt "@item:inmenu undo cut"
-#~ msgid "Cut"
-#~ msgstr "Retalla"
-
-#~ msgctxt "@item:inmenu undo paste"
-#~ msgid "Paste"
-#~ msgstr "A&pega"
-
-#~ msgctxt "@item:inmenu undo sort"
-#~ msgid "Sort"
-#~ msgstr "Ordena"
-
-#~ msgctxt "@item:inmenu undo insert"
-#~ msgid "Insert"
-#~ msgstr "Inserix"
-
-#~ msgctxt "@item:inmenu undo delete"
-#~ msgid "Delete"
-#~ msgstr "Elimina"
-
-#~ msgctxt "@item:inmenu undo unmark blank"
-#~ msgid "Unmark Blank"
-#~ msgstr "Desmarca espais"
-
-#~ msgctxt "@item:inmenu undo column titles"
-#~ msgid "Column Settings"
-#~ msgstr "Configureu les columnes"
-
-#~ msgid "Font"
-#~ msgstr "Tipus de lletra"
-
-#~ msgid "Entry"
-#~ msgstr "Entrada"
-
-#~ msgid "Questions"
-#~ msgstr "Preguntes"
-
-#~ msgid "The number of questions in the session"
-#~ msgstr "El nombre de preguntes en esta sessió"
-
-#~ msgid "00"
-#~ msgstr "00"
-
-#~ msgid "Correct answers"
-#~ msgstr "Respostes correctes"
-
-#~ msgid ""
-#~ "The number of questions answered correctly. May be shown as a percentage."
-#~ msgstr ""
-#~ "El nombre de preguntes respostes correctament. Pot mostrar-se com a "
-#~ "percentatge."
-
-#~ msgid ""
-#~ "The number of questions answered incorrectly. May be shown as a "
-#~ "percentage."
-#~ msgstr ""
-#~ "El nombre de preguntes respostes incorrectament. Pot mostrar-se com a "
-#~ "percentatge."
-
-#~ msgid "Answered questions"
-#~ msgstr "Preguntes respostes"
-
-#~ msgid ""
-#~ "The number of questions already answered. May be shown as a percentage."
-#~ msgstr "El nombre de preguntes respostes. Pot mostrar-se com a percentatge."
-
-#~ msgid "Untitled"
-#~ msgstr "Sense títol"
-
-#~ msgid "There is an error with the Fill-in-the-blank brackets"
-#~ msgstr "Hi ha un error amb els claudàtors d'emplenar els espais en blanc"
-
-#~ msgid "All Files (*)"
-#~ msgstr "Tots els fitxers (*)"
-
-#~ msgid ""
-#~ "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that "
-#~ "allows you to set a certain time interval at which flashcards will pop up."
-#~ "<br /><br />The flashcards pop up in a non-intrusive way allowing you to "
-#~ "carry on working without stealing the focus from other programs you might "
-#~ "be working with.<br /><br />Be sure to right-click KWordQuiz Tutor icon "
-#~ "on the panel and select Preferences. There you can assign keyboard "
-#~ "shortcuts.</qt>"
-#~ msgstr ""
-#~ "<qt>El tutor de KWordQuiz mostra targetes ràpides en la vostra pantalla "
-#~ "tot permetent-vos ajustar l'interval d'aparició.<br /><br />Les targetes "
-#~ "ràpides es mostren d'una manera no intrusiva sense robar el focus als "
-#~ "altres programes amb què esteu treballant.<br /><br />Assegureu-vos de "
-#~ "fer clic dret damunt de la icona del tutor de KWordQuiz al quadro i "
-#~ "escollir l'opció «preferències». Allí podeu assignar les dreceres de "
-#~ "teclat.</qt>"
-
-#~ msgid "Tutor"
-#~ msgstr "Tutor"
-
-#~ msgid "Start Exercise"
-#~ msgstr "Inicia l'exercici"
-
-#~ msgid "Configure KWordQuiz Tutor..."
-#~ msgstr "Configura el tutor de KWordQuiz..."
-
-#~ msgid "Close Flash Card"
-#~ msgstr "Tanca la targeta ràpida"
-
-#~ msgid "Flip Flash Card"
-#~ msgstr "Gira la targeta ràpida"
-
-#~ msgid "Stop Exercise"
-#~ msgstr "Para l'exercici"
-
-#~ msgctxt "@title:group tutor settings"
-#~ msgid "Tutor"
-#~ msgstr "Tutor"
-
-#~ msgctxt "@title:group tutor settings"
-#~ msgid "Tutor Settings"
-#~ msgstr "Configureu el tutor"
-
-#~ msgctxt "Shortcuts Config"
-#~ msgid "Shortcuts"
-#~ msgstr "Dreceres"
-
-#~ msgid "Shortcuts Settings"
-#~ msgstr "Configureu les dreceres"
-
-#~ msgid ""
-#~ "A number 1-5 corresponding to the \n"
-#~ "entries in the Mode menu"
-#~ msgstr ""
-#~ "Un número 1-5 corresponent a les \n"
-#~ "entrades en el menú Mode"
-
-#~ msgid "Previous Question"
-#~ msgstr "Pregunta anterior"
-
-#~ msgid "Your Answer"
-#~ msgstr "La vostra resposta"
-
-#~ msgid "Summary"
-#~ msgstr "Resum"
-
-#~ msgid "The question"
-#~ msgstr "La pregunta"
-
-#~ msgid "Language or other identifier for the question"
-#~ msgstr "Idioma o altre identificador de la pregunta"
-
-#~ msgid "This is your question"
-#~ msgstr "Esta és la vostra pregunta"
-
-#~ msgid "Your choices"
-#~ msgstr "Les vostres opcions"
-
-#~ msgid "Three choices for the answer. One is correct."
-#~ msgstr "Tres opcions de resposta. Una és correcta."
-
-#~ msgid "&1 Option"
-#~ msgstr "Opció &1"
-
-#~ msgid "Language or other identifier for the answer"
-#~ msgstr "Idioma o altre identificador per a la resposta"
-
-#~ msgid "Language 2"
-#~ msgstr "Idioma 2"
-
-#~ msgid "&3 Option"
-#~ msgstr "Opció &3"
-
-#~ msgid "Previous question"
-#~ msgstr "Pregunta anterior"
-
-#~ msgid "The previous question"
-#~ msgstr "La pregunta anterior"
-
-#~ msgid "This was your question"
-#~ msgstr "Esta ha sigut la vostra pregunta"
-
-#~ msgid "Your previous answer"
-#~ msgstr "La vostra resposta anterior"
-
-#~ msgid "Your answer to the previous question"
-#~ msgstr "La vostra resposta a la pregunta anterior"
-
-#~ msgid "This was your answer"
-#~ msgstr "Esta ha sigut la vostra resposta"
-
-#~ msgid "Previous correct answer"
-#~ msgstr "Resposta anterior correcta"
-
-#~ msgid "The correct answer to the previous question"
-#~ msgstr "La resposta correcta a la pregunta anterior"
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least three entries for a multiple choice quiz.</html>"
-#~ msgstr ""
-#~ "<html>Hi ha massa poques entrades al vostre vocabulari.<br />Necessiteu "
-#~ "com a mínim tres entrades per a un qüestionari de tria múltiple.</html>"
-
-#~ msgctxt "Back of the flashcard"
-#~ msgid "Back"
-#~ msgstr "Part de darrere"
-
-#~ msgid "Front"
-#~ msgstr "Part davantera"
-
-#~ msgid "Card Appearance"
-#~ msgstr "Aparença de la targeta"
-
-#~ msgid "Flip card"
-#~ msgstr "Gira la targeta"
-
-#~ msgid "Use to show the other side of the card"
-#~ msgstr "Utilitza per a mostrar l'altra banda de la targeta"
-
-#~ msgid "&Flip Card"
-#~ msgstr "&Gira la targeta"
-
-#~ msgid "F&ont:"
-#~ msgstr "Tipus de &lletra:"
-
-#~ msgid "Use to select the font for displaying text on the back of the card"
-#~ msgstr ""
-#~ "Utilitza per a seleccionar el tipus de lletra del text de la part de "
-#~ "darrere de la targeta"
-
-#~ msgid "Select text color"
-#~ msgstr "Seleccioneu el color del text"
-
-#~ msgid "Use to select the color for text shown on the card"
-#~ msgstr "Utilitza per a seleccionar el color del text de la targeta"
-
-#~ msgid "Select card frame color"
-#~ msgstr "Seleccioneu el color del marc de la targeta"
-
-#~ msgid "Use to select the color for drawing the frame of the card"
-#~ msgstr "Utilitza per a seleccionar el color del marc de la targeta"
-
-#~ msgid "Select card color"
-#~ msgstr "Seleccioneu el color de la targeta"
-
-#~ msgid "Select color used to draw the card"
-#~ msgstr "Seleccioneu el color de la targeta"
-
-#~ msgid "Use to select the font for displaying text on the front of the card"
-#~ msgstr ""
-#~ "Utilitza per a seleccionar el tipus de lletra del text de la part "
-#~ "davantera de la targeta"
-
-#~ msgid "&Text color:"
-#~ msgstr "Color del &text:"
-
-#~ msgid "&Card color:"
-#~ msgstr "&Color de la targeta:"
-
-#~ msgid "Fra&me color:"
-#~ msgstr "Color del &marc:"
-
-#~ msgid "Action"
-#~ msgstr "Acció"
-
-#~ msgid "Shortcut"
-#~ msgstr "Drecera"
-
-#~ msgid "Character"
-#~ msgstr "Caràcter"
-
-#~ msgid "Special Character %1"
-#~ msgstr "Caràcter especial %1"
-
-#~ msgid ""
-#~ "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-#~ "associated with each action."
-#~ msgstr ""
-#~ "Nota: Seleccioneu «Configuració -> Configura les dreceres...» per a "
-#~ "canviar les dreceres associades amb cada acció."
-
-#~ msgid "Select character to modify"
-#~ msgstr "Seleccioneu el caràcter que s'ha de modificar"
-
-#~ msgid "Customizable special character actions"
-#~ msgstr "Accions a mida per als caràcters especials"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "1"
-#~ msgstr "1"
-
-#~ msgid "2"
-#~ msgstr "2"
-
-#~ msgid "Click to choose a new character"
-#~ msgstr "Feu clic per a escollir un caràcter nou"
-
-#~ msgid "Choose a character for the selected action"
-#~ msgstr "Escolliu un caràcter per a l'acció seleccionada"
-
-#~ msgid "C&haracter..."
-#~ msgstr "C&aràcter..."
-
-#~ msgid "Preview of current character"
-#~ msgstr "Vista prèvia del caràcter actual"
-
-#~ msgid "Preview of the character associated with the selected action"
-#~ msgstr "Vista prèvia del caràcter associat amb l'acció seleccionada"
-
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgid "How enter key moves"
-#~ msgstr "Com mou la tecla de retorn"
-
-#~ msgid "Select how the Enter key should behave in the editor"
-#~ msgstr "Seleccioneu com s'ha de comportar la tecla de retorn en l'editor"
-
-#~ msgid "Enter Ke&y Moves"
-#~ msgstr "La tecla de &retorn mou"
-
-#~ msgid ""
-#~ "Select if the next cell below should become active when pressing Enter."
-#~ msgstr ""
-#~ "Seleccioneu si la cel·la inferior ha de tornar-se activa en prémer la "
-#~ "tecla de retorn."
-
-#~ msgid "&Down"
-#~ msgstr "A&vall"
-
-#~ msgid ""
-#~ "Select if the next cell to the right should become active when pressing "
-#~ "Enter"
-#~ msgstr ""
-#~ "Seleccioneu si la cel·la de la dreta ha de tornar-se activa en prémer la "
-#~ "tecla de retorn"
-
-#~ msgid "&Right"
-#~ msgstr "&Dreta"
-
-#~ msgid "Select if the current cell should remain active when pressing Enter"
-#~ msgstr ""
-#~ "Seleccioneu si la cel·la ha de mantindre's activa en prémer la tecla de "
-#~ "retorn"
-
-#~ msgid "Does not &move"
-#~ msgstr "No &mou"
-
-#~ msgid "Check to enable fill-in-the-blank"
-#~ msgstr "Marqueu per a habilitar l'emplenament dels espais en blanc"
-
-#~ msgid "Select to enable the functions for Fill-in-the-blank"
-#~ msgstr "Seleccioneu habilitar les funcions d'emplenar els espais en blanc"
-
-#~ msgid "E&nable fill-in-the-blank"
-#~ msgstr "&Habilita emplenar els espais en blanc"
-
-#~ msgid "How vocabulary documents are opened"
-#~ msgstr "Manera d'obrir els documents de vocabulari"
-
-#~ msgid "Select the kind of session to load an opened vocabulary document in"
-#~ msgstr ""
-#~ "Trieu la mena de sessió en què voleu carregar un document vocabulari obert"
-
-#~ msgid "&Open Vocabulary Documents in"
-#~ msgstr "O&bri documents de vocabulari en"
-
-#~ msgid "Open vocabulary documents in the editor"
-#~ msgstr "Obri els documents de vocabulari en l'editor"
-
-#~ msgid "Select if the vocabulary documents should be opened in the editor"
-#~ msgstr "Selecciona si els documents de vocabulari s'han d'obrir en l'editor"
-
-#~ msgid "&Editor"
-#~ msgstr "&Editor"
-
-#~ msgid "Open vocabulary documents in a flashcard quiz"
-#~ msgstr ""
-#~ "Obri els documents de vocabulari en un qüestionari de targetes ràpides"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
-#~ msgstr ""
-#~ "Selecciona si els documents de vocabulari s'han d'obrir en un qüestionari "
-#~ "de targetes ràpides"
-
-#~ msgid "&Flashcard Quiz"
-#~ msgstr "&Qüestionari de targetes ràpides"
-
-#~ msgid "Open vocabulary documents in a multiple choice quiz"
-#~ msgstr "Obri els documents de vocabulari en un qüestionari de tria múltiple"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a multiple choice "
-#~ "quiz"
-#~ msgstr ""
-#~ "Selecciona si els documents de vocabulari s'han d'obrir en un qüestionari "
-#~ "de tria múltiple"
-
-#~ msgid "&Multiple Choice Quiz"
-#~ msgstr "Qüestionari de tria &múltiple"
-
-#~ msgid "Open vocabulary documents in a question and answer quiz"
-#~ msgstr ""
-#~ "Obri els documents de vocabulari en un qüestionari de preguntes i "
-#~ "respostes"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a question and "
-#~ "answer quiz"
-#~ msgstr ""
-#~ "Selecciona si els documents de vocabulari s'han d'obrir en un qüestionari "
-#~ "de preguntes i respostes"
-
-#~ msgid "&Question and Answer Quiz"
-#~ msgstr "Qüestionari de &preguntes i respostes"
-
-#~ msgid "Specify behavior for a question and answer session"
-#~ msgstr "Especifica el comportament d'una sessió de preguntes i respostes"
-
-#~ msgid "Question && Answer"
-#~ msgstr "Preguntes i respostes"
-
-#~ msgid ""
-#~ "Select if questions where the hint function has been used should be "
-#~ "counted as errors"
-#~ msgstr ""
-#~ "Seleccioneu si les preguntes on s'ha utilitzat la funció de consell s'han "
-#~ "de comptar com a errors"
-
-#~ msgid "&Treat hint as error"
-#~ msgstr "&Tracta el consell com a un error"
-
-#~ msgid "Specify behavior of the score presentation in any session"
-#~ msgstr "Especifica el comportament de la puntuació en qualsevol sessió"
-
-#~ msgid "Check to show score as a percentage"
-#~ msgstr "Marqueu per a mostrar la puntuació com a percentatge"
-
-#~ msgid "Select if the score should be shown as a percentage"
-#~ msgstr "Seleccioneu si la puntuació s'ha de mostrar com a percentatge"
-
-#~ msgid "&Show score as a percentage"
-#~ msgstr "&Mostra la puntuació com a percentatge"
-
-#~ msgid "Specify behavior for a multiple choice session"
-#~ msgstr "Especifica el comportament d'una sessió de tria múltiple"
-
-#~ msgid "Check to correct automatically"
-#~ msgstr "Marqueu per a corregir automàticament"
-
-#~ msgid "Select if a choice should be checked immediately"
-#~ msgstr "Seleccioneu si la resposta s'ha de comprovar immediatament"
-
-#~ msgid "Check selection a&utomatically"
-#~ msgstr "Comprova la selecció a&utomàticament"
-
-#~ msgid "Specify behavior of a flashcard session"
-#~ msgstr "Especifica el comportament d'una sessió de targetes ràpides"
-
-#~ msgid "Specify the amount of time between card flips"
-#~ msgstr "Especifiqueu la quantitat de temps entre girs de les targetes"
-
-#~ msgid "seconds and"
-#~ msgstr "segons i"
-
-#~ msgid "Delay to flip card"
-#~ msgstr "Temps abans de girar la targeta"
-
-#~ msgid "Delay in seconds to flip card"
-#~ msgstr "Temps en segons abans de girar la targeta"
-
-#~ msgid "Select how to count card"
-#~ msgstr "Seleccioneu com comptar la targeta"
-
-#~ msgid ""
-#~ "Select if the previous card should be counted as correct when moving to "
-#~ "the next card"
-#~ msgstr ""
-#~ "Seleccioneu si la targeta anterior ha de comptar-se com a correcta en "
-#~ "passar a la següent"
-
-#~ msgid "Count &as correct"
-#~ msgstr "Compta com a co&rrecta"
-
-#~ msgid ""
-#~ "Select if the previous card should be counted as incorrect when moving to "
-#~ "the next card"
-#~ msgstr ""
-#~ "Seleccioneu si la targeta anterior ha de comptar-se com a incorrecta en "
-#~ "passar a la següent"
-
-#~ msgid "Count as &error"
-#~ msgstr "Compta com a &error"
-
-#~ msgid "Check to flip card automatically"
-#~ msgstr "Marqueu per a girar automàticament la targeta"
-
-#~ msgid ""
-#~ "Select if you want a card to turn over automatically after the given "
-#~ "amount of time"
-#~ msgstr ""
-#~ "Seleccioneu si voleu que les targetes es giren automàticament després "
-#~ "d'un interval de temps donat"
-
-#~ msgid "&Flip card automatically after"
-#~ msgstr "&Gira la targeta automàticament després de"
-
-#~ msgid "Tutor Timing"
-#~ msgstr "Temporització del tutor"
-
-#~ msgid "&Every"
-#~ msgstr "&Cada"
-
-#~ msgid "&minutes"
-#~ msgstr "&minuts"
-
-#~ msgid "&Randomly"
-#~ msgstr "&Aleatòriament"
-
-#~ msgid "Between"
-#~ msgstr "Entre"
-
-#~ msgid "m&inutes and"
-#~ msgstr "m&inuts i"
-
-#~ msgid "mi&nutes"
-#~ msgstr "mi&nuts"
-
-#~ msgid "Flashcard Appearance"
-#~ msgstr "Aparença de les targetes ràpides"
-
-#~ msgid "&Native"
-#~ msgstr "&Natiu"
-
-#~ msgid "Minim&alistic"
-#~ msgstr "Minim&alista"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Miscel·lània"
-
-#~ msgid "S&tart exercise as soon as vocabulary file is opened"
-#~ msgstr "Ini&cia l'exercici tan bon punt s'òbriga un fitxer de vocabulari"
-
-#~ msgid "Type your answer"
-#~ msgstr "Escriviu la vostra resposta"
-
-#~ msgid "The answer showing blanks for a Fill-in-the-blank question"
-#~ msgstr ""
-#~ "La resposta mostra espais en blanc per a una pregunta d'emplenar els "
-#~ "espais en blanc"
-
-#~ msgid "This is _____ answer"
-#~ msgstr "Esta és _____ resposta"
-
-#~ msgid "Type the answer to the question"
-#~ msgstr "Escriviu la resposta a la pregunta"
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least one entry for a question and answer quiz.</html>"
-#~ msgstr ""
-#~ "<html>Hi ha massa poques entrades al vostre vocabulari.<br />Necessiteu "
-#~ "com a mínim una entrada per a un qüestionari de preguntes i respostes.</"
-#~ "html>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Vocabulary Options"
-#~ msgstr "Opcions del vocabulari"
-
-#~ msgid "Select Type of Printout"
-#~ msgstr "Escolliu el tipus d'impressió"
-
-#~ msgid "Vocabulary &list"
-#~ msgstr "&Llista de vocabulari"
-
-#~ msgid "Select to print the vocabulary as displayed in the editor"
-#~ msgstr "Seleccioneu imprimir el vocabulari tal com es mostra en l'editor"
-
-#~ msgid "Vocabulary e&xam"
-#~ msgstr "E&xamen de vocabulari"
-
-#~ msgid "Select to print the vocabulary as a vocabulary exam"
-#~ msgstr "Seleccioneu imprimir el vocabulari com a un examen de vocabulari"
-
-#~ msgid "&Flashcards"
-#~ msgstr "Targetes &ràpides"
-
-#~ msgid "Select to print flashcards"
-#~ msgstr "Seleccioneu imprimir les targetes ràpides"
+msgstr "Elimina"
