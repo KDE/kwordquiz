@@ -271,7 +271,7 @@ In the example below the user gave an incorrect answer to the previous question.
   </mediaobject>
 </screenshot>
 <para>
-Your choices are shown on the middle of the scren. Select the one you think is correct. Use <guibutton>Check</guibutton> to see if the answer is correct. If you have activated the automatic mode in <menuchoice><guimenu>Settings</guimenu></menuchoice> your selection is checked immediately.
+Your choices are shown on the middle of the screen. Select the one you think is correct. Use <guibutton>Check</guibutton> to see if the answer is correct. If you have activated the automatic mode in <menuchoice><guimenu>Settings</guimenu></menuchoice> your selection is checked immediately.
 </para>
 <para>
 Select <guibutton>Repeat Errors</guibutton> to repeat the cards you have counted as incorrect.
