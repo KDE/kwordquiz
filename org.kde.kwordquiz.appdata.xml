@@ -119,6 +119,14 @@
   <url type="donation">https://www.kde.org/community/donations/?app=kwordquiz&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
+      <caption>KWordQuiz welcome page</caption>
+      <image>https://cdn.kde.org/screenshots/kwordquiz/home.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Editor</caption>
+      <image>https://cdn.kde.org/screenshots/kwordquiz/editor.png</image>
+    </screenshot>
+    <screenshot type="default">
       <caption>Flashcard quiz in KWordQuiz</caption>
       <caption xml:lang="ar">اختبار بطاقة تعليمية</caption>
       <caption xml:lang="ca">Qüestionari de targetes ràpides al KWordQuiz</caption>
@@ -153,6 +161,14 @@
       <caption xml:lang="zh-CN">KWordQuiz 中的抽认卡测试</caption>
       <caption xml:lang="zh-TW">在 KWordQuiz 中測驗閃卡</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/flashcard.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Multiple choice mode in KWordQuiz</caption>
+      <image>https://cdn.kde.org/screenshots/kwordquiz/multiple-choice.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Question response mode in KWordQuiz</caption>
+      <image>https://cdn.kde.org/screenshots/kwordquiz/question-response.png</image>
     </screenshot>
   </screenshots>
   <project_group>KDE</project_group>
