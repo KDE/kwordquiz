@@ -78,13 +78,13 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "Původní autor"
 
 #: main.cpp:99
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:99
 #, kde-format
@@ -113,24 +113,13 @@ msgid "Leitner System and several code contributions"
 msgstr "Leitnerova metoda a několik příspěvků kódem"
 
 #: main.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
 "'qa' for question and answer"
 msgstr ""
-"Typ sezení, kterým se má začít: \n"
-"'flash' pro kartičky, \n"
-"'mc' pro sezení s nabídkou možností, \n"
-"'qa' pro otázku a odpověď, \n"
-"'tutor' pro domácího učitele"
 
 #: main.cpp:123
 #, kde-format
@@ -167,15 +156,14 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "Zopakovat &chyby"
+msgstr ""
 
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "Zkusit znovu"
 
 #: qml/DeckEditorPage.qml:33
 #, kde-format
@@ -184,29 +172,26 @@ msgid "Create Deck"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "Editor"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:40
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "Filtr"
 
 #: qml/DeckEditorPage.qml:43
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "Filtr..."
 
 #: qml/DeckEditorPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "Zobrazuje se náhled..."
+msgstr ""
 
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
@@ -216,7 +201,7 @@ msgstr "Kartička"
 #: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Seznam"
 
 #: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
 #, kde-format
@@ -224,23 +209,22 @@ msgid "Exam"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "Probíhá tisk..."
+msgstr ""
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 #: qml/DeckEditorPage.qml:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: qml/DeckEditorPage.qml:121
 #, kde-format
@@ -249,42 +233,34 @@ msgid "Remove Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
-msgstr "Spojit obrázek"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr "Vyberte zvuk"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
-msgstr "Spojit zvuk"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "Jazyk 1"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "Jazyk 1"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:183
 #, kde-format
@@ -300,87 +276,76 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Název:"
 
 #: qml/DeckEditorPage.qml:238
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "Autor:"
 
 #: qml/DeckEditorPage.qml:249
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "Licence:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Editor"
+msgstr "Úpravy"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "&Zkontrolovat"
+msgstr "Zkontrolovat"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "Správná odpověď"
+msgstr ""
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "Označit poslední jako správné"
+msgstr ""
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "Vybrat obrázek"
+msgstr "Zvolte jazyk"
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "Nastavení kvízu"
+msgstr ""
 
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
+msgstr "Nastavit"
+
+#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#, kde-format
+msgid "This is correct"
 msgstr ""
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
-msgid "This is correct"
-msgstr "Toto byla správná odpověď"
-
-#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "Nesprávné odpovědi"
+msgstr ""
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "Další"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
@@ -393,39 +358,31 @@ msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "&2 možnost"
+msgstr "Možnosti"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
-msgstr "Zamíchat"
+msgstr ""
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Rada"
+msgstr ""
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Nastavení kvízu"
+msgstr "Nastavení"
 
 #: qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Obecné"
 
@@ -435,10 +392,9 @@ msgid "Show score as percentage"
 msgstr "Ukazovat skóre jako procenta"
 
 #: qml/SettingsPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
-msgstr "Kartička"
+msgstr ""
 
 #: qml/SettingsPage.qml:52
 #, kde-format
@@ -446,34 +402,29 @@ msgid "Automatically flip flashcard"
 msgstr "Automaticky obracet kartičky"
 
 #: qml/SettingsPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
-msgstr "Časové prodlení pro obracení kartiček"
+msgstr ""
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
-msgstr "S nabídkou možností"
+msgstr "Více možností"
 
 #: qml/SettingsPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "Automaticky kontrolovat vybranou odpověď v sezení s nabídkou možností"
+msgstr ""
 
 #: qml/SettingsPage.qml:105
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "&Otázka a odpověď"
+msgstr "Otázka a odpověď"
 
 #: qml/SettingsPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "Zaškrtněte, pokud má být rada považována za chybu"
+msgstr ""
 
 #: qml/SettingsPage.qml:122
 #, kde-format
@@ -481,15 +432,14 @@ msgid "Compare answers in a case sensitive way"
 msgstr "Rozlišovat malá/velká písmena při porovnání odpovědí"
 
 #: qml/SettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "Ukončí KWordQuiz"
+msgstr ""
 
 #: qml/SettingsPage.qml:161
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "O prostředí KDE"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
@@ -523,16 +473,14 @@ msgid "XDXF documents (*.xdxf)"
 msgstr ""
 
 #: qml/WelcomePage.qml:62
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "Ukončí KWordQuiz"
+msgstr ""
 
 #: qml/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "Otevře existující slovníček"
+msgstr "Otevřít existující dokument"
 
 #: qml/WelcomePage.qml:80
 #, kde-format
@@ -550,25 +498,22 @@ msgid "Mode"
 msgstr "Režim"
 
 #: qml/WelcomePage.qml:147
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
-msgstr "Kartička"
+msgstr ""
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
-msgstr "S nabídkou možností"
+msgstr ""
 
 #: qml/WelcomePage.qml:161
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "Otázka a odpověď"
+msgstr ""
 
 #: qml/WelcomePage.qml:177
 #, kde-format
@@ -579,1231 +524,4 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
-
-#, fuzzy
-#~| msgid "Multiple Choice"
-#~ msgctxt "@option:check Mode selector"
-#~ msgid "Multiple Choice"
-#~ msgstr "S nabídkou možností"
-
-#~ msgid "Selection"
-#~ msgstr "Výběr"
-
-#~ msgid "Delete all information in selected entries"
-#~ msgstr "Smazat všechny informace ve vybraných záznamech"
-
-#~ msgid ""
-#~ "When checked all information will be deleted from the selected entries"
-#~ msgstr ""
-#~ "Je-li zaškrtnuto, budou všechny informace z vybraných záznamů smazány"
-
-#~ msgid "Clear &All"
-#~ msgstr "Vyč&istit vše"
-
-#~ msgid "Delete the text from selected entries"
-#~ msgstr "Smazat text z vybraných záznamů"
-
-#~ msgid "When checked the text will be deleted from selected entries"
-#~ msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán text"
-
-#~ msgid "&Text"
-#~ msgstr "&Text"
-
-#~ msgid "Delete the image link from selected entries"
-#~ msgstr "Smazat odkaz na obrázek z vybraných záznamů"
-
-#~ msgid "When checked the image link will be deleted from selected entries"
-#~ msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán odkaz na obrázek"
-
-#~ msgid "&Image Links"
-#~ msgstr "&Odkazy na obrázek"
-
-#~ msgid "Delete the sound link from selected entries"
-#~ msgstr "Smazat odkaz na zvuk z vybraných záznamů"
-
-#~ msgid "When checked the sound link will be deleted from selected entries"
-#~ msgstr "Je-li zaškrtnuto, bude z vybraných záznamů smazán odkaz na zvuk"
-
-#~ msgid "&Sound Links"
-#~ msgstr "&Odkazy na zvuk"
-
-#~ msgid "Column 1"
-#~ msgstr "Sloupec 1"
-
-#~ msgid "Title for the left column"
-#~ msgstr "Záhlaví levého sloupce"
-
-#~ msgid "Enter a title (identifier) for the left column"
-#~ msgstr "Vložte záhlaví (identifikátor) levého sloupce"
-
-#~ msgid "&Title:"
-#~ msgstr "&Název:"
-
-#~ msgid "&Keyboard layout:"
-#~ msgstr "&Rozvržení klávesnice:"
-
-#~ msgid "&Width:"
-#~ msgstr "Šíř&ka:"
-
-#~ msgid "Keyboard layout for the left column"
-#~ msgstr "Rozložení klávesnice pro levý sloupec"
-
-#~ msgid "Select a keyboard layout for the left column"
-#~ msgstr "Vyberte rozložení klávesnice pro levý sloupec"
-
-#~ msgid "Width of the left column"
-#~ msgstr "Šířka levého sloupce"
-
-#~ msgid "Enter the width (in pixels) for the left column"
-#~ msgstr "Zadejte šířku (v pixelech) levého sloupce"
-
-#~ msgid "Column 2"
-#~ msgstr "Sloupec 2"
-
-#~ msgid "T&itle:"
-#~ msgstr "&Název:"
-
-#~ msgid "Keyboard &Layout:"
-#~ msgstr "Rozvržení k&lávesnice:"
-
-#~ msgid "Wi&dth:"
-#~ msgstr "Šíř&ka:"
-
-#~ msgid "Title for the right column"
-#~ msgstr "Záhlaví pravého sloupce"
-
-#~ msgid "Enter a title (identifier) for the right column"
-#~ msgstr "Vložte záhlaví (identifikátor) pravého sloupce"
-
-#~ msgid "Width of the right column"
-#~ msgstr "Šířka pravého sloupce"
-
-#~ msgid "Enter the width (in pixels) for the right column"
-#~ msgstr "Zadejte šířku (v pixelech) pravého sloupce"
-
-#~ msgctxt "@title:window"
-#~ msgid "Column Settings"
-#~ msgstr "Nastavení sloupce"
-
-#~ msgctxt "@title:window select character dialog"
-#~ msgid "Select Character"
-#~ msgstr "Zvolte znak"
-
-#~ msgctxt "@action:button"
-#~ msgid "&Select"
-#~ msgstr "Vy&brat"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select this character"
-#~ msgstr "Zvolit tento znak"
-
-#~ msgid "Column widths"
-#~ msgstr "Šířky sloupců"
-
-#~ msgid "Keyboard layouts"
-#~ msgstr "Rozvržení klávesnice"
-
-#~ msgid "Search"
-#~ msgstr "Hledat"
-
-#~ msgid "Your answer was correct!"
-#~ msgstr "Vaše odpověď byla správná!"
-
-#~ msgid "Your answer was incorrect."
-#~ msgstr "Vaše odpověď byla nesprávná."
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least one entry for a flashcard quiz.</html>"
-#~ msgstr ""
-#~ "<html>Ve vašem slovníčku je příliš málo položek.<br />Pro kvíz s "
-#~ "kartičkami potřebujete alespoň jeden záznam.</html>"
-
-#~ msgid "Creates a new blank vocabulary document"
-#~ msgstr "Vytvoří nový prázdný slovníček"
-
-#~ msgid "Download New Vocabularies..."
-#~ msgstr "Stáhnout nové slovníčky..."
-
-#~ msgid "Downloads new vocabularies"
-#~ msgstr "Stáhne nové slovníčky"
-
-#~ msgid "Saves the active vocabulary document"
-#~ msgstr "Uloží aktivní slovníček"
-
-#~ msgid "Saves the active vocabulary document with a different name"
-#~ msgstr "Uloží aktivní slovníček pod jiným jménem"
-
-#~ msgid "Closes the active vocabulary document"
-#~ msgstr "Zavře aktivní slovníček"
-
-#~ msgid "Prints the active vocabulary document"
-#~ msgstr "Vytiskne aktivní slovníček"
-
-#~ msgid "Shows a preview of the active vocabulary document"
-#~ msgstr "Zobrazí náhled na aktivní slovníček"
-
-#~ msgid "Cuts the text from the selected cells and places it on the clipboard"
-#~ msgstr "Vyjme text z vybraných buněk a vloží jej do schránky"
-
-#~ msgid ""
-#~ "Copies the text from the selected cells and places it on the clipboard"
-#~ msgstr "Zkopíruje text z vybraných buněk a vloží jej do schránky"
-
-#~ msgid ""
-#~ "Pastes previously cut or copied text from the clipboard into the selected "
-#~ "cells"
-#~ msgstr ""
-#~ "Vloží dříve vyjmutý nebo zkopírovaný text ze schránky do vybraných buněk"
-
-#~ msgid "Clears the content of the selected cells"
-#~ msgstr "Smaže obsah vybraných buněk"
-
-#~ msgid "&Insert Row"
-#~ msgstr "Vlož&it řádek"
-
-#~ msgid "Inserts a new row above the current row"
-#~ msgstr "Vloží nový řádek nad stávající"
-
-#~ msgid "&Delete Row"
-#~ msgstr "&Smazat řádek"
-
-#~ msgid "Deletes the selected row(s)"
-#~ msgstr "Smaže vybraný řádek či řádky"
-
-#~ msgid "&Mark as Blank"
-#~ msgstr "Označit jako &chybějící"
-
-#~ msgid "Marks the current or selected word as a blank for Fill-in-the-blank"
-#~ msgstr ""
-#~ "Označí vybrané slovo jako chybějící pro funkci doplňování chybějícího"
-
-#~ msgid "&Unmark Blanks"
-#~ msgstr "Zrušit c&hybějící"
-
-#~ msgid "Removes blanks from the current or selected word"
-#~ msgstr "Odstraní příznak chybějícího z vybraného slova"
-
-#~ msgid "&Column Settings..."
-#~ msgstr "Nastavení sloup&ce..."
-
-#~ msgid "Defines the column settings for the active vocabulary"
-#~ msgstr "Stanoví nastavení sloupců pro aktivní slovníček"
-
-#~ msgid "&Font..."
-#~ msgstr "&Písmo..."
-
-#~ msgid "Defines the font used by the editor"
-#~ msgstr "Stanoví písmo používané v editoru"
-
-#~ msgid "Link &Image..."
-#~ msgstr "Spojit &obrázek..."
-
-#~ msgid "Links an image with the current entry"
-#~ msgstr "Spojí obrázek se současným záznamem"
-
-#~ msgid "Link &Sound..."
-#~ msgstr "Spojit &zvuk..."
-
-#~ msgid "Links a sound with the current entry"
-#~ msgstr "Spojí zvuk se současným záznamem"
-
-#~ msgid "&Adjust Row Heights"
-#~ msgstr "&Upravit výšku řádků"
-
-#~ msgid "Automatically adjusts the height of selected rows"
-#~ msgstr "Automaticky upravit výšku vybraných řádků"
-
-#~ msgid "Sh&uffle"
-#~ msgstr "Za&míchat"
-
-#~ msgid "Shuffles the entries of the active vocabulary"
-#~ msgstr "Zamíchá položky aktivního slovníčku"
-
-#~ msgid "&Keyboard Layout"
-#~ msgstr "Rozvržení &klávesnice"
-
-#~ msgid "Shows available keyboard layouts"
-#~ msgstr "Zobrazí dostupná rozložení klávesnice"
-
-#~ msgid "Change Mode"
-#~ msgstr "Změnit režim"
-
-#~ msgid "Changes the mode used in quiz sessions"
-#~ msgstr "Změní režim používaný v sezeních kvízu"
-
-#~ msgid "Selects this mode"
-#~ msgstr "Vybírá tento režim"
-
-#~ msgctxt "@item:inlistbox activate vocabulary editor"
-#~ msgid "&Editor"
-#~ msgstr "&Editor"
-
-#~ msgid "Activates the vocabulary editor"
-#~ msgstr "Aktivuje editor slovníčku"
-
-#~ msgid "&Flashcard"
-#~ msgstr "&Kartička"
-
-#~ msgid "Starts a flashcard session using the active vocabulary"
-#~ msgstr "Zahájí karetní sezení s použitím aktivního slovníčku"
-
-#~ msgid "&Multiple Choice"
-#~ msgstr "&S nabídkou možností"
-
-#~ msgid "Starts a multiple choice session using the active vocabulary"
-#~ msgstr ""
-#~ "Zahájí sezení typu s nabídkou možností s použitím aktivního slovníčku"
-
-#~ msgid "Q&&A"
-#~ msgstr "O&&O"
-
-#~ msgid "Starts a question and answer session using the active vocabulary"
-#~ msgstr "Zahájí sezení typu otázka a odpověď s použitím aktivního slovníčku"
-
-#~ msgid "Checks your answer to this question"
-#~ msgstr "Zkontroluje vaši odpověď na tuto otázku"
-
-#~ msgid "Choose Option &1"
-#~ msgstr "Vybrat možnost &1"
-
-#~ msgid "Choose Option &2"
-#~ msgstr "Vybrat možnost &2"
-
-#~ msgid "Choose Option &3"
-#~ msgstr "Vybrat možnost &3"
-
-#~ msgid "I &Know"
-#~ msgstr "&Vím"
-
-#~ msgid "Counts this card as correct and shows the next card"
-#~ msgstr "Započítá kartu jako správně zodpovězenou a zobrazí následující"
-
-#~ msgid "I &Do Not Know"
-#~ msgstr "&Nevím"
-
-#~ msgid "Counts this card as incorrect and shows the next card"
-#~ msgstr "Započítá kartu jako nesprávně zodpovězenou a zobrazí následující"
-
-#~ msgid "Gets the next correct letter of the answer"
-#~ msgstr "Napoví zobrazením následujícího správného písmena z odpovědi"
-
-#~ msgid "Marks last answer as correct"
-#~ msgstr "Označí poslední odpověď jako správnou"
-
-#~ msgid "&Restart"
-#~ msgstr "&Znovu"
-
-#~ msgid "Restarts the quiz session from the beginning"
-#~ msgstr "Spustí kvíz znovu od začátku"
-
-#~ msgid "&Play Audio"
-#~ msgstr "&Přehrát zvuk"
-
-#~ msgid "Play associated audio"
-#~ msgstr "Přehrát připojený zvuk"
-
-#~ msgid "Repeats all incorrectly answered questions"
-#~ msgstr "Zopakuje všechny špatně zodpovězené otázky"
-
-#~ msgid "Export Errors &As..."
-#~ msgstr "Exportovat chyby &jako..."
-
-#~ msgid "Exports all errors as a new vocabulary document"
-#~ msgstr "Exportuje všechny chyby jako nový slovníček"
-
-#~ msgid "Show Se&arch"
-#~ msgstr "Zobrazit hle&dání"
-
-#~ msgid "Toggle display of the search bar"
-#~ msgstr "Přepnout zobrazení vyhledávacího panelu"
-
-#~ msgid "Configures sound and other notifications for certain events"
-#~ msgstr "Nastavení zvukových a následujících upozornění určitých událostí"
-
-#~ msgid "Specifies preferences for the vocabulary editor and quiz sessions"
-#~ msgstr "Předvolby editoru slovníčku a sezení kvízu"
-
-#~ msgid "Special Character <numid>%1</numid>"
-#~ msgstr "Zvláštní znak <numid>%1</numid>"
-
-#~ msgid "Toggles display of the toolbars"
-#~ msgstr "Přepíná zobrazení panelů nástrojů"
-
-#~ msgid "Enter search terms here"
-#~ msgstr "Zde zadejte hledaná slova"
-
-#~ msgid "Opening file..."
-#~ msgstr "Otevírá se soubor..."
-
-#~ msgid "Open File"
-#~ msgstr "Otevřít soubor"
-
-#~ msgctxt "@info:status ready"
-#~ msgid "Ready"
-#~ msgstr "Připraveno"
-
-#~ msgid ""
-#~ "The current document has been modified.\n"
-#~ "Do you want to save it?"
-#~ msgstr ""
-#~ "Současný dokument byl upraven.\n"
-#~ "Přejete si jej uložit?"
-
-#~ msgid "Opening a new document window..."
-#~ msgstr "Otevírá se nové okno dokumentu..."
-
-#~ msgid "&Merge selected files with the current document"
-#~ msgstr "&Sloučit vybrané soubory s nynějším dokumentem"
-
-#~ msgid "Open Vocabulary Document"
-#~ msgstr "Otevřít slovníček"
-
-#~ msgid "Saving file..."
-#~ msgstr "Ukládá se soubor..."
-
-#~ msgid "Saving file with a new filename..."
-#~ msgstr "Ukládám soubor pod novým názvem..."
-
-#~ msgid "HTML Document"
-#~ msgstr "HTML dokument"
-
-#~ msgid "Save Vocabulary Document As"
-#~ msgstr "Uložit slovníček jako"
-
-#~ msgid "Closing file..."
-#~ msgstr "Zavírá se soubor..."
-
-#~ msgctxt "@info:status quitting"
-#~ msgid "Quitting..."
-#~ msgstr "Ukončuje se..."
-
-#~ msgid "Cutting selection..."
-#~ msgstr "Vyjímá se výběr..."
-
-#~ msgid "Copying selection to clipboard..."
-#~ msgstr "Kopíruje se výběr do schránky..."
-
-#~ msgid "Inserting clipboard contents..."
-#~ msgstr "Vkládá se obsah schránky..."
-
-#~ msgid "Clearing the selected cells..."
-#~ msgstr "Mažou se vybrané buňky..."
-
-#~ msgid "Inserting rows..."
-#~ msgstr "Vkládají se řádky..."
-
-#~ msgid "Deleting selected rows..."
-#~ msgstr "Mažou se vybrané řádky..."
-
-#~ msgid "Marking selected text as a blank..."
-#~ msgstr "Označuje se vybraný text jako chybějící..."
-
-#~ msgid "Removing blank markings..."
-#~ msgstr "Odstraňuje se označení chybějícího..."
-
-#~ msgid "Setting the column titles of the vocabulary..."
-#~ msgstr "Nastavují se záhlaví sloupců slovníčku..."
-
-#~ msgid "Setting the font of the vocabulary..."
-#~ msgstr "Nastavuje se písmo slovníčku..."
-
-#~ msgid "Linking an image with the current entry..."
-#~ msgstr "Spojuje se obrázek se současným záznamem..."
-
-#~ msgid "Linking a sound with the current entry..."
-#~ msgstr "Spojuje se zvuk se současným záznamem..."
-
-#~ msgid "Adjusting row heights..."
-#~ msgstr "Úprava výšky řádků..."
-
-#~ msgid "Randomizing the vocabulary..."
-#~ msgstr "Náhodně se vybírá slovníček..."
-
-#~ msgid "Updating mode..."
-#~ msgstr "Aktualizuje se režim..."
-
-#~ msgid "Starting editor session..."
-#~ msgstr "Zahajuje se sezení editoru..."
-
-#~ msgid "Starting flashcard session..."
-#~ msgstr "Zahajuje se sezení s kartičkami..."
-
-#~ msgid "Starting multiple choice session..."
-#~ msgstr "Zahajuje se sezení s nabídkou možností..."
-
-#~ msgid "Starting question & answer session..."
-#~ msgstr "Zahajuje se sezení otázek a odpovědí..."
-
-#~ msgid "Insert %1"
-#~ msgstr "Vložit %1"
-
-#~ msgid "Inserts the character %1"
-#~ msgstr "Vkládá znak %1"
-
-#~ msgid "This will restart your quiz. Do you wish to continue?"
-#~ msgstr "Tímto se restartuje váš kvíz. Přejete si pokračovat?"
-
-#~ msgid "&1 %1 -> %2 In Order"
-#~ msgstr "&1 %1 -> %2 popořadě"
-
-#~ msgid "&2 %1 -> %2 In Order"
-#~ msgstr "&2 %1 -> %2 popořadě"
-
-#~ msgid "&3 %1 -> %2 Randomly"
-#~ msgstr "&3 %1 -> %2 náhodně"
-
-#~ msgid "&4 %1 -> %2 Randomly"
-#~ msgstr "&4 %1 -> %2 náhodně"
-
-#~ msgid "&5 %1 <-> %2 Randomly"
-#~ msgstr "&5 %1 <-> %2 Náhodně"
-
-#~ msgid "%1 -> %2 In Order"
-#~ msgstr "%1 -> %2 popořadě"
-
-#~ msgid "%1 -> %2 Randomly"
-#~ msgstr "%1 -> %2 náhodně"
-
-#~ msgid "%1 &lt;-&gt; %2 Randomly"
-#~ msgstr "%1 &lt;-&gt; %2 náhodně"
-
-#~ msgid "Is this the first time KWordQuiz is run?"
-#~ msgstr "Spouštíte KWordQuiz poprvé?"
-
-#~ msgid "Toggle display of the search bar."
-#~ msgstr "Přepnout zobrazení panelu hledání."
-
-#~ msgid "Type of session to use when opening files"
-#~ msgstr "Druh sezení, který se použije při otevírání souboru"
-
-#~ msgid "Type of printout to generate"
-#~ msgstr "Druh výtisku, který bude vytvořen"
-
-#~ msgid "Titles for column 1"
-#~ msgstr "Záhlaví pro sloupec 1"
-
-#~ msgid "Titles for column 2"
-#~ msgstr "Záhlaví pro sloupec 2"
-
-#~ msgid "Font used in the editor"
-#~ msgstr "Písmo používané v editoru"
-
-#~ msgid "If Fill-in-the-blank should be enabled"
-#~ msgstr "Zda má být funkce doplňování chybějícího povolena"
-
-#~ msgid "Direction the Enter key moves in the editor"
-#~ msgstr "Směr, kterým se v editoru pohybuje pomocí klávesy Enter"
-
-#~ msgid "Characters for the special character toolbar"
-#~ msgstr "Znaky pro panel zvláštních znaků"
-
-#~ msgid "Clear all data in selected entries"
-#~ msgstr "Smazat všechna data ve vybraných záznamech"
-
-#~ msgid "Clear the text in selected entries"
-#~ msgstr "Smazat text ve vybraných záznamech"
-
-#~ msgid "Clear the image link in selected entries"
-#~ msgstr "Smazat odkaz na obrázek ve vybraných záznamech"
-
-#~ msgid "Clear the sound link in selected entries"
-#~ msgstr "Smazat odkaz na zvuk ve vybraných záznamech"
-
-#~ msgid "Treat use of hint as error"
-#~ msgstr "Považovat použití rady za chybu"
-
-#~ msgid "Count flashcard as correct or error"
-#~ msgstr "Počítat kartičku za chybnou nebo správnou"
-
-#~ msgid "Quiz mode"
-#~ msgstr "Režim kvízu"
-
-#~ msgid "Font used for front of flashcard"
-#~ msgstr "Písmo líce kartičky"
-
-#~ msgid "Color used for text on front of flashcard"
-#~ msgstr "Barva textu na líci kartičky"
-
-#~ msgid "Color used for front of flashcard"
-#~ msgstr "Barva líce kartičky"
-
-#~ msgid "Color used for frame on front of flashcard"
-#~ msgstr "Barva rámečku líce kartičky"
-
-#~ msgid "Font used for back of flashcard"
-#~ msgstr "Písmo rubu kartičky"
-
-#~ msgid "Color used for text on back of flashcard"
-#~ msgstr "Barva textu na rubu kartičky"
-
-#~ msgid "Color used for back of flashcard"
-#~ msgstr "Barva rubu kartičky"
-
-#~ msgid "Color used for frame on back of flashcard"
-#~ msgstr "Barva rámečku na rubu kartičky"
-
-#~ msgid "The Providers path for KWordQuiz"
-#~ msgstr "Poskytovatelova cesta k KWordQuiz"
-
-#~ msgid "The command used to start a downloaded vocabulary"
-#~ msgstr "Příkaz používaný ke spuštění staženého slovníčku"
-
-#~ msgid ""
-#~ "The folder where downloaded vocabularies are saved by default (relative "
-#~ "to $HOME)"
-#~ msgstr ""
-#~ "Složka, do které se automaticky ukládají stažené slovníčky (relativně "
-#~ "vůči $HOME)"
-
-#~ msgid "Pop up flashcards at fixed or random intervals"
-#~ msgstr ""
-#~ "Nechat kartičky objevit se v pevných nebo náhodných časových sledech"
-
-#~ msgid "The interval in minutes at which to pop up a flash card"
-#~ msgstr "Časový sled v minutách, v jakém se kartičky budou objevovat"
-
-#~ msgid "The minimum interval in minutes at which to pop up a flash card"
-#~ msgstr ""
-#~ "Nejkratší časový sled v minutách, v jakém se kartičky budou objevovat"
-
-#~ msgid "The maximum interval in minutes at which to pop up a flash card"
-#~ msgstr ""
-#~ "Nejdelší časový sled v minutách, v jakém se kartičky budou objevovat"
-
-#~ msgid "Geometry of the last flash card"
-#~ msgstr "Uspořádání poslední kartičky"
-
-#~ msgid "Show flash card in a native KWordQuiz style"
-#~ msgstr "Ukázat kartičku v původním stylu programu KWordQuiz"
-
-#~ msgid ""
-#~ "Last open vocabulary file to be opened automatically if none other is "
-#~ "specified on the command line"
-#~ msgstr ""
-#~ "Otevřít naposledy otevřený soubor se slovníčkem, pokud v příkazovém řádku "
-#~ "není zadán jiný"
-
-#~ msgid "Start exercise as soon as the user opens vocabulary file"
-#~ msgstr "Začít cvičení jakmile uživatel otevře soubor se slovníčkem"
-
-#~ msgctxt "@title:group general settings"
-#~ msgid "General Settings"
-#~ msgstr "Obecná nastavení"
-
-#~ msgctxt "@title:group editor settings"
-#~ msgid "Editor"
-#~ msgstr "Editor"
-
-#~ msgctxt "@title:group editor settings"
-#~ msgid "Editor Settings"
-#~ msgstr "Nastavení editoru"
-
-#~ msgctxt "@title:group quiz settings"
-#~ msgid "Quiz"
-#~ msgstr "Kvíz"
-
-#~ msgctxt "@title:group flash appearance settings"
-#~ msgid "Flashcard Appearance"
-#~ msgstr "Vzhled kartiček"
-
-#~ msgctxt "@title:group flash appearance settings"
-#~ msgid "Flashcard Appearance Settings"
-#~ msgstr "Nastavení vzhledu kartiček"
-
-#~ msgctxt "@title:group special character settings"
-#~ msgid "Special Characters"
-#~ msgstr "Zvláštní znaky"
-
-#~ msgid "V&ocabulary"
-#~ msgstr "Sl&ovníček"
-
-#~ msgid "&Mode"
-#~ msgstr "&Režim"
-
-#~ msgid "&Quiz"
-#~ msgstr "&Kvíz"
-
-#~ msgid "Quiz"
-#~ msgstr "Kvíz"
-
-#~ msgid "Special Characters"
-#~ msgstr "Zvláštní znaky"
-
-#~ msgctxt "@title:window"
-#~ msgid "Clear Contents"
-#~ msgstr "Smazat obsah"
-
-#~ msgctxt "@item:inmenu undo clear"
-#~ msgid "Clear"
-#~ msgstr "Smazat"
-
-#~ msgctxt "@item:inmenu undo cut"
-#~ msgid "Cut"
-#~ msgstr "Vyjmout"
-
-#~ msgctxt "@item:inmenu undo paste"
-#~ msgid "Paste"
-#~ msgstr "Vložit"
-
-#~ msgctxt "@item:inmenu undo sort"
-#~ msgid "Sort"
-#~ msgstr "Seřadit"
-
-#~ msgctxt "@item:inmenu undo insert"
-#~ msgid "Insert"
-#~ msgstr "Vložit"
-
-#~ msgctxt "@item:inmenu undo delete"
-#~ msgid "Delete"
-#~ msgstr "Smazat"
-
-#~ msgctxt "@item:inmenu undo unmark blank"
-#~ msgid "Unmark Blank"
-#~ msgstr "Zrušit chybějící"
-
-#~ msgctxt "@item:inmenu undo column titles"
-#~ msgid "Column Settings"
-#~ msgstr "Nastavení sloupce"
-
-#~ msgid "Font"
-#~ msgstr "Písmo"
-
-#~ msgid "Entry"
-#~ msgstr "Záznam"
-
-#~ msgid "Questions"
-#~ msgstr "Otázky"
-
-#~ msgid "The number of questions in the session"
-#~ msgstr "Počet otázek v sezení"
-
-#~ msgid "00"
-#~ msgstr "00"
-
-#~ msgid "Correct answers"
-#~ msgstr "Správné odpovědi"
-
-#~ msgid ""
-#~ "The number of questions answered correctly. May be shown as a percentage."
-#~ msgstr "Počet správně zodpovězených otázek. Lze zobrazit jako procento."
-
-#~ msgid ""
-#~ "The number of questions answered incorrectly. May be shown as a "
-#~ "percentage."
-#~ msgstr "Počet nesprávně zodpovězených otázek. Lze zobrazit jako procento."
-
-#~ msgid "Answered questions"
-#~ msgstr "Zodpovězené otázky"
-
-#~ msgid ""
-#~ "The number of questions already answered. May be shown as a percentage."
-#~ msgstr "Počet již zodpovězených otázek. Lze zobrazit jako procento."
-
-#~ msgid "Untitled"
-#~ msgstr "Bez názvu"
-
-#~ msgid "There is an error with the Fill-in-the-blank brackets"
-#~ msgstr "V závorkách pro doplňování chybějícího je chyba"
-
-#~ msgid "All Files (*)"
-#~ msgstr "Všechny soubory (*)"
-
-#~ msgid ""
-#~ "<qt>KWordQuiz Tutor displays flashcards on your screen in a way that "
-#~ "allows you to set a certain time interval at which flashcards will pop up."
-#~ "<br /><br />The flashcards pop up in a non-intrusive way allowing you to "
-#~ "carry on working without stealing the focus from other programs you might "
-#~ "be working with.<br /><br />Be sure to right-click KWordQuiz Tutor icon "
-#~ "on the panel and select Preferences. There you can assign keyboard "
-#~ "shortcuts.</qt>"
-#~ msgstr ""
-#~ "<qt>Domácí učitel programu KWordQuiz na vaší obrazovce zobrazuje pomocné "
-#~ "kartičky způsobem, který vám umožní nastavit určitý časový sled, ve "
-#~ "kterém se kartičky budou objevovat.<br /><br />Pomocné kartičky se "
-#~ "objevují způsobem, který neruší, čímž vám umožňují pokračovat v práci, "
-#~ "aniž byste přicházel o soustředění se na další programy, se kterými byste "
-#~ "snad mohl pracovat.<br /><br />Klikněte pravým tlačítkem myši na ikonu "
-#~ "domácího učitele KWordQuiz v panelu a vyberte Nastavení. Zde můžete si "
-#~ "vybrat přiřazení klávesových zkratek.</qt>"
-
-#~ msgid "Tutor"
-#~ msgstr "Výuka"
-
-#~ msgid "Start Exercise"
-#~ msgstr "Začít cvičení"
-
-#~ msgid "Configure KWordQuiz Tutor..."
-#~ msgstr "Nastavit výuku programu KWordQuiz..."
-
-#~ msgid "Close Flash Card"
-#~ msgstr "Zavřít kartičku"
-
-#~ msgid "Flip Flash Card"
-#~ msgstr "Obrátit kartičku"
-
-#~ msgid "Stop Exercise"
-#~ msgstr "Zastavit cvičení"
-
-#~ msgctxt "@title:group tutor settings"
-#~ msgid "Tutor"
-#~ msgstr "Výuka"
-
-#~ msgctxt "@title:group tutor settings"
-#~ msgid "Tutor Settings"
-#~ msgstr "Nastavení výuky"
-
-#~ msgctxt "Shortcuts Config"
-#~ msgid "Shortcuts"
-#~ msgstr "Klávesové zkratky"
-
-#~ msgid "Shortcuts Settings"
-#~ msgstr "Nastavení zkratek"
-
-#~ msgid ""
-#~ "A number 1-5 corresponding to the \n"
-#~ "entries in the Mode menu"
-#~ msgstr ""
-#~ "Číslo 1-5 odpovídající\n"
-#~ "položkám v nabídce Režim"
-
-#~ msgid "Previous Question"
-#~ msgstr "Předchozí otázka"
-
-#~ msgid "Your Answer"
-#~ msgstr "Vaše odpověď"
-
-#~ msgid "Summary"
-#~ msgstr "Shrnutí"
-
-#~ msgid "The question"
-#~ msgstr "Otázka"
-
-#~ msgid "Language or other identifier for the question"
-#~ msgstr "Jazyk nebo jiný identifikátor otázky"
-
-#~ msgid "This is your question"
-#~ msgstr "Toto je vaše otázka"
-
-#~ msgid "Your choices"
-#~ msgstr "Vaše možnosti"
-
-#~ msgid "Three choices for the answer. One is correct."
-#~ msgstr "Tři možné odpovědi. Jen jedna je ale správná."
-
-#~ msgid "&1 Option"
-#~ msgstr "&1 možnost"
-
-#~ msgid "Language or other identifier for the answer"
-#~ msgstr "Jazyk nebo jiný identifikátor otázky"
-
-#~ msgid "Language 2"
-#~ msgstr "Jazyk 2"
-
-#~ msgid "&3 Option"
-#~ msgstr "&3 možnost"
-
-#~ msgid "Previous question"
-#~ msgstr "Předchozí otázka"
-
-#~ msgid "The previous question"
-#~ msgstr "Předchozí otázka"
-
-#~ msgid "This was your question"
-#~ msgstr "Toto byla vaše otázka"
-
-#~ msgid "Your previous answer"
-#~ msgstr "Vaše předchozí odpověď"
-
-#~ msgid "Your answer to the previous question"
-#~ msgstr "Vaše odpověď na předchozí otázku"
-
-#~ msgid "This was your answer"
-#~ msgstr "Toto byla vaše odpověď"
-
-#~ msgid "Previous correct answer"
-#~ msgstr "Předchozí správná odpověď"
-
-#~ msgid "The correct answer to the previous question"
-#~ msgstr "Správná odpověď na předchozí otázku"
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least three entries for a multiple choice quiz.</html>"
-#~ msgstr ""
-#~ "<html>Ve vašem slovníčku je příliš málo položek.<br />Pro kvíz s nabídkou "
-#~ "možností potřebujete alespoň tři záznamy.</html>"
-
-#~ msgctxt "Back of the flashcard"
-#~ msgid "Back"
-#~ msgstr "Rub"
-
-#~ msgid "Front"
-#~ msgstr "Přední strana"
-
-#~ msgid "Card Appearance"
-#~ msgstr "Vzhled kartičky"
-
-#~ msgid "Flip card"
-#~ msgstr "Obrátit kartičku"
-
-#~ msgid "Use to show the other side of the card"
-#~ msgstr "Slouží k ukázání druhé strany kartičky"
-
-#~ msgid "&Flip Card"
-#~ msgstr "&Obrátit kartičku"
-
-#~ msgid "F&ont:"
-#~ msgstr "Písm&o:"
-
-#~ msgid "Use to select the font for displaying text on the back of the card"
-#~ msgstr "Slouží k volbě písma na rubu kartičky"
-
-#~ msgid "Select text color"
-#~ msgstr "Zvolte barvu textu"
-
-#~ msgid "Use to select the color for text shown on the card"
-#~ msgstr "Slouží k volbě barvy textu na kartičce"
-
-#~ msgid "Select card frame color"
-#~ msgstr "Zvolte barvu rámečku kartičky"
-
-#~ msgid "Use to select the color for drawing the frame of the card"
-#~ msgstr "Slouží k volbě barvy rámečku kartičky"
-
-#~ msgid "Select card color"
-#~ msgstr "Zvolte barvu kartičky"
-
-#~ msgid "Select color used to draw the card"
-#~ msgstr "Zvolte barvu kartičky"
-
-#~ msgid "Use to select the font for displaying text on the front of the card"
-#~ msgstr "Slouží k volbě písma na lící kartičky"
-
-#~ msgid "&Text color:"
-#~ msgstr "Barva &textu:"
-
-#~ msgid "&Card color:"
-#~ msgstr "&Barva kartičky:"
-
-#~ msgid "Fra&me color:"
-#~ msgstr "Barva rá&mečku:"
-
-#~ msgid "Action"
-#~ msgstr "Činnost"
-
-#~ msgid "Shortcut"
-#~ msgstr "Zkratka"
-
-#~ msgid "Character"
-#~ msgstr "Znak"
-
-#~ msgid "Special Character %1"
-#~ msgstr "Zvláštní znak %1"
-
-#~ msgid ""
-#~ "Note: Select Settings -> Configure Shortcuts... to change the shortcut "
-#~ "associated with each action."
-#~ msgstr ""
-#~ "Poznámka: Volbou Nastavení -> Přizpůsobit klávesové zkratky... můžete "
-#~ "změnit zkratky spojené s jednotlivými činnostmi."
-
-#~ msgid "Select character to modify"
-#~ msgstr "Zvolte znak, který si přejete změnit"
-
-#~ msgid "Customizable special character actions"
-#~ msgstr "Nastavitelné zvláštní činnosti znaků"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "1"
-#~ msgstr "1"
-
-#~ msgid "2"
-#~ msgstr "2"
-
-#~ msgid "Click to choose a new character"
-#~ msgstr "Klikněte pro výběr nového znaku"
-
-#~ msgid "Choose a character for the selected action"
-#~ msgstr "Zvolte znak pro vybranou činnost"
-
-#~ msgid "C&haracter..."
-#~ msgstr "&Znak..."
-
-#~ msgid "Preview of current character"
-#~ msgstr "Náhled aktuálního znaku"
-
-#~ msgid "Preview of the character associated with the selected action"
-#~ msgstr "Náhled znaku spojeného s vybranou činností"
-
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgid "How enter key moves"
-#~ msgstr "Směr pohybu klávesou Enter"
-
-#~ msgid "Select how the Enter key should behave in the editor"
-#~ msgstr "Zvolte, jak se má v editoru chovat klávesa Enter"
-
-#~ msgid "Enter Ke&y Moves"
-#~ msgstr "Pohyb klávesou &Enter"
-
-#~ msgid ""
-#~ "Select if the next cell below should become active when pressing Enter."
-#~ msgstr "Zvolte, pokud se má při stisku Enter aktivovat textová buňka níže."
-
-#~ msgid "&Down"
-#~ msgstr "&Dolů"
-
-#~ msgid ""
-#~ "Select if the next cell to the right should become active when pressing "
-#~ "Enter"
-#~ msgstr "Zvolte, pokud se má při stisku Enter aktivovat textová buňka vpravo"
-
-#~ msgid "&Right"
-#~ msgstr "Vp&ravo"
-
-#~ msgid "Select if the current cell should remain active when pressing Enter"
-#~ msgstr ""
-#~ "Zvolte, pokud se má při stisku Enter zachovat aktivní stávající textová "
-#~ "buňka"
-
-#~ msgid "Does not &move"
-#~ msgstr "Nepo&hybuje se"
-
-#~ msgid "Check to enable fill-in-the-blank"
-#~ msgstr "Zaškrtněte pro povolení funkce doplňování chybějícího"
-
-#~ msgid "Select to enable the functions for Fill-in-the-blank"
-#~ msgstr "Zvolte pro povolení funkce doplňování chybějícího"
-
-#~ msgid "E&nable fill-in-the-blank"
-#~ msgstr "Povolit &doplňování chybějícího"
-
-#~ msgid "How vocabulary documents are opened"
-#~ msgstr "Způsob otevírání slovníčků"
-
-#~ msgid "Select the kind of session to load an opened vocabulary document in"
-#~ msgstr "Zvolte druh sezení pro načítání otevřeného slovníku"
-
-#~ msgid "&Open Vocabulary Documents in"
-#~ msgstr "&Otevřít slovníčky"
-
-#~ msgid "Open vocabulary documents in the editor"
-#~ msgstr "Otevřít slovníčky v editoru"
-
-#~ msgid "Select if the vocabulary documents should be opened in the editor"
-#~ msgstr "Zvolte, pokud si přejete slovníčky otevřít v editoru"
-
-#~ msgid "&Editor"
-#~ msgstr "&Editor"
-
-#~ msgid "Open vocabulary documents in a flashcard quiz"
-#~ msgstr "Otevřít slovníčky v kvízu s kartičkami"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a flashcard quiz"
-#~ msgstr "Zvolte, pokud si přejete slovníčky v kvízu s kartičkami"
-
-#~ msgid "&Flashcard Quiz"
-#~ msgstr "&Kvíz s kartičkami"
-
-#~ msgid "Open vocabulary documents in a multiple choice quiz"
-#~ msgstr "Otevřít slovníčky v kvízu s nabídkou možností"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a multiple choice "
-#~ "quiz"
-#~ msgstr ""
-#~ "Zvolte, pokud si přejete slovníčky otevřít v kvízu s nabídkou možností"
-
-#~ msgid "&Multiple Choice Quiz"
-#~ msgstr "&Kvíz s nabídkou možností"
-
-#~ msgid "Open vocabulary documents in a question and answer quiz"
-#~ msgstr "Otevřít slovníčky v kvízu s otázkami a odpověďmi"
-
-#~ msgid ""
-#~ "Select if the vocabulary documents should be opened in a question and "
-#~ "answer quiz"
-#~ msgstr ""
-#~ "Zvolte, pokud si přejete slovníčky otevřít v kvízu s otázkami a odpověďmi"
-
-#~ msgid "&Question and Answer Quiz"
-#~ msgstr "&Kvíz s otázkami a odpověďmi"
-
-#~ msgid "Specify behavior for a question and answer session"
-#~ msgstr "Určete chování pro sezení typu otázka a odpověď"
-
-#~ msgid "Question && Answer"
-#~ msgstr "Otázka a odpověď"
-
-#~ msgid ""
-#~ "Select if questions where the hint function has been used should be "
-#~ "counted as errors"
-#~ msgstr ""
-#~ "Zvolte, pokud se mají otázky, u kterých byla použita rada, považovat za "
-#~ "chybně zodpovězené"
-
-#~ msgid "&Treat hint as error"
-#~ msgstr "&Radu považovat za chybu"
-
-#~ msgid "Specify behavior of the score presentation in any session"
-#~ msgstr "Nastavte zobrazování skóre v libovolném sezení"
-
-#~ msgid "Check to show score as a percentage"
-#~ msgstr "Zaškrtněte pro zobrazování skóre v procentech"
-
-#~ msgid "Select if the score should be shown as a percentage"
-#~ msgstr "Zvolte, pokud se má skóre zobrazovat jako procenta"
-
-#~ msgid "&Show score as a percentage"
-#~ msgstr "Zobrazovat skóre jako &procenta"
-
-#~ msgid "Specify behavior for a multiple choice session"
-#~ msgstr "Určete chování sezení typu s nabídkou možností"
-
-#~ msgid "Check to correct automatically"
-#~ msgstr "Zaškrtněte pro automatické opravy"
-
-#~ msgid "Select if a choice should be checked immediately"
-#~ msgstr "Zvolte, pokud má být výběr okamžitě zkontrolován"
-
-#~ msgid "Check selection a&utomatically"
-#~ msgstr "Zkontrolovat výběr a&utomaticky"
-
-#~ msgid "Specify behavior of a flashcard session"
-#~ msgstr "Určete chování sezení typu Kartička"
-
-#~ msgid "Specify the amount of time between card flips"
-#~ msgstr "Nastavte množství času mezi obrácením karty"
-
-#~ msgid "seconds and"
-#~ msgstr "sekundách a"
-
-#~ msgid "Delay to flip card"
-#~ msgstr "Prodlení v obrácení karty"
-
-#~ msgid "Delay in seconds to flip card"
-#~ msgstr "Prodlení v obrácení karty v sekundách"
-
-#~ msgid "Select how to count card"
-#~ msgstr "Zvolte, jak kartu započítat"
-
-#~ msgid ""
-#~ "Select if the previous card should be counted as correct when moving to "
-#~ "the next card"
-#~ msgstr ""
-#~ "Zvolte, pokud má být předchozí karta považována za správně zodpovězenou, "
-#~ "při přesunu na následující kartu"
-
-#~ msgid "Count &as correct"
-#~ msgstr "Počítat za &správné"
-
-#~ msgid ""
-#~ "Select if the previous card should be counted as incorrect when moving to "
-#~ "the next card"
-#~ msgstr ""
-#~ "Zvolte, pokud má být předchozí karta považována za nesprávně "
-#~ "zodpovězenou, při přesunu na následující kartu"
-
-#~ msgid "Count as &error"
-#~ msgstr "Počítat za &chybné"
-
-#~ msgid "Check to flip card automatically"
-#~ msgstr "Zaškrtněte pro automatické obracení karet"
-
-#~ msgid ""
-#~ "Select if you want a card to turn over automatically after the given "
-#~ "amount of time"
-#~ msgstr ""
-#~ "Zvolte, pokud si přejete, aby po uplynutí určitého času byly karty "
-#~ "automaticky obraceny"
-
-#~ msgid "&Flip card automatically after"
-#~ msgstr "&Obrátit karty automaticky po"
-
-#~ msgid "Tutor Timing"
-#~ msgstr "Načasování výuky"
-
-#~ msgid "&Every"
-#~ msgstr "&Každých"
-
-#~ msgid "&minutes"
-#~ msgstr "&minut"
-
-#~ msgid "&Randomly"
-#~ msgstr "&Náhodně"
-
-#~ msgid "Between"
-#~ msgstr "Mezi"
-
-#~ msgid "m&inutes and"
-#~ msgstr "m&inutami a"
-
-#~ msgid "mi&nutes"
-#~ msgstr "mi&nut"
-
-#~ msgid "Flashcard Appearance"
-#~ msgstr "Vzhled kartiček"
-
-#~ msgid "&Native"
-#~ msgstr "&Původní"
-
-#~ msgid "Minim&alistic"
-#~ msgstr "Minim&alistický"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Různé"
-
-#~ msgid "S&tart exercise as soon as vocabulary file is opened"
-#~ msgstr "Začít cvičení jakmile je soubor se slovníčkem otevřen"
-
-#~ msgid "Type your answer"
-#~ msgstr "Napište odpověď"
-
-#~ msgid "The answer showing blanks for a Fill-in-the-blank question"
-#~ msgstr "Odpověď obsahující prázdná místo pro funkci doplňování chybějícího"
-
-#~ msgid "This is _____ answer"
-#~ msgstr "toto je _____ odpověď"
-
-#~ msgid "Type the answer to the question"
-#~ msgstr "Napište odpověď na otázku"
-
-#~ msgid ""
-#~ "<html>There are too few entries in your vocabulary.<br />You need at "
-#~ "least one entry for a question and answer quiz.</html>"
-#~ msgstr ""
-#~ "<html>Ve vašem slovníčku je příliš málo položek.<br />Potřebujete alespoň "
-#~ "jeden záznam pro kvíz s otázkami a odpověďmi.</html>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Vocabulary Options"
-#~ msgstr "Volby slovníku"
-
-#~ msgid "Select Type of Printout"
-#~ msgstr "Zvolte typ výtisku"
-
-#~ msgid "Vocabulary &list"
-#~ msgstr "Seznam s&lovíček"
-
-#~ msgid "Select to print the vocabulary as displayed in the editor"
-#~ msgstr ""
-#~ "Zvolte, pokud si přejete slovníček vytisknout tak, jak je zobrazen v "
-#~ "editoru"
-
-#~ msgid "Vocabulary e&xam"
-#~ msgstr "Z&kouška slovíček"
-
-#~ msgid "Select to print the vocabulary as a vocabulary exam"
-#~ msgstr "Zvolte, pokud si přejete slovníček vytisknout pro zkoušení slovíček"
-
-#~ msgid "&Flashcards"
-#~ msgstr "&Kartičky"
-
-#~ msgid "Select to print flashcards"
-#~ msgstr "Zvolte, pokud si přejete tisknout karty"
+msgstr "Odstranit"
