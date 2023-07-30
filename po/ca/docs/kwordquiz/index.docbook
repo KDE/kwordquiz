@@ -353,13 +353,13 @@
   </mediaobject>
 </screenshot>
 <para
->Your choices are shown on the middle of the screen. Select the one you think is correct. Use <guibutton
->Check</guibutton
-> to see if the answer is correct. If you have activated the automatic mode in <menuchoice
+>Les eleccions possibles es mostren al mig de la pantalla. Seleccioneu aquella que penseu que sigui correcte. Utilitzeu <guibutton
+>Comprova</guibutton
+> per a veure si la resposta és correcta. Si vàreu activar el mode automàtic en <menuchoice
 ><guimenu
->Settings</guimenu
+>Configuració</guimenu
 ></menuchoice
-> your selection is checked immediately. </para>
+> la vostra selecció es comprovarà immediatament. </para>
 <para
 >Seleccioneu <guibutton
 >Repeteix els errors</guibutton
