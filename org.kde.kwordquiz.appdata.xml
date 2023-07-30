@@ -120,10 +120,24 @@
   <screenshots>
     <screenshot type="default">
       <caption>KWordQuiz welcome page</caption>
+      <caption xml:lang="ca">Pàgina de benvinguda del KWordQuiz</caption>
+      <caption xml:lang="eo">Bonvena paĝo de KWordQuiz</caption>
+      <caption xml:lang="nl">Welkomstpagina van KWordQuiz</caption>
+      <caption xml:lang="sl">KWordQuiz stran dobrodošlice</caption>
+      <caption xml:lang="tr">KWordQuiz karşılama sayfası</caption>
+      <caption xml:lang="uk">Сторінка вітання KWordQuiz</caption>
+      <caption xml:lang="x-test">xxKWordQuiz welcome pagexx</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/home.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>Editor</caption>
+      <caption xml:lang="ca">Editor</caption>
+      <caption xml:lang="eo">Redaktilo</caption>
+      <caption xml:lang="nl">Bewerker</caption>
+      <caption xml:lang="sl">Urejevalnik</caption>
+      <caption xml:lang="tr">Düzenleyici</caption>
+      <caption xml:lang="uk">Редактор</caption>
+      <caption xml:lang="x-test">xxEditorxx</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/editor.png</image>
     </screenshot>
     <screenshot type="default">
@@ -164,10 +178,24 @@
     </screenshot>
     <screenshot type="default">
       <caption>Multiple choice mode in KWordQuiz</caption>
+      <caption xml:lang="ca">Mode d'elecció múltiple en el KWordQuiz</caption>
+      <caption xml:lang="eo">Plurelekta reĝimo en KWordQuiz</caption>
+      <caption xml:lang="nl">Modus voor meerkeuzevragen in KWordQuiz</caption>
+      <caption xml:lang="sl">Način večkratnega izbora v KWordQuiz</caption>
+      <caption xml:lang="tr">KWordQuiz'de çoktan seçmeli kip</caption>
+      <caption xml:lang="uk">Режим вибору з варіантів у KWordQuiz</caption>
+      <caption xml:lang="x-test">xxMultiple choice mode in KWordQuizxx</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/multiple-choice.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>Question response mode in KWordQuiz</caption>
+      <caption xml:lang="ca">Mode de preguntes i respostes en el KWordQuiz</caption>
+      <caption xml:lang="eo">Demand-responda reĝimo en KWordQuiz</caption>
+      <caption xml:lang="nl">Modus voor antwoorden op vragen in KWordQuiz</caption>
+      <caption xml:lang="sl">Način odgovarjanja na vprašanja v KWordQuiz</caption>
+      <caption xml:lang="tr">KWordQuiz'de soru-yanıt kipi</caption>
+      <caption xml:lang="uk">Режим відповіді на питання у KWordQuiz</caption>
+      <caption xml:lang="x-test">xxQuestion response mode in KWordQuizxx</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/question-response.png</image>
     </screenshot>
   </screenshots>
