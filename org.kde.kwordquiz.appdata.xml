@@ -128,6 +128,7 @@
       <caption xml:lang="ka">KWordQuiz-ის მისალმების გვერდი</caption>
       <caption xml:lang="nl">Welkomstpagina van KWordQuiz</caption>
       <caption xml:lang="sl">KWordQuiz stran dobrodošlice</caption>
+      <caption xml:lang="sv">KWordQuiz välkomstsida</caption>
       <caption xml:lang="tr">KWordQuiz karşılama sayfası</caption>
       <caption xml:lang="uk">Сторінка вітання KWordQuiz</caption>
       <caption xml:lang="x-test">xxKWordQuiz welcome pagexx</caption>
@@ -143,6 +144,7 @@
       <caption xml:lang="ka">რედაქტორი</caption>
       <caption xml:lang="nl">Bewerker</caption>
       <caption xml:lang="sl">Urejevalnik</caption>
+      <caption xml:lang="sv">Editor</caption>
       <caption xml:lang="tr">Düzenleyici</caption>
       <caption xml:lang="uk">Редактор</caption>
       <caption xml:lang="x-test">xxEditorxx</caption>
@@ -194,6 +196,7 @@
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი არჩევნის რეჟიმი</caption>
       <caption xml:lang="nl">Modus voor meerkeuzevragen in KWordQuiz</caption>
       <caption xml:lang="sl">Način večkratnega izbora v KWordQuiz</caption>
+      <caption xml:lang="sv">Flerval i KWordQuiz</caption>
       <caption xml:lang="tr">KWordQuiz'de çoktan seçmeli kip</caption>
       <caption xml:lang="uk">Режим вибору з варіантів у KWordQuiz</caption>
       <caption xml:lang="x-test">xxMultiple choice mode in KWordQuizxx</caption>
@@ -209,6 +212,7 @@
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი პასუხის რეჟიმი</caption>
       <caption xml:lang="nl">Modus voor antwoorden op vragen in KWordQuiz</caption>
       <caption xml:lang="sl">Način odgovarjanja na vprašanja v KWordQuiz</caption>
+      <caption xml:lang="sv">Fråga-svar i KWordQuiz</caption>
       <caption xml:lang="tr">KWordQuiz'de soru-yanıt kipi</caption>
       <caption xml:lang="uk">Режим відповіді на питання у KWordQuiz</caption>
       <caption xml:lang="x-test">xxQuestion response mode in KWordQuizxx</caption>
