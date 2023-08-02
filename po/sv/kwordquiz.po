@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-20 00:44+0000\n"
-"PO-Revision-Date: 2023-07-26 22:18+0200\n"
+"PO-Revision-Date: 2023-08-01 08:32+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -155,28 +155,23 @@ msgstr[0] "Du gjorde ett fel"
 msgstr[1] "Du gjorde %1 fel"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "Upprepa fel"
+msgstr "Upprepa felaktiga"
 
 #: qml/BasePage.qml:93
-#, fuzzy, kde-format
-#| msgid "Try again"
+#, kde-format
 msgid "Try Again"
 msgstr "Försök igen"
 
 #: qml/DeckEditorPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Create Deck"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "Skapa kortlek"
 
 #: qml/DeckEditorPage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Edit deck"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Redigera kortlek"
@@ -231,33 +226,25 @@ msgid "Save"
 msgstr "Spara"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "Ta bort bild"
 
 #: qml/DeckEditorPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Link image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Länka till bild"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Ta bort ljud"
 
 #: qml/DeckEditorPage.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Link sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Länka till ljud"
@@ -269,22 +256,18 @@ msgid "Set language"
 msgstr "Ange språk"
 
 #: qml/DeckEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Set language"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "Ange språk"
 
 #: qml/DeckEditorPage.qml:183
-#, fuzzy, kde-format
-#| msgid "Please choose an image"
+#, kde-format
 msgid "Please Choose an Image"
 msgstr "Välj en bild"
 
 #: qml/DeckEditorPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Please choose a sound"
+#, kde-format
 msgid "Please Choose a Sound"
 msgstr "Välj ett ljud"
 
@@ -494,8 +477,7 @@ msgid "Welcome to KWordQuiz"
 msgstr "Välkommen till Kwordquiz"
 
 #: qml/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Open existing document"
+#, kde-format
 msgid "Open Existing Document"
 msgstr "Öppna befintligt dokument"
 
@@ -521,8 +503,7 @@ msgid "Flashcard"
 msgstr "Snabbkort"
 
 #: qml/WelcomePage.qml:154
-#, fuzzy, kde-format
-#| msgid "Multiple choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Flerval"
