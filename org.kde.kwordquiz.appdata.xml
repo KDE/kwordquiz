@@ -56,7 +56,7 @@
   <summary xml:lang="eu">Oroimen-txartel entrenatzailea</summary>
   <summary xml:lang="fi">Sanaston harjoittelu kysymyskorteilla</summary>
   <summary xml:lang="fr">Entraînement aux cartes mémoire</summary>
-  <summary xml:lang="gl">Adestrador de vocabulario</summary>
+  <summary xml:lang="gl">Adestrador de vocabulario.</summary>
   <summary xml:lang="id">Pelatihan Kartu Flash</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
   <summary xml:lang="ka">ბარათებით სწავლის პროგრამა</summary>
@@ -125,6 +125,7 @@
       <caption xml:lang="eo">Bonvena paĝo de KWordQuiz</caption>
       <caption xml:lang="es">Página de bienvenida de KWordQuiz</caption>
       <caption xml:lang="eu">KWordQuiz ongietorri orria</caption>
+      <caption xml:lang="gl">Páxina de benvida de KWordQuiz.</caption>
       <caption xml:lang="ka">KWordQuiz-ის მისალმების გვერდი</caption>
       <caption xml:lang="nl">Welkomstpagina van KWordQuiz</caption>
       <caption xml:lang="sl">KWordQuiz stran dobrodošlice</caption>
@@ -141,6 +142,7 @@
       <caption xml:lang="eo">Redaktilo</caption>
       <caption xml:lang="es">Editor</caption>
       <caption xml:lang="eu">Editorea</caption>
+      <caption xml:lang="gl">Editor.</caption>
       <caption xml:lang="ka">რედაქტორი</caption>
       <caption xml:lang="nl">Bewerker</caption>
       <caption xml:lang="sl">Urejevalnik</caption>
@@ -165,7 +167,7 @@
       <caption xml:lang="eu">Oroimen-txartel galdeketa «KWordQuiz»en</caption>
       <caption xml:lang="fi">KWordQuizin kysymyskorttivisa</caption>
       <caption xml:lang="fr">Questionnaire à cartes sur KWordQuiz</caption>
-      <caption xml:lang="gl">Proba de cartas en KWordQuiz</caption>
+      <caption xml:lang="gl">Proba de cartas en KWordQuiz.</caption>
       <caption xml:lang="id">Kuis flashcard di KWordQuiz</caption>
       <caption xml:lang="it">Quiz di carte mnemoniche in KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის გამოცნობანა ბარათებით</caption>
@@ -193,6 +195,7 @@
       <caption xml:lang="eo">Plurelekta reĝimo en KWordQuiz</caption>
       <caption xml:lang="es">Modo de elección múltiple en KWordQuiz</caption>
       <caption xml:lang="eu">Aukera anitzeko modua «KWordQuiz»en</caption>
+      <caption xml:lang="gl">Modo de escolla múltipla en KWordQuiz.</caption>
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი არჩევნის რეჟიმი</caption>
       <caption xml:lang="nl">Modus voor meerkeuzevragen in KWordQuiz</caption>
       <caption xml:lang="sl">Način večkratnega izbora v KWordQuiz</caption>
@@ -209,6 +212,7 @@
       <caption xml:lang="eo">Demand-responda reĝimo en KWordQuiz</caption>
       <caption xml:lang="es">Modo pregunta-respuesta en KWordQuiz</caption>
       <caption xml:lang="eu">Galdera-erantzun modua «KWordQuiz»en</caption>
+      <caption xml:lang="gl">Modo de pregunta e resposta en KWordQuiz.</caption>
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი პასუხის რეჟიმი</caption>
       <caption xml:lang="nl">Modus voor antwoorden op vragen in KWordQuiz</caption>
       <caption xml:lang="sl">Način odgovarjanja na vprašanja v KWordQuiz</caption>
