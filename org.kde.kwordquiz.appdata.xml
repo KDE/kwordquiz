@@ -56,7 +56,7 @@
   <summary xml:lang="eu">Oroimen-txartel entrenatzailea</summary>
   <summary xml:lang="fi">Sanaston harjoittelu kysymyskorteilla</summary>
   <summary xml:lang="fr">Entraînement aux cartes mémoire</summary>
-  <summary xml:lang="gl">Adestrador de vocabulario</summary>
+  <summary xml:lang="gl">Adestrador de vocabulario.</summary>
   <summary xml:lang="id">Pelatihan Kartu Flash</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
   <summary xml:lang="ka">ბარათებით სწავლის პროგრამა</summary>
@@ -133,7 +133,7 @@
       <caption xml:lang="eu">Oroimen-txartel galdeketa «KWordQuiz»en</caption>
       <caption xml:lang="fi">KWordQuizin kysymyskorttivisa</caption>
       <caption xml:lang="fr">Questionnaire à cartes sur KWordQuiz</caption>
-      <caption xml:lang="gl">Proba de cartas en KWordQuiz</caption>
+      <caption xml:lang="gl">Proba de cartas en KWordQuiz.</caption>
       <caption xml:lang="id">Kuis flashcard di KWordQuiz</caption>
       <caption xml:lang="it">Quiz di carte mnemoniche in KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის გამოცნობანა ბარათებით</caption>
