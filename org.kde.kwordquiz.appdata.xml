@@ -127,6 +127,7 @@
       <caption xml:lang="eu">KWordQuiz ongietorri orria</caption>
       <caption xml:lang="gl">Páxina de benvida de KWordQuiz.</caption>
       <caption xml:lang="ka">KWordQuiz-ის მისალმების გვერდი</caption>
+      <caption xml:lang="ko">KWordQuiz 환영 페이지</caption>
       <caption xml:lang="nl">Welkomstpagina van KWordQuiz</caption>
       <caption xml:lang="sl">KWordQuiz stran dobrodošlice</caption>
       <caption xml:lang="sv">KWordQuiz välkomstsida</caption>
@@ -144,6 +145,7 @@
       <caption xml:lang="eu">Editorea</caption>
       <caption xml:lang="gl">Editor.</caption>
       <caption xml:lang="ka">რედაქტორი</caption>
+      <caption xml:lang="ko">편집기</caption>
       <caption xml:lang="nl">Bewerker</caption>
       <caption xml:lang="sl">Urejevalnik</caption>
       <caption xml:lang="sv">Editor</caption>
@@ -197,6 +199,7 @@
       <caption xml:lang="eu">Aukera anitzeko modua «KWordQuiz»en</caption>
       <caption xml:lang="gl">Modo de escolla múltipla en KWordQuiz.</caption>
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი არჩევნის რეჟიმი</caption>
+      <caption xml:lang="ko">KWordQuiz의 객관식 퀴즈 모드</caption>
       <caption xml:lang="nl">Modus voor meerkeuzevragen in KWordQuiz</caption>
       <caption xml:lang="sl">Način večkratnega izbora v KWordQuiz</caption>
       <caption xml:lang="sv">Flerval i KWordQuiz</caption>
@@ -214,6 +217,7 @@
       <caption xml:lang="eu">Galdera-erantzun modua «KWordQuiz»en</caption>
       <caption xml:lang="gl">Modo de pregunta e resposta en KWordQuiz.</caption>
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი პასუხის რეჟიმი</caption>
+      <caption xml:lang="ko">KWordQuiz의 주관식 퀴즈 모드</caption>
       <caption xml:lang="nl">Modus voor antwoorden op vragen in KWordQuiz</caption>
       <caption xml:lang="sl">Način odgovarjanja na vprašanja v KWordQuiz</caption>
       <caption xml:lang="sv">Fråga-svar i KWordQuiz</caption>
