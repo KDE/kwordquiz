@@ -125,6 +125,7 @@
       <caption xml:lang="eo">Bonvena paĝo de KWordQuiz</caption>
       <caption xml:lang="es">Página de bienvenida de KWordQuiz</caption>
       <caption xml:lang="eu">KWordQuiz ongietorri orria</caption>
+      <caption xml:lang="fr">Page d'accueil de KWordQuiz</caption>
       <caption xml:lang="gl">Páxina de benvida de KWordQuiz.</caption>
       <caption xml:lang="it">Pagina di benvenuto di KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის მისალმების გვერდი</caption>
@@ -144,6 +145,7 @@
       <caption xml:lang="eo">Redaktilo</caption>
       <caption xml:lang="es">Editor</caption>
       <caption xml:lang="eu">Editorea</caption>
+      <caption xml:lang="fr">Éditeur</caption>
       <caption xml:lang="gl">Editor.</caption>
       <caption xml:lang="it">Editor</caption>
       <caption xml:lang="ka">რედაქტორი</caption>
@@ -199,6 +201,7 @@
       <caption xml:lang="eo">Plurelekta reĝimo en KWordQuiz</caption>
       <caption xml:lang="es">Modo de elección múltiple en KWordQuiz</caption>
       <caption xml:lang="eu">Aukera anitzeko modua «KWordQuiz»en</caption>
+      <caption xml:lang="fr">Mode avec choix multiples dans KWordQuiz</caption>
       <caption xml:lang="gl">Modo de escolla múltipla en KWordQuiz.</caption>
       <caption xml:lang="it">Modalità a scelta multipla in KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი არჩევნის რეჟიმი</caption>
@@ -218,6 +221,7 @@
       <caption xml:lang="eo">Demand-responda reĝimo en KWordQuiz</caption>
       <caption xml:lang="es">Modo pregunta-respuesta en KWordQuiz</caption>
       <caption xml:lang="eu">Galdera-erantzun modua «KWordQuiz»en</caption>
+      <caption xml:lang="fr">Mode avec réponses aux questions dans KWordQuiz</caption>
       <caption xml:lang="gl">Modo de pregunta e resposta en KWordQuiz.</caption>
       <caption xml:lang="it">Modalità risposta alla domanda in KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი პასუხის რეჟიმი</caption>
