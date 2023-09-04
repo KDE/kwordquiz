@@ -18,7 +18,7 @@ class KWQRandomSortModel : public QSortFilterProxyModel
 
 public:
     enum ExtraRoles {
-        MultipleChoiceRole = KWQCardModel::ExtraRoles + 1,
+        MultipleChoiceRole = KWQCardModel::ExtraUserRoles + 1,
     };
 
     explicit KWQRandomSortModel(QObject *parent = nullptr);
