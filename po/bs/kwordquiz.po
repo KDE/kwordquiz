@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-05 00:41+0000\n"
 "PO-Revision-Date: 2013-10-18 19:25+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -421,71 +421,71 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Postavke kviza"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgctxt "@title:group general settings"
 #| msgid "General"
 msgid "General"
 msgstr "Opšte"
 
-#: qml/SettingsPage.qml:30
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
 msgstr "Prikaži rezultat kao procenat"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgid "Flash Card"
 msgstr "Brza kartica"
 
-#: qml/SettingsPage.qml:52
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "Automatski okreni brzu karticu"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Time delay for flipping flashcard"
 msgid "Time delay for flipping the flashcard"
 msgstr "Vremenski zastoj za okretanje brze kartice"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgid "Multiple choice"
 msgstr "Višestruki izbor"
 
-#: qml/SettingsPage.qml:88
+#: qml/SettingsPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Automatically check selected answer in multiple choice"
 msgid "Automatically check selected answer"
 msgstr "Automatski provjeri izabrani odgovor u višestrukom izboru"
 
-#: qml/SettingsPage.qml:105
+#: qml/SettingsPage.qml:78
 #, fuzzy, kde-format
 #| msgid "&Question and Answer"
 msgid "Question and Answer"
 msgstr "&Pitanje i odgovor"
 
-#: qml/SettingsPage.qml:110
+#: qml/SettingsPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Check to count hint as error"
 msgid "Count using hint as an error"
 msgstr "Uključite da bi se nagovještaj računao kao greška"
 
-#: qml/SettingsPage.qml:122
+#: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#: qml/SettingsPage.qml:152
+#: qml/SettingsPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
 msgid "About KWordQuiz"
 msgstr "Izlazi i KWordQuiz-a"
 
-#: qml/SettingsPage.qml:161
+#: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
 msgstr ""

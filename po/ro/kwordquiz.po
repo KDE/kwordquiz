@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-05 00:41+0000\n"
 "PO-Revision-Date: 2012-06-16 00:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -419,71 +419,71 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configurări chestionar"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgctxt "@title:group general settings"
 #| msgid "General"
 msgid "General"
 msgstr "General"
 
-#: qml/SettingsPage.qml:30
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
 msgstr "Afișează scor ca procentaj"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgid "Flash Card"
 msgstr "Flashcard"
 
-#: qml/SettingsPage.qml:52
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "Întoarce flashcardul automat"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Time delay for flipping flashcard"
 msgid "Time delay for flipping the flashcard"
 msgstr "Întârziere pentru întoarcerea flashcardului"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgid "Multiple choice"
 msgstr "Variante multiple"
 
-#: qml/SettingsPage.qml:88
+#: qml/SettingsPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Automatically check selected answer in multiple choice"
 msgid "Automatically check selected answer"
 msgstr "Bifează automat răspunsul selectat în variante multiple"
 
-#: qml/SettingsPage.qml:105
+#: qml/SettingsPage.qml:78
 #, fuzzy, kde-format
 #| msgid "&Question and Answer"
 msgid "Question and Answer"
 msgstr "Î&ntrebare și răspuns"
 
-#: qml/SettingsPage.qml:110
+#: qml/SettingsPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Check to count hint as error"
 msgid "Count using hint as an error"
 msgstr "Bifează pentru a considera indiciul ca eroare"
 
-#: qml/SettingsPage.qml:122
+#: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#: qml/SettingsPage.qml:152
+#: qml/SettingsPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
 msgid "About KWordQuiz"
 msgstr "Ieșire din KWordQuiz"
 
-#: qml/SettingsPage.qml:161
+#: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
 msgstr ""

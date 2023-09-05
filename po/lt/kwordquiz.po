@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-05 00:41+0000\n"
 "PO-Revision-Date: 2015-12-30 18:15+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -407,42 +407,42 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Viktorinos nuostatos"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgctxt "@title:group general settings"
 #| msgid "General"
 msgid "General"
 msgstr "Bendri"
 
-#: qml/SettingsPage.qml:30
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
 msgstr "Įvertinimą rodyti procentais"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgid "Flash Card"
 msgstr "Mokymasis iš kortelių"
 
-#: qml/SettingsPage.qml:52
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "Kortelę apversti automatiškai"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Time delay for flipping flashcard"
 msgid "Time delay for flipping the flashcard"
 msgstr "Delsa iki kol bus apversta kortelė"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgid "Multiple choice"
 msgstr "Pasirinkimas iš kelių atsakymų"
 
-#: qml/SettingsPage.qml:88
+#: qml/SettingsPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Automatically check selected answer in multiple choice"
 msgid "Automatically check selected answer"
@@ -450,30 +450,30 @@ msgstr ""
 "Veiksenoje, kai galima rinktis iš kelių atsakymų, pažymėtąjį atsakymą "
 "patikrinti automatiškai"
 
-#: qml/SettingsPage.qml:105
+#: qml/SettingsPage.qml:78
 #, fuzzy, kde-format
 #| msgid "&Question and Answer"
 msgid "Question and Answer"
 msgstr "&Klausimas ir atsakymas"
 
-#: qml/SettingsPage.qml:110
+#: qml/SettingsPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Check to count hint as error"
 msgid "Count using hint as an error"
 msgstr "Jei pažymėta, tai pasinaudojimas sufleriu bus laikomas klaida"
 
-#: qml/SettingsPage.qml:122
+#: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#: qml/SettingsPage.qml:152
+#: qml/SettingsPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
 msgid "About KWordQuiz"
 msgstr "Baigia KWordQuiz darbą"
 
-#: qml/SettingsPage.qml:161
+#: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz (KDE 3.5)\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-05 00:41+0000\n"
 "PO-Revision-Date: 2006-04-02 13:00+0600\n"
 "Last-Translator: Progga <progga@BengaLinux.Org>\n"
 "Language-Team: Bangla <kde-translation@BengaLinux.Org>\n"
@@ -407,70 +407,70 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "কুইজের বৈশিষ্ট্য"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgid "Editor Settings"
 msgid "General"
 msgstr "টেক্সট সম্পাদকের বৈশিষ্ট্য"
 
-#: qml/SettingsPage.qml:30
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
 msgstr "স্কোরকে শতাংশ হিসাবে দেখাও"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgid "Flash Card"
 msgstr "ফ্ল্যাশকার্ড"
 
-#: qml/SettingsPage.qml:52
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "স্বয়ংক্রিয়ভাবে ফ্ল্যাশকার্ড উল্টাও"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Time delay for flipping flashcard"
 msgid "Time delay for flipping the flashcard"
 msgstr "ফ্ল্যাশকার্ড উল্টাতে বিলম্বের পরিমাণ"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgid "Multiple choice"
 msgstr "নৈব্যক্তিক"
 
-#: qml/SettingsPage.qml:88
+#: qml/SettingsPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Automatically check selected answer in multiple choice"
 msgid "Automatically check selected answer"
 msgstr "নৈব্যক্তিক প্রশ্নের উত্তর স্বয়ংক্রিয়ভাবে মিলিয়ে দেখো"
 
-#: qml/SettingsPage.qml:105
+#: qml/SettingsPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Question && Answer"
 msgid "Question and Answer"
 msgstr "প্রশ্নোত্তর"
 
-#: qml/SettingsPage.qml:110
+#: qml/SettingsPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Check to count hint as error"
 msgid "Count using hint as an error"
 msgstr "ইঙ্গিতকে সমস্যারূপে গণনা করার জন্য এটিতে টিক দিন"
 
-#: qml/SettingsPage.qml:122
+#: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#: qml/SettingsPage.qml:152
+#: qml/SettingsPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
 msgid "About KWordQuiz"
 msgstr "কে-ওয়ার্ডকুইজ থেকে প্রস্থান করে"
 
-#: qml/SettingsPage.qml:161
+#: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
 msgstr ""

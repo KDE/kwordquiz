@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-05 00:41+0000\n"
 "PO-Revision-Date: 2021-01-18 19:24+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -401,70 +401,70 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "வினாடி வினாவின் அமைப்புகள்"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgid "Editor Settings"
 msgid "General"
 msgstr "தொகுப்பான் அமைவுகள்"
 
-#: qml/SettingsPage.qml:30
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
 msgstr "மதிப்பெண்ணை சதவீதமாக காட்டு"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgid "Flash Card"
 msgstr "ஃபிளாஷ்அட்டை"
 
-#: qml/SettingsPage.qml:52
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "ஃப்ளாஷ்கார்டை தானாகவே சுழற்று"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Time delay for flipping flashcard"
 msgid "Time delay for flipping the flashcard"
 msgstr "ஃப்ளாஷ்கார்ட்டை சுழற்ற நேரம்"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgid "Multiple choice"
 msgstr "பலமுனை தேர்வு"
 
-#: qml/SettingsPage.qml:88
+#: qml/SettingsPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Automatically check selected answer in multiple choice"
 msgid "Automatically check selected answer"
 msgstr "தேர்ந்தெடுக்கப்பட்ட பதிலை பலவிதத்தில் தானாகவே சரிப்பார்"
 
-#: qml/SettingsPage.qml:105
+#: qml/SettingsPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Question && Answer"
 msgid "Question and Answer"
 msgstr "கேள்வி &&பதில்"
 
-#: qml/SettingsPage.qml:110
+#: qml/SettingsPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Check to count hint as error"
 msgid "Count using hint as an error"
 msgstr "குறிப்பை பிழையாக நினைக்கவும்."
 
-#: qml/SettingsPage.qml:122
+#: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#: qml/SettingsPage.qml:152
+#: qml/SettingsPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
 msgid "About KWordQuiz"
 msgstr "Kவோர்டுவினாவிடையில் இருந்து வெளியேறவும்"
 
-#: qml/SettingsPage.qml:161
+#: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
 msgstr ""

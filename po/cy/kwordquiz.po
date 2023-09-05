@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-05 00:41+0000\n"
 "PO-Revision-Date: 2005-11-03 00:28+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -392,65 +392,65 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Gosodiadau Pos"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgid "Editor Settings"
 msgid "General"
 msgstr "Gosodiadau Golygydd"
 
-#: qml/SettingsPage.qml:30
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
 msgstr ""
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:32
 #, kde-format
 msgid "Flash Card"
 msgstr ""
 
-#: qml/SettingsPage.qml:52
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr ""
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:50
 #, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr ""
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:63
 #, kde-format
 msgid "Multiple choice"
 msgstr ""
 
-#: qml/SettingsPage.qml:88
+#: qml/SettingsPage.qml:68
 #, kde-format
 msgid "Automatically check selected answer"
 msgstr ""
 
-#: qml/SettingsPage.qml:105
+#: qml/SettingsPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Question"
 msgid "Question and Answer"
 msgstr "Cwestiwn"
 
-#: qml/SettingsPage.qml:110
+#: qml/SettingsPage.qml:84
 #, kde-format
 msgid "Count using hint as an error"
 msgstr ""
 
-#: qml/SettingsPage.qml:122
+#: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#: qml/SettingsPage.qml:152
+#: qml/SettingsPage.qml:111
 #, fuzzy, kde-format
 #| msgid "KWordQuiz"
 msgid "About KWordQuiz"
 msgstr "KWordQuiz"
 
-#: qml/SettingsPage.qml:161
+#: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
 msgstr ""

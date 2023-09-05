@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-05 00:41+0000\n"
 "PO-Revision-Date: 2008-07-09 21:10+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -381,62 +381,62 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Tetapan Lain-lain"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:16
 #, fuzzy, kde-format
 msgid "General"
 msgstr "Tetapan Lain-lain"
 
-#: qml/SettingsPage.qml:30
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
 msgstr ""
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:32
 #, fuzzy, kde-format
 msgid "Flash Card"
 msgstr "Belakang"
 
-#: qml/SettingsPage.qml:52
+#: qml/SettingsPage.qml:38
 #, fuzzy, kde-format
 msgid "Automatically flip flashcard"
 msgstr "Belakang"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:50
 #, fuzzy, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "%s: tidak dapat menetapkan lengahan kegagalan: %s\n"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:63
 #, fuzzy, kde-format
 msgid "Multiple choice"
 msgstr "Pilihan Tidak Sah"
 
-#: qml/SettingsPage.qml:88
+#: qml/SettingsPage.qml:68
 #, fuzzy, kde-format
 msgid "Automatically check selected answer"
 msgstr "Belakang"
 
-#: qml/SettingsPage.qml:105
+#: qml/SettingsPage.qml:78
 #, fuzzy, kde-format
 msgid "Question and Answer"
 msgstr "Dialog soalan:"
 
-#: qml/SettingsPage.qml:110
+#: qml/SettingsPage.qml:84
 #, fuzzy, kde-format
 msgid "Count using hint as an error"
 msgstr "-a  --text  Layan semua fail sebagai teks."
 
-#: qml/SettingsPage.qml:122
+#: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr ""
 
-#: qml/SettingsPage.qml:152
+#: qml/SettingsPage.qml:111
 #, fuzzy, kde-format
 msgid "About KWordQuiz"
 msgstr "Comment=Perbendaharaan Kata KWordQuiz"
 
-#: qml/SettingsPage.qml:161
+#: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
 msgstr ""
