@@ -13,6 +13,8 @@
 
 #include <KRandom>
 
+using namespace Qt::Literals::StringLiterals;
+
 KWQQuizModel::KWQQuizModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
     m_sourceModel = nullptr;
@@ -88,7 +90,7 @@ bool KWQQuizModel::init()
 
     invalidate();
 
-    //check if enough in list
+    // check if enoufile:///home/carl/kde6/src/log/2023-09-26-07/kwordquiz/build.loggh in list
     bool result = false;
     switch (m_quizType)  {
         case Prefs::EnumStartSession::Editor:
@@ -149,13 +151,13 @@ bool KWQQuizModel::checkAnswer(const QString & a)
     if (m_quizType == Prefs::EnumStartSession::QA) {
         if (!m_correctBlank.isEmpty()) {
             QStringList la, ls;
-            if (ans.indexOf(';') > 0)
-                ls = ans.split(';', Qt::SkipEmptyParts);
+            if (ans.indexOf(QLatin1Char(';')) > 0)
+                ls = ans.split(QLatin1Char(';'), Qt::SkipEmptyParts);
             else
                 ls.append(ans);
 
-            if (m_correctBlank.indexOf(';') > 0)
-                la = m_correctBlank.split(';', Qt::SkipEmptyParts);
+            if (m_correctBlank.indexOf(QLatin1Char(';')) > 0)
+                la = m_correctBlank.split(QLatin1Char(';'), Qt::SkipEmptyParts);
             else
                 la.append(m_correctBlank);
 
@@ -175,8 +177,8 @@ bool KWQQuizModel::checkAnswer(const QString & a)
       } else {
           if (m_quizType == Prefs::EnumStartSession::MultipleChoice) {
               if (Prefs::enableBlanks()) {
-                  tTemp.remove('[');
-                  tTemp.remove(']');
+                tTemp.remove(QLatin1Char('['));
+                tTemp.remove(QLatin1Char(']'));
               }
               result = (ans == tTemp);
           } else {
@@ -225,8 +227,8 @@ QStringList KWQQuizModel::multiOptions()
 
   if (Prefs::enableBlanks()) {
     for (int i = 0; i < ls.count(); i++) {
-      ls[i].remove('[');
-      ls[i].remove(']');
+            ls[i].remove(QLatin1Char('['));
+            ls[i].remove(QLatin1Char(']'));
       }
   }
 
@@ -315,17 +317,17 @@ QString KWQQuizModel::answer()
 
     if (m_quizType == Prefs::EnumStartSession::QA) {
         if (Prefs::enableBlanks()) {
-            s.replace('[', QLatin1String("<u>"));
-            s.replace(']', QLatin1String("</u>"));
-            s.prepend("<qt>");
-            s.append("</qt>");
+            s.replace(QLatin1Char('['), u"<u>"_s);
+            s.replace(QLatin1Char(']'), u"</u>"_s);
+            s.prepend(u"<qt>"_s);
+            s.append(u"</qt>"_s);
         }
     }
     else
     {
         if (Prefs::enableBlanks()) {
-            s.remove('[');
-            s.remove(']');
+            s.remove(QLatin1Char('['));
+            s.remove(QLatin1Char(']'));
         }
     }
     return s;

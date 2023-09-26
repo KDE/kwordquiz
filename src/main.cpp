@@ -16,6 +16,7 @@
 #include <KAboutData>
 #include <KCrash>
 #include <KLocalizedString>
+#include <qstringliteral.h>
 
 #include "audioprober.h"
 #include "blankanswer.h"
@@ -33,6 +34,8 @@
 #include <KDBusService>
 #endif
 
+using namespace Qt::Literals::StringLiterals;
+
 void parseArgs(QCommandLineParser &parser, QQuickWindow *view, const QString &workingDirectory)
 {
     const QStringList args = parser.positionalArguments();
@@ -40,17 +43,17 @@ void parseArgs(QCommandLineParser &parser, QQuickWindow *view, const QString &wo
         return;
     }
 
-    auto fileOpener = view->findChild<FileOpener *>(QStringLiteral("FileOpener"));
+    auto fileOpener = view->findChild<FileOpener *>(u"FileOpener"_s);
 
-    QString goTo = parser.value(QStringLiteral("goto"));
+    QString goTo = parser.value(u"goto"_s);
     Prefs::EnumStartSession mode = Prefs::Flashcard;
 
     if (!goTo.isEmpty()) {
-        if (goTo == QStringLiteral("flash")) {
+        if (goTo == u"flash"_s) {
             mode = Prefs::Flashcard;
-        } else if (goTo == QStringLiteral("mc")) {
+        } else if (goTo == u"mc"_s) {
             mode = Prefs::MultipleChoice;
-        } else if (goTo == QStringLiteral("qa")) {
+        } else if (goTo == u"qa"_s) {
             mode = Prefs::QA;
         } else {
             qWarning() << i18n("Invalid goto given: %1. Allowed: flash, mc and qa", goTo);
@@ -63,32 +66,28 @@ void parseArgs(QCommandLineParser &parser, QQuickWindow *view, const QString &wo
 
 int main(int argc, char *argv[])
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
-
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
-    QIcon::setThemeName("tokodon");
+    QQuickStyle::setStyle(u"org.kde.breeze"_s);
+    QIcon::setThemeName(u"tokodon"_s);
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+        QQuickStyle::setStyle(u"org.kde.desktop"_s);
     }
 #endif
 
     KCrash::initialize();
     KLocalizedString::setApplicationDomain("kwordquiz");
-    QApplication::setApplicationName(QStringLiteral("kwordquiz"));
-    QApplication::setApplicationVersion(KWORDQUIZ_VERSION_STRING);
-    QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
-    QIcon::setFallbackThemeName("breeze");
+    QApplication::setApplicationName(u"kwordquiz"_s);
+    QApplication::setApplicationVersion(QStringLiteral(KWORDQUIZ_VERSION_STRING));
+    QApplication::setOrganizationDomain(u"kde.org"_s);
+    QIcon::setFallbackThemeName(u"breeze"_s);
 
-    KAboutData aboutData(QStringLiteral("kwordquiz"),
+    KAboutData aboutData(u"kwordquiz"_s,
                          i18n("KWordQuiz"),
-                         KWORDQUIZ_VERSION_STRING,
+                         QStringLiteral(KWORDQUIZ_VERSION_STRING),
                          i18n("A powerful flashcard and vocabulary learning program"),
                          KAboutLicense::GPL_V2,
                          i18n("(c) 2003-2010, Peter Hedlund"),

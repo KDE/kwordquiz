@@ -11,7 +11,7 @@
 KWQRandomSortModel::KWQRandomSortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
-    m_sourceModel = 0;
+    m_sourceModel = nullptr;
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setFilterKeyColumn(-1);

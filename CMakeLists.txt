@@ -15,10 +15,10 @@ if(NOT MSVC)
 endif(NOT MSVC)
 
 include(FeatureSummary)
-set(KF5_MIN_VERSION "5.92.0")
-set(REQUIRED_QT_VERSION "5.15.0")
-set(KDE_COMPILERSETTINGS_LEVEL "5.82")
-find_package(ECM ${KF5_MIN_VERSION} NO_MODULE REQUIRED)
+set(KF_MIN_VERSION "5.240.0")
+set(REQUIRED_QT_VERSION "6.5.0")
+set(KDE_COMPILERSETTINGS_LEVEL "5.240.0")
+find_package(ECM ${KF_MIN_VERSION} NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
 
@@ -33,18 +33,10 @@ include(ECMAddTests)
 include(ECMDeprecationSettings)
 include(KDEGitCommitHooks)
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS
+find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS
     Core
     Widgets
     PrintSupport
@@ -55,12 +47,12 @@ find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS
     Multimedia
     Xml
 )
-set_package_properties(Qt${QT_MAJOR_VERSION} PROPERTIES
+set_package_properties(Qt6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Base application components"
 )
 
-find_package(KF${QT_MAJOR_VERSION} ${KF5_MIN_VERSION} COMPONENTS
+find_package(KF6 ${KF5_MIN_VERSION} COMPONENTS
     I18n
     Crash
     Config
@@ -71,13 +63,13 @@ find_package(KF${QT_MAJOR_VERSION} ${KF5_MIN_VERSION} COMPONENTS
     Kirigami2
     DBusAddons
 )
-set_package_properties(KF${QT_MAJOR_VERSION} PROPERTIES
+set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Base application components"
 )
 
-find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.9.0)
-set_package_properties(KF${QT_MAJOR_VERSION}KirigamiAddons PROPERTIES
+find_package(KF6KirigamiAddons 0.11.0)
+set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Kirigami addons application UI framework"
 )
@@ -89,23 +81,11 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.89.0)
 
-if(QT_MAJOR_VERSION STREQUAL "6")
-    set(KIRIGAMIPAGE_CONTEXTUALACTIONS "actions")
-    set(QTMULTIMEDIA_MODULE_VERSION "")
-    set(QTMULTIMEDIA_AUDIO "MediaPlayer")
-    set(QTMULTIMEDIA_AUDIO_AUTOLOAD "")
-else()
-    set(KIRIGAMIPAGE_CONTEXTUALACTIONS "actions.contextualActions")
-    set(QTMULTIMEDIA_MODULE_VERSION "5.15")
-    set(QTMULTIMEDIA_AUDIO "Audio")
-    set(QTMULTIMEDIA_AUDIO_AUTOLOAD "autoLoad: false")
-endif()
-
 add_subdirectory(doc)
 add_subdirectory(src)
 
 if(BUILD_TESTING)
-    find_package(Qt${QT_MAJOR_VERSION}Test REQUIRED)
+    find_package(Qt6Test REQUIRED)
 
     add_subdirectory(autotests)
 endif()

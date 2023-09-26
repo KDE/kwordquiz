@@ -37,7 +37,7 @@ public:
 
         ExtraUserRoles,
     };
-    Q_ENUMS(ExtraRoles);
+    Q_ENUMS(ExtraRoles)
 
     explicit KWQCardModel(QObject *parent = nullptr);
 

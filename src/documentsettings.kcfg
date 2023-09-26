@@ -16,8 +16,8 @@
     <entry name="KeyboardLayoutColumn$(Section)" type="String" key="KeyboardLayoutColumn$(Section)">
       <parameter name="Section" type="Int" max="1" />
       <label>Keyboard layouts</label>
-      <default param="0"></default>
-      <default param="1"></default>
+      <default param="0">QString()</default>
+      <default param="1">QString()</default>
     </entry>
   </group>
 </kcfg>

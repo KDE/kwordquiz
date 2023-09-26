@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
-        <file alias="qml/SoundPlayer.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/SoundPlayer.qml</file>
+        <file>qml/SoundPlayer.qml</file>
         <file>qml/Visualization.qml</file>
 
         <!-- Actions -->
@@ -9,9 +9,9 @@
         <file>qml/EditAction.qml</file>
 
         <!-- Pages -->
-        <file alias="qml/BasePage.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/BasePage.qml</file>
+        <file>qml/BasePage.qml</file>
         <file>qml/WelcomePage.qml</file>
-        <file alias="qml/DeckEditorPage.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/DeckEditorPage.qml</file>
+        <file>qml/DeckEditorPage.qml</file>
         <file>qml/FlashCardPage.qml</file>
         <file>qml/QuestionAnswerPage.qml</file>
         <file>qml/MultipleChoicePage.qml</file>

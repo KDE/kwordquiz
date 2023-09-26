@@ -3,11 +3,10 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "kwqcardmodel.h"
+#include "keduvocexpression.h"
+#include "kwordquiz_version.h"
 #include <keduvocdocument.h>
 #include <keduvoclesson.h>
-#include "keduvocexpression.h"
-#include "blankanswer.h"
-#include "kwordquiz_version.h"
 
 #include <KLocalizedString>
 #include <QDebug>
@@ -17,6 +16,8 @@
 #include <QRegularExpression>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
+
 KWQCardModel::KWQCardModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -25,7 +26,7 @@ KWQCardModel::KWQCardModel(QObject *parent)
 void KWQCardModel::createNew()
 {
     auto doc = new KEduVocDocument(this);
-    doc->setGenerator(QStringLiteral("kwordquiz %1").arg(KWORDQUIZ_VERSION_STRING));
+    doc->setGenerator(QStringLiteral("kwordquiz %1").arg(QStringLiteral(KWORDQUIZ_VERSION_STRING)));
     doc->appendIdentifier();
     doc->identifier(0).setName(i18n("Question"));
     doc->appendIdentifier();
@@ -343,7 +344,7 @@ QVariant KWQCardModel::data(const QModelIndex &index, int role) const
 
     switch (role) {
     case Qt::DisplayRole:
-      return QString(entry->translation(0)->text() + " ->" + entry->translation(1)->text());
+        return QString(entry->translation(0)->text() + u" ->"_s + entry->translation(1)->text());
 
     case QuestionRole:
         return entry->translation(0)->text();

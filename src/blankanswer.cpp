@@ -8,6 +8,8 @@
 #include <QRegularExpression>
 #include <QStringList>
 
+using namespace Qt::Literals::StringLiterals;
+
 QString BlankAnswer::input() const
 {
     return m_input;
@@ -43,7 +45,7 @@ QString BlankAnswer::correctAnswer() const
 BlankAnswer::BlankResult BlankAnswer::blankAnswer(const QString &input)
 {
     BlankResult result;
-    static QRegularExpression rx(QStringLiteral("\\[(.*?)\\]"));
+    static QRegularExpression rx(u"\\[(.*?)\\]"_s);
 
     QRegularExpressionMatchIterator matchIt = rx.globalMatch(input);
 
@@ -53,7 +55,7 @@ BlankAnswer::BlankResult BlankAnswer::blankAnswer(const QString &input)
     }
 
     result.blankedAnswer = input;
-    result.blankedAnswer.replace(rx, QStringLiteral(".........."));
+    result.blankedAnswer.replace(rx, u".........."_s);
 
     QStringList answerParts;
 
@@ -62,7 +64,7 @@ BlankAnswer::BlankResult BlankAnswer::blankAnswer(const QString &input)
         answerParts << match.captured(1);
     }
 
-    result.correctAnswer = answerParts.join(QLatin1String("; "));
+    result.correctAnswer = answerParts.join(u"; "_s);
 
     return result;
 }
@@ -75,24 +77,24 @@ QString BlankAnswer::yourAnswerResult(const QString &givenAnswer, const QString 
         result.clear();
         QStringList ls;
 
-        if (givenAnswer.indexOf(';') > 0)
-            ls = givenAnswer.split(';');
+        if (givenAnswer.indexOf(QLatin1Char(';')) > 0)
+            ls = givenAnswer.split(QLatin1Char(';'));
         else
             ls.append(givenAnswer);
 
-        result = QString(blankedAnswer).replace(QLatin1String(".........."), QLatin1String("<u></u>"));
+        result = QString(blankedAnswer).replace(u".........."_s, u"<u></u>"_s);
 
         int offset = 0, counter = 0;
         while (offset >= 0 && counter < ls.size()) {
-            offset = result.indexOf(QStringLiteral("<u>"), offset);
+            offset = result.indexOf(u"<u>"_s, offset);
             if (offset >= 0) {
                 result.insert(offset + 3, ls[counter]);
                 offset++;
                 counter++;
             }
         }
-        result.append("</qt>");
-        result.prepend("<qt>");
+        result.append(u"</qt>"_s);
+        result.prepend(u"<qt>"_s);
     }
 
     return result;

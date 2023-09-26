@@ -115,7 +115,7 @@ QString LanguageListModel::flagFromName(const QString &language) const
 
     static constexpr auto surrogatePairCodePoint = 0xD83C;
     static constexpr auto flagCodePointStart = 0xDDE6; // https://en.wikipedia.org/wiki/Regional_indicator_symbol
-    static constexpr auto offsetCodePointA = QChar('A').unicode(); // offset from 0, the flag code points have the same offsets
+    static constexpr auto offsetCodePointA = QLatin1Char('A').unicode(); // offset from 0, the flag code points have the same offsets
     static constexpr auto basePoint = flagCodePointStart - offsetCodePointA;
 
     QString emoji;

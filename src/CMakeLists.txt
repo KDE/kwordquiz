@@ -10,10 +10,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-configure_file(qml/BasePage.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/BasePage.qml)
-configure_file(qml/DeckEditorPage.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/DeckEditorPage.qml)
-configure_file(qml/SoundPlayer.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/SoundPlayer.qml)
-
 configure_file(resources.qrc ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc)
 
 ########### next target ###############
@@ -41,7 +37,7 @@ set(kwordquiz_SRCS
     fileopener.cpp
     languagelistmodel.h
     languagelistmodel.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc
+    resources.qrc
 )
 
 kconfig_add_kcfg_files(kwordquiz_SRCS GENERATE_MOC prefs.kcfgc documentsettings.kcfgc stateprefs.kcfgc)
@@ -52,20 +48,20 @@ ecm_add_app_icon(kwordquiz_SRCS ICONS ${ICONS_SRCS})
 add_executable(kwordquiz ${kwordquiz_SRCS})
 
 target_link_libraries(kwordquiz
-    Qt::Core
-    Qt::Quick
-    Qt::QuickControls2
-    Qt::PrintSupport
-    Qt::Svg
-    Qt::Multimedia
-    KF${KF_MAJOR_VERSION}::Crash
-    KF${KF_MAJOR_VERSION}::ConfigCore
-    KF${KF_MAJOR_VERSION}::ConfigGui
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::NewStuffCore
-    KF${KF_MAJOR_VERSION}::Notifications
-    KF${KF_MAJOR_VERSION}::NotifyConfig
-    KF${KF_MAJOR_VERSION}::DBusAddons
+    Qt6::Core
+    Qt6::Quick
+    Qt6::QuickControls2
+    Qt6::PrintSupport
+    Qt6::Svg
+    Qt6::Multimedia
+    KF6::Crash
+    KF6::ConfigCore
+    KF6::ConfigGui
+    KF6::I18n
+    KF6::NewStuffCore
+    KF6::Notifications
+    KF6::NotifyConfig
+    KF6::DBusAddons
     LibKEduVocDocumentImport__KEduVocDocument
 )
 

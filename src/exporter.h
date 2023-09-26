@@ -13,7 +13,7 @@ class QTextDocument;
 class Exporter : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(KWQCardModel *cardModel MEMBER m_cardModel NOTIFY cardModelChanged);
+    Q_PROPERTY(KWQCardModel *cardModel MEMBER m_cardModel NOTIFY cardModelChanged)
 
 public:
     enum PrintStyle {

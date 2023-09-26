@@ -11,8 +11,11 @@
 #include <QTextDocument>
 #include <QTextTable>
 #include <array>
+#include <qstringliteral.h>
 
 #include "kwordquiz_version.h"
+
+using namespace Qt::Literals::StringLiterals;
 
 void Exporter::print(const PrintStyle printStyle)
 {
@@ -116,10 +119,10 @@ void Exporter::createPages(QPrinter *printer, QTextDocument *textDoc, bool sendT
             }
         }
     } else {
-        textDoc->rootFrame()->lastCursorPosition().insertText(QStringLiteral("kwordquiz %1").arg(KWORDQUIZ_VERSION_STRING));
+        textDoc->rootFrame()->lastCursorPosition().insertText(QStringLiteral("kwordquiz %1").arg(QStringLiteral(KWORDQUIZ_VERSION_STRING)));
 
         if (printStyle == Exam)
-            textDoc->rootFrame()->lastCursorPosition().insertText(' ' + i18n("Name:_____________________________ Date:__________"));
+            textDoc->rootFrame()->lastCursorPosition().insertText(QLatin1Char(' ') + i18n("Name:_____________________________ Date:__________"));
 
         QTextTable *table;
         if (printStyle == Exam)
