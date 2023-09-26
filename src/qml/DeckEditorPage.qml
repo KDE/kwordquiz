@@ -6,7 +6,6 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import Qt.labs.platform 1.1
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kwordquiz 1.0
 import org.kde.kitemmodels 1.0
 
