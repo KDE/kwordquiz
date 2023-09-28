@@ -3,13 +3,9 @@
 
 #pragma once
 
+#include <KNSCore/Entry>
 #include <QAbstractListModel>
 #include <keduvocdocument.h>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <KNSCore/EntryWrapper>
-#else
-#include <KNSCore/Entry>
-#endif
 
 /// @author Carl Schwan <carl@carlschwan.eu>
 class KWQDocumentModel : public QAbstractListModel
@@ -37,11 +33,7 @@ public:
     Q_INVOKABLE void add(KEduVocDocument *document);
     Q_INVOKABLE void remove(const int row);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Q_INVOKABLE void entryChanged(KNSCore::EntryWrapper *wrapper);
-#else
     Q_INVOKABLE void entryChanged(const KNSCore::Entry &wrapper);
-#endif
 
 private:
     std::vector<std::unique_ptr<KEduVocDocument>> m_documents;
