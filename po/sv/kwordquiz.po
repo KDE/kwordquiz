@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-05 00:41+0000\n"
+"POT-Creation-Date: 2023-09-28 01:38+0000\n"
 "PO-Revision-Date: 2023-08-01 08:32+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -25,90 +25,90 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@bredband.net"
 
-#: exporter.cpp:122
+#: exporter.cpp:125
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Namn:____________________________ Datum:__________"
 
-#: exporter.cpp:170
+#: exporter.cpp:173
 #, kde-format
 msgid "Score"
 msgstr "Poäng"
 
-#: kwqcardmodel.cpp:30
+#: kwqcardmodel.cpp:31
 #, kde-format
 msgid "Question"
 msgstr "Fråga"
 
-#: kwqcardmodel.cpp:32
+#: kwqcardmodel.cpp:33
 #, kde-format
 msgid "Answer"
 msgstr "Svar"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Ogiltigt gå till angivet: %1. Tillåtet: flash, mc och qa"
 
-#: main.cpp:90
+#: main.cpp:89
 #, kde-format
 msgid "KWordQuiz"
 msgstr "Kwordquiz"
 
-#: main.cpp:92
+#: main.cpp:91
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Ett kraftfullt program för snabbkort och ordförrådsinlärning"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "© 2003-2010, Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "Ursprunglig upphovsman"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "Konvertering till QML"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Ansvarig för KDE:s utbildningspaket"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner-systemet och flera bidrag till koden"
 
-#: main.cpp:121
+#: main.cpp:120
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -121,7 +121,7 @@ msgstr ""
 "'mc' för flerval,\n"
 "'qa' för frågor och svar"
 
-#: main.cpp:123
+#: main.cpp:122
 #, kde-format
 msgid "File to open"
 msgstr "Fil att öppna"
@@ -164,132 +164,132 @@ msgstr "Upprepa felaktiga"
 msgid "Try Again"
 msgstr "Försök igen"
 
-#: qml/DeckEditorPage.qml:33
+#: qml/DeckEditorPage.qml:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "Skapa kortlek"
 
-#: qml/DeckEditorPage.qml:35
+#: qml/DeckEditorPage.qml:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Redigera kortlek"
 
-#: qml/DeckEditorPage.qml:40
+#: qml/DeckEditorPage.qml:39
 #, kde-format
 msgid "Filter"
 msgstr "Filtrera"
 
-#: qml/DeckEditorPage.qml:43
+#: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
 msgstr "Filtrera..."
 
-#: qml/DeckEditorPage.qml:51
+#: qml/DeckEditorPage.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
 msgstr "Förhandsgranskning av utskrift"
 
-#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
 msgid "Flashcard"
 msgstr "Snabbkort"
 
-#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
 msgid "List"
 msgstr "Lista"
 
-#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
 msgid "Exam"
 msgstr "Prov"
 
-#: qml/DeckEditorPage.qml:73
+#: qml/DeckEditorPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Print"
 msgstr "Skriv ut"
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Skapa"
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Spara"
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "Ta bort bild"
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Länka till bild"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Ta bort ljud"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Länka till ljud"
 
-#: qml/DeckEditorPage.qml:156
+#: qml/DeckEditorPage.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "Ange språk"
 
-#: qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:161
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "Ange språk"
 
-#: qml/DeckEditorPage.qml:183
+#: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
 msgstr "Välj en bild"
 
-#: qml/DeckEditorPage.qml:192
+#: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
 msgstr "Välj ett ljud"
 
-#: qml/DeckEditorPage.qml:227
+#: qml/DeckEditorPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr "Namn:"
 
-#: qml/DeckEditorPage.qml:238
+#: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "Upphovsman:"
 
-#: qml/DeckEditorPage.qml:249
+#: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "Licens:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -446,80 +446,82 @@ msgctxt "@title:window"
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: qml/WelcomePage.qml:43
+#: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a KWordQuiz document"
 msgstr "Välj ett Kwordquiz-dokument"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
 msgstr "KEdu-dokument (*.kvtml)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "Wql documents (*.wql)"
 msgstr "Wql-dokument (*.wql)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "CSV documents (*.csv)"
 msgstr "CSV-dokument (*.csv)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF-dokument (*.xdxf)"
 
-#: qml/WelcomePage.qml:62
+#: qml/WelcomePage.qml:58
 #, kde-format
 msgid "Welcome to KWordQuiz"
 msgstr "Välkommen till Kwordquiz"
 
-#: qml/WelcomePage.qml:74
+#: qml/WelcomePage.qml:70
 #, kde-format
 msgid "Open Existing Document"
 msgstr "Öppna befintligt dokument"
 
-#: qml/WelcomePage.qml:80
+#: qml/WelcomePage.qml:76
 #, kde-format
 msgid "Create Deck"
 msgstr "Skapa kortlek"
 
-#: qml/WelcomePage.qml:88
+#: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
 msgstr "Ladda ner kortlek"
 
-#: qml/WelcomePage.qml:111
-#, kde-format
+#: qml/WelcomePage.qml:100
+#, fuzzy, kde-format
+#| msgid "Mode"
+msgctxt "@title:group"
 msgid "Mode"
 msgstr "Läge"
 
-#: qml/WelcomePage.qml:147
+#: qml/WelcomePage.qml:137
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Snabbkort"
 
-#: qml/WelcomePage.qml:154
+#: qml/WelcomePage.qml:144
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Flerval"
 
-#: qml/WelcomePage.qml:161
+#: qml/WelcomePage.qml:151
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "Frågor och svar"
 
-#: qml/WelcomePage.qml:177
+#: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
 msgstr "Kortlekar"
 
-#: qml/WelcomePage.qml:219
+#: qml/WelcomePage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

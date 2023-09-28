@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-05 00:41+0000\n"
+"POT-Creation-Date: 2023-09-28 01:38+0000\n"
 "PO-Revision-Date: 2023-07-20 07:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,90 +28,90 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: exporter.cpp:122
+#: exporter.cpp:125
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "სახელი:_____________________________ თარიღი:__________"
 
-#: exporter.cpp:170
+#: exporter.cpp:173
 #, kde-format
 msgid "Score"
 msgstr "ქულები"
 
-#: kwqcardmodel.cpp:30
+#: kwqcardmodel.cpp:31
 #, kde-format
 msgid "Question"
 msgstr "კითხვა"
 
-#: kwqcardmodel.cpp:32
+#: kwqcardmodel.cpp:33
 #, kde-format
 msgid "Answer"
 msgstr "პასუხი"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "მითითებული გადასვლა არასწორია: %1. შესაძლებელია: flash, mc და qa"
 
-#: main.cpp:90
+#: main.cpp:89
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:92
+#: main.cpp:91
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "ბარათებით ლექსიკონის სასწავლო პროგრამა"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "საწყისი ავტორი"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "QML-ზე გადაყვანა"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE-ის სასწავლო პროგრამების კოორდინატორი"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "ლაიტნერის სისტემა და კოდის რამდენიმე ჩასწორება"
 
-#: main.cpp:121
+#: main.cpp:120
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -124,7 +124,7 @@ msgstr ""
 "'mc' ერთზე მეტი არჩევანისთვის,\n"
 "'qa' კითხვაპასუხისთვის"
 
-#: main.cpp:123
+#: main.cpp:122
 #, kde-format
 msgid "File to open"
 msgstr "გასახსნელი ფაილი"
@@ -167,132 +167,132 @@ msgstr "შეცდომების გამეორება"
 msgid "Try Again"
 msgstr "კიდევ სცადეთ"
 
-#: qml/DeckEditorPage.qml:33
+#: qml/DeckEditorPage.qml:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "მაგიდის შექმნა"
 
-#: qml/DeckEditorPage.qml:35
+#: qml/DeckEditorPage.qml:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "მაგიდის ჩასწორება"
 
-#: qml/DeckEditorPage.qml:40
+#: qml/DeckEditorPage.qml:39
 #, kde-format
 msgid "Filter"
 msgstr "ფილტრი"
 
-#: qml/DeckEditorPage.qml:43
+#: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
 msgstr "გაფილტვრა..."
 
-#: qml/DeckEditorPage.qml:51
+#: qml/DeckEditorPage.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
 msgstr "დასაბეჭდის გადახედვა"
 
-#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
 msgid "Flashcard"
 msgstr "ბარათი"
 
-#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
 msgid "List"
 msgstr "სია"
 
-#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
 msgid "Exam"
 msgstr "გამოცდა"
 
-#: qml/DeckEditorPage.qml:73
+#: qml/DeckEditorPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Print"
 msgstr "დაბეჭდვა"
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "შექმნა"
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "შენახვა"
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "სურათის წაშლა"
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "ბმული სურათზე"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "ხმის მოცილება"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "ბმული ხმაზე"
 
-#: qml/DeckEditorPage.qml:156
+#: qml/DeckEditorPage.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "ენის არჩევა"
 
-#: qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:161
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "ენის დაყენება"
 
-#: qml/DeckEditorPage.qml:183
+#: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
 msgstr "აირჩიეთ გამოსახულება"
 
-#: qml/DeckEditorPage.qml:192
+#: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
 msgstr "აირჩიეთ ხმა"
 
-#: qml/DeckEditorPage.qml:227
+#: qml/DeckEditorPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr "სახელი:"
 
-#: qml/DeckEditorPage.qml:238
+#: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "ავტორი:"
 
-#: qml/DeckEditorPage.qml:249
+#: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "ლიცენზია:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -449,80 +449,82 @@ msgctxt "@title:window"
 msgid "Welcome"
 msgstr "კეთილი იყოს თქვენი მობრძანება"
 
-#: qml/WelcomePage.qml:43
+#: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a KWordQuiz document"
 msgstr "აირჩიეთ KWordQuiz -ის დოკუმენტი"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
 msgstr "KEduDocument (*.kvtml)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "Wql documents (*.wql)"
 msgstr "Wql დოკუმენტი (*.wql)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "CSV documents (*.csv)"
 msgstr "CSV დოკუმენტი (*.csv)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF დოკუმენტი (*.xdxf)"
 
-#: qml/WelcomePage.qml:62
+#: qml/WelcomePage.qml:58
 #, kde-format
 msgid "Welcome to KWordQuiz"
 msgstr "კეთილი იყოს თქვენი მობრძანება KWordQuiz-ში"
 
-#: qml/WelcomePage.qml:74
+#: qml/WelcomePage.qml:70
 #, kde-format
 msgid "Open Existing Document"
 msgstr "არსებული დოკუმენტის გახსნა"
 
-#: qml/WelcomePage.qml:80
+#: qml/WelcomePage.qml:76
 #, kde-format
 msgid "Create Deck"
 msgstr "მაგიდის შექმნა"
 
-#: qml/WelcomePage.qml:88
+#: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
 msgstr "მაგიდის გადმოწერა"
 
-#: qml/WelcomePage.qml:111
-#, kde-format
+#: qml/WelcomePage.qml:100
+#, fuzzy, kde-format
+#| msgid "Mode"
+msgctxt "@title:group"
 msgid "Mode"
 msgstr "რეჟიმი"
 
-#: qml/WelcomePage.qml:147
+#: qml/WelcomePage.qml:137
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "ბარათი"
 
-#: qml/WelcomePage.qml:154
+#: qml/WelcomePage.qml:144
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "მრავალი არჩევანი"
 
-#: qml/WelcomePage.qml:161
+#: qml/WelcomePage.qml:151
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "კითხვა და პასუხი"
 
-#: qml/WelcomePage.qml:177
+#: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
 msgstr "მაგიდები"
 
-#: qml/WelcomePage.qml:219
+#: qml/WelcomePage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

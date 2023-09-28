@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-05 00:41+0000\n"
+"POT-Creation-Date: 2023-09-28 01:38+0000\n"
 "PO-Revision-Date: 2023-07-20 11:13+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -33,90 +33,90 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aacid@kde.org,al016950@yahoo.es,orestes@tsc.upc.edu"
 
-#: exporter.cpp:122
+#: exporter.cpp:125
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Nom:_____________________________ Data:__________"
 
-#: exporter.cpp:170
+#: exporter.cpp:173
 #, kde-format
 msgid "Score"
 msgstr "Puntuació"
 
-#: kwqcardmodel.cpp:30
+#: kwqcardmodel.cpp:31
 #, kde-format
 msgid "Question"
 msgstr "Pregunta"
 
-#: kwqcardmodel.cpp:32
+#: kwqcardmodel.cpp:33
 #, kde-format
 msgid "Answer"
 msgstr "Resposta"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "S'ha indicat un «goto» no vàlid: %1. Es permet: «flash», «mc» i «qa»"
 
-#: main.cpp:90
+#: main.cpp:89
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:92
+#: main.cpp:91
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Un potent programa de targetes ràpides i aprenentatge de vocabulari"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "Autor original"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "Adaptació al QML"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Mantenidora del KDE educació i entreteniment"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Sistema Leitner i diverses contribucions al codi"
 
-#: main.cpp:121
+#: main.cpp:120
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -129,7 +129,7 @@ msgstr ""
 "«mc» per a tria múltiple, \n"
 "«qa» per a preguntes i respostes"
 
-#: main.cpp:123
+#: main.cpp:122
 #, kde-format
 msgid "File to open"
 msgstr "Fitxer a obrir"
@@ -172,132 +172,132 @@ msgstr "Repeteix els errors"
 msgid "Try Again"
 msgstr "Torneu-ho a intentar"
 
-#: qml/DeckEditorPage.qml:33
+#: qml/DeckEditorPage.qml:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "Crea un conjunt"
 
-#: qml/DeckEditorPage.qml:35
+#: qml/DeckEditorPage.qml:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Edita el conjunt"
 
-#: qml/DeckEditorPage.qml:40
+#: qml/DeckEditorPage.qml:39
 #, kde-format
 msgid "Filter"
 msgstr "Filtre"
 
-#: qml/DeckEditorPage.qml:43
+#: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
 msgstr "Filtre..."
 
-#: qml/DeckEditorPage.qml:51
+#: qml/DeckEditorPage.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
 msgstr "Vista prèvia d'impressió"
 
-#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
 msgid "Flashcard"
 msgstr "Targeta ràpida"
 
-#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
 msgid "List"
 msgstr "Llista"
 
-#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
 msgid "Exam"
 msgstr "Examen"
 
-#: qml/DeckEditorPage.qml:73
+#: qml/DeckEditorPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Print"
 msgstr "Imprimeix"
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Crea"
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Desa"
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "Elimina la imatge"
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Enllaça una imatge"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Elimina el so"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Enllaça un so"
 
-#: qml/DeckEditorPage.qml:156
+#: qml/DeckEditorPage.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "Estableix l'idioma"
 
-#: qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:161
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "Estableix l'idioma"
 
-#: qml/DeckEditorPage.qml:183
+#: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
 msgstr "Escolliu una imatge"
 
-#: qml/DeckEditorPage.qml:192
+#: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
 msgstr "Escolliu un so"
 
-#: qml/DeckEditorPage.qml:227
+#: qml/DeckEditorPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr "Nom:"
 
-#: qml/DeckEditorPage.qml:238
+#: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "Autor:"
 
-#: qml/DeckEditorPage.qml:249
+#: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "Llicència:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -454,80 +454,82 @@ msgctxt "@title:window"
 msgid "Welcome"
 msgstr "Us donem la benvinguda"
 
-#: qml/WelcomePage.qml:43
+#: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a KWordQuiz document"
 msgstr "Trieu un document del KWordQuiz"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
 msgstr "KEduDocument (*.kvtml)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "Wql documents (*.wql)"
 msgstr "Documents Wql (*.wql)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "CSV documents (*.csv)"
 msgstr "Documents CSV (*.csv)"
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
 msgstr "Documents XDXF (*.xdxf)"
 
-#: qml/WelcomePage.qml:62
+#: qml/WelcomePage.qml:58
 #, kde-format
 msgid "Welcome to KWordQuiz"
 msgstr "Us donem la benvinguda al KWordQuiz"
 
-#: qml/WelcomePage.qml:74
+#: qml/WelcomePage.qml:70
 #, kde-format
 msgid "Open Existing Document"
 msgstr "Obre un document existent"
 
-#: qml/WelcomePage.qml:80
+#: qml/WelcomePage.qml:76
 #, kde-format
 msgid "Create Deck"
 msgstr "Crea un conjunt"
 
-#: qml/WelcomePage.qml:88
+#: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
 msgstr "Baixa un conjunt"
 
-#: qml/WelcomePage.qml:111
-#, kde-format
+#: qml/WelcomePage.qml:100
+#, fuzzy, kde-format
+#| msgid "Mode"
+msgctxt "@title:group"
 msgid "Mode"
 msgstr "Mode"
 
-#: qml/WelcomePage.qml:147
+#: qml/WelcomePage.qml:137
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Targeta ràpida"
 
-#: qml/WelcomePage.qml:154
+#: qml/WelcomePage.qml:144
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Tria múltiple"
 
-#: qml/WelcomePage.qml:161
+#: qml/WelcomePage.qml:151
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "Pregunta-resposta"
 
-#: qml/WelcomePage.qml:177
+#: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
 msgstr "Conjunts"
 
-#: qml/WelcomePage.qml:219
+#: qml/WelcomePage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

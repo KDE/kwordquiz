@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-05 00:41+0000\n"
+"POT-Creation-Date: 2023-09-28 01:38+0000\n"
 "PO-Revision-Date: 2013-10-18 19:25+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -30,90 +30,90 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Caslav.ilic@gmx.nit,lalic@etf.ba,samir.ribic@etf.unsa.ba"
 
-#: exporter.cpp:122
+#: exporter.cpp:125
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
 msgstr "Ime:_____________________________ Datum:__________"
 
-#: exporter.cpp:170
+#: exporter.cpp:173
 #, kde-format
 msgid "Score"
 msgstr "Rezultat"
 
-#: kwqcardmodel.cpp:30
+#: kwqcardmodel.cpp:31
 #, kde-format
 msgid "Question"
 msgstr "Pitanje"
 
-#: kwqcardmodel.cpp:32
+#: kwqcardmodel.cpp:33
 #, kde-format
 msgid "Answer"
 msgstr "Odgovor"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:90
+#: main.cpp:89
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:92
+#: main.cpp:91
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Moćan program za učenje rječnika i pomoću brzih kartica"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Održavalac obrazovnog KDE softvera"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:101
+#: main.cpp:100
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner sistem i nekoliko doprinosa kodu"
 
-#: main.cpp:121
+#: main.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "Type of session to start with: \n"
@@ -133,7 +133,7 @@ msgstr ""
 "'qa' za pitanje i odgovor, \n"
 "'tutor' za tutora"
 
-#: main.cpp:123
+#: main.cpp:122
 #, kde-format
 msgid "File to open"
 msgstr "Datoteka za otvaranje"
@@ -178,13 +178,13 @@ msgstr "Ponovi &greške"
 msgid "Try Again"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:33
+#: qml/DeckEditorPage.qml:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:35
+#: qml/DeckEditorPage.qml:34
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox vocabulary editor"
 #| msgid "Editor"
@@ -192,64 +192,64 @@ msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Uređivač"
 
-#: qml/DeckEditorPage.qml:40
+#: qml/DeckEditorPage.qml:39
 #, kde-format
 msgid "Filter"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:43
+#: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
 msgstr ""
 
-#: qml/DeckEditorPage.qml:51
+#: qml/DeckEditorPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Showing Preview..."
 msgctxt "@action:button"
 msgid "Print Preview"
 msgstr "Prikazujem preglef..."
 
-#: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
+#: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
 msgid "Flashcard"
 msgstr "Brza kartica"
 
-#: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
+#: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
 msgid "List"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:67 qml/DeckEditorPage.qml:89
+#: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
 msgid "Exam"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:73
+#: qml/DeckEditorPage.qml:72
 #, fuzzy, kde-format
 #| msgid "Printing..."
 msgctxt "@action:button"
 msgid "Print"
 msgstr "Štampam..."
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:95
+#: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:121
+#: qml/DeckEditorPage.qml:120
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu undo link image"
 #| msgid "Link Image"
@@ -257,14 +257,14 @@ msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Poveži sliku"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, fuzzy, kde-format
 #| msgid "Select Sound"
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Izaberite zvuk"
 
-#: qml/DeckEditorPage.qml:123
+#: qml/DeckEditorPage.qml:122
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu undo link sound"
 #| msgid "Link Sound"
@@ -272,49 +272,49 @@ msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Poveži zvuk"
 
-#: qml/DeckEditorPage.qml:156
+#: qml/DeckEditorPage.qml:155
 #, fuzzy, kde-format
 #| msgid "Language 1"
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "Jezik 1"
 
-#: qml/DeckEditorPage.qml:162
+#: qml/DeckEditorPage.qml:161
 #, fuzzy, kde-format
 #| msgid "Language 1"
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "Jezik 1"
 
-#: qml/DeckEditorPage.qml:183
+#: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:192
+#: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:227
+#: qml/DeckEditorPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:238
+#: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr ""
 
-#: qml/DeckEditorPage.qml:249
+#: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr ""
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:233
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox vocabulary editor"
 #| msgid "Editor"
@@ -496,85 +496,87 @@ msgctxt "@title:window"
 msgid "Welcome"
 msgstr ""
 
-#: qml/WelcomePage.qml:43
+#: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a KWordQuiz document"
 msgstr ""
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
 msgstr ""
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "Wql documents (*.wql)"
 msgstr ""
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "CSV documents (*.csv)"
 msgstr ""
 
-#: qml/WelcomePage.qml:45
+#: qml/WelcomePage.qml:42
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
 msgstr ""
 
-#: qml/WelcomePage.qml:62
+#: qml/WelcomePage.qml:58
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
 msgid "Welcome to KWordQuiz"
 msgstr "Izlazi i KWordQuiz-a"
 
-#: qml/WelcomePage.qml:74
+#: qml/WelcomePage.qml:70
 #, fuzzy, kde-format
 #| msgid "Opens an existing vocabulary document"
 msgid "Open Existing Document"
 msgstr "Otvara postojeći rječnički dokument"
 
-#: qml/WelcomePage.qml:80
+#: qml/WelcomePage.qml:76
 #, kde-format
 msgid "Create Deck"
 msgstr ""
 
-#: qml/WelcomePage.qml:88
+#: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
 msgstr ""
 
-#: qml/WelcomePage.qml:111
-#, kde-format
+#: qml/WelcomePage.qml:100
+#, fuzzy, kde-format
+#| msgid "Mode"
+msgctxt "@title:group"
 msgid "Mode"
 msgstr "Režim"
 
-#: qml/WelcomePage.qml:147
+#: qml/WelcomePage.qml:137
 #, fuzzy, kde-format
 #| msgid "Flashcard"
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Brza kartica"
 
-#: qml/WelcomePage.qml:154
+#: qml/WelcomePage.qml:144
 #, fuzzy, kde-format
 #| msgid "Multiple Choice"
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Višestruki izbor"
 
-#: qml/WelcomePage.qml:161
+#: qml/WelcomePage.qml:151
 #, fuzzy, kde-format
 #| msgid "Question & Answer"
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "Pitanje i odgovor"
 
-#: qml/WelcomePage.qml:177
+#: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
 msgstr ""
 
-#: qml/WelcomePage.qml:219
+#: qml/WelcomePage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
