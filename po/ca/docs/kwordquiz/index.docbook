@@ -253,7 +253,7 @@
 >L'àrea de document del vocabulari té l'aspecte d'una quadrícula similar a un full de càlcul. La quadrícula està constituïda per cel·les organitzades en dues columnes i una sèrie de files. Cada columna i cada línia tenen un encapçalament. Els encapçalaments de les columnes s'utilitzen per a especificar els títols del document de vocabulari. Es poden configurar editant la primera fila. </para>
 
 <para
->Podeu fer clic a una cel·la de la quadrícula per a fer-la activa. Podeu fer servir les fletxes amunt i avall per a moure's amunt i avall per la taula, i el tabulador per anar a l'element següent.</para>
+>Podeu fer clic a una cel·la de la quadrícula per a fer-la activa. Podeu fer servir les fletxes amunt i avall per a moure's amunt i avall per la taula, i el tabulador per a anar a l'element següent.</para>
 
 <screenshot>
   <screeninfo
@@ -288,7 +288,7 @@
 >. Si canvieu les opcions durant una sessió, la sessió s'iniciarà des del començament. </para>
 
 <para
->Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida del tipus de lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les parts diferents de la finestra. </para>
+>Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida de la lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les parts diferents de la finestra. </para>
 
 <screenshot>
   <screeninfo
@@ -335,7 +335,7 @@
 >Opcions</guimenu
 >. Si canvieu el mode durant una sessió, la sessió s'iniciarà des del començament. </para>
 <para
->Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida del tipus de lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les diferents parts de la finestra. </para>
+>Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida de la lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les diferents parts de la finestra. </para>
 <para
 >En l'exemple següent l'usuari dona una resposta incorrecta a la pregunta. Ell o ella està responent a la següent qüestió. </para>
 
@@ -382,7 +382,7 @@
 >Mode</guimenu
 >. Si canvieu el mode durant una sessió, la sessió s'iniciarà des del començament. </para>
 <para
->Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida del tipus de lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les diferents parts de la finestra. </para>
+>Si treballeu amb expressions llargues, la finestra es pot redimensionar per a disposar de més espai. La mida de la lletra (seleccionada per l'editor) també influirà sobre com s'ajustarà el text en les diferents parts de la finestra. </para>
 <para
 >En l'exemple següent l'usuari dona una resposta correcta a la qüestió anterior (per a veure el comportament en una resposta incorrecta, vegeu el capítol <link linkend="multiple"
 >Tria múltiple</link
@@ -508,7 +508,7 @@
 <para
 >El &kwordquiz; ofereix la possibilitat d'imprimir els documents de vocabulari en diversos formats. Les opcions d'impressió són disponibles en l'editor del &kwordquiz;. En seleccionar <guibutton
 >Imprimeix...</guibutton
-> es mostrarà un menú ha on podreu seleccionar imprimir el document com una llista de vocabulari (&ead;, tal com es mostra en l'editor), com un exercici de vocabulari o com targetes ràpides. Una vegada seleccionat el mode, es mostrarà el diàleg d'impressió estàndard de &kde;. </para>
+> es mostrarà un menú a on podreu seleccionar imprimir el document com una llista de vocabulari (&ead;, tal com es mostra en l'editor), com un exercici de vocabulari o com targetes ràpides. Una vegada seleccionat el mode, es mostrarà el diàleg d'impressió estàndard de &kde;. </para>
 <screenshot>
   <screeninfo
 >Opcions d'impressió del vocabulari</screeninfo>
@@ -527,7 +527,7 @@
 <title
 >Llista de vocabulari</title>
 <para
->El vocabulari l'imprimireu tal com s'indica a l'editor; incloent-hi el tipus de lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
+>El vocabulari l'imprimireu tal com s'indica a l'editor; incloent-hi la lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
 </formalpara>
 <screenshot>
   <screeninfo
@@ -547,7 +547,7 @@
 <title
 >Examen de vocabulari</title>
 <para
->El vocabulari s'imprimirà tal com s'indica a l'editor; a part que es deixarà buida la columna de la dreta i s'afegirà una tercera columna per a valorar el resultat. Les opcions utilitzades incloses: el tipus de lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
+>El vocabulari s'imprimirà tal com s'indica a l'editor; a part que es deixarà buida la columna de la dreta i s'afegirà una tercera columna per a valorar el resultat. Les opcions utilitzades incloses: la lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
 </formalpara>
 <screenshot>
   <screeninfo
