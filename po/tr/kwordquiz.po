@@ -12,13 +12,13 @@
 # Muhammet Kara <muhammetk@gmail.com>, 2009.
 # obsoleteman <tulliana@gmail.com>, 2007-2008,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2015.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 02:51+0000\n"
-"PO-Revision-Date: 2023-08-22 15:48+0300\n"
+"PO-Revision-Date: 2023-09-28 10:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -41,12 +41,12 @@ msgstr "bbolat@yildiz.edu.tr, ayhanyalcinsoy@gmail.com, emir_sari@icloud.com"
 #: exporter.cpp:122
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
-msgstr "Ad:_____________________________ Tarih:__________"
+msgstr "Ad:_______________________________ Tarih:_________"
 
 #: exporter.cpp:170
 #, kde-format
 msgid "Score"
-msgstr "Skor"
+msgstr "Puan"
 
 #: kwqcardmodel.cpp:30
 #, kde-format
@@ -165,7 +165,7 @@ msgstr ""
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Olabilecek en iyi puanı aldınız"
 
 #: qml/BasePage.qml:75
 #, kde-format
@@ -429,7 +429,7 @@ msgstr "Genel"
 #: qml/SettingsPage.qml:30
 #, kde-format
 msgid "Show score as percentage"
-msgstr "Skoru yüzde olarak göster"
+msgstr "Puanı yüzde olarak göster"
 
 #: qml/SettingsPage.qml:47
 #, fuzzy, kde-format
