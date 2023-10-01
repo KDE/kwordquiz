@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:38+0000\n"
-"PO-Revision-Date: 2023-09-17 12:29+0200\n"
+"PO-Revision-Date: 2023-09-30 10:12+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -164,29 +164,26 @@ msgstr[1] "Popełniłeś %1 błędy"
 msgstr[2] "Popełniłeś %1 błędów"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "Powtórz błę&dy"
+msgstr "Powtórz błędy"
 
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "Spróbuj ponownie"
 
 #: qml/DeckEditorPage.qml:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
-msgstr ""
+msgstr "Utwórz zestaw"
 
 #: qml/DeckEditorPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "Edytor"
+msgstr "Edytuj zestaw"
 
 #: qml/DeckEditorPage.qml:39
 #, kde-format
@@ -241,28 +238,22 @@ msgstr "Zapisz"
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "Usuń obrazek"
 
 #: qml/DeckEditorPage.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Dowiąż obraz"
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr "Wybierz dźwięk"
+msgstr "Usuń dźwięk"
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Dowiąż dźwięk"
@@ -274,21 +265,20 @@ msgid "Set language"
 msgstr "Ustaw język"
 
 #: qml/DeckEditorPage.qml:161
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "Język 1"
+msgstr "Ustaw język"
 
 #: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
-msgstr ""
+msgstr "Wybierz obraz"
 
 #: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr ""
+msgstr "Wybierz dźwięk"
 
 #: qml/DeckEditorPage.qml:226
 #, kde-format
@@ -496,10 +486,9 @@ msgid "Welcome to KWordQuiz"
 msgstr "Witaj w KWordQuiz"
 
 #: qml/WelcomePage.qml:70
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "Otwiera istniejący dokument słownikowy"
+msgstr "Otwórz istniejący dokument"
 
 #: qml/WelcomePage.qml:76
 #, kde-format
@@ -512,8 +501,7 @@ msgid "Download Deck"
 msgstr "Pobierz zestaw"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Tryb"
@@ -525,11 +513,10 @@ msgid "Flashcard"
 msgstr "Fiszka"
 
 #: qml/WelcomePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
-msgstr "Wiele odpowiedzi"
+msgstr "Wielokrotny wybór"
 
 #: qml/WelcomePage.qml:151
 #, kde-format
