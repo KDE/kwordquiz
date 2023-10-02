@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 02:51+0000\n"
-"PO-Revision-Date: 2023-09-17 12:29+0200\n"
+"PO-Revision-Date: 2023-10-01 09:47+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -375,7 +375,7 @@ msgstr "Wymieszaj"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "Podpowiedź"
+msgstr "Podpowiedz"
 
 #: qml/SettingsPage.qml:13
 #, kde-format
