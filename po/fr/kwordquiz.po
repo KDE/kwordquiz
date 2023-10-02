@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:38+0000\n"
-"PO-Revision-Date: 2023-09-14 18:38+0200\n"
+"PO-Revision-Date: 2023-09-30 11:07+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -515,8 +515,7 @@ msgid "Download Deck"
 msgstr "Télécharger une plate-forme"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Mode"
