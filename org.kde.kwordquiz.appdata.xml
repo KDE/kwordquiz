@@ -36,7 +36,7 @@
   <name xml:lang="sk">KWordQuiz</name>
   <name xml:lang="sl">KWordQuiz</name>
   <name xml:lang="sv">KWordQuiz</name>
-  <name xml:lang="tr">KWordQuiz</name>
+  <name xml:lang="tr">K Sözcük Oyunu</name>
   <name xml:lang="uk">KWordQuiz</name>
   <name xml:lang="x-test">xxKWordQuizxx</name>
   <name xml:lang="zh-CN">KWordQuiz</name>
@@ -107,7 +107,7 @@
     <p xml:lang="sk">KWordQuiz je všeobecný kartový program. Dá sa použiť na učenie slovnej zásoby a na mnoho iných účelov. Obsahuje editor a 5 rôznych režimov kvízov s kartami. Používa formát súborov KVTML a súbory sa dajú stiahnuť priamo z aplikácie.</p>
     <p xml:lang="sl">KWordQuiz je splošen program za učenje s spominskimi kartami. Uporabite ga lahko za učenje besedišča in drugih zadev. Ponuja urejevalnik in pet različnih načinov kviza s spominskimi kartami. Uporabniško prispevane datoteke KVTML, ki jih uporablja, lahko prejmete znotraj programa.</p>
     <p xml:lang="sv">Kwordquiz är ett generellt program för snabbkort. Det kan användas för inlärning av ordförråd och många andra ämnen. Det tillhandahåller en editor och fem olika frågemetoder för snabbkort. Det använder filformatet KVTML, och bidragna filer kan laddas ner inne i programmet.</p>
-    <p xml:lang="tr">KWordQuiz genel amaçlı bir bilgi kartı çalıştırma programıdır. Sözcük öğrenmek veya başka bir çok konu için kullanılabilir. Bir düzenleyici ve beş farklı bilgi kartı sınav kipi içerir. KVTML dosya biçimini kullanır ve katkı verilmiş dosyalar uygulama içinden indirilebilir.</p>
+    <p xml:lang="tr">K Sözcük Oyunu genel amaçlı bir bilgi kartı çalıştırma programıdır. Söz dağarcığı genişletmek veya başka bir çok konu için kullanılabilir. Bir düzenleyici ve beş farklı bilgi kartı sınav kipi içerir. KVTML dosya biçimini kullanır ve katkı verilmiş dosyalar uygulama içinden indirilebilir.</p>
     <p xml:lang="uk">KWordQuiz — програма для навчання за допомогою карток загального призначення. Нею можна скористатися для поповнення словникового запасу іноземною мовою або вивчення інших дисциплін. У програмі передбачено редактор та п’ять різних режимів навчання за допомогою карток. Для даних використовується формат файлів KVTML, файли даних, створені іншими користувачами, можна отримати безпосередньо за допомогою програми.</p>
     <p xml:lang="x-test">xxKWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.xx</p>
     <p xml:lang="zh-CN">KWordQuiz 是一款通用题卡程序，它可用于词汇学习及其他许多问题上，并能提供编辑器及五个不同的题卡测验模式。本程序使用了 KVTML 格式的文件，程序内还可直接下载他人贡献的文件。</p>
@@ -136,7 +136,7 @@
       <caption xml:lang="pt-BR">Página de boas-vindas do KWordQuiz</caption>
       <caption xml:lang="sl">KWordQuiz stran dobrodošlice</caption>
       <caption xml:lang="sv">KWordQuiz välkomstsida</caption>
-      <caption xml:lang="tr">KWordQuiz karşılama sayfası</caption>
+      <caption xml:lang="tr">K Sözcük Oyunu karşılama sayfası</caption>
       <caption xml:lang="uk">Сторінка вітання KWordQuiz</caption>
       <caption xml:lang="x-test">xxKWordQuiz welcome pagexx</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/home.png</image>
@@ -193,7 +193,7 @@
       <caption xml:lang="sk">Kvíz s kartami v KWordQuiz</caption>
       <caption xml:lang="sl">Kviz s spominskimi kartami KWordQuiz</caption>
       <caption xml:lang="sv">Snabbkortsprov i KWordQuiz</caption>
-      <caption xml:lang="tr">KWordQuiz'de bilgi kartı sınavı</caption>
+      <caption xml:lang="tr">K Sözcük Oyunu'nda bilgi kartı sınavı</caption>
       <caption xml:lang="uk">Тест за допомогою карток у KWordQuiz</caption>
       <caption xml:lang="x-test">xxFlashcard quiz in KWordQuizxx</caption>
       <caption xml:lang="zh-CN">KWordQuiz 中的抽认卡测试</caption>
@@ -218,7 +218,7 @@
       <caption xml:lang="pt-BR">Modo de múltipla escolha no KWordQuiz</caption>
       <caption xml:lang="sl">Način večkratnega izbora v KWordQuiz</caption>
       <caption xml:lang="sv">Flerval i KWordQuiz</caption>
-      <caption xml:lang="tr">KWordQuiz'de çoktan seçmeli kip</caption>
+      <caption xml:lang="tr">K Sözcük Oyunu'nda çoktan seçmeli kip</caption>
       <caption xml:lang="uk">Режим вибору з варіантів у KWordQuiz</caption>
       <caption xml:lang="x-test">xxMultiple choice mode in KWordQuizxx</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/multiple-choice.png</image>
@@ -241,7 +241,7 @@
       <caption xml:lang="pt-BR">Modo de resposta a perguntas no KWordQuiz</caption>
       <caption xml:lang="sl">Način odgovarjanja na vprašanja v KWordQuiz</caption>
       <caption xml:lang="sv">Fråga-svar i KWordQuiz</caption>
-      <caption xml:lang="tr">KWordQuiz'de soru-yanıt kipi</caption>
+      <caption xml:lang="tr">K Sözcük Oyunu'nda soru-yanıt kipi</caption>
       <caption xml:lang="uk">Режим відповіді на питання у KWordQuiz</caption>
       <caption xml:lang="x-test">xxQuestion response mode in KWordQuizxx</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/question-response.png</image>
