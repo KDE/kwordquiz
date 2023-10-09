@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:38+0000\n"
-"PO-Revision-Date: 2023-08-06 23:07+0200\n"
+"PO-Revision-Date: 2023-10-08 23:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -494,8 +494,7 @@ msgid "Download Deck"
 msgstr "덱 다운로드"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "모드"
