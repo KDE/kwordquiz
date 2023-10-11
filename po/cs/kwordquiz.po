@@ -497,11 +497,10 @@ msgid "Download Deck"
 msgstr "Stáhnout balíček"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
-msgstr "Režim"
+msgstr ""
 
 #: qml/WelcomePage.qml:137
 #, kde-format
