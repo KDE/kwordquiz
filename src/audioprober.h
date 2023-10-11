@@ -12,13 +12,7 @@
 #include <QTimer>
 #include <QVariant>
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QAudioProbe>
-
-class AudioProber : public QAudioProbe
-#else
 class AudioProber : public QObject
-#endif
 {
     Q_OBJECT
     Q_PROPERTY(QVariantList volumesList READ volumesList NOTIFY volumesListChanged)
@@ -30,9 +24,6 @@ public:
 
     Q_INVOKABLE void setSource(QObject *source);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    void process(QAudioBuffer buffer);
-#endif
     void processVolumeBar();
 
     QVariantList volumesList() const;
@@ -43,9 +34,6 @@ public:
     int animationIndex();
 
 private:
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    void handlePlayerState(QMediaPlayer::State state);
-#endif
 
     int m_audioSum = 0; //
     int m_audioLen = 0; // used for calculating the value of one volume bar from many

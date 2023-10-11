@@ -6,94 +6,19 @@
  */
 
 #include "audioprober.h"
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <qmediaobject.h>
-#endif
 
 AudioProber::AudioProber(QObject *parent)
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    : QAudioProbe{parent}
-#else
     : QObject{parent}
-#endif
 {
 }
 
 void AudioProber::setSource(QObject *source)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    auto player = qvariant_cast<QMediaPlayer *>(source->property("mediaObject"));
-
-    m_playerSource = player;
-    QAudioProbe::setSource(player);
-
-    connect(this, &AudioProber::audioBufferProbed, this, &AudioProber::process);
-
-    // connect to player
-    connect(m_playerSource, &QMediaPlayer::stateChanged, this, &AudioProber::handlePlayerState);
-
-    // loop to add volume bars
-    volumeBarTimer = new QTimer(this);
-    connect(volumeBarTimer, &QTimer::timeout, this, &AudioProber::processVolumeBar);
-    volumeBarTimer->setInterval(150);
-#endif
 }
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void AudioProber::handlePlayerState(QMediaPlayer::State state)
-{
-    if (state == QMediaPlayer::PlayingState) {
-        volumeBarTimer->start();
-    } else if (state == QMediaPlayer::PausedState) {
-        volumeBarTimer->stop();
-    } else if (state == QMediaPlayer::StoppedState) {
-        volumeBarTimer->stop();
-    }
-}
-#endif
 
 void AudioProber::processVolumeBar()
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (isActive()) {
-        // m_audioLen might be 0
-        const int val = m_audioLen == 0 ? 0 : m_audioSum / m_audioLen;
-
-        m_volumesList.append(val);
-        Q_EMIT volumesListAdded(val);
-
-        if (m_volumesList.count() > m_maxVolumes) {
-            m_volumesList.removeFirst();
-        }
-
-        Q_EMIT volumesListChanged();
-
-        // index of rectangle to animate
-        if (m_volumesList.count() != 0) {
-            m_animationIndex = m_volumesList.count();
-            Q_EMIT animationIndexChanged();
-        }
-
-        m_audioSum = 0;
-        m_audioLen = 0;
-    }
-#endif
 }
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void AudioProber::process(QAudioBuffer buffer)
-{
-    int sum = 0;
-    for (int i = 0; i < buffer.sampleCount(); i++) {
-        sum += abs(static_cast<short *>(buffer.data())[i]);
-    }
-
-    sum /= buffer.sampleCount();
-
-    m_audioSum += sum;
-    m_audioLen++;
-}
-#endif
 
 QVariantList AudioProber::volumesList() const
 {
