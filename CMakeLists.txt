@@ -57,9 +57,7 @@ find_package(KF6 ${KF5_MIN_VERSION} COMPONENTS
     Crash
     Config
     DocTools
-    NotifyConfig
     NewStuff
-    Notifications
     Kirigami2
     DBusAddons
 )

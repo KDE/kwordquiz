@@ -59,8 +59,6 @@ target_link_libraries(kwordquiz
     KF6::ConfigGui
     KF6::I18n
     KF6::NewStuffCore
-    KF6::Notifications
-    KF6::NotifyConfig
     KF6::DBusAddons
     LibKEduVocDocumentImport__KEduVocDocument
 )
@@ -72,5 +70,4 @@ install(TARGETS kwordquiz ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kwordquiz.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES kwordquiz.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 install(FILES kwordquiz.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR})
-install(FILES kwordquiz.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 
