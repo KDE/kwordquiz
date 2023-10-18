@@ -29,8 +29,6 @@ set(kwordquiz_SRCS
     kwqrandomsortmodel.cpp
     exporter.h
     exporter.cpp
-    audioprober.h
-    audioprober.cpp
     blankanswer.h
     blankanswer.cpp
     fileopener.h

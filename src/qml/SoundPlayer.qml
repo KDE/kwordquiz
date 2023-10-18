@@ -17,8 +17,8 @@ QQC2.AbstractButton {
         audio.play();
     }
 
-    onClicked: if (audio.playbackState === Audio.PlayingState) {
-        audio.stop();
+    onClicked: if (audio.playbackState === MediaPlayer.PlayingState) {
+        audio.pause();
     } else {
         audio.play();
     }
@@ -26,31 +26,26 @@ QQC2.AbstractButton {
     leftPadding: Kirigami.Units.largeSpacing
     rightPadding: Kirigami.Units.largeSpacing
 
-    Audio {
+    MediaPlayer {
         id: audio
         source: root.progressInfo.localPath
+        audioOutput: AudioOutput {}
     }
 
     contentItem: RowLayout {
         Kirigami.Icon {
-            source: audio.playbackState === Audio.PlayingState ? "media-playback-pause" : "media-playback-start"
+            source: audio.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
         }
 
-        Visualization {
-            id: visualization
-
+        QQC2.Slider {
             Layout.fillWidth: true
-            implicitHeight: Kirigami.Units.gridUnit * 3
-
-            prober: AudioProber {
-                Component.onCompleted: setSource(audio)
-            }
-
-            maxBarHeight: Kirigami.Units.gridUnit * 3
-            animationIndex: prober.animationIndex
-            volumes: prober.volumesList
+            from: 0.0
+            to: 1.0
+            enabled: audio.seekable
+            value: audio.position / audio.duration
+            onMoved: audio.setPosition(value * audio.duration)
         }
     }
 

@@ -18,7 +18,6 @@
 #include <KLocalizedString>
 #include <qstringliteral.h>
 
-#include "audioprober.h"
 #include "blankanswer.h"
 #include "exporter.h"
 #include "fileopener.h"
@@ -142,7 +141,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
     qmlRegisterType<FileOpener>("org.kde.kwordquiz", 1, 0, "FileOpener");
     qmlRegisterType<Exporter>("org.kde.kwordquiz", 1, 0, "Exporter");
-    qmlRegisterType<AudioProber>("org.kde.kwordquiz", 1, 0, "AudioProber");
     qmlRegisterType<BlankAnswer>("org.kde.kwordquiz", 1, 0, "BlankAnswer");
     qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
     qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
