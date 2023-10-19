@@ -65,7 +65,7 @@ void Exporter::createPages(QPrinter *printer, QTextDocument *textDoc, bool sendT
         tableFormat.setCellSpacing(0);
         tableFormat.setCellPadding(0);
 
-        QVector<QTextLength> constraints;
+        QList<QTextLength> constraints;
         constraints.append(QTextLength(QTextLength::FixedLength, cardWidth));
         constraints.append(QTextLength(QTextLength::FixedLength, cardWidth));
 
@@ -138,7 +138,7 @@ void Exporter::createPages(QPrinter *printer, QTextDocument *textDoc, bool sendT
         tableFormat.setBorderBrush(QBrush(Qt::black));
         tableFormat.setCellPadding(2);
 
-        QVector<QTextLength> constraints;
+        QList<QTextLength> constraints;
         // constraints.append(QTextLength(QTextLength::FixedLength,
         // verticalHeader()->width()));
         constraints.append(QTextLength(QTextLength::FixedLength, 100));
