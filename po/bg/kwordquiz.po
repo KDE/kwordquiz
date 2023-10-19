@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:38+0000\n"
+"POT-Creation-Date: 2023-10-19 01:40+0000\n"
 "PO-Revision-Date: 2010-10-06 10:04+0300\n"
 "Last-Translator: Yasen Pramatarov <yasen@lindeas.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -48,70 +48,70 @@ msgstr "Въпрос"
 msgid "Answer"
 msgstr "Отговор"
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:91
+#: main.cpp:90
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Обучаваща програма за разширяване на речниковия запас"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgid "Peter Hedlund"
 msgstr ""
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE Edutainment Maintainer"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr ""
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr ""
 
-#: main.cpp:120
+#: main.cpp:119
 #, fuzzy, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -124,7 +124,7 @@ msgstr ""
 "\"mc\" за много възможности, \n"
 "\"qa\" за въпроси и отговори"
 
-#: main.cpp:122
+#: main.cpp:121
 #, kde-format
 msgid "File to open"
 msgstr "Файл за отваряне"

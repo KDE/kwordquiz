@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:38+0000\n"
+"POT-Creation-Date: 2023-10-19 01:40+0000\n"
 "PO-Revision-Date: 2023-10-08 23:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -48,70 +48,70 @@ msgstr "질문"
 msgid "Answer"
 msgstr "답"
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "잘못된 goto가 지정됨: %1. 사용 가능: flash, mc, ga"
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:91
+#: main.cpp:90
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "강력한 플래시카드와 단어 학습 프로그램"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "원 작성자"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "QML 이식"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE 에듀테인먼트 관리자"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner 시스템 및 여러 코드"
 
-#: main.cpp:120
+#: main.cpp:119
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -124,7 +124,7 @@ msgstr ""
 "객관식은 'mc', \n"
 "주관식은 'qa'"
 
-#: main.cpp:122
+#: main.cpp:121
 #, kde-format
 msgid "File to open"
 msgstr "열 파일"

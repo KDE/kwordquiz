@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz trunk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:38+0000\n"
+"POT-Creation-Date: 2023-10-19 01:40+0000\n"
 "PO-Revision-Date: 2019-12-12 21:38+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
@@ -48,70 +48,70 @@ msgstr "ചോദ്യം"
 msgid "Answer"
 msgstr "ഉത്തരം"
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "KWordQuiz"
 msgstr "കെവേര്‍ഡ്ക്വിസ്"
 
-#: main.cpp:91
+#: main.cpp:90
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "ഒരു ശക്തിയേറിയ ഫ്ലാഷ്‌കാര്‍ഡ്, പദസഞ്ചയ പഠന പ്രോഗ്രാം"
 
-#: main.cpp:93
+#: main.cpp:92
 #, fuzzy, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2007, പീറ്റര്‍ ഹെഡ്ലണ്ട്"
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "പീറ്റര്‍ ഹെഡ്ലണ്ട്"
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "ആന്‍-മറീ മഹ്ഫൂഫ്"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "കെഡിഇ എഡ്യൂടെയ്ന്‍മെന്റ് പരിപാലകന്‍"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "മാര്‍ട്ടിന്‍ ഫൈഫര്‍"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "ലീറ്റ്നര്‍ സിസ്റ്റവും അനവധി കോഡ് സംഭാവനകളും"
 
-#: main.cpp:120
+#: main.cpp:119
 #, fuzzy, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -124,7 +124,7 @@ msgstr ""
 "'mc' അനവധി ചോയ്സിനായി, \n"
 "'qa' ചോദ്യോത്തരത്തിനായി"
 
-#: main.cpp:122
+#: main.cpp:121
 #, kde-format
 msgid "File to open"
 msgstr "തുറക്കേണ്ട ഫയല്‍"

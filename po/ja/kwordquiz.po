@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:38+0000\n"
+"POT-Creation-Date: 2023-10-19 01:40+0000\n"
 "PO-Revision-Date: 2009-03-02 21:12+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -50,71 +50,71 @@ msgstr "問題"
 msgid "Answer"
 msgstr "答え"
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:91
+#: main.cpp:90
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "パワフルなフラッシュカードと語彙の学習プログラム"
 
-#: main.cpp:93
+#: main.cpp:92
 #, fuzzy, kde-format
 #| msgid "(c) 2003-2007, Peter Hedlund"
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2007, Peter Hedlund"
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:97
+#: main.cpp:96
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:99
+#: main.cpp:98
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE エデュテインメントのメンテナ"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:100
+#: main.cpp:99
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner システム、いくつかのコードを寄贈"
 
-#: main.cpp:120
+#: main.cpp:119
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -127,7 +127,7 @@ msgstr ""
 "mc --- 選択式問題\n"
 "qa --- Q&A 方式"
 
-#: main.cpp:122
+#: main.cpp:121
 #, kde-format
 msgid "File to open"
 msgstr "開くファイル"
