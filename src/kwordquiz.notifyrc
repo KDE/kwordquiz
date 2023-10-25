@@ -202,7 +202,7 @@ Comment[vi]=Sửa câu trả lời
 Comment[x-test]=xxCorrect answerxx
 Comment[zh_CN]=正确的答案
 Comment[zh_TW]=正確答案
-Sound=Oxygen-Sys-App-Positive.ogg
+Sound=outcome-success
 Action=Sound
 
 [Event/QuizError]
@@ -337,7 +337,7 @@ Comment[vi]=Câu trả lời sai
 Comment[x-test]=xxWrong answerxx
 Comment[zh_CN]=错误的答案
 Comment[zh_TW]=錯誤答案
-Sound=Oxygen-Sys-App-Negative.ogg
+Sound=outcome-failure
 Action=Sound
 
 [Event/SyntaxError]
@@ -473,5 +473,5 @@ Comment[vi]=Có lỗi trong ngữ pháp
 Comment[x-test]=xxError in syntaxxx
 Comment[zh_CN]=语法有错
 Comment[zh_TW]=語法錯誤
-Sound=Oxygen-Sys-Warning.ogg
+Sound=dialog-warning
 Action=Sound
