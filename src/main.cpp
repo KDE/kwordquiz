@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 #endif
 
     KCrash::initialize();
-    KLocalizedString::setApplicationDomain("kwordquiz");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kwordquiz"));
     QApplication::setApplicationName(u"kwordquiz"_s);
     QApplication::setApplicationVersion(QStringLiteral(KWORDQUIZ_VERSION_STRING));
     QApplication::setOrganizationDomain(u"kde.org"_s);
