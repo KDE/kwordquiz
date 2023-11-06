@@ -21,7 +21,7 @@ bool operator<(const LanguageListModel::Language &a, const LanguageListModel::La
 static QString nameFromEntryFile(const QString &entryFile)
 {
     const KConfig entry(entryFile, KConfig::SimpleConfig);
-    const KConfigGroup group(&entry, "KCM Locale");
+    const KConfigGroup group(&entry, QStringLiteral("KCM Locale"));
     return group.readEntry("Name", QString());
 }
 
