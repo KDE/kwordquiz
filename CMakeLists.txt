@@ -58,7 +58,7 @@ find_package(KF6 ${KF5_MIN_VERSION} COMPONENTS
     Config
     DocTools
     NewStuff
-    Kirigami2
+    Kirigami
     DBusAddons
 )
 set_package_properties(KF6 PROPERTIES
