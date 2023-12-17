@@ -198,7 +198,7 @@ msgstr "Presa Antaŭrigardo"
 #: qml/DeckEditorPage.qml:55 qml/DeckEditorPage.qml:77
 #, kde-format
 msgid "Flashcard"
-msgstr "Fulmkarto"
+msgstr "Memoriga karto"
 
 #: qml/DeckEditorPage.qml:61 qml/DeckEditorPage.qml:83
 #, kde-format
@@ -497,7 +497,7 @@ msgstr "Reĝimo"
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
-msgstr "Fulmkarto"
+msgstr "Memoriga karto"
 
 #: qml/WelcomePage.qml:154
 #, kde-format
