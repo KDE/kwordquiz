@@ -14,7 +14,7 @@ Dependencies:
     'frameworks/knotifications': '@latest-kf6'
     'education/libkeduvocdocument': '@same'
     'education/libkeduvocdocument': '@same'
-    'libraries/kirigami-addons': '@latest'
+    'libraries/kirigami-addons': '@latest-kf6'
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
   'require':
@@ -27,7 +27,7 @@ Dependencies:
     'frameworks/knewstuff': '@stable'
     'frameworks/knotifications': '@stable'
     'education/libkeduvocdocument': '@same'
-    'libraries/kirigami-addons': '@latest-kf6'
+    'libraries/kirigami-addons': '@latest'
 
 Options:
   require-passing-tests-on: [ '@all' ]
