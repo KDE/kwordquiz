@@ -41,7 +41,7 @@
   <name xml:lang="uk">KWordQuiz</name>
   <name xml:lang="x-test">xxKWordQuizxx</name>
   <name xml:lang="zh-CN">KWordQuiz</name>
-  <name xml:lang="zh-TW">語言_KWordQuiz</name>
+  <name xml:lang="zh-TW">KWordQuiz 單字測驗</name>
   <summary>Flash Card Trainer</summary>
   <summary xml:lang="ar">مدرب البطاقة التعليمية</summary>
   <summary xml:lang="bs">Učitelj fleš karticama</summary>
@@ -141,6 +141,7 @@
       <caption xml:lang="tr">K Sözcük Oyunu karşılama sayfası</caption>
       <caption xml:lang="uk">Сторінка вітання KWordQuiz</caption>
       <caption xml:lang="x-test">xxKWordQuiz welcome pagexx</caption>
+      <caption xml:lang="zh-TW">KWordQuiz 歡迎頁面</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/home.png</image>
     </screenshot>
     <screenshot type="default">
@@ -165,6 +166,7 @@
       <caption xml:lang="tr">Düzenleyici</caption>
       <caption xml:lang="uk">Редактор</caption>
       <caption xml:lang="x-test">xxEditorxx</caption>
+      <caption xml:lang="zh-TW">編輯器</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/editor.png</image>
     </screenshot>
     <screenshot type="default">
@@ -225,6 +227,7 @@
       <caption xml:lang="tr">K Sözcük Oyunu'nda çoktan seçmeli kip</caption>
       <caption xml:lang="uk">Режим вибору з варіантів у KWordQuiz</caption>
       <caption xml:lang="x-test">xxMultiple choice mode in KWordQuizxx</caption>
+      <caption xml:lang="zh-TW">KWordQuiz 中的多選題模式</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/multiple-choice.png</image>
     </screenshot>
     <screenshot type="default">
@@ -249,6 +252,7 @@
       <caption xml:lang="tr">K Sözcük Oyunu'nda soru-yanıt kipi</caption>
       <caption xml:lang="uk">Режим відповіді на питання у KWordQuiz</caption>
       <caption xml:lang="x-test">xxQuestion response mode in KWordQuizxx</caption>
+      <caption xml:lang="zh-TW">KWordQuiz 中的問答題模式</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/question-response.png</image>
     </screenshot>
   </screenshots>
