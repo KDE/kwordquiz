@@ -68,7 +68,7 @@ Comment[uk]=KWordQuiz
 Comment[vi]=KWordQuiz
 Comment[x-test]=xxKWordQuizxx
 Comment[zh_CN]=KWordQuiz
-Comment[zh_TW]=語言訓練
+Comment[zh_TW]=KWordQuiz 單字測驗
 
 [Event/QuizCorrect]
 Name=QuizCorrect
