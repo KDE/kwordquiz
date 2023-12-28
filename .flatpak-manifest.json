@@ -2,7 +2,7 @@
     "id": "org.kde.kwordquiz",
     "branch": "master",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "6.6-kf6preview",
     "sdk": "org.kde.Sdk",
     "command": "kwordquiz",
     "rename-icon": "kwordquiz",
@@ -19,18 +19,25 @@
         {
             "name": "libkeduvocdocument",
             "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/kde/libkeduvocdocument.git" } ]
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/kde/libkeduvocdocument.git" } ],
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_WITH_QT6=ON"
+            ]	    
         },
         {
-            "name": "kirigamiaddons",
+            "name": "kirigami-addons",
             "config-opts": [
-                "-DBUILD_TESTING=OFF"
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://invent.kde.org/libraries/kirigami-addons.git"
+                    "url": "https://invent.kde.org/libraries/kirigami-addons.git",
+                    "branch": "master"
                 }
             ]
         },
