@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-19 01:40+0000\n"
-"PO-Revision-Date: 2023-10-12 18:25+0300\n"
+"PO-Revision-Date: 2023-11-30 14:47+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -60,7 +60,7 @@ msgstr "Vastaus"
 #: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "Annettu virheellinen siirtymä: %1. Sallittu: flash, mc ja qa"
 
 # pmap: =/gen=KWordQuizin/
 # pmap: =/elat=KWordQuizistä/
@@ -143,12 +143,12 @@ msgstr "Avattava sanasto"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Kortteja %1 % Virheitä %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Kortteja %1/%2 Virheitä %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
@@ -415,8 +415,7 @@ msgid "Automatically flip flashcard"
 msgstr "Käännä kysymyskortti automaattisesti"
 
 #: qml/SettingsPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "Odotusaika kysymyskortin kääntämiseen"
 
@@ -426,10 +425,9 @@ msgid "Multiple choice"
 msgstr "Monivalinta"
 
 #: qml/SettingsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "Tarkista monivalintakysymyksissä valittu vastaus automaattisesti "
+msgstr "Tarkista valittu vastaus automaattisesti "
 
 #: qml/SettingsPage.qml:78
 #, kde-format
@@ -437,10 +435,9 @@ msgid "Question and Answer"
 msgstr "Kysymys ja vastaus"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "Vihje lasketaan vääräksi"
+msgstr "Laske vihjeen käyttö virheeksi"
 
 #: qml/SettingsPage.qml:96
 #, kde-format
@@ -509,11 +506,10 @@ msgid "Download Deck"
 msgstr "Lataa pakka"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
-msgstr "Kyselyjärjestys"
+msgstr "Tila"
 
 #: qml/WelcomePage.qml:137
 #, kde-format
