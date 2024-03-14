@@ -52,7 +52,7 @@ set_package_properties(Qt6 PROPERTIES
     PURPOSE "Base application components"
 )
 
-find_package(KF6 ${KF5_MIN_VERSION} COMPONENTS
+find_package(KF6 ${KF_MIN_VERSION} COMPONENTS
     I18n
     Crash
     Config
