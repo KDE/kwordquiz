@@ -120,7 +120,7 @@
     <p xml:lang="zh-CN">KWordQuiz 是一款通用题卡程序，它可用于词汇学习及其他许多问题上，并能提供编辑器及五个不同的题卡测验模式。本程序使用了 KVTML 格式的文件，程序内还可直接下载他人贡献的文件。</p>
     <p xml:lang="zh-TW">KWordQuiz 是一套閃卡記憶訓練程式。它可以用於字彙學習，還有許多其它的用途。它提供了一個編輯器與五種不同的閃卡模式。它使用 KVTML 檔案格式，並且可以下載其他人所製作的閃卡檔。</p>
   </description>
-  <url type="homepage">https://edu.kde.org/kwordquiz/</url>
+  <url type="homepage">https://apps.kde.org/kwordquiz</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kwordquiz</url>
   <url type="help">https://docs.kde.org/?application=kwordquiz</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kwordquiz&amp;source=appdata</url>
