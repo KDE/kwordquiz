@@ -79,9 +79,6 @@ int main(int argc, char *argv[])
 
     KCrash::initialize();
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("kwordquiz"));
-    QApplication::setApplicationName(u"kwordquiz"_s);
-    QApplication::setApplicationVersion(QStringLiteral(KWORDQUIZ_VERSION_STRING));
-    QApplication::setOrganizationDomain(u"kde.org"_s);
     QIcon::setFallbackThemeName(u"breeze"_s);
 
     KAboutData aboutData(u"kwordquiz"_s,
@@ -97,9 +94,9 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "Port to QML"), QStringLiteral("carl@carlschwan.eu"));
     aboutData.addCredit(i18n("Anne-Marie Mahfouf"), i18n("KDE Edutainment Maintainer"), QStringLiteral("annma@kde.org"));
     aboutData.addCredit(i18n("Martin Pfeiffer"), i18n("Leitner System and several code contributions"), QStringLiteral("hubipete@gmx.net"));
-    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kwordquiz")));
 
     KAboutData::setApplicationData(aboutData);
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kwordquiz")));
 
 #ifndef Q_OS_ANDROID
     KDBusService service(KDBusService::Unique);
