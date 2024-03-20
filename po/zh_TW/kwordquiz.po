@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:40+0000\n"
+"POT-Creation-Date: 2024-03-20 00:35+0000\n"
 "PO-Revision-Date: 2023-12-25 19:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -61,65 +61,65 @@ msgstr "答案"
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "提供了無效的 goto：%1。有效選項：flash、mc 和 qa"
 
-#: main.cpp:88
+#: main.cpp:85
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz 單字測驗"
 
-#: main.cpp:90
+#: main.cpp:87
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "強大的閃卡和字彙學習程式"
 
-#: main.cpp:92
+#: main.cpp:89
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:96
+#: main.cpp:93
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:96
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "原始作者"
 
-#: main.cpp:97
+#: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:97
+#: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "移植到 QML"
 
-#: main.cpp:98
+#: main.cpp:95
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:98
+#: main.cpp:95
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE 娛樂教育套件維護者"
 
-#: main.cpp:99
+#: main.cpp:96
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:99
+#: main.cpp:96
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "萊納系統與貢獻一些程式碼"
 
-#: main.cpp:119
+#: main.cpp:116
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -132,7 +132,7 @@ msgstr ""
 "'mc' 為多重選擇題型態\n"
 "'qa' 為問答題型態"
 
-#: main.cpp:121
+#: main.cpp:118
 #, kde-format
 msgid "File to open"
 msgstr "要開啟的檔案"

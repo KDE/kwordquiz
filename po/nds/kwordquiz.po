@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:40+0000\n"
+"POT-Creation-Date: 2024-03-20 00:35+0000\n"
 "PO-Revision-Date: 2010-07-27 08:22+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -53,66 +53,66 @@ msgstr "Antwoort"
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:88
+#: main.cpp:85
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:90
+#: main.cpp:87
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr ""
 "En deegt Programm för't Hanteren vun Naslakoorten un dat Lehren vun Vokaveln"
 
-#: main.cpp:92
+#: main.cpp:89
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "© 2003-2010, Peter Hedlund"
 
-#: main.cpp:96
+#: main.cpp:93
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:96
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:97
+#: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:97
+#: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:95
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:98
+#: main.cpp:95
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Pleger vun de KDE-Lehrspelen"
 
-#: main.cpp:99
+#: main.cpp:96
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:99
+#: main.cpp:96
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner-Systeem un en Reeg Bidrääg to den Kode"
 
-#: main.cpp:119
+#: main.cpp:116
 #, fuzzy, kde-format
 #| msgid ""
 #| "Type of session to start with: \n"
@@ -132,7 +132,7 @@ msgstr ""
 ".\"qa\" för Fraag un Antwoort, \n"
 "\"tutor\" för Persetter."
 
-#: main.cpp:121
+#: main.cpp:118
 #, kde-format
 msgid "File to open"
 msgstr "Datei, de opmaakt warrn schall"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:40+0000\n"
+"POT-Creation-Date: 2024-03-20 00:35+0000\n"
 "PO-Revision-Date: 2022-10-30 09:40+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -56,65 +56,65 @@ msgstr "Svar"
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:88
+#: main.cpp:85
 #, kde-format
 msgid "KWordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:90
+#: main.cpp:87
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Eit kraftig læreprogram for å utvida ordtilfanget ved spørjekort"
 
-#: main.cpp:92
+#: main.cpp:89
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "© 2003–2010 Peter Hedlund"
 
-#: main.cpp:96
+#: main.cpp:93
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:96
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:97
+#: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:97
+#: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:95
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:98
+#: main.cpp:95
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Vedlikehaldar for KDE Leik og lær"
 
-#: main.cpp:99
+#: main.cpp:96
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:99
+#: main.cpp:96
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner-systemet og fleire kodebidrag"
 
-#: main.cpp:119
+#: main.cpp:116
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -123,7 +123,7 @@ msgid ""
 "'qa' for question and answer"
 msgstr ""
 
-#: main.cpp:121
+#: main.cpp:118
 #, kde-format
 msgid "File to open"
 msgstr "Fil som skal opnast"
