@@ -43,41 +43,6 @@
   <name xml:lang="zh-CN">KWordQuiz</name>
   <name xml:lang="zh-TW">KWordQuiz 單字測驗</name>
   <summary>Flash card trainer</summary>
-  <summary xml:lang="ar">مدرب البطاقة التعليمية</summary>
-  <summary xml:lang="bs">Učitelj fleš karticama</summary>
-  <summary xml:lang="ca">Entrenador amb targetes ràpides</summary>
-  <summary xml:lang="ca-valencia">Entrenador amb targetes ràpides</summary>
-  <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
-  <summary xml:lang="de">Karteikartentrainer</summary>
-  <summary xml:lang="el">Εκπαιδευτής ερωτήσεων με κάρτες</summary>
-  <summary xml:lang="en-GB">Flash Card Trainer</summary>
-  <summary xml:lang="eo">Fulmkarta Trejnilo</summary>
-  <summary xml:lang="es">Entrenador de tarjetas</summary>
-  <summary xml:lang="et">Sähvikute treening</summary>
-  <summary xml:lang="eu">Oroimen-txartel entrenatzailea</summary>
-  <summary xml:lang="fi">Sanaston harjoittelu kysymyskorteilla</summary>
-  <summary xml:lang="fr">Entraînement aux cartes mémoire</summary>
-  <summary xml:lang="gl">Adestrador de vocabulario.</summary>
-  <summary xml:lang="id">Pelatihan Kartu Flash</summary>
-  <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
-  <summary xml:lang="ka">ბარათებით სწავლის პროგრამა</summary>
-  <summary xml:lang="ko">플래시 카드 트레이너</summary>
-  <summary xml:lang="lt">Mokymasis iš kortelių</summary>
-  <summary xml:lang="nds">Koorten-Lehrprogramm</summary>
-  <summary xml:lang="nl">Woorden oefenen</summary>
-  <summary xml:lang="nn">Spørsmålskort</summary>
-  <summary xml:lang="pl">Ćwiczenie z fiszkami</summary>
-  <summary xml:lang="pt">Treinador de Cartões</summary>
-  <summary xml:lang="pt-BR">Treinador de cartões</summary>
-  <summary xml:lang="ru">Программа для изучения новой лексики</summary>
-  <summary xml:lang="sk">Precvičovanie slovnej zásoby s kartičkami</summary>
-  <summary xml:lang="sl">Učenje s spominskimi kartami</summary>
-  <summary xml:lang="sv">Flash Card Trainer</summary>
-  <summary xml:lang="tr">Bilgi Kartı Çalıştırıcısı</summary>
-  <summary xml:lang="uk">Тренування словникового запасу</summary>
-  <summary xml:lang="x-test">xxFlash Card Trainerxx</summary>
-  <summary xml:lang="zh-CN">卡片式训练程序</summary>
-  <summary xml:lang="zh-TW">閃卡訓練師</summary>
   <description>
     <p>KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
     <p xml:lang="ar">اختبار الكلمات ك هو برنامج بطاقة فلاش للأغراض العامة. يمكن استخدامه لتعلم المفردات والعديد من الموضوعات الأخرى. يوفر محررًا وخمسة أوضاع اختبار بطاقات تعليمية مختلفة. يستخدم تنسيق ملف KVTML ويمكن تنزيل الملفات المساهمة من داخل التطبيق.</p>
