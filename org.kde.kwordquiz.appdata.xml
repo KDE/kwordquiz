@@ -43,6 +43,10 @@
   <name xml:lang="zh-CN">KWordQuiz</name>
   <name xml:lang="zh-TW">KWordQuiz 單字測驗</name>
   <summary>Flash card trainer</summary>
+  <summary xml:lang="ca">Entrenador amb targetes ràpides</summary>
+  <summary xml:lang="es">Entrenador de tarjetas</summary>
+  <summary xml:lang="sl">Trene s spominskimi kartami</summary>
+  <summary xml:lang="tr">Bilgi Kartı Çalıştırıcısı</summary>
   <description>
     <p>KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
     <p xml:lang="ar">اختبار الكلمات ك هو برنامج بطاقة فلاش للأغراض العامة. يمكن استخدامه لتعلم المفردات والعديد من الموضوعات الأخرى. يوفر محررًا وخمسة أوضاع اختبار بطاقات تعليمية مختلفة. يستخدم تنسيق ملف KVTML ويمكن تنزيل الملفات المساهمة من داخل التطبيق.</p>
