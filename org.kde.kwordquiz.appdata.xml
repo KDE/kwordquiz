@@ -48,6 +48,7 @@
   <name xml:lang="zh-TW">KWordQuiz 單字測驗</name>
   <summary>Flash card trainer</summary>
   <summary xml:lang="ca">Entrenador amb targetes ràpides</summary>
+  <summary xml:lang="ca-valencia">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="es">Entrenador de tarjetas</summary>
   <summary xml:lang="eu">Oroimen-txartel entrenatzailea</summary>
   <summary xml:lang="fr">Entraînement aux cartes mémoire</summary>
