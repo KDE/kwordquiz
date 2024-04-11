@@ -4,36 +4,37 @@
 #
 # Einars Sprugis <einars8@gmail.com>, 2009, 2011.
 # Maris Nartiss <maris.kde@gmail.com>, 2009.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:35+0000\n"
-"PO-Revision-Date: 2011-07-02 23:52+0300\n"
-"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-08 21:06+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Einārs Sprūģis"
+msgstr "Einārs Sprūģis, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "einars8@gmail.com"
+msgstr "einars8@gmail.com, toms.trasuns@posteo.net"
 
 #: exporter.cpp:125
 #, kde-format
 msgid "Name:_____________________________ Date:__________"
-msgstr "Vārds:_____________________________Datums:_________"
+msgstr "Vārds:_____________________________ Datums:_________"
 
 #: exporter.cpp:173
 #, kde-format
@@ -53,7 +54,7 @@ msgstr "Atbilde"
 #: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "Padots nederīgs mērķis: %1. Atļauts: „flash“, „mc“ un „qa“"
 
 #: main.cpp:85
 #, kde-format
@@ -70,7 +71,7 @@ msgstr ""
 #: main.cpp:89
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
-msgstr "(c) 2003-2010, Peter Hedlund"
+msgstr "(c) 2003—2010, Peter Hedlund"
 
 #: main.cpp:93
 #, kde-format
@@ -81,19 +82,19 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "Sākotnējais autors"
 
 #: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "Ports uz QML"
 
 #: main.cpp:95
 #, kde-format
@@ -103,7 +104,7 @@ msgstr "Anne-Marie Mahfouf"
 #: main.cpp:95
 #, kde-format
 msgid "KDE Edutainment Maintainer"
-msgstr "KDE Edutainment uzturētājs"
+msgstr "„KDE Edutainment“ uzturētājs"
 
 #: main.cpp:96
 #, kde-format
@@ -113,103 +114,92 @@ msgstr "Martin Pfeiffer"
 #: main.cpp:96
 #, kde-format
 msgid "Leitner System and several code contributions"
-msgstr "Leitner sistēma un dažādi ieguldījumi kodā"
+msgstr "Leitnera sistēma un dažādi ieguldījumi kodā"
 
 #: main.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
 "'qa' for question and answer"
 msgstr ""
-"Sesijas tips, ar kuru sākt: \n"
-"'flash' — vārdu kartīte, \n"
-"'mc' — vairākas izvēles, \n"
-"'qa' — jautājums un atbilde, \n"
-"'tutor' — skolotājs"
+"Sākuma sesijas tips: \n"
+"„flash“ — vārdu kartīte, \n"
+"„mc“ — vairākas izvēles, \n"
+"„qa“ — jautājums un atbilde"
 
 #: main.cpp:118
 #, kde-format
 msgid "File to open"
-msgstr "Atveramais fails"
+msgstr "Atveramā datne"
 
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Kartītes %1 %. Kļūdas %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Kartītes %1/%2. Kļūdas %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "Pabeigts"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Jums ir nevainojams rezultāts"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Jums ir %1 kļūda"
+msgstr[1] "Jums ir %1 kļūdas"
+msgstr[2] "Jums ir %1 kļūdu"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "Atkārt&ot kļūdas"
+msgstr "Atkārtot kļūdas"
 
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "Mēģināt vēlreiz"
 
 #: qml/DeckEditorPage.qml:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
-msgstr ""
+msgstr "Izveidot kartīšu komplektu"
 
 #: qml/DeckEditorPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "Redaktors"
+msgstr "Rediģēt kartīšu komplektu"
 
 #: qml/DeckEditorPage.qml:39
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "Filtrēt"
 
 #: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "Filtrēt..."
 
 #: qml/DeckEditorPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "Rāda priekšskatījumu..."
+msgstr "Drukas priekšskatījums"
 
 #: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
@@ -219,216 +209,190 @@ msgstr "Vārdu kartītes"
 #: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Saraksts"
 
 #: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "Eksāmens"
 
 #: qml/DeckEditorPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "Drukā..."
+msgstr "Drukāt"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Izveidot"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Saglabāt"
 
 #: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "Noņemt attēlu"
 
 #: qml/DeckEditorPage.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
-msgstr "Piesaistīt uz attēlu"
+msgstr "Saistīt attēlu"
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr "Izvēlēties skaņu"
+msgstr "Noņemt skaņu"
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
-msgstr "Piesaistīt skaņu"
+msgstr "Sasaistīt skaņu"
 
 #: qml/DeckEditorPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "1. valoda"
+msgstr "Iestatīt valodu"
 
 #: qml/DeckEditorPage.qml:161
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "1. valoda"
+msgstr "Iestatīt valodu"
 
 #: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
-msgstr ""
+msgstr "Izvēlieties attēlu"
 
 #: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr ""
+msgstr "Izvēlieties skaņu"
 
 #: qml/DeckEditorPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Nosaukums:"
 
 #: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "Autors:"
 
 #: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "Licence:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Redaktors"
+msgstr "Rediģēt"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "Pār&baudīt"
+msgstr "Pārbaudīt"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "Pareiza atbilde"
+msgstr "Pareizi"
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "Atzīmē pēdējo kā pareizu"
+msgstr "Nepareizi"
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "Izvēlieties attēlu"
+msgstr "Atlasiet valodu"
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "Aptaujas iestatījumi"
+msgstr "Iestatījumi"
 
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Konfigurēt"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
+#, kde-format
 msgid "This is correct"
-msgstr "Šī bija pareizā atbilde"
+msgstr "Pareiza atbilde"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "Nepareizas atbildes"
+msgstr "Nepareizi — pareizā atbilde bija „%1“."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "Tālāk"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "Komplektā nepietiek vārdu"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr ""
+msgstr "Lai ieslēgtu atbilžu variantu režīmu, nepieciešami vismaz trīs vārdi"
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "&2. opcija"
+msgstr "Opcijas"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Sajaukt"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Ieteikums"
+msgstr "Padoms"
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Aptaujas iestatījumi"
+msgstr "Iestatījumi"
 
 #: qml/SettingsPage.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
-msgstr "Vispārīgi"
+msgstr "Pamata"
 
 #: qml/SettingsPage.qml:22
 #, kde-format
@@ -436,8 +400,7 @@ msgid "Show score as percentage"
 msgstr "Rādīt rezultātu kā procentuālo attiecību"
 
 #: qml/SettingsPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
 msgstr "Vārdu kartītes"
 
@@ -447,142 +410,130 @@ msgid "Automatically flip flashcard"
 msgstr "Automātiski apmest vārdu kartīti"
 
 #: qml/SettingsPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "Aizture vārdu kartītes apmešanai"
 
 #: qml/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
-msgstr "Vairākas iespējas"
+msgstr "Atbilžu varianti"
 
 #: qml/SettingsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "Esot vairākām iespējām, automātiski atzīmēt izvēlēto"
+msgstr "Automātiski pārbaudīt atlasīto atbildi"
 
 #: qml/SettingsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "&Jautājums un atbilde"
+msgstr "Jautājums un atbilde"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "Atzīmējiet, lai ieteikumu uzskatītu par kļūdu"
+msgstr "Padoma lietošanu skaitīt kā kļūdu"
 
 #: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Reģistrjutīgas atbildes"
 
 #: qml/SettingsPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "Iziet no KWordQuiz"
+msgstr "Par „KWordQuiz“"
 
 #: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Par KDE"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Laipni lūgti"
 
 #: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a KWordQuiz document"
-msgstr ""
+msgstr "Izvēlieties „KWordQuiz“ dokumentu"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
-msgstr ""
+msgstr "KEduDocument (*.kvtml)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "Wql documents (*.wql)"
-msgstr ""
+msgstr "WQL dokumenti (*.wql)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "CSV documents (*.csv)"
-msgstr ""
+msgstr "CSV dokumenti (*.csv)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
-msgstr ""
+msgstr "XDXF dokumenti (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "Iziet no KWordQuiz"
+msgstr "Laipni lūgti „KWordQuiz“!"
 
 #: qml/WelcomePage.qml:70
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "Atver esošu vārdnīcas dokumentu"
+msgstr "Atvērt jau esošu dokumentu"
 
 #: qml/WelcomePage.qml:76
 #, kde-format
 msgid "Create Deck"
-msgstr ""
+msgstr "Izveidot kartīšu komplektu"
 
 #: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "Lejupielādēt kartīšu komplektu"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Režīms"
 
 #: qml/WelcomePage.qml:137
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
-msgstr "Vārdu kartītes"
+msgstr "Vārdu kartīte"
 
 #: qml/WelcomePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
-msgstr "Vairākas iespējas"
+msgstr "Atbilžu varianti"
 
 #: qml/WelcomePage.qml:151
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "Jautājums un atbilde"
+msgstr "Jautājums — atbilde"
 
 #: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "Kartīšu komplekti"
 
 #: qml/WelcomePage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "Noņemt"
 
 #, fuzzy
 #~| msgid "Multiple Choice"
