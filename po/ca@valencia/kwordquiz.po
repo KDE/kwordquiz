@@ -192,7 +192,7 @@ msgstr "Filtre"
 #: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
-msgstr "Filtre..."
+msgstr "Filtre…"
 
 #: qml/DeckEditorPage.qml:50
 #, kde-format
