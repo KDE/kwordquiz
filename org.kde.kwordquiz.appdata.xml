@@ -51,6 +51,7 @@
   <summary xml:lang="ca">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="ca-valencia">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
+  <summary xml:lang="en-GB">Flash card trainer</summary>
   <summary xml:lang="eo">Fulmkarta trejnilo</summary>
   <summary xml:lang="es">Entrenador de tarjetas</summary>
   <summary xml:lang="eu">Oroimen-txartel entrenatzailea</summary>
@@ -114,6 +115,7 @@
       <caption xml:lang="ca">Pàgina de benvinguda del KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Pàgina de benvinguda de KWordQuiz</caption>
       <caption xml:lang="cs">Uvítací stránka KWordQuiz</caption>
+      <caption xml:lang="en-GB">KWordQuiz welcome page</caption>
       <caption xml:lang="eo">Bonvena paĝo de KWordQuiz</caption>
       <caption xml:lang="es">Página de bienvenida de KWordQuiz</caption>
       <caption xml:lang="eu">KWordQuiz ongietorri orria</caption>
@@ -141,6 +143,7 @@
       <caption xml:lang="ca">Editor</caption>
       <caption xml:lang="ca-valencia">Editor</caption>
       <caption xml:lang="cs">Editor</caption>
+      <caption xml:lang="en-GB">Editor</caption>
       <caption xml:lang="eo">Redaktilo</caption>
       <caption xml:lang="es">Editor</caption>
       <caption xml:lang="eu">Editorea</caption>
@@ -206,6 +209,7 @@
       <caption xml:lang="ca">Mode d'elecció múltiple en el KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Mode d'elecció múltiple en KWordQuiz</caption>
       <caption xml:lang="cs">Režim s nabídkou vícero možností v KWordQuiz</caption>
+      <caption xml:lang="en-GB">Multiple choice mode in KWordQuiz</caption>
       <caption xml:lang="eo">Plurelekta reĝimo en KWordQuiz</caption>
       <caption xml:lang="es">Modo de elección múltiple en KWordQuiz</caption>
       <caption xml:lang="eu">Aukera anitzeko modua «KWordQuiz»en</caption>
@@ -233,6 +237,7 @@
       <caption xml:lang="ca">Mode de preguntes i respostes en el KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Mode de preguntes i respostes en KWordQuiz</caption>
       <caption xml:lang="cs">Režim s nabídkou odpovědí v KWordQuiz</caption>
+      <caption xml:lang="en-GB">Question response mode in KWordQuiz</caption>
       <caption xml:lang="eo">Demand-responda reĝimo en KWordQuiz</caption>
       <caption xml:lang="es">Modo pregunta-respuesta en KWordQuiz</caption>
       <caption xml:lang="eu">Galdera-erantzun modua «KWordQuiz»en</caption>
