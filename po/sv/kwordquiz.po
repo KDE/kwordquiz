@@ -1,18 +1,18 @@
 # translation of kwordquiz.po to Swedish
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2004, 2005, 2007, 2008, 2009, 2010, 2014, 2015, 2018, 2019, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2004, 2005, 2007, 2008, 2009, 2010, 2014, 2015, 2018, 2019, 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:35+0000\n"
-"PO-Revision-Date: 2023-08-01 08:32+0200\n"
+"PO-Revision-Date: 2024-06-08 15:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -354,7 +354,7 @@ msgstr "Inte tillräckligt med ord i kortleken"
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr "Det krävs minst tre ord för att aktivera flervalsläge"
+msgstr "Det krävs minst tre ord för att aktivera flerval"
 
 #: qml/OptionsAction.qml:12
 #, kde-format
@@ -492,11 +492,10 @@ msgid "Download Deck"
 msgstr "Ladda ner kortlek"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
-msgstr "Läge"
+msgstr "Metod"
 
 #: qml/WelcomePage.qml:137
 #, kde-format
