@@ -1,19 +1,20 @@
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010.
 # Balázs Úr <urbalazs@gmail.com>, 2012.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:35+0000\n"
-"PO-Revision-Date: 2012-06-23 13:31+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"PO-Revision-Date: 2024-06-21 15:59+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -109,13 +110,7 @@ msgid "Leitner System and several code contributions"
 msgstr "Leitner-rendszer és számos kód hozzájárulások"
 
 #: main.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
@@ -125,8 +120,7 @@ msgstr ""
 "A kezdési munkafolyamat típusa: \n"
 "'flash' - tanulókártya, \n"
 "'mc' - feleletválasztós, \n"
-"'qa' - kérdés-válasz, \n"
-"'tutor' - oktató"
+"'qa' - kérdés-válasz"
 
 #: main.cpp:118
 #, kde-format
@@ -162,10 +156,9 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "A &hibák ismétlése"
+msgstr "Hibák ismétlése"
 
 #: qml/BasePage.qml:93
 #, kde-format
@@ -179,12 +172,10 @@ msgid "Create Deck"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "Szerkesztő"
+msgstr "Pakli szerkesztése"
 
 #: qml/DeckEditorPage.qml:39
 #, kde-format
@@ -197,11 +188,10 @@ msgid "Filter..."
 msgstr ""
 
 #: qml/DeckEditorPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Showing Preview..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr "Előnézet megjelenítése…"
+msgstr "Nyomtatási kép"
 
 #: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
@@ -219,11 +209,10 @@ msgid "Exam"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "Nyomtatás…"
+msgstr "Nyomtatás"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
@@ -244,41 +233,34 @@ msgid "Remove Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Kép csatolása"
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Select Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr "Hang kiválasztása"
+msgstr "Hang eltávolítása"
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Hang csatolása"
 
 #: qml/DeckEditorPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr "1. nyelv"
+msgstr "Nyelv beállítása"
 
 #: qml/DeckEditorPage.qml:161
-#, fuzzy, kde-format
-#| msgid "Language 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "1. nyelv"
+msgstr "Nyelv beállítása"
 
 #: qml/DeckEditorPage.qml:182
 #, kde-format
@@ -309,48 +291,40 @@ msgid "License:"
 msgstr ""
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Szerkesztő"
+msgstr "Szerkesztés"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "&Ellenőrzés"
+msgstr "Ellenőrzés"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "Helyes válasz"
+msgstr "Helyes"
 
 #: qml/FlashCardPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Mark Last Correct"
+#, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr "Az utolsót helyesnek jelölése"
+msgstr "Helytelen"
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "Kép kiválasztása"
+msgstr "Nyelvválasztás"
 
 #: qml/main.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "Kvíz beállítások"
+msgstr "Beállítások"
 
 #: qml/main.qml:42
 #, kde-format
@@ -358,16 +332,14 @@ msgid "Configure"
 msgstr ""
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "This was the correct answer"
+#, kde-format
 msgid "This is correct"
-msgstr "Ez volt a helyes válasz"
+msgstr "Ez helyes"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Incorrect answers"
+#, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "Hibás válaszok"
+msgstr "Téves, a helyes válasz „%1” volt."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
@@ -386,39 +358,31 @@ msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "&2 Option"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "&2. lehetőség"
+msgstr "Beállítások"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Keverés"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Tipp"
+msgstr "Tipp"
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@title:group quiz settings"
-#| msgid "Quiz Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Kvíz beállítások"
+msgstr "Beállítások"
 
 #: qml/SettingsPage.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Általános"
 
@@ -428,8 +392,7 @@ msgid "Show score as percentage"
 msgstr "Pontszám megjelenítése százalékosan"
 
 #: qml/SettingsPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgid "Flash Card"
 msgstr "Tanulókártya"
 
@@ -439,34 +402,29 @@ msgid "Automatically flip flashcard"
 msgstr "Tanulókártya automatikus megfordítása"
 
 #: qml/SettingsPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "Késleltetési idő a tanulókártyák felfordításánál"
 
 #: qml/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
-msgstr "Feleletválasztás"
+msgstr "Többszörös választás"
 
 #: qml/SettingsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "Feleletválasztós kérdésnél a kijelölt válasz automatikus ellenőrzése"
+msgstr "Kijelölt válasz automatikus ellenőrzése"
 
 #: qml/SettingsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "&Kérdés és válasz"
+msgstr "Kérdés és válasz"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "Jelölje be a tipp hibaként történő számolásához"
+msgstr "Tippek számolása hibaként"
 
 #: qml/SettingsPage.qml:96
 #, kde-format
@@ -474,10 +432,9 @@ msgid "Compare answers in a case sensitive way"
 msgstr ""
 
 #: qml/SettingsPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "Kilépés a KWordQuizből"
+msgstr "A KWordQuizből névjegye"
 
 #: qml/SettingsPage.qml:127
 #, kde-format
