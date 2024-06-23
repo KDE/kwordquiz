@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
     QIcon::setFallbackThemeName(u"breeze"_s);
 
     KAboutData aboutData(u"kwordquiz"_s,
-                         i18n("KWordQuiz"),
+                         i18n("WordQuiz"),
                          QStringLiteral(KWORDQUIZ_VERSION_STRING),
                          i18n("A powerful flashcard and vocabulary learning program"),
                          KAboutLicense::GPL_V2,
