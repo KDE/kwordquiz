@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:35+0000\n"
+"POT-Creation-Date: 2024-06-24 00:36+0000\n"
 "PO-Revision-Date: 2024-04-08 21:06+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -57,8 +57,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Padots nederīgs mērķis: %1. Atļauts: „flash“, „mc“ un „qa“"
 
 #: main.cpp:85
-#, kde-format
-msgid "KWordQuiz"
+#, fuzzy, kde-format
+#| msgid "KWordQuiz"
+msgid "WordQuiz"
 msgstr "KWordQuiz"
 
 #: main.cpp:87

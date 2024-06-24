@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:35+0000\n"
+"POT-Creation-Date: 2024-06-24 00:36+0000\n"
 "PO-Revision-Date: 2023-11-30 14:47+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -65,8 +65,9 @@ msgstr "Annettu virheellinen siirtymä: %1. Sallittu: flash, mc ja qa"
 # pmap: =/gen=KWordQuizin/
 # pmap: =/elat=KWordQuizistä/
 #: main.cpp:85
-#, kde-format
-msgid "KWordQuiz"
+#, fuzzy, kde-format
+#| msgid "KWordQuiz"
+msgid "WordQuiz"
 msgstr "KWordQuiz"
 
 #: main.cpp:87

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:35+0000\n"
+"POT-Creation-Date: 2024-06-24 00:36+0000\n"
 "PO-Revision-Date: 2024-06-18 00:37+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -51,8 +51,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Ogiltigt gå till angivet: %1. Tillåtet: flash, mc och qa"
 
 #: main.cpp:85
-#, kde-format
-msgid "KWordQuiz"
+#, fuzzy, kde-format
+#| msgid "KWordQuiz"
+msgid "WordQuiz"
 msgstr "Kwordquiz"
 
 #: main.cpp:87

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:35+0000\n"
+"POT-Creation-Date: 2024-06-24 00:36+0000\n"
 "PO-Revision-Date: 2023-10-08 23:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -54,8 +54,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "잘못된 goto가 지정됨: %1. 사용 가능: flash, mc, ga"
 
 #: main.cpp:85
-#, kde-format
-msgid "KWordQuiz"
+#, fuzzy, kde-format
+#| msgid "KWordQuiz"
+msgid "WordQuiz"
 msgstr "KWordQuiz"
 
 #: main.cpp:87

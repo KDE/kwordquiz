@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:35+0000\n"
+"POT-Creation-Date: 2024-06-24 00:36+0000\n"
 "PO-Revision-Date: 2019-09-29 12:43+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -58,9 +58,10 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
 #: main.cpp:85
-#, kde-format
-msgid "KWordQuiz"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "KWordQuiz - %1"
+msgid "WordQuiz"
+msgstr "KWordQuiz - %1"
 
 #: main.cpp:87
 #, kde-format
@@ -2126,6 +2127,3 @@ msgstr ""
 
 #~ msgid "Inserting special character..."
 #~ msgstr "Мондани аломатҳои махсус..."
-
-#~ msgid "KWordQuiz - %1"
-#~ msgstr "KWordQuiz - %1"

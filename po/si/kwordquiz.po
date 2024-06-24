@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:35+0000\n"
+"POT-Creation-Date: 2024-06-24 00:36+0000\n"
 "PO-Revision-Date: 2009-11-08 18:25+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: main.cpp:85
 #, kde-format
-msgid "KWordQuiz"
+msgid "WordQuiz"
 msgstr ""
 
 #: main.cpp:87
