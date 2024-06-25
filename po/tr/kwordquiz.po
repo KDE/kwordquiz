@@ -12,13 +12,13 @@
 # Muhammet Kara <muhammetk@gmail.com>, 2009.
 # obsoleteman <tulliana@gmail.com>, 2007-2008,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2015.
-# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:35+0000\n"
-"PO-Revision-Date: 2023-10-04 13:38+0300\n"
+"PO-Revision-Date: 2024-06-24 14:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -76,7 +76,7 @@ msgstr "Güçlü bir bilgi kartı ve söz dağarcığı genişletme programı"
 #: main.cpp:89
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
-msgstr "(c) 2003-2010, Peter Hedlund"
+msgstr "(c) 2003–2010, Peter Hedlund"
 
 #: main.cpp:93
 #, kde-format
@@ -104,7 +104,7 @@ msgstr "QML aktarımı"
 #: main.cpp:95
 #, kde-format
 msgid "Anne-Marie Mahfouf"
-msgstr "Anne-Marie Mahfouf"
+msgstr "Anne–Marie Mahfouf"
 
 #: main.cpp:95
 #, kde-format
@@ -130,9 +130,9 @@ msgid ""
 "'qa' for question and answer"
 msgstr ""
 "Başlatılacak oturumu yazın: \n"
-"bilgi kartı için 'flash', \n"
-"çoklu tercih için 'mc', \n"
-"soru-yanıt için 'qa'"
+"bilgi kartı için “flash”, \n"
+"çoklu tercih için “mc”, \n"
+"soru–yanıt için “qa”"
 
 #: main.cpp:118
 #, kde-format
@@ -197,7 +197,7 @@ msgstr "Süz"
 #: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
-msgstr "Süz..."
+msgstr "Süz…"
 
 #: qml/DeckEditorPage.qml:50
 #, kde-format
@@ -351,7 +351,7 @@ msgstr "Bu doğru"
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
 #, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr "Yanlış, doğru yanıt \"%1\" idi."
+msgstr "Yanlış, doğru yanıt “%1” idi."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
@@ -488,7 +488,7 @@ msgstr "XDXF belgeleri (*.xdxf)"
 #: qml/WelcomePage.qml:58
 #, kde-format
 msgid "Welcome to KWordQuiz"
-msgstr "K Sözcük Oyunu'na hoş geldiniz"
+msgstr "K Sözcük Oyunu’na hoş geldiniz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format
@@ -527,7 +527,7 @@ msgstr "Çoktan seçmeli"
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "Soru-Yanıt"
+msgstr "Soru–Yanıt"
 
 #: qml/WelcomePage.qml:157
 #, kde-format
