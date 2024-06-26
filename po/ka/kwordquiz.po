@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:36+0000\n"
-"PO-Revision-Date: 2024-06-24 05:44+0200\n"
+"PO-Revision-Date: 2024-06-25 05:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -331,7 +331,7 @@ msgstr "მორგება"
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr "1"
+msgstr "მორგება"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
 #, kde-format

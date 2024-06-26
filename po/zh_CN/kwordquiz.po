@@ -53,10 +53,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
 #: main.cpp:85
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "KWordQuiz"
+msgstr ""
 
 #: main.cpp:87
 #, kde-format
