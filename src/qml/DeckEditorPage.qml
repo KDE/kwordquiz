@@ -344,6 +344,8 @@ Kirigami.ScrollablePage {
         footer: QQC2.ItemDelegate {
             id: footer
 
+            background: null
+
             function insertRow() {
                 if (newQuestionField.text.length === 0 || newAnswerField.text.length === 0) {
                     return;
@@ -439,6 +441,7 @@ Kirigami.ScrollablePage {
 
             width: ListView.view.width
             spacing: 0
+            background: null
 
             QQC2.ItemDelegate {
                 Layout.fillWidth: true
