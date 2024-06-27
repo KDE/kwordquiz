@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:36+0000\n"
-"PO-Revision-Date: 2024-06-21 15:59+0200\n"
+"PO-Revision-Date: 2024-06-26 22:39+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -49,7 +49,7 @@ msgstr "Válasz"
 #: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "Érvénytelen utasítás: %1. Megengedett: flash, mc és qa"
 
 #: main.cpp:85
 #, fuzzy, kde-format
@@ -76,19 +76,19 @@ msgstr "Peter Hedlund"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "Eredeti szerző"
 
 #: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:94
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "Portolás QML-re"
 
 #: main.cpp:95
 #, kde-format
@@ -98,7 +98,7 @@ msgstr "Anne-Marie Mahfouf"
 #: main.cpp:95
 #, kde-format
 msgid "KDE Edutainment Maintainer"
-msgstr "KDE Edu karbantartó"
+msgstr "KDE Edutainment karbantartó"
 
 #: main.cpp:96
 #, kde-format
@@ -108,7 +108,7 @@ msgstr "Martin Pfeiffer"
 #: main.cpp:96
 #, kde-format
 msgid "Leitner System and several code contributions"
-msgstr "Leitner-rendszer és számos kód hozzájárulások"
+msgstr "Leitner-rendszer és számos kódhozzájárulás"
 
 #: main.cpp:116
 #, kde-format
@@ -119,9 +119,9 @@ msgid ""
 "'qa' for question and answer"
 msgstr ""
 "A kezdési munkafolyamat típusa: \n"
-"'flash' - tanulókártya, \n"
-"'mc' - feleletválasztós, \n"
-"'qa' - kérdés-válasz"
+"„flash” - tanulókártya, \n"
+"„mc” - feleletválasztós, \n"
+"„qa” - kérdés-válasz"
 
 #: main.cpp:118
 #, kde-format
@@ -131,30 +131,30 @@ msgstr "A megnyitandó fájl"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Kártyák %1% Hibák %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Kártyák %1/%2 Hibák %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "Befejezve"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Hibátlan eredményt ért el"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 hibát vétett"
+msgstr[1] "%1 hibát vétett"
 
 #: qml/BasePage.qml:82
 #, kde-format
@@ -164,13 +164,13 @@ msgstr "Hibák ismétlése"
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "Újra"
 
 #: qml/DeckEditorPage.qml:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
-msgstr ""
+msgstr "Pakli készítése"
 
 #: qml/DeckEditorPage.qml:34
 #, kde-format
@@ -181,12 +181,12 @@ msgstr "Pakli szerkesztése"
 #: qml/DeckEditorPage.qml:39
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "Szűrő"
 
 #: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "Szűrő…"
 
 #: qml/DeckEditorPage.qml:50
 #, kde-format
@@ -202,12 +202,12 @@ msgstr "Tanulókártya"
 #: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Lista"
 
 #: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "Vizsga"
 
 #: qml/DeckEditorPage.qml:72
 #, kde-format
@@ -219,19 +219,19 @@ msgstr "Nyomtatás"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Létrehozás"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Mentés"
 
 #: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "Kép eltávolítása"
 
 #: qml/DeckEditorPage.qml:120
 #, kde-format
@@ -266,30 +266,30 @@ msgstr "Nyelv beállítása"
 #: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
-msgstr ""
+msgstr "Válasszon egy képet"
 
 #: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr ""
+msgstr "Válasszon egy hangot"
 
 #: qml/DeckEditorPage.qml:226
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "Név:"
 
 #: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "Szerző:"
 
 #: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "Licenc:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:217
 #, kde-format
@@ -330,7 +330,7 @@ msgstr "Beállítások"
 #: qml/main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Beállítás"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
 #, kde-format
@@ -346,17 +346,17 @@ msgstr "Téves, a helyes válasz „%1” volt."
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "Következő"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "Nincs elég szó a pakliban"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr ""
+msgstr "Legalább három szó kell a feleletválasztós mód bekapcsolásához"
 
 #: qml/OptionsAction.qml:12
 #, kde-format
@@ -430,48 +430,48 @@ msgstr "Tippek számolása hibaként"
 #: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Válaszok összehasonlítása a kis- és nagybetűérzékeny módon"
 
 #: qml/SettingsPage.qml:111
 #, kde-format
 msgid "About KWordQuiz"
-msgstr "A KWordQuizből névjegye"
+msgstr "A KWordQuiz névjegye"
 
 #: qml/SettingsPage.qml:127
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "A KDE névjegye"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Kezdőlap"
 
 #: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a KWordQuiz document"
-msgstr ""
+msgstr "Válasszon egy KWordQuiz dokumentumot"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
-msgstr ""
+msgstr "KEduDocument (*.kvtml)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "Wql documents (*.wql)"
-msgstr ""
+msgstr "Wql dokumentumok (*.wql)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "CSV documents (*.csv)"
-msgstr ""
+msgstr "CSV dokumentumok (*.csv)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
-msgstr ""
+msgstr "XDXF dokumentumok (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
 #, fuzzy, kde-format
@@ -488,12 +488,12 @@ msgstr "Megnyit egy már létező szótárfájlt"
 #: qml/WelcomePage.qml:76
 #, kde-format
 msgid "Create Deck"
-msgstr ""
+msgstr "Pakli készítése"
 
 #: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "Pakli letöltése"
 
 #: qml/WelcomePage.qml:100
 #, fuzzy, kde-format
@@ -526,13 +526,13 @@ msgstr "Kérdés és válasz"
 #: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "Paklik"
 
 #: qml/WelcomePage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "Eltávolítás"
 
 #, fuzzy
 #~| msgid "Multiple Choice"
