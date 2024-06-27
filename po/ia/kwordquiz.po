@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kwordquiz package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:35+0000\n"
-"PO-Revision-Date: 2023-09-28 10:34+0200\n"
+"PO-Revision-Date: 2024-06-26 11:21+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -193,7 +193,7 @@ msgstr "Vista preliminar de imprimer"
 #: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
 msgid "Flashcard"
-msgstr ""
+msgstr "Flashcard"
 
 #: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
@@ -203,7 +203,7 @@ msgstr "Lista"
 #: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
 msgid "Exam"
-msgstr ""
+msgstr "Examine"
 
 #: qml/DeckEditorPage.qml:72
 #, kde-format
@@ -347,7 +347,7 @@ msgstr "Proxime"
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "NOn assatis parolas in tu joco"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
@@ -391,7 +391,7 @@ msgstr ""
 #: qml/SettingsPage.qml:32
 #, kde-format
 msgid "Flash Card"
-msgstr ""
+msgstr "Flash Card"
 
 #: qml/SettingsPage.qml:38
 #, kde-format
@@ -406,12 +406,12 @@ msgstr ""
 #: qml/SettingsPage.qml:63
 #, kde-format
 msgid "Multiple choice"
-msgstr ""
+msgstr "Selection multiple"
 
 #: qml/SettingsPage.qml:68
 #, kde-format
 msgid "Automatically check selected answer"
-msgstr ""
+msgstr "Verifica automaticamente responsa seligite"
 
 #: qml/SettingsPage.qml:78
 #, kde-format
@@ -421,7 +421,7 @@ msgstr "Demanda e Responsa"
 #: qml/SettingsPage.qml:84
 #, kde-format
 msgid "Count using hint as an error"
-msgstr ""
+msgstr "Computo usante suggestion como un error"
 
 #: qml/SettingsPage.qml:96
 #, kde-format
@@ -487,7 +487,7 @@ msgstr "Crea Deck"
 #: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "Discarga Joco (Deck)"
 
 #: qml/WelcomePage.qml:100
 #, kde-format
@@ -499,13 +499,13 @@ msgstr "Modo"
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
-msgstr ""
+msgstr "Flashcard"
 
 #: qml/WelcomePage.qml:144
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
-msgstr ""
+msgstr "Selection multiple"
 
 #: qml/WelcomePage.qml:151
 #, kde-format
@@ -516,7 +516,7 @@ msgstr "Demanda-Responsa"
 #: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "Jocos (Decks)"
 
 #: qml/WelcomePage.qml:203
 #, kde-format
