@@ -37,7 +37,7 @@ FormCard.FormCardPage {
     data: FileDialog {
         id: fileDialog
 
-        title: i18n("Please choose a KWordQuiz document")
+        title: i18n("Please choose a WordQuiz document")
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("KEduDocument (*.kvtml)"), i18n("Wql documents (*.wql)"), i18n("CSV documents (*.csv)"), i18n("XDXF documents (*.xdxf)")]
 
@@ -55,7 +55,7 @@ FormCard.FormCardPage {
     }
 
     Kirigami.Heading {
-        text: i18n("Welcome to KWordQuiz")
+        text: i18n("Welcome to WordQuiz")
 
         Layout.alignment: Qt.AlignHCenter
         Layout.topMargin: Kirigami.Units.largeSpacing
