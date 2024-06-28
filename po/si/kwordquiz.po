@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:36+0000\n"
+"POT-Creation-Date: 2024-06-28 00:36+0000\n"
 "PO-Revision-Date: 2009-11-08 18:25+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -446,7 +446,7 @@ msgstr ""
 
 #: qml/WelcomePage.qml:40
 #, kde-format
-msgid "Please choose a KWordQuiz document"
+msgid "Please choose a WordQuiz document"
 msgstr ""
 
 #: qml/WelcomePage.qml:42
@@ -471,7 +471,7 @@ msgstr ""
 
 #: qml/WelcomePage.qml:58
 #, kde-format
-msgid "Welcome to KWordQuiz"
+msgid "Welcome to WordQuiz"
 msgstr ""
 
 #: qml/WelcomePage.qml:70

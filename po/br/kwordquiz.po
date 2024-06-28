@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu/kwordquiz.pot\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:36+0000\n"
+"POT-Creation-Date: 2024-06-28 00:36+0000\n"
 "PO-Revision-Date: 2004-09-20 15:44+0200\n"
 "Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
 "Language-Team: br <LL@li.org>\n"
@@ -466,7 +466,7 @@ msgstr ""
 
 #: qml/WelcomePage.qml:40
 #, kde-format
-msgid "Please choose a KWordQuiz document"
+msgid "Please choose a WordQuiz document"
 msgstr ""
 
 #: qml/WelcomePage.qml:42
@@ -492,7 +492,7 @@ msgstr ""
 #: qml/WelcomePage.qml:58
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
-msgid "Welcome to KWordQuiz"
+msgid "Welcome to WordQuiz"
 msgstr "Kuitaat KWordQuiz"
 
 #: qml/WelcomePage.qml:70

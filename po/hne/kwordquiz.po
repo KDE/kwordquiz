@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:36+0000\n"
+"POT-Creation-Date: 2024-06-28 00:36+0000\n"
 "PO-Revision-Date: 2009-02-24 22:17+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -485,7 +485,7 @@ msgstr ""
 
 #: qml/WelcomePage.qml:40
 #, kde-format
-msgid "Please choose a KWordQuiz document"
+msgid "Please choose a WordQuiz document"
 msgstr ""
 
 #: qml/WelcomePage.qml:42
@@ -511,7 +511,7 @@ msgstr ""
 #: qml/WelcomePage.qml:58
 #, fuzzy, kde-format
 #| msgid "Quits KWordQuiz"
-msgid "Welcome to KWordQuiz"
+msgid "Welcome to WordQuiz"
 msgstr "के-वर्ड-क्विज से बाहिर होथे "
 
 #: qml/WelcomePage.qml:70

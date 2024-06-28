@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:36+0000\n"
+"POT-Creation-Date: 2024-06-28 00:36+0000\n"
 "PO-Revision-Date: 2007-01-17 11:14+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
@@ -462,7 +462,7 @@ msgstr ""
 
 #: qml/WelcomePage.qml:40
 #, kde-format
-msgid "Please choose a KWordQuiz document"
+msgid "Please choose a WordQuiz document"
 msgstr ""
 
 #: qml/WelcomePage.qml:42
@@ -487,7 +487,7 @@ msgstr ""
 
 #: qml/WelcomePage.qml:58
 #, kde-format
-msgid "Welcome to KWordQuiz"
+msgid "Welcome to WordQuiz"
 msgstr ""
 
 #: qml/WelcomePage.qml:70
