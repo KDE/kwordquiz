@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2023-09-28 07:45+0100\n"
+"PO-Revision-Date: 2024-06-28 16:51+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -54,10 +54,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Nevalida goto donita: %1. Permesitaj: flash, mc kaj qa"
 
 #: main.cpp:85
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "KWordQuiz"
+msgstr "WordQuiz"
 
 #: main.cpp:87
 #, kde-format
@@ -451,10 +450,9 @@ msgid "Welcome"
 msgstr "Bonvenon"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Bonvolu elekti KWordQuiz-dokumenton"
+msgstr "Bonvolu elekti WordQuiz-dokumenton"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -477,10 +475,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF-dokumentoj (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Bonvenon al KWordQuiz"
+msgstr "Bonvenon al WordQuiz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format

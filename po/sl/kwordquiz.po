@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-06-24 08:14+0200\n"
+"PO-Revision-Date: 2024-06-28 06:51+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -459,10 +459,9 @@ msgid "Welcome"
 msgstr "Dobrodošli"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Prosimo izberite dokument KWordQuiz"
+msgstr "Prosimo izberite dokument WordQuiza"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -485,10 +484,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF dokumenti (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Dobrodošli v KWordQuiz"
+msgstr "Dobrodošli v WordQuiz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format

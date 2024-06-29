@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-06-24 14:07+0300\n"
+"PO-Revision-Date: 2024-06-28 14:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -461,10 +461,9 @@ msgid "Welcome"
 msgstr "Hoş Geldiniz"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Lütfen bir K Sözcük Oyunu belgesi seçin"
+msgstr "Lütfen bir Sözcük Oyunu belgesi seçin"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -487,10 +486,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF belgeleri (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "K Sözcük Oyunu’na hoş geldiniz"
+msgstr "Sözcük Oyunu’na hoş geldiniz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format

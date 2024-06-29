@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-06-24 08:15+0300\n"
+"PO-Revision-Date: 2024-06-28 09:21+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -452,10 +452,9 @@ msgid "Welcome"
 msgstr "ברוך בואך"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "נא לבחור מסמך KWordQuiz"
+msgstr "נא לבחור מסמך WordQuiz"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -478,10 +477,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "מסמכי XDXF‏ (‎*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "ברוך בואך ל־KWordQuiz"
+msgstr "ברוך בואך ל־WordQuiz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format
