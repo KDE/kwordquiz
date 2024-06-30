@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-05-24 16:37+0100\n"
+"PO-Revision-Date: 2024-06-29 11:26+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -53,10 +53,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Invalid goto given: %1. Allowed: flash, mc and qa"
 
 #: main.cpp:85
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "KWordQuiz"
+msgstr "WordQuiz"
 
 #: main.cpp:87
 #, kde-format
@@ -450,10 +449,9 @@ msgid "Welcome"
 msgstr "Welcome"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Please choose a KWordQuiz document"
+msgstr "Please choose a WordQuiz document"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -476,10 +474,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF documents (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Welcome to KWordQuiz"
+msgstr "Welcome to WordQuiz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format
