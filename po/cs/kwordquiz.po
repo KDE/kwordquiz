@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2017, 2019, 2023 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2017, 2019, 2023, 2024 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2023-10-12 16:39+0200\n"
+"PO-Revision-Date: 2024-07-03 10:46+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -452,10 +452,9 @@ msgid "Welcome"
 msgstr "Vítejte"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Prosím, vyberte dokument KWordQuiz"
+msgstr "Prosím, vyberte dokument WordQuiz"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -478,10 +477,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "Dokument XDXF (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Vítejte v aplikaci KWordQuiz"
+msgstr "Vítejte v aplikaci WordQuiz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format
