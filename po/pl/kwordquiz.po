@@ -1,18 +1,18 @@
 # translation of kwordquiz.po to Polish
 # translation of kwordquiz.po to
+# SPDX-FileCopyrightText: 2011, 2014, 2015, 2018, 2019, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Krzysztof Pawlak <jmnemonic@gazeta.pl>, 2004, 2005.
 # Krzysztof Lichota <lichota@mimuw.edu.pl>, 2007.
 # Marcin Kowalski <yoshi314@gmail.com>, 2007.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2010, 2013.
 # Maciej Wikło <maciej.wiklo@wp.pl>, 2008, 2009.
 # Jan Stożek <jasio@stozek.waw.pl>, 2010.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2014, 2015, 2018, 2019, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2023-09-30 10:12+0200\n"
+"PO-Revision-Date: 2024-07-20 09:14+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -21,6 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,10 +59,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Podano nieprawidłowe przejdź-do: %1. Dozwolone: flash, mc oraz qa"
 
 #: main.cpp:85
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "KWordQuiz"
+msgstr "WordQuiz"
 
 #: main.cpp:87
 #, kde-format
@@ -456,10 +456,9 @@ msgid "Welcome"
 msgstr "Witaj"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Wybierz dokument KWordQuiz"
+msgstr "Wybierz dokument WordQuiz"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -482,10 +481,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "Dokumenty XDXF (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Witaj w KWordQuiz"
+msgstr "Witaj w WordQuiz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format
