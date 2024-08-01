@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-06-26 22:39+0200\n"
+"PO-Revision-Date: 2024-07-31 21:35+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -52,10 +52,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Érvénytelen utasítás: %1. Megengedett: flash, mc és qa"
 
 #: main.cpp:85
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "KWordQuiz"
+msgstr "WordQuiz"
 
 #: main.cpp:87
 #, kde-format
@@ -449,10 +448,9 @@ msgid "Welcome"
 msgstr "Kezdőlap"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Válasszon egy KWordQuiz dokumentumot"
+msgstr "Válasszon egy WordQuiz dokumentumot"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -475,16 +473,14 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF dokumentumok (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Kilépés a KWordQuizből"
+msgstr "Üdvözli a WordQuiz"
 
 #: qml/WelcomePage.qml:70
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "Megnyit egy már létező szótárfájlt"
+msgstr "Meglévő dokumentum megnyitása"
 
 #: qml/WelcomePage.qml:76
 #, kde-format
@@ -497,29 +493,25 @@ msgid "Download Deck"
 msgstr "Pakli letöltése"
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Mód"
 
 #: qml/WelcomePage.qml:137
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Tanulókártya"
 
 #: qml/WelcomePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
-msgstr "Feleletválasztás"
+msgstr "Többszörös választás"
 
 #: qml/WelcomePage.qml:151
-#, fuzzy, kde-format
-#| msgid "Question & Answer"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "Kérdés és válasz"
