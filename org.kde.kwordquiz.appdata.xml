@@ -17,6 +17,7 @@
   <name xml:lang="he">WordQuiz</name>
   <name xml:lang="hu">WordQuiz</name>
   <name xml:lang="ia">WordQuiz</name>
+  <name xml:lang="it">WordQuiz</name>
   <name xml:lang="ka">WordQuiz</name>
   <name xml:lang="nl">WordQuiz</name>
   <name xml:lang="pl">WordQuiz</name>
@@ -37,6 +38,7 @@
   <summary xml:lang="fr">Entraînement aux cartes mémoire</summary>
   <summary xml:lang="he">מאמן בקלפי זיכרון</summary>
   <summary xml:lang="hu">Tanulókártya-gyakorló</summary>
+  <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
   <summary xml:lang="ka">ბარათებით სწავლის პროგრამა</summary>
   <summary xml:lang="lv">Apmācības ar kartītēm programma</summary>
   <summary xml:lang="nl">Woorden oefenen</summary>
