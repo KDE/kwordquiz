@@ -20,6 +20,7 @@
   <name xml:lang="ia">WordQuiz</name>
   <name xml:lang="it">WordQuiz</name>
   <name xml:lang="ka">WordQuiz</name>
+  <name xml:lang="ko">WordQuiz</name>
   <name xml:lang="nl">WordQuiz</name>
   <name xml:lang="pl">WordQuiz</name>
   <name xml:lang="sl">KWordQuiz</name>
@@ -42,6 +43,7 @@
   <summary xml:lang="hu">Tanulókártya-gyakorló</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
   <summary xml:lang="ka">ბარათებით სწავლის პროგრამა</summary>
+  <summary xml:lang="ko">플래시 카드 트레이너</summary>
   <summary xml:lang="lv">Apmācības ar kartītēm programma</summary>
   <summary xml:lang="nl">Woorden oefenen</summary>
   <summary xml:lang="pl">Ćwiczenie z fiszkami</summary>
