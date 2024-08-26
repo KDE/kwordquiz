@@ -61,7 +61,6 @@ msgstr ""
 
 #: main.cpp:85
 #, fuzzy, kde-format
-#| msgid "KWordQuiz"
 msgid "WordQuiz"
 msgstr "KWordQuiz"
 
@@ -499,7 +498,6 @@ msgstr ""
 
 #: qml/WelcomePage.qml:100
 #, fuzzy, kde-format
-#| msgid "Mode"
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Modus"
