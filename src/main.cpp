@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
         QCommandLineOption(QStringList() << QStringLiteral("g") << QStringLiteral("goto"),
                            i18n("Type of session to start with: \n'flash' for flashcard, \n'mc' for multiple choice, \n'qa' for question and answer"),
                            QStringLiteral("session")));
-    parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+[File]"), i18n("File to open")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[File]"), i18n("File to open")));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 

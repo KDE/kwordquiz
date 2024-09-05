@@ -37,9 +37,7 @@ QVariant KWQRandomSortModel::data(const QModelIndex &idx, int role) const
             return QStringList();
         }
 
-        const auto rowRole = mode == QuestionInRightColumn
-            ? KWQCardModel::QuestionRole
-            : KWQCardModel::AnswerRole;
+        const auto rowRole = mode == QuestionInRightColumn ? KWQCardModel::QuestionRole : KWQCardModel::AnswerRole;
 
         QList<int> possibleIndex;
         for (int i = 0; i < rowCount(); i++) {
@@ -121,8 +119,7 @@ bool KWQRandomSortModel::lessThan(const QModelIndex &left, const QModelIndex &ri
     if (m_shuffle) {
         return m_shuffleList.at(right.row()) < m_shuffleList.at(left.row());
     } else if (m_restoreNativeOrder) {
-        return sourceModel()->index(right.row(), right.column()).row() <
-               sourceModel()->index(left.row(), left.column()).row();
+        return sourceModel()->index(right.row(), right.column()).row() < sourceModel()->index(left.row(), left.column()).row();
     } else {
         return QSortFilterProxyModel::lessThan(left, right);
     }

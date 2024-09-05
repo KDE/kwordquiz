@@ -4,9 +4,8 @@
 
 #pragma once
 
-#include <QString>
 #include <QObject>
-
+#include <QString>
 
 class BlankAnswer : public QObject
 {
@@ -17,7 +16,6 @@ class BlankAnswer : public QObject
     Q_PROPERTY(QString correctAnswer READ correctAnswer NOTIFY inputChanged)
 
 public:
-
     QString input() const;
     void setInput(const QString &input);
 
@@ -40,7 +38,6 @@ Q_SIGNALS:
     void inputChanged();
 
 private:
-
     QString m_input;
     BlankResult m_blankResult;
 };

@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include <QSortFilterProxyModel>
 #include "kwqcardmodel.h"
+#include <QSortFilterProxyModel>
 
 /// Randomize the order of the items contained inside the KWQCardModel
 ///
@@ -46,8 +46,9 @@ Q_SIGNALS:
 protected:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
     bool filterAcceptsRow(const int sourceRow, const QModelIndex &sourceParent) const override;
+
 private:
-    KWQCardModel * m_sourceModel;
+    KWQCardModel *m_sourceModel;
 
     enum Mode {
         QuestionInLeftColumn = 1,

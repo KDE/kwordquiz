@@ -76,12 +76,11 @@ QVariant KWQDocumentModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> KWQDocumentModel::roleNames() const
 {
     return {
-        { TitleRole, "title" },
-        { UrlRole, "url" },
-        { DocumentRole, "document" },
+        {TitleRole, "title"},
+        {UrlRole, "url"},
+        {DocumentRole, "document"},
     };
 }
-
 
 void KWQDocumentModel::add(KEduVocDocument *document)
 {

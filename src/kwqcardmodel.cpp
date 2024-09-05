@@ -68,7 +68,7 @@ void KWQCardModel::add(const QString &question, const QString &answer)
     Q_ASSERT(m_document);
 
     beginInsertRows({}, rowCount(), rowCount());
-    m_document->lesson()->appendEntry(new KEduVocExpression({ question, answer }));
+    m_document->lesson()->appendEntry(new KEduVocExpression({question, answer}));
     endInsertRows();
 
     Q_EMIT multipleChoiceAvailableChanged();
@@ -122,7 +122,6 @@ bool KWQCardModel::save()
     } else {
         url = m_document->url();
     }
-
 
     auto result = m_document->saveAs(url, KEduVocDocument::Automatic);
     return result == KEduVocDocument::NoError;
@@ -368,13 +367,13 @@ QVariant KWQCardModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> KWQCardModel::roleNames() const
 {
     return {
-        { QuestionRole, "question" },
-        { QuestionImageRole, "questionImage" },
-        { QuestionSoundRole, "questionSound" },
+        {QuestionRole, "question"},
+        {QuestionImageRole, "questionImage"},
+        {QuestionSoundRole, "questionSound"},
 
-        { AnswerRole, "answer" },
-        { AnswerImageRole, "answerImage" },
-        { AnswerSoundRole, "answerSound" },
+        {AnswerRole, "answer"},
+        {AnswerImageRole, "answerImage"},
+        {AnswerSoundRole, "answerSound"},
     };
 }
 
