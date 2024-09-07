@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-08-14 00:32+0330\n"
+"PO-Revision-Date: 2024-09-06 22:32+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
 "Language: fa\n"
@@ -112,7 +112,7 @@ msgstr ""
 #: main.cpp:96
 #, kde-format
 msgid "Leitner System and several code contributions"
-msgstr "سیستم Leitner و همکاریهای کد مختلف"
+msgstr "سامانه Leitner و همکاریهای کد مختلف"
 
 #: main.cpp:116
 #, fuzzy, kde-format
