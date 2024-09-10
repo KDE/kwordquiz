@@ -9,6 +9,7 @@
   <name>WordQuiz</name>
   <name xml:lang="ca">WordQuiz</name>
   <name xml:lang="ca-valencia">WordQuiz</name>
+  <name xml:lang="de">WordQuiz</name>
   <name xml:lang="en-GB">WordQuiz</name>
   <name xml:lang="eo">WordQuiz</name>
   <name xml:lang="es">WordQuiz</name>
@@ -33,6 +34,7 @@
   <summary xml:lang="ca">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="ca-valencia">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
+  <summary xml:lang="de">Karteikartentrainer</summary>
   <summary xml:lang="en-GB">Flash card trainer</summary>
   <summary xml:lang="eo">Fulmkarta trejnilo</summary>
   <summary xml:lang="es">Entrenador de tarjetas</summary>
@@ -103,6 +105,7 @@
       <caption xml:lang="ca">Pàgina de benvinguda del KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Pàgina de benvinguda de KWordQuiz</caption>
       <caption xml:lang="cs">Uvítací stránka KWordQuiz</caption>
+      <caption xml:lang="de">WordQuiz Willkommen-Seite</caption>
       <caption xml:lang="en-GB">KWordQuiz welcome page</caption>
       <caption xml:lang="eo">Bonvena paĝo de KWordQuiz</caption>
       <caption xml:lang="es">Página de bienvenida de KWordQuiz</caption>
@@ -132,6 +135,7 @@
       <caption xml:lang="ca">Editor</caption>
       <caption xml:lang="ca-valencia">Editor</caption>
       <caption xml:lang="cs">Editor</caption>
+      <caption xml:lang="de">Editor</caption>
       <caption xml:lang="en-GB">Editor</caption>
       <caption xml:lang="eo">Redaktilo</caption>
       <caption xml:lang="es">Editor</caption>
