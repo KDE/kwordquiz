@@ -19,8 +19,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -170,10 +170,9 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "Επανάληψη των &Λαθών"
+msgstr "Επανάληψη των Λαθών"
 
 #: qml/BasePage.qml:93
 #, kde-format
@@ -252,9 +251,7 @@ msgid "Remove Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link image"
-#| msgid "Link Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Σύνδεση εικόνας"
@@ -268,9 +265,7 @@ msgid "Remove Sound"
 msgstr "Επιλογή ήχου"
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo link sound"
-#| msgid "Link Sound"
+#, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Σύνδεση ήχου"
@@ -327,11 +322,10 @@ msgstr "Επεξεργαστής"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "&Έλεγχος"
+msgstr "Έλεγχος"
 
 #: qml/FlashCardPage.qml:128
 #, fuzzy, kde-format
@@ -403,19 +397,16 @@ msgid "Options"
 msgstr "&2 Επιλογή"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Ανακάτεμα"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "&Υπόδειξη"
+msgstr "Υπόδειξη"
 
 #: qml/SettingsPage.qml:13
 #, fuzzy, kde-format
@@ -426,9 +417,7 @@ msgid "Settings"
 msgstr "Ρυθμίσεις κουίζ"
 
 #: qml/SettingsPage.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Γενικά"
 
@@ -455,8 +444,7 @@ msgid "Time delay for flipping the flashcard"
 msgstr "Χρονική καθυστέρηση στο γύρισμα της κάρτας"
 
 #: qml/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
 msgstr "Πολλαπλής επιλογής"
 
@@ -467,10 +455,9 @@ msgid "Automatically check selected answer"
 msgstr "Αυτόματος έλεγχος της επιλεγμένης απάντησης στην πολλαπλή επιλογή"
 
 #: qml/SettingsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "Κουίζ &ερωταπαντήσεων"
+msgstr "Κουίζ ερωταπαντήσεων"
 
 #: qml/SettingsPage.qml:84
 #, fuzzy, kde-format
@@ -548,22 +535,19 @@ msgid "Download Deck"
 msgstr ""
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Λειτουργία"
 
 #: qml/WelcomePage.qml:137
-#, fuzzy, kde-format
-#| msgid "Flashcard"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Κάρτα"
 
 #: qml/WelcomePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Πολλαπλής επιλογής"
