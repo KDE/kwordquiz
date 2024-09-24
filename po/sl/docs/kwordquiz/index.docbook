@@ -1,0 +1,676 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Slovenian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>&kwordquiz; Priročnik</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Matjaž</firstname
+><surname
+>Jeran</surname
+><affiliation
+><address
+><email
+>matjaz.jeran@amis.net</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>04.07.2023</date>
+<releaseinfo
+>Applications 23.08</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; je kartica in program za učenje besedišča &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>kartica</keyword>
+<keyword
+>besedišče</keyword>
+<keyword
+>jezik</keyword>
+<keyword
+>izobraževanje</keyword>
+<keyword
+>šola</keyword>
+<keyword
+>fakulteta</keyword>
+<keyword
+>univerza</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Uvod</title>
+<para
+>&kwordquiz; je orodje, ki vam omogoča zmogljiv način za obvladovanje novih besedišč. Lahko je jezik ali katera koli druga terminologija. </para>
+<sect1 id="easy-to-use">
+<title
+>Enostavna za uporabo</title>
+
+<para
+>Z &kwordquiz; na preprost in intuitiven način sestavite lastne dokumente z besediščem. Osnovna postavitev je preglednica z dvema stolpcema, v katero vnašate vnose besedišča v eni obliki, ki jo poznate, in v drugi obliki, ki se je želite naučiti. Naslove stolpcev spremenite tako, da odražajo, kar vadite. </para>
+
+<sect2 id="quiz-types">
+<title
+>Vrste kviza</title>
+
+<para
+>Ko vnesete svoj besedišče, ste pripravljeni na začetek kviza. Morda želite začeti s sejo flashcard. Pozneje lahko preidete na kviz z več možnimi izbirami ali rešite zmogljiv kviz z vprašanji in odgovori. Prejmete takojšnje povratne informacije o pravilnih in nepravilnih odgovorih in imate možnost ponoviti morebitne napake, s čimer še izboljšate svojo učno učinkovitost. Če potrebujete malo dodatne pomoči, lahko uporabite funkcijo namigovanja. </para>
+</sect2>
+
+
+<sect2 id="practice-modes">
+<title
+>Načini vadbe</title>
+
+<para
+>Izberete lahko, kako želite vaditi. &kwordquiz; ponuja tri različne načine za učinkovitejšo vadbo. Različni načini omogočajo izbiro, kateri stolpec bo uporabljen kot vprašanje, odgovor ali oboje. Poleg tega lahko izberete, ali želite uporabiti zaporedni ali naključni vrstni red. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Dokumenti besedišča</title>
+<para
+>&kwordquiz; lahko odpre več vrst besednih podatkov. Privzeti format je <filename class="extension"
+>.kvtml</filename
+>, format datoteke, ki si ga deli več &kde; programi. &kwordquiz; prav tako mora odpreti datoteke <filename class="extension"
+>.wql</filename
+>, ki jih je ustvaril &kwordquiz; za &Windows;, datoteke <filename class="extension"
+>.csv</filename
+> z besedilom, ločenim z vejicami, <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class= "extension"
+>.voc</filename
+> datoteke</ulink
+>, ustvarjene s staro različico programa Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>.xdxf</filename
+> datoteke</ulink
+> in <filename class="extension"
+>.xml.gz</filename
+> datoteke, ustvarjene s starimi različicami <ulink url="http:/ /pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>&kwordquiz; lahko shrani vaše dokumente besedišča v več različnih formatih. Privzeta je oblika <filename class="extension"
+>.kvtml</filename
+>, ki jo uporabljajo drugi &kde; programi. Druga razpoložljiva možnost je z vejicami ločeno besedilo <filename class="extension"
+>.csv</filename
+>. </para>
+<para
+>Odprete lahko več datotek hkrati in preprosto kopirate ali premikate vnose med datotekami. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referenca ukazov</title>
+<sect1 id="mode-menu">
+<title
+>Meni z možnostmi</title>
+<para
+>Meni ponuja 3 različne možnosti za kviz, ki se med seboj ne izključujejo.</para>
+
+  <note
+><para
+>Imena menijev se bodo spremenila tako, da bodo odražala naslove stolpcev trenutno aktivnega dokumenta besedišča. Izbrani način bo veljal za Flashcard, Večkratna izbira in Vprašanja &amp; Odgovor.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Možnosti</guimenu
+> <guimenuitem
+>Premešaj</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Med kvizom boste prejeli vnose v naključnem vrstnem redu, vendar bo vsak vnos obdelan enkrat. </para>
+    </listitem>
+  </varlistentry>
+
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Možnosti</guimenu
+> <guimenuitem
+>Stolpec 1 -&gt; Stolpec 2</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Med kvizom boste prejeli vnose v 1. stolpcu in morali boste vnesti ustrezne vnose v 2. stolpcu. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Način</guimenu
+> <guimenuitem
+>Stolpec 2 -&gt; Stolpec 1</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Med kvizom boste prejeli vnose v 2. stolpcu in morali boste vnesti ustrezne vnose v 1. stolpcu. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="welcome-page">
+<title
+>Pozdravna stran</title>
+
+<para
+>Ko odprete KWordQuiz, boste pristali na pozdravni strani. Na tej strani bodo navedeni vse predhodno odprte karte. Poleg tega vam omogoča ustvarjanje novega kompleta, odpiranje kompleta iz datoteke ali prenos kompleta iz interneta. Končno lahko izberete tudi, kateri glavni način želite uporabiti. </para>
+
+<screenshot>
+  <screeninfo
+>Pozdravna stran</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Pozdravna stran</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>Urejevalnik besedišča</title>
+
+<para
+>Območje dokumenta z besediščem je videti kot mreža, podobna preglednici. Mreža je sestavljena iz celic, organiziranih v dveh stolpcih in številnih vrsticah. Vsak stolpec in vrstica ima glavo. Naslovi stolpcev se uporabljajo za določanje naslovov dokumenta besedišča. Nastavite jih lahko z urejanjem prve vrstice. </para>
+
+<para
+>Lahko kliknete celico mreže, da postane aktivna celica. S puščico gor in dol se lahko premikate gor in dol v tabeli in zavihek, da se premaknete na naslednji element.</para>
+
+<screenshot>
+  <screeninfo
+>Urejevalnik besedišča</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Urejevalnik besedišča</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>V dokumentu sestavite besednjak vnosov po parih v dveh stolpcih. Besedilo lahko vnesete v aktivno celico preprosto tako, da začnete tipkati. Celica bo zdaj v načinu za urejanje in lahko izberete celotno ali del besedila. Celico lahko uredite tudi tako, da jo dvokliknete ali pritisnete <keycap
+>F2</keycap
+> in spremenite neposredno v celici. </para>
+<para
+>Ko končate s tipkanjem enega vnosa, pritisnite tipko za vrnitev in naslednja celica bo samodejno postala aktivna. Zato je enostavno hitro vnesti več vnosov. V resnici ni omejitev glede števila vrstic, ki jih lahko imate v dokumentu. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Seja s kartami</title>
+
+<para
+>Izberite Flashcard na navigacijski plošči, da začnete sejo s kartami na vnosih dokumenta aktivnega besedišča. Uporabljen bo način, izbran v meniju <guimenu
+>Možnosti</guimenu
+>. Če med sejo spremenite možnosti, se bo seja znova zagnala. </para>
+
+<para
+>Če delate z dolgimi izrazi, lahko spremenite velikost okna, da bo na voljo več prostora. Velikost pisave bo vplivala tudi na to, koliko se bo prilegalo v različne dele okna. </para>
+
+<screenshot>
+  <screeninfo
+>Seja s kartami</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Seja s kartami</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Sprva se prikaže sprednja stran kartice. Uporabite <guibutton
+>Preveri</guibutton
+>, da vidite drugo stran. </para>
+<para
+>Če se želite premakniti na naslednjo kartico, bodisi izberite <guibutton
+>Vem</guibutton
+>, da kartico štejete kot pravilno, ali <guibutton
+>Ne vem</guibutton
+>, da kartico štejete kot napačno. </para>
+<para
+>Izberite <guibutton
+>Ponovi napake</guibutton
+>, če želite ponoviti karte, ki ste jih šteli kot nepravilne. </para>
+<para
+>Izberite <guibutton
+>Poskusi znova</guibutton
+>, da znova začnete sejo od začetka. Če uporabljate naključni način, bodo karte premešane. </para>
+<para
+>Razdelek z rezultati na vrhu zaslona prikazuje število kart, število kart, ki ste jih videli, število kart, ki so bile preštete kot pravilne, in številke, ki so bile preštete kot nepravilne. </para>
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Seja z več možnostmi</title>
+
+<para
+>Izberite Več možnosti na pozdravni strani, da začnete kviz z več izbirami o vnosih v dokumentu aktivnega besedišča. Uporabljen bo način, izbran v meniju <guimenu
+>Možnosti</guimenu
+>. Če med sejo spremenite možnosti, se bo seja znova zagnala. </para>
+<para
+>Če delate z dolgimi izrazi, lahko spremenite velikost okna, da naredite več prostora. Velikost pisave (izbrana za urejevalnik) bo prav tako vplivala na to, koliko se bo prilegalo v različne dele okna. </para>
+<para
+>V spodnjem primeru je uporabnik na prejšnje vprašanje dal napačen odgovor. Zdaj bo odgovoril na naslednje vprašanje. </para>
+
+<screenshot>
+  <screeninfo
+>Seja z več možnostmi</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Seja z več možnostmi</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Vaše izbire so prikazane na sredini zaslona. Izberite tistega, ki se vam zdi pravilen. Če želite preveriti, ali je odgovor pravilen, uporabite <guibutton
+>Preveri</guibutton
+>. Če ste aktivirali samodejni način v <menuchoice
+><guimenu
+>Nastavitve</guimenu
+></menuchoice
+>, je vaša izbira takoj označena. </para>
+<para
+>Izberite <guibutton
+>Ponovi napake</guibutton
+>, če želite ponoviti karte, ki ste jih šteli kot nepravilne. </para>
+<para
+>Izberite <guibutton
+>Poskusi znova</guibutton
+>, da znova začnete sejo od začetka. Če uporabljate naključni način, bodo karte premešane. </para>
+<para
+>Razdelek z rezultati na vrhu zaslona prikazuje število vprašanj, število vprašanj, na katera ste odgovorili, število pravilnih odgovorov in število nepravilnih odgovorov. </para>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Seja vprašanj &amp; odgovorov</title>
+<para
+>Izberite vprašanje &amp; Odgovorite na navigacijski plošči, da začnete vprašanje &amp; odgovor na vnose v aktivnem besedišču. Uporabljen bo način, izbran v meniju <guimenu
+>Način</guimenu
+>. Če med sejo spremenite način, se bo seja znova zagnala. </para>
+<para
+>Če delate z dolgimi izrazi, lahko spremenite velikost okna, da naredite več prostora. Velikost pisave (izbrana za urejevalnik) bo prav tako vplivala na to, koliko se bo prilegalo v različne dele okna. </para>
+<para
+>V spodnjem primeru je uporabnik pravilno odgovoril na prejšnje vprašanje (če si želite ogledati, kako se obravnavajo nepravilni odgovori, glejte poglavje <link linkend="multiple"
+>Večkratna izbira</link
+>). Zdaj bo odgovoril na naslednje vprašanje. </para>
+
+<screenshot>
+  <screeninfo
+>Seja vprašanje &amp; odgovor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Seja vprašanje &amp; odgovor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Vaše vprašanje je prikazano na sredini. Vnesite odgovor v polje za urejanje. Uporabite <guibutton
+>Preveri</guibutton
+> ali &Enter; da vidite, ali je odgovor pravilen. </para>
+<para
+>Izberite <guibutton
+>Namig</guibutton
+>, da dobite naslednjo pravilno črko odgovora. V <menuchoice
+><guimenu
+>Nastavitve</guimenu
+></menuchoice
+> lahko izberete, da vsa vprašanja, pri katerih uporabljate funkcijo namigovanja, štejete kot nepravilna. </para>
+<para
+>Izberite <guibutton
+>Ponovi napake</guibutton
+>, če želite ponoviti karte, ki ste jih šteli kot nepravilne. </para>
+<para
+>Izberite <guibutton
+>Poskusi znova</guibutton
+>, da znova začnete sejo od začetka. Če uporabljate naključni način, bodo karte premešane. </para>
+<para
+>Razdelek z rezultati na vrhu zaslona prikazuje število vprašanj, število vprašanj, na katera ste odgovorili, število pravilnih odgovorov in število nepravilnih odgovorov. </para>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Izpolni prazna polja</title>
+
+<para
+>'Izpolni prazna polja' je zmogljiv način za vadbo v &kwordquiz;. Gre za posebno vrsto kviza vprašanj in odgovorov, ki ga je treba podrobneje opisati. </para>
+
+<para
+>Razmislite o naslednji tabeli. Lahko bi bil besednjak v &kwordquiz;: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>angleščina</entry>
+<entry
+>nemščina</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>Imamo računalnik</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>Imamo računalnik</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>Imamo računalnik</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>Imamo računalnik</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>Pomembna stvar, na katero morate biti pozorni, je namestitev oklepajev. Pravijo &kwordquiz; kako naj se kviz izvede. </para>
+<para
+>V 1. ni oklepajev. Če predpostavimo, da je vprašanje angleščina, odgovor pa nemščina, morate za pravilen odgovor dati celoten izraz 'Wir besitzen einen Computer'. </para>
+<para
+>V 2. &kwordquiz; bi prikazal vprašanje, ampak tudi "Wir ........ einen Computer". Za pravilen odgovor zadostuje, da napišete 'besitzen'. </para>
+<para
+>3. kaže, da lahko praznina sestoji iz več kot ene besede. Pravilen odgovor je 'besitzen einen'. </para>
+<para
+>V 4. sta dve ločeni praznini. Če želite določiti, da morate v odgovor napisati 'besitzen; Computer', &ie; ločite prazna mesta s podpičjem, da dobite pravilen odgovor. </para>
+<para
+>Označena prazna polja so pomembna le, če se pojavijo v odgovoru. V nasprotnem primeru se oklepaji ne upoštevajo. Poleg tega oklepaji nimajo učinka pri kvizih z več izbirami. Za poenostavitev ustvarjanja besednjakov za izpolnjevanje praznin obstajajo menijski ukazi za označevanje in odznačevanje praznin. Seveda lahko tudi samo vtipkate oklepaje. &kwordquiz; preveri sintakso. Če je besedilo rdeče, je nekaj narobe z oklepaji in kviza ni mogoče začeti. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Tiskanje</title>
+<para
+>&kwordquiz; omogoča tiskanje dokumentov besedišča na več različnih načinov. Možnosti tiskanja so na voljo v urejevalniku &kwordquiz;. Ko izberete <guibutton
+>Natisni...</guibutton
+>, se prikaže meni, kjer lahko izberete tiskanje dokumenta kot seznam besedišča (&ie; kot je prikazan v urejevalniku), izpitu iz besedišča ali kot kartice. Ko je način izbran, se vam prikaže standardno &kde; pogovorno okno za tiskanje. </para>
+<screenshot>
+  <screeninfo
+>Možnosti tiskanja besedišča</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Možnosti tiskanja besedišča</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Seznam besedišča</title>
+<para
+>Besedišče bo natisnjeno, kot je prikazano v urejevalniku. To vključuje pisavo, višino vrstic in širino stolpcev. Prepričajte se, da so stolpci dovolj ozki, da se prilegajo strani.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Natisni seznam besedišča</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Natisni seznam besedišča</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Izpit iz besedišča</title>
+<para
+>Besedišče bo natisnjeno, kot je prikazano v urejevalniku, le da bo desni stolpec ostal prazen, dodan pa bo tretji stolpec za točkovanje. Uporabljene nastavitve vključujejo pisavo, višine vrstic in širine stolpcev. Prepričajte se, da so stolpci dovolj ozki, da se prilegajo strani.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Natisni izpit iz besedišča</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Natisni izpit iz besedišča</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Kartice</title>
+<para
+>Dve kartici velikosti 3" x 5" na stran. Kartice bodo vedno natisnjene ležeče.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Natisni kartice</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Natisni kartice</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="dialogs">
+<title
+>Pogovorna okna</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Splošne nastavitve</title>
+<screenshot>
+  <screeninfo
+>Splošne nastavitve</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-config.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Splošne nastavitve</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Izberete lahko, v kateri vrsti seje naj se začne na novo odprti besednjak. Če greste neposredno na kviz, lahko preprečite, da bi vnaprej videli kakršnekoli vnose. </para>
+<para
+>Za vse seje lahko izberete, ali naj bodo rezultati prikazani v odstotkih namesto v absolutnih številkah. </para>
+<tip>
+<para
+>Upoštevajte, da se nastavitve samodejno uporabijo. </para>
+</tip>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Nastavitve stolpca</title>
+<para
+>To pogovorno okno lahko odprete v urejevalniku.</para>
+<screenshot>
+  <screeninfo
+>Nastavitve stolpca</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Nastavitve stolpca</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>S tem pogovornim oknom določite naslove stolpcev in jezike stolpcev. Kliknite na jezik, da ga izberete, ali zaprite pogovorno okno, da zavržete vse spremembe. </para>
+</sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Zasluge in licenca</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Avtorske pravice za program 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> 2023 Carl Schwan <email
+>carl@carlchwan.eu</email
+> </para>
+
+<para
+>Avtorske pravice za dokumentacijo 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Prevod: Matjaž Jeran<email
+>matjaz.jeran@amis.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
