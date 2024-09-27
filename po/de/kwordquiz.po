@@ -522,7 +522,7 @@ msgstr "Mehrfachauswahl"
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "Frage & Antwort"
+msgstr "Frage && Antwort"
 
 #: qml/WelcomePage.qml:157
 #, kde-format
