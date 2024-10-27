@@ -44,6 +44,7 @@
   <summary xml:lang="gl">Adestrador de vocabulario.</summary>
   <summary xml:lang="he">מאמן בקלפי זיכרון</summary>
   <summary xml:lang="hu">Tanulókártya-gyakorló</summary>
+  <summary xml:lang="ia">Instructor de Flash Card</summary>
   <summary xml:lang="it">Apprendimento con carte mnemoniche</summary>
   <summary xml:lang="ka">ბარათებით სწავლის პროგრამა</summary>
   <summary xml:lang="ko">플래시 카드 트레이너</summary>
@@ -76,6 +77,7 @@
     <p xml:lang="gl">KWordQuiz é un programa de fichas de propósito xeral. Pode usarse para adestrar vocabulario e para moitas outras cousas. Fornece un editor e cinco modos distintos de preguntas mediante fichas. Usa o formato de ficheiro KVTML e os ficheiros doados poden descargarse desde a propia aplicación.</p>
     <p xml:lang="he">‏KWordQuiz היא תוכנית קלפי זיכרון רב תכליתית. אפשר להשתמש בה ללמידת אוצר מילים ומגוון נושאים נוספים. היא מספקת עורך וחמישה מצבי בחינות של קלפי זיכרון. היא משתמשת בתבנית הקבצים KVTML והקבצים שנתרמים זמינים להורדה מתוך היישום.</p>
     <p xml:lang="hu">A KWordQuiz egy általános célú tanulókártya-program. Használható szókincs tanulására és sok más tantárgyhoz. Szerkesztőt és öt különböző kvízmódot biztosít. A KVTML fájlformátumot használja, és a közreműködők által készített fájlok az alkalmazáson belül letölthetők.</p>
+    <p xml:lang="ia">KWordQuiz es un programam de carta  mnemonica (flsh card) de proposito general. Il pote esser  usate per apprender vocabularioe multe altere subjectos. Il forni un editor e cinque modos differente de quiz de flashcard. Il usa le formato KVTML e file contribuite pote esser discargate ab intra le application.</p>
     <p xml:lang="id">KWordQuiz adalah program kartu flash pada umumnya. Ini dapat digunakan untuk pembelajaran kosa kata dan banyak mata pelajaran lainnya. Ini menyediakan editor dan lima mode kuis flashcard yang berbeda. Ini menggunakan format file KVTML dan file kontribusi dapat diunduh dari dalam aplikasi.</p>
     <p xml:lang="it">KWordQuiz è un programma di carte mnemoniche. Può essere usato per l'apprendimento di vocaboli e moltre altre materie. Fornisce un editor e cinque diversi tipi di quiz con carte menmoniche. Usa il formato di file KVTML e permette di scaricare file inviati da altri utenti.</p>
     <p xml:lang="ka">KWordQuiz ჩვეულებრივი ბარათების პროგრამაა. ის შეგიძლიათ ლექსიკონის სასწავლად და ბევრი სხვა მიზნით გამოიყენოთ. მას ასევე გააჩნია რედაქტორი და ბარათების გამოცანების 5 სხვადასხვა რეჟიმი. ის KVTML ფაილის ფორმატს იყენებს და მოხალისეების ფაილების გადმოწერა აპლიკაციის შიგნიდანვე შეგიძლიათ.</p>
@@ -117,6 +119,7 @@
       <caption xml:lang="gl">Páxina de benvida de KWordQuiz.</caption>
       <caption xml:lang="he">מסך קבלת הפנים של KWordQuiz</caption>
       <caption xml:lang="hu">A KWordQuiz kezdőlapja</caption>
+      <caption xml:lang="ia">Pagina de benvenite de KWordQuiz</caption>
       <caption xml:lang="it">Pagina di benvenuto di KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის მისალმების გვერდი</caption>
       <caption xml:lang="ko">KWordQuiz 환영 페이지</caption>
@@ -183,6 +186,7 @@
       <caption xml:lang="gl">Proba de cartas en KWordQuiz.</caption>
       <caption xml:lang="he">בוחן קלפי זיכרון ב־KWordQuiz</caption>
       <caption xml:lang="hu">Tanulókártyakvíz a KWordQuizben</caption>
+      <caption xml:lang="ia">Quiz de Flashcard in KWordQuiz</caption>
       <caption xml:lang="id">Kuis flashcard di KWordQuiz</caption>
       <caption xml:lang="it">Quiz di carte mnemoniche in KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის გამოცნობანა ბარათებით</caption>
@@ -249,6 +253,7 @@
       <caption xml:lang="gl">Modo de pregunta e resposta en KWordQuiz.</caption>
       <caption xml:lang="he">מצב מענה לשאלות ב־KWordQuiz</caption>
       <caption xml:lang="hu">A KWordQuiz kérdés-válasz módja</caption>
+      <caption xml:lang="ia">Modo de Demanda responsa in KwordQuiz</caption>
       <caption xml:lang="it">Modalità risposta alla domanda in KWordQuiz</caption>
       <caption xml:lang="ka">KWordQuiz-ის ერთზე მეტი პასუხის რეჟიმი</caption>
       <caption xml:lang="ko">KWordQuiz의 주관식 퀴즈 모드</caption>
