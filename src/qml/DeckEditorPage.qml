@@ -441,7 +441,6 @@ Kirigami.ScrollablePage {
 
             width: ListView.view.width
             spacing: 0
-            background: null
 
             QQC2.ItemDelegate {
                 Layout.fillWidth: true
