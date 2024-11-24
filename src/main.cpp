@@ -77,7 +77,6 @@ int main(int argc, char *argv[])
     }
 #endif
 
-    KCrash::initialize();
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("kwordquiz"));
     QIcon::setFallbackThemeName(u"breeze"_s);
 
