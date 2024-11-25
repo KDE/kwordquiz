@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 00:36+0000\n"
+"POT-Creation-Date: 2024-11-25 00:37+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -52,65 +52,65 @@ msgstr "答案"
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:85
+#: main.cpp:84
 #, kde-format
 msgid "WordQuiz"
 msgstr ""
 
-#: main.cpp:87
+#: main.cpp:86
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "强大的答题卡和词汇表学习程序"
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE 教育娱乐类软件维护者"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner 学习系统并贡献了一些代码"
 
-#: main.cpp:116
+#: main.cpp:115
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -119,7 +119,7 @@ msgid ""
 "'qa' for question and answer"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "File to open"
 msgstr "要打开的文件"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 00:36+0000\n"
+"POT-Creation-Date: 2024-11-25 00:37+0000\n"
 "PO-Revision-Date: 2024-09-23 15:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -63,65 +63,65 @@ msgstr "Yanıt"
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Geçersiz goto verildi: %1. İzin verilenler: flash, mc ve qa"
 
-#: main.cpp:85
+#: main.cpp:84
 #, kde-format
 msgid "WordQuiz"
 msgstr "Sözcük Oyunu"
 
-#: main.cpp:87
+#: main.cpp:86
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Güçlü bir bilgi kartı ve söz dağarcığı genişletme programı"
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "© 2003–2010, Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "Özgün yazar"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "QML aktarımı"
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne–Marie Mahfouf"
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "KDE Bilgisayar ortamında eğlendirerek eğitim Sorumlusu"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner Sistemi ve birkaç kod katkısı"
 
-#: main.cpp:116
+#: main.cpp:115
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -134,7 +134,7 @@ msgstr ""
 "çoklu tercih için “mc”, \n"
 "soru–yanıt için “qa”"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "File to open"
 msgstr "Açılacak dosya"

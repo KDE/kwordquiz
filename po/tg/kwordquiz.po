@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 00:36+0000\n"
+"POT-Creation-Date: 2024-11-25 00:37+0000\n"
 "PO-Revision-Date: 2019-09-29 12:43+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -57,67 +57,67 @@ msgstr "Ҷавоби шумо"
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:85
+#: main.cpp:84
 #, fuzzy, kde-format
 #| msgid "KWordQuiz - %1"
 msgid "WordQuiz"
 msgstr "KWordQuiz - %1"
 
-#: main.cpp:87
+#: main.cpp:86
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr ""
 "KWordQuiz - барномаи омӯзишии иқтидорӣ барои машқи захираи луғатӣ мебошад"
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr ""
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgid "Peter Hedlund"
 msgstr ""
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr ""
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Координати пакети омӯзиши барномаи KDE"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr ""
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr ""
 
-#: main.cpp:116
+#: main.cpp:115
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -126,7 +126,7 @@ msgid ""
 "'qa' for question and answer"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "File to open"
 msgstr "Кушодани файл"

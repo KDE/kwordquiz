@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 00:36+0000\n"
+"POT-Creation-Date: 2024-11-25 00:37+0000\n"
 "PO-Revision-Date: 2012-07-06 16:02+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -53,66 +53,66 @@ msgstr "ចម្លើយ"
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
-#: main.cpp:85
+#: main.cpp:84
 #, fuzzy, kde-format
 #| msgid "KWordQuiz"
 msgid "WordQuiz"
 msgstr "KWordQuiz"
 
-#: main.cpp:87
+#: main.cpp:86
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "កម្មវិធី​សិក្សា​វាក្យសព្ទ និង បណ្ណ​បង្ហាញ​ដែល​មាន​ប្រសិទ្ធិភាព"
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០០៣-២០១០ ដោយ Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr ""
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr ""
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "អ្នក​ថែ​ទាំ​ល្បែង​កំសាន្ត​បង្កើន​ចំណេះដឹង​របស់ KDE"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "ប្រព័ន្ធ Leitner និង​កា​រចែកចាយ​កូដ​ជា​ច្រើន"
 
-#: main.cpp:116
+#: main.cpp:115
 #, fuzzy, kde-format
 #| msgid ""
 #| "Type of session to start with: \n"
@@ -132,7 +132,7 @@ msgstr ""
 "'qa' សម្រាប់​សំណួរ​ និងចម្លើយ\n"
 "'tutor' សម្រាប់​ការ​បង្រៀន"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "File to open"
 msgstr "ឯកសារ​ដែល​ត្រូវ​បើក"
