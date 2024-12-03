@@ -14,6 +14,7 @@
   <name xml:lang="eo">WordQuiz</name>
   <name xml:lang="es">WordQuiz</name>
   <name xml:lang="eu">WordQuiz</name>
+  <name xml:lang="fi">WordQuiz</name>
   <name xml:lang="fr">WordQuiz</name>
   <name xml:lang="gl">WordQuiz</name>
   <name xml:lang="he">WordQuiz</name>
@@ -42,6 +43,7 @@
   <summary xml:lang="eo">Fulmkarta trejnilo</summary>
   <summary xml:lang="es">Entrenador de tarjetas</summary>
   <summary xml:lang="eu">Oroimen-txartel entrenatzailea</summary>
+  <summary xml:lang="fi">Kysymyskorttiharjoittelu</summary>
   <summary xml:lang="fr">Entraînement aux cartes mémoire</summary>
   <summary xml:lang="gl">Adestrador de vocabulario.</summary>
   <summary xml:lang="he">מאמן בקלפי זיכרון</summary>
