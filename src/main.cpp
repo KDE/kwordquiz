@@ -149,7 +149,6 @@ int main(int argc, char *argv[])
     });
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     const auto rootObjects = engine.rootObjects();
