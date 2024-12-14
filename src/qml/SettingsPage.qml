@@ -129,7 +129,7 @@ FormCard.FormCardPage {
 
             Component {
                 id: aboutKde
-                FormCard.AboutKDE {}
+                FormCard.AboutKDEPage {}
             }
         }
     }
