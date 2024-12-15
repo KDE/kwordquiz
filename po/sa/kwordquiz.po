@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: exporter.cpp:125
 #, kde-format
@@ -76,19 +76,19 @@ msgstr "पीटर हेडलुण्ड्"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "मूल लेखक"
 
 #: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "कार्ल स्वान्"
 
 #: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "QML प्रति पोर्ट् कुर्वन्तु"
 
 #: main.cpp:94
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "कार्ड्स् %1/%2 त्रुटयः %3"
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "सम्पूर्ण"
 
 #: qml/BasePage.qml:75
 #, kde-format
@@ -153,8 +153,8 @@ msgstr "भवता सम्यक् स्कोरः प्राप्त
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "त्वया एकः त्रुटिः कृता"
+msgstr[1] "भवता %1 त्रुटयः कृताः"
 
 #: qml/BasePage.qml:82
 #, kde-format
@@ -176,7 +176,7 @@ msgstr "डेकं रचयन्तु"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr ""
+msgstr "सम्पादयतु डेक"
 
 #: qml/DeckEditorPage.qml:39
 #, kde-format
@@ -192,7 +192,7 @@ msgstr "फ़िल्टर..."
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr ""
+msgstr "मुद्रण पूर्वावलोकनम्"
 
 #: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
@@ -213,55 +213,55 @@ msgstr "परीक्षा"
 #, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr ""
+msgstr "मुद्रणम्"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "निर्मियताम्"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "रक्ष्"
 
 #: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "चित्रं निष्कासयन्तु"
 
 #: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
-msgstr ""
+msgstr "लिङ्क इमेज"
 
 #: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr ""
+msgstr "ध्वनिं निष्कासयन्तु"
 
 #: qml/DeckEditorPage.qml:122
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
-msgstr ""
+msgstr "लिङ्क ध्वनि"
 
 #: qml/DeckEditorPage.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
-msgstr ""
+msgstr "भाषा सेट् करें"
 
 #: qml/DeckEditorPage.qml:161
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr ""
+msgstr "सेट् भाषा"
 
 #: qml/DeckEditorPage.qml:182
 #, kde-format
@@ -277,44 +277,44 @@ msgstr "कृपया ध्वनिं चिनोतु"
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "नामः:"
 
 #: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "लेखकः:"
 
 #: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "अनुज्ञापत्रम् : १."
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr ""
+msgstr "सम्पादन"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr ""
+msgstr "अनुशीलय"
 
 #: qml/FlashCardPage.qml:128
 #, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr ""
+msgstr "उचितं"
 
 #: qml/FlashCardPage.qml:146
 #, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
-msgstr ""
+msgstr "न सम्यक्"
 
 #: qml/LanguageSelectorPage.qml:15
 #, kde-format
@@ -325,7 +325,7 @@ msgstr "भाषां चिनोतु"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "सेटिंग्स्"
 
 #: qml/main.qml:42
 #, kde-format
@@ -346,7 +346,7 @@ msgstr "गलत्, सम्यक् उत्तरं \"%1\" आसीत�
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "अग्रिम"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
@@ -362,25 +362,25 @@ msgstr "बहुविकल्पविधानं सक्षमं कर�
 #, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr ""
+msgstr "विकल्पाः"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
-msgstr ""
+msgstr "शफल"
 
 #: qml/QuestionAnswerPage.qml:143
 #, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr ""
+msgstr "संकेत"
 
 #: qml/SettingsPage.qml:13
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "सेटिंग्स्"
 
 #: qml/SettingsPage.qml:16
 #, kde-format
@@ -446,7 +446,7 @@ msgstr "KDE विषये"
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "स्वागतम्‌"
 
 #: qml/WelcomePage.qml:40
 #, kde-format
@@ -497,7 +497,7 @@ msgstr "Download Deck"
 #, kde-format
 msgctxt "@title:group"
 msgid "Mode"
-msgstr ""
+msgstr "मोड्"
 
 #: qml/WelcomePage.qml:137
 #, kde-format
@@ -515,7 +515,7 @@ msgstr "बहुविकल्पः"
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr ""
+msgstr "प्रश्न-उत्तर"
 
 #: qml/WelcomePage.qml:157
 #, kde-format
@@ -526,4 +526,4 @@ msgstr "डेक्स"
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "अपाकरोति"
