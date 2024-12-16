@@ -77,7 +77,6 @@ int main(int argc, char *argv[])
     }
 #endif
 
-    KCrash::initialize();
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("kwordquiz"));
     QIcon::setFallbackThemeName(u"breeze"_s);
 
@@ -150,7 +149,6 @@ int main(int argc, char *argv[])
     });
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     const auto rootObjects = engine.rootObjects();

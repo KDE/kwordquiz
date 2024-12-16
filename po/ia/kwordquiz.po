@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-06-28 10:53+0200\n"
+"POT-Creation-Date: 2024-11-25 00:37+0000\n"
+"PO-Revision-Date: 2024-10-25 12:11+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -50,67 +50,68 @@ msgstr "Responde"
 #: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "Invalide commando de vader date: %1. Permettite: flash, mc e qa"
 
-#: main.cpp:85
+#: main.cpp:84
 #, kde-format
 msgid "WordQuiz"
 msgstr "WordQuiz"
 
-#: main.cpp:87
+#: main.cpp:86
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr ""
+"Un programma potente per apprender vocabulario e flashcard (carta mnemonica)"
 
-#: main.cpp:89
+#: main.cpp:88
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:93
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "Autor original"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:94
+#: main.cpp:93
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "Porto a QML"
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "KDE Edutainment Maintainer"
-msgstr ""
+msgstr "Mantenitor de KDE Edutainment"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer "
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "Leitner System and several code contributions"
-msgstr ""
+msgstr "Leitner System e plure contributiones de codice"
 
-#: main.cpp:116
+#: main.cpp:115
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -118,8 +119,12 @@ msgid ""
 "'mc' for multiple choice, \n"
 "'qa' for question and answer"
 msgstr ""
+"Typo de session a startar con: \n"
+"'flash' per flashcard (carta mnemonica), \n"
+"'mc' per selection multiple, \n"
+"'qa' per demanda e responsa"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "File to open"
 msgstr "File de aperir"
@@ -127,12 +132,12 @@ msgstr "File de aperir"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "Cartas %1% Errores %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "Cartas %1/%2 Errores %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
@@ -143,19 +148,19 @@ msgstr "Terminate"
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "Tu obteneva un punctuage perfecte"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tu faceva un error"
+msgstr[1] "Tu faceva %1 errores"
 
 #: qml/BasePage.qml:82
 #, kde-format
 msgid "Repeat Errors"
-msgstr ""
+msgstr "Repite errores"
 
 #: qml/BasePage.qml:93
 #, kde-format
@@ -336,7 +341,7 @@ msgstr "Isto es correcte"
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
 #, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
-msgstr ""
+msgstr "Errate, òle responsa correcte esseva \"%1\"."
 
 #: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
 #, kde-format
@@ -353,6 +358,7 @@ msgstr "NOn assatis parolas in tu joco"
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
+"Tu necessita al minus 3 parolas per habilitar le modo de selection multiple"
 
 #: qml/OptionsAction.qml:12
 #, kde-format
@@ -386,7 +392,7 @@ msgstr "General"
 #: qml/SettingsPage.qml:22
 #, kde-format
 msgid "Show score as percentage"
-msgstr ""
+msgstr "Monstra punctuage como percentage"
 
 #: qml/SettingsPage.qml:32
 #, kde-format
@@ -396,12 +402,12 @@ msgstr "Flash Card"
 #: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
-msgstr ""
+msgstr "Gira automaticamente flashcard (carta mnemonica)"
 
 #: qml/SettingsPage.qml:50
 #, kde-format
 msgid "Time delay for flipping the flashcard"
-msgstr ""
+msgstr "Retardo de tempore epr girar le carta mnemonica"
 
 #: qml/SettingsPage.qml:63
 #, kde-format
@@ -426,7 +432,7 @@ msgstr "Computo usante suggestion como un error"
 #: qml/SettingsPage.qml:96
 #, kde-format
 msgid "Compare answers in a case sensitive way"
-msgstr ""
+msgstr "Compara respoinsas in un modo sensibile inter majusculas e minusculas"
 
 #: qml/SettingsPage.qml:111
 #, kde-format
