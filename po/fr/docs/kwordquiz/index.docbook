@@ -1,0 +1,660 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % French "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>Manuel utilisateur de &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+&traducteurYohannHamon; &traducteurDanielDurand; &relecteurLudovicGrossard; &traducteurXavierBesnard; 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>04-07-2023</date>
+<releaseinfo
+>Applications 23.08</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; est un programme d'apprentissage de vocabulaire et de méthodes mnémotechniques pour &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>carte</keyword>
+<keyword
+>vocabulaire</keyword>
+<keyword
+>langage</keyword>
+<keyword
+>éducation</keyword>
+<keyword
+>école</keyword>
+<keyword
+>collège</keyword>
+<keyword
+>université</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduction</title>
+<para
+>&kwordquiz; est un outil puissant permettant de maîtriser du vocabulaire nouveau. Cela peut être un langage ou tout autre type de terminologie. </para>
+<sect1 id="easy-to-use">
+<title
+>Simple d'utilisation</title>
+
+<para
+>Avec &kwordquiz;, vous construisez votre propre document de vocabulaire d'une manière simple et intuitive. La disposition de base est une grille de deux colonnes dans laquelle vous saisissez le vocabulaire sous une forme que vous connaissez et sous une autre forme que vous voulez apprendre. Vous pouvez changer les titres des colonnes pour refléter ce à quoi vous vous exercez. </para>
+
+<sect2 id="quiz-types">
+<title
+>Types de questionnaire</title>
+
+<para
+>Lorsque vous avez saisi votre vocabulaire, vous êtes prêt à commencer un questionnaire. Vous souhaiterez peut-être commencer avec une session de cartes, puis, passer plus tard à un questionnaire à choix multiple ou affronter directement le mode « Questions et réponses ». Vous obtenez un retour direct sur les réponses correctes et incorrectes et vous avez la possibilité de recommencer lorsque les réponses sont incorrectes, améliorant ainsi votre efficacité d'apprentissage. Si vous avez besoin d'un peu d'aide, vous pouvez utiliser la fonction de conseils. </para>
+</sect2>
+
+
+<sect2 id="practice-modes">
+<title
+>Modes d'utilisation</title>
+
+<para
+>Vous pouvez sélectionner la manière dont vous voulez vous exercer. &kwordquiz; propose trois modes différents pour rendre l'apprentissage plus efficace. Les différents modes le rendent possibles pour décider quelle colonne est utilisée comme question, comme réponse ou comme les deux. De plus, vous pouvez sélectionner l'utilisation d'un ordre séquentiel ou aléatoire. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Documents de vocabulaire</title>
+<para
+>&kwordquiz; peut ouvrir plusieurs types de documents de vocabulaire. Le format par défaut est <filename class="extension"
+>.kvtml</filename
+>, un format de fichier partagé avec d'autres programmes de &kde;. &kwordquiz; peut aussi ouvrir des fichiers <filename class="extension"
+>.wql</filename
+> créés par &kwordquiz; pour &Windows;, des fichiers <filename class="extension"
+>.csv</filename
+> contenant du texte séparé par des virgules, des fichiers <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class="extension"
+>.voc</filename
+></ulink
+> créés par l'ancienne version de Vokabeltrainer, des fichiers <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>.xdxf</filename
+></ulink
+> et enfin, des fichiers <filename class="extension"
+>.xml.gz</filename
+> créés par les anciennes versions de <ulink url="http://pauker. sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>&kwordquiz; peut enregistrer vos documents de vocabulaire sous plusieurs différents formats. Celui par défaut est le format <filename class="extension"
+>.kvtml</filename
+>, utilisé par d'autres programmes de &kde;. Une autre possibilité est le format <filename class="extension"
+>.csv</filename
+> avec du texte séparé par des virgules. </para>
+<para
+>Vous pouvez avoir simultanément plusieurs fichiers ouverts et copier ou déplacer facilement des éléments entre les fichiers. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Référence des commandes</title>
+<sect1 id="mode-menu">
+<title
+>Le menu « Options »</title>
+<para
+>Le menu fournit 3 modes différents pour le questionnaire, qui ne sont mutuellement exclusifs.</para>
+
+  <note
+><para
+>Les noms des menus changeront pour refléter les titres des colonnes du document de vocabulaire actif. Le mode sélectionné sera appliqué à Cartes, Choix multiples et Questions &amp; Réponses.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Options</guimenu
+> <guimenuitem
+>Mélanger</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durant le questionnaire, les entrées de la colonne 1 vous seront données dans un ordre aléatoire mais chaque entrée ne sera traitée qu'une seule fois. </para>
+    </listitem>
+  </varlistentry>
+
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Options</guimenu
+> <guimenuitem
+>Colonne 1 -&gt; Colonne 2</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durant le questionnaire, les entrées de la colonne 1 vous seront données et il vous sera demandé de fournir les entrées correspondantes de la colonne 2. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Mode</guimenu
+> <guimenuitem
+>Colonne 2 -&gt; Colonne 1</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durant le questionnaire, les entrées de la colonne 2 vous seront données et il vous sera demandé de fournir les entrées correspondantes de la colonne 1. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="welcome-page">
+<title
+>La fenêtre de bienvenue</title>
+
+<para
+>Lors de l'ouverture de KWordQuiz, vous arriverez sur la page d'accueil. Cette page répertorie tous les jeux précédemment ouverts. De plus, cela vous permet de créer un nouveau jeu, d'ouvrir un jeu à partir d'un fichier ou de télécharger un jeu à partir d'Internet. Enfin, vous pouvez également choisir le mode principal que vous souhaitez utiliser. </para>
+
+<screenshot>
+  <screeninfo
+>La page de bienvenue</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>La page de bienvenue</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>L'éditeur de vocabulaire</title>
+
+<para
+>La zone de documents de vocabulaire a l'aspect d'une grille semblable à une feuille de tableur. La grille est constituée de cellules organisées en deux colonnes et un certain nombre de lignes. Chaque colonne et chaque ligne ont une en-tête. Les en-têtes de colonnes sont utilisés pour spécifier les titres du document de vocabulaire. Ils peuvent être définis par modification de la première colonne. </para>
+
+<para
+>Vous pouvez cliquer sur une cellule de la grille pour faire d'elle la cellule active. Vous pouvez utiliser les touches de flèche vers le haut et vers le bas pour vous déplacer dans le bateau et la touche de tabulation pour vous déplacer au prochain élément.</para>
+
+<screenshot>
+  <screeninfo
+>L'éditeur de vocabulaire</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>L'éditeur de vocabulaire</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Dans le document vous construisez une liste de vocabulaire en saisissant des paires d'éléments dans les deux colonnes. Vous pouvez saisir du texte dans la cellule active simplement en commençant à le saisir. La cellule passera alors en mode d'édition et vous pourrez sélectionner tout ou une partie du texte. Vous pouvez également modifier une cellule en effectuant un double clic ou en pressant la touche <keycap
+>F2</keycap
+> et faire les modifications directement dans la cellule. </para>
+<para
+>Lorsque vous avez terminé de saisir une entrée, veuillez appuyer sur la touche « Entrée » et la cellule suivante deviendra automatiquement active. Par conséquent, il est facile de saisir rapidement plusieurs entrées. Il n'y a vraiment aucune limite au nombre de lignes que vous pouvez avoir dans un document. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Session Cartes</title>
+
+<para
+>Sélectionnez « Cartes » à partir du panneau de navigation pour commencer une session de cartes sur les entrées du document de vocabulaire actif. Le mode sélectionné dans le menu <guimenu
+>Option</guimenu
+> sera utilisé. Si vous changez de mode durant une session, la session sera re-démarrée. </para>
+
+<para
+>Si vous travaillez avec des expressions longues, la fenêtre peut être redimensionnée pour avoir plus d'espace disponible. La taille de la police de caractères influencera aussi la manière dont les différentes parties s'adapteront dans la fenêtre. </para>
+
+<screenshot>
+  <screeninfo
+>Session « Cartes »</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Session « Cartes »</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Initialement, la face avant de la carte est affichée. Veuillez utiliser le bouton  <guibutton
+>Vérifier</guibutton
+> pour voir l'autre côté. </para>
+<para
+>Pour vous déplacer à la carte suivante, veuillez sélectionner, soit <guibutton
+>Je sais</guibutton
+> pour compter la carte comme correcte, soit <guibutton
+>Je ne sais pas</guibutton
+> pour compter la carte comme incorrecte. </para>
+<para
+>Sélectionnez <guibutton
+>Répéter les erreurs</guibutton
+> pour recommencer avec les cartes que vous avez ratées. </para>
+<para
+>Sélectionnez <guibutton
+>Essayer à nouveau</guibutton
+> pour redémarrer la session depuis le début une nouvelle fois. Si vous avez utilisé un mode aléatoire, les cartes seront mélangées à nouveau. </para>
+<para
+>La section « Score » en haut de l'écran affiche le nombre de cartes, le nombre de cartes que vous avez vues, le nombre de cartes comptées comme correctes et le nombre de cartes comptées comme incorrectes. </para>
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Session « Choix multiple »</title>
+
+<para
+>Sélectionnez « Choix multiple » dans la page d'accueil pour commencer un questionnaire à choix multiple sur les entrées du document actif de vocabulaire. Le mode sélectionné dans le menu <guimenu
+>Options</guimenu
+> sera utilisé. Si vous modifiez les options durant une session, la session sera réinitialisée. </para>
+<para
+>Si vous travaillez avec des expressions longues, la fenêtre peut être redimensionnée pour rendre disponible plus d'espace. La taille de la police de caractère (sélectionné pour l'éditeur) influencera aussi la manière dont le texte s'adaptera dans les différentes parties de la fenêtre. </para>
+<para
+>Dans l'exemple ci-dessous, l'utilisateur a donné une réponse fausse à la question précédente. Il / elle va maintenant répondre à la question suivante. </para>
+
+<screenshot>
+  <screeninfo
+>Session « Choix multiple » </screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Session « Choix multiple »</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Vos choix sont affichés dans la partie centrale de l'écran. Sélectionnez celui que vous pensez correct. Utilisez <guibutton
+>Vérifier</guibutton
+> pour voir si la réponse est correcte. Si vous avez activé le mode automatique dans <menuchoice
+><guimenu
+>Configuration</guimenu
+></menuchoice
+>, votre sélection sera vérifiée automatiquement. </para>
+<para
+>Sélectionnez <guibutton
+>Répéter les erreurs</guibutton
+> pour recommencer avec les cartes que vous avez ratées. </para>
+<para
+>Sélectionnez <guibutton
+>Essayer à nouveau</guibutton
+> pour redémarrer la session depuis le début une nouvelle fois. Si vous avez utilisé un mode aléatoire, les cartes seront mélangées à nouveau. </para>
+<para
+>La section « Score » en haut de l'écran affiche le nombre de questions, le nombre de questions auxquelles vous avez répondues, le nombre de réponses comptées comme correctes et le nombre de réponses comptées comme incorrectes. </para>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Session « Question et réponse »</title>
+<para
+>Sélectionnez « Question et réponse » pour commencer une session question-réponse sur les entrées du document de vocabulaire actif. Le mode sélectionné dans le menu <guimenu
+>Mode</guimenu
+> sera utilisé. Si vous changez le mode durant une session, la session reprendra au début. </para>
+<para
+>Si vous travaillez avec des expressions longues, la fenêtre peut être redimensionnée pour rendre disponible plus d'espace. La taille de la police de caractère (Sélectionnée pour l'éditeur) influencera aussi la façon dont les différentes parties s'adapteront dans la fenêtre. </para>
+<para
+>Dans l'exemple ci-dessous, l'utilisateur a donné une réponse correcte à la question précédente (pour voir le comportement lors d'une mauvaise réponse, consultez le chapitre <link linkend="multiple"
+>Choix multiple</link
+>). Il / elle est maintenant prêt à répondre à la question suivante. </para>
+
+<screenshot>
+  <screeninfo
+>Session « Question et réponse »</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Session « Question et réponse »</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Votre question est affichée au centre. Veuillez saisir votre réponse dans le champ d'édition. Veuillez utiliser le bouton  <guibutton
+>Valider</guibutton
+> ou la touche &Entree; pour voir si votre réponse est correcte. </para>
+<para
+>Sélectionnez <guibutton
+>Indice</guibutton
+> pour obtenir la lettre suivante de bonne réponse. Dans <menuchoice
+><guimenu
+>Configuration</guimenu
+></menuchoice
+>, vous pouvez sélectionner de compter comme incorrecte, toutes les questions où vous utilisez la fonction d’indice. </para>
+<para
+>Sélectionnez <guibutton
+>Répéter les erreurs</guibutton
+> pour recommencer avec les cartes que vous avez ratées. </para>
+<para
+>Sélectionnez <guibutton
+>Essayer à nouveau</guibutton
+> pour redémarrer la session depuis le début une nouvelle fois. Si vous avez utilisé un mode aléatoire, les cartes seront mélangées à nouveau. </para>
+<para
+>La section « Score » en haut de l'écran affiche le nombre de questions, le nombre de questions auxquelles vous avez répondues, le nombre de réponses comptées comme correctes et le nombre de réponses comptées comme incorrectes. </para>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Remplir le blanc</title>
+
+<para
+>« Remplir le blanc » est une méthode puissante d'utilisation de &kwordquiz;. C'est un type spécifique de questionnaire « Question et réponse » qui a besoin d'être décrit plus en détails. </para>
+
+<para
+>Considérez le tableau suivant. Cela pourrait être une liste de vocabulaire dans &kwordquiz; : </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Français</entry>
+<entry
+>Allemand</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>Nous possédons un ordinateur</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>Nous possédons un ordinateur</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>Nous possédons un ordinateur</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>Nous possédons un ordinateur</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>La chose importante à noter est le placement des crochets. Ils disent à &kwordquiz; comment le questionnaire devrait être exécuté. </para>
+<para
+>En 1, il n'y a pas de crochets. Supposons que le texte en Français soit la question et le texte en Allemand la réponse. Vous avez à donner pour une réponse correcte l'expression entière « Wir besitzen einen Computer ». </para>
+<para
+>En 2, &kwordquiz; afficherait la question mais aussi « Wir ........ einen Computer ». Pour une réponse correcte il est suffisant d'écrire « besitzen ». </para>
+<para
+>En 3, on montre qu'un blanc peut se composer de plus d'un mot. La réponse correcte est « besitzen einen ». </para>
+<para
+>En 4, il y a deux blancs séparés. Pour indiquer cela dans la réponse, vous devez écrire « besitzen ; Computer », &cad; séparer les blancs avec un point-virgule afin d'obtenir une réponse correcte. </para>
+<para
+>Les blancs marqués sont significatifs seulement s'ils apparaissent dans la réponse. Autrement les crochets sont ignorés. En outre, les crochets n'ont pas d'effet lors des questionnaires à choix multiple. Pour simplifier la création de documents de vocabulaire de type « Remplir le blanc », il y a les commandes des menus pour marquer ou démarquer les blancs. Naturellement vous pouvez aussi simplement saisir les crochets. &kwordquiz; vérifie la syntaxe. Si le texte apparaît en rouge, il y a une erreur avec les crochets et le questionnaire ne peut pas démarrer. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Impression</title>
+<para
+>&kwordquiz; offre la possibilité d'imprimer les documents de vocabulaire sous plusieurs formes. Les options d'impression sont disponibles dans l'éditeur de &kwordquiz;. Lors de la sélection de <guibutton
+>Imprimer...</guibutton
+>, un menu vous sera proposé dans lequel vous pourrez sélectionner d'imprimer le document comme un liste de vocabulaire (&cad; comme affiché dans l'éditeur), comme un exercice de vocabulaire, ou comme des cartes. Une fois le mode sélectionné, une boîte de dialogue d'impression de &kde; vous sera présentée. </para>
+<screenshot>
+  <screeninfo
+>Options d'impression du vocabulaire</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Options d'impression du vocabulaire</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Liste de vocabulaire</title>
+<para
+>Le vocabulaire sera imprimé comme affiché dans l'éditeur. Cela inclut la police, la hauteur des lignes et la largeur des colonnes. Assurez vous que les colonnes sont suffisamment étroites pour entrer dans la page.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Examen de vocabulaire</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Examen de vocabulaire</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Examen de vocabulaire</title>
+<para
+>Le vocabulaire sera imprimé comme affiché dans l'éditeur à part que la colonne de droite sera laissée vide et une troisième colonne sera ajoutée pour noter le score. Les réglages utilisés incluent la police, la hauteur des lignes et la largeur des colonnes. Assurez vous que les colonnes sont suffisamment étroites pour entrer dans la page.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Examen de vocabulaire imprimé</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Examen de vocabulaire imprimé</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Cartes</title>
+<para
+>Deux 7,62×12,7 cm par page. Les cartes seront toujours imprimées en paysage.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Cartes imprimées</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Cartes imprimées</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="dialogs">
+<title
+>Boîtes de dialogues</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Configuration générale</title>
+<screenshot>
+  <screeninfo
+>Configuration générale</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-config.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuration générale</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Vous pouvez sélectionner le type de session qu'un nouveau vocabulaire doit utiliser au démarrage. Aller directement à un questionnaire vous évite de voir les réponses à l'avance. </para>
+<para
+>Pour toutes les sessions, vous pouvez sélectionner si les scores doivent être affichés sous forme de pourcentages ou de nombres. </para>
+<tip>
+<para
+>Veuillez noter que les paramètres sont automatiquement appliqués. </para>
+</tip>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Configuration des colonnes</title>
+<para
+>Vous pouvez ouvrir cette boîte de dialogue à partir de l'éditeur.</para>
+<screenshot>
+  <screeninfo
+>Configuration des colonnes</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuration des colonnes</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Utilisez cette boîte de dialogue pour définir les titres et les langues des colonnes. Veuillez cliquer sur une langue pour la sélectionner ou fermer la boîte de dialogue pour annuler toutes les modifications. </para>
+</sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Remerciements et licence</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Licence du programme 2003-2004 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> 2023 Carl Schwan <email
+>carl@carlchwan.eu</email
+> </para>
+
+<para
+>Copyright de la documentation 2003-2004 Peter B. Hedlund <email
+>peter@peterandlinda.com</email
+> </para>
+
+<para
+>Traduction française par &YohannHamon;, &DanielDurand;, &XavierBesnard;. Relecture par &LudovicGrossard;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
