@@ -64,13 +64,6 @@ public:
     QString question();
     QString blankAnswer();
     QString answer();
-    QString langQuestion();
-    QString langAnswer();
-    QPixmap imageQuestion();
-    QPixmap imageAnswer();
-    QUrl soundQuestion();
-    QUrl soundAnswer();
-
     QString kbAnswer();
 
     QList<int> errorList() const
