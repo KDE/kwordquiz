@@ -74,8 +74,6 @@ set_package_properties(KF6KirigamiAddons PROPERTIES
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 
 find_package(LibKEduVocDocument REQUIRED)
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 ecm_set_disabled_deprecation_versions(QT 6.8.0  KF 6.5.0)
 
 add_subdirectory(doc)
