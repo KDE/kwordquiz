@@ -7,6 +7,7 @@
     <name translate="no">KDE</name>
   </developer>
   <name>WordQuiz</name>
+  <name xml:lang="ar">اختبر كلماتك</name>
   <name xml:lang="ca">WordQuiz</name>
   <name xml:lang="ca-valencia">WordQuiz</name>
   <name xml:lang="de">WordQuiz</name>
@@ -35,6 +36,7 @@
   <name xml:lang="x-test">xxWordQuizxx</name>
   <name xml:lang="zh-TW">單字測驗</name>
   <summary>Flash card trainer</summary>
+  <summary xml:lang="ar">مدرب البطاقة التعليمية</summary>
   <summary xml:lang="ca">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="ca-valencia">Entrenador amb targetes ràpides</summary>
   <summary xml:lang="cs">Procvičování slovní zásoby s kartičkami</summary>
@@ -67,7 +69,7 @@
   <summary xml:lang="zh-TW">閃卡訓練師</summary>
   <description>
     <p>KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
-    <p xml:lang="ar">اختبار الكلمات ك هو برنامج بطاقة فلاش للأغراض العامة. يمكن استخدامه لتعلم المفردات والعديد من الموضوعات الأخرى. يوفر محررًا وخمسة أوضاع اختبار بطاقات تعليمية مختلفة. يستخدم تنسيق ملف KVTML ويمكن تنزيل الملفات المساهمة من داخل التطبيق.</p>
+    <p xml:lang="ar">اختبر كلماتك هو برنامج بطاقة تعليمية للأغراض العامة. يمكن استخدامه لتعلم المفردات والعديد من الموضوعات الأخرى. يوفر محررًا وخمسة أوضاع اختبار بطاقات تعليمية مختلفة. يستخدم تنسيق ملف KVTML ويمكن تنزيل الملفات المساهمة من داخل التطبيق.</p>
     <p xml:lang="bs">KWordQuiz je program opšte namjene fleš kartica. Može se koristiti za učenje riječi i s mnogim drugim temama. On pruža urednik i pet različitih flashcard kviz režima. Koristi format KVTML datoteke i doprinesni fajlovi mogu se preuzeti u okviru same aplikacije.</p>
     <p xml:lang="ca">El KWordQuiz és un programa de targetes ràpides de finalitat general. Es pot utilitzar per a aprendre vocabulari i molts altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar a l'aplicació fitxers de col·laboracions.</p>
     <p xml:lang="ca-valencia">KWordQuiz és un programa de targetes ràpides de finalitat general. Es pot utilitzar per a aprendre vocabulari i molts altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar a l'aplicació fitxers de col·laboracions.</p>
@@ -113,6 +115,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>KWordQuiz welcome page</caption>
+      <caption xml:lang="ar">مرحبا بك في اختبر كلماتك</caption>
       <caption xml:lang="ca">Pàgina de benvinguda del KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Pàgina de benvinguda de KWordQuiz</caption>
       <caption xml:lang="cs">Uvítací stránka KWordQuiz</caption>
@@ -146,6 +149,7 @@
     </screenshot>
     <screenshot type="default">
       <caption>Editor</caption>
+      <caption xml:lang="ar">المحرّر</caption>
       <caption xml:lang="ca">Editor</caption>
       <caption xml:lang="ca-valencia">Editor</caption>
       <caption xml:lang="cs">Editor</caption>
@@ -220,6 +224,7 @@
     </screenshot>
     <screenshot type="default">
       <caption>Multiple choice mode in KWordQuiz</caption>
+      <caption xml:lang="ar">وضع الاختيار المتعدد في اختبر كلماتك</caption>
       <caption xml:lang="ca">Mode d'elecció múltiple en el KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Mode d'elecció múltiple en KWordQuiz</caption>
       <caption xml:lang="cs">Režim s nabídkou vícero možností v KWordQuiz</caption>
@@ -252,6 +257,7 @@
     </screenshot>
     <screenshot type="default">
       <caption>Question response mode in KWordQuiz</caption>
+      <caption xml:lang="ar">وضع السؤال والجواب في اختبر كلماتك</caption>
       <caption xml:lang="ca">Mode de preguntes i respostes en el KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Mode de preguntes i respostes en KWordQuiz</caption>
       <caption xml:lang="cs">Režim s nabídkou odpovědí v KWordQuiz</caption>
