@@ -1,7 +1,7 @@
 # translation of kwordquiz.po to
 # Language AR translations for PACKAGE package.
 # Automatically generated, 2007.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # محمد الحرقان <malham1@gmail.com>, 2010.
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 00:36+0000\n"
-"PO-Revision-Date: 2024-09-19 10:01+0400\n"
+"PO-Revision-Date: 2025-01-17 08:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -53,28 +53,27 @@ msgstr "الجواب"
 #: main.cpp:58
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr ""
+msgstr "أعطيت انتقال غير صالح: %1. مسموح: flash وmc وqa"
 
 #: main.cpp:85
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "اختبار الكلمات ك"
+msgstr "WordQuiz"
 
 #: main.cpp:87
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
-msgstr "برنامج التعليم وإعداد البطاقات التعليمية المتكامل"
+msgstr "برنامج تعليمي قوي للبطاقات التعليمية والمفردات"
 
 #: main.cpp:89
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
-msgstr "(c) 2003-2010، Peter Hedlund"
+msgstr "(ج) 2003-2010، بيتر هيدلوند"
 
 #: main.cpp:93
 #, kde-format
 msgid "Peter Hedlund"
-msgstr "Peter Hedlund"
+msgstr "بيتر هيدلوند"
 
 #: main.cpp:93
 #, kde-format
@@ -92,47 +91,40 @@ msgstr "كارل شوان"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
-msgstr ""
+msgstr "النّقل إلى QML"
 
 #: main.cpp:95
 #, kde-format
 msgid "Anne-Marie Mahfouf"
-msgstr "Anne-Marie Mahfouf"
+msgstr "آن ماري محفوف"
 
 #: main.cpp:95
 #, kde-format
 msgid "KDE Edutainment Maintainer"
-msgstr "KDE Edutainment Maintainer"
+msgstr "صائن الترفيه التعليمي في كيدي"
 
 #: main.cpp:96
 #, kde-format
 msgid "Martin Pfeiffer"
-msgstr "Martin Pfeiffer"
+msgstr "مارتن فايفر"
 
 #: main.cpp:96
 #, kde-format
 msgid "Leitner System and several code contributions"
-msgstr "Leitner System and several code contributions"
+msgstr "نظام لايتنر والعديد من مساهمات برمجية"
 
 #: main.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "Type of session to start with: \n"
-#| "'flash' for flashcard, \n"
-#| "'mc' for multiple choice, \n"
-#| "'qa' for question and answer, \n"
-#| "'tutor' for tutor"
+#, kde-format
 msgid ""
 "Type of session to start with: \n"
 "'flash' for flashcard, \n"
 "'mc' for multiple choice, \n"
 "'qa' for question and answer"
 msgstr ""
-"نوع الجلسة عند البداية :\n"
-"'بطاقة' للبطاقات التعليمية\n"
-"'خ م ' للاختيار المتعدد\n"
-"'س ج ' لسؤال وجواب\n"
-"'مدرب ' للمدرب"
+"نوع الجلسة التي يجب البدء بها: \n"
+"'flash' للبطاقات التعليمية، \n"
+"'mc' للاختيار من متعدد، \n"
+"'qa' للأسئلة والأجوبة"
 
 #: main.cpp:118
 #, kde-format
@@ -142,12 +134,12 @@ msgstr "الملف المراد فتحه"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr ""
+msgstr "البطاقات %1٪ أخطاء %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
-msgstr ""
+msgstr "البطاقات %1/%2 أخطاء %3"
 
 #: qml/BasePage.qml:73
 #, kde-format
@@ -158,24 +150,23 @@ msgstr "انتهى"
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You got a perfect score"
-msgstr ""
+msgstr "لقد حصلت على درجة مثالية"
 
 #: qml/BasePage.qml:75
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لم ترتكب أي خطأ"
+msgstr[1] "ارتكبت خطأ واحدا"
+msgstr[2] "ارتكبت خطأين"
+msgstr[3] "ارتكبت %1 أخطاء"
+msgstr[4] "ارتكبت %1 خطأ"
+msgstr[5] "ارتكبت %1 خطأ"
 
 #: qml/BasePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Repeat &Errors"
+#, kde-format
 msgid "Repeat Errors"
-msgstr "تقارير وأخطاء"
+msgstr "أخطاء متكررة"
 
 #: qml/BasePage.qml:93
 #, kde-format
@@ -186,15 +177,13 @@ msgstr "جرّب مجدّدًا"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
-msgstr ""
+msgstr "أنشئ مجموعة"
 
 #: qml/DeckEditorPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "المحرر"
+msgstr "حرّر مجموعة"
 
 #: qml/DeckEditorPage.qml:39
 #, kde-format
@@ -284,12 +273,12 @@ msgstr "اضبط اللغة"
 #: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
-msgstr ""
+msgstr "رجاءً اختر صورة"
 
 #: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr ""
+msgstr "رجاءً اختر صوتًا"
 
 #: qml/DeckEditorPage.qml:226
 #, kde-format
@@ -369,12 +358,12 @@ msgstr "التالي"
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
 msgid "Not enough words in your deck"
-msgstr ""
+msgstr "لا توجد كلمات كافية في مجموعتك"
 
 #: qml/MultipleChoicePage.qml:151
 #, kde-format
 msgid "You need at least 3 words to enable the multiple choice mode"
-msgstr ""
+msgstr "تحتاج إلى 3 كلمات على الأقل لتمكين وضع الاختيار المتعدد"
 
 #: qml/OptionsAction.qml:12
 #, kde-format
@@ -421,8 +410,7 @@ msgid "Automatically flip flashcard"
 msgstr "تلقائيا اقلب التعليمية"
 
 #: qml/SettingsPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Time delay for flipping flashcard"
+#, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "الزمن حتى تقلب البطاقات التعليمية"
 
@@ -432,22 +420,19 @@ msgid "Multiple choice"
 msgstr "أسئلة متعددة الإجابات"
 
 #: qml/SettingsPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Automatically check selected answer in multiple choice"
+#, kde-format
 msgid "Automatically check selected answer"
-msgstr "تلقائيا اختر الجواب المحددة في اختيار متعدد"
+msgstr "تحقق آليًا من الإجابة المحددة"
 
 #: qml/SettingsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "&Question and Answer"
+#, kde-format
 msgid "Question and Answer"
-msgstr "إختبار سؤال والجواب"
+msgstr "السؤال والجواب"
 
 #: qml/SettingsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "Check to count hint as error"
+#, kde-format
 msgid "Count using hint as an error"
-msgstr "علم لتعين التلميح كإجابة خاطئة"
+msgstr "عُد استخدام التلميح كخطأ"
 
 #: qml/SettingsPage.qml:96
 #, kde-format
@@ -455,10 +440,9 @@ msgid "Compare answers in a case sensitive way"
 msgstr "قارن الإجابات بحساسية لحالة الأحرف"
 
 #: qml/SettingsPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "إنها اختبار الكلمات ك"
+msgstr "عن اختبر كلماتك"
 
 #: qml/SettingsPage.qml:127
 #, kde-format
@@ -474,49 +458,47 @@ msgstr "مرحباً"
 #: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr ""
+msgstr "الرجاء اختيار مستند WordQuiz"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
-msgstr ""
+msgstr "مستند KEduDocument (*.kvtml)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "Wql documents (*.wql)"
-msgstr ""
+msgstr "مستندات Wql (*.wql)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "CSV documents (*.csv)"
-msgstr ""
+msgstr "مستندات CSV (*.csv)"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
-msgstr ""
+msgstr "مستندات XDXF (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Quits KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "إنها اختبار الكلمات ك"
+msgstr "مرحبا إلى اختبار الكلمات"
 
 #: qml/WelcomePage.qml:70
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "فتح مستند معجم موجود"
+msgstr "افتح مستندًا موجودًا"
 
 #: qml/WelcomePage.qml:76
 #, kde-format
 msgid "Create Deck"
-msgstr ""
+msgstr "أنشئ مجموعة"
 
 #: qml/WelcomePage.qml:84
 #, kde-format
 msgid "Download Deck"
-msgstr ""
+msgstr "نزّل مجموعة"
 
 #: qml/WelcomePage.qml:100
 #, kde-format
@@ -545,7 +527,7 @@ msgstr "سؤال وجواب"
 #: qml/WelcomePage.qml:157
 #, kde-format
 msgid "Decks"
-msgstr ""
+msgstr "المجموعات"
 
 #: qml/WelcomePage.qml:203
 #, kde-format
