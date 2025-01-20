@@ -18,6 +18,10 @@
 #include <KLocalizedString>
 #include <qstringliteral.h>
 
+#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+#include <KLocalizedQmlContext>
+#endif
+
 #include "blankanswer.h"
 #include "exporter.h"
 #include "fileopener.h"
@@ -148,7 +152,11 @@ int main(int argc, char *argv[])
         return new LanguageListModel;
     });
 
+#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+#else
+    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
+#endif
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     const auto rootObjects = engine.rootObjects();

@@ -61,6 +61,12 @@ target_link_libraries(kwordquiz
     LibKEduVocDocumentImport__KEduVocDocument
 )
 
+if(TARGET KF6::I18nQml)
+target_link_libraries(kwordquiz
+        KF6::I18nQml
+)
+endif()
+
 install(TARGETS kwordquiz ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
