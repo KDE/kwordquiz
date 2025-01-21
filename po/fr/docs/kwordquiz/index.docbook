@@ -290,7 +290,7 @@
   </mediaobject>
 </screenshot>
 <para
->Initialement, la face avant de la carte est affichée. Veuillez utiliser le bouton  <guibutton
+>Initialement, la face avant de la carte est affichée. Veuillez utiliser le bouton <guibutton
 >Vérifier</guibutton
 > pour voir l'autre côté. </para>
 <para
@@ -388,7 +388,7 @@
   </mediaobject>
 </screenshot>
 <para
->Votre question est affichée au centre. Veuillez saisir votre réponse dans le champ d'édition. Veuillez utiliser le bouton  <guibutton
+>Votre question est affichée au centre. Veuillez saisir votre réponse dans le champ d'édition. Veuillez utiliser le bouton <guibutton
 >Valider</guibutton
 > ou la touche &Entree; pour voir si votre réponse est correcte. </para>
 <para
@@ -398,7 +398,7 @@
 ><guimenu
 >Configuration</guimenu
 ></menuchoice
->, vous pouvez sélectionner de compter comme incorrecte, toutes les questions où vous utilisez la fonction d’indice. </para>
+>, vous pouvez sélectionner de compter comme incorrecte, toutes les questions où vous utilisez la fonction d'indice. </para>
 <para
 >Sélectionnez <guibutton
 >Répéter les erreurs</guibutton
@@ -479,11 +479,11 @@
 <para
 >En 1, il n'y a pas de crochets. Supposons que le texte en Français soit la question et le texte en Allemand la réponse. Vous avez à donner pour une réponse correcte l'expression entière « Wir besitzen einen Computer ». </para>
 <para
->En 2, &kwordquiz; afficherait la question mais aussi « Wir ........ einen Computer ». Pour une réponse correcte il est suffisant d'écrire « besitzen ». </para>
+>En 2, &kwordquiz; afficherait la question mais aussi « Nous _____ un ordinateur ». Pour une réponse correcte il est suffisant d'écrire « possédons ». </para>
 <para
 >En 3, on montre qu'un blanc peut se composer de plus d'un mot. La réponse correcte est « besitzen einen ». </para>
 <para
->En 4, il y a deux blancs séparés. Pour indiquer cela dans la réponse, vous devez écrire « besitzen ; Computer », &cad; séparer les blancs avec un point-virgule afin d'obtenir une réponse correcte. </para>
+>En 4, il y a deux blancs séparés. Pour indiquer cela dans la réponse, vous devez écrire « possédons ; un ordinateur », &cad; séparer les blancs avec un point-virgule afin d'obtenir une réponse correcte. </para>
 <para
 >Les blancs marqués sont significatifs seulement s'ils apparaissent dans la réponse. Autrement les crochets sont ignorés. En outre, les crochets n'ont pas d'effet lors des questionnaires à choix multiple. Pour simplifier la création de documents de vocabulaire de type « Remplir le blanc », il y a les commandes des menus pour marquer ou démarquer les blancs. Naturellement vous pouvez aussi simplement saisir les crochets. &kwordquiz; vérifie la syntaxe. Si le texte apparaît en rouge, il y a une erreur avec les crochets et le questionnaire ne peut pas démarrer. </para>
 </chapter>
