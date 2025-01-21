@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-25 00:37+0000\n"
+"POT-Creation-Date: 2025-01-21 00:37+0000\n"
 "PO-Revision-Date: 2024-06-28 17:09+0200\n"
 "Last-Translator: Vincenzo Reale <>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -49,71 +49,71 @@ msgstr "Domanda"
 msgid "Answer"
 msgstr "Risposta"
 
-#: main.cpp:58
+#: main.cpp:62
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Goto fornito non valido: %1. Permessi: flash, mc e qa"
 
-#: main.cpp:84
+#: main.cpp:88
 #, kde-format
 msgid "WordQuiz"
 msgstr "WordQuiz"
 
-#: main.cpp:86
+#: main.cpp:90
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr ""
 "Un potente programma per l'apprendimento di carte mnemoniche e di vocabolari"
 
-#: main.cpp:88
+#: main.cpp:92
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:92
+#: main.cpp:96
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:92
+#: main.cpp:96
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "Autore originale"
 
-#: main.cpp:93
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:93
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "Conversione a QML"
 
-#: main.cpp:94
+#: main.cpp:98
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:94
+#: main.cpp:98
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Responsabile KDE Edu"
 
-#: main.cpp:95
+#: main.cpp:99
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:95
+#: main.cpp:99
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Sistema di Leitner e contributi vari"
 
-#: main.cpp:115
+#: main.cpp:119
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -126,7 +126,7 @@ msgstr ""
 "«mc» per la scelta multipla,\n"
 "«qa» per domanda e risposta"
 
-#: main.cpp:117
+#: main.cpp:121
 #, kde-format
 msgid "File to open"
 msgstr "File da aprire"

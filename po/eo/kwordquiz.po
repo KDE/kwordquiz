@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-25 00:37+0000\n"
+"POT-Creation-Date: 2025-01-21 00:37+0000\n"
 "PO-Revision-Date: 2024-06-28 16:51+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -48,70 +48,70 @@ msgstr "Demando"
 msgid "Answer"
 msgstr "Respondo"
 
-#: main.cpp:58
+#: main.cpp:62
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr "Nevalida goto donita: %1. Permesitaj: flash, mc kaj qa"
 
-#: main.cpp:84
+#: main.cpp:88
 #, kde-format
 msgid "WordQuiz"
 msgstr "WordQuiz"
 
-#: main.cpp:86
+#: main.cpp:90
 #, kde-format
 msgid "A powerful flashcard and vocabulary learning program"
 msgstr "Potenca fulmkart- kaj vortproviz-lernada programo"
 
-#: main.cpp:88
+#: main.cpp:92
 #, kde-format
 msgid "(c) 2003-2010, Peter Hedlund"
 msgstr "(c) 2003-2010, Peter Hedlund"
 
-#: main.cpp:92
+#: main.cpp:96
 #, kde-format
 msgid "Peter Hedlund"
 msgstr "Peter Hedlund"
 
-#: main.cpp:92
+#: main.cpp:96
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
 msgstr "Origina aŭtoro"
 
-#: main.cpp:93
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:93
+#: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Port to QML"
 msgstr "Portado al QML"
 
-#: main.cpp:94
+#: main.cpp:98
 #, kde-format
 msgid "Anne-Marie Mahfouf"
 msgstr "Anne-Marie Mahfouf"
 
-#: main.cpp:94
+#: main.cpp:98
 #, kde-format
 msgid "KDE Edutainment Maintainer"
 msgstr "Prizorganto de KDE Edutainment"
 
-#: main.cpp:95
+#: main.cpp:99
 #, kde-format
 msgid "Martin Pfeiffer"
 msgstr "Martin Pfeiffer"
 
-#: main.cpp:95
+#: main.cpp:99
 #, kde-format
 msgid "Leitner System and several code contributions"
 msgstr "Leitner-Sistemp kaj pluraj kodkontribuoj"
 
-#: main.cpp:115
+#: main.cpp:119
 #, kde-format
 msgid ""
 "Type of session to start with: \n"
@@ -124,7 +124,7 @@ msgstr ""
 "'mc' for multobla elekto, \n"
 "'qa' for demando kaj respondo"
 
-#: main.cpp:117
+#: main.cpp:121
 #, kde-format
 msgid "File to open"
 msgstr "Malfermenda dosiero"
