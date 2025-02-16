@@ -82,7 +82,7 @@ QHash<int, QByteArray> KWQDocumentModel::roleNames() const
     };
 }
 
-void KWQDocumentModel::add(KEduVocDocument *document)
+void KWQDocumentModel::addDocument(KEduVocDocument *document)
 {
     document->setParent(nullptr);
     const int row = rowCount();

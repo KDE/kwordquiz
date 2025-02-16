@@ -30,7 +30,7 @@ public:
     void save() const;
 
     Q_INVOKABLE int add(const QUrl &url);
-    Q_INVOKABLE void add(KEduVocDocument *document);
+    Q_INVOKABLE void addDocument(KEduVocDocument *document);
     Q_INVOKABLE void remove(const int row);
 
     Q_INVOKABLE void entryChanged(const KNSCore::Entry &wrapper);
