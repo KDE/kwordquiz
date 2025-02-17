@@ -96,7 +96,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 root.editorModel.save();
                 if (mode === DeckEditorPage.CreateMode) {
-                    root.documentModel.add(root.editorModel.document);
+                    root.documentModel.addDocument(root.editorModel.document);
                 } else {
                     root.editorModel.reloaded();
                 }
