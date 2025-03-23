@@ -189,6 +189,9 @@ FormCard.FormCardPage {
 
                     text: documentDelegate.title
 
+                    QQC2.ToolTip.visible: enabled ? false : hovered
+                    QQC2.ToolTip.text: i18n("Document cannot be opened")
+
                     contentItem: RowLayout {
                         spacing: 0
 
