@@ -29,6 +29,6 @@ Kirigami.Action {
         text: `${root.cardModel.identifierRight} -> ${root.cardModel.identifierLeft}`
         checkable: true
         checked: Prefs.questionInRightColumn
-        onCheckedChanged: Prefs.questionInRightColumn = checked
+        onCheckedChanged: checked => Prefs.questionInRightColumn = checked
     }
 }

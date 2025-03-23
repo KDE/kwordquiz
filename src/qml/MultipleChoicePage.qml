@@ -110,7 +110,7 @@ BasePage {
                 fillMode: Image.PreserveAspectFit
                 visible: root.showAnswer
                 smooth: true
-                source: 'file:' + wordDelegate.answerImage
+                source: wordDelegate.answerImage !== '' ? 'file:' + wordDelegate.answerImage : ''
             }
 
             Loader {
@@ -121,7 +121,7 @@ BasePage {
                 Layout.alignment: Qt.AlignHCenter
 
                 sourceComponent: SoundPlayer {
-                    source: 'file:' + wordDelegate.answerSound
+                    source: wordDelegate.answerSound !== '' ? 'file:' + wordDelegate.answerSound : ''
                 }
             }
 
