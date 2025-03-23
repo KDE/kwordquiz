@@ -346,41 +346,54 @@ Kirigami.ScrollablePage {
 
             background: null
 
-            function insertRow() {
+            function insertRow(): void {
                 if (newQuestionField.text.length === 0 || newAnswerField.text.length === 0) {
                     return;
                 }
 
-                root.editorModel.add(newQuestionField.text, newAnswerField.text);
+                root.editorModel.add(newQuestionField.text.replace('\n', '<br />'), newAnswerField.text.replace('\n', '<br />'));
                 newQuestionField.text = '';
                 newAnswerField.text = '';
             }
 
-            function focusQuestionField() {
+            function focusQuestionField(): void {
                 newQuestionField.forceActiveFocus();
             }
 
-            function focusAnswerField() {
+            function focusAnswerField(): void {
                 newAnswerField.forceActiveFocus();
             }
 
             width: parent.width
 
             contentItem: RowLayout {
-                QQC2.TextField {
+                spacing: 0
+                QQC2.TextArea {
                     id: newQuestionField
+
                     background: null
                     placeholderText: root.editorModel.identifierLeft
                     enabled: root.editorModel.enabled
                     onEditingFinished: footer.insertRow();
-                    onAccepted: newAnswerField.forceActiveFocus();
+                    padding: Kirigami.Units.smallSpacing
 
                     Layout.fillWidth: true
+                    Layout.maximumWidth: parent.width / 2
+                    Keys.onReturnPressed: (event) => {
+                        if (event.modifiers & Qt.ShiftModifier) {
+                            newQuestionField.append('');
+                        } else {
+                            newAnswerField.forceActiveFocus();
+                        }
+                    }
                     Keys.onUpPressed: {
                         const item = listView.itemAtIndex(listView.count - 1);
                         if (item) {
                             item.focusQuestionField();
                         }
+                    }
+                    Keys.onTabPressed: {
+                        newAnswerField.forceActiveFocus();
                     }
                 }
 
@@ -389,15 +402,30 @@ Kirigami.ScrollablePage {
                     Layout.preferredWidth: 1
                 }
 
-                QQC2.TextField {
+                QQC2.TextArea {
                     id: newAnswerField
+
                     background: null
                     placeholderText: root.editorModel.identifierRight
                     onEditingFinished: footer.insertRow()
-                    onAccepted: newQuestionField.forceActiveFocus();
                     enabled: root.editorModel.enabled
+                    padding: Kirigami.Units.smallSpacing
 
                     Layout.fillWidth: true
+                    Layout.maximumWidth: parent.width / 2
+
+                    Keys.onReturnPressed: (event) => {
+                        if (event.modifiers & Qt.ShiftModifier) {
+                            newAnswerField.append('');
+                        } else {
+                            newQuestionField.forceActiveFocus();
+                        }
+                    }
+
+                    Keys.onTabPressed: {
+                        newQuestionField.forceActiveFocus();
+                    }
+
                     Keys.onUpPressed: {
                         const item = listView.itemAtIndex(listView.count - 1);
                         if (item) {
@@ -431,11 +459,11 @@ Kirigami.ScrollablePage {
             required property string answerImage
             required property string answerSound
 
-            function focusQuestionField() {
+            function focusQuestionField(): void {
                 questionField.forceActiveFocus();
             }
 
-            function focusAnswerField() {
+            function focusAnswerField(): void {
                 answerField.forceActiveFocus();
             }
 
@@ -444,16 +472,23 @@ Kirigami.ScrollablePage {
 
             QQC2.ItemDelegate {
                 Layout.fillWidth: true
+                background: null
 
                 contentItem: RowLayout {
-                    QQC2.TextField {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    QQC2.TextArea {
                         id: questionField
 
                         text: editorDelegate.question
+                        textFormat: TextEdit.RichText
                         background: null
                         onEditingFinished: root.editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
 
                         Layout.fillWidth: true
+                        Layout.minimumWidth: parent.width / 2 - fileSelectorButton.width * 2 - Kirigami.Units.smallSpacing * 3 - 1
+                        Layout.maximumWidth: parent.width / 2 - fileSelectorButton.width * 2 - Kirigami.Units.smallSpacing * 3 - 1
+
                         Keys.onUpPressed: {
                             const item = listView.itemAtIndex(editorDelegate.index - 1);
                             if (item) {
@@ -470,10 +505,23 @@ Kirigami.ScrollablePage {
                                 listView.footerItem.focusQuestionField();
                             }
                         }
-                        onAccepted: answerField.forceActiveFocus()
+
+                        Keys.onTabPressed: {
+                            answerField.forceActiveFocus();
+                        }
+
+                        Keys.onReturnPressed: (event) => {
+                            if (event.modifiers & Qt.ShiftModifier) {
+                                questionField.append('');
+                            } else {
+                                answerField.forceActiveFocus()
+                            }
+                        }
                     }
 
                     FileSelectorButton {
+                        id: fileSelectorButton
+
                         isImage: true
                         file: editorDelegate.questionImage
                         onFileRemoved: root.editorModel.removeQuestionImage(editorDelegate.index);
@@ -492,14 +540,18 @@ Kirigami.ScrollablePage {
                         Layout.preferredWidth: 1
                     }
 
-                    QQC2.TextField {
+                    QQC2.TextArea {
                         id: answerField
 
                         text: editorDelegate.answer
+                        textFormat: TextEdit.RichText
                         background: null
                         onEditingFinished: root.editorModel.edit(editorDelegate.index, questionField.text, answerField.text)
 
                         Layout.fillWidth: true
+                        Layout.minimumWidth: parent.width / 2 - fileSelectorButton.width * 2 - Kirigami.Units.smallSpacing * 3
+                        Layout.maximumWidth: parent.width / 2 - fileSelectorButton.width * 2 - Kirigami.Units.smallSpacing * 3
+
                         Keys.onUpPressed: {
                             const item = listView.itemAtIndex(editorDelegate.index - 1);
                             if (item) {
@@ -516,15 +568,18 @@ Kirigami.ScrollablePage {
                                 listView.footerItem.focusAnswerField();
                             }
                         }
-                        onAccepted: {
-                            const item = listView.itemAtIndex(editorDelegate.index + 1);
-                            if (item) {
-                                item.focusQuestionField();
+                        Keys.onReturnPressed: (event) => {
+                            if (event.modifiers & Qt.ShiftModifier) {
+                                answerField.append('');
                             } else {
-                                root.listView.headerItem.focusQuestionField();
+                                const item = listView.itemAtIndex(editorDelegate.index + 1);
+                                if (item) {
+                                    item.focusQuestionField();
+                                } else {
+                                    root.listView.headerItem.focusQuestionField();
+                                }
                             }
                         }
-
                     }
 
                     FileSelectorButton {
