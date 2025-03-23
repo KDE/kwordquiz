@@ -17,7 +17,15 @@ public:
         TitleRole = Qt::UserRole + 1,
         UrlRole,
         DocumentRole,
+        DocumentStatusRole,
     };
+
+    enum class DocumentStatus {
+        NoError,
+        CannotLoadFile,
+        CannotSaveFile,
+    };
+    Q_ENUM(DocumentStatus)
 
     explicit KWQDocumentModel(QObject *parent = nullptr);
     ~KWQDocumentModel();
@@ -36,5 +44,5 @@ public:
     Q_INVOKABLE void entryChanged(const KNSCore::Entry &wrapper);
 
 private:
-    std::vector<std::unique_ptr<KEduVocDocument>> m_documents;
+    std::vector<std::pair<std::unique_ptr<KEduVocDocument>, DocumentStatus>> m_documents;
 };

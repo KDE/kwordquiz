@@ -173,7 +173,9 @@ FormCard.FormCardPage {
                 required property int index
                 required property string title
                 required property var document
+                required property var documentStatus
                 readonly property alias documentButton: documentButton
+                readonly property bool readError: documentStatus === DocumentModel.CannotLoadFile
 
                 spacing: 0
 
@@ -183,6 +185,7 @@ FormCard.FormCardPage {
 
                 FormCard.AbstractFormDelegate {
                     id: documentButton
+                    enabled: documentStatus !== DocumentModel.CannotLoadFile
 
                     text: documentDelegate.title
 

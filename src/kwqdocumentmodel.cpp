@@ -5,6 +5,28 @@
 #include "stateprefs.h"
 #include <keduvocdocument.h>
 
+constexpr KWQDocumentModel::DocumentStatus mapErrorCodeToDocumentStatus(KEduVocDocument::ErrorCode errorCode)
+{
+    switch (errorCode) {
+    case KEduVocDocument::ErrorCode::NoError:
+        return KWQDocumentModel::DocumentStatus::NoError;
+    case KEduVocDocument::ErrorCode::FileTypeUnknown:
+    case KEduVocDocument::ErrorCode::FileReaderFailed:
+    case KEduVocDocument::ErrorCode::FileDoesNotExist:
+    case KEduVocDocument::ErrorCode::Unknown:
+    case KEduVocDocument::ErrorCode::InvalidXml:
+    case KEduVocDocument::ErrorCode::FileCannotRead:
+        return KWQDocumentModel::DocumentStatus::CannotLoadFile;
+    case KEduVocDocument::ErrorCode::FileIsReadOnly:
+    case KEduVocDocument::ErrorCode::FileCannotWrite:
+    case KEduVocDocument::ErrorCode::FileWriterFailed:
+    case KEduVocDocument::ErrorCode::FileLocked:
+    case KEduVocDocument::ErrorCode::FileCannotLock:
+        return KWQDocumentModel::DocumentStatus::CannotSaveFile;
+    }
+    return KWQDocumentModel::DocumentStatus::NoError;
+};
+
 KWQDocumentModel::KWQDocumentModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -31,8 +53,8 @@ void KWQDocumentModel::load()
 
     for (const auto &url : urls) {
         auto doc = std::make_unique<KEduVocDocument>(nullptr);
-        doc->open(QUrl(url), KEduVocDocument::FileIgnoreLock);
-        m_documents.push_back(std::move(doc));
+        auto error = doc->open(QUrl(url), KEduVocDocument::FileIgnoreLock);
+        m_documents.push_back(std::make_pair(std::move(doc), mapErrorCodeToDocumentStatus(error)));
     }
 }
 
@@ -40,7 +62,7 @@ void KWQDocumentModel::save() const
 {
     QStringList urls;
     for (const auto &document : std::as_const(m_documents)) {
-        urls << document->url().url();
+        urls << document.first->url().url();
     }
     StatePrefs::setDocuments(urls);
     StatePrefs::self()->save();
@@ -60,14 +82,16 @@ QVariant KWQDocumentModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case Qt::DisplayRole:
     case TitleRole:
-        return document->title();
+        return document.first->title();
 
     case UrlRole:
-        return document->url().url();
+        return document.first->url().url();
 
     case DocumentRole:
-        return QVariant::fromValue(document.get());
+        return QVariant::fromValue(document.first.get());
 
+    case DocumentStatusRole:
+        return QVariant::fromValue(document.second);
     default:
         return {};
     }
@@ -79,6 +103,7 @@ QHash<int, QByteArray> KWQDocumentModel::roleNames() const
         {TitleRole, "title"},
         {UrlRole, "url"},
         {DocumentRole, "document"},
+        {DocumentStatusRole, "documentStatus"},
     };
 }
 
@@ -87,7 +112,7 @@ void KWQDocumentModel::addDocument(KEduVocDocument *document)
     document->setParent(nullptr);
     const int row = rowCount();
     beginInsertRows({}, row, row);
-    m_documents.push_back(std::unique_ptr<KEduVocDocument>(document));
+    m_documents.push_back(std::make_pair(std::unique_ptr<KEduVocDocument>(document), DocumentStatus::NoError));
     endInsertRows();
 
     save();
@@ -97,7 +122,7 @@ int KWQDocumentModel::add(const QUrl &url)
 {
     int row = 0;
     for (const auto &doc : std::as_const(m_documents)) {
-        if (doc->url() == url) {
+        if (doc.first->url() == url) {
             qDebug() << row;
             return row;
         }
@@ -105,11 +130,11 @@ int KWQDocumentModel::add(const QUrl &url)
     }
 
     auto doc = std::make_unique<KEduVocDocument>(nullptr);
-    doc->open(url, KEduVocDocument::FileIgnoreLock);
+    auto error = doc->open(url, KEduVocDocument::FileIgnoreLock);
 
     row = rowCount();
     beginInsertRows({}, row, row);
-    m_documents.push_back(std::move(doc));
+    m_documents.push_back(std::make_pair(std::move(doc), mapErrorCodeToDocumentStatus(error)));
     endInsertRows();
 
     save();
@@ -130,7 +155,7 @@ void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry)
         const auto uninstalledFiles = entry.uninstalledFiles();
         for (const auto &url : uninstalledFiles) {
             auto it = std::find_if(cbegin(m_documents), cend(m_documents), [url](const auto &document) {
-                return document->url() == QUrl(url);
+                return document.first->url() == QUrl(url);
             });
 
             if (it == cend(m_documents)) {
@@ -147,8 +172,8 @@ void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry)
         beginInsertRows({}, rowCount(), rowCount() + entry.installedFiles().count() - 1);
         for (const auto &url : installedFiles) {
             auto doc = std::make_unique<KEduVocDocument>(nullptr);
-            doc->open(QUrl(QStringLiteral("file:") + url), KEduVocDocument::FileIgnoreLock);
-            m_documents.push_back(std::move(doc));
+            auto error = doc->open(QUrl(QStringLiteral("file:") + url), KEduVocDocument::FileIgnoreLock);
+            m_documents.push_back(std::make_pair(std::move(doc), mapErrorCodeToDocumentStatus(error)));
         }
         endInsertRows();
     }
