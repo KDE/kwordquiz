@@ -37,7 +37,7 @@ void KWQCardModel::createNew()
 
 QString KWQCardModel::identifierLeft() const
 {
-    return m_document ? m_document->identifier(0).name() : QString();
+    return m_document && m_document->identifierCount() > 0 ? m_document->identifier(0).name() : QString();
 }
 
 void KWQCardModel::setIdentifierLeft(const QString &identifierLeft)
@@ -51,7 +51,7 @@ void KWQCardModel::setIdentifierLeft(const QString &identifierLeft)
 
 QString KWQCardModel::identifierRight() const
 {
-    return m_document ? m_document->identifier(1).name() : QString();
+    return m_document && m_document->identifierCount() > 1 ? m_document->identifier(1).name() : QString();
 }
 
 void KWQCardModel::setIdentifierRight(const QString &identifierRight)
