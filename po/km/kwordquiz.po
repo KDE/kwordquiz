@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:37+0000\n"
+"POT-Creation-Date: 2025-03-24 00:38+0000\n"
 "PO-Revision-Date: 2012-07-06 16:02+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -311,7 +311,7 @@ msgctxt "@label"
 msgid "License:"
 msgstr ""
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:223
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox vocabulary editor"
 #| msgid "Editor"
@@ -573,7 +573,12 @@ msgstr "សំណួរ & ចម្លើយ"
 msgid "Decks"
 msgstr ""
 
-#: qml/WelcomePage.qml:203
+#: qml/WelcomePage.qml:193
+#, kde-format
+msgid "Document cannot be opened"
+msgstr ""
+
+#: qml/WelcomePage.qml:209
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

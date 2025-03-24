@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:37+0000\n"
+"POT-Creation-Date: 2025-03-24 00:38+0000\n"
 "PO-Revision-Date: 2025-03-07 23:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -302,7 +302,7 @@ msgctxt "@label"
 msgid "License:"
 msgstr "Lisans:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -534,7 +534,12 @@ msgstr "Soru–Yanıt"
 msgid "Decks"
 msgstr "Desteler"
 
-#: qml/WelcomePage.qml:203
+#: qml/WelcomePage.qml:193
+#, kde-format
+msgid "Document cannot be opened"
+msgstr ""
+
+#: qml/WelcomePage.qml:209
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:37+0000\n"
+"POT-Creation-Date: 2025-03-24 00:38+0000\n"
 "PO-Revision-Date: 2024-10-01 15:50+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -302,7 +302,7 @@ msgctxt "@label"
 msgid "License:"
 msgstr "Лицензия:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -535,7 +535,12 @@ msgstr "Вопрос и ответ"
 msgid "Decks"
 msgstr "Наборы карточек"
 
-#: qml/WelcomePage.qml:203
+#: qml/WelcomePage.qml:193
+#, kde-format
+msgid "Document cannot be opened"
+msgstr ""
+
+#: qml/WelcomePage.qml:209
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

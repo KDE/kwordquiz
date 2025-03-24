@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 00:37+0000\n"
+"POT-Creation-Date: 2025-03-24 00:38+0000\n"
 "PO-Revision-Date: 2024-06-28 12:16+0300\n"
 "Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -299,7 +299,7 @@ msgctxt "@label"
 msgid "License:"
 msgstr "Ліцензування:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:217
+#: qml/EditAction.qml:13 qml/WelcomePage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -531,7 +531,12 @@ msgstr "Питання і відповідь"
 msgid "Decks"
 msgstr "Колоди"
 
-#: qml/WelcomePage.qml:203
+#: qml/WelcomePage.qml:193
+#, kde-format
+msgid "Document cannot be opened"
+msgstr ""
+
+#: qml/WelcomePage.qml:209
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
