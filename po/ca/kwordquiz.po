@@ -1,19 +1,18 @@
 # Translation of kwordquiz.po to Catalan
-# Copyright (C) 2004-2024 This_file_is_part_of_KDE
+# Copyright (C) 2004-2025 This_file_is_part_of_KDE
 #
-# SPDX-FileCopyrightText: 2007, 2009, 2010, 2014, 2015, 2018, 2019, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005.
 # David Gil <al016950@yahoo.es>, 2005.
 # Sebastià Pla i Sanz <sps@sastia.com>, 2005.
 # Orestes Mas Casals <orestes@tsc.upc.edu>, 2006, 2007, 2008, 2009, 2010, 2012.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2017, 2020, 2021.
-# Josep M. Ferrer <txemaq@gmail.com>, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2009, 2010, 2014, 2015, 2018, 2019, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-24 00:38+0000\n"
-"PO-Revision-Date: 2024-06-28 12:55+0200\n"
+"PO-Revision-Date: 2025-03-24 12:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -532,7 +531,7 @@ msgstr "Conjunts"
 #: qml/WelcomePage.qml:193
 #, kde-format
 msgid "Document cannot be opened"
-msgstr ""
+msgstr "No s'ha pogut obrir el document"
 
 #: qml/WelcomePage.qml:209
 #, kde-format
