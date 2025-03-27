@@ -56,7 +56,6 @@ find_package(KF6 ${KF_MIN_VERSION} COMPONENTS
     I18n
     Crash
     Config
-    DocTools
     NewStuff
     Kirigami
     DBusAddons
@@ -64,6 +63,12 @@ find_package(KF6 ${KF_MIN_VERSION} COMPONENTS
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Base application components"
+)
+
+find_package(KF6DocTools ${KF_MIN_VERSION})
+set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
+    "Tools to generate documentation"
+    TYPE OPTIONAL
 )
 
 find_package(KF6KirigamiAddons 0.11.0)
@@ -77,7 +82,6 @@ include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 find_package(LibKEduVocDocument REQUIRED)
 ecm_set_disabled_deprecation_versions(QT 6.8.0  KF 6.10.0)
 
-add_subdirectory(doc)
 add_subdirectory(src)
 
 if(BUILD_TESTING)
@@ -89,6 +93,7 @@ endif()
 ki18n_install(po)
 if (KF6DocTools_FOUND)
     kdoctools_install(po)
+    add_subdirectory(doc)
 endif()
 
 install(FILES org.kde.kwordquiz.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
