@@ -87,7 +87,7 @@ if(BUILD_TESTING)
 endif()
 
 ki18n_install(po)
-if (KF5DocTools_FOUND)
+if (KF6DocTools_FOUND)
     kdoctools_install(po)
 endif()
 
