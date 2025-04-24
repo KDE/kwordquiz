@@ -6,6 +6,7 @@
 
 #include "kwqcardmodel.h"
 #include <QSortFilterProxyModel>
+#include <qqmlintegration.h>
 
 /// Randomize the order of the items contained inside the KWQCardModel
 ///
@@ -13,6 +14,8 @@
 class KWQRandomSortModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(RandomSortModel)
+
     Q_PROPERTY(KWQCardModel *cardModel READ cardModel WRITE setCardModel NOTIFY cardModelChanged)
     Q_PROPERTY(bool showErrorsOnly READ showErrorsOnly WRITE setShowErrorsOnly NOTIFY showErrorsOnlyChanged)
 

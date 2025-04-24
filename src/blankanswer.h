@@ -6,10 +6,13 @@
 
 #include <QObject>
 #include <QString>
+#include <qqmlintegration.h>
 
 class BlankAnswer : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QString input READ input WRITE setInput NOTIFY inputChanged)
     Q_PROPERTY(bool hasBlank READ hasBlank NOTIFY inputChanged)
     Q_PROPERTY(QString blankedAnswer READ blankedAnswer NOTIFY inputChanged)

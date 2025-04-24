@@ -7,3 +7,4 @@ GenerateProperties=true
 ParentInConstructor=true
 Singleton=true
 GlobalEnums=true
+QmlRegistration=true

@@ -10,8 +10,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-configure_file(resources.qrc ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc)
-
 ########### next target ###############
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION}
@@ -35,7 +33,6 @@ set(kwordquiz_SRCS
     fileopener.cpp
     languagelistmodel.h
     languagelistmodel.cpp
-    resources.qrc
 )
 
 kconfig_add_kcfg_files(kwordquiz_SRCS GENERATE_MOC prefs.kcfgc documentsettings.kcfgc stateprefs.kcfgc)
@@ -45,7 +42,24 @@ ecm_add_app_icon(kwordquiz_SRCS ICONS ${ICONS_SRCS})
 
 add_executable(kwordquiz ${kwordquiz_SRCS})
 
-target_link_libraries(kwordquiz
+ecm_add_qml_module(kwordquiz URI org.kde.kwordquiz
+    QML_FILES
+        qml/Main.qml
+        qml/SoundPlayer.qml
+        qml/Visualization.qml
+        qml/OptionsAction.qml
+        qml/EditAction.qml
+        qml/BasePage.qml
+        qml/WelcomePage.qml
+        qml/DeckEditorPage.qml
+        qml/FlashCardPage.qml
+        qml/QuestionAnswerPage.qml
+        qml/MultipleChoicePage.qml
+        qml/SettingsPage.qml
+        qml/LanguageSelectorPage.qml
+)
+
+target_link_libraries(kwordquiz PRIVATE
     Qt6::Core
     Qt6::Quick
     Qt6::QuickControls2
@@ -62,7 +76,7 @@ target_link_libraries(kwordquiz
 )
 
 if(TARGET KF6::I18nQml)
-target_link_libraries(kwordquiz
+target_link_libraries(kwordquiz PRIVATE
         KF6::I18nQml
 )
 endif()

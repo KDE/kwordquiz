@@ -6,11 +6,13 @@
 #include <KNSCore/Entry>
 #include <QAbstractListModel>
 #include <keduvocdocument.h>
+#include <qqmlintegration.h>
 
 /// @author Carl Schwan <carl@carlschwan.eu>
 class KWQDocumentModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(DocumentModel)
 
 public:
     enum ExtraRoles {

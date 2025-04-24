@@ -5,10 +5,12 @@
 
 #include "prefs.h"
 #include <QObject>
+#include <qqmlintegration.h>
 
 class FileOpener : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     Q_INVOKABLE void openFile(const QUrl &file, const Prefs::EnumStartSession mode);

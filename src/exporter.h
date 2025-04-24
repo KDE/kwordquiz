@@ -6,6 +6,7 @@
 
 #include "kwqcardmodel.h"
 #include <QObject>
+#include <qqmlintegration.h>
 
 class QPrinter;
 class QTextDocument;
@@ -13,6 +14,8 @@ class QTextDocument;
 class Exporter : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(KWQCardModel *cardModel MEMBER m_cardModel NOTIFY cardModelChanged)
 
 public:

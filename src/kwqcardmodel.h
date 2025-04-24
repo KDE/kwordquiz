@@ -5,12 +5,16 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <qqmlintegration.h>
+
 #include <keduvocdocument.h>
 
 /// @author Carl Schwan <carl@carlschwan.eu>
 class KWQCardModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(CardModel)
+
     Q_PROPERTY(KEduVocDocument *document READ document WRITE setDocument NOTIFY documentChanged)
     Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
     Q_PROPERTY(QString author READ author WRITE setAuthor NOTIFY authorChanged)

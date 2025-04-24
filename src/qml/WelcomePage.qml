@@ -1,15 +1,15 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as QQC2
-import Qt.labs.platform 1.1
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
-import org.kde.kwordquiz 1.0
-import org.kde.newstuff 1.91 as NewStuff
-import QtQml 2.15
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import Qt.labs.platform
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kwordquiz
+import org.kde.newstuff as NewStuff
+import QtQml
 
 FormCard.FormCardPage {
     id: root
@@ -75,7 +75,7 @@ FormCard.FormCardPage {
             FormCard.FormGridContainer.InfoCard {
                 title: i18n("Create Deck")
                 action: Kirigami.Action {
-                    onTriggered: applicationWindow().pageStack.layers.push("qrc:/qml/DeckEditorPage.qml", {
+                    onTriggered: applicationWindow().pageStack.layers.push("./DeckEditorPage.qml", {
                         documentModel: documentModel,
                     })
                 }
@@ -225,7 +225,7 @@ FormCard.FormCardPage {
                             display: QQC2.ToolButton.IconOnly
 
                             onClicked: {
-                                const editor = applicationWindow().pageStack.layers.push('qrc:/qml/DeckEditorPage.qml', {
+                                const editor = applicationWindow().pageStack.layers.push('./DeckEditorPage.qml', {
                                     documentModel: documentModel,
                                     mode: DeckEditorPage.EditMode,
                                 });
@@ -247,17 +247,17 @@ FormCard.FormCardPage {
                     }
 
                     onClicked: if (Prefs.startSession === Prefs.Flashcard){
-                        applicationWindow().pageStack.layers.push("qrc:/qml/FlashCardPage.qml", {
+                        applicationWindow().pageStack.layers.push("./FlashCardPage.qml", {
                             document: documentDelegate.document,
                             documentModel: documentModel,
                         });
                     } else if (Prefs.startSession === Prefs.QA) {
-                        applicationWindow().pageStack.layers.push("qrc:/qml/QuestionAnswerPage.qml", {
+                        applicationWindow().pageStack.layers.push("./QuestionAnswerPage.qml", {
                             document: documentDelegate.document,
                             documentModel: documentModel,
                         });
                     } else  {
-                        applicationWindow().pageStack.layers.push("qrc:/qml/MultipleChoicePage.qml", {
+                        applicationWindow().pageStack.layers.push("./MultipleChoicePage.qml", {
                             document: documentDelegate.document,
                             documentModel: documentModel,
                         });

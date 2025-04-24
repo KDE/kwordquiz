@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kwordquiz 1.0
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import org.kde.kwordquiz
 
 Kirigami.ApplicationWindow {
     id: root
@@ -38,7 +38,7 @@ Kirigami.ApplicationWindow {
         isMenu: true
         actions: Kirigami.Action {
             text: i18nc("@action:inmenu", "Settings")
-            onTriggered: root.pageStack.pushDialogLayer('qrc:/qml/SettingsPage.qml', {}, {
+            onTriggered: root.pageStack.pushDialogLayer('qrc:/qt/qml/org/kde/kwordquiz/qml/SettingsPage.qml', {}, {
                 title: i18n("Configure"),
                 width: Kirigami.Units.gridUnit * 15,
             });

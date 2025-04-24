@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kwordquiz 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kwordquiz
 
 Kirigami.Action {
     id: root

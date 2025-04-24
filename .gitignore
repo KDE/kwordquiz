@@ -28,3 +28,4 @@ CMakeLists.txt.user*
 /cmake-build*
 src/resources.generated.qrc
 /.vscode/
+.qmlls.ini

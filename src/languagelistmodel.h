@@ -4,10 +4,13 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <qqmlintegration.h>
 
 class LanguageListModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     enum Roles {

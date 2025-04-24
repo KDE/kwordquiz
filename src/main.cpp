@@ -134,30 +134,12 @@ int main(int argc, char *argv[])
         }
     });
 
-    auto prefs = Prefs::self();
-    auto statePrefs = StatePrefs::self();
-    qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "Prefs", prefs);
-    qmlRegisterSingletonInstance("org.kde.kwordquiz", 1, 0, "StatePrefs", statePrefs);
-    qmlRegisterType<KWQCardModel>("org.kde.kwordquiz", 1, 0, "CardModel");
-    qmlRegisterType<FileOpener>("org.kde.kwordquiz", 1, 0, "FileOpener");
-    qmlRegisterType<Exporter>("org.kde.kwordquiz", 1, 0, "Exporter");
-    qmlRegisterType<BlankAnswer>("org.kde.kwordquiz", 1, 0, "BlankAnswer");
-    qmlRegisterType<KWQDocumentModel>("org.kde.kwordquiz", 1, 0, "DocumentModel");
-    qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
-    qmlRegisterType<KWQRandomSortModel>("org.kde.kwordquiz", 1, 0, "RandomSortModel");
-    qmlRegisterSingletonType("org.kde.kwordquiz", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
-    qmlRegisterSingletonType<LanguageListModel>("org.kde.kwordquiz", 1, 0, "LanguageListModel", [](QQmlEngine *engine, QJSEngine *) {
-        return new LanguageListModel;
-    });
-
 #if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 #else
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
 #endif
-    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+    engine.loadFromModule("org.kde.kwordquiz", "Main");
 
     const auto rootObjects = engine.rootObjects();
     if (rootObjects.isEmpty()) {
