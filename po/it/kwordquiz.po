@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2024-06-28 17:09+0200\n"
 "Last-Translator: Vincenzo Reale <>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -324,13 +324,13 @@ msgstr "Non corretta"
 msgid "Select a language"
 msgstr "Scegli una lingua"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
@@ -441,7 +441,7 @@ msgstr "Confronta le risposte con distinzione tra maiuscole e minuscole"
 msgid "About KWordQuiz"
 msgstr "Informazioni su KWordQuiz"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr "Informazioni su KDE"

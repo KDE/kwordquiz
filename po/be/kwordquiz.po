@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2007-05-29 12:41+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -328,14 +328,14 @@ msgstr ""
 msgid "Select a language"
 msgstr "Знак"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, fuzzy, kde-format
 #| msgid "Editor Settings"
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Настаўленні рэдактара"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -449,7 +449,7 @@ msgstr ""
 msgid "About KWordQuiz"
 msgstr ""
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr ""

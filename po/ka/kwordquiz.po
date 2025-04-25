@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2025-03-24 03:42+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -322,13 +322,13 @@ msgstr "არასწორია"
 msgid "Select a language"
 msgstr "ენის არჩევა"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "მორგება"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr "მორგება"
@@ -438,7 +438,7 @@ msgstr "პასუხების შედარებისას რეგ�
 msgid "About KWordQuiz"
 msgstr "KWordQuiz-ის შესახებ"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr "KDE-ის შესახებ"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2021-01-18 19:24+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -334,14 +334,14 @@ msgstr "சரி &என எண்ணவும்"
 msgid "Select a language"
 msgstr "எழுத்தை தேர்வுசெய்"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, fuzzy, kde-format
 #| msgid "Quiz Settings"
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "வினாடி வினாவின் அமைப்புகள்"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -465,7 +465,7 @@ msgstr ""
 msgid "About KWordQuiz"
 msgstr "Kவோர்டுவினாவிடையில் இருந்து வெளியேறவும்"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr ""

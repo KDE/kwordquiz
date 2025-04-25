@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2025-03-24 15:03+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -329,13 +329,13 @@ msgstr "Неправильно"
 msgid "Select a language"
 msgstr "Виберіть мову"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Параметри"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr "Налаштувати"
@@ -446,7 +446,7 @@ msgstr "Порівнювати відповіді без врахування р
 msgid "About KWordQuiz"
 msgstr "Про KWordQuiz"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr "Про KDE"

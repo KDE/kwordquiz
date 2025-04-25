@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2025-03-24 22:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -332,13 +332,13 @@ msgstr "Doğru Değil"
 msgid "Select a language"
 msgstr "Dil seç"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr "Yapılandır"
@@ -449,7 +449,7 @@ msgstr "Yanıtları BÜYÜK/küçük harf duyarlı biçimde karşılaştır"
 msgid "About KWordQuiz"
 msgstr "K Sözcük Oyunu Hakkında"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr "KDE Hakkında"

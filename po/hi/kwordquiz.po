@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2022-02-26 11:47+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -333,14 +333,14 @@ msgstr "सही के रूप में गिनें (&a)"
 msgid "Select a language"
 msgstr "अक्षर चुनें"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, fuzzy, kde-format
 #| msgid "Quiz Settings"
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "प्रश्नोत्तर विन्यास"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -464,7 +464,7 @@ msgstr ""
 msgid "About KWordQuiz"
 msgstr "के-वर्ड-क्विज से बाहर होता है"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2012-07-06 16:02+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -347,7 +347,7 @@ msgstr "សម្គាល់​ថា​ត្រឹមត្រូវ​ចុ
 msgid "Select a language"
 msgstr "ជ្រើស​រូបភាព"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, fuzzy, kde-format
 #| msgctxt "@title:group quiz settings"
 #| msgid "Quiz Settings"
@@ -355,7 +355,7 @@ msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "ការកំណត់​សំណួរ"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -482,7 +482,7 @@ msgstr ""
 msgid "About KWordQuiz"
 msgstr "ចាកចេញពី KWordQuiz"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr ""

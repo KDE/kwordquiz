@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz (KDE 3.5)\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2006-04-02 13:00+0600\n"
 "Last-Translator: Progga <progga@BengaLinux.Org>\n"
 "Language-Team: Bangla <kde-translation@BengaLinux.Org>\n"
@@ -340,14 +340,14 @@ msgstr "&সঠিক হিসাবে গণনা করো"
 msgid "Select a language"
 msgstr "অক্ষর বাছাই করুন"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, fuzzy, kde-format
 #| msgid "Quiz Settings"
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "কুইজের বৈশিষ্ট্য"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -471,7 +471,7 @@ msgstr ""
 msgid "About KWordQuiz"
 msgstr "কে-ওয়ার্ডকুইজ থেকে প্রস্থান করে"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr ""

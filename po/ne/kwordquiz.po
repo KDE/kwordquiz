@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 00:38+0000\n"
+"POT-Creation-Date: 2025-04-25 00:38+0000\n"
 "PO-Revision-Date: 2008-01-03 14:44+0545\n"
 "Last-Translator: Shyam Krishna Bal <balshyam24@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -341,14 +341,14 @@ msgstr "सहीको रूपमा गणना गर्नुहोस्
 msgid "Select a language"
 msgstr "क्यारेक्टर चयन गर्नुहोस्"
 
-#: qml/main.qml:40
+#: qml/Main.qml:40
 #, fuzzy, kde-format
 #| msgid "Quiz Settings"
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "प्रश्नमाला सेटिङ"
 
-#: qml/main.qml:42
+#: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -472,7 +472,7 @@ msgstr ""
 msgid "About KWordQuiz"
 msgstr "केडीई वर्ड क्विज अन्त्य गर्दछ"
 
-#: qml/SettingsPage.qml:127
+#: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
 msgstr ""
