@@ -1,12 +1,12 @@
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010.
 # Balázs Úr <urbalazs@gmail.com>, 2012.
-# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
+# SPDX-FileCopyrightText: 2024, 2025 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:38+0000\n"
-"PO-Revision-Date: 2024-07-31 21:35+0200\n"
+"PO-Revision-Date: 2025-04-26 22:22+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -524,7 +524,7 @@ msgstr "Paklik"
 #: qml/WelcomePage.qml:193
 #, kde-format
 msgid "Document cannot be opened"
-msgstr ""
+msgstr "A dokumentum nem nyitható meg"
 
 #: qml/WelcomePage.qml:209
 #, kde-format
