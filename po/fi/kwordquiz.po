@@ -3,7 +3,7 @@
 # KDE Finnish translation sprint participants:
 # Author: Artnay
 # Author: Niklas Laxström
-# SPDX-FileCopyrightText: 2016, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2016, 2020, 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 # Ilpo Kantonen <ilpo@iki.fi>, 2005, 2006.
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2006.
 # Markku Borén <mobemu@gmail.com>, 2008.
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:38+0000\n"
-"PO-Revision-Date: 2024-10-27 10:11+0200\n"
+"PO-Revision-Date: 2025-04-08 08:17+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -536,7 +536,7 @@ msgstr "Pakat"
 #: qml/WelcomePage.qml:193
 #, kde-format
 msgid "Document cannot be opened"
-msgstr ""
+msgstr "Tiedostoa ei voi avata"
 
 #: qml/WelcomePage.qml:209
 #, kde-format
