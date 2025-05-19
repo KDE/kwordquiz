@@ -1,7 +1,7 @@
 # Spanish translations for kwordquiz.po package.
-# translation of kwordquiz.po to Español
-# Translation of kwordquiz to Spanish
-# Development-KDE, 2005.
+# Copyright (C) 2004-2025 This file is copyright:
+# This file is distributed under the same license as the kwordquiz package.
+#
 # SPDX-FileCopyrightText: 2004 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
 # SPDX-FileCopyrightText: 2004, 2009, 2010, 2011, 2015, 2016, 2018, 2019, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2004 Juan Manuel Garcia Molina <juanma@superiodico.net>
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:38+0000\n"
-"PO-Revision-Date: 2025-03-24 02:48+0100\n"
+"PO-Revision-Date: 2025-05-18 15:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
