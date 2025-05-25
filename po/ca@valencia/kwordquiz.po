@@ -272,12 +272,12 @@ msgstr "Establix l'idioma"
 #: qml/DeckEditorPage.qml:182
 #, kde-format
 msgid "Please Choose an Image"
-msgstr "Escolliu una imatge"
+msgstr "Trieu una imatge"
 
 #: qml/DeckEditorPage.qml:191
 #, kde-format
 msgid "Please Choose a Sound"
-msgstr "Escolliu un so"
+msgstr "Trieu un so"
 
 #: qml/DeckEditorPage.qml:226
 #, kde-format
