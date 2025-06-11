@@ -521,7 +521,7 @@
 <para
 >En 1 no hay corchetes. Considerando que «Inglés» es la pregunta y que «Alemán» es la respuesta, tendrá que proporcionar la expresión completa «Wir besitzen einen Computer» para que la respuesta sea considerada como correcta. </para>
 <para
->En 2, &kwordquiz; le mostrará la pregunta, pero también parte de la respuesta: «Wir ........ einen Computer». Para que la respuesta se considere correcta es suficiente con escribir «besitzen». </para>
+>En 2, &kwordquiz; le mostrará la pregunta, pero también parte de la respuesta: «Wir …….. einen Computer». Para que la respuesta se considere correcta es suficiente con escribir «besitzen». </para>
 <para
 >En 3 se le mostrará un espacio formado por más de una palabra. La respuesta correcta es «besitzen einen». </para>
 <para
@@ -535,7 +535,7 @@
 >Impresión</title>
 <para
 >&kwordquiz; proporciona la posibilidad de imprimir documentos de vocabulario de varias maneras diferentes. Las opciones de impresión están disponibles en el editor de &kwordquiz;. Al seleccionar <guibutton
->Imprimir...</guibutton
+>Imprimir…</guibutton
 > se le muestra un menú donde puede seleccionar imprimir el documento como una lista de vocabulario (es decir, como se muestra en el editor), como un examen de vocabulario o como tarjetas de aprendizaje. Tras seleccionar el modo, se mostrará el diálogo de impresión estándar de &kde;. </para>
 <screenshot>
   <screeninfo
