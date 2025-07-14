@@ -1082,7 +1082,7 @@ msgstr "წაშლა"
 #~ "The folder where downloaded vocabularies are saved by default (relative "
 #~ "to $HOME)"
 #~ msgstr ""
-#~ "ნაგულისხმები საქაღალდე, სადაც გადმოწერილი ლექსიკონები ინახება ($HOME-დან)"
+#~ "ნაგულისხმევი საქაღალდე, სადაც გადმოწერილი ლექსიკონები ინახება ($HOME-დან)"
 
 #~ msgid "Pop up flashcards at fixed or random intervals"
 #~ msgstr "ბარათების ჩვენება მითითებულ ან შემთხვევით ინტერვალებში"
