@@ -15,6 +15,19 @@
         "--socket=fallback-x11",
         "--socket=pulseaudio"
     ],
+    "cleanup": [
+        "*.a",
+        "*.la",
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "/lib/*/cmake",
+        "/lib/*/pkgconfig",
+        "/man",
+        "/share/cmake",
+        "/share/man",
+        "/share/pkgconfig"
+    ],
     "modules": [
         {
             "name": "libkeduvocdocument",
