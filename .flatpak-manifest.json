@@ -9,11 +9,11 @@
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
-        "--share=network",
+        "--device=dri",
         "--share=ipc",
+        "--share=network",
         "--socket=fallback-x11",
-        "--socket=pulseaudio",
-        "--device=dri"
+        "--socket=pulseaudio"
     ],
     "modules": [
         {
