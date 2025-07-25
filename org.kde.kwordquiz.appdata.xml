@@ -27,6 +27,7 @@
   <name xml:lang="lv">WordQuiz</name>
   <name xml:lang="nl">WordQuiz</name>
   <name xml:lang="pl">WordQuiz</name>
+  <name xml:lang="pt-BR">WordQuiz</name>
   <name xml:lang="ru">WordQuiz</name>
   <name xml:lang="sa">शब्दप्रश्नोत्तर</name>
   <name xml:lang="sl">KWordQuiz</name>
@@ -58,6 +59,7 @@
   <summary xml:lang="lv">Apmācības ar kartītēm programma</summary>
   <summary xml:lang="nl">Woorden oefenen</summary>
   <summary xml:lang="pl">Ćwiczenie z fiszkami</summary>
+  <summary xml:lang="pt-BR">Treinador de cartões</summary>
   <summary xml:lang="ru">Программа для изучения новой лексики</summary>
   <summary xml:lang="sa">फ्लैश कार्ड प्रशिक्षक</summary>
   <summary xml:lang="sl">Trener s spominskimi karticami</summary>
