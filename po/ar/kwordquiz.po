@@ -407,7 +407,7 @@ msgstr "بطاقة تعليمية"
 #: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Automatically flip flashcard"
-msgstr "تلقائيا اقلب التعليمية"
+msgstr "آليّا اقلب التعليمية"
 
 #: qml/SettingsPage.qml:50
 #, kde-format
@@ -422,7 +422,7 @@ msgstr "أسئلة متعددة الإجابات"
 #: qml/SettingsPage.qml:68
 #, kde-format
 msgid "Automatically check selected answer"
-msgstr "تحقق آليًا من الإجابة المحددة"
+msgstr "تحقق آليًّا من الإجابة المحددة"
 
 #: qml/SettingsPage.qml:78
 #, kde-format
