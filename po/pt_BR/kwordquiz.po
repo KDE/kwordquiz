@@ -6,20 +6,21 @@
 # Henrique Marks <henriquemarks@gmail.com>, 2008.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2014, 2015.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2018, 2019, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:38+0000\n"
-"PO-Revision-Date: 2023-10-05 18:23-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-08-29 09:11-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,10 +59,9 @@ msgstr ""
 "Tipo de sessão inválida fornecida: %1. As permitidas são: flash, mc e qa"
 
 #: main.cpp:88
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "KWordQuiz"
+msgstr "WordQuiz"
 
 #: main.cpp:90
 #, kde-format
@@ -457,10 +457,9 @@ msgid "Welcome"
 msgstr "Bem-vindo"
 
 #: qml/WelcomePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Please choose a KWordQuiz document"
+#, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Escolha um documento do KWordQuiz"
+msgstr "Escolha um documento do WordQuiz"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
@@ -483,10 +482,9 @@ msgid "XDXF documents (*.xdxf)"
 msgstr "Documentos XDXF (*.xdxf)"
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Welcome to KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Bem-vindo ao KWordQuiz"
+msgstr "Bem-vindo ao WordQuiz"
 
 #: qml/WelcomePage.qml:70
 #, kde-format
@@ -535,7 +533,7 @@ msgstr "Baralhos"
 #: qml/WelcomePage.qml:193
 #, kde-format
 msgid "Document cannot be opened"
-msgstr ""
+msgstr "O documento não pôde ser aberto"
 
 #: qml/WelcomePage.qml:209
 #, kde-format
