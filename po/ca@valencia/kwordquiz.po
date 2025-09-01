@@ -325,7 +325,7 @@ msgstr "No correcta"
 #: qml/LanguageSelectorPage.qml:15
 #, kde-format
 msgid "Select a language"
-msgstr "Seleccioneu un idioma"
+msgstr "Trieu un idioma"
 
 #: qml/Main.qml:40
 #, kde-format
@@ -457,7 +457,7 @@ msgstr "Us donem la benvinguda"
 #: qml/WelcomePage.qml:40
 #, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Seleccioneu un document del WordQuiz"
+msgstr "Trieu un document del WordQuiz"
 
 #: qml/WelcomePage.qml:42
 #, kde-format
