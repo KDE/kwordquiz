@@ -7,7 +7,7 @@
 #include <QAbstractListModel>
 #include <qqmlintegration.h>
 
-#include <keduvocdocument.h>
+#include <KEduVocDocument>
 
 /// @author Carl Schwan <carl@carlschwan.eu>
 class KWQCardModel : public QAbstractListModel

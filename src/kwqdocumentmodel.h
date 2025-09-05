@@ -3,9 +3,9 @@
 
 #pragma once
 
+#include <KEduVocDocument>
 #include <KNSCore/Entry>
 #include <QAbstractListModel>
-#include <keduvocdocument.h>
 #include <qqmlintegration.h>
 
 /// @author Carl Schwan <carl@carlschwan.eu>

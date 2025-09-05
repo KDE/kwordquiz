@@ -3,7 +3,7 @@
 
 #include "kwqdocumentmodel.h"
 #include "stateprefs.h"
-#include <keduvocdocument.h>
+#include <KEduVocDocument>
 
 constexpr KWQDocumentModel::DocumentStatus mapErrorCodeToDocumentStatus(KEduVocDocument::ErrorCode errorCode)
 {
