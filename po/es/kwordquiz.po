@@ -140,7 +140,7 @@ msgstr "Archivo a abrir"
 #: qml/BasePage.qml:24
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr "Tarjetas %1% Errores %2"
+msgstr "Tarjetas %1 % Errores %2"
 
 #: qml/BasePage.qml:26
 #, kde-format
