@@ -5,7 +5,6 @@
 #include "kwqcardmodel.h"
 #include "keduvocexpression.h"
 #include "kwordquiz_version.h"
-#include <KEduVocDocument>
 #include <keduvoclesson.h>
 
 #include <KLocalizedString>
