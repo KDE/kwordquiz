@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:38+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2025-04-08 08:17+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -46,12 +46,12 @@ msgstr "Nimi:_____________________________ Päiväys:__________"
 msgid "Score"
 msgstr "Pisteet"
 
-#: kwqcardmodel.cpp:31
+#: kwqcardmodel.cpp:30
 #, kde-format
 msgid "Question"
 msgstr "Kysymys"
 
-#: kwqcardmodel.cpp:33
+#: kwqcardmodel.cpp:32
 #, kde-format
 msgid "Answer"
 msgstr "Vastaus"

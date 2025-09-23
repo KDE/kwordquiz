@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:38+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2010-08-14 20:37+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -44,12 +44,12 @@ msgstr "Navn:_____________________________ Dato:__________"
 msgid "Score"
 msgstr "Poengsum"
 
-#: kwqcardmodel.cpp:31
+#: kwqcardmodel.cpp:30
 #, kde-format
 msgid "Question"
 msgstr "Spørsmål"
 
-#: kwqcardmodel.cpp:33
+#: kwqcardmodel.cpp:32
 #, kde-format
 msgid "Answer"
 msgstr "Svar"

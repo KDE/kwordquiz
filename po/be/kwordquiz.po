@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:38+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2007-05-29 12:41+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -40,12 +40,12 @@ msgstr ""
 msgid "Score"
 msgstr "Балы"
 
-#: kwqcardmodel.cpp:31
+#: kwqcardmodel.cpp:30
 #, kde-format
 msgid "Question"
 msgstr "Пытанне"
 
-#: kwqcardmodel.cpp:33
+#: kwqcardmodel.cpp:32
 #, kde-format
 msgid "Answer"
 msgstr "Адказ"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:38+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2008-01-03 14:44+0545\n"
 "Last-Translator: Shyam Krishna Bal <balshyam24@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -38,12 +38,12 @@ msgstr "नाम:_____________________________ मिति:__________"
 msgid "Score"
 msgstr "प्राप्ताङ्क"
 
-#: kwqcardmodel.cpp:31
+#: kwqcardmodel.cpp:30
 #, kde-format
 msgid "Question"
 msgstr "प्रश्न"
 
-#: kwqcardmodel.cpp:33
+#: kwqcardmodel.cpp:32
 #, kde-format
 msgid "Answer"
 msgstr "उत्तर"
