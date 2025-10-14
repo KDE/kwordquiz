@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:38+0000\n"
-"PO-Revision-Date: 2025-03-24 14:45+0200\n"
+"PO-Revision-Date: 2025-10-09 13:15+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,7 +51,7 @@ msgstr "תשובה"
 #: main.cpp:62
 #, kde-format
 msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
-msgstr "סופקה הפנייה שגויה: %1. מותר: flash, mc ו־qa"
+msgstr "סופקה הפניה שגויה: %1. מותר: flash,‏ mc ו־qa"
 
 #: main.cpp:88
 #, kde-format
