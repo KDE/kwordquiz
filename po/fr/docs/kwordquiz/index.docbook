@@ -485,7 +485,7 @@
 <para
 >En 4, il y a deux blancs séparés. Pour indiquer cela dans la réponse, vous devez écrire « possédons ; un ordinateur », &cad; séparer les blancs avec un point-virgule afin d'obtenir une réponse correcte. </para>
 <para
->Les blancs marqués sont significatifs seulement s'ils apparaissent dans la réponse. Autrement les crochets sont ignorés. En outre, les crochets n'ont pas d'effet lors des questionnaires à choix multiple. Pour simplifier la création de documents de vocabulaire de type « Remplir le blanc », il y a les commandes des menus pour marquer ou démarquer les blancs. Naturellement vous pouvez aussi simplement saisir les crochets. &kwordquiz; vérifie la syntaxe. Si le texte apparaît en rouge, il y a une erreur avec les crochets et le questionnaire ne peut pas démarrer. </para>
+>Les blancs marqués sont significatifs seulement s'ils apparaissent dans la réponse. Autrement les crochets sont ignorés. En outre, les crochets n'ont pas d'effet lors des questionnaires à choix multiple. Pour simplifier la création de documents de vocabulaire de type « Remplir le blanc », il y a les commandes des menus pour marquer ou démarquer les blancs. Naturellement vous pouvez aussi simplement saisir les crochets. &kwordquiz; vérifie la syntaxe. Si le texte apparait en rouge, il y a une erreur avec les crochets et le questionnaire ne peut pas démarrer. </para>
 </chapter>
 
 <chapter id="printing">
@@ -494,7 +494,7 @@
 <para
 >&kwordquiz; offre la possibilité d'imprimer les documents de vocabulaire sous plusieurs formes. Les options d'impression sont disponibles dans l'éditeur de &kwordquiz;. Lors de la sélection de <guibutton
 >Imprimer...</guibutton
->, un menu vous sera proposé dans lequel vous pourrez sélectionner d'imprimer le document comme un liste de vocabulaire (&cad; comme affiché dans l'éditeur), comme un exercice de vocabulaire, ou comme des cartes. Une fois le mode sélectionné, une boîte de dialogue d'impression de &kde; vous sera présentée. </para>
+>, un menu vous sera proposé dans lequel vous pourrez sélectionner d'imprimer le document comme un liste de vocabulaire (&cad; comme affiché dans l'éditeur), comme un exercice de vocabulaire, ou comme des cartes. Une fois le mode sélectionné, une boite de dialogue d'impression de &kde; vous sera présentée. </para>
 <screenshot>
   <screeninfo
 >Options d'impression du vocabulaire</screeninfo>
@@ -605,7 +605,7 @@
 <title
 >Configuration des colonnes</title>
 <para
->Vous pouvez ouvrir cette boîte de dialogue à partir de l'éditeur.</para>
+>Vous pouvez ouvrir cette boite de dialogue à partir de l'éditeur.</para>
 <screenshot>
   <screeninfo
 >Configuration des colonnes</screeninfo>
@@ -620,7 +620,7 @@
   </mediaobject>
 </screenshot>
 <para
->Utilisez cette boîte de dialogue pour définir les titres et les langues des colonnes. Veuillez cliquer sur une langue pour la sélectionner ou fermer la boîte de dialogue pour annuler toutes les modifications. </para>
+>Utilisez cette boite de dialogue pour définir les titres et les langues des colonnes. Veuillez cliquer sur une langue pour la sélectionner ou fermer la boite de dialogue pour annuler toutes les modifications. </para>
 </sect1>
 </chapter>
 
