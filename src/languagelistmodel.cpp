@@ -30,7 +30,7 @@ LanguageListModel::LanguageListModel(QObject *parent)
 {
     const QStringList localeDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("locale"), QStandardPaths::LocateDirectory);
     for (const QString &localeDir : localeDirs) {
-        const QStringList entries = QDir(localeDir).entryList(QDir::Dirs, QDir::Name);
+        const QStringList entries = QDir(localeDir).entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
         for (const QString &languageCode : entries) {
             const QString entryFile = localeDir + QLatin1Char('/') + languageCode + QStringLiteral("/kf6_entry.desktop");
             if (QFile::exists(entryFile)) {
