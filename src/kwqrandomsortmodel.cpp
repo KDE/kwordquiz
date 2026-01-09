@@ -193,12 +193,12 @@ void KWQRandomSortModel::shuffle()
 
 void KWQRandomSortModel::markAsError(const int row)
 {
-    m_errors << sourceModel()->index(row, 0).row();
+    m_errors << mapToSource(index(row, 0)).row();
 }
 
 void KWQRandomSortModel::unMarkAsError(const int row)
 {
-    m_errors.removeAll(sourceModel()->index(row, 0).row());
+    m_errors.removeAll(mapToSource(index(row, 0)).row());
 }
 
 bool KWQRandomSortModel::showErrorsOnly() const
