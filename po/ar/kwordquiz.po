@@ -453,7 +453,7 @@ msgstr "عن كِيدِي"
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr "مرحباً"
+msgstr "مرحبًا"
 
 #: qml/WelcomePage.qml:40
 #, kde-format
@@ -483,7 +483,7 @@ msgstr "مستندات XDXF (*.xdxf)"
 #: qml/WelcomePage.qml:58
 #, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "مرحبا إلى اختبار الكلمات"
+msgstr "مرحبًا إلى اختبار الكلمات"
 
 #: qml/WelcomePage.qml:70
 #, kde-format
