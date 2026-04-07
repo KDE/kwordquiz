@@ -114,7 +114,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>KWordQuiz welcome page</caption>
-      <caption xml:lang="ar">مرحبا بك في اختبر كلماتك</caption>
+      <caption xml:lang="ar">مرحبًا بك في اختبر كلماتك</caption>
       <caption xml:lang="ca">Pàgina de benvinguda del KWordQuiz</caption>
       <caption xml:lang="ca-valencia">Pàgina de benvinguda de KWordQuiz</caption>
       <caption xml:lang="cs">Uvítací stránka KWordQuiz</caption>
