@@ -30,6 +30,7 @@
   <name xml:lang="pt-BR">WordQuiz</name>
   <name xml:lang="ru">WordQuiz</name>
   <name xml:lang="sa">शब्दप्रश्नोत्तर</name>
+  <name xml:lang="sk">KWordQuiz</name>
   <name xml:lang="sl">KWordQuiz</name>
   <name xml:lang="sv">Wordquiz</name>
   <name xml:lang="tr">Sözcük Oyunu</name>
@@ -61,6 +62,7 @@
   <summary xml:lang="pt-BR">Treinador de cartões</summary>
   <summary xml:lang="ru">Программа для изучения новой лексики</summary>
   <summary xml:lang="sa">फ्लैश कार्ड प्रशिक्षक</summary>
+  <summary xml:lang="sk">Precvičovanie slovnej zásoby s kartičkami</summary>
   <summary xml:lang="sl">Trener s spominskimi karticami</summary>
   <summary xml:lang="sv">Snabbkortsövning</summary>
   <summary xml:lang="tr">Bilgi Kartı Çalıştırıcısı</summary>
@@ -138,6 +140,7 @@
       <caption xml:lang="pt-BR">Página de boas-vindas do KWordQuiz</caption>
       <caption xml:lang="ru">Начальная страница KWordQuiz</caption>
       <caption xml:lang="sa">KWordQuiz स्वागत पृष्ठ</caption>
+      <caption xml:lang="sk">Uvítacia stránka KWordQuiz</caption>
       <caption xml:lang="sl">KWordQuiz stran dobrodošlice</caption>
       <caption xml:lang="sv">KWordQuiz välkomstsida</caption>
       <caption xml:lang="tr">K Sözcük Oyunu karşılama sayfası</caption>
@@ -171,6 +174,7 @@
       <caption xml:lang="pt-BR">Editor</caption>
       <caption xml:lang="ru">Редактор</caption>
       <caption xml:lang="sa">सम्पादक</caption>
+      <caption xml:lang="sk">Editor</caption>
       <caption xml:lang="sl">Urejevalnik</caption>
       <caption xml:lang="sv">Editor</caption>
       <caption xml:lang="tr">Düzenleyici</caption>
@@ -244,6 +248,7 @@
       <caption xml:lang="pt-BR">Modo de múltipla escolha no KWordQuiz</caption>
       <caption xml:lang="ru">Режим выбора из нескольких вариантов в KWordQuiz</caption>
       <caption xml:lang="sa">KWordQuiz इत्यस्मिन् बहुविकल्पविधिः</caption>
+      <caption xml:lang="sk">Režim výberu z možností v KWordQuiz</caption>
       <caption xml:lang="sl">Način večkratnega izbora v KWordQuiz</caption>
       <caption xml:lang="sv">Flerval i KWordQuiz</caption>
       <caption xml:lang="tr">K Sözcük Oyunu’nda çoktan seçmeli kip</caption>
@@ -277,6 +282,7 @@
       <caption xml:lang="pt-BR">Modo de resposta a perguntas no KWordQuiz</caption>
       <caption xml:lang="ru">Режим ответа на вопрос в KWordQuiz</caption>
       <caption xml:lang="sa">KWordQuiz इत्यस्मिन् प्रश्नप्रतिसादविधिः</caption>
+      <caption xml:lang="sk">Režim otázok a odpovedí v KWordQuiz</caption>
       <caption xml:lang="sl">Način odgovarjanja na vprašanja v KWordQuiz</caption>
       <caption xml:lang="sv">Fråga-svar i KWordQuiz</caption>
       <caption xml:lang="tr">K Sözcük Oyunu’nda soru–yanıt kipi</caption>
