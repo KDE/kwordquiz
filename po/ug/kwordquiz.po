@@ -8,24 +8,25 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:48+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-31 20:11-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: exporter.cpp:125
 #, kde-format
@@ -53,10 +54,9 @@ msgid "Invalid goto given: %1. Allowed: flash, mc and qa"
 msgstr ""
 
 #: main.cpp:88
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "WordQuiz"
-msgstr "KWordQuiz"
+msgstr "سۆز سىناق"
 
 #: main.cpp:90
 #, kde-format
@@ -71,19 +71,19 @@ msgstr ""
 #: main.cpp:96
 #, kde-format
 msgid "Peter Hedlund"
-msgstr "Peter Hedlund"
+msgstr ""
 
 #: main.cpp:96
 #, kde-format
 msgctxt "@info:credit"
 msgid "Original author"
-msgstr ""
+msgstr "ئەسلى يازغۇچى"
 
 #: main.cpp:97
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:97
 #, kde-format
@@ -104,7 +104,7 @@ msgstr ""
 #: main.cpp:99
 #, kde-format
 msgid "Martin Pfeiffer"
-msgstr "Martin Pfeiffer"
+msgstr ""
 
 #: main.cpp:99
 #, kde-format
@@ -139,7 +139,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
-msgstr ""
+msgstr "تاماملاندى"
 
 #: qml/BasePage.qml:75
 #, kde-format
@@ -160,7 +160,7 @@ msgstr ""
 #: qml/BasePage.qml:93
 #, kde-format
 msgid "Try Again"
-msgstr ""
+msgstr "قايتا سىنا"
 
 #: qml/DeckEditorPage.qml:32
 #, kde-format
@@ -169,28 +169,26 @@ msgid "Create Deck"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
-msgstr "تەھرىرلىگۈچ"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:39
 #, kde-format
 msgid "Filter"
-msgstr ""
+msgstr "سۈزگۈچ"
 
 #: qml/DeckEditorPage.qml:42
 #, kde-format
 msgid "Filter..."
-msgstr ""
+msgstr "سۈزگۈچ…"
 
 #: qml/DeckEditorPage.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
-msgstr ""
+msgstr "بېسىشنى ئالدىن كۆزەت"
 
 #: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
 #, kde-format
@@ -200,7 +198,7 @@ msgstr ""
 #: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "تىزىم"
 
 #: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
 #, kde-format
@@ -208,29 +206,28 @@ msgid "Exam"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Printing..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Print"
-msgstr "بېسىۋاتىدۇ…"
+msgstr "باس"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "ياسا"
 
 #: qml/DeckEditorPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "ساقلا"
 
 #: qml/DeckEditorPage.qml:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
-msgstr ""
+msgstr "سۈرەت چىقىرىۋەت"
 
 #: qml/DeckEditorPage.qml:120
 #, kde-format
@@ -239,11 +236,10 @@ msgid "Link Image"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
-msgstr "تاللاش"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:122
 #, kde-format
@@ -258,11 +254,10 @@ msgid "Set language"
 msgstr ""
 
 #: qml/DeckEditorPage.qml:161
-#, fuzzy, kde-format
-#| msgid "Select Image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
-msgstr "سۈرەت تاللاش"
+msgstr ""
 
 #: qml/DeckEditorPage.qml:182
 #, kde-format
@@ -278,42 +273,38 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
-msgstr ""
+msgstr "ئاتى:"
 
 #: qml/DeckEditorPage.qml:237
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
-msgstr ""
+msgstr "يازغۇچى:"
 
 #: qml/DeckEditorPage.qml:248
 #, kde-format
 msgctxt "@label"
 msgid "License:"
-msgstr ""
+msgstr "ئىجازەتنامە:"
 
 #: qml/EditAction.qml:13 qml/WelcomePage.qml:223
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox vocabulary editor"
-#| msgid "Editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "تەھرىرلىگۈچ"
+msgstr "تەھرىر"
 
 #: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
 #: qml/QuestionAnswerPage.qml:151
-#, fuzzy, kde-format
-#| msgid "&Check"
+#, kde-format
 msgctxt "@action:button"
 msgid "Check"
-msgstr "تەكشۈر(&C)"
+msgstr "تەكشۈر"
 
 #: qml/FlashCardPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Correct Answer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Correct"
-msgstr "توغرا جاۋاب"
+msgstr "تۈزەت"
 
 #: qml/FlashCardPage.qml:146
 #, kde-format
@@ -322,22 +313,20 @@ msgid "Not Correct"
 msgstr ""
 
 #: qml/LanguageSelectorPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Select Image"
+#, kde-format
 msgid "Select a language"
-msgstr "سۈرەت تاللاش"
+msgstr ""
 
 #: qml/Main.qml:40
-#, fuzzy, kde-format
-#| msgid "Column Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
-msgstr "ئىستون تەڭشىكى"
+msgstr "تەڭشەك"
 
 #: qml/Main.qml:42
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "سەپلە"
 
 #: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
 #, kde-format
@@ -353,7 +342,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr ""
+msgstr "كېيىنكى"
 
 #: qml/MultipleChoicePage.qml:150
 #, kde-format
@@ -366,38 +355,31 @@ msgid "You need at least 3 words to enable the multiple choice mode"
 msgstr ""
 
 #: qml/OptionsAction.qml:12
-#, fuzzy, kde-format
-#| msgid "Questions"
+#, kde-format
 msgctxt "@action:button"
 msgid "Options"
-msgstr "سوئاللار"
+msgstr "تاللانما"
 
 #: qml/OptionsAction.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu undo shuffle"
-#| msgid "Shuffle"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "تەرتىپسىز"
 
 #: qml/QuestionAnswerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "&Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hint"
-msgstr "كۆرسەتمە(&H)"
+msgstr "كۆرسەتمە(Hint)"
 
 #: qml/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgid "Column Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "ئىستون تەڭشىكى"
+msgstr "تەڭشەك"
 
 #: qml/SettingsPage.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title:group general settings"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "ئادەتتىكى"
 
@@ -422,10 +404,9 @@ msgid "Time delay for flipping the flashcard"
 msgstr ""
 
 #: qml/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgid "Multiple choice"
-msgstr "كۆپنى تاللاش"
+msgstr ""
 
 #: qml/SettingsPage.qml:68
 #, kde-format
@@ -433,10 +414,9 @@ msgid "Automatically check selected answer"
 msgstr ""
 
 #: qml/SettingsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Questions"
+#, kde-format
 msgid "Question and Answer"
-msgstr "سوئاللار"
+msgstr ""
 
 #: qml/SettingsPage.qml:84
 #, kde-format
@@ -449,21 +429,20 @@ msgid "Compare answers in a case sensitive way"
 msgstr ""
 
 #: qml/SettingsPage.qml:111
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "About KWordQuiz"
-msgstr "KWordQuiz"
+msgstr ""
 
 #: qml/SettingsPage.qml:126
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "KDE ھەققىدە"
 
 #: qml/WelcomePage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "مەرھابا"
 
 #: qml/WelcomePage.qml:40
 #, kde-format
@@ -491,16 +470,14 @@ msgid "XDXF documents (*.xdxf)"
 msgstr ""
 
 #: qml/WelcomePage.qml:58
-#, fuzzy, kde-format
-#| msgid "KWordQuiz"
+#, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "KWordQuiz"
+msgstr ""
 
 #: qml/WelcomePage.qml:70
-#, fuzzy, kde-format
-#| msgid "Opens an existing vocabulary document"
+#, kde-format
 msgid "Open Existing Document"
-msgstr "مەۋجۇت سۆزلۈك پۈتۈكىنى ئاچىدۇ"
+msgstr ""
 
 #: qml/WelcomePage.qml:76
 #, kde-format
@@ -513,32 +490,28 @@ msgid "Download Deck"
 msgstr ""
 
 #: qml/WelcomePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Mode"
+#, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "ھالىتى"
 
 #: qml/WelcomePage.qml:137
-#, fuzzy, kde-format
-#| msgid "Flashcard Appearance"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
-msgstr "Flashcard كۆرۈنۈشى"
+msgstr ""
 
 #: qml/WelcomePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Multiple Choice"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
-msgstr "كۆپنى تاللاش"
+msgstr ""
 
 #: qml/WelcomePage.qml:151
-#, fuzzy, kde-format
-#| msgid "Questions"
+#, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
-msgstr "سوئاللار"
+msgstr ""
 
 #: qml/WelcomePage.qml:157
 #, kde-format
@@ -554,9 +527,8 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "چىقىرىۋەت"
 
-#, fuzzy
 #~| msgid "Multiple Choice"
 #~ msgctxt "@option:check Mode selector"
 #~ msgid "Multiple Choice"
@@ -577,7 +549,6 @@ msgstr ""
 #~ msgid "&Title:"
 #~ msgstr "ماۋزۇ(&T):"
 
-#, fuzzy
 #~| msgid "Keyboard layouts"
 #~ msgid "&Keyboard layout:"
 #~ msgstr "ھەرپتاختا جايلاشتۇرۇلۇشى"
@@ -592,14 +563,12 @@ msgstr ""
 #~ msgid "Select Character"
 #~ msgstr "ھەرپ تاللا"
 
-#, fuzzy
 #~| msgctxt "@action:button select"
 #~| msgid "&Select"
 #~ msgctxt "@action:button"
 #~ msgid "&Select"
 #~ msgstr "تاللا(&S)"
 
-#, fuzzy
 #~| msgctxt "@title:window select character dialog"
 #~| msgid "Select Character"
 #~ msgctxt "@info:tooltip"
@@ -609,7 +578,6 @@ msgstr ""
 #~ msgid "Keyboard layouts"
 #~ msgstr "ھەرپتاختا جايلاشتۇرۇلۇشى"
 
-#, fuzzy
 #~| msgid "Show Se&arch"
 #~ msgid "Search"
 #~ msgstr "ئىزدەشنى كۆرسىتىش(&A)"
@@ -642,7 +610,6 @@ msgstr ""
 #~ msgid "Opening file..."
 #~ msgstr "ھۆججەتلەرنى ئېچىۋاتىدۇ…"
 
-#, fuzzy
 #~| msgid "Opening file..."
 #~ msgid "Open File"
 #~ msgstr "ھۆججەتلەرنى ئېچىۋاتىدۇ…"
@@ -711,7 +678,6 @@ msgstr ""
 #~ msgid "Special Characters"
 #~ msgstr "ئالاھىدە ھەرپلەر"
 
-#, fuzzy
 #~| msgid "Clear Contents"
 #~ msgctxt "@title:window"
 #~ msgid "Clear Contents"
@@ -754,7 +720,6 @@ msgstr ""
 #~ msgid "Untitled"
 #~ msgstr "ماۋزۇسىز"
 
-#, fuzzy
 #~| msgid "*|All Files"
 #~ msgid "All Files (*)"
 #~ msgstr "*|بارلىق ھۆججەتلەر"
@@ -824,7 +789,6 @@ msgstr ""
 #~ msgid "Miscellaneous"
 #~ msgstr "باشقىلار"
 
-#, fuzzy
 #~| msgid "Vocabulary Options"
 #~ msgctxt "@title:window"
 #~ msgid "Vocabulary Options"
