@@ -34,6 +34,7 @@
   <name xml:lang="sl">KWordQuiz</name>
   <name xml:lang="sv">Wordquiz</name>
   <name xml:lang="tr">Sözcük Oyunu</name>
+  <name xml:lang="ug">سۆز سىناق</name>
   <name xml:lang="uk">WordQuiz</name>
   <name xml:lang="zh-TW">單字測驗</name>
   <summary>Flash card trainer</summary>
@@ -178,6 +179,7 @@
       <caption xml:lang="sl">Urejevalnik</caption>
       <caption xml:lang="sv">Editor</caption>
       <caption xml:lang="tr">Düzenleyici</caption>
+      <caption xml:lang="ug">تەھرىرلىگۈچ</caption>
       <caption xml:lang="uk">Редактор</caption>
       <caption xml:lang="zh-TW">編輯器</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/editor.png</image>
