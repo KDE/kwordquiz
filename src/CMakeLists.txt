@@ -72,6 +72,7 @@ target_link_libraries(kwordquiz PRIVATE
     KF6::I18n
     KF6::NewStuffCore
     KF6::DBusAddons
+    KirigamiApp
     LibKEduVocDocumentImport__KEduVocDocument
 )
 

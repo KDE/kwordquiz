@@ -72,7 +72,7 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 
-find_package(KF6KirigamiAddons 0.11.0)
+find_package(KF6KirigamiAddons 1.12.0)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Kirigami addons application UI framework"

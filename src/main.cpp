@@ -16,6 +16,7 @@
 #include <KAboutData>
 #include <KCrash>
 #include <KLocalizedString>
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 #include <qstringliteral.h>
 
 #if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
@@ -71,15 +72,12 @@ int main(int argc, char *argv[])
 {
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle(u"org.kde.breeze"_s);
     QIcon::setThemeName(u"tokodon"_s);
 #else
     QApplication app(argc, argv);
-    // Default to org.kde.desktop style unless the user forces another style
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(u"org.kde.desktop"_s);
-    }
 #endif
+
+    KirigamiAppDefaults::apply(&app);
 
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("kwordquiz"));
     QIcon::setFallbackThemeName(u"breeze"_s);
@@ -103,12 +101,6 @@ int main(int argc, char *argv[])
 
 #ifndef Q_OS_ANDROID
     KDBusService service(KDBusService::Unique);
-#endif
-
-    KCrash::initialize();
-
-#ifdef Q_OS_WIN
-    QApplication::setStyle(QStringLiteral("breeze"));
 #endif
 
     QCommandLineParser parser;
