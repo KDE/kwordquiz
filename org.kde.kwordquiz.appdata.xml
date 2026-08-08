@@ -10,6 +10,7 @@
   <name xml:lang="ar">اختبر كلماتك</name>
   <name xml:lang="ca">WordQuiz</name>
   <name xml:lang="ca-valencia">WordQuiz</name>
+  <name xml:lang="cs">WordQuiz</name>
   <name xml:lang="de">WordQuiz</name>
   <name xml:lang="en-GB">WordQuiz</name>
   <name xml:lang="eo">WordQuiz</name>
@@ -76,6 +77,7 @@
     <p xml:lang="bs">KWordQuiz je program opšte namjene fleš kartica. Može se koristiti za učenje riječi i s mnogim drugim temama. On pruža urednik i pet različitih flashcard kviz režima. Koristi format KVTML datoteke i doprinesni fajlovi mogu se preuzeti u okviru same aplikacije.</p>
     <p xml:lang="ca">El KWordQuiz és un programa de targetes ràpides de finalitat general. Es pot utilitzar per a aprendre vocabulari i molts altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar a l'aplicació fitxers de col·laboracions.</p>
     <p xml:lang="ca-valencia">KWordQuiz és un programa de targetes ràpides de finalitat general. Es pot utilitzar per a aprendre vocabulari i molts altres temes. Proporciona un editor i cinc modes diferents de targetes ràpides. Utilitza el format de fitxer KVTML i es poden baixar a l'aplicació fitxers de col·laboracions.</p>
+    <p xml:lang="cs">KWordQuiz je univerzální program pro práci s kartičkami. Lze jej využít k učení slovíček i k mnoha dalším tématům. Obsahuje editor a pět různých režimů kvízů s kartičkami. Využívá formát souborů KVTML a soubory od ostatních uživatelů lze stahovat přímo z aplikace.</p>
     <p xml:lang="de">KWordQuiz ist ein universell einsetzbares Karteikartenprogramm. Es kann für das Vokabel lernen und viele andere Bereiche verwendet werden. Es bietet einen Editor und fünf verschiedene Karteikarten-Quiz-Modi. Es verwendet das KVTML-Dateiformat und beigetragene Dateien können aus der Anwendung heraus heruntergeladen werden.</p>
     <p xml:lang="el">Το KWordQuiz είναι ένα γενικού σκοπύ πρόγραμμα εκπαίδευσης με κάρτες. Χρησιμοποιείται για εκμάθηση λεξιλογίου και σε διάφορους άλλους τομείς. Περιλαμβάνει έναν επεξεργαστή και πέντε διαφορετικές λειτουργίες ερωτήσεων με κάρτες. Χρησιμοποιεί τον τύπο αποθήκευσης KVTML και μπορεί να γίνει λήψη αρχείων συνεισφοράς μέσα από την εφαρμογή.</p>
     <p xml:lang="en-GB">KWordQuiz is a general purpose flash card program. It can be used for vocabulary learning and many other subjects. It provides an editor and five different flashcard quiz modes. It uses the KVTML file format and contributed files can be downloaded from within the application.</p>
