@@ -6,7 +6,9 @@
     "sdk": "org.kde.Sdk",
     "command": "kwordquiz",
     "rename-icon": "kwordquiz",
-    "tags": ["nightly"],
+    "tags": [
+        "nightly"
+    ],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--device=dri",
@@ -32,7 +34,12 @@
         {
             "name": "libkeduvocdocument",
             "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/kde/libkeduvocdocument.git" } ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/kde/libkeduvocdocument.git"
+                }
+            ],
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
                 "-DBUILD_WITH_QT6=ON"
@@ -57,7 +64,12 @@
         {
             "name": "kwordquiz",
             "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "dir", "path": "." } ]
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ]
         }
     ]
 }
