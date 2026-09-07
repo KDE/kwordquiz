@@ -527,7 +527,7 @@
 <title
 >Llista de vocabulari</title>
 <para
->El vocabulari l'imprimireu tal com s'indica a l'editor; incloent-hi la lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
+>El vocabulari l'imprimireu tal com s'indica a l'editor; incloent-hi la lletra, l'altura de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
 </formalpara>
 <screenshot>
   <screeninfo
@@ -547,7 +547,7 @@
 <title
 >Examen de vocabulari</title>
 <para
->El vocabulari s'imprimirà tal com s'indica a l'editor; a part que es deixarà buida la columna de la dreta i s'afegirà una tercera columna per a valorar el resultat. Les opcions utilitzades incloses: la lletra, l'alçada de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
+>El vocabulari s'imprimirà tal com s'indica a l'editor; a part que es deixarà buida la columna de la dreta i s'afegirà una tercera columna per a valorar el resultat. Les opcions utilitzades incloses: la lletra, l'altura de les files i l'amplada de les columnes. Comproveu que les columnes són prou estretes perquè càpiguen a la pàgina.</para>
 </formalpara>
 <screenshot>
   <screeninfo
