@@ -33,6 +33,10 @@
   <name xml:lang="sa">शब्दप्रश्नोत्तर</name>
   <name xml:lang="sk">KWordQuiz</name>
   <name xml:lang="sl">KWordQuiz</name>
+  <name xml:lang="sr">WordQuiz</name>
+  <name xml:lang="sr-Latn">WordQuiz</name>
+  <name xml:lang="sr-ijekavian">WordQuiz</name>
+  <name xml:lang="sr-ijekavianlatin">WordQuiz</name>
   <name xml:lang="sv">Wordquiz</name>
   <name xml:lang="tr">Sözcük Oyunu</name>
   <name xml:lang="ug">سۆز سىناق</name>
@@ -66,6 +70,10 @@
   <summary xml:lang="sa">फ्लैश कार्ड प्रशिक्षक</summary>
   <summary xml:lang="sk">Precvičovanie slovnej zásoby s kartičkami</summary>
   <summary xml:lang="sl">Trener s spominskimi karticami</summary>
+  <summary xml:lang="sr">Тренер брзих картица</summary>
+  <summary xml:lang="sr-Latn">Trener brzih kartica</summary>
+  <summary xml:lang="sr-ijekavian">Тренер брзих картица</summary>
+  <summary xml:lang="sr-ijekavianlatin">Trener brzih kartica</summary>
   <summary xml:lang="sv">Snabbkortsövning</summary>
   <summary xml:lang="tr">Bilgi Kartı Çalıştırıcısı</summary>
   <summary xml:lang="uk">Тренування словникового запасу</summary>
@@ -106,6 +114,10 @@
     <p xml:lang="sa">KWordQuiz इति सामान्यप्रयोजनस्य फ्लैशकार्ड् कार्यक्रमः अस्ति । शब्दावलीशिक्षणाय अन्येषु च अनेकेषु विषयेषु अस्य उपयोगः कर्तुं शक्यते । एतत् सम्पादकं पञ्च भिन्नानि फ्लैशकार्ड् प्रश्नोत्तरीविधानानि च प्रदाति । एतत् KVTML सञ्चिकास्वरूपस्य उपयोगं करोति तथा च योगदानयुक्तानि सञ्चिकाः अनुप्रयोगस्य अन्तः अवतरणं कर्तुं शक्यन्ते ।</p>
     <p xml:lang="sk">KWordQuiz je všeobecný kartový program. Dá sa použiť na učenie slovnej zásoby a na mnoho iných účelov. Obsahuje editor a 5 rôznych režimov kvízov s kartami. Používa formát súborov KVTML a súbory sa dajú stiahnuť priamo z aplikácie.</p>
     <p xml:lang="sl">KWordQuiz je splošen program za učenje s spominskimi kartami. Uporabite ga lahko za učenje besedišča in drugih zadev. Ponuja urejevalnik in pet različnih načinov kviza s spominskimi kartami. Uporabniško prispevane datoteke KVTML, ki jih uporablja, lahko prejmete znotraj programa.</p>
+    <p xml:lang="sr">К‑квиз‑речи је програм опште намене за брзе картице. Може се користити за учење речника и многе друге предмете. Пружа уређивач и пет различитих режима квиза брзим картицама. Користи формат фајлова КВТМЛ, а фајлови које доприносе корисници могу се преузети из самог програма.</p>
+    <p xml:lang="sr-Latn">K‑kviz‑reči je program opšte namene za brze kartice. Može se koristiti za učenje rečnika i mnoge druge predmete. Pruža uređivač i pet različitih režima kviza brzim karticama. Koristi format fajlova KVTML, a fajlovi koje doprinose korisnici mogu se preuzeti iz samog programa.</p>
+    <p xml:lang="sr-ijekavian">К‑квиз‑ријечи је програм опште намјене за брзе картице. Може се користити за учење рјечника и многе друге предмете. Пружа уређивач и пет различитих режима квиза брзим картицама. Користи формат фајлова КВТМЛ, а фајлови које доприносе корисници могу се преузети из самог програма.</p>
+    <p xml:lang="sr-ijekavianlatin">K‑kviz‑riječi je program opšte namjene za brze kartice. Može se koristiti za učenje rječnika i mnoge druge predmete. Pruža uređivač i pet različitih režima kviza brzim karticama. Koristi format fajlova KVTML, a fajlovi koje doprinose korisnici mogu se preuzeti iz samog programa.</p>
     <p xml:lang="sv">Kwordquiz är ett generellt program för snabbkort. Det kan användas för inlärning av ordförråd och många andra ämnen. Det tillhandahåller en editor och fem olika frågemetoder för snabbkort. Det använder filformatet KVTML, och bidragna filer kan laddas ner inne i programmet.</p>
     <p xml:lang="tr">K Sözcük Oyunu genel amaçlı bir bilgi kartı çalıştırma programıdır. Söz dağarcığı genişletmek veya başka birçok konu için kullanılabilir. Bir düzenleyici ve beş farklı bilgi kartı sınav kipi içerir. KVTML dosya biçimini kullanır ve katkı verilmiş dosyalar uygulama içinden indirilebilir.</p>
     <p xml:lang="uk">KWordQuiz — програма для навчання за допомогою карток загального призначення. Нею можна скористатися для поповнення словникового запасу іноземною мовою або вивчення інших дисциплін. У програмі передбачено редактор та п’ять різних режимів навчання за допомогою карток. Для даних використовується формат файлів KVTML, файли даних, створені іншими користувачами, можна отримати безпосередньо за допомогою програми.</p>
@@ -148,6 +160,10 @@
       <caption xml:lang="sa">KWordQuiz स्वागत पृष्ठ</caption>
       <caption xml:lang="sk">Uvítacia stránka KWordQuiz</caption>
       <caption xml:lang="sl">KWordQuiz stran dobrodošlice</caption>
+      <caption xml:lang="sr">Уводна страница програма К‑квиз‑речи</caption>
+      <caption xml:lang="sr-Latn">Uvodna stranica programa K‑kviz‑reči</caption>
+      <caption xml:lang="sr-ijekavian">Уводна страница програма К‑квиз‑ријечи</caption>
+      <caption xml:lang="sr-ijekavianlatin">Uvodna stranica programa K‑kviz‑riječi</caption>
       <caption xml:lang="sv">KWordQuiz välkomstsida</caption>
       <caption xml:lang="tr">K Sözcük Oyunu karşılama sayfası</caption>
       <caption xml:lang="uk">Сторінка вітання KWordQuiz</caption>
@@ -182,6 +198,10 @@
       <caption xml:lang="sa">सम्पादक</caption>
       <caption xml:lang="sk">Editor</caption>
       <caption xml:lang="sl">Urejevalnik</caption>
+      <caption xml:lang="sr">Уређивач</caption>
+      <caption xml:lang="sr-Latn">Uređivač</caption>
+      <caption xml:lang="sr-ijekavian">Уређивач</caption>
+      <caption xml:lang="sr-ijekavianlatin">Uređivač</caption>
       <caption xml:lang="sv">Editor</caption>
       <caption xml:lang="tr">Düzenleyici</caption>
       <caption xml:lang="ug">تەھرىرلىگۈچ</caption>
@@ -222,6 +242,10 @@
       <caption xml:lang="sa">KWordQuiz इत्यस्मिन् Flashcard प्रश्नोत्तरी</caption>
       <caption xml:lang="sk">Kvíz s kartami v KWordQuiz</caption>
       <caption xml:lang="sl">Kviz s spominskimi kartami KWordQuiz</caption>
+      <caption xml:lang="sr">Квиз брзим картицама у програму К‑квиз‑речи</caption>
+      <caption xml:lang="sr-Latn">Kviz brzim karticama u programu K‑kviz‑reči</caption>
+      <caption xml:lang="sr-ijekavian">Квиз брзим картицама у програму К‑квиз‑ријечи</caption>
+      <caption xml:lang="sr-ijekavianlatin">Kviz brzim karticama u programu K‑kviz‑riječi</caption>
       <caption xml:lang="sv">Snabbkortsprov i KWordQuiz</caption>
       <caption xml:lang="tr">K Sözcük Oyunu’nda bilgi kartı sınavı</caption>
       <caption xml:lang="uk">Тест за допомогою карток у KWordQuiz</caption>
@@ -257,6 +281,10 @@
       <caption xml:lang="sa">KWordQuiz इत्यस्मिन् बहुविकल्पविधिः</caption>
       <caption xml:lang="sk">Režim výberu z možností v KWordQuiz</caption>
       <caption xml:lang="sl">Način večkratnega izbora v KWordQuiz</caption>
+      <caption xml:lang="sr">Режим вишеструког избора у програму К‑квиз‑речи</caption>
+      <caption xml:lang="sr-Latn">Režim višestrukog izbora u programu K‑kviz‑reči</caption>
+      <caption xml:lang="sr-ijekavian">Режим вишеструког избора у програму К‑квиз‑ријечи</caption>
+      <caption xml:lang="sr-ijekavianlatin">Režim višestrukog izbora u programu K‑kviz‑riječi</caption>
       <caption xml:lang="sv">Flerval i KWordQuiz</caption>
       <caption xml:lang="tr">K Sözcük Oyunu’nda çoktan seçmeli kip</caption>
       <caption xml:lang="uk">Режим вибору з варіантів у KWordQuiz</caption>
@@ -291,6 +319,10 @@
       <caption xml:lang="sa">KWordQuiz इत्यस्मिन् प्रश्नप्रतिसादविधिः</caption>
       <caption xml:lang="sk">Režim otázok a odpovedí v KWordQuiz</caption>
       <caption xml:lang="sl">Način odgovarjanja na vprašanja v KWordQuiz</caption>
+      <caption xml:lang="sr">Режим питања и одговора у програму К‑квиз‑речи</caption>
+      <caption xml:lang="sr-Latn">Režim pitanja i odgovora u programu K‑kviz‑reči</caption>
+      <caption xml:lang="sr-ijekavian">Режим питања и одговора у програму К‑квиз‑ријечи</caption>
+      <caption xml:lang="sr-ijekavianlatin">Režim pitanja i odgovora u programu K‑kviz‑riječi</caption>
       <caption xml:lang="sv">Fråga-svar i KWordQuiz</caption>
       <caption xml:lang="tr">K Sözcük Oyunu’nda soru–yanıt kipi</caption>
       <caption xml:lang="uk">Режим відповіді на питання у KWordQuiz</caption>
