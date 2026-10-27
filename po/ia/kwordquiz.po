@@ -161,7 +161,7 @@ msgstr[1] "Tu faceva %1 errores"
 #: qml/BasePage.qml:82
 #, kde-format
 msgid "Repeat Errors"
-msgstr "Repite errores"
+msgstr "Repete errores"
 
 #: qml/BasePage.qml:93
 #, kde-format
