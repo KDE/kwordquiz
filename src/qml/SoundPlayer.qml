@@ -1,12 +1,13 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtMultimedia
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kwordquiz
 
 QQC2.AbstractButton {
     id: root
@@ -28,7 +29,6 @@ QQC2.AbstractButton {
 
     MediaPlayer {
         id: audio
-        source: root.progressInfo.localPath
         audioOutput: AudioOutput {}
     }
 

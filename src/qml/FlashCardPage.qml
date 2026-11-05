@@ -1,7 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
+import org.kde.ki18n
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -13,7 +16,7 @@ BasePage {
     QQC2.Action {
         id: checkAction
 
-        text: i18nc("@action:button", "Check")
+        text: KI18n.i18nc("@action:button", "Check")
         onTriggered: root.showAnswer = true;
     }
 
@@ -125,15 +128,15 @@ BasePage {
 
                 QQC2.Button {
                     icon.name: "know"
-                    text: i18nc("@action:button", "Correct")
+                    text: KI18n.i18nc("@action:button", "Correct")
                     visible: root.showAnswer
                     onClicked: {
                         root.showAnswer = false;
-                        randomSortModel.unMarkAsError(listView.currentIndex);
-                        if (listView.currentIndex + 1 === listView.count) {
+                        root.randomSortModel.unMarkAsError(root.listView.currentIndex);
+                        if (root.listView.currentIndex + 1 === root.listView.count) {
                             root.finished = true;
                         } else {
-                            listView.incrementCurrentIndex();
+                            root.listView.incrementCurrentIndex();
                         }
 
                         if (Prefs.autoFlip) {
@@ -143,17 +146,17 @@ BasePage {
                 }
 
                 QQC2.Button {
-                    text: i18nc("@action:button", "Not Correct")
+                    text: KI18n.i18nc("@action:button", "Not Correct")
                     icon.name: "dontknow"
                     visible: root.showAnswer
                     onClicked: {
                         root.showAnswer = false;
                         root.errors++;
-                        randomSortModel.markAsError(listView.currentIndex);
-                        if (listView.currentIndex + 1 === listView.count) {
+                        root.randomSortModel.markAsError(root.listView.currentIndex);
+                        if (root.listView.currentIndex + 1 === root.listView.count) {
                             root.finished = true;
                         } else {
-                            listView.incrementCurrentIndex();
+                            root.listView.incrementCurrentIndex();
                         }
 
                         if (Prefs.autoFlip) {

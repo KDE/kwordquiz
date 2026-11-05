@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kwordquiz
 
@@ -9,10 +12,10 @@ Kirigami.Action {
 
     required property CardModel cardModel
 
-    text: i18nc("@action:button", "Options")
+    text: KI18n.i18nc("@action:button", "Options")
 
     Kirigami.Action {
-        text: i18nc("@action:inmenu", "Shuffle")
+        text: KI18n.i18nc("@action:inmenu", "Shuffle")
         checkable: true
         checked: Prefs.randomize
         onCheckedChanged: Prefs.randomize = true

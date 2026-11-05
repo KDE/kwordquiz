@@ -19,6 +19,7 @@ ecm_setup_version(${RELEASE_SERVICE_VERSION}
 
 set(kwordquiz_SRCS
     main.cpp
+    foreigntypes.h
     kwqcardmodel.h
     kwqcardmodel.cpp
     kwqdocumentmodel.h

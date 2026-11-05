@@ -15,7 +15,7 @@ if(NOT MSVC)
 endif(NOT MSVC)
 
 include(FeatureSummary)
-set(KF_MIN_VERSION "5.240.0")
+set(KF_MIN_VERSION "6.21.0")
 set(REQUIRED_QT_VERSION "6.5.0")
 find_package(ECM ${KF_MIN_VERSION} NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} )

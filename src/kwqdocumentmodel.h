@@ -43,7 +43,7 @@ public:
     Q_INVOKABLE void addDocument(KEduVocDocument *document);
     Q_INVOKABLE void remove(const int row);
 
-    Q_INVOKABLE void entryChanged(const KNSCore::Entry &wrapper);
+    Q_INVOKABLE void entryChanged(const KNSCore::Entry &entry, int event);
 
 private:
     std::vector<std::pair<std::unique_ptr<KEduVocDocument>, DocumentStatus>> m_documents;

@@ -1,7 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
+import org.kde.ki18n
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
@@ -12,7 +15,7 @@ Kirigami.ScrollablePage {
 
     property string language
 
-    title: i18n("Select a language")
+    title: KI18n.i18n("Select a language")
 
     ListView {
         model: LanguageListModel
@@ -29,7 +32,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Heading {
                     level: 2
                     font.family: "emoji"
-                    text: flag
+                    text: languageDelegate.flag
                 }
 
                 QQC2.Label {
@@ -43,7 +46,7 @@ Kirigami.ScrollablePage {
             highlighted: languageCode === root.language
             onClicked: {
                 root.language = languageCode;
-                root.closeDialog();
+                root.Kirigami.PageStack.closeDialog();
             }
         }
     }

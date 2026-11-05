@@ -1,7 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
+import org.kde.ki18n
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -21,9 +24,9 @@ Kirigami.Page {
     property bool showAnswer: false
 
     title: if (Prefs.percent) {
-        i18n("Cards %1% Errors %2", Math.round((listView.currentIndex + (finished ? 1 : 0)) / listView.count * 100), root.errors)
+        KI18n.i18n("Cards %1% Errors %2", Math.round((listView.currentIndex + (finished ? 1 : 0)) / listView.count * 100), root.errors)
     } else {
-        i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
+        KI18n.i18n("Cards %1/%2 Errors %3", listView.currentIndex + 1, listView.count, root.errors)
     }
 
     actions: [
@@ -32,6 +35,7 @@ Kirigami.Page {
         },
         EditAction {
             cardModel: root.cardModel
+            page: root
             documentModel: root.documentModel
         }
     ]
@@ -70,16 +74,16 @@ Kirigami.Page {
             anchors.centerIn: parent
             width: parent.width - Kirigami.Units.gridUnit * 4
             visible: root.finished
-            text: i18nc("@label", "Finished")
+            text: KI18n.i18nc("@label", "Finished")
 
-            explanation: root.errors === 0 ? i18n("You got a perfect score") : i18np("You made one mistake", "You made %1 mistakes", root.errors)
+            explanation: root.errors === 0 ? KI18n.i18n("You got a perfect score") : KI18n.i18np("You made one mistake", "You made %1 mistakes", root.errors)
 
             RowLayout {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.topMargin: Kirigami.Units.gridUnit
 
                 QQC2.Button {
-                    text: i18n("Repeat Errors")
+                    text: KI18n.i18n("Repeat Errors")
                     visible: root.errors > 0
                     onClicked: {
                         root.randomSortModel.showErrorsOnly = true;
@@ -90,7 +94,7 @@ Kirigami.Page {
                 }
 
                 QQC2.Button {
-                    text: i18n("Try Again")
+                    text: KI18n.i18n("Try Again")
                     onClicked: root.reset();
                 }
             }

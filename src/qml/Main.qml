@@ -1,8 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Controls as QQC2
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kwordquiz
 
@@ -15,18 +17,20 @@ Kirigami.ApplicationWindow {
     FileOpener {
         objectName: "FileOpener"
 
-        onFileOpened: pageStack.items[0].openFile(file, mode);
+        onFileOpened: (file, mode) => welcomePage.openFile(file, mode)
     }
 
     pageStack {
         defaultColumnWidth: Kirigami.Units.gridUnit * 30
-        initialPage: WelcomePage {}
+        initialPage: WelcomePage {
+            id: welcomePage
+        }
 
         globalToolBar {
             canContainHandles: true
             style: Kirigami.ApplicationHeaderStyle.ToolBar
-            showNavigationButtons: if (applicationWindow().pageStack.currentIndex > 0
-                || applicationWindow().pageStack.currentIndex > 0) {
+            showNavigationButtons: if (root.pageStack.currentIndex > 0
+                || root.pageStack.currentIndex > 0) {
                 Kirigami.ApplicationHeaderStyle.ShowBackButton
             } else {
                 0
@@ -37,9 +41,9 @@ Kirigami.ApplicationWindow {
     globalDrawer: Kirigami.GlobalDrawer {
         isMenu: true
         actions: Kirigami.Action {
-            text: i18nc("@action:inmenu", "Settings")
+            text: KI18n.i18nc("@action:inmenu", "Settings")
             onTriggered: root.pageStack.pushDialogLayer('qrc:/qt/qml/org/kde/kwordquiz/qml/SettingsPage.qml', {}, {
-                title: i18n("Configure"),
+                title: KI18n.i18n("Configure"),
                 width: Kirigami.Units.gridUnit * 15,
             });
         }

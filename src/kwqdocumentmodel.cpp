@@ -149,8 +149,12 @@ void KWQDocumentModel::remove(const int row)
     endRemoveRows();
 }
 
-void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry)
+void KWQDocumentModel::entryChanged(const KNSCore::Entry &entry, int event)
 {
+    if (event != KNSCore::Entry::StatusChangedEvent) {
+        return;
+    }
+
     if (entry.status() == KNSCore::Entry::Deleted) {
         const auto uninstalledFiles = entry.uninstalledFiles();
         for (const auto &url : uninstalledFiles) {

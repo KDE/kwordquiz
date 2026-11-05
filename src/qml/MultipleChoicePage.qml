@@ -1,7 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
+import org.kde.ki18n
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -34,7 +37,7 @@ BasePage {
 
         color: Kirigami.Theme.backgroundColor
 
-        visible: listView.count >= root.multipleChoiceLimit && !root.finished
+        visible: root.listView.count >= root.multipleChoiceLimit && !root.finished
 
         onIsCurrentItemChanged: if (!isCurrentItem) {
             multipleChoiceGroup.checkState = Qt.Unchecked;
@@ -48,11 +51,11 @@ BasePage {
         function check() {
             if (!multipleChoiceGroup.checkedButton || multipleChoiceGroup.checkedButton.text !== wordDelegate.answer) {
                 root.wasCorrect = false;
-                randomSortModel.markAsError(listView.currentIndex);
+                root.randomSortModel.markAsError(root.listView.currentIndex);
                 root.errors++;
             } else {
                 root.wasCorrect = true;
-                randomSortModel.unMarkAsError(listView.currentIndex);
+                root.randomSortModel.unMarkAsError(root.listView.currentIndex);
             }
         }
 
@@ -72,6 +75,8 @@ BasePage {
                 model: wordDelegate.multipleChoice
 
                 FormCard.FormRadioDelegate {
+                    required property string modelData
+
                     text: modelData
                     leftPadding: Kirigami.Units.smallSpacing
                     rightPadding: Kirigami.Units.smallSpacing
@@ -84,10 +89,10 @@ BasePage {
 
             QQC2.Button {
                 icon.name: "checkbox"
-                text: i18nc("@action:button", "Check")
-                enabled: listView.currentItem && listView.currentItem.hasSelection
+                text: KI18n.i18nc("@action:button", "Check")
+                enabled: wordDelegate.hasSelection
                 onClicked: {
-                    listView.currentItem.check();
+                    wordDelegate.check();
                     root.showAnswer = true;
                 }
                 visible: !root.showAnswer && !root.finished && !Prefs.autoCheck
@@ -96,7 +101,7 @@ BasePage {
             Kirigami.Heading {
                 level: 3
                 visible: root.showAnswer
-                text: root.wasCorrect ? i18n("This is correct") : i18n("Wrong, the correct answer was \"%1\".", wordDelegate.answer)
+                text: root.wasCorrect ? KI18n.i18n("This is correct") : KI18n.i18n("Wrong, the correct answer was \"%1\".", wordDelegate.answer)
 
                 horizontalAlignment: Text.AlignHCenter
 
@@ -127,14 +132,14 @@ BasePage {
 
             QQC2.Button {
                 icon.name: "go-next"
-                text: i18nc("@action:button", "Next")
+                text: KI18n.i18nc("@action:button", "Next")
                 visible: root.showAnswer
                 onClicked: {
                     root.showAnswer = false;
-                    if (listView.currentIndex + 1 === listView.count) {
+                    if (root.listView.currentIndex + 1 === root.listView.count) {
                         root.finished = true;
                     } else {
-                        listView.incrementCurrentIndex();
+                        root.listView.incrementCurrentIndex();
                     }
                 }
                 Layout.alignment: Qt.AlignHCenter
@@ -146,8 +151,8 @@ BasePage {
         parent: root
         anchors.centerIn: parent
         width: parent.width - Kirigami.Units.gridUnit * 4
-        visible: listView.count < 4
-        text: i18n("Not enough words in your deck")
-        explanation: i18n("You need at least 3 words to enable the multiple choice mode")
+        visible: root.listView.count < 4
+        text: KI18n.i18n("Not enough words in your deck")
+        explanation: KI18n.i18n("You need at least 3 words to enable the multiple choice mode")
     }
 }

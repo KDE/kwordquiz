@@ -1,7 +1,11 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import QtQuick.Layouts
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -10,16 +14,18 @@ import org.kde.kwordquiz
 FormCard.FormCardPage {
     id: root
 
-    title: i18nc("@title:window", "Settings")
+    readonly property Kirigami.ApplicationWindow applicationWindow: QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
+
+    title: KI18n.i18nc("@title:window", "Settings")
 
     FormCard.FormHeader {
-        title: i18n("General")
+        title: KI18n.i18n("General")
     }
 
     FormCard.FormCard {
         FormCard.FormCheckDelegate {
             id: showScoreCheckbox
-            text: i18n("Show score as percentage")
+            text: KI18n.i18n("Show score as percentage")
             checked: Prefs.percent
             onCheckedChanged: {
                 Prefs.percent = checked;
@@ -29,7 +35,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Flash Card")
+        title: KI18n.i18n("Flash Card")
     }
 
     FormCard.FormCard {
@@ -37,7 +43,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: autoFlipCheck
-            text: i18n("Automatically flip flashcard")
+            text: KI18n.i18n("Automatically flip flashcard")
             checked: Prefs.autoFlip
             onCheckedChanged: {
                 Prefs.autoFlip = checked;
@@ -47,7 +53,7 @@ FormCard.FormCardPage {
 
         FormCard.FormSpinBoxDelegate {
             id: flipDelayCheck
-            label: i18n("Time delay for flipping the flashcard")
+            label: KI18n.i18n("Time delay for flipping the flashcard")
             value: Prefs.flipDelay
             from: 1
             to: 30
@@ -60,12 +66,12 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Multiple choice")
+        title: KI18n.i18n("Multiple choice")
     }
 
     FormCard.FormCard {
         FormCard.FormCheckDelegate {
-            text: i18n("Automatically check selected answer")
+            text: KI18n.i18n("Automatically check selected answer")
             checked: Prefs.autoCheck
             onCheckedChanged: {
                 Prefs.autoCheck = checked;
@@ -75,7 +81,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Question and Answer")
+        title: KI18n.i18n("Question and Answer")
     }
 
     FormCard.FormCard {
@@ -83,7 +89,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: hintErrorCheckbox
-            text: i18n("Count using hint as an error")
+            text: KI18n.i18n("Count using hint as an error")
             checked: Prefs.hintError
             onCheckedChanged: {
                 Prefs.hintError = checked
@@ -93,7 +99,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: caseSensitiveCheck
-            text: i18n("Compare answers in a case sensitive way")
+            text: KI18n.i18n("Compare answers in a case sensitive way")
             checked: Prefs.caseSensitiveAnswers
             onCheckedChanged: {
                 Prefs.caseSensitiveAnswers = checked
@@ -109,8 +115,8 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: aboutPageButton
             icon.name: "org.kde.kwordquiz"
-            text: i18n("About KWordQuiz")
-            onClicked: applicationWindow().pageStack.layers.push(aboutPage)
+            text: KI18n.i18n("About KWordQuiz")
+            onClicked: root.applicationWindow.pageStack.layers.push(aboutPage)
 
             Component {
                 id: aboutPage
@@ -122,8 +128,8 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: aboutKDEButton
             icon.name: "kde"
-            text: i18n("About KDE")
-            onClicked: applicationWindow().pageStack.layers.push(aboutKde)
+            text: KI18n.i18n("About KDE")
+            onClicked: root.applicationWindow.pageStack.layers.push(aboutKde)
 
             Component {
                 id: aboutKde
