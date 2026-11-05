@@ -56,6 +56,10 @@
     </entry>
   </group>
   <group name="Quiz">
+    <entry name="SmartPractice" type="Bool">
+      <label>Prioritize difficult and unseen cards in short practice sessions</label>
+      <default>false</default>
+    </entry>
     <entry name="AutoCheck" type="Bool">
       <label>Automatically check selected answer in multiple choice</label>
       <default>false</default>

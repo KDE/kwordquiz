@@ -34,7 +34,7 @@ include(KDEGitCommitHooks)
 include(ECMEnableSanitizers)
 include(ECMQmlModule)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS

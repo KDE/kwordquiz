@@ -16,8 +16,6 @@ BasePage {
 
     property bool wasCorrect: true
 
-    readonly property int multipleChoiceLimit: 4
-
     listView.delegate: Rectangle {
         id: wordDelegate
 
@@ -37,7 +35,7 @@ BasePage {
 
         color: Kirigami.Theme.backgroundColor
 
-        visible: root.listView.count >= root.multipleChoiceLimit && !root.finished
+        visible: root.cardModel.multipleChoiceAvailable && !root.finished
 
         onIsCurrentItemChanged: if (!isCurrentItem) {
             multipleChoiceGroup.checkState = Qt.Unchecked;
@@ -151,8 +149,8 @@ BasePage {
         parent: root
         anchors.centerIn: parent
         width: parent.width - Kirigami.Units.gridUnit * 4
-        visible: root.listView.count < 4
+        visible: !root.cardModel.multipleChoiceAvailable
         text: KI18n.i18n("Not enough words in your deck")
-        explanation: KI18n.i18n("You need at least 3 words to enable the multiple choice mode")
+        explanation: KI18n.i18n("You need at least 4 words to enable the multiple choice mode")
     }
 }

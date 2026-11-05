@@ -156,6 +156,20 @@ FormCard.FormCardPage {
         }
     }
 
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing
+
+        FormCard.FormSwitchDelegate {
+            text: KI18n.i18nc("@option:check", "Smart practice")
+            description: KI18n.i18n("Practice up to 20 cards, starting with mistakes and unseen cards. Your progress is saved on this device.")
+            checked: Prefs.smartPractice
+            onToggled: {
+                Prefs.smartPractice = checked;
+                Prefs.save();
+            }
+        }
+    }
+
     FormCard.FormHeader {
         title: KI18n.i18n("Decks")
     }

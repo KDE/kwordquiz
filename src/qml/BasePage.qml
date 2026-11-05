@@ -94,7 +94,7 @@ Kirigami.Page {
                 }
 
                 QQC2.Button {
-                    text: KI18n.i18n("Try Again")
+                    text: Prefs.smartPractice ? KI18n.i18nc("@action:button", "Next Practice Session") : KI18n.i18n("Try Again")
                     onClicked: root.reset();
                 }
             }

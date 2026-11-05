@@ -31,7 +31,7 @@ class KWQCardModel : public QAbstractListModel
 
 public:
     enum ExtraRoles {
-        QuestionRole = Qt::DisplayRole + 1,
+        QuestionRole = Qt::UserRole + 1,
         QuestionImageRole,
         QuestionSoundRole,
 

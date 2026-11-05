@@ -5,6 +5,8 @@
 #pragma once
 
 #include "kwqcardmodel.h"
+#include <KSharedConfig>
+#include <QSet>
 #include <QSortFilterProxyModel>
 #include <qqmlintegration.h>
 
@@ -58,11 +60,19 @@ private:
         QuestionInRightColumn = 2,
     };
     void setRandomModes();
+    void preparePractice();
+    void recordAnswer(int sourceRow, bool correct);
 
     bool m_showErrorsOnly = false;
-    bool m_restoreNativeOrder = false;
     bool m_shuffle = false;
     QList<int> m_shuffleList;
     QList<int> m_errors;
     QList<Mode> m_modes;
+    KSharedConfig::Ptr m_practiceConfig;
+    QStringList m_practiceKeys;
+    QList<int> m_practiceOrder;
+    QSet<int> m_practiceRows;
+    QSet<int> m_answeredRows;
+    QSet<int> m_reviewRows;
+    bool m_smartPractice = false;
 };

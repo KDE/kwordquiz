@@ -253,7 +253,7 @@ void KWQCardModel::setLangAnswer(const QString &langAnswer)
 
 bool KWQCardModel::multipleChoiceAvailable() const
 {
-    return rowCount() > 4;
+    return rowCount() >= 4;
 }
 
 bool KWQCardModel::enabled() const
