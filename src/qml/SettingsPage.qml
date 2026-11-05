@@ -33,6 +33,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormCheckDelegate {
             id: autoFlipCheck
             text: i18n("Automatically flip flashcard")
@@ -42,8 +44,6 @@ FormCard.FormCardPage {
                 Prefs.save();
             }
         }
-
-        FormCard.FormDelegateSeparator { above: flipDelayCheck; below: autoFlipCheck }
 
         FormCard.FormSpinBoxDelegate {
             id: flipDelayCheck
@@ -79,6 +79,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormCheckDelegate {
             id: hintErrorCheckbox
             text: i18n("Count using hint as an error")
@@ -88,8 +90,6 @@ FormCard.FormCardPage {
                 Prefs.save();
             }
         }
-
-        FormCard.FormDelegateSeparator { above: caseSensitiveCheck; below: hintErrorCheckbox }
 
         FormCard.FormCheckDelegate {
             id: caseSensitiveCheck
@@ -104,6 +104,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.gridUnit
+        autoSeparators: true
 
         FormCard.FormButtonDelegate {
             id: aboutPageButton
@@ -117,8 +118,6 @@ FormCard.FormCardPage {
                 }
             }
         }
-
-        FormCard.FormDelegateSeparator { above: aboutKDEButton; below: aboutKDEButton}
 
         FormCard.FormButtonDelegate {
             id: aboutKDEButton

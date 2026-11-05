@@ -159,6 +159,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: documentRepeater.count > 0
+        autoSeparators: true
 
         Repeater {
             id: documentRepeater
@@ -167,114 +168,97 @@ FormCard.FormCardPage {
                 id: documentModel
             }
 
-            delegate: ColumnLayout {
+            delegate: FormCard.AbstractFormDelegate {
                 id: documentDelegate
 
                 required property int index
                 required property string title
                 required property var document
                 required property var documentStatus
-                readonly property alias documentButton: documentButton
-                readonly property bool readError: documentStatus === DocumentModel.CannotLoadFile
 
-                spacing: 0
+                enabled: documentStatus !== DocumentModel.CannotLoadFile
 
                 function open() {
-                    documentButton.clicked();
+                    documentDelegate.clicked();
                 }
 
-                FormCard.AbstractFormDelegate {
-                    id: documentButton
-                    enabled: documentStatus !== DocumentModel.CannotLoadFile
+                text: documentDelegate.title
 
-                    text: documentDelegate.title
+                QQC2.ToolTip.visible: enabled ? false : hovered
+                QQC2.ToolTip.text: i18n("Document cannot be opened")
 
-                    QQC2.ToolTip.visible: enabled ? false : hovered
-                    QQC2.ToolTip.text: i18n("Document cannot be opened")
+                contentItem: RowLayout {
+                    spacing: 0
 
-                    contentItem: RowLayout {
-                        spacing: 0
-
-                        QQC2.Label {
-                            Layout.fillWidth: true
-                            text: documentDelegate.title
-                            elide: Text.ElideRight
-                            wrapMode: Text.Wrap
-                            maximumLineCount: 2
-                            color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                            Accessible.ignored: true
-                        }
-
-                        QQC2.ToolButton {
-                            text: i18nc("@action:button", "Remove")
-                            icon.name: "delete"
-                            display: QQC2.ToolButton.IconOnly
-
-                            onClicked: documentModel.remove(documentDelegate.index)
-
-                            Layout.rightMargin: Kirigami.Units.smallSpacing
-
-                            QQC2.ToolTip.visible: hovered
-                            QQC2.ToolTip.text: text
-                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                        }
-
-                        QQC2.ToolButton {
-                            text: i18nc("@action:button", "Edit")
-                            icon.name: "document-edit"
-                            display: QQC2.ToolButton.IconOnly
-
-                            onClicked: {
-                                const editor = applicationWindow().pageStack.layers.push('./DeckEditorPage.qml', {
-                                    documentModel: documentModel,
-                                    mode: DeckEditorPage.EditMode,
-                                });
-                                editor.editorModel.document = documentDelegate.document;
-                            }
-
-                            Layout.rightMargin: Kirigami.Units.smallSpacing
-
-                            QQC2.ToolTip.visible: hovered
-                            QQC2.ToolTip.text: text
-                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                        }
-
-                        FormCard.FormArrow {
-                            Layout.leftMargin: Kirigami.Units.smallSpacing
-                            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                            direction: Qt.RightArrow
-                        }
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        text: documentDelegate.title
+                        elide: Text.ElideRight
+                        wrapMode: Text.Wrap
+                        maximumLineCount: 2
+                        color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                        Accessible.ignored: true
                     }
 
-                    onClicked: if (Prefs.startSession === Prefs.Flashcard){
-                        applicationWindow().pageStack.layers.push("./FlashCardPage.qml", {
-                            document: documentDelegate.document,
-                            documentModel: documentModel,
-                        });
-                    } else if (Prefs.startSession === Prefs.QA) {
-                        applicationWindow().pageStack.layers.push("./QuestionAnswerPage.qml", {
-                            document: documentDelegate.document,
-                            documentModel: documentModel,
-                        });
-                    } else  {
-                        applicationWindow().pageStack.layers.push("./MultipleChoicePage.qml", {
-                            document: documentDelegate.document,
-                            documentModel: documentModel,
-                        });
+                    QQC2.ToolButton {
+                        text: i18nc("@action:button", "Remove")
+                        icon.name: "delete"
+                        display: QQC2.ToolButton.IconOnly
+
+                        onClicked: documentModel.remove(documentDelegate.index)
+
+                        Layout.rightMargin: Kirigami.Units.smallSpacing
+
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.text: text
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
 
-                    Layout.fillWidth: true
+                    QQC2.ToolButton {
+                        text: i18nc("@action:button", "Edit")
+                        icon.name: "document-edit"
+                        display: QQC2.ToolButton.IconOnly
+
+                        onClicked: {
+                            const editor = applicationWindow().pageStack.layers.push('./DeckEditorPage.qml', {
+                                documentModel: documentModel,
+                                mode: DeckEditorPage.EditMode,
+                            });
+                            editor.editorModel.document = documentDelegate.document;
+                        }
+
+                        Layout.rightMargin: Kirigami.Units.smallSpacing
+
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.text: text
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    }
+
+                    FormCard.FormArrow {
+                        Layout.leftMargin: Kirigami.Units.smallSpacing
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        direction: Qt.RightArrow
+                    }
                 }
 
-                FormCard.FormDelegateSeparator {
-                    below: documentButton
-                    above: if (index === documentRepeater.count - 1) {
-                        null
-                    } else {
-                        documentRepeater.itemAt(index + 1).children[0]
-                    }
-                    visible: index !== documentRepeater.count - 1
+                onClicked: if (Prefs.startSession === Prefs.Flashcard){
+                    applicationWindow().pageStack.layers.push("./FlashCardPage.qml", {
+                        document: documentDelegate.document,
+                        documentModel: documentModel,
+                    });
+                } else if (Prefs.startSession === Prefs.QA) {
+                    applicationWindow().pageStack.layers.push("./QuestionAnswerPage.qml", {
+                        document: documentDelegate.document,
+                        documentModel: documentModel,
+                    });
+                } else  {
+                    applicationWindow().pageStack.layers.push("./MultipleChoicePage.qml", {
+                        document: documentDelegate.document,
+                        documentModel: documentModel,
+                    });
                 }
+
+                Layout.fillWidth: true
             }
         }
     }
