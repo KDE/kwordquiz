@@ -336,6 +336,13 @@
   </provides>
   <launchable type="desktop-id">org.kde.kwordquiz.desktop</launchable>
   <releases>
+    <release version="26.11.70" type="snapshot">
+      <description>
+        <ul>
+          <li>Add a practice mode with up to 20 cards, starting with mistakes and unseen cards.</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.08.3" date="2026-11-05"/>
     <release version="26.08.2" date="2026-10-08"/>
     <release version="26.08.1" date="2026-09-10"/>

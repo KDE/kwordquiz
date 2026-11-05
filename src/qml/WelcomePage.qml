@@ -161,7 +161,7 @@ FormCard.FormCardPage {
 
         FormCard.FormSwitchDelegate {
             text: KI18n.i18nc("@option:check", "Smart practice")
-            description: KI18n.i18n("Practice up to 20 cards, starting with mistakes and unseen cards. Your progress is saved on this device.")
+            description: KI18n.i18n("Practice up to 20 cards, starting with mistakes and unseen cards.")
             checked: Prefs.smartPractice
             onToggled: {
                 Prefs.smartPractice = checked;
