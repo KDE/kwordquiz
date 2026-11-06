@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:40+0000\n"
+"POT-Creation-Date: 2026-11-06 00:45+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -130,406 +130,424 @@ msgstr ""
 msgid "File to open"
 msgstr "सञ्चिकां उद्घाटयितुं"
 
-#: qml/BasePage.qml:24
+#: qml/BasePage.qml:27
 #, kde-format
 msgid "Cards %1% Errors %2"
 msgstr "कार्ड्स् %1% त्रुटयः %2"
 
-#: qml/BasePage.qml:26
+#: qml/BasePage.qml:29
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
 msgstr "कार्ड्स् %1/%2 त्रुटयः %3"
 
-#: qml/BasePage.qml:73
+#: qml/BasePage.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
 msgstr "सम्पूर्ण"
 
-#: qml/BasePage.qml:75
+#: qml/BasePage.qml:79
 #, kde-format
 msgid "You got a perfect score"
 msgstr "भवता सम्यक् स्कोरः प्राप्तः"
 
-#: qml/BasePage.qml:75
+#: qml/BasePage.qml:79
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
 msgstr[0] "त्वया एकः त्रुटिः कृता"
 msgstr[1] "भवता %1 त्रुटयः कृताः"
 
-#: qml/BasePage.qml:82
+#: qml/BasePage.qml:86
 #, kde-format
 msgid "Repeat Errors"
 msgstr "पुनरावृत्ति त्रुटिः"
 
-#: qml/BasePage.qml:93
+#: qml/BasePage.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Practice Session"
+msgstr ""
+
+#: qml/BasePage.qml:97
 #, kde-format
 msgid "Try Again"
 msgstr "पुनः प्रयासं कुरुत"
 
-#: qml/DeckEditorPage.qml:32
+#: qml/DeckEditorPage.qml:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "डेकं रचयन्तु"
 
-#: qml/DeckEditorPage.qml:34
+#: qml/DeckEditorPage.qml:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "सम्पादयतु डेक"
 
-#: qml/DeckEditorPage.qml:39
+#: qml/DeckEditorPage.qml:44
 #, kde-format
 msgid "Filter"
 msgstr "फ़िल्टर"
 
-#: qml/DeckEditorPage.qml:42
+#: qml/DeckEditorPage.qml:47
 #, kde-format
 msgid "Filter..."
 msgstr "फ़िल्टर..."
 
-#: qml/DeckEditorPage.qml:50
+#: qml/DeckEditorPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
 msgstr "मुद्रण पूर्वावलोकनम्"
 
-#: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
+#: qml/DeckEditorPage.qml:59 qml/DeckEditorPage.qml:81
 #, kde-format
 msgid "Flashcard"
 msgstr "फ्लैशकार्ड"
 
-#: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
+#: qml/DeckEditorPage.qml:65 qml/DeckEditorPage.qml:87
 #, kde-format
 msgid "List"
 msgstr "सूची"
 
-#: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
+#: qml/DeckEditorPage.qml:71 qml/DeckEditorPage.qml:93
 #, kde-format
 msgid "Exam"
 msgstr "परीक्षा"
 
-#: qml/DeckEditorPage.qml:72
+#: qml/DeckEditorPage.qml:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Print"
 msgstr "मुद्रणम्"
 
-#: qml/DeckEditorPage.qml:94
+#: qml/DeckEditorPage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "निर्मियताम्"
 
-#: qml/DeckEditorPage.qml:94
+#: qml/DeckEditorPage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "रक्ष्"
 
-#: qml/DeckEditorPage.qml:120
+#: qml/DeckEditorPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "चित्रं निष्कासयन्तु"
 
-#: qml/DeckEditorPage.qml:120
+#: qml/DeckEditorPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "लिङ्क इमेज"
 
-#: qml/DeckEditorPage.qml:122
+#: qml/DeckEditorPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "ध्वनिं निष्कासयन्तु"
 
-#: qml/DeckEditorPage.qml:122
+#: qml/DeckEditorPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "लिङ्क ध्वनि"
 
-#: qml/DeckEditorPage.qml:155
+#: qml/DeckEditorPage.qml:160
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "भाषा सेट् करें"
 
-#: qml/DeckEditorPage.qml:161
+#: qml/DeckEditorPage.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "सेट् भाषा"
 
-#: qml/DeckEditorPage.qml:182
+#: qml/DeckEditorPage.qml:187
 #, kde-format
 msgid "Please Choose an Image"
 msgstr "कृपया एकं चित्रं चिनोतु"
 
-#: qml/DeckEditorPage.qml:191
+#: qml/DeckEditorPage.qml:196
 #, kde-format
 msgid "Please Choose a Sound"
 msgstr "कृपया ध्वनिं चिनोतु"
 
-#: qml/DeckEditorPage.qml:226
+#: qml/DeckEditorPage.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr "नामः:"
 
-#: qml/DeckEditorPage.qml:237
+#: qml/DeckEditorPage.qml:244
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "लेखकः:"
 
-#: qml/DeckEditorPage.qml:248
+#: qml/DeckEditorPage.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "अनुज्ञापत्रम् :"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:223
+#: qml/EditAction.qml:20 qml/WelcomePage.qml:237
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "सम्पादन"
 
-#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
-#: qml/QuestionAnswerPage.qml:151
+#: qml/FlashCardPage.qml:19 qml/MultipleChoicePage.qml:90
+#: qml/QuestionAnswerPage.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "Check"
 msgstr "अनुशीलय"
 
-#: qml/FlashCardPage.qml:128
+#: qml/FlashCardPage.qml:131
 #, kde-format
 msgctxt "@action:button"
 msgid "Correct"
 msgstr "उचितं"
 
-#: qml/FlashCardPage.qml:146
+#: qml/FlashCardPage.qml:149
 #, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
 msgstr "न सम्यक्"
 
-#: qml/LanguageSelectorPage.qml:15
+#: qml/LanguageSelectorPage.qml:18
 #, kde-format
 msgid "Select a language"
 msgstr "भाषां चिनोतु"
 
-#: qml/Main.qml:40
+#: qml/Main.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: qml/Main.qml:42
+#: qml/Main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "विन्यस्तं कुर्वन्तु"
 
-#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#: qml/MultipleChoicePage.qml:102 qml/QuestionAnswerPage.qml:168
 #, kde-format
 msgid "This is correct"
 msgstr "एतत् सम्यक्"
 
-#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#: qml/MultipleChoicePage.qml:102 qml/QuestionAnswerPage.qml:168
 #, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
 msgstr "गलत्, सम्यक् उत्तरं \"%1\" आसीत् ।"
 
-#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
+#: qml/MultipleChoicePage.qml:133 qml/QuestionAnswerPage.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "अग्रिम"
 
-#: qml/MultipleChoicePage.qml:150
+#: qml/MultipleChoicePage.qml:153
 #, kde-format
 msgid "Not enough words in your deck"
 msgstr "भवतः डेक् मध्ये पर्याप्ताः शब्दाः न सन्ति"
 
-#: qml/MultipleChoicePage.qml:151
-#, kde-format
-msgid "You need at least 3 words to enable the multiple choice mode"
+#: qml/MultipleChoicePage.qml:154
+#, fuzzy, kde-format
+#| msgid "You need at least 3 words to enable the multiple choice mode"
+msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr "बहुविकल्पविधानं सक्षमं कर्तुं भवतः न्यूनातिन्यूनं ३ शब्दानां आवश्यकता वर्तते"
 
-#: qml/OptionsAction.qml:12
+#: qml/OptionsAction.qml:15
 #, kde-format
 msgctxt "@action:button"
 msgid "Options"
 msgstr "विकल्पाः"
 
-#: qml/OptionsAction.qml:15
+#: qml/OptionsAction.qml:18
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "शफल"
 
-#: qml/QuestionAnswerPage.qml:143
+#: qml/QuestionAnswerPage.qml:146
 #, kde-format
 msgctxt "@action:button"
 msgid "Hint"
 msgstr "संकेत"
 
-#: qml/SettingsPage.qml:13
+#: qml/SettingsPage.qml:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: qml/SettingsPage.qml:16
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "General"
 msgstr "सामान्य"
 
-#: qml/SettingsPage.qml:22
+#: qml/SettingsPage.qml:28
 #, kde-format
 msgid "Show score as percentage"
 msgstr "स्कोरं प्रतिशतरूपेण दर्शयतु"
 
-#: qml/SettingsPage.qml:32
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Flash Card"
 msgstr "फ़्लैश कार्ड"
 
-#: qml/SettingsPage.qml:38
+#: qml/SettingsPage.qml:46
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "स्वयमेव फ्लैशकार्डं पलटयन्तु"
 
-#: qml/SettingsPage.qml:50
+#: qml/SettingsPage.qml:56
 #, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "फ्लैशकार्डं प्लटयितुं समयविलम्बः"
 
-#: qml/SettingsPage.qml:63
+#: qml/SettingsPage.qml:69
 #, kde-format
 msgid "Multiple choice"
 msgstr "बहुविकल्पः"
 
-#: qml/SettingsPage.qml:68
+#: qml/SettingsPage.qml:74
 #, kde-format
 msgid "Automatically check selected answer"
 msgstr "चयनितं उत्तरं स्वयमेव परीक्ष्यताम्"
 
-#: qml/SettingsPage.qml:78
+#: qml/SettingsPage.qml:84
 #, kde-format
 msgid "Question and Answer"
 msgstr "प्रश्न उत्तर"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:92
 #, kde-format
 msgid "Count using hint as an error"
 msgstr "हिन्ट् इत्यस्य उपयोगेन त्रुटिरूपेण गणनां कुर्वन्तु"
 
-#: qml/SettingsPage.qml:96
+#: qml/SettingsPage.qml:102
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr "उत्तराणां तुलना केससंवेदनशीलरीत्या कुर्वन्तु"
 
-#: qml/SettingsPage.qml:111
+#: qml/SettingsPage.qml:118
 #, kde-format
 msgid "About KWordQuiz"
 msgstr "KWordQuiz विषये"
 
-#: qml/SettingsPage.qml:126
+#: qml/SettingsPage.qml:131
 #, kde-format
 msgid "About KDE"
 msgstr "KDE विषये"
 
-#: qml/WelcomePage.qml:35
+#: qml/WelcomePage.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "स्वागतम्‌"
 
-#: qml/WelcomePage.qml:40
+#: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Please choose a WordQuiz document"
 msgstr "कृपया WordQuiz दस्तावेजं चिनुत"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
 msgstr "केडुदस्तावेज (*.kvtml) 1.1."
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "Wql documents (*.wql)"
 msgstr "Wql दस्तावेज (*.wql) 1.1."
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "CSV documents (*.csv)"
 msgstr "CSV दस्तावेजाः (*.csv) ."
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF दस्तावेजाः (*.xdxf) ."
 
-#: qml/WelcomePage.qml:58
+#: qml/WelcomePage.qml:63
 #, kde-format
 msgid "Welcome to WordQuiz"
 msgstr "WordQuiz इत्यत्र भवतः स्वागतम्"
 
-#: qml/WelcomePage.qml:70
+#: qml/WelcomePage.qml:75
 #, kde-format
 msgid "Open Existing Document"
 msgstr "विद्यमानं दस्तावेजं उद्घाटयन्तु"
 
-#: qml/WelcomePage.qml:76
+#: qml/WelcomePage.qml:81
 #, kde-format
 msgid "Create Deck"
 msgstr "डेकं रचयन्तु"
 
-#: qml/WelcomePage.qml:84
+#: qml/WelcomePage.qml:89
 #, kde-format
 msgid "Download Deck"
 msgstr "Download Deck"
 
-#: qml/WelcomePage.qml:100
+#: qml/WelcomePage.qml:103
 #, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "मोड्"
 
-#: qml/WelcomePage.qml:137
+#: qml/WelcomePage.qml:140
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "फ्लैशकार्ड"
 
-#: qml/WelcomePage.qml:144
+#: qml/WelcomePage.qml:147
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "बहुविकल्पः"
 
-#: qml/WelcomePage.qml:151
+#: qml/WelcomePage.qml:154
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "प्रश्न-उत्तर"
 
-#: qml/WelcomePage.qml:157
+#: qml/WelcomePage.qml:163
+#, kde-format
+msgctxt "@option:check"
+msgid "Smart practice"
+msgstr ""
+
+#: qml/WelcomePage.qml:164
+#, kde-format
+msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
+msgstr ""
+
+#: qml/WelcomePage.qml:174
 #, kde-format
 msgid "Decks"
 msgstr "डेक्स"
 
-#: qml/WelcomePage.qml:193
+#: qml/WelcomePage.qml:207
 #, kde-format
 msgid "Document cannot be opened"
 msgstr ""
 
-#: qml/WelcomePage.qml:209
+#: qml/WelcomePage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

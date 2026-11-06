@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:40+0000\n"
+"POT-Creation-Date: 2026-11-06 00:45+0000\n"
 "PO-Revision-Date: 2024-06-28 16:51+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -129,406 +129,424 @@ msgstr ""
 msgid "File to open"
 msgstr "Malfermenda dosiero"
 
-#: qml/BasePage.qml:24
+#: qml/BasePage.qml:27
 #, kde-format
 msgid "Cards %1% Errors %2"
 msgstr "Kartoj %1% Eraroj %2"
 
-#: qml/BasePage.qml:26
+#: qml/BasePage.qml:29
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
 msgstr "Kartoj %1/%2 Eraroj %3"
 
-#: qml/BasePage.qml:73
+#: qml/BasePage.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
 msgstr "Finita"
 
-#: qml/BasePage.qml:75
+#: qml/BasePage.qml:79
 #, kde-format
 msgid "You got a perfect score"
 msgstr "Vi atingis perfektan poentaron"
 
-#: qml/BasePage.qml:75
+#: qml/BasePage.qml:79
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
 msgstr[0] "Vi faris unu eraron"
 msgstr[1] "Vi faris %1 erarojn"
 
-#: qml/BasePage.qml:82
+#: qml/BasePage.qml:86
 #, kde-format
 msgid "Repeat Errors"
 msgstr "Ripeti Erarojn"
 
-#: qml/BasePage.qml:93
+#: qml/BasePage.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Practice Session"
+msgstr ""
+
+#: qml/BasePage.qml:97
 #, kde-format
 msgid "Try Again"
 msgstr "Reprovi"
 
-#: qml/DeckEditorPage.qml:32
+#: qml/DeckEditorPage.qml:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "Krei Kartaron"
 
-#: qml/DeckEditorPage.qml:34
+#: qml/DeckEditorPage.qml:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Redakti Kartaron"
 
-#: qml/DeckEditorPage.qml:39
+#: qml/DeckEditorPage.qml:44
 #, kde-format
 msgid "Filter"
 msgstr "Filtri"
 
-#: qml/DeckEditorPage.qml:42
+#: qml/DeckEditorPage.qml:47
 #, kde-format
 msgid "Filter..."
 msgstr "Filtri..."
 
-#: qml/DeckEditorPage.qml:50
+#: qml/DeckEditorPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
 msgstr "Presa Antaŭrigardo"
 
-#: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
+#: qml/DeckEditorPage.qml:59 qml/DeckEditorPage.qml:81
 #, kde-format
 msgid "Flashcard"
 msgstr "Fulmkarto"
 
-#: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
+#: qml/DeckEditorPage.qml:65 qml/DeckEditorPage.qml:87
 #, kde-format
 msgid "List"
 msgstr "Listo"
 
-#: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
+#: qml/DeckEditorPage.qml:71 qml/DeckEditorPage.qml:93
 #, kde-format
 msgid "Exam"
 msgstr "Ekzameno"
 
-#: qml/DeckEditorPage.qml:72
+#: qml/DeckEditorPage.qml:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Print"
 msgstr "Presi"
 
-#: qml/DeckEditorPage.qml:94
+#: qml/DeckEditorPage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Krei"
 
-#: qml/DeckEditorPage.qml:94
+#: qml/DeckEditorPage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Konservi"
 
-#: qml/DeckEditorPage.qml:120
+#: qml/DeckEditorPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "Forigi Bildon"
 
-#: qml/DeckEditorPage.qml:120
+#: qml/DeckEditorPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Ligi Bildon"
 
-#: qml/DeckEditorPage.qml:122
+#: qml/DeckEditorPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Forigi Sonon"
 
-#: qml/DeckEditorPage.qml:122
+#: qml/DeckEditorPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Ligi Sonon"
 
-#: qml/DeckEditorPage.qml:155
+#: qml/DeckEditorPage.qml:160
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "Meti lingvon"
 
-#: qml/DeckEditorPage.qml:161
+#: qml/DeckEditorPage.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "Meti Lingvon"
 
-#: qml/DeckEditorPage.qml:182
+#: qml/DeckEditorPage.qml:187
 #, kde-format
 msgid "Please Choose an Image"
 msgstr "Bonvolu elekti bildon"
 
-#: qml/DeckEditorPage.qml:191
+#: qml/DeckEditorPage.qml:196
 #, kde-format
 msgid "Please Choose a Sound"
 msgstr "Bonvolu elekti sonon"
 
-#: qml/DeckEditorPage.qml:226
+#: qml/DeckEditorPage.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr "Nomo:"
 
-#: qml/DeckEditorPage.qml:237
+#: qml/DeckEditorPage.qml:244
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "Aŭtoro:"
 
-#: qml/DeckEditorPage.qml:248
+#: qml/DeckEditorPage.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "Permesilo:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:223
+#: qml/EditAction.qml:20 qml/WelcomePage.qml:237
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Redakti"
 
-#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
-#: qml/QuestionAnswerPage.qml:151
+#: qml/FlashCardPage.qml:19 qml/MultipleChoicePage.qml:90
+#: qml/QuestionAnswerPage.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "Check"
 msgstr "Kontroli"
 
-#: qml/FlashCardPage.qml:128
+#: qml/FlashCardPage.qml:131
 #, kde-format
 msgctxt "@action:button"
 msgid "Correct"
 msgstr "Korekta"
 
-#: qml/FlashCardPage.qml:146
+#: qml/FlashCardPage.qml:149
 #, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
 msgstr "Nekorekta"
 
-#: qml/LanguageSelectorPage.qml:15
+#: qml/LanguageSelectorPage.qml:18
 #, kde-format
 msgid "Select a language"
 msgstr "Elekti lingvon"
 
-#: qml/Main.qml:40
+#: qml/Main.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Agordoj"
 
-#: qml/Main.qml:42
+#: qml/Main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Agordi"
 
-#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#: qml/MultipleChoicePage.qml:102 qml/QuestionAnswerPage.qml:168
 #, kde-format
 msgid "This is correct"
 msgstr "Tio estas ĝusta"
 
-#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#: qml/MultipleChoicePage.qml:102 qml/QuestionAnswerPage.qml:168
 #, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
 msgstr "Malĝusta, la ĝusta respondo estis \"%1\"."
 
-#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
+#: qml/MultipleChoicePage.qml:133 qml/QuestionAnswerPage.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Sekva"
 
-#: qml/MultipleChoicePage.qml:150
+#: qml/MultipleChoicePage.qml:153
 #, kde-format
 msgid "Not enough words in your deck"
 msgstr "Nesufiĉaj vortoj en via kartaro"
 
-#: qml/MultipleChoicePage.qml:151
-#, kde-format
-msgid "You need at least 3 words to enable the multiple choice mode"
+#: qml/MultipleChoicePage.qml:154
+#, fuzzy, kde-format
+#| msgid "You need at least 3 words to enable the multiple choice mode"
+msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr "Vi bezonas almenaŭ 3 vortojn por ebligi la plurelektan reĝimon"
 
-#: qml/OptionsAction.qml:12
+#: qml/OptionsAction.qml:15
 #, kde-format
 msgctxt "@action:button"
 msgid "Options"
 msgstr "Opcioj"
 
-#: qml/OptionsAction.qml:15
+#: qml/OptionsAction.qml:18
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Miksi"
 
-#: qml/QuestionAnswerPage.qml:143
+#: qml/QuestionAnswerPage.qml:146
 #, kde-format
 msgctxt "@action:button"
 msgid "Hint"
 msgstr "Helpindiko"
 
-#: qml/SettingsPage.qml:13
+#: qml/SettingsPage.qml:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Agordoj"
 
-#: qml/SettingsPage.qml:16
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "General"
 msgstr "Ĝenerala"
 
-#: qml/SettingsPage.qml:22
+#: qml/SettingsPage.qml:28
 #, kde-format
 msgid "Show score as percentage"
 msgstr "Montri poentaron kiel procento"
 
-#: qml/SettingsPage.qml:32
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Flash Card"
 msgstr "Fulmkarto"
 
-#: qml/SettingsPage.qml:38
+#: qml/SettingsPage.qml:46
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "Aŭtomate renversi memorkarton"
 
-#: qml/SettingsPage.qml:50
+#: qml/SettingsPage.qml:56
 #, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "Prokrastodaŭro antaŭ renversi memorkarton"
 
-#: qml/SettingsPage.qml:63
+#: qml/SettingsPage.qml:69
 #, kde-format
 msgid "Multiple choice"
 msgstr "Plurelekto"
 
-#: qml/SettingsPage.qml:68
+#: qml/SettingsPage.qml:74
 #, kde-format
 msgid "Automatically check selected answer"
 msgstr "Aŭtomate kontroli elektintan respondon"
 
-#: qml/SettingsPage.qml:78
+#: qml/SettingsPage.qml:84
 #, kde-format
 msgid "Question and Answer"
 msgstr "Demando kaj Respondo"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:92
 #, kde-format
 msgid "Count using hint as an error"
 msgstr "Nombrigi uzante aludon kiel eraron"
 
-#: qml/SettingsPage.qml:96
+#: qml/SettingsPage.qml:102
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr "Kompari respondojn en usklecdistinga maniero"
 
-#: qml/SettingsPage.qml:111
+#: qml/SettingsPage.qml:118
 #, kde-format
 msgid "About KWordQuiz"
 msgstr "Pri KWordQuiz"
 
-#: qml/SettingsPage.qml:126
+#: qml/SettingsPage.qml:131
 #, kde-format
 msgid "About KDE"
 msgstr "Pri KDE"
 
-#: qml/WelcomePage.qml:35
+#: qml/WelcomePage.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "Bonvenon"
 
-#: qml/WelcomePage.qml:40
+#: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Please choose a WordQuiz document"
 msgstr "Bonvolu elekti WordQuiz-dokumenton"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
 msgstr "KEduDocument (*.kvtml)"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "Wql documents (*.wql)"
 msgstr "Wql-dokumentoj (*.wql)"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "CSV documents (*.csv)"
 msgstr "CSV-dokumentoj (*.csv)"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
 msgstr "XDXF-dokumentoj (*.xdxf)"
 
-#: qml/WelcomePage.qml:58
+#: qml/WelcomePage.qml:63
 #, kde-format
 msgid "Welcome to WordQuiz"
 msgstr "Bonvenon al WordQuiz"
 
-#: qml/WelcomePage.qml:70
+#: qml/WelcomePage.qml:75
 #, kde-format
 msgid "Open Existing Document"
 msgstr "Malfermi Ekzistantan Dokumenton"
 
-#: qml/WelcomePage.qml:76
+#: qml/WelcomePage.qml:81
 #, kde-format
 msgid "Create Deck"
 msgstr "Krei Kartaron"
 
-#: qml/WelcomePage.qml:84
+#: qml/WelcomePage.qml:89
 #, kde-format
 msgid "Download Deck"
 msgstr "Elŝuti Kartaron"
 
-#: qml/WelcomePage.qml:100
+#: qml/WelcomePage.qml:103
 #, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Reĝimo"
 
-#: qml/WelcomePage.qml:137
+#: qml/WelcomePage.qml:140
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Memoriga karto"
 
-#: qml/WelcomePage.qml:144
+#: qml/WelcomePage.qml:147
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Plurelekto"
 
-#: qml/WelcomePage.qml:151
+#: qml/WelcomePage.qml:154
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "Demando-Respondo"
 
-#: qml/WelcomePage.qml:157
+#: qml/WelcomePage.qml:163
+#, kde-format
+msgctxt "@option:check"
+msgid "Smart practice"
+msgstr ""
+
+#: qml/WelcomePage.qml:164
+#, kde-format
+msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
+msgstr ""
+
+#: qml/WelcomePage.qml:174
 #, kde-format
 msgid "Decks"
 msgstr "Kartaroj"
 
-#: qml/WelcomePage.qml:193
+#: qml/WelcomePage.qml:207
 #, kde-format
 msgid "Document cannot be opened"
 msgstr ""
 
-#: qml/WelcomePage.qml:209
+#: qml/WelcomePage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

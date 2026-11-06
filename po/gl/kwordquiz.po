@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:40+0000\n"
+"POT-Creation-Date: 2026-11-06 00:45+0000\n"
 "PO-Revision-Date: 2025-05-03 07:02+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -131,407 +131,427 @@ msgstr ""
 msgid "File to open"
 msgstr "Ficheiro para abrir"
 
-#: qml/BasePage.qml:24
+#: qml/BasePage.qml:27
 #, kde-format
 msgid "Cards %1% Errors %2"
 msgstr "Tarxetas: %1%. Erros: %2."
 
-#: qml/BasePage.qml:26
+#: qml/BasePage.qml:29
 #, kde-format
 msgid "Cards %1/%2 Errors %3"
 msgstr "Tarxetas: %1/%2. Erros: %3."
 
-#: qml/BasePage.qml:73
+#: qml/BasePage.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Finished"
 msgstr "Rematou"
 
-#: qml/BasePage.qml:75
+#: qml/BasePage.qml:79
 #, kde-format
 msgid "You got a perfect score"
 msgstr "Atinou todo"
 
-#: qml/BasePage.qml:75
+#: qml/BasePage.qml:79
 #, kde-format
 msgid "You made one mistake"
 msgid_plural "You made %1 mistakes"
 msgstr[0] "Cometeu un erro"
 msgstr[1] "Cometeu %1 erros"
 
-#: qml/BasePage.qml:82
+#: qml/BasePage.qml:86
 #, kde-format
 msgid "Repeat Errors"
 msgstr "Repetir os erros"
 
-#: qml/BasePage.qml:93
+#: qml/BasePage.qml:97
+#, fuzzy, kde-format
+#| msgid "Practice modes"
+msgctxt "@action:button"
+msgid "Next Practice Session"
+msgstr "Modos de práctica"
+
+#: qml/BasePage.qml:97
 #, kde-format
 msgid "Try Again"
 msgstr "Intentalo de novo"
 
-#: qml/DeckEditorPage.qml:32
+#: qml/DeckEditorPage.qml:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Deck"
 msgstr "Crear unha baralla"
 
-#: qml/DeckEditorPage.qml:34
+#: qml/DeckEditorPage.qml:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Deck"
 msgstr "Editar a baralla"
 
-#: qml/DeckEditorPage.qml:39
+#: qml/DeckEditorPage.qml:44
 #, kde-format
 msgid "Filter"
 msgstr "Filtrar"
 
-#: qml/DeckEditorPage.qml:42
+#: qml/DeckEditorPage.qml:47
 #, kde-format
 msgid "Filter..."
 msgstr "Filtrar…"
 
-#: qml/DeckEditorPage.qml:50
+#: qml/DeckEditorPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Print Preview"
 msgstr "Vista de impresión"
 
-#: qml/DeckEditorPage.qml:54 qml/DeckEditorPage.qml:76
+#: qml/DeckEditorPage.qml:59 qml/DeckEditorPage.qml:81
 #, kde-format
 msgid "Flashcard"
 msgstr "Ficha"
 
-#: qml/DeckEditorPage.qml:60 qml/DeckEditorPage.qml:82
+#: qml/DeckEditorPage.qml:65 qml/DeckEditorPage.qml:87
 #, kde-format
 msgid "List"
 msgstr "Lista"
 
-#: qml/DeckEditorPage.qml:66 qml/DeckEditorPage.qml:88
+#: qml/DeckEditorPage.qml:71 qml/DeckEditorPage.qml:93
 #, kde-format
 msgid "Exam"
 msgstr "Exame"
 
-#: qml/DeckEditorPage.qml:72
+#: qml/DeckEditorPage.qml:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Print"
 msgstr "Imprimir"
 
-#: qml/DeckEditorPage.qml:94
+#: qml/DeckEditorPage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Crear"
 
-#: qml/DeckEditorPage.qml:94
+#: qml/DeckEditorPage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Gardar"
 
-#: qml/DeckEditorPage.qml:120
+#: qml/DeckEditorPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Image"
 msgstr "Retirar a imaxe"
 
-#: qml/DeckEditorPage.qml:120
+#: qml/DeckEditorPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Image"
 msgstr "Ligar unha imaxe"
 
-#: qml/DeckEditorPage.qml:122
+#: qml/DeckEditorPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove Sound"
 msgstr "Retirar o son"
 
-#: qml/DeckEditorPage.qml:122
+#: qml/DeckEditorPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Link Sound"
 msgstr "Ligar un son"
 
-#: qml/DeckEditorPage.qml:155
+#: qml/DeckEditorPage.qml:160
 #, kde-format
 msgctxt "@action:button"
 msgid "Set language"
 msgstr "Definir o idioma"
 
-#: qml/DeckEditorPage.qml:161
+#: qml/DeckEditorPage.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Language"
 msgstr "Definir o idioma"
 
-#: qml/DeckEditorPage.qml:182
+#: qml/DeckEditorPage.qml:187
 #, kde-format
 msgid "Please Choose an Image"
 msgstr "Escolla unha imaxe"
 
-#: qml/DeckEditorPage.qml:191
+#: qml/DeckEditorPage.qml:196
 #, kde-format
 msgid "Please Choose a Sound"
 msgstr "Escolla un son"
 
-#: qml/DeckEditorPage.qml:226
+#: qml/DeckEditorPage.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Name:"
 msgstr "Nome:"
 
-#: qml/DeckEditorPage.qml:237
+#: qml/DeckEditorPage.qml:244
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "Autoría:"
 
-#: qml/DeckEditorPage.qml:248
+#: qml/DeckEditorPage.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "Licenza:"
 
-#: qml/EditAction.qml:13 qml/WelcomePage.qml:223
+#: qml/EditAction.qml:20 qml/WelcomePage.qml:237
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Editar"
 
-#: qml/FlashCardPage.qml:16 qml/MultipleChoicePage.qml:87
-#: qml/QuestionAnswerPage.qml:151
+#: qml/FlashCardPage.qml:19 qml/MultipleChoicePage.qml:90
+#: qml/QuestionAnswerPage.qml:155
 #, kde-format
 msgctxt "@action:button"
 msgid "Check"
 msgstr "Comprobar"
 
-#: qml/FlashCardPage.qml:128
+#: qml/FlashCardPage.qml:131
 #, kde-format
 msgctxt "@action:button"
 msgid "Correct"
 msgstr "Correcto"
 
-#: qml/FlashCardPage.qml:146
+#: qml/FlashCardPage.qml:149
 #, kde-format
 msgctxt "@action:button"
 msgid "Not Correct"
 msgstr "Incorrecto"
 
-#: qml/LanguageSelectorPage.qml:15
+#: qml/LanguageSelectorPage.qml:18
 #, kde-format
 msgid "Select a language"
 msgstr "Escoller un idioma"
 
-#: qml/Main.qml:40
+#: qml/Main.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Configuración"
 
-#: qml/Main.qml:42
+#: qml/Main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"
 
-#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#: qml/MultipleChoicePage.qml:102 qml/QuestionAnswerPage.qml:168
 #, kde-format
 msgid "This is correct"
 msgstr "Correcto"
 
-#: qml/MultipleChoicePage.qml:99 qml/QuestionAnswerPage.qml:164
+#: qml/MultipleChoicePage.qml:102 qml/QuestionAnswerPage.qml:168
 #, kde-format
 msgid "Wrong, the correct answer was \"%1\"."
 msgstr "Incorrecto, a resposta era «%1»."
 
-#: qml/MultipleChoicePage.qml:130 qml/QuestionAnswerPage.qml:195
+#: qml/MultipleChoicePage.qml:133 qml/QuestionAnswerPage.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Seguinte"
 
-#: qml/MultipleChoicePage.qml:150
+#: qml/MultipleChoicePage.qml:153
 #, kde-format
 msgid "Not enough words in your deck"
 msgstr "Non ten palabras dabondo na baralla"
 
-#: qml/MultipleChoicePage.qml:151
-#, kde-format
-msgid "You need at least 3 words to enable the multiple choice mode"
+#: qml/MultipleChoicePage.qml:154
+#, fuzzy, kde-format
+#| msgid "You need at least 3 words to enable the multiple choice mode"
+msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr ""
 "Necesita polo menos 3 palabras para activar o modo de escolla múltiple."
 
-#: qml/OptionsAction.qml:12
+#: qml/OptionsAction.qml:15
 #, kde-format
 msgctxt "@action:button"
 msgid "Options"
 msgstr "Opcións"
 
-#: qml/OptionsAction.qml:15
+#: qml/OptionsAction.qml:18
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Shuffle"
 msgstr "Desordenar"
 
-#: qml/QuestionAnswerPage.qml:143
+#: qml/QuestionAnswerPage.qml:146
 #, kde-format
 msgctxt "@action:button"
 msgid "Hint"
 msgstr "Axuda"
 
-#: qml/SettingsPage.qml:13
+#: qml/SettingsPage.qml:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuración"
 
-#: qml/SettingsPage.qml:16
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgid "General"
 msgstr "Xeral"
 
-#: qml/SettingsPage.qml:22
+#: qml/SettingsPage.qml:28
 #, kde-format
 msgid "Show score as percentage"
 msgstr "Amosar a puntuación como porcentaxe"
 
-#: qml/SettingsPage.qml:32
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgid "Flash Card"
 msgstr "Ficha"
 
-#: qml/SettingsPage.qml:38
+#: qml/SettingsPage.qml:46
 #, kde-format
 msgid "Automatically flip flashcard"
 msgstr "Voltear automaticamente as fichas"
 
-#: qml/SettingsPage.qml:50
+#: qml/SettingsPage.qml:56
 #, kde-format
 msgid "Time delay for flipping the flashcard"
 msgstr "Demora en voltear as fichas"
 
-#: qml/SettingsPage.qml:63
+#: qml/SettingsPage.qml:69
 #, kde-format
 msgid "Multiple choice"
 msgstr "Escolla múltipla"
 
-#: qml/SettingsPage.qml:68
+#: qml/SettingsPage.qml:74
 #, kde-format
 msgid "Automatically check selected answer"
 msgstr "Comprobar automaticamente a resposta"
 
-#: qml/SettingsPage.qml:78
+#: qml/SettingsPage.qml:84
 #, kde-format
 msgid "Question and Answer"
 msgstr "Pregunta e resposta"
 
-#: qml/SettingsPage.qml:84
+#: qml/SettingsPage.qml:92
 #, kde-format
 msgid "Count using hint as an error"
 msgstr "Contar usar axuda como erro"
 
-#: qml/SettingsPage.qml:96
+#: qml/SettingsPage.qml:102
 #, kde-format
 msgid "Compare answers in a case sensitive way"
 msgstr "Comparar as respostas distinguindo as maiúsculas"
 
-#: qml/SettingsPage.qml:111
+#: qml/SettingsPage.qml:118
 #, kde-format
 msgid "About KWordQuiz"
 msgstr "Sobre KWordQuiz"
 
-#: qml/SettingsPage.qml:126
+#: qml/SettingsPage.qml:131
 #, kde-format
 msgid "About KDE"
 msgstr "Sobre KDE"
 
-#: qml/WelcomePage.qml:35
+#: qml/WelcomePage.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "Benvida"
 
-#: qml/WelcomePage.qml:40
+#: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Please choose a WordQuiz document"
 msgstr "Escolla un documento de WordQuiz"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "KEduDocument (*.kvtml)"
 msgstr "KEduDocument (*.kvtml)"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "Wql documents (*.wql)"
 msgstr "Documentos wql (*.wql)"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "CSV documents (*.csv)"
 msgstr "Documentos CSV (*.csv)"
 
-#: qml/WelcomePage.qml:42
+#: qml/WelcomePage.qml:47
 #, kde-format
 msgid "XDXF documents (*.xdxf)"
 msgstr "Documentos XDXF (*.xdxf)"
 
-#: qml/WelcomePage.qml:58
+#: qml/WelcomePage.qml:63
 #, kde-format
 msgid "Welcome to WordQuiz"
 msgstr "Benvida a WordQuiz"
 
-#: qml/WelcomePage.qml:70
+#: qml/WelcomePage.qml:75
 #, kde-format
 msgid "Open Existing Document"
 msgstr "Abrir un documento existente"
 
-#: qml/WelcomePage.qml:76
+#: qml/WelcomePage.qml:81
 #, kde-format
 msgid "Create Deck"
 msgstr "Crear unha baralla"
 
-#: qml/WelcomePage.qml:84
+#: qml/WelcomePage.qml:89
 #, kde-format
 msgid "Download Deck"
 msgstr "Descargar unha baralla"
 
-#: qml/WelcomePage.qml:100
+#: qml/WelcomePage.qml:103
 #, kde-format
 msgctxt "@title:group"
 msgid "Mode"
 msgstr "Modo"
 
-#: qml/WelcomePage.qml:137
+#: qml/WelcomePage.qml:140
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Flashcard"
 msgstr "Ficha"
 
-#: qml/WelcomePage.qml:144
+#: qml/WelcomePage.qml:147
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Multiple choice"
 msgstr "Escolla múltipla"
 
-#: qml/WelcomePage.qml:151
+#: qml/WelcomePage.qml:154
 #, kde-format
 msgctxt "@option:check Mode selector"
 msgid "Question-Answer"
 msgstr "Pregunta e resposta"
 
-#: qml/WelcomePage.qml:157
+#: qml/WelcomePage.qml:163
+#, fuzzy, kde-format
+#| msgid "Start Exercise"
+msgctxt "@option:check"
+msgid "Smart practice"
+msgstr "Comezar o exercicio"
+
+#: qml/WelcomePage.qml:164
+#, kde-format
+msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
+msgstr ""
+
+#: qml/WelcomePage.qml:174
 #, kde-format
 msgid "Decks"
 msgstr "Barallas"
 
-#: qml/WelcomePage.qml:193
+#: qml/WelcomePage.qml:207
 #, kde-format
 msgid "Document cannot be opened"
 msgstr "Non é posíbel abrir o documento"
 
-#: qml/WelcomePage.qml:209
+#: qml/WelcomePage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
@@ -1304,9 +1324,6 @@ msgstr "Retirar"
 #~ msgid "Tutor"
 #~ msgstr "Titor"
 
-#~ msgid "Start Exercise"
-#~ msgstr "Comezar o exercicio"
-
 #~ msgid "Configure KWordQuiz Tutor..."
 #~ msgstr "Configurar o Titor de KWordQuiz…"
 
@@ -1860,9 +1877,6 @@ msgstr "Retirar"
 #~ "columnas nas que se escriben entradas de vocabulario nunha forma que xa "
 #~ "coñece e noutra que quere aprender. Troca os títulos das columnas para "
 #~ "reflectir o que está a practicar."
-
-#~ msgid "Practice modes"
-#~ msgstr "Modos de práctica"
 
 #~ msgid ""
 #~ "Before you start a quiz you select how you want to practice. &kwordquiz; "
