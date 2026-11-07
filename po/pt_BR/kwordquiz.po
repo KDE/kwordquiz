@@ -6,22 +6,22 @@
 # Henrique Marks <henriquemarks@gmail.com>, 2008.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2014, 2015.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2018, 2019, 2021, 2022, 2023.
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 # SPDX-FileCopyrightText: 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2026-03-06 15:57-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"PO-Revision-Date: 2026-11-06 08:36-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -172,7 +172,7 @@ msgstr "Repetir erradas"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "Próxima sessão de prática"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -367,11 +367,10 @@ msgid "Not enough words in your deck"
 msgstr "Sem palavras suficientes no seu baralho"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr ""
-"Você precisa de pelo menos 3 palavras para habilitar o modo de múltipla "
+"Você precisa de pelo menos 4 palavras para habilitar o modo de múltipla "
 "escolha"
 
 #: qml/OptionsAction.qml:15
@@ -534,16 +533,17 @@ msgid "Question-Answer"
 msgstr "Pergunta e resposta"
 
 #: qml/WelcomePage.qml:163
-#, fuzzy, kde-format
-#| msgid "Start Exercise"
+#, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr "Iniciar exercício"
+msgstr "Prática inteligente"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
 msgstr ""
+"Pratique até 20 cartões, começando pelos erros e pelos cartões ainda não "
+"vistos."
 
 #: qml/WelcomePage.qml:174
 #, kde-format

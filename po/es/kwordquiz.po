@@ -1,12 +1,12 @@
 # Spanish translations for kwordquiz.po package.
-# Copyright (C) 2004-2025 This file is copyright:
+# Copyright (C) 2004-2026 This file is copyright:
 # This file is distributed under the same license as the kwordquiz package.
 #
 # SPDX-FileCopyrightText: 2004 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
-# SPDX-FileCopyrightText: 2004, 2009, 2010, 2011, 2015, 2016, 2018, 2019, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2004, 2009-2011, 2015-2016, 2018-2019, 2021-2026 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2004 Juan Manuel Garcia Molina <juanma@superiodico.net>
-# SPDX-FileCopyrightText: 2004, 2005 Rafael Beccar <rafael.beccar@kdemail.net>
-# SPDX-FileCopyrightText: 2007, 2008 Santiago Fernández Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2004-2005 Rafael Beccar <rafael.beccar@kdemail.net>
+# SPDX-FileCopyrightText: 2007-2008 Santiago Fernández Sancho <santi@kde-es.org>
 # SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
 # SPDX-FileCopyrightText: 2014 Rocio Gallego <traducciones@rociogallego.com>
 msgid ""
@@ -14,14 +14,14 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2025-05-18 15:10+0100\n"
+"PO-Revision-Date: 2026-11-07 01:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 26.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -174,7 +174,7 @@ msgstr "Repetir errores"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "Siguiente sesión de práctica"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -369,11 +369,10 @@ msgid "Not enough words in your deck"
 msgstr "No hay suficientes palabras en el mazo"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr ""
-"Necesita tener al menos 3 palabras para activar el modo de elección múltiple"
+"Necesita tener al menos 4 palabras para activar el modo de elección múltiple"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
@@ -538,12 +537,14 @@ msgstr "Pregunta y respuesta"
 #, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr ""
+msgstr "Práctica inteligente"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
 msgstr ""
+"Práctica con un máximo de 20 tarjetas, empezando por los errores y las "
+"tarjetas que aún no se han visto."
 
 #: qml/WelcomePage.qml:174
 #, kde-format
