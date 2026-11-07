@@ -340,6 +340,9 @@
       <description>
         <ul>
           <li>Add a practice mode with up to 20 cards, starting with mistakes and unseen cards.</li>
+          <li xml:lang="ca">Afegeix un mode de pràctica fins a 20 targetes, començant amb errors i targetes no vistes.</li>
+          <li xml:lang="ca-valencia">Afig un mode de pràctica fins a 20 targetes, començant amb errors i targetes no vistes.</li>
+          <li xml:lang="pt-BR">Adicionado um modo de prática com até 20 cartas, começando pelos erros e pelas cartas ainda não vistas.</li>
         </ul>
       </description>
     </release>
