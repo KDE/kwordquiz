@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kwordquiz package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2025-10-09 13:15+0300\n"
+"PO-Revision-Date: 2026-11-07 19:47+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -168,7 +168,7 @@ msgstr "נא לחזור על השגיאות"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "הפעלת התרגול הבאה"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -363,10 +363,9 @@ msgid "Not enough words in your deck"
 msgstr "אין מספיק מילים בחפיסה שלך"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
-msgstr "דרושות לפחות 3 מילים כדי להפעיל את מצב הבחירה המרוכזת"
+msgstr "דרושות לפחות 4 מילים כדי להפעיל את מצב הבחירה המרוכזת"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
@@ -531,12 +530,12 @@ msgstr "שאלה-תשובה"
 #, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr ""
+msgstr "תרגול חכם"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
-msgstr ""
+msgstr "תרגול עם עד 20 קלפים, החל מטעויות וקלפים שטרם נצפו."
 
 #: qml/WelcomePage.qml:174
 #, kde-format

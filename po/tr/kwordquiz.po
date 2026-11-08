@@ -12,13 +12,13 @@
 # Muhammet Kara <muhammetk@gmail.com>, 2009.
 # obsoleteman <tulliana@gmail.com>, 2007-2008,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2015.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2025-03-24 22:36+0300\n"
+"PO-Revision-Date: 2026-11-07 19:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -66,7 +66,7 @@ msgstr "Geçersiz goto verildi: %1. İzin verilenler: flash, mc ve qa"
 #: main.cpp:86
 #, kde-format
 msgid "WordQuiz"
-msgstr "Sözcük Oyunu"
+msgstr "KWordQuiz"
 
 #: main.cpp:88
 #, kde-format
@@ -176,7 +176,7 @@ msgstr "Hataları Yinele"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "Sonraki Alıştırma Oturumu"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -371,11 +371,10 @@ msgid "Not enough words in your deck"
 msgstr "Destenizde yeterli sözcük yok"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr ""
-"Çoktan seçmeli kipini etkinleştirmek için en az 3 sözcüğe gereksiniminiz var"
+"Çoktan seçmeli kipini etkinleştirmek için en az 4 sözcüğe gereksiniminiz var"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
@@ -454,7 +453,7 @@ msgstr "Yanıtları BÜYÜK/küçük harf duyarlı biçimde karşılaştır"
 #: qml/SettingsPage.qml:118
 #, kde-format
 msgid "About KWordQuiz"
-msgstr "K Sözcük Oyunu Hakkında"
+msgstr "KWordQuiz Hakkında"
 
 #: qml/SettingsPage.qml:131
 #, kde-format
@@ -470,7 +469,7 @@ msgstr "Hoş Geldiniz"
 #: qml/WelcomePage.qml:45
 #, kde-format
 msgid "Please choose a WordQuiz document"
-msgstr "Lütfen bir Sözcük Oyunu belgesi seçin"
+msgstr "Lütfen bir KWordQuiz belgesi seçin"
 
 #: qml/WelcomePage.qml:47
 #, kde-format
@@ -495,7 +494,7 @@ msgstr "XDXF belgeleri (*.xdxf)"
 #: qml/WelcomePage.qml:63
 #, kde-format
 msgid "Welcome to WordQuiz"
-msgstr "Sözcük Oyunu’na hoş geldiniz"
+msgstr "KWordQuiz’e hoş geldiniz"
 
 #: qml/WelcomePage.qml:75
 #, kde-format
@@ -537,16 +536,17 @@ msgid "Question-Answer"
 msgstr "Soru–Yanıt"
 
 #: qml/WelcomePage.qml:163
-#, fuzzy, kde-format
-#| msgid "Start Exercise"
+#, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr "Alıştırmaları Başlat"
+msgstr "Akıllı alıştırmalar"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
 msgstr ""
+"En çok 20 kart kullanarak ve daha önceki yanlışlarınız ve görülmeyen "
+"kartlara öncelik vererek alıştırmalar yapın."
 
 #: qml/WelcomePage.qml:174
 #, kde-format
