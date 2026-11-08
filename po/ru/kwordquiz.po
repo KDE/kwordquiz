@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2025-05-22 18:06+0300\n"
+"PO-Revision-Date: 2026-11-06 07:49+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -176,7 +176,7 @@ msgstr "Повторить ошибочные"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "Следующая тренировка"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -371,12 +371,11 @@ msgid "Not enough words in your deck"
 msgstr "В наборе карточек недостаточно слов"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr ""
-"Для включения режима выбора из нескольких вариантов требуется не менее трёх "
-"слов"
+"Для включения режима выбора из нескольких вариантов требуется не менее "
+"четырёх слов"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
@@ -538,16 +537,16 @@ msgid "Question-Answer"
 msgstr "Вопрос и ответ"
 
 #: qml/WelcomePage.qml:163
-#, fuzzy, kde-format
-#| msgid "Start Exercise"
+#, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr "Начать упражнение"
+msgstr "Умная тренировка"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
 msgstr ""
+"Тренировка до 20 карточек, начиная с ошибок и ещё не показанных карточек."
 
 #: qml/WelcomePage.qml:174
 #, kde-format
