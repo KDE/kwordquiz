@@ -38,7 +38,7 @@
   <name xml:lang="sr-ijekavian">WordQuiz</name>
   <name xml:lang="sr-ijekavianlatin">WordQuiz</name>
   <name xml:lang="sv">Wordquiz</name>
-  <name xml:lang="tr">Sözcük Oyunu</name>
+  <name xml:lang="tr">KWordQuiz</name>
   <name xml:lang="ug">سۆز سىناق</name>
   <name xml:lang="uk">WordQuiz</name>
   <name xml:lang="zh-TW">單字測驗</name>
@@ -75,7 +75,7 @@
   <summary xml:lang="sr-ijekavian">Тренер брзих картица</summary>
   <summary xml:lang="sr-ijekavianlatin">Trener brzih kartica</summary>
   <summary xml:lang="sv">Snabbkortsövning</summary>
-  <summary xml:lang="tr">Bilgi Kartı Çalıştırıcısı</summary>
+  <summary xml:lang="tr">Bilgi kartı çalıştırıcısı</summary>
   <summary xml:lang="uk">Тренування словникового запасу</summary>
   <summary xml:lang="zh-CN">抽认卡训练器</summary>
   <summary xml:lang="zh-TW">閃卡訓練師</summary>
@@ -119,7 +119,7 @@
     <p xml:lang="sr-ijekavian">К‑квиз‑ријечи је програм опште намјене за брзе картице. Може се користити за учење рјечника и многе друге предмете. Пружа уређивач и пет различитих режима квиза брзим картицама. Користи формат фајлова КВТМЛ, а фајлови које доприносе корисници могу се преузети из самог програма.</p>
     <p xml:lang="sr-ijekavianlatin">K‑kviz‑riječi je program opšte namjene za brze kartice. Može se koristiti za učenje rječnika i mnoge druge predmete. Pruža uređivač i pet različitih režima kviza brzim karticama. Koristi format fajlova KVTML, a fajlovi koje doprinose korisnici mogu se preuzeti iz samog programa.</p>
     <p xml:lang="sv">Kwordquiz är ett generellt program för snabbkort. Det kan användas för inlärning av ordförråd och många andra ämnen. Det tillhandahåller en editor och fem olika frågemetoder för snabbkort. Det använder filformatet KVTML, och bidragna filer kan laddas ner inne i programmet.</p>
-    <p xml:lang="tr">K Sözcük Oyunu genel amaçlı bir bilgi kartı çalıştırma programıdır. Söz dağarcığı genişletmek veya başka birçok konu için kullanılabilir. Bir düzenleyici ve beş farklı bilgi kartı sınav kipi içerir. KVTML dosya biçimini kullanır ve katkı verilmiş dosyalar uygulama içinden indirilebilir.</p>
+    <p xml:lang="tr">KWordQuiz, genel amaçlı bir bilgi kartı çalıştırma programıdır. Söz dağarcığı genişletmek veya başka birçok konu için kullanılabilir. Bir düzenleyici ve beş farklı bilgi kartı sınav kipi içerir. KVTML dosya biçimini kullanır ve katkı verilmiş dosyalar uygulama içinden indirilebilir.</p>
     <p xml:lang="uk">KWordQuiz — програма для навчання за допомогою карток загального призначення. Нею можна скористатися для поповнення словникового запасу іноземною мовою або вивчення інших дисциплін. У програмі передбачено редактор та п’ять різних режимів навчання за допомогою карток. Для даних використовується формат файлів KVTML, файли даних, створені іншими користувачами, можна отримати безпосередньо за допомогою програми.</p>
     <p xml:lang="zh-CN">KWordQuiz 是一款通用题卡程序，它可用于词汇学习及其他许多问题上，并能提供编辑器及五个不同的题卡测验模式。本程序使用了 KVTML 格式的文件，程序内还可直接下载他人贡献的文件。</p>
     <p xml:lang="zh-TW">KWordQuiz 是一套閃卡記憶訓練程式。它可以用於字彙學習，還有許多其它的用途。它提供了一個編輯器與五種不同的閃卡模式。它使用 KVTML 檔案格式，並且可以下載其他人所製作的閃卡檔。</p>
@@ -165,7 +165,7 @@
       <caption xml:lang="sr-ijekavian">Уводна страница програма К‑квиз‑ријечи</caption>
       <caption xml:lang="sr-ijekavianlatin">Uvodna stranica programa K‑kviz‑riječi</caption>
       <caption xml:lang="sv">KWordQuiz välkomstsida</caption>
-      <caption xml:lang="tr">K Sözcük Oyunu karşılama sayfası</caption>
+      <caption xml:lang="tr">KWordQuiz karşılama sayfası</caption>
       <caption xml:lang="uk">Сторінка вітання KWordQuiz</caption>
       <caption xml:lang="zh-TW">KWordQuiz 歡迎頁面</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/home.png</image>
@@ -247,7 +247,7 @@
       <caption xml:lang="sr-ijekavian">Квиз брзим картицама у програму К‑квиз‑ријечи</caption>
       <caption xml:lang="sr-ijekavianlatin">Kviz brzim karticama u programu K‑kviz‑riječi</caption>
       <caption xml:lang="sv">Snabbkortsprov i KWordQuiz</caption>
-      <caption xml:lang="tr">K Sözcük Oyunu’nda bilgi kartı sınavı</caption>
+      <caption xml:lang="tr">KWordQuiz’de bilgi kartı sınavı</caption>
       <caption xml:lang="uk">Тест за допомогою карток у KWordQuiz</caption>
       <caption xml:lang="zh-CN">KWordQuiz 中的抽认卡测试</caption>
       <caption xml:lang="zh-TW">在 KWordQuiz 中測驗閃卡</caption>
@@ -286,7 +286,7 @@
       <caption xml:lang="sr-ijekavian">Режим вишеструког избора у програму К‑квиз‑ријечи</caption>
       <caption xml:lang="sr-ijekavianlatin">Režim višestrukog izbora u programu K‑kviz‑riječi</caption>
       <caption xml:lang="sv">Flerval i KWordQuiz</caption>
-      <caption xml:lang="tr">K Sözcük Oyunu’nda çoktan seçmeli kip</caption>
+      <caption xml:lang="tr">KWordQuiz’de çoktan seçmeli kip</caption>
       <caption xml:lang="uk">Режим вибору з варіантів у KWordQuiz</caption>
       <caption xml:lang="zh-TW">KWordQuiz 中的多選題模式</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/multiple-choice.png</image>
@@ -324,7 +324,7 @@
       <caption xml:lang="sr-ijekavian">Режим питања и одговора у програму К‑квиз‑ријечи</caption>
       <caption xml:lang="sr-ijekavianlatin">Režim pitanja i odgovora u programu K‑kviz‑riječi</caption>
       <caption xml:lang="sv">Fråga-svar i KWordQuiz</caption>
-      <caption xml:lang="tr">K Sözcük Oyunu’nda soru–yanıt kipi</caption>
+      <caption xml:lang="tr">KWordQuiz’de soru–yanıt kipi</caption>
       <caption xml:lang="uk">Режим відповіді на питання у KWordQuiz</caption>
       <caption xml:lang="zh-TW">KWordQuiz 中的問答題模式</caption>
       <image>https://cdn.kde.org/screenshots/kwordquiz/question-response.png</image>
@@ -342,7 +342,16 @@
           <li>Add a practice mode with up to 20 cards, starting with mistakes and unseen cards.</li>
           <li xml:lang="ca">Afegeix un mode de pràctica fins a 20 targetes, començant amb errors i targetes no vistes.</li>
           <li xml:lang="ca-valencia">Afig un mode de pràctica fins a 20 targetes, començant amb errors i targetes no vistes.</li>
+          <li xml:lang="cs">Přidán cvičný režim s až 20 kartami, který začíná chybami a neznámými kartami.</li>
+          <li xml:lang="es">Añadir un modo de práctica con un máximo de 20 tarjetas, empezando por los errores y las tarjetas aún no vistas.</li>
+          <li xml:lang="he">הוספת מצב תרגול עם עד 20 קלפים, החל מטעויות וקלפים שטרם נצפו.</li>
+          <li xml:lang="ka">ივარჯიშეთ 20 ბარათამდე. დაიწყეთ შეცდომებით და ჯერ უნახავი ბარათებით.</li>
+          <li xml:lang="nl">Voeg een oefenmodus toe met maximaal 20 kaarten, waarbij wordt begonnen met fouten en nog niet eerder geziene kaarten.</li>
           <li xml:lang="pt-BR">Adicionado um modo de prática com até 20 cartas, começando pelos erros e pelas cartas ainda não vistas.</li>
+          <li xml:lang="ru">Добавлен режим тренировки: до 20 карточек, начиная с ошибок и ещё не показанных карточек.</li>
+          <li xml:lang="sl">Doda način vadbe z do 20 kartami, začenši z napakami in nevidnimi kartami.</li>
+          <li xml:lang="tr">En çok 20 kart içeren bir pratik kipi eklendi. Bu kip, yanlışlar ve görülmeyen kartlara öncelik verir.</li>
+          <li xml:lang="uk">Додано режим вправляння з понад 20 картками, починаючи з помилок та непереглянутих карток.</li>
         </ul>
       </description>
     </release>
