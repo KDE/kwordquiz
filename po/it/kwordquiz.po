@@ -2,22 +2,22 @@
 # Copyright (C) 2004, 2005, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 # Pino Toscano <toscano.pino@tiscali.it>, 2004, 2005, 2007, 2008, 2009, 2010, 2014, 2015, 2018, 2019, 2021.
 # Paolo Zamponi <feus73@gmail.com>, 2022, 2023.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2022-2026 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2025-05-28 10:37+0200\n"
-"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"PO-Revision-Date: 2026-11-08 07:50+0100\n"
+"Last-Translator: Vincenzo Reale <>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -168,7 +168,7 @@ msgstr "Ripeti errori"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "Prossima sessione di esercizio"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -363,11 +363,10 @@ msgid "Not enough words in your deck"
 msgstr "Non ci sono abbastanza parole nel tuo mazzo"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
 msgstr ""
-"Hai bisogno di almeno 3 parole per abilitare la modalità a scelta multipla"
+"Hai bisogno di almeno 4 parole per abilitare la modalità a scelta multipla"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
@@ -529,16 +528,17 @@ msgid "Question-Answer"
 msgstr "Domanda e risposta"
 
 #: qml/WelcomePage.qml:163
-#, fuzzy, kde-format
-#| msgid "Start Exercise"
+#, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr "Avvia esercizio"
+msgstr "Esercizio intelligente"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
 msgstr ""
+"Esercitati con un massimo di 20 carte, iniziando da quelle in cui hai "
+"commesso errori e da quelle che non hai ancora visto."
 
 #: qml/WelcomePage.qml:174
 #, kde-format
