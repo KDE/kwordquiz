@@ -340,6 +340,7 @@
       <description>
         <ul>
           <li>Add a practice mode with up to 20 cards, starting with mistakes and unseen cards.</li>
+          <li xml:lang="ar">إضافة وضعاً للتدريب يتضمن ما يصل إلى 20 بطاقة، بدءاً بالبطاقات التي أخطأت فيها وتلك التي لم ترَها بعد.</li>
           <li xml:lang="ca">Afegeix un mode de pràctica fins a 20 targetes, començant amb errors i targetes no vistes.</li>
           <li xml:lang="ca-valencia">Afig un mode de pràctica fins a 20 targetes, començant amb errors i targetes no vistes.</li>
           <li xml:lang="cs">Přidán cvičný režim s až 20 kartami, který začíná chybami a neznámými kartami.</li>
