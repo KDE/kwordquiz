@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2026-11-06 07:49+0200\n"
+"PO-Revision-Date: 2026-11-11 22:57+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -140,7 +140,7 @@ msgstr "Открываемый файл"
 #: qml/BasePage.qml:27
 #, kde-format
 msgid "Cards %1% Errors %2"
-msgstr "Карточки: %1%  Ошибки: %2"
+msgstr "Карточки: %1 %  Ошибки: %2"
 
 #: qml/BasePage.qml:29
 #, kde-format
