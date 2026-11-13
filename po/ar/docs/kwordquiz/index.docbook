@@ -1,0 +1,676 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>دليل برنامج اختبر كلماتك</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2023-07-04</date>
+<releaseinfo
+>تطبيقات 23.08</releaseinfo>
+
+<abstract>
+<para
+>اختبر كلماتك هو برنامج لتعلم البطاقات التعليمية والمفردات من &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>اختبر كلماتك</keyword>
+<keyword
+>بطاقة تعليمية</keyword>
+<keyword
+>معجم</keyword>
+<keyword
+>اللغة</keyword>
+<keyword
+>تعليم</keyword>
+<keyword
+>مدرسية</keyword>
+<keyword
+>كلية</keyword>
+<keyword
+>جامعة</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+<para
+>اختبر كلماتك هي أداة تمنحك طريقة قوية لإتقان مفردات جديدة. قد تكون لغة أو أي نوع آخر من المصطلحات. </para>
+<sect1 id="easy-to-use">
+<title
+>سهل الاستخدام</title>
+
+<para
+>مع اختبر كلماتك تبني مستندات المفردات الخاصة بك بطريقة بسيطة وبديهية. التخطيط الأساسي هو جدول بيانات مكون من عمودين حيث تكتب إدخالات المفردات بشكل تعرفه وبشكل تريد تعلمه. تغير عناوين الأعمدة لتعكس ما تتدرب عليه. </para>
+
+<sect2 id="quiz-types">
+<title
+>أنواع الاختبارات</title>
+
+<para
+>عندما تدخل مفرداتك، تكون مستعدًا لبدء اختبار. ربما تريد البدء بجلسة بطاقات تعليمية. لاحقًا يمكنك الانتقال إلى اختبار اختيار من متعدد، أو إجراء اختبار الأسئلة والأجوبة القوي. تحصل على تغذية راجعة فورية عن الإجابات الصحيحة والخاطئة، ولديك خيار تكرار أي أخطاء، مما يحسن كفاءة تعلمك. إذا كنت بحاجة إلى مساعدة إضافية قليلة يمكنك استخدام وظيفة التلميح. </para>
+</sect2>
+
+
+<sect2 id="practice-modes">
+<title
+>أنماط الممارسة</title>
+
+<para
+>يمكنك اختيار كيف تريد الممارسة. يقدم اختبر كلماتك ثلاثة أنماط مختلفة لجعل الممارسة أكثر كفاءة. الأنماط المختلفة تجعل من الممكن تحديد أي عمود يُستخدم كسؤال أو إجابة أو كليهما. بالإضافة إلى ذلك يمكنك اختيار ما إذا كنت تريد استخدام ترتيب تسلسلي أو عشوائي. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>مستندات المفردات</title>
+<para
+>يمكن لـ اختبر كلماتك فتح عدة أنواع من بيانات المفردات. الصيغة المبدئية هي <filename class="extension"
+>.kvtml</filename
+>، وهي صيغة ملف مشتركة بين عدة برامج &kde;. يجب أن يفتح اختبر كلماتك أيضًا ملفات <filename class="extension"
+>.wql</filename
+> المنشأة بواسطة اختبر كلماتك لنظام &Windows;، وملفات <filename class="extension"
+>.csv</filename
+> بنص مفصول بفاصلة، وملفات <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class="extension"
+>.voc</filename
+></ulink
+> المنشأة بواسطة الإصدار القديم من Vokabeltrainer، وملفات <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>.xdxf</filename
+></ulink
+>، وملفات <filename class="extension"
+>.xml.gz</filename
+> المنشأة بواسطة الإصدارات القديمة من <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>يمكن لـ اختبر كلماتك حفظ مستندات المفردات الخاصة بك بعدة صيغ مختلفة. الصيغة المبدئية هي صيغة <filename class="extension"
+>.kvtml</filename
+> المستخدمة بواسطة برامج &kde; أخرى. خيار آخر متاح هو النص المفصول بفاصلة <filename class="extension"
+>.csv</filename
+>. </para>
+<para
+>يمكنك فتح عدة ملفات في نفس الوقت، ونسخ أو نقل الإدخالات بين الملفات بسهولة. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>مرجع الأوامر</title>
+<sect1 id="mode-menu">
+<title
+>قائمة خيارات</title>
+<para
+>توفر القائمة 3 خيارات مختلفة للاختبار ليست حصرية لبعضها البعض.</para>
+
+  <note
+><para
+>ستتغير أسماء القائمة لتعكس عناوين الأعمدة لمستند المفردات النشط حاليًا. سينطبق النمط المحدد على البطاقات التعليمية والاختيار من متعدد والأسئلة والأجوبة.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>خيارات</guimenu
+> <guimenuitem
+>خلط</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>أثناء الاختبار ستعطى الإدخالات بترتيب عشوائي، ولكن كل إدخال سيُعالج مرة واحدة. </para>
+    </listitem>
+  </varlistentry>
+
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>خيارات</guimenu
+> <guimenuitem
+>العمود 1 -&gt; العمود 2</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>أثناء الاختبار ستعطى إدخالات العمود 1 ويُطلب منك تقديم إدخالات العمود 2 المقابلة. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>نمط</guimenu
+> <guimenuitem
+>العمود 2 -&gt; العمود 1</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>أثناء الاختبار ستعطى إدخالات العمود 2 ويُطلب منك تقديم إدخالات العمود 1 المقابلة. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="welcome-page">
+<title
+>صفحة الترحيب</title>
+
+<para
+>عند فتح KWordQuiz، ستهبط على صفحة الترحيب. ستدرج هذه الصفحة جميع الحزم المفتوحة سابقًا. بالإضافة إلى ذلك تتيح لك إنشاء حزمة جديدة، أو فتح حزمة من ملف، أو تنزيل حزمة من الإنترنت. أخيرًا يمكنك أيضًا اختيار النمط الرئيس الذي تريد استخدامه. </para>
+
+<screenshot>
+  <screeninfo
+>صفحة الترحيب</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>صفحة الترحيب</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>محرر المفردات</title>
+
+<para
+>منطقة مستند المفردات لها مظهر شبكة تشبه جدول البيانات. تتكون الشبكة من خلايا منظمة في عمودين وعدد من الصفوف. لكل عمود وصف رأس. تُستخدم رؤوس الأعمدة لتحديد عناوين مستند المفردات. يمكن ضبطها بتحرير الصف الأول. </para>
+
+<para
+>يمكنك النقر في خلية من الشبكة لجعلها الخلية النشطة. يمكنك استخدام السهمين لأعلى ولأسفل للتحرك لأعلى ولأسفل في الجدول وعلامة التبويب للانتقال إلى العنصر التالي.</para>
+
+<screenshot>
+  <screeninfo
+>محرر المفردات</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>محرر المفردات</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>في المستند، تبني مفردات من إدخالات زوجية في العمودين. يمكنك إدخال نص في الخلية النشطة ببساطة بالبدء في الكتابة. ستكون الخلية الآن في نمط التحرير ويمكنك تحديد كل النص أو جزء منه. يمكنك أيضًا تحرير خلية بالنقر المزدوج عليها أو بالضغط على <keycap
+>F2</keycap
+> وإجراء تغييرات مباشرة في الخلية. </para>
+<para
+>عند الانتهاء من كتابة مدخل، اضغط مفتاح العودة لتنشيط الخلية التالية آليًا. لذا، من السهل كتابة عدة مدخلات بسرعة. لا يوجد حد فعلي لعدد الصفوف التي يمكن أن تحتويها الوثيقة. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>جلسة البطاقات التعليمية</title>
+
+<para
+>اختر البطاقات التعليمية من لوحة التنقل لبدء جلسة بطاقات تعليمية على مدخلات وثيقة المفردات النشطة. سيُستخدم الوضع المحدد في قائمة <guimenu
+>خيارات</guimenu
+>. إذا غيرت الخيارات أثناء الجلسة، ستُعاد تشغيل الجلسة. </para>
+
+<para
+>إذا كنت تعمل مع تعابير طويلة، يمكن تغيير حجم النافذة لتوفير مساحة أكبر. سيؤثر حجم الخط أيضًا على مقدار ما يتسع في الأجزاء المختلفة من النافذة. </para>
+
+<screenshot>
+  <screeninfo
+>جلسة البطاقات التعليمية</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>جلسة البطاقات التعليمية</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>في البداية، يُعرض وجه البطاقة الأمامي. استخدم <guibutton
+>تحقق</guibutton
+> لرؤية الوجه الآخر. </para>
+<para
+>للانتقال إلى البطاقة التالية، اختر إما <guibutton
+>أعرف</guibutton
+> لعد البطاقة كصحيحة أو <guibutton
+>لا أعرف</guibutton
+> لعد البطاقة كخاطئة. </para>
+<para
+>اختر <guibutton
+>كرر الأخطاء</guibutton
+> لتكرار البطاقات التي عددتها كخاطئة. </para>
+<para
+>اختر <guibutton
+>حاول مجددًا</guibutton
+> لبدء الجلسة من البداية مرة أخرى. إذا كنت تستخدم وضعًا عشوائيًا، ستُخلط البطاقات مجددًا. </para>
+<para
+>يظهر قسم النتيجة في أعلى الشاشة عدد البطاقات، وعدد البطاقات التي رأيتها، وعدد البطاقات المعدودة كصحيحة، وعددها كخاطئة. </para>
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>جلسة الاختيار من متعدد</title>
+
+<para
+>اختر الاختيار من متعدد في صفحة الترحيب لبدء اختبار اختيار من متعدد على المدخلات في وثيقة المفردات النشطة. سيُستخدم الوضع المحدد في قائمة <guimenu
+>خيارات</guimenu
+>. إذا غيرت الخيارات أثناء الجلسة، ستُعاد تشغيل الجلسة. </para>
+<para
+>إذا كنت تعمل مع تعابير طويلة، يمكن تغيير حجم النافذة لتوفير مساحة أكبر. سيؤثر حجم الخط (المحدد للمحرر) أيضًا على مقدار ما يتسع في الأجزاء المختلفة من النافذة. </para>
+<para
+>في المثال أدناه، أعطى المستخدم إجابة خاطئة للسؤال السابق. هو/هي على وشك الإجابة على السؤال التالي الآن. </para>
+
+<screenshot>
+  <screeninfo
+>جلسة الاختيار من متعدد</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>جلسة الاختيار من متعدد</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>تُعرض خياراتك في منتصف الشاشة. اختر ما تعتقد أنه صحيح. استخدم <guibutton
+>تحقق</guibutton
+> لمعرفة ما إذا كانت الإجابة صحيحة. إذا فعّلت الوضع الآلي في <menuchoice
+><guimenu
+>إعدادات</guimenu
+></menuchoice
+>، يُفحص اختيارك فورًا. </para>
+<para
+>اختر <guibutton
+>كرر الأخطاء</guibutton
+> لتكرار البطاقات التي عددتها كخاطئة. </para>
+<para
+>اختر <guibutton
+>حاول مجددًا</guibutton
+> لبدء الجلسة من البداية مرة أخرى. إذا كنت تستخدم وضعًا عشوائيًا، ستُخلط البطاقات مجددًا. </para>
+<para
+>يظهر قسم النتيجة في أعلى الشاشة عدد الأسئلة، وعدد الأسئلة التي أجبت عليها، وعدد الإجابات الصحيحة، وعدد الإجابات الخاطئة. </para>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>جلسة السؤال والجواب</title>
+<para
+>اختر السؤال والجواب من لوحة التنقل لبدء جلسة سؤال وجواب على المدخلات في المفردات النشطة. سيُستخدم الوضع المحدد في قائمة <guimenu
+>وضع</guimenu
+>. إذا غيرت الوضع أثناء الجلسة، ستُعاد تشغيل الجلسة. </para>
+<para
+>إذا كنت تعمل مع تعابير طويلة، يمكن تغيير حجم النافذة لتوفير مساحة أكبر. سيؤثر حجم الخط (المحدد للمحرر) أيضًا على مقدار ما يتسع في الأجزاء المختلفة من النافذة. </para>
+<para
+>في المثال أدناه، أعطى المستخدم إجابة صحيحة للسؤال السابق (لرؤية كيفية معالجة الإجابات الخاطئة، انظر فصل <link linkend="multiple"
+>الاختيار من متعدد</link
+>). هو/هي على وشك الإجابة على السؤال التالي الآن. </para>
+
+<screenshot>
+  <screeninfo
+>جلسة السؤال والجواب</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>جلسة السؤال والجواب</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>يُعرض سؤالك في المنتصف. اكتب إجابتك في حقل التحرير. استخدم <guibutton
+>تحقق</guibutton
+> أو &Enter; لمعرفة ما إذا كانت الإجابة صحيحة. </para>
+<para
+>اختر <guibutton
+>تلميح</guibutton
+> للحصول على الحرف الصحيح التالي من الإجابة. في <menuchoice
+><guimenu
+>إعدادات</guimenu
+></menuchoice
+>، يمكنك اختيار عد أي أسئلة تستخدم فيها وظيفة التلميح كخاطئة. </para>
+<para
+>اختر <guibutton
+>كرر الأخطاء</guibutton
+> لتكرار البطاقات التي عددتها كخاطئة. </para>
+<para
+>اختر <guibutton
+>حاول مجددًا</guibutton
+> لبدء الجلسة من البداية مرة أخرى. إذا كنت تستخدم وضعًا عشوائيًا، ستُخلط البطاقات مجددًا. </para>
+<para
+>يظهر قسم النتيجة في أعلى الشاشة عدد الأسئلة، وعدد الأسئلة التي أجبت عليها، وعدد الإجابات الصحيحة، وعدد الإجابات الخاطئة. </para>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>ملء الفراغ</title>
+
+<para
+>'ملء الفراغ' هو وسيلة قوية للتدرب في اختبر كلماتك. إنه نوع خاص من اختبار السؤال والجواب يحتاج إلى وصف أكثر تفصيلًا. </para>
+
+<para
+>انظر إلى الجدول التالي. قد يكون مفردات في اختبر كلماتك: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>الإنجليزية</entry>
+<entry
+>الألمانية</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>نحن نملك حاسوبًا</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>نحن نملك حاسوبًا</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>نحن نملك حاسوبًا</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>نحن نملك حاسوبًا</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>الشيء المهم الذي يجب ملاحظته هو وضع الأقواس. فهي تخبر اختبر كلماتك كيف ينبغي إجراء الاختبار. </para>
+<para
+>في 1. لا توجد أقواس. بافتراض أن الإنجليزية هي السؤال والألمانية هي الإجابة، يجب عليك إعطاء التعبير الكامل 'Wir besitzen einen Computer' للحصول على إجابة صحيحة. </para>
+<para
+>في 2. سيعرض اختبر كلماتك السؤال ولكن أيضًا 'Wir ........ einen Computer'. للحصول على إجابة صحيحة، يكفي كتابة 'besitzen'. </para>
+<para
+>يُظهر 3. أن الفراغ يمكن أن يتكون من أكثر من كلمة. الإجابة الصحيحة هي 'besitzen einen'. </para>
+<para
+>في 4. يوجد فراغان منفصلان. لتحديد ذلك في الإجابة، يجب عليك كتابة 'besitzen; Computer'، أي فصل الفراغات بفاصلة منقوطة للحصول على إجابة صحيحة. </para>
+<para
+>الفراغات المحددة تكون ذات صلة فقط إذا ظهرت في الإجابة. وإلا يتم تجاهل الأقواس. علاوة على ذلك، ليس للأقواس أي تأثير في اختبارات الاختيار من متعدد. لتبسيط إنشاء مفردات 'ملء الفراغات'، توجد أوامر قائمة لتحديد الفراغات وإلغاء تحديدها. بالطبع يمكنك أيضًا كتابة الأقواس فقط. يتحقق اختبر كلماتك من الصياغة. إذا ظهر النص باللون الأحمر، فهناك خطأ في الأقواس ولا يمكن بدء الاختبار. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>الطباعة</title>
+<para
+>يوفر اختبر كلماتك القدرة على طباعة مستندات المفردات بعدة طرق مختلفة. خيارات الطباعة متاحة في محرر اختبر كلماتك. عند اختيار <guibutton
+>طباعة...</guibutton
+>، يُعرض عليك قائمة حيث يمكنك اختيار طباعة المستند كقائمة مفردات (أي كما هو معروض في المحرر)، أو اختبار مفردات، أو كبطاقات تعليمية. بمجرد تحديد الوضع، سيُعرض عليك حوار الطباعة القياسي لـ &kde;. </para>
+<screenshot>
+  <screeninfo
+>خيارات طباعة المفردات</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>خيارات طباعة المفردات</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>قائمة المفردات</title>
+<para
+>ستُطبع المفردات كما هي معروضة في المحرر. يتضمن ذلك الخط وارتفاعات الصفوف وعرض الأعمدة. تأكد من أن الأعمدة ضيقة بما يكفي لتناسب الصفحة.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>طباعة قائمة المفردات</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>طباعة قائمة المفردات</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>اختبار المفردات</title>
+<para
+>ستُطبع المفردات كما هي معروضة في المحرر، باستثناء أن العمود الأيمن سيُترك فارغًا ويُضاف عمود ثالث للتصحيح. تشمل الإعدادات المستخدمة الخط وارتفاعات الصفوف وعرض الأعمدة. تأكد من أن الأعمدة ضيقة بما يكفي لتناسب الصفحة.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>طباعة اختبار المفردات</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>طباعة اختبار المفردات</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>بطاقات تعليمية</title>
+<para
+>بطاقتان بحجم 3 × 5 بوصات لكل صفحة. ستُطبع البطاقات دائمًا في الوضع الأفقي.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>طباعة البطاقات التعليمية</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>طباعة البطاقات التعليمية</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="dialogs">
+<title
+>الحوارات</title>
+
+<sect1 id="dlg-config-general">
+<title
+>الإعدادات العامة</title>
+<screenshot>
+  <screeninfo
+>الإعدادات العامة</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-config.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>الإعدادات العامة</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>يمكنك اختيار نوع الجلسة التي سيبدأ بها المفردات المفتوحة حديثًا. قد يمنعك الانتقال مباشرة إلى اختبار من رؤية أي إدخالات مسبقًا. </para>
+<para
+>لجميع الجلسات، يمكنك اختيار ما إذا كانت النتائج ستُعرض كنسب مئوية بدلًا من الأرقام المطلقة. </para>
+<tip>
+<para
+>لاحظ أن الإعدادات تُطبق آليًا. </para>
+</tip>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>إعدادات الأعمدة</title>
+<para
+>يمكنك فتح مربع الحوار هذا من المحرر.</para>
+<screenshot>
+  <screeninfo
+>إعدادات الأعمدة</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>إعدادات الأعمدة</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>استخدم مربع الحوار هذا لتحديد عناوين الأعمدة ولغات الأعمدة. انقر على لغة لتحديدها أو أغلق مربع الحوار لتجاهل أي تغييرات. </para>
+</sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>الحقوق والترخيص</title>
+
+<para
+>اختبر كلماتك </para>
+<para
+>حقوق نشر البرنامج 2003-2008 بيتر ب. هيدلوند <email
+>peter.hedlund@kdemail.net</email
+> 2023 كارل شوان <email
+>carl@carlchwan.eu</email
+> </para>
+
+<para
+>حقوق نشر التوثيق 2003-2008 بيتر ب. هيدلوند <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
