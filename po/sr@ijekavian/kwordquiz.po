@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: kwordquiz\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:45+0000\n"
-"PO-Revision-Date: 2026-10-05 15:05+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
@@ -170,7 +170,7 @@ msgstr "Понови грешке"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "Сљедећа сесија вјежбања"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -365,10 +365,9 @@ msgid "Not enough words in your deck"
 msgstr "У шпилу нема довољно ријечи"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
-msgstr "За режим вишеструког избора потребне су најмање 3 ријечи"
+msgstr "За режим вишеструког избора потребне су најмање 4 ријечи"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
@@ -533,12 +532,13 @@ msgstr "Питања и одговори"
 #, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr ""
+msgstr "Паметно вјежбање"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
 msgstr ""
+"Вјежба се највише 20 картица, почев од оних са грешкама и још невиђених."
 
 #: qml/WelcomePage.qml:174
 #, kde-format
