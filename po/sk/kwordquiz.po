@@ -166,7 +166,7 @@ msgstr "Zopakovať &chyby"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Practice Session"
-msgstr ""
+msgstr "Ďalšie cvičenie"
 
 #: qml/BasePage.qml:97
 #, kde-format
@@ -361,10 +361,9 @@ msgid "Not enough words in your deck"
 msgstr "Nedostatok slov vo vašom balíku"
 
 #: qml/MultipleChoicePage.qml:154
-#, fuzzy, kde-format
-#| msgid "You need at least 3 words to enable the multiple choice mode"
+#, kde-format
 msgid "You need at least 4 words to enable the multiple choice mode"
-msgstr "Na aktiváciu režimu výberu z možností potrebujete aspoň 3 slová"
+msgstr "Na aktiváciu režimu výberu z možností potrebujete aspoň 4 slová"
 
 #: qml/OptionsAction.qml:15
 #, kde-format
@@ -526,16 +525,15 @@ msgid "Question-Answer"
 msgstr "Otázka a odpoveď"
 
 #: qml/WelcomePage.qml:163
-#, fuzzy, kde-format
-#| msgid "Start Exercise"
+#, kde-format
 msgctxt "@option:check"
 msgid "Smart practice"
-msgstr "Spustiť cvičenie"
+msgstr "Inteligentné cvičenie"
 
 #: qml/WelcomePage.qml:164
 #, kde-format
 msgid "Practice up to 20 cards, starting with mistakes and unseen cards."
-msgstr ""
+msgstr "Precvičiť až 20 kartičiek, začínajúc chybami a nevidenými kartičkami."
 
 #: qml/WelcomePage.qml:174
 #, kde-format
